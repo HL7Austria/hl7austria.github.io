@@ -82,8 +82,8 @@ Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationreq
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
-| Kassenrezept | 1 Monat ab Datum der Verordnung: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag | 1× | Im Zuge des "Besorgerprozesses" (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert. | Ein Kassenrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält das Rezept den Status "abgelaufen" (**stopped**). |
-| Privatrezept | 1 Monat ab Datum der Verordnung für die erste Einlösung; mindestens: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag; maximal: Beginn des Gültigkeitszeitraums + 1 Jahr (+ 1 Tag?) | Bis zu 6× (durch den Verordner festgelegt) | Keine Verlängerung möglich. | Ein Privatrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält es den Status (**stopped**). |
+| Kassenrezept | 1 Monat ab Datum der Verordnung: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag | 1× (kann nur in 1 Apotheke eingelöst werden) | Im Zuge des "Besorgerprozesses" (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert. | Ein Kassenrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält das Rezept den Status "abgelaufen" (**stopped**). |
+| Privatrezept | 1 Monat ab Datum der Verordnung für die erste Einlösung; mindestens: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag; maximal: Beginn des Gültigkeitszeitraums + 1 Jahr (+ 1 Tag?) | Bis zu 6× (durch den Verordner festgelegt); kann in mehreren Apotheken eingelöst werden (je nach Anzahl der Einlösemöglichkeiten) | Keine Verlängerung möglich. | Ein Privatrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält es den Status (**stopped**). |
 | Substitutionsrezept | Angabe eines beliebigen Gültigkeitszeitraums durch den Verordner; Datum frei wählbar, aber später als das Beginndatum | 1× | Keine Verlängerung möglich. | Ein Substitutionsrezept erhält den Status (**stopped**), wenn das "Bis-Datum" erreicht ist. |
 
 [^1] Die Anzahl der Einlösungen gibt an, wie viele Einlösungen auf ein Rezept durchgeführt werden dürfen bis die Verordnung auf dem Rezept und das Rezept den Status eingelöst(**completed**) erhält.
@@ -119,7 +119,7 @@ Im Element **MedicationDispense.type** einer durchgeführten Abgabe wird die Art
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
-| Vollständige Abgabe (Einzelabgabe)Sub_UC_eMed_09_01_01 | completed, wenn letzte Einlösung abgeschlossen, sonst active | Geplante Abgabe wird nach erfolgter Dispense automatisch auf completed gesetzt | type: FFC (First Fill - Complete)quantity:  x Packungenstatus: „complete“ | Dispense abgeschlossen; Kann nicht mehr verändert werden. |
+| Vollständige AbgabeSub_UC_eMed_09_01_01 | completed, wenn letzte Einlösung abgeschlossen, sonst active | Geplante Abgabe wird nach erfolgter Dispense automatisch auf completed gesetzt | type: FFC (First Fill - Complete)quantity:  x Packungenstatus: „complete“ | Dispense abgeschlossen; Kann nicht mehr verändert werden. |
 | "Besorgerprozess": Medikament von Apotheke bestelltSub_UC_eMed_09_01_02 | active | Geplante Abgabe bleibt active | type: FFP (First Fill - Part Fill)quantity:  0 Packungen (wurden  ausgegeben)status: „preparation?“ | Medikament bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden |
 | "Besorgerprozess": bestelltes Medikament wird ausgehändigtSub_UC_eMed_09_01_02 | completed | wenn Dispense completed, dann auch Geplante Abgabe completed | type: RFC (Refill - Complete)quantity:  x Packungenstatus: „complete“ | Durchgeführte Abgabe abgeschlossen |
 | 1. Teilabgabe | active | Geplante Abgabe bleibt active | type: FFP (First Fill - Part Fill)quantity:  x Packungenstatus: „complete“ | 1. Teilabgabe |
