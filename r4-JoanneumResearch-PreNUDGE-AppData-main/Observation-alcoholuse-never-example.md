@@ -33,7 +33,14 @@ Ich trinke zwar nicht, bin aber als Kind in ein Fass hausgemachten Schnaps gefal
 
 **derivedFrom**: [Response to Questionnaire '->Alkoholkonsum im letzten Jahr' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-AlcoholResponseNever.md)
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-16
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 

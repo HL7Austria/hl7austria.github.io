@@ -13,15 +13,12 @@
      fhir:status [ fhir:v "generated" ] ;
      fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap SleepQualityBase</b></p><a name=\"SleepQualityBase\"> </a><a name=\"hcSleepQualityBase\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase<span style=\"color: navy\">\" = \"</span>SleepQualityBase<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Sleep Quality Base (WHOQOL-BREF scale to LOINC)</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>SetSleepQualityObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation'</span> <i>\"SetProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'61987-4'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'My sleep quality was...in past 7 days [PROMIS]'</span><span style=\"color: navy\">)</span> <i>\"SetCode\"</i><span style=\"color: navy\">;</span>#xD;\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.effectiveDateTime = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'dateTime'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">dt</span><span style=\"color: navy\">, </span> dt.value = <span style=\"color: maroon\">authored</span> <i>\"SetEffective\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">https://loinc.org/61987-4 My sleep quality was...in past 7 days [PROMIS]</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">https://loinc.org/LL1023-2 [PROMIS] Very poor|Poor|Fair|Good|Very good</span>#xD;\n<b>group </b>MapWhoQolToLoinc<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">coding</span><span style=\"color: navy\"> : </span>Coding, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = 'S1'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><span style=\"color: navy\">, </span> cc.coding = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Coding'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">loinc</span><span style=\"color: navy\">, </span> loinc.system = <span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span> loinc.code = <span style=\"color: blue\">'LA9615-1'</span><span style=\"color: navy\">, </span> loinc.display = <span style=\"color: blue\">'Very poor'</span> <i>\"MapS1\"</i><span style=\"color: navy\">;</span>#xD;\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = 'S2'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><span style=\"color: navy\">, </span> cc.coding = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Coding'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">loinc</span><span style=\"color: navy\">, </span> loinc.system = <span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span> loinc.code = <span style=\"color: blue\">'LA8969-3'</span><span style=\"color: navy\">, </span> loinc.display = <span style=\"color: blue\">'Poor'</span> <i>\"MapS2\"</i><span style=\"color: navy\">;</span>#xD;\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = 'S3'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><span style=\"color: navy\">, </span> cc.coding = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Coding'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">loinc</span><span style=\"color: navy\">, </span> loinc.system = <span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span> loinc.code = <span style=\"color: blue\">'LA8968-5'</span><span style=\"color: navy\">, </span> loinc.display = <span style=\"color: blue\">'Fair'</span> <i>\"MapS3\"</i><span style=\"color: navy\">;</span>#xD;\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = 'S4'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><span style=\"color: navy\">, </span> cc.coding = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Coding'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">loinc</span><span style=\"color: navy\">, </span> loinc.system = <span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span> loinc.code = <span style=\"color: blue\">'LA8967-7'</span><span style=\"color: navy\">, </span> loinc.display = <span style=\"color: blue\">'Good'</span> <i>\"MapS4\"</i><span style=\"color: navy\">;</span>#xD;\n  coding.code<b> as </b><span style=\"color: maroon\">c</span><b> where </b>$this = 'S5'<span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><span style=\"color: navy\">, </span> cc.coding = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Coding'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">loinc</span><span style=\"color: navy\">, </span> loinc.system = <span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span> loinc.code = <span style=\"color: blue\">'LA13913-1'</span><span style=\"color: navy\">, </span> loinc.display = <span style=\"color: blue\">'Very Good'</span> <i>\"MapS5\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase"^^xsd:anyURI ;
-     fhir:l <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase>
-  ] ; # 
+  fhir:url [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "SleepQualityBase"] ; # 
   fhir:title [ fhir:v "Sleep Quality Base (WHOQOL-BREF scale to LOINC)"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2026-06-03T10:15:52+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-16T06:28:21+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -41,21 +38,21 @@
   fhir:structure ( [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
      ] ;
      fhir:mode [ fhir:v "source" ] ;
      fhir:alias [ fhir:v "QR" ]
   ] [
      fhir:url [
        fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
-       fhir:l <http://hl7.org/fhir/StructureDefinition/Observation>
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
      ] ;
      fhir:mode [ fhir:v "target" ] ;
      fhir:alias [ fhir:v "Obs" ]
   ] ) ; # 
   fhir:import ( [
      fhir:v "http://hl7.org/fhir/StructureMap/*"^^xsd:anyURI ;
-     fhir:l <http://hl7.org/fhir/StructureMap/*>
+     fhir:link <http://hl7.org/fhir/StructureMap/*>
   ] ) ; # 
   fhir:group ( [
      fhir:name [ fhir:v "SetSleepQualityObservation" ] ;
@@ -82,7 +79,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Meta"
            ]
          ] )
@@ -93,7 +90,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation"
            ]
          ] )
@@ -110,17 +107,17 @@
          fhir:transform [ fhir:v "cc" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "http://loinc.org"
            ]
          ] [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "61987-4"
            ]
          ] [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "My sleep quality was...in past 7 days [PROMIS]"
            ]
          ] )
@@ -140,7 +137,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "dateTime"
            ]
          ] )
@@ -151,7 +148,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:Id ;
+             a fhir:id ;
              fhir:v "authored"
            ]
          ] )
@@ -186,7 +183,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "CodeableConcept"
            ]
          ] )
@@ -198,7 +195,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Coding"
            ]
          ] )
@@ -209,7 +206,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "http://loinc.org"
            ]
          ] )
@@ -220,7 +217,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "LA9615-1"
            ]
          ] )
@@ -231,7 +228,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Very poor"
            ]
          ] )
@@ -252,7 +249,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "CodeableConcept"
            ]
          ] )
@@ -264,7 +261,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Coding"
            ]
          ] )
@@ -275,7 +272,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "http://loinc.org"
            ]
          ] )
@@ -286,7 +283,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "LA8969-3"
            ]
          ] )
@@ -297,7 +294,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Poor"
            ]
          ] )
@@ -318,7 +315,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "CodeableConcept"
            ]
          ] )
@@ -330,7 +327,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Coding"
            ]
          ] )
@@ -341,7 +338,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "http://loinc.org"
            ]
          ] )
@@ -352,7 +349,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "LA8968-5"
            ]
          ] )
@@ -363,7 +360,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Fair"
            ]
          ] )
@@ -384,7 +381,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "CodeableConcept"
            ]
          ] )
@@ -396,7 +393,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Coding"
            ]
          ] )
@@ -407,7 +404,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "http://loinc.org"
            ]
          ] )
@@ -418,7 +415,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "LA8967-7"
            ]
          ] )
@@ -429,7 +426,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Good"
            ]
          ] )
@@ -450,7 +447,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "CodeableConcept"
            ]
          ] )
@@ -462,7 +459,7 @@
          fhir:transform [ fhir:v "create" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Coding"
            ]
          ] )
@@ -473,7 +470,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "http://loinc.org"
            ]
          ] )
@@ -484,7 +481,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "LA13913-1"
            ]
          ] )
@@ -495,7 +492,7 @@
          fhir:transform [ fhir:v "copy" ] ;
          fhir:parameter ( [
            fhir:value [
-             a fhir:String ;
+             a fhir:string ;
              fhir:v "Very Good"
            ]
          ] )

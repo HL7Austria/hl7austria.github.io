@@ -17,7 +17,7 @@ For more, see [Background](background.md).
 
 This Implementation Guide (IG) explains how application providers can use the **PreNUDGE FHIR API** to deliver **health indicators**.
 
-We focus on narrow standardization of **four PreNUDGE measurements**:
+We focus on narrow standardization of the following **PreNUDGE measurements**:
 
 * Physical Activity: Daily activity as **Steps per day** (from a [**EHIS PAQ questionnaire**](Questionnaire-StepCountEhisPaqQuestionnaire.md), [**quantity questionnaire**](Questionnaire-StepCountQuantityQuestionnaire.md) and from a [**wearable device as an observation**](StructureDefinition-at-prenudge-stepcount-observation.md))
 * **Alcohol consumption** as number of drinks (from a [**questionnaire**](Questionnaire-AlcoholUseQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-alcoholuse-observation.md))
@@ -38,7 +38,6 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 * Physical Activity: Minutes of moderate physical activity (per week), Minutes of physical activity (per week) (from a questionnaire and from a wearable device as an observation)
 * Physical Activity: Number of muscle strengthening exercise sessions (per week) (from a questionnaire and from a wearable device as an observation)
 * Physical Activity: Sitting hours (per day) (from a questionnaire from a wearable device as an observation)
-* Smoking: Current status (from a questionnaire and from an observation IPS style)
 * Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)
 * Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)
 * Sociodemographic Data: Age (from a questionnaire)
@@ -51,7 +50,14 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 
 Besides these narrow standardized measurements, **broad standardized measurements** called [**other quantities observations**](StructureDefinition-at-prenudge-observation-other-quantities.md) and [**other not quantities observations**](StructureDefinition-at-prenudge-observation-other-not-quantities.md) are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-16
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -64,7 +70,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-03T10:15:52+00:00",
+  "date" : "2026-06-16T06:28:21+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -93,7 +99,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -882,6 +888,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-smokingstatus-observation"
+      },
+      "name" : "AT PreNUDGE Observation Smoking Status",
+      "description" : "This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-prenudge-stepcount-observation"
       },
       "name" : "AT PreNUDGE Observation Step Count",
@@ -1098,6 +1116,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "Questionnaire"
       }],
       "reference" : {
+        "reference" : "Questionnaire/SmokingStatusQuestionnaire"
+      },
+      "name" : "Rauchstatus und Nikotinkonsum",
+      "description" : "ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
         "reference" : "Questionnaire/SleepQualityQuestionnaire"
       },
       "name" : "Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)",
@@ -1222,6 +1252,78 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "Sleep Quality Q - Satisfied Example",
       "description" : "Example of a standalone sleep quality questionnaire response indicating satisfaction with sleep (S4 - Zufrieden).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/smokingstatus-current-every-day-example"
+      },
+      "name" : "Smoking Status O mapped from ATHIS Q - Current Daily Tobacco Smoker Example",
+      "description" : "Example of a smoking status observation for a current daily tobacco smoker, mapped from SK1 of the ATHIS-based SmokingStatusQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/smokingstatus-former-example"
+      },
+      "name" : "Smoking Status O mapped from ATHIS Q - Former Tobacco Smoker Example",
+      "description" : "Example of a smoking status observation for a former tobacco smoker, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/smokingstatus-never-example"
+      },
+      "name" : "Smoking Status O mapped from ATHIS Q - Never Tobacco Smoker Example",
+      "description" : "Example of a smoking status observation for a person who never smoked tobacco, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseCurrentEveryDay"
+      },
+      "name" : "Smoking Status Q ATHIS - Current Daily Tobacco Smoker Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response for a current daily tobacco smoker. The derived observation maps SK1 daily to SNOMED CT 449868002.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseFormer"
+      },
+      "name" : "Smoking Status Q ATHIS - Former Tobacco Smoker Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response for a former tobacco smoker. The derived observation maps SK1 no and past tobacco smoking to SNOMED CT 8517006.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseNever"
+      },
+      "name" : "Smoking Status Q ATHIS - Never Tobacco Smoker Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response for a person who never smoked tobacco. The derived observation maps SK1 no and past tobacco smoking no to SNOMED CT 266919005.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -1409,6 +1511,17 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "Sleep Quality Base (WHOQOL-BREF scale to LOINC)",
       "description" : "Sleep Quality Base (WHOQOL-BREF scale to LOINC)"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/SmokingStatusQuestionnaireResponseToObservation"
+      },
+      "name" : "ATHIS-based Smoking Status Q to O",
+      "description" : "ATHIS-based Smoking Status Q to O"
     },
     {
       "extension" : [{

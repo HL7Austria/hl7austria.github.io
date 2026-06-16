@@ -220,6 +220,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Questionnaire-SmokingStatusQuestionnaire.html"
+                  title="Questionnaire/SmokingStatusQuestionnaire">Rauchstatus und Nikotinkonsum</a>
+            </td>
+            <td>
+<p>ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Questionnaire-SleepQualityQuestionnaire.html"
                   title="Questionnaire/SleepQualityQuestionnaire">Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)</a>
             </td>
@@ -331,6 +340,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Records the self-assessed sleep quality from PROMIS (My sleep quality was…in past 7 days). Also used to map WHOQOL-BREF Q16 from standalone SleepQualityQuestionnaire or the full WhoQolBrefQuestionnaire.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-smokingstatus-observation.html"
+                  title="StructureDefinition/at-prenudge-smokingstatus-observation">AT PreNUDGE Observation Smoking Status</a>
+            </td>
+            <td>
+<p>This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question.</p>
 </td>
          </tr>
          <tr>
@@ -455,6 +473,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-SmokingStatusQuestionnaireResponseToObservation.html"
+                  title="StructureMap/SmokingStatusQuestionnaireResponseToObservation">ATHIS-based Smoking Status Q to O</a>
+            </td>
+            <td>
+<p>ATHIS-based Smoking Status Q to O</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="StructureMap-AlcoholQuestionnaireResponseToObservation.html"
@@ -724,6 +751,60 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-smokingstatus-current-every-day-example.html"
+                  title="Observation/smokingstatus-current-every-day-example">Smoking Status O mapped from ATHIS Q - Current Daily Tobacco Smoker Example</a>
+            </td>
+            <td>
+<p>Example of a smoking status observation for a current daily tobacco smoker, mapped from SK1 of the ATHIS-based SmokingStatusQuestionnaire.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-smokingstatus-former-example.html"
+                  title="Observation/smokingstatus-former-example">Smoking Status O mapped from ATHIS Q - Former Tobacco Smoker Example</a>
+            </td>
+            <td>
+<p>Example of a smoking status observation for a former tobacco smoker, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-smokingstatus-never-example.html"
+                  title="Observation/smokingstatus-never-example">Smoking Status O mapped from ATHIS Q - Never Tobacco Smoker Example</a>
+            </td>
+            <td>
+<p>Example of a smoking status observation for a person who never smoked tobacco, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-SmokingStatusResponseCurrentEveryDay.html"
+                  title="QuestionnaireResponse/SmokingStatusResponseCurrentEveryDay">Smoking Status Q ATHIS - Current Daily Tobacco Smoker Example</a>
+            </td>
+            <td>
+<p>Example of an ATHIS-based smoking status questionnaire response for a current daily tobacco smoker. The derived observation maps SK1 daily to SNOMED CT 449868002.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-SmokingStatusResponseFormer.html"
+                  title="QuestionnaireResponse/SmokingStatusResponseFormer">Smoking Status Q ATHIS - Former Tobacco Smoker Example</a>
+            </td>
+            <td>
+<p>Example of an ATHIS-based smoking status questionnaire response for a former tobacco smoker. The derived observation maps SK1 no and past tobacco smoking to SNOMED CT 8517006.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-SmokingStatusResponseNever.html"
+                  title="QuestionnaireResponse/SmokingStatusResponseNever">Smoking Status Q ATHIS - Never Tobacco Smoker Example</a>
+            </td>
+            <td>
+<p>Example of an ATHIS-based smoking status questionnaire response for a person who never smoked tobacco. The derived observation maps SK1 no and past tobacco smoking no to SNOMED CT 266919005.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="QuestionnaireResponse-stepcount-ehispaq-high.html"
                   title="QuestionnaireResponse/stepcount-ehispaq-high">Step Count EHIS PAQ Q - High Example</a>
             </td>
@@ -823,7 +904,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jun 3, 2026 10:15+0000">2026-06-03</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Jun 16, 2026 06:28+0000">2026-06-16</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
