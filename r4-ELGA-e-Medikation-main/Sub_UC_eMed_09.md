@@ -52,10 +52,9 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
 
 #### Sub_UC_eMed_09_01_02 - Teilabgaben erfassen
 
-Eine Teilabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordneten Arzneimenge nicht vollständig abgegeben wird, weil:
+Eine Teilabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordneten Arzneimenge nicht vollständig abgegeben wird, weil nur ein Teil der verordneten Arzneimenge eingelöst werden soll oder kann.
 
-* nur ein Teil der verordneten Arzneimenge eingelöst werden soll oder
-* ein Teil oder die Gesamtmenge im Rahmen des Besorgerprozesses erst später verfügbar ist (siehe [Sub_UC_eMed_09_01_02 Besorgerprozess](Sub_UC_eMed_09.md#sub_uc_emed_09_01_03-besorgerprozess))
+Sonderfälle von Teilabgaben sind Besorgerprozess (siehe [Sub_UC_eMed_09_01_03 - Besorgerprozess](sub_uc_emed_09_01_03---besorgerprozess)) und Leerabgabe (siehe [Sub_UC_eMed_09_01_05 Leerabgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01_05-leerabgabe-erfassen)).
 
 Für jede Teilabgabe **MUSS** eine **Durchgeführte Abgabe** erstellt werden. Dabei gelten folgende Regeln:
 
@@ -65,7 +64,7 @@ Für jede Teilabgabe **MUSS** eine **Durchgeführte Abgabe** erstellt werden. Da
 * bei der letzten Teilabgabe (**vollständige Teilabgabe**), d. h. sobald die in der **Geplanten Abgabe** verordnete Arzneimenge vollständig abgegeben wurde, den Wert **RFC (Refill – Complete)** enthalten.
  
 * **MedicationDispense.status** **MUSS** den Wert **completed** besitzen.
-* **MedicationDispense.quantity** **MUSS** die Anzahl der tatsächlich abgegebenen Packungen enthalten.
+* **MedicationDispense.quantity** **MUSS** die **Anzahl der tatsächlich abgegebenen Packungen** enthalten.
 
 Die Gültigkeit einer **Geplanten Abgabe** verlängert sich im Zuge von Teilabgaben (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart)).
 
@@ -100,64 +99,57 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
 
 #### Sub_UC_eMed_09_01_03 - Besorgerprozess
 
-Ein Besorgerprozess liegt vor, wenn das in der **Geplanten Abgabe** verordnete Arzneimittel vollständig bestellt oder zubereitet werden muss.
+Ein Besorgerprozess liegt vor, wenn das in der **Geplanten Abgabe** verordnete Arzneimittel **vollständig bestellt oder zubereitet** werden muss.
 
-Werden hingegen Arzneimittel teilweise bereits abgegeben (und nur ein Teil bestellt oder zubereitet), liegt eine Teilabgabe vor (siehe [Sub_UC_eMed_09_01_02 Teilabgaben](Sub_UC_eMed_09.md#sub_uc_emed_09_01_02-teilabgaben)).
-
-Zu Beginn des Besorgerprozesses **MUSS**, entsprechend den Regeln für Teilabgaben, eine **Durchgeführte Abgabe** mit:
+Zu Beginn des Besorgerprozesses **MUSS**, entsprechend den Regeln für Teilabgaben, wird eine **Durchgeführte Abgabe** erstellt mit:
 
 * **MedicationDispense.type = FFP (First Fill – Part Fill)**, **MedicationDispense.status = completed** erstellt werden.
-* Die abgegebenen Packungen (**MedicationDispense.quantity**) werden mit 0 dokumentiert. Die **Geplanten Abgabe** kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.
+* Die abgegebenen Packungen **MÜSSEN** mit **MedicationDispense.quantity** = **0** dokumentiert werden. Die **Geplanten Abgabe** kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.
 
-Wird das bestellte/zubereitete Arzneimittel ausgehändigt, wird eine weitere **Durchgeführte Abgabe** erstellt mit:
+Wird das bestellte/zubereitete Arzneimittel ausgehändigt, wird die Teilabgabe beendet, indem eine weitere **Durchgeführte Abgabe** erstellt wird mit:
 
 * **MedicationDispense.type = RFC (Refill - Complete)**, **MedicationDispense.status = completed**.
-* **MedicationDispense.quantity** **MUSS** die Anzahl der tatsächlich abgegebenen Packungen enthalten.
+* **MedicationDispense.quantity** **MUSS** die Anzahl der **tatsächlich abgegebenen Packungen** enthalten. Der Besorgerprozess und die Abgabe ist damit abgeschlossen. Mögliche weitere Einlösungen der **Geplanten Abgabe** können in anderen Apotheken erfolgen.
 
-Die zugehörige **Geplante Abgabe** bleibt so lange im Status **active**, bis eine Durchgeführte Abgabe mit einem **completed** Status gespeichert wird, danach setzt die Fachanwendung den Status der **Geplante Abgabe** ebenfalls auch **completed**. Der Besorgerprozess und die Abgabe ist damit abgeschlossen.
+Der Status der **Geplanten Abgabe** bleibt **active**, solange weitere Einlösungen zulässig sind. Sind keine weiteren Einlösungen mehr möglich, setzt die Fachanwendung den Status der **Geplanten Abgabe** auf **completed**.
 
-#### Sub_UC_eMed_09_01_05 Leerabgabe erfassen
+#### Sub_UC_eMed_09_01_04 Leerabgabe erfassen
 
-In Arbeit.
+Mit einer **Leerabgabe** dokumentiert der GDA (Apotheker bzw. Arzt mit Hausapotheke), dass der Patient ein Arzneimittel einer **Geplanten Abgabe** nicht benötigt. Hierfür erstellt er eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) wie folgt:
+
+* Im Fall einer Beendigung einer Einzelabgabe: 
+* **MedicationDispense.type = FFC (First Fill Complete)**, **MedicationDispense.status = **cancelled****
+ 
+* Wenn bereits Teilabgabe(n) erfolgt sind: **MedicationDispense.type = RFC (Refill - Complete)**, **MedicationDispense.status = **cancelled****
+* Die abgegebenen Packungen **MÜSSEN** mit **MedicationDispense.quantity** = **0** dokumentiert werden. Dieser Einlösevorgang ist damit beendet.
+
+Die Anzahl der möglichen Einlösungen einer **Geplanten Abgabe** reduziert sich nach einer Leerabgabe, d.h. sie bleibt weiterhin **active** bis die restlichen möglichen Einlösungen erfolgt sind oder sie zeitlich abläuft. Nur wenn alle möglichen Einlösungen mit **cancelled** gespeichert wurden, wird die zugehörige **Geplante Abgabe** automatisch auf **cancelled** gesetzt, sonst auf **completed**.
+
+#### Sub_UC_eMed_09_01_05 - Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen
+
+In folgenden Fällen liegt bei der Erfassung einer **Durchgeführten Abgabe** keine zugehörige **Geplante Abgabe** vor:
+
+* Abgabe von nicht verordneten Arzneimitteln (Abgabe von wechselwirkungsrelevanten OTC)
+* wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist, aber keine zugehörige **Geplante Abgabe** in e-Medikation existiert.
+
+Sofern für die **Durchgeführten Abgabe** im nachhinein ein **Planeintrag** erstellt wird, **KANN** mit $reference-plan der Planeintrag (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
+
+#### Sub_UC_eMed_09_01_06 - Geplanten Abgabe nacherfassen
+
+Bei der Nacherfassung bereits abgegebener Arzneimittel (z.B. wenn eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war oder bei Arzneimittelbezug aus dem Ausland), wird als Erfassungsdatum der Zeitpunkt der Nacherfassung gesetzt, während als Abgabedatum das tatsächliche Datum der Abgabe in der Vergangenheit eingetragen wird.
 
 #### Relevante Elemente (MedicationDispense)
 
 ```
 AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
-    recorded: Datum der Erstellung der Durchgeführten Abgabe
-    status: cancelled     
-    medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
-    performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
-    authorizingPrescription[geplanteabgabe]: Verpflichtende Referenz auf zugehörige Geplante Abgabe
-    authorizingPrescription[planeintrag]: Verpflichtende Referenz auf Planeintrag
-    type: FFC (First Fill - Complete) | (Refill - Part Fill) | RFC (Refill - Complete)  // Leerabgabe beendet Einzelabgabe | Leerabgabe beendet eine Teilabgabe | Leerabgabe beendet alle Teilabgaben
-    quantity: 0     // Packungen
-    //whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde 
-    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation 
+    recorded: Datum der Nacherfassung
+    whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
 
 ```
 
-#### Sub_UC_eMed_09_01_04 - Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen (ohne Verordnung / OTC Abgabe)
+#### Sub_UC_eMed_09_01_07 Substitution eines Arzneimittels erfassen
 
-In Arbeit. <!– In folgenden Fällen liegt bei der Erfassung einer **Durchgeführten Abgabe** keine zugehörige **Durchgeführte Abgabe** vor:
-
-* OTC Abgabe (rezeptfrei): Ein rezeptfreies Medikament wurde abgegeben. 
-* Für wechselwirkungsrelevante Medikamente (aus ASP-Liste) **SOLL** eine **Durchgeführte Abgabe** erstellt werden.
-* Ein Planeintrag für Wechselwirkungsrelevante Medikatmente **KANN** nacherfasst werden. In der **Durchgeführten Abgabe** **KANN** im nachhinein der Planeintrag (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
- 
-* Notabgabe: Ein rezeptpflichtiges Medikament wurde ohne zugrundeliegende geplante Abgabe abgegeben (z.B. die Dokumentation ist nur in e-Rezept erfolgt). 
-* Für Notabgaben **MUSS** eine **Durchgeführte Abgabe** erstellt werden.
-* Ein Planeintrag **KANN** nacherfasst werden. In der **Durchgeführten Abgabe** kann im nachhinein der Planeintrag (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
- 
-* Rezept wird nachgebracht: Ein rezeptpflichtiges Medikament wurde ohne zugrundeliegende geplante Abgabe abgegeben (z.B. die Dokumentation ist nur in e-Rezept erfolgt).
-
-Eine **Durchgeführte Abgabe** kann nacherfasst werden, wenn das Arzneimittel bereits abgegeben wurde, - aber eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war - der Arzneimittelbezug aus dem Ausland erfolgt ist (Element **recorded** abweichend von **whenHandedOver**) - wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist und keine Geplante Abgabe in e-Medikation eingetragen wurden.
-
-Medikament wurde abgegeben oder reserviert, das formale Rezept wird später nachgereicht. Planeintrag für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden. –>
-
-#### Sub_UC_eMed_09_01_07 Durchgeführte Abgabe mit Substitution eines Arzneimittels erfassen
-
-Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Referenz auf die zugehörige Geplante Abgabe bzw. den Planeintrag.
+Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Referenz auf die zugehörige **Geplante Abgabe** bzw. den **Planeintrag**.
 
 ### Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen
 
