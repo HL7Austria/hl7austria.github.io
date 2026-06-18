@@ -1,0 +1,37 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-usage-category-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ehds-usage-category-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet ehds-usage-category-vs</b></p><a name=\"ehds-usage-category-vs\"> </a><a name=\"hcehds-usage-category-vs\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-EUAIActCodeSystem.html\"><code>http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-EUAIActCodeSystem.html#EUAIActCodeSystem-primary-use\">primary-use</a></td><td style=\"color: #cccccc\">Primary Use</td><td>Processing for direct patient care.</td></tr><tr><td><a href=\"CodeSystem-EUAIActCodeSystem.html#EUAIActCodeSystem-secondary-use\">secondary-use</a></td><td style=\"color: #cccccc\">Secondary Use</td><td>Processing for research, AI training, or policy making.</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-usage-category-vs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "EHDS_UsageCategoryVS"] ; # 
+  fhir:title [ fhir:v "EHDS Usage Category ValueSet"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-18T08:40:47+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Selina Adlberger"] ; # 
+  fhir:description [ fhir:v "Defines whether the data usage is primary care or secondary use."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "primary-use" ]
+       ] [
+         fhir:code [ fhir:v "secondary-use" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

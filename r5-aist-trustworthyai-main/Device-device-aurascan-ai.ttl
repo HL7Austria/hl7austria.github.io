@@ -1,0 +1,157 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Device/device-aurascan-ai> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "device-aurascan-ai"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"^^xsd:anyURI ;
+       fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device device-aurascan-ai</b></p><a name=\"device-aurascan-ai\"> </a><a name=\"hcdevice-aurascan-ai\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-device.html\">EU AI Act Compliant Device</a></p></div><p><b>Model Card Reference</b>: <a href=\"DocumentReference-modelcard-aurascan.html\">DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Intended for adult thorax CTs. Residual Risk: Potential for false-positive vascular artifacts.</a></p><blockquote><p><b>Third-Country Data Transfer</b></p><ul><li>transferFlag: false</li><li>destinationCountry: AT</li></ul></blockquote><p><b>identifier</b>: EU AI Database Identifier/EU-AI-2042-XJ992</p><p><b>manufacturer</b>: Aetheria HealthTech Systems Corp.</p><h3>Names</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>AuraScan Pulmo-Net Diagnostics</td><td>Registered name</td></tr></table><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>3.1.0</td></tr></table><blockquote><p><b>conformsTo</b></p><p><b>specification</b>: <span title=\"Codes:\">ISO 13485:2016 Medical devices - QMS</span></p></blockquote><blockquote><p><b>conformsTo</b></p><p><b>specification</b>: <span title=\"Codes:\">EU AI Act High-Risk Compliance</span></p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem ce-mark}\">CE Mark</span></p><p><b>value</b>: true</p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem notified-body-id}\">Notified Body ID</span></p><p><b>value</b>: 0123</p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem expected-lifetime}\">Expected Lifetime</span></p><p><b>value</b>: 5 years<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codea = 'a')</span></p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem medical-purpose}\">Medical Purpose</span></p><p><b>value</b>: Automated detection of lung nodules in CT Thorax scans.</p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem target-population}\">Target Population</span></p><p><b>value</b>: <span title=\"Codes:{http://snomed.info/sct 38033009}\">Amputation stump</span></p></blockquote><p><b>owner</b>: <a href=\"Organization-org-chronos-medical.html\">Organization St. Chronos Medical Center</a></p><p><b>contact</b>: <a href=\"mailto:support@aetheria-health.test\">support@aetheria-health.test</a>, <a href=\"tel:+4900098765432\">+49 000 98765432</a></p><p><b>note</b>: , </p><blockquote><div><p>Maintenance: Hardware calibration required every 12 months.</p>\n</div></blockquote><blockquote><div><p>Security: Software patches are deployed monthly via remote update.</p>\n</div></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://example.org/fhir/eu-ai-transparency/DocumentReference/modelcard-aurascan> ;
+       fhir:reference [ fhir:v "DocumentReference/modelcard-aurascan" ]
+     ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "transferFlag"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:url [ fhir:v "destinationCountry"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "AT"
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/third-country-data-transfer"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "eu-ai-database-id" ] ;
+         fhir:display [ fhir:v "EU AI Database Identifier" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/sid/eu-ai-database"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "EU-AI-2042-XJ992" ]
+  ] ) ; # 
+  fhir:manufacturer [ fhir:v "Aetheria HealthTech Systems Corp."] ; # 
+  fhir:name ( [
+     fhir:value [ fhir:v "AuraScan Pulmo-Net Diagnostics" ] ;
+     fhir:type [ fhir:v "registered-name" ]
+  ] ) ; # 
+  fhir:version ( [
+     fhir:value [ fhir:v "3.1.0" ]
+  ] ) ; # 
+  fhir:conformsTo ( [
+     fhir:specification [
+       fhir:text [ fhir:v "ISO 13485:2016 Medical devices - QMS" ]
+     ]
+  ] [
+     fhir:specification [
+       fhir:text [ fhir:v "EU AI Act High-Risk Compliance" ]
+     ]
+  ] ) ; # 
+  fhir:property ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ce-mark" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:boolean ;
+       fhir:v true
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "notified-body-id" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "0123"
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "expected-lifetime" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "5"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "years" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "a" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "medical-purpose" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "Automated detection of lung nodules in CT Thorax scans."
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "target-population" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         a sct:38033009 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "38033009" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:owner [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Organization/org-chronos-medical> ;
+     fhir:reference [ fhir:v "Organization/org-chronos-medical" ]
+  ] ; # 
+  fhir:contact ( [
+     fhir:system [ fhir:v "email" ] ;
+     fhir:value [ fhir:v "support@aetheria-health.test" ] ;
+     fhir:use [ fhir:v "work" ]
+  ] [
+     fhir:system [ fhir:v "phone" ] ;
+     fhir:value [ fhir:v "+49 000 98765432" ] ;
+     fhir:use [ fhir:v "work" ]
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Maintenance: Hardware calibration required every 12 months." ]
+  ] [
+     fhir:text [ fhir:v "Security: Software patches are deployed monthly via remote update." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

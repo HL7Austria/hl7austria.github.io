@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="observation-ai-nodule"/>
+  <meta>
+    <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Observation observation-ai-nodule</b></p><a name="observation-ai-nodule"> </a><a name="hcobservation-ai-nodule"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-eu-ai-observation.html">EU AI Act Observation (Validated Result)</a></p></div><p><b>Case-Specific Indication</b>: <span title="Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem screening}">Screening</span></p><p><b>status</b>: Preliminary</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 786838002}">Nodule of lung (disorder)</span></p><p><b>subject</b>: <a href="Patient-patient-elias-vance.html">Elias Vance  Male, DoB: 1965-04-12</a></p><p><b>effective</b>: 2026-04-08 08:00:00+0000</p><p><b>performer</b>: <a href="Practitioner-doctor-aris-thorne.html">Practitioner Aris Thorne </a></p><p><b>interpretation</b>: <span title="Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem ai-generated}">AI Generated Result</span></p><p><b>method</b>: <span title="Codes:">AuraScan Neural Engine v3.1</span></p><p><b>device</b>: <a href="Device-device-aurascan-ai.html">Device: extension = -&gt;DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Intended for adult thorax CTs. Residual Risk: Potential for false-positive vascular artifacts.,; identifier = EU AI Database Identifier: EU-AI-2042-XJ992; manufacturer = Aetheria HealthTech Systems Corp.; contact = support@aetheria-health.test(Work),ph: +49 000 98765432(Work); note = Maintenance: Hardware calibration required every 12 months.,Security: Software patches are deployed monthly via remote update.</a></p></div>
+  </text>
+  <extension url="http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"/>
+        <code value="screening"/>
+        <display value="Screening"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="preliminary"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="786838002"/>
+      <display value="Nodule of lung (disorder)"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/patient-elias-vance"/>
+  </subject>
+  <effectiveDateTime value="2026-04-08T08:00:00Z"/>
+  <performer>
+    <reference value="Practitioner/doctor-aris-thorne"/>
+  </performer>
+  <interpretation>
+    <coding>
+      <system value="http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"/>
+      <code value="ai-generated"/>
+    </coding>
+  </interpretation>
+  <method>
+    <text value="AuraScan Neural Engine v3.1"/>
+  </method>
+  <device>
+    <reference value="Device/device-aurascan-ai"/>
+  </device>
+</Observation>

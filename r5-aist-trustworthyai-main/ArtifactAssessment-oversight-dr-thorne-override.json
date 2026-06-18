@@ -1,0 +1,39 @@
+{
+  "resourceType" : "ArtifactAssessment",
+  "id" : "oversight-dr-thorne-override",
+  "meta" : {
+    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ArtifactAssessment oversight-dr-thorne-override</b></p><a name=\"oversight-dr-thorne-override\"> </a><a name=\"hcoversight-dr-thorne-override\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-human-oversight.html\">EU AI Act Human Oversight (HL)</a></p></div><p><b>date</b>: 2026-04-08 14:05:00+0000</p><p><b>artifact</b>: <a href=\"Observation-observation-ai-nodule.html\">Observation Nodule of lung (disorder)</a></p><blockquote><p><b>content</b></p><p><b>summary</b>: </p><div><p>Clinical review of the CT and AI Heatmap confirms a vascular crossing artifact, not a true pulmonary lesion. Finding dismissed.</p>\n</div><p><b>classifier</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem human-override}\">Human Override</span></p><p><b>author</b>: <a href=\"PractitionerRole-role-dr-thorne.html\">PractitionerRole Doctor</a></p><h3>RelatedArtifacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>ResourceReference</b></td></tr><tr><td style=\"display: none\">*</td><td>Citation</td><td><a href=\"DocumentReference-doc-ai-heatmap.html\">DocumentReference: status = current</a></td></tr></table></blockquote><p><b>workflowStatus</b>: Submitted</p></div>"
+  },
+  "date" : "2026-04-08T14:05:00Z",
+  "artifactReference" : {
+    "reference" : "Observation/observation-ai-nodule"
+  },
+  "content" : [{
+    "summary" : "Clinical review of the CT and AI Heatmap confirms a vascular crossing artifact, not a true pulmonary lesion. Finding dismissed.",
+    "classifier" : [{
+      "coding" : [{
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "code" : "human-override",
+        "display" : "Human Override"
+      }]
+    }],
+    "author" : {
+      "extension" : [{
+        "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status",
+        "valueBoolean" : true
+      }],
+      "reference" : "PractitionerRole/role-dr-thorne"
+    },
+    "relatedArtifact" : [{
+      "type" : "citation",
+      "resourceReference" : {
+        "reference" : "DocumentReference/doc-ai-heatmap"
+      }
+    }]
+  }],
+  "workflowStatus" : "submitted"
+}

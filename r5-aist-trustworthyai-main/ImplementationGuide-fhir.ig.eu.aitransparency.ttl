@@ -1,0 +1,1107 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fhir.ig.eu.aitransparency"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide fhir.ig.eu.aitransparency</b></p><a name=\"fhir.ig.eu.aitransparency\"> </a><a name=\"hcfhir.ig.eu.aitransparency\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>EUAITransparencyIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency</pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "EUAITransparencyIG"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2026-06-18T08:40:47+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Selina Adlberger"] ; # 
+  fhir:packageId [ fhir:v "fhir.ig.eu.aitransparency"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "5.0.0"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+       ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
+     fhir:version [ fhir:v "7.2.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:markdown ;
+         fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+       ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r5" ] ;
+     fhir:version [ fhir:v "5.3.0" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:code ;
+         fhir:v "hl7.fhir.uv.tools.r5#1.1.2"
+       ]
+     ] ) ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-data-quality-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eu-ai-data-quality-vs" ]
+       ] ;
+       fhir:name [ fhir:v "AI Data Quality ValueSet" ] ;
+       fhir:description [ fhir:v "Attributes describing the quality of training data." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-performance-metric-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eu-ai-performance-metric-vs" ]
+       ] ;
+       fhir:name [ fhir:v "AI Performance Metric ValueSet" ] ;
+       fhir:description [ fhir:v "Codes for technical quality and performance metrics." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics> ;
+         fhir:reference [ fhir:v "StructureDefinition/ai-performance-metrics" ]
+       ] ;
+       fhir:name [ fhir:v "AI Performance Metrics" ] ;
+       fhir:description [ fhir:v "Captures quantitative metrics and bias disclosures." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-privacy-metadata> ;
+         fhir:reference [ fhir:v "StructureDefinition/ai-privacy-metadata" ]
+       ] ;
+       fhir:name [ fhir:v "AI Privacy Metadata" ] ;
+       fhir:description [ fhir:v "GDPR and AI Act privacy parameters. Third country transfer flags and data retention policies at the model level." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status> ;
+         fhir:reference [ fhir:v "StructureDefinition/ai-system-training-status" ]
+       ] ;
+       fhir:name [ fhir:v "AI System Specific Training" ] ;
+       fhir:description [ fhir:v "Mandatory flag indicating whether the human actor has received specific training for the utilized AI tool." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data> ;
+         fhir:reference [ fhir:v "StructureDefinition/ai-training-data" ]
+       ] ;
+       fhir:name [ fhir:v "AI Training Data Metadata" ] ;
+       fhir:description [ fhir:v "Details regarding provenance, EHDS categories, and data quality." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ArtifactAssessment"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ArtifactAssessment/oversight-dr-thorne-override> ;
+         fhir:reference [ fhir:v "ArtifactAssessment/oversight-dr-thorne-override" ]
+       ] ;
+       fhir:name [ fhir:v "Assessment: Human Override of AI Finding" ] ;
+       fhir:description [ fhir:v "Dr. Thorne reviews the AI finding and the heatmap, determining it to be a false positive." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "AuditEvent"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/AuditEvent/audit-ai-execution> ;
+         fhir:reference [ fhir:v "AuditEvent/audit-ai-execution" ]
+       ] ;
+       fhir:name [ fhir:v "Audit Log: AI Execution Trace" ] ;
+       fhir:description [ fhir:v "Cryptographically signed trace connecting the CT scan, the AI device, and the resulting observation." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication> ;
+         fhir:reference [ fhir:v "StructureDefinition/case-specific-indication" ]
+       ] ;
+       fhir:name [ fhir:v "Case-Specific Indication" ] ;
+       fhir:description [ fhir:v "The clinical reason why the AI was used for this specific patient." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Communication"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Communication/comm-patient-explanation> ;
+         fhir:reference [ fhir:v "Communication/comm-patient-explanation" ]
+       ] ;
+       fhir:name [ fhir:v "Communication: Right to Explanation Fulfilled" ] ;
+       fhir:description [ fhir:v "Logs that the patient was actively informed about the human-AI decision." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Consent"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Consent/consent-vance-ai> ;
+         fhir:reference [ fhir:v "Consent/consent-vance-ai" ]
+       ] ;
+       fhir:name [ fhir:v "Consent: Elias Vance (AI & EHDS)" ] ;
+       fhir:description [ fhir:v "Patient consent instance illustrating GDPR compliance and EHDS secondary use opt-out." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-consent"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-consent>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Provenance"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Provenance/prov-ai-lineage> ;
+         fhir:reference [ fhir:v "Provenance/prov-ai-lineage" ]
+       ] ;
+       fhir:name [ fhir:v "Data Provenance: AI Lineage" ] ;
+       fhir:description [ fhir:v "Oversight protocol documenting data lineage of AI results." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Organization/org-chronos-medical> ;
+         fhir:reference [ fhir:v "Organization/org-chronos-medical" ]
+       ] ;
+       fhir:name [ fhir:v "Deployer: St. Chronos Medical Center" ] ;
+       fhir:description [ fhir:v "Healthcare Organization (Deployer) with Data Protection Officer (DPO) contact." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Device"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Device/device-aurascan-ai> ;
+         fhir:reference [ fhir:v "Device/device-aurascan-ai" ]
+       ] ;
+       fhir:name [ fhir:v "Device: AuraScan Pulmo-Net System" ] ;
+       fhir:description [ fhir:v "Example of a high-risk AI system with EU AI Act metadata." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "DocumentReference"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/DocumentReference/doc-patient-explanation> ;
+         fhir:reference [ fhir:v "DocumentReference/doc-patient-explanation" ]
+       ] ;
+       fhir:name [ fhir:v "Document: Patient AI Explanation Letter" ] ;
+       fhir:description [ fhir:v "A patient-friendly PDF explaining the AI's role and the doctor's override." ] ;
+       fhir:isExample [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-data-category-vs> ;
+         fhir:reference [ fhir:v "ValueSet/ehds-data-category-vs" ]
+       ] ;
+       fhir:name [ fhir:v "EHDS Data Category ValueSet (Final Regulation 2025/327)" ] ;
+       fhir:description [ fhir:v "Mandatory categories of electronic health data for secondary use according to Art. 51 EHDS." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit> ;
+         fhir:reference [ fhir:v "StructureDefinition/ehds-data-permit" ]
+       ] ;
+       fhir:name [ fhir:v "EHDS Data Permit" ] ;
+       fhir:description [ fhir:v "The unique ID of the Health Data Access Body permit (required if secondary use)." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category> ;
+         fhir:reference [ fhir:v "StructureDefinition/ehds-usage-category" ]
+       ] ;
+       fhir:name [ fhir:v "EHDS Usage Category" ] ;
+       fhir:description [ fhir:v "Categorizes the data processing as Primary Care or Secondary Use according to the EHDS." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-usage-category-vs> ;
+         fhir:reference [ fhir:v "ValueSet/ehds-usage-category-vs" ]
+       ] ;
+       fhir:name [ fhir:v "EHDS Usage Category ValueSet" ] ;
+       fhir:description [ fhir:v "Defines whether the data usage is primary care or secondary use." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-consent> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-consent" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI & EHDS Consent Profile" ] ;
+       fhir:description [ fhir:v "A profile on the Consent resource to capture GDPR legal basis and EHDS secondary use opt-out." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-device" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Compliant Device" ] ;
+       fhir:description [ fhir:v "A Device profile representing an AI system, fulfilling EU AI Act metadata requirements." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem> ;
+         fhir:reference [ fhir:v "CodeSystem/EUAIActCodeSystem" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Custom Codes" ] ;
+       fhir:description [ fhir:v "Central repository of legal and technical terms according to the EU AI Act." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-explanation-requested> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-explanation-requested" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Explanation Requested Flag" ] ;
+       fhir:description [ fhir:v "Flag indicating if the patient (data subject) explicitly requested a clear and meaningful explanation of the AI's role and the clinical decision." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-practitionerrole" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Human Overseer (PractitionerRole)" ] ;
+       fhir:description [ fhir:v "Defines the qualifications, specialty, and AI-specific training of the human responsible for oversight of the AI system, as required by the AI Act (HL-02)." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-human-oversight" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Human Oversight (HL)" ] ;
+       fhir:description [ fhir:v "Documents the professional review and clinical decision-making regarding AI outputs." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-log-integrity" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Log Integrity Signature" ] ;
+       fhir:description [ fhir:v "Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-machine-execution-audit-event" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Machine Execution Audit Event" ] ;
+       fhir:description [ fhir:v "Logs the automated execution of an AI model, establishing the core traceability chain." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-model-card" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Model Card" ] ;
+       fhir:description [ fhir:v "The official AI Model Card. It mandates the inclusion of intended purpose, risk assessments, and performance metrics as per the EU AI Act and GDPR." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-observation" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Observation (Validated Result)" ] ;
+       fhir:description [ fhir:v "Profile for clinical findings generated by an AI system, implementing LAW-02 (AI Flag) and linking to the AI Device." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-patient-explanation" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Patient Right to Explanation" ] ;
+       fhir:description [ fhir:v "Documents the fulfillment of the patient's right to a clear and meaningful explanation regarding the AI's role and the clinical decision (LAW-07)." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-provenance" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Act Provenance (Human-in-the-Loop)" ] ;
+       fhir:description [ fhir:v "Records the execution of an AI system, including human oversight and data provenance." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/eu-case-specific-indication-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eu-case-specific-indication-vs" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Case-Specific Indication ValueSet" ] ;
+       fhir:description [ fhir:v "Clinical and administrative reasons for AI application." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization> ;
+         fhir:reference [ fhir:v "StructureDefinition/eu-ai-organization" ]
+       ] ;
+       fhir:name [ fhir:v "EU AI Responsible Organization" ] ;
+       fhir:description [ fhir:v "An organization acting as a manufacturer or deployer (owner) of an AI system, containing required regulatory contacts." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "DocumentReference"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/DocumentReference/doc-ai-heatmap> ;
+         fhir:reference [ fhir:v "DocumentReference/doc-ai-heatmap" ]
+       ] ;
+       fhir:name [ fhir:v "Explainability Artifact: AI Heatmap" ] ;
+       fhir:description [ fhir:v "A visual heatmap generated by the AI model to explain its finding." ] ;
+       fhir:isExample [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem> ;
+         fhir:reference [ fhir:v "CodeSystem/gdpr-art6-codesystem" ]
+       ] ;
+       fhir:name [ fhir:v "GDPR Art 6 Legal Basis" ] ;
+       fhir:description [ fhir:v "Codes representing legal bases for processing personal data according to GDPR Article 6." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs> ;
+         fhir:reference [ fhir:v "ValueSet/gdpr-art6-legal-basis-vs" ]
+       ] ;
+       fhir:name [ fhir:v "GDPR Art 6 Legal Basis for AI" ] ;
+       fhir:description [ fhir:v "Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-exception-vs> ;
+         fhir:reference [ fhir:v "ValueSet/gdpr-art9-exception-vs" ]
+       ] ;
+       fhir:name [ fhir:v "GDPR Art 9 Exception for AI Health Data" ] ;
+       fhir:description [ fhir:v "Value set including GDPR Article 9 exceptions relevant for documenting the processing of special categories of personal data, including health data." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem> ;
+         fhir:reference [ fhir:v "CodeSystem/gdpr-art9-codesystem" ]
+       ] ;
+       fhir:name [ fhir:v "GDPR Art 9 Exceptions" ] ;
+       fhir:description [ fhir:v "Codes representing exceptions for processing special categories of personal data according to GDPR Article 9." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-intervention-vs> ;
+         fhir:reference [ fhir:v "ValueSet/eu-ai-intervention-vs" ]
+       ] ;
+       fhir:name [ fhir:v "Human Intervention Type ValueSet" ] ;
+       fhir:description [ fhir:v "Codes representing the type of human oversight or intervention." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ImagingStudy"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/ImagingStudy/input-ct-thorax> ;
+         fhir:reference [ fhir:v "ImagingStudy/input-ct-thorax" ]
+       ] ;
+       fhir:name [ fhir:v "Input: Patient CT Thorax Scan" ] ;
+       fhir:description [ fhir:v "The raw CT scan data acting as the input for the AI system." ] ;
+       fhir:isExample [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Organization"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Organization/org-aetheria-health> ;
+         fhir:reference [ fhir:v "Organization/org-aetheria-health" ]
+       ] ;
+       fhir:name [ fhir:v "Manufacturer: Aetheria HealthTech Systems" ] ;
+       fhir:description [ fhir:v "Organization acting as the AI Provider (Manufacturer) with incident reporting contact." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card> ;
+         fhir:reference [ fhir:v "StructureDefinition/ext-model-card" ]
+       ] ;
+       fhir:name [ fhir:v "Model Card Reference" ] ;
+       fhir:description [ fhir:v "A reference to the DocumentReference resource that acts as the Model Card, containing detailed\n documentation, intended purpose, and risk assessments." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "DocumentReference"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/DocumentReference/modelcard-aurascan> ;
+         fhir:reference [ fhir:v "DocumentReference/modelcard-aurascan" ]
+       ] ;
+       fhir:name [ fhir:v "Model Card: AuraScan Pulmo-Net v3.1.0" ] ;
+       fhir:description [ fhir:v "The AI Model Card containing human-readable risk and purpose documentation." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/observation-ai-nodule> ;
+         fhir:reference [ fhir:v "Observation/observation-ai-nodule" ]
+       ] ;
+       fhir:name [ fhir:v "Output: AI-Generated Finding (Pulmonary Nodule)" ] ;
+       fhir:description [ fhir:v "AI-generated clinical observation linked to a human-in-the-loop oversight protocol." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/patient-ai-info-provided> ;
+         fhir:reference [ fhir:v "StructureDefinition/patient-ai-info-provided" ]
+       ] ;
+       fhir:name [ fhir:v "Patient AI Info Provided Flag" ] ;
+       fhir:description [ fhir:v "Confirmation that the patient was informed about the use of AI systems according to AI Act transparency rules." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Patient"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-elias-vance> ;
+         fhir:reference [ fhir:v "Patient/patient-elias-vance" ]
+       ] ;
+       fhir:name [ fhir:v "Patient: Elias Vance" ] ;
+       fhir:description [ fhir:v "A fictional 61-year-old patient undergoing a routine thorax CT scan." ] ;
+       fhir:isExample [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Practitioner"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Practitioner/doctor-aris-thorne> ;
+         fhir:reference [ fhir:v "Practitioner/doctor-aris-thorne" ]
+       ] ;
+       fhir:name [ fhir:v "Practitioner: Dr. Aris Thorne" ] ;
+       fhir:description [ fhir:v "The clinical expert performing the human oversight." ] ;
+       fhir:isExample [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "PractitionerRole"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/PractitionerRole/role-dr-thorne> ;
+         fhir:reference [ fhir:v "PractitionerRole/role-dr-thorne" ]
+       ] ;
+       fhir:name [ fhir:v "Role: Dr. Thorne (Trained Overseer)" ] ;
+       fhir:description [ fhir:v "Specialized role ensuring the 'appropriate expertise' requirement for AI oversight (Art. 14)." ] ;
+       fhir:isExample [ fhir:v true ] ;
+       fhir:profile ( [
+         fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"^^xsd:anyURI ;
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole>
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:extension"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/third-country-data-transfer> ;
+         fhir:reference [ fhir:v "StructureDefinition/third-country-data-transfer" ]
+       ] ;
+       fhir:name [ fhir:v "Third-Country Data Transfer" ] ;
+       fhir:description [ fhir:v "Captures if patient data is transferred outside the EU by this device." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] ) ;
+     fhir:page [
+       fhir:source [
+         a fhir:url ;
+         fhir:v "toc.html"^^xsd:anyURI
+       ] ;
+       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "index.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "copyrightyear" ]
+       ] ;
+       fhir:value [ fhir:v "2026+" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "releaselabel" ]
+       ] ;
+       fhir:value [ fhir:v "ci-build" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "autoload-resources" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-resource" ]
+       ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-pages" ]
+       ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "template/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-liquid" ]
+       ] ;
+       fhir:value [ fhir:v "input/liquid" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-qa" ]
+       ] ;
+       fhir:value [ fhir:v "temp/qa" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-temp" ]
+       ] ;
+       fhir:value [ fhir:v "temp/pages" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-output" ]
+       ] ;
+       fhir:value [ fhir:v "output" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/guide-parameter-code"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-tx-cache" ]
+       ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-suppressed-warnings" ]
+       ] ;
+       fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "path-history" ]
+       ] ;
+       fhir:value [ fhir:v "http://example.org/fhir/eu-ai-transparency/history.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-html" ]
+       ] ;
+       fhir:value [ fhir:v "template-page.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "template-md" ]
+       ] ;
+       fhir:value [ fhir:v "template-page-md.html" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-contact" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-context" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-copyright" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-jurisdiction" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-license" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-publisher" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-version" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "apply-wg" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "active-tables" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "fmm-definition" ]
+       ] ;
+       fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "propagate-status" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "excludelogbinaryformat" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] [
+       fhir:code [
+         fhir:system [ fhir:v "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "tabbed-snapshots" ]
+       ] ;
+       fhir:value [ fhir:v "true" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

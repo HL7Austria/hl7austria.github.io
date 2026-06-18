@@ -1,0 +1,84 @@
+{
+  "resourceType" : "AuditEvent",
+  "id" : "audit-ai-execution",
+  "meta" : {
+    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AuditEvent audit-ai-execution</b></p><a name=\"audit-ai-execution\"> </a><a name=\"hcaudit-ai-execution\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-machine-execution-audit-event.html\">EU AI Act Machine Execution Audit Event</a></p></div><p><b>EU AI Act Log Integrity Signature</b>: No display for Signature  (type: Proof of origin (ETSI Signature Type Codes#ProofOfOrigin); when: 2026-04-08 08:00:06+0000; who: -&gt;Device: extension = -&gt;DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Intended for adult thorax CTs. Residual Risk: Potential for false-positive vascular artifacts.,; identifier = EU AI Database Identifier: EU-AI-2042-XJ992; manufacturer = Aetheria HealthTech Systems Corp.; contact = support@aetheria-health.test(Work),ph: +49 000 98765432(Work); note = Maintenance: Hardware calibration required every 12 months.,Security: Software patches are deployed monthly via remote update.; data: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)</p><p><b>code</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/audit-event-type rest}\">RESTful Operation</span></p><p><b>occurred</b>: 2026-04-08 08:00:00+0000 --&gt; 2026-04-08 08:00:05+0000</p><p><b>recorded</b>: 2026-04-08 08:00:06+0000</p><h3>Agents</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Who</b></td><td><b>Requestor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Device-device-aurascan-ai.html\">Device: extension = -&gt;DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Intended for adult thorax CTs. Residual Risk: Potential for false-positive vascular artifacts.,; identifier = EU AI Database Identifier: EU-AI-2042-XJ992; manufacturer = Aetheria HealthTech Systems Corp.; contact = support@aetheria-health.test(Work),ph: +49 000 98765432(Work); note = Maintenance: Hardware calibration required every 12 months.,Security: Software patches are deployed monthly via remote update.</a></td><td>false</td></tr></table><h3>Sources</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Observer</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Device-device-aurascan-ai.html\">Device: extension = -&gt;DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Intended for adult thorax CTs. Residual Risk: Potential for false-positive vascular artifacts.,; identifier = EU AI Database Identifier: EU-AI-2042-XJ992; manufacturer = Aetheria HealthTech Systems Corp.; contact = support@aetheria-health.test(Work),ph: +49 000 98765432(Work); note = Maintenance: Hardware calibration required every 12 months.,Security: Software patches are deployed monthly via remote update.</a></td></tr></table><blockquote><p><b>entity</b></p><p><b>what</b>: <a href=\"ImagingStudy-input-ct-thorax.html\">ImagingStudy: status = available; started = 2026-04-08 07:45:00+0000</a></p><p><b>role</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/object-role 4}\">Domain Resource</span></p></blockquote><blockquote><p><b>entity</b></p><p><b>what</b>: Identifier: <code>http://example.org/fhir/eu-ai-transparency/identifier/reference-database</code>/Atlas-Version-9</p><p><b>role</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/object-role 17}\">Data Repository</span></p></blockquote><blockquote><p><b>entity</b></p><p><b>what</b>: <a href=\"Observation-observation-ai-nodule.html\">Observation Nodule of lung (disorder)</a></p><p><b>role</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/object-role 3}\">Report</span></p></blockquote></div>"
+  },
+  "extension" : [{
+    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity",
+    "valueSignature" : {
+      "type" : [{
+        "system" : "http://uri.etsi.org/01903/v1.2.2",
+        "code" : "ProofOfOrigin"
+      }],
+      "when" : "2026-04-08T08:00:06Z",
+      "who" : {
+        "reference" : "Device/device-aurascan-ai"
+      },
+      "data" : "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/audit-event-type",
+      "code" : "rest",
+      "display" : "RESTful Operation"
+    }]
+  },
+  "occurredPeriod" : {
+    "start" : "2026-04-08T08:00:00Z",
+    "end" : "2026-04-08T08:00:05Z"
+  },
+  "recorded" : "2026-04-08T08:00:06Z",
+  "agent" : [{
+    "who" : {
+      "reference" : "Device/device-aurascan-ai"
+    },
+    "requestor" : false
+  }],
+  "source" : {
+    "observer" : {
+      "reference" : "Device/device-aurascan-ai"
+    }
+  },
+  "entity" : [{
+    "what" : {
+      "reference" : "ImagingStudy/input-ct-thorax"
+    },
+    "role" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
+        "code" : "4"
+      }]
+    }
+  },
+  {
+    "what" : {
+      "identifier" : {
+        "system" : "http://example.org/fhir/eu-ai-transparency/identifier/reference-database",
+        "value" : "Atlas-Version-9"
+      }
+    },
+    "role" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
+        "code" : "17"
+      }]
+    }
+  },
+  {
+    "what" : {
+      "reference" : "Observation/observation-ai-nodule"
+    },
+    "role" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
+        "code" : "3"
+      }]
+    }
+  }]
+}

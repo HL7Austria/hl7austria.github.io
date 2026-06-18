@@ -1,0 +1,24 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/ImagingStudy/input-ct-thorax> a fhir:ImagingStudy ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "input-ct-thorax"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImagingStudy input-ct-thorax</b></p><a name=\"input-ct-thorax\"> </a><a name=\"hcinput-ct-thorax\"> </a><p><b>status</b>: Available</p><p><b>subject</b>: <a href=\"Patient-patient-elias-vance.html\">Elias Vance  Male, DoB: 1965-04-12</a></p><p><b>started</b>: 2026-04-08 07:45:00+0000</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "available"] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-elias-vance> ;
+     fhir:reference [ fhir:v "Patient/patient-elias-vance" ]
+  ] ; # 
+  fhir:started [ fhir:v "2026-04-08T07:45:00Z"^^xsd:dateTime] . # 
+
+# -------------------------------------------------------------------------------------
+
