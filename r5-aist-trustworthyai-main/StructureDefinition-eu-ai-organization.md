@@ -12,12 +12,12 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIOrganization |
 
  
-An organization acting as a manufacturer or deployer (owner) of an AI system, containing required regulatory contacts. 
+An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information. 
 
 **Usages:**
 
-* Refer to this Profile: [EU AI Act Compliant Device](StructureDefinition-eu-ai-device.md) and [EU AI Act Human Overseer (PractitionerRole)](StructureDefinition-eu-ai-practitionerrole.md)
-* Examples for this Profile: [Aetheria HealthTech Systems Corp.](Organization-org-aetheria-health.md) and [St. Chronos Medical Center](Organization-org-chronos-medical.md)
+* Refer to this Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md) and [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md)
+* Examples for this Profile: [Example Hospital](Organization-organization-examplehospital.md) and [ExampleMed AI GmbH](Organization-organization-examplemed.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-organization.json)
 
@@ -42,9 +42,9 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
   "name" : "EU_AIOrganization",
   "title" : "EU AI Responsible Organization",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "An organization acting as a manufacturer or deployer (owner) of an AI system, containing required regulatory contacts.",
+  "description" : "An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "w5",
@@ -114,8 +114,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
     {
       "id" : "Organization.contact:dpo.name.text",
       "path" : "Organization.contact.name.text",
-      "short" : "Data Protection Officer",
-      "mustSupport" : true
+      "short" : "Data Protection Officer"
     },
     {
       "id" : "Organization.contact:dpo.telecom",
@@ -145,8 +144,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
     {
       "id" : "Organization.contact:incident.name.text",
       "path" : "Organization.contact.name.text",
-      "short" : "AI Incident Reporting Contact",
-      "mustSupport" : true
+      "short" : "AI Incident Reporting Contact"
     },
     {
       "id" : "Organization.contact:incident.telecom",

@@ -12,7 +12,7 @@
 | Active as of 2026-06-18 | *Computable Name*:EHDS_UsageCategoryVS |
 
  
-Defines whether the data usage is primary care or secondary use. 
+Codes defining whether data usage is documented as primary use or secondary use (LAW-03.1). 
 
  **References** 
 
@@ -51,9 +51,9 @@ Defines whether the data usage is primary care or secondary use.
   "title" : "EHDS Usage Category ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Defines whether the data usage is primary care or secondary use.",
+  "description" : "Codes defining whether data usage is documented as primary use or secondary use (LAW-03.1).",
   "compose" : {
     "include" : [{
       "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",

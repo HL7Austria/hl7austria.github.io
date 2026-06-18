@@ -16,12 +16,8 @@
       <sch:assert test="count(f:extension[@url = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/patient-ai-info-provided']) &lt;= 1">extension with URL = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/patient-ai-info-provided': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
       <sch:assert test="count(f:decision) &gt;= 1">decision: minimum cardinality of 'decision' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:title>f:Consent/f:provision</sch:title>
-    <sch:rule context="f:Consent/f:provision">
-      <sch:assert test="count(f:purpose) &gt;= 1">purpose: minimum cardinality of 'purpose' is 1</sch:assert>
+      <sch:assert test="count(f:provision) &gt;= 1">provision: minimum cardinality of 'provision' is 1</sch:assert>
+      <sch:assert test="count(f:provision) &lt;= 1">provision: maximum cardinality of 'provision' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

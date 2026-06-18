@@ -1,10 +1,10 @@
-# EHDS Data Category ValueSet (Final Regulation 2025/327) - v0.1.0
+# EHDS Data Category ValueSet - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EHDS Data Category ValueSet (Final Regulation 2025/327)**
+* **EHDS Data Category ValueSet**
 
-## ValueSet: EHDS Data Category ValueSet (Final Regulation 2025/327) 
+## ValueSet: EHDS Data Category ValueSet 
 
 | | |
 | :--- | :--- |
@@ -12,7 +12,7 @@
 | Active as of 2026-06-18 | *Computable Name*:EHDS_DataCategoryVS |
 
  
-Mandatory categories of electronic health data for secondary use according to Art. 51 EHDS. 
+Categories of electronic health data relevant for secondary-use documentation under the EHDS (EHDS Art. 51). 
 
  **References** 
 
@@ -48,12 +48,12 @@ Mandatory categories of electronic health data for secondary use according to Ar
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-data-category-vs",
   "version" : "0.1.0",
   "name" : "EHDS_DataCategoryVS",
-  "title" : "EHDS Data Category ValueSet (Final Regulation 2025/327)",
+  "title" : "EHDS Data Category ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Mandatory categories of electronic health data for secondary use according to Art. 51 EHDS.",
+  "description" : "Categories of electronic health data relevant for secondary-use documentation under the EHDS (EHDS Art. 51).",
   "compose" : {
     "include" : [{
       "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",

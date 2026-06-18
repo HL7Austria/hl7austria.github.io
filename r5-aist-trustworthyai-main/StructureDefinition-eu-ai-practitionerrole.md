@@ -1,10 +1,10 @@
-# EU AI Act Human Overseer (PractitionerRole) - v0.1.0
+# EU AI Practitioner Role - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Human Overseer (PractitionerRole)**
+* **EU AI Practitioner Role**
 
-## Resource Profile: EU AI Act Human Overseer (PractitionerRole) 
+## Resource Profile: EU AI Practitioner Role 
 
 | | |
 | :--- | :--- |
@@ -12,12 +12,12 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIPractitionerRole |
 
  
-Defines the qualifications, specialty, and AI-specific training of the human responsible for oversight of the AI system, as required by the AI Act (HL-02). 
+A PractitionerRole profile representing the role, qualification context, specialty, and AI-related training information of the human reviewer involved in oversight of an AI-supported workflow. 
 
 **Usages:**
 
-* Refer to this Profile: [EU AI Act Human Oversight (HL)](StructureDefinition-eu-ai-human-oversight.md)
-* Examples for this Profile: [PractitionerRole/role-dr-thorne](PractitionerRole-role-dr-thorne.md)
+* Refer to this Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-oversight.md)
+* Examples for this Profile: [PractitionerRole/practitionerrole-reviewer-001](PractitionerRole-practitionerrole-reviewer-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-practitionerrole.json)
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-practitionerro
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole",
   "version" : "0.1.0",
   "name" : "EU_AIPractitionerRole",
-  "title" : "EU AI Act Human Overseer (PractitionerRole)",
+  "title" : "EU AI Practitioner Role",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Defines the qualifications, specialty, and AI-specific training of the human responsible for oversight of the AI system, as required by the AI Act (HL-02).",
+  "description" : "A PractitionerRole profile representing the role, qualification context, specialty, and AI-related training information of the human reviewer involved in oversight of an AI-supported workflow.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "w5",
@@ -135,7 +135,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-practitionerro
     {
       "id" : "PractitionerRole.specialty",
       "path" : "PractitionerRole.specialty",
-      "short" : "Clinical specialty (e.g., Radiology) required for oversight",
+      "short" : "Clinical specialty required for oversight",
       "min" : 1,
       "mustSupport" : true
     }]

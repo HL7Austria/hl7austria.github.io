@@ -1,10 +1,10 @@
-# EU AI Act Human Oversight (HL) - v0.1.0
+# EU AI Human Oversight Assessment - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Human Oversight (HL)**
+* **EU AI Human Oversight Assessment**
 
-## Resource Profile: EU AI Act Human Oversight (HL) 
+## Resource Profile: EU AI Human Oversight Assessment 
 
 | | |
 | :--- | :--- |
@@ -12,12 +12,12 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIHumanOversightAssessment |
 
  
-Documents the professional review and clinical decision-making regarding AI outputs. 
+An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden. 
 
 **Usages:**
 
-* Refer to this Profile: [EU AI Act Patient Right to Explanation](StructureDefinition-eu-ai-patient-explanation.md)
-* Examples for this Profile: [ArtifactAssessment/oversight-dr-thorne-override](ArtifactAssessment-oversight-dr-thorne-override.md)
+* Refer to this Profile: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-patient-explanation.md)
+* Examples for this Profile: [ArtifactAssessment/sc-02-validation-human-oversight-001](ArtifactAssessment-sc-02-validation-human-oversight-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-human-oversight.json)
 
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight",
   "version" : "0.1.0",
   "name" : "EU_AIHumanOversightAssessment",
-  "title" : "EU AI Act Human Oversight (HL)",
+  "title" : "EU AI Human Oversight Assessment",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Documents the professional review and clinical decision-making regarding AI outputs.",
+  "description" : "An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "w5",
@@ -72,6 +72,13 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
       "path" : "ArtifactAssessment"
     },
     {
+      "id" : "ArtifactAssessment.date",
+      "path" : "ArtifactAssessment.date",
+      "short" : "Date and time of human oversight assessment",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "ArtifactAssessment.artifact[x]",
       "path" : "ArtifactAssessment.artifact[x]",
       "slicing" : {
@@ -92,8 +99,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
       "max" : "1",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Observation",
-        "http://hl7.org/fhir/StructureDefinition/DiagnosticReport"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Observation"]
       }],
       "mustSupport" : true
     },
@@ -101,6 +107,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
       "id" : "ArtifactAssessment.content.summary",
       "path" : "ArtifactAssessment.content.summary",
       "short" : "Medical/Technical rationale for the decision",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -141,14 +148,12 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status"]
-      }],
-      "mustSupport" : true
+      }]
     },
     {
       "id" : "ArtifactAssessment.content.relatedArtifact",
       "path" : "ArtifactAssessment.content.relatedArtifact",
-      "short" : "Reference to heatmap or explainability tool used",
-      "mustSupport" : true
+      "short" : "Reference to heatmap or explainability tool used"
     },
     {
       "id" : "ArtifactAssessment.workflowStatus",

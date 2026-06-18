@@ -30,6 +30,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Provenance.extension:usageCategory","Provenance.extension","usageCategory","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category]]} {[]}
 ","Primary vs. Secondary Use Category","Categorizes the data processing as Primary Care or Secondary Use according to the EHDS.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Provenance.extension:secondaryUsePurpose","Provenance.extension","secondaryUsePurpose","","",0,*,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose]]} {[]}
+","EHDS Secondary Use Purpose","Documents the permitted purpose for secondary use of electronic health data under the EHDS.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Provenance.extension:dataPermit","Provenance.extension","dataPermit","","",0,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit]]} {[]}
 ","Reference to the EHDS Data Access Permit","The unique ID of the Health Data Access Body permit (required if secondary use).","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -55,7 +58,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Where the activity occurred, if relevant","Where the activity occurred, if relevant.","","","","","","","","","",,,,,"",,,,"Provenance.location",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.location","FiveWs.where[x]","unique(./participation[isNormalParticipation() and typeCode=LOC]/role[isNormalRole() and subsumes(SDLOC, classCode)]/player[isNormalEntity and classCode=""LOC"" and determinerCode=""INST""]","Activity.location","AuditEvent.agent.location"
 "Provenance.authorization","Provenance.authorization","","PurposeOfEvent
-","",1,*,"Y","","","CodeableReference {[]} {[]}
+","",2,*,"Y","","","CodeableReference {[]} {[]}
 ","Authorization (purposeOfUse) related to the event","The authorization (e.g., PurposeOfUse) that was used during the event being recorded.","","Record of any relevant security context, not restricted to purposeOfUse valueSet. May include security compartments, refrain, obligation, or other security tags.","","","","","","","",,"example","The authorized purposeOfUse for the activity.","http://terminology.hl7.org/ValueSet/v3-PurposeOfUse","","value:concept.coding.system}
 ","",,"open","Provenance.authorization",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reason","FiveWs.why[x]","unique(./reasonCode)","Activity.Activity","AuditEvent.purposeOfEvent"
@@ -117,7 +120,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Reference to a resource (by instance)","A reference to a resource the provides exact details about the information being referenced.","","","","","","","","","",,,,,"",,,,"CodeableReference.reference",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
 "Provenance.authorization:gdprException","Provenance.authorization","gdprException","PurposeOfEvent
-","",0,1,"Y","","","CodeableReference {[]} {[]}
+","",1,1,"Y","","","CodeableReference {[]} {[]}
 ","Authorization (purposeOfUse) related to the event","The authorization (e.g., PurposeOfUse) that was used during the event being recorded.","","Record of any relevant security context, not restricted to purposeOfUse valueSet. May include security compartments, refrain, obligation, or other security tags.","","","","","","","",,"required","","http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-exception-vs","",,,,"Provenance.authorization",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reason","FiveWs.why[x]","unique(./reasonCode)","Activity.Activity","AuditEvent.purposeOfEvent"
 "Provenance.authorization:gdprException.id","Provenance.authorization.id","","","",0,1,"","","","id {[]} {[]}
@@ -234,7 +237,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Provenance.entity.role","Provenance.entity.role","","","",1,1,"","","Y","code {[]} {[]}
 ","revision | quotation | source | instantiates | removal","How the entity was used during the activity.","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""source""/>","","","",,"required","How an entity was used in an activity.","http://hl7.org/fhir/ValueSet/provenance-entity-role|5.0.0","",,,,"Provenance.entity.role",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./typeCode","Entity.role","AuditEvent.entity.role"
-"Provenance.entity.what","Provenance.entity.what","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation], CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy], CanonicalType[http://hl7.org/fhir/StructureDefinition/DocumentReference]]}
+"Provenance.entity.what","Provenance.entity.what","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation], CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy], CanonicalType[http://hl7.org/fhir/StructureDefinition/DocumentReference]]}
 ","Source data processed by the AI","Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.","whatIdentity should be used for entities that are not a Resource type.","","","","","","","","",,,,,"",,,,"Provenance.entity.what",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./text/reference","Entity.Identity","AuditEvent.entity.reference"
 "Provenance.entity.agent","Provenance.entity.agent","","","",0,*,"","","","null {[]} {[]}

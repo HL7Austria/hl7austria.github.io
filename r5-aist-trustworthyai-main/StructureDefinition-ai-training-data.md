@@ -20,7 +20,7 @@ Details regarding provenance, EHDS categories, and data quality.
 **Usages:**
 
 * Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/modelcard-aurascan](DocumentReference-modelcard-aurascan.md)
+* Examples for this Extension: [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-training-data.json)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
   "name" : "AITrainingData",
   "title" : "AI Training Data Metadata",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Details regarding provenance, EHDS categories, and data quality.",
   "fhirVersion" : "5.0.0",
@@ -81,7 +81,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
     {
       "id" : "Extension.extension",
       "path" : "Extension.extension",
-      "min" : 2
+      "min" : 1
     },
     {
       "id" : "Extension.extension:provenance",
@@ -138,6 +138,35 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       }
     },
     {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose",
+      "path" : "Extension.extension",
+      "sliceName" : "ehdsSecondaryUsePurpose",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "ehdsSecondaryUsePurpose"
+    },
+    {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs"
+      }
+    },
+    {
       "id" : "Extension.extension:ehdsPermit",
       "path" : "Extension.extension",
       "sliceName" : "ehdsPermit",
@@ -166,8 +195,8 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       "id" : "Extension.extension:dataQuality",
       "path" : "Extension.extension",
       "sliceName" : "dataQuality",
-      "min" : 1,
-      "max" : "1",
+      "min" : 0,
+      "max" : "*",
       "mustSupport" : true
     },
     {

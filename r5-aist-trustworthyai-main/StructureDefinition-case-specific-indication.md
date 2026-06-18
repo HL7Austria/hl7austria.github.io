@@ -19,8 +19,8 @@ The clinical reason why the AI was used for this specific patient.
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Observation (Validated Result)](StructureDefinition-eu-ai-observation.md)
-* Examples for this Extension: [Observation/observation-ai-nodule](Observation-observation-ai-nodule.md)
+* Use this Extension: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
+* Examples for this Extension: [Observation/sc-02-validation-ai-observation-risk-001](Observation-sc-02-validation-ai-observation-risk-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-case-specific-indication.json)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-case-specific-indica
   "name" : "CaseSpecificIndication",
   "title" : "Case-Specific Indication",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "The clinical reason why the AI was used for this specific patient.",
   "fhirVersion" : "5.0.0",

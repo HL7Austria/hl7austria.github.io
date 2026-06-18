@@ -19,8 +19,8 @@ Flag indicating if the patient (data subject) explicitly requested a clear and m
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Patient Right to Explanation](StructureDefinition-eu-ai-patient-explanation.md)
-* Examples for this Extension: [Communication/comm-patient-explanation](Communication-comm-patient-explanation.md)
+* Use this Extension: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-patient-explanation.md)
+* Examples for this Extension: [Communication/Communication-sc-02-patient-explanation-001](Communication-Communication-sc-02-patient-explanation-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-explanation-requested.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-explanation-re
   "name" : "EU_AI_ExplanationRequested",
   "title" : "EU AI Act Explanation Requested Flag",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Flag indicating if the patient (data subject) explicitly requested a clear and meaningful explanation of the AI's role and the clinical decision.",
   "fhirVersion" : "5.0.0",
@@ -93,8 +93,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-explanation-re
       "min" : 1,
       "type" : [{
         "code" : "boolean"
-      }],
-      "mustSupport" : true
+      }]
     }]
   }
 }

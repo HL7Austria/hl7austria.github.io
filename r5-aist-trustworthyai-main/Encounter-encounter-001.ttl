@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Encounter/encounter-001> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "encounter-001"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter encounter-001</b></p><a name=\"encounter-001\"> </a><a name=\"hcencounter-001\"> </a><p><b>status</b>: Completed</p><p><b>class</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ActCode AMB}\">ambulatory</span></p><p><b>subject</b>: <a href=\"Patient-patient-001.html\">Anonymous Patient Female, DoB: 1959-04-12</a></p><p><b>actualPeriod</b>: 2026-03-01 10:00:00+0000 --&gt; 2026-03-01 10:30:00+0000</p><blockquote><p><b>reason</b></p><h3>Values</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Concept</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:\">suspected-infection-early-warning-risk-assessment</span></td></tr></table></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:class ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActCode"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "AMB" ] ;
+       fhir:display [ fhir:v "ambulatory" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-001> ;
+     fhir:reference [ fhir:v "Patient/patient-001" ]
+  ] ; # 
+  fhir:actualPeriod [
+     fhir:start [ fhir:v "2026-03-01T10:00:00Z"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2026-03-01T10:30:00Z"^^xsd:dateTime ]
+  ] ; # 
+  fhir:reason ( [
+     fhir:value ( [
+       fhir:concept [
+         fhir:text [ fhir:v "suspected-infection-early-warning-risk-assessment" ]
+       ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

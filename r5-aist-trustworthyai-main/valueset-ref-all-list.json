@@ -18,11 +18,24 @@
     "version" : "0.1.0",
     "status" : "active",
     "name" : "EHDS_DataCategoryVS",
-    "title" : "EHDS Data Category ValueSet (Final Regulation 2025/327)",
-    "description" : "Mandatory categories of electronic health data for secondary use according to Art. 51 EHDS.",
+    "title" : "EHDS Data Category ValueSet",
+    "description" : "Categories of electronic health data relevant for secondary-use documentation under the EHDS (EHDS Art. 51).",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"],
     "uses" : {
     },
+    "StructureDefinition-ai-training-data.html" : "AI Training Data Metadata"
+  },
+  {
+    "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "EHDS_SecondaryUsePurposeVS",
+    "title" : "EHDS Secondary Use Purpose ValueSet",
+    "description" : "Permitted purposes for secondary use of electronic health data under the EHDS.",
+    "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-purpose-codesystem"],
+    "uses" : {
+    },
+    "StructureDefinition-ehds-secondary-use-purpose.html" : "EHDS Secondary Use Purpose",
     "StructureDefinition-ai-training-data.html" : "AI Training Data Metadata"
   },
   {
@@ -31,11 +44,23 @@
     "status" : "active",
     "name" : "EHDS_UsageCategoryVS",
     "title" : "EHDS Usage Category ValueSet",
-    "description" : "Defines whether the data usage is primary care or secondary use.",
+    "description" : "Codes defining whether data usage is documented as primary use or secondary use (LAW-03.1).",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"],
     "uses" : {
     },
     "StructureDefinition-ehds-usage-category.html" : "EHDS Usage Category"
+  },
+  {
+    "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-clinical-validation-status-vs",
+    "version" : "0.1.0",
+    "status" : "active",
+    "name" : "EU_AI_ClinicalValidationStatusVS",
+    "title" : "AI Clinical Validation Status ValueSet",
+    "description" : "Codes describing the clinical validation status of an AI system.",
+    "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"],
+    "uses" : {
+    },
+    "StructureDefinition-ai-clinical-validation-status.html" : "AI Clinical Validation Status"
   },
   {
     "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-data-quality-vs",
@@ -43,7 +68,7 @@
     "status" : "active",
     "name" : "EU_AI_DataQualityVS",
     "title" : "AI Data Quality ValueSet",
-    "description" : "Attributes describing the quality of training data.",
+    "description" : "Codes describing data-quality characteristics relevant for training-data documentation (Art. 10 AI Act).",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"],
     "uses" : {
     },
@@ -55,11 +80,11 @@
     "status" : "active",
     "name" : "EU_AI_Intervention_ValueSet",
     "title" : "Human Intervention Type ValueSet",
-    "description" : "Codes representing the type of human oversight or intervention.",
+    "description" : "Codes representing the type of human oversight or intervention (HL-03.1).",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)"
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment"
   },
   {
     "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-performance-metric-vs",
@@ -67,7 +92,7 @@
     "status" : "active",
     "name" : "EU_AI_PerformanceMetricVS",
     "title" : "AI Performance Metric ValueSet",
-    "description" : "Codes for technical quality and performance metrics.",
+    "description" : "Codes for technical quality and performance metrics (QUAL-01).",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"],
     "uses" : {
     },
@@ -79,7 +104,7 @@
     "status" : "active",
     "name" : "EUCaseSpecificIndicationVS",
     "title" : "EU AI Case-Specific Indication ValueSet",
-    "description" : "Clinical and administrative reasons for AI application.",
+    "description" : "Clinical and administrative reasons for applying an AI system in a specific case (USE-04).",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"],
     "uses" : {
     },
@@ -88,26 +113,26 @@
   {
     "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs",
     "version" : "0.1.0",
-    "status" : "draft",
+    "status" : "active",
     "name" : "GDPR_Art6_LegalBasisVS",
-    "title" : "GDPR Art 6 Legal Basis for AI",
+    "title" : "GDPR Article 6 Legal Basis ValueSet",
     "description" : "Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data.",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)"
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance"
   },
   {
     "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-exception-vs",
     "version" : "0.1.0",
-    "status" : "draft",
+    "status" : "active",
     "name" : "GDPR_Art9_ExceptionVS",
-    "title" : "GDPR Art 9 Exception for AI Health Data",
+    "title" : "GDPR Article 9 Exception ValueSet",
     "description" : "Value set including GDPR Article 9 exceptions relevant for documenting the processing of special categories of personal data, including health data.",
     "systems" : ["http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)"
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/all-languages",
@@ -121,16 +146,16 @@
     "sources" : ["2.16.840.1.113883.4.642.3.21"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event",
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)",
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile",
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation",
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device",
-    "StructureDefinition-eu-ai-organization.html" : "EU AI Responsible Organization",
+    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Practitioner Role",
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context",
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment",
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event",
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation",
     "StructureDefinition-eu-ai-model-card.html" : "EU AI Act Model Card",
-    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Act Human Overseer (PractitionerRole)",
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)",
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device",
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance",
+    "StructureDefinition-eu-ai-organization.html" : "EU AI Responsible Organization",
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/artifactassessment-disposition",
@@ -144,7 +169,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3155"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)"
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/artifactassessment-information-type",
@@ -158,7 +183,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3156"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)"
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/artifactassessment-workflow-status",
@@ -172,7 +197,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3157"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)"
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/audit-event-action",
@@ -190,7 +215,7 @@
     "2.16.840.1.113883.4.642.2.263"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/audit-event-outcome",
@@ -208,7 +233,7 @@
     "2.16.840.1.113883.4.642.2.264"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/audit-event-outcome-detail",
@@ -222,7 +247,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.2979"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/audit-event-severity",
@@ -236,7 +261,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.2980"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/audit-event-sub-type",
@@ -255,7 +280,7 @@
     "2.16.840.1.113883.4.642.2.270"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/audit-event-type",
@@ -274,7 +299,7 @@
     "2.16.840.1.113883.4.642.3.462"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/body-site",
@@ -292,8 +317,8 @@
     "2.16.840.1.113883.4.642.3.141"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-model-card.html" : "EU AI Act Model Card",
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation",
+    "StructureDefinition-eu-ai-model-card.html" : "EU AI Act Model Card"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/c80-facilitycodes",
@@ -325,8 +350,8 @@
     "2.16.840.1.113883.3.88.12.80.72"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-model-card.html" : "EU AI Act Model Card",
-    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Act Human Overseer (PractitionerRole)"
+    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Practitioner Role",
+    "StructureDefinition-eu-ai-model-card.html" : "EU AI Act Model Card"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/certainty-type",
@@ -340,7 +365,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3043"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)"
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/clinical-findings",
@@ -358,7 +383,7 @@
     "2.16.840.1.113883.4.642.2.115"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation"
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/communication-category",
@@ -374,7 +399,7 @@
     "2.16.840.1.113883.4.642.3.162"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation"
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/communication-not-done-reason",
@@ -390,7 +415,7 @@
     "2.16.840.1.113883.4.642.3.174"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation"
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/communication-topic",
@@ -404,7 +429,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.983"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation"
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/composition-attestation-mode",
@@ -456,7 +481,7 @@
     "2.16.840.1.113883.4.642.3.737"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-category",
@@ -475,7 +500,7 @@
     "2.16.840.1.113883.4.642.3.735"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-content-class",
@@ -491,7 +516,7 @@
     "2.16.840.1.113883.4.642.3.747"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-content-code",
@@ -507,7 +532,7 @@
     "2.16.840.1.113883.4.642.3.746"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-data-meaning",
@@ -523,7 +548,7 @@
     "2.16.840.1.113883.4.642.3.759"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-policy",
@@ -537,7 +562,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1014"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-provision-type",
@@ -551,7 +576,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.757"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-state-codes",
@@ -567,7 +592,7 @@
     "2.16.840.1.113883.4.642.3.739"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/consent-verification",
@@ -581,7 +606,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3178"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/data-absent-reason",
@@ -595,7 +620,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.5"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-availability-status",
@@ -609,7 +634,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3198"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-category",
@@ -623,7 +648,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3307"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-nametype",
@@ -637,7 +662,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1083"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-operation-mode",
@@ -651,7 +676,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3309"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-property-type",
@@ -667,7 +692,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3195"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-safety",
@@ -683,7 +708,7 @@
     "2.16.840.1.113883.4.642.3.893"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-specification-category",
@@ -697,7 +722,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3197"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-specification-type",
@@ -711,7 +736,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3204"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-status",
@@ -727,7 +752,7 @@
     "2.16.840.1.113883.4.642.3.209"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-type",
@@ -743,7 +768,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.1376"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/device-versiontype",
@@ -757,7 +782,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3202"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/doc-typecodes",
@@ -821,7 +846,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.109"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation"
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-type",
@@ -835,7 +860,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.45"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
@@ -849,7 +874,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.57"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/languages",
@@ -865,16 +890,16 @@
     "2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event",
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)",
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile",
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation",
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device",
-    "StructureDefinition-eu-ai-organization.html" : "EU AI Responsible Organization",
+    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Practitioner Role",
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context",
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment",
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event",
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation",
     "StructureDefinition-eu-ai-model-card.html" : "EU AI Act Model Card",
-    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Act Human Overseer (PractitionerRole)",
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)",
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device",
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance",
+    "StructureDefinition-eu-ai-organization.html" : "EU AI Responsible Organization",
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/mimetypes",
@@ -921,7 +946,7 @@
     "2.16.840.1.113883.4.642.3.460"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-category",
@@ -939,7 +964,7 @@
     "2.16.840.1.113883.4.642.3.392"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-codes",
@@ -957,7 +982,7 @@
     "2.16.840.1.113883.4.642.3.383"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-interpretation",
@@ -975,7 +1000,7 @@
     "2.16.840.1.113883.4.642.2.218"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-methods",
@@ -993,7 +1018,7 @@
     "2.16.840.1.113883.4.642.3.382"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
@@ -1007,7 +1032,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3264"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-status",
@@ -1025,7 +1050,7 @@
     "2.16.840.1.113883.4.642.2.219"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/observation-triggeredbytype",
@@ -1039,7 +1064,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3265"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/organization-type",
@@ -1073,9 +1098,9 @@
     "sources" : ["2.16.840.1.113883.4.642.3.54"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event",
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile",
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context",
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event",
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/practitioner-role",
@@ -1094,7 +1119,7 @@
     "2.16.840.1.113883.4.642.3.439"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Act Human Overseer (PractitionerRole)"
+    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Practitioner Role"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/provenance-activity-type",
@@ -1110,7 +1135,7 @@
     "2.16.840.1.113883.4.642.3.438"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)"
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/provenance-entity-role",
@@ -1128,7 +1153,7 @@
     "2.16.840.1.113883.4.642.3.427"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)"
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/referenced-item-category",
@@ -1160,7 +1185,7 @@
     "2.16.840.1.113883.4.642.3.396"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/referencerange-meaning",
@@ -1178,7 +1203,7 @@
     "2.16.840.1.113883.4.642.3.384"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-observation.html" : "EU AI Act Observation (Validated Result)"
+    "StructureDefinition-eu-ai-observation.html" : "EU AI Generated Observation"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/request-priority",
@@ -1192,7 +1217,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.115"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation"
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/resource-types",
@@ -1206,8 +1231,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.27"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Act Human Oversight (HL)",
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context",
+    "StructureDefinition-eu-ai-human-oversight.html" : "EU AI Human Oversight Assessment"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/security-label-examples",
@@ -1223,8 +1248,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.3011"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event",
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile",
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context",
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event",
     "StructureDefinition-eu-ai-model-card.html" : "EU AI Act Model Card"
   },
   {
@@ -1239,8 +1264,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.978"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event",
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event",
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/security-source-type",
@@ -1254,7 +1279,7 @@
     "sources" : ["2.16.840.1.113883.4.642.3.2981"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event"
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/service-mode",
@@ -1268,7 +1293,7 @@
     "sources" : ["2.16.840.1.113883.4.642.4.3322"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Act Human Overseer (PractitionerRole)"
+    "StructureDefinition-eu-ai-practitionerrole.html" : "EU AI Practitioner Role"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/signature-type",
@@ -1299,7 +1324,7 @@
     "2.16.840.1.113883.4.642.3.211"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-device.html" : "EU AI Act Compliant Device"
+    "StructureDefinition-eu-ai-device.html" : "EU AI System Device"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/contactentity-type",
@@ -1354,7 +1379,7 @@
     "sources" : ["2.16.840.1.113883.1.11.16543"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Act Patient Right to Explanation"
+    "StructureDefinition-eu-ai-patient-explanation.html" : "EU AI Patient Explanation Communication"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v3-PurposeOfUse",
@@ -1368,8 +1393,8 @@
     "sources" : ["2.16.840.1.113883.1.11.20448"],
     "uses" : {
     },
-    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Act Machine Execution Audit Event",
-    "StructureDefinition-eu-ai-consent.html" : "EU AI & EHDS Consent Profile",
-    "StructureDefinition-eu-ai-provenance.html" : "EU AI Act Provenance (Human-in-the-Loop)"
+    "StructureDefinition-eu-ai-consent.html" : "EU AI Consent and Processing Context",
+    "StructureDefinition-eu-ai-machine-execution-audit-event.html" : "EU AI Execution Audit Event",
+    "StructureDefinition-eu-ai-provenance.html" : "EU AI Provenance"
   }]
 }

@@ -19,8 +19,8 @@ Captures if patient data is transferred outside the EU by this device.
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Compliant Device](StructureDefinition-eu-ai-device.md)
-* Examples for this Extension: [Device/device-aurascan-ai](Device-device-aurascan-ai.md)
+* Use this Extension: [EU AI System Device](StructureDefinition-eu-ai-device.md)
+* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-third-country-data-transfer.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
   "name" : "ThirdCountryDataTransfer",
   "title" : "Third-Country Data Transfer",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Captures if patient data is transferred outside the EU by this device.",
   "fhirVersion" : "5.0.0",

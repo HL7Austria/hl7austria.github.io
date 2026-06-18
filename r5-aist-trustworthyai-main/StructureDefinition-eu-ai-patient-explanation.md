@@ -1,10 +1,10 @@
-# EU AI Act Patient Right to Explanation - v0.1.0
+# EU AI Patient Explanation Communication - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Patient Right to Explanation**
+* **EU AI Patient Explanation Communication**
 
-## Resource Profile: EU AI Act Patient Right to Explanation 
+## Resource Profile: EU AI Patient Explanation Communication 
 
 | | |
 | :--- | :--- |
@@ -12,11 +12,11 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIPatientExplanation |
 
  
-Documents the fulfillment of the patient's right to a clear and meaningful explanation regarding the AI's role and the clinical decision (LAW-07). 
+A Communication profile documenting patient-facing information about the AI-supported workflow, including the role of the AI system and the related clinical review where applicable. 
 
 **Usages:**
 
-* Examples for this Profile: [Communication/comm-patient-explanation](Communication-comm-patient-explanation.md)
+* Examples for this Profile: [Communication/Communication-sc-02-patient-explanation-001](Communication-Communication-sc-02-patient-explanation-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-patient-explanation.json)
 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation",
   "version" : "0.1.0",
   "name" : "EU_AIPatientExplanation",
-  "title" : "EU AI Act Patient Right to Explanation",
+  "title" : "EU AI Patient Explanation Communication",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Documents the fulfillment of the patient's right to a clear and meaningful explanation regarding the AI's role and the clinical decision (LAW-07).",
+  "description" : "A Communication profile documenting patient-facing information about the AI-supported workflow, including the role of the AI system and the related clinical review where applicable.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "workflow",
@@ -149,8 +149,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Practitioner",
-        "http://hl7.org/fhir/StructureDefinition/PractitionerRole"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/PractitionerRole"]
       }],
       "mustSupport" : true
     },

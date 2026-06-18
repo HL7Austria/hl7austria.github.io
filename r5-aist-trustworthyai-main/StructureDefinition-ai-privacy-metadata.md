@@ -20,7 +20,7 @@ GDPR and AI Act privacy parameters. Third country transfer flags and data retent
 **Usages:**
 
 * Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/modelcard-aurascan](DocumentReference-modelcard-aurascan.md)
+* Examples for this Extension: [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-privacy-metadata.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-privacy-metadata.
   "name" : "AIPrivacyMetadata",
   "title" : "AI Privacy Metadata",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "GDPR and AI Act privacy parameters. Third country transfer flags and data retention policies at the model level.",
   "fhirVersion" : "5.0.0",
@@ -136,8 +136,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-privacy-metadata.
       "path" : "Extension.extension",
       "sliceName" : "destination",
       "min" : 0,
-      "max" : "*",
-      "mustSupport" : true
+      "max" : "*"
     },
     {
       "id" : "Extension.extension:destination.extension",

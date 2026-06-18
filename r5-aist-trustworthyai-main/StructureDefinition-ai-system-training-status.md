@@ -19,8 +19,8 @@ Mandatory flag indicating whether the human actor has received specific training
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Human Oversight (HL)](StructureDefinition-eu-ai-human-oversight.md) and [EU AI Act Human Overseer (PractitionerRole)](StructureDefinition-eu-ai-practitionerrole.md)
-* Examples for this Extension: [ArtifactAssessment/oversight-dr-thorne-override](ArtifactAssessment-oversight-dr-thorne-override.md) and [PractitionerRole/role-dr-thorne](PractitionerRole-role-dr-thorne.md)
+* Use this Extension: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-oversight.md) and [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md)
+* Examples for this Extension: [ArtifactAssessment/sc-02-validation-human-oversight-001](ArtifactAssessment-sc-02-validation-human-oversight-001.md) and [PractitionerRole/practitionerrole-reviewer-001](PractitionerRole-practitionerrole-reviewer-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-system-training-status.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-system-training-s
   "name" : "AISystemTrainingStatus",
   "title" : "AI System Specific Training",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Mandatory flag indicating whether the human actor has received specific training for the utilized AI tool.",
   "fhirVersion" : "5.0.0",

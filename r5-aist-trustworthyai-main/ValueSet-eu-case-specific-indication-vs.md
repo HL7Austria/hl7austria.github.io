@@ -12,7 +12,7 @@
 | Active as of 2026-06-18 | *Computable Name*:EUCaseSpecificIndicationVS |
 
  
-Clinical and administrative reasons for AI application. 
+Clinical and administrative reasons for applying an AI system in a specific case (USE-04). 
 
  **References** 
 
@@ -51,9 +51,9 @@ Clinical and administrative reasons for AI application.
   "title" : "EU AI Case-Specific Indication ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Clinical and administrative reasons for AI application.",
+  "description" : "Clinical and administrative reasons for applying an AI system in a specific case (USE-04).",
   "compose" : {
     "include" : [{
       "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",

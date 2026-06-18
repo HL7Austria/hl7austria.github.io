@@ -1,22 +1,22 @@
-# GDPR Art 9 Exception for AI Health Data - v0.1.0
+# GDPR Article 9 Exception ValueSet - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **GDPR Art 9 Exception for AI Health Data**
+* **GDPR Article 9 Exception ValueSet**
 
-## ValueSet: GDPR Art 9 Exception for AI Health Data 
+## ValueSet: GDPR Article 9 Exception ValueSet 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-exception-vs | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:GDPR_Art9_ExceptionVS |
+| Active as of 2026-06-18 | *Computable Name*:GDPR_Art9_ExceptionVS |
 
  
 Value set including GDPR Article 9 exceptions relevant for documenting the processing of special categories of personal data, including health data. 
 
  **References** 
 
-* [EU AI Act Provenance (Human-in-the-Loop)](StructureDefinition-eu-ai-provenance.md)
+* [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
 
 ### Logical Definition (CLD)
 
@@ -48,10 +48,10 @@ Value set including GDPR Article 9 exceptions relevant for documenting the proce
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-exception-vs",
   "version" : "0.1.0",
   "name" : "GDPR_Art9_ExceptionVS",
-  "title" : "GDPR Art 9 Exception for AI Health Data",
-  "status" : "draft",
+  "title" : "GDPR Article 9 Exception ValueSet",
+  "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Value set including GDPR Article 9 exceptions relevant for documenting the processing of special categories of personal data, including health data.",
   "compose" : {

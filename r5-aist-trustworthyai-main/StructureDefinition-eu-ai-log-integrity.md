@@ -19,8 +19,8 @@ Cryptographic signature or verification hash to ensure the integrity, accountabi
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Machine Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
-* Examples for this Extension: [AuditEvent/audit-ai-execution](AuditEvent-audit-ai-execution.md)
+* Use this Extension: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
+* Examples for this Extension: [AuditEvent/sc-02-validation-audit-event-ai-execution-001](AuditEvent-sc-02-validation-audit-event-ai-execution-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-log-integrity.json)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-log-integrity.
   "name" : "LogIntegritySignature",
   "title" : "EU AI Act Log Integrity Signature",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log.",
   "fhirVersion" : "5.0.0",
@@ -94,20 +94,17 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-log-integrity.
       "min" : 1,
       "type" : [{
         "code" : "Signature"
-      }],
-      "mustSupport" : true
+      }]
     },
     {
       "id" : "Extension.value[x].type",
       "path" : "Extension.value[x].type",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Extension.value[x].when",
       "path" : "Extension.value[x].when",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Extension.value[x].who",
@@ -120,8 +117,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-log-integrity.
     {
       "id" : "Extension.value[x].data",
       "path" : "Extension.value[x].data",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     }]
   }
 }

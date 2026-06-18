@@ -23,12 +23,15 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, nor can they have their own independent transaction scope. This is allowed to be a Parameters resource if and only if it is referenced by a resource that provides context/meaning.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags in their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"dom-2
 dom-4dom-3dom-5","","N/A"
-"Observation.extension","Observation.extension","","","",1,*,"","","","Extension {[]} {[]}
+"Observation.extension","Observation.extension","","","",2,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"Observation.extension:caseIndication","Observation.extension","caseIndication","","",1,*,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication]]} {[]}
+"Observation.extension:caseIndication","Observation.extension","caseIndication","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication]]} {[]}
 ","Case-Specific Indication","The clinical reason why the AI was used for this specific patient.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Observation.extension:automatedDecision","Observation.extension","automatedDecision","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag]]} {[]}
+","Automated Decision-Making Flag","Indicates whether the AI-generated output was used as part of a solely automated decision-making process within the meaning of GDPR Article 22.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Observation.modifierExtension","Observation.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -76,7 +79,7 @@ Reflex | Repeat | Re-run.","","","","","","","","","",,"required","The type of T
 ","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/MedicationAdministration|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/MedicationDispense|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/MedicationStatement|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/Procedure|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/Immunization|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/GenomicStudy|5.0.0]]}
 ","Part of referenced event","A larger event of which this particular Observation is a component or step.  For example,  an observation as part of a procedure.","To link an Observation to an Encounter use `encounter`.  See the  [Notes](http://hl7.org/fhir/R5/observation.html#obsgrouping) below for guidance on referencing another Observation.","","","","","","","","",,,,,"",,,,"Observation.partOf",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.partOf","Varies by domain",".outboundRelationship[typeCode=FLFS].target"
-"Observation.status","Observation.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
+"Observation.status","Observation.status","","","",1,1,"","Y","Y","code {[]} {[]}
 ","Workflow state: preliminary (unseen) | final (checked) | entered-in-error (overridden)","The status of the result value.","This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.","Need to track the status of individual results. Some results are finalized before the whole report is finalized.","","","","","","","",,"required","Codes providing the status of an observation.","http://hl7.org/fhir/ValueSet/observation-status|5.0.0","",,,,"Observation.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.status","FiveWs.status","< 445584004 |Report by finality status|","OBX-11","status  Amended & Final are differentiated by whether it is the subject of a ControlAct event with a type of ""revise"""
 "Observation.category","Observation.category","","","",0,*,"","","","CodeableConcept {[]} {[]}
@@ -126,7 +129,7 @@ The alternate way is to use the value element for actual observations and use th
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A","value.nullFlavor"
 "Observation.interpretation","Observation.interpretation","","Abnormal Flag
-","",1,*,"Y","","","CodeableConcept {[]} {[]}
+","",1,*,"","","","CodeableConcept {[]} {[]}
 ","High, low, normal, etc","A categorical assessment of an observation value.  For example, high, low, normal.","Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.","For some results, particularly numeric results, an interpretation is necessary to fully understand the significance of a result.","","","","","","","",,"extensible","Codes identifying interpretations of observations.","http://hl7.org/fhir/ValueSet/observation-interpretation|5.0.0","","value:coding}
 ","",,"open","Observation.interpretation",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","< 260245000 |Findings values|","OBX-8","interpretationCode","363713009 |Has interpretation|"

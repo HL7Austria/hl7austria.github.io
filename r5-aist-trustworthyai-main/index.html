@@ -175,19 +175,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#eu-ai-transparency-implementation-guide" id="markdown-toc-eu-ai-transparency-implementation-guide">EU AI Transparency Implementation Guide</a>    <ul>
-      <li><a href="#overview" id="markdown-toc-overview">Overview</a>        <ul>
-          <li><a href="#core-problem" id="markdown-toc-core-problem">Core Problem</a></li>
-          <li><a href="#goal" id="markdown-toc-goal">Goal</a></li>
-        </ul>
-      </li>
-      <li><a href="#architectural-layers-profiles" id="markdown-toc-architectural-layers-profiles">Architectural Layers (Profiles)</a>        <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#purpose" id="markdown-toc-purpose">Purpose</a></li>
+      <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
+      <li><a href="#architectural-structure" id="markdown-toc-architectural-structure">Architectural Structure</a>        <ul>
           <li><a href="#1-static-system-context" id="markdown-toc-1-static-system-context">1. Static System Context</a></li>
-          <li><a href="#2-ai-output-context" id="markdown-toc-2-ai-output-context">2. AI Output Context</a></li>
-          <li><a href="#3-clinical-decision-context" id="markdown-toc-3-clinical-decision-context">3. Clinical Decision Context</a></li>
+          <li><a href="#2-ai-output-and-execution-context" id="markdown-toc-2-ai-output-and-execution-context">2. AI Output and Execution Context</a></li>
+          <li><a href="#3-clinical-decision-and-patient-facing-context" id="markdown-toc-3-clinical-decision-and-patient-facing-context">3. Clinical Decision and Patient-Facing Context</a></li>
         </ul>
       </li>
       <li><a href="#validated-clinical-use-case-instances" id="markdown-toc-validated-clinical-use-case-instances">Validated Clinical Use Case (Instances)</a></li>
-      <li><a href="#terminology--standards" id="markdown-toc-terminology--standards">Terminology &amp; Standards</a></li>
+      <li><a href="#terminology" id="markdown-toc-terminology">Terminology</a></li>
     </ul>
   </li>
 </ul>
@@ -197,44 +195,70 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h2 id="overview">Overview</h2>
 
-<p>This Implementation Guide (IG) addresses the critical need for standardized IT processes in healthcare to comply with the "Big Three" European regulations: the EU AI Act, the GDPR (General Data Protection Regulation), and the EHDS (European Health Data Space).</p>
+<p>This Implementation Guide (IG) defines a custom FHIR R5 framework for representing selected AI-related transparency, traceability, legal-context, and human-oversight metadata in healthcare.</p>
 
-<h3 id="core-problem">Core Problem</h3>
-<p>Hospitals currently lack standardized IT interoperability models for these laws, leading to inconsistent compliance, increased risk of legal violations, and inefficiencies in managing AI systems within clinical workflows.</p>
+<p>The IG focuses on how documentation requirements and transparency-relevant concepts from the EU AI Act, the GDPR, and the European Health Data Space (EHDS) can be represented using machine-readable FHIR artifacts. It provides profiles, extensions, terminology, and examples for documenting AI-supported processing in clinical contexts.</p>
 
-<h3 id="goal">Goal</h3>
-<p>The translation of legal transparency requirements into machine-readable FHIR R5 artifacts that enable automated compliance checking, end-to-end traceability, and legal interoperability across European healthcare systems.</p>
+<p>The IG does not claim to provide complete legal compliance or regulatory certification. Instead, it supports structured documentation, traceability, and interoperability for selected AI-related metadata.</p>
 
-<h2 id="architectural-layers-profiles">Architectural Layers (Profiles)</h2>
+<h2 id="purpose">Purpose</h2>
 
-<p>The IG defines FHIR profiles organized into three distinct contexts, representing the complete lifecycle and oversight of algorithmic systems:</p>
+<p>AI-supported healthcare workflows require technical documentation that is understandable, traceable, and interoperable across systems. Relevant information may include the identity of the AI system, its intended purpose, technical documentation, training-data context, privacy metadata, legal processing context, generated outputs, execution traces, human oversight, and patient-facing information.</p>
+
+<p>This IG provides a FHIR-based representation of these concepts by defining reusable profiles and extensions. The goal is to make selected AI-related metadata explicit, structured, and linkable within healthcare IT environments.</p>
+
+<h2 id="scope">Scope</h2>
+
+<p>The IG covers selected metadata areas relevant to AI-supported processing in healthcare:</p>
+
+<ul>
+  <li>AI system identification and system-level metadata,</li>
+  <li>organizational accountability and contact information,</li>
+  <li>model-card and technical-documentation metadata,</li>
+  <li>training-data and data-quality context,</li>
+  <li>privacy and data-use metadata,</li>
+  <li>AI-generated clinical outputs,</li>
+  <li>execution traceability and audit metadata,</li>
+  <li>provenance and legal-context documentation,</li>
+  <li>human oversight actions,</li>
+  <li>patient-facing information and explanation documentation.</li>
+</ul>
+
+<p>The IG does not replace clinical validation, conformity assessment, data protection assessment, national legal review, or organization-specific governance processes.</p>
+
+<h2 id="architectural-structure">Architectural Structure</h2>
+
+<p>The IG organizes the profiles into three main contexts.</p>
 
 <h3 id="1-static-system-context">1. Static System Context</h3>
-<p>These profiles capture the foundational metadata, institutional accountability, and technical documentation of the AI system before any clinical execution occurs.</p>
+
+<p>These profiles describe the AI system, responsible organizations, and technical documentation independently of a specific clinical execution.</p>
 
 <ul>
-  <li><strong>EU_AIDevice</strong> (Device): Represents the core AI software entity, fulfilling EU AI Act metadata requirements (e.g., system versioning, CE-marking, and EU Database IDs).</li>
-  <li><strong>EU_AIOrganization</strong> (Organization): Anchors institutional accountability by defining the manufacturer or deploying hospital, including legally mandated contacts (Data Protection Officer, Incident Reporting).</li>
-  <li><strong>EU_AIModelCard</strong> (DocumentReference): The algorithmic Model Card containing the intended clinical purpose, risk assessments, and structured performance metrics.</li>
+  <li><strong>EU_AIDevice</strong> (<code class="language-plaintext highlighter-rouge">Device</code>): Represents the AI system as an identifiable and versioned system component. It includes metadata such as system name, version, manufacturer, owner, CE marking information, intended purpose, target population, expected lifetime, and EU AI database identifier where applicable.</li>
+  <li><strong>EU_AIOrganization</strong> (<code class="language-plaintext highlighter-rouge">Organization</code>): Represents organizations involved in the AI system context, such as the manufacturer, deployer, or healthcare provider. It can document relevant contact points such as data protection or incident-reporting contacts.</li>
+  <li><strong>EU_AIModelCard</strong> (<code class="language-plaintext highlighter-rouge">DocumentReference</code>): Represents model-card and technical-documentation metadata. It can reference documentation artifacts and includes structured extensions for performance information, training-data context, privacy metadata, and clinical validation status.</li>
 </ul>
 
-<h3 id="2-ai-output-context">2. AI Output Context</h3>
-<p>These profiles document the dynamic execution of the algorithm, representing the machine-generated results and their legal justifications.</p>
+<h3 id="2-ai-output-and-execution-context">2. AI Output and Execution Context</h3>
+
+<p>These profiles document AI-generated outputs, execution events, provenance, and selected legal-context metadata.</p>
 
 <ul>
-  <li><strong>EU_AIObservation</strong> (Observation): Captures the clinical finding generated by the AI system. It implements the mandatory "AI-generated" transparency flag and links to the executing device.</li>
-  <li><strong>EU_AIConsent</strong> (Consent): Manages the GDPR legal justification for processing sensitive health data and handles EHDS secondary use opt-out workflows.</li>
-  <li><strong>EU_AIProvenance</strong> (Provenance): Acts as the primary traceability link, connecting the clinical result to the algorithmic actor (Device), the source data, and the legal basis (Consent).</li>
-  <li><strong>EU_AIAuditEvent</strong> (AuditEvent): Provides a tamper-proof forensic log of the automated model execution, securing the audit trail with cryptographic signatures.</li>
+  <li><strong>EU_AIObservation</strong> (<code class="language-plaintext highlighter-rouge">Observation</code>): Represents an AI-generated clinical output, such as a risk classification, recommendation, or other clinical result. It documents the case-specific indication and whether the output was used in a solely automated decision-making context.</li>
+  <li><strong>EU_AIAuditEvent</strong> (<code class="language-plaintext highlighter-rouge">AuditEvent</code>): Records the technical execution trace, including references to input data, output data, the AI system, and log-integrity metadata.</li>
+  <li><strong>EU_AIProvenance</strong> (<code class="language-plaintext highlighter-rouge">Provenance</code>): Links the AI-generated output to the AI system, source data, execution context, and selected legal-context metadata, including GDPR Article 6 and Article 9 documentation.</li>
+  <li><strong>EU_AIConsent</strong> (<code class="language-plaintext highlighter-rouge">Consent</code>): Documents patient-facing processing context, including whether AI-related information was provided and whether the documented processing context is permitted or denied, for example in relation to an opt-out. It is not used as the sole GDPR legal basis.</li>
 </ul>
 
-<h3 id="3-clinical-decision-context">3. Clinical Decision Context</h3>
-<p>These profiles technically document the "Human-in-the-Loop" requirements, tracking clinical oversight and patient-facing transparency.</p>
+<h3 id="3-clinical-decision-and-patient-facing-context">3. Clinical Decision and Patient-Facing Context</h3>
+
+<p>These profiles document human oversight and patient-facing explanation.</p>
 
 <ul>
-  <li><strong>EU_AIHumanOversightAssessment</strong> (ArtifactAssessment): Documents the professional review of the AI output, capturing whether a clinician validated, corrected, or overrode the algorithmic recommendation.</li>
-  <li><strong>EU_AIPractitionerRole</strong> (PractitionerRole): Defines the clinical specialty, seniority, and mandatory AI-specific training status of the human overseer.</li>
-  <li><strong>EU_AIPatientExplanation</strong> (Communication): Documents the fulfillment of the patient's right to a meaningful explanation regarding the AI's role in their specific clinical decision.</li>
+  <li><strong>EU_AIHumanOversightAssessment</strong> (<code class="language-plaintext highlighter-rouge">ArtifactAssessment</code>): Documents the human review of an AI-generated output. It can represent validation, override, or correction by a human reviewer without overwriting the original AI output.</li>
+  <li><strong>EU_AIPractitionerRole</strong> (<code class="language-plaintext highlighter-rouge">PractitionerRole</code>): Represents the reviewer in their clinical and organizational role, including whether AI-specific training was completed.</li>
+  <li><strong>EU_AIPatientExplanation</strong> (<code class="language-plaintext highlighter-rouge">Communication</code>): Documents patient-facing explanation related to the AI-supported process, where such an explanation is requested or provided.</li>
 </ul>
 
 <h2 id="validated-clinical-use-case-instances">Validated Clinical Use Case (Instances)</h2>
@@ -250,9 +274,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>The subsequent communication of the human-AI decision workflow to the patient (<code class="language-plaintext highlighter-rouge">EU_AIPatientExplanation</code>).</li>
 </ol>
 
-<h2 id="terminology--standards">Terminology &amp; Standards</h2>
+<h2 id="terminology">Terminology</h2>
 
-<p>Where global medical ontologies do not yet cover specific European legal concepts, this IG introduces the custom <strong><code class="language-plaintext highlighter-rouge">EUAIActCodeSystem</code></strong> (e.g., for AI-generation flags, specific GDPR Article 6/9 pathways, and human-intervention classifications).</p>
+<p>The IG defines custom terminology where existing FHIR or clinical terminologies do not directly represent the required AI transparency and legal-context concepts.</p>
+
+<p>The terminology includes:</p>
+
+<ul>
+  <li>EU AI transparency and human-oversight codes,</li>
+  <li>case-specific AI indication codes,</li>
+  <li>AI performance and clinical-validation status codes,</li>
+  <li>EHDS usage and data-category codes,</li>
+  <li>EHDS secondary-use purpose codes,</li>
+  <li>GDPR Article 6 legal-basis codes,</li>
+  <li>GDPR Article 9 exception codes.</li>
+</ul>
+
+<p>These codes are used to support structured bindings in the profiles and to make the selected metadata explicit and machine-readable.</p>
 
 <hr />
 <p><strong>Author:</strong> Selina Adlberger<br />
@@ -276,7 +314,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.eu.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, Jun 18, 2026 08:40+0000">2026-06-18</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.eu.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, Jun 18, 2026 12:04+0000">2026-06-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

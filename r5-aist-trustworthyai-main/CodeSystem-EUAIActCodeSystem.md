@@ -1,10 +1,10 @@
-# EU AI Act Custom Codes - v0.1.0
+# EU AI Transparency Custom Codes - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Custom Codes**
+* **EU AI Transparency Custom Codes**
 
-## CodeSystem: EU AI Act Custom Codes 
+## CodeSystem: EU AI Transparency Custom Codes 
 
 | | |
 | :--- | :--- |
@@ -12,12 +12,13 @@
 | Active as of 2026-06-18 | *Computable Name*:EUAIActCodeSystem |
 
  
-Central repository of legal and technical terms according to the EU AI Act. 
+Custom codes used in this IG to represent AI transparency, data-use, provenance, technical documentation, data-quality, and human-oversight documentation concepts. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
 * [EHDS_DataCategoryVS](ValueSet-ehds-data-category-vs.md)
 * [EHDS_UsageCategoryVS](ValueSet-ehds-usage-category-vs.md)
+* [EU_AI_ClinicalValidationStatusVS](ValueSet-eu-ai-clinical-validation-status-vs.md)
 * [EU_AI_DataQualityVS](ValueSet-eu-ai-data-quality-vs.md)
 * [EU_AI_Intervention_ValueSet](ValueSet-eu-ai-intervention-vs.md)
 * [EU_AI_PerformanceMetricVS](ValueSet-eu-ai-performance-metric-vs.md)
@@ -34,15 +35,15 @@ Central repository of legal and technical terms according to the EU AI Act.
   "url" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
   "version" : "0.1.0",
   "name" : "EUAIActCodeSystem",
-  "title" : "EU AI Act Custom Codes",
+  "title" : "EU AI Transparency Custom Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Central repository of legal and technical terms according to the EU AI Act.",
+  "description" : "Custom codes used in this IG to represent AI transparency, data-use, provenance, technical documentation, data-quality, and human-oversight documentation concepts.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 54,
+  "count" : 55,
   "concept" : [{
     "code" : "ai-system",
     "display" : "AI System"
@@ -80,8 +81,16 @@ Central repository of legal and technical terms according to the EU AI Act.
     "display" : "AI Transparency Information"
   },
   {
-    "code" : "informed-consent",
-    "display" : "Informed Consent"
+    "code" : "patient-information-provided",
+    "display" : "Patient Information Provided"
+  },
+  {
+    "code" : "patient-explanation-requested",
+    "display" : "Patient Explanation Requested"
+  },
+  {
+    "code" : "patient-explanation-provided",
+    "display" : "Patient Explanation Provided"
   },
   {
     "code" : "accuracy",
@@ -94,6 +103,30 @@ Central repository of legal and technical terms according to the EU AI Act.
   {
     "code" : "specificity",
     "display" : "Specificity"
+  },
+  {
+    "code" : "robustness",
+    "display" : "Robustness"
+  },
+  {
+    "code" : "clinically-validated",
+    "display" : "Clinically Validated",
+    "definition" : "The AI system has completed clinical validation."
+  },
+  {
+    "code" : "not-clinically-validated",
+    "display" : "Not Clinically Validated",
+    "definition" : "The AI system has not completed clinical validation."
+  },
+  {
+    "code" : "validation-in-progress",
+    "display" : "Validation In Progress",
+    "definition" : "Clinical validation is currently in progress."
+  },
+  {
+    "code" : "technical-validation-only",
+    "display" : "Technical Validation Only",
+    "definition" : "Only technical or syntactic validation has been performed."
   },
   {
     "code" : "triage",
@@ -122,7 +155,7 @@ Central repository of legal and technical terms according to the EU AI Act.
   {
     "code" : "ce-mark",
     "display" : "CE Mark",
-    "definition" : "Indicates if the device has a CE mark."
+    "definition" : "Indicates whether the device has a CE mark."
   },
   {
     "code" : "notified-body-id",
@@ -145,6 +178,11 @@ Central repository of legal and technical terms according to the EU AI Act.
     "definition" : "The intended target population."
   },
   {
+    "code" : "eu-ai-database-id",
+    "display" : "EU AI Database Identifier",
+    "definition" : "Identifier for an AI system registration in the EU AI database or an equivalent AI system registry."
+  },
+  {
     "code" : "primary-use",
     "display" : "Primary Use",
     "definition" : "Processing for direct patient care."
@@ -152,140 +190,112 @@ Central repository of legal and technical terms according to the EU AI Act.
   {
     "code" : "secondary-use",
     "display" : "Secondary Use",
-    "definition" : "Processing for research, AI training, or policy making."
+    "definition" : "Processing for research, AI training, policy making, or other permitted secondary-use purposes."
   },
   {
     "code" : "ehr",
     "display" : "Electronic Health Records (EHRs)",
-    "definition" : "Electronic health data from electronic health records (Art. 51 1a)"
+    "definition" : "Electronic health data from electronic health records (Art. 51 1a)."
   },
   {
     "code" : "health-factors",
     "display" : "Health Determinants",
-    "definition" : "Data impacting on health, including socioeconomic, environmental and behavioural determinants (Art. 51 1b)"
+    "definition" : "Data impacting health, including socioeconomic, environmental and behavioural determinants (Art. 51 1b)."
   },
   {
     "code" : "healthcare-resources",
     "display" : "Aggregated Healthcare Data",
-    "definition" : "Aggregated data on healthcare needs, resources, access, and financing (Art. 51 1c)"
+    "definition" : "Aggregated data on healthcare needs, resources, access and financing (Art. 51 1c)."
   },
   {
     "code" : "pathogen-data",
     "display" : "Pathogen Data",
-    "definition" : "Data on pathogens impacting on human health (Art. 51 1d)"
+    "definition" : "Data on pathogens impacting human health (Art. 51 1d)."
   },
   {
     "code" : "admin-claims",
     "display" : "Administrative and Claims Data",
-    "definition" : "Health-related administrative data, including claims and reimbursement data (Art. 51 1e)"
+    "definition" : "Health-related administrative data, including claims and reimbursement data (Art. 51 1e)."
   },
   {
     "code" : "human-genomic",
     "display" : "Human Genomic Data",
-    "definition" : "Human genetic, epigenomic and genomic data (Art. 51 1f)"
+    "definition" : "Human genetic, epigenomic and genomic data (Art. 51 1f)."
   },
   {
     "code" : "molecular-omics",
     "display" : "Molecular Omic Data",
-    "definition" : "Other human molecular data, such as proteomic, transcriptomic, metabolomic, lipidomic and other omic data (Art. 51 1g)"
+    "definition" : "Other human molecular data, such as proteomic, transcriptomic, metabolomic, lipidomic and other omic data (Art. 51 1g)."
   },
   {
     "code" : "device-generated-personal",
     "display" : "Device-Generated Personal Data",
-    "definition" : "Person-generated electronic health data automatically generated by medical devices (Art. 51 1h)"
+    "definition" : "Person-generated electronic health data automatically generated by medical devices (Art. 51 1h)."
   },
   {
     "code" : "wellness-apps",
     "display" : "Wellness Application Data",
-    "definition" : "Data from wellness applications (Art. 51 1i)"
+    "definition" : "Data from wellness applications (Art. 51 1i)."
   },
   {
     "code" : "professional-status",
     "display" : "Healthcare Professional Data",
-    "definition" : "Data on the professional status, specialization, and institution of healthcare professionals (Art. 51 1j)"
+    "definition" : "Data on the professional status, specialization and institution of healthcare professionals (Art. 51 1j)."
   },
   {
     "code" : "public-health-registry",
     "display" : "Public Health Registries",
-    "definition" : "Data from population-wide health data registries (Art. 51 1k)"
+    "definition" : "Data from population-wide health data registries (Art. 51 1k)."
   },
   {
     "code" : "medical-mortality-registry",
     "display" : "Medical and Mortality Registries",
-    "definition" : "Data from medical registries and mortality registries (Art. 51 1l)"
+    "definition" : "Data from medical registries and mortality registries (Art. 51 1l)."
   },
   {
     "code" : "clinical-trial",
     "display" : "Clinical Trial Data",
-    "definition" : "Data from clinical trials, clinical studies, and performance studies (Art. 51 1m)"
+    "definition" : "Data from clinical trials, clinical studies and performance studies (Art. 51 1m)."
   },
   {
     "code" : "medical-device-other",
     "display" : "Other Medical Device Data",
-    "definition" : "Other health data from medical devices (Art. 51 1n)"
+    "definition" : "Other health data from medical devices (Art. 51 1n)."
   },
   {
     "code" : "medicinal-device-registry",
     "display" : "Medicinal and Device Registries",
-    "definition" : "Data from registries for medicinal products and medical devices (Art. 51 1o)"
+    "definition" : "Data from registries for medicinal products and medical devices (Art. 51 1o)."
   },
   {
     "code" : "research-cohort-survey",
     "display" : "Research Cohorts and Surveys",
-    "definition" : "Data from research cohorts, questionnaires, and health-related surveys (Art. 51 1p)"
+    "definition" : "Data from research cohorts, questionnaires and health-related surveys (Art. 51 1p)."
   },
   {
     "code" : "biobank",
     "display" : "Biobank Data",
-    "definition" : "Health data from biobanks and associated databases (Art. 51 1q)"
+    "definition" : "Health data from biobanks and associated databases (Art. 51 1q)."
   },
   {
     "code" : "representative",
     "display" : "Representative",
-    "definition" : "Data is sufficiently representative of the target population."
+    "definition" : "Data are sufficiently representative of the target population."
   },
   {
     "code" : "error-free",
-    "display" : "Error-free",
-    "definition" : "Data is free of errors to the best extent possible."
+    "display" : "Error-Free",
+    "definition" : "Data are free of errors to the best extent possible."
   },
   {
     "code" : "complete",
     "display" : "Complete",
-    "definition" : "Data is complete regarding the intended purpose."
+    "definition" : "Data are complete with regard to the intended purpose."
   },
   {
-    "code" : "gdpr-art-6-1-a",
-    "display" : "Consent (Art. 6(1)(a))"
-  },
-  {
-    "code" : "gdpr-art-6-1-b",
-    "display" : "Contract (Art. 6(1)(b))"
-  },
-  {
-    "code" : "gdpr-art-6-1-d",
-    "display" : "Vital Interests (Art. 6(1)(d))"
-  },
-  {
-    "code" : "gdpr-art-9-2-a",
-    "display" : "Explicit Consent (Art. 9(2)(a))"
-  },
-  {
-    "code" : "gdpr-art-9-2-h",
-    "display" : "Health or Social Care (Art. 9(2)(h))"
-  },
-  {
-    "code" : "gdpr-art-9-2-i",
-    "display" : "Public Health (Art. 9(2)(i))"
-  },
-  {
-    "code" : "gdpr-art-9-2-j",
-    "display" : "Research (Art. 9(2)(j))"
-  },
-  {
-    "code" : "eu-ai-database-id",
-    "display" : "EU AI Database Identifier",
-    "definition" : "Identifier for an AI system registration in the EU AI database or an equivalent AI system registry."
+    "code" : "relevant",
+    "display" : "Relevant",
+    "definition" : "Data are relevant for the intended purpose."
   }]
 }
 

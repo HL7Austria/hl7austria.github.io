@@ -1,11 +1,10 @@
-# EU AI & EHDS Consent Profile - v0.1.0
+# EU AI Consent and Processing Context - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI & EHDS Consent Profile**
+* **EU AI Consent and Processing Context**
 
-## 
-Resource Profile: EU AI & EHDS Consent Profile /h2>
+## Resource Profile: EU AI Consent and Processing Context 
 
 | | |
 | :--- | :--- |
@@ -13,11 +12,11 @@ Resource Profile: EU AI & EHDS Consent Profile /h2>
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIConsent |
 
  
-A profile on the Consent resource to capture GDPR legal basis and EHDS secondary use opt-out. 
+A Consent profile documenting patient-facing information, permission status, and opt-out preferences for AI-supported processing where applicable. 
 
 **Usages:**
 
-* Examples for this Profile: [Consent/consent-vance-ai](Consent-consent-vance-ai.md)
+* Examples for this Profile: [Consent/sc-02-validation-consent-ai-use-001](Consent-sc-02-validation-consent-ai-use-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-consent.json)
 
@@ -40,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-consent.csv), 
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-consent",
   "version" : "0.1.0",
   "name" : "EU_AIConsent",
-  "title" : "EU AI & EHDS Consent Profile",
+  "title" : "EU AI Consent and Processing Context",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "A profile on the Consent resource to capture GDPR legal basis and EHDS secondary use opt-out.",
+  "description" : "A Consent profile documenting patient-facing information, permission status, and opt-out preferences for AI-supported processing where applicable.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "workflow",
@@ -135,13 +134,10 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-consent.csv), 
       "mustSupport" : true
     },
     {
-      "id" : "Consent.provision.purpose",
-      "path" : "Consent.provision.purpose",
+      "id" : "Consent.provision",
+      "path" : "Consent.provision",
       "min" : 1,
-      "patternCoding" : {
-        "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-        "code" : "RESCH"
-      },
+      "max" : "1",
       "mustSupport" : true
     }]
   }

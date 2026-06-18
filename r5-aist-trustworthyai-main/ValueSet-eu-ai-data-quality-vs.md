@@ -12,7 +12,7 @@
 | Active as of 2026-06-18 | *Computable Name*:EU_AI_DataQualityVS |
 
  
-Attributes describing the quality of training data. 
+Codes describing data-quality characteristics relevant for training-data documentation (Art. 10 AI Act). 
 
  **References** 
 
@@ -51,9 +51,9 @@ Attributes describing the quality of training data.
   "title" : "AI Data Quality ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Attributes describing the quality of training data.",
+  "description" : "Codes describing data-quality characteristics relevant for training-data documentation (Art. 10 AI Act).",
   "compose" : {
     "include" : [{
       "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
@@ -65,6 +65,9 @@ Attributes describing the quality of training data.
       },
       {
         "code" : "complete"
+      },
+      {
+        "code" : "relevant"
       }]
     }]
   }

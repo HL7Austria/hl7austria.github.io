@@ -20,7 +20,7 @@ Captures quantitative metrics and bias disclosures.
 **Usages:**
 
 * Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/modelcard-aurascan](DocumentReference-modelcard-aurascan.md)
+* Examples for this Extension: [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-performance-metrics.json)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
   "name" : "AIPerformanceMetrics",
   "title" : "AI Performance Metrics",
   "status" : "draft",
-  "date" : "2026-06-18T08:40:47+00:00",
+  "date" : "2026-06-18T12:04:51+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Captures quantitative metrics and bias disclosures.",
   "fhirVersion" : "5.0.0",
@@ -79,15 +79,10 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "definition" : "Captures quantitative metrics and bias disclosures."
     },
     {
-      "id" : "Extension.extension",
-      "path" : "Extension.extension",
-      "min" : 1
-    },
-    {
       "id" : "Extension.extension:metric",
       "path" : "Extension.extension",
       "sliceName" : "metric",
-      "min" : 1,
+      "min" : 0,
       "max" : "*",
       "mustSupport" : true
     },
@@ -101,8 +96,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "path" : "Extension.extension.extension",
       "sliceName" : "type",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Extension.extension:metric.extension:type.extension",
@@ -130,8 +124,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "path" : "Extension.extension.extension",
       "sliceName" : "value",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Extension.extension:metric.extension:value.extension",
@@ -165,7 +158,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "path" : "Extension.extension",
       "sliceName" : "biasDisclosure",
       "min" : 0,
-      "max" : "1",
+      "max" : "*",
       "mustSupport" : true
     },
     {
