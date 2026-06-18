@@ -42,8 +42,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 markdown {[]} {[]}","How to cite the comment or rating","Display of or reference to the bibliographic citation of the comment, classifier, or rating.","","","","","","","","","",,,,,"",,,,"ArtifactAssessment.citeAs[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ArtifactAssessment.date","ArtifactAssessment.date","","Revision Date
-","",0,1,"","","Y","dateTime {[]} {[]}
-","Date last changed","The date  (and optionally time) when the artifact assessment was published. The date must change when the disposition changes and it must change if the workflow status code changes. In addition, it should change when the substantive content of the artifact assessment changes.","The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the artifact assessment. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.","","","","","","","","",,,,,"",,,,"ArtifactAssessment.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","",1,1,"Y","","Y","dateTime {[]} {[]}
+","Date and time of human oversight assessment","The date  (and optionally time) when the artifact assessment was published. The date must change when the disposition changes and it must change if the workflow status code changes. In addition, it should change when the substantive content of the artifact assessment changes.","The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the artifact assessment. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.","","","","","","","","",,,,,"",,,,"ArtifactAssessment.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","FiveWs.recorded",".participation[typeCode=AUT].time"
 "ArtifactAssessment.copyright","ArtifactAssessment.copyright","","License
 Restrictions","",0,1,"","","","markdown {[]} {[]}
@@ -81,7 +81,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "ArtifactAssessment.content.informationType","ArtifactAssessment.content.informationType","","","",0,1,"","","","code {[]} {[]}
 ","comment | classifier | rating | container | response | change-request","The type of information this component of the content represents.","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/artifactassessment-information-type|5.0.0","",,,,"ArtifactAssessment.content.informationType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"ArtifactAssessment.content.summary","ArtifactAssessment.content.summary","","","",0,1,"Y","","","markdown {[]} {[]}
+"ArtifactAssessment.content.summary","ArtifactAssessment.content.summary","","","",1,1,"Y","","","markdown {[]} {[]}
 ","Medical/Technical rationale for the decision","A brief summary of the content of this component.","","","","","","","","","",,,,,"",,,,"ArtifactAssessment.content.summary",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ArtifactAssessment.content.type","ArtifactAssessment.content.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -103,7 +103,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"ArtifactAssessment.content.author.extension:aiTraining","ArtifactAssessment.content.author.extension","aiTraining","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status]]} {[]}
+"ArtifactAssessment.content.author.extension:aiTraining","ArtifactAssessment.content.author.extension","aiTraining","","",1,1,"","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status]]} {[]}
 ","Did this specific human receive training for this AI?","Mandatory flag indicating whether the human actor has received specific training for the utilized AI tool.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ArtifactAssessment.content.author.reference","ArtifactAssessment.content.author.reference","","","",0,1,"","","Y","string {[]} {[]}
@@ -134,7 +134,7 @@ This element only allows for a single identifier. In the case where additional i
 "ArtifactAssessment.content.path","ArtifactAssessment.content.path","","","",0,*,"","","","uri {[]} {[]}
 ","What the comment is directed to","A URI that points to what the comment is about, such as a line of text in the CQL, or a specific element in a resource.","The target element is used to point the comment to aspect of the artifact, such as a text range within a CQL library (e.g. #content?0:0-120:80).","","","","","","","","",,,,,"",,,,"ArtifactAssessment.content.path",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"ArtifactAssessment.content.relatedArtifact","ArtifactAssessment.content.relatedArtifact","","","",0,*,"Y","","","RelatedArtifact {[]} {[]}
+"ArtifactAssessment.content.relatedArtifact","ArtifactAssessment.content.relatedArtifact","","","",0,*,"","","","RelatedArtifact {[]} {[]}
 ","Reference to heatmap or explainability tool used","Additional related artifacts that provide supporting documentation, additional evidence, or further information related to the content.","","","","","","","","","",,,,,"",,,,"ArtifactAssessment.content.relatedArtifact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ArtifactAssessment.content.freeToShare","ArtifactAssessment.content.freeToShare","","","",0,1,"","","","boolean {[]} {[]}

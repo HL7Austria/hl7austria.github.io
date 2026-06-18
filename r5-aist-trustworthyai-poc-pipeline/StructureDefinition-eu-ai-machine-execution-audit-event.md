@@ -1,10 +1,10 @@
-# EU AI Act Machine Execution Audit Event - v0.1.0
+# EU AI Execution Audit Event - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Machine Execution Audit Event**
+* **EU AI Execution Audit Event**
 
-## Resource Profile: EU AI Act Machine Execution Audit Event 
+## Resource Profile: EU AI Execution Audit Event 
 
 | | |
 | :--- | :--- |
@@ -12,7 +12,7 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIAuditEvent |
 
  
-Logs the automated execution of an AI model, establishing the core traceability chain. 
+An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability. 
 
 **Usages:**
 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event",
   "version" : "0.1.0",
   "name" : "EU_AIAuditEvent",
-  "title" : "EU AI Act Machine Execution Audit Event",
+  "title" : "EU AI Execution Audit Event",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Logs the automated execution of an AI model, establishing the core traceability chain.",
+  "description" : "An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "workflow",
@@ -198,8 +198,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
         }],
         "rules" : "open"
       },
-      "min" : 2,
-      "mustSupport" : true
+      "min" : 2
     },
     {
       "id" : "AuditEvent.entity:inputData",
@@ -227,8 +226,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
       "sliceName" : "referenceDb",
       "short" : "Identification of specific reference databases or versions (e.g., Clinical Guidelines)",
       "min" : 0,
-      "max" : "*",
-      "mustSupport" : true
+      "max" : "*"
     },
     {
       "id" : "AuditEvent.entity:referenceDb.role",

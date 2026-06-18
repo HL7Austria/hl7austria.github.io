@@ -6,7 +6,7 @@
 
 ## Example Provenance: Provenance: AI Output Generation
 
-Profile: [EU AI Act Provenance (Human-in-the-Loop)](StructureDefinition-eu-ai-provenance.md)
+Profile: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
 
 Provenance for [Observation ](Observation-sc-02-validation-ai-observation-risk-001.md)
 
@@ -20,7 +20,7 @@ Summary
 
 **Agents**
 
-* **who**: [Device: extension = ,->DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 
 

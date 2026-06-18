@@ -19,7 +19,7 @@ Categorizes the data processing as Primary Care or Secondary Use according to th
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Provenance (Human-in-the-Loop)](StructureDefinition-eu-ai-provenance.md)
+* Use this Extension: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
 * Examples for this Extension: [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ehds-usage-category.json)
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-usage-category.
   "name" : "EHDSPUsageCategory",
   "title" : "EHDS Usage Category",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Categorizes the data processing as Primary Care or Secondary Use according to the EHDS.",
   "fhirVersion" : "5.0.0",

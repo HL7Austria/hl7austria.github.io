@@ -4,6 +4,13 @@
   "fhirVersion": "5.0.0",
   "extensions": [
     {
+      "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status",
+      "title": "AI Clinical Validation Status",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
       "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics",
       "title": "AI Performance Metrics",
       "types": [
@@ -196,6 +203,7 @@
       "types": [
         "string",
         "CodeableConcept",
+        "CodeableConcept",
         "Identifier",
         "CodeableConcept",
         "base64Binary",
@@ -255,6 +263,13 @@
       ]
     },
     {
+      "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag",
+      "title": "Automated Decision-Making Flag",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
       "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication",
       "title": "Case-Specific Indication",
       "types": [
@@ -266,6 +281,13 @@
       "title": "EHDS Data Permit",
       "types": [
         "Identifier"
+      ]
+    },
+    {
+      "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose",
+      "title": "EHDS Secondary Use Purpose",
+      "types": [
+        "CodeableConcept"
       ]
     },
     {
@@ -379,25 +401,25 @@
     "Consent": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-consent",
-        "title": "EU AI \u0026 EHDS Consent Profile"
+        "title": "EU AI Consent and Processing Context"
       }
     ],
     "Device": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device",
-        "title": "EU AI Act Compliant Device"
+        "title": "EU AI System Device"
       }
     ],
     "ArtifactAssessment": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight",
-        "title": "EU AI Act Human Oversight (HL)"
+        "title": "EU AI Human Oversight Assessment"
       }
     ],
     "AuditEvent": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event",
-        "title": "EU AI Act Machine Execution Audit Event"
+        "title": "EU AI Execution Audit Event"
       }
     ],
     "DocumentReference": [
@@ -409,7 +431,7 @@
     "Observation": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation",
-        "title": "EU AI Act Observation (Validated Result)"
+        "title": "EU AI Generated Observation"
       }
     ],
     "Organization": [
@@ -421,23 +443,26 @@
     "Communication": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation",
-        "title": "EU AI Act Patient Right to Explanation"
+        "title": "EU AI Patient Explanation Communication"
       }
     ],
     "PractitionerRole": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole",
-        "title": "EU AI Act Human Overseer (PractitionerRole)"
+        "title": "EU AI Practitioner Role"
       }
     ],
     "Provenance": [
       {
         "url": "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance",
-        "title": "EU AI Act Provenance (Human-in-the-Loop)"
+        "title": "EU AI Provenance"
       }
     ]
   },
   "usage": {
+    "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status": [
+      "DocumentReference"
+    ],
     "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics": [
       "DocumentReference"
     ],
@@ -451,10 +476,16 @@
     "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data": [
       "DocumentReference"
     ],
+    "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag": [
+      "Observation"
+    ],
     "http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication": [
       "Observation"
     ],
     "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit": [
+      "Provenance"
+    ],
+    "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose": [
       "Provenance"
     ],
     "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category": [

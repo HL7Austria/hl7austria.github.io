@@ -11,7 +11,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","Signature {[]} {[]}
+"Extension.value[x]","Extension.value[x]","","","",1,1,"","","","Signature {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
@@ -23,10 +23,10 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"Extension.value[x].type","Extension.value[x].type","","","",1,*,"Y","","Y","Coding {[]} {[]}
+"Extension.value[x].type","Extension.value[x].type","","","",1,*,"","","Y","Coding {[]} {[]}
 ","Indication of the reason the entity signed the object(s)","An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.","Examples include attesting to: authorship, correct transcription, and witness of specific event. Also known as a &quot;Commitment Type Indication&quot;.","","","","","","","","",,"preferred","An indication of the reason that an entity signed the object.","http://hl7.org/fhir/ValueSet/signature-type|5.0.0","",,,,"Signature.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Extension.value[x].when","Extension.value[x].when","","","",1,1,"Y","","Y","instant {[]} {[]}
+"Extension.value[x].when","Extension.value[x].when","","","",1,1,"","","Y","instant {[]} {[]}
 ","When the signature was created","When the digital signature was signed.","This should agree with the information in the signature.","","","","","","","","",,,,,"",,,,"Signature.when",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Extension.value[x].who","Extension.value[x].who","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Device]]}
@@ -41,6 +41,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Extension.value[x].sigFormat","Extension.value[x].sigFormat","","","",0,1,"","","","code {[]} {[]}
 ","The technical format of the signature","A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.","","","","","","","","","",,"required","BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)","http://hl7.org/fhir/ValueSet/mimetypes|5.0.0","",,,,"Signature.sigFormat",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Extension.value[x].data","Extension.value[x].data","","","",1,1,"Y","","","base64Binary {[]} {[]}
+"Extension.value[x].data","Extension.value[x].data","","","",1,1,"","","","base64Binary {[]} {[]}
 ","The actual signature content (XML DigSig. JWS, picture, etc.)","The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.","Where the signature type is an XML DigSig, the signed content is a FHIR Resource(s), the signature is of the XML form of the Resource(s) using  XML-Signature (XMLDIG) ""Detached Signature"" form.","","","","","","","","",,,,,"",,,,"Signature.data",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "

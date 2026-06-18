@@ -8,11 +8,10 @@
 
 Profile: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
 
-> **AI Performance Metrics****type**: Not clinically validated**value**: 0 1 (Details: UCUM code1 = '1')
-> **url**metric
+**AI Clinical Validation Status**: Not Clinically Validated
 
-> **url**biasDisclosure
-**value**: No bias evaluation is claimed for this synthetic PoC model.
+> **AI Performance Metrics**
+* biasDisclosure: No bias evaluation is claimed for this synthetic PoC model.
 
 > **AI Training Data Metadata**
 * provenance: No real training data are used. The component is used only to simulate AI-like outputs for the PoC.
@@ -27,7 +26,7 @@ Profile: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
 
 **type**: AI Model Card
 
-**subject**: [Device: extension = ,->DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**subject**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 **description**: 
 
@@ -65,29 +64,17 @@ Synthetic model card for a deterministic AI-output simulation component used in 
     "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"]
   },
   "extension" : [{
+    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "code" : "not-clinically-validated",
+        "display" : "Not Clinically Validated"
+      }]
+    }
+  },
+  {
     "extension" : [{
-      "extension" : [{
-        "url" : "type",
-        "valueCodeableConcept" : {
-          "coding" : [{
-            "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-            "code" : "not-clinically-validated",
-            "display" : "Not clinically validated"
-          }]
-        }
-      },
-      {
-        "url" : "value",
-        "valueQuantity" : {
-          "value" : 0,
-          "unit" : "1",
-          "system" : "http://unitsofmeasure.org",
-          "code" : "1"
-        }
-      }],
-      "url" : "metric"
-    },
-    {
       "url" : "biasDisclosure",
       "valueString" : "No bias evaluation is claimed for this synthetic PoC model."
     }],

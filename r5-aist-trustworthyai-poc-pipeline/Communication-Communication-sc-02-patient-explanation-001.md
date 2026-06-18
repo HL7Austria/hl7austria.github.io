@@ -6,7 +6,7 @@
 
 ## Example Communication: Communication: Patient-Facing AI Explanation
 
-Profile: [EU AI Act Patient Right to Explanation](StructureDefinition-eu-ai-patient-explanation.md)
+Profile: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-patient-explanation.md)
 
 **EU AI Act Explanation Requested Flag**: true
 
@@ -14,7 +14,7 @@ Profile: [EU AI Act Patient Right to Explanation](StructureDefinition-eu-ai-pati
 
 **subject**: [Anonymous Patient Female, DoB: 1959-04-12](Patient-patient-001.md)
 
-**about**: [ArtifactAssessment: artifact[x] = ->Observation ; workflowStatus = published](ArtifactAssessment-sc-02-validation-human-oversight-001.md)
+**about**: [ArtifactAssessment: date = 2026-03-01 10:20:00+0000; artifact[x] = ->Observation ; workflowStatus = published](ArtifactAssessment-sc-02-validation-human-oversight-001.md)
 
 **sent**: 2026-03-01 10:30:00+0000
 

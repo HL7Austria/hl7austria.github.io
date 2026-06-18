@@ -12,11 +12,11 @@
 | Active as of 2026-06-18 | *Computable Name*:EU_AI_Intervention_ValueSet |
 
  
-Codes representing the type of human oversight or intervention. 
+Codes representing the type of human oversight or intervention (HL-03.1). 
 
  **References** 
 
-* [EU AI Act Human Oversight (HL)](StructureDefinition-eu-ai-human-oversight.md)
+* [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-oversight.md)
 
 ### Logical Definition (CLD)
 
@@ -51,9 +51,9 @@ Codes representing the type of human oversight or intervention.
   "title" : "Human Intervention Type ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes representing the type of human oversight or intervention.",
+  "description" : "Codes representing the type of human oversight or intervention (HL-03.1).",
   "compose" : {
     "include" : [{
       "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",

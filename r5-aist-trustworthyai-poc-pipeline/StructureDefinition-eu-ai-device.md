@@ -1,10 +1,10 @@
-# EU AI Act Compliant Device - v0.1.0
+# EU AI System Device - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Compliant Device**
+* **EU AI System Device**
 
-## Resource Profile: EU AI Act Compliant Device 
+## Resource Profile: EU AI System Device 
 
 | | |
 | :--- | :--- |
@@ -12,11 +12,11 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIDevice |
 
  
-A Device profile representing an AI system, fulfilling EU AI Act metadata requirements. 
+A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata. 
 
 **Usages:**
 
-* Refer to this Profile: [EU AI Act Machine Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md), [EU AI Act Observation (Validated Result)](StructureDefinition-eu-ai-observation.md) and [EU AI Act Provenance (Human-in-the-Loop)](StructureDefinition-eu-ai-provenance.md)
+* Refer to this Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md), [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md), [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md) and [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
 * Examples for this Profile: [Device/device-riskassist-ai](Device-device-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-device.json)
@@ -40,11 +40,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device",
   "version" : "0.1.0",
   "name" : "EU_AIDevice",
-  "title" : "EU AI Act Compliant Device",
+  "title" : "EU AI System Device",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "A Device profile representing an AI system, fulfilling EU AI Act metadata requirements.",
+  "description" : "A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "w5",

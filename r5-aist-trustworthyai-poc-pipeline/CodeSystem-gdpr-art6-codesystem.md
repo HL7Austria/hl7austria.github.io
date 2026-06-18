@@ -1,10 +1,10 @@
-# GDPR Art 6 Legal Basis - v0.1.0
+# GDPR Article 6 Legal Basis CodeSystem - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **GDPR Art 6 Legal Basis**
+* **GDPR Article 6 Legal Basis CodeSystem**
 
-## CodeSystem: GDPR Art 6 Legal Basis 
+## CodeSystem: GDPR Article 6 Legal Basis CodeSystem 
 
 | | |
 | :--- | :--- |
@@ -12,7 +12,7 @@
 | Active as of 2026-06-18 | *Computable Name*:GDPRArt6CodeSystem |
 
  
-Codes representing legal bases for processing personal data according to GDPR Article 6. 
+Code system defining GDPR Article 6 legal bases relevant for documenting legal-basis metadata in AI-supported processing contexts. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
@@ -29,15 +29,15 @@ Codes representing legal bases for processing personal data according to GDPR Ar
   "url" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem",
   "version" : "0.1.0",
   "name" : "GDPRArt6CodeSystem",
-  "title" : "GDPR Art 6 Legal Basis",
+  "title" : "GDPR Article 6 Legal Basis CodeSystem",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes representing legal bases for processing personal data according to GDPR Article 6.",
+  "description" : "Code system defining GDPR Article 6 legal bases relevant for documenting legal-basis metadata in AI-supported processing contexts.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 3,
+  "count" : 6,
   "concept" : [{
     "code" : "gdpr-art-6-1-a",
     "display" : "Consent (Art. 6(1)(a))"
@@ -47,8 +47,20 @@ Codes representing legal bases for processing personal data according to GDPR Ar
     "display" : "Contract (Art. 6(1)(b))"
   },
   {
+    "code" : "gdpr-art-6-1-c",
+    "display" : "Legal Obligation (Art. 6(1)(c))"
+  },
+  {
     "code" : "gdpr-art-6-1-d",
     "display" : "Vital Interests (Art. 6(1)(d))"
+  },
+  {
+    "code" : "gdpr-art-6-1-e",
+    "display" : "Public Interest or Official Authority (Art. 6(1)(e))"
+  },
+  {
+    "code" : "gdpr-art-6-1-f",
+    "display" : "Legitimate Interests (Art. 6(1)(f))"
   }]
 }
 

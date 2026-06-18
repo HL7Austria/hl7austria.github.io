@@ -12,7 +12,7 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIModelCard |
 
  
-The official AI Model Card. It mandates the inclusion of intended purpose, risk assessments, and performance metrics as per the EU AI Act and GDPR. 
+A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation. 
 
 **Usages:**
 
@@ -41,9 +41,9 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
   "name" : "EU_AIModelCard",
   "title" : "EU AI Act Model Card",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "The official AI Model Card. It mandates the inclusion of intended purpose, risk assessments, and performance metrics as per the EU AI Act and GDPR.",
+  "description" : "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "workflow",
@@ -101,7 +101,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 3
+      "min" : 4
     },
     {
       "id" : "DocumentReference.extension:performance",
@@ -143,6 +143,18 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
       "mustSupport" : true
     },
     {
+      "id" : "DocumentReference.extension:clinicalValidationStatus",
+      "path" : "DocumentReference.extension",
+      "sliceName" : "clinicalValidationStatus",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "DocumentReference.status",
       "path" : "DocumentReference.status",
       "mustSupport" : true
@@ -159,6 +171,17 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
           "display" : "AI Model Card"
         }]
       },
+      "mustSupport" : true
+    },
+    {
+      "id" : "DocumentReference.subject",
+      "path" : "DocumentReference.subject",
+      "short" : "Reference to the specific AI System Device (Traceability)",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"]
+      }],
       "mustSupport" : true
     },
     {

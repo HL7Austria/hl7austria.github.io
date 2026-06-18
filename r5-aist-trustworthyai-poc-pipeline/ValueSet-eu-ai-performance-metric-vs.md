@@ -12,7 +12,7 @@
 | Active as of 2026-06-18 | *Computable Name*:EU_AI_PerformanceMetricVS |
 
  
-Codes for technical quality and performance metrics. 
+Codes for technical quality and performance metrics (QUAL-01). 
 
  **References** 
 
@@ -51,9 +51,9 @@ Codes for technical quality and performance metrics.
   "title" : "AI Performance Metric ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes for technical quality and performance metrics.",
+  "description" : "Codes for technical quality and performance metrics (QUAL-01).",
   "compose" : {
     "include" : [{
       "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
@@ -67,7 +67,7 @@ Codes for technical quality and performance metrics.
         "code" : "specificity"
       },
       {
-        "code" : "not-clinically-validated"
+        "code" : "robustness"
       }]
     }]
   }

@@ -6,7 +6,7 @@
 
 ## Example PractitionerRole: PractitionerRole: Human Reviewer
 
-Profile: [EU AI Act Human Overseer (PractitionerRole)](StructureDefinition-eu-ai-practitionerrole.md)
+Profile: [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md)
 
 **AI System Specific Training**: true
 

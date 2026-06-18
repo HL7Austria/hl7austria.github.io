@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-clinical-validation-status-vs> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "eu-ai-clinical-validation-status-vs"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet eu-ai-clinical-validation-status-vs</b></p><a name=\"eu-ai-clinical-validation-status-vs\"> </a><a name=\"hceu-ai-clinical-validation-status-vs\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-EUAIActCodeSystem.html\"><code>http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?0.1.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"CodeSystem-EUAIActCodeSystem.html#EUAIActCodeSystem-clinically-validated\">clinically-validated</a></td><td style=\"color: #cccccc\">Clinically Validated</td><td>The AI system has completed clinical validation.</td></tr><tr><td><a href=\"CodeSystem-EUAIActCodeSystem.html#EUAIActCodeSystem-not-clinically-validated\">not-clinically-validated</a></td><td style=\"color: #cccccc\">Not Clinically Validated</td><td>The AI system has not completed clinical validation.</td></tr><tr><td><a href=\"CodeSystem-EUAIActCodeSystem.html#EUAIActCodeSystem-validation-in-progress\">validation-in-progress</a></td><td style=\"color: #cccccc\">Validation In Progress</td><td>Clinical validation is currently in progress.</td></tr><tr><td><a href=\"CodeSystem-EUAIActCodeSystem.html#EUAIActCodeSystem-technical-validation-only\">technical-validation-only</a></td><td style=\"color: #cccccc\">Technical Validation Only</td><td>Only technical or syntactic validation has been performed.</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-clinical-validation-status-vs"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "EU_AI_ClinicalValidationStatusVS"] ; # 
+  fhir:title [ fhir:v "AI Clinical Validation Status ValueSet"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-18T11:52:19+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Selina Adlberger"] ; # 
+  fhir:description [ fhir:v "Codes describing the clinical validation status of an AI system."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "clinically-validated" ]
+       ] [
+         fhir:code [ fhir:v "not-clinically-validated" ]
+       ] [
+         fhir:code [ fhir:v "validation-in-progress" ]
+       ] [
+         fhir:code [ fhir:v "technical-validation-only" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

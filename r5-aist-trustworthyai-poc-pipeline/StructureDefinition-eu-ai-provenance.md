@@ -1,10 +1,10 @@
-# EU AI Act Provenance (Human-in-the-Loop) - v0.1.0
+# EU AI Provenance - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Provenance (Human-in-the-Loop)**
+* **EU AI Provenance**
 
-## Resource Profile: EU AI Act Provenance (Human-in-the-Loop) 
+## Resource Profile: EU AI Provenance 
 
 | | |
 | :--- | :--- |
@@ -12,7 +12,7 @@
 | Draft as of 2026-06-18 | *Computable Name*:EU_AIProvenance |
 
  
-Records the execution of an AI system, including human oversight and data provenance. 
+A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context. 
 
 **Usages:**
 
@@ -39,11 +39,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance",
   "version" : "0.1.0",
   "name" : "EU_AIProvenance",
-  "title" : "EU AI Act Provenance (Human-in-the-Loop)",
+  "title" : "EU AI Provenance",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Records the execution of an AI system, including human oversight and data provenance.",
+  "description" : "A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "workflow",
@@ -107,6 +107,18 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       "mustSupport" : true
     },
     {
+      "id" : "Provenance.extension:secondaryUsePurpose",
+      "path" : "Provenance.extension",
+      "sliceName" : "secondaryUsePurpose",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "Provenance.extension:dataPermit",
       "path" : "Provenance.extension",
       "sliceName" : "dataPermit",
@@ -149,7 +161,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
         }],
         "rules" : "open"
       },
-      "min" : 1,
+      "min" : 2,
       "mustSupport" : true
     },
     {
@@ -179,7 +191,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       "id" : "Provenance.authorization:gdprException",
       "path" : "Provenance.authorization",
       "sliceName" : "gdprException",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "mustSupport" : true,
       "binding" : {
@@ -232,8 +244,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Observation",
         "http://hl7.org/fhir/StructureDefinition/ImagingStudy",
         "http://hl7.org/fhir/StructureDefinition/DocumentReference"]
-      }],
-      "mustSupport" : true
+      }]
     }]
   }
 }

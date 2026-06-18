@@ -19,7 +19,7 @@ Confirmation that the patient was informed about the use of AI systems according
 
 **Usages:**
 
-* Use this Extension: EU AI & EHDS Consent Profile/a>
+* Use this Extension: [EU AI Consent and Processing Context](StructureDefinition-eu-ai-consent.md)
 * Examples for this Extension: [Consent/sc-02-validation-consent-ai-use-001](Consent-sc-02-validation-consent-ai-use-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-patient-ai-info-provided.json)
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-patient-ai-info-prov
   "name" : "PatientAIInfoProvidedFlag",
   "title" : "Patient AI Info Provided Flag",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Confirmation that the patient was informed about the use of AI systems according to AI Act transparency rules.",
   "fhirVersion" : "5.0.0",

@@ -19,7 +19,7 @@ A reference to the DocumentReference resource that acts as the Model Card, conta
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Compliant Device](StructureDefinition-eu-ai-device.md)
+* Use this Extension: [EU AI System Device](StructureDefinition-eu-ai-device.md)
 * Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ext-model-card.json)
@@ -51,9 +51,9 @@ Other representations of profile: [CSV](StructureDefinition-ext-model-card.csv),
   "name" : "EU_AIModelCardLink",
   "title" : "Model Card Reference",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "A reference to the DocumentReference resource that acts as the Model Card, containing detailed\n documentation, intended purpose, and risk assessments.",
+  "description" : "A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -74,7 +74,7 @@ Other representations of profile: [CSV](StructureDefinition-ext-model-card.csv),
       "id" : "Extension",
       "path" : "Extension",
       "short" : "Model Card Reference",
-      "definition" : "A reference to the DocumentReference resource that acts as the Model Card, containing detailed\n documentation, intended purpose, and risk assessments."
+      "definition" : "A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments."
     },
     {
       "id" : "Extension.extension",

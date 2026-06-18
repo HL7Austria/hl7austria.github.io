@@ -1,10 +1,10 @@
-# GDPR Art 9 Exceptions - v0.1.0
+# GDPR Article 9 Exception CodeSystem - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **GDPR Art 9 Exceptions**
+* **GDPR Article 9 Exception CodeSystem**
 
-## CodeSystem: GDPR Art 9 Exceptions 
+## CodeSystem: GDPR Article 9 Exception CodeSystem 
 
 | | |
 | :--- | :--- |
@@ -12,7 +12,7 @@
 | Active as of 2026-06-18 | *Computable Name*:GDPRArt9CodeSystem |
 
  
-Codes representing exceptions for processing special categories of personal data according to GDPR Article 9. 
+Code system defining GDPR Article 9 exceptions relevant for documenting the processing context of special categories of personal data, including health data. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
@@ -29,18 +29,26 @@ Codes representing exceptions for processing special categories of personal data
   "url" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem",
   "version" : "0.1.0",
   "name" : "GDPRArt9CodeSystem",
-  "title" : "GDPR Art 9 Exceptions",
+  "title" : "GDPR Article 9 Exception CodeSystem",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes representing exceptions for processing special categories of personal data according to GDPR Article 9.",
+  "description" : "Code system defining GDPR Article 9 exceptions relevant for documenting the processing context of special categories of personal data, including health data.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 4,
+  "count" : 6,
   "concept" : [{
     "code" : "gdpr-art-9-2-a",
     "display" : "Explicit Consent (Art. 9(2)(a))"
+  },
+  {
+    "code" : "gdpr-art-9-2-c",
+    "display" : "Vital Interests (Art. 9(2)(c))"
+  },
+  {
+    "code" : "gdpr-art-9-2-g",
+    "display" : "Substantial Public Interest (Art. 9(2)(g))"
   },
   {
     "code" : "gdpr-art-9-2-h",

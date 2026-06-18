@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-privacy-metadata.
   "name" : "AIPrivacyMetadata",
   "title" : "AI Privacy Metadata",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "GDPR and AI Act privacy parameters. Third country transfer flags and data retention policies at the model level.",
   "fhirVersion" : "5.0.0",
@@ -136,8 +136,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-privacy-metadata.
       "path" : "Extension.extension",
       "sliceName" : "destination",
       "min" : 0,
-      "max" : "*",
-      "mustSupport" : true
+      "max" : "*"
     },
     {
       "id" : "Extension.extension:destination.extension",

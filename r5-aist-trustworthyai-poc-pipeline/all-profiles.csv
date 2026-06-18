@@ -1,15 +1,32 @@
 "Profile","Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"ai-clinical-validation-status","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","AI Clinical Validation Status","Documents whether the AI system is clinically validated, not clinically validated, under validation, or only technically validated.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ai-clinical-validation-status","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"ai-clinical-validation-status","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ai-clinical-validation-status","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"ai-clinical-validation-status","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","","http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-clinical-validation-status-vs","",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "ai-performance-metrics","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
 ","AI Performance Metrics","Captures quantitative metrics and bias disclosures.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ai-performance-metrics","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
 ",""
-"ai-performance-metrics","Extension.extension","Extension.extension","","","",1,*,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+"ai-performance-metrics","Extension.extension","Extension.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"ai-performance-metrics","Extension.extension:metric","Extension.extension","metric","","",1,*,"Y","","","Extension {[]} {[]}
+"ai-performance-metrics","Extension.extension:metric","Extension.extension","metric","","",0,*,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ai-performance-metrics","Extension.extension:metric.id","Extension.extension.id","","","",0,1,"","","","id {[]} {[]}
@@ -19,7 +36,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"ai-performance-metrics","Extension.extension:metric.extension:type","Extension.extension.extension","type","","",1,1,"Y","","","Extension {[]} {[]}
+"ai-performance-metrics","Extension.extension:metric.extension:type","Extension.extension.extension","type","","",1,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ai-performance-metrics","Extension.extension:metric.extension:type.id","Extension.extension.extension.id","","","",0,1,"","","","id {[]} {[]}
@@ -35,7 +52,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"extensible","","http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-performance-metric-vs","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"ai-performance-metrics","Extension.extension:metric.extension:value","Extension.extension.extension","value","","",1,1,"Y","","","Extension {[]} {[]}
+"ai-performance-metrics","Extension.extension:metric.extension:value","Extension.extension.extension","value","","",1,1,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ai-performance-metrics","Extension.extension:metric.extension:value.id","Extension.extension.extension.id","","","",0,1,"","","","id {[]} {[]}
@@ -121,7 +138,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"ai-privacy-metadata","Extension.extension:destination","Extension.extension","destination","","",0,*,"Y","","","Extension {[]} {[]}
+"ai-privacy-metadata","Extension.extension:destination","Extension.extension","destination","","",0,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ai-privacy-metadata","Extension.extension:destination.id","Extension.extension.id","","","",0,1,"","","","id {[]} {[]}
@@ -201,6 +218,22 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"extensible","","http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-data-category-vs","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"ai-training-data","Extension.extension:ehdsSecondaryUsePurpose","Extension.extension","ehdsSecondaryUsePurpose","","",0,*,"Y","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ai-training-data","Extension.extension:ehdsSecondaryUsePurpose.id","Extension.extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"ai-training-data","Extension.extension:ehdsSecondaryUsePurpose.extension","Extension.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ai-training-data","Extension.extension:ehdsSecondaryUsePurpose.url","Extension.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""ehdsSecondaryUsePurpose""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"ai-training-data","Extension.extension:ehdsSecondaryUsePurpose.value[x]","Extension.extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"extensible","","http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs","",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "ai-training-data","Extension.extension:ehdsPermit","Extension.extension","ehdsPermit","","",0,*,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -217,7 +250,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"ai-training-data","Extension.extension:dataQuality","Extension.extension","dataQuality","","",0,1,"Y","","","Extension {[]} {[]}
+"ai-training-data","Extension.extension:dataQuality","Extension.extension","dataQuality","","",0,*,"Y","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ai-training-data","Extension.extension:dataQuality.id","Extension.extension.id","","","",0,1,"","","","id {[]} {[]}
@@ -237,6 +270,22 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "ai-training-data","Extension.value[x]","Extension.value[x]","","","",0,0,"","","","base64Binary {[]} {[]}
 boolean {[]} {[]}canonical {[]} {[]}code {[]} {[]}date {[]} {[]}dateTime {[]} {[]}decimal {[]} {[]}id {[]} {[]}instant {[]} {[]}integer {[]} {[]}integer64 {[]} {[]}markdown {[]} {[]}oid {[]} {[]}positiveInt {[]} {[]}string {[]} {[]}time {[]} {[]}unsignedInt {[]} {[]}uri {[]} {[]}url {[]} {[]}uuid {[]} {[]}Address {[]} {[]}Age {[]} {[]}Annotation {[]} {[]}Attachment {[]} {[]}CodeableConcept {[]} {[]}CodeableReference {[]} {[]}Coding {[]} {[]}ContactPoint {[]} {[]}Count {[]} {[]}Distance {[]} {[]}Duration {[]} {[]}HumanName {[]} {[]}Identifier {[]} {[]}Money {[]} {[]}Period {[]} {[]}Quantity {[]} {[]}Range {[]} {[]}Ratio {[]} {[]}RatioRange {[]} {[]}Reference {[]} {[]}SampledData {[]} {[]}Signature {[]} {[]}Timing {[]} {[]}ContactDetail {[]} {[]}DataRequirement {[]} {[]}Expression {[]} {[]}ParameterDefinition {[]} {[]}RelatedArtifact {[]} {[]}TriggerDefinition {[]} {[]}UsageContext {[]} {[]}Availability {[]} {[]}ExtendedContactDetail {[]} {[]}Dosage {[]} {[]}Meta {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"automated-decision-flag","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Automated Decision-Making Flag","Indicates whether the AI-generated output was used as part of a solely automated decision-making process within the meaning of GDPR Article 22.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"automated-decision-flag","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"automated-decision-flag","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"automated-decision-flag","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"automated-decision-flag","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "case-specific-indication","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
@@ -269,6 +318,22 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "ehds-data-permit","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","Identifier {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"ehds-secondary-use-purpose","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","EHDS Secondary Use Purpose","Documents the permitted purpose for secondary use of electronic health data under the EHDS.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ehds-secondary-use-purpose","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"ehds-secondary-use-purpose","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ehds-secondary-use-purpose","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"ehds-secondary-use-purpose","Extension.value[x]","Extension.value[x]","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","","http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ehds-usage-category","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
@@ -479,11 +544,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "eu-ai-consent","Consent.provision.securityLabel","Consent.provision.securityLabel","","","",0,*,"","","Y","Coding {[]} {[]}
 ","Security Labels that define affected resources","A security label, comprised of 0..* security label fields (Privacy tags), which define which resources are controlled by this exception.","If the consent specifies a security label of ""R"" then it applies to all resources that are labeled ""R"" or lower. E.g. for Confidentiality, it's a high water mark. For other kinds of security labels, subsumption logic applies. When the purpose of use tag is on the data, access request purpose of use shall not conflict.","","","","","","","","",,"example","Example Security Labels from the Healthcare Privacy and Security Classification System.","http://hl7.org/fhir/ValueSet/security-label-examples|5.0.0","",,,,"Consent.provision.securityLabel",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-consent","Consent.provision.purpose","Consent.provision.purpose","","","",1,*,"Y","","Y","Coding {[]} {[]}
-","Context of activities covered by this provision","The context of the activities a user is taking - why the user is accessing the data - that are controlled by this provision.","When the purpose of use tag is on the data, access request purpose of use shall not conflict.","","","","","<valueCoding xmlns=""http://hl7.org/fhir"">
-  <system value=""http://terminology.hl7.org/CodeSystem/v3-ActReason""/>
-  <code value=""RESCH""/>
-</valueCoding>","","","",,"extensible","What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.","http://terminology.hl7.org/ValueSet/v3-PurposeOfUse","",,,,"Consent.provision.purpose",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"eu-ai-consent","Consent.provision.purpose","Consent.provision.purpose","","","",0,*,"","","Y","Coding {[]} {[]}
+","Context of activities covered by this provision","The context of the activities a user is taking - why the user is accessing the data - that are controlled by this provision.","When the purpose of use tag is on the data, access request purpose of use shall not conflict.","","","","","","","","",,"extensible","What purposes of use are controlled by this exception. If more than one label is specified, operations must have all the specified labels.","http://terminology.hl7.org/ValueSet/v3-PurposeOfUse","",,,,"Consent.provision.purpose",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-consent","Consent.provision.documentType","Consent.provision.documentType","","","",0,*,"","","Y","Coding {[]} {[]}
 ","e.g. Resource Type, Profile, CDA, etc","The documentType(s) covered by this provision. The type can be a CDA document, or some other type that indicates what sort of information the consent relates to.","Multiple types are or'ed together. The intention of the documentType element is that the codes refer to document types defined in a standard somewhere.","","","","","","","","",,"preferred","The document type a consent provision covers.","http://hl7.org/fhir/ValueSet/consent-content-class|5.0.0","",,,,"Consent.provision.documentType",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -556,8 +618,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Third-Country Transfer Data","Captures if patient data is transferred outside the EU by this device.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-device","Device.extension:modelCard","Device.extension","modelCard","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card]]} {[]}
-","Model Card Reference","A reference to the DocumentReference resource that acts as the Model Card, containing detailed
- documentation, intended purpose, and risk assessments.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Model Card Reference","A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-device","Device.modifierExtension","Device.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -978,7 +1039,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-explanation-requested","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-explanation-requested""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"eu-ai-explanation-requested","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","boolean {[]} {[]}
+"eu-ai-explanation-requested","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","boolean {[]} {[]}
 ","True, if the patient actively requested an explanation.","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -1025,8 +1086,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 markdown {[]} {[]}","How to cite the comment or rating","Display of or reference to the bibliographic citation of the comment, classifier, or rating.","","","","","","","","","",,,,,"",,,,"ArtifactAssessment.citeAs[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-human-oversight","ArtifactAssessment.date","ArtifactAssessment.date","","Revision Date
-","",0,1,"","","Y","dateTime {[]} {[]}
-","Date last changed","The date  (and optionally time) when the artifact assessment was published. The date must change when the disposition changes and it must change if the workflow status code changes. In addition, it should change when the substantive content of the artifact assessment changes.","The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the artifact assessment. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.","","","","","","","","",,,,,"",,,,"ArtifactAssessment.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","",1,1,"Y","","Y","dateTime {[]} {[]}
+","Date and time of human oversight assessment","The date  (and optionally time) when the artifact assessment was published. The date must change when the disposition changes and it must change if the workflow status code changes. In addition, it should change when the substantive content of the artifact assessment changes.","The date is often not tracked until the resource is published, but may be present on draft content. Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the artifact assessment. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.","","","","","","","","",,,,,"",,,,"ArtifactAssessment.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-human-oversight","ArtifactAssessment.copyright","ArtifactAssessment.copyright","","License
 Restrictions","",0,1,"","","","markdown {[]} {[]}
@@ -1064,7 +1125,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "eu-ai-human-oversight","ArtifactAssessment.content.informationType","ArtifactAssessment.content.informationType","","","",0,1,"","","","code {[]} {[]}
 ","comment | classifier | rating | container | response | change-request","The type of information this component of the content represents.","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/artifactassessment-information-type|5.0.0","",,,,"ArtifactAssessment.content.informationType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-human-oversight","ArtifactAssessment.content.summary","ArtifactAssessment.content.summary","","","",0,1,"Y","","","markdown {[]} {[]}
+"eu-ai-human-oversight","ArtifactAssessment.content.summary","ArtifactAssessment.content.summary","","","",1,1,"Y","","","markdown {[]} {[]}
 ","Medical/Technical rationale for the decision","A brief summary of the content of this component.","","","","","","","","","",,,,,"",,,,"ArtifactAssessment.content.summary",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-human-oversight","ArtifactAssessment.content.type","ArtifactAssessment.content.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -1086,7 +1147,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"eu-ai-human-oversight","ArtifactAssessment.content.author.extension:aiTraining","ArtifactAssessment.content.author.extension","aiTraining","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status]]} {[]}
+"eu-ai-human-oversight","ArtifactAssessment.content.author.extension:aiTraining","ArtifactAssessment.content.author.extension","aiTraining","","",1,1,"","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status]]} {[]}
 ","Did this specific human receive training for this AI?","Mandatory flag indicating whether the human actor has received specific training for the utilized AI tool.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-human-oversight","ArtifactAssessment.content.author.reference","ArtifactAssessment.content.author.reference","","","",0,1,"","","Y","string {[]} {[]}
@@ -1117,7 +1178,7 @@ This element only allows for a single identifier. In the case where additional i
 "eu-ai-human-oversight","ArtifactAssessment.content.path","ArtifactAssessment.content.path","","","",0,*,"","","","uri {[]} {[]}
 ","What the comment is directed to","A URI that points to what the comment is about, such as a line of text in the CQL, or a specific element in a resource.","The target element is used to point the comment to aspect of the artifact, such as a text range within a CQL library (e.g. #content?0:0-120:80).","","","","","","","","",,,,,"",,,,"ArtifactAssessment.content.path",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-human-oversight","ArtifactAssessment.content.relatedArtifact","ArtifactAssessment.content.relatedArtifact","","","",0,*,"Y","","","RelatedArtifact {[]} {[]}
+"eu-ai-human-oversight","ArtifactAssessment.content.relatedArtifact","ArtifactAssessment.content.relatedArtifact","","","",0,*,"","","","RelatedArtifact {[]} {[]}
 ","Reference to heatmap or explainability tool used","Additional related artifacts that provide supporting documentation, additional evidence, or further information related to the content.","","","","","","","","","",,,,,"",,,,"ArtifactAssessment.content.relatedArtifact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-human-oversight","ArtifactAssessment.content.freeToShare","ArtifactAssessment.content.freeToShare","","","",0,1,"","","","boolean {[]} {[]}
@@ -1144,7 +1205,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-log-integrity","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
-"eu-ai-log-integrity","Extension.value[x]","Extension.value[x]","","","",1,1,"Y","","","Signature {[]} {[]}
+"eu-ai-log-integrity","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","Signature {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -1156,10 +1217,10 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"eu-ai-log-integrity","Extension.value[x].type","Extension.value[x].type","","","",1,*,"Y","","Y","Coding {[]} {[]}
+"eu-ai-log-integrity","Extension.value[x].type","Extension.value[x].type","","","",1,*,"","","Y","Coding {[]} {[]}
 ","Indication of the reason the entity signed the object(s)","An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.","Examples include attesting to: authorship, correct transcription, and witness of specific event. Also known as a &quot;Commitment Type Indication&quot;.","","","","","","","","",,"preferred","An indication of the reason that an entity signed the object.","http://hl7.org/fhir/ValueSet/signature-type|5.0.0","",,,,"Signature.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-log-integrity","Extension.value[x].when","Extension.value[x].when","","","",1,1,"Y","","Y","instant {[]} {[]}
+"eu-ai-log-integrity","Extension.value[x].when","Extension.value[x].when","","","",1,1,"","","Y","instant {[]} {[]}
 ","When the signature was created","When the digital signature was signed.","This should agree with the information in the signature.","","","","","","","","",,,,,"",,,,"Signature.when",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-log-integrity","Extension.value[x].who","Extension.value[x].who","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Device]]}
@@ -1174,7 +1235,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "eu-ai-log-integrity","Extension.value[x].sigFormat","Extension.value[x].sigFormat","","","",0,1,"","","","code {[]} {[]}
 ","The technical format of the signature","A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.","","","","","","","","","",,"required","BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)","http://hl7.org/fhir/ValueSet/mimetypes|5.0.0","",,,,"Signature.sigFormat",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-log-integrity","Extension.value[x].data","Extension.value[x].data","","","",1,1,"Y","","","base64Binary {[]} {[]}
+"eu-ai-log-integrity","Extension.value[x].data","Extension.value[x].data","","","",1,1,"","","","base64Binary {[]} {[]}
 ","The actual signature content (XML DigSig. JWS, picture, etc.)","The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.","Where the signature type is an XML DigSig, the signed content is a FHIR Resource(s), the signature is of the XML form of the Resource(s) using  XML-Signature (XMLDIG) ""Detached Signature"" form.","","","","","","","","",,,,,"",,,,"Signature.data",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-machine-execution-audit-event","AuditEvent","AuditEvent","","","",0,*,"","","","null {[]} {[]}
@@ -1352,7 +1413,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","The type of source where event originated","Code specifying the type of source where event originated.","","This field indicates which type of source is identified by the Audit Source ID. It is an optional value that may be used to group events for analysis according to the type of source where the event occurred.","","","","","","","",,"preferred","Code specifying the type of system that detected and recorded the event. Use of these codes is not required but is encouraged to maintain translation with DICOM AuditMessage schema.","http://hl7.org/fhir/ValueSet/security-source-type|5.0.0","",,,,"AuditEvent.source.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-machine-execution-audit-event","AuditEvent.entity","AuditEvent.entity","","ParticipantObject
-","",2,*,"Y","","Y","BackboneElement {[]} {[]}
+","",2,*,"","","Y","BackboneElement {[]} {[]}
 ","Data or objects used","Specific instances of data or objects that have been accessed.","Required unless the values for event identification, agent identification, and audit source identification are sufficient to document the entire auditable event. Because events may have more than one entity, this group can be a repeating set of values.","The event may have other entities involved.","","","","","","","",,,,,"","value:role}
 ","",,"open","AuditEvent.entity",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -1470,7 +1531,7 @@ CodeableConcept {[]} {[]}string {[]} {[]}boolean {[]} {[]}integer {[]} {[]}Range
 ","Entity is attributed to this agent","The entity is attributed to an agent to express the agent's responsibility for that entity in the activity. This is most used to indicate when persistence media (the entity) are used by an agent. For example when importing data from a device, the device would be described in an entity, and the user importing data from that media would be indicated as the entity.agent.","A usecase where one AuditEvent.entity.agent is used where the Entity that was used in the creation/updating of a target resource, is not in the context of the same custodianship as the target resource, and thus the meaning of AuditEvent.entity.agent is to say that the entity referenced is managed elsewhere and that this Agent provided access to it.  This would be similar to where the Entity being referenced is managed outside FHIR, such as through HL7 V2, v3, or XDS. This might be where the Entity being referenced is managed in another FHIR resource server. Thus it explains the provenance of that Entity's use in the context of this AuditEvent activity.","","","","","","","","",,,,,"",,,,"AuditEvent.entity.agent",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-machine-execution-audit-event","AuditEvent.entity:referenceDb","AuditEvent.entity","referenceDb","ParticipantObject
-","",0,*,"Y","","Y","BackboneElement {[]} {[]}
+","",0,*,"","","Y","BackboneElement {[]} {[]}
 ","Identification of specific reference databases or versions (e.g., Clinical Guidelines)","Specific instances of data or objects that have been accessed.","Required unless the values for event identification, agent identification, and audit source identification are sufficient to document the entire auditable event. Because events may have more than one entity, this group can be a repeating set of values.","The event may have other entities involved.","","","","","","","",,,,,"",,,,"AuditEvent.entity",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-machine-execution-audit-event","AuditEvent.entity:referenceDb.id","AuditEvent.entity.id","","","",0,1,"","","","string {[]} {[]}
@@ -1614,7 +1675,7 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, nor can they have their own independent transaction scope. This is allowed to be a Parameters resource if and only if it is referenced by a resource that provides context/meaning.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags in their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"dom-2
 dom-4dom-3dom-5",""
-"eu-ai-model-card","DocumentReference.extension","DocumentReference.extension","","","",3,*,"","","","Extension {[]} {[]}
+"eu-ai-model-card","DocumentReference.extension","DocumentReference.extension","","","",4,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -1626,6 +1687,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-model-card","DocumentReference.extension:privacy","DocumentReference.extension","privacy","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-privacy-metadata]]} {[]}
 ","Transfer & Retention","GDPR and AI Act privacy parameters. Third country transfer flags and data retention policies at the model level.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"eu-ai-model-card","DocumentReference.extension:clinicalValidationStatus","DocumentReference.extension","clinicalValidationStatus","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status]]} {[]}
+","AI Clinical Validation Status","Documents whether the AI system is clinically validated, not clinically validated, under validation, or only technically validated.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-model-card","DocumentReference.modifierExtension","DocumentReference.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -1667,8 +1731,8 @@ This element is labeled as a modifier because the status contains the codes that
 classCode","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Categorization of document","A categorization for the type of document referenced - helps for indexing and searching. This may be implied by or derived from the code specified in the DocumentReference.type.","Key metadata element describing the the category or classification of the document. This is a broader perspective that groups similar documents based on how they would be used. This is a primary key used in searching.","","","","","","","","",,"example","High-level kind of document at a macro level.","http://hl7.org/fhir/ValueSet/referenced-item-category|5.0.0","",,,,"DocumentReference.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-model-card","DocumentReference.subject","DocumentReference.subject","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Resource|5.0.0]]}
-","Who/what is the subject of the document","Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).","","","","","","","","","",,,,,"",,,,"DocumentReference.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"eu-ai-model-card","DocumentReference.subject","DocumentReference.subject","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device]]}
+","Reference to the specific AI System Device (Traceability)","Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).","","","","","","","","","",,,,,"",,,,"DocumentReference.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-model-card","DocumentReference.context","DocumentReference.context","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Appointment|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/EpisodeOfCare|5.0.0]]}
 ","Context of the document content","Describes the clinical encounter or type of care that the document content is associated with.","","","","","","","","","",,,,,"",,,,"DocumentReference.context",0,*,"docRef-1
@@ -1870,12 +1934,15 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, nor can they have their own independent transaction scope. This is allowed to be a Parameters resource if and only if it is referenced by a resource that provides context/meaning.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags in their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"dom-2
 dom-4dom-3dom-5",""
-"eu-ai-observation","Observation.extension","Observation.extension","","","",1,*,"","","","Extension {[]} {[]}
+"eu-ai-observation","Observation.extension","Observation.extension","","","",2,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-observation","Observation.extension:caseIndication","Observation.extension","caseIndication","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication]]} {[]}
 ","Case-Specific Indication","The clinical reason why the AI was used for this specific patient.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"eu-ai-observation","Observation.extension:automatedDecision","Observation.extension","automatedDecision","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag]]} {[]}
+","Automated Decision-Making Flag","Indicates whether the AI-generated output was used as part of a solely automated decision-making process within the meaning of GDPR Article 22.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-observation","Observation.modifierExtension","Observation.modifierExtension","","extensions
 user content","",0,*,"","Y","Y","Extension {[]} {[]}
@@ -1923,7 +1990,7 @@ Reflex | Repeat | Re-run.","","","","","","","","","",,"required","The type of T
 ","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/MedicationAdministration|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/MedicationDispense|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/MedicationStatement|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/Procedure|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/Immunization|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy|5.0.0], CanonicalType[http://hl7.org/fhir/StructureDefinition/GenomicStudy|5.0.0]]}
 ","Part of referenced event","A larger event of which this particular Observation is a component or step.  For example,  an observation as part of a procedure.","To link an Observation to an Encounter use `encounter`.  See the  [Notes](http://hl7.org/fhir/R5/observation.html#obsgrouping) below for guidance on referencing another Observation.","","","","","","","","",,,,,"",,,,"Observation.partOf",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-observation","Observation.status","Observation.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
+"eu-ai-observation","Observation.status","Observation.status","","","",1,1,"","Y","Y","code {[]} {[]}
 ","Workflow state: preliminary (unseen) | final (checked) | entered-in-error (overridden)","The status of the result value.","This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.","Need to track the status of individual results. Some results are finalized before the whole report is finalized.","","","","","","","",,"required","Codes providing the status of an observation.","http://hl7.org/fhir/ValueSet/observation-status|5.0.0","",,,,"Observation.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-observation","Observation.category","Observation.category","","","",0,*,"","","","CodeableConcept {[]} {[]}
@@ -1973,7 +2040,7 @@ The alternate way is to use the value element for actual observations and use th
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-observation","Observation.interpretation","Observation.interpretation","","Abnormal Flag
-","",1,*,"Y","","","CodeableConcept {[]} {[]}
+","",1,*,"","","","CodeableConcept {[]} {[]}
 ","High, low, normal, etc","A categorical assessment of an observation value.  For example, high, low, normal.","Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.","For some results, particularly numeric results, an interpretation is necessary to fully understand the significance of a result.","","","","","","","",,"extensible","Codes identifying interpretations of observations.","http://hl7.org/fhir/ValueSet/observation-interpretation|5.0.0","","value:coding}
 ","",,"open","Observation.interpretation",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2207,7 +2274,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "eu-ai-organization","Organization.contact:dpo.name.use","Organization.contact.name.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","usual | official | temp | nickname | anonymous | old | maiden","Identifies the purpose for this name.","Applications can assume that a name is current unless it explicitly says that it is temporary or old.","Allows the appropriate name for a particular context of use to be selected from among a set of names.","","","","","","","",,"required","The use of a human name.","http://hl7.org/fhir/ValueSet/name-use|5.0.0","",,,,"HumanName.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-organization","Organization.contact:dpo.name.text","Organization.contact.name.text","","","",0,1,"Y","","Y","string {[]} {[]}
+"eu-ai-organization","Organization.contact:dpo.name.text","Organization.contact.name.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Data Protection Officer","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-organization","Organization.contact:dpo.name.family","Organization.contact.name.family","","surname
@@ -2272,7 +2339,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "eu-ai-organization","Organization.contact:incident.name.use","Organization.contact.name.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","usual | official | temp | nickname | anonymous | old | maiden","Identifies the purpose for this name.","Applications can assume that a name is current unless it explicitly says that it is temporary or old.","Allows the appropriate name for a particular context of use to be selected from among a set of names.","","","","","","","",,"required","The use of a human name.","http://hl7.org/fhir/ValueSet/name-use|5.0.0","",,,,"HumanName.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-organization","Organization.contact:incident.name.text","Organization.contact.name.text","","","",0,1,"Y","","Y","string {[]} {[]}
+"eu-ai-organization","Organization.contact:incident.name.text","Organization.contact.name.text","","","",0,1,"","","Y","string {[]} {[]}
 ","AI Incident Reporting Contact","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-organization","Organization.contact:incident.name.family","Organization.contact.name.family","","surname
@@ -2583,6 +2650,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "eu-ai-provenance","Provenance.extension:usageCategory","Provenance.extension","usageCategory","","",1,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category]]} {[]}
 ","Primary vs. Secondary Use Category","Categorizes the data processing as Primary Care or Secondary Use according to the EHDS.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"eu-ai-provenance","Provenance.extension:secondaryUsePurpose","Provenance.extension","secondaryUsePurpose","","",0,*,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose]]} {[]}
+","EHDS Secondary Use Purpose","Documents the permitted purpose for secondary use of electronic health data under the EHDS.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "eu-ai-provenance","Provenance.extension:dataPermit","Provenance.extension","dataPermit","","",0,1,"Y","","","Extension {[CanonicalType[http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit]]} {[]}
 ","Reference to the EHDS Data Access Permit","The unique ID of the Health Data Access Body permit (required if secondary use).","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -2608,7 +2678,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Where the activity occurred, if relevant","Where the activity occurred, if relevant.","","","","","","","","","",,,,,"",,,,"Provenance.location",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-provenance","Provenance.authorization","Provenance.authorization","","PurposeOfEvent
-","",1,*,"Y","","","CodeableReference {[]} {[]}
+","",2,*,"Y","","","CodeableReference {[]} {[]}
 ","Authorization (purposeOfUse) related to the event","The authorization (e.g., PurposeOfUse) that was used during the event being recorded.","","Record of any relevant security context, not restricted to purposeOfUse valueSet. May include security compartments, refrain, obligation, or other security tags.","","","","","","","",,"example","The authorized purposeOfUse for the activity.","http://terminology.hl7.org/ValueSet/v3-PurposeOfUse","","value:concept.coding.system}
 ","",,"open","Provenance.authorization",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2670,7 +2740,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Reference to a resource (by instance)","A reference to a resource the provides exact details about the information being referenced.","","","","","","","","","",,,,,"",,,,"CodeableReference.reference",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-provenance","Provenance.authorization:gdprException","Provenance.authorization","gdprException","PurposeOfEvent
-","",0,1,"Y","","","CodeableReference {[]} {[]}
+","",1,1,"Y","","","CodeableReference {[]} {[]}
 ","Authorization (purposeOfUse) related to the event","The authorization (e.g., PurposeOfUse) that was used during the event being recorded.","","Record of any relevant security context, not restricted to purposeOfUse valueSet. May include security compartments, refrain, obligation, or other security tags.","","","","","","","",,"required","","http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-exception-vs","",,,,"Provenance.authorization",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-provenance","Provenance.authorization:gdprException.id","Provenance.authorization.id","","","",0,1,"","","","id {[]} {[]}
@@ -2787,7 +2857,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "eu-ai-provenance","Provenance.entity.role","Provenance.entity.role","","","",1,1,"","","Y","code {[]} {[]}
 ","revision | quotation | source | instantiates | removal","How the entity was used during the activity.","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""source""/>","","","",,"required","How an entity was used in an activity.","http://hl7.org/fhir/ValueSet/provenance-entity-role|5.0.0","",,,,"Provenance.entity.role",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"eu-ai-provenance","Provenance.entity.what","Provenance.entity.what","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation], CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy], CanonicalType[http://hl7.org/fhir/StructureDefinition/DocumentReference]]}
+"eu-ai-provenance","Provenance.entity.what","Provenance.entity.what","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation], CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy], CanonicalType[http://hl7.org/fhir/StructureDefinition/DocumentReference]]}
 ","Source data processed by the AI","Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.","whatIdentity should be used for entities that are not a Resource type.","","","","","","","","",,,,,"",,,,"Provenance.entity.what",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "eu-ai-provenance","Provenance.entity.agent","Provenance.entity.agent","","","",0,*,"","","","null {[]} {[]}
@@ -2797,8 +2867,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Signature on target","A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.","","","","","","","","","",,,,,"",,,,"Provenance.signature",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "ext-model-card","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","Model Card Reference","A reference to the DocumentReference resource that acts as the Model Card, containing detailed
- documentation, intended purpose, and risk assessments.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Model Card Reference","A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ext-model-card","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1

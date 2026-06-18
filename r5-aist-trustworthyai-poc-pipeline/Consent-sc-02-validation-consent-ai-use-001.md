@@ -6,7 +6,7 @@
 
 ## Example Consent: Consent: AI Use for PoC Scenario sc-02-validation
 
-Profile: [EU AI & EHDS Consent Profile](StructureDefinition-eu-ai-consent.md)
+Profile: [EU AI Consent and Processing Context](StructureDefinition-eu-ai-consent.md)
 
 ## Participants
 

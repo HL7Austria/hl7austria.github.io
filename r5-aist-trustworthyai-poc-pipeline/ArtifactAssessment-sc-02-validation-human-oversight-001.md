@@ -6,7 +6,9 @@
 
 ## Example ArtifactAssessment: Assessment: Human Validation of AI Output
 
-Profile: [EU AI Act Human Oversight (HL)](StructureDefinition-eu-ai-human-oversight.md)
+Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-oversight.md)
+
+**date**: 2026-03-01 10:20:00+0000
 
 **artifact**: [Observation ](Observation-sc-02-validation-ai-observation-risk-001.md)
 
@@ -30,6 +32,7 @@ Profile: [EU AI Act Human Oversight (HL)](StructureDefinition-eu-ai-human-oversi
   "meta" : {
     "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
   },
+  "date" : "2026-03-01T10:20:00Z",
   "artifactReference" : {
     "reference" : "Observation/sc-02-validation-ai-observation-risk-001"
   },

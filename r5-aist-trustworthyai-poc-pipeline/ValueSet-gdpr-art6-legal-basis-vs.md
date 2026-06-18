@@ -1,22 +1,22 @@
-# GDPR Art 6 Legal Basis for AI - v0.1.0
+# GDPR Article 6 Legal Basis ValueSet - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **GDPR Art 6 Legal Basis for AI**
+* **GDPR Article 6 Legal Basis ValueSet**
 
-## ValueSet: GDPR Art 6 Legal Basis for AI 
+## ValueSet: GDPR Article 6 Legal Basis ValueSet 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:GDPR_Art6_LegalBasisVS |
+| Active as of 2026-06-18 | *Computable Name*:GDPR_Art6_LegalBasisVS |
 
  
 Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data. 
 
  **References** 
 
-* [EU AI Act Provenance (Human-in-the-Loop)](StructureDefinition-eu-ai-provenance.md)
+* [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
 
 ### Logical Definition (CLD)
 
@@ -48,10 +48,10 @@ Value set including GDPR Article 6 legal bases relevant for documenting the lawf
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs",
   "version" : "0.1.0",
   "name" : "GDPR_Art6_LegalBasisVS",
-  "title" : "GDPR Art 6 Legal Basis for AI",
-  "status" : "draft",
+  "title" : "GDPR Article 6 Legal Basis ValueSet",
+  "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data.",
   "compose" : {

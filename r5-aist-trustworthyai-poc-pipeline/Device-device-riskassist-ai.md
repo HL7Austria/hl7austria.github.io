@@ -6,12 +6,12 @@
 
 ## Example Device: Device: RiskAssist AI
 
-Profile: [EU AI Act Compliant Device](StructureDefinition-eu-ai-device.md)
+Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md)
 
 > **Third-Country Data Transfer**
 * transferFlag: false
 
-**Model Card Reference**: [DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.](DocumentReference-modelcard-riskassist-ai.md)
+**Model Card Reference**: [DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.](DocumentReference-modelcard-riskassist-ai.md)
 
 **identifier**: EU AI Database Identifier/EU-AI-000123
 

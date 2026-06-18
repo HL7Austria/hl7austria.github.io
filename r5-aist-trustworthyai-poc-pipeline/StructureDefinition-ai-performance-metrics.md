@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
   "name" : "AIPerformanceMetrics",
   "title" : "AI Performance Metrics",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Captures quantitative metrics and bias disclosures.",
   "fhirVersion" : "5.0.0",
@@ -79,15 +79,10 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "definition" : "Captures quantitative metrics and bias disclosures."
     },
     {
-      "id" : "Extension.extension",
-      "path" : "Extension.extension",
-      "min" : 1
-    },
-    {
       "id" : "Extension.extension:metric",
       "path" : "Extension.extension",
       "sliceName" : "metric",
-      "min" : 1,
+      "min" : 0,
       "max" : "*",
       "mustSupport" : true
     },
@@ -101,8 +96,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "path" : "Extension.extension.extension",
       "sliceName" : "type",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Extension.extension:metric.extension:type.extension",
@@ -130,8 +124,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "path" : "Extension.extension.extension",
       "sliceName" : "value",
       "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "max" : "1"
     },
     {
       "id" : "Extension.extension:metric.extension:value.extension",

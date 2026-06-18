@@ -6,9 +6,11 @@
 
 ## Example Observation: AI Output: Early Warning Risk Assessment
 
-Profile: [EU AI Act Observation (Validated Result)](StructureDefinition-eu-ai-observation.md)
+Profile: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
 
 **Case-Specific Indication**: Prognostic Prediction
+
+**Automated Decision-Making Flag**: false
 
 **status**: Final
 
@@ -33,7 +35,7 @@ Profile: [EU AI Act Observation (Validated Result)](StructureDefinition-eu-ai-ob
 Urgent clinical review recommended
 
 
-**device**: [Device: extension = ,->DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 > **component****code**: Confidence**value**: 0.86 1 (Details: UCUM code1 = '1')
 
@@ -59,6 +61,10 @@ Urgent clinical review recommended
         "display" : "Prognostic Prediction"
       }]
     }
+  },
+  {
+    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag",
+    "valueBoolean" : false
   }],
   "status" : "final",
   "code" : {

@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
   "name" : "AITrainingData",
   "title" : "AI Training Data Metadata",
   "status" : "draft",
-  "date" : "2026-06-18T09:07:35+00:00",
+  "date" : "2026-06-18T11:52:19+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Details regarding provenance, EHDS categories, and data quality.",
   "fhirVersion" : "5.0.0",
@@ -138,6 +138,35 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       }
     },
     {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose",
+      "path" : "Extension.extension",
+      "sliceName" : "ehdsSecondaryUsePurpose",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "ehdsSecondaryUsePurpose"
+    },
+    {
+      "id" : "Extension.extension:ehdsSecondaryUsePurpose.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs"
+      }
+    },
+    {
       "id" : "Extension.extension:ehdsPermit",
       "path" : "Extension.extension",
       "sliceName" : "ehdsPermit",
@@ -167,7 +196,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       "path" : "Extension.extension",
       "sliceName" : "dataQuality",
       "min" : 0,
-      "max" : "1",
+      "max" : "*",
       "mustSupport" : true
     },
     {

@@ -6,9 +6,9 @@
 
 ## Example AuditEvent: Audit Log: AI Execution Trace
 
-Profile: [EU AI Act Machine Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
+Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
 
-**EU AI Act Log Integrity Signature**: No display for Signature (type: Verification Signature (ASTM Signature Type Codes#1.2.840.10065.1.12.1.5); when: 2026-03-01 10:15:04+0000; who: ->Device: extension = ,->DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.; sigFormat: text/plain; data: c2hhMjU2LTIzNGY0MmQxMzQyN2YyMzRiOWU3YTg5NTJjMGU1ZjA1MmRkZDNiNTBkMWMxMGZjY2Q0OWNjN2EwMWM5OWQ0NjA=)
+**EU AI Act Log Integrity Signature**: No display for Signature (type: Verification Signature (ASTM Signature Type Codes#1.2.840.10065.1.12.1.5); when: 2026-03-01 10:15:04+0000; who: ->Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.; sigFormat: text/plain; data: c2hhMjU2LTIzNGY0MmQxMzQyN2YyMzRiOWU3YTg5NTJjMGU1ZjA1MmRkZDNiNTBkMWMxMGZjY2Q0OWNjN2EwMWM5OWQ0NjA=)
 
 **code**: RESTful Operation
 
@@ -29,14 +29,14 @@ Profile: [EU AI Act Machine Execution Audit Event](StructureDefinition-eu-ai-mac
 | | | |
 | :--- | :--- | :--- |
 | - | **Who** | **Requestor** |
-| * | [Device: extension = ,->DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) | false |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) | false |
 
 ### Sources
 
 | | |
 | :--- | :--- |
 | - | **Observer** |
-| * | [Device: extension = ,->DocumentReference: extension = ,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) |
 
 > **entity****what**: [Observation ](Observation-sc-02-validation-observation-temperature-001.md)**role**: Domain Resource
 
