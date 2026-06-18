@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Medication/At-Emed-Example-Medication-Magistral-01> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "At-Emed-Example-Medication-Magistral-01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "additional" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Freitext-Informationen zur magistralen Anwendung.</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:form [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "100000073713" ] ;
+       fhir:display [ fhir:v "Salbe" ]
+     ] )
+  ] ; # 
+  fhir:ingredient ( [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "A01AC03" ] ;
+         fhir:display [ fhir:v "Hydrocortison" ]
+       ] )
+     ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "%" ] ;
+         fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "%" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "100"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ] ;
+         fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "g" ]
+       ]
+     ]
+  ] [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "A01AB18" ] ;
+         fhir:display [ fhir:v "Clotrimazol" ]
+       ] )
+     ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "1"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "%" ] ;
+         fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "%" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "100"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ] ;
+         fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "g" ]
+       ]
+     ]
+  ] [
+     fhir:item [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "Salbengrundlage" ]
+     ] ;
+     fhir:isActive [ fhir:v false ] ;
+     fhir:strength [
+       fhir:numerator [
+         fhir:value [ fhir:v "98"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ]
+       ] ;
+       fhir:denominator [
+         fhir:value [ fhir:v "100"^^xsd:decimal ] ;
+         fhir:unit [ fhir:v "g" ]
+       ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
