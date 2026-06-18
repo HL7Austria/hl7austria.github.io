@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="fhir.ig.eu.aitransparency"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide fhir.ig.eu.aitransparency</b></p><a name="fhir.ig.eu.aitransparency"> </a><a name="hcfhir.ig.eu.aitransparency"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>EUAITransparencyIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency</pre></div>
+  </text>
+  <url value="http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency"/>
+  <version value="0.1.0"/>
+  <name value="EUAITransparencyIG"/>
+  <status value="draft"/>
+  <date value="2026-06-18T09:07:35+00:00"/>
+  <publisher value="Selina Adlberger"/>
+  <packageId value="fhir.ig.eu.aitransparency"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="5.0.0"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r5"/>
+    <version value="7.2.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r5"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r5#1.1.2"/>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eu-ai-data-quality-vs"/>
+      </reference>
+      <name value="AI Data Quality ValueSet"/>
+      <description value="Attributes describing the quality of training data."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sc-02-validation-ai-observation-risk-001"/>
+      </reference>
+      <name value="AI Output: Early Warning Risk Assessment"/>
+      <description value="AI-generated early warning risk assessment output."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eu-ai-performance-metric-vs"/>
+      </reference>
+      <name value="AI Performance Metric ValueSet"/>
+      <description value="Codes for technical quality and performance metrics."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ai-performance-metrics"/>
+      </reference>
+      <name value="AI Performance Metrics"/>
+      <description value="Captures quantitative metrics and bias disclosures."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ai-privacy-metadata"/>
+      </reference>
+      <name value="AI Privacy Metadata"/>
+      <description value="GDPR and AI Act privacy parameters. Third country transfer flags and data retention policies at the model level."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ai-system-training-status"/>
+      </reference>
+      <name value="AI System Specific Training"/>
+      <description value="Mandatory flag indicating whether the human actor has received specific training for the utilized AI tool."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ai-training-data"/>
+      </reference>
+      <name value="AI Training Data Metadata"/>
+      <description value="Details regarding provenance, EHDS categories, and data quality."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/sc-02-validation-human-oversight-001"/>
+      </reference>
+      <name value="Assessment: Human Validation of AI Output"/>
+      <description value="Human oversight assessment documenting validation of the AI output."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AuditEvent"/>
+      </extension>
+      <reference>
+        <reference value="AuditEvent/sc-02-validation-audit-event-ai-execution-001"/>
+      </reference>
+      <name value="Audit Log: AI Execution Trace"/>
+      <description value="Audit event documenting the simulated AI execution."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/case-specific-indication"/>
+      </reference>
+      <name value="Case-Specific Indication"/>
+      <description value="The clinical reason why the AI was used for this specific patient."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Communication"/>
+      </extension>
+      <reference>
+        <reference value="Communication/Communication-sc-02-patient-explanation-001"/>
+      </reference>
+      <name value="Communication: Patient-Facing AI Explanation"/>
+      <description value="Synthetic patient-facing explanation about AI-supported processing."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/sc-02-validation-consent-ai-use-001"/>
+      </reference>
+      <name value="Consent: AI Use for PoC Scenario sc-02-validation"/>
+      <description value="Consent and patient information context for AI-related processing."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-consent"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/device-riskassist-ai"/>
+      </reference>
+      <name value="Device: RiskAssist AI"/>
+      <description value="Example AI system used for the NEWS2-inspired PoC scenario."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehds-data-category-vs"/>
+      </reference>
+      <name value="EHDS Data Category ValueSet (Final Regulation 2025/327)"/>
+      <description value="Mandatory categories of electronic health data for secondary use according to Art. 51 EHDS."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehds-data-permit"/>
+      </reference>
+      <name value="EHDS Data Permit"/>
+      <description value="The unique ID of the Health Data Access Body permit (required if secondary use)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ehds-usage-category"/>
+      </reference>
+      <name value="EHDS Usage Category"/>
+      <description value="Categorizes the data processing as Primary Care or Secondary Use according to the EHDS."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ehds-usage-category-vs"/>
+      </reference>
+      <name value="EHDS Usage Category ValueSet"/>
+      <description value="Defines whether the data usage is primary care or secondary use."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Encounter"/>
+      </extension>
+      <reference>
+        <reference value="Encounter/encounter-001"/>
+      </reference>
+      <name value="Encounter: Acute Care Assessment"/>
+      <description value="Synthetic encounter for suspected infection and early-warning risk assessment."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-consent"/>
+      </reference>
+      <name value="EU AI &amp; EHDS Consent Profile"/>
+      <description value="A profile on the Consent resource to capture GDPR legal basis and EHDS secondary use opt-out."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-device"/>
+      </reference>
+      <name value="EU AI Act Compliant Device"/>
+      <description value="A Device profile representing an AI system, fulfilling EU AI Act metadata requirements."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/EUAIActCodeSystem"/>
+      </reference>
+      <name value="EU AI Act Custom Codes"/>
+      <description value="Central repository of legal and technical terms according to the EU AI Act."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-explanation-requested"/>
+      </reference>
+      <name value="EU AI Act Explanation Requested Flag"/>
+      <description value="Flag indicating if the patient (data subject) explicitly requested a clear and meaningful explanation of the AI's role and the clinical decision."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-practitionerrole"/>
+      </reference>
+      <name value="EU AI Act Human Overseer (PractitionerRole)"/>
+      <description value="Defines the qualifications, specialty, and AI-specific training of the human responsible for oversight of the AI system, as required by the AI Act (HL-02)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-human-oversight"/>
+      </reference>
+      <name value="EU AI Act Human Oversight (HL)"/>
+      <description value="Documents the professional review and clinical decision-making regarding AI outputs."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-log-integrity"/>
+      </reference>
+      <name value="EU AI Act Log Integrity Signature"/>
+      <description value="Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-machine-execution-audit-event"/>
+      </reference>
+      <name value="EU AI Act Machine Execution Audit Event"/>
+      <description value="Logs the automated execution of an AI model, establishing the core traceability chain."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-model-card"/>
+      </reference>
+      <name value="EU AI Act Model Card"/>
+      <description value="The official AI Model Card. It mandates the inclusion of intended purpose, risk assessments, and performance metrics as per the EU AI Act and GDPR."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-observation"/>
+      </reference>
+      <name value="EU AI Act Observation (Validated Result)"/>
+      <description value="Profile for clinical findings generated by an AI system, implementing LAW-02 (AI Flag) and linking to the AI Device."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-patient-explanation"/>
+      </reference>
+      <name value="EU AI Act Patient Right to Explanation"/>
+      <description value="Documents the fulfillment of the patient's right to a clear and meaningful explanation regarding the AI's role and the clinical decision (LAW-07)."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-provenance"/>
+      </reference>
+      <name value="EU AI Act Provenance (Human-in-the-Loop)"/>
+      <description value="Records the execution of an AI system, including human oversight and data provenance."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eu-case-specific-indication-vs"/>
+      </reference>
+      <name value="EU AI Case-Specific Indication ValueSet"/>
+      <description value="Clinical and administrative reasons for AI application."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-organization"/>
+      </reference>
+      <name value="EU AI Responsible Organization"/>
+      <description value="An organization acting as a manufacturer or deployer (owner) of an AI system, containing required regulatory contacts."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/gdpr-art6-codesystem"/>
+      </reference>
+      <name value="GDPR Art 6 Legal Basis"/>
+      <description value="Codes representing legal bases for processing personal data according to GDPR Article 6."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/gdpr-art6-legal-basis-vs"/>
+      </reference>
+      <name value="GDPR Art 6 Legal Basis for AI"/>
+      <description value="Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/gdpr-art9-exception-vs"/>
+      </reference>
+      <name value="GDPR Art 9 Exception for AI Health Data"/>
+      <description value="Value set including GDPR Article 9 exceptions relevant for documenting the processing of special categories of personal data, including health data."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/gdpr-art9-codesystem"/>
+      </reference>
+      <name value="GDPR Art 9 Exceptions"/>
+      <description value="Codes representing exceptions for processing special categories of personal data according to GDPR Article 9."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/eu-ai-intervention-vs"/>
+      </reference>
+      <name value="Human Intervention Type ValueSet"/>
+      <description value="Codes representing the type of human oversight or intervention."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sc-02-validation-observation-temperature-001"/>
+      </reference>
+      <name value="Input Observation: Body Temperature"/>
+      <description value="Synthetic NEWS2-inspired input parameter."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sc-02-validation-observation-consciousness-status-001"/>
+      </reference>
+      <name value="Input Observation: Consciousness Status"/>
+      <description value="Synthetic NEWS2-inspired input parameter."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sc-02-validation-observation-heart-rate-001"/>
+      </reference>
+      <name value="Input Observation: Heart Rate"/>
+      <description value="Synthetic NEWS2-inspired input parameter."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sc-02-validation-observation-oxygen-saturation-001"/>
+      </reference>
+      <name value="Input Observation: Oxygen Saturation"/>
+      <description value="Synthetic NEWS2-inspired input parameter."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sc-02-validation-observation-respiratory-rate-001"/>
+      </reference>
+      <name value="Input Observation: Respiratory Rate"/>
+      <description value="Synthetic NEWS2-inspired input parameter."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sc-02-validation-observation-blood-pressure-001"/>
+      </reference>
+      <name value="Input Observation: Systolic Blood Pressure"/>
+      <description value="Synthetic NEWS2-inspired input parameter."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/organization-examplemed"/>
+      </reference>
+      <name value="Manufacturer Organization: ExampleMed AI GmbH"/>
+      <description value="Manufacturer organization for the synthetic AI system."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ext-model-card"/>
+      </reference>
+      <name value="Model Card Reference"/>
+      <description value="A reference to the DocumentReference resource that acts as the Model Card, containing detailed&#xA; documentation, intended purpose, and risk assessments."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/modelcard-riskassist-ai"/>
+      </reference>
+      <name value="Model Card: RiskAssist AI v1.0.0"/>
+      <description value="Synthetic model card for the RiskAssist AI PoC system."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/organization-examplehospital"/>
+      </reference>
+      <name value="Operator Organization: Example Hospital"/>
+      <description value="Healthcare organization operating the synthetic AI system."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/patient-ai-info-provided"/>
+      </reference>
+      <name value="Patient AI Info Provided Flag"/>
+      <description value="Confirmation that the patient was informed about the use of AI systems according to AI Act transparency rules."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/patient-001"/>
+      </reference>
+      <name value="Patient: Synthetic Patient 001"/>
+      <description value="A fictional female patient used in the NEWS2-inspired PoC scenario."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/practitioner-001"/>
+      </reference>
+      <name value="Practitioner: Human Reviewer"/>
+      <description value="The fictional clinician responsible for reviewing the AI-generated output."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/practitionerrole-reviewer-001"/>
+      </reference>
+      <name value="PractitionerRole: Human Reviewer"/>
+      <description value="Human reviewer role used for AI output validation."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/sc-02-validation-provenance-ai-output-001"/>
+      </reference>
+      <name value="Provenance: AI Output Generation"/>
+      <description value="Provenance linking the AI-generated output to the AI system and input observations."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/third-country-data-transfer"/>
+      </reference>
+      <name value="Third-Country Data Transfer"/>
+      <description value="Captures if patient data is transferred outside the EU by this device."/>
+      <isExample value="false"/>
+    </resource>
+    <page>
+      <sourceUrl value="toc.html"/>
+      <name value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <sourceUrl value="index.html"/>
+        <name value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="copyrightyear"/>
+      </code>
+      <value value="2026+"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="releaselabel"/>
+      </code>
+      <value value="ci-build"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="autoload-resources"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-resource"/>
+      </code>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="template/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-liquid"/>
+      </code>
+      <value value="input/liquid"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-qa"/>
+      </code>
+      <value value="temp/qa"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-temp"/>
+      </code>
+      <value value="temp/pages"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-output"/>
+      </code>
+      <value value="output"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-tx-cache"/>
+      </code>
+      <value value="input-cache/txcache"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-suppressed-warnings"/>
+      </code>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-history"/>
+      </code>
+      <value value="http://example.org/fhir/eu-ai-transparency/history.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-html"/>
+      </code>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="template-md"/>
+      </code>
+      <value value="template-page-md.html"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-contact"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-context"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-copyright"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-jurisdiction"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-license"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-publisher"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-version"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="apply-wg"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="active-tables"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="fmm-definition"/>
+      </code>
+      <value value="http://hl7.org/fhir/versions.html#maturity"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="propagate-status"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="excludelogbinaryformat"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="tabbed-snapshots"/>
+      </code>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>
