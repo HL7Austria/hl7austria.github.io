@@ -16,7 +16,7 @@ HL7® Austria FHIR® Core Base Profile for patient data in Austria.
 
 **Usages:**
 
-* Derived from this Profile: [HL7® AT Core Patient Profile for Primary Use](StructureDefinition-at-core-patient-primary.md) and [HL7® AT Core Patient Profile for Primary Use](StructureDefinition-at-core-patient-secondary.md)
+* Derived from this Profile: [HL7® AT Core Patient Profile for Primary Use](StructureDefinition-at-core-patient-primary.md) and [HL7® AT Core Patient Profile for Secondary Use](StructureDefinition-at-core-patient-secondary.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-patient-base.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-patient-base
   "name" : "HL7ATCorePatientBase",
   "title" : "HL7® AT Core Base Patient Profile",
   "status" : "active",
-  "date" : "2026-06-18T08:57:11+00:00",
+  "date" : "2026-06-18T09:39:20+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

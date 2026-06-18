@@ -58,7 +58,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-06-18T08:57:11+00:00",
+  "date" : "2026-06-18T09:39:20+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -947,7 +947,7 @@ This Implementation Guide contains and references intellectual property owned by
       "reference" : {
         "reference" : "StructureDefinition/at-core-patient-secondary"
       },
-      "name" : "HL7® AT Core Patient Profile for Primary Use",
+      "name" : "HL7® AT Core Patient Profile for Secondary Use",
       "description" : "HL7® Austria FHIR® Core Profile for patient data for secondary use in Austria.",
       "exampleBoolean" : false
     },

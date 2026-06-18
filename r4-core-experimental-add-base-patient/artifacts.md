@@ -17,7 +17,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md) | HL7® Austria FHIR® Core Profile for location data in Austria. |
 | [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md) | HL7® Austria FHIR® Core Profile for organization data in Austria. |
 | [HL7® AT Core Patient Profile for Primary Use](StructureDefinition-at-core-patient-primary.md) | HL7® Austria FHIR® Core Profile for patient data for primary use in Austria. |
-| [HL7® AT Core Patient Profile for Primary Use](StructureDefinition-at-core-patient-secondary.md) | HL7® Austria FHIR® Core Profile for patient data for secondary use in Austria. |
+| [HL7® AT Core Patient Profile for Secondary Use](StructureDefinition-at-core-patient-secondary.md) | HL7® Austria FHIR® Core Profile for patient data for secondary use in Austria. |
 | [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md) | HL7® Austria FHIR® Core Profile for practitioner data in Austria. |
 | [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md) | HL7® Austria FHIR® Core Profile for practitioner role data in Austria. |
 | [HL7® AT Core ValueSet Profile](StructureDefinition-at-core-valueset.md) | HL7® Austria FHIR® Core Profile for valuesets in Austria. The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension. |

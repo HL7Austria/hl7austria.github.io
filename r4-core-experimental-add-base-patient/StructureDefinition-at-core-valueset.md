@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-valueset.csv
   "name" : "HL7ATCoreValueSet",
   "title" : "HL7® AT Core ValueSet Profile",
   "status" : "active",
-  "date" : "2026-06-18T08:57:11+00:00",
+  "date" : "2026-06-18T09:39:20+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

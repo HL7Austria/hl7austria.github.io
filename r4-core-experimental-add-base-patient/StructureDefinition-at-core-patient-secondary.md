@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.CORE.R4\HL7® AT Core Patient Profile for Primary Use - FHIR® v4.0.1
+# HL7.AT.FHIR.CORE.R4\HL7® AT Core Patient Profile for Secondary Use - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **HL7® AT Core Patient Profile for Primary Use**
+* **HL7® AT Core Patient Profile for Secondary Use**
 
-## Resource Profile: HL7® AT Core Patient Profile for Primary Use 
+## Resource Profile: HL7® AT Core Patient Profile for Secondary Use 
 
 | | | |
 | :--- | :--- | :--- |
@@ -39,9 +39,9 @@ Other representations of profile: [CSV](StructureDefinition-at-core-patient-seco
   "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient-secondary",
   "version" : "2.1.0",
   "name" : "HL7ATCorePatientSecondary",
-  "title" : "HL7® AT Core Patient Profile for Primary Use",
+  "title" : "HL7® AT Core Patient Profile for Secondary Use",
   "status" : "active",
-  "date" : "2026-06-18T08:57:11+00:00",
+  "date" : "2026-06-18T09:39:20+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
