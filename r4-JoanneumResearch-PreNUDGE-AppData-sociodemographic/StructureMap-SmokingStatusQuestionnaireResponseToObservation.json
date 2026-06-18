@@ -1,0 +1,424 @@
+{
+  "resourceType" : "StructureMap",
+  "id" : "SmokingStatusQuestionnaireResponseToObservation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap SmokingStatusQuestionnaireResponseToObservation</b></p><a name=\"SmokingStatusQuestionnaireResponseToObservation\"> </a><a name=\"hcSmokingStatusQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SmokingStatusQuestionnaireResponseToObservation<span style=\"color: navy\">&quot; = &quot;</span>SmokingStatusQuestionnaireResponseToObservation<span style=\"color: navy\">&quot;\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">ATHIS-based Smoking Status Q to O</span>\r\n\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>\r\n\r\n<b>group </b>SmokingStatusQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Administrative metadata. Implementations may replace or enrich the identifier</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">if the Observation needs a separate stable business identifier.</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>&quot;setFinalStatus&quot;</i><span style=\"color: navy\">;</span>\r\n  src.identifier<b> as </b><span style=\"color: maroon\">identifier</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.identifier = <span style=\"color: maroon\">identifier</span> <i>&quot;copyIdentifier&quot;</i><span style=\"color: navy\">;</span>\r\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <span style=\"color: maroon\">subject</span> <i>&quot;copySubject&quot;</i><span style=\"color: navy\">;</span>\r\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.effective = <span style=\"color: maroon\">authored</span><span style=\"color: navy\">, </span> tgt.issued = <span style=\"color: maroon\">authored</span> <i>&quot;copyAuthoredToObservationTimes&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">IPS/APS-style tobacco smoking status coding.</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'72166-2'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Tobacco smoking status'</span><span style=\"color: navy\">)</span> <i>&quot;setTobaccoSmokingStatusCode&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">User-entered QuestionnaireResponse data is considered manual input.</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.method = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'87982008'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Manual'</span><span style=\"color: navy\">)</span> <i>&quot;setManualMethod&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Keep the derivation from QuestionnaireResponse to Observation traceable.</span>\r\n  src.id<b> as </b><span style=\"color: maroon\">id</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.derivedFrom = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Reference'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">reference</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    id<span style=\"color: navy\"><b> -&gt; </b></span>reference.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'QuestionnaireResponse/'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">id</span><span style=\"color: navy\">)</span> <i>&quot;setDerivedFromReference&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;setDerivedFrom&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">ATHIS answer mapping to the clinical SNOMED CT valueCodeableConcept.</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">groupItem</span><b> where </b>groupItem.linkId = 'smoking-status-athis'<b> then </b>SmokingStatusGroupToObservation<span style=\"color: navy\">(</span><span style=\"color: maroon\">groupItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;mapSmokingStatusGroup&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><b>group </b>SmokingStatusGroupToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">groupItem</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">SK1 = Ja, täglich -&gt; current every day smoker.</span>\r\n  groupItem.item<b> as </b><span style=\"color: maroon\">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style=\"color: navy\"> {\r\n</span>    sk1.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      answer.value<b> as </b><span style=\"color: maroon\">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'449868002'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Smokes tobacco daily'</span><span style=\"color: navy\">)</span> <i>&quot;mapCurrentDailySmoker&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;evaluateSk1Daily&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;sk1Daily&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">SK1 = Ja, gelegentlich -&gt; current occasional smoker.</span>\r\n  groupItem.item<b> as </b><span style=\"color: maroon\">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style=\"color: navy\"> {\r\n</span>    sk1.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      answer.value<b> as </b><span style=\"color: maroon\">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'428041000124106'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Occasional tobacco smoker'</span><span style=\"color: navy\">)</span> <i>&quot;mapCurrentOccasionalSmoker&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;evaluateSk1Occasional&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;sk1Occasional&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">SK1 = Nein and past tobacco smoking = Ja, täglich or Ja, gelegentlich -&gt; former smoker.</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">The past-tobacco-smoking item is enabled only when SK1 is negative.</span>\r\n  groupItem.item<b> as </b><span style=\"color: maroon\">past</span><b> where </b>past.linkId = 'past-tobacco-smoking'<b> then</b><span style=\"color: navy\"> {\r\n</span>    past.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      answer.value<b> as </b><span style=\"color: maroon\">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'8517006'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Ex-smoker'</span><span style=\"color: navy\">)</span> <i>&quot;mapPastDailyToFormerSmoker&quot;</i><span style=\"color: navy\">;</span>\r\n      answer.value<b> as </b><span style=\"color: maroon\">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'8517006'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Ex-smoker'</span><span style=\"color: navy\">)</span> <i>&quot;mapPastOccasionalToFormerSmoker&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;evaluatePastSmoking&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;pastSmokingFormer&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">// </span><span style=\"color: green\">SK1 = Nein and past tobacco smoking = Nein -&gt; never smoker.</span>\r\n  groupItem.item<b> as </b><span style=\"color: maroon\">past</span><b> where </b>past.linkId = 'past-tobacco-smoking'<b> then</b><span style=\"color: navy\"> {\r\n</span>    past.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      answer.value<b> as </b><span style=\"color: maroon\">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-no')<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'266919005'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Never smoked tobacco'</span><span style=\"color: navy\">)</span> <i>&quot;mapPastNoToNeverSmoker&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;evaluatePastNo&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;pastSmokingNever&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  },
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SmokingStatusQuestionnaireResponseToObservation",
+  "version" : "0.1.0",
+  "name" : "SmokingStatusQuestionnaireResponseToObservation",
+  "title" : "ATHIS-based Smoking Status Q to O",
+  "status" : "active",
+  "date" : "2026-06-18T13:38:50+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "ATHIS-based Smoking Status Q to O",
+  "structure" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+    "mode" : "source",
+    "alias" : "QR"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
+    "mode" : "target",
+    "alias" : "Obs"
+  }],
+  "group" : [{
+    "name" : "SmokingStatusQuestionnaireResponseToObservation",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "setFinalStatus",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "status",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "final"
+        }]
+      }]
+    },
+    {
+      "name" : "copyIdentifier",
+      "source" : [{
+        "context" : "src",
+        "element" : "identifier",
+        "variable" : "identifier"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "identifier",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "identifier"
+        }]
+      }]
+    },
+    {
+      "name" : "copySubject",
+      "source" : [{
+        "context" : "src",
+        "element" : "subject",
+        "variable" : "subject"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "subject",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "subject"
+        }]
+      }]
+    },
+    {
+      "name" : "copyAuthoredToObservationTimes",
+      "source" : [{
+        "context" : "src",
+        "element" : "authored",
+        "variable" : "authored"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "effective",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "authored"
+        }]
+      },
+      {
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "issued",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueId" : "authored"
+        }]
+      }]
+    },
+    {
+      "name" : "setTobaccoSmokingStatusCode",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "cc",
+        "parameter" : [{
+          "valueString" : "http://loinc.org"
+        },
+        {
+          "valueString" : "72166-2"
+        },
+        {
+          "valueString" : "Tobacco smoking status"
+        }]
+      }]
+    },
+    {
+      "name" : "setManualMethod",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "method",
+        "transform" : "cc",
+        "parameter" : [{
+          "valueString" : "http://snomed.info/sct"
+        },
+        {
+          "valueString" : "87982008"
+        },
+        {
+          "valueString" : "Manual"
+        }]
+      }]
+    },
+    {
+      "name" : "setDerivedFrom",
+      "source" : [{
+        "context" : "src",
+        "element" : "id",
+        "variable" : "id"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "derivedFrom",
+        "variable" : "reference",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Reference"
+        }]
+      }],
+      "rule" : [{
+        "name" : "setDerivedFromReference",
+        "source" : [{
+          "context" : "id"
+        }],
+        "target" : [{
+          "context" : "reference",
+          "contextType" : "variable",
+          "element" : "reference",
+          "transform" : "append",
+          "parameter" : [{
+            "valueString" : "QuestionnaireResponse/"
+          },
+          {
+            "valueId" : "id"
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "mapSmokingStatusGroup",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "groupItem",
+        "condition" : "groupItem.linkId = 'smoking-status-athis'"
+      }],
+      "dependent" : [{
+        "name" : "SmokingStatusGroupToObservation",
+        "variable" : ["groupItem",
+        "tgt"]
+      }]
+    }]
+  },
+  {
+    "name" : "SmokingStatusGroupToObservation",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "groupItem",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "sk1Daily",
+      "source" : [{
+        "context" : "groupItem",
+        "element" : "item",
+        "variable" : "sk1",
+        "condition" : "sk1.linkId = 'sk1'"
+      }],
+      "rule" : [{
+        "name" : "evaluateSk1Daily",
+        "source" : [{
+          "context" : "sk1",
+          "element" : "answer",
+          "variable" : "answer"
+        }],
+        "rule" : [{
+          "name" : "mapCurrentDailySmoker",
+          "source" : [{
+            "context" : "answer",
+            "element" : "value",
+            "variable" : "coding",
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "http://snomed.info/sct"
+            },
+            {
+              "valueString" : "449868002"
+            },
+            {
+              "valueString" : "Smokes tobacco daily"
+            }]
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "sk1Occasional",
+      "source" : [{
+        "context" : "groupItem",
+        "element" : "item",
+        "variable" : "sk1",
+        "condition" : "sk1.linkId = 'sk1'"
+      }],
+      "rule" : [{
+        "name" : "evaluateSk1Occasional",
+        "source" : [{
+          "context" : "sk1",
+          "element" : "answer",
+          "variable" : "answer"
+        }],
+        "rule" : [{
+          "name" : "mapCurrentOccasionalSmoker",
+          "source" : [{
+            "context" : "answer",
+            "element" : "value",
+            "variable" : "coding",
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "http://snomed.info/sct"
+            },
+            {
+              "valueString" : "428041000124106"
+            },
+            {
+              "valueString" : "Occasional tobacco smoker"
+            }]
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "pastSmokingFormer",
+      "source" : [{
+        "context" : "groupItem",
+        "element" : "item",
+        "variable" : "past",
+        "condition" : "past.linkId = 'past-tobacco-smoking'"
+      }],
+      "rule" : [{
+        "name" : "evaluatePastSmoking",
+        "source" : [{
+          "context" : "past",
+          "element" : "answer",
+          "variable" : "answer"
+        }],
+        "rule" : [{
+          "name" : "mapPastDailyToFormerSmoker",
+          "source" : [{
+            "context" : "answer",
+            "element" : "value",
+            "variable" : "coding",
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "http://snomed.info/sct"
+            },
+            {
+              "valueString" : "8517006"
+            },
+            {
+              "valueString" : "Ex-smoker"
+            }]
+          }]
+        },
+        {
+          "name" : "mapPastOccasionalToFormerSmoker",
+          "source" : [{
+            "context" : "answer",
+            "element" : "value",
+            "variable" : "coding",
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "http://snomed.info/sct"
+            },
+            {
+              "valueString" : "8517006"
+            },
+            {
+              "valueString" : "Ex-smoker"
+            }]
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "pastSmokingNever",
+      "source" : [{
+        "context" : "groupItem",
+        "element" : "item",
+        "variable" : "past",
+        "condition" : "past.linkId = 'past-tobacco-smoking'"
+      }],
+      "rule" : [{
+        "name" : "evaluatePastNo",
+        "source" : [{
+          "context" : "past",
+          "element" : "answer",
+          "variable" : "answer"
+        }],
+        "rule" : [{
+          "name" : "mapPastNoToNeverSmoker",
+          "source" : [{
+            "context" : "answer",
+            "element" : "value",
+            "variable" : "coding",
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-no')"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "http://snomed.info/sct"
+            },
+            {
+              "valueString" : "266919005"
+            },
+            {
+              "valueString" : "Never smoked tobacco"
+            }]
+          }]
+        }]
+      }]
+    }]
+  }]
+}

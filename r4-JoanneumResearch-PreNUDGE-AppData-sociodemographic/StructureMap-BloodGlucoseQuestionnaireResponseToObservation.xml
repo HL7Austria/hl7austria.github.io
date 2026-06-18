@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="BloodGlucoseQuestionnaireResponseToObservation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap BloodGlucoseQuestionnaireResponseToObservation</b></p><a name="BloodGlucoseQuestionnaireResponseToObservation"> </a><a name="hcBloodGlucoseQuestionnaireResponseToObservation"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>BloodGlucoseQuestionnaireResponseToObservation<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Blood Glucose Q to O</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/datatypes.html#Quantity" title="Quantity">http://hl7.org/fhir/StructureDefinition/Quantity</a><span style="color: navy">&quot; </span><b>alias </b>Quantity <b>as </b><b>source</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-QuestionnaireResponseToObservationBase.html" title="Shared base for Q to O">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style="color: navy">&quot;
+</span>
+<b>group </b>BloodGlucoseQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'41653-7'</span><span style="color: navy">, </span><span style="color: blue">'Glucose [Mass/volume] in Capillary blood by Glucometer'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'blood-glucose'<b> then </b>MapBloodGlucose<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessItem&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapBloodGlucose<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Process the answer first to get access to nested items</span>
+  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">effectiveDateTime from nested item</span>
+    answer.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style="color: navy"> {
+</span>      dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><b> then</b><span style="color: navy"> {
+</span>        dtAns.valueDateTime<b> as </b><span style="color: maroon">dt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dt</span> <i>&quot;SetEffectiveFromDatetime&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ExtractDateTime&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessDatetime&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">Meal context → component[mealContext]</span>
+    answer.item<b> as </b><span style="color: maroon">mcItem</span><b> where </b>linkId = 'meal-context'<b> then</b><span style="color: navy"> {
+</span>      mcItem.answer<b> as </b><span style="color: maroon">mcAns</span><b> then</b><span style="color: navy"> {
+</span>        mcAns.valueCoding<b> as </b><span style="color: maroon">coding</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'309602000'</span><span style="color: navy">, </span><span style="color: blue">'Temporal periods relating to feeding and eating'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc</span><span style="color: navy">, </span> cc.coding = <span style="color: maroon">coding</span> <i>&quot;SetMealContextCoding&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ExtractCoding&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessMealContext&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">Map the blood glucose value</span>
+    answer.valueQuantity<b> as </b><span style="color: maroon">srcQty</span><b> then </b>MapBloodGlucoseQuantity<span style="color: navy">(</span><span style="color: maroon">srcQty</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapValueQuantity&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapBloodGlucoseQuantity<span style="color: navy">(</span><b>source</b> <span style="color: maroon">srcQty</span><span style="color: navy"> : </span>Quantity, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  srcQty.value<b> as </b><span style="color: maroon">v</span><b> then</b><span style="color: navy"> {
+</span>    v.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'mg/dL'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'mg/dL'</span> <i>&quot;SetQuantity&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation"/>
+  <version value="0.1.0"/>
+  <name value="BloodGlucoseQuestionnaireResponseToObservation"/>
+  <title value="Blood Glucose Q to O"/>
+  <status value="active"/>
+  <date value="2026-06-18T13:38:50+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Blood Glucose Q to O"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Quantity"/>
+    <mode value="source"/>
+    <alias value="Quantity"/>
+  </structure>
+  <import value="http://hl7.org/fhir/StructureMap/*"/>
+  <import value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"/>
+  <group>
+    <name value="BloodGlucoseQuestionnaireResponseToObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="Base"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetObservationBase"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Meta"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="41653-7"/>
+        </parameter>
+        <parameter>
+          <valueString value="Glucose [Mass/volume] in Capillary blood by Glucometer"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ProcessItem"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="item"/>
+        <condition value="linkId = 'blood-glucose'"/>
+      </source>
+      <dependent>
+        <name value="MapBloodGlucose"/>
+        <variable value="item"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+  </group>
+  <group>
+    <name value="MapBloodGlucose"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ProcessDatetime"/>
+        <source>
+          <context value="answer"/>
+          <element value="item"/>
+          <variable value="dtItem"/>
+          <condition value="linkId = 'datetime'"/>
+        </source>
+        <rule>
+          <name value="ExtractDateTime"/>
+          <source>
+            <context value="dtItem"/>
+            <element value="answer"/>
+            <variable value="dtAns"/>
+          </source>
+          <rule>
+            <name value="SetEffectiveFromDatetime"/>
+            <source>
+              <context value="dtAns"/>
+              <element value="valueDateTime"/>
+              <variable value="dt"/>
+            </source>
+            <target>
+              <context value="tgt"/>
+              <contextType value="variable"/>
+              <element value="effectiveDateTime"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="dt"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <rule>
+        <name value="ProcessMealContext"/>
+        <source>
+          <context value="answer"/>
+          <element value="item"/>
+          <variable value="mcItem"/>
+          <condition value="linkId = 'meal-context'"/>
+        </source>
+        <rule>
+          <name value="ExtractCoding"/>
+          <source>
+            <context value="mcItem"/>
+            <element value="answer"/>
+            <variable value="mcAns"/>
+          </source>
+          <rule>
+            <name value="SetMealContextCoding"/>
+            <source>
+              <context value="mcAns"/>
+              <element value="valueCoding"/>
+              <variable value="coding"/>
+            </source>
+            <target>
+              <context value="tgt"/>
+              <contextType value="variable"/>
+              <element value="component"/>
+              <variable value="comp"/>
+            </target>
+            <target>
+              <context value="comp"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cc"/>
+              <parameter>
+                <valueString value="http://snomed.info/sct"/>
+              </parameter>
+              <parameter>
+                <valueString value="309602000"/>
+              </parameter>
+              <parameter>
+                <valueString value="Temporal periods relating to feeding and eating"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="comp"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <variable value="cc"/>
+              <transform value="create"/>
+              <parameter>
+                <valueString value="CodeableConcept"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="cc"/>
+              <contextType value="variable"/>
+              <element value="coding"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="coding"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+      <rule>
+        <name value="MapValueQuantity"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueQuantity"/>
+          <variable value="srcQty"/>
+        </source>
+        <dependent>
+          <name value="MapBloodGlucoseQuantity"/>
+          <variable value="srcQty"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapBloodGlucoseQuantity"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="srcQty"/>
+      <type value="Quantity"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ExtractValue"/>
+      <source>
+        <context value="srcQty"/>
+        <element value="value"/>
+        <variable value="v"/>
+      </source>
+      <rule>
+        <name value="SetQuantity"/>
+        <source>
+          <context value="v"/>
+          <element value="value"/>
+          <variable value="numVal"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="qty"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="Quantity"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="numVal"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="unit"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="mg/dL"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="http://unitsofmeasure.org"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="qty"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueString value="mg/dL"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>

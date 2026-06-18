@@ -1,0 +1,71 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "AtPrenudgeCodeUnitMap",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap AtPrenudgeCodeUnitMap</b></p><a name=\"AtPrenudgeCodeUnitMap\"> </a><a name=\"hcAtPrenudgeCodeUnitMap\"> </a><p>Mapping from <a href=\"ValueSet-prenudge-other-observations-codes.html\">AT PreNUDGE Other Observations Codes</a> to <a href=\"ValueSet-prenudge-other-observations-units.html\">AT PreNUDGE Other Observations Units</a></p><br/><p><b>Group 1 </b>Mapping from <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html\">Unified Code for Units of Measure (UCUM)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>82832008 (General body state finding (finding))</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>{finding} (finding)</td><td>Subjective well-being rating on a numeric scale (e.g., 1-10).</td></tr></table><hr/><p><b>Group 2 </b>Mapping from <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html\">Unified Code for Units of Measure (UCUM)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>66266-8 (Time doing this activity)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>min (minute)</td><td>Duration of the activity in minutes.</td></tr><tr><td>66270-0 (Activity intensity)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>{intensity} (intensity)</td><td>Subjective intensity rating on a numeric scale (e.g., 1-10, where 1 = very light and 10 = maximum effort).</td></tr></table></div>"
+  },
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/ConceptMap/AtPrenudgeCodeUnitMap",
+  "version" : "0.1.0",
+  "title" : "AT PreNUDGE Code-to-Unit Mapping",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2026-06-18T13:38:50+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Maps observation codes to their expected UCUM units for the 'Other Quantities' observation profile.",
+  "sourceUri" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-codes",
+  "targetUri" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-units",
+  "group" : [{
+    "source" : "http://snomed.info/sct",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "82832008",
+      "display" : "General body state finding (finding)",
+      "target" : [{
+        "code" : "{finding}",
+        "display" : "finding",
+        "equivalence" : "equivalent",
+        "comment" : "Subjective well-being rating on a numeric scale (e.g., 1-10)."
+      }]
+    }]
+  },
+  {
+    "source" : "http://loinc.org",
+    "target" : "http://unitsofmeasure.org",
+    "element" : [{
+      "code" : "66266-8",
+      "display" : "Time doing this activity",
+      "target" : [{
+        "code" : "min",
+        "display" : "minute",
+        "equivalence" : "equivalent",
+        "comment" : "Duration of the activity in minutes."
+      }]
+    },
+    {
+      "code" : "66270-0",
+      "display" : "Activity intensity",
+      "target" : [{
+        "code" : "{intensity}",
+        "display" : "intensity",
+        "equivalence" : "equivalent",
+        "comment" : "Subjective intensity rating on a numeric scale (e.g., 1-10, where 1 = very light and 10 = maximum effort)."
+      }]
+    }]
+  }]
+}

@@ -1,0 +1,1427 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/WhoQolBrefQuestionnaire> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "WhoQolBrefQuestionnaire"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "de-AT"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xml:lang=\"de-AT\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"de-AT\"><p class=\"res-header-id\"><b>Generated Narrative: Questionnaire WhoQolBrefQuestionnaire</b></p><a name=\"WhoQolBrefQuestionnaire\"> </a><a name=\"hcWhoQolBrefQuestionnaire\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: de-AT</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-questionnaire.html\">AT PreNUDGE Questionnaire</a></p></div><b>Structure</b><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\">LinkID</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\">Text</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\">Cardinality</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\">Type</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Other attributes of the item\">Flags</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the item\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireRoot\" class=\"hierarchy\"/> AtPrenudgeQoLByWhoQolBref</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Questionnaire</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/WhoQolBrefQuestionnaire#0.1.0</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" id=\"item.introduction-text\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> introduction-text</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">In diesem Fragebogen werden Sie danach gefragt, wie Sie Ihre Lebensqualität, Ihre Gesundheit und andere Bereiche Ihres Lebens beurteilen. Bitte beantworten Sie alle Fragen. Wenn Sie sich bei der Beantwortung einer Frage nicht sicher sind, wählen Sie bitte die Antwortkategorie, die Ihrer Meinung nach am ehesten zutrifft. Oft ist dies die Kategorie, die Ihnen als erstes in den Sinn kommt. Bitte beantworten Sie alle Fragen auf der Grundlage Ihrer eigenen Beurteilungskriterien, Hoffnungen, Vorlieben und Interessen. Bitte denken Sie bei der Beantwortung der Fragen an Ihr Leben während der vergangenen zwei Wochen.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" id=\"item.general\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> general</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">null</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q1\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie würden Sie Ihre Lebensqualität beurteilen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q1\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q2\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q2</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihrer Gesundheit?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q2\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)\" id=\"item.section-0-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> section-0-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" id=\"item.section-1\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> section-1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">In den folgenden Fragen geht es darum, wie stark Sie während der vergangenen zwei Wochen bestimmte Dinge erlebt haben.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q3\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q3</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie stark werden Sie durch Schmerzen daran gehindert, notwendige Dinge zu tun?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q3\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q3-reversed\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-integer.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"integer\" class=\"hierarchy\"/> Q3-reversed</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Q3 umkodiert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-integer\">integer</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q4\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q4</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie sehr sind Sie auf medizinische Behandlung angewiesen, um das tägliche Leben zu meistern?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q4\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q4-reversed\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-integer.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"integer\" class=\"hierarchy\"/> Q4-reversed</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Q4 umkodiert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-integer\">integer</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q5\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q5</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie sehr genießen Sie das Leben?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q5\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q6\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q6</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">In welchem Ausmaß empfinden Sie Ihr Leben als sinnvoll?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q6\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q7\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q7</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie gut können Sie sich konzentrieren?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q7\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q8\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q8</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie sicher fühlen Sie sich in Ihrem täglichen Leben?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q8\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q9\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q9</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie gesund ist Ihre unmittelbare Umgebung?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q9\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)\" id=\"item.section-1-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> section-1-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" id=\"item.section-2\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> section-2</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">In den folgenden Fragen geht es darum, im welchem Umfang Sie während der vergangenen zwei Wochen bestimmte Dinge erlebt haben oder in der Lage waren, bestimmte Dinge zu tun.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q10\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q10</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie genug Energie für das tägliche Leben?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q10\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q11\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q11</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Können Sie Ihr Aussehen akzeptieren?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q11\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q12\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q12</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie genug Geld, um Ihre Bedürfnisse erfüllen zu können?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q12\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q13\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q13</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie verfügbar sind die Informationen für Sie, die Sie im Alltag brauchen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q13\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q14\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q14</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie ausreichend Möglichkeiten zu Freizeitaktivitäten?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q14\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q15\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q15</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie gut können Sie sich fortbewegen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q15\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)\" id=\"item.section-2-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> section-2-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" id=\"item.section-3\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> section-3</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">In den folgenden Fragen geht es darum, wie zufrieden, glücklich oder gut Sie sich während der vergangenen zwei Wochen hinsichtlich verschiedener Aspekte Ihres Lebens gefühlt haben.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q16\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q16</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihrem Schlaf?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q16\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q17\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q17</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihrer Fähigkeit, alltägliche Dinge erledigen zu können?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q17\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q18\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q18</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihrer Arbeitsfähigkeit?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q18\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q19\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q19</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit sich selbst?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q19\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q20\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q20</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihren persönlichen Beziehungen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q20\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q21\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q21</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihrem Sexualleben?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q21\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q22\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q22</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit der Unterstützung durch Ihre Freunde?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q22\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q23\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q23</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihren Wohnbedingungen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q23\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q24\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q24</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit Ihren Möglichkeiten, Gesundheitsdienste in Anspruch nehmen zu können?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q24\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q25\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q25</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie zufrieden sind Sie mit den Beförderungsmitteln, die Ihnen zur Verfügung stehen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q25\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)\" id=\"item.section-3-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> section-3-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)\" id=\"item.section-4\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> section-4</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">In der folgenden Frage geht es darum, wie oft sich während der vergangenen zwei Wochen bei Ihnen negative Gefühle eingestellt haben, wie zum Beispiel Angst oder Traurigkeit.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.Q26\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> Q26</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie häufig haben Sie negative Gefühle wie Traurigkeit, Verzweiflung, Angst oder Depression?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.Q26\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)\" id=\"item.section-4-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> section-4-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)\" id=\"item.Q26-reversed\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-integer.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"integer\" class=\"hierarchy\"/> Q26-reversed</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Q26 umkodiert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-integer\">integer</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" id=\"item.section-5\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> section-5</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie irgendwelche Anmerkungen zu diesem Fragebogen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.general-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> general-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie allgemein noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain1-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> domain1-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu ihrer physischen Gesundheit noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain2-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> domain2-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu ihrem psychisches Wohlbefinden noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain3-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> domain3-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu ihren sozialen Beziehungen noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain4-comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> domain4-comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu ihrer Umwelt noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.general-raw\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> general-raw</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Allgemeiner Rohwert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.general-score\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> general-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Allgemeiner Score (0-100)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain1-raw\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain1-raw</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 1 Rohwert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain1-score\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain1-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 1: Physische Gesundheit (0-100)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain2-raw\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain2-raw</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 2 Rohwert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain2-score\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain2-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 2: Psychisches Wohlbefinden (0-100)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain3-raw\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain3-raw</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 3 Rohwert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain3-score\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain3-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 3: Soziale Beziehungen (0-100)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.domain4-raw\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain4-raw</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 4 Rohwert</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/><a href=\"https://hl7.org/fhir/R4/extension-questionnaire-hidden.html\" title=\"Is a hidden item\"><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></a><img src=\"icon-qi-hidden.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)\" id=\"item.domain4-score\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-decimal.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"decimal\" class=\"hierarchy\"/> domain4-score</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Domäne 4: Umwelt (0-100)</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-decimal\">decimal</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/questionnaire-definitions.html#Questionnaire.item.readOnly\" title=\"Is Read Only\"><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></a><img src=\"icon-qi-readonly.png\" alt=\"icon\"/></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr><td colspan=\"6\" class=\"hierarchy\"><br/><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table><hr/><p><b>Options Sets</b></p><a name=\"opt-item.Q1\"> </a><p><b>Answer options for Q1 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q1 (\"Sehr schlecht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q2 (\"Schlecht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q4 (\"Gut\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q5 (\"Sehr gut\")</li></ul><a name=\"opt-item.Q2\"> </a><p><b>Answer options for Q2 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q3\"> </a><p><b>Answer options for Q3 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I2 (\"Ein wenig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I4 (\"Ziemlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I5 (\"Äußerst\")</li></ul><a name=\"opt-item.Q4\"> </a><p><b>Answer options for Q4 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I2 (\"Ein wenig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I4 (\"Ziemlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I5 (\"Äußerst\")</li></ul><a name=\"opt-item.Q5\"> </a><p><b>Answer options for Q5 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I2 (\"Ein wenig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I4 (\"Ziemlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I5 (\"Äußerst\")</li></ul><a name=\"opt-item.Q6\"> </a><p><b>Answer options for Q6 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I2 (\"Ein wenig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I4 (\"Ziemlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I5 (\"Äußerst\")</li></ul><a name=\"opt-item.Q7\"> </a><p><b>Answer options for Q7 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I2 (\"Ein wenig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I4 (\"Ziemlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I5 (\"Äußerst\")</li></ul><a name=\"opt-item.Q8\"> </a><p><b>Answer options for Q8 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I2 (\"Ein wenig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I4 (\"Ziemlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I5 (\"Äußerst\")</li></ul><a name=\"opt-item.Q9\"> </a><p><b>Answer options for Q9 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I2 (\"Ein wenig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I4 (\"Ziemlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#I5 (\"Äußerst\")</li></ul><a name=\"opt-item.Q10\"> </a><p><b>Answer options for Q10 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C2 (\"Eher nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C3 (\"Halbwegs\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C4 (\"Überwiegend\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C5 (\"Völlig\")</li></ul><a name=\"opt-item.Q11\"> </a><p><b>Answer options for Q11 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C2 (\"Eher nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C3 (\"Halbwegs\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C4 (\"Überwiegend\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C5 (\"Völlig\")</li></ul><a name=\"opt-item.Q12\"> </a><p><b>Answer options for Q12 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C2 (\"Eher nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C3 (\"Halbwegs\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C4 (\"Überwiegend\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C5 (\"Völlig\")</li></ul><a name=\"opt-item.Q13\"> </a><p><b>Answer options for Q13 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C2 (\"Eher nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C3 (\"Halbwegs\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C4 (\"Überwiegend\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C5 (\"Völlig\")</li></ul><a name=\"opt-item.Q14\"> </a><p><b>Answer options for Q14 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C1 (\"Überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C2 (\"Eher nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C3 (\"Halbwegs\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C4 (\"Überwiegend\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#C5 (\"Völlig\")</li></ul><a name=\"opt-item.Q15\"> </a><p><b>Answer options for Q15 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q1 (\"Sehr schlecht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q2 (\"Schlecht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q3 (\"Mittelmäßig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q4 (\"Gut\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#Q5 (\"Sehr gut\")</li></ul><a name=\"opt-item.Q16\"> </a><p><b>Answer options for Q16 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q17\"> </a><p><b>Answer options for Q17 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q18\"> </a><p><b>Answer options for Q18 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q19\"> </a><p><b>Answer options for Q19 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q20\"> </a><p><b>Answer options for Q20 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q21\"> </a><p><b>Answer options for Q21 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q22\"> </a><p><b>Answer options for Q22 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q23\"> </a><p><b>Answer options for Q23 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q24\"> </a><p><b>Answer options for Q24 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q25\"> </a><p><b>Answer options for Q25 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S1 (\"Sehr unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S2 (\"Unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S3 (\"Weder zufrieden noch unzufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S4 (\"Zufrieden\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#S5 (\"Sehr zufrieden\")</li></ul><a name=\"opt-item.Q26\"> </a><p><b>Answer options for Q26 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#F1 (\"Niemals\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#F2 (\"Nicht oft\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#F3 (\"Zeitweilig\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#F4 (\"Oftmals\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale#F5 (\"Immer\")</li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/WhoQolBrefQuestionnaire"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "AtPrenudgeQoLByWhoQolBref"] ; # 
+  fhir:title [ fhir:v "WHOQOL-BREF Lebensstil Selbsteinschätzung"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:subjectType ( [ fhir:v "Patient"] ) ; # 
+  fhir:date [ fhir:v "2026-06-18T13:38:50+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO."] ; # 
+  fhir:purpose [ fhir:v "Assessment of subjective quality of life in the general population and in patients."] ; # 
+  fhir:copyright [ fhir:v "© World Health Organization. Usage with permission from WHO."] ; # 
+  fhir:code ( [
+     a sct:405152002 ;
+     fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "405152002" ]
+  ] ) ; # 
+  fhir:item ( [
+     fhir:linkId [ fhir:v "introduction-text" ] ;
+     fhir:text [ fhir:v "In diesem Fragebogen werden Sie danach gefragt, wie Sie Ihre Lebensqualität, Ihre Gesundheit und andere Bereiche Ihres Lebens beurteilen. Bitte beantworten Sie alle Fragen. Wenn Sie sich bei der Beantwortung einer Frage nicht sicher sind, wählen Sie bitte die Antwortkategorie, die Ihrer Meinung nach am ehesten zutrifft. Oft ist dies die Kategorie, die Ihnen als erstes in den Sinn kommt. Bitte beantworten Sie alle Fragen auf der Grundlage Ihrer eigenen Beurteilungskriterien, Hoffnungen, Vorlieben und Interessen. Bitte denken Sie bei der Beantwortung der Fragen an Ihr Leben während der vergangenen zwei Wochen." ] ;
+     fhir:type [ fhir:v "display" ]
+  ] [
+     fhir:linkId [ fhir:v "general" ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "Q1" ] ;
+       fhir:text [ fhir:v "Wie würden Sie Ihre Lebensqualität beurteilen?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q1" ] ;
+           fhir:display [ fhir:v "Sehr schlecht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q2" ] ;
+           fhir:display [ fhir:v "Schlecht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q4" ] ;
+           fhir:display [ fhir:v "Gut" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q5" ] ;
+           fhir:display [ fhir:v "Sehr gut" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q2" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihrer Gesundheit?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "section-0-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "section-1" ] ;
+     fhir:text [ fhir:v "In den folgenden Fragen geht es darum, wie stark Sie während der vergangenen zwei Wochen bestimmte Dinge erlebt haben." ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "Q3" ] ;
+       fhir:text [ fhir:v "Wie stark werden Sie durch Schmerzen daran gehindert, notwendige Dinge zu tun?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I2" ] ;
+           fhir:display [ fhir:v "Ein wenig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I4" ] ;
+           fhir:display [ fhir:v "Ziemlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I5" ] ;
+           fhir:display [ fhir:v "Äußerst" ]
+         ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Reverse scoring für Q3" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "6 - %resource.repeat(item).where(linkId='Q3').answer.valueCoding.code.substring(1).toInteger()" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "Q3-reversed" ] ;
+       fhir:text [ fhir:v "Q3 umkodiert" ] ;
+       fhir:type [ fhir:v "integer" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:linkId [ fhir:v "Q4" ] ;
+       fhir:text [ fhir:v "Wie sehr sind Sie auf medizinische Behandlung angewiesen, um das tägliche Leben zu meistern?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I2" ] ;
+           fhir:display [ fhir:v "Ein wenig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I4" ] ;
+           fhir:display [ fhir:v "Ziemlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I5" ] ;
+           fhir:display [ fhir:v "Äußerst" ]
+         ]
+       ] )
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Reverse scoring für Q4" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "6 - %resource.repeat(item).where(linkId='Q4').answer.valueCoding.code.substring(1).toInteger()" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "Q4-reversed" ] ;
+       fhir:text [ fhir:v "Q4 umkodiert" ] ;
+       fhir:type [ fhir:v "integer" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:linkId [ fhir:v "Q5" ] ;
+       fhir:text [ fhir:v "Wie sehr genießen Sie das Leben?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I2" ] ;
+           fhir:display [ fhir:v "Ein wenig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I4" ] ;
+           fhir:display [ fhir:v "Ziemlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I5" ] ;
+           fhir:display [ fhir:v "Äußerst" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q6" ] ;
+       fhir:text [ fhir:v "In welchem Ausmaß empfinden Sie Ihr Leben als sinnvoll?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I2" ] ;
+           fhir:display [ fhir:v "Ein wenig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I4" ] ;
+           fhir:display [ fhir:v "Ziemlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I5" ] ;
+           fhir:display [ fhir:v "Äußerst" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q7" ] ;
+       fhir:text [ fhir:v "Wie gut können Sie sich konzentrieren?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I2" ] ;
+           fhir:display [ fhir:v "Ein wenig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I4" ] ;
+           fhir:display [ fhir:v "Ziemlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I5" ] ;
+           fhir:display [ fhir:v "Äußerst" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q8" ] ;
+       fhir:text [ fhir:v "Wie sicher fühlen Sie sich in Ihrem täglichen Leben?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I2" ] ;
+           fhir:display [ fhir:v "Ein wenig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I4" ] ;
+           fhir:display [ fhir:v "Ziemlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I5" ] ;
+           fhir:display [ fhir:v "Äußerst" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q9" ] ;
+       fhir:text [ fhir:v "Wie gesund ist Ihre unmittelbare Umgebung?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I2" ] ;
+           fhir:display [ fhir:v "Ein wenig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I4" ] ;
+           fhir:display [ fhir:v "Ziemlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "I5" ] ;
+           fhir:display [ fhir:v "Äußerst" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "section-1-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "section-2" ] ;
+     fhir:text [ fhir:v "In den folgenden Fragen geht es darum, im welchem Umfang Sie während der vergangenen zwei Wochen bestimmte Dinge erlebt haben oder in der Lage waren, bestimmte Dinge zu tun." ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "Q10" ] ;
+       fhir:text [ fhir:v "Haben Sie genug Energie für das tägliche Leben?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C2" ] ;
+           fhir:display [ fhir:v "Eher nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C3" ] ;
+           fhir:display [ fhir:v "Halbwegs" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C4" ] ;
+           fhir:display [ fhir:v "Überwiegend" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C5" ] ;
+           fhir:display [ fhir:v "Völlig" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q11" ] ;
+       fhir:text [ fhir:v "Können Sie Ihr Aussehen akzeptieren?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C2" ] ;
+           fhir:display [ fhir:v "Eher nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C3" ] ;
+           fhir:display [ fhir:v "Halbwegs" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C4" ] ;
+           fhir:display [ fhir:v "Überwiegend" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C5" ] ;
+           fhir:display [ fhir:v "Völlig" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q12" ] ;
+       fhir:text [ fhir:v "Haben Sie genug Geld, um Ihre Bedürfnisse erfüllen zu können?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C2" ] ;
+           fhir:display [ fhir:v "Eher nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C3" ] ;
+           fhir:display [ fhir:v "Halbwegs" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C4" ] ;
+           fhir:display [ fhir:v "Überwiegend" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C5" ] ;
+           fhir:display [ fhir:v "Völlig" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q13" ] ;
+       fhir:text [ fhir:v "Wie verfügbar sind die Informationen für Sie, die Sie im Alltag brauchen?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C2" ] ;
+           fhir:display [ fhir:v "Eher nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C3" ] ;
+           fhir:display [ fhir:v "Halbwegs" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C4" ] ;
+           fhir:display [ fhir:v "Überwiegend" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C5" ] ;
+           fhir:display [ fhir:v "Völlig" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q14" ] ;
+       fhir:text [ fhir:v "Haben Sie ausreichend Möglichkeiten zu Freizeitaktivitäten?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C1" ] ;
+           fhir:display [ fhir:v "Überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C2" ] ;
+           fhir:display [ fhir:v "Eher nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C3" ] ;
+           fhir:display [ fhir:v "Halbwegs" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C4" ] ;
+           fhir:display [ fhir:v "Überwiegend" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "C5" ] ;
+           fhir:display [ fhir:v "Völlig" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q15" ] ;
+       fhir:text [ fhir:v "Wie gut können Sie sich fortbewegen?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q1" ] ;
+           fhir:display [ fhir:v "Sehr schlecht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q2" ] ;
+           fhir:display [ fhir:v "Schlecht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q3" ] ;
+           fhir:display [ fhir:v "Mittelmäßig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q4" ] ;
+           fhir:display [ fhir:v "Gut" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "Q5" ] ;
+           fhir:display [ fhir:v "Sehr gut" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "section-2-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "section-3" ] ;
+     fhir:text [ fhir:v "In den folgenden Fragen geht es darum, wie zufrieden, glücklich oder gut Sie sich während der vergangenen zwei Wochen hinsichtlich verschiedener Aspekte Ihres Lebens gefühlt haben." ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "Q16" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihrem Schlaf?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q17" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihrer Fähigkeit, alltägliche Dinge erledigen zu können?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q18" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihrer Arbeitsfähigkeit?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q19" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit sich selbst?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q20" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihren persönlichen Beziehungen?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q21" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihrem Sexualleben?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q22" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit der Unterstützung durch Ihre Freunde?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q23" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihren Wohnbedingungen?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q24" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit Ihren Möglichkeiten, Gesundheitsdienste in Anspruch nehmen zu können?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "Q25" ] ;
+       fhir:text [ fhir:v "Wie zufrieden sind Sie mit den Beförderungsmitteln, die Ihnen zur Verfügung stehen?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S1" ] ;
+           fhir:display [ fhir:v "Sehr unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S2" ] ;
+           fhir:display [ fhir:v "Unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S3" ] ;
+           fhir:display [ fhir:v "Weder zufrieden noch unzufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S4" ] ;
+           fhir:display [ fhir:v "Zufrieden" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "S5" ] ;
+           fhir:display [ fhir:v "Sehr zufrieden" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "section-3-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "section-4" ] ;
+     fhir:text [ fhir:v "In der folgenden Frage geht es darum, wie oft sich während der vergangenen zwei Wochen bei Ihnen negative Gefühle eingestellt haben, wie zum Beispiel Angst oder Traurigkeit." ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "Q26" ] ;
+       fhir:text [ fhir:v "Wie häufig haben Sie negative Gefühle wie Traurigkeit, Verzweiflung, Angst oder Depression?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "F1" ] ;
+           fhir:display [ fhir:v "Niemals" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "F2" ] ;
+           fhir:display [ fhir:v "Nicht oft" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "F3" ] ;
+           fhir:display [ fhir:v "Zeitweilig" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "F4" ] ;
+           fhir:display [ fhir:v "Oftmals" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/whoqol-bref-scale"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "F5" ] ;
+           fhir:display [ fhir:v "Immer" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "section-4-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu diesem Abschnitt noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Reverse scoring für Q26" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "6 - %resource.repeat(item).where(linkId='Q26').answer.valueCoding.code.substring(1).toInteger()" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "Q26-reversed" ] ;
+       fhir:text [ fhir:v "Q26 umkodiert" ] ;
+       fhir:type [ fhir:v "integer" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] )
+  ] [
+     fhir:linkId [ fhir:v "section-5" ] ;
+     fhir:text [ fhir:v "Haben Sie irgendwelche Anmerkungen zu diesem Fragebogen?" ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "general-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie allgemein noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:linkId [ fhir:v "domain1-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu ihrer physischen Gesundheit noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:linkId [ fhir:v "domain2-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu ihrem psychisches Wohlbefinden noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:linkId [ fhir:v "domain3-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu ihren sozialen Beziehungen noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:linkId [ fhir:v "domain4-comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu ihrer Umwelt noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Summe Q1 + Q2" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%resource.repeat(item).where(linkId='Q1').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q2').answer.valueCoding.code.substring(1).toInteger()" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "general-raw" ] ;
+       fhir:text [ fhir:v "Allgemeiner Rohwert" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Transformierter Score: ((Mittelwert - 1) * 25)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "((%resource.repeat(item).where(linkId='general-raw').answer.valueDecimal / 2) - 1) * 25" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "general-score" ] ;
+       fhir:text [ fhir:v "Allgemeiner Score (0-100)" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Summe der 7 Items (Q3r, Q4r, Q10, Q15, Q16, Q17, Q18)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%resource.repeat(item).where(linkId='Q3-reversed').answer.valueInteger + %resource.repeat(item).where(linkId='Q4-reversed').answer.valueInteger + %resource.repeat(item).where(linkId='Q10').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q15').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q16').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q17').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q18').answer.valueCoding.code.substring(1).toInteger()" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain1-raw" ] ;
+       fhir:text [ fhir:v "Domäne 1 Rohwert" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Transformierter Score: ((Mittelwert - 1) * 25)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "((%resource.repeat(item).where(linkId='domain1-raw').answer.valueDecimal / 7) - 1) * 25" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain1-score" ] ;
+       fhir:text [ fhir:v "Domäne 1: Physische Gesundheit (0-100)" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Summe der 6 Items (Q5, Q6, Q7, Q11, Q19, Q26r)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%resource.repeat(item).where(linkId='Q5').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q6').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q7').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q11').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q19').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q26-reversed').answer.valueInteger" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain2-raw" ] ;
+       fhir:text [ fhir:v "Domäne 2 Rohwert" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Transformierter Score: ((Mittelwert - 1) * 25)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "((%resource.repeat(item).where(linkId='domain2-raw').answer.valueDecimal / 6) - 1) * 25" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain2-score" ] ;
+       fhir:text [ fhir:v "Domäne 2: Psychisches Wohlbefinden (0-100)" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Summe der 3 Items (Q20, Q21, Q22)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%resource.repeat(item).where(linkId='Q20').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q21').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q22').answer.valueCoding.code.substring(1).toInteger()" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain3-raw" ] ;
+       fhir:text [ fhir:v "Domäne 3 Rohwert" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Transformierter Score: ((Mittelwert - 1) * 25)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "((%resource.repeat(item).where(linkId='domain3-raw').answer.valueDecimal / 3) - 1) * 25" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain3-score" ] ;
+       fhir:text [ fhir:v "Domäne 3: Soziale Beziehungen (0-100)" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:boolean ;
+           fhir:v true
+         ]
+       ] [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Summe der 8 Items (Q8, Q9, Q12, Q13, Q14, Q23, Q24, Q25)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "%resource.repeat(item).where(linkId='Q8').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q9').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q12').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q13').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q14').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q23').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q24').answer.valueCoding.code.substring(1).toInteger() + %resource.repeat(item).where(linkId='Q25').answer.valueCoding.code.substring(1).toInteger()" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain4-raw" ] ;
+       fhir:text [ fhir:v "Domäne 4 Rohwert" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:Expression ;
+           fhir:description [ fhir:v "Transformierter Score: ((Mittelwert - 1) * 25)" ] ;
+           fhir:language [ fhir:v "text/fhirpath" ] ;
+           fhir:expression [ fhir:v "((%resource.repeat(item).where(linkId='domain4-raw').answer.valueDecimal / 8) - 1) * 25" ]
+         ]
+       ] ) ;
+       fhir:linkId [ fhir:v "domain4-score" ] ;
+       fhir:text [ fhir:v "Domäne 4: Umwelt (0-100)" ] ;
+       fhir:type [ fhir:v "decimal" ] ;
+       fhir:readOnly [ fhir:v true ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

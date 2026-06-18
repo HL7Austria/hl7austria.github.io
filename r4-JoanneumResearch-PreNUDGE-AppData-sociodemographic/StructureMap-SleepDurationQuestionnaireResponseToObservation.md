@@ -1,0 +1,302 @@
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Sleep Duration Q to O - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Sleep Duration Q to O**
+
+## StructureMap: Sleep Duration Q to O 
+
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation | *Version*:0.1.0 | |
+| Active as of 2026-06-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepDurationQuestionnaireResponseToObservation |
+
+ 
+Sleep Duration Q to O 
+
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-18
+
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureMap",
+  "id" : "SleepDurationQuestionnaireResponseToObservation",
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepDurationQuestionnaireResponseToObservation",
+  "version" : "0.1.0",
+  "name" : "SleepDurationQuestionnaireResponseToObservation",
+  "title" : "Sleep Duration Q to O",
+  "status" : "active",
+  "date" : "2026-06-18T13:38:50+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Sleep Duration Q to O",
+  "structure" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+    "mode" : "source",
+    "alias" : "QR"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
+    "mode" : "target",
+    "alias" : "Obs"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Quantity",
+    "mode" : "source",
+    "alias" : "Quantity"
+  }],
+  "import" : ["http://hl7.org/fhir/StructureMap/*",
+  "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase",
+  "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase"],
+  "group" : [{
+    "name" : "SleepDurationQuestionnaireResponseToObservation",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "Base",
+      "source" : [{
+        "context" : "src"
+      }],
+      "dependent" : [{
+        "name" : "SetObservationBase",
+        "variable" : ["src", "tgt"]
+      }]
+    },
+    {
+      "name" : "SetProfile",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "meta",
+        "variable" : "meta",
+        "transform" : "create",
+        "parameter" : [{
+          "valueString" : "Meta"
+        }]
+      },
+      {
+        "context" : "meta",
+        "contextType" : "variable",
+        "element" : "profile",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation"
+        }]
+      }]
+    },
+    {
+      "name" : "SetCode",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "cc",
+        "parameter" : [{
+          "valueString" : "http://loinc.org"
+        },
+        {
+          "valueString" : "93832-4"
+        },
+        {
+          "valueString" : "Sleep duration"
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessItem",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "item",
+        "condition" : "linkId = 'sleep-duration'"
+      }],
+      "dependent" : [{
+        "name" : "MapSleepDuration",
+        "variable" : ["item", "tgt"]
+      }]
+    }]
+  },
+  {
+    "name" : "MapSleepDuration",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "ProcessDate",
+        "source" : [{
+          "context" : "answer",
+          "element" : "item",
+          "variable" : "dtItem",
+          "condition" : "linkId = 'date'"
+        }],
+        "rule" : [{
+          "name" : "ExtractDate",
+          "source" : [{
+            "context" : "dtItem",
+            "element" : "answer",
+            "variable" : "dtAns"
+          }],
+          "rule" : [{
+            "name" : "SetEffectiveFromDate",
+            "source" : [{
+              "context" : "dtAns",
+              "element" : "valueDate",
+              "variable" : "dt"
+            }],
+            "target" : [{
+              "context" : "tgt",
+              "contextType" : "variable",
+              "element" : "effectiveDateTime",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueId" : "dt"
+              }]
+            }]
+          }]
+        }]
+      },
+      {
+        "name" : "MapValueQuantity",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueQuantity",
+          "variable" : "srcQty"
+        }],
+        "dependent" : [{
+          "name" : "MapSleepDurationQuantity",
+          "variable" : ["srcQty", "tgt"]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapSleepDurationQuantity",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "srcQty",
+      "type" : "Quantity",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ExtractValue",
+      "source" : [{
+        "context" : "srcQty",
+        "element" : "value",
+        "variable" : "v"
+      }],
+      "rule" : [{
+        "name" : "SetQuantity",
+        "source" : [{
+          "context" : "v",
+          "element" : "value",
+          "variable" : "numVal"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "value",
+          "variable" : "qty",
+          "transform" : "create",
+          "parameter" : [{
+            "valueString" : "Quantity"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "value",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueId" : "numVal"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "unit",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "h"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "system",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "http://unitsofmeasure.org"
+          }]
+        },
+        {
+          "context" : "qty",
+          "contextType" : "variable",
+          "element" : "code",
+          "transform" : "copy",
+          "parameter" : [{
+            "valueString" : "h"
+          }]
+        }]
+      }]
+    }]
+  }]
+}
+
+```
