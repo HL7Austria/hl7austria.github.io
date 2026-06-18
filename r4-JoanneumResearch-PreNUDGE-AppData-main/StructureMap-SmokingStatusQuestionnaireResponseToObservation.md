@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SmokingStatusQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-06-16 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaireResponseToObservation |
+| Active as of 2026-06-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaireResponseToObservation |
 
  
 ATHIS-based Smoking Status Q to O 
@@ -17,7 +17,7 @@ ATHIS-based Smoking Status Q to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-16
+2026-06-18
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "SmokingStatusQuestionnaireResponseToObservation",
   "title" : "ATHIS-based Smoking Status Q to O",
   "status" : "active",
-  "date" : "2026-06-16T06:28:21+00:00",
+  "date" : "2026-06-18T08:24:24+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -274,14 +274,14 @@ Links:
           "name" : "mapCurrentDailySmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "valueCoding",
+            "element" : "value",
             "variable" : "coding",
             "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "valueCodeableConcept",
+            "element" : "value",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -315,14 +315,14 @@ Links:
           "name" : "mapCurrentOccasionalSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "valueCoding",
+            "element" : "value",
             "variable" : "coding",
             "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "valueCodeableConcept",
+            "element" : "value",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -356,14 +356,14 @@ Links:
           "name" : "mapPastDailyToFormerSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "valueCoding",
+            "element" : "value",
             "variable" : "coding",
             "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "valueCodeableConcept",
+            "element" : "value",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -380,14 +380,14 @@ Links:
           "name" : "mapPastOccasionalToFormerSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "valueCoding",
+            "element" : "value",
             "variable" : "coding",
             "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "valueCodeableConcept",
+            "element" : "value",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
@@ -421,14 +421,14 @@ Links:
           "name" : "mapPastNoToNeverSmoker",
           "source" : [{
             "context" : "answer",
-            "element" : "valueCoding",
+            "element" : "value",
             "variable" : "coding",
             "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-no')"
           }],
           "target" : [{
             "context" : "tgt",
             "contextType" : "variable",
-            "element" : "valueCodeableConcept",
+            "element" : "value",
             "transform" : "cc",
             "parameter" : [{
               "valueString" : "http://snomed.info/sct"
