@@ -34,7 +34,7 @@ Links:
   "name" : "BloodGlucoseQuestionnaireResponseToObservation",
   "title" : "Blood Glucose Q to O",
   "status" : "active",
-  "date" : "2026-06-18T08:24:24+00:00",
+  "date" : "2026-06-18T13:26:12+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

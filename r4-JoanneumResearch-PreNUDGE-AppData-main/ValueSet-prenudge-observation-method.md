@@ -17,6 +17,7 @@ ValueSet containing SNOMED CT codes for differentiating methods used in the PreN
 
  **References** 
 
+* [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md)
 * [AT PreNUDGE Observation](StructureDefinition-at-prenudge-observation.md)
 * [AT PreNUDGE Observation Smoking Status](StructureDefinition-at-prenudge-smokingstatus-observation.md)
 
@@ -60,7 +61,7 @@ Links:
   "title" : "AT PreNUDGE Observation Methods",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T08:24:24+00:00",
+  "date" : "2026-06-18T13:26:12+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

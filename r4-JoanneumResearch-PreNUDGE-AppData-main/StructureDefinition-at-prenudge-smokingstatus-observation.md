@@ -12,7 +12,7 @@
 | Draft as of 2026-06-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationSmokingStatus |
 
  
-This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question. 
+This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question. Additional fields from the PreNUDGE Observation profile are added. 
 
 **Usages:**
 
@@ -52,7 +52,7 @@ Links:
   "name" : "AtPrenudgeObservationSmokingStatus",
   "title" : "AT PreNUDGE Observation Smoking Status",
   "status" : "draft",
-  "date" : "2026-06-18T08:24:24+00:00",
+  "date" : "2026-06-18T13:26:12+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -69,7 +69,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question.",
+  "description" : "This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question. Additional fields from the PreNUDGE Observation profile are added.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -161,6 +161,7 @@ Links:
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
+      "short" : "Set to CodeableConcept, as recommended in Observation Social History - Tobacco Use (IPS)",
       "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
@@ -183,10 +184,21 @@ Links:
       }
     },
     {
+      "id" : "Observation.device",
+      "path" : "Observation.device",
+      "short" : "(Measurement) Devices should be documented when used",
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.derivedFrom",
       "path" : "Observation.derivedFrom",
       "short" : "QuestionnaireResponse or other source this smoking status observation was derived from",
       "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component",
+      "path" : "Observation.component",
+      "short" : "Components should only be used when multiple values are inseparably connected to a single measurement (e.g., score domains)."
     }]
   }
 }

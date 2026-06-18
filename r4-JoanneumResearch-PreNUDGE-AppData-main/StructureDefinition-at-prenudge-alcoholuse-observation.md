@@ -12,7 +12,7 @@
 | Draft as of 2026-06-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
 
  
-This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required. 
+This FHIR profile is derived from the APS Observation Alcohol Use profile. Additional fields from the PreNUDGE Observation profile are added. 
 
 **Usages:**
 
@@ -52,7 +52,7 @@ Links:
   "name" : "AtPrenudgeObservationAlcoholUse",
   "title" : "AT PreNUDGE Observation Alcohol Use",
   "status" : "draft",
-  "date" : "2026-06-18T08:24:24+00:00",
+  "date" : "2026-06-18T13:26:12+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -69,7 +69,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required.",
+  "description" : "This FHIR profile is derived from the APS Observation Alcohol Use profile. Additional fields from the PreNUDGE Observation profile are added.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -110,6 +110,95 @@ Links:
     "element" : [{
       "id" : "Observation",
       "path" : "Observation"
+    },
+    {
+      "id" : "Observation.identifier",
+      "path" : "Observation.identifier",
+      "short" : "Business Identifier for observation, at least one is assigned by the data provider",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.identifier.system",
+      "path" : "Observation.identifier.system",
+      "short" : "The namespace for the identifier value, if no other specifications are given, use your website url",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.identifier.value",
+      "path" : "Observation.identifier.value",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.effective[x]",
+      "path" : "Observation.effective[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Observation.effective[x]:effectiveDateTime",
+      "path" : "Observation.effective[x]",
+      "sliceName" : "effectiveDateTime",
+      "short" : "The mandatory clinically relevant time for observation",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "dateTime"
+      }]
+    },
+    {
+      "id" : "Observation.issued",
+      "path" : "Observation.issued",
+      "short" : "The mandatory date/time this version was made available",
+      "min" : 1
+    },
+    {
+      "id" : "Observation.value[x]",
+      "path" : "Observation.value[x]",
+      "short" : "Set to Quantity (drinks/day), as recommended in Observation Social History - Alcohol Use (IPS)",
+      "min" : 1,
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.note",
+      "path" : "Observation.note",
+      "short" : "Comments about the observation including patient comments have to be possible",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.method",
+      "path" : "Observation.method",
+      "short" : "Manual if derived from a QuestionnaireResponse; Automated only if a plausible automated source is documented",
+      "min" : 1,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-observation-method"
+      }
+    },
+    {
+      "id" : "Observation.device",
+      "path" : "Observation.device",
+      "short" : "(Measurement) Devices should be documented when used",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.derivedFrom",
+      "path" : "Observation.derivedFrom",
+      "short" : "QuestionnaireResponse or other source this smoking status observation was derived from",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Observation.component",
+      "path" : "Observation.component",
+      "short" : "Components should only be used when multiple values are inseparably connected to a single measurement (e.g., score domains)."
     }]
   }
 }

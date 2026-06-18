@@ -33,7 +33,7 @@ For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtoo
 
 Each **questionnaire variant** maps **one-way** to its corresponding **observation variant**. The mappings can be found at [StructureMaps](artifacts.md#terminology-structure-maps) and can be executed with [MaLaC-HD](https://gitlab.com/cdehealth/malac-hd). These transformations will be performed on the server side.
 
-Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from the informative ballot. The following are to be specified:
+Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to the ones mentioned above, based on feedback from the informative ballot. The following are to be specified:
 
 * Physical Activity: Minutes of moderate physical activity (per week), Minutes of physical activity (per week) (from a questionnaire and from a wearable device as an observation)
 * Physical Activity: Number of muscle strengthening exercise sessions (per week) (from a questionnaire and from a wearable device as an observation)
@@ -70,7 +70,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-18T08:24:24+00:00",
+  "date" : "2026-06-18T13:26:12+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -807,7 +807,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-alcoholuse-observation"
       },
       "name" : "AT PreNUDGE Observation Alcohol Use",
-      "description" : "This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required.",
+      "description" : "This FHIR profile is derived from the APS Observation Alcohol Use profile. Additional fields from the PreNUDGE Observation profile are added.",
       "exampleBoolean" : false
     },
     {
@@ -891,7 +891,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-smokingstatus-observation"
       },
       "name" : "AT PreNUDGE Observation Smoking Status",
-      "description" : "This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question.",
+      "description" : "This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question. Additional fields from the PreNUDGE Observation profile are added.",
       "exampleBoolean" : false
     },
     {
