@@ -311,7 +311,7 @@ Eine Einlösung gilt als vollständig, wenn für <em>MedicationDispense.type</em
 
 <h4 id="sub_uc_emed_09_01_01---vollständige-einzelabgabe-erfassen">Sub_UC_eMed_09_01_01 - Vollständige Einzelabgabe erfassen</h4>
 
-<p>Eine vollständige Einzelabgabe liegt vor, wenn die in der <em>Geplanten Abgabe</em> verordneten Arzneimenge vollständig abgegeben wird (existiert keine zugehörige <em>Geplante Abgabe</em> gilt <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05---abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">Sub_UC_eMed_09_01_05 - Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</a>).</p>
+<p>Eine vollständige Einzelabgabe liegt vor, wenn die in der <em>Geplanten Abgabe</em> verordneten Arzneimenge vollständig abgegeben wird (existiert keine zugehörige <em>Geplante Abgabe</em> gilt <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">Sub_UC_eMed_09_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</a>).</p>
 
 <p>Bei einer vollständigen Einzelabgabe <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> wie folgt erstellt werden:</p>
 <ul>
@@ -393,7 +393,7 @@ enthalten.</li>
 
 <h4 id="sub_uc_emed_09_01_03---besorgerprozess">Sub_UC_eMed_09_01_03 - Besorgerprozess</h4>
 
-<p>Ein Besorgerprozess liegt vor, wenn das in der <em>Geplanten Abgabe</em> verordnete Arzneimittel <strong>vollständig bestellt oder zubereitet</strong> werden muss (es findet noch <strong>keine Abgabe</strong> statt). Die <em>Geplanten Abgabe</em> kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.</p>
+<p>Ein Besorgerprozess liegt vor, wenn das in der <em>Geplanten Abgabe</em> verordnete Arzneimittel <strong>bestellt oder zubereitet</strong> werden muss (es findet noch <strong>keine Abgabe</strong> statt). Die <em>Geplanten Abgabe</em> kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.</p>
 
 <p>Entsprechend den Regeln für Teilabgaben <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> wie folgt erstellt werden:</p>
 <ul>
@@ -435,7 +435,7 @@ Dieser Einlösevorgang ist damit beendet.</li>
 
   <!-- Kann wieder rückgängig gemacht werden (durch Storno). (S31. v2 Absetzdatum + GDA relevant (statusChanged R6) -->
 
-<h4 id="sub_uc_emed_09_01_05---abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">Sub_UC_eMed_09_01_05 - Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</h4>
+<h4 id="sub_uc_emed_09_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">Sub_UC_eMed_09_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</h4>
 
 <p>In folgenden Fällen liegt bei der Erfassung einer <em>Durchgeführten Abgabe</em> keine zugehörige <em>Geplante Abgabe</em> vor:</p>
 <ul>
@@ -450,7 +450,7 @@ Dieser Einlösevorgang ist damit beendet.</li>
 
 <p>Sofern für die <em>Durchgeführten Abgabe</em> im nachhinein ein <em>Planeintrag</em> erstellt wird, <strong>KANN</strong> mit $reference-plan der <em>Planeintrag</em> (in <em>MedicationDispense.authorizingPrescription[planeintrag]</em>) referenziert werden.</p>
 
-<h4 id="sub_uc_emed_09_01_06---geplanten-abgabe-nacherfassen">Sub_UC_eMed_09_01_06 - Geplanten Abgabe nacherfassen</h4>
+<h4 id="sub_uc_emed_09_01_06---durchgeführte-abgabe-nacherfassen">Sub_UC_eMed_09_01_06 - Durchgeführte Abgabe nacherfassen</h4>
 
 <p>Bei der Nacherfassung bereits abgegebener Arzneimittel (z.B. wenn eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war oder bei Arzneimittelbezug aus dem Ausland), wird als Erfassungsdatum der Zeitpunkt der Nacherfassung gesetzt, während als Abgabedatum das tatsächliche Datum der Abgabe in der Vergangenheit eingetragen wird.</p>
 
@@ -468,11 +468,10 @@ Dieser Einlösevorgang ist damit beendet.</li>
 <p>Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Referenz auf die zugehörige <em>Geplante Abgabe</em> bzw. den <em>Planeintrag</em>.</p>
 
   <!-- Begrüdung verpflichtend? -->
-<p><br/></p>
 
 <h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
 
-<p><a name="l1033">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
+<p><a name="l1030">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
 
 <p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, ruft der GDA diese mittels GET MedicationDispense ab und bearbeitet diese wie folgt:</p>
 <ul>
@@ -486,7 +485,6 @@ Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
   <!-- TODO: Suchparameter nach stornierten Durchgeführten Abgaben? -->
   <!-- TODO: Wenn stornierte *Durchgeführte Abgabe* Teil eines e-Rezepts mit weiteren geplanten Abgaben ist: Auswirkungen? keene -->
-<p><br/></p>
 
 <h3 id="sub_uc_emed_09_03---durchgeführte-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_09_03 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)</h3>
 
@@ -532,7 +530,7 @@ Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jun 19, 2026 14:53+0000">2026-06-19</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 08:46+0000">2026-06-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

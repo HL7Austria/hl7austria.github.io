@@ -318,10 +318,10 @@ Das Bundle enthält den [Medikationsplan](design_choices.html#medikationsplan-at
 
 Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und wird selbst nicht persisitert. -->
 
-  <!-- #### Geplante Abgabe: AtElgaEmedMedicationRequestGeplanteAbgabe (*MedicationRequest*)
+  <!-- #### *Geplante Abgabe*: AtElgaEmedMedicationRequestGeplanteAbgabe (*MedicationRequest*)
 
 Eine *Geplante Abgabe* einer Medikation aus dem zugrundeliegenden Medikationsplaneintrag wird durch eine *MedicationRequest*-Ressource der Kategorie *Geplante Abgabe* abgebildet. Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. *Geplante Abgaben* dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
-Werden mehrere Medikamente gleichzeitig verordnet (und sollen demselben e-Rezept zugeordnet sein), wird für jedes Medikament eine geplante Abgabe mit demselben e-Med GroupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.
+Werden mehrere Medikamente gleichzeitig verordnet (und sollen demselben e-Rezept zugeordnet sein), wird für jedes Medikament eine Geplante Abgabe mit demselben e-Med GroupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.
 
 Der aktuelle Status einer geplanten Abgabe wird im *status*-Element dokumentiert (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe)). -->
 
@@ -333,16 +333,16 @@ Der aktuelle Status einer geplanten Abgabe wird im *status*-Element dokumentiert
 
 <p>Profil in Arbeit.</p>
 
-  <!-- #### Durchgeführte Abgabe: AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe (*MedicationDispense*)
+  <!-- #### *Durchgeführte Abgabe*: AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe (*MedicationDispense*)
 
 Eine *Durchgeführte Abgabe* einer Medikation wird durch eine *MedicationDispense*-Ressource abgebildet. 
 Die *Durchgeführte Abgabe* enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. 
 
 In der *Durchgeführten Abgabe* können Abweichungen von der *Geplanten Abgabe* hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige [Geplante Abgabe](design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. 
 
-Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige geplante Abgabe, ersichtlich. Es werden R5-Backport-Extensions verwendet.
+Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige Geplante Abgabe, ersichtlich. Es werden R5-Backport-Extensions verwendet.
 
-Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *type*-Element dokumentiert (siehe [Status des MedicationDispense in der durchgeführten Abgabe](workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe)). -->
+Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *type*-Element dokumentiert (siehe [Status des MedicationDispense in der Durchgeführten Abgabe](workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe)). -->
 
 
 
@@ -363,7 +363,7 @@ Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *t
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jun 19, 2026 14:53+0000">2026-06-19</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 08:46+0000">2026-06-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

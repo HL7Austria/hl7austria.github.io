@@ -7,7 +7,7 @@
 
 Das Kapitel gibt einen Überblick über die zentralen Anwendungsfälle der e-Medikation und zeigt, wie die verschiedenen Akteure mit den Funktionen interagieren.
 
-Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf den Medikationsplan und geplante und durchgeführte Abgaben erhalten sollen.
+Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf den Medikationsplan und Geplante und Durchgeführte Abgaben erhalten sollen.
 
 ### Use Case Diagramm
 

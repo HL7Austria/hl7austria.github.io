@@ -6,7 +6,7 @@
 
 ## Patient Journey
 
-Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der Medikationsplan eines Patienten mit den zugehörigen geplanten Abgaben und den durchgeführten Abgaben verändern kann.
+Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der Medikationsplan eines Patienten mit den zugehörigen geplanten Abgaben und den Durchgeführten Abgaben verändern kann.
 
 ### 27.2.2026: Arztbesuch
 
@@ -28,7 +28,7 @@ Dr. Musterärztin ergänzt das Medikament Ebetrexat (10 mg, Tabletten) und erkl�
 
 Im neu erstellen Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Musterärztin ([Practitioner 1](Practitioner-At-Emed-Example-Practitioner-01.md)) ersichtlich.
 
-Dr. Musterärztin erstellt für beide Medikamente eine geplante Abgabe (Rezeptierung), sodass Herr Mustermann die Medikamente in der Apotheke abholen kann.
+Dr. Musterärztin erstellt für beide Medikamente eine Geplante Abgabe (Rezeptierung), sodass Herr Mustermann die Medikamente in der Apotheke abholen kann.
 
 * **Geplante Abgaben erstellen:** 
 * Beispiel [Medication Request](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe.md)
@@ -37,14 +37,14 @@ Dr. Musterärztin erstellt für beide Medikamente eine geplante Abgabe (Rezeptie
 ### 28.2.2026: Abgabe in der Apotheke, Teil 1
 
 Herr Mustermann sucht eine ([Apotheke](Organization-At-Emed-Example-Organization-Apo-01.md)) auf, um sich die Medikamente abzuholen.
- Der Apotheke identifiziert den Patienten, sieht die geplanten Abgaben in der e-Medikation und kontrolliert, ob im Medikationsplan eventuell wechselwirkungsrelevante Medikation existiert. Da er das Medikament Ebetrexat verfügbar hat, erstellt er eine durchgeführte Abgabe  und händigt dem Patienten das Medikament aus.
- Für die Herstellung der magistralen Zubereitung benötigt der Apotheker Zeit, er erstellt eine durchgeführte Abgabe und kennzeichnet sie entsprechend,  sodass dies in der e-Medikation ersichtlich ist.
+ Der Apotheke identifiziert den Patienten, sieht die geplanten Abgaben in der e-Medikation und kontrolliert, ob im Medikationsplan eventuell wechselwirkungsrelevante Medikation existiert. Da er das Medikament Ebetrexat verfügbar hat, erstellt er eine **Durchgeführte Abgabe**  und händigt dem Patienten das Medikament aus.
+ Für die Herstellung der magistralen Zubereitung benötigt der Apotheker Zeit, er erstellt eine **Durchgeführte Abgabe** und kennzeichnet sie entsprechend,  sodass dies in der e-Medikation ersichtlich ist.
 
 * Durchgeführte Abgabe (zu erstellen)  
 
 ### 1.3.2026: Abgabe in der Apotheke, Teil 2
 
-Herr Mustermann sucht erneut die Apotheke auf, um die magistrale Zubereitung abzuholen. Der Apotheker kennzeichnet die bereits vorhandene durchgeführte Abgabe als abgeschlossen und übergibt dem Patienten das Medikament.
+Herr Mustermann sucht erneut die Apotheke auf, um die magistrale Zubereitung abzuholen. Der Apotheker kennzeichnet die bereits vorhandene **Durchgeführte Abgabe** als abgeschlossen und übergibt dem Patienten das Medikament.
 
 ### 5.3.2026: Abruf Medikationsplan durch Patienten
 

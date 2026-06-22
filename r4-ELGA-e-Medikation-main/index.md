@@ -10,11 +10,11 @@
 Der vorliegende **FHIR Implementation Guide e‑Medikation Version 4** ersetzt die bestehende, auf CDA basierende Version 2 der e‑Medikation.
 
 * Mit Version 4 wird die bestehende Umsetzung der e‑Medikation um die Funktionalität des e‑Medikationsplans ergänzt.
-* Darüber hinaus sollen alle geplanten und durchgeführten Abgaben von Medikamenten in der e-Abgabe als Teil von e-Medikation abgebildet werden.
+* Darüber hinaus sollen alle **Geplanten** und **Durchgeführten Abgaben** von Medikamenten in der e-Abgabe als Teil von e-Medikation abgebildet werden.
 
-Der **e‑Medikationsplan** bietet Behandler:innen und Patient:innen eine vollständige, strukturierte Übersicht über die aktuelle sowie die historische Medikation. Zentrales Element ist die Verordnung, welche im jeweiligen e‑Medikationsplaneintrag mit sämtlichen relevanten Einnahmedetails digital abgebildet wird. Diese Verordnung bildet die Grundlage für die Folgeprozesse Weiterverordnung, Rezeptierung und Abgabe. Die Einsicht in geplante und durchgeführte Abgaben (mit und ohne Medikationsplanbezug) in **e-Abgabe** soll die Vollständigkeit der Information zur Medikation gewährleisten.
+Der **e‑Medikationsplan** bietet Behandler:innen und Patient:innen eine vollständige, strukturierte Übersicht über die aktuelle sowie die historische Medikation. Zentrales Element ist die Verordnung, welche im jeweiligen e‑Medikationsplaneintrag mit sämtlichen relevanten Einnahmedetails digital abgebildet wird. Diese Verordnung bildet die Grundlage für die Folgeprozesse Weiterverordnung, Rezeptierung und Abgabe. Die Einsicht in **Geplante** und **Durchgeführte Abgaben** (mit und ohne Medikationsplanbezug) in **e-Abgabe** soll die Vollständigkeit der Information zur Medikation gewährleisten.
 
-Die Einführung des E-Medikationsplans gewährleistet, dass alle für die Therapieentscheidung relevanten Informationen verfügbar sind, Doppelverordnungen vermieden werden und die Patient:innensicherheit erhöht wird. Darüber hinaus fungiert der e‑Medikationsplan als Datengrundlage für die automatisierte Übernahme relevanter Medikationsinformationen in die ELGA Patient Summary.
+Die Einführung des E-Medikationsplans gewährleistet, dass alle für die Therapieentscheidung relevanten Informationen verfügbar sind, Doppelverordnungen vermieden werden und die Patient:innensicherheit erhöht wird. Darüber hinaus fungiert der e‑Medikationsplan als Datengrundlage für die automatisierte Übernahme relevanter Medikationsinformationen in die **ELGA Patient Summary**.
 
 ![](e_medikation_overview_start.png)
 
@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-06-19T14:53:34+00:00",
+  "date" : "2026-06-22T08:46:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -723,7 +723,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-elga-emed-medication-medikation"
       },
       "name" : "AT ELGA e-Medikation Medication Medikation",
-      "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, geplante Abgabe und durchgeführte Abgabe.",
+      "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
     },
@@ -981,7 +981,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe"
       },
       "name" : "Beispiel Journey 03: Geplante Abgabe",
-      "description" : "Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
+      "description" : "Bildet eine Geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
@@ -1125,7 +1125,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationRequest/At-Emed-Example-Mr-Geplante-Abgabe"
       },
       "name" : "Beispiel: Geplante Abgabe",
-      "description" : "Bildet eine geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
+      "description" : "Bildet eine Geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
@@ -1161,7 +1161,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "ValueSet/DurchgefuehrteAbgabeStatusVS"
       },
       "name" : "ELGA e-Med Durchgeführte Abgabe Status Value Set",
-      "description" : "ValueSet für zulässige Ausprägungen eines Status einer durchgeführten Abgabe (MedicationDispense).",
+      "description" : "ValueSet für zulässige Ausprägungen eines Status einer Durchgeführten Abgabe (MedicationDispense).",
       "exampleBoolean" : false
     },
     {
@@ -1173,7 +1173,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "ValueSet/DurchgefuehrteAbgabeTypVS"
       },
       "name" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
-      "description" : "ValueSet für zulässige Ausprägungen eines Typs einer durchgeführten Abgabe (MedicationDispense).",
+      "description" : "ValueSet für zulässige Ausprägungen eines Typs einer Durchgeführten Abgabe (MedicationDispense).",
       "exampleBoolean" : false
     },
     {

@@ -22,7 +22,7 @@ Die unterschiedlichen Arten der Abgabe und deren Abfolge sind dargestellt unter 
 
 #### Sub_UC_eMed_09_01_01 - Vollständige Einzelabgabe erfassen
 
-Eine vollständige Einzelabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordneten Arzneimenge vollständig abgegeben wird (existiert keine zugehörige **Geplante Abgabe** gilt [Sub_UC_eMed_09_01_05 - Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01_05---abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen)).
+Eine vollständige Einzelabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordneten Arzneimenge vollständig abgegeben wird (existiert keine zugehörige **Geplante Abgabe** gilt [Sub_UC_eMed_09_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen)).
 
 Bei einer vollständigen Einzelabgabe **MUSS** eine **Durchgeführte Abgabe** wie folgt erstellt werden:
 
@@ -99,7 +99,7 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
 
 #### Sub_UC_eMed_09_01_03 - Besorgerprozess
 
-Ein Besorgerprozess liegt vor, wenn das in der **Geplanten Abgabe** verordnete Arzneimittel **vollständig bestellt oder zubereitet** werden muss (es findet noch **keine Abgabe** statt). Die **Geplanten Abgabe** kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.
+Ein Besorgerprozess liegt vor, wenn das in der **Geplanten Abgabe** verordnete Arzneimittel **bestellt oder zubereitet** werden muss (es findet noch **keine Abgabe** statt). Die **Geplanten Abgabe** kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.
 
 Entsprechend den Regeln für Teilabgaben **MUSS** eine **Durchgeführte Abgabe** wie folgt erstellt werden:
 
@@ -129,7 +129,7 @@ Mit einer **Leerabgabe** dokumentiert der GDA (Apotheker bzw. Arzt mit Hausapoth
 
 Die Anzahl der möglichen Einlösungen einer **Geplanten Abgabe** reduziert sich nach einer Leerabgabe, d.h. sie bleibt weiterhin **active** bis die restlichen möglichen Einlösungen erfolgt sind oder sie zeitlich abläuft. Nur wenn alle möglichen Einlösungen mit **cancelled** gespeichert wurden, wird die zugehörige **Geplante Abgabe** automatisch auf **cancelled** gesetzt, sonst auf **completed**.
 
-#### Sub_UC_eMed_09_01_05 - Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen
+#### Sub_UC_eMed_09_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen
 
 In folgenden Fällen liegt bei der Erfassung einer **Durchgeführten Abgabe** keine zugehörige **Geplante Abgabe** vor:
 
@@ -142,7 +142,7 @@ Analog zu [Sub_UC_eMed_09_01_01 - Vollständige Einzelabgabe erfassen](Sub_UC_eM
 
 Sofern für die **Durchgeführten Abgabe** im nachhinein ein **Planeintrag** erstellt wird, **KANN** mit $reference-plan der **Planeintrag** (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
 
-#### Sub_UC_eMed_09_01_06 - Geplanten Abgabe nacherfassen
+#### Sub_UC_eMed_09_01_06 - Durchgeführte Abgabe nacherfassen
 
 Bei der Nacherfassung bereits abgegebener Arzneimittel (z.B. wenn eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war oder bei Arzneimittelbezug aus dem Ausland), wird als Erfassungsdatum der Zeitpunkt der Nacherfassung gesetzt, während als Abgabedatum das tatsächliche Datum der Abgabe in der Vergangenheit eingetragen wird.
 

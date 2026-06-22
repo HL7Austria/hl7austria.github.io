@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS | *Version*:0.1.1 | |
-| Active as of 2026-06-19 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestCategoryCS |
+| Active as of 2026-06-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedicationRequestCategoryCS |
 
  
 Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. 
@@ -32,7 +32,7 @@ Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient 
   "title" : "ELGA e-Med MedicationRequest Kategorie CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-06-19T14:53:34+00:00",
+  "date" : "2026-06-22T08:46:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
