@@ -12,7 +12,7 @@
 | Draft as of 2026-06-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationOtherQuantities |
 
  
-This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at. 
+This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifying a new Observation is missing, please contact prenudge@joanneum.at. 
 
 **Usages:**
 
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationOtherQuantities",
   "title" : "AT PreNUDGE Observation Other Quantities",
   "status" : "draft",
-  "date" : "2026-06-22T12:35:22+00:00",
+  "date" : "2026-06-22T13:57:07+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -65,7 +65,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at.",
+  "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifying a new Observation is missing, please contact prenudge@joanneum.at.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -118,7 +118,6 @@ Links:
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "min" : 1,
       "type" : [{
         "code" : "Quantity"
       }]

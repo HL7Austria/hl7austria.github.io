@@ -52,7 +52,7 @@ Links:
   "name" : "AtPrenudgeObservationSmokingStatus",
   "title" : "AT PreNUDGE Observation Smoking Status",
   "status" : "draft",
-  "date" : "2026-06-22T12:35:22+00:00",
+  "date" : "2026-06-22T13:57:07+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -162,7 +162,6 @@ Links:
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
       "short" : "Set to CodeableConcept, as recommended in Observation Social History - Tobacco Use (IPS)",
-      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }]

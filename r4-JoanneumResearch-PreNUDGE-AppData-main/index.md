@@ -73,7 +73,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-22T12:35:22+00:00",
+  "date" : "2026-06-22T13:57:07+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -882,7 +882,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-observation-other-not-quantities"
       },
       "name" : "AT PreNUDGE Observation Other not Quantities",
-      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations.",
+      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations.",
       "exampleBoolean" : false
     },
     {
@@ -894,7 +894,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-observation-other-quantities"
       },
       "name" : "AT PreNUDGE Observation Other Quantities",
-      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at.",
+      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifying a new Observation is missing, please contact prenudge@joanneum.at.",
       "exampleBoolean" : false
     },
     {

@@ -12,7 +12,7 @@
 | Draft as of 2026-06-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationOtherNotQuantities |
 
  
-This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations. 
+This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations. 
 
 **Usages:**
 
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationOtherNotQuantities",
   "title" : "AT PreNUDGE Observation Other not Quantities",
   "status" : "draft",
-  "date" : "2026-06-22T12:35:22+00:00",
+  "date" : "2026-06-22T13:57:07+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -65,7 +65,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations.",
+  "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -118,7 +118,6 @@ Links:
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       },

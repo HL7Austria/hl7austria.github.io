@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-06-22T12:35:22+00:00",
+  "date" : "2026-06-22T13:57:07+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -128,7 +128,6 @@ Links:
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "min" : 1,
       "type" : [{
         "code" : "Quantity"
       }]
