@@ -426,38 +426,38 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <tbody>
     <tr>
       <td><strong>active</strong></td>
-      <td>Geplante Abgabe <strong>offen</strong>: Status beim Erstellen einer Geplanten Abgabe, solange noch (Teil-)Abgaben offen sind (dh. Rezept kann noch eingelöst werden)</td>
+      <td><em>Geplante Abgabe</em> <strong>offen</strong>: Status beim Erstellen einer Geplanten Abgabe, solange noch (Teil-)Abgaben offen sind (dh. Rezept kann noch eingelöst werden)</td>
     </tr>
     <tr>
       <td><strong>completed</strong></td>
-      <td>Geplante Abgabe <strong>eingelöst</strong>: Der Status wird durch die Fachwendung <strong>automatisch</strong> gesetzt, wenn alle möglichen Einlösungen durchgeführt wurden. Sonderfall: Sollte im Anschluss eine Durchgeführte Abgabe den Status <em>entered-in-error</em> erhalten, setzt die Fachanwendung gegebenfalls die Geplante Abgabe automatisch wieder auf <em>active</em>.</td>
+      <td><em>Geplante Abgabe</em> <strong>eingelöst</strong>: Der Status wird durch die Fachwendung <strong>automatisch</strong> gesetzt, wenn alle möglichen Einlösungen durchgeführt wurden. Sonderfall: Sollte im Anschluss eine <em>Durchgeführte Abgabe</em> den Status <em>entered-in-error</em> erhalten, setzt die Fachanwendung gegebenfalls die <em>Geplante Abgabe</em> automatisch wieder auf <em>active</em>.</td>
     </tr>
     <tr>
       <td><strong>stopped</strong></td>
-      <td>Geplante Abgabe ist <strong>abgelaufen</strong>, d.h. der Einlösezeitraum für die ausgewählte Rezeptart (<em>category:recipetype</em>) ist überschritten; der Status wird <strong>automatisch durch die Fachanwendung</strong> gesetzt. Die Geplante Abgabe ist damit abgeschlossen.</td>
+      <td><em>Geplante Abgabe</em> ist <strong>abgelaufen</strong>, d.h. der Einlösezeitraum für die ausgewählte Rezeptart (<em>category:recipetype</em>) ist überschritten; der Status wird <strong>automatisch durch die Fachanwendung</strong> gesetzt. Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</td>
     </tr>
     <tr>
       <td><strong>entered-in-error</strong></td>
-      <td>Geplante Abgabe wird aufgrund eines Fehlers verworfen. Es wurden noch <strong>keine Abgaben durchgeführt</strong>. Die Geplante Abgabe wird damit abgeschlossen.</td>
+      <td><em>Geplante Abgabe</em> wird aufgrund eines Fehlers verworfen. Es wurden noch <strong>keine Abgaben durchgeführt</strong>. Die <em>Geplante Abgabe</em> wird damit abgeschlossen.</td>
     </tr>
     <tr>
       <td><strong>cancelled</strong></td>
-      <td>Geplante Abgabe erhält automatisch den Status <strong>cancelled</strong> ("nicht abgegeben"), wenn alle Durchgeführten Abgaben (jede Einlösung) den Status <strong>cancelled</strong> erhalten haben ("Leerabgabe"). Wird eine gecancelte Abgabe verworfen, wird die geplante Abgabe automatisch wieder aktiviert.</td>
+      <td><em>Geplante Abgabe</em> erhält automatisch den Status <strong>cancelled</strong> ("nicht abgegeben"), wenn alle Durchgeführten Abgaben (jede Einlösung) den Status <strong>cancelled</strong> erhalten haben ("Leerabgabe"). Wird eine gecancelte Abgabe verworfen, wird die <em>Geplante Abgabe</em> automatisch wieder aktiviert.</td>
     </tr>
   </tbody>
 </table>
 
-  <!-- |  **cancelled**  | Geplante Abgabe ist storniert, aufgrund eines Fehlers. Die Geplante Abgabe wurde zurückgezogen, **bevor eine Abgabe durchgeführt** wurde. Die Geplante Abgabe ist damit abgeschlossen. | -->
+  <!-- |  **cancelled**  | *Geplante Abgabe* ist storniert, aufgrund eines Fehlers. Die *Geplante Abgabe* wurde zurückgezogen, **bevor eine Abgabe durchgeführt** wurde. Die *Geplante Abgabe* ist damit abgeschlossen. | -->
 
-  <!-- | **stopped** | Geplante Abgabe wird **nicht abgegeben**: Die geplante Abgabe wird dauerhaft **durch den GDA** gestoppt, auch wenn bereits Teilabgaben durchgeführt worden sind. Wenn die Geplante Abgabe **abgelaufen** ist, d.h. der Einlösezeitraum für die ausgewählte Rezeptart (*category:recipetype*) ist überschritten, wird der Status **automatisch durch die Fachanwendung** gesetzt. Die Geplante Abgabe ist damit abgeschlossen. | -->
+  <!-- | **stopped** | *Geplante Abgabe* wird **nicht abgegeben**: Die *Geplante Abgabe* wird dauerhaft **durch den GDA** gestoppt, auch wenn bereits Teilabgaben durchgeführt worden sind. Wenn die *Geplante Abgabe* **abgelaufen** ist, d.h. der Einlösezeitraum für die ausgewählte Rezeptart (*category:recipetype*) ist überschritten, wird der Status **automatisch durch die Fachanwendung** gesetzt. Die *Geplante Abgabe* ist damit abgeschlossen. | -->
 
-  <!-- Gemäß:  [active | completed | entered-in-error | stopped]. Bedeutung: active: offene, geplante Abgabe | completed: geplante Abgabe abgeschlossen | entered-in-error: nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde | stopped: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)"
+  <!-- Gemäß:  [active | completed | entered-in-error | stopped]. Bedeutung: active: offene, *Geplante Abgabe* | completed: *Geplante Abgabe* abgeschlossen | entered-in-error: nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde | stopped: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)"
 //(nicht verwendet: on-hold, cancelled, draft, unknown) -->
 
   <!-- TODO: Status abgelaufen ist nur über das Datum und die Rezeptart ersichtlich? -->
 
 <p><br/></p>
-<div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 581 360" zoomAndPan="magnify" preserveAspectRatio="none" width="581px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:581px;height:360px;background:#FFFFFF;" version="1.1" height="360px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="123.855" font-size="14" textLength="320" y="23.5352" font-family="sans-serif" fill="#000000">MedicationRequest.status (geplante Abgabe)</text><ellipse cx="272.19" cy="53.4883" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse><rect rx="12.5" ry="12.5" width="53" x="245.69" y="117.4883" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="255.69" font-size="12" textLength="33" y="139.0898" font-family="sans-serif" fill="#000000">active</text><rect rx="12.5" ry="12.5" width="68" x="31.19" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="41.19" font-size="12" textLength="48" y="279.2298" font-family="sans-serif" fill="#000000">stopped</text><rect rx="12.5" ry="12.5" width="81" x="146.69" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="156.69" font-size="12" textLength="61" y="279.2298" font-family="sans-serif" fill="#000000">completed</text><rect rx="12.5" ry="12.5" width="118" x="248.19" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="258.19" font-size="12" textLength="98" y="279.2298" font-family="sans-serif" fill="#000000">entered-in-error</text><rect rx="12.5" ry="12.5" width="74" x="386.19" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="396.19" font-size="12" textLength="54" y="279.2298" font-family="sans-serif" fill="#000000">cancelled</text><ellipse cx="246.19" cy="343.7583" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="246.19" cy="343.7583" rx="6" ry="6" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse>  <!-- link start to active --><g id="link_start_active"><path d="M272.19,63.8683 C272.19,76.9583 272.19,94.9083 272.19,111.0283 " style="stroke:#181818;stroke-width:1.0;" id="start-to-active" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="272.19,117.0283,276.19,108.0283,272.19,112.0283,268.19,108.0283,272.19,117.0283"></polygon><text lengthAdjust="spacing" x="273.19" font-size="11" textLength="28" y="95.123" font-family="sans-serif" fill="#000000">offen</text></g>  <!-- link active to stopped --><g id="link_active_stopped"><path d="M245.54,135.2783 C187.67,135.2883 53.46,138.9283 25.19,171.6283 C6,193.8183 13.27,210.8283 25.19,237.6283 C28.53,245.1483 29.8091,247.7794 35.9491,253.2194 " style="stroke:#181818;stroke-width:1.0;" id="active-to-stopped" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="40.44,257.1983,36.3562,248.236,36.6976,253.8825,31.051,254.2238,40.44,257.1983"></polygon><text lengthAdjust="spacing" x="39.69" font-size="11" textLength="47" y="189.763" font-family="sans-serif" fill="#000000">Geplante</text><text lengthAdjust="spacing" x="42.69" font-size="11" textLength="41" y="202.7181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="33.69" font-size="11" textLength="59" y="215.6732" font-family="sans-serif" fill="#000000">abgelaufen</text><text lengthAdjust="spacing" x="26.19" font-size="11" textLength="74" y="228.6283" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link active to completed --><g id="link_active_completed"><path d="M245.42,137.9383 C205.82,142.0883 134.65,152.0983 119.19,171.6283 C100.98,194.6283 104.07,212.4883 119.19,237.6283 C125.39,247.9283 130.2796,252.733 140.9596,258.153 " style="stroke:#181818;stroke-width:1.0;" id="active-to-completed" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="146.31,260.8683,140.0945,253.2284,141.8513,258.6055,136.4741,260.3623,146.31,260.8683"></polygon><text lengthAdjust="spacing" x="147.19" font-size="11" textLength="20" y="183.263" font-family="sans-serif" fill="#000000">Alle</text><text lengthAdjust="spacing" x="129.19" font-size="11" textLength="56" y="196.2181" font-family="sans-serif" fill="#000000">möglichen</text><text lengthAdjust="spacing" x="124.19" font-size="11" textLength="66" y="209.1732" font-family="sans-serif" fill="#000000">Einlösungen</text><text lengthAdjust="spacing" x="121.19" font-size="11" textLength="72" y="222.1283" font-family="sans-serif" fill="#000000">durchgeführt</text><text lengthAdjust="spacing" x="120.19" font-size="11" textLength="74" y="235.0834" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link completed to active --><g id="link_completed_active"><path d="M191.46,257.5383 C198.87,229.6583 213.58,175.1383 216.19,171.6283 C223.69,161.4983 229.734,156.406 240.194,150.506 " style="stroke:#181818;stroke-width:1.0;" id="completed-to-active" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="245.42,147.5583,235.6159,148.4959,241.065,150.0147,239.5462,155.4639,245.42,147.5583"></polygon><text lengthAdjust="spacing" x="217.19" font-size="11" textLength="78" y="189.763" font-family="sans-serif" fill="#000000">durchgeführte</text><text lengthAdjust="spacing" x="235.69" font-size="11" textLength="41" y="202.7181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="229.19" font-size="11" textLength="54" y="215.6732" font-family="sans-serif" fill="#000000">verworfen</text><text lengthAdjust="spacing" x="219.19" font-size="11" textLength="74" y="228.6283" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link active to entered-in-error --><g id="link_active_entered-in-error"><path d="M288.76,151.7783 C293.64,157.5583 298.41,164.4283 301.19,171.6283 C312.17,200.1083 311.6417,230.4228 309.7617,251.1628 " style="stroke:#181818;stroke-width:1.0;" id="active-to-entered-in-error" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="309.22,257.1383,314.0162,248.5361,309.6714,252.1587,306.0488,247.8139,309.22,257.1383"></polygon><text lengthAdjust="spacing" x="314.42" font-size="11" textLength="47" y="196.263" font-family="sans-serif" fill="#000000">Geplante</text><text lengthAdjust="spacing" x="317.42" font-size="11" textLength="41" y="209.2181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="311.42" font-size="11" textLength="53" y="222.1732" font-family="sans-serif" fill="#000000">verwerfen</text></g>  <!-- link active to cancelled --><g id="link_active_cancelled"><path d="M299.05,139.9283 C320.45,144.6083 350.06,153.8883 370.19,171.6283 C371.97,173.1883 397.58,223.3102 412.07,251.8002 " style="stroke:#181818;stroke-width:1.0;" id="active-to-cancelled" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="414.79,257.1483,414.2753,247.3129,412.5233,252.6916,407.1446,250.9396,414.79,257.1483"></polygon><text lengthAdjust="spacing" x="431.73" font-size="11" textLength="20" y="183.263" font-family="sans-serif" fill="#000000">Alle</text><text lengthAdjust="spacing" x="413.73" font-size="11" textLength="56" y="196.2181" font-family="sans-serif" fill="#000000">möglichen</text><text lengthAdjust="spacing" x="408.73" font-size="11" textLength="66" y="209.1732" font-family="sans-serif" fill="#000000">Einlösungen</text><text lengthAdjust="spacing" x="407.23" font-size="11" textLength="69" y="222.1283" font-family="sans-serif" fill="#000000">Leerabgaben</text><text lengthAdjust="spacing" x="404.73" font-size="11" textLength="74" y="235.0834" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link cancelled to active --><g id="link_cancelled_active"><path d="M460.62,258.6383 C469.21,253.3283 477.26,246.4183 482.19,237.6283 C496.54,212.0383 501.09,194.0583 482.19,171.6283 C459.06,144.1883 356.3872,137.8131 305.1072,136.2331 " style="stroke:#181818;stroke-width:1.0;" id="cancelled-to-active" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="299.11,136.0483,307.9825,140.3236,304.1076,136.2023,308.2289,132.3273,299.11,136.0483"></polygon><text lengthAdjust="spacing" x="495.71" font-size="11" textLength="78" y="189.763" font-family="sans-serif" fill="#000000">durchgeführte</text><text lengthAdjust="spacing" x="514.21" font-size="11" textLength="41" y="202.7181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="507.71" font-size="11" textLength="54" y="215.6732" font-family="sans-serif" fill="#000000">verworfen</text><text lengthAdjust="spacing" x="497.71" font-size="11" textLength="74" y="228.6283" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link stopped to end --><g id="link_stopped_end"><path d="M99.66,288.4683 C141.71,304.0483 204.7539,327.4034 230.4439,336.9234 " style="stroke:#181818;stroke-width:1.0;" id="stopped-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="236.07,339.0083,229.0207,332.1302,231.3816,337.2709,226.2409,339.6317,236.07,339.0083"></polygon></g>  <!-- link entered-in-error to end --><g id="link_entered-in-error_end"><path d="M292.42,291.9283 C280.01,305.5683 266.8446,320.0373 257.3146,330.5273 " style="stroke:#181818;stroke-width:1.0;" id="entered-in-error-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="253.28,334.9683,262.2925,330.9965,256.6421,331.2675,256.3712,325.6171,253.28,334.9683"></polygon></g>  <!-- link completed to end --><g id="link_completed_end"><path d="M201.47,291.9283 C213.48,305.5683 226.1489,319.9716 235.3689,330.4616 " style="stroke:#181818;stroke-width:1.0;" id="completed-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="239.33,334.9683,236.3929,325.5676,236.0291,331.2127,230.384,330.849,239.33,334.9683"></polygon></g>  <!-- link cancelled to end --><g id="link_cancelled_end"><path d="M386.08,289.7483 C344.93,305.3483 286.6908,327.4126 262.0108,336.7626 " style="stroke:#181818;stroke-width:1.0;" id="cancelled-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="256.4,338.8883,266.2334,339.4403,261.0757,337.1169,263.3992,331.9592,256.4,338.8883"></polygon></g>  <!-- SRC=[fP4nRiGW54HxJe6siYCvHuYqHPGcQTB6Ms0OOoGC3dmsDzigdIyMrhOisKuJfKByqJpc3sJ8Whz16Id8UFUEpuH8Zv44fSWBZS4AH-3dHei69MF5Gychweb_-BQ5kt0XoLp1vcDMNXPJxMPNxKIZOKNAXjeL8f7lysjHTkM5H_B30BK1dAtDfdwyQMjaTpSz6sV7MqnEtsyg1TbfjEDt5-X0bBuVB6Z7F8Qw8dmXJ4iW2m6gCgv223xyASqh4CJ4F6udXPF8ViNML3Dqiy8kb0-_5RKKlHB_oLbwdoZvJzbfty5fbRRHfyacH9xy0000] --></g></svg></div>
+<div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 581 360" zoomAndPan="magnify" preserveAspectRatio="none" width="581px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:581px;height:360px;background:#FFFFFF;" version="1.1" height="360px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="123.855" font-size="14" textLength="320" y="23.5352" font-family="sans-serif" fill="#000000">MedicationRequest.status (Geplante Abgabe)</text><ellipse cx="272.19" cy="53.4883" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse><rect rx="12.5" ry="12.5" width="53" x="245.69" y="117.4883" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="255.69" font-size="12" textLength="33" y="139.0898" font-family="sans-serif" fill="#000000">active</text><rect rx="12.5" ry="12.5" width="68" x="31.19" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="41.19" font-size="12" textLength="48" y="279.2298" font-family="sans-serif" fill="#000000">stopped</text><rect rx="12.5" ry="12.5" width="81" x="146.69" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="156.69" font-size="12" textLength="61" y="279.2298" font-family="sans-serif" fill="#000000">completed</text><rect rx="12.5" ry="12.5" width="118" x="248.19" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="258.19" font-size="12" textLength="98" y="279.2298" font-family="sans-serif" fill="#000000">entered-in-error</text><rect rx="12.5" ry="12.5" width="74" x="386.19" y="257.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="396.19" font-size="12" textLength="54" y="279.2298" font-family="sans-serif" fill="#000000">cancelled</text><ellipse cx="246.19" cy="343.7583" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="246.19" cy="343.7583" rx="6" ry="6" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse>  <!-- link start to active --><g id="link_start_active"><path d="M272.19,63.8683 C272.19,76.9583 272.19,94.9083 272.19,111.0283 " style="stroke:#181818;stroke-width:1.0;" id="start-to-active" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="272.19,117.0283,276.19,108.0283,272.19,112.0283,268.19,108.0283,272.19,117.0283"></polygon><text lengthAdjust="spacing" x="273.19" font-size="11" textLength="28" y="95.123" font-family="sans-serif" fill="#000000">offen</text></g>  <!-- link active to stopped --><g id="link_active_stopped"><path d="M245.54,135.2783 C187.67,135.2883 53.46,138.9283 25.19,171.6283 C6,193.8183 13.27,210.8283 25.19,237.6283 C28.53,245.1483 29.8091,247.7794 35.9491,253.2194 " style="stroke:#181818;stroke-width:1.0;" id="active-to-stopped" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="40.44,257.1983,36.3562,248.236,36.6976,253.8825,31.051,254.2238,40.44,257.1983"></polygon><text lengthAdjust="spacing" x="39.69" font-size="11" textLength="47" y="189.763" font-family="sans-serif" fill="#000000">Geplante</text><text lengthAdjust="spacing" x="42.69" font-size="11" textLength="41" y="202.7181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="33.69" font-size="11" textLength="59" y="215.6732" font-family="sans-serif" fill="#000000">abgelaufen</text><text lengthAdjust="spacing" x="26.19" font-size="11" textLength="74" y="228.6283" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link active to completed --><g id="link_active_completed"><path d="M245.42,137.9383 C205.82,142.0883 134.65,152.0983 119.19,171.6283 C100.98,194.6283 104.07,212.4883 119.19,237.6283 C125.39,247.9283 130.2796,252.733 140.9596,258.153 " style="stroke:#181818;stroke-width:1.0;" id="active-to-completed" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="146.31,260.8683,140.0945,253.2284,141.8513,258.6055,136.4741,260.3623,146.31,260.8683"></polygon><text lengthAdjust="spacing" x="147.19" font-size="11" textLength="20" y="183.263" font-family="sans-serif" fill="#000000">Alle</text><text lengthAdjust="spacing" x="129.19" font-size="11" textLength="56" y="196.2181" font-family="sans-serif" fill="#000000">möglichen</text><text lengthAdjust="spacing" x="124.19" font-size="11" textLength="66" y="209.1732" font-family="sans-serif" fill="#000000">Einlösungen</text><text lengthAdjust="spacing" x="121.19" font-size="11" textLength="72" y="222.1283" font-family="sans-serif" fill="#000000">durchgeführt</text><text lengthAdjust="spacing" x="120.19" font-size="11" textLength="74" y="235.0834" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link completed to active --><g id="link_completed_active"><path d="M191.46,257.5383 C198.87,229.6583 213.58,175.1383 216.19,171.6283 C223.69,161.4983 229.734,156.406 240.194,150.506 " style="stroke:#181818;stroke-width:1.0;" id="completed-to-active" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="245.42,147.5583,235.6159,148.4959,241.065,150.0147,239.5462,155.4639,245.42,147.5583"></polygon><text lengthAdjust="spacing" x="217.19" font-size="11" textLength="78" y="189.763" font-family="sans-serif" fill="#000000">durchgeführte</text><text lengthAdjust="spacing" x="235.69" font-size="11" textLength="41" y="202.7181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="229.19" font-size="11" textLength="54" y="215.6732" font-family="sans-serif" fill="#000000">verworfen</text><text lengthAdjust="spacing" x="219.19" font-size="11" textLength="74" y="228.6283" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link active to entered-in-error --><g id="link_active_entered-in-error"><path d="M288.76,151.7783 C293.64,157.5583 298.41,164.4283 301.19,171.6283 C312.17,200.1083 311.6417,230.4228 309.7617,251.1628 " style="stroke:#181818;stroke-width:1.0;" id="active-to-entered-in-error" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="309.22,257.1383,314.0162,248.5361,309.6714,252.1587,306.0488,247.8139,309.22,257.1383"></polygon><text lengthAdjust="spacing" x="314.42" font-size="11" textLength="47" y="196.263" font-family="sans-serif" fill="#000000">Geplante</text><text lengthAdjust="spacing" x="317.42" font-size="11" textLength="41" y="209.2181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="311.42" font-size="11" textLength="53" y="222.1732" font-family="sans-serif" fill="#000000">verwerfen</text></g>  <!-- link active to cancelled --><g id="link_active_cancelled"><path d="M299.05,139.9283 C320.45,144.6083 350.06,153.8883 370.19,171.6283 C371.97,173.1883 397.58,223.3102 412.07,251.8002 " style="stroke:#181818;stroke-width:1.0;" id="active-to-cancelled" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="414.79,257.1483,414.2753,247.3129,412.5233,252.6916,407.1446,250.9396,414.79,257.1483"></polygon><text lengthAdjust="spacing" x="431.73" font-size="11" textLength="20" y="183.263" font-family="sans-serif" fill="#000000">Alle</text><text lengthAdjust="spacing" x="413.73" font-size="11" textLength="56" y="196.2181" font-family="sans-serif" fill="#000000">möglichen</text><text lengthAdjust="spacing" x="408.73" font-size="11" textLength="66" y="209.1732" font-family="sans-serif" fill="#000000">Einlösungen</text><text lengthAdjust="spacing" x="407.23" font-size="11" textLength="69" y="222.1283" font-family="sans-serif" fill="#000000">Leerabgaben</text><text lengthAdjust="spacing" x="404.73" font-size="11" textLength="74" y="235.0834" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link cancelled to active --><g id="link_cancelled_active"><path d="M460.62,258.6383 C469.21,253.3283 477.26,246.4183 482.19,237.6283 C496.54,212.0383 501.09,194.0583 482.19,171.6283 C459.06,144.1883 356.3872,137.8131 305.1072,136.2331 " style="stroke:#181818;stroke-width:1.0;" id="cancelled-to-active" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="299.11,136.0483,307.9825,140.3236,304.1076,136.2023,308.2289,132.3273,299.11,136.0483"></polygon><text lengthAdjust="spacing" x="495.71" font-size="11" textLength="78" y="189.763" font-family="sans-serif" fill="#000000">durchgeführte</text><text lengthAdjust="spacing" x="514.21" font-size="11" textLength="41" y="202.7181" font-family="sans-serif" fill="#000000">Abgabe</text><text lengthAdjust="spacing" x="507.71" font-size="11" textLength="54" y="215.6732" font-family="sans-serif" fill="#000000">verworfen</text><text lengthAdjust="spacing" x="497.71" font-size="11" textLength="74" y="228.6283" font-family="sans-serif" fill="#000000">(automatisch)</text></g>  <!-- link stopped to end --><g id="link_stopped_end"><path d="M99.66,288.4683 C141.71,304.0483 204.7539,327.4034 230.4439,336.9234 " style="stroke:#181818;stroke-width:1.0;" id="stopped-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="236.07,339.0083,229.0207,332.1302,231.3816,337.2709,226.2409,339.6317,236.07,339.0083"></polygon></g>  <!-- link entered-in-error to end --><g id="link_entered-in-error_end"><path d="M292.42,291.9283 C280.01,305.5683 266.8446,320.0373 257.3146,330.5273 " style="stroke:#181818;stroke-width:1.0;" id="entered-in-error-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="253.28,334.9683,262.2925,330.9965,256.6421,331.2675,256.3712,325.6171,253.28,334.9683"></polygon></g>  <!-- link completed to end --><g id="link_completed_end"><path d="M201.47,291.9283 C213.48,305.5683 226.1489,319.9716 235.3689,330.4616 " style="stroke:#181818;stroke-width:1.0;" id="completed-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="239.33,334.9683,236.3929,325.5676,236.0291,331.2127,230.384,330.849,239.33,334.9683"></polygon></g>  <!-- link cancelled to end --><g id="link_cancelled_end"><path d="M386.08,289.7483 C344.93,305.3483 286.6908,327.4126 262.0108,336.7626 " style="stroke:#181818;stroke-width:1.0;" id="cancelled-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="256.4,338.8883,266.2334,339.4403,261.0757,337.1169,263.3992,331.9592,256.4,338.8883"></polygon></g>  <!-- SRC=[fP4nRiGW54HxJe6siYCvHuYqHPGcQTB6Ms0OOoGC3dmsDzigdIyMrhOisKuJfKByqJpc3sJ8Whz16Id8UFUEpuH8Zv44fSWBZS4AH-3dHei69MF5Gychweb_-BQ5kt0XoLp1vcDMNXPJxMPNxKIZOKNAXjeL8f7lysjHTkM5H_B30BK1dAtDfdwyQMjaTpSz6sV7MqnEtsyg1TbfjEDt5-X0bBuVB6Z7F8Qw8dmXJ4iW2m6gCgv223xyASqh4CJ4F6udXPF8ViNML3Dqiy8kb0-_5RKKlHB_oLbwdoZvJzbfty5fbRRHfyacH9xy0000] --></g></svg></div>
 <p><br/></p>
 
 <h4 id="gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</h4>
@@ -501,9 +501,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 [^2] Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe wird in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert. Wird die Gültigkeitsdauer nicht angegeben, kann die Gültigkeitsdauer vom empfangenden System nur mit 1 Monat angenommen werden, gerechnet vom Erstellungsdatum an.
 <br/><br/></p>
 
-<h4 id="status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der durchgeführten Abgabe</h4>
+<h4 id="status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der Durchgeführten Abgabe</h4>
 
-<p><a name="l1496">​</a>Eine <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> kann, abhängig vom jeweiligen <a href="Sub_UC_eMed_09.html">Use Case für Durchgeführte Abgabe schreiben</a>, unterschiedliche Status einnehmen (Element <em>status</em>).</p>
+<p><a name="l1521">​</a>Eine <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> kann, abhängig vom jeweiligen <a href="Sub_UC_eMed_09.html">Use Case für Durchgeführte Abgabe schreiben</a>, unterschiedliche Status einnehmen (Element <em>status</em>).</p>
 
 <table>
   <thead>
@@ -519,22 +519,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td><strong>cancelled</strong></td>
-      <td>Durchgeführte Abgabe gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (Medikation "abgesetzt")</td>
+      <td><em>Durchgeführte Abgabe</em> gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (Medikation "abgesetzt")</td>
     </tr>
     <tr>
       <td><strong>entered-in-error</strong></td>
-      <td>Vorhandene Durchgeführte Abgabe (im Status <em>completed</em> oder <em>cancelled</em>) wird aufgrund eines Fehlers verworfen (eine mögliche beendete Geplante Abgabe, wird dadurch wieder <em>aktiv</em>)</td>
+      <td>Vorhandene <em>Durchgeführte Abgabe</em> (im Status <em>completed</em> oder <em>cancelled</em>) wird aufgrund eines Fehlers verworfen (eine mögliche beendete <em>Geplante Abgabe</em>, wird dadurch wieder <em>aktiv</em>)</td>
     </tr>
   </tbody>
 </table>
 
-  <!-- |  **preparation**  | Durchgeführte Abgabe wird vorbereitet (zubereitet oder bestellt) | -->
+  <!-- |  **preparation**  | *Durchgeführte Abgabe* wird vorbereitet (zubereitet oder bestellt) | -->
 
 <p><br/></p>
 <div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 397 308" zoomAndPan="magnify" preserveAspectRatio="none" width="397px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:397px;height:308px;background:#FFFFFF;" version="1.1" height="308px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="10" font-size="14" textLength="369" y="23.5352" font-family="sans-serif" fill="#000000">MedicationDispense.status (Durchgeführte Abgabe)</text><ellipse cx="196.84" cy="53.4883" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse><rect rx="12.5" ry="12.5" width="81" x="78.34" y="117.4883" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="88.34" font-size="12" textLength="61" y="139.0898" font-family="sans-serif" fill="#000000">completed</text><rect rx="12.5" ry="12.5" width="74" x="237.84" y="117.4883" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="247.84" font-size="12" textLength="54" y="139.0898" font-family="sans-serif" fill="#000000">cancelled</text><rect rx="12.5" ry="12.5" width="118" x="137.84" y="205.6283" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="34.1328"></rect><text lengthAdjust="spacing" x="147.84" font-size="12" textLength="98" y="227.2298" font-family="sans-serif" fill="#000000">entered-in-error</text><ellipse cx="196.84" cy="291.7583" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;" fill="none"></ellipse><ellipse cx="196.84" cy="291.7583" rx="6" ry="6" style="stroke:#222222;stroke-width:1.0;" fill="#222222"></ellipse>  <!-- link start to completed --><g id="link_start_completed"><path d="M186.53,54.8183 C169.14,56.0083 134.34,61.1883 118.84,83.4883 C112.09,93.1983 111.4574,100.8113 113.3374,111.3613 " style="stroke:#181818;stroke-width:1.0;" id="start-to-completed" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="114.39,117.2683,116.749,107.7061,113.5128,112.3458,108.8731,109.1096,114.39,117.2683"></polygon><text lengthAdjust="spacing" x="119.84" font-size="11" textLength="129" y="95.123" font-family="sans-serif" fill="#000000">abgegeben oder bestellt</text></g>  <!-- link start to cancelled --><g id="link_start_cancelled"><path d="M206.38,57.5383 C218.17,61.7183 238.2,70.2583 250.84,83.4883 C259.89,92.9683 264.0628,100.8647 267.8928,111.4747 " style="stroke:#181818;stroke-width:1.0;" id="start-to-cancelled" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="269.93,117.1183,270.6366,107.2948,268.2323,112.4153,263.1118,110.0111,269.93,117.1183"></polygon><text lengthAdjust="spacing" x="261.66" font-size="11" textLength="62" y="95.123" font-family="sans-serif" fill="#000000">Leerabgabe</text></g>  <!-- link cancelled to entered-in-error --><g id="link_cancelled_entered-in-error"><path d="M243.05,152.1183 C234.75,157.5183 226.32,164.0983 219.84,171.6283 C211.36,181.4883 207.3937,189.3427 203.6737,199.8427 " style="stroke:#181818;stroke-width:1.0;" id="cancelled-to-entered-in-error" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="201.67,205.4983,208.4459,198.3507,203.3397,200.7853,200.9052,195.6792,201.67,205.4983"></polygon><text lengthAdjust="spacing" x="220.84" font-size="11" textLength="53" y="183.263" font-family="sans-serif" fill="#000000">verwerfen</text></g>  <!-- link completed to entered-in-error --><g id="link_completed_entered-in-error"><path d="M127.38,151.8583 C133.21,162.1583 141.55,175.3883 150.84,185.6283 C157.25,192.6883 160.3971,195.7793 167.8371,201.4793 " style="stroke:#181818;stroke-width:1.0;" id="completed-to-entered-in-error" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="172.6,205.1283,167.8883,196.4796,168.6309,202.0875,163.023,202.8301,172.6,205.1283"></polygon><text lengthAdjust="spacing" x="151.84" font-size="11" textLength="53" y="183.263" font-family="sans-serif" fill="#000000">verwerfen</text></g>  <!-- link cancelled to end --><g id="link_cancelled_end"><path d="M277.71,151.7883 C280.68,173.5683 282.77,212.6583 265.84,239.7583 C251.39,262.8783 227.7597,276.434 212.3697,283.744 " style="stroke:#181818;stroke-width:1.0;" id="cancelled-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="206.95,286.3183,216.7957,286.07,211.4664,284.1731,213.3634,278.8437,206.95,286.3183"></polygon></g>  <!-- link completed to end --><g id="link_completed_end"><path d="M116.31,151.9283 C113.81,173.5183 112.32,212.0283 127.84,239.7583 C141.23,263.6783 165.5458,277.102 181.2358,284.142 " style="stroke:#181818;stroke-width:1.0;" id="completed-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="186.71,286.5983,180.1362,279.2645,182.1482,284.5514,176.8612,286.5634,186.71,286.5983"></polygon></g>  <!-- link entered-in-error to end --><g id="link_entered-in-error_end"><path d="M196.84,239.9283 C196.84,252.4883 196.84,263.5083 196.84,274.3083 " style="stroke:#181818;stroke-width:1.0;" id="entered-in-error-to-end" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="196.84,280.3083,200.84,271.3083,196.84,275.3083,192.84,271.3083,196.84,280.3083"></polygon></g>  <!-- SRC=[ZOv12i8m44NtESNGLIlK8mX2bte2wI9fVjD0JCfagfTpvyMiYXPrusxu__t7Y9S0siFwJejFiV5vHCnOPz4oPIgRYRl1eRzU1XRGrZXjK2bLhYggwmqTj75mC8YKB9WCiY04QQbBnp50O8aMUWUmVZXcGCTkHc7L-tf29_0Pt2EsL20A6BRsiGPpua8jtd_W3_FynjVydlpENjKD] --></g></svg></div>
 <p><br/></p>
 
-<h4 id="abhängigkeiten-der-geplanten-abgabe-und-der-durchgeführten-abgaben">Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben</h4>
+<h4 id="abhängigkeiten-der-geplanten-abgabe-und-der-durchgeführten-abgaben">Abhängigkeiten der <em>Geplanten Abgabe</em> und der <em>Durchgeführten Abgaben</em></h4>
 
 <table>
   <thead>
@@ -542,10 +542,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <th>Use Case</th>
       <th>Planeintrag (MedicationRequest-Status)</th>
       <th>Beschreibung</th>
-      <th>geplante Abgabe (MedicationRequest-Status)</th>
+      <th><em>Geplante Abgabe</em> (MedicationRequest-Status)</th>
       <th>Status Verordnung CDA</th>
       <th>Beschreibung</th>
-      <th>durchgeführte Abgabe (MedicationDispense-Status)</th>
+      <th><em>Durchgeführte Abgabe</em> (MedicationDispense-Status)</th>
       <th>Status Abgabe CDA</th>
       <th>Beschreibung</th>
       <th>Use Case</th>
@@ -553,9 +553,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </thead>
   <tbody>
     <tr>
-      <td>Geplante Abgabe basierend auf Planeintrag erfassen</td>
+      <td><em>Geplante Abgabe</em> basierend auf Planeintrag erfassen</td>
       <td>active</td>
-      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe *</td>
+      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe (*)</td>
       <td>active</td>
       <td>OFFEN</td>
       <td>z.B. 6 Einlösungen bei Privatrezept</td>
@@ -565,33 +565,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Geplante Abgabe beenden (durch Fachanwendung)</td>
+      <td><em>Geplante Abgabe</em> beenden (durch Fachanwendung)</td>
       <td>active</td>
-      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe *</td>
+      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe (*)</td>
       <td>completed</td>
       <td>EINGELÖST</td>
-      <td>auf Basis der durchgeführten Abgaben automatisch gesetzt durch Fachanwendung; dh. Alle möglichen Einlösungen sind abgechlossen (entweder completed oder cancelled)</td>
+      <td>auf Basis der Durchgeführten Abgaben automatisch gesetzt durch Fachanwendung; dh. Alle möglichen Einlösungen sind abgechlossen (entweder completed oder cancelled)</td>
       <td>completed</td>
       <td>ABGEGEBEN</td>
       <td>alle möglichen Einlösungen erfolgt</td>
-      <td>Durchgeführte Abgabe erfassen</td>
+      <td><em>Durchgeführte Abgabe</em> erfassen</td>
     </tr>
     <tr>
-      <td>Geplante Abgabe verwerfen</td>
+      <td><em>Geplante Abgabe</em> verwerfen</td>
       <td>active</td>
-      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe *</td>
+      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe (*)</td>
       <td>entered-in-error</td>
       <td>STORNIERT</td>
       <td>bei fehlerhafter Eingabe, wenn noch keine Abgabe durchgeführt</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-      <td>keine durchgeführten Abgaben vorhanden</td>
+      <td>keine Durchgeführten Abgaben vorhanden</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Geplante Abgabe abgelaufen (durch Fachanwendung)</td>
+      <td><em>Geplante Abgabe</em> abgelaufen (durch Fachanwendung)</td>
       <td>active</td>
-      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe *</td>
+      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe (*)</td>
       <td>stopped</td>
       <td>ABGELAUFEN</td>
       <td>automatisch erkannt durch Fachanwendung</td>
@@ -601,16 +601,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Geplante Abgabe nicht abgegeben (durch Fachanwendung)</td>
+      <td><em>Geplante Abgabe</em> nicht abgegeben (durch Fachanwendung)</td>
       <td>active</td>
-      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe *</td>
+      <td>Planeintrag bleibt active, unabhängig von Status der gepanten Abgabe (*)</td>
       <td>cancelled</td>
       <td>NICHT_ABGEGEBEN</td>
       <td>automatisch, wenn alle Einlösungen im MedicationDispense den Status "cancelled" erhalten haben</td>
       <td>cancelled</td>
       <td>ABGESETZT</td>
-      <td>Apotheker dokumentiert in der durchgeführten Abgabe, dass der Patient das Medikament in der geplanten Abgabe nicht einnimmt (mit Packungen 0) (entspricht der Leerabgabe).<br/>Kann wieder rückgängig gemacht werden (durch Storno)</td>
-      <td>Durchgeführten Abgabe abgesetzt</td>
+      <td>Apotheker dokumentiert in der Durchgeführten Abgabe, dass der Patient das Medikament in der geplanten Abgabe nicht einnimmt (mit Packungen 0) (entspricht der Leerabgabe).<br/>Kann wieder rückgängig gemacht werden (durch Storno)</td>
+      <td><em>Durchgeführten Abgabe</em> abgesetzt</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -622,111 +622,121 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>entered-in-error</td>
       <td>STORNIERT</td>
       <td>bei fehlerhafter Eingabe</td>
-      <td>Durchgeführte Abgabe verwerfen</td>
+      <td><em>Durchgeführte Abgabe</em> verwerfen</td>
     </tr>
   </tbody>
 </table>
 
-<p><br/>* solange ein evtl. Behandlungszeitraum nicht überschritten</p>
+<p><br/>(*) solange ein evtl. Behandlungszeitraum nicht überschritten</p>
 
 <p><br/></p>
 
 <h4 id="varianten-der-teil-abgabe">Varianten der (Teil-)Abgabe</h4>
 
-<p>Im Element <em>MedicationDispense.type</em> einer durchgeführten Abgabe wird die Art der Abgabe dokumentiert, welche von der <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (Anzahl Einlösungen) und vom Use Case abhängt.</p>
+<p>Im Element <em>MedicationDispense.type</em> einer Durchgeführten Abgabe wird die Art der Abgabe dokumentiert, welche von der <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Rezeptart</a> (Anzahl Einlösungen) und vom Use Case abhängt.</p>
+
+<p><br/>
+<a href="diagram_durchgefuehrte_abgaben_abgabearten.drawio.svg"><img src="diagram_durchgefuehrte_abgaben_abgabearten.drawio.svg" alt="diagram" style="width: 100%"/></a></p>
+
+<p><br/></p>
 
 <table>
   <thead>
     <tr>
-      <th>Use Case (pro Einlösung)</th>
-      <th>Geplante Abgabe (MedicationRequest.status)</th>
+      <th>Abgabenart</th>
+      <th><em>Geplante Abgabe</em> (MedicationRequest-Status)</th>
       <th>Beschreibung</th>
-      <th>Durchgeführte Abgabe (MedicationDispense)</th>
+      <th><em>Durchgeführte Abgabe</em> (MedicationDispense-Status)</th>
       <th>Beschreibung</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Vollständige Abgabe<br/>Sub_UC_eMed_09_01_01</td>
-      <td>completed, wenn letzte Einlösung abgeschlossen, sonst active</td>
-      <td>Geplante Abgabe wird nach erfolgter Dispense automatisch auf completed gesetzt</td>
-      <td>type: FFC (First Fill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Dispense abgeschlossen; Kann nicht mehr verändert werden.</td>
-    </tr>
-    <tr>
-      <td>"Besorgerprozess": Medikament von Apotheke bestellt<br/>Sub_UC_eMed_09_01_02</td>
-      <td>active</td>
-      <td>Geplante Abgabe bleibt active</td>
-      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; 0 Packungen (wurden&nbsp; ausgegeben)<br/>status: „preparation?“</td>
-      <td>Medikament bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden</td>
-    </tr>
-    <tr>
-      <td>"Besorgerprozess": bestelltes Medikament wird ausgehändigt<br/>Sub_UC_eMed_09_01_02</td>
+      <td>Einzelabgabe (einmalige Einlösemöglichkeit)</td>
       <td>completed</td>
-      <td>wenn Dispense completed, dann auch Geplante Abgabe completed</td>
-      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Durchgeführte Abgabe abgeschlossen</td>
+      <td>Sofern <em>Geplante Abgabe</em> vorhanden, wird diese nach erfolgter Abgabe automatisch auf <em>completed</em> gesetzt.</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „completed“</td>
+      <td>Abgabe abgeschlossen</td>
+    </tr>
+    <tr>
+      <td>Vollständige Einzelabgabe (bei mehrmaliger Einlösemöglichkeit)</td>
+      <td>active<br/><br/>wenn letzte Einlösung abgeschlossen: completed</td>
+      <td><em>Geplante Abgabe</em> bleibt nach erfolgter Abgabe <em>active</em> und wird erst nach der letzten möglichen Einlösung von der Fachanwendung automatisch auf <em>completed</em> gesetzt.</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity: x Packungen<br/>status: „completed“</td>
+      <td>je Einlösung wird eine <em>Durchgeführte Abgabe</em> erstellt</td>
     </tr>
     <tr>
       <td>1. Teilabgabe</td>
       <td>active</td>
-      <td>Geplante Abgabe bleibt active</td>
-      <td>type: FFP (First Fill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>1. Teilabgabe</td>
+      <td><em>Geplante Abgabe</em> bleibt <em>active</em></td>
+      <td>type: FFP (First Fill - Part Fill)<br/>quantity: x Packungen<br/>status: „completed“</td>
+      <td>Je Teilabgabe wird eine <em>Durchgeführte Abgabe</em> erstellt. <em>Geplante Abgabe</em> kann nicht mehr in einer anderen Apotheke abgegeben werden</td>
     </tr>
     <tr>
       <td>Weitere Teilabgabe</td>
       <td>active</td>
-      <td>Geplante Abgabe bleibt active</td>
-      <td>type: RFP (Refill - Part Fill)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>weitere Teilabgabe</td>
+      <td><em>Geplante Abgabe</em> bleibt <em>active</em></td>
+      <td>type: RFP (Refill - Part Fill)<br/>quantity: x Packungen<br/>status: „completed“</td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Vollständige Teilabgabe</td>
+      <td>Letzte Teilabgabe</td>
       <td>completed</td>
-      <td>nach der letzten Teilabgabe wird die Geplante Abgabe automatisch auf completed gesetzt</td>
-      <td>type:&nbsp; RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>letzte Teilabgabe</td>
+      <td><em>Geplante Abgabe</em> bleibt <em>active</em>, solange weitere Einlösungen möglich. Danach setzt die Fachanwendung den Status der <em>Geplanten Abgabe</em> auf <em>completed</em>.</td>
+      <td>type:&nbsp; RFC (Refill - Complete)<br/>quantity:&nbsp; x Packungen<br/>status: „completed“</td>
+      <td>&nbsp;</td>
     </tr>
     <tr>
-      <td>Leerabgabe bei Einzelabgabe</td>
-      <td>completed</td>
-      <td>die Geplante Abgabe wird automatisch auf completed gesetzt</td>
-      <td>type: FFC (First Fill - Complete) bzw. RFC (Refill Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
-      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt.</td>
+      <td>"Besorgerprozess": Arzneimittel von Apotheke bestellt / zubereitet (ohne Abgabe)</td>
+      <td>active</td>
+      <td><em>Geplante Abgabe</em> bleibt <em>active</em></td>
+      <td>type: FFP (First Fill - Part Fill)<br/>quantity: 0 Packungen (wurden ausgegeben)<br/>status: „completed“</td>
+      <td>Arzneimittel bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden</td>
     </tr>
     <tr>
-      <td>Leerabgabe beendet Teilabgaben</td>
-      <td>completed</td>
-      <td>nach einer Leerabgabe bei einer&nbsp; Teilabgabe wird die Geplante Abgabe automatisch auf completed gesetzt</td>
-      <td>type: RFC (Refill - Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
-      <td>Das Medikament einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet.</td>
+      <td>"Besorgerprozess": Arzneimittel nach Teilabgaben von Apotheke bestellt (ohne Abgabe)</td>
+      <td>active</td>
+      <td><em>Geplante Abgabe</em> bleibt <em>active</em></td>
+      <td>type: FFP (Refill – Part Fill)<br/>quantity: 0 Packungen (wurden&nbsp; ausgegeben)<br/>status: „completed“</td>
+      <td>Arzneimittel nach bereits erfolgter Teilabgabe bestellt oder Magistrale Zubereitung in Vorbereitung.</td>
+    </tr>
+    <tr>
+      <td>Leerabgabe beendet Einzelabgabe</td>
+      <td>cancelled</td>
+      <td>wenn alle möglichen Einlösungen <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
+      <td>Das Arzneimittel einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt.</td>
+    </tr>
+    <tr>
+      <td>Leerabgabe beendet Teilabgabe</td>
+      <td>completed oder cancelled</td>
+      <td>wenn alle möglichen Einlösungen <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</td>
+      <td>type: RFC (Refill - Complete)<br/>quantity: 0 Packungen<br/>status: „cancelled“</td>
+      <td>Teilabgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet.</td>
     </tr>
     <tr>
       <td>Notabgabe</td>
       <td>&nbsp;-</td>
-      <td>keine Geplante Abgabe vorhanden</td>
-      <td>type: EM (Emergency Supply)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Das Medikament wurde ohne zugrundeliegende Geplante Abgabe abgegeben.<br/>Es wird kein Rezept nachgereicht</td>
+      <td>keine <em>Geplante Abgabe</em> vorhanden</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity: x Packungen<br/>status: „completed“</td>
+      <td>Das Medikament wurde ohne zugrundeliegende <em>Geplante Abgabe</em> abgegeben.<br/>Es wird kein Rezept nachgereicht</td>
     </tr>
     <tr>
       <td>Rezept wird nachgebracht</td>
       <td>&nbsp;-</td>
-      <td>keine Geplante Abgabe vorhanden</td>
-      <td>type: SO (Script Owing)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Medikament wurde abgegeben oder reserviert, das formale Rezept wird später nachgereicht.&nbsp; Planeintrag + Geplante Abgabe für wechselwirkungsrelevante Medikamente soll nacherfasst werden.</td>
+      <td>keine <em>Geplante Abgabe</em> vorhanden</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity: x Packungen<br/>status: „completed“</td>
+      <td>Medikament wurde abgegeben, das formale Rezept wird später nachgereicht. Planeintrag kann nacherfasst werden.</td>
     </tr>
     <tr>
       <td>OTC Abgabe (rezeptfrei)</td>
       <td>&nbsp;-</td>
-      <td>keine Geplante Abgabe vorhanden</td>
-      <td>type: OTC (hinzufügen)<br/>quantity:&nbsp; x Packungen<br/>status: „complete“</td>
-      <td>Rezeptfreies Medikament wurde abgegeben. Ein Planeintrag für wechselwirkungsrelevante Medikamente soll nacherfasst werden.</td>
+      <td>keine <em>Geplante Abgabe</em> vorhanden</td>
+      <td>type: FFC (First Fill - Complete)<br/>quantity: x Packungen<br/>status: „completed“</td>
+      <td>Rezeptfreies MedA52:E57ikament wurde abgegeben. Ein Planeintrag für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden.</td>
     </tr>
   </tbody>
 </table>
-
-<p><br/></p>
 
 
 
@@ -746,7 +756,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Jun 18, 2026 12:41+0000">2026-06-18</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 13:11+0000">2026-06-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

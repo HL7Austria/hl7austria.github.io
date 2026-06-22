@@ -94,7 +94,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 Wurden alle möglichen Einlösungen einer **Geplanten Abgabe** planmäßig durchgeführt (siehe [Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01---durchgeführte-abgabe-erfassen)), setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status **completed** (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplante Abgabe** ist damit abgeschlossen.
 
-Sonderfall: Wenn die letzte durchgeführte Abgabe danach verworfen wird (Status **entered-in-error**), wird der Status der **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
+Sonderfall: Wenn die letzte **Durchgeführte Abgabe** danach verworfen wird (Status **entered-in-error**), wird der Status der **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
 
 #### Relevante Elemente (MedicationRequest)
 

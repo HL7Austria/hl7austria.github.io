@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe | *Version*:0.1.1 | |
-| Draft as of 2026-06-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
+| Draft as of 2026-06-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
 
  
 Dokumentiert eine "Durchgeführte Abgabe" eines Arzneimittels ("MedicationDispense"-Ressource). Die "Durchgeführte Abgabe" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. Es können Abweichungen zur "Geplanten Abgabe" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige "Geplanten Abgabe" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige "Geplante Abgabe", ersichtlich. Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "type"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-06-18T12:41:29+00:00",
+  "date" : "2026-06-22T13:11:20+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -136,19 +136,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationDispense.identifier",
       "path" : "MedicationDispense.identifier",
-      "short" : "Durchgeführte-Abgabe-ID. Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Durchgeführte-Abgabe-ID. Keine Verwendung in der Durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.partOf",
       "path" : "MedicationDispense.partOf",
-      "short" : "Auslösendes Ereignis (Referenz auf Procedure-Ressource). Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Auslösendes Ereignis (Referenz auf Procedure-Ressource). Keine Verwendung in der Durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
-      "short" : "Status der durchgeführten Abgabe. Mögliche Ausprägungen: [completed | entered-in-error | stopped] Bedeutung: completed: Die durchgeführte Abgabe ist abgeschlossen. | entered-in-error: Die durchgeführte Abgabe wird aufgrund falscher Eingabe storniert. | stopped: Die Abgabe wird nicht durchgeführt (Medikament wird abgesetzt).",
+      "short" : "Status der Durchgeführten Abgabe. Mögliche Ausprägungen: [completed | entered-in-error | stopped] Bedeutung: completed: Die Durchgeführte Abgabe ist abgeschlossen. | entered-in-error: Die Durchgeführte Abgabe wird aufgrund falscher Eingabe storniert. | stopped: Die Abgabe wird nicht durchgeführt (Medikament wird abgesetzt).",
       "mustSupport" : true
     },
     {
@@ -180,7 +180,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationDispense.statusReason[x]:statusReasonReference",
       "path" : "MedicationDispense.statusReason[x]",
       "sliceName" : "statusReasonReference",
-      "short" : "Referenz auf DetectedIssue-Ressource. Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Referenz auf DetectedIssue-Ressource. Keine Verwendung in der Durchgeführten Abgabe.",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -191,7 +191,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationDispense.category",
       "path" : "MedicationDispense.category",
-      "short" : "Angabe, wo das abgegebene Medikament voraussichtlich eingenommen oder verabreicht wird (z.B. stationär oder ambulant). Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Angabe, wo das abgegebene Medikament voraussichtlich eingenommen oder verabreicht wird (z.B. stationär oder ambulant). Keine Verwendung in der Durchgeführten Abgabe.",
       "max" : "0"
     },
     {
@@ -208,7 +208,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationDispense.subject",
       "path" : "MedicationDispense.subject",
-      "short" : "Patient, für den die durchgeführte Abgabe ausgestellt wird (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
+      "short" : "Patient, für den die Durchgeführte Abgabe ausgestellt wird (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -219,13 +219,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationDispense.context",
       "path" : "MedicationDispense.context",
-      "short" : "Referenz auf Encounter oder EpisodeOfCare. Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Referenz auf Encounter oder EpisodeOfCare. Keine Verwendung in der Durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.supportingInformation",
       "path" : "MedicationDispense.supportingInformation",
-      "short" : "Referenz (Any) auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Referenz (Any) auf zusätzliche Informationen, die die Abgabe des Medikaments unterstützen. Keine Verwendung in der Durchgeführten Abgabe.",
       "max" : "0"
     },
     {
@@ -239,13 +239,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationDispense.performer.function",
       "path" : "MedicationDispense.performer.function",
-      "short" : "Rolle der Person, die die Abgabe durchgeführt hat. Keine Verwendung in der durchgeführten Abgabe.",
+      "short" : "Rolle der Person, die die Abgabe durchgeführt hat. Keine Verwendung in der Durchgeführten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.performer.actor",
       "path" : "MedicationDispense.performer.actor",
-      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \nder/die die durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
+      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \nder/die die Durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
@@ -271,7 +271,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
         "ordered" : false,
         "rules" : "closed"
       },
-      "short" : "Referenz auf zugehörige geplante Abgabe (MedicationRequest), sofern diese existiert bzw. \nPlaneintrag (MedicationRequest). Es muss nicht zwingend eine geplante Abgabe referenziert werden, da es auch durchgeführte \nAbgaben ohne geplante Abgabe geben kann (z.B. Notfall oder OTC-Medikation)."
+      "short" : "Referenz auf zugehörige Geplante Abgabe (MedicationRequest), sofern diese existiert bzw. \nPlaneintrag (MedicationRequest). Es muss nicht zwingend eine Geplante Abgabe referenziert werden, da es auch durchgeführte \nAbgaben ohne Geplante Abgabe geben kann (z.B. Notfall oder OTC-Medikation)."
     },
     {
       "id" : "MedicationDispense.authorizingPrescription:geplanteAbgabe",

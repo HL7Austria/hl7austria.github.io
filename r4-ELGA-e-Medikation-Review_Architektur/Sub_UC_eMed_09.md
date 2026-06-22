@@ -14,23 +14,23 @@ Der GDA (Apotheke bzw. Arzt mit Hausapotheke) dokumentiert die Abgabe eines Arzn
 * Die maximale Anzahl an **Durchgeführten Abgaben** wird durch die Anzahl der zulässigen Einlösungen der zugehörigen **Geplanten Abgabe** bestimmt.
  
 * Der Status einer **Durchgeführten Abgabe** wird durch **MedicationDispense.status** (siehe [Status des MedicationDispense in der Durchgeführten Abgabe](workflowmanagement.md#status-des-medicationdispense-in-der-durchgeführten-abgabe)) und **MedicationDispense.type** bestimmt und kann Auswirkungen auf den Status der zugehörigen **Geplanten Abgabe** haben (siehe [Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben](workflowmanagement.md#abhängigkeiten-der-geplanten-abgabe-und-der-durchgeführten-abgaben)): 
-* Über **MedicationDispense.type** werden Einzelabgabe, Teilabgaben, Besorgerprozess und Leerabgabe unterschieden (siehe [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)). Für Teilabgaben, Besorgerprozesse und Leerabgaben **MUSS** die jeweils vorgegebene Sequenz der zulässigen **MedicationDispense.type**-Werte eingehalten werden.
+* Über **MedicationDispense.type** werden Einzelabgabe, Teilabgaben/Besorgerprozess und Leerabgabe unterschieden (siehe [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)). Für Teilabgaben, Besorgerprozesse und Leerabgaben **MUSS** die jeweils vorgegebene Sequenz der zulässigen **MedicationDispense.type**-Werte eingehalten werden.
  
 * Die tatsächlich abgegebene Packungsmenge **MUSS** in **MedicationDispense.quantity** angegeben werden. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden **Geplanten Abgabe**. Eine Einlösung gilt als vollständig, wenn für **MedicationDispense.type** den Wert **FFC (First Fill – Complete)** oder **PFC (Part Fill - Complete)** enthält. Die Anzahl der abgegebenen Packungen ist hierfür nicht maßgeblich.
 
-#### Abgabearten
+Die unterschiedlichen Arten der Abgabe und deren Abfolge sind dargestellt unter [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)).
 
- ![](diagram_durchgefuehrte_abgaben_abgabearten.drawio.svg)
+#### Sub_UC_eMed_09_01_01 - Vollständige Einzelabgabe erfassen
 
-#### Sub_UC_eMed_09_01_01 - Vollständige Abgabe erfassen
+Eine vollständige Einzelabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordneten Arzneimenge vollständig abgegeben wird (existiert keine zugehörige **Geplante Abgabe** gilt [Sub_UC_eMed_09_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen)).
 
-Wenn die **Geplante Abgabe** nur eine **einmalige Einlösung** ermöglicht (z.B. Kassenrezept), **MUSS** bei einer vollständigen Abgabe die zugehörige **Durchgeführte Abgabe** mit:
+Bei einer vollständigen Einzelabgabe **MUSS** eine **Durchgeführte Abgabe** wie folgt erstellt werden:
 
-* **MedicationDispense.type = FFC (First Fill – Complete)** und **MedicationDispense.status = completed** erstellt werden.
+* **MedicationDispense.type = FFC (First Fill – Complete)** und **MedicationDispense.status = completed**
 
-Die Fachanwendung erkennt anhand dieser Werte sowie **MedicationRequest.numberOfRepeatsAllowed** = 0 in der zugehörigen **Geplanten Abgabe**, dass keine weitere Einlösung zulässig ist und setzt den Status der **Geplanten Abgabe** auf **completed**.
+Existiert eine zugehörige **Geplante Abgabe** prüft die Fachanwendung anhand **MedicationRequest.numberOfRepeatsAllowed** ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Ist nur eine **einmalige Einlösung** möglich (z.B. Kassenrezept), setzt die Fachanwendung die **Geplanten Abgabe** auf den Status **completed**.
 
-Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationRequest.numberOfRepeatsAllowed** > 0), bleibt ihr Status solange **active**, bis die letztmögliche Einlösung erfolgt ist (siehe[Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_08.md#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung)).
+Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationRequest.numberOfRepeatsAllowed** > 0), wird je Einlösung eine **Durchgeführte Abgabe** erstellt. Der Status der **Geplanten Abgabe** bleibt solange **active**, bis die letztmögliche Einlösung erfolgt ist (siehe[Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_08.md#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung)).
 
 #### Relevante Elemente (MedicationDispense)
 
@@ -60,15 +60,15 @@ Für jede Teilabgabe **MUSS** eine **Durchgeführte Abgabe** erstellt werden. Da
 
 * **MedicationDispense.type** **MUSS** 
 * bei der ersten Teilabgabe den Wert **FFP (First Fill – Part Fill)**,
-* bei jeder weiteren Teilabgabe den Wert **RFP (Refill Fill – Part Fill)** und
-* bei der letzten Teilabgabe (**vollständige Teilabgabe**), d. h. sobald die in der **Geplanten Abgabe** verordnete Arzneimenge vollständig abgegeben wurde, den Wert **RFC (Refill – Complete)** enthalten.
+* bei jeder weiteren Teilabgabe den Wert **RFP (Refill – Part Fill)** und
+* bei der letzten Teilabgabe, d.h. sobald die in der **Geplanten Abgabe** verordnete Arzneimenge (für eine Einlösung) vollständig abgegeben wurde, den Wert **RFC (Refill – Complete)** enthalten.
  
-* **MedicationDispense.status** **MUSS** den Wert **completed** besitzen.
+* **MedicationDispense.status** **MUSS** den Wert **completed** enthalten.
 * **MedicationDispense.quantity** **MUSS** die **Anzahl der tatsächlich abgegebenen Packungen** enthalten.
 
 Die Gültigkeit einer **Geplanten Abgabe** verlängert sich im Zuge von Teilabgaben (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart)).
 
-Sobald eine Teilabgabe durchgeführt wurde (**Part Fill**), ist die Einlösung einer weiteren Teilabgabe in einer anderen Apotheke nicht mehr möglich, d.h. die Apotheke **MUSS** die Teilabgaben mit einem **Complete** abschließen.
+Sobald eine Teilabgabe durchgeführt wurde (**Part Fill**), ist die Einlösung einer weiteren Teilabgabe in einer anderen Apotheke nicht mehr möglich, d.h. die Apotheke **MUSS** die Teilabgaben mit einem **complete** abschließen.
 
 Vor dem Speichern einer neuen **Durchgeführten Abgabe** **MUSS** die Fachanwendung prüfen,
 
@@ -90,7 +90,7 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
     performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
     authorizingPrescription[geplanteabgabe]: Verpflichtende Referenz auf zugehörige Geplante Abgabe
     authorizingPrescription[planeintrag]: Verpflichtende Referenz auf Planeintrag
-    type: FFC (First Fill - Complete) | (Refill - Part Fill) | RFC (Refill - Complete)  // 1. Teilabgabe, weitere Teilabgabe, letzte Teilabgabe
+    type: FFC (First Fill - Complete) | (Refill - Part Fill) // 1. Teilabgabe, weitere Teilabgabe bestellen
     quantity: Abgegebene Packungen  // je Teilabgabe       
     whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
     dosageInstruction: optional Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation
@@ -99,44 +99,54 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
 
 #### Sub_UC_eMed_09_01_03 - Besorgerprozess
 
-Ein Besorgerprozess liegt vor, wenn das in der **Geplanten Abgabe** verordnete Arzneimittel **vollständig bestellt oder zubereitet** werden muss.
+Ein Besorgerprozess liegt vor, wenn das in der **Geplanten Abgabe** verordnete Arzneimittel **bestellt oder zubereitet** werden muss (es findet noch **keine Abgabe** statt). Die **Geplanten Abgabe** kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.
 
-Zu Beginn des Besorgerprozesses **MUSS**, entsprechend den Regeln für Teilabgaben, wird eine **Durchgeführte Abgabe** erstellt mit:
+Entsprechend den Regeln für Teilabgaben **MUSS** eine **Durchgeführte Abgabe** wie folgt erstellt werden:
 
-* **MedicationDispense.type = FFP (First Fill – Part Fill)**, **MedicationDispense.status = completed** erstellt werden.
-* Die abgegebenen Packungen **MÜSSEN** mit **MedicationDispense.quantity** = **0** dokumentiert werden. Die **Geplanten Abgabe** kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.
+* **MedicationDispense.type** **MUSS** enthalten: 
+* zu Beginn des Besorgerprozesses: **MedicationDispense.type = FFP (First Fill – Part Fill)**,
+* nach bereits erfolgten Teilabgaben: **MedicationDispense.type = FFP (Refill – Part Fill)**
+ 
+* **MedicationDispense.status** **MUSS** den Wert **completed** enthalten.
+* Die abgegebenen Packungen **MÜSSEN** mit **MedicationDispense.quantity** = **0** dokumentiert werden.
 
-Wird das bestellte/zubereitete Arzneimittel ausgehändigt, wird die Teilabgabe beendet, indem eine weitere **Durchgeführte Abgabe** erstellt wird mit:
+Wird das bestellte/zubereitete Arzneimittel ausgehändigt, wird dies in Form einer Teilabgabe mit der abgegebenen Menge dokumentiert, siehe [Sub_UC_eMed_09_01_02 - Teilabgaben erfassen](). Die **MedicationDispense.type**-Sequenz **FFP → RFP → RFC** muss dabei konsistent gehalten werden.
 
-* **MedicationDispense.type = RFC (Refill - Complete)**, **MedicationDispense.status = completed**.
-* **MedicationDispense.quantity** **MUSS** die Anzahl der **tatsächlich abgegebenen Packungen** enthalten. Der Besorgerprozess und die Abgabe ist damit abgeschlossen. Mögliche weitere Einlösungen der **Geplanten Abgabe** können in anderen Apotheken erfolgen.
+Im Fall einer Bestellung mit gleichzeitiger Teilabgabe wird nur die Teilabgabe dokumentert.
 
-Der Status der **Geplanten Abgabe** bleibt **active**, solange weitere Einlösungen zulässig sind. Sind keine weiteren Einlösungen mehr möglich, setzt die Fachanwendung den Status der **Geplanten Abgabe** auf **completed**.
+Der Status der **Geplanten Abgabe** bleibt während des Besorgerprozesses **active**.
 
 #### Sub_UC_eMed_09_01_04 Leerabgabe erfassen
 
 Mit einer **Leerabgabe** dokumentiert der GDA (Apotheker bzw. Arzt mit Hausapotheke), dass der Patient ein Arzneimittel einer **Geplanten Abgabe** nicht benötigt. Hierfür erstellt er eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) wie folgt:
 
-* Im Fall einer Beendigung einer Einzelabgabe: 
-* **MedicationDispense.type = FFC (First Fill Complete)**, **MedicationDispense.status = **cancelled****
+* **MedicationDispense.type** **MUSS** 
+* im Fall einer Beendigung einer Einzelabgabe: **MedicationDispense.type = FFC (First Fill Complete)**,
+* im Fall einer Beendigung einer Teilabgabe: **MedicationDispense.type = RFC (Refill - Complete)**
  
-* Wenn bereits Teilabgabe(n) erfolgt sind: **MedicationDispense.type = RFC (Refill - Complete)**, **MedicationDispense.status = **cancelled****
+* **MedicationDispense.status** **MUSS** den Wert **cancelled** enthalten.
 * Die abgegebenen Packungen **MÜSSEN** mit **MedicationDispense.quantity** = **0** dokumentiert werden. Dieser Einlösevorgang ist damit beendet.
 
 Die Anzahl der möglichen Einlösungen einer **Geplanten Abgabe** reduziert sich nach einer Leerabgabe, d.h. sie bleibt weiterhin **active** bis die restlichen möglichen Einlösungen erfolgt sind oder sie zeitlich abläuft. Nur wenn alle möglichen Einlösungen mit **cancelled** gespeichert wurden, wird die zugehörige **Geplante Abgabe** automatisch auf **cancelled** gesetzt, sonst auf **completed**.
 
-#### Sub_UC_eMed_09_01_05 - Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen
+#### Sub_UC_eMed_09_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen
 
 In folgenden Fällen liegt bei der Erfassung einer **Durchgeführten Abgabe** keine zugehörige **Geplante Abgabe** vor:
 
 * Abgabe von nicht verordneten Arzneimitteln (Abgabe von wechselwirkungsrelevanten OTC)
 * wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist, aber keine zugehörige **Geplante Abgabe** in e-Medikation existiert.
 
-Sofern für die **Durchgeführten Abgabe** im nachhinein ein **Planeintrag** erstellt wird, **KANN** mit $reference-plan der Planeintrag (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
+Analog zu [Sub_UC_eMed_09_01_01 - Vollständige Einzelabgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01_01---vollständige-einzelabgabe-erfassen) gilt bei der Erstellung der **Durchgeführten Abgabe**:
 
-#### Sub_UC_eMed_09_01_06 - Geplanten Abgabe nacherfassen
+* **MedicationDispense.type = FFC (First Fill – Complete)** und **MedicationDispense.status = completed**
+
+Sofern für die **Durchgeführten Abgabe** im nachhinein ein **Planeintrag** erstellt wird, **KANN** mit $reference-plan der **Planeintrag** (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
+
+#### Sub_UC_eMed_09_01_06 - Durchgeführte Abgabe nacherfassen
 
 Bei der Nacherfassung bereits abgegebener Arzneimittel (z.B. wenn eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war oder bei Arzneimittelbezug aus dem Ausland), wird als Erfassungsdatum der Zeitpunkt der Nacherfassung gesetzt, während als Abgabedatum das tatsächliche Datum der Abgabe in der Vergangenheit eingetragen wird.
+
+Alle weiteren Elemente sind entsprechend der Abgabeart zu befüllen.
 
 #### Relevante Elemente (MedicationDispense)
 
