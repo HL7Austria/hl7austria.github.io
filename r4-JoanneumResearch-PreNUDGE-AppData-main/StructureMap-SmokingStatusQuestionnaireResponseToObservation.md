@@ -34,7 +34,7 @@ Links:
   "name" : "SmokingStatusQuestionnaireResponseToObservation",
   "title" : "ATHIS-based Smoking Status Q to O",
   "status" : "active",
-  "date" : "2026-06-22T13:57:07+00:00",
+  "date" : "2026-06-22T14:44:05+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -438,6 +438,88 @@ Links:
             },
             {
               "valueString" : "Never smoked tobacco"
+            }]
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "sk1Unknown",
+      "source" : [{
+        "context" : "groupItem",
+        "element" : "item",
+        "variable" : "sk1",
+        "condition" : "sk1.linkId = 'sk1'"
+      }],
+      "rule" : [{
+        "name" : "evaluateSk1Unknown",
+        "source" : [{
+          "context" : "sk1",
+          "element" : "answer",
+          "variable" : "answer"
+        }],
+        "rule" : [{
+          "name" : "mapSk1Unknown",
+          "source" : [{
+            "context" : "answer",
+            "element" : "value",
+            "variable" : "coding",
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-unknown')"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "dataAbsentReason",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+            },
+            {
+              "valueString" : "asked-unknown"
+            },
+            {
+              "valueString" : "Asked But Unknown"
+            }]
+          }]
+        }]
+      }]
+    },
+    {
+      "name" : "sk1NotStated",
+      "source" : [{
+        "context" : "groupItem",
+        "element" : "item",
+        "variable" : "sk1",
+        "condition" : "sk1.linkId = 'sk1'"
+      }],
+      "rule" : [{
+        "name" : "evaluateSk1NotStated",
+        "source" : [{
+          "context" : "sk1",
+          "element" : "answer",
+          "variable" : "answer"
+        }],
+        "rule" : [{
+          "name" : "mapSk1NotStated",
+          "source" : [{
+            "context" : "answer",
+            "element" : "value",
+            "variable" : "coding",
+            "condition" : "(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-not-stated')"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "dataAbsentReason",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+            },
+            {
+              "valueString" : "asked-declined"
+            },
+            {
+              "valueString" : "Asked But Declined"
             }]
           }]
         }]

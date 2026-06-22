@@ -150,8 +150,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#prenudge-fhir-ig-for-data-provider--data-from-apps" id="markdown-toc-prenudge-fhir-ig-for-data-provider--data-from-apps">PreNUDGE FHIR® IG for Data Provider / Data from Apps</a></li>
+  <li><a href="#observation-values-and-missing-data" id="markdown-toc-observation-values-and-missing-data">Observation values and missing data</a></li>
+</ul>
+
 </div>
 <p>PreNUDGE is an Austrian research project designed to strengthen citizens' personal responsibility for their health. The project aims to increase the number of <strong>healthy life years</strong> through the <strong>digitalization of self-reported health data</strong>.</p>
 
@@ -206,6 +210,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Besides these narrow standardized measurements, <strong>broad standardized measurements</strong> called <a href="StructureDefinition-at-prenudge-observation-other-quantities.html"><strong>other quantities observations</strong></a> and <a href="StructureDefinition-at-prenudge-observation-other-not-quantities.html"><strong>other not quantities observations</strong></a> are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.</p>
 
+<h3 id="observation-values-and-missing-data">Observation values and missing data</h3>
+
+<p>PreNUDGE Observations SHOULD contain <code class="language-plaintext highlighter-rouge">value[x]</code> when a clinically or analytically meaningful value can be derived. If no such value can be derived, <code class="language-plaintext highlighter-rouge">value[x]</code> SHALL be absent and <code class="language-plaintext highlighter-rouge">dataAbsentReason</code> SHALL be provided.</p>
+
+<p>This applies especially to observations derived from questionnaires. The original <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code> remains the source record for the submitted answer, including answers such as "unknown" or "not stated". The derived <code class="language-plaintext highlighter-rouge">Observation</code> represents the clinically or analytically usable result.</p>
+
+<p>If neither <code class="language-plaintext highlighter-rouge">value[x]</code> nor <code class="language-plaintext highlighter-rouge">dataAbsentReason</code> is present, the Observation is incomplete and does not conform to the PreNUDGE data quality expectation.</p>
 
 
 
@@ -225,7 +236,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 13:57+0000">2026-06-22</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 14:44+0000">2026-06-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

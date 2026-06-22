@@ -59,7 +59,7 @@ Links:
   "title" : "AT PreNUDGE WHOQOL-BREF Score Type ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-22T13:57:07+00:00",
+  "date" : "2026-06-22T14:44:05+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

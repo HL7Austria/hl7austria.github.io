@@ -16,7 +16,7 @@ This FHIR profile is defining the current smoking status observation for PreNUDG
 
 **Usages:**
 
-* Examples for this Profile: [Observation/smokingstatus-current-every-day-example](Observation-smokingstatus-current-every-day-example.md), [Observation/smokingstatus-former-example](Observation-smokingstatus-former-example.md) and [Observation/smokingstatus-never-example](Observation-smokingstatus-never-example.md)
+* Examples for this Profile: [Observation/smokingstatus-current-every-day-example](Observation-smokingstatus-current-every-day-example.md), [Observation/smokingstatus-former-example](Observation-smokingstatus-former-example.md), [Observation/smokingstatus-never-example](Observation-smokingstatus-never-example.md) and [Observation/smokingstatus-not-stated-example](Observation-smokingstatus-not-stated-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-smokingstatus-observation.json)
 
@@ -52,7 +52,7 @@ Links:
   "name" : "AtPrenudgeObservationSmokingStatus",
   "title" : "AT PreNUDGE Observation Smoking Status",
   "status" : "draft",
-  "date" : "2026-06-22T13:57:07+00:00",
+  "date" : "2026-06-22T14:44:05+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -57,6 +57,18 @@
 </span>      answer.value<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-no')<span style="color: navy"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'266919005'</span><span style="color: navy">, </span><span style="color: blue">'Never smoked tobacco'</span><span style="color: navy">)</span> <i>&quot;mapPastNoToNeverSmoker&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;evaluatePastNo&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;pastSmokingNever&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">SK1 = Weiß nicht</span>
+  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
+</span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>      answer.value<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-unknown')<span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-unknown'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Unknown'</span><span style="color: navy">)</span> <i>&quot;mapSk1Unknown&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;evaluateSk1Unknown&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;sk1Unknown&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">SK1 = Keine Angabe</span>
+  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
+</span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>      answer.value<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-not-stated')<span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-declined'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Declined'</span><span style="color: navy">)</span> <i>&quot;mapSk1NotStated&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;evaluateSk1NotStated&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;sk1NotStated&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -66,7 +78,7 @@
   <name value="SmokingStatusQuestionnaireResponseToObservation"/>
   <title value="ATHIS-based Smoking Status Q to O"/>
   <status value="active"/>
-  <date value="2026-06-22T13:57:07+00:00"/>
+  <date value="2026-06-22T14:44:05+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -471,6 +483,88 @@
             </parameter>
             <parameter>
               <valueString value="Never smoked tobacco"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="sk1Unknown"/>
+      <source>
+        <context value="groupItem"/>
+        <element value="item"/>
+        <variable value="sk1"/>
+        <condition value="sk1.linkId = 'sk1'"/>
+      </source>
+      <rule>
+        <name value="evaluateSk1Unknown"/>
+        <source>
+          <context value="sk1"/>
+          <element value="answer"/>
+          <variable value="answer"/>
+        </source>
+        <rule>
+          <name value="mapSk1Unknown"/>
+          <source>
+            <context value="answer"/>
+            <element value="value"/>
+            <variable value="coding"/>
+            <condition value="(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-unknown')"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="dataAbsentReason"/>
+            <transform value="cc"/>
+            <parameter>
+              <valueString value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+            </parameter>
+            <parameter>
+              <valueString value="asked-unknown"/>
+            </parameter>
+            <parameter>
+              <valueString value="Asked But Unknown"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+    <rule>
+      <name value="sk1NotStated"/>
+      <source>
+        <context value="groupItem"/>
+        <element value="item"/>
+        <variable value="sk1"/>
+        <condition value="sk1.linkId = 'sk1'"/>
+      </source>
+      <rule>
+        <name value="evaluateSk1NotStated"/>
+        <source>
+          <context value="sk1"/>
+          <element value="answer"/>
+          <variable value="answer"/>
+        </source>
+        <rule>
+          <name value="mapSk1NotStated"/>
+          <source>
+            <context value="answer"/>
+            <element value="value"/>
+            <variable value="coding"/>
+            <condition value="(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-not-stated')"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="dataAbsentReason"/>
+            <transform value="cc"/>
+            <parameter>
+              <valueString value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+            </parameter>
+            <parameter>
+              <valueString value="asked-declined"/>
+            </parameter>
+            <parameter>
+              <valueString value="Asked But Declined"/>
             </parameter>
           </target>
         </rule>

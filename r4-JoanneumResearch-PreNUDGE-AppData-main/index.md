@@ -53,6 +53,14 @@ The following sociodemographic data are provided as patient demographic data, pr
 
 Besides these narrow standardized measurements, **broad standardized measurements** called [**other quantities observations**](StructureDefinition-at-prenudge-observation-other-quantities.md) and [**other not quantities observations**](StructureDefinition-at-prenudge-observation-other-not-quantities.md) are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.
 
+### Observation values and missing data
+
+PreNUDGE Observations SHOULD contain `value[x]` when a clinically or analytically meaningful value can be derived. If no such value can be derived, `value[x]` SHALL be absent and `dataAbsentReason` SHALL be provided.
+
+This applies especially to observations derived from questionnaires. The original `QuestionnaireResponse` remains the source record for the submitted answer, including answers such as "unknown" or "not stated". The derived `Observation` represents the clinically or analytically usable result.
+
+If neither `value[x]` nor `dataAbsentReason` is present, the Observation is incomplete and does not conform to the PreNUDGE data quality expectation.
+
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
@@ -73,7 +81,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-22T13:57:07+00:00",
+  "date" : "2026-06-22T14:44:05+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -1359,6 +1367,18 @@ Links:
         "valueString" : "Observation"
       }],
       "reference" : {
+        "reference" : "Observation/smokingstatus-not-stated-example"
+      },
+      "name" : "Smoking Status O - Not Stated Example",
+      "description" : "Example of a smoking status observation where no clinically meaningful smoking status could be derived because the respondent declined to answer.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
         "reference" : "Observation/smokingstatus-current-every-day-example"
       },
       "name" : "Smoking Status O mapped from ATHIS Q - Current Daily Tobacco Smoker Example",
@@ -1423,6 +1443,18 @@ Links:
       },
       "name" : "Smoking Status Q ATHIS - Never Tobacco Smoker Example",
       "description" : "Example of an ATHIS-based smoking status questionnaire response for a person who never smoked tobacco. The derived observation maps SK1 no and past tobacco smoking no to SNOMED CT 266919005.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseNotStated"
+      },
+      "name" : "Smoking Status Q ATHIS - Not Stated Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response where the respondent declined to answer the current tobacco smoking question. The derived observation uses dataAbsentReason asked-declined.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
