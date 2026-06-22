@@ -34,7 +34,7 @@ Links:
   "name" : "WHOQOLBrefQuestionnaireResponseToObservation",
   "title" : "WHOQOL-BREF Q score to O score",
   "status" : "active",
-  "date" : "2026-06-22T11:44:44+00:00",
+  "date" : "2026-06-22T12:35:22+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
