@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-06-18T13:26:12+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-22T11:44:44+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -1015,6 +1015,42 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "CodeSystem"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level> ;
+         fhir:reference [ fhir:v "CodeSystem/prenudge-isced-2011-education-level" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE ISCED 2011 Education Level Codes" ] ;
+       fhir:description [ fhir:v "Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation" ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "ValueSet"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-isced-2011-education-level> ;
+         fhir:reference [ fhir:v "ValueSet/prenudge-isced-2011-education-level" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE ISCED 2011 Education Level ValueSet" ] ;
+       fhir:description [ fhir:v "Permitted answer values for the highest completed education level according to ISCED 2011." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "StructureDefinition:resource:abstract"
          ]
        ] ) ;
@@ -1060,6 +1096,24 @@
        ] ;
        fhir:name [ fhir:v "AT PreNUDGE Observation Blood Glucose (only in mg/dL)" ] ;
        fhir:description [ fhir:v "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-education-observation" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Highest Completed Education" ] ;
+       fhir:description [ fhir:v "This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire." ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -1488,6 +1542,82 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/education-bachelor-example> ;
+         fhir:reference [ fhir:v "Observation/education-bachelor-example" ]
+       ] ;
+       fhir:name [ fhir:v "Education O mapped from Q - Bachelor's Level Example" ] ;
+       fhir:description [ fhir:v "Example of a highest completed education observation mapped from the EducationQuestionnaire." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/education-upper-secondary-example> ;
+         fhir:reference [ fhir:v "Observation/education-upper-secondary-example" ]
+       ] ;
+       fhir:name [ fhir:v "Education O mapped from Q - Upper Secondary Education Example" ] ;
+       fhir:description [ fhir:v "Example of a highest completed education observation mapped from the EducationQuestionnaire." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/education-response-bachelor-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/education-response-bachelor-example" ]
+       ] ;
+       fhir:name [ fhir:v "Education Q - Bachelor's Level Example" ] ;
+       fhir:description [ fhir:v "Example of a highest completed education questionnaire response using ISCED 2011 level 6." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/education-response-upper-secondary-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/education-response-upper-secondary-example" ]
+       ] ;
+       fhir:name [ fhir:v "Education Q - Upper Secondary Education Example" ] ;
+       fhir:description [ fhir:v "Example of a highest completed education questionnaire response using ISCED 2011 level 3." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Questionnaire"
          ]
        ] ) ;
@@ -1497,6 +1627,24 @@
        ] ;
        fhir:name [ fhir:v "EHIS-PAQ: Zu-Fuß-Gehen" ] ;
        fhir:description [ fhir:v "The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/EducationQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/EducationQuestionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Höchster abgeschlossener Bildungsabschluss" ] ;
+       fhir:description [ fhir:v "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels." ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false

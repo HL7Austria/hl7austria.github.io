@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SleepQualityBase | *Version*:0.1.0 | |
-| Active as of 2026-06-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepQualityBase |
+| Active as of 2026-06-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SleepQualityBase |
 
  
 Sleep Quality Base (WHOQOL-BREF scale to LOINC) 
@@ -17,7 +17,7 @@ Sleep Quality Base (WHOQOL-BREF scale to LOINC)
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-18
+2026-06-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "SleepQualityBase",
   "title" : "Sleep Quality Base (WHOQOL-BREF scale to LOINC)",
   "status" : "active",
-  "date" : "2026-06-18T13:26:12+00:00",
+  "date" : "2026-06-22T11:44:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

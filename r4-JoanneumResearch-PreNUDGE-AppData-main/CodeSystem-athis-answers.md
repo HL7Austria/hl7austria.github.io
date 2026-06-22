@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers | *Version*:0.1.0 | |
-| Active as of 2026-06-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemAthis |
+| Active as of 2026-06-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemAthis |
 | **Copyright/Legal**: STATISTIK AUSTRIA – Bundesanstalt Statistik Österreich. Reproduziert für das PreNUDGE Forschungsprojekt. | | |
 
  
@@ -22,7 +22,7 @@ Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische G
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-18
+2026-06-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -40,7 +40,7 @@ Links:
   "title" : "ATHIS – Antwortmöglichkeiten",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T13:26:12+00:00",
+  "date" : "2026-06-22T11:44:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -27,6 +27,7 @@ We focus on narrow standardization of the following **PreNUDGE measurements**:
 * Duration - from [**questionnaire**](Questionnaire-SleepDurationQuestionnaire.md) or as an [**observation**](StructureDefinition-at-prenudge-sleep-duration-observation.md)
 * Quality - question 16 from the [**WHOQOL-BRE questionnaire**](Questionnaire-WhoQolBrefQuestionnaire.md) or same question 16 from a [**single quesion questionnaire**](Questionnaire-SleepQualityQuestionnaire.md) or as an [**observation**](StructureDefinition-at-prenudge-sleep-quality-observation.md)
  
+* Sociodemographic Data: **Highest completed education** (ISCED level) (from a [**questionnaire**](Questionnaire-EducationQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-education-observation.md))
 * For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
@@ -40,20 +41,22 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 * Physical Activity: Sitting hours (per day) (from a questionnaire from a wearable device as an observation)
 * Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)
 * Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)
-* Sociodemographic Data: Age (from a questionnaire)
-* Sociodemographic Data: Gender (from a questionnaire)
-* Sociodemographic Data: Highest completed education (ISCED level) (from a questionnaire)
 * Psychosocial Factors: Self reported emotional burden (from a questionnaire)
 * Psychosocial Factors: Self reported stress (from a questionnaire with a calculated score as an observation)
 * Anthropometry: Body Mass Index (kg/m²) (from a questionnaire and from a wearable device as an observation)
 * Workability (score per category) (from a questionnaire with a calculated score as an observation)
+
+The following sociodemographic data are provided as patient demographic data, preferably from ID Austria. They are not collected using PreNUDGE questionnaires and are not represented as observations.
+
+* **Date of birth / age**: The date of birth is represented using the mandatory `Patient.birthDate` element in the AT APS Patient profile. Age is derived from `Patient.birthDate` at the relevant point in time and is not stored as a separate PreNUDGE observation. The corresponding ID Austria attribute is `birthdate` (`urn:oid:1.2.40.0.10.2.1.1.55`).
+* **Gender**: Administrative gender is represented using the mandatory `Patient.gender` element in the AT APS Patient profile. The corresponding ID Austria attribute is `gender` (`urn:eidgvat:attributes.gender`).
 
 Besides these narrow standardized measurements, **broad standardized measurements** called [**other quantities observations**](StructureDefinition-at-prenudge-observation-other-quantities.md) and [**other not quantities observations**](StructureDefinition-at-prenudge-observation-other-not-quantities.md) are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.
 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-18
+2026-06-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -70,7 +73,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-18T13:26:12+00:00",
+  "date" : "2026-06-22T11:44:44+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -789,6 +792,30 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/prenudge-isced-2011-education-level"
+      },
+      "name" : "AT PreNUDGE ISCED 2011 Education Level Codes",
+      "description" : "Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-isced-2011-education-level"
+      },
+      "name" : "AT PreNUDGE ISCED 2011 Education Level ValueSet",
+      "description" : "Permitted answer values for the highest completed education level according to ISCED 2011.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource:abstract"
       }],
       "reference" : {
@@ -820,6 +847,18 @@ Links:
       },
       "name" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
       "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-education-observation"
+      },
+      "name" : "AT PreNUDGE Observation Highest Completed Education",
+      "description" : "This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire.",
       "exampleBoolean" : false
     },
     {
@@ -1101,6 +1140,54 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/education-bachelor-example"
+      },
+      "name" : "Education O mapped from Q - Bachelor's Level Example",
+      "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/education-upper-secondary-example"
+      },
+      "name" : "Education O mapped from Q - Upper Secondary Education Example",
+      "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/education-response-bachelor-example"
+      },
+      "name" : "Education Q - Bachelor's Level Example",
+      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 6.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/education-response-upper-secondary-example"
+      },
+      "name" : "Education Q - Upper Secondary Education Example",
+      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 3.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       }],
       "reference" : {
@@ -1108,6 +1195,18 @@ Links:
       },
       "name" : "EHIS-PAQ: Zu-Fuß-Gehen",
       "description" : "The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/EducationQuestionnaire"
+      },
+      "name" : "Höchster abgeschlossener Bildungsabschluss",
+      "description" : "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels.",
       "exampleBoolean" : false
     },
     {

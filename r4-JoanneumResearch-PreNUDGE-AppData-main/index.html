@@ -177,6 +177,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>Quality - question 16 from the <a href="Questionnaire-WhoQolBrefQuestionnaire.html"><strong>WHOQOL-BRE questionnaire</strong></a> or same question 16 from a  <a href="Questionnaire-SleepQualityQuestionnaire.html"><strong>single quesion questionnaire</strong></a> or as an <a href="StructureDefinition-at-prenudge-sleep-quality-observation.html"><strong>observation</strong></a></li>
     </ul>
   </li>
+  <li>Sociodemographic Data: <strong>Highest completed education</strong> (ISCED level) (from a <a href="Questionnaire-EducationQuestionnaire.html"><strong>questionnaire</strong></a> and from an <a href="StructureDefinition-at-prenudge-education-observation.html"><strong>observation</strong></a>)</li>
   <li>For Demo Purposes: <strong>Blood glucose</strong> in mg/dL (from a <a href="Questionnaire-BloodGlucoseQuestionnaire.html"><strong>questionnaire</strong></a> and from a <a href="StructureDefinition-at-prenudge-bloodglucose-observation.html"><strong>device as an observation</strong></a>)</li>
 </ul>
 
@@ -191,13 +192,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Physical Activity: Sitting hours (per day) (from a questionnaire from a wearable device as an observation)</li>
   <li>Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)</li>
   <li>Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)</li>
-  <li>Sociodemographic Data: Age (from a questionnaire)</li>
-  <li>Sociodemographic Data: Gender (from a questionnaire)</li>
-  <li>Sociodemographic Data: Highest completed education (ISCED level) (from a questionnaire)</li>
   <li>Psychosocial Factors: Self reported emotional burden (from a questionnaire)</li>
   <li>Psychosocial Factors: Self reported stress (from a questionnaire with a calculated score as an observation)</li>
   <li>Anthropometry: Body Mass Index (kg/m²) (from a questionnaire and from a wearable device as an observation)</li>
   <li>Workability (score per category) (from a questionnaire with a calculated score as an observation)</li>
+</ul>
+
+<p>The following sociodemographic data are provided as patient demographic data, preferably from ID Austria. They are not collected using PreNUDGE questionnaires and are not represented as observations.</p>
+<ul>
+  <li><strong>Date of birth / age</strong>: The date of birth is represented using the mandatory <code class="language-plaintext highlighter-rouge">Patient.birthDate</code> element in the AT APS Patient profile. Age is derived from <code class="language-plaintext highlighter-rouge">Patient.birthDate</code> at the relevant point in time and is not stored as a separate PreNUDGE observation. The corresponding ID Austria attribute is <code class="language-plaintext highlighter-rouge">birthdate</code> (<code class="language-plaintext highlighter-rouge">urn:oid:1.2.40.0.10.2.1.1.55</code>).</li>
+  <li><strong>Gender</strong>: Administrative gender is represented using the mandatory <code class="language-plaintext highlighter-rouge">Patient.gender</code> element in the AT APS Patient profile. The corresponding ID Austria attribute is <code class="language-plaintext highlighter-rouge">gender</code> (<code class="language-plaintext highlighter-rouge">urn:eidgvat:attributes.gender</code>).</li>
 </ul>
 
 <p>Besides these narrow standardized measurements, <strong>broad standardized measurements</strong> called <a href="StructureDefinition-at-prenudge-observation-other-quantities.html"><strong>other quantities observations</strong></a> and <a href="StructureDefinition-at-prenudge-observation-other-not-quantities.html"><strong>other not quantities observations</strong></a> are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.</p>
@@ -221,7 +225,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jun 18, 2026 13:26+0000">2026-06-18</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 11:44+0000">2026-06-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
