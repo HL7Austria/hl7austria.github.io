@@ -100,10 +100,6 @@ Plan-Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 ##### Sequenzdiagramm Plan-Write
 
-##### Diagramm Plan-Read- und Write-Logik
-
- ![](class_diagram_planread_planwrite.drawio.svg)
-
 ##### Abgelehntes Plan-Write
 
 ##### Ablauf
