@@ -28,6 +28,10 @@ We focus on narrow standardization of the following **PreNUDGE measurements**:
 * Quality - question 16 from the [**WHOQOL-BRE questionnaire**](Questionnaire-WhoQolBrefQuestionnaire.md) or same question 16 from a [**single quesion questionnaire**](Questionnaire-SleepQualityQuestionnaire.md) or as an [**observation**](StructureDefinition-at-prenudge-sleep-quality-observation.md)
  
 * Sociodemographic Data: **Highest completed education** (ISCED level) (from a [**questionnaire**](Questionnaire-EducationQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-education-observation.md))
+* **Workability** 
+* Work-related Sense of Coherence (Work-SoC) - [**questionnaire**](Questionnaire-WorkSocQuestionnaire.md) with a calculated score as an [**observation**](StructureDefinition-at-prenudge-work-soc-score-observation.md)
+* Work Ability Index (WAI) - [**questionnaire**](Questionnaire-WorkAbilityIndexQuestionnaire.md) only
+ 
 * For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
@@ -44,7 +48,6 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 * Psychosocial Factors: Self reported emotional burden (from a questionnaire)
 * Psychosocial Factors: Self reported stress (from a questionnaire with a calculated score as an observation)
 * Anthropometry: Body Mass Index (kg/m²) (from a questionnaire and from a wearable device as an observation)
-* Workability (score per category) (from a questionnaire with a calculated score as an observation)
 
 The following sociodemographic data are provided as patient demographic data, preferably from ID Austria. They are not collected using PreNUDGE questionnaires and are not represented as observations.
 
@@ -64,7 +67,7 @@ If neither `value[x]` nor `dataAbsentReason` is present, the Observation is inco
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-22
+2026-06-24
 
 Links:
 [Table of Contents](toc.md)|
@@ -81,7 +84,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-22T14:44:05+00:00",
+  "date" : "2026-06-24T07:32:55+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -764,6 +767,30 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/WorkSocQuestionnaire"
+      },
+      "name" : "Arbeitsbezogenes Kohärenzgefühl (Work-SoC)",
+      "description" : "Work-related Sense of Coherence (Work-SoC) questionnaire. The raw item responses are collected in the QuestionnaireResponse. Category scores are defined as SDC calculated expressions and may be mapped to a Work-SoC score Observation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/WorkAbilityIndexQuestionnaire"
+      },
+      "name" : "Arbeitsfähigkeit (WAI Kurzmodul)",
+      "description" : "Short Work Ability Index (WAI) questionnaire module based on Tuomi et al. 1998. The raw answers are collected as QuestionnaireResponse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -968,6 +995,18 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-work-soc-score-observation"
+      },
+      "name" : "AT PreNUDGE Observation Work-SoC Category Score",
+      "description" : "This FHIR profile defines the calculated work-related sense of coherence (Work-SoC) category score observation. It contains the category scores for comprehensibility, manageability and meaningfulness as Observation components. The raw Work-SoC item answers are represented in the source QuestionnaireResponse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -1019,6 +1058,30 @@ Links:
         "valueString" : "CodeSystem"
       }],
       "reference" : {
+        "reference" : "CodeSystem/prenudge-wai-answer"
+      },
+      "name" : "AT PreNUDGE WAI Answer Codes",
+      "description" : "Local answer codes for categorical Work Ability Index answer options.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-wai-physical-demands-answer"
+      },
+      "name" : "AT PreNUDGE WAI Physical Demands Answer ValueSet",
+      "description" : "Permitted categorical answers for current work ability in relation to physical work demands.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
         "reference" : "CodeSystem/whoqol-bref-scale"
       },
       "name" : "AT PreNUDGE WHOQOL-BREF Answer Scales",
@@ -1035,6 +1098,18 @@ Links:
       },
       "name" : "AT PreNUDGE WHOQOL-BREF Score Type ValueSet",
       "description" : "ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/prenudge-workability"
+      },
+      "name" : "AT PreNUDGE Workability Codes",
+      "description" : "Local PreNUDGE codes for workability questionnaires and derived Work-SoC score observations. Work-SoC source DOI: https://doi.org/10.4102/sajip.v39i1.1111",
       "exampleBoolean" : false
     },
     {
@@ -1544,6 +1619,18 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/wai-response-example"
+      },
+      "name" : "WAI Q - Example",
+      "description" : "Example of a short Work Ability Index questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       }],
       "reference" : {
@@ -1576,6 +1663,30 @@ Links:
       "name" : "WHOQOL-BREF Q",
       "description" : "Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/work-soc-response-example"
+      },
+      "name" : "Work-SoC Q - Example",
+      "description" : "Example of a Work-SoC questionnaire response with nine raw item answers.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/work-soc-score-example"
+      },
+      "name" : "Work-SoC Score O mapped from Q - Example",
+      "description" : "Example of a calculated Work-SoC category score observation derived from the WorkSocQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation"
     },
     {
       "extension" : [{
@@ -1664,6 +1775,17 @@ Links:
       },
       "name" : "Step Count Q to O",
       "description" : "Step Count Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/WorkSocQuestionnaireResponseToObservation"
+      },
+      "name" : "Work-SoC Q score to O score",
+      "description" : "Work-SoC Q score to O score"
     }],
     "page" : {
       "extension" : [{

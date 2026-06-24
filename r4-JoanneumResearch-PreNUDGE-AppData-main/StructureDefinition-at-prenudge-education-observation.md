@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation | *Version*:0.1.0 | |
-| Draft as of 2026-06-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationEducation |
+| Draft as of 2026-06-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationEducation |
 
  
 This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire. 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-educatio
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-22
+2026-06-24
 
 Links:
 [Table of Contents](toc.md)|
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationEducation",
   "title" : "AT PreNUDGE Observation Highest Completed Education",
   "status" : "draft",
-  "date" : "2026-06-22T14:44:05+00:00",
+  "date" : "2026-06-24T07:32:55+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

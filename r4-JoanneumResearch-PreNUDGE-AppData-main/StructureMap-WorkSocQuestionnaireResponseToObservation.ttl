@@ -1,0 +1,536 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WorkSocQuestionnaireResponseToObservation> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "WorkSocQuestionnaireResponseToObservation"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap WorkSocQuestionnaireResponseToObservation</b></p><a name=\"WorkSocQuestionnaireResponseToObservation\"> </a><a name=\"hcWorkSocQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WorkSocQuestionnaireResponseToObservation<span style=\"color: navy\">\" = \"</span>WorkSocQuestionnaireResponseToObservation<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Work-SoC Q score to O score</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-QuestionnaireResponseToObservationBase.html\" title=\"Shared base for Q to O\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>WorkSocQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<b> then </b>SetObservationBase<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"Base\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta<b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation'</span> <i>\"SetProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-category-score'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC category score'</span><span style=\"color: navy\">)</span> <i>\"SetCode\"</i><span style=\"color: navy\">;</span>#xD;\n  src.item<b> as </b><span style=\"color: maroon\">workSocGroup</span><b> where </b>linkId = 'work-soc'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    workSocGroup.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'work-soc-comprehensibility-score'<b> then </b>MapComprehensibilityScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"MapComprehensibilityScore\"</i><span style=\"color: navy\">;</span>#xD;\n    workSocGroup.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'work-soc-manageability-score'<b> then </b>MapManageabilityScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"MapManageabilityScore\"</i><span style=\"color: navy\">;</span>#xD;\n    workSocGroup.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'work-soc-meaningfulness-score'<b> then </b>MapMeaningfulnessScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"MapMeaningfulnessScore\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessWorkSoc\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">TODO: Comment/Note mapping disabled due to MaLaC-HD limitation</span>#xD;\n<span style=\"color: navy\">// </span><span style=\"color: green\">See: https://gitlab.com/cdehealth/malac-hd/-/issues/128</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapComprehensibilityScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    answer.valueDecimal<b> as </b><span style=\"color: maroon\">val</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      val.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-comprehensibility'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC comprehensibility score'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>\"SetComponent\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ExtractValue\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapManageabilityScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    answer.valueDecimal<b> as </b><span style=\"color: maroon\">val</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      val.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-manageability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC manageability score'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>\"SetComponent\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ExtractValue\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapMeaningfulnessScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    answer.valueDecimal<b> as </b><span style=\"color: maroon\">val</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      val.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-meaningfulness'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC meaningfulness score'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>\"SetComponent\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ExtractValue\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WorkSocQuestionnaireResponseToObservation"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "WorkSocQuestionnaireResponseToObservation"] ; # 
+  fhir:title [ fhir:v "Work-SoC Q score to O score"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-24T07:32:55+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Work-SoC Q score to O score"] ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "QR" ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "Obs" ]
+  ] ) ; # 
+  fhir:import ( [
+     fhir:v "http://hl7.org/fhir/StructureMap/*"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/StructureMap/*>
+  ] [
+     fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"^^xsd:anyURI ;
+     fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase>
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "WorkSocQuestionnaireResponseToObservation" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "Base" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:dependent ( [
+         fhir:name [ fhir:v "SetObservationBase" ] ;
+         fhir:variable ( [ fhir:v "src" ] [ fhir:v "tgt" ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "SetProfile" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "meta" ] ;
+         fhir:variable [ fhir:v "meta" ]
+       ] [
+         fhir:context [ fhir:v "meta" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "profile" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "SetCode" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "code" ] ;
+         fhir:transform [ fhir:v "cc" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+           ]
+         ] [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "work-soc-category-score"
+           ]
+         ] [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Work-SoC category score"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "ProcessWorkSoc" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "item" ] ;
+         fhir:variable [ fhir:v "workSocGroup" ] ;
+         fhir:condition [ fhir:v "linkId = 'work-soc'" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "MapComprehensibilityScore" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "workSocGroup" ] ;
+           fhir:element [ fhir:v "item" ] ;
+           fhir:variable [ fhir:v "scoreItem" ] ;
+           fhir:condition [ fhir:v "linkId = 'work-soc-comprehensibility-score'" ]
+         ] ) ;
+         fhir:dependent ( [
+           fhir:name [ fhir:v "MapComprehensibilityScore" ] ;
+           fhir:variable ( [ fhir:v "scoreItem" ] [ fhir:v "tgt" ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "MapManageabilityScore" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "workSocGroup" ] ;
+           fhir:element [ fhir:v "item" ] ;
+           fhir:variable [ fhir:v "scoreItem" ] ;
+           fhir:condition [ fhir:v "linkId = 'work-soc-manageability-score'" ]
+         ] ) ;
+         fhir:dependent ( [
+           fhir:name [ fhir:v "MapManageabilityScore" ] ;
+           fhir:variable ( [ fhir:v "scoreItem" ] [ fhir:v "tgt" ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "MapMeaningfulnessScore" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "workSocGroup" ] ;
+           fhir:element [ fhir:v "item" ] ;
+           fhir:variable [ fhir:v "scoreItem" ] ;
+           fhir:condition [ fhir:v "linkId = 'work-soc-meaningfulness-score'" ]
+         ] ) ;
+         fhir:dependent ( [
+           fhir:name [ fhir:v "MapMeaningfulnessScore" ] ;
+           fhir:variable ( [ fhir:v "scoreItem" ] [ fhir:v "tgt" ] )
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "MapComprehensibilityScore" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "ProcessAnswer" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "answer" ] ;
+         fhir:variable [ fhir:v "answer" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "ExtractValue" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "answer" ] ;
+           fhir:element [ fhir:v "valueDecimal" ] ;
+           fhir:variable [ fhir:v "val" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "SetComponent" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "val" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "numVal" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgt" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "component" ] ;
+             fhir:variable [ fhir:v "comp" ]
+           ] [
+             fhir:context [ fhir:v "comp" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "code" ] ;
+             fhir:transform [ fhir:v "cc" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+               ]
+             ] [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "work-soc-comprehensibility"
+               ]
+             ] [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "Work-SoC comprehensibility score"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "comp" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "qty" ] ;
+             fhir:transform [ fhir:v "create" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "Quantity"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:id ;
+                 fhir:v "numVal"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "unit" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "score"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "http://unitsofmeasure.org"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "code" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "{score}"
+               ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "MapManageabilityScore" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "ProcessAnswer" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "answer" ] ;
+         fhir:variable [ fhir:v "answer" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "ExtractValue" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "answer" ] ;
+           fhir:element [ fhir:v "valueDecimal" ] ;
+           fhir:variable [ fhir:v "val" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "SetComponent" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "val" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "numVal" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgt" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "component" ] ;
+             fhir:variable [ fhir:v "comp" ]
+           ] [
+             fhir:context [ fhir:v "comp" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "code" ] ;
+             fhir:transform [ fhir:v "cc" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+               ]
+             ] [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "work-soc-manageability"
+               ]
+             ] [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "Work-SoC manageability score"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "comp" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "qty" ] ;
+             fhir:transform [ fhir:v "create" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "Quantity"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:id ;
+                 fhir:v "numVal"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "unit" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "score"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "http://unitsofmeasure.org"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "code" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "{score}"
+               ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:name [ fhir:v "MapMeaningfulnessScore" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "ProcessAnswer" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "answer" ] ;
+         fhir:variable [ fhir:v "answer" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "ExtractValue" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "answer" ] ;
+           fhir:element [ fhir:v "valueDecimal" ] ;
+           fhir:variable [ fhir:v "val" ]
+         ] ) ;
+         fhir:rule ( [
+           fhir:name [ fhir:v "SetComponent" ] ;
+           fhir:source ( [
+             fhir:context [ fhir:v "val" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "numVal" ]
+           ] ) ;
+           fhir:target ( [
+             fhir:context [ fhir:v "tgt" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "component" ] ;
+             fhir:variable [ fhir:v "comp" ]
+           ] [
+             fhir:context [ fhir:v "comp" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "code" ] ;
+             fhir:transform [ fhir:v "cc" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+               ]
+             ] [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "work-soc-meaningfulness"
+               ]
+             ] [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "Work-SoC meaningfulness score"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "comp" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:variable [ fhir:v "qty" ] ;
+             fhir:transform [ fhir:v "create" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "Quantity"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "value" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:id ;
+                 fhir:v "numVal"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "unit" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "score"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "system" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "http://unitsofmeasure.org"
+               ]
+             ] )
+           ] [
+             fhir:context [ fhir:v "qty" ] ;
+             fhir:contextType [ fhir:v "variable" ] ;
+             fhir:element [ fhir:v "code" ] ;
+             fhir:transform [ fhir:v "copy" ] ;
+             fhir:parameter ( [
+               fhir:value [
+                 a fhir:string ;
+                 fhir:v "{score}"
+               ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-units | *Version*:0.1.0 | |
-| Active as of 2026-06-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetOtherObservationsUnits |
+| Active as of 2026-06-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetOtherObservationsUnits |
 
  
 Allowed UCUM units for the 'Other' observation profile. 
@@ -40,7 +40,7 @@ Allowed UCUM units for the 'Other' observation profile.
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-22
+2026-06-24
 
 Links:
 [Table of Contents](toc.md)|
@@ -58,7 +58,7 @@ Links:
   "title" : "AT PreNUDGE Other Observations Units",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-22T14:44:05+00:00",
+  "date" : "2026-06-24T07:32:55+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

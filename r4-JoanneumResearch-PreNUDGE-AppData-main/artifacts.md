@@ -14,6 +14,8 @@ These define forms used by systems conforming to this implementation guide to ca
 | | |
 | :--- | :--- |
 | [Alkoholkonsum im letzten Jahr](Questionnaire-AlcoholUseQuestionnaire.md) | Categorical variable for the frequency of alcohol consumption in the last year (IPS compatible). |
+| [Arbeitsbezogenes Kohärenzgefühl (Work-SoC)](Questionnaire-WorkSocQuestionnaire.md) | Work-related Sense of Coherence (Work-SoC) questionnaire. The raw item responses are collected in the QuestionnaireResponse. Category scores are defined as SDC calculated expressions and may be mapped to a Work-SoC score Observation. |
+| [Arbeitsfähigkeit (WAI Kurzmodul)](Questionnaire-WorkAbilityIndexQuestionnaire.md) | Short Work Ability Index (WAI) questionnaire module based on Tuomi et al. 1998. The raw answers are collected as QuestionnaireResponse. |
 | [Blutzucker bei der letzten Messung](Questionnaire-BloodGlucoseQuestionnaire.md) | A simple questionnaire for asking how high the blood glucose level is right now. The blood glucose option only allows values inbetween 0 and 999 mg/dL. |
 | [Durchschnittliche Schlafdauer pro Nacht](Questionnaire-SleepDurationQuestionnaire.md) | A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours. |
 | [EHIS-PAQ: Zu-Fuß-Gehen](Questionnaire-StepCountEhisPaqQuestionnaire.md) | The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. |
@@ -48,6 +50,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT PreNUDGE Observation Smoking Status](StructureDefinition-at-prenudge-smokingstatus-observation.md) | This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question. Additional fields from the PreNUDGE Observation profile are added. |
 | [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md) | This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours. |
 | [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) | Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components. |
+| [AT PreNUDGE Observation Work-SoC Category Score](StructureDefinition-at-prenudge-work-soc-score-observation.md) | This FHIR profile defines the calculated work-related sense of coherence (Work-SoC) category score observation. It contains the category scores for comprehensibility, manageability and meaningfulness as Observation components. The raw Work-SoC item answers are represented in the source QuestionnaireResponse. |
 | [AT PreNUDGE Questionnaire Response](StructureDefinition-at-prenudge-questionnaireresponse.md) | This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaire responses must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/. |
 
 ### Terminology: Value Sets 
@@ -62,6 +65,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | [AT PreNUDGE Observation Methods](ValueSet-prenudge-observation-method.md) | ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation. |
 | [AT PreNUDGE Other Observations Codes](ValueSet-prenudge-other-observations-codes.md) | Allowed observation codes for the 'Other' observation profile. |
 | [AT PreNUDGE Other Observations Units](ValueSet-prenudge-other-observations-units.md) | Allowed UCUM units for the 'Other' observation profile. |
+| [AT PreNUDGE WAI Physical Demands Answer ValueSet](ValueSet-prenudge-wai-physical-demands-answer.md) | Permitted categorical answers for current work ability in relation to physical work demands. |
 | [AT PreNUDGE WHOQOL-BREF Score Type ValueSet](ValueSet-prenudge-whoqol-bref-score-type.md) | ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores. |
 
 ### Terminology: Code Systems 
@@ -71,7 +75,9 @@ These define new code systems used by systems conforming to this implementation 
 | | |
 | :--- | :--- |
 | [AT PreNUDGE ISCED 2011 Education Level Codes](CodeSystem-prenudge-isced-2011-education-level.md) | Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation |
+| [AT PreNUDGE WAI Answer Codes](CodeSystem-prenudge-wai-answer.md) | Local answer codes for categorical Work Ability Index answer options. |
 | [AT PreNUDGE WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
+| [AT PreNUDGE Workability Codes](CodeSystem-prenudge-workability.md) | Local PreNUDGE codes for workability questionnaires and derived Work-SoC score observations. Work-SoC source DOI: https://doi.org/10.4102/sajip.v39i1.1111 |
 | [ATHIS – Antwortmöglichkeiten](CodeSystem-athis-answers.md) | Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). |
 
 ### Terminology: Structure Maps 
@@ -88,6 +94,7 @@ These define transformations to convert between data structures used by systems 
 | [Sleep Quality Base (WHOQOL-BREF scale to LOINC)](StructureMap-SleepQualityBase.md) | Sleep Quality Base (WHOQOL-BREF scale to LOINC) |
 | [Step Count Q to O](StructureMap-StepCountQuestionnaireResponseToObservation.md) | Step Count Q to O |
 | [WHOQOL-BREF Q score to O score](StructureMap-WHOQOLBrefQuestionnaireResponseToObservation.md) | WHOQOL-BREF Q score to O score |
+| [Work-SoC Q score to O score](StructureMap-WorkSocQuestionnaireResponseToObservation.md) | Work-SoC Q score to O score |
 
 ### Terminology: Concept Maps 
 
@@ -142,13 +149,16 @@ These are example instances that show what data produced and consumed by systems
 | [Step Count O mapped from Q - Normal Example](Observation-stepcount-normal-example.md) | Example of a normal step count (8,432 steps per day). |
 | [Step Count Q - High Example](QuestionnaireResponse-stepcount-quantity-response-high-example.md) | Example of a high step count (133,519 steps per day). |
 | [Step Count Q - Normal Example](QuestionnaireResponse-stepcount-quantity-response-normal-example.md) | Example of a normal step count (8,432 steps per day). |
+| [WAI Q - Example](QuestionnaireResponse-wai-response-example.md) | Example of a short Work Ability Index questionnaire response. |
 | [WHOQOL-BREF O Score only mapped from Q](Observation-whoqol-bref-score-example.md) | Example of a WHOQOL-BREF score observation with a general score and all four domain scores. |
 | [WHOQOL-BREF Q](QuestionnaireResponse-whoqol-bref-response-example.md) | Example of a completed WHOQOL-BREF QuestionnaireResponse including all 26 items and calculated scores. |
+| [Work-SoC Q - Example](QuestionnaireResponse-work-soc-response-example.md) | Example of a Work-SoC questionnaire response with nine raw item answers. |
+| [Work-SoC Score O mapped from Q - Example](Observation-work-soc-score-example.md) | Example of a calculated Work-SoC category score observation derived from the WorkSocQuestionnaire. |
 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-22
+2026-06-24
 
 Links:
 [Table of Contents](toc.md)|
