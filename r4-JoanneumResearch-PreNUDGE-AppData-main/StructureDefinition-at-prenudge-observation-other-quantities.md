@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationOtherQuantities",
   "title" : "AT PreNUDGE Observation Other Quantities",
   "status" : "draft",
-  "date" : "2026-06-24T07:32:55+00:00",
+  "date" : "2026-06-24T12:07:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

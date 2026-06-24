@@ -18,7 +18,7 @@
   fhir:name [ fhir:v "PreNUDGEAppdataR4"] ; # 
   fhir:title [ fhir:v "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-06-24T07:32:55+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-06-24T12:07:10+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
@@ -1145,6 +1145,60 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-bodyheight-observation" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Body Height" ] ;
+       fhir:description [ fhir:v "This FHIR profile defines a body height Observation based on the FHIR R4 Vital Signs body height concept. Body height is represented using LOINC 8302-2 and UCUM cm." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-bmi-observation" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Body Mass Index" ] ;
+       fhir:description [ fhir:v "This FHIR profile defines a Body Mass Index (BMI) Observation based on the FHIR R4 Vital Signs BMI concept. BMI is represented using LOINC 39156-5 and UCUM kg/m2." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/at-prenudge-bodyweight-observation" ]
+       ] ;
+       fhir:name [ fhir:v "AT PreNUDGE Observation Body Weight" ] ;
+       fhir:description [ fhir:v "This FHIR profile defines a body weight Observation based on the FHIR R4 Vital Signs body weight concept. Body weight is represented using LOINC 29463-7 and UCUM kg." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation> ;
          fhir:reference [ fhir:v "StructureDefinition/at-prenudge-education-observation" ]
        ] ;
@@ -1632,6 +1686,82 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
+           fhir:v "QuestionnaireResponse"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/bmi-questionnaire-response-example> ;
+         fhir:reference [ fhir:v "QuestionnaireResponse/bmi-questionnaire-response-example" ]
+       ] ;
+       fhir:name [ fhir:v "BMI Questionnaire Response Example" ] ;
+       fhir:description [ fhir:v "Example of a BMI questionnaire response with body height, body weight and a calculated BMI value." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/bodyheight-example> ;
+         fhir:reference [ fhir:v "Observation/bodyheight-example" ]
+       ] ;
+       fhir:name [ fhir:v "Body Height O - Example" ] ;
+       fhir:description [ fhir:v "Example body height Observation derived from a BMI questionnaire response." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/bmi-example> ;
+         fhir:reference [ fhir:v "Observation/bmi-example" ]
+       ] ;
+       fhir:name [ fhir:v "Body Mass Index O - Example" ] ;
+       fhir:description [ fhir:v "Example BMI Observation derived from a BMI questionnaire response." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Observation"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/bodyweight-example> ;
+         fhir:reference [ fhir:v "Observation/bodyweight-example" ]
+       ] ;
+       fhir:name [ fhir:v "Body Weight O - Example" ] ;
+       fhir:description [ fhir:v "Example body weight Observation derived from a BMI questionnaire response." ] ;
+       fhir:example [
+         a fhir:canonical ;
+         fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation"^^xsd:anyURI ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
            fhir:v "Questionnaire"
          ]
        ] ) ;
@@ -1753,6 +1883,24 @@
        ] ;
        fhir:name [ fhir:v "Höchster abgeschlossener Bildungsabschluss" ] ;
        fhir:description [ fhir:v "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels." ] ;
+       fhir:example [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "Questionnaire"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/BmiQuestionnaire> ;
+         fhir:reference [ fhir:v "Questionnaire/BmiQuestionnaire" ]
+       ] ;
+       fhir:name [ fhir:v "Körpergröße, Körpergewicht und Body Mass Index (BMI)" ] ;
+       fhir:description [ fhir:v "Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations." ] ;
        fhir:example [
          a fhir:boolean ;
          fhir:v false
@@ -2408,6 +2556,20 @@
        ] ;
        fhir:name [ fhir:v "Blood Glucose Q to O" ] ;
        fhir:description [ fhir:v "Blood Glucose Q to O" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureMap"
+         ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BmiQuestionnaireResponseToObservations> ;
+         fhir:reference [ fhir:v "StructureMap/BmiQuestionnaireResponseToObservations" ]
+       ] ;
+       fhir:name [ fhir:v "BMI Q to Body Height, Body Weight and BMI Observations Bundle" ] ;
+       fhir:description [ fhir:v "BMI Q to Body Height, Body Weight and BMI Observations Bundle" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

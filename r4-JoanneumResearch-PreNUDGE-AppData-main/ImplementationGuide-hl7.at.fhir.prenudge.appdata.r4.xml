@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-06-24T07:32:55+00:00"/>
+  <date value="2026-06-24T12:07:10+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -643,6 +643,39 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/at-prenudge-bodyheight-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Body Height"/>
+      <description value="This FHIR profile defines a body height Observation based on the FHIR R4 Vital Signs body height concept. Body height is represented using LOINC 8302-2 and UCUM cm."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-bmi-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Body Mass Index"/>
+      <description value="This FHIR profile defines a Body Mass Index (BMI) Observation based on the FHIR R4 Vital Signs BMI concept. BMI is represented using LOINC 39156-5 and UCUM kg/m2."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-bodyweight-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Body Weight"/>
+      <description value="This FHIR profile defines a body weight Observation based on the FHIR R4 Vital Signs body weight concept. Body weight is represented using LOINC 29463-7 and UCUM kg."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/at-prenudge-education-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Highest Completed Education"/>
@@ -937,6 +970,50 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/bmi-questionnaire-response-example"/>
+      </reference>
+      <name value="BMI Questionnaire Response Example"/>
+      <description value="Example of a BMI questionnaire response with body height, body weight and a calculated BMI value."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/bodyheight-example"/>
+      </reference>
+      <name value="Body Height O - Example"/>
+      <description value="Example body height Observation derived from a BMI questionnaire response."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/bmi-example"/>
+      </reference>
+      <name value="Body Mass Index O - Example"/>
+      <description value="Example BMI Observation derived from a BMI questionnaire response."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/bodyweight-example"/>
+      </reference>
+      <name value="Body Weight O - Example"/>
+      <description value="Example body weight Observation derived from a BMI questionnaire response."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
@@ -1010,6 +1087,17 @@
       </reference>
       <name value="Höchster abgeschlossener Bildungsabschluss"/>
       <description value="A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/BmiQuestionnaire"/>
+      </reference>
+      <name value="Körpergröße, Körpergewicht und Body Mass Index (BMI)"/>
+      <description value="Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1394,6 +1482,16 @@
       </reference>
       <name value="Blood Glucose Q to O"/>
       <description value="Blood Glucose Q to O"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/BmiQuestionnaireResponseToObservations"/>
+      </reference>
+      <name value="BMI Q to Body Height, Body Weight and BMI Observations Bundle"/>
+      <description value="BMI Q to Body Height, Body Weight and BMI Observations Bundle"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

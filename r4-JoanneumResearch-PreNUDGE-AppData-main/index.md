@@ -32,6 +32,7 @@ We focus on narrow standardization of the following **PreNUDGE measurements**:
 * Work-related Sense of Coherence (Work-SoC) - [**questionnaire**](Questionnaire-WorkSocQuestionnaire.md) with a calculated score as an [**observation**](StructureDefinition-at-prenudge-work-soc-score-observation.md)
 * Work Ability Index (WAI) - [**questionnaire**](Questionnaire-WorkAbilityIndexQuestionnaire.md) only
  
+* Anthropometry: **Body Mass Index** (BMI) in kg/m² (from a [**questionnaire**](Questionnaire-BmiQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-bmi-observation.md))
 * For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
@@ -47,7 +48,6 @@ Additional PreNUDGE measurements, also narrow standardized, will be specified an
 * Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)
 * Psychosocial Factors: Self reported emotional burden (from a questionnaire)
 * Psychosocial Factors: Self reported stress (from a questionnaire with a calculated score as an observation)
-* Anthropometry: Body Mass Index (kg/m²) (from a questionnaire and from a wearable device as an observation)
 
 The following sociodemographic data are provided as patient demographic data, preferably from ID Austria. They are not collected using PreNUDGE questionnaires and are not represented as observations.
 
@@ -84,7 +84,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-24T07:32:55+00:00",
+  "date" : "2026-06-24T12:07:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -890,6 +890,42 @@ Links:
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-bodyheight-observation"
+      },
+      "name" : "AT PreNUDGE Observation Body Height",
+      "description" : "This FHIR profile defines a body height Observation based on the FHIR R4 Vital Signs body height concept. Body height is represented using LOINC 8302-2 and UCUM cm.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-bmi-observation"
+      },
+      "name" : "AT PreNUDGE Observation Body Mass Index",
+      "description" : "This FHIR profile defines a Body Mass Index (BMI) Observation based on the FHIR R4 Vital Signs BMI concept. BMI is represented using LOINC 39156-5 and UCUM kg/m2.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-bodyweight-observation"
+      },
+      "name" : "AT PreNUDGE Observation Body Weight",
+      "description" : "This FHIR profile defines a body weight Observation based on the FHIR R4 Vital Signs body weight concept. Body weight is represented using LOINC 29463-7 and UCUM kg.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-prenudge-education-observation"
       },
       "name" : "AT PreNUDGE Observation Highest Completed Education",
@@ -1211,6 +1247,54 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/bmi-questionnaire-response-example"
+      },
+      "name" : "BMI Questionnaire Response Example",
+      "description" : "Example of a BMI questionnaire response with body height, body weight and a calculated BMI value.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/bodyheight-example"
+      },
+      "name" : "Body Height O - Example",
+      "description" : "Example body height Observation derived from a BMI questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/bmi-example"
+      },
+      "name" : "Body Mass Index O - Example",
+      "description" : "Example BMI Observation derived from a BMI questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/bodyweight-example"
+      },
+      "name" : "Body Weight O - Example",
+      "description" : "Example body weight Observation derived from a BMI questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       }],
       "reference" : {
@@ -1290,6 +1374,18 @@ Links:
       },
       "name" : "Höchster abgeschlossener Bildungsabschluss",
       "description" : "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/BmiQuestionnaire"
+      },
+      "name" : "Körpergröße, Körpergewicht und Body Mass Index (BMI)",
+      "description" : "Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations.",
       "exampleBoolean" : false
     },
     {
@@ -1709,6 +1805,17 @@ Links:
       },
       "name" : "Blood Glucose Q to O",
       "description" : "Blood Glucose Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/BmiQuestionnaireResponseToObservations"
+      },
+      "name" : "BMI Q to Body Height, Body Weight and BMI Observations Bundle",
+      "description" : "BMI Q to Body Height, Body Weight and BMI Observations Bundle"
     },
     {
       "extension" : [{

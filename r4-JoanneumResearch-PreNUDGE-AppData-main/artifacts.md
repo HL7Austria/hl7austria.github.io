@@ -20,6 +20,7 @@ These define forms used by systems conforming to this implementation guide to ca
 | [Durchschnittliche Schlafdauer pro Nacht](Questionnaire-SleepDurationQuestionnaire.md) | A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours. |
 | [EHIS-PAQ: Zu-Fuß-Gehen](Questionnaire-StepCountEhisPaqQuestionnaire.md) | The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. |
 | [Höchster abgeschlossener Bildungsabschluss](Questionnaire-EducationQuestionnaire.md) | A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels. |
+| [Körpergröße, Körpergewicht und Body Mass Index (BMI)](Questionnaire-BmiQuestionnaire.md) | Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations. |
 | [Rauchstatus und Nikotinkonsum](Questionnaire-SmokingStatusQuestionnaire.md) | ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question. |
 | [Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)](Questionnaire-SleepQualityQuestionnaire.md) | Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?'). |
 | [Schrittzahl am heutigen Tag](Questionnaire-StepCountQuantityQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
@@ -42,6 +43,9 @@ These define constraints on FHIR resources for systems conforming to this implem
 | :--- | :--- |
 | [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md) | This FHIR profile is derived from the APS Observation Alcohol Use profile. Additional fields from the PreNUDGE Observation profile are added. |
 | [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md) | This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL. |
+| [AT PreNUDGE Observation Body Height](StructureDefinition-at-prenudge-bodyheight-observation.md) | This FHIR profile defines a body height Observation based on the FHIR R4 Vital Signs body height concept. Body height is represented using LOINC 8302-2 and UCUM cm. |
+| [AT PreNUDGE Observation Body Mass Index](StructureDefinition-at-prenudge-bmi-observation.md) | This FHIR profile defines a Body Mass Index (BMI) Observation based on the FHIR R4 Vital Signs BMI concept. BMI is represented using LOINC 39156-5 and UCUM kg/m2. |
+| [AT PreNUDGE Observation Body Weight](StructureDefinition-at-prenudge-bodyweight-observation.md) | This FHIR profile defines a body weight Observation based on the FHIR R4 Vital Signs body weight concept. Body weight is represented using LOINC 29463-7 and UCUM kg. |
 | [AT PreNUDGE Observation Highest Completed Education](StructureDefinition-at-prenudge-education-observation.md) | This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire. |
 | [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifying a new Observation is missing, please contact prenudge@joanneum.at. |
 | [AT PreNUDGE Observation Other not Quantities](StructureDefinition-at-prenudge-observation-other-not-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations. |
@@ -88,6 +92,7 @@ These define transformations to convert between data structures used by systems 
 | :--- | :--- |
 | [ATHIS-based Smoking Status Q to O](StructureMap-SmokingStatusQuestionnaireResponseToObservation.md) | ATHIS-based Smoking Status Q to O |
 | [Alcohol Use Q mapping frequency to O drinks per day](StructureMap-AlcoholQuestionnaireResponseToObservation.md) | Alcohol Use Q mapping frequency to O drinks per day |
+| [BMI Q to Body Height, Body Weight and BMI Observations Bundle](StructureMap-BmiQuestionnaireResponseToObservations.md) | BMI Q to Body Height, Body Weight and BMI Observations Bundle |
 | [Blood Glucose Q to O](StructureMap-BloodGlucoseQuestionnaireResponseToObservation.md) | Blood Glucose Q to O |
 | [Shared base for Q to O](StructureMap-QuestionnaireResponseToObservationBase.md) | Shared base for Q to O |
 | [Sleep Duration Q to O](StructureMap-SleepDurationQuestionnaireResponseToObservation.md) | Sleep Duration Q to O |
@@ -116,11 +121,15 @@ These are example instances that show what data produced and consumed by systems
 | [Alcohol Use Q - Daily](QuestionnaireResponse-AlcoholResponseDaily.md) | Example of an alcohol use observation for a daily drinker. |
 | [Alcohol Use Q - Non-Drinker](QuestionnaireResponse-AlcoholResponseNever.md) | Example of an alcohol use observation for a lifetime non-drinker. |
 | [AtApsPatient-example](Patient-example.md) | An example of a patient with a license to krill. |
+| [BMI Questionnaire Response Example](QuestionnaireResponse-bmi-questionnaire-response-example.md) | Example of a BMI questionnaire response with body height, body weight and a calculated BMI value. |
 | [Blood Glucose O - Low Example](Observation-bloodglucose-low-example.md) | Example of a low fasting blood glucose measurement (62 mg/dL), indicating hypoglycemia. |
 | [Blood Glucose O mapped from Q - Elevated Example](Observation-bloodglucose-elevated-example.md) | Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus. |
 | [Blood Glucose O mapped from Q - Normal Example](Observation-bloodglucose-normal-example.md) | Example of a normal fasting blood glucose measurement (95 mg/dL). |
 | [Blood Glucose Q - Elevated Example](QuestionnaireResponse-bloodglucose-response-elevated-example.md) | Example of an elevated fasting blood glucose measurement (142 mg/dL), indicating diabetes mellitus. |
 | [Blood Glucose Q - Normal Example](QuestionnaireResponse-bloodglucose-response-normal-example.md) | Example of a normal fasting blood glucose measurement (95 mg/dL). |
+| [Body Height O - Example](Observation-bodyheight-example.md) | Example body height Observation derived from a BMI questionnaire response. |
+| [Body Mass Index O - Example](Observation-bmi-example.md) | Example BMI Observation derived from a BMI questionnaire response. |
+| [Body Weight O - Example](Observation-bodyweight-example.md) | Example body weight Observation derived from a BMI questionnaire response. |
 | [Education O mapped from Q - Bachelor's Level Example](Observation-education-bachelor-example.md) | Example of a highest completed education observation mapped from the EducationQuestionnaire. |
 | [Education O mapped from Q - Upper Secondary Education Example](Observation-education-upper-secondary-example.md) | Example of a highest completed education observation mapped from the EducationQuestionnaire. |
 | [Education Q - Bachelor's Level Example](QuestionnaireResponse-education-response-bachelor-example.md) | Example of a highest completed education questionnaire response using ISCED 2011 level 6. |

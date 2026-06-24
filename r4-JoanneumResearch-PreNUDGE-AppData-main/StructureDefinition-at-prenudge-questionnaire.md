@@ -16,7 +16,7 @@ This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top 
 
 **Usages:**
 
-* Examples for this Profile: [AlcoholUseQuestionnaire](Questionnaire-AlcoholUseQuestionnaire.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [EducationQuestionnaire](Questionnaire-EducationQuestionnaire.md), [SleepDurationQuestionnaire](Questionnaire-SleepDurationQuestionnaire.md)... Show 7 more, [SleepQualityQuestionnaire](Questionnaire-SleepQualityQuestionnaire.md), [SmokingStatusQuestionnaire](Questionnaire-SmokingStatusQuestionnaire.md), [StepCountEhisPaqQuestionnaire](Questionnaire-StepCountEhisPaqQuestionnaire.md), [StepCountQuantityQuestionnaire](Questionnaire-StepCountQuantityQuestionnaire.md), [AtPrenudgeQoLByWhoQolBref](Questionnaire-WhoQolBrefQuestionnaire.md), [WorkAbilityIndexQuestionnaire](Questionnaire-WorkAbilityIndexQuestionnaire.md) and [WorkSocQuestionnaire](Questionnaire-WorkSocQuestionnaire.md)
+* Examples for this Profile: [AlcoholUseQuestionnaire](Questionnaire-AlcoholUseQuestionnaire.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [BmiQuestionnaire](Questionnaire-BmiQuestionnaire.md), [EducationQuestionnaire](Questionnaire-EducationQuestionnaire.md)... Show 8 more, [SleepDurationQuestionnaire](Questionnaire-SleepDurationQuestionnaire.md), [SleepQualityQuestionnaire](Questionnaire-SleepQualityQuestionnaire.md), [SmokingStatusQuestionnaire](Questionnaire-SmokingStatusQuestionnaire.md), [StepCountEhisPaqQuestionnaire](Questionnaire-StepCountEhisPaqQuestionnaire.md), [StepCountQuantityQuestionnaire](Questionnaire-StepCountQuantityQuestionnaire.md), [AtPrenudgeQoLByWhoQolBref](Questionnaire-WhoQolBrefQuestionnaire.md), [WorkAbilityIndexQuestionnaire](Questionnaire-WorkAbilityIndexQuestionnaire.md) and [WorkSocQuestionnaire](Questionnaire-WorkSocQuestionnaire.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-questionnaire.json)
 
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeQuestionnaire",
   "title" : "AT PreNUDGE Questionnaire",
   "status" : "draft",
-  "date" : "2026-06-24T07:32:55+00:00",
+  "date" : "2026-06-24T12:07:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
