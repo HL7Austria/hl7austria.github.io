@@ -94,6 +94,7 @@ These define transformations to convert between data structures used by systems 
 | [Alcohol Use Q mapping frequency to O drinks per day](StructureMap-AlcoholQuestionnaireResponseToObservation.md) | Alcohol Use Q mapping frequency to O drinks per day |
 | [BMI Q to Body Height, Body Weight and BMI Observations Bundle](StructureMap-BmiQuestionnaireResponseToObservations.md) | BMI Q to Body Height, Body Weight and BMI Observations Bundle |
 | [Blood Glucose Q to O](StructureMap-BloodGlucoseQuestionnaireResponseToObservation.md) | Blood Glucose Q to O |
+| [Highest Completed Education Q to O](StructureMap-EducationQuestionnaireResponseToObservation.md) | Highest Completed Education Q to O |
 | [Shared base for Q to O](StructureMap-QuestionnaireResponseToObservationBase.md) | Shared base for Q to O |
 | [Sleep Duration Q to O](StructureMap-SleepDurationQuestionnaireResponseToObservation.md) | Sleep Duration Q to O |
 | [Sleep Quality Base (WHOQOL-BREF scale to LOINC)](StructureMap-SleepQualityBase.md) | Sleep Quality Base (WHOQOL-BREF scale to LOINC) |

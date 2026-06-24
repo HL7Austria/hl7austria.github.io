@@ -34,7 +34,7 @@ Links:
   "name" : "SmokingStatusQuestionnaireResponseToObservation",
   "title" : "ATHIS-based Smoking Status Q to O",
   "status" : "active",
-  "date" : "2026-06-24T12:07:10+00:00",
+  "date" : "2026-06-24T13:18:54+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -125,7 +125,7 @@ Links:
       }]
     },
     {
-      "name" : "copyAuthoredToObservationTimes",
+      "name" : "copyAuthoredToEffective",
       "source" : [{
         "context" : "src",
         "element" : "authored",
@@ -139,8 +139,16 @@ Links:
         "parameter" : [{
           "valueId" : "authored"
         }]
-      },
-      {
+      }]
+    },
+    {
+      "name" : "copyAuthoredToIssued",
+      "source" : [{
+        "context" : "src",
+        "element" : "authored",
+        "variable" : "authored"
+      }],
+      "target" : [{
         "context" : "tgt",
         "contextType" : "variable",
         "element" : "issued",
@@ -245,6 +253,7 @@ Links:
   {
     "name" : "SmokingStatusGroupToObservation",
     "typeMode" : "none",
+    "documentation" : "optimized for IG Publisher\r\nto work with MaLaC-HD, answer.value -> answer.valueCoding and tgt.value -> tgt.valueCodeableConcept",
     "input" : [{
       "name" : "groupItem",
       "type" : "QR",

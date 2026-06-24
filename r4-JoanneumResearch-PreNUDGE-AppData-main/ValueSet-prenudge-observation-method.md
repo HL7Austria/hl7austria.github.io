@@ -61,7 +61,7 @@ Links:
   "title" : "AT PreNUDGE Observation Methods",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-24T12:07:10+00:00",
+  "date" : "2026-06-24T13:18:54+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -44,8 +44,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.50"}
-    h3,h4,h5,h6{--heading-prefix:"6.50"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.51"}
+    h3,h4,h5,h6{--heading-prefix:"6.51"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -218,7 +218,8 @@
   src&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.status = &lt;span style=&quot;color: blue&quot;&gt;'final'&lt;/span&gt; &lt;i&gt;&amp;quot;setFinalStatus&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   src.identifier&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;identifier&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.identifier = &lt;span style=&quot;color: maroon&quot;&gt;identifier&lt;/span&gt; &lt;i&gt;&amp;quot;copyIdentifier&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   src.subject&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;subject&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.subject = &lt;span style=&quot;color: maroon&quot;&gt;subject&lt;/span&gt; &lt;i&gt;&amp;quot;copySubject&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
-  src.authored&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt; tgt.effective = &lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; tgt.issued = &lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt; &lt;i&gt;&amp;quot;copyAuthoredToObservationTimes&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  src.authored&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.effective = &lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt; &lt;i&gt;&amp;quot;copyAuthoredToEffective&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  src.authored&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.issued = &lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt; &lt;i&gt;&amp;quot;copyAuthoredToIssued&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;IPS/APS-style tobacco smoking status coding.&lt;/span&gt;
   src&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.code = &lt;b&gt;cc&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'http://loinc.org'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'72166-2'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Tobacco smoking status'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;setTobaccoSmokingStatusCode&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;User-entered QuestionnaireResponse data is considered manual input.&lt;/span&gt;
@@ -231,7 +232,9 @@
   src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;groupItem&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;groupItem.linkId = 'smoking-status-athis'&lt;b&gt; then &lt;/b&gt;SmokingStatusGroupToObservation&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;groupItem&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;mapSmokingStatusGroup&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;}
 
-&lt;/span&gt;&lt;b&gt;group &lt;/b&gt;SmokingStatusGroupToObservation&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;groupItem&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;QR, &lt;b&gt;target&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;Obs&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;optimized for IG Publisher&lt;/span&gt;
+&lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;to work with MaLaC-HD, answer.value -&amp;gt; answer.valueCoding and tgt.value -&amp;gt; tgt.valueCodeableConcept&lt;/span&gt;
+&lt;b&gt;group &lt;/b&gt;SmokingStatusGroupToObservation&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;groupItem&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;QR, &lt;b&gt;target&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;Obs&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;SK1 = Ja, täglich -&amp;gt; current every day smoker.&lt;/span&gt;
   groupItem.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;sk1&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;sk1.linkId = 'sk1'&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;    sk1.answer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;answer&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
@@ -280,7 +283,7 @@
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;SmokingStatusQuestionnaireResponseToObservation&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ATHIS-based Smoking Status Q to O&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-06-24T12:07:10+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-06-24T13:18:54+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
@@ -372,7 +375,7 @@
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;copyAuthoredToObservationTimes&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;copyAuthoredToEffective&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;src&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;authored&quot;/&gt;
@@ -387,6 +390,14 @@
           &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;authored&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;copyAuthoredToIssued&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;src&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;authored&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;authored&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.source">source</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.context">context</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;tgt&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.contextType">contextType</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;variable&quot;/&gt;
@@ -493,6 +504,9 @@
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;SmokingStatusGroupToObservation&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.typeMode">typeMode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;none&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.documentation">documentation</a>
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;optimized for IG Publisher
+to work with MaLaC-HD, answer.value -&amp;gt; answer.valueCoding and tgt.value -&amp;gt; tgt.valueCodeableConcept&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input">input</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;groupItem&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.input.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;QR&quot;/&gt;
@@ -807,7 +821,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:07+0000">2026-06-24</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 13:18+0000">2026-06-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

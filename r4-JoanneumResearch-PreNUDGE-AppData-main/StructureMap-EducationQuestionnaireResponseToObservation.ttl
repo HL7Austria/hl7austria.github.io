@@ -1,0 +1,598 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/EducationQuestionnaireResponseToObservation> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "EducationQuestionnaireResponseToObservation"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap EducationQuestionnaireResponseToObservation</b></p><a name=\"EducationQuestionnaireResponseToObservation\"> </a><a name=\"hcEducationQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/EducationQuestionnaireResponseToObservation<span style=\"color: navy\">\" = \"</span>EducationQuestionnaireResponseToObservation<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Highest Completed Education Q to O</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n#xD;\n<b>group </b>EducationQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>\"setFinalStatus\"</i><span style=\"color: navy\">;</span>#xD;\n  src.identifier<b> as </b><span style=\"color: maroon\">identifier</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.identifier = <span style=\"color: maroon\">identifier</span> <i>\"copyIdentifier\"</i><span style=\"color: navy\">;</span>#xD;\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <span style=\"color: maroon\">subject</span> <i>\"copySubject\"</i><span style=\"color: navy\">;</span>#xD;\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effective = <span style=\"color: maroon\">authored</span> <i>\"copyAuthoredToEffective\"</i><span style=\"color: navy\">;</span>#xD;\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.issued = <span style=\"color: maroon\">authored</span> <i>\"copyAuthoredToIssued\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'82589-3'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Highest level of education'</span><span style=\"color: navy\">)</span> <i>\"setEducationCode\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.method = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'87982008'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Manual'</span><span style=\"color: navy\">)</span> <i>\"setManualMethod\"</i><span style=\"color: navy\">;</span>#xD;\n  src.id<b> as </b><span style=\"color: maroon\">id</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.derivedFrom = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Reference'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">reference</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    id<span style=\"color: navy\"><b> -&gt; </b></span>reference.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'QuestionnaireResponse/'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">id</span><span style=\"color: navy\">)</span> <i>\"setDerivedFromReference\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"setDerivedFrom\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">optimized for IG Publisher</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">to work with MaLaC-HD, tgt.value -&gt; tgt.valueCodeableConcept</span>#xD;\n  src.item<b> as </b><span style=\"color: maroon\">educationItem</span><b> where </b>educationItem.linkId = 'highest-completed-education'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-0'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-0'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 0 - Elementarbereich'</span><span style=\"color: navy\">)</span> <i>\"mapIsced0\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-1'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-1'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 1 - Primarbereich'</span><span style=\"color: navy\">)</span> <i>\"mapIsced1\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-2'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-2'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 2 - Sekundarbereich I'</span><span style=\"color: navy\">)</span> <i>\"mapIsced2\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-3'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-3'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 3 - Sekundarbereich II'</span><span style=\"color: navy\">)</span> <i>\"mapIsced3\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-4'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-4'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 4 - Postsekundärer, nicht-tertiärer Bereich'</span><span style=\"color: navy\">)</span> <i>\"mapIsced4\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-5'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-5'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 5 - Kurzes tertiäres Bildungsprogramm'</span><span style=\"color: navy\">)</span> <i>\"mapIsced5\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-6'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-6'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 6 - Bachelor- bzw. gleichwertiges Bildungsprogramm'</span><span style=\"color: navy\">)</span> <i>\"mapIsced6\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-7'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-7'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 7 - Master- bzw. gleichwertiges Bildungsprogramm'</span><span style=\"color: navy\">)</span> <i>\"mapIsced7\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'isced-8'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'isced-8'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'ISCED 8 - Doktorat oder gleichwertig'</span><span style=\"color: navy\">)</span> <i>\"mapIsced8\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'unknown'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'unknown'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Weiß nicht'</span><span style=\"color: navy\">)</span> <i>\"mapUnknown\"</i><span style=\"color: navy\">;</span>#xD;\n    educationItem.answer<b> as </b><span style=\"color: maroon\">answer</span><b> where </b>answer.valueCoding.code = 'not-stated'<span style=\"color: navy\"><b> -&gt; </b></span>tgt.value = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'not-stated'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Keine Angabe'</span><span style=\"color: navy\">)</span> <i>\"mapNotStated\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"mapEducationItem\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/EducationQuestionnaireResponseToObservation"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "EducationQuestionnaireResponseToObservation"] ; # 
+  fhir:title [ fhir:v "Highest Completed Education Q to O"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2026-06-24T13:18:54+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Highest Completed Education Q to O"] ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "QR" ]
+  ] [
+     fhir:url [
+       fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "Obs" ]
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "EducationQuestionnaireResponseToObservation" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "src" ] ;
+       fhir:type [ fhir:v "QR" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "tgt" ] ;
+       fhir:type [ fhir:v "Obs" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "setFinalStatus" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "status" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "final"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "copyIdentifier" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:variable [ fhir:v "identifier" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "identifier" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:id ;
+             fhir:v "identifier"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "copySubject" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "subject" ] ;
+         fhir:variable [ fhir:v "subject" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "subject" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:id ;
+             fhir:v "subject"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "copyAuthoredToEffective" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "authored" ] ;
+         fhir:variable [ fhir:v "authored" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "effective" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:id ;
+             fhir:v "authored"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "copyAuthoredToIssued" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "authored" ] ;
+         fhir:variable [ fhir:v "authored" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "issued" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:id ;
+             fhir:v "authored"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "setEducationCode" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "code" ] ;
+         fhir:transform [ fhir:v "cc" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "http://loinc.org"
+           ]
+         ] [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "82589-3"
+           ]
+         ] [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Highest level of education"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "setManualMethod" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "method" ] ;
+         fhir:transform [ fhir:v "cc" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "http://snomed.info/sct"
+           ]
+         ] [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "87982008"
+           ]
+         ] [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Manual"
+           ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "setDerivedFrom" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "id" ] ;
+         fhir:variable [ fhir:v "id" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "tgt" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "derivedFrom" ] ;
+         fhir:variable [ fhir:v "reference" ] ;
+         fhir:transform [ fhir:v "create" ] ;
+         fhir:parameter ( [
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Reference"
+           ]
+         ] )
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "setDerivedFromReference" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "id" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "reference" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "reference" ] ;
+           fhir:transform [ fhir:v "append" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "QuestionnaireResponse/"
+             ]
+           ] [
+             fhir:value [
+               a fhir:id ;
+               fhir:v "id"
+             ]
+           ] )
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "mapEducationItem" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "src" ] ;
+         fhir:element [ fhir:v "item" ] ;
+         fhir:variable [ fhir:v "educationItem" ] ;
+         fhir:condition [ fhir:v "educationItem.linkId = 'highest-completed-education'" ]
+       ] ) ;
+       fhir:rule ( [
+         fhir:name [ fhir:v "mapIsced0" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-0'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-0"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 0 - Elementarbereich"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced1" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-1'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-1"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 1 - Primarbereich"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced2" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-2'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-2"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 2 - Sekundarbereich I"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced3" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-3'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-3"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 3 - Sekundarbereich II"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced4" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-4'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-4"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 4 - Postsekundärer, nicht-tertiärer Bereich"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced5" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-5'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-5"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 5 - Kurzes tertiäres Bildungsprogramm"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced6" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-6'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-6"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 6 - Bachelor- bzw. gleichwertiges Bildungsprogramm"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced7" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-7'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-7"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 7 - Master- bzw. gleichwertiges Bildungsprogramm"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapIsced8" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'isced-8'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "isced-8"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "ISCED 8 - Doktorat oder gleichwertig"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapUnknown" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'unknown'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "unknown"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "Weiß nicht"
+             ]
+           ] )
+         ] )
+       ] [
+         fhir:name [ fhir:v "mapNotStated" ] ;
+         fhir:source ( [
+           fhir:context [ fhir:v "educationItem" ] ;
+           fhir:element [ fhir:v "answer" ] ;
+           fhir:variable [ fhir:v "answer" ] ;
+           fhir:condition [ fhir:v "answer.valueCoding.code = 'not-stated'" ]
+         ] ) ;
+         fhir:target ( [
+           fhir:context [ fhir:v "tgt" ] ;
+           fhir:contextType [ fhir:v "variable" ] ;
+           fhir:element [ fhir:v "value" ] ;
+           fhir:transform [ fhir:v "cc" ] ;
+           fhir:parameter ( [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "not-stated"
+             ]
+           ] [
+             fhir:value [
+               a fhir:string ;
+               fhir:v "Keine Angabe"
+             ]
+           ] )
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

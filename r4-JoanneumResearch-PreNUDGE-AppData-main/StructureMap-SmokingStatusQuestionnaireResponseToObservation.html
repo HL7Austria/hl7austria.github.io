@@ -42,8 +42,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.50"}
-    h3,h4,h5,h6{--heading-prefix:"6.50"}</style>
+    <style type="text/css">h2{--heading-prefix:"6.51"}
+    h3,h4,h5,h6{--heading-prefix:"6.51"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -251,7 +251,8 @@
   src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;setFinalStatus&quot;</i><span style="color: navy">;</span>
   src.identifier<b> as </b><span style="color: maroon">identifier</span><span style="color: navy"><b> -&gt; </b></span>tgt.identifier = <span style="color: maroon">identifier</span> <i>&quot;copyIdentifier&quot;</i><span style="color: navy">;</span>
   src.subject<b> as </b><span style="color: maroon">subject</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject = <span style="color: maroon">subject</span> <i>&quot;copySubject&quot;</i><span style="color: navy">;</span>
-  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effective = <span style="color: maroon">authored</span><span style="color: navy">, </span> tgt.issued = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToObservationTimes&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effective = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToEffective&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.issued = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToIssued&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">IPS/APS-style tobacco smoking status coding.</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'72166-2'</span><span style="color: navy">, </span><span style="color: blue">'Tobacco smoking status'</span><span style="color: navy">)</span> <i>&quot;setTobaccoSmokingStatusCode&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">User-entered QuestionnaireResponse data is considered manual input.</span>
@@ -264,7 +265,9 @@
   src.item<b> as </b><span style="color: maroon">groupItem</span><b> where </b>groupItem.linkId = 'smoking-status-athis'<b> then </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><span style="color: maroon">groupItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;mapSmokingStatusGroup&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
-</span><b>group </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span><span style="color: navy">// </span><span style="color: green">optimized for IG Publisher</span>
+<span style="color: navy">// </span><span style="color: green">to work with MaLaC-HD, answer.value -&gt; answer.valueCoding and tgt.value -&gt; tgt.valueCodeableConcept</span>
+<b>group </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  <span style="color: navy">// </span><span style="color: green">SK1 = Ja, täglich -&gt; current every day smoker.</span>
   groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
 </span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
@@ -330,7 +333,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 12:07+0000">2026-06-24</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 13:18+0000">2026-06-24</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

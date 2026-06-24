@@ -17,7 +17,8 @@
   src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;setFinalStatus&quot;</i><span style="color: navy">;</span>
   src.identifier<b> as </b><span style="color: maroon">identifier</span><span style="color: navy"><b> -&gt; </b></span>tgt.identifier = <span style="color: maroon">identifier</span> <i>&quot;copyIdentifier&quot;</i><span style="color: navy">;</span>
   src.subject<b> as </b><span style="color: maroon">subject</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject = <span style="color: maroon">subject</span> <i>&quot;copySubject&quot;</i><span style="color: navy">;</span>
-  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effective = <span style="color: maroon">authored</span><span style="color: navy">, </span> tgt.issued = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToObservationTimes&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effective = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToEffective&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.issued = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToIssued&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">IPS/APS-style tobacco smoking status coding.</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'72166-2'</span><span style="color: navy">, </span><span style="color: blue">'Tobacco smoking status'</span><span style="color: navy">)</span> <i>&quot;setTobaccoSmokingStatusCode&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">User-entered QuestionnaireResponse data is considered manual input.</span>
@@ -30,7 +31,9 @@
   src.item<b> as </b><span style="color: maroon">groupItem</span><b> where </b>groupItem.linkId = 'smoking-status-athis'<b> then </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><span style="color: maroon">groupItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;mapSmokingStatusGroup&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
-</span><b>group </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span><span style="color: navy">// </span><span style="color: green">optimized for IG Publisher</span>
+<span style="color: navy">// </span><span style="color: green">to work with MaLaC-HD, answer.value -&gt; answer.valueCoding and tgt.value -&gt; tgt.valueCodeableConcept</span>
+<b>group </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  <span style="color: navy">// </span><span style="color: green">SK1 = Ja, täglich -&gt; current every day smoker.</span>
   groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
 </span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
@@ -78,7 +81,7 @@
   <name value="SmokingStatusQuestionnaireResponseToObservation"/>
   <title value="ATHIS-based Smoking Status Q to O"/>
   <status value="active"/>
-  <date value="2026-06-24T12:07:10+00:00"/>
+  <date value="2026-06-24T13:18:54+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -169,7 +172,7 @@
       </target>
     </rule>
     <rule>
-      <name value="copyAuthoredToObservationTimes"/>
+      <name value="copyAuthoredToEffective"/>
       <source>
         <context value="src"/>
         <element value="authored"/>
@@ -184,6 +187,14 @@
           <valueId value="authored"/>
         </parameter>
       </target>
+    </rule>
+    <rule>
+      <name value="copyAuthoredToIssued"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
       <target>
         <context value="tgt"/>
         <contextType value="variable"/>
@@ -290,6 +301,7 @@
   <group>
     <name value="SmokingStatusGroupToObservation"/>
     <typeMode value="none"/>
+    <documentation value="optimized for IG Publisher&#xD;&#xA;to work with MaLaC-HD, answer.value -&gt; answer.valueCoding and tgt.value -&gt; tgt.valueCodeableConcept"/>
     <input>
       <name value="groupItem"/>
       <type value="QR"/>

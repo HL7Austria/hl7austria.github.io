@@ -84,7 +84,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-24T12:07:10+00:00",
+  "date" : "2026-06-24T13:18:54+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -1816,6 +1816,17 @@ Links:
       },
       "name" : "BMI Q to Body Height, Body Weight and BMI Observations Bundle",
       "description" : "BMI Q to Body Height, Body Weight and BMI Observations Bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/EducationQuestionnaireResponseToObservation"
+      },
+      "name" : "Highest Completed Education Q to O",
+      "description" : "Highest Completed Education Q to O"
     },
     {
       "extension" : [{
