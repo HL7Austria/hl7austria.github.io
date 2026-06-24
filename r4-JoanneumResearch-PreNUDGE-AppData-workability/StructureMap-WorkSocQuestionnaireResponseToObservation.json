@@ -1,0 +1,476 @@
+{
+  "resourceType" : "StructureMap",
+  "id" : "WorkSocQuestionnaireResponseToObservation",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap WorkSocQuestionnaireResponseToObservation</b></p><a name=\"WorkSocQuestionnaireResponseToObservation\"> </a><a name=\"hcWorkSocQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">\r\n<b>map</b><span style=\"color: navy\"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WorkSocQuestionnaireResponseToObservation<span style=\"color: navy\">&quot; = &quot;</span>WorkSocQuestionnaireResponseToObservation<span style=\"color: navy\">&quot;\r\n\r\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Work-SoC Q score to O score</span>\r\n\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>\r\n<b>uses</b><span style=\"color: navy\"> &quot;</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>\r\n\r\n<b>imports</b><span style=\"color: navy\"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">&quot;\r\n</span><b>imports</b><span style=\"color: navy\"> &quot;</span><a href=\"StructureMap-QuestionnaireResponseToObservationBase.html\" title=\"Shared base for Q to O\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style=\"color: navy\">&quot;\r\n</span>\r\n<b>group </b>WorkSocQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src<b> then </b>SetObservationBase<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;Base&quot;</i><span style=\"color: navy\">;</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta<b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation'</span> <i>&quot;SetProfile&quot;</i><span style=\"color: navy\">;</span>\r\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-category-score'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC category score'</span><span style=\"color: navy\">)</span> <i>&quot;SetCode&quot;</i><span style=\"color: navy\">;</span>\r\n  src.item<b> as </b><span style=\"color: maroon\">workSocGroup</span><b> where </b>linkId = 'work-soc'<b> then</b><span style=\"color: navy\"> {\r\n</span>    workSocGroup.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'work-soc-comprehensibility-score'<b> then </b>MapComprehensibilityScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapComprehensibilityScore&quot;</i><span style=\"color: navy\">;</span>\r\n    workSocGroup.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'work-soc-manageability-score'<b> then </b>MapManageabilityScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapManageabilityScore&quot;</i><span style=\"color: navy\">;</span>\r\n    workSocGroup.item<b> as </b><span style=\"color: maroon\">scoreItem</span><b> where </b>linkId = 'work-soc-meaningfulness-score'<b> then </b>MapMeaningfulnessScore<span style=\"color: navy\">(</span><span style=\"color: maroon\">scoreItem</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>&quot;MapMeaningfulnessScore&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessWorkSoc&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">TODO: Comment/Note mapping disabled due to MaLaC-HD limitation</span>\r\n<span style=\"color: navy\">// </span><span style=\"color: green\">See: https://gitlab.com/cdehealth/malac-hd/-/issues/128</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><b>group </b>MapComprehensibilityScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.valueDecimal<b> as </b><span style=\"color: maroon\">val</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      val.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-comprehensibility'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC comprehensibility score'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;ExtractValue&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><b>group </b>MapManageabilityScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.valueDecimal<b> as </b><span style=\"color: maroon\">val</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      val.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-manageability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC manageability score'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;ExtractValue&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span><b>group </b>MapMeaningfulnessScore<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {\r\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {\r\n</span>    answer.valueDecimal<b> as </b><span style=\"color: maroon\">val</span><b> then</b><span style=\"color: navy\"> {\r\n</span>      val.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'work-soc-meaningfulness'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Work-SoC meaningfulness score'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'score'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{score}'</span> <i>&quot;SetComponent&quot;</i><span style=\"color: navy\">;</span>\r\n    <span style=\"color: navy\">}</span> <i>&quot;ExtractValue&quot;</i><span style=\"color: navy\">;</span>\r\n  <span style=\"color: navy\">}</span> <i>&quot;ProcessAnswer&quot;</i><span style=\"color: navy\">;</span>\r\n<span style=\"color: navy\">}\r\n\r\n</span></pre></div>"
+  },
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WorkSocQuestionnaireResponseToObservation",
+  "version" : "0.1.0",
+  "name" : "WorkSocQuestionnaireResponseToObservation",
+  "title" : "Work-SoC Q score to O score",
+  "status" : "active",
+  "date" : "2026-06-24T07:21:07+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Work-SoC Q score to O score",
+  "structure" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+    "mode" : "source",
+    "alias" : "QR"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/Observation",
+    "mode" : "target",
+    "alias" : "Obs"
+  }],
+  "import" : ["http://hl7.org/fhir/StructureMap/*",
+  "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"],
+  "group" : [{
+    "name" : "WorkSocQuestionnaireResponseToObservation",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "Base",
+      "source" : [{
+        "context" : "src"
+      }],
+      "dependent" : [{
+        "name" : "SetObservationBase",
+        "variable" : ["src",
+        "tgt"]
+      }]
+    },
+    {
+      "name" : "SetProfile",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "meta",
+        "variable" : "meta"
+      },
+      {
+        "context" : "meta",
+        "contextType" : "variable",
+        "element" : "profile",
+        "transform" : "copy",
+        "parameter" : [{
+          "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation"
+        }]
+      }]
+    },
+    {
+      "name" : "SetCode",
+      "source" : [{
+        "context" : "src"
+      }],
+      "target" : [{
+        "context" : "tgt",
+        "contextType" : "variable",
+        "element" : "code",
+        "transform" : "cc",
+        "parameter" : [{
+          "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+        },
+        {
+          "valueString" : "work-soc-category-score"
+        },
+        {
+          "valueString" : "Work-SoC category score"
+        }]
+      }]
+    },
+    {
+      "name" : "ProcessWorkSoc",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "workSocGroup",
+        "condition" : "linkId = 'work-soc'"
+      }],
+      "rule" : [{
+        "name" : "MapComprehensibilityScore",
+        "source" : [{
+          "context" : "workSocGroup",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'work-soc-comprehensibility-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapComprehensibilityScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      },
+      {
+        "name" : "MapManageabilityScore",
+        "source" : [{
+          "context" : "workSocGroup",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'work-soc-manageability-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapManageabilityScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      },
+      {
+        "name" : "MapMeaningfulnessScore",
+        "source" : [{
+          "context" : "workSocGroup",
+          "element" : "item",
+          "variable" : "scoreItem",
+          "condition" : "linkId = 'work-soc-meaningfulness-score'"
+        }],
+        "dependent" : [{
+          "name" : "MapMeaningfulnessScore",
+          "variable" : ["scoreItem",
+          "tgt"]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapComprehensibilityScore",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "ExtractValue",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueDecimal",
+          "variable" : "val"
+        }],
+        "rule" : [{
+          "name" : "SetComponent",
+          "source" : [{
+            "context" : "val",
+            "element" : "value",
+            "variable" : "numVal"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "component",
+            "variable" : "comp"
+          },
+          {
+            "context" : "comp",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+            },
+            {
+              "valueString" : "work-soc-comprehensibility"
+            },
+            {
+              "valueString" : "Work-SoC comprehensibility score"
+            }]
+          },
+          {
+            "context" : "comp",
+            "contextType" : "variable",
+            "element" : "value",
+            "variable" : "qty",
+            "transform" : "create",
+            "parameter" : [{
+              "valueString" : "Quantity"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueId" : "numVal"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "unit",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "score"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "system",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "http://unitsofmeasure.org"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "{score}"
+            }]
+          }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapManageabilityScore",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "ExtractValue",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueDecimal",
+          "variable" : "val"
+        }],
+        "rule" : [{
+          "name" : "SetComponent",
+          "source" : [{
+            "context" : "val",
+            "element" : "value",
+            "variable" : "numVal"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "component",
+            "variable" : "comp"
+          },
+          {
+            "context" : "comp",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+            },
+            {
+              "valueString" : "work-soc-manageability"
+            },
+            {
+              "valueString" : "Work-SoC manageability score"
+            }]
+          },
+          {
+            "context" : "comp",
+            "contextType" : "variable",
+            "element" : "value",
+            "variable" : "qty",
+            "transform" : "create",
+            "parameter" : [{
+              "valueString" : "Quantity"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueId" : "numVal"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "unit",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "score"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "system",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "http://unitsofmeasure.org"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "{score}"
+            }]
+          }]
+        }]
+      }]
+    }]
+  },
+  {
+    "name" : "MapMeaningfulnessScore",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "ExtractValue",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueDecimal",
+          "variable" : "val"
+        }],
+        "rule" : [{
+          "name" : "SetComponent",
+          "source" : [{
+            "context" : "val",
+            "element" : "value",
+            "variable" : "numVal"
+          }],
+          "target" : [{
+            "context" : "tgt",
+            "contextType" : "variable",
+            "element" : "component",
+            "variable" : "comp"
+          },
+          {
+            "context" : "comp",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "cc",
+            "parameter" : [{
+              "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability"
+            },
+            {
+              "valueString" : "work-soc-meaningfulness"
+            },
+            {
+              "valueString" : "Work-SoC meaningfulness score"
+            }]
+          },
+          {
+            "context" : "comp",
+            "contextType" : "variable",
+            "element" : "value",
+            "variable" : "qty",
+            "transform" : "create",
+            "parameter" : [{
+              "valueString" : "Quantity"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "value",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueId" : "numVal"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "unit",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "score"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "system",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "http://unitsofmeasure.org"
+            }]
+          },
+          {
+            "context" : "qty",
+            "contextType" : "variable",
+            "element" : "code",
+            "transform" : "copy",
+            "parameter" : [{
+              "valueString" : "{score}"
+            }]
+          }]
+        }]
+      }]
+    }]
+  }]
+}
