@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="AtPrenudgeCodeUnitMap"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ConceptMap AtPrenudgeCodeUnitMap</b></p><a name="AtPrenudgeCodeUnitMap"> </a><a name="hcAtPrenudgeCodeUnitMap"> </a><p>Mapping from <a href="ValueSet-prenudge-other-observations-codes.html">AT PreNUDGE Other Observations Codes</a> to <a href="ValueSet-prenudge-other-observations-units.html">AT PreNUDGE Other Observations Units</a></p><br/><p><b>Group 1 </b>Mapping from <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html">Unified Code for Units of Measure (UCUM)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>82832008 (General body state finding (finding))</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>{finding} (finding)</td><td>Subjective well-being rating on a numeric scale (e.g., 1-10).</td></tr></table><hr/><p><b>Group 2 </b>Mapping from <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a> to <a href="http://terminology.hl7.org/6.5.0/CodeSystem-v3-ucum.html">Unified Code for Units of Measure (UCUM)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>66266-8 (Time doing this activity)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>min (minute)</td><td>Duration of the activity in minutes.</td></tr><tr><td>66270-0 (Activity intensity)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equivalent" title="equivalent">is equivalent to</a></td><td>{intensity} (intensity)</td><td>Subjective intensity rating on a numeric scale (e.g., 1-10, where 1 = very light and 10 = maximum effort).</td></tr></table></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/ConceptMap/AtPrenudgeCodeUnitMap"/>
+  <version value="0.1.0"/>
+  <title value="AT PreNUDGE Code-to-Unit Mapping"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-06-24T11:55:57+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Maps observation codes to their expected UCUM units for the 'Other Quantities' observation profile."/>
+  <sourceUri value="https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-codes"/>
+  <targetUri value="https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-other-observations-units"/>
+  <group>
+    <source value="http://snomed.info/sct"/>
+    <target value="http://unitsofmeasure.org"/>
+    <element>
+      <code value="82832008"/>
+      <display value="General body state finding (finding)"/>
+      <target>
+        <code value="{finding}"/>
+        <display value="finding"/>
+        <equivalence value="equivalent"/>
+        <comment value="Subjective well-being rating on a numeric scale (e.g., 1-10)."/>
+      </target>
+    </element>
+  </group>
+  <group>
+    <source value="http://loinc.org"/>
+    <target value="http://unitsofmeasure.org"/>
+    <element>
+      <code value="66266-8"/>
+      <display value="Time doing this activity"/>
+      <target>
+        <code value="min"/>
+        <display value="minute"/>
+        <equivalence value="equivalent"/>
+        <comment value="Duration of the activity in minutes."/>
+      </target>
+    </element>
+    <element>
+      <code value="66270-0"/>
+      <display value="Activity intensity"/>
+      <target>
+        <code value="{intensity}"/>
+        <display value="intensity"/>
+        <equivalence value="equivalent"/>
+        <comment value="Subjective intensity rating on a numeric scale (e.g., 1-10, where 1 = very light and 10 = maximum effort)."/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

@@ -1,0 +1,407 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SmokingStatusQuestionnaire> a fhir:Questionnaire ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SmokingStatusQuestionnaire"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Questionnaire SmokingStatusQuestionnaire</b></p><a name=\"SmokingStatusQuestionnaire\"> </a><a name=\"hcSmokingStatusQuestionnaire\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-questionnaire.html\">AT PreNUDGE Questionnaire</a></p></div><b>Structure</b><table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The linkID for the item\">LinkID</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Text for the item\">Text</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the item can appear in the instance\">Cardinality</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"The type of the item\">Type</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the item\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_q_root.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"QuestionnaireRoot\" class=\"hierarchy\"/> SmokingStatusQuestionnaire</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Questionnaire</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SmokingStatusQuestionnaire#0.1.0</td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck01.png)\" id=\"item.smoking-status-athis\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-group.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"group\" class=\"hierarchy\"/> smoking-status-athis</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Rauchstatus und Nikotinkonsum</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-group\">group</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)\" id=\"item.sk1\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> sk1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Rauchen Sie Tabakprodukte? Nicht gemeint sind Tabakerhitzer, elektronische Zigaretten oder ähnliche elektronische Produkte</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.sk1\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)\" id=\"item.sk1-help\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> sk1-help</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Tabakprodukte sind: Zigaretten (aus der Schachtel und/oder selbstgedreht), Zigarren (einschließlich Zigarillos), Pfeife. Nicht dazu zählen: Tabakschnupfen oder Tabakkauen, Shisha, Elektronische Zigaretten oder ähnliche elektronische Produkte, Cannabis gemischt mit Tabak</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.sk2a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> sk2a</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Rauchen Sie täglich Zigaretten aus der Schachtel oder selbstgedrehte Zigaretten?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <span><a href=\"#item.sk1\">sk1</a> = Ja, täglich (ATHIS – Antwortmöglichkeiten#yn-yes-daily)</span><br/>Options: <a href=\"#opt-item.sk2a\">4 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)\" id=\"item.sk2b\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-integer.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"integer\" class=\"hierarchy\"/> sk2b</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie viele Zigaretten rauchen Sie durchschnittlich pro Tag?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-integer\">integer</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <span><a href=\"#item.sk2a\">sk2a</a> = Ja (ATHIS – Antwortmöglichkeiten#yn-yes)</span></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)\" id=\"item.sk2-help\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> sk2-help</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Bitte um Angabe von Zigaretten, nicht von Packungen. In einer Zigarettenschachtel sind meist 20 Zigaretten enthalten.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.past-tobacco-smoking\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> past-tobacco-smoking</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie in der Vergangenheit Tabakprodukte geraucht?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <span><a href=\"#item.sk1\">sk1</a> = Nein, überhaupt nicht (ATHIS – Antwortmöglichkeiten#yn-no-not-at-all)</span><br/>Options: <a href=\"#opt-item.past-tobacco-smoking\">5 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.past-cigarettes-per-day\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-integer.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"integer\" class=\"hierarchy\"/> past-cigarettes-per-day</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie viele Zigaretten haben Sie durchschnittlich pro Tag geraucht?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-integer\">integer</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <ul><li><a href=\"#item.past-tobacco-smoking\">past-tobacco-smoking</a> = Ja, täglich (ATHIS – Antwortmöglichkeiten#yn-yes-daily)</li><li><a href=\"#item.past-tobacco-smoking\">past-tobacco-smoking</a> = Ja, gelegentlich (ATHIS – Antwortmöglichkeiten#yn-yes-occasionally)</li></ul></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck011.png)\" id=\"item.sk4\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-integer.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"integer\" class=\"hierarchy\"/> sk4</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wie viele Jahre haben Sie täglich geraucht? Bitte zählen Sie alle Zeiträume von täglichem Rauchen zusammen.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-integer\">integer</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Enable When: <span><a href=\"#item.past-tobacco-smoking\">past-tobacco-smoking</a> = Ja, täglich (ATHIS – Antwortmöglichkeiten#yn-yes-daily)</span></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck0100.png)\" id=\"item.sk4-help\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vline.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-display.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"display\" class=\"hierarchy\"/> sk4-help</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Wenn Sie sich nicht an die genaue Anzahl der Jahre erinnern, geben Sie bitte eine Schätzung ab.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-display\">display</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.sk6a\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> sk6a</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Nutzen Sie derzeit Tabakerhitzer, bei denen Tabaksticks oder loser Tabak erhitzt werden, zum Beispiel der Marken IQOS, glo, Ploom oder PAX?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.sk6a\">6 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.sk6b\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> sk6b</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Konsumieren Sie derzeit elektronische Zigaretten oder ähnliche elektronische Produkte? Zum Beispiel E-Shisha oder E-Pfeife.</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.sk6b\">6 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck010.png)\" id=\"item.sk6c\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-coding.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"coding\" class=\"hierarchy\"/> sk6c</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Konsumieren Sie derzeit Nikotinbeutel?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-choice\">choice</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Options: <a href=\"#opt-item.sk6c\">6 options</a></td></tr>#xD;\n<tr style=\"border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck000.png)\" id=\"item.comment\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_blank.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon-q-string.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"string\" class=\"hierarchy\"/> comment</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Haben Sie zu Ihren Antworten noch einen Kommentar oder etwas hinzuzufügen?</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"https://hl7.org/fhir/R4/codesystem-item-type.html#item-type-string\">string</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/></tr>#xD;\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table><hr/><p><b>Options Sets</b></p><a name=\"opt-item.sk1\"> </a><p><b>Answer options for sk1 </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-daily (\"Ja, täglich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-occasionally (\"Ja, gelegentlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no-not-at-all (\"Nein, überhaupt nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-unknown (\"Weiß nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-not-stated (\"Keine Angabe\")</li></ul><a name=\"opt-item.sk2a\"> </a><p><b>Answer options for sk2a </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes (\"Ja\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no (\"Nein\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-unknown (\"Weiß nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-not-stated (\"Keine Angabe\")</li></ul><a name=\"opt-item.past-tobacco-smoking\"> </a><p><b>Answer options for past-tobacco-smoking </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no (\"Nein\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-occasionally (\"Ja, gelegentlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-daily (\"Ja, täglich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-unknown (\"Weiß nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-not-stated (\"Keine Angabe\")</li></ul><a name=\"opt-item.sk6a\"> </a><p><b>Answer options for sk6a </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-daily (\"Ja, täglich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-occasionally (\"Ja, gelegentlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no-but-formerly (\"Nein, aber früher\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no-never (\"Nein, noch nie genutzt/konsumiert\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-unknown (\"Weiß nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-not-stated (\"Keine Angabe\")</li></ul><a name=\"opt-item.sk6b\"> </a><p><b>Answer options for sk6b </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-daily (\"Ja, täglich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-occasionally (\"Ja, gelegentlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no-but-formerly (\"Nein, aber früher\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no-never (\"Nein, noch nie genutzt/konsumiert\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-unknown (\"Weiß nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-not-stated (\"Keine Angabe\")</li></ul><a name=\"opt-item.sk6c\"> </a><p><b>Answer options for sk6c </b></p><ul><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-daily (\"Ja, täglich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-yes-occasionally (\"Ja, gelegentlich\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no-but-formerly (\"Nein, aber früher\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#yn-no-never (\"Nein, noch nie genutzt/konsumiert\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-unknown (\"Weiß nicht\")</li><li style=\"font-size: 11px\">https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers#meta-not-stated (\"Keine Angabe\")</li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/SmokingStatusQuestionnaire"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "SmokingStatusQuestionnaire"] ; # 
+  fhir:title [ fhir:v "Rauchstatus und Nikotinkonsum"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:subjectType ( [ fhir:v "Patient"] ) ; # 
+  fhir:date [ fhir:v "2026-06-24T11:55:57+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://prenudge.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question."] ; # 
+  fhir:item ( [
+     fhir:linkId [ fhir:v "smoking-status-athis" ] ;
+     fhir:text [ fhir:v "Rauchstatus und Nikotinkonsum" ] ;
+     fhir:type [ fhir:v "group" ] ;
+     fhir:item ( [
+       fhir:linkId [ fhir:v "sk1" ] ;
+       fhir:text [ fhir:v "Rauchen Sie Tabakprodukte? Nicht gemeint sind Tabakerhitzer, elektronische Zigaretten oder ähnliche elektronische Produkte" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v true ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-occasionally" ] ;
+           fhir:display [ fhir:v "Ja, gelegentlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-not-at-all" ] ;
+           fhir:display [ fhir:v "Nein, überhaupt nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-unknown" ] ;
+           fhir:display [ fhir:v "Weiß nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-not-stated" ] ;
+           fhir:display [ fhir:v "Keine Angabe" ]
+         ]
+       ] ) ;
+       fhir:item ( [
+         fhir:linkId [ fhir:v "sk1-help" ] ;
+         fhir:text [ fhir:v "Tabakprodukte sind: Zigaretten (aus der Schachtel und/oder selbstgedreht), Zigarren (einschließlich Zigarillos), Pfeife. Nicht dazu zählen: Tabakschnupfen oder Tabakkauen, Shisha, Elektronische Zigaretten oder ähnliche elektronische Produkte, Cannabis gemischt mit Tabak" ] ;
+         fhir:type [ fhir:v "display" ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "sk2a" ] ;
+       fhir:text [ fhir:v "Rauchen Sie täglich Zigaretten aus der Schachtel oder selbstgedrehte Zigaretten?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:enableWhen ( [
+         fhir:question [ fhir:v "sk1" ] ;
+         fhir:operator [ fhir:v "=" ] ;
+         fhir:answer [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] ) ;
+       fhir:required [ fhir:v false ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes" ] ;
+           fhir:display [ fhir:v "Ja" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no" ] ;
+           fhir:display [ fhir:v "Nein" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-unknown" ] ;
+           fhir:display [ fhir:v "Weiß nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-not-stated" ] ;
+           fhir:display [ fhir:v "Keine Angabe" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "sk2b" ] ;
+       fhir:text [ fhir:v "Wie viele Zigaretten rauchen Sie durchschnittlich pro Tag?" ] ;
+       fhir:type [ fhir:v "integer" ] ;
+       fhir:enableWhen ( [
+         fhir:question [ fhir:v "sk2a" ] ;
+         fhir:operator [ fhir:v "=" ] ;
+         fhir:answer [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes" ] ;
+           fhir:display [ fhir:v "Ja" ]
+         ]
+       ] ) ;
+       fhir:required [ fhir:v false ] ;
+       fhir:item ( [
+         fhir:linkId [ fhir:v "sk2-help" ] ;
+         fhir:text [ fhir:v "Bitte um Angabe von Zigaretten, nicht von Packungen. In einer Zigarettenschachtel sind meist 20 Zigaretten enthalten." ] ;
+         fhir:type [ fhir:v "display" ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "past-tobacco-smoking" ] ;
+       fhir:text [ fhir:v "Haben Sie in der Vergangenheit Tabakprodukte geraucht?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:enableWhen ( [
+         fhir:question [ fhir:v "sk1" ] ;
+         fhir:operator [ fhir:v "=" ] ;
+         fhir:answer [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-not-at-all" ] ;
+           fhir:display [ fhir:v "Nein, überhaupt nicht" ]
+         ]
+       ] ) ;
+       fhir:required [ fhir:v false ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no" ] ;
+           fhir:display [ fhir:v "Nein" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-occasionally" ] ;
+           fhir:display [ fhir:v "Ja, gelegentlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-unknown" ] ;
+           fhir:display [ fhir:v "Weiß nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-not-stated" ] ;
+           fhir:display [ fhir:v "Keine Angabe" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "past-cigarettes-per-day" ] ;
+       fhir:text [ fhir:v "Wie viele Zigaretten haben Sie durchschnittlich pro Tag geraucht?" ] ;
+       fhir:type [ fhir:v "integer" ] ;
+       fhir:enableWhen ( [
+         fhir:question [ fhir:v "past-tobacco-smoking" ] ;
+         fhir:operator [ fhir:v "=" ] ;
+         fhir:answer [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] [
+         fhir:question [ fhir:v "past-tobacco-smoking" ] ;
+         fhir:operator [ fhir:v "=" ] ;
+         fhir:answer [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-occasionally" ] ;
+           fhir:display [ fhir:v "Ja, gelegentlich" ]
+         ]
+       ] ) ;
+       fhir:enableBehavior [ fhir:v "any" ] ;
+       fhir:required [ fhir:v false ]
+     ] [
+       fhir:linkId [ fhir:v "sk4" ] ;
+       fhir:text [ fhir:v "Wie viele Jahre haben Sie täglich geraucht? Bitte zählen Sie alle Zeiträume von täglichem Rauchen zusammen." ] ;
+       fhir:type [ fhir:v "integer" ] ;
+       fhir:enableWhen ( [
+         fhir:question [ fhir:v "past-tobacco-smoking" ] ;
+         fhir:operator [ fhir:v "=" ] ;
+         fhir:answer [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] ) ;
+       fhir:required [ fhir:v false ] ;
+       fhir:item ( [
+         fhir:linkId [ fhir:v "sk4-help" ] ;
+         fhir:text [ fhir:v "Wenn Sie sich nicht an die genaue Anzahl der Jahre erinnern, geben Sie bitte eine Schätzung ab." ] ;
+         fhir:type [ fhir:v "display" ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "sk6a" ] ;
+       fhir:text [ fhir:v "Nutzen Sie derzeit Tabakerhitzer, bei denen Tabaksticks oder loser Tabak erhitzt werden, zum Beispiel der Marken IQOS, glo, Ploom oder PAX?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v false ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-occasionally" ] ;
+           fhir:display [ fhir:v "Ja, gelegentlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-but-formerly" ] ;
+           fhir:display [ fhir:v "Nein, aber früher" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-never" ] ;
+           fhir:display [ fhir:v "Nein, noch nie genutzt/konsumiert" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-unknown" ] ;
+           fhir:display [ fhir:v "Weiß nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-not-stated" ] ;
+           fhir:display [ fhir:v "Keine Angabe" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "sk6b" ] ;
+       fhir:text [ fhir:v "Konsumieren Sie derzeit elektronische Zigaretten oder ähnliche elektronische Produkte? Zum Beispiel E-Shisha oder E-Pfeife." ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v false ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-occasionally" ] ;
+           fhir:display [ fhir:v "Ja, gelegentlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-but-formerly" ] ;
+           fhir:display [ fhir:v "Nein, aber früher" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-never" ] ;
+           fhir:display [ fhir:v "Nein, noch nie genutzt/konsumiert" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-unknown" ] ;
+           fhir:display [ fhir:v "Weiß nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-not-stated" ] ;
+           fhir:display [ fhir:v "Keine Angabe" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "sk6c" ] ;
+       fhir:text [ fhir:v "Konsumieren Sie derzeit Nikotinbeutel?" ] ;
+       fhir:type [ fhir:v "choice" ] ;
+       fhir:required [ fhir:v false ] ;
+       fhir:answerOption ( [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-daily" ] ;
+           fhir:display [ fhir:v "Ja, täglich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-yes-occasionally" ] ;
+           fhir:display [ fhir:v "Ja, gelegentlich" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-but-formerly" ] ;
+           fhir:display [ fhir:v "Nein, aber früher" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "yn-no-never" ] ;
+           fhir:display [ fhir:v "Nein, noch nie genutzt/konsumiert" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-unknown" ] ;
+           fhir:display [ fhir:v "Weiß nicht" ]
+         ]
+       ] [
+         fhir:value [
+           a fhir:Coding ;
+           fhir:system [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers"^^xsd:anyURI ] ;
+           fhir:code [ fhir:v "meta-not-stated" ] ;
+           fhir:display [ fhir:v "Keine Angabe" ]
+         ]
+       ] )
+     ] [
+       fhir:linkId [ fhir:v "comment" ] ;
+       fhir:text [ fhir:v "Haben Sie zu Ihren Antworten noch einen Kommentar oder etwas hinzuzufügen?" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
