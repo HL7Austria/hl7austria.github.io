@@ -33,7 +33,14 @@ Automatisch vom Wearable erkannte Krafttrainings-Einheiten.
 
 **device**: [Device: identifier = https://www.joanneum.at/devices#dev-wearable-001; status = active; manufacturer = PreNUDGE Demo Devices GmbH; modelNumber = PND-FT-001](Device-device-wearable-example.md)
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 

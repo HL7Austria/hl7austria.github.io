@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-physical-activity-classification-method-vs | *Version*:0.1.0 | |
-| Active as of 2026-06-08 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:PrenudgePhysicalActivityClassificationMethodVS |
+| Active as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:PrenudgePhysicalActivityClassificationMethodVS |
 
  
 ValueSet containing all codes from the AT PreNUDGE Physical Activity Classification Method CodeSystem. Used as the required binding for component[classificationMethod].value[x] in the AT PreNUDGE Observation Physical Activity Minutes profile. 
@@ -37,7 +37,14 @@ ValueSet containing all codes from the AT PreNUDGE Physical Activity Classificat
 | Definition | An explanation of the meaning of the concept |
 | Comments | Additional notes about how to use the code |
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -51,7 +58,7 @@ ValueSet containing all codes from the AT PreNUDGE Physical Activity Classificat
   "title" : "AT PreNUDGE Physical Activity Classification Method ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-08T06:51:44+00:00",
+  "date" : "2026-06-25T12:51:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

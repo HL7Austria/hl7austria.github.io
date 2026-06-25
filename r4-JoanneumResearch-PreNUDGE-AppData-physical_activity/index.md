@@ -17,7 +17,7 @@ For more, see [Background](background.md).
 
 This Implementation Guide (IG) explains how application providers can use the **PreNUDGE FHIR API** to deliver **health indicators**.
 
-We focus on narrow standardization of **four PreNUDGE measurements**:
+We focus on narrow standardization of the following **PreNUDGE measurements**:
 
 * **Physical Activity**: 
 * ⏳Minutes of moderate and vigorous/intense physical activity (per week) (from [**EHIS-PAQ Q4–Q7 / ATHIS PE4–PE7 questionnaire**](Questionnaire-EhisPaqPhysicalActivityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-physical-activity-minutes-observation.md))
@@ -32,28 +32,48 @@ We focus on narrow standardization of **four PreNUDGE measurements**:
 * Duration - from [**questionnaire**](Questionnaire-SleepDurationQuestionnaire.md) or as an [**observation**](StructureDefinition-at-prenudge-sleep-duration-observation.md)
 * Quality - question 16 from the [**WHOQOL-BRE questionnaire**](Questionnaire-WhoQolBrefQuestionnaire.md) or same question 16 from a [**single quesion questionnaire**](Questionnaire-SleepQualityQuestionnaire.md) or as an [**observation**](StructureDefinition-at-prenudge-sleep-quality-observation.md)
  
+* Sociodemographic Data: **Highest completed education** (ISCED level) (from a [**questionnaire**](Questionnaire-EducationQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-education-observation.md))
+* **Workability** 
+* Work-related Sense of Coherence (Work-SoC) - [**questionnaire**](Questionnaire-WorkSocQuestionnaire.md) with a calculated score as an [**observation**](StructureDefinition-at-prenudge-work-soc-score-observation.md)
+* Work Ability Index (WAI) - [**questionnaire**](Questionnaire-WorkAbilityIndexQuestionnaire.md) only
+ 
+* Anthropometry: **Body Mass Index** (BMI) in kg/m² (from a [**questionnaire**](Questionnaire-BmiQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-bmi-observation.md))
 * For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
 
 Each **questionnaire variant** maps **one-way** to its corresponding **observation variant**. The mappings can be found at [StructureMaps](artifacts.md#terminology-structure-maps) and can be executed with [MaLaC-HD](https://gitlab.com/cdehealth/malac-hd). These transformations will be performed on the server side.
 
-Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to these four, based on feedback from the informative ballot. The following are to be specified:
+Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to the ones mentioned above, based on feedback from the informative ballot. The following are to be specified:
 
-* Smoking: Current status (from a questionnaire and from an observation IPS style)
 * Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)
 * Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)
-* Sociodemographic Data: Age (from a questionnaire)
-* Sociodemographic Data: Gender (from a questionnaire)
-* Sociodemographic Data: Highest completed education (ISCED level) (from a questionnaire)
 * Psychosocial Factors: Self reported emotional burden (from a questionnaire)
 * Psychosocial Factors: Self reported stress (from a questionnaire with a calculated score as an observation)
-* Anthropometry: Body Mass Index (kg/m²) (from a questionnaire and from a wearable device as an observation)
-* Workability (score per category) (from a questionnaire with a calculated score as an observation)
+
+The following sociodemographic data are provided as patient demographic data, preferably from ID Austria. They are not collected using PreNUDGE questionnaires and are not represented as observations.
+
+* **Date of birth / age**: The date of birth is represented using the mandatory `Patient.birthDate` element in the AT APS Patient profile. Age is derived from `Patient.birthDate` at the relevant point in time and is not stored as a separate PreNUDGE observation. The corresponding ID Austria attribute is `birthdate` (`urn:oid:1.2.40.0.10.2.1.1.55`).
+* **Gender**: Administrative gender is represented using the mandatory `Patient.gender` element in the AT APS Patient profile. The corresponding ID Austria attribute is `gender` (`urn:eidgvat:attributes.gender`).
 
 Besides these narrow standardized measurements, **broad standardized measurements** called [**other quantities observations**](StructureDefinition-at-prenudge-observation-other-quantities.md) and [**other not quantities observations**](StructureDefinition-at-prenudge-observation-other-not-quantities.md) are also supported. Please be aware that such broad standardized measurements do not have a corresponding questionnaire.
 
+### Observation values and missing data
 
+PreNUDGE Observations SHOULD contain `value[x]` when a clinically or analytically meaningful value can be derived. If no such value can be derived, `value[x]` SHALL be absent and `dataAbsentReason` SHALL be provided.
+
+This applies especially to observations derived from questionnaires. The original `QuestionnaireResponse` remains the source record for the submitted answer, including answers such as "unknown" or "not stated". The derived `Observation` represents the clinically or analytically usable result.
+
+If neither `value[x]` nor `dataAbsentReason` is present, the Observation is incomplete and does not conform to the PreNUDGE data quality expectation.
+
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
+
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -66,7 +86,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-08T06:51:44+00:00",
+  "date" : "2026-06-25T12:51:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -95,7 +115,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -749,6 +769,30 @@ Besides these narrow standardized measurements, **broad standardized measurement
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/WorkSocQuestionnaire"
+      },
+      "name" : "Arbeitsbezogenes Kohärenzgefühl (Work-SoC)",
+      "description" : "Work-related Sense of Coherence (Work-SoC) questionnaire. The raw item responses are collected in the QuestionnaireResponse. Category scores are defined as SDC calculated expressions and may be mapped to a Work-SoC score Observation.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/WorkAbilityIndexQuestionnaire"
+      },
+      "name" : "Arbeitsfähigkeit (WAI Kurzmodul)",
+      "description" : "Short Work Ability Index (WAI) questionnaire module based on Tuomi et al. 1998. The raw answers are collected as QuestionnaireResponse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -797,6 +841,30 @@ Besides these narrow standardized measurements, **broad standardized measurement
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/prenudge-isced-2011-education-level"
+      },
+      "name" : "AT PreNUDGE ISCED 2011 Education Level Codes",
+      "description" : "Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-isced-2011-education-level"
+      },
+      "name" : "AT PreNUDGE ISCED 2011 Education Level ValueSet",
+      "description" : "Permitted answer values for the highest completed education level according to ISCED 2011.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource:abstract"
       }],
       "reference" : {
@@ -815,7 +883,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "reference" : "StructureDefinition/at-prenudge-alcoholuse-observation"
       },
       "name" : "AT PreNUDGE Observation Alcohol Use",
-      "description" : "This FHIR profile is currently derived from the APS Observation Alcohol Use profile without introducing any additional constraints or changes. It serves as a prepared extension point so that future adaptations can be made independently if required.",
+      "description" : "This FHIR profile is derived from the APS Observation Alcohol Use profile. Additional fields from the PreNUDGE Observation profile are added.",
       "exampleBoolean" : false
     },
     {
@@ -828,6 +896,54 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
       "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-bodyheight-observation"
+      },
+      "name" : "AT PreNUDGE Observation Body Height",
+      "description" : "This FHIR profile defines a body height Observation based on the FHIR R4 Vital Signs body height concept. Body height is represented using LOINC 8302-2 and UCUM cm.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-bmi-observation"
+      },
+      "name" : "AT PreNUDGE Observation Body Mass Index",
+      "description" : "This FHIR profile defines a Body Mass Index (BMI) Observation based on the FHIR R4 Vital Signs BMI concept. BMI is represented using LOINC 39156-5 and UCUM kg/m2.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-bodyweight-observation"
+      },
+      "name" : "AT PreNUDGE Observation Body Weight",
+      "description" : "This FHIR profile defines a body weight Observation based on the FHIR R4 Vital Signs body weight concept. Body weight is represented using LOINC 29463-7 and UCUM kg.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-education-observation"
+      },
+      "name" : "AT PreNUDGE Observation Highest Completed Education",
+      "description" : "This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire.",
       "exampleBoolean" : false
     },
     {
@@ -863,7 +979,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "reference" : "StructureDefinition/at-prenudge-observation-other-not-quantities"
       },
       "name" : "AT PreNUDGE Observation Other not Quantities",
-      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations.",
+      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations.",
       "exampleBoolean" : false
     },
     {
@@ -875,7 +991,7 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "reference" : "StructureDefinition/at-prenudge-observation-other-quantities"
       },
       "name" : "AT PreNUDGE Observation Other Quantities",
-      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifing a new Observation is missing, please contact prenudge@joanneum.at.",
+      "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifying a new Observation is missing, please contact prenudge@joanneum.at.",
       "exampleBoolean" : false
     },
     {
@@ -932,6 +1048,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-smokingstatus-observation"
+      },
+      "name" : "AT PreNUDGE Observation Smoking Status",
+      "description" : "This FHIR profile is defining the current smoking status observation for PreNUDGE. It is derived from the APS Observation Tobacco Use profile, which imposes the IPS Observation Social History - Tobacco Use profile. The value is derived from the ATHIS-based SmokingStatusQuestionnaire, primarily from SK1 and, if SK1 is negative, from the past tobacco smoking question. Additional fields from the PreNUDGE Observation profile are added.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-prenudge-stepcount-observation"
       },
       "name" : "AT PreNUDGE Observation Step Count",
@@ -948,6 +1076,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "AT PreNUDGE Observation WHOQOL-BREF Score",
       "description" : "Observation profile for recording WHOQOL-BREF domain scores. The overall score is represented in Observation.value, individual domain scores are recorded as components.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-work-soc-score-observation"
+      },
+      "name" : "AT PreNUDGE Observation Work-SoC Category Score",
+      "description" : "This FHIR profile defines the calculated work-related sense of coherence (Work-SoC) category score observation. It contains the category scores for comprehensibility, manageability and meaningfulness as Observation components. The raw Work-SoC item answers are represented in the source QuestionnaireResponse.",
       "exampleBoolean" : false
     },
     {
@@ -1028,6 +1168,30 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "CodeSystem"
       }],
       "reference" : {
+        "reference" : "CodeSystem/prenudge-wai-answer"
+      },
+      "name" : "AT PreNUDGE WAI Answer Codes",
+      "description" : "Local answer codes for categorical Work Ability Index answer options.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-wai-physical-demands-answer"
+      },
+      "name" : "AT PreNUDGE WAI Physical Demands Answer ValueSet",
+      "description" : "Permitted categorical answers for current work ability in relation to physical work demands.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
         "reference" : "CodeSystem/whoqol-bref-scale"
       },
       "name" : "AT PreNUDGE WHOQOL-BREF Answer Scales",
@@ -1044,6 +1208,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "AT PreNUDGE WHOQOL-BREF Score Type ValueSet",
       "description" : "ValueSet containing SNOMED CT codes for differentiating WHOQOL-BREF overall and domain scores.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/prenudge-workability"
+      },
+      "name" : "AT PreNUDGE Workability Codes",
+      "description" : "Local PreNUDGE codes for workability questionnaires and derived Work-SoC score observations. Work-SoC source DOI: https://doi.org/10.4102/sajip.v39i1.1111",
       "exampleBoolean" : false
     },
     {
@@ -1145,6 +1321,54 @@ Besides these narrow standardized measurements, **broad standardized measurement
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/bmi-questionnaire-response-example"
+      },
+      "name" : "BMI Questionnaire Response Example",
+      "description" : "Example of a BMI questionnaire response with body height, body weight and a calculated BMI value.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/bodyheight-example"
+      },
+      "name" : "Body Height O - Example",
+      "description" : "Example body height Observation derived from a BMI questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/bmi-example"
+      },
+      "name" : "Body Mass Index O - Example",
+      "description" : "Example BMI Observation derived from a BMI questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/bodyweight-example"
+      },
+      "name" : "Body Weight O - Example",
+      "description" : "Example body weight Observation derived from a BMI questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       }],
       "reference" : {
@@ -1153,6 +1377,54 @@ Besides these narrow standardized measurements, **broad standardized measurement
       "name" : "Durchschnittliche Schlafdauer pro Nacht",
       "description" : "A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/education-bachelor-example"
+      },
+      "name" : "Education O mapped from Q - Bachelor's Level Example",
+      "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/education-upper-secondary-example"
+      },
+      "name" : "Education O mapped from Q - Upper Secondary Education Example",
+      "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/education-response-bachelor-example"
+      },
+      "name" : "Education Q - Bachelor's Level Example",
+      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 6.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/education-response-upper-secondary-example"
+      },
+      "name" : "Education Q - Upper Secondary Education Example",
+      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 3.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -1236,6 +1508,30 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "EHIS-PAQ/ATHIS: Zu-Fuß-Gehen",
       "description" : "Questions Q2–Q3 from the European Health Interview Survey Physical Activity\nQuestionnaire (EHIS-PAQ), equivalent to ATHIS PE2–PE3: number of days per week on\nwhich the respondent walks for transport (Q2/PE2, integer 0–7) and the typical\nduration of that walking per day (Q3/PE3, coded using ATHIS group 9 answer set).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/EducationQuestionnaire"
+      },
+      "name" : "Höchster abgeschlossener Bildungsabschluss",
+      "description" : "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/BmiQuestionnaire"
+      },
+      "name" : "Körpergröße, Körpergewicht und Body Mass Index (BMI)",
+      "description" : "Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations.",
       "exampleBoolean" : false
     },
     {
@@ -1381,6 +1677,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
       "name" : "PreNUDGE Wearable Device Example",
       "description" : "Example of a wearable fitness tracker referenced from the physical activity wearable observation example.",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/SmokingStatusQuestionnaire"
+      },
+      "name" : "Rauchstatus und Nikotinkonsum",
+      "description" : "ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -1541,6 +1849,102 @@ Besides these narrow standardized measurements, **broad standardized measurement
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/smokingstatus-not-stated-example"
+      },
+      "name" : "Smoking Status O - Not Stated Example",
+      "description" : "Example of a smoking status observation where no clinically meaningful smoking status could be derived because the respondent declined to answer.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/smokingstatus-current-every-day-example"
+      },
+      "name" : "Smoking Status O mapped from ATHIS Q - Current Daily Tobacco Smoker Example",
+      "description" : "Example of a smoking status observation for a current daily tobacco smoker, mapped from SK1 of the ATHIS-based SmokingStatusQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/smokingstatus-former-example"
+      },
+      "name" : "Smoking Status O mapped from ATHIS Q - Former Tobacco Smoker Example",
+      "description" : "Example of a smoking status observation for a former tobacco smoker, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/smokingstatus-never-example"
+      },
+      "name" : "Smoking Status O mapped from ATHIS Q - Never Tobacco Smoker Example",
+      "description" : "Example of a smoking status observation for a person who never smoked tobacco, mapped from SK1 and the past tobacco smoking question of the ATHIS-based SmokingStatusQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseCurrentEveryDay"
+      },
+      "name" : "Smoking Status Q ATHIS - Current Daily Tobacco Smoker Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response for a current daily tobacco smoker. The derived observation maps SK1 daily to SNOMED CT 449868002.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseFormer"
+      },
+      "name" : "Smoking Status Q ATHIS - Former Tobacco Smoker Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response for a former tobacco smoker. The derived observation maps SK1 no and past tobacco smoking to SNOMED CT 8517006.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseNever"
+      },
+      "name" : "Smoking Status Q ATHIS - Never Tobacco Smoker Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response for a person who never smoked tobacco. The derived observation maps SK1 no and past tobacco smoking no to SNOMED CT 266919005.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/SmokingStatusResponseNotStated"
+      },
+      "name" : "Smoking Status Q ATHIS - Not Stated Example",
+      "description" : "Example of an ATHIS-based smoking status questionnaire response where the respondent declined to answer the current tobacco smoking question. The derived observation uses dataAbsentReason asked-declined.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
@@ -1625,6 +2029,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/wai-response-example"
+      },
+      "name" : "WAI Q - Example",
+      "description" : "Example of a short Work Ability Index questionnaire response.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       }],
       "reference" : {
@@ -1661,6 +2077,30 @@ Besides these narrow standardized measurements, **broad standardized measurement
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/work-soc-response-example"
+      },
+      "name" : "Work-SoC Q - Example",
+      "description" : "Example of a Work-SoC questionnaire response with nine raw item answers.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/work-soc-score-example"
+      },
+      "name" : "Work-SoC Score O mapped from Q - Example",
+      "description" : "Example of a calculated Work-SoC category score observation derived from the WorkSocQuestionnaire.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureMap"
       }],
       "reference" : {
@@ -1679,6 +2119,28 @@ Besides these narrow standardized measurements, **broad standardized measurement
       },
       "name" : "Blood Glucose Q to O",
       "description" : "Blood Glucose Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/BmiQuestionnaireResponseToObservations"
+      },
+      "name" : "BMI Q to Body Height, Body Weight and BMI Observations Bundle",
+      "description" : "BMI Q to Body Height, Body Weight and BMI Observations Bundle"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/EducationQuestionnaireResponseToObservation"
+      },
+      "name" : "Highest Completed Education Q to O",
+      "description" : "Highest Completed Education Q to O"
     },
     {
       "extension" : [{
@@ -1774,10 +2236,32 @@ Besides these narrow standardized measurements, **broad standardized measurement
         "valueString" : "StructureMap"
       }],
       "reference" : {
+        "reference" : "StructureMap/SmokingStatusQuestionnaireResponseToObservation"
+      },
+      "name" : "ATHIS-based Smoking Status Q to O",
+      "description" : "ATHIS-based Smoking Status Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
         "reference" : "StructureMap/StepCountQuestionnaireResponseToObservation"
       },
       "name" : "Step Count Q to O",
       "description" : "Step Count Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/WorkSocQuestionnaireResponseToObservation"
+      },
+      "name" : "Work-SoC Q score to O score",
+      "description" : "Work-SoC Q score to O score"
     }],
     "page" : {
       "extension" : [{

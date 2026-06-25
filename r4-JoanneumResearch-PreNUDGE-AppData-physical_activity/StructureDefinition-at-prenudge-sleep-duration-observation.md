@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation | *Version*:0.1.0 | |
-| Draft as of 2026-06-08 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationSleepDuration |
+| Draft as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationSleepDuration |
 
  
 This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual). 
@@ -28,7 +28,14 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](StructureDefinition-at-prenudge-sleep-duration-observation.csv), [Excel](StructureDefinition-at-prenudge-sleep-duration-observation.xlsx), [Schematron](StructureDefinition-at-prenudge-sleep-duration-observation.sch) 
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -41,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-sleep-du
   "name" : "AtPrenudgeObservationSleepDuration",
   "title" : "AT PreNUDGE Observation Sleep Duration",
   "status" : "draft",
-  "date" : "2026-06-08T06:51:44+00:00",
+  "date" : "2026-06-25T12:51:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -121,7 +128,6 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-sleep-du
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "min" : 1,
       "type" : [{
         "code" : "Quantity"
       }]

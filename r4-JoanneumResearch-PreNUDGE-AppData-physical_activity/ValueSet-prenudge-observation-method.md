@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-observation-method | *Version*:0.1.0 | |
-| Active as of 2026-06-08 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetMethodManualAutomated |
+| Active as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetMethodManualAutomated |
 | **Copyright/Legal**: Description: Contains information protected by copyright of SNOMED International. Any use of SNOMED CT in Austria requires a valid affiliate license or sublicense. The corresponding license is free of charge, provided that the use only takes place in Austria and fulfills the conditions of the Affiliate License Agreement. Affiliate licenses can be requested directly from the respective NRC via the Member Licensing and Distribution Service (MLDS).https://wiki.hl7.at/index.php?title=SCT:SNOMED_CTBeschreibung: Enthält durch SNOMED International urheberrechtlich geschützte Information. Jede Verwendung von SNOMED CT in Österreich erfordert eine aufrechte Affiliate Lizenz oder eine Sublizenz. Die entsprechende Lizenz ist kostenlos, vorausgesetzt die Verwendung findet nur in Österreich statt und erfüllt die Bedingungen des Affiliate License Agreements. Affiliate Lizenzen können über das Member Licensing and Distribution Service (MLDS) direkt beim jeweiligen NRC beantragt werden.https://wiki.hl7.at/index.php?title=SCT:SNOMED_CT | | |
 
  
@@ -17,7 +17,9 @@ ValueSet containing SNOMED CT codes for differentiating methods used in the PreN
 
  **References** 
 
+* [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-alcoholuse-observation.md)
 * [AT PreNUDGE Observation](StructureDefinition-at-prenudge-observation.md)
+* [AT PreNUDGE Observation Smoking Status](StructureDefinition-at-prenudge-smokingstatus-observation.md)
 
 ### Logical Definition (CLD)
 
@@ -38,7 +40,14 @@ ValueSet containing SNOMED CT codes for differentiating methods used in the PreN
 | Definition | An explanation of the meaning of the concept |
 | Comments | Additional notes about how to use the code |
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -52,7 +61,7 @@ ValueSet containing SNOMED CT codes for differentiating methods used in the PreN
   "title" : "AT PreNUDGE Observation Methods",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-08T06:51:44+00:00",
+  "date" : "2026-06-25T12:51:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

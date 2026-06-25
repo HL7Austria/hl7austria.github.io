@@ -33,7 +33,14 @@ Selbstberichtet. Schlafstunden vom Befragten gemäß Fragebogenanweisung ausgesc
 
 **derivedFrom**: [Response to Questionnaire '->EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-sitting-hours-ehis-paq-response-example.md)
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 

@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="BmiQuestionnaireResponseToObservations"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap BmiQuestionnaireResponseToObservations</b></p><a name="BmiQuestionnaireResponseToObservations"> </a><a name="hcBmiQuestionnaireResponseToObservations"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BmiQuestionnaireResponseToObservations<span style="color: navy">&quot; = &quot;</span>BmiQuestionnaireResponseToObservations<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">BMI Q to Body Height, Body Weight and BMI Observations Bundle</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/bundle.html" title="Bundle">http://hl7.org/fhir/StructureDefinition/Bundle</a><span style="color: navy">&quot; </span><b>alias </b>Bundle <b>as </b><b>target</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+
+<b>group </b>BmiQuestionnaireResponseToObservations<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Bundle<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<span style="color: navy"><b> -&gt; </b></span>tgt.type = <span style="color: blue">'collection'</span> <i>&quot;SetBundleType&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.entry<b> as </b><span style="color: maroon">heightEntry</span><span style="color: navy">, </span> heightEntry.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">heightObs</span><b> then</b><span style="color: navy"> {
+</span>    src<b> then </b>MapBodyHeightObservation<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">heightObs</span><span style="color: navy">)</span> <i>&quot;MapBodyHeightObservation&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;CreateBodyHeightEntry&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.entry<b> as </b><span style="color: maroon">weightEntry</span><span style="color: navy">, </span> weightEntry.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">weightObs</span><b> then</b><span style="color: navy"> {
+</span>    src<b> then </b>MapBodyWeightObservation<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">weightObs</span><span style="color: navy">)</span> <i>&quot;MapBodyWeightObservation&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;CreateBodyWeightEntry&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.entry<b> as </b><span style="color: maroon">bmiEntry</span><span style="color: navy">, </span> bmiEntry.resource = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Observation'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">bmiObs</span><b> then</b><span style="color: navy"> {
+</span>    src<b> then </b>MapBodyMassIndexObservation<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">bmiObs</span><span style="color: navy">)</span> <i>&quot;MapBodyMassIndexObservation&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;CreateBmiEntry&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>SetCommonObservationFields<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;setFinalStatus&quot;</i><span style="color: navy">;</span>
+  src.subject<b> as </b><span style="color: maroon">subject</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject = <span style="color: maroon">subject</span> <i>&quot;copySubject&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effective = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToEffective&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.issued = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToIssued&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.method = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'87982008'</span><span style="color: navy">, </span><span style="color: blue">'Manual'</span><span style="color: navy">)</span> <i>&quot;setManualMethod&quot;</i><span style="color: navy">;</span>
+  src.id<b> as </b><span style="color: maroon">id</span><span style="color: navy"><b> -&gt; </b></span>tgt.derivedFrom = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Reference'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">reference</span><b> then</b><span style="color: navy"> {
+</span>    id<span style="color: navy"><b> -&gt; </b></span>reference.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'QuestionnaireResponse/'</span><span style="color: navy">, </span><span style="color: maroon">id</span><span style="color: navy">)</span> <i>&quot;setDerivedFromReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;setDerivedFrom&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapBodyHeightObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetCommonObservationFields<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;SetCommonFields&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.category = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/observation-category'</span><span style="color: navy">, </span><span style="color: blue">'vital-signs'</span><span style="color: navy">, </span><span style="color: blue">'Vital Signs'</span><span style="color: navy">)</span> <i>&quot;SetCategory&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'8302-2'</span><span style="color: navy">, </span><span style="color: blue">'Body height'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src.identifier<b> as </b><span style="color: maroon">identifier</span><span style="color: navy"><b> -&gt; </b></span>tgt.identifier = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Identifier'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetIdentifier</span><b> then</b><span style="color: navy"> {
+</span>    identifier.system<b> as </b><span style="color: maroon">system</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.system = <span style="color: maroon">system</span> <i>&quot;SetIdentifierSystem&quot;</i><span style="color: navy">;</span>
+    identifier.value<b> as </b><span style="color: maroon">value</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.value = <b>append</b><span style="color: navy">(</span><span style="color: maroon">value</span><span style="color: navy">, </span><span style="color: blue">'-bodyheight'</span><span style="color: navy">)</span> <i>&quot;SetIdentifierValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;SetIdentifier&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b>bmiGroup.linkId = 'bmi'<b> then</b><span style="color: navy"> {
+</span>    bmiGroup.item<b> as </b><span style="color: maroon">heightItem</span><b> where </b>heightItem.linkId = 'height-cm'<b> then</b><span style="color: navy"> {
+</span>      heightItem.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>        answer.value<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>          val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'cm'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'cm'</span> <i>&quot;SetValue&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;ExtractPrimitiveValue&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessHeightItem&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessBmiGroup&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapBodyWeightObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetCommonObservationFields<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;SetCommonFields&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.category = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/observation-category'</span><span style="color: navy">, </span><span style="color: blue">'vital-signs'</span><span style="color: navy">, </span><span style="color: blue">'Vital Signs'</span><span style="color: navy">)</span> <i>&quot;SetCategory&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'29463-7'</span><span style="color: navy">, </span><span style="color: blue">'Body weight'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src.identifier<b> as </b><span style="color: maroon">identifier</span><span style="color: navy"><b> -&gt; </b></span>tgt.identifier = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Identifier'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetIdentifier</span><b> then</b><span style="color: navy"> {
+</span>    identifier.system<b> as </b><span style="color: maroon">system</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.system = <span style="color: maroon">system</span> <i>&quot;SetIdentifierSystem&quot;</i><span style="color: navy">;</span>
+    identifier.value<b> as </b><span style="color: maroon">value</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.value = <b>append</b><span style="color: navy">(</span><span style="color: maroon">value</span><span style="color: navy">, </span><span style="color: blue">'-bodyweight'</span><span style="color: navy">)</span> <i>&quot;SetIdentifierValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;SetIdentifier&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b>bmiGroup.linkId = 'bmi'<b> then</b><span style="color: navy"> {
+</span>    bmiGroup.item<b> as </b><span style="color: maroon">weightItem</span><b> where </b>weightItem.linkId = 'weight-kg'<b> then</b><span style="color: navy"> {
+</span>      weightItem.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>        answer.value<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>          val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'kg'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'kg'</span> <i>&quot;SetValue&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;ExtractPrimitiveValue&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessWeightItem&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessBmiGroup&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapBodyMassIndexObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetCommonObservationFields<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;SetCommonFields&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.category = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/observation-category'</span><span style="color: navy">, </span><span style="color: blue">'vital-signs'</span><span style="color: navy">, </span><span style="color: blue">'Vital Signs'</span><span style="color: navy">)</span> <i>&quot;SetCategory&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'39156-5'</span><span style="color: navy">, </span><span style="color: blue">'Body mass index (BMI) [Ratio]'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src.identifier<b> as </b><span style="color: maroon">identifier</span><span style="color: navy"><b> -&gt; </b></span>tgt.identifier = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Identifier'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">targetIdentifier</span><b> then</b><span style="color: navy"> {
+</span>    identifier.system<b> as </b><span style="color: maroon">system</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.system = <span style="color: maroon">system</span> <i>&quot;SetIdentifierSystem&quot;</i><span style="color: navy">;</span>
+    identifier.value<b> as </b><span style="color: maroon">value</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.value = <b>append</b><span style="color: navy">(</span><span style="color: maroon">value</span><span style="color: navy">, </span><span style="color: blue">'-bmi'</span><span style="color: navy">)</span> <i>&quot;SetIdentifierValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;SetIdentifier&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b>bmiGroup.linkId = 'bmi'<b> then</b><span style="color: navy"> {
+</span>    bmiGroup.item<b> as </b><span style="color: maroon">bmiItem</span><b> where </b>bmiItem.linkId = 'bmi-kg-m2'<b> then</b><span style="color: navy"> {
+</span>      bmiItem.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>        answer.value<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>          val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'kg/m2'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'kg/m2'</span> <i>&quot;SetValue&quot;</i><span style="color: navy">;</span>
+        <span style="color: navy">}</span> <i>&quot;ExtractPrimitiveValue&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ProcessBmiItem&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessBmiGroup&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BmiQuestionnaireResponseToObservations"/>
+  <version value="0.1.0"/>
+  <name value="BmiQuestionnaireResponseToObservations"/>
+  <title value="BMI Q to Body Height, Body Weight and BMI Observations Bundle"/>
+  <status value="active"/>
+  <date value="2026-06-25T12:51:02+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="BMI Q to Body Height, Body Weight and BMI Observations Bundle"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+    <mode value="target"/>
+    <alias value="Bundle"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <group>
+    <name value="BmiQuestionnaireResponseToObservations"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Bundle"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="SetBundleType"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="type"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="collection"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="CreateBodyHeightEntry"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="heightEntry"/>
+      </target>
+      <target>
+        <context value="heightEntry"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="heightObs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Observation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="MapBodyHeightObservation"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <dependent>
+          <name value="MapBodyHeightObservation"/>
+          <variable value="src"/>
+          <variable value="heightObs"/>
+        </dependent>
+      </rule>
+    </rule>
+    <rule>
+      <name value="CreateBodyWeightEntry"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="weightEntry"/>
+      </target>
+      <target>
+        <context value="weightEntry"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="weightObs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Observation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="MapBodyWeightObservation"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <dependent>
+          <name value="MapBodyWeightObservation"/>
+          <variable value="src"/>
+          <variable value="weightObs"/>
+        </dependent>
+      </rule>
+    </rule>
+    <rule>
+      <name value="CreateBmiEntry"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="entry"/>
+        <variable value="bmiEntry"/>
+      </target>
+      <target>
+        <context value="bmiEntry"/>
+        <contextType value="variable"/>
+        <element value="resource"/>
+        <variable value="bmiObs"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Observation"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="MapBodyMassIndexObservation"/>
+        <source>
+          <context value="src"/>
+        </source>
+        <dependent>
+          <name value="MapBodyMassIndexObservation"/>
+          <variable value="src"/>
+          <variable value="bmiObs"/>
+        </dependent>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="SetCommonObservationFields"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="setFinalStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="copySubject"/>
+      <source>
+        <context value="src"/>
+        <element value="subject"/>
+        <variable value="subject"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="subject"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="copyAuthoredToEffective"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effective"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="copyAuthoredToIssued"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="issued"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="setManualMethod"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="method"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://snomed.info/sct"/>
+        </parameter>
+        <parameter>
+          <valueString value="87982008"/>
+        </parameter>
+        <parameter>
+          <valueString value="Manual"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="setDerivedFrom"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="id"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="derivedFrom"/>
+        <variable value="reference"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Reference"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="setDerivedFromReference"/>
+        <source>
+          <context value="id"/>
+        </source>
+        <target>
+          <context value="reference"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="QuestionnaireResponse/"/>
+          </parameter>
+          <parameter>
+            <valueId value="id"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapBodyHeightObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="SetCommonFields"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetCommonObservationFields"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyheight-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCategory"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="category"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+        </parameter>
+        <parameter>
+          <valueString value="vital-signs"/>
+        </parameter>
+        <parameter>
+          <valueString value="Vital Signs"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="8302-2"/>
+        </parameter>
+        <parameter>
+          <valueString value="Body height"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetIdentifier"/>
+      <source>
+        <context value="src"/>
+        <element value="identifier"/>
+        <variable value="identifier"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="targetIdentifier"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Identifier"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="SetIdentifierSystem"/>
+        <source>
+          <context value="identifier"/>
+          <element value="system"/>
+          <variable value="system"/>
+        </source>
+        <target>
+          <context value="targetIdentifier"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="system"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="SetIdentifierValue"/>
+        <source>
+          <context value="identifier"/>
+          <element value="value"/>
+          <variable value="value"/>
+        </source>
+        <target>
+          <context value="targetIdentifier"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="append"/>
+          <parameter>
+            <valueId value="value"/>
+          </parameter>
+          <parameter>
+            <valueString value="-bodyheight"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+    <rule>
+      <name value="ProcessBmiGroup"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="bmiGroup"/>
+        <condition value="bmiGroup.linkId = 'bmi'"/>
+      </source>
+      <rule>
+        <name value="ProcessHeightItem"/>
+        <source>
+          <context value="bmiGroup"/>
+          <element value="item"/>
+          <variable value="heightItem"/>
+          <condition value="heightItem.linkId = 'height-cm'"/>
+        </source>
+        <rule>
+          <name value="ProcessAnswer"/>
+          <source>
+            <context value="heightItem"/>
+            <element value="answer"/>
+            <variable value="answer"/>
+          </source>
+          <rule>
+            <name value="ExtractPrimitiveValue"/>
+            <source>
+              <context value="answer"/>
+              <element value="value"/>
+              <variable value="val"/>
+            </source>
+            <rule>
+              <name value="SetValue"/>
+              <source>
+                <context value="val"/>
+                <element value="value"/>
+                <variable value="numVal"/>
+              </source>
+              <target>
+                <context value="tgt"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <variable value="qty"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="Quantity"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueId value="numVal"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="unit"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="cm"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="system"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="http://unitsofmeasure.org"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="code"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="cm"/>
+                </parameter>
+              </target>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapBodyWeightObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="SetCommonFields"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetCommonObservationFields"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bodyweight-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCategory"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="category"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+        </parameter>
+        <parameter>
+          <valueString value="vital-signs"/>
+        </parameter>
+        <parameter>
+          <valueString value="Vital Signs"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="29463-7"/>
+        </parameter>
+        <parameter>
+          <valueString value="Body weight"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetIdentifier"/>
+      <source>
+        <context value="src"/>
+        <element value="identifier"/>
+        <variable value="identifier"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="targetIdentifier"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Identifier"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="SetIdentifierSystem"/>
+        <source>
+          <context value="identifier"/>
+          <element value="system"/>
+          <variable value="system"/>
+        </source>
+        <target>
+          <context value="targetIdentifier"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="system"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="SetIdentifierValue"/>
+        <source>
+          <context value="identifier"/>
+          <element value="value"/>
+          <variable value="value"/>
+        </source>
+        <target>
+          <context value="targetIdentifier"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="append"/>
+          <parameter>
+            <valueId value="value"/>
+          </parameter>
+          <parameter>
+            <valueString value="-bodyweight"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+    <rule>
+      <name value="ProcessBmiGroup"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="bmiGroup"/>
+        <condition value="bmiGroup.linkId = 'bmi'"/>
+      </source>
+      <rule>
+        <name value="ProcessWeightItem"/>
+        <source>
+          <context value="bmiGroup"/>
+          <element value="item"/>
+          <variable value="weightItem"/>
+          <condition value="weightItem.linkId = 'weight-kg'"/>
+        </source>
+        <rule>
+          <name value="ProcessAnswer"/>
+          <source>
+            <context value="weightItem"/>
+            <element value="answer"/>
+            <variable value="answer"/>
+          </source>
+          <rule>
+            <name value="ExtractPrimitiveValue"/>
+            <source>
+              <context value="answer"/>
+              <element value="value"/>
+              <variable value="val"/>
+            </source>
+            <rule>
+              <name value="SetValue"/>
+              <source>
+                <context value="val"/>
+                <element value="value"/>
+                <variable value="numVal"/>
+              </source>
+              <target>
+                <context value="tgt"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <variable value="qty"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="Quantity"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueId value="numVal"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="unit"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="kg"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="system"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="http://unitsofmeasure.org"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="code"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="kg"/>
+                </parameter>
+              </target>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapBodyMassIndexObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="SetCommonFields"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetCommonObservationFields"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bmi-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCategory"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="category"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+        </parameter>
+        <parameter>
+          <valueString value="vital-signs"/>
+        </parameter>
+        <parameter>
+          <valueString value="Vital Signs"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="39156-5"/>
+        </parameter>
+        <parameter>
+          <valueString value="Body mass index (BMI) [Ratio]"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetIdentifier"/>
+      <source>
+        <context value="src"/>
+        <element value="identifier"/>
+        <variable value="identifier"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <variable value="targetIdentifier"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Identifier"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="SetIdentifierSystem"/>
+        <source>
+          <context value="identifier"/>
+          <element value="system"/>
+          <variable value="system"/>
+        </source>
+        <target>
+          <context value="targetIdentifier"/>
+          <contextType value="variable"/>
+          <element value="system"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="system"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="SetIdentifierValue"/>
+        <source>
+          <context value="identifier"/>
+          <element value="value"/>
+          <variable value="value"/>
+        </source>
+        <target>
+          <context value="targetIdentifier"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <transform value="append"/>
+          <parameter>
+            <valueId value="value"/>
+          </parameter>
+          <parameter>
+            <valueString value="-bmi"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+    <rule>
+      <name value="ProcessBmiGroup"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="bmiGroup"/>
+        <condition value="bmiGroup.linkId = 'bmi'"/>
+      </source>
+      <rule>
+        <name value="ProcessBmiItem"/>
+        <source>
+          <context value="bmiGroup"/>
+          <element value="item"/>
+          <variable value="bmiItem"/>
+          <condition value="bmiItem.linkId = 'bmi-kg-m2'"/>
+        </source>
+        <rule>
+          <name value="ProcessAnswer"/>
+          <source>
+            <context value="bmiItem"/>
+            <element value="answer"/>
+            <variable value="answer"/>
+          </source>
+          <rule>
+            <name value="ExtractPrimitiveValue"/>
+            <source>
+              <context value="answer"/>
+              <element value="value"/>
+              <variable value="val"/>
+            </source>
+            <rule>
+              <name value="SetValue"/>
+              <source>
+                <context value="val"/>
+                <element value="value"/>
+                <variable value="numVal"/>
+              </source>
+              <target>
+                <context value="tgt"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <variable value="qty"/>
+                <transform value="create"/>
+                <parameter>
+                  <valueString value="Quantity"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="value"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueId value="numVal"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="unit"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="kg/m2"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="system"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="http://unitsofmeasure.org"/>
+                </parameter>
+              </target>
+              <target>
+                <context value="qty"/>
+                <contextType value="variable"/>
+                <element value="code"/>
+                <transform value="copy"/>
+                <parameter>
+                  <valueString value="kg/m2"/>
+                </parameter>
+              </target>
+            </rule>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>

@@ -9,12 +9,19 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/EhisPaqPhysicalActivityQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-06-08 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EhisPaqPhysicalActivityQuestionnaire |
+| Active as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EhisPaqPhysicalActivityQuestionnaire |
 
  
 EHIS-PAQ Q4–Q7 (equivalent to ATHIS PE4–PE7). Q7 only is mapped to the AT PreNUDGE Observation Physical Activity profile. 
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -30,7 +37,7 @@ EHIS-PAQ Q4–Q7 (equivalent to ATHIS PE4–PE7). Q7 only is mapped to the AT Pr
   "name" : "EhisPaqPhysicalActivityQuestionnaire",
   "title" : "EHIS-PAQ/ATHIS: Körperliche Aktivität",
   "status" : "active",
-  "date" : "2026-06-08T06:51:44+00:00",
+  "date" : "2026-06-25T12:51:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation | *Version*:0.1.0 | |
-| Draft as of 2026-06-08 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationMuscleStrengthening |
+| Draft as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationMuscleStrengthening |
 
  
 This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater. 
@@ -28,7 +28,14 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](StructureDefinition-at-prenudge-muscle-strengthening-observation.csv), [Excel](StructureDefinition-at-prenudge-muscle-strengthening-observation.xlsx), [Schematron](StructureDefinition-at-prenudge-muscle-strengthening-observation.sch) 
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -41,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-muscle-s
   "name" : "AtPrenudgeObservationMuscleStrengthening",
   "title" : "AT PreNUDGE Observation Muscle Strengthening Sessions",
   "status" : "draft",
-  "date" : "2026-06-08T06:51:44+00:00",
+  "date" : "2026-06-25T12:51:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

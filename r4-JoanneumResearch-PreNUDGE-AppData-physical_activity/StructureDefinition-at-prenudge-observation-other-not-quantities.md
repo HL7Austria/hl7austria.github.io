@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation-other-not-quantities | *Version*:0.1.0 | |
-| Draft as of 2026-06-08 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationOtherNotQuantities |
+| Draft as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationOtherNotQuantities |
 
  
-This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations. 
+This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations. 
 
 **Usages:**
 
@@ -28,7 +28,14 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](StructureDefinition-at-prenudge-observation-other-not-quantities.csv), [Excel](StructureDefinition-at-prenudge-observation-other-not-quantities.xlsx), [Schematron](StructureDefinition-at-prenudge-observation-other-not-quantities.sch) 
 
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-06-25
 
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
 
 ## Resource Content
 
@@ -41,7 +48,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
   "name" : "AtPrenudgeObservationOtherNotQuantities",
   "title" : "AT PreNUDGE Observation Other not Quantities",
   "status" : "draft",
-  "date" : "2026-06-08T06:51:44+00:00",
+  "date" : "2026-06-25T12:51:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -58,7 +65,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not beeing an quantity and not fitting the existing narrow standardized observations.",
+  "description" : "This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -111,7 +118,6 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       },
