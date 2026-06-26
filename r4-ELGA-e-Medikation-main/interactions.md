@@ -7,8 +7,6 @@
 
 Im Folgenden werden standardisierte Interaktionen für den lesenden und schreibenden Zugriff auf die e-Medikation eines Patienten bzw. einer Patientin erläutert, die für alle technischen Use Cases relevant sind.
 
- ![](eMed_Interactions.png) 
-
 ### Medikationsplan
 
 #### Plan-History-Read

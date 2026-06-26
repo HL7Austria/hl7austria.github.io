@@ -41,8 +41,8 @@
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.5"}
-    h3,h4,h5,h6{--heading-prefix:"9.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.8"}
+    h3,h4,h5,h6{--heading-prefix:"9.8"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -133,10 +133,28 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="patient_journey.html">Patient Journey</a>
+        <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
       </li>
       <li>
-        <a href="overview_sub_use_case.html">Technische Use Cases</a>
+        <a href="Sub_UC_eMed_05.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_06.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
       </li>
     </ul>
   </li>
@@ -194,7 +212,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#sub_uc_emed_09_01---durchgeführte-abgabe-erfassen" id="markdown-toc-sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</a></li>
+  <li><a href="#sub_uc_emed_09_01---durchgeführte-abgabe-schreiben" id="markdown-toc-sub_uc_emed_09_01---durchgeführte-abgabe-schreiben">Sub_UC_eMed_09_01 - Durchgeführte Abgabe schreiben</a></li>
+  <li><a href="#ablauf-durchgeführte-abgabe-schreiben" id="markdown-toc-ablauf-durchgeführte-abgabe-schreiben">Ablauf Durchgeführte Abgabe schreiben</a></li>
   <li><a href="#sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen" id="markdown-toc-sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</a></li>
   <li><a href="#sub_uc_emed_09_03---durchgeführte-abgabe-löschen-durch-elga-teilnehmer" id="markdown-toc-sub_uc_emed_09_03---durchgeführte-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_09_03 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)</a></li>
 </ul>
@@ -286,9 +305,35 @@ width: 100%;}
 
   <!-- Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09) -->
 
-<h3 id="sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</h3>
+<h3 id="sub_uc_emed_09_01---durchgeführte-abgabe-schreiben">Sub_UC_eMed_09_01 - Durchgeführte Abgabe schreiben</h3>
 
-<p>Der GDA (Apotheke bzw. Arzt mit Hausapotheke) dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgabe</a>:</p>
+<p>In Arbeit: Zugriffsarten.</p>
+
+  <!-- #### Variante A: Zugriff mittels e-card
+
+<br>
+
+[![overview](plantuml/UC_eMed_09_01_a.svg){: .mx-auto style="width:80%;"}](plantuml/UC_eMed_09_01_a.svg)
+
+<br>
+
+
+#### Variante B: Zugriff mittels e-Rezept
+
+<br>
+
+[![overview](plantuml/UC_eMed_09_01_a.svg){: .mx-auto style="width:80%;"}](plantuml/UC_eMed_09_01_b.svg)
+
+<br> -->
+
+  <!-- Erfolgt die Arzneimittelabgabe in der Apotheke nach Identifikation des ELGA-Teilnehmers mittels e-card, erhält der Apotheker lesenden Zugriff auf alle offenen Geplanten Abgaben und kann entsprechende Abgaben durchführen und dokumentieren. Zusätzlich kann der Apotheker evtl. Wechselwirkungen mit Hilfe des Medikationsplan des ELGA Teilnehmers prüfen und er kann weitere durchgeführten Abgaben (z.B. OTC oder Notabgaben) in der e-Medikation des ELGA-Teilnehmers speichern.
+Zusätzlich kann der Apotheker den Medikationsplan des ELGA-Teilnehmers abrufen, um evtl. Wechselwirkungen zu prüfen und weitere *Durchgeführte Abgaben* (z.B. OTC oder Notabgaben) in der e-Medikation des ELGA-Teilnehmers speichern. -->
+
+  <!-- ohne ecard: Der GDA erhält in diesem Fall keinen Zugriff auf weitere offene *Geplante Abgaben*, kann den *Medikationsplan* des ELGA-Teilnehmers zwecks Wechselwirkungsprüfung nicht einsehen und kann auch keine weiteren *Durchgeführten Abgaben* (z.B. OTC oder Notabgaben) in der e-Medikation des ELGA-Teilnehmers speichern. -->
+
+<h3 id="ablauf-durchgeführte-abgabe-schreiben">Ablauf Durchgeführte Abgabe schreiben</h3>
+
+<p>Ein berechtigter GDA (siehe <a href="actors.html#rollen-und-berechtigungen">Rollen und Berechtigungen</a>) dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgabe</a>:</p>
 <ul>
   <li>Wenn eine zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgabe</a> vorliegt, <strong>MUSS</strong> diese im Element <em>MedicationDispense.authorizingPrescription[geplanteAbgabe]</em> referenziert werden. Der zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">Planeintrag</a> <strong>MUSS</strong> über <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert werden.
   <!-- TODO: ist kommt die Referenz auf den Planeintrag zustande? Automatisch durch die Fachanwendung oder durch den GDA? -> ergänzen in Relevante Elmente -->
@@ -343,7 +388,7 @@ wird je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt. Der Status der 
 
 <p>Eine Teilabgabe liegt vor, wenn die in der <em>Geplanten Abgabe</em> verordneten Arzneimenge nicht vollständig abgegeben wird, weil nur ein Teil der verordneten Arzneimenge eingelöst werden soll oder kann.</p>
 
-<p><a name="l581">​</a>Sonderfälle von Teilabgaben sind Besorgerprozess (siehe <a href="sub_uc_emed_09_01_03---besorgerprozess">Sub_UC_eMed_09_01_03 - Besorgerprozess</a>) und Leerabgabe (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05-leerabgabe-erfassen">Sub_UC_eMed_09_01_05 Leerabgabe erfassen</a>).</p>
+<p><a name="l636">​</a>Sonderfälle von Teilabgaben sind Besorgerprozess (siehe <a href="sub_uc_emed_09_01_03---besorgerprozess">Sub_UC_eMed_09_01_03 - Besorgerprozess</a>) und Leerabgabe (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05-leerabgabe-erfassen">Sub_UC_eMed_09_01_05 Leerabgabe erfassen</a>).</p>
 
 <p>Für jede Teilabgabe <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> erstellt werden. Dabei gelten folgende Regeln:</p>
 <ul>
@@ -471,7 +516,7 @@ Dieser Einlösevorgang ist damit beendet.</li>
 
 <h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
 
-<p><a name="l1030">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
+<p><a name="l1085">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
 
 <p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, ruft der GDA diese mittels GET MedicationDispense ab und bearbeitet diese wie folgt:</p>
 <ul>
@@ -530,7 +575,7 @@ Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 09:33+0000">2026-06-22</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jun 26, 2026 11:41+0000">2026-06-26</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

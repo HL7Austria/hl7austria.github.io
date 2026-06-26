@@ -133,10 +133,28 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="patient_journey.html">Patient Journey</a>
+        <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
       </li>
       <li>
-        <a href="overview_sub_use_case.html">Technische Use Cases</a>
+        <a href="Sub_UC_eMed_05.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_06.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
       </li>
     </ul>
   </li>
@@ -198,19 +216,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#3">Durchgeführte Abgabe</a>
       </li>
       <li>
-         <a href="#4">Behavior: Operation Definitions</a>
+         <a href="#4">Medikation</a>
       </li>
       <li>
-         <a href="#5">Structures: Data Type Profiles</a>
+         <a href="#5">Behavior: Operation Definitions</a>
       </li>
       <li>
-         <a href="#6">Terminology: Value Sets</a>
+         <a href="#6">Structures: Data Type Profiles</a>
       </li>
       <li>
-         <a href="#7">Terminology: Code Systems</a>
+         <a href="#7">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#8">Example: Example Instances</a>
+         <a href="#8">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#9">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -250,15 +271,6 @@ Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listen
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-medication-medikation.html"
-                  title="StructureDefinition/at-elga-emed-medication-medikation">AT ELGA e-Medikation Medication Medikation</a>
-            </td>
-            <td>
-<p>Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html"
                   title="StructureDefinition/at-elga-emed-medicationrequest-planeintrag">At ELGA e-Medikation MedicationRequest Planeintrag</a>
             </td>
@@ -266,15 +278,6 @@ Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listen
 <p>Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet.
 Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.
 Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-substance-wirkstoff.html"
-                  title="StructureDefinition/at-elga-emed-substance-wirkstoff">At ELGA e-Medikation Substance Wirkstoff</a>
-            </td>
-            <td>
-<p>Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.</p>
 </td>
          </tr>
          <tr>
@@ -336,6 +339,32 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
       </tbody>
    </table>
    <a name="4"> </a>
+   <h3>Medikation </h3>
+    <p>Medikation</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-medication-medikation.html"
+                  title="StructureDefinition/at-elga-emed-medication-medikation">AT ELGA e-Medikation Medication Medikation</a>
+            </td>
+            <td>
+<p>Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-substance-wirkstoff.html"
+                  title="StructureDefinition/at-elga-emed-substance-wirkstoff">At ELGA e-Medikation Substance Wirkstoff</a>
+            </td>
+            <td>
+<p>Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
    <h3>Behavior: Operation Definitions </h3>
     <p>These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -361,7 +390,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
       </tbody>
    </table>
-   <a name="5"> </a>
+   <a name="6"> </a>
    <h3>Structures: Data Type Profiles </h3>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -387,7 +416,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
       </tbody>
    </table>
-   <a name="6"> </a>
+   <a name="7"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -466,7 +495,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
       </tbody>
    </table>
-   <a name="7"> </a>
+   <a name="8"> </a>
    <h3>Terminology: Code Systems </h3>
     <p>These define new code systems used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -492,7 +521,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
       </tbody>
    </table>
-   <a name="8"> </a>
+   <a name="9"> </a>
    <h3>Example: Example Instances </h3>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 <table class="grid">
@@ -761,7 +790,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 22, 2026 09:33+0000">2026-06-22</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jun 26, 2026 11:41+0000">2026-06-26</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -18,7 +18,7 @@ Die Einführung des E-Medikationsplans gewährleistet, dass alle für die Therap
 
 ![](e_medikation_overview_start.png)
 
-Die technische Umsetzung des E-Medikationsplans sowie der e-Abgabe erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS). In Anbetracht der ab 2029 vorgesehenen Sekundärnutzung medizinischer Daten im EHDS werden durch diesen Implementation Guide die technischen Grundlagen geschaffen, um eine datenschutzkonforme Nutzung von Medikationsdaten für gemeinwohlorientierte Forschung und gesundheitspolitische Steuerung zu ermöglichen.
+Die technische Umsetzung des E-Medikationsplans sowie der e-Abgabe erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS).
 
 Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Integration der e-Medikation in die ELGA-Infrastruktur.
 
@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-06-22T09:33:42+00:00",
+  "date" : "2026-06-26T11:41:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -675,6 +675,11 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "id" : "DurchgefuehrteAbgabe",
       "name" : "Durchgeführte Abgabe",
       "description" : "Durchgeführte Abgabe"
+    },
+    {
+      "id" : "Medikation",
+      "name" : "Medikation",
+      "description" : "Medikation"
     }],
     "resource" : [{
       "extension" : [{
@@ -725,7 +730,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "AT ELGA e-Medikation Medication Medikation",
       "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
       "exampleBoolean" : false,
-      "groupingId" : "Medikationsplan"
+      "groupingId" : "Medikation"
     },
     {
       "extension" : [{
@@ -777,7 +782,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "At ELGA e-Medikation Substance Wirkstoff",
       "description" : "Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.",
       "exampleBoolean" : false,
-      "groupingId" : "Medikationsplan"
+      "groupingId" : "Medikation"
     },
     {
       "extension" : [{
@@ -1381,10 +1386,37 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_05.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_05.html",
+          "title" : "​Technische Use Cases für Medikationsplan lesen (UC_eMed_05)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "Sub_UC_eMed_06.html"
           }],
           "nameUrl" : "Sub_UC_eMed_06.html",
           "title" : "​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_07_01.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_07_01.html",
+          "title" : "​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_07)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_07_02.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_07_02.html",
+          "title" : "​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_07)",
           "generation" : "markdown"
         },
         {
