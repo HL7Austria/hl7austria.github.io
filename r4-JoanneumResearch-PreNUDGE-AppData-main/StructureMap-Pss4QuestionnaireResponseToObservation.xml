@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="Pss4QuestionnaireResponseToObservation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap Pss4QuestionnaireResponseToObservation</b></p><a name="Pss4QuestionnaireResponseToObservation"> </a><a name="hcPss4QuestionnaireResponseToObservation"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/Pss4QuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>Pss4QuestionnaireResponseToObservation<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">PSS-4 Q score to O score</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-QuestionnaireResponseToObservationBase.html" title="Shared base for Q to O">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style="color: navy">&quot;
+</span>
+<b>group </b>Pss4QuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss4-score-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem'</span><span style="color: navy">, </span><span style="color: blue">'pss4'</span><span style="color: navy">, </span><span style="color: blue">'PSS-4 Perceived Stress Scale (4-item)'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effectiveDateTime = <b>create</b><span style="color: navy">(</span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dt</span><span style="color: navy">, </span> dt.value = <span style="color: maroon">authored</span> <i>&quot;SetEffective&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">pss4Group</span><b> where </b>linkId = 'pss4'<b> then</b><span style="color: navy"> {
+</span>    <span style="color: navy">// </span><span style="color: green">Map individual item codings → Observation components (raw categorical answers)</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q1</span><b> where </b>linkId = 'pss4-q1'<b> then </b>MapPss4Q1<span style="color: navy">(</span><span style="color: maroon">q1</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ1&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q2</span><b> where </b>linkId = 'pss4-q2'<b> then </b>MapPss4Q2<span style="color: navy">(</span><span style="color: maroon">q2</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ2&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q3</span><b> where </b>linkId = 'pss4-q3'<b> then </b>MapPss4Q3<span style="color: navy">(</span><span style="color: maroon">q3</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ3&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q4</span><b> where </b>linkId = 'pss4-q4'<b> then </b>MapPss4Q4<span style="color: navy">(</span><span style="color: maroon">q4</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ4&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">// </span><span style="color: green">Map pre-computed total score → Observation.value</span>
+    pss4Group.item<b> as </b><span style="color: maroon">totalItem</span><b> where </b>linkId = 'pss4-total-score'<b> then </b>MapPss4TotalScore<span style="color: navy">(</span><span style="color: maroon">totalItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapTotal&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessPss4&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapPss4Q1<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueCoding<b> as </b><span style="color: maroon">vc</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem'</span><span style="color: navy">, </span><span style="color: blue">'pss4-q1'</span><span style="color: navy">, </span><span style="color: blue">'PSS-4 Item 1 (Kontrollverlust)'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc2</span><span style="color: navy">, </span> cc2.coding = <span style="color: maroon">vc</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapPss4Q2<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueCoding<b> as </b><span style="color: maroon">vc</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem'</span><span style="color: navy">, </span><span style="color: blue">'pss4-q2'</span><span style="color: navy">, </span><span style="color: blue">'PSS-4 Item 2 (Selbstwirksamkeit — positiv)'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc2</span><span style="color: navy">, </span> cc2.coding = <span style="color: maroon">vc</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapPss4Q3<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueCoding<b> as </b><span style="color: maroon">vc</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem'</span><span style="color: navy">, </span><span style="color: blue">'pss4-q3'</span><span style="color: navy">, </span><span style="color: blue">'PSS-4 Item 3 (Kontrolle — positiv)'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc2</span><span style="color: navy">, </span> cc2.coding = <span style="color: maroon">vc</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapPss4Q4<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueCoding<b> as </b><span style="color: maroon">vc</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem'</span><span style="color: navy">, </span><span style="color: blue">'pss4-q4'</span><span style="color: navy">, </span><span style="color: blue">'PSS-4 Item 4 (Überforderung)'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc2</span><span style="color: navy">, </span> cc2.coding = <span style="color: maroon">vc</span> <i>&quot;SetComponent&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">Pre-computed integer total score from the hidden pss4-total-score QR item.</span>
+<span style="color: navy">// </span><span style="color: green">Two-level .value unwrap (integer) — MaLaC-HD safe pattern (no evaluate()).</span>
+<b>group </b>MapPss4TotalScore<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueInteger<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
+</span>      val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'score'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'{score}'</span> <i>&quot;SetQuantity&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/Pss4QuestionnaireResponseToObservation"/>
+  <version value="0.1.0"/>
+  <name value="Pss4QuestionnaireResponseToObservation"/>
+  <title value="PSS-4 Q score to O score"/>
+  <status value="active"/>
+  <date value="2026-06-29T17:35:07+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="PSS-4 Q score to O score"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <import value="http://hl7.org/fhir/StructureMap/*"/>
+  <import value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"/>
+  <group>
+    <name value="Pss4QuestionnaireResponseToObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="Base"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetObservationBase"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss4-score-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem"/>
+        </parameter>
+        <parameter>
+          <valueString value="pss4"/>
+        </parameter>
+        <parameter>
+          <valueString value="PSS-4 Perceived Stress Scale (4-item)"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetEffective"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectiveDateTime"/>
+        <variable value="dt"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="dateTime"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="dt"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ProcessPss4"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="pss4Group"/>
+        <condition value="linkId = 'pss4'"/>
+      </source>
+      <rule>
+        <name value="MapQ1"/>
+        <source>
+          <context value="pss4Group"/>
+          <element value="item"/>
+          <variable value="q1"/>
+          <condition value="linkId = 'pss4-q1'"/>
+        </source>
+        <dependent>
+          <name value="MapPss4Q1"/>
+          <variable value="q1"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+      <rule>
+        <name value="MapQ2"/>
+        <source>
+          <context value="pss4Group"/>
+          <element value="item"/>
+          <variable value="q2"/>
+          <condition value="linkId = 'pss4-q2'"/>
+        </source>
+        <dependent>
+          <name value="MapPss4Q2"/>
+          <variable value="q2"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+      <rule>
+        <name value="MapQ3"/>
+        <source>
+          <context value="pss4Group"/>
+          <element value="item"/>
+          <variable value="q3"/>
+          <condition value="linkId = 'pss4-q3'"/>
+        </source>
+        <dependent>
+          <name value="MapPss4Q3"/>
+          <variable value="q3"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+      <rule>
+        <name value="MapQ4"/>
+        <source>
+          <context value="pss4Group"/>
+          <element value="item"/>
+          <variable value="q4"/>
+          <condition value="linkId = 'pss4-q4'"/>
+        </source>
+        <dependent>
+          <name value="MapPss4Q4"/>
+          <variable value="q4"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+      <rule>
+        <name value="MapTotal"/>
+        <source>
+          <context value="pss4Group"/>
+          <element value="item"/>
+          <variable value="totalItem"/>
+          <condition value="linkId = 'pss4-total-score'"/>
+        </source>
+        <dependent>
+          <name value="MapPss4TotalScore"/>
+          <variable value="totalItem"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPss4Q1"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="SetComponent"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="vc"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="component"/>
+          <variable value="comp"/>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem"/>
+          </parameter>
+          <parameter>
+            <valueString value="pss4-q1"/>
+          </parameter>
+          <parameter>
+            <valueString value="PSS-4 Item 1 (Kontrollverlust)"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="cc2"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="CodeableConcept"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="cc2"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="vc"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPss4Q2"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="SetComponent"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="vc"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="component"/>
+          <variable value="comp"/>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem"/>
+          </parameter>
+          <parameter>
+            <valueString value="pss4-q2"/>
+          </parameter>
+          <parameter>
+            <valueString value="PSS-4 Item 2 (Selbstwirksamkeit — positiv)"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="cc2"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="CodeableConcept"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="cc2"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="vc"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPss4Q3"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="SetComponent"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="vc"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="component"/>
+          <variable value="comp"/>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem"/>
+          </parameter>
+          <parameter>
+            <valueString value="pss4-q3"/>
+          </parameter>
+          <parameter>
+            <valueString value="PSS-4 Item 3 (Kontrolle — positiv)"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="cc2"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="CodeableConcept"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="cc2"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="vc"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPss4Q4"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="SetComponent"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="vc"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="component"/>
+          <variable value="comp"/>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="code"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem"/>
+          </parameter>
+          <parameter>
+            <valueString value="pss4-q4"/>
+          </parameter>
+          <parameter>
+            <valueString value="PSS-4 Item 4 (Überforderung)"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="comp"/>
+          <contextType value="variable"/>
+          <element value="value"/>
+          <variable value="cc2"/>
+          <transform value="create"/>
+          <parameter>
+            <valueString value="CodeableConcept"/>
+          </parameter>
+        </target>
+        <target>
+          <context value="cc2"/>
+          <contextType value="variable"/>
+          <element value="coding"/>
+          <transform value="copy"/>
+          <parameter>
+            <valueId value="vc"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="MapPss4TotalScore"/>
+    <typeMode value="none"/>
+    <documentation value="Pre-computed integer total score from the hidden pss4-total-score QR item.&#xD;&#xA;Two-level .value unwrap (integer) — MaLaC-HD safe pattern (no evaluate())."/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="ExtractValue"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueInteger"/>
+          <variable value="val"/>
+        </source>
+        <rule>
+          <name value="SetQuantity"/>
+          <source>
+            <context value="val"/>
+            <element value="value"/>
+            <variable value="numVal"/>
+          </source>
+          <target>
+            <context value="tgt"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <variable value="qty"/>
+            <transform value="create"/>
+            <parameter>
+              <valueString value="Quantity"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="value"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueId value="numVal"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="unit"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="score"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="system"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="http://unitsofmeasure.org"/>
+            </parameter>
+          </target>
+          <target>
+            <context value="qty"/>
+            <contextType value="variable"/>
+            <element value="code"/>
+            <transform value="copy"/>
+            <parameter>
+              <valueString value="{score}"/>
+            </parameter>
+          </target>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>

@@ -10,7 +10,7 @@
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-29T16:58:51+00:00",
+  "date" : "2026-06-29T17:35:07+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -996,6 +996,30 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-pss10-score-observation"
+      },
+      "name" : "AT PreNUDGE Observation PSS-10 Score",
+      "description" : "Observation profile for recording the calculated PSS-10 total score (LOINC 106860-0). Observation.value holds the integer total score (0–40). Components hold the raw categorical answers per item (bound to the PSS frequency ValueSet). Derived from a completed PSS-10 QuestionnaireResponse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-pss4-score-observation"
+      },
+      "name" : "AT PreNUDGE Observation PSS-4 Score",
+      "description" : "Observation profile for recording the calculated PSS-4 total score. Observation.value holds the integer total score (0–16). Components hold the raw categorical answers per item (bound to the PSS frequency ValueSet). Derived from a completed PSS-4 QuestionnaireResponse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/at-prenudge-sitting-hours-observation"
       },
       "name" : "AT PreNUDGE Observation Sitting Hours",
@@ -1048,6 +1072,18 @@
       },
       "name" : "AT PreNUDGE Observation Step Count",
       "description" : "This FHIR profile is defining the Step Count Observation. The step count only allows values inbetween 0 and 150,000 steps per 24 hours.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-whooley-observation"
+      },
+      "name" : "AT PreNUDGE Observation Whooley Depression Screening",
+      "description" : "Records the binary result of the PHQ-2/Whooley depression screening (Ja/Nein-Version) as referenced in the Nationale VersorgungsLeitlinie Depression (AWMF nvl-005, https://register.awmf.org/de/leitlinien/detail/nvl-005). The reference period is the last month (letzter Monat), not the standard PHQ-2 period of two weeks. Interpretation of valueCodeableConcept: SNOMED CT 10828004 (Positive) = both Whooley questions answered 'Ja' (positive depression screen); SNOMED CT 260385009 (Negative) = at least one answer was 'Nein' (negative screen). Werden beide Fragen mit 'Ja' beantwortet, identifiziert der Test das Vorliegen depressiver Störungen mit einer Sensitivität von 96 % und einer Spezifität von 57 % (NVL Depression, AWMF nvl-005).",
       "exampleBoolean" : false
     },
     {
@@ -1125,6 +1161,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-prenudge-pss-frequency-codesystem"
+      },
+      "name" : "AT PreNUDGE PSS Frequency Answer Scale",
+      "description" : "5-point frequency answer scale (0–4) used by the Perceived Stress Scale (PSS-4 and PSS-10) instruments. Based on Cohen, S., Kamarck, T., & Mermelstein, R. (1983). A global measure of perceived stress. Journal of Health and Social Behavior, 24(4), 385–396.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-prenudge-pss-codes-codesystem"
+      },
+      "name" : "AT PreNUDGE PSS Instrument Codes",
+      "description" : "IG-internal codes for PSS-4 instrument identification and per-item Observation component codes for PSS-4 and PSS-10.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource:abstract"
       }],
       "reference" : {
@@ -1144,6 +1204,30 @@
       },
       "name" : "AT PreNUDGE Questionnaire Response",
       "description" : "This FHIR profile is defining the overall Questionnaire Response for PreNUDGE. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all questionnaire responses must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-prenudge-pss-frequency-valueset"
+      },
+      "name" : "AT PreNUDGE ValueSet PSS Frequency Answer Scale",
+      "description" : "All five PSS frequency answer options (Nie–Sehr oft) used in PSS-4 and PSS-10 questionnaire items.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-prenudge-whooley-screen-result"
+      },
+      "name" : "AT PreNUDGE ValueSet Whooley Screen Result",
+      "description" : "Binary result of the PHQ-2; \"Whooley\" Questions (Ja/Nein-Version). Positive = both questions answered 'Ja'; Negative = at least one question answered 'Nein'.",
       "exampleBoolean" : false
     },
     {
@@ -1713,6 +1797,42 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/Pss10Questionnaire"
+      },
+      "name" : "Perceived Stress Scale (PSS-10)",
+      "description" : "10-item Perceived Stress Scale (PSS-10; LOINC 106875-8) measuring subjective experience of stress over the past four weeks. Scoring: items q4, q5, q7, q8 are positive items reversed (4 – ordinal); items q1, q2, q3, q6, q9, q10 are used as-is. Total score range 0–40; higher scores indicate greater perceived stress.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/Pss4Questionnaire"
+      },
+      "name" : "Perceived Stress Scale (PSS-4)",
+      "description" : "4-item short version of the Perceived Stress Scale (PSS-4) measuring subjective experience of stress over the past month. Scoring: items pss4-q2 and pss4-q3 are positive items reversed (4 – ordinal); items pss4-q1 and pss4-q4 are used as-is. Total score range 0–16; higher scores indicate greater perceived stress.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/WhooleyQuestionnaire"
+      },
+      "name" : "PHQ-2; \"Whooley Questions\"",
+      "description" : "Short screening for emotional burden and depressive disorders (Whooley Questions / PHQ-2 Yes/No version) as referenced in the Nationale VersorgungsLeitlinie (NVL) Depression (AWMF nvl-005, https://register.awmf.org/de/leitlinien/detail/nvl-005). Reference period: last month (deviating from the standard PHQ-2 period of two weeks). When both questions are answered 'Yes', the instrument identifies depressive disorders with a sensitivity of 96% and a specificity of 57%.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
       }],
       "reference" : {
@@ -1805,6 +1925,54 @@
       "name" : "PreNUDGE Wearable Device Example",
       "description" : "Example of a wearable fitness tracker referenced from the physical activity wearable observation example.",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/pss10-response-example"
+      },
+      "name" : "PSS-10 Q - Example",
+      "description" : "Example of a completed PSS-10 QuestionnaireResponse with all ten items answered and the pre-computed total score. Derived Observation: score = 19 (see pss10-score-example).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/pss10-score-example"
+      },
+      "name" : "PSS-10 Score O mapped from Q - Example",
+      "description" : "Example of a PSS-10 score Observation derived from pss10-response-example. Total score = 19.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss10-score-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/pss4-response-example"
+      },
+      "name" : "PSS-4 Q - Example",
+      "description" : "Example of a completed PSS-4 QuestionnaireResponse with all four items answered and the pre-computed total score. Derived Observation: score = 8 (see pss4-score-example).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/pss4-score-example"
+      },
+      "name" : "PSS-4 Score O mapped from Q - Example",
+      "description" : "Example of a PSS-4 score Observation derived from pss4-response-example. Total score = 8.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss4-score-observation"
     },
     {
       "extension" : [{
@@ -2169,6 +2337,42 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/whooley-observation-positive-example"
+      },
+      "name" : "Whooley O mapped from Q - Example",
+      "description" : "Example of a Whooley depression screening Observation derived from whooley-response-positive-example. Both questions answered 'Ja' → positive screen (SNOMED CT 10828004).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whooley-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/whooley-response-negative-example"
+      },
+      "name" : "Whooley Q - Negative Screen Example (q1 Ja, q2 Nein)",
+      "description" : "Example of a Whooley (PHQ-2 Ja/Nein-Version) questionnaire response where the first question is answered 'Ja' but the second is 'Nein'. The derived Observation maps to valueBoolean = false (negative depression screen).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/whooley-response-positive-example"
+      },
+      "name" : "Whooley Q - Positive Screen Example (both Ja)",
+      "description" : "Example of a Whooley (PHQ-2 Ja/Nein-Version) questionnaire response where both questions are answered 'Ja'. The derived Observation maps to valueBoolean = true (positive depression screen).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       }],
       "reference" : {
@@ -2342,6 +2546,28 @@
         "valueString" : "StructureMap"
       }],
       "reference" : {
+        "reference" : "StructureMap/Pss10QuestionnaireResponseToObservation"
+      },
+      "name" : "PSS-10 Q score to O score",
+      "description" : "PSS-10 Q score to O score"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/Pss4QuestionnaireResponseToObservation"
+      },
+      "name" : "PSS-4 Q score to O score",
+      "description" : "PSS-4 Q score to O score"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
         "reference" : "StructureMap/QuestionnaireResponseToObservationBase"
       },
       "name" : "Shared base for Q to O",
@@ -2412,6 +2638,17 @@
       },
       "name" : "Step Count Q to O",
       "description" : "Step Count Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/WhooleyQuestionnaireResponseToObservation"
+      },
+      "name" : "PHQ-2/Whooley Q to O",
+      "description" : "PHQ-2/Whooley Q to O"
     },
     {
       "extension" : [{

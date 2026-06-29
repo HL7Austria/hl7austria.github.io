@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="WhooleyQuestionnaireResponseToObservation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap WhooleyQuestionnaireResponseToObservation</b></p><a name="WhooleyQuestionnaireResponseToObservation"> </a><a name="hcWhooleyQuestionnaireResponseToObservation"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WhooleyQuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>WhooleyQuestionnaireResponseToObservation<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">PHQ-2/Whooley Q to O</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+
+<b>group </b>WhooleyQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src<span style="color: navy"><b> -&gt; </b></span>tgt.status = <span style="color: blue">'final'</span> <i>&quot;setFinalStatus&quot;</i><span style="color: navy">;</span>
+  src.identifier<b> as </b><span style="color: maroon">identifier</span><span style="color: navy"><b> -&gt; </b></span>tgt.identifier = <span style="color: maroon">identifier</span> <i>&quot;copyIdentifier&quot;</i><span style="color: navy">;</span>
+  src.subject<b> as </b><span style="color: maroon">subject</span><span style="color: navy"><b> -&gt; </b></span>tgt.subject = <span style="color: maroon">subject</span> <i>&quot;copySubject&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effective = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToEffective&quot;</i><span style="color: navy">;</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.issued = <span style="color: maroon">authored</span> <i>&quot;copyAuthoredToIssued&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">LOINC 55757-9: closest available code for a PHQ-2 screening result.</span>
+  <span style="color: navy">// </span><span style="color: green">The Whooley Ja/Nein variant over the last month differs from the standard scored PHQ-2.</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'73832-8'</span><span style="color: navy">, </span><span style="color: blue">'Adult depression screening assessment'</span><span style="color: navy">)</span> <i>&quot;setCode&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.method = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'87982008'</span><span style="color: navy">, </span><span style="color: blue">'Manual'</span><span style="color: navy">)</span> <i>&quot;setManualMethod&quot;</i><span style="color: navy">;</span>
+  src.id<b> as </b><span style="color: maroon">id</span><span style="color: navy"><b> -&gt; </b></span>tgt.derivedFrom = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Reference'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">reference</span><b> then</b><span style="color: navy"> {
+</span>    id<span style="color: navy"><b> -&gt; </b></span>reference.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'QuestionnaireResponse/'</span><span style="color: navy">, </span><span style="color: maroon">id</span><span style="color: navy">)</span> <i>&quot;setDerivedFromReference&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;setDerivedFrom&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">whooleyGroup</span><b> where </b>whooleyGroup.linkId = 'whooley'<b> then </b>WhooleyGroupToObservation<span style="color: navy">(</span><span style="color: maroon">whooleyGroup</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;mapWhooleyGroup&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">Routes based on q1 answer.</span>
+<span style="color: navy">// </span><span style="color: green">If q1 = SNOMED 373066001 (Ja): delegates to WhooleyQ2Check to test q2.</span>
+<span style="color: navy">// </span><span style="color: green">If q1 = SNOMED 373067005 (Nein): sets Negative result immediately.</span>
+<b>group </b>WhooleyGroupToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  groupItem.item<b> as </b><span style="color: maroon">q1</span><b> where </b>q1.linkId = '/whooley-q1'<b> then</b><span style="color: navy"> {
+</span>    q1.answer<b> as </b><span style="color: maroon">a1</span><b> where </b>a1.valueCoding.code = '373066001'<b> then </b>WhooleyQ2Check<span style="color: navy">(</span><span style="color: maroon">groupItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;whenQ1Ja&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;q1Ja&quot;</i><span style="color: navy">;</span>
+  groupItem.item<b> as </b><span style="color: maroon">q1</span><b> where </b>q1.linkId = '/whooley-q1'<b> then</b><span style="color: navy"> {
+</span>    q1.answer<b> as </b><span style="color: maroon">a1</span><b> where </b>a1.valueCoding.code = '373067005'<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'260385009'</span><span style="color: navy">, </span><span style="color: blue">'Negative (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;q1Nein&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;q1Nein&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">Called only when q1 = Ja. Sets Positive if q2 = Ja, Negative if q2 = Nein.</span>
+<b>group </b>WhooleyQ2Check<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  groupItem.item<b> as </b><span style="color: maroon">q2</span><b> where </b>q2.linkId = '/whooley-q2'<b> then</b><span style="color: navy"> {
+</span>    q2.answer<b> as </b><span style="color: maroon">a2</span><b> where </b>a2.valueCoding.code = '373066001'<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'10828004'</span><span style="color: navy">, </span><span style="color: blue">'Positive (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;bothJa&quot;</i><span style="color: navy">;</span>
+    q2.answer<b> as </b><span style="color: maroon">a2</span><b> where </b>a2.valueCoding.code = '373067005'<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'260385009'</span><span style="color: navy">, </span><span style="color: blue">'Negative (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;q2Nein&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;processQ2&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/WhooleyQuestionnaireResponseToObservation"/>
+  <version value="0.1.0"/>
+  <name value="WhooleyQuestionnaireResponseToObservation"/>
+  <title value="PHQ-2/Whooley Q to O"/>
+  <status value="active"/>
+  <date value="2026-06-29T17:35:07+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="PHQ-2/Whooley Q to O"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <group>
+    <name value="WhooleyQuestionnaireResponseToObservation"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="setFinalStatus"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="status"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="final"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="copyIdentifier"/>
+      <source>
+        <context value="src"/>
+        <element value="identifier"/>
+        <variable value="identifier"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="identifier"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="identifier"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="copySubject"/>
+      <source>
+        <context value="src"/>
+        <element value="subject"/>
+        <variable value="subject"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="subject"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="subject"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="copyAuthoredToEffective"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effective"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="copyAuthoredToIssued"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="issued"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="setCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="73832-8"/>
+        </parameter>
+        <parameter>
+          <valueString value="Adult depression screening assessment"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="setManualMethod"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="method"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://snomed.info/sct"/>
+        </parameter>
+        <parameter>
+          <valueString value="87982008"/>
+        </parameter>
+        <parameter>
+          <valueString value="Manual"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="setDerivedFrom"/>
+      <source>
+        <context value="src"/>
+        <element value="id"/>
+        <variable value="id"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="derivedFrom"/>
+        <variable value="reference"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Reference"/>
+        </parameter>
+      </target>
+      <rule>
+        <name value="setDerivedFromReference"/>
+        <source>
+          <context value="id"/>
+        </source>
+        <target>
+          <context value="reference"/>
+          <contextType value="variable"/>
+          <element value="reference"/>
+          <transform value="append"/>
+          <parameter>
+            <valueString value="QuestionnaireResponse/"/>
+          </parameter>
+          <parameter>
+            <valueId value="id"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+    <rule>
+      <name value="mapWhooleyGroup"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="whooleyGroup"/>
+        <condition value="whooleyGroup.linkId = 'whooley'"/>
+      </source>
+      <dependent>
+        <name value="WhooleyGroupToObservation"/>
+        <variable value="whooleyGroup"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+  </group>
+  <group>
+    <name value="WhooleyGroupToObservation"/>
+    <typeMode value="none"/>
+    <documentation value="Routes based on q1 answer.&#xD;&#xA;If q1 = SNOMED 373066001 (Ja): delegates to WhooleyQ2Check to test q2.&#xD;&#xA;If q1 = SNOMED 373067005 (Nein): sets Negative result immediately."/>
+    <input>
+      <name value="groupItem"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="q1Ja"/>
+      <source>
+        <context value="groupItem"/>
+        <element value="item"/>
+        <variable value="q1"/>
+        <condition value="q1.linkId = '/whooley-q1'"/>
+      </source>
+      <rule>
+        <name value="whenQ1Ja"/>
+        <source>
+          <context value="q1"/>
+          <element value="answer"/>
+          <variable value="a1"/>
+          <condition value="a1.valueCoding.code = '373066001'"/>
+        </source>
+        <dependent>
+          <name value="WhooleyQ2Check"/>
+          <variable value="groupItem"/>
+          <variable value="tgt"/>
+        </dependent>
+      </rule>
+    </rule>
+    <rule>
+      <name value="q1Nein"/>
+      <source>
+        <context value="groupItem"/>
+        <element value="item"/>
+        <variable value="q1"/>
+        <condition value="q1.linkId = '/whooley-q1'"/>
+      </source>
+      <rule>
+        <name value="q1Nein"/>
+        <source>
+          <context value="q1"/>
+          <element value="answer"/>
+          <variable value="a1"/>
+          <condition value="a1.valueCoding.code = '373067005'"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="valueCodeableConcept"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="http://snomed.info/sct"/>
+          </parameter>
+          <parameter>
+            <valueString value="260385009"/>
+          </parameter>
+          <parameter>
+            <valueString value="Negative (qualifier value)"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+  <group>
+    <name value="WhooleyQ2Check"/>
+    <typeMode value="none"/>
+    <documentation value="Called only when q1 = Ja. Sets Positive if q2 = Ja, Negative if q2 = Nein."/>
+    <input>
+      <name value="groupItem"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="processQ2"/>
+      <source>
+        <context value="groupItem"/>
+        <element value="item"/>
+        <variable value="q2"/>
+        <condition value="q2.linkId = '/whooley-q2'"/>
+      </source>
+      <rule>
+        <name value="bothJa"/>
+        <source>
+          <context value="q2"/>
+          <element value="answer"/>
+          <variable value="a2"/>
+          <condition value="a2.valueCoding.code = '373066001'"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="valueCodeableConcept"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="http://snomed.info/sct"/>
+          </parameter>
+          <parameter>
+            <valueString value="10828004"/>
+          </parameter>
+          <parameter>
+            <valueString value="Positive (qualifier value)"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="q2Nein"/>
+        <source>
+          <context value="q2"/>
+          <element value="answer"/>
+          <variable value="a2"/>
+          <condition value="a2.valueCoding.code = '373067005'"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="valueCodeableConcept"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="http://snomed.info/sct"/>
+          </parameter>
+          <parameter>
+            <valueString value="260385009"/>
+          </parameter>
+          <parameter>
+            <valueString value="Negative (qualifier value)"/>
+          </parameter>
+        </target>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>
