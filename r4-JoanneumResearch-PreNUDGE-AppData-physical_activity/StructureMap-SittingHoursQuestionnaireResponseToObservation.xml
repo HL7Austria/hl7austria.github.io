@@ -32,19 +32,19 @@
 
 </span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <span style="color: navy">// </span><span style="color: green">Q9 → Observation.valueQuantity (h)</span>
-<span style="color: navy">// </span><span style="color: green">Only Q9-hours (integer) is mapped to Observation.valueQuantity.value.</span>
-<span style="color: navy">// </span><span style="color: green">Q9-minutes is not included because MaLaC-HD does not support evaluate()</span>
-<span style="color: navy">// </span><span style="color: green">with complex FHIRPath expressions (arithmetic or multi-token paths).</span>
-<span style="color: navy">// </span><span style="color: green">Sub-hour precision requires an engine that supports evaluate(), e.g. matchbox.</span>
+<span style="color: navy">// </span><span style="color: green">Q9-total-hours (decimal, SDC calculatedExpression) is read using the</span>
+<span style="color: navy">// </span><span style="color: green">MaLaC-HD 1.6.0 two-level .value unwrap pattern (valueDecimal → .value).</span>
+<span style="color: navy">// </span><span style="color: green">The arithmetic Q9-hours + (Q9-minutes / 60) is pre-computed by the</span>
+<span style="color: navy">// </span><span style="color: green">questionnaire; this map copies the result without evaluate().</span>
 <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <b>group </b>MapQ9ToSittingHours<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  src.item<b> as </b><span style="color: maroon">hoursItem</span><b> where </b>linkId = 'Q9-hours'<b> then</b><span style="color: navy"> {
-</span>    hoursItem.answer<b> as </b><span style="color: maroon">hoursAnswer</span><b> then</b><span style="color: navy"> {
-</span>      hoursAnswer.valueInteger<b> as </b><span style="color: maroon">hoursElem</span><b> then</b><span style="color: navy"> {
-</span>        hoursElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'h'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'h'</span> <i>&quot;SetSittingQuantity&quot;</i><span style="color: navy">;</span>
-      <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
-    <span style="color: navy">}</span> <i>&quot;ExtractHoursAnswer&quot;</i><span style="color: navy">;</span>
-  <span style="color: navy">}</span> <i>&quot;ProcessHoursItem&quot;</i><span style="color: navy">;</span>
+</span>  src.item<b> as </b><span style="color: maroon">totHours</span><b> where </b>linkId = 'Q9-total-hours'<b> then</b><span style="color: navy"> {
+</span>    totHours.answer<b> as </b><span style="color: maroon">ans</span><b> then</b><span style="color: navy"> {
+</span>      ans.valueDecimal<b> as </b><span style="color: maroon">decElem</span><b> then</b><span style="color: navy"> {
+</span>        decElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'h'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'h'</span> <i>&quot;SetSittingQuantity&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;UnwrapDecimal&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;GetAnswer&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;GetTotalHours&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -54,7 +54,7 @@
   <name value="SittingHoursQuestionnaireResponseToObservation"/>
   <title value="Sitting Hours Q to O"/>
   <status value="active"/>
-  <date value="2026-06-29T14:49:16+00:00"/>
+  <date value="2026-06-29T16:38:59+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -190,7 +190,7 @@
   <group>
     <name value="MapQ9ToSittingHours"/>
     <typeMode value="none"/>
-    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Q9 → Observation.valueQuantity (h)&#xD;&#xA;Only Q9-hours (integer) is mapped to Observation.valueQuantity.value.&#xD;&#xA;Q9-minutes is not included because MaLaC-HD does not support evaluate()&#xD;&#xA;with complex FHIRPath expressions (arithmetic or multi-token paths).&#xD;&#xA;Sub-hour precision requires an engine that supports evaluate(), e.g. matchbox.&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Q9 → Observation.valueQuantity (h)&#xD;&#xA;Q9-total-hours (decimal, SDC calculatedExpression) is read using the&#xD;&#xA;MaLaC-HD 1.6.0 two-level .value unwrap pattern (valueDecimal → .value).&#xD;&#xA;The arithmetic Q9-hours + (Q9-minutes / 60) is pre-computed by the&#xD;&#xA;questionnaire; this map copies the result without evaluate().&#xD;&#xA;---------------------------------------------------------------------------"/>
     <input>
       <name value="src"/>
       <type value="QR"/>
@@ -202,31 +202,31 @@
       <mode value="target"/>
     </input>
     <rule>
-      <name value="ProcessHoursItem"/>
+      <name value="GetTotalHours"/>
       <source>
         <context value="src"/>
         <element value="item"/>
-        <variable value="hoursItem"/>
-        <condition value="linkId = 'Q9-hours'"/>
+        <variable value="totHours"/>
+        <condition value="linkId = 'Q9-total-hours'"/>
       </source>
       <rule>
-        <name value="ExtractHoursAnswer"/>
+        <name value="GetAnswer"/>
         <source>
-          <context value="hoursItem"/>
+          <context value="totHours"/>
           <element value="answer"/>
-          <variable value="hoursAnswer"/>
+          <variable value="ans"/>
         </source>
         <rule>
-          <name value="ExtractValue"/>
+          <name value="UnwrapDecimal"/>
           <source>
-            <context value="hoursAnswer"/>
-            <element value="valueInteger"/>
-            <variable value="hoursElem"/>
+            <context value="ans"/>
+            <element value="valueDecimal"/>
+            <variable value="decElem"/>
           </source>
           <rule>
             <name value="SetSittingQuantity"/>
             <source>
-              <context value="hoursElem"/>
+              <context value="decElem"/>
               <element value="value"/>
               <variable value="numVal"/>
             </source>

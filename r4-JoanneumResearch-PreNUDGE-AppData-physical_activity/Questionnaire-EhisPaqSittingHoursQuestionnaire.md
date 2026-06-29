@@ -37,7 +37,7 @@ Links:
   "name" : "EhisPaqSittingHoursQuestionnaire",
   "title" : "EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen",
   "status" : "active",
-  "date" : "2026-06-29T14:49:16+00:00",
+  "date" : "2026-06-29T16:38:59+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -110,6 +110,19 @@ Links:
       "text" : "Minuten",
       "type" : "integer",
       "required" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+        "valueExpression" : {
+          "language" : "text/fhirpath",
+          "expression" : "(%resource.item.where(linkId='Q9').item.where(linkId='Q9-hours').answer.valueInteger) + (%resource.item.where(linkId='Q9').item.where(linkId='Q9-minutes').answer.valueInteger / 60)"
+        }
+      }],
+      "linkId" : "Q9-total-hours",
+      "text" : "Gesamtstunden pro Tag (berechnet)",
+      "type" : "decimal",
+      "readOnly" : true
     },
     {
       "linkId" : "Q9-comment",

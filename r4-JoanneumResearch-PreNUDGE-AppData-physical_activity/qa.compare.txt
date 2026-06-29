@@ -442,8 +442,8 @@ ERROR: QuestionnaireResponse/physical-activity-ehispaq-response-example: Questio
 ERROR: QuestionnaireResponse/physical-activity-ehispaq-response-example: QuestionnaireResponse.item[3].item[3].answer[0].value.ofType(string): value cannot be empty
 == fsh-generated/resources/QuestionnaireResponse-sitting-hours-ehis-paq-response-example.json ==
 WARNING: QuestionnaireResponse/sitting-hours-ehis-paq-response-example: QuestionnaireResponse.identifier.system: No definition could be found for URL value 'https://www.joanneum.at'
-ERROR: QuestionnaireResponse/sitting-hours-ehis-paq-response-example: QuestionnaireResponse.item[0].item[2].answer[0].value.ofType(string): Constraint failed: ele-1: 'All FHIR elements must have a @value or children (hasValue() or (children().count() > id.count()))' (defined in http://hl7.org/fhir/StructureDefinition/Element)
-ERROR: QuestionnaireResponse/sitting-hours-ehis-paq-response-example: QuestionnaireResponse.item[0].item[2].answer[0].value.ofType(string): value cannot be empty
+ERROR: QuestionnaireResponse/sitting-hours-ehis-paq-response-example: QuestionnaireResponse.item[0].item[3].answer[0].value.ofType(string): Constraint failed: ele-1: 'All FHIR elements must have a @value or children (hasValue() or (children().count() > id.count()))' (defined in http://hl7.org/fhir/StructureDefinition/Element)
+ERROR: QuestionnaireResponse/sitting-hours-ehis-paq-response-example: QuestionnaireResponse.item[0].item[3].answer[0].value.ofType(string): value cannot be empty
 == fsh-generated/resources/QuestionnaireResponse-sleep-duration-response-normal-example.json ==
 WARNING: QuestionnaireResponse/sleep-duration-response-normal-example: QuestionnaireResponse.identifier.system: No definition could be found for URL value 'https://www.joanneum.at'
 == fsh-generated/resources/QuestionnaireResponse-sleep-duration-response-short-example.json ==
@@ -672,7 +672,7 @@ INFORMATION: StructureMap/SittingHoursQuestionnaireResponseToObservation: Struct
 INFORMATION: StructureMap/SittingHoursQuestionnaireResponseToObservation: StructureMap.group[0].rule[1].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
 INFORMATION: StructureMap/SittingHoursQuestionnaireResponseToObservation: StructureMap.group[0].rule[2].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended
 ERROR: StructureMap/SittingHoursQuestionnaireResponseToObservation: StructureMap.group[0].rule[3].target[0]: The target path tgt.effectiveDateTime refers to the path Observation.effectiveDateTime which is unknown
-ERROR: StructureMap/SittingHoursQuestionnaireResponseToObservation: StructureMap.group[1].rule[0].rule[0].rule[0].source[0]: The source path hoursAnswer.valueInteger refers to the path QuestionnaireResponse.item.answer.valueInteger which is unknown
+ERROR: StructureMap/SittingHoursQuestionnaireResponseToObservation: StructureMap.group[1].rule[0].rule[0].rule[0].source[0]: The source path ans.valueDecimal refers to the path QuestionnaireResponse.item.answer.valueDecimal which is unknown
 INFORMATION: Resource: The resource StructureMap/SittingHoursQuestionnaireResponseToObservation could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == input/maps/at-prenudge-sleep-duration-mapping.map ==
 INFORMATION: StructureMap/SleepDurationQuestionnaireResponseToObservation: StructureMap.group[0].rule[0].source[0]: The source statement doesn't assign a variable to the source - check that this is what is intended

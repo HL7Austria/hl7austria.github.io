@@ -22,8 +22,8 @@ We focus on narrow standardization of the following **PreNUDGE measurements**:
 * **Physical Activity**: 
 * Minutes of moderate and vigorous/intense physical activity (per week) (from [**EHIS-PAQ Q4–Q7 / ATHIS PE4–PE7 questionnaire**](Questionnaire-EhisPaqPhysicalActivityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-physical-activity-minutes-observation.md))
 * Daily activity as Steps per day (from a [**EHIS-PAQ Q2–Q3 / ATHIS PE2–PE3 questionnaire**](Questionnaire-StepCountEhisPaqQuestionnaire.md), [**quantity questionnaire**](Questionnaire-StepCountQuantityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-stepcount-observation.md))
-* ⏳Number of muscle-strengthening exercise sessions (per week) (from [**EHIS-PAQ Q8 / ATHIS PE8 questionnaire**](Questionnaire-EhisPaqMuscleStrengtheningQuestionnaire.md), [**quantity questionnaire**](Questionnaire-MuscleStrengtheningQuantityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-muscle-strengthening-observation.md))
-* ⏳Sitting hours (per day) (from [**EHIS-PAQ Q9 / ATHIS PE9 questionnaire**](Questionnaire-EhisPaqSittingHoursQuestionnaire.md) and (from wearable device) as an [**observation**](StructureDefinition-at-prenudge-sitting-hours-observation.md))
+* Number of muscle-strengthening exercise sessions (per week) (from [**EHIS-PAQ Q8 / ATHIS PE8 questionnaire**](Questionnaire-EhisPaqMuscleStrengtheningQuestionnaire.md), [**quantity questionnaire**](Questionnaire-MuscleStrengtheningQuantityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-muscle-strengthening-observation.md))
+* Sitting hours (per day) (from [**EHIS-PAQ Q9 / ATHIS PE9 questionnaire**](Questionnaire-EhisPaqSittingHoursQuestionnaire.md) and (from wearable device) as an [**observation**](StructureDefinition-at-prenudge-sitting-hours-observation.md))
  
 * **Alcohol consumption** as number of drinks (from a [**questionnaire**](Questionnaire-AlcoholUseQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-alcoholuse-observation.md))
 * **Quality of life** (from a [**questionnaire**](Questionnaire-WhoQolBrefQuestionnaire.md) with a calculated [**score as an observation**](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md))
@@ -88,7 +88,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-29T14:49:16+00:00",
+  "date" : "2026-06-29T16:38:59+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -1077,7 +1077,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-sitting-hours-observation"
       },
       "name" : "AT PreNUDGE Observation Sitting Hours",
-      "description" : "This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Sleep hours must be subtracted by the originating app before recording the value.",
+      "description" : "This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Device-derived sitting hours are computed as: Sitting Hours = 24 h − Active Hours − Sleep Hours, where Active Hours (Stehstunden) are hours in which a person has moved at least once (≥ 50 steps per hour). Sleep hours must be subtracted by the originating app before recording the value.",
       "exampleBoolean" : false
     },
     {
@@ -1533,7 +1533,7 @@ Links:
         "reference" : "QuestionnaireResponse/sitting-hours-ehis-paq-response-example"
       },
       "name" : "EHIS-PAQ Q9 / ATHIS PE9 Sitting Hours Q – Example Response",
-      "description" : "Example QuestionnaireResponse for EhisPaqSittingHoursQuestionnaire: respondent reports 6 hours and 0 minutes of sitting or resting per day (sleep excluded). Corresponds to sitting-hours-questionnaire-derived-example (6.0 h) via SittingHoursQuestionnaireResponseToObservation.",
+      "description" : "Example QuestionnaireResponse for EhisPaqSittingHoursQuestionnaire: respondent reports 6 hours and 30 minutes of sitting or resting per day (sleep excluded). Corresponds to sitting-hours-questionnaire-derived-example (6.5 h) via SittingHoursQuestionnaireResponseToObservation.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {

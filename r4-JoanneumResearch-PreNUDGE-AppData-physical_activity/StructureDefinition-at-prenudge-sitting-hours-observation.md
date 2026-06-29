@@ -12,7 +12,7 @@
 | Draft as of 2026-06-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationSittingHours |
 
  
-This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Sleep hours must be subtracted by the originating app before recording the value. 
+This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Device-derived sitting hours are computed as: Sitting Hours = 24 h − Active Hours − Sleep Hours, where Active Hours (Stehstunden) are hours in which a person has moved at least once (≥ 50 steps per hour). Sleep hours must be subtracted by the originating app before recording the value. 
 
 **Usages:**
 
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationSittingHours",
   "title" : "AT PreNUDGE Observation Sitting Hours",
   "status" : "draft",
-  "date" : "2026-06-29T14:49:16+00:00",
+  "date" : "2026-06-29T16:38:59+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -65,7 +65,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Sleep hours must be subtracted by the originating app before recording the value.",
+  "description" : "This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Device-derived sitting hours are computed as: Sitting Hours = 24 h − Active Hours − Sleep Hours, where Active Hours (Stehstunden) are hours in which a person has moved at least once (≥ 50 steps per hour). Sleep hours must be subtracted by the originating app before recording the value.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",

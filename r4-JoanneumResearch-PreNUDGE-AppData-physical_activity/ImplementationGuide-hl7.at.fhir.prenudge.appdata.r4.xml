@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-06-29T14:49:16+00:00"/>
+  <date value="2026-06-29T16:38:59+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -811,7 +811,7 @@
         <reference value="StructureDefinition/at-prenudge-sitting-hours-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Sitting Hours"/>
-      <description value="This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Sleep hours must be subtracted by the originating app before recording the value."/>
+      <description value="This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Device-derived sitting hours are computed as: Sitting Hours = 24 h − Active Hours − Sleep Hours, where Active Hours (Stehstunden) are hours in which a person has moved at least once (≥ 50 steps per hour). Sleep hours must be subtracted by the originating app before recording the value."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1229,7 +1229,7 @@
         <reference value="QuestionnaireResponse/sitting-hours-ehis-paq-response-example"/>
       </reference>
       <name value="EHIS-PAQ Q9 / ATHIS PE9 Sitting Hours Q – Example Response"/>
-      <description value="Example QuestionnaireResponse for EhisPaqSittingHoursQuestionnaire: respondent reports 6 hours and 0 minutes of sitting or resting per day (sleep excluded). Corresponds to sitting-hours-questionnaire-derived-example (6.0 h) via SittingHoursQuestionnaireResponseToObservation."/>
+      <description value="Example QuestionnaireResponse for EhisPaqSittingHoursQuestionnaire: respondent reports 6 hours and 30 minutes of sitting or resting per day (sleep excluded). Corresponds to sitting-hours-questionnaire-derived-example (6.5 h) via SittingHoursQuestionnaireResponseToObservation."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>

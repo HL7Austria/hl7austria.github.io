@@ -34,7 +34,7 @@ Links:
   "name" : "SittingHoursQuestionnaireResponseToObservation",
   "title" : "Sitting Hours Q to O",
   "status" : "active",
-  "date" : "2026-06-29T14:49:16+00:00",
+  "date" : "2026-06-29T16:38:59+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -168,7 +168,7 @@ Links:
   {
     "name" : "MapQ9ToSittingHours",
     "typeMode" : "none",
-    "documentation" : "---------------------------------------------------------------------------\r\nQ9 → Observation.valueQuantity (h)\r\nOnly Q9-hours (integer) is mapped to Observation.valueQuantity.value.\r\nQ9-minutes is not included because MaLaC-HD does not support evaluate()\r\nwith complex FHIRPath expressions (arithmetic or multi-token paths).\r\nSub-hour precision requires an engine that supports evaluate(), e.g. matchbox.\r\n---------------------------------------------------------------------------",
+    "documentation" : "---------------------------------------------------------------------------\r\nQ9 → Observation.valueQuantity (h)\r\nQ9-total-hours (decimal, SDC calculatedExpression) is read using the\r\nMaLaC-HD 1.6.0 two-level .value unwrap pattern (valueDecimal → .value).\r\nThe arithmetic Q9-hours + (Q9-minutes / 60) is pre-computed by the\r\nquestionnaire; this map copies the result without evaluate().\r\n---------------------------------------------------------------------------",
     "input" : [{
       "name" : "src",
       "type" : "QR",
@@ -180,31 +180,31 @@ Links:
       "mode" : "target"
     }],
     "rule" : [{
-      "name" : "ProcessHoursItem",
+      "name" : "GetTotalHours",
       "source" : [{
         "context" : "src",
         "element" : "item",
-        "variable" : "hoursItem",
-        "condition" : "linkId = 'Q9-hours'"
+        "variable" : "totHours",
+        "condition" : "linkId = 'Q9-total-hours'"
       }],
       "rule" : [{
-        "name" : "ExtractHoursAnswer",
+        "name" : "GetAnswer",
         "source" : [{
-          "context" : "hoursItem",
+          "context" : "totHours",
           "element" : "answer",
-          "variable" : "hoursAnswer"
+          "variable" : "ans"
         }],
         "rule" : [{
-          "name" : "ExtractValue",
+          "name" : "UnwrapDecimal",
           "source" : [{
-            "context" : "hoursAnswer",
-            "element" : "valueInteger",
-            "variable" : "hoursElem"
+            "context" : "ans",
+            "element" : "valueDecimal",
+            "variable" : "decElem"
           }],
           "rule" : [{
             "name" : "SetSittingQuantity",
             "source" : [{
-              "context" : "hoursElem",
+              "context" : "decElem",
               "element" : "value",
               "variable" : "numVal"
             }],

@@ -266,19 +266,19 @@
 
 </span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <span style="color: navy">// </span><span style="color: green">Q9 → Observation.valueQuantity (h)</span>
-<span style="color: navy">// </span><span style="color: green">Only Q9-hours (integer) is mapped to Observation.valueQuantity.value.</span>
-<span style="color: navy">// </span><span style="color: green">Q9-minutes is not included because MaLaC-HD does not support evaluate()</span>
-<span style="color: navy">// </span><span style="color: green">with complex FHIRPath expressions (arithmetic or multi-token paths).</span>
-<span style="color: navy">// </span><span style="color: green">Sub-hour precision requires an engine that supports evaluate(), e.g. matchbox.</span>
+<span style="color: navy">// </span><span style="color: green">Q9-total-hours (decimal, SDC calculatedExpression) is read using the</span>
+<span style="color: navy">// </span><span style="color: green">MaLaC-HD 1.6.0 two-level .value unwrap pattern (valueDecimal → .value).</span>
+<span style="color: navy">// </span><span style="color: green">The arithmetic Q9-hours + (Q9-minutes / 60) is pre-computed by the</span>
+<span style="color: navy">// </span><span style="color: green">questionnaire; this map copies the result without evaluate().</span>
 <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <b>group </b>MapQ9ToSittingHours<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  src.item<b> as </b><span style="color: maroon">hoursItem</span><b> where </b>linkId = 'Q9-hours'<b> then</b><span style="color: navy"> {
-</span>    hoursItem.answer<b> as </b><span style="color: maroon">hoursAnswer</span><b> then</b><span style="color: navy"> {
-</span>      hoursAnswer.valueInteger<b> as </b><span style="color: maroon">hoursElem</span><b> then</b><span style="color: navy"> {
-</span>        hoursElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'h'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'h'</span> <i>&quot;SetSittingQuantity&quot;</i><span style="color: navy">;</span>
-      <span style="color: navy">}</span> <i>&quot;ExtractValue&quot;</i><span style="color: navy">;</span>
-    <span style="color: navy">}</span> <i>&quot;ExtractHoursAnswer&quot;</i><span style="color: navy">;</span>
-  <span style="color: navy">}</span> <i>&quot;ProcessHoursItem&quot;</i><span style="color: navy">;</span>
+</span>  src.item<b> as </b><span style="color: maroon">totHours</span><b> where </b>linkId = 'Q9-total-hours'<b> then</b><span style="color: navy"> {
+</span>    totHours.answer<b> as </b><span style="color: maroon">ans</span><b> then</b><span style="color: navy"> {
+</span>      ans.valueDecimal<b> as </b><span style="color: maroon">decElem</span><b> then</b><span style="color: navy"> {
+</span>        decElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'h'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'h'</span> <i>&quot;SetSittingQuantity&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;UnwrapDecimal&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;GetAnswer&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;GetTotalHours&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -306,7 +306,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 29, 2026 14:49+0000">2026-06-29</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 29, 2026 16:38+0000">2026-06-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
