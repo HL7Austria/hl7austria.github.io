@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-06-29T10:47:49+00:00"/>
+  <date value="2026-06-29T16:58:51+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -588,6 +588,17 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/at-prenudge-physicalactivity-codesystem-ehispaq"/>
+      </reference>
+      <name value="AT PreNUDGE EHIS-PAQ Answer Set"/>
+      <description value="Consolidated CodeSystem for all options from the EHIS-PAQ questionnaires (European Health Interview Survey Physical Activity Questionnaire) used in PreNUDGE. Contains two answer scales: days per week (Q4, Q6 in EhisPaqPhysicalActivityQuestionnaire; also Q2 in StepCountEhisPaqQuestionnaire) and activity duration per day (Q3 in StepCountEhisPaqQuestionnaire, Q5 in EhisPaqPhysicalActivityQuestionnaire). Codes are in English; display values remain in German."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/prenudge-isced-2011-education-level"/>
       </reference>
       <name value="AT PreNUDGE ISCED 2011 Education Level Codes"/>
@@ -720,6 +731,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/at-prenudge-muscle-strengthening-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Muscle Strengthening Sessions"/>
+      <description value="This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/at-prenudge-nutrition-fruitportions-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Nutrition Fruit Portions"/>
@@ -768,6 +790,28 @@
       </reference>
       <name value="AT PreNUDGE Observation Other Quantities"/>
       <description value="This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifying a new Observation is missing, please contact prenudge@joanneum.at."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Physical Activity Minutes"/>
+      <description value="Observation profile for recording physical activity duration as a panel&#xA;(moderate, vigorous, aggregate components) derived from either a wearable device or&#xA;the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combinations:&#xA;  (a) aggregate only           — questionnaire source (Q7/PE7 → aggregateActivity)&#xA;  (b) moderate only            — manual source; vigorous implicitly 0,&#xA;                                 aggregate = moderateActivity (pa-agg-01 warning&#xA;                                 if aggregateActivity absent)&#xA;  (c) moderate + aggregate     — partial wearable or manual source&#xA;  (d) vigorous + aggregate     — partial wearable source&#xA;  (e) all three                — full wearable source."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-prenudge-sitting-hours-observation"/>
+      </reference>
+      <name value="AT PreNUDGE Observation Sitting Hours"/>
+      <description value="This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Device-derived sitting hours are computed as: Sitting Hours = 24 h − Active Hours − Sleep Hours, where Active Hours (Stehstunden) are hours in which a person has moved at least once (≥ 50 steps per hour). Sleep hours must be subtracted by the originating app before recording the value."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -856,6 +900,28 @@
       </reference>
       <name value="AT PreNUDGE Other Observations Units"/>
       <description value="Allowed UCUM units for the 'Other' observation profile."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-prenudge-physical-activity-classification-method-cs"/>
+      </reference>
+      <name value="AT PreNUDGE Physical Activity Classification Method CodeSystem"/>
+      <description value="Codes for the algorithm or technique used to classify the intensity of a physical activity measurement into moderate / vigorous categories."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/prenudge-physical-activity-classification-method-vs"/>
+      </reference>
+      <name value="AT PreNUDGE Physical Activity Classification Method ValueSet"/>
+      <description value="ValueSet containing all codes from the AT PreNUDGE Physical Activity Classification Method CodeSystem. Used as the required binding for component[classificationMethod].value[x] in the AT PreNUDGE Observation Physical Activity Minutes profile."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1124,13 +1190,79 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/physical-activity-ehispaq-response-example"/>
+      </reference>
+      <name value="EHIS-PAQ Q7 / ATHIS PE7 Physical Activity - Example Response"/>
+      <description value="Example EHIS-PAQ Q7 / ATHIS PE7 physical activity questionnaire response:&#xA;Q4 = 3 Tage pro Woche (Fahrrad, Transport),&#xA;Q5 = 30 bis 59 Minuten pro Tag (Fahrrad),&#xA;Q6 = 5 Tage pro Woche (Freizeit-Sport),&#xA;Q7 = 2 Stunden 30 Minuten (= 150 min/Woche).&#xA;Q7 maps to physical-activity-questionnaire-example via the StructureMap."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/muscle-strengthening-ehis-paq-response-example"/>
+      </reference>
+      <name value="EHIS-PAQ Q8 / ATHIS PE8 Muscle Strengthening Q - Example Response"/>
+      <description value="Example QuestionnaireResponse for EhisPaqMuscleStrengtheningQuestionnaire: respondent selects 3 days per week of muscle-strengthening exercise."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/EhisPaqMuscleStrengtheningQuestionnaire"/>
+      </reference>
+      <name value="EHIS-PAQ Q8 / ATHIS PE8: Muskelkräftigungsübungen"/>
+      <description value="EHIS-PAQ Q8 / ATHIS PE8: number of&#xA;days per week on which the respondent performs physical activities specifically aimed at&#xA;building or strengthening muscles (e.g. weight training, resistance-band exercises,&#xA;bodyweight exercises, squats, push-ups, sit-ups). Answer options use existing ATHIS&#xA;CodeSystem codes activity-1-day through activity-7-days. Two mapping paths to&#xA;AtPrenudgeObservationMuscleStrengthening are available: (1) directly from this&#xA;questionnaire via MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation&#xA;(translates coded day-count to numeric sessions/wk: 1 day = 1 session/wk, …, 7 days&#xA;= 7 sessions/wk); (2) via MuscleStrengtheningQuantityQuestionnaire and&#xA;MuscleStrengtheningQuestionnaireResponseToObservation when a numeric quantity answer&#xA;is preferred."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/sitting-hours-ehis-paq-response-example"/>
+      </reference>
+      <name value="EHIS-PAQ Q9 / ATHIS PE9 Sitting Hours Q – Example Response"/>
+      <description value="Example QuestionnaireResponse for EhisPaqSittingHoursQuestionnaire: respondent reports 6 hours and 30 minutes of sitting or resting per day (sleep excluded). Corresponds to sitting-hours-questionnaire-derived-example (6.5 h) via SittingHoursQuestionnaireResponseToObservation."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/EhisPaqSittingHoursQuestionnaire"/>
+      </reference>
+      <name value="EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen"/>
+      <description value="EHIS-PAQ Q9 / ATHIS PE9: total time spent sitting or resting on a&#xA;typical day (excluding sleep), captured as two integer sub-items (hours 0–23,&#xA;minutes 0–60). Mapped to AtPrenudgeObservationSittingHours via&#xA;SittingHoursQuestionnaireResponseToObservation (hours + minutes/60 → valueQuantity&#xA;in h)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/EhisPaqPhysicalActivityQuestionnaire"/>
+      </reference>
+      <name value="EHIS-PAQ/ATHIS: Körperliche Aktivität"/>
+      <description value="Questions Q4–Q7 from the European Health Interview Survey Physical Activity&#xA;Questionnaire (EHIS-PAQ), equivalent to ATHIS PE4–PE7: cycling for transport&#xA;(Q4/PE4: days per week, Q5/PE5: duration per day), leisure sport and physical&#xA;activity in leisure time (Q6/PE6: days per week, Q7/PE7: total duration per week).&#xA;Q7 is mapped to Observation via PhysicalActivityMinutesQtoO;&#xA;Q4–Q6 are captured only."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
         <reference value="Questionnaire/StepCountEhisPaqQuestionnaire"/>
       </reference>
-      <name value="EHIS-PAQ: Zu-Fuß-Gehen"/>
-      <description value="The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week."/>
+      <name value="EHIS-PAQ/ATHIS: Zu-Fuß-Gehen"/>
+      <description value="Questions Q2–Q3 from the European Health Interview Survey Physical Activity&#xA;Questionnaire (EHIS-PAQ), equivalent to ATHIS PE2–PE3: number of days per week on&#xA;which the respondent walks for transport (Q2/PE2, integer 0–7) and the typical&#xA;duration of that walking per day (Q3/PE3, coded using ATHIS group 9 answer set)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1164,6 +1296,61 @@
       </reference>
       <name value="Körpergröße, Körpergewicht und Body Mass Index (BMI)"/>
       <description value="Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/muscle-strengthening-wearable-derived-example"/>
+      </reference>
+      <name value="Muscle Strengthening Sessions O - Wearable Automated Example"/>
+      <description value="Example of an automatically detected muscle strengthening sessions count (5 sessions per week) measured by a wearable fitness tracker."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/muscle-strengthening-ehis-paq-derived-example"/>
+      </reference>
+      <name value="Muscle Strengthening Sessions O mapped from EHIS-PAQ Q8 / ATHIS PE8 - Example"/>
+      <description value="Example of a self-reported muscle strengthening sessions count (3 sessions per week) derived from EhisPaqMuscleStrengtheningQuestionnaire via MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation. ATHIS code activity-3-days is translated to the numeric value 3."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/muscle-strengthening-questionnaire-derived-example"/>
+      </reference>
+      <name value="Muscle Strengthening Sessions O mapped from Q - Example"/>
+      <description value="Example of a self-reported muscle strengthening sessions count (3 sessions per week) derived from MuscleStrengtheningQuantityQuestionnaire."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="QuestionnaireResponse"/>
+      </extension>
+      <reference>
+        <reference value="QuestionnaireResponse/muscle-strengthening-quantity-response-example"/>
+      </reference>
+      <name value="Muscle Strengthening Sessions Q - Example Response"/>
+      <description value="Example QuestionnaireResponse for MuscleStrengtheningQuantityQuestionnaire: respondent reports 3 muscle-strengthening exercise sessions per week."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Questionnaire"/>
+      </extension>
+      <reference>
+        <reference value="Questionnaire/MuscleStrengtheningQuantityQuestionnaire"/>
+      </reference>
+      <name value="Muskelkräftigungs-Trainingseinheiten pro Woche (numerisch)"/>
+      <description value="A numeric questionnaire for directly entering the number of muscle-strengthening exercise sessions per week. Designed for direct FML mapping to the AT PreNUDGE Observation Muscle Strengthening Sessions profile via MuscleStrengtheningQuestionnaireResponseToObservation. Use EhisPaqMuscleStrengtheningQuestionnaire for the categorical EHIS-PAQ Q8 / ATHIS PE8 representation."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1278,6 +1465,72 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/physical-activity-minutes-aggregate-only-example"/>
+      </reference>
+      <name value="Physical Activity Minutes O - (a) Aggregate Only (Manual)"/>
+      <description value="Scenario (a): only component[aggregateActivity] is present.&#xA;Typical for a questionnaire-derived observation that asks only for total activity&#xA;time without splitting moderate and vigorous.  pa-agg-01 passes silently because&#xA;neither moderate nor vigorous is present."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/physical-activity-minutes-moderate-only-example"/>
+      </reference>
+      <name value="Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 warning)"/>
+      <description value="Scenario (b): only component[moderateActivity] is present; aggregate absent.&#xA;pa-agg-01 fires a WARNING because moderateActivity is present but aggregateActivity&#xA;is not.  The aggregate should equal moderateActivity + (0 × 2) = 150 min/wk;&#xA;a sender should add component[aggregateActivity] = 150 min/wk to suppress the warning.&#xA;This scenario may arise when a source captures moderate activity but omits the aggregate."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/physical-activity-minutes-moderate-aggregate-example"/>
+      </reference>
+      <name value="Physical Activity Minutes O - (c) Moderate + Aggregate (Manual)"/>
+      <description value="Scenario (c): component[moderateActivity] and component[aggregateActivity] present;&#xA;vigorousActivity absent (implicitly 0).  aggregateActivity = moderateActivity + (0 × 2) = 90 min/wk.&#xA;pa-agg-01 is satisfied.  Typical for a structured questionnaire that reports&#xA;moderate-intensity activity separately and includes the computed aggregate."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/physical-activity-minutes-vigorous-aggregate-example"/>
+      </reference>
+      <name value="Physical Activity Minutes O - (d) Vigorous + Aggregate (Automated, HRZ)"/>
+      <description value="Scenario (d): component[vigorousActivity] and component[aggregateActivity] present;&#xA;moderateActivity absent (implicitly 0).  aggregateActivity = 0 + (vigorousActivity × 2) = 150 min/wk.&#xA;classificationMethod = hrz (Heart Rate Zones, moderate 50–70% HRmax; vigorous &gt;70% HRmax).&#xA;Typical for a wearable that identifies only vigorous bouts via heart rate but does not&#xA;separately count moderate bouts."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/physical-activity-minutes-all-components-example"/>
+      </reference>
+      <name value="Physical Activity Minutes O - (e) All Three Components (Automated, MET-Cal)"/>
+      <description value="Scenario (e): all three Quantity components present.&#xA;moderateActivity = 120 min/wk, vigorousActivity = 60 min/wk,&#xA;aggregateActivity = 120 + (60 × 2) = 240 min/wk.&#xA;classificationMethod = met-cal (MET estimated from accelerometer / VO2 proxy).&#xA;This is the richest Observation variant, produced by a full wearable pipeline&#xA;that computes both intensity levels and the WHO/IPAQ weighted aggregate."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/physical-activity-minutes-ehispaq-q7-mapped-example"/>
+      </reference>
+      <name value="Physical Activity Minutes O - (f) EHIS-PAQ/ATHIS Q7/PE7 Mapped (Aggregate Only)"/>
+      <description value="Scenario (f): Observation produced by applying&#xA;PhysicalActivityMinutesQtoO to&#xA;physical-activity-ehispaq-response-example.&#xA;Q7/PE7 answer: 2 Stunden + 30 Minuten → aggregateActivity = (2×60)+30 = 150 min/wk.&#xA;No intensity weighting is applied because Q7 does not separate moderate from&#xA;vigorous activity.  derivedFrom links back to the source QuestionnaireResponse.&#xA;classificationMethod is absent; pa-manual-comp-01 is satisfied by absence."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Questionnaire"/>
       </extension>
       <reference>
@@ -1286,6 +1539,17 @@
       <name value="Portionen Obst und Gemüse pro Tag"/>
       <description value="Questionnaire based on ATHIS 2025 questions DH1–DH4 (STATISTIK AUSTRIA) to self-report daily portions of fruit and vegetables. DH2 is only enabled when DH1 = 'Täglich oder mehrmals täglich'; DH4 is only enabled when DH3 = 'Täglich oder mehrmals täglich'."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/device-wearable-example"/>
+      </reference>
+      <name value="PreNUDGE Wearable Device Example"/>
+      <description value="Example of a wearable fitness tracker referenced from the physical activity wearable observation example."/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1319,6 +1583,28 @@
       <name value="Schrittzahl am heutigen Tag"/>
       <description value="A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sitting-hours-questionnaire-derived-example"/>
+      </reference>
+      <name value="Sitting Hours O mapped from EHIS-PAQ Q9 / ATHIS PE9 – Example"/>
+      <description value="Example of a self-reported sitting/resting duration (6.0 h per day, sleep excluded) derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/sitting-hours-wearable-example"/>
+      </reference>
+      <name value="Sitting Hours O – Wearable Automated Example"/>
+      <description value="Example of an automatically measured sitting/resting duration (6.0 h per day, sleep excluded) derived from a wearable device."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1695,6 +1981,26 @@
         <valueString value="StructureMap"/>
       </extension>
       <reference>
+        <reference value="StructureMap/MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation"/>
+      </reference>
+      <name value="Muscle Strengthening EHIS-PAQ Q8 / ATHIS PE8 to O"/>
+      <description value="Muscle Strengthening EHIS-PAQ Q8 / ATHIS PE8 to O"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/MuscleStrengtheningQuestionnaireResponseToObservation"/>
+      </reference>
+      <name value="Muscle Strengthening Sessions Q to O"/>
+      <description value="Muscle Strengthening Sessions Q to O"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
         <reference value="StructureMap/NutritionFruitPortionsQuestionnaireResponseToObservation"/>
       </reference>
       <name value="Nutrition Fruit Portions Q to O"/>
@@ -1725,6 +2031,16 @@
         <valueString value="StructureMap"/>
       </extension>
       <reference>
+        <reference value="StructureMap/PhysicalActivityMinutesQtoO"/>
+      </reference>
+      <name value="Physical Activity Minutes Q to O"/>
+      <description value="Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
         <reference value="StructureMap/QuestionnaireResponseToObservationBase"/>
       </reference>
       <name value="Shared base for Q to O"/>
@@ -1739,6 +2055,16 @@
       </reference>
       <name value="WHOQOL-BREF Q score to O score"/>
       <description value="WHOQOL-BREF Q score to O score"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureMap"/>
+      </extension>
+      <reference>
+        <reference value="StructureMap/SittingHoursQuestionnaireResponseToObservation"/>
+      </reference>
+      <name value="Sitting Hours Q to O"/>
+      <description value="Sitting Hours EHIS-PAQ Q9 / ATHIS PE9 to O"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

@@ -229,11 +229,60 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Questionnaire-StepCountEhisPaqQuestionnaire.html"
-                  title="Questionnaire/StepCountEhisPaqQuestionnaire">EHIS-PAQ: Zu-Fuß-Gehen</a>
+               <a href="Questionnaire-EhisPaqMuscleStrengtheningQuestionnaire.html"
+                  title="Questionnaire/EhisPaqMuscleStrengtheningQuestionnaire">EHIS-PAQ Q8 / ATHIS PE8: Muskelkräftigungsübungen</a>
             </td>
             <td>
-<p>The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week.</p>
+<p>EHIS-PAQ Q8 / ATHIS PE8: number of
+days per week on which the respondent performs physical activities specifically aimed at
+building or strengthening muscles (e.g. weight training, resistance-band exercises,
+bodyweight exercises, squats, push-ups, sit-ups). Answer options use existing ATHIS
+CodeSystem codes activity-1-day through activity-7-days. Two mapping paths to
+AtPrenudgeObservationMuscleStrengthening are available: (1) directly from this
+questionnaire via MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation
+(translates coded day-count to numeric sessions/wk: 1 day = 1 session/wk, …, 7 days
+= 7 sessions/wk); (2) via MuscleStrengtheningQuantityQuestionnaire and
+MuscleStrengtheningQuestionnaireResponseToObservation when a numeric quantity answer
+is preferred.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-EhisPaqSittingHoursQuestionnaire.html"
+                  title="Questionnaire/EhisPaqSittingHoursQuestionnaire">EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen</a>
+            </td>
+            <td>
+<p>EHIS-PAQ Q9 / ATHIS PE9: total time spent sitting or resting on a
+typical day (excluding sleep), captured as two integer sub-items (hours 0–23,
+minutes 0–60). Mapped to AtPrenudgeObservationSittingHours via
+SittingHoursQuestionnaireResponseToObservation (hours + minutes/60 → valueQuantity
+in h).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-EhisPaqPhysicalActivityQuestionnaire.html"
+                  title="Questionnaire/EhisPaqPhysicalActivityQuestionnaire">EHIS-PAQ/ATHIS: Körperliche Aktivität</a>
+            </td>
+            <td>
+<p>Questions Q4–Q7 from the European Health Interview Survey Physical Activity
+Questionnaire (EHIS-PAQ), equivalent to ATHIS PE4–PE7: cycling for transport
+(Q4/PE4: days per week, Q5/PE5: duration per day), leisure sport and physical
+activity in leisure time (Q6/PE6: days per week, Q7/PE7: total duration per week).
+Q7 is mapped to Observation via PhysicalActivityMinutesQtoO;
+Q4–Q6 are captured only.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-StepCountEhisPaqQuestionnaire.html"
+                  title="Questionnaire/StepCountEhisPaqQuestionnaire">EHIS-PAQ/ATHIS: Zu-Fuß-Gehen</a>
+            </td>
+            <td>
+<p>Questions Q2–Q3 from the European Health Interview Survey Physical Activity
+Questionnaire (EHIS-PAQ), equivalent to ATHIS PE2–PE3: number of days per week on
+which the respondent walks for transport (Q2/PE2, integer 0–7) and the typical
+duration of that walking per day (Q3/PE3, coded using ATHIS group 9 answer set).</p>
 </td>
          </tr>
          <tr>
@@ -261,6 +310,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-MuscleStrengtheningQuantityQuestionnaire.html"
+                  title="Questionnaire/MuscleStrengtheningQuantityQuestionnaire">Muskelkräftigungs-Trainingseinheiten pro Woche (numerisch)</a>
+            </td>
+            <td>
+<p>A numeric questionnaire for directly entering the number of muscle-strengthening exercise sessions per week. Designed for direct FML mapping to the AT PreNUDGE Observation Muscle Strengthening Sessions profile via MuscleStrengtheningQuestionnaireResponseToObservation. Use EhisPaqMuscleStrengtheningQuestionnaire for the categorical EHIS-PAQ Q8 / ATHIS PE8 representation.</p>
 </td>
          </tr>
          <tr>
@@ -398,6 +456,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-muscle-strengthening-observation.html"
+                  title="StructureDefinition/at-prenudge-muscle-strengthening-observation">AT PreNUDGE Observation Muscle Strengthening Sessions</a>
+            </td>
+            <td>
+<p>This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-at-prenudge-nutrition-fruitportions-observation.html"
                   title="StructureDefinition/at-prenudge-nutrition-fruitportions-observation">AT PreNUDGE Observation Nutrition Fruit Portions</a>
             </td>
@@ -439,6 +506,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-physical-activity-minutes-observation.html"
+                  title="StructureDefinition/at-prenudge-physical-activity-minutes-observation">AT PreNUDGE Observation Physical Activity Minutes</a>
+            </td>
+            <td>
+<p>Observation profile for recording physical activity duration as a panel
+(moderate, vigorous, aggregate components) derived from either a wearable device or
+the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combinations:
+  (a) aggregate only           — questionnaire source (Q7/PE7 → aggregateActivity)
+  (b) moderate only            — manual source; vigorous implicitly 0,
+                                 aggregate = moderateActivity (pa-agg-01 warning
+                                 if aggregateActivity absent)
+  (c) moderate + aggregate     — partial wearable or manual source
+  (d) vigorous + aggregate     — partial wearable source
+  (e) all three                — full wearable source.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-sitting-hours-observation.html"
+                  title="StructureDefinition/at-prenudge-sitting-hours-observation">AT PreNUDGE Observation Sitting Hours</a>
+            </td>
+            <td>
+<p>This FHIR profile defines the Sitting Hours Observation recording the average number of sitting or resting hours per day (excluding sleep). Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation (method = Manual). Device-derived sitting hours are computed as: Sitting Hours = 24 h − Active Hours − Sleep Hours, where Active Hours (Stehstunden) are hours in which a person has moved at least once (≥ 50 steps per hour). Sleep hours must be subtracted by the originating app before recording the value.</p>
 </td>
          </tr>
          <tr>
@@ -586,6 +680,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-prenudge-physical-activity-classification-method-vs.html"
+                  title="ValueSet/prenudge-physical-activity-classification-method-vs">AT PreNUDGE Physical Activity Classification Method ValueSet</a>
+            </td>
+            <td>
+<p>ValueSet containing all codes from the AT PreNUDGE Physical Activity Classification Method CodeSystem. Used as the required binding for component[classificationMethod].value[x] in the AT PreNUDGE Observation Physical Activity Minutes profile.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-prenudge-wai-physical-demands-answer.html"
                   title="ValueSet/prenudge-wai-physical-demands-answer">AT PreNUDGE WAI Physical Demands Answer ValueSet</a>
             </td>
@@ -612,11 +715,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
+               <a href="CodeSystem-at-prenudge-physicalactivity-codesystem-ehispaq.html"
+                  title="CodeSystem/at-prenudge-physicalactivity-codesystem-ehispaq">AT PreNUDGE EHIS-PAQ Answer Set</a>
+            </td>
+            <td>
+<p>Consolidated CodeSystem for all options from the EHIS-PAQ questionnaires (European Health Interview Survey Physical Activity Questionnaire) used in PreNUDGE. Contains two answer scales: days per week (Q4, Q6 in EhisPaqPhysicalActivityQuestionnaire; also Q2 in StepCountEhisPaqQuestionnaire) and activity duration per day (Q3 in StepCountEhisPaqQuestionnaire, Q5 in EhisPaqPhysicalActivityQuestionnaire). Codes are in English; display values remain in German.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="CodeSystem-prenudge-isced-2011-education-level.html"
                   title="CodeSystem/prenudge-isced-2011-education-level">AT PreNUDGE ISCED 2011 Education Level Codes</a>
             </td>
             <td>
 <p>Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-at-prenudge-physical-activity-classification-method-cs.html"
+                  title="CodeSystem/at-prenudge-physical-activity-classification-method-cs">AT PreNUDGE Physical Activity Classification Method CodeSystem</a>
+            </td>
+            <td>
+<p>Codes for the algorithm or technique used to classify the intensity of a physical activity measurement into moderate / vigorous categories.</p>
 </td>
          </tr>
          <tr>
@@ -709,6 +830,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureMap-MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation.html"
+                  title="StructureMap/MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation">Muscle Strengthening EHIS-PAQ Q8 / ATHIS PE8 to O</a>
+            </td>
+            <td>
+<p>Muscle Strengthening EHIS-PAQ Q8 / ATHIS PE8 to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-MuscleStrengtheningQuestionnaireResponseToObservation.html"
+                  title="StructureMap/MuscleStrengtheningQuestionnaireResponseToObservation">Muscle Strengthening Sessions Q to O</a>
+            </td>
+            <td>
+<p>Muscle Strengthening Sessions Q to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureMap-NutritionFruitPortionsQuestionnaireResponseToObservation.html"
                   title="StructureMap/NutritionFruitPortionsQuestionnaireResponseToObservation">Nutrition Fruit Portions Q to O</a>
             </td>
@@ -736,11 +875,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureMap-PhysicalActivityMinutesQtoO.html"
+                  title="StructureMap/PhysicalActivityMinutesQtoO">Physical Activity Minutes Q to O</a>
+            </td>
+            <td>
+<p>Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureMap-QuestionnaireResponseToObservationBase.html"
                   title="StructureMap/QuestionnaireResponseToObservationBase">Shared base for Q to O</a>
             </td>
             <td>
 <p>Shared base for Q to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-SittingHoursQuestionnaireResponseToObservation.html"
+                  title="StructureMap/SittingHoursQuestionnaireResponseToObservation">Sitting Hours Q to O</a>
+            </td>
+            <td>
+<p>Sitting Hours EHIS-PAQ Q9 / ATHIS PE9 to O</p>
 </td>
          </tr>
          <tr>
@@ -948,6 +1105,38 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="QuestionnaireResponse-physical-activity-ehispaq-response-example.html"
+                  title="QuestionnaireResponse/physical-activity-ehispaq-response-example">EHIS-PAQ Q7 / ATHIS PE7 Physical Activity - Example Response</a>
+            </td>
+            <td>
+<p>Example EHIS-PAQ Q7 / ATHIS PE7 physical activity questionnaire response:
+Q4 = 3 Tage pro Woche (Fahrrad, Transport),
+Q5 = 30 bis 59 Minuten pro Tag (Fahrrad),
+Q6 = 5 Tage pro Woche (Freizeit-Sport),
+Q7 = 2 Stunden 30 Minuten (= 150 min/Woche).
+Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-muscle-strengthening-ehis-paq-response-example.html"
+                  title="QuestionnaireResponse/muscle-strengthening-ehis-paq-response-example">EHIS-PAQ Q8 / ATHIS PE8 Muscle Strengthening Q - Example Response</a>
+            </td>
+            <td>
+<p>Example QuestionnaireResponse for EhisPaqMuscleStrengtheningQuestionnaire: respondent selects 3 days per week of muscle-strengthening exercise.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-sitting-hours-ehis-paq-response-example.html"
+                  title="QuestionnaireResponse/sitting-hours-ehis-paq-response-example">EHIS-PAQ Q9 / ATHIS PE9 Sitting Hours Q – Example Response</a>
+            </td>
+            <td>
+<p>Example QuestionnaireResponse for EhisPaqSittingHoursQuestionnaire: respondent reports 6 hours and 30 minutes of sitting or resting per day (sleep excluded). Corresponds to sitting-hours-questionnaire-derived-example (6.5 h) via SittingHoursQuestionnaireResponseToObservation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-education-bachelor-example.html"
                   title="Observation/education-bachelor-example">Education O mapped from Q - Bachelor's Level Example</a>
             </td>
@@ -980,6 +1169,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Example of a highest completed education questionnaire response using ISCED 2011 level 3.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-muscle-strengthening-wearable-derived-example.html"
+                  title="Observation/muscle-strengthening-wearable-derived-example">Muscle Strengthening Sessions O - Wearable Automated Example</a>
+            </td>
+            <td>
+<p>Example of an automatically detected muscle strengthening sessions count (5 sessions per week) measured by a wearable fitness tracker.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-muscle-strengthening-ehis-paq-derived-example.html"
+                  title="Observation/muscle-strengthening-ehis-paq-derived-example">Muscle Strengthening Sessions O mapped from EHIS-PAQ Q8 / ATHIS PE8 - Example</a>
+            </td>
+            <td>
+<p>Example of a self-reported muscle strengthening sessions count (3 sessions per week) derived from EhisPaqMuscleStrengtheningQuestionnaire via MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation. ATHIS code activity-3-days is translated to the numeric value 3.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-muscle-strengthening-questionnaire-derived-example.html"
+                  title="Observation/muscle-strengthening-questionnaire-derived-example">Muscle Strengthening Sessions O mapped from Q - Example</a>
+            </td>
+            <td>
+<p>Example of a self-reported muscle strengthening sessions count (3 sessions per week) derived from MuscleStrengtheningQuantityQuestionnaire.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-muscle-strengthening-quantity-response-example.html"
+                  title="QuestionnaireResponse/muscle-strengthening-quantity-response-example">Muscle Strengthening Sessions Q - Example Response</a>
+            </td>
+            <td>
+<p>Example QuestionnaireResponse for MuscleStrengtheningQuantityQuestionnaire: respondent reports 3 muscle-strengthening exercise sessions per week.</p>
 </td>
          </tr>
          <tr>
@@ -1070,6 +1295,112 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Example of 2 daily vegetable and salad portions, derived from a questionnaire response (daily eater, DH4 = 2).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-physical-activity-minutes-aggregate-only-example.html"
+                  title="Observation/physical-activity-minutes-aggregate-only-example">Physical Activity Minutes O - (a) Aggregate Only (Manual)</a>
+            </td>
+            <td>
+<p>Scenario (a): only component[aggregateActivity] is present.
+Typical for a questionnaire-derived observation that asks only for total activity
+time without splitting moderate and vigorous.  pa-agg-01 passes silently because
+neither moderate nor vigorous is present.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-physical-activity-minutes-moderate-only-example.html"
+                  title="Observation/physical-activity-minutes-moderate-only-example">Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 warning)</a>
+            </td>
+            <td>
+<p>Scenario (b): only component[moderateActivity] is present; aggregate absent.
+pa-agg-01 fires a WARNING because moderateActivity is present but aggregateActivity
+is not.  The aggregate should equal moderateActivity + (0 × 2) = 150 min/wk;
+a sender should add component[aggregateActivity] = 150 min/wk to suppress the warning.
+This scenario may arise when a source captures moderate activity but omits the aggregate.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-physical-activity-minutes-moderate-aggregate-example.html"
+                  title="Observation/physical-activity-minutes-moderate-aggregate-example">Physical Activity Minutes O - (c) Moderate + Aggregate (Manual)</a>
+            </td>
+            <td>
+<p>Scenario (c): component[moderateActivity] and component[aggregateActivity] present;
+vigorousActivity absent (implicitly 0).  aggregateActivity = moderateActivity + (0 × 2) = 90 min/wk.
+pa-agg-01 is satisfied.  Typical for a structured questionnaire that reports
+moderate-intensity activity separately and includes the computed aggregate.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-physical-activity-minutes-vigorous-aggregate-example.html"
+                  title="Observation/physical-activity-minutes-vigorous-aggregate-example">Physical Activity Minutes O - (d) Vigorous + Aggregate (Automated, HRZ)</a>
+            </td>
+            <td>
+<p>Scenario (d): component[vigorousActivity] and component[aggregateActivity] present;
+moderateActivity absent (implicitly 0).  aggregateActivity = 0 + (vigorousActivity × 2) = 150 min/wk.
+classificationMethod = hrz (Heart Rate Zones, moderate 50–70% HRmax; vigorous &gt;70% HRmax).
+Typical for a wearable that identifies only vigorous bouts via heart rate but does not
+separately count moderate bouts.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-physical-activity-minutes-all-components-example.html"
+                  title="Observation/physical-activity-minutes-all-components-example">Physical Activity Minutes O - (e) All Three Components (Automated, MET-Cal)</a>
+            </td>
+            <td>
+<p>Scenario (e): all three Quantity components present.
+moderateActivity = 120 min/wk, vigorousActivity = 60 min/wk,
+aggregateActivity = 120 + (60 × 2) = 240 min/wk.
+classificationMethod = met-cal (MET estimated from accelerometer / VO2 proxy).
+This is the richest Observation variant, produced by a full wearable pipeline
+that computes both intensity levels and the WHO/IPAQ weighted aggregate.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-physical-activity-minutes-ehispaq-q7-mapped-example.html"
+                  title="Observation/physical-activity-minutes-ehispaq-q7-mapped-example">Physical Activity Minutes O - (f) EHIS-PAQ/ATHIS Q7/PE7 Mapped (Aggregate Only)</a>
+            </td>
+            <td>
+<p>Scenario (f): Observation produced by applying
+PhysicalActivityMinutesQtoO to
+physical-activity-ehispaq-response-example.
+Q7/PE7 answer: 2 Stunden + 30 Minuten → aggregateActivity = (2×60)+30 = 150 min/wk.
+No intensity weighting is applied because Q7 does not separate moderate from
+vigorous activity.  derivedFrom links back to the source QuestionnaireResponse.
+classificationMethod is absent; pa-manual-comp-01 is satisfied by absence.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Device-device-wearable-example.html"
+                  title="Device/device-wearable-example">PreNUDGE Wearable Device Example</a>
+            </td>
+            <td>
+<p>Example of a wearable fitness tracker referenced from the physical activity wearable observation example.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-sitting-hours-questionnaire-derived-example.html"
+                  title="Observation/sitting-hours-questionnaire-derived-example">Sitting Hours O mapped from EHIS-PAQ Q9 / ATHIS PE9 – Example</a>
+            </td>
+            <td>
+<p>Example of a self-reported sitting/resting duration (6.0 h per day, sleep excluded) derived from EhisPaqSittingHoursQuestionnaire via SittingHoursQuestionnaireResponseToObservation.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-sitting-hours-wearable-example.html"
+                  title="Observation/sitting-hours-wearable-example">Sitting Hours O – Wearable Automated Example</a>
+            </td>
+            <td>
+<p>Example of an automatically measured sitting/resting duration (6.0 h per day, sleep excluded) derived from a wearable device.</p>
 </td>
          </tr>
          <tr>
@@ -1353,7 +1684,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 29, 2026 10:47+0000">2026-06-29</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 29, 2026 16:58+0000">2026-06-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

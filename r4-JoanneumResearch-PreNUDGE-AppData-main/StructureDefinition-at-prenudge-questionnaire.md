@@ -16,7 +16,7 @@ This FHIR profile is defining the overall Questionnaire for PreNUDGE. Every top 
 
 **Usages:**
 
-* Examples for this Profile: [AlcoholUseQuestionnaire](Questionnaire-AlcoholUseQuestionnaire.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [BmiQuestionnaire](Questionnaire-BmiQuestionnaire.md), [EducationQuestionnaire](Questionnaire-EducationQuestionnaire.md)... Show 10 more, [NutritionFruitVegetableQuestionnaire](Questionnaire-NutritionFruitVegetableQuestionnaire.md), [NutritionSugarSaltyQuestionnaire](Questionnaire-NutritionSugarSaltyQuestionnaire.md), [SleepDurationQuestionnaire](Questionnaire-SleepDurationQuestionnaire.md), [SleepQualityQuestionnaire](Questionnaire-SleepQualityQuestionnaire.md), [SmokingStatusQuestionnaire](Questionnaire-SmokingStatusQuestionnaire.md), [StepCountEhisPaqQuestionnaire](Questionnaire-StepCountEhisPaqQuestionnaire.md), [StepCountQuantityQuestionnaire](Questionnaire-StepCountQuantityQuestionnaire.md), [AtPrenudgeQoLByWhoQolBref](Questionnaire-WhoQolBrefQuestionnaire.md), [WorkAbilityIndexQuestionnaire](Questionnaire-WorkAbilityIndexQuestionnaire.md) and [WorkSocQuestionnaire](Questionnaire-WorkSocQuestionnaire.md)
+* Examples for this Profile: [AlcoholUseQuestionnaire](Questionnaire-AlcoholUseQuestionnaire.md), [BloodGlucoseQuestionnaire](Questionnaire-BloodGlucoseQuestionnaire.md), [BmiQuestionnaire](Questionnaire-BmiQuestionnaire.md), [EducationQuestionnaire](Questionnaire-EducationQuestionnaire.md)... Show 14 more, [EhisPaqMuscleStrengtheningQuestionnaire](Questionnaire-EhisPaqMuscleStrengtheningQuestionnaire.md), [EhisPaqPhysicalActivityQuestionnaire](Questionnaire-EhisPaqPhysicalActivityQuestionnaire.md), [EhisPaqSittingHoursQuestionnaire](Questionnaire-EhisPaqSittingHoursQuestionnaire.md), [MuscleStrengtheningQuantityQuestionnaire](Questionnaire-MuscleStrengtheningQuantityQuestionnaire.md), [NutritionFruitVegetableQuestionnaire](Questionnaire-NutritionFruitVegetableQuestionnaire.md), [NutritionSugarSaltyQuestionnaire](Questionnaire-NutritionSugarSaltyQuestionnaire.md), [SleepDurationQuestionnaire](Questionnaire-SleepDurationQuestionnaire.md), [SleepQualityQuestionnaire](Questionnaire-SleepQualityQuestionnaire.md), [SmokingStatusQuestionnaire](Questionnaire-SmokingStatusQuestionnaire.md), [StepCountEhisPaqQuestionnaire](Questionnaire-StepCountEhisPaqQuestionnaire.md), [StepCountQuantityQuestionnaire](Questionnaire-StepCountQuantityQuestionnaire.md), [AtPrenudgeQoLByWhoQolBref](Questionnaire-WhoQolBrefQuestionnaire.md), [WorkAbilityIndexQuestionnaire](Questionnaire-WorkAbilityIndexQuestionnaire.md) and [WorkSocQuestionnaire](Questionnaire-WorkSocQuestionnaire.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-questionnaire.json)
 
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeQuestionnaire",
   "title" : "AT PreNUDGE Questionnaire",
   "status" : "draft",
-  "date" : "2026-06-29T10:47:49+00:00",
+  "date" : "2026-06-29T16:58:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

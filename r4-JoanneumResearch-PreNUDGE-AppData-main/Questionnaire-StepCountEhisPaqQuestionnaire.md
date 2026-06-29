@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\EHIS-PAQ: Zu-Fuß-Gehen - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\EHIS-PAQ/ATHIS: Zu-Fuß-Gehen - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EHIS-PAQ: Zu-Fuß-Gehen**
+* **EHIS-PAQ/ATHIS: Zu-Fuß-Gehen**
 
-## Questionnaire: EHIS-PAQ: Zu-Fuß-Gehen 
+## Questionnaire: EHIS-PAQ/ATHIS: Zu-Fuß-Gehen 
 
 | | | |
 | :--- | :--- | :--- |
@@ -12,7 +12,7 @@
 | Active as of 2026-06-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountEhisPaqQuestionnaire |
 
  
-The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. 
+EHIS-PAQ Q2–Q3 (equivalent to ATHIS PE2–PE3): number of days per week (Q2/PE2) and duration per day (Q3/PE3) of walking for transport in a typical week. 
 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
@@ -35,11 +35,11 @@ Links:
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountEhisPaqQuestionnaire",
   "version" : "0.1.0",
   "name" : "StepCountEhisPaqQuestionnaire",
-  "title" : "EHIS-PAQ: Zu-Fuß-Gehen",
+  "title" : "EHIS-PAQ/ATHIS: Zu-Fuß-Gehen",
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-06-29T10:47:49+00:00",
+  "date" : "2026-06-29T16:58:51+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -56,7 +56,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week.",
+  "description" : "EHIS-PAQ Q2–Q3 (equivalent to ATHIS PE2–PE3): number of days per week (Q2/PE2) and duration per day (Q3/PE3) of walking for transport in a typical week.",
   "item" : [{
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/minValue",
@@ -84,22 +84,39 @@ Links:
     "required" : true,
     "repeats" : false,
     "answerOption" : [{
-      "valueString" : "0–9 Minuten pro Tag"
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "activity-10-29-min",
+        "display" : "10 bis 29 Minuten pro Tag"
+      }
     },
     {
-      "valueString" : "10–29 Minuten pro Tag"
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "activity-30-59-min",
+        "display" : "30 bis 59 Minuten pro Tag"
+      }
     },
     {
-      "valueString" : "30–59 Minuten pro Tag"
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "activity-1h-under-2h",
+        "display" : "1 Stunde bis unter 2 Stunden pro Tag"
+      }
     },
     {
-      "valueString" : "1 Stunde bis unter 2 Stunden pro Tag"
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "activity-2h-under-3h",
+        "display" : "2 Stunden bis unter 3 Stunden pro Tag"
+      }
     },
     {
-      "valueString" : "2 Stunden bis unter 3 Stunden pro Tag"
-    },
-    {
-      "valueString" : "3 Stunden pro Tag oder mehr"
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "activity-3h-or-more",
+        "display" : "3 Stunden pro Tag oder mehr"
+      }
     }],
     "item" : [{
       "linkId" : "Q3-comment",

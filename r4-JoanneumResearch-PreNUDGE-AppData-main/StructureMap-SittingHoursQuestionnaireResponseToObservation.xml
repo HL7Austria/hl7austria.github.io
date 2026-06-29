@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="SittingHoursQuestionnaireResponseToObservation"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: StructureMap SittingHoursQuestionnaireResponseToObservation</b></p><a name="SittingHoursQuestionnaireResponseToObservation"> </a><a name="hcSittingHoursQuestionnaireResponseToObservation"> </a><pre class="fml">
+<b>map</b><span style="color: navy"> &quot;</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SittingHoursQuestionnaireResponseToObservation<span style="color: navy">&quot; = &quot;</span>SittingHoursQuestionnaireResponseToObservation<span style="color: navy">&quot;
+
+</span><span style="color: navy">// </span><span style="color: green">Sitting Hours EHIS-PAQ Q9 / ATHIS PE9 to O</span>
+
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/questionnaireresponse.html" title="QuestionnaireResponse">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style="color: navy">&quot; </span><b>alias </b>QR <b>as </b><b>source</b>
+<b>uses</b><span style="color: navy"> &quot;</span><a href="http://hl7.org/fhir/R4/observation.html" title="Observation">http://hl7.org/fhir/StructureDefinition/Observation</a><span style="color: navy">&quot; </span><b>alias </b>Obs <b>as </b><b>target</b>
+
+<b>imports</b><span style="color: navy"> &quot;</span>http://hl7.org/fhir/StructureMap/*<span style="color: navy">&quot;
+</span><b>imports</b><span style="color: navy"> &quot;</span><a href="StructureMap-QuestionnaireResponseToObservationBase.html" title="Shared base for Q to O">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style="color: navy">&quot;
+</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Main entry group</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>SittingHoursQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  <span style="color: navy">// </span><span style="color: green">Shared base: identifier copy, derivedFrom, subject, issued, status, method.</span>
+  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Target profile</span>
+  src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Observation code</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'87705-0'</span><span style="color: navy">, </span><span style="color: blue">'Sedentary activity 24 hour'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">effectiveDateTime from authored (Q9 has no embedded date sub-item)</span>
+  src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">authored</span> <i>&quot;SetEffectiveDateTime&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">// </span><span style="color: green">Map Q9 group to Observation.value</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'Q9'<b> then </b>MapQ9ToSittingHours<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ9&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<span style="color: navy">// </span><span style="color: green">Q9 → Observation.valueQuantity (h)</span>
+<span style="color: navy">// </span><span style="color: green">Q9-total-hours (decimal, SDC calculatedExpression) is read using the</span>
+<span style="color: navy">// </span><span style="color: green">MaLaC-HD 1.6.0 two-level .value unwrap pattern (valueDecimal → .value).</span>
+<span style="color: navy">// </span><span style="color: green">The arithmetic Q9-hours + (Q9-minutes / 60) is pre-computed by the</span>
+<span style="color: navy">// </span><span style="color: green">questionnaire; this map copies the result without evaluate().</span>
+<span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
+<b>group </b>MapQ9ToSittingHours<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.item<b> as </b><span style="color: maroon">totHours</span><b> where </b>linkId = 'Q9-total-hours'<b> then</b><span style="color: navy"> {
+</span>    totHours.answer<b> as </b><span style="color: maroon">ans</span><b> then</b><span style="color: navy"> {
+</span>      ans.valueDecimal<b> as </b><span style="color: maroon">decElem</span><b> then</b><span style="color: navy"> {
+</span>        decElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'h'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'h'</span> <i>&quot;SetSittingQuantity&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;UnwrapDecimal&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;GetAnswer&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;GetTotalHours&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span></pre></div>
+  </text>
+  <url value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SittingHoursQuestionnaireResponseToObservation"/>
+  <version value="0.1.0"/>
+  <name value="SittingHoursQuestionnaireResponseToObservation"/>
+  <title value="Sitting Hours Q to O"/>
+  <status value="active"/>
+  <date value="2026-06-29T16:58:51+00:00"/>
+  <publisher value="The PreNUDGE Consortium"/>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="The PreNUDGE Consortium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://prenudge.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Sitting Hours EHIS-PAQ Q9 / ATHIS PE9 to O"/>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"/>
+    <mode value="source"/>
+    <alias value="QR"/>
+  </structure>
+  <structure>
+    <url value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+    <mode value="target"/>
+    <alias value="Obs"/>
+  </structure>
+  <import value="http://hl7.org/fhir/StructureMap/*"/>
+  <import value="https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"/>
+  <group>
+    <name value="SittingHoursQuestionnaireResponseToObservation"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Main entry group&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="Base"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <dependent>
+        <name value="SetObservationBase"/>
+        <variable value="src"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
+      <name value="SetProfile"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="meta"/>
+        <variable value="meta"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Meta"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="meta"/>
+        <contextType value="variable"/>
+        <element value="profile"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetCode"/>
+      <source>
+        <context value="src"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="code"/>
+        <transform value="cc"/>
+        <parameter>
+          <valueString value="http://loinc.org"/>
+        </parameter>
+        <parameter>
+          <valueString value="87705-0"/>
+        </parameter>
+        <parameter>
+          <valueString value="Sedentary activity 24 hour"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="SetEffectiveDateTime"/>
+      <source>
+        <context value="src"/>
+        <element value="authored"/>
+        <variable value="authored"/>
+      </source>
+      <target>
+        <context value="tgt"/>
+        <contextType value="variable"/>
+        <element value="effectiveDateTime"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="authored"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="ProcessQ9"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="item"/>
+        <condition value="linkId = 'Q9'"/>
+      </source>
+      <dependent>
+        <name value="MapQ9ToSittingHours"/>
+        <variable value="item"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+  </group>
+  <group>
+    <name value="MapQ9ToSittingHours"/>
+    <typeMode value="none"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Q9 → Observation.valueQuantity (h)&#xD;&#xA;Q9-total-hours (decimal, SDC calculatedExpression) is read using the&#xD;&#xA;MaLaC-HD 1.6.0 two-level .value unwrap pattern (valueDecimal → .value).&#xD;&#xA;The arithmetic Q9-hours + (Q9-minutes / 60) is pre-computed by the&#xD;&#xA;questionnaire; this map copies the result without evaluate().&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="GetTotalHours"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="totHours"/>
+        <condition value="linkId = 'Q9-total-hours'"/>
+      </source>
+      <rule>
+        <name value="GetAnswer"/>
+        <source>
+          <context value="totHours"/>
+          <element value="answer"/>
+          <variable value="ans"/>
+        </source>
+        <rule>
+          <name value="UnwrapDecimal"/>
+          <source>
+            <context value="ans"/>
+            <element value="valueDecimal"/>
+            <variable value="decElem"/>
+          </source>
+          <rule>
+            <name value="SetSittingQuantity"/>
+            <source>
+              <context value="decElem"/>
+              <element value="value"/>
+              <variable value="numVal"/>
+            </source>
+            <target>
+              <context value="tgt"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <variable value="qty"/>
+              <transform value="create"/>
+              <parameter>
+                <valueString value="Quantity"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="numVal"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="unit"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="h"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="http://unitsofmeasure.org"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="h"/>
+              </parameter>
+            </target>
+          </rule>
+        </rule>
+      </rule>
+    </rule>
+  </group>
+</StructureMap>
