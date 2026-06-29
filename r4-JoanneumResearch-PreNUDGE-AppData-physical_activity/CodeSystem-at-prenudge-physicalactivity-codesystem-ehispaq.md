@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-physicalactivity-codesystem-ehispaq | *Version*:0.1.0 | |
-| Retired as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeEhisPaqScale |
+| Retired as of 2026-06-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeEhisPaqScale |
 | **Copyright/Legal**: European Health Interview Survey Physical Activity Questionnaire (EHIS-PAQ). Eurostat / STATISTIK AUSTRIA. Reproduziert für das PreNUDGE Forschungsprojekt. | | |
 
  
@@ -22,7 +22,7 @@ Consolidated CodeSystem for all options from the EHIS-PAQ questionnaires (Europe
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-25
+2026-06-29
 
 Links:
 [Table of Contents](toc.md)|
@@ -40,7 +40,7 @@ Links:
   "title" : "AT PreNUDGE EHIS-PAQ Answer Set",
   "status" : "retired",
   "experimental" : false,
-  "date" : "2026-06-25T12:51:02+00:00",
+  "date" : "2026-06-29T13:58:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

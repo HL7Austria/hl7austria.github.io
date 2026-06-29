@@ -1,7 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
-@prefix loinc: <https://loinc.org/rdf/> .
+@prefix loinc: <http://loinc.org/rdf#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -10,61 +9,68 @@
 
 <https://fhir.hl7.at/prenudge/appdata/r4/Observation/sitting-hours-questionnaire-derived-example> a fhir:Observation ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "sitting-hours-questionnaire-derived-example"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "sitting-hours-questionnaire-derived-example"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation" ;
+       fhir:index 0 ;
        fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation sitting-hours-questionnaire-derived-example</b></p><a name=\"sitting-hours-questionnaire-derived-example\"> </a><a name=\"hcsitting-hours-questionnaire-derived-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-sitting-hours-observation.html\">AT PreNUDGE Observation Sitting Hours</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/obs-sh-2026-06-06-002</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 87705-0}\">Sedentary activity 24 hour</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-06-06 09:00:00+0200</p><p><b>issued</b>: 2026-06-06 09:00:00+0200</p><p><b>value</b>: 6 h<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeh = 'h')</span></p><p><b>note</b>: </p><blockquote><div><p>Selbstberichtet. Schlafstunden vom Befragten gemäß Fragebogenanweisung ausgeschlossen.</p>\n</div></blockquote><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-sitting-hours-ehis-paq-response-example.html\">Response to Questionnaire '-&gt;EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen' about '-&gt;James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'</a></p></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:identifier ( [
-     fhir:system [ fhir:v "https://www.joanneum.at"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "obs-sh-2026-06-06-002" ]
-  ] ) ; # 
-  fhir:status [ fhir:v "final"] ; # 
-  fhir:code [
-     fhir:coding ( [
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation sitting-hours-questionnaire-derived-example</b></p><a name=\"sitting-hours-questionnaire-derived-example\"> </a><a name=\"hcsitting-hours-questionnaire-derived-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-sitting-hours-observation.html\">AT PreNUDGE Observation Sitting Hours</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/obs-sh-2026-06-06-002</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 87705-0}\">Sedentary activity 24 hour</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-06-06 09:00:00+0200</p><p><b>issued</b>: 2026-06-06 09:00:00+0200</p><p><b>value</b>: 6 h<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeh = 'h')</span></p><p><b>note</b>: </p><blockquote><div><p>Selbstberichtet. Schlafstunden vom Befragten gemäß Fragebogenanweisung ausgeschlossen.</p>\n</div></blockquote><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-sitting-hours-ehis-paq-response-example.html\">Response to Questionnaire '-&gt;EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen' about '-&gt;James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'</a></p></div>"
+  ] ;
+  fhir:Observation.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://www.joanneum.at" ] ;
+     fhir:Identifier.value [ fhir:value "obs-sh-2026-06-06-002" ]
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a loinc:87705-0 ;
-       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "87705-0" ] ;
-       fhir:display [ fhir:v "Sedentary activity 24 hour" ]
-     ] )
-  ] ; # 
-  fhir:subject [
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "87705-0" ] ;
+       fhir:Coding.display [ fhir:value "Sedentary activity 24 hour" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
      fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
-     fhir:reference [ fhir:v "Patient/example" ]
-  ] ; # 
-  fhir:effective [
-     a fhir:dateTime ;
-     fhir:v "2026-06-06T09:00:00+02:00"^^xsd:dateTime
-  ] ; # 
-  fhir:issued [ fhir:v "2026-06-06T09:00:00+02:00"^^xsd:dateTime] ; # 
-  fhir:value [
-     a fhir:Quantity ;
-     fhir:value [ fhir:v "6"^^xsd:decimal ] ;
-     fhir:unit [ fhir:v "h" ] ;
-     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
-     fhir:code [ fhir:v "h" ]
-  ] ; # 
-  fhir:note ( [
-     fhir:text [ fhir:v "Selbstberichtet. Schlafstunden vom Befragten gemäß Fragebogenanweisung ausgeschlossen." ]
-  ] ) ; # 
-  fhir:method [
-     fhir:coding ( [
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-06-06T09:00:00+02:00"^^xsd:dateTime] ;
+  fhir:Observation.issued [ fhir:value "2026-06-06T09:00:00+02:00"^^xsd:dateTime] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "6"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "h" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "h" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Selbstberichtet. Schlafstunden vom Befragten gemäß Fragebogenanweisung ausgeschlossen." ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a sct:87982008 ;
-       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "87982008" ] ;
-       fhir:display [ fhir:v "Manual" ]
-     ] )
-  ] ; # 
-  fhir:derivedFrom ( [
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "87982008" ] ;
+       fhir:Coding.display [ fhir:value "Manual" ]
+     ]
+  ] ;
+  fhir:Observation.derivedFrom [
+     fhir:index 0 ;
      fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/sitting-hours-ehis-paq-response-example> ;
-     fhir:reference [ fhir:v "QuestionnaireResponse/sitting-hours-ehis-paq-response-example" ]
-  ] ) . # 
+     fhir:Reference.reference [ fhir:value "QuestionnaireResponse/sitting-hours-ehis-paq-response-example" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/sitting-hours-questionnaire-derived-example.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

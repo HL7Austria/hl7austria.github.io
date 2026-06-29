@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/PhysicalActivityMinutesQtoO | *Version*:0.1.0 | |
-| Draft as of 2026-06-25 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Physical Activity Minutes Q to O |
+| Draft as of 2026-06-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Physical Activity Minutes Q to O |
 
  
 Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant) 
@@ -17,7 +17,7 @@ Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-25
+2026-06-29
 
 Links:
 [Table of Contents](toc.md)|
@@ -33,7 +33,7 @@ Links:
   "version" : "0.1.0",
   "name" : "Physical Activity Minutes Q to O",
   "status" : "draft",
-  "date" : "2026-06-25T12:51:02+00:00",
+  "date" : "2026-06-29T13:58:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -188,7 +188,7 @@ Links:
   {
     "name" : "MapQ7ToAggregate",
     "typeMode" : "none",
-    "documentation" : "---------------------------------------------------------------------------\r\nQ7 → component[aggregateActivity]  (LOINC 101691-4)\r\nFormula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes\r\nThis is a direct transcription of the patient-reported total time.\r\nNo intensity weighting is applied because Q7 does not capture intensity.\r\nThe ×2 vigorous weighting (WHO/IPAQ) is ONLY applied when a wearable\r\nseparately measures moderate and vigorous minutes (wearable variant).\r\nNote on FML arithmetic / MaLaC-HD compatibility:\r\nThis map uses evaluate() with integer arithmetic (* 60, +) which is NOT\r\nsupported by MaLaC-HD 1.6.0. MaLaC-HD fails at parse time with\r\n\"Param type 14 not implemented\" (integer literal in FHIRPath expression).\r\nThe questionnaire captures hours and minutes as separate integer items,\r\nso no MaLaC-HD compatible rewrite exists without redesigning the questionnaire\r\nor changing the output unit. Use matchbox or another evaluate()-capable engine.\r\n---------------------------------------------------------------------------",
+    "documentation" : "---------------------------------------------------------------------------\r\nQ7 → component[aggregateActivity]  (LOINC 101691-4)\r\nFormula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes\r\nThe arithmetic is performed by the questionnaire via the SDC\r\ncalculatedExpression extension on item Q7-total-minutes (FHIRPath:\r\n(%resource.item.where(linkId='Q7').item.where(linkId='Q7-hours').answer.valueInteger * 60)\r\n+ %resource.item.where(linkId='Q7').item.where(linkId='Q7-minutes').answer.valueInteger\r\n). This map reads the pre-computed integer — no evaluate() needed.\r\nMaLaC-HD 1.6.0 integer extraction pattern used here:\r\nanswer.valueInteger as intElem then { intElem.value as numVal → ... }\r\nThe double .value unwrap gives MaLaC-HD a raw primitive it can copy\r\ninto Quantity.value without a type-coercion crash (direct integer→decimal\r\ncopy fails in MaLaC-HD). All Quantity fields are set in one rule so that\r\nno cross-scope variable reference occurs (also a MaLaC-HD limitation).\r\n---------------------------------------------------------------------------",
     "input" : [{
       "name" : "src",
       "type" : "QR",
@@ -200,112 +200,100 @@ Links:
       "mode" : "target"
     }],
     "rule" : [{
-      "name" : "MapAggregateComponent",
+      "name" : "GetTotalMins",
       "source" : [{
-        "context" : "src"
-      }],
-      "target" : [{
-        "context" : "tgt",
-        "contextType" : "variable",
-        "element" : "component",
-        "variable" : "aggComp"
+        "context" : "src",
+        "element" : "item",
+        "variable" : "totMins",
+        "condition" : "linkId = 'Q7-total-minutes'"
       }],
       "rule" : [{
-        "name" : "SetAggregateCode",
+        "name" : "GetAnswer",
         "source" : [{
-          "context" : "src"
-        }],
-        "target" : [{
-          "context" : "aggComp",
-          "contextType" : "variable",
-          "element" : "code",
-          "transform" : "cc",
-          "parameter" : [{
-            "valueString" : "http://loinc.org"
-          },
-          {
-            "valueString" : "101691-4"
-          },
-          {
-            "valueString" : "Duration of physical activity"
-          }]
-        }]
-      },
-      {
-        "name" : "SetAggregateQuantity",
-        "source" : [{
-          "context" : "src"
-        }],
-        "target" : [{
-          "context" : "aggComp",
-          "contextType" : "variable",
-          "element" : "value",
-          "variable" : "qty",
-          "transform" : "create",
-          "parameter" : [{
-            "valueString" : "Quantity"
-          }]
+          "context" : "totMins",
+          "element" : "answer",
+          "variable" : "ans"
         }],
         "rule" : [{
-          "name" : "ComputeAggregateMinutes",
+          "name" : "UnwrapInteger",
           "source" : [{
-            "context" : "src"
+            "context" : "ans",
+            "element" : "valueInteger",
+            "variable" : "intElem"
           }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "value",
-            "transform" : "evaluate",
-            "parameter" : [{
-              "valueId" : "src"
+          "rule" : [{
+            "name" : "SetAggregateComponent",
+            "source" : [{
+              "context" : "intElem",
+              "element" : "value",
+              "variable" : "numVal"
+            }],
+            "target" : [{
+              "context" : "tgt",
+              "contextType" : "variable",
+              "element" : "component",
+              "variable" : "aggComp"
             },
             {
-              "valueString" : "(item.where(linkId = 'Q7-hours').answer.valueInteger * 60) + item.where(linkId = 'Q7-minutes').answer.valueInteger"
-            }]
-          }]
-        },
-        {
-          "name" : "SetUnit",
-          "source" : [{
-            "context" : "src"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "unit",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "min/wk"
-            }]
-          }]
-        },
-        {
-          "name" : "SetSystem",
-          "source" : [{
-            "context" : "src"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "system",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "http://unitsofmeasure.org"
-            }]
-          }]
-        },
-        {
-          "name" : "SetUCUM",
-          "source" : [{
-            "context" : "src"
-          }],
-          "target" : [{
-            "context" : "qty",
-            "contextType" : "variable",
-            "element" : "code",
-            "transform" : "copy",
-            "parameter" : [{
-              "valueString" : "min/wk"
+              "context" : "aggComp",
+              "contextType" : "variable",
+              "element" : "code",
+              "transform" : "cc",
+              "parameter" : [{
+                "valueString" : "http://loinc.org"
+              },
+              {
+                "valueString" : "101691-4"
+              },
+              {
+                "valueString" : "Duration of physical activity"
+              }]
+            },
+            {
+              "context" : "aggComp",
+              "contextType" : "variable",
+              "element" : "value",
+              "variable" : "qty",
+              "transform" : "create",
+              "parameter" : [{
+                "valueString" : "Quantity"
+              }]
+            },
+            {
+              "context" : "qty",
+              "contextType" : "variable",
+              "element" : "value",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueId" : "numVal"
+              }]
+            },
+            {
+              "context" : "qty",
+              "contextType" : "variable",
+              "element" : "unit",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueString" : "min/wk"
+              }]
+            },
+            {
+              "context" : "qty",
+              "contextType" : "variable",
+              "element" : "system",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueString" : "http://unitsofmeasure.org"
+              }]
+            },
+            {
+              "context" : "qty",
+              "contextType" : "variable",
+              "element" : "code",
+              "transform" : "copy",
+              "parameter" : [{
+                "valueString" : "min/wk"
+              }]
             }]
           }]
         }]

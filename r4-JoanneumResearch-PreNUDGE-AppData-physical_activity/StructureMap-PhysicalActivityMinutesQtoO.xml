@@ -46,32 +46,27 @@
 </span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <span style="color: navy">// </span><span style="color: green">Q7 → component[aggregateActivity]  (LOINC 101691-4)</span>
 <span style="color: navy">// </span><span style="color: green">Formula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes</span>
-<span style="color: navy">// </span><span style="color: green">This is a direct transcription of the patient-reported total time.</span>
-<span style="color: navy">// </span><span style="color: green">No intensity weighting is applied because Q7 does not capture intensity.</span>
-<span style="color: navy">// </span><span style="color: green">The ×2 vigorous weighting (WHO/IPAQ) is ONLY applied when a wearable</span>
-<span style="color: navy">// </span><span style="color: green">separately measures moderate and vigorous minutes (wearable variant).</span>
-<span style="color: navy">// </span><span style="color: green">Note on FML arithmetic / MaLaC-HD compatibility:</span>
-<span style="color: navy">// </span><span style="color: green">This map uses evaluate() with integer arithmetic (* 60, +) which is NOT</span>
-<span style="color: navy">// </span><span style="color: green">supported by MaLaC-HD 1.6.0. MaLaC-HD fails at parse time with</span>
-<span style="color: navy">// </span><span style="color: green">&quot;Param type 14 not implemented&quot; (integer literal in FHIRPath expression).</span>
-<span style="color: navy">// </span><span style="color: green">The questionnaire captures hours and minutes as separate integer items,</span>
-<span style="color: navy">// </span><span style="color: green">so no MaLaC-HD compatible rewrite exists without redesigning the questionnaire</span>
-<span style="color: navy">// </span><span style="color: green">or changing the output unit. Use matchbox or another evaluate()-capable engine.</span>
+<span style="color: navy">// </span><span style="color: green">The arithmetic is performed by the questionnaire via the SDC</span>
+<span style="color: navy">// </span><span style="color: green">calculatedExpression extension on item Q7-total-minutes (FHIRPath:</span>
+<span style="color: navy">// </span><span style="color: green">(%resource.item.where(linkId='Q7').item.where(linkId='Q7-hours').answer.valueInteger * 60)</span>
+<span style="color: navy">// </span><span style="color: green">+ %resource.item.where(linkId='Q7').item.where(linkId='Q7-minutes').answer.valueInteger</span>
+<span style="color: navy">// </span><span style="color: green">). This map reads the pre-computed integer — no evaluate() needed.</span>
+<span style="color: navy">// </span><span style="color: green">MaLaC-HD 1.6.0 integer extraction pattern used here:</span>
+<span style="color: navy">// </span><span style="color: green">answer.valueInteger as intElem then { intElem.value as numVal → ... }</span>
+<span style="color: navy">// </span><span style="color: green">The double .value unwrap gives MaLaC-HD a raw primitive it can copy</span>
+<span style="color: navy">// </span><span style="color: green">into Quantity.value without a type-coercion crash (direct integer→decimal</span>
+<span style="color: navy">// </span><span style="color: green">copy fails in MaLaC-HD). All Quantity fields are set in one rule so that</span>
+<span style="color: navy">// </span><span style="color: green">no cross-scope variable reference occurs (also a MaLaC-HD limitation).</span>
 <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <b>group </b>MapQ7ToAggregate<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  src<span style="color: navy"><b> -&gt; </b></span>tgt.component<b> as </b><span style="color: maroon">aggComp</span><b> then</b><span style="color: navy"> {
-</span>    <span style="color: navy">// </span><span style="color: green">Component discriminator code: LOINC 101691-4</span>
-    <span style="color: navy">// </span><span style="color: green">Note: same code as panel Observation.code — collision documented in profile.</span>
-    <span style="color: navy">// </span><span style="color: green">obs-7 is not violated because Observation.value[x] is absent.</span>
-    src<span style="color: navy"><b> -&gt; </b></span>aggComp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'101691-4'</span><span style="color: navy">, </span><span style="color: blue">'Duration of physical activity'</span><span style="color: navy">)</span> <i>&quot;SetAggregateCode&quot;</i><span style="color: navy">;</span>
-    src<span style="color: navy"><b> -&gt; </b></span>aggComp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><b> then</b><span style="color: navy"> {
-</span>      <span style="color: navy">// </span><span style="color: green">aggregateMinutes = (Q7-hours × 60) + Q7-minutes</span>
-      src<span style="color: navy"><b> -&gt; </b></span>qty.value = evaluate<span style="color: navy">(</span>src<span style="color: navy">, </span>(item.where(linkId = 'Q7-hours').answer.valueInteger * 60) + item.where(linkId = 'Q7-minutes').answer.valueInteger<span style="color: navy">)</span> <i>&quot;ComputeAggregateMinutes&quot;</i><span style="color: navy">;</span>
-      src<span style="color: navy"><b> -&gt; </b></span>qty.unit = <span style="color: blue">'min/wk'</span> <i>&quot;SetUnit&quot;</i><span style="color: navy">;</span>
-      src<span style="color: navy"><b> -&gt; </b></span>qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span> <i>&quot;SetSystem&quot;</i><span style="color: navy">;</span>
-      src<span style="color: navy"><b> -&gt; </b></span>qty.code = <span style="color: blue">'min/wk'</span> <i>&quot;SetUCUM&quot;</i><span style="color: navy">;</span>
-    <span style="color: navy">}</span> <i>&quot;SetAggregateQuantity&quot;</i><span style="color: navy">;</span>
-  <span style="color: navy">}</span> <i>&quot;MapAggregateComponent&quot;</i><span style="color: navy">;</span>
+</span>  <span style="color: navy">// </span><span style="color: green">src is the Q7 group item; Q7-total-minutes is a calculated child item.</span>
+  src.item<b> as </b><span style="color: maroon">totMins</span><b> where </b>linkId = 'Q7-total-minutes'<b> then</b><span style="color: navy"> {
+</span>    totMins.answer<b> as </b><span style="color: maroon">ans</span><b> then</b><span style="color: navy"> {
+</span>      ans.valueInteger<b> as </b><span style="color: maroon">intElem</span><b> then</b><span style="color: navy"> {
+</span>        intElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">aggComp</span><span style="color: navy">, </span> aggComp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'101691-4'</span><span style="color: navy">, </span><span style="color: blue">'Duration of physical activity'</span><span style="color: navy">)</span><span style="color: navy">, </span> aggComp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'min/wk'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'min/wk'</span> <i>&quot;SetAggregateComponent&quot;</i><span style="color: navy">;</span>
+      <span style="color: navy">}</span> <i>&quot;UnwrapInteger&quot;</i><span style="color: navy">;</span>
+    <span style="color: navy">}</span> <i>&quot;GetAnswer&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;GetTotalMins&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span></pre></div>
@@ -80,7 +75,7 @@
   <version value="0.1.0"/>
   <name value="Physical Activity Minutes Q to O"/>
   <status value="draft"/>
-  <date value="2026-06-25T12:51:02+00:00"/>
+  <date value="2026-06-29T13:58:40+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -237,7 +232,7 @@
   <group>
     <name value="MapQ7ToAggregate"/>
     <typeMode value="none"/>
-    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Q7 → component[aggregateActivity]  (LOINC 101691-4)&#xD;&#xA;Formula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes&#xD;&#xA;This is a direct transcription of the patient-reported total time.&#xD;&#xA;No intensity weighting is applied because Q7 does not capture intensity.&#xD;&#xA;The ×2 vigorous weighting (WHO/IPAQ) is ONLY applied when a wearable&#xD;&#xA;separately measures moderate and vigorous minutes (wearable variant).&#xD;&#xA;Note on FML arithmetic / MaLaC-HD compatibility:&#xD;&#xA;This map uses evaluate() with integer arithmetic (* 60, +) which is NOT&#xD;&#xA;supported by MaLaC-HD 1.6.0. MaLaC-HD fails at parse time with&#xD;&#xA;&quot;Param type 14 not implemented&quot; (integer literal in FHIRPath expression).&#xD;&#xA;The questionnaire captures hours and minutes as separate integer items,&#xD;&#xA;so no MaLaC-HD compatible rewrite exists without redesigning the questionnaire&#xD;&#xA;or changing the output unit. Use matchbox or another evaluate()-capable engine.&#xD;&#xA;---------------------------------------------------------------------------"/>
+    <documentation value="---------------------------------------------------------------------------&#xD;&#xA;Q7 → component[aggregateActivity]  (LOINC 101691-4)&#xD;&#xA;Formula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes&#xD;&#xA;The arithmetic is performed by the questionnaire via the SDC&#xD;&#xA;calculatedExpression extension on item Q7-total-minutes (FHIRPath:&#xD;&#xA;(%resource.item.where(linkId='Q7').item.where(linkId='Q7-hours').answer.valueInteger * 60)&#xD;&#xA;+ %resource.item.where(linkId='Q7').item.where(linkId='Q7-minutes').answer.valueInteger&#xD;&#xA;). This map reads the pre-computed integer — no evaluate() needed.&#xD;&#xA;MaLaC-HD 1.6.0 integer extraction pattern used here:&#xD;&#xA;answer.valueInteger as intElem then { intElem.value as numVal → ... }&#xD;&#xA;The double .value unwrap gives MaLaC-HD a raw primitive it can copy&#xD;&#xA;into Quantity.value without a type-coercion crash (direct integer→decimal&#xD;&#xA;copy fails in MaLaC-HD). All Quantity fields are set in one rule so that&#xD;&#xA;no cross-scope variable reference occurs (also a MaLaC-HD limitation).&#xD;&#xA;---------------------------------------------------------------------------"/>
     <input>
       <name value="src"/>
       <type value="QR"/>
@@ -249,114 +244,102 @@
       <mode value="target"/>
     </input>
     <rule>
-      <name value="MapAggregateComponent"/>
+      <name value="GetTotalMins"/>
       <source>
         <context value="src"/>
+        <element value="item"/>
+        <variable value="totMins"/>
+        <condition value="linkId = 'Q7-total-minutes'"/>
       </source>
-      <target>
-        <context value="tgt"/>
-        <contextType value="variable"/>
-        <element value="component"/>
-        <variable value="aggComp"/>
-      </target>
       <rule>
-        <name value="SetAggregateCode"/>
+        <name value="GetAnswer"/>
         <source>
-          <context value="src"/>
+          <context value="totMins"/>
+          <element value="answer"/>
+          <variable value="ans"/>
         </source>
-        <target>
-          <context value="aggComp"/>
-          <contextType value="variable"/>
-          <element value="code"/>
-          <transform value="cc"/>
-          <parameter>
-            <valueString value="http://loinc.org"/>
-          </parameter>
-          <parameter>
-            <valueString value="101691-4"/>
-          </parameter>
-          <parameter>
-            <valueString value="Duration of physical activity"/>
-          </parameter>
-        </target>
-      </rule>
-      <rule>
-        <name value="SetAggregateQuantity"/>
-        <source>
-          <context value="src"/>
-        </source>
-        <target>
-          <context value="aggComp"/>
-          <contextType value="variable"/>
-          <element value="value"/>
-          <variable value="qty"/>
-          <transform value="create"/>
-          <parameter>
-            <valueString value="Quantity"/>
-          </parameter>
-        </target>
         <rule>
-          <name value="ComputeAggregateMinutes"/>
+          <name value="UnwrapInteger"/>
           <source>
-            <context value="src"/>
+            <context value="ans"/>
+            <element value="valueInteger"/>
+            <variable value="intElem"/>
           </source>
-          <target>
-            <context value="qty"/>
-            <contextType value="variable"/>
-            <element value="value"/>
-            <transform value="evaluate"/>
-            <parameter>
-              <valueId value="src"/>
-            </parameter>
-            <parameter>
-              <valueString value="(item.where(linkId = 'Q7-hours').answer.valueInteger * 60) + item.where(linkId = 'Q7-minutes').answer.valueInteger"/>
-            </parameter>
-          </target>
-        </rule>
-        <rule>
-          <name value="SetUnit"/>
-          <source>
-            <context value="src"/>
-          </source>
-          <target>
-            <context value="qty"/>
-            <contextType value="variable"/>
-            <element value="unit"/>
-            <transform value="copy"/>
-            <parameter>
-              <valueString value="min/wk"/>
-            </parameter>
-          </target>
-        </rule>
-        <rule>
-          <name value="SetSystem"/>
-          <source>
-            <context value="src"/>
-          </source>
-          <target>
-            <context value="qty"/>
-            <contextType value="variable"/>
-            <element value="system"/>
-            <transform value="copy"/>
-            <parameter>
-              <valueString value="http://unitsofmeasure.org"/>
-            </parameter>
-          </target>
-        </rule>
-        <rule>
-          <name value="SetUCUM"/>
-          <source>
-            <context value="src"/>
-          </source>
-          <target>
-            <context value="qty"/>
-            <contextType value="variable"/>
-            <element value="code"/>
-            <transform value="copy"/>
-            <parameter>
-              <valueString value="min/wk"/>
-            </parameter>
-          </target>
+          <rule>
+            <name value="SetAggregateComponent"/>
+            <source>
+              <context value="intElem"/>
+              <element value="value"/>
+              <variable value="numVal"/>
+            </source>
+            <target>
+              <context value="tgt"/>
+              <contextType value="variable"/>
+              <element value="component"/>
+              <variable value="aggComp"/>
+            </target>
+            <target>
+              <context value="aggComp"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="cc"/>
+              <parameter>
+                <valueString value="http://loinc.org"/>
+              </parameter>
+              <parameter>
+                <valueString value="101691-4"/>
+              </parameter>
+              <parameter>
+                <valueString value="Duration of physical activity"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="aggComp"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <variable value="qty"/>
+              <transform value="create"/>
+              <parameter>
+                <valueString value="Quantity"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="value"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueId value="numVal"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="unit"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="min/wk"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="system"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="http://unitsofmeasure.org"/>
+              </parameter>
+            </target>
+            <target>
+              <context value="qty"/>
+              <contextType value="variable"/>
+              <element value="code"/>
+              <transform value="copy"/>
+              <parameter>
+                <valueString value="min/wk"/>
+              </parameter>
+            </target>
+          </rule>
         </rule>
       </rule>
     </rule>

@@ -1,7 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
-@prefix loinc: <https://loinc.org/rdf/> .
+@prefix loinc: <http://loinc.org/rdf#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -10,61 +9,68 @@
 
 <https://fhir.hl7.at/prenudge/appdata/r4/Observation/stepcount-normal-example> a fhir:Observation ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "stepcount-normal-example"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "stepcount-normal-example"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation" ;
+       fhir:index 0 ;
        fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation stepcount-normal-example</b></p><a name=\"stepcount-normal-example\"> </a><a name=\"hcstepcount-normal-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-stepcount-observation.html\">AT PreNUDGE Observation Step Count</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/obs-sc-2026-02-28-001</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 41950-7}\">Number of steps in 24 hour Measured</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-02-27</p><p><b>issued</b>: 2026-02-28 20:00:00+0000</p><p><b>value</b>: 8432 {steps}/d<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{steps}/d = '{steps}/d')</span></p><p><b>note</b>: </p><blockquote><div><p>Normaler Arbeitstag mit Spaziergang in der Mittagspause.</p>\n</div></blockquote><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-stepcount-quantity-response-normal-example.html\">Response to Questionnaire '-&gt;Schrittzahl am heutigen Tag' about '-&gt;James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'</a></p></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:identifier ( [
-     fhir:system [ fhir:v "https://www.joanneum.at"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "obs-sc-2026-02-28-001" ]
-  ] ) ; # 
-  fhir:status [ fhir:v "final"] ; # 
-  fhir:code [
-     fhir:coding ( [
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation stepcount-normal-example</b></p><a name=\"stepcount-normal-example\"> </a><a name=\"hcstepcount-normal-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-stepcount-observation.html\">AT PreNUDGE Observation Step Count</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/obs-sc-2026-02-28-001</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 41950-7}\">Number of steps in 24 hour Measured</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-02-27</p><p><b>issued</b>: 2026-02-28 20:00:00+0000</p><p><b>value</b>: 8432 {steps}/d<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{steps}/d = '{steps}/d')</span></p><p><b>note</b>: </p><blockquote><div><p>Normaler Arbeitstag mit Spaziergang in der Mittagspause.</p>\n</div></blockquote><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p><p><b>derivedFrom</b>: <a href=\"QuestionnaireResponse-stepcount-quantity-response-normal-example.html\">Response to Questionnaire '-&gt;Schrittzahl am heutigen Tag' about '-&gt;James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'</a></p></div>"
+  ] ;
+  fhir:Observation.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://www.joanneum.at" ] ;
+     fhir:Identifier.value [ fhir:value "obs-sc-2026-02-28-001" ]
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a loinc:41950-7 ;
-       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "41950-7" ] ;
-       fhir:display [ fhir:v "Number of steps in 24 hour Measured" ]
-     ] )
-  ] ; # 
-  fhir:subject [
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "41950-7" ] ;
+       fhir:Coding.display [ fhir:value "Number of steps in 24 hour Measured" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
      fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
-     fhir:reference [ fhir:v "Patient/example" ]
-  ] ; # 
-  fhir:effective [
-     a fhir:dateTime ;
-     fhir:v "2026-02-27"^^xsd:date
-  ] ; # 
-  fhir:issued [ fhir:v "2026-02-28T20:00:00Z"^^xsd:dateTime] ; # 
-  fhir:value [
-     a fhir:Quantity ;
-     fhir:value [ fhir:v "8432"^^xsd:decimal ] ;
-     fhir:unit [ fhir:v "{steps}/d" ] ;
-     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
-     fhir:code [ fhir:v "{steps}/d" ]
-  ] ; # 
-  fhir:note ( [
-     fhir:text [ fhir:v "Normaler Arbeitstag mit Spaziergang in der Mittagspause." ]
-  ] ) ; # 
-  fhir:method [
-     fhir:coding ( [
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-02-27"^^xsd:date] ;
+  fhir:Observation.issued [ fhir:value "2026-02-28T20:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "8432"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "{steps}/d" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "{steps}/d" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Normaler Arbeitstag mit Spaziergang in der Mittagspause." ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a sct:87982008 ;
-       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "87982008" ] ;
-       fhir:display [ fhir:v "Manual" ]
-     ] )
-  ] ; # 
-  fhir:derivedFrom ( [
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "87982008" ] ;
+       fhir:Coding.display [ fhir:value "Manual" ]
+     ]
+  ] ;
+  fhir:Observation.derivedFrom [
+     fhir:index 0 ;
      fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/stepcount-quantity-response-normal-example> ;
-     fhir:reference [ fhir:v "QuestionnaireResponse/stepcount-quantity-response-normal-example" ]
-  ] ) . # 
+     fhir:Reference.reference [ fhir:value "QuestionnaireResponse/stepcount-quantity-response-normal-example" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/stepcount-normal-example.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

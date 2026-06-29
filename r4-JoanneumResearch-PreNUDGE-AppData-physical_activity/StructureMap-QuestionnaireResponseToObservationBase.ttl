@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,279 +7,296 @@
 
 <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase> a fhir:StructureMap ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "QuestionnaireResponseToObservationBase"] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap QuestionnaireResponseToObservationBase</b></p><a name=\"QuestionnaireResponseToObservationBase\"> </a><a name=\"hcQuestionnaireResponseToObservationBase\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase<span style=\"color: navy\">\" = \"</span>QuestionnaireResponseToObservationBase<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Shared base for Q to O</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n#xD;\n<b>group </b>SetObservationBase<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Fixed values</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>\"SetStatus\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.method = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'87982008'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Manual'</span><span style=\"color: navy\">)</span> <i>\"SetMethod\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Copy identifier from QuestionnaireResponse to Observation</span>#xD;\n  src.identifier<b> as </b><span style=\"color: maroon\">srcId</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.identifier = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Identifier'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtId</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcId.system<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtId.system = <span style=\"color: maroon\">s</span> <i>\"CopyIdSystem\"</i><span style=\"color: navy\">;</span>#xD;\n    srcId.value<b> as </b><span style=\"color: maroon\">v</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtId.value = <span style=\"color: maroon\">v</span> <i>\"CopyIdValue\"</i><span style=\"color: navy\">;</span>#xD;\n    srcId.use<b> as </b><span style=\"color: maroon\">u</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtId.use = <span style=\"color: maroon\">u</span> <i>\"CopyIdUse\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"CopyIdentifier\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Set derivedFrom reference back to the QuestionnaireResponse</span>#xD;\n  src.id<b> as </b><span style=\"color: maroon\">srcRefId</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.derivedFrom = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Reference'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">ref</span><span style=\"color: navy\">, </span> ref.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'QuestionnaireResponse/'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">srcRefId</span><span style=\"color: navy\">)</span> <i>\"SetDerivedFrom\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Subject reference</span>#xD;\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Reference'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">ref</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    subject.reference<b> as </b><span style=\"color: maroon\">r</span><span style=\"color: navy\"><b> -&gt; </b></span>ref.reference = <span style=\"color: maroon\">r</span> <i>\"CopySubjectRef\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"SetSubject\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Instance creation datetime</span>#xD;\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.issued = <span style=\"color: maroon\">authored</span> <i>\"SetEffective\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:url [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.0"] ; # 
-  fhir:name [ fhir:v "QuestionnaireResponseToObservationBase"] ; # 
-  fhir:title [ fhir:v "Shared base for Q to O"] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2026-06-25T12:51:02+00:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
-  fhir:contact ( [
-     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://prenudge.at" ]
-     ] )
-  ] [
-     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://prenudge.at" ] ;
-       fhir:use [ fhir:v "work" ]
-     ] )
-  ] ) ; # 
-  fhir:description [ fhir:v "Shared base for Q to O"] ; # 
-  fhir:structure ( [
-     fhir:url [
-       fhir:v "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "QuestionnaireResponseToObservationBase"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap QuestionnaireResponseToObservationBase</b></p><a name=\"QuestionnaireResponseToObservationBase\"> </a><a name=\"hcQuestionnaireResponseToObservationBase\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase<span style=\"color: navy\">\" = \"</span>QuestionnaireResponseToObservationBase<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Shared base for Q to O</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n#xD;\n<b>group </b>SetObservationBase<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Fixed values</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.status = <span style=\"color: blue\">'final'</span> <i>\"SetStatus\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.method = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'87982008'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Manual'</span><span style=\"color: navy\">)</span> <i>\"SetMethod\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Copy identifier from QuestionnaireResponse to Observation</span>#xD;\n  src.identifier<b> as </b><span style=\"color: maroon\">srcId</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.identifier = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Identifier'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">tgtId</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    srcId.system<b> as </b><span style=\"color: maroon\">s</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtId.system = <span style=\"color: maroon\">s</span> <i>\"CopyIdSystem\"</i><span style=\"color: navy\">;</span>#xD;\n    srcId.value<b> as </b><span style=\"color: maroon\">v</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtId.value = <span style=\"color: maroon\">v</span> <i>\"CopyIdValue\"</i><span style=\"color: navy\">;</span>#xD;\n    srcId.use<b> as </b><span style=\"color: maroon\">u</span><span style=\"color: navy\"><b> -&gt; </b></span>tgtId.use = <span style=\"color: maroon\">u</span> <i>\"CopyIdUse\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"CopyIdentifier\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Set derivedFrom reference back to the QuestionnaireResponse</span>#xD;\n  src.id<b> as </b><span style=\"color: maroon\">srcRefId</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.derivedFrom = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Reference'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">ref</span><span style=\"color: navy\">, </span> ref.reference = <b>append</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'QuestionnaireResponse/'</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">srcRefId</span><span style=\"color: navy\">)</span> <i>\"SetDerivedFrom\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Subject reference</span>#xD;\n  src.subject<b> as </b><span style=\"color: maroon\">subject</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.subject = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Reference'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">ref</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    subject.reference<b> as </b><span style=\"color: maroon\">r</span><span style=\"color: navy\"><b> -&gt; </b></span>ref.reference = <span style=\"color: maroon\">r</span> <i>\"CopySubjectRef\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"SetSubject\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">// </span><span style=\"color: green\">Instance creation datetime</span>#xD;\n  src.authored<b> as </b><span style=\"color: maroon\">authored</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.issued = <span style=\"color: maroon\">authored</span> <i>\"SetEffective\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"] ;
+  fhir:StructureMap.version [ fhir:value "0.1.0"] ;
+  fhir:StructureMap.name [ fhir:value "QuestionnaireResponseToObservationBase"] ;
+  fhir:StructureMap.title [ fhir:value "Shared base for Q to O"] ;
+  fhir:StructureMap.status [ fhir:value "active"] ;
+  fhir:StructureMap.date [ fhir:value "2026-06-29T13:58:40+00:00"^^xsd:dateTime] ;
+  fhir:StructureMap.publisher [ fhir:value "The PreNUDGE Consortium"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "The PreNUDGE Consortium" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://prenudge.at" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "The PreNUDGE Consortium" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://prenudge.at" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:StructureMap.description [ fhir:value "Shared base for Q to O"] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" ;
        fhir:link <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
      ] ;
-     fhir:mode [ fhir:v "source" ] ;
-     fhir:alias [ fhir:v "QR" ]
-  ] [
-     fhir:url [
-       fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "QR" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
        fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
      ] ;
-     fhir:mode [ fhir:v "target" ] ;
-     fhir:alias [ fhir:v "Obs" ]
-  ] ) ; # 
-  fhir:group ( [
-     fhir:name [ fhir:v "SetObservationBase" ] ;
-     fhir:typeMode [ fhir:v "none" ] ;
-     fhir:input ( [
-       fhir:name [ fhir:v "src" ] ;
-       fhir:type [ fhir:v "QR" ] ;
-       fhir:mode [ fhir:v "source" ]
-     ] [
-       fhir:name [ fhir:v "tgt" ] ;
-       fhir:type [ fhir:v "Obs" ] ;
-       fhir:mode [ fhir:v "target" ]
-     ] ) ;
-     fhir:rule ( [
-       fhir:name [ fhir:v "SetStatus" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "status" ] ;
-         fhir:transform [ fhir:v "copy" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "final"
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Obs" ]
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "SetObservationBase" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "QR" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Obs" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetStatus" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "status" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "final" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetMethod" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "method" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cc" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://snomed.info/sct" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "87982008" ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Manual" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "CopyIdentifier" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcId" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "identifier" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "tgtId" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Identifier" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "CopyIdSystem" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcId" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "system" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "s" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtId" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "s" ]
            ]
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "SetMethod" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "method" ] ;
-         fhir:transform [ fhir:v "cc" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "http://snomed.info/sct"
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "CopyIdValue" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcId" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "v" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtId" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "v" ]
            ]
-         ] [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "87982008"
+         ]
+       ], [
+         fhir:index 2 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "CopyIdUse" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "srcId" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "use" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "u" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgtId" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "use" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "u" ]
            ]
-         ] [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "Manual"
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetDerivedFrom" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "id" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "srcRefId" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "derivedFrom" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ref" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Reference" ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "ref" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "append" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "QuestionnaireResponse/" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "srcRefId" ]
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetSubject" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "subject" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "subject" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "subject" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "ref" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Reference" ]
+         ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "CopySubjectRef" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "subject" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "r" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "ref" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "reference" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "r" ]
            ]
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "CopyIdentifier" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ] ;
-         fhir:element [ fhir:v "identifier" ] ;
-         fhir:variable [ fhir:v "srcId" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "identifier" ] ;
-         fhir:variable [ fhir:v "tgtId" ] ;
-         fhir:transform [ fhir:v "create" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "Identifier"
-           ]
-         ] )
-       ] ) ;
-       fhir:rule ( [
-         fhir:name [ fhir:v "CopyIdSystem" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "srcId" ] ;
-           fhir:element [ fhir:v "system" ] ;
-           fhir:variable [ fhir:v "s" ]
-         ] ) ;
-         fhir:target ( [
-           fhir:context [ fhir:v "tgtId" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "system" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:id ;
-               fhir:v "s"
-             ]
-           ] )
-         ] )
-       ] [
-         fhir:name [ fhir:v "CopyIdValue" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "srcId" ] ;
-           fhir:element [ fhir:v "value" ] ;
-           fhir:variable [ fhir:v "v" ]
-         ] ) ;
-         fhir:target ( [
-           fhir:context [ fhir:v "tgtId" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "value" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:id ;
-               fhir:v "v"
-             ]
-           ] )
-         ] )
-       ] [
-         fhir:name [ fhir:v "CopyIdUse" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "srcId" ] ;
-           fhir:element [ fhir:v "use" ] ;
-           fhir:variable [ fhir:v "u" ]
-         ] ) ;
-         fhir:target ( [
-           fhir:context [ fhir:v "tgtId" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "use" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:id ;
-               fhir:v "u"
-             ]
-           ] )
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "SetDerivedFrom" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ] ;
-         fhir:element [ fhir:v "id" ] ;
-         fhir:variable [ fhir:v "srcRefId" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "derivedFrom" ] ;
-         fhir:variable [ fhir:v "ref" ] ;
-         fhir:transform [ fhir:v "create" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "Reference"
-           ]
-         ] )
-       ] [
-         fhir:context [ fhir:v "ref" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "reference" ] ;
-         fhir:transform [ fhir:v "append" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "QuestionnaireResponse/"
-           ]
-         ] [
-           fhir:value [
-             a fhir:id ;
-             fhir:v "srcRefId"
-           ]
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "SetSubject" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ] ;
-         fhir:element [ fhir:v "subject" ] ;
-         fhir:variable [ fhir:v "subject" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "subject" ] ;
-         fhir:variable [ fhir:v "ref" ] ;
-         fhir:transform [ fhir:v "create" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "Reference"
-           ]
-         ] )
-       ] ) ;
-       fhir:rule ( [
-         fhir:name [ fhir:v "CopySubjectRef" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "subject" ] ;
-           fhir:element [ fhir:v "reference" ] ;
-           fhir:variable [ fhir:v "r" ]
-         ] ) ;
-         fhir:target ( [
-           fhir:context [ fhir:v "ref" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "reference" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:id ;
-               fhir:v "r"
-             ]
-           ] )
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "SetEffective" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ] ;
-         fhir:element [ fhir:v "authored" ] ;
-         fhir:variable [ fhir:v "authored" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "issued" ] ;
-         fhir:transform [ fhir:v "copy" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:id ;
-             fhir:v "authored"
-           ]
-         ] )
-       ] )
-     ] )
-  ] ) . # 
+         ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetEffective" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "authored" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "authored" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "issued" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "authored" ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

@@ -20,7 +20,7 @@ This Implementation Guide (IG) explains how application providers can use the **
 We focus on narrow standardization of the following **PreNUDGE measurements**:
 
 * **Physical Activity**: 
-* ⏳Minutes of moderate and vigorous/intense physical activity (per week) (from [**EHIS-PAQ Q4–Q7 / ATHIS PE4–PE7 questionnaire**](Questionnaire-EhisPaqPhysicalActivityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-physical-activity-minutes-observation.md))
+* Minutes of moderate and vigorous/intense physical activity (per week) (from [**EHIS-PAQ Q4–Q7 / ATHIS PE4–PE7 questionnaire**](Questionnaire-EhisPaqPhysicalActivityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-physical-activity-minutes-observation.md))
 * Daily activity as Steps per day (from a [**EHIS-PAQ Q2–Q3 / ATHIS PE2–PE3 questionnaire**](Questionnaire-StepCountEhisPaqQuestionnaire.md), [**quantity questionnaire**](Questionnaire-StepCountQuantityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-stepcount-observation.md))
 * ⏳Number of muscle-strengthening exercise sessions (per week) (from [**EHIS-PAQ Q8 / ATHIS PE8 questionnaire**](Questionnaire-EhisPaqMuscleStrengtheningQuestionnaire.md), [**quantity questionnaire**](Questionnaire-MuscleStrengtheningQuantityQuestionnaire.md) and (from a wearable device) as an [**observation**](StructureDefinition-at-prenudge-muscle-strengthening-observation.md))
 * ⏳Sitting hours (per day) (from [**EHIS-PAQ Q9 / ATHIS PE9 questionnaire**](Questionnaire-EhisPaqSittingHoursQuestionnaire.md) and (from wearable device) as an [**observation**](StructureDefinition-at-prenudge-sitting-hours-observation.md))
@@ -39,6 +39,10 @@ We focus on narrow standardization of the following **PreNUDGE measurements**:
  
 * Anthropometry: **Body Mass Index** (BMI) in kg/m² (from a [**questionnaire**](Questionnaire-BmiQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-bmi-observation.md))
 * For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
+* **Nutrition**: 
+* Portions of fruit and vegetables (per day) from a [**questionnaire**](Questionnaire-NutritionFruitVegetableQuestionnaire.md) and as a [**fruit portions observation**](StructureDefinition-at-prenudge-nutrition-fruitportions-observation.md) and a [**vegetable portions observation**](StructureDefinition-at-prenudge-nutrition-vegetableportions-observation.md)
+* Consumption frequency of sugary and salty foods (per week) from a [**questionnaire**](Questionnaire-NutritionSugarSaltyQuestionnaire.md) and as an [**observation**](StructureDefinition-at-prenudge-nutrition-sugarsalty-observation.md)
+ 
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
 
@@ -46,8 +50,6 @@ Each **questionnaire variant** maps **one-way** to its corresponding **observati
 
 Additional PreNUDGE measurements, also narrow standardized, will be specified analogously to the ones mentioned above, based on feedback from the informative ballot. The following are to be specified:
 
-* Nutrition: Portions of fruit and vegetables (per day) (from a questionnaire)
-* Nutrition: Consumption frequency of sugary and salty foods (per week) (from a questionnaire)
 * Psychosocial Factors: Self reported emotional burden (from a questionnaire)
 * Psychosocial Factors: Self reported stress (from a questionnaire with a calculated score as an observation)
 
@@ -69,7 +71,7 @@ If neither `value[x]` nor `dataAbsentReason` is present, the Observation is inco
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-25
+2026-06-29
 
 Links:
 [Table of Contents](toc.md)|
@@ -86,7 +88,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-25T12:51:02+00:00",
+  "date" : "2026-06-29T13:58:40+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -865,6 +867,30 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-nutrition-consumption-frequency-vs"
+      },
+      "name" : "AT PreNUDGE Nutrition Consumption Frequency",
+      "description" : "All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025. Includes the 'Weiß nicht' option (code 'unknown').",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/prenudge-nutrition-sugarsalty-frequency-vs"
+      },
+      "name" : "AT PreNUDGE Nutrition Sugar Salty Consumption Frequency",
+      "description" : "Frequency options for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). Excludes 'Weiß nicht' because DH6 does not offer that option.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource:abstract"
       }],
       "reference" : {
@@ -968,6 +994,42 @@ Links:
       },
       "name" : "AT PreNUDGE Observation Muscle Strengthening Sessions",
       "description" : "This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-nutrition-fruitportions-observation"
+      },
+      "name" : "AT PreNUDGE Observation Nutrition Fruit Portions",
+      "description" : "Records self-reported daily portions of fruit based on ATHIS 2025 question DH2. Applicable only for respondents who eat fruit daily (DH1 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89765-5 'Servings of fruit per day [PhenX]'.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-nutrition-sugarsalty-observation"
+      },
+      "name" : "AT PreNUDGE Observation Nutrition Sugar Salty Frequency",
+      "description" : "Records self-reported consumption frequency of sugary, fatty, and salty foods and energy-dense drinks, based on ATHIS 2025 question DH6. Coded using SNOMED CT 364395008 'Pattern of food and drink intake (observable entity)' as the observation concept; update if a more specific LOINC code is identified for this measurement.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-prenudge-nutrition-vegetableportions-observation"
+      },
+      "name" : "AT PreNUDGE Observation Nutrition Vegetable Portions",
+      "description" : "Records self-reported daily portions of vegetables or salad based on ATHIS 2025 question DH4. Applicable only for respondents who eat vegetables daily (DH3 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89764-8 'Servings of vegetables per day [PhenX]'.",
       "exampleBoolean" : false
     },
     {
@@ -1243,7 +1305,7 @@ Links:
         "reference" : "CodeSystem/athis-answers"
       },
       "name" : "ATHIS – Antwortmöglichkeiten",
-      "description" : "Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).",
+      "description" : "Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).",
       "exampleBoolean" : false
     },
     {
@@ -1528,6 +1590,18 @@ Links:
         "valueString" : "Questionnaire"
       }],
       "reference" : {
+        "reference" : "Questionnaire/NutritionSugarSaltyQuestionnaire"
+      },
+      "name" : "Konsumhäufigkeit fett-, zucker- und salzreicher Lebensmittel",
+      "description" : "Questionnaire based on ATHIS 2025 question DH6 (STATISTIK AUSTRIA) to self-report the weekly consumption frequency of sugary, fatty, and salty foods and energy-dense drinks.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
         "reference" : "Questionnaire/BmiQuestionnaire"
       },
       "name" : "Körpergröße, Körpergewicht und Body Mass Index (BMI)",
@@ -1593,6 +1667,126 @@ Links:
       "name" : "Muskelkräftigungs-Trainingseinheiten pro Woche (numerisch)",
       "description" : "A numeric questionnaire for directly entering the number of muscle-strengthening exercise sessions per week. Designed for direct FML mapping to the AT PreNUDGE Observation Muscle Strengthening Sessions profile via MuscleStrengtheningQuestionnaireResponseToObservation. Use EhisPaqMuscleStrengtheningQuestionnaire for the categorical EHIS-PAQ Q8 / ATHIS PE8 representation.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/nutrition-fruitvegetable-response-daily-example"
+      },
+      "name" : "Nutrition Fruit & Veg Q - Daily Eater Example",
+      "description" : "Example response for a daily fruit and vegetable eater: fruit daily (DH1), 3 portions of fruit (DH2), vegetables daily (DH3), 2 portions of vegetables (DH4).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/nutrition-fruitvegetable-response-nondaily-example"
+      },
+      "name" : "Nutrition Fruit & Veg Q - Non-Daily Eater Example",
+      "description" : "Example response for a non-daily fruit and vegetable eater: fruit 4–6 times per week (DH1, DH2 not enabled), vegetables 1–3 times per week (DH3, DH4 not enabled).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-fruitportions-high-example"
+      },
+      "name" : "Nutrition Fruit Portions O mapped from Q - High Intake Example",
+      "description" : "Example of 5 daily fruit portions, indicating high fruit intake.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-fruitportions-normal-example"
+      },
+      "name" : "Nutrition Fruit Portions O mapped from Q - Normal Example",
+      "description" : "Example of 3 daily fruit portions, derived from a questionnaire response (daily eater, DH2 = 3).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-sugarsalty-daily-example"
+      },
+      "name" : "Nutrition Sugar Salty Frequency O mapped from Q - Daily Example",
+      "description" : "Example of daily consumption of sugary, fatty, and salty foods, derived from a questionnaire response (DH6 = code#1).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-sugarsalty-rare-example"
+      },
+      "name" : "Nutrition Sugar Salty Frequency O mapped from Q - Rare Example",
+      "description" : "Example of less-than-once-weekly consumption of sugary, fatty, and salty foods (DH6 = code#4).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/nutrition-sugarsalty-response-daily-example"
+      },
+      "name" : "Nutrition Sugar Salty Q - Daily Consumption Example",
+      "description" : "Example response for daily or multiple-times-daily consumption of sugary, fatty, and salty foods (DH6 = code#1).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/nutrition-sugarsalty-response-rare-example"
+      },
+      "name" : "Nutrition Sugar Salty Q - Rare Consumption Example",
+      "description" : "Example response for less-than-once-weekly consumption of sugary, fatty, and salty foods (DH6 = code#4).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-vegetableportions-high-example"
+      },
+      "name" : "Nutrition Vegetable Portions O mapped from Q - High Intake Example",
+      "description" : "Example of 4 daily vegetable and salad portions, indicating high vegetable intake.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-vegetableportions-normal-example"
+      },
+      "name" : "Nutrition Vegetable Portions O mapped from Q - Normal Example",
+      "description" : "Example of 2 daily vegetable and salad portions, derived from a questionnaire response (daily eater, DH4 = 2).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation"
     },
     {
       "extension" : [{
@@ -1665,6 +1859,18 @@ Links:
       "name" : "Physical Activity Minutes O - (f) EHIS-PAQ/ATHIS Q7/PE7 Mapped (Aggregate Only)",
       "description" : "Scenario (f): Observation produced by applying\nPhysicalActivityMinutesQtoO to\nphysical-activity-ehispaq-response-example.\nQ7/PE7 answer: 2 Stunden + 30 Minuten → aggregateActivity = (2×60)+30 = 150 min/wk.\nNo intensity weighting is applied because Q7 does not separate moderate from\nvigorous activity.  derivedFrom links back to the source QuestionnaireResponse.\nclassificationMethod is absent; pa-manual-comp-01 is satisfied by absence.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Questionnaire"
+      }],
+      "reference" : {
+        "reference" : "Questionnaire/NutritionFruitVegetableQuestionnaire"
+      },
+      "name" : "Portionen Obst und Gemüse pro Tag",
+      "description" : "Questionnaire based on ATHIS 2025 questions DH1–DH4 (STATISTIK AUSTRIA) to self-report daily portions of fruit and vegetables. DH2 is only enabled when DH1 = 'Täglich oder mehrmals täglich'; DH4 is only enabled when DH3 = 'Täglich oder mehrmals täglich'.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -2163,6 +2369,39 @@ Links:
       },
       "name" : "Muscle Strengthening Sessions Q to O",
       "description" : "Muscle Strengthening Sessions Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/NutritionFruitPortionsQuestionnaireResponseToObservation"
+      },
+      "name" : "Nutrition Fruit Portions Q to O",
+      "description" : "Nutrition Fruit Portions Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation"
+      },
+      "name" : "Nutrition Sugar Salty Frequency Q to O",
+      "description" : "Nutrition Sugar Salty Frequency Q to O"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureMap"
+      }],
+      "reference" : {
+        "reference" : "StructureMap/NutritionVegetablePortionsQuestionnaireResponseToObservation"
+      },
+      "name" : "Nutrition Vegetable Portions Q to O",
+      "description" : "Nutrition Vegetable Portions Q to O"
     },
     {
       "extension" : [{
