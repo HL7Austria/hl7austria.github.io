@@ -34,11 +34,9 @@ We focus on narrow standardization of the following **PreNUDGE measurements**:
  
 * Anthropometry: **Body Mass Index** (BMI) in kg/m² (from a [**questionnaire**](Questionnaire-BmiQuestionnaire.md) and from an [**observation**](StructureDefinition-at-prenudge-bmi-observation.md))
 * For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
-* **Nutrition**: Portions of fruit and vegetables (per day) 
-* From a [**questionnaire**](Questionnaire-NutritionFruitVegetableQuestionnaire.md) and as a [**fruit portions observation**](StructureDefinition-at-prenudge-nutrition-fruitportions-observation.md) and a [**vegetable portions observation**](StructureDefinition-at-prenudge-nutrition-vegetableportions-observation.md)
- 
-* **Nutrition**: Consumption frequency of sugary and salty foods (per week) 
-* From a [**questionnaire**](Questionnaire-NutritionSugarSaltyQuestionnaire.md) and as an [**observation**](StructureDefinition-at-prenudge-nutrition-sugarsalty-observation.md)
+* **Nutrition**: 
+* Portions of fruit and vegetables (per day) from a [**questionnaire**](Questionnaire-NutritionFruitVegetableQuestionnaire.md) and as a [**fruit portions observation**](StructureDefinition-at-prenudge-nutrition-fruitportions-observation.md) and a [**vegetable portions observation**](StructureDefinition-at-prenudge-nutrition-vegetableportions-observation.md)
+* Consumption frequency of sugary and salty foods (per week) from a [**questionnaire**](Questionnaire-NutritionSugarSaltyQuestionnaire.md) and as an [**observation**](StructureDefinition-at-prenudge-nutrition-sugarsalty-observation.md)
  
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
@@ -88,7 +86,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-29T10:23:22+00:00",
+  "date" : "2026-06-29T10:47:49+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
