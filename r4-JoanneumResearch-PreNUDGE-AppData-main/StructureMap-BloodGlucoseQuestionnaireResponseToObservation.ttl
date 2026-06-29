@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,380 +7,433 @@
 
 <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation> a fhir:StructureMap ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "BloodGlucoseQuestionnaireResponseToObservation"] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap BloodGlucoseQuestionnaireResponseToObservation</b></p><a name=\"BloodGlucoseQuestionnaireResponseToObservation\"> </a><a name=\"hcBloodGlucoseQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation<span style=\"color: navy\">\" = \"</span>BloodGlucoseQuestionnaireResponseToObservation<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Blood Glucose Q to O</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Quantity\" title=\"Quantity\">http://hl7.org/fhir/StructureDefinition/Quantity</a><span style=\"color: navy\">\" </span><b>alias </b>Quantity <b>as </b><b>source</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-QuestionnaireResponseToObservationBase.html\" title=\"Shared base for Q to O\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>BloodGlucoseQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<b> then </b>SetObservationBase<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"Base\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation'</span> <i>\"SetProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'41653-7'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Glucose [Mass/volume] in Capillary blood by Glucometer'</span><span style=\"color: navy\">)</span> <i>\"SetCode\"</i><span style=\"color: navy\">;</span>#xD;\n  src.item<b> as </b><span style=\"color: maroon\">item</span><b> where </b>linkId = 'blood-glucose'<b> then </b>MapBloodGlucose<span style=\"color: navy\">(</span><span style=\"color: maroon\">item</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"ProcessItem\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapBloodGlucose<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Process the answer first to get access to nested items</span>#xD;\n  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    <span style=\"color: navy\">// </span><span style=\"color: green\">effectiveDateTime from nested item</span>#xD;\n    answer.item<b> as </b><span style=\"color: maroon\">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      dtItem.answer<b> as </b><span style=\"color: maroon\">dtAns</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        dtAns.valueDateTime<b> as </b><span style=\"color: maroon\">dt</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style=\"color: maroon\">dt</span> <i>\"SetEffectiveFromDatetime\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"ExtractDateTime\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ProcessDatetime\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Meal context → component[mealContext]</span>#xD;\n    answer.item<b> as </b><span style=\"color: maroon\">mcItem</span><b> where </b>linkId = 'meal-context'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      mcItem.answer<b> as </b><span style=\"color: maroon\">mcAns</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        mcAns.valueCoding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'309602000'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Temporal periods relating to feeding and eating'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><span style=\"color: navy\">, </span> cc.coding = <span style=\"color: maroon\">coding</span> <i>\"SetMealContextCoding\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"ExtractCoding\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ProcessMealContext\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Map the blood glucose value</span>#xD;\n    answer.valueQuantity<b> as </b><span style=\"color: maroon\">srcQty</span><b> then </b>MapBloodGlucoseQuantity<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcQty</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"MapValueQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapBloodGlucoseQuantity<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">srcQty</span><span style=\"color: navy\"> : </span>Quantity, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  srcQty.value<b> as </b><span style=\"color: maroon\">v</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    v.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'mg/dL'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'mg/dL'</span> <i>\"SetQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ExtractValue\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:url [ fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.0"] ; # 
-  fhir:name [ fhir:v "BloodGlucoseQuestionnaireResponseToObservation"] ; # 
-  fhir:title [ fhir:v "Blood Glucose Q to O"] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2026-06-24T13:18:54+00:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "The PreNUDGE Consortium"] ; # 
-  fhir:contact ( [
-     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://prenudge.at" ]
-     ] )
-  ] [
-     fhir:name [ fhir:v "The PreNUDGE Consortium" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://prenudge.at" ] ;
-       fhir:use [ fhir:v "work" ]
-     ] )
-  ] ) ; # 
-  fhir:description [ fhir:v "Blood Glucose Q to O"] ; # 
-  fhir:structure ( [
-     fhir:url [
-       fhir:v "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"^^xsd:anyURI ;
+  fhir:Resource.id [ fhir:value "BloodGlucoseQuestionnaireResponseToObservation"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap BloodGlucoseQuestionnaireResponseToObservation</b></p><a name=\"BloodGlucoseQuestionnaireResponseToObservation\"> </a><a name=\"hcBloodGlucoseQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation<span style=\"color: navy\">\" = \"</span>BloodGlucoseQuestionnaireResponseToObservation<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Blood Glucose Q to O</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/datatypes.html#Quantity\" title=\"Quantity\">http://hl7.org/fhir/StructureDefinition/Quantity</a><span style=\"color: navy\">\" </span><b>alias </b>Quantity <b>as </b><b>source</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-QuestionnaireResponseToObservationBase.html\" title=\"Shared base for Q to O\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>BloodGlucoseQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<b> then </b>SetObservationBase<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"Base\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation'</span> <i>\"SetProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'41653-7'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Glucose [Mass/volume] in Capillary blood by Glucometer'</span><span style=\"color: navy\">)</span> <i>\"SetCode\"</i><span style=\"color: navy\">;</span>#xD;\n  src.item<b> as </b><span style=\"color: maroon\">item</span><b> where </b>linkId = 'blood-glucose'<b> then </b>MapBloodGlucose<span style=\"color: navy\">(</span><span style=\"color: maroon\">item</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"ProcessItem\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapBloodGlucose<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  <span style=\"color: navy\">// </span><span style=\"color: green\">Process the answer first to get access to nested items</span>#xD;\n  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    <span style=\"color: navy\">// </span><span style=\"color: green\">effectiveDateTime from nested item</span>#xD;\n    answer.item<b> as </b><span style=\"color: maroon\">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      dtItem.answer<b> as </b><span style=\"color: maroon\">dtAns</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        dtAns.valueDateTime<b> as </b><span style=\"color: maroon\">dt</span><span style=\"color: navy\"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style=\"color: maroon\">dt</span> <i>\"SetEffectiveFromDatetime\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"ExtractDateTime\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ProcessDatetime\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Meal context → component[mealContext]</span>#xD;\n    answer.item<b> as </b><span style=\"color: maroon\">mcItem</span><b> where </b>linkId = 'meal-context'<b> then</b><span style=\"color: navy\"> {#xD;\n</span>      mcItem.answer<b> as </b><span style=\"color: maroon\">mcAns</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>        mcAns.valueCoding<b> as </b><span style=\"color: maroon\">coding</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.component<b> as </b><span style=\"color: maroon\">comp</span><span style=\"color: navy\">, </span> comp.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://snomed.info/sct'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'309602000'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Temporal periods relating to feeding and eating'</span><span style=\"color: navy\">)</span><span style=\"color: navy\">, </span> comp.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'CodeableConcept'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">cc</span><span style=\"color: navy\">, </span> cc.coding = <span style=\"color: maroon\">coding</span> <i>\"SetMealContextCoding\"</i><span style=\"color: navy\">;</span>#xD;\n      <span style=\"color: navy\">}</span> <i>\"ExtractCoding\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ProcessMealContext\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">// </span><span style=\"color: green\">Map the blood glucose value</span>#xD;\n    answer.valueQuantity<b> as </b><span style=\"color: maroon\">srcQty</span><b> then </b>MapBloodGlucoseQuantity<span style=\"color: navy\">(</span><span style=\"color: maroon\">srcQty</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"MapValueQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapBloodGlucoseQuantity<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">srcQty</span><span style=\"color: navy\"> : </span>Quantity, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  srcQty.value<b> as </b><span style=\"color: maroon\">v</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    v.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'mg/dL'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'mg/dL'</span> <i>\"SetQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ExtractValue\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation"] ;
+  fhir:StructureMap.version [ fhir:value "0.1.0"] ;
+  fhir:StructureMap.name [ fhir:value "BloodGlucoseQuestionnaireResponseToObservation"] ;
+  fhir:StructureMap.title [ fhir:value "Blood Glucose Q to O"] ;
+  fhir:StructureMap.status [ fhir:value "active"] ;
+  fhir:StructureMap.date [ fhir:value "2026-06-29T10:23:22+00:00"^^xsd:dateTime] ;
+  fhir:StructureMap.publisher [ fhir:value "The PreNUDGE Consortium"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "The PreNUDGE Consortium" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://prenudge.at" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "The PreNUDGE Consortium" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://prenudge.at" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:StructureMap.description [ fhir:value "Blood Glucose Q to O"] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" ;
        fhir:link <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
      ] ;
-     fhir:mode [ fhir:v "source" ] ;
-     fhir:alias [ fhir:v "QR" ]
-  ] [
-     fhir:url [
-       fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "QR" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
        fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
      ] ;
-     fhir:mode [ fhir:v "target" ] ;
-     fhir:alias [ fhir:v "Obs" ]
-  ] [
-     fhir:url [
-       fhir:v "http://hl7.org/fhir/StructureDefinition/Quantity"^^xsd:anyURI ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Obs" ]
+  ], [
+     fhir:index 2 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Quantity" ;
        fhir:link <http://hl7.org/fhir/StructureDefinition/Quantity>
      ] ;
-     fhir:mode [ fhir:v "source" ] ;
-     fhir:alias [ fhir:v "Quantity" ]
-  ] ) ; # 
-  fhir:import ( [
-     fhir:v "http://hl7.org/fhir/StructureMap/*"^^xsd:anyURI ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Quantity" ]
+  ] ;
+  fhir:StructureMap.import [
+     fhir:value "http://hl7.org/fhir/StructureMap/*" ;
+     fhir:index 0 ;
      fhir:link <http://hl7.org/fhir/StructureMap/*>
-  ] [
-     fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase"^^xsd:anyURI ;
+  ], [
+     fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase" ;
+     fhir:index 1 ;
      fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase>
-  ] ) ; # 
-  fhir:group ( [
-     fhir:name [ fhir:v "BloodGlucoseQuestionnaireResponseToObservation" ] ;
-     fhir:typeMode [ fhir:v "none" ] ;
-     fhir:input ( [
-       fhir:name [ fhir:v "src" ] ;
-       fhir:type [ fhir:v "QR" ] ;
-       fhir:mode [ fhir:v "source" ]
-     ] [
-       fhir:name [ fhir:v "tgt" ] ;
-       fhir:type [ fhir:v "Obs" ] ;
-       fhir:mode [ fhir:v "target" ]
-     ] ) ;
-     fhir:rule ( [
-       fhir:name [ fhir:v "Base" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ]
-       ] ) ;
-       fhir:dependent ( [
-         fhir:name [ fhir:v "SetObservationBase" ] ;
-         fhir:variable ( [ fhir:v "src" ] [ fhir:v "tgt" ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "SetProfile" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "meta" ] ;
-         fhir:variable [ fhir:v "meta" ] ;
-         fhir:transform [ fhir:v "create" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "Meta"
-           ]
-         ] )
-       ] [
-         fhir:context [ fhir:v "meta" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "profile" ] ;
-         fhir:transform [ fhir:v "copy" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
-           ]
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "SetCode" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ]
-       ] ) ;
-       fhir:target ( [
-         fhir:context [ fhir:v "tgt" ] ;
-         fhir:contextType [ fhir:v "variable" ] ;
-         fhir:element [ fhir:v "code" ] ;
-         fhir:transform [ fhir:v "cc" ] ;
-         fhir:parameter ( [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "http://loinc.org"
-           ]
-         ] [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "41653-7"
-           ]
-         ] [
-           fhir:value [
-             a fhir:string ;
-             fhir:v "Glucose [Mass/volume] in Capillary blood by Glucometer"
-           ]
-         ] )
-       ] )
-     ] [
-       fhir:name [ fhir:v "ProcessItem" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ] ;
-         fhir:element [ fhir:v "item" ] ;
-         fhir:variable [ fhir:v "item" ] ;
-         fhir:condition [ fhir:v "linkId = 'blood-glucose'" ]
-       ] ) ;
-       fhir:dependent ( [
-         fhir:name [ fhir:v "MapBloodGlucose" ] ;
-         fhir:variable ( [ fhir:v "item" ] [ fhir:v "tgt" ] )
-       ] )
-     ] )
-  ] [
-     fhir:name [ fhir:v "MapBloodGlucose" ] ;
-     fhir:typeMode [ fhir:v "none" ] ;
-     fhir:input ( [
-       fhir:name [ fhir:v "src" ] ;
-       fhir:type [ fhir:v "QR" ] ;
-       fhir:mode [ fhir:v "source" ]
-     ] [
-       fhir:name [ fhir:v "tgt" ] ;
-       fhir:type [ fhir:v "Obs" ] ;
-       fhir:mode [ fhir:v "target" ]
-     ] ) ;
-     fhir:rule ( [
-       fhir:name [ fhir:v "ProcessAnswer" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "src" ] ;
-         fhir:element [ fhir:v "answer" ] ;
-         fhir:variable [ fhir:v "answer" ]
-       ] ) ;
-       fhir:rule ( [
-         fhir:name [ fhir:v "ProcessDatetime" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "answer" ] ;
-           fhir:element [ fhir:v "item" ] ;
-           fhir:variable [ fhir:v "dtItem" ] ;
-           fhir:condition [ fhir:v "linkId = 'datetime'" ]
-         ] ) ;
-         fhir:rule ( [
-           fhir:name [ fhir:v "ExtractDateTime" ] ;
-           fhir:source ( [
-             fhir:context [ fhir:v "dtItem" ] ;
-             fhir:element [ fhir:v "answer" ] ;
-             fhir:variable [ fhir:v "dtAns" ]
-           ] ) ;
-           fhir:rule ( [
-             fhir:name [ fhir:v "SetEffectiveFromDatetime" ] ;
-             fhir:source ( [
-               fhir:context [ fhir:v "dtAns" ] ;
-               fhir:element [ fhir:v "valueDateTime" ] ;
-               fhir:variable [ fhir:v "dt" ]
-             ] ) ;
-             fhir:target ( [
-               fhir:context [ fhir:v "tgt" ] ;
-               fhir:contextType [ fhir:v "variable" ] ;
-               fhir:element [ fhir:v "effectiveDateTime" ] ;
-               fhir:transform [ fhir:v "copy" ] ;
-               fhir:parameter ( [
-                 fhir:value [
-                   a fhir:id ;
-                   fhir:v "dt"
-                 ]
-               ] )
-             ] )
-           ] )
-         ] )
-       ] [
-         fhir:name [ fhir:v "ProcessMealContext" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "answer" ] ;
-           fhir:element [ fhir:v "item" ] ;
-           fhir:variable [ fhir:v "mcItem" ] ;
-           fhir:condition [ fhir:v "linkId = 'meal-context'" ]
-         ] ) ;
-         fhir:rule ( [
-           fhir:name [ fhir:v "ExtractCoding" ] ;
-           fhir:source ( [
-             fhir:context [ fhir:v "mcItem" ] ;
-             fhir:element [ fhir:v "answer" ] ;
-             fhir:variable [ fhir:v "mcAns" ]
-           ] ) ;
-           fhir:rule ( [
-             fhir:name [ fhir:v "SetMealContextCoding" ] ;
-             fhir:source ( [
-               fhir:context [ fhir:v "mcAns" ] ;
-               fhir:element [ fhir:v "valueCoding" ] ;
-               fhir:variable [ fhir:v "coding" ]
-             ] ) ;
-             fhir:target ( [
-               fhir:context [ fhir:v "tgt" ] ;
-               fhir:contextType [ fhir:v "variable" ] ;
-               fhir:element [ fhir:v "component" ] ;
-               fhir:variable [ fhir:v "comp" ]
-             ] [
-               fhir:context [ fhir:v "comp" ] ;
-               fhir:contextType [ fhir:v "variable" ] ;
-               fhir:element [ fhir:v "code" ] ;
-               fhir:transform [ fhir:v "cc" ] ;
-               fhir:parameter ( [
-                 fhir:value [
-                   a fhir:string ;
-                   fhir:v "http://snomed.info/sct"
-                 ]
-               ] [
-                 fhir:value [
-                   a fhir:string ;
-                   fhir:v "309602000"
-                 ]
-               ] [
-                 fhir:value [
-                   a fhir:string ;
-                   fhir:v "Temporal periods relating to feeding and eating"
-                 ]
-               ] )
-             ] [
-               fhir:context [ fhir:v "comp" ] ;
-               fhir:contextType [ fhir:v "variable" ] ;
-               fhir:element [ fhir:v "value" ] ;
-               fhir:variable [ fhir:v "cc" ] ;
-               fhir:transform [ fhir:v "create" ] ;
-               fhir:parameter ( [
-                 fhir:value [
-                   a fhir:string ;
-                   fhir:v "CodeableConcept"
-                 ]
-               ] )
-             ] [
-               fhir:context [ fhir:v "cc" ] ;
-               fhir:contextType [ fhir:v "variable" ] ;
-               fhir:element [ fhir:v "coding" ] ;
-               fhir:transform [ fhir:v "copy" ] ;
-               fhir:parameter ( [
-                 fhir:value [
-                   a fhir:id ;
-                   fhir:v "coding"
-                 ]
-               ] )
-             ] )
-           ] )
-         ] )
-       ] [
-         fhir:name [ fhir:v "MapValueQuantity" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "answer" ] ;
-           fhir:element [ fhir:v "valueQuantity" ] ;
-           fhir:variable [ fhir:v "srcQty" ]
-         ] ) ;
-         fhir:dependent ( [
-           fhir:name [ fhir:v "MapBloodGlucoseQuantity" ] ;
-           fhir:variable ( [ fhir:v "srcQty" ] [ fhir:v "tgt" ] )
-         ] )
-       ] )
-     ] )
-  ] [
-     fhir:name [ fhir:v "MapBloodGlucoseQuantity" ] ;
-     fhir:typeMode [ fhir:v "none" ] ;
-     fhir:input ( [
-       fhir:name [ fhir:v "srcQty" ] ;
-       fhir:type [ fhir:v "Quantity" ] ;
-       fhir:mode [ fhir:v "source" ]
-     ] [
-       fhir:name [ fhir:v "tgt" ] ;
-       fhir:type [ fhir:v "Obs" ] ;
-       fhir:mode [ fhir:v "target" ]
-     ] ) ;
-     fhir:rule ( [
-       fhir:name [ fhir:v "ExtractValue" ] ;
-       fhir:source ( [
-         fhir:context [ fhir:v "srcQty" ] ;
-         fhir:element [ fhir:v "value" ] ;
-         fhir:variable [ fhir:v "v" ]
-       ] ) ;
-       fhir:rule ( [
-         fhir:name [ fhir:v "SetQuantity" ] ;
-         fhir:source ( [
-           fhir:context [ fhir:v "v" ] ;
-           fhir:element [ fhir:v "value" ] ;
-           fhir:variable [ fhir:v "numVal" ]
-         ] ) ;
-         fhir:target ( [
-           fhir:context [ fhir:v "tgt" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "value" ] ;
-           fhir:variable [ fhir:v "qty" ] ;
-           fhir:transform [ fhir:v "create" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:string ;
-               fhir:v "Quantity"
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "BloodGlucoseQuestionnaireResponseToObservation" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "QR" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Obs" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "Base" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "SetObservationBase" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "tgt" ;
+           fhir:index 1
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetProfile" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Meta" ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "profile" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetCode" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cc" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://loinc.org" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "41653-7" ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Glucose [Mass/volume] in Capillary blood by Glucometer" ]
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "ProcessItem" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "item" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "item" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "linkId = 'blood-glucose'" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "MapBloodGlucose" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "item" ;
+           fhir:index 0
+         ], [
+           fhir:value "tgt" ;
+           fhir:index 1
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.group.name [ fhir:value "MapBloodGlucose" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "QR" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Obs" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "ProcessAnswer" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "answer" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "answer" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ProcessDatetime" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "answer" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "item" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "dtItem" ] ;
+           fhir:StructureMap.group.rule.source.condition [ fhir:value "linkId = 'datetime'" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "ExtractDateTime" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "dtItem" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "answer" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "dtAns" ]
+           ] ;
+           fhir:StructureMap.group.rule.rule [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "SetEffectiveFromDatetime" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "dtAns" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "valueDateTime" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "dt" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "effectiveDateTime" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "dt" ]
+               ]
              ]
-           ] )
-         ] [
-           fhir:context [ fhir:v "qty" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "value" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:id ;
-               fhir:v "numVal"
+           ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ProcessMealContext" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "answer" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "item" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "mcItem" ] ;
+           fhir:StructureMap.group.rule.source.condition [ fhir:value "linkId = 'meal-context'" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "ExtractCoding" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "mcItem" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "answer" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "mcAns" ]
+           ] ;
+           fhir:StructureMap.group.rule.rule [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.name [ fhir:value "SetMealContextCoding" ] ;
+             fhir:StructureMap.group.rule.source [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.source.context [ fhir:value "mcAns" ] ;
+               fhir:StructureMap.group.rule.source.element [ fhir:value "valueCoding" ] ;
+               fhir:StructureMap.group.rule.source.variable [ fhir:value "coding" ]
+             ] ;
+             fhir:StructureMap.group.rule.target [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "component" ] ;
+               fhir:StructureMap.group.rule.target.variable [ fhir:value "comp" ]
+             ], [
+               fhir:index 1 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "comp" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "cc" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://snomed.info/sct" ]
+               ], [
+                 fhir:index 1 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "309602000" ]
+               ], [
+                 fhir:index 2 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Temporal periods relating to feeding and eating" ]
+               ]
+             ], [
+               fhir:index 2 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "comp" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+               fhir:StructureMap.group.rule.target.variable [ fhir:value "cc" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "CodeableConcept" ]
+               ]
+             ], [
+               fhir:index 3 ;
+               fhir:StructureMap.group.rule.target.context [ fhir:value "cc" ] ;
+               fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+               fhir:StructureMap.group.rule.target.element [ fhir:value "coding" ] ;
+               fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+               fhir:StructureMap.group.rule.target.parameter [
+                 fhir:index 0 ;
+                 fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "coding" ]
+               ]
              ]
-           ] )
-         ] [
-           fhir:context [ fhir:v "qty" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "unit" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:string ;
-               fhir:v "mg/dL"
-             ]
-           ] )
-         ] [
-           fhir:context [ fhir:v "qty" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "system" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:string ;
-               fhir:v "http://unitsofmeasure.org"
-             ]
-           ] )
-         ] [
-           fhir:context [ fhir:v "qty" ] ;
-           fhir:contextType [ fhir:v "variable" ] ;
-           fhir:element [ fhir:v "code" ] ;
-           fhir:transform [ fhir:v "copy" ] ;
-           fhir:parameter ( [
-             fhir:value [
-               a fhir:string ;
-               fhir:v "mg/dL"
-             ]
-           ] )
-         ] )
-       ] )
-     ] )
-  ] ) . # 
+           ]
+         ]
+       ], [
+         fhir:index 2 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "MapValueQuantity" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "answer" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "valueQuantity" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "srcQty" ]
+         ] ;
+         fhir:StructureMap.group.rule.dependent [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.dependent.name [ fhir:value "MapBloodGlucoseQuantity" ] ;
+           fhir:StructureMap.group.rule.dependent.variable [
+             fhir:value "srcQty" ;
+             fhir:index 0
+           ], [
+             fhir:value "tgt" ;
+             fhir:index 1
+           ]
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:StructureMap.group.name [ fhir:value "MapBloodGlucoseQuantity" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "srcQty" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Quantity" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Obs" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "ExtractValue" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "srcQty" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "v" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "SetQuantity" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "v" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "numVal" ]
+         ] ;
+         fhir:StructureMap.group.rule.target [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.target.variable [ fhir:value "qty" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Quantity" ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "numVal" ]
+           ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "unit" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "mg/dL" ]
+           ]
+         ], [
+           fhir:index 3 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://unitsofmeasure.org" ]
+           ]
+         ], [
+           fhir:index 4 ;
+           fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+           fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+           fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+           fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+           fhir:StructureMap.group.rule.target.parameter [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "mg/dL" ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/BloodGlucoseQuestionnaireResponseToObservation.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

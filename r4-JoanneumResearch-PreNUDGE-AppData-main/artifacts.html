@@ -247,11 +247,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Questionnaire-NutritionSugarSaltyQuestionnaire.html"
+                  title="Questionnaire/NutritionSugarSaltyQuestionnaire">Konsumhäufigkeit fett-, zucker- und salzreicher Lebensmittel</a>
+            </td>
+            <td>
+<p>Questionnaire based on ATHIS 2025 question DH6 (STATISTIK AUSTRIA) to self-report the weekly consumption frequency of sugary, fatty, and salty foods and energy-dense drinks.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Questionnaire-BmiQuestionnaire.html"
                   title="Questionnaire/BmiQuestionnaire">Körpergröße, Körpergewicht und Body Mass Index (BMI)</a>
             </td>
             <td>
 <p>Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Questionnaire-NutritionFruitVegetableQuestionnaire.html"
+                  title="Questionnaire/NutritionFruitVegetableQuestionnaire">Portionen Obst und Gemüse pro Tag</a>
+            </td>
+            <td>
+<p>Questionnaire based on ATHIS 2025 questions DH1–DH4 (STATISTIK AUSTRIA) to self-report daily portions of fruit and vegetables. DH2 is only enabled when DH1 = 'Täglich oder mehrmals täglich'; DH4 is only enabled when DH3 = 'Täglich oder mehrmals täglich'.</p>
 </td>
          </tr>
          <tr>
@@ -380,6 +398,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-nutrition-fruitportions-observation.html"
+                  title="StructureDefinition/at-prenudge-nutrition-fruitportions-observation">AT PreNUDGE Observation Nutrition Fruit Portions</a>
+            </td>
+            <td>
+<p>Records self-reported daily portions of fruit based on ATHIS 2025 question DH2. Applicable only for respondents who eat fruit daily (DH1 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89765-5 'Servings of fruit per day [PhenX]'.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-nutrition-sugarsalty-observation.html"
+                  title="StructureDefinition/at-prenudge-nutrition-sugarsalty-observation">AT PreNUDGE Observation Nutrition Sugar Salty Frequency</a>
+            </td>
+            <td>
+<p>Records self-reported consumption frequency of sugary, fatty, and salty foods and energy-dense drinks, based on ATHIS 2025 question DH6. Coded using SNOMED CT 364395008 'Pattern of food and drink intake (observable entity)' as the observation concept; update if a more specific LOINC code is identified for this measurement.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-prenudge-nutrition-vegetableportions-observation.html"
+                  title="StructureDefinition/at-prenudge-nutrition-vegetableportions-observation">AT PreNUDGE Observation Nutrition Vegetable Portions</a>
+            </td>
+            <td>
+<p>Records self-reported daily portions of vegetables or salad based on ATHIS 2025 question DH4. Applicable only for respondents who eat vegetables daily (DH3 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89764-8 'Servings of vegetables per day [PhenX]'.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-at-prenudge-observation-other-quantities.html"
                   title="StructureDefinition/at-prenudge-observation-other-quantities">AT PreNUDGE Observation Other Quantities</a>
             </td>
@@ -496,6 +541,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-prenudge-nutrition-consumption-frequency-vs.html"
+                  title="ValueSet/prenudge-nutrition-consumption-frequency-vs">AT PreNUDGE Nutrition Consumption Frequency</a>
+            </td>
+            <td>
+<p>All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025. Includes the 'Weiß nicht' option (code 'unknown').</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-prenudge-nutrition-sugarsalty-frequency-vs.html"
+                  title="ValueSet/prenudge-nutrition-sugarsalty-frequency-vs">AT PreNUDGE Nutrition Sugar Salty Consumption Frequency</a>
+            </td>
+            <td>
+<p>Frequency options for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). Excludes 'Weiß nicht' because DH6 does not offer that option.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-prenudge-observation-method.html"
                   title="ValueSet/prenudge-observation-method">AT PreNUDGE Observation Methods</a>
             </td>
@@ -588,7 +651,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                <a href="CodeSystem-athis-answers.html" title="CodeSystem/athis-answers">ATHIS – Antwortmöglichkeiten</a>
             </td>
             <td>
-<p>Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).</p>
+<p>Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).</p>
 </td>
          </tr>
       </tbody>
@@ -642,6 +705,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Highest Completed Education Q to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-NutritionFruitPortionsQuestionnaireResponseToObservation.html"
+                  title="StructureMap/NutritionFruitPortionsQuestionnaireResponseToObservation">Nutrition Fruit Portions Q to O</a>
+            </td>
+            <td>
+<p>Nutrition Fruit Portions Q to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation.html"
+                  title="StructureMap/NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation">Nutrition Sugar Salty Frequency Q to O</a>
+            </td>
+            <td>
+<p>Nutrition Sugar Salty Frequency Q to O</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureMap-NutritionVegetablePortionsQuestionnaireResponseToObservation.html"
+                  title="StructureMap/NutritionVegetablePortionsQuestionnaireResponseToObservation">Nutrition Vegetable Portions Q to O</a>
+            </td>
+            <td>
+<p>Nutrition Vegetable Portions Q to O</p>
 </td>
          </tr>
          <tr>
@@ -890,6 +980,96 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Example of a highest completed education questionnaire response using ISCED 2011 level 3.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-nutrition-fruitvegetable-response-daily-example.html"
+                  title="QuestionnaireResponse/nutrition-fruitvegetable-response-daily-example">Nutrition Fruit &amp; Veg Q - Daily Eater Example</a>
+            </td>
+            <td>
+<p>Example response for a daily fruit and vegetable eater: fruit daily (DH1), 3 portions of fruit (DH2), vegetables daily (DH3), 2 portions of vegetables (DH4).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-nutrition-fruitvegetable-response-nondaily-example.html"
+                  title="QuestionnaireResponse/nutrition-fruitvegetable-response-nondaily-example">Nutrition Fruit &amp; Veg Q - Non-Daily Eater Example</a>
+            </td>
+            <td>
+<p>Example response for a non-daily fruit and vegetable eater: fruit 4–6 times per week (DH1, DH2 not enabled), vegetables 1–3 times per week (DH3, DH4 not enabled).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-fruitportions-high-example.html"
+                  title="Observation/nutrition-fruitportions-high-example">Nutrition Fruit Portions O mapped from Q - High Intake Example</a>
+            </td>
+            <td>
+<p>Example of 5 daily fruit portions, indicating high fruit intake.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-fruitportions-normal-example.html"
+                  title="Observation/nutrition-fruitportions-normal-example">Nutrition Fruit Portions O mapped from Q - Normal Example</a>
+            </td>
+            <td>
+<p>Example of 3 daily fruit portions, derived from a questionnaire response (daily eater, DH2 = 3).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-sugarsalty-daily-example.html"
+                  title="Observation/nutrition-sugarsalty-daily-example">Nutrition Sugar Salty Frequency O mapped from Q - Daily Example</a>
+            </td>
+            <td>
+<p>Example of daily consumption of sugary, fatty, and salty foods, derived from a questionnaire response (DH6 = code#1).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-sugarsalty-rare-example.html"
+                  title="Observation/nutrition-sugarsalty-rare-example">Nutrition Sugar Salty Frequency O mapped from Q - Rare Example</a>
+            </td>
+            <td>
+<p>Example of less-than-once-weekly consumption of sugary, fatty, and salty foods (DH6 = code#4).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-nutrition-sugarsalty-response-daily-example.html"
+                  title="QuestionnaireResponse/nutrition-sugarsalty-response-daily-example">Nutrition Sugar Salty Q - Daily Consumption Example</a>
+            </td>
+            <td>
+<p>Example response for daily or multiple-times-daily consumption of sugary, fatty, and salty foods (DH6 = code#1).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-nutrition-sugarsalty-response-rare-example.html"
+                  title="QuestionnaireResponse/nutrition-sugarsalty-response-rare-example">Nutrition Sugar Salty Q - Rare Consumption Example</a>
+            </td>
+            <td>
+<p>Example response for less-than-once-weekly consumption of sugary, fatty, and salty foods (DH6 = code#4).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-vegetableportions-high-example.html"
+                  title="Observation/nutrition-vegetableportions-high-example">Nutrition Vegetable Portions O mapped from Q - High Intake Example</a>
+            </td>
+            <td>
+<p>Example of 4 daily vegetable and salad portions, indicating high vegetable intake.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-vegetableportions-normal-example.html"
+                  title="Observation/nutrition-vegetableportions-normal-example">Nutrition Vegetable Portions O mapped from Q - Normal Example</a>
+            </td>
+            <td>
+<p>Example of 2 daily vegetable and salad portions, derived from a questionnaire response (daily eater, DH4 = 2).</p>
 </td>
          </tr>
          <tr>
@@ -1173,7 +1353,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 13:18+0000">2026-06-24</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Jun 29, 2026 10:23+0000">2026-06-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

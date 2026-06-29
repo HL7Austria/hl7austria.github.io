@@ -20,7 +20,9 @@ These define forms used by systems conforming to this implementation guide to ca
 | [Durchschnittliche Schlafdauer pro Nacht](Questionnaire-SleepDurationQuestionnaire.md) | A simple questionnaire for self-reporting average sleep duration per night in hours. Only allows values between 0 and 24 hours. |
 | [EHIS-PAQ: Zu-Fuß-Gehen](Questionnaire-StepCountEhisPaqQuestionnaire.md) | The questions Q2 and Q3 from the EHIS-PAQ about the number of days and duration of walking (for transport) in a typical week. |
 | [Höchster abgeschlossener Bildungsabschluss](Questionnaire-EducationQuestionnaire.md) | A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels. |
+| [Konsumhäufigkeit fett-, zucker- und salzreicher Lebensmittel](Questionnaire-NutritionSugarSaltyQuestionnaire.md) | Questionnaire based on ATHIS 2025 question DH6 (STATISTIK AUSTRIA) to self-report the weekly consumption frequency of sugary, fatty, and salty foods and energy-dense drinks. |
 | [Körpergröße, Körpergewicht und Body Mass Index (BMI)](Questionnaire-BmiQuestionnaire.md) | Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations. |
+| [Portionen Obst und Gemüse pro Tag](Questionnaire-NutritionFruitVegetableQuestionnaire.md) | Questionnaire based on ATHIS 2025 questions DH1–DH4 (STATISTIK AUSTRIA) to self-report daily portions of fruit and vegetables. DH2 is only enabled when DH1 = 'Täglich oder mehrmals täglich'; DH4 is only enabled when DH3 = 'Täglich oder mehrmals täglich'. |
 | [Rauchstatus und Nikotinkonsum](Questionnaire-SmokingStatusQuestionnaire.md) | ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question. |
 | [Schlafqualität – Selbsteinschätzung (WHOQOL-BREF Q16)](Questionnaire-SleepQualityQuestionnaire.md) | Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?'). |
 | [Schrittzahl am heutigen Tag](Questionnaire-StepCountQuantityQuestionnaire.md) | A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. |
@@ -47,6 +49,9 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT PreNUDGE Observation Body Mass Index](StructureDefinition-at-prenudge-bmi-observation.md) | This FHIR profile defines a Body Mass Index (BMI) Observation based on the FHIR R4 Vital Signs BMI concept. BMI is represented using LOINC 39156-5 and UCUM kg/m2. |
 | [AT PreNUDGE Observation Body Weight](StructureDefinition-at-prenudge-bodyweight-observation.md) | This FHIR profile defines a body weight Observation based on the FHIR R4 Vital Signs body weight concept. Body weight is represented using LOINC 29463-7 and UCUM kg. |
 | [AT PreNUDGE Observation Highest Completed Education](StructureDefinition-at-prenudge-education-observation.md) | This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire. |
+| [AT PreNUDGE Observation Nutrition Fruit Portions](StructureDefinition-at-prenudge-nutrition-fruitportions-observation.md) | Records self-reported daily portions of fruit based on ATHIS 2025 question DH2. Applicable only for respondents who eat fruit daily (DH1 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89765-5 'Servings of fruit per day [PhenX]'. |
+| [AT PreNUDGE Observation Nutrition Sugar Salty Frequency](StructureDefinition-at-prenudge-nutrition-sugarsalty-observation.md) | Records self-reported consumption frequency of sugary, fatty, and salty foods and energy-dense drinks, based on ATHIS 2025 question DH6. Coded using SNOMED CT 364395008 'Pattern of food and drink intake (observable entity)' as the observation concept; update if a more specific LOINC code is identified for this measurement. |
+| [AT PreNUDGE Observation Nutrition Vegetable Portions](StructureDefinition-at-prenudge-nutrition-vegetableportions-observation.md) | Records self-reported daily portions of vegetables or salad based on ATHIS 2025 question DH4. Applicable only for respondents who eat vegetables daily (DH3 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89764-8 'Servings of vegetables per day [PhenX]'. |
 | [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, beeing quantities and not fitting the existing narrow standardized observations. If some code for specifying a new Observation is missing, please contact prenudge@joanneum.at. |
 | [AT PreNUDGE Observation Other not Quantities](StructureDefinition-at-prenudge-observation-other-not-quantities.md) | This FHIR profile can be used for all the other Observations for PreNUDGE, not being an quantity and not fitting the existing narrow standardized observations. |
 | [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-duration-observation.md) | This FHIR profile defines the Sleep Duration Observation recording average nightly sleep in hours. Applicable for both automated wearable measurements (method = automated) and self-reported values derived from a questionnaire (method = manual). |
@@ -66,6 +71,8 @@ These define sets of codes used by systems conforming to this implementation gui
 | [AT PreNUDGE Alcohol Use Frequency](ValueSet-prenudge-alcoholuse-frequency.md) | Frequencies used in the PreNUDGE alcoholuse questionnaire. |
 | [AT PreNUDGE Blood Glucose Meal Context](ValueSet-prenudge-bloodglucose-mealcontext.md) | Meal context used in the PreNUDGE Blood Glucose questionnaire and observation. |
 | [AT PreNUDGE ISCED 2011 Education Level ValueSet](ValueSet-prenudge-isced-2011-education-level.md) | Permitted answer values for the highest completed education level according to ISCED 2011. |
+| [AT PreNUDGE Nutrition Consumption Frequency](ValueSet-prenudge-nutrition-consumption-frequency-vs.md) | All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025. Includes the 'Weiß nicht' option (code 'unknown'). |
+| [AT PreNUDGE Nutrition Sugar Salty Consumption Frequency](ValueSet-prenudge-nutrition-sugarsalty-frequency-vs.md) | Frequency options for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). Excludes 'Weiß nicht' because DH6 does not offer that option. |
 | [AT PreNUDGE Observation Methods](ValueSet-prenudge-observation-method.md) | ValueSet containing SNOMED CT codes for differentiating methods used in the PreNUDGE observation. |
 | [AT PreNUDGE Other Observations Codes](ValueSet-prenudge-other-observations-codes.md) | Allowed observation codes for the 'Other' observation profile. |
 | [AT PreNUDGE Other Observations Units](ValueSet-prenudge-other-observations-units.md) | Allowed UCUM units for the 'Other' observation profile. |
@@ -82,7 +89,7 @@ These define new code systems used by systems conforming to this implementation 
 | [AT PreNUDGE WAI Answer Codes](CodeSystem-prenudge-wai-answer.md) | Local answer codes for categorical Work Ability Index answer options. |
 | [AT PreNUDGE WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
 | [AT PreNUDGE Workability Codes](CodeSystem-prenudge-workability.md) | Local PreNUDGE codes for workability questionnaires and derived Work-SoC score observations. Work-SoC source DOI: https://doi.org/10.4102/sajip.v39i1.1111 |
-| [ATHIS – Antwortmöglichkeiten](CodeSystem-athis-answers.md) | Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-nutrition-consumption-frequency (DH1/DH3 numerische Codes), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). |
+| [ATHIS – Antwortmöglichkeiten](CodeSystem-athis-answers.md) | Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). |
 
 ### Terminology: Structure Maps 
 
@@ -95,6 +102,9 @@ These define transformations to convert between data structures used by systems 
 | [BMI Q to Body Height, Body Weight and BMI Observations Bundle](StructureMap-BmiQuestionnaireResponseToObservations.md) | BMI Q to Body Height, Body Weight and BMI Observations Bundle |
 | [Blood Glucose Q to O](StructureMap-BloodGlucoseQuestionnaireResponseToObservation.md) | Blood Glucose Q to O |
 | [Highest Completed Education Q to O](StructureMap-EducationQuestionnaireResponseToObservation.md) | Highest Completed Education Q to O |
+| [Nutrition Fruit Portions Q to O](StructureMap-NutritionFruitPortionsQuestionnaireResponseToObservation.md) | Nutrition Fruit Portions Q to O |
+| [Nutrition Sugar Salty Frequency Q to O](StructureMap-NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation.md) | Nutrition Sugar Salty Frequency Q to O |
+| [Nutrition Vegetable Portions Q to O](StructureMap-NutritionVegetablePortionsQuestionnaireResponseToObservation.md) | Nutrition Vegetable Portions Q to O |
 | [Shared base for Q to O](StructureMap-QuestionnaireResponseToObservationBase.md) | Shared base for Q to O |
 | [Sleep Duration Q to O](StructureMap-SleepDurationQuestionnaireResponseToObservation.md) | Sleep Duration Q to O |
 | [Sleep Quality Base (WHOQOL-BREF scale to LOINC)](StructureMap-SleepQualityBase.md) | Sleep Quality Base (WHOQOL-BREF scale to LOINC) |
@@ -135,6 +145,16 @@ These are example instances that show what data produced and consumed by systems
 | [Education O mapped from Q - Upper Secondary Education Example](Observation-education-upper-secondary-example.md) | Example of a highest completed education observation mapped from the EducationQuestionnaire. |
 | [Education Q - Bachelor's Level Example](QuestionnaireResponse-education-response-bachelor-example.md) | Example of a highest completed education questionnaire response using ISCED 2011 level 6. |
 | [Education Q - Upper Secondary Education Example](QuestionnaireResponse-education-response-upper-secondary-example.md) | Example of a highest completed education questionnaire response using ISCED 2011 level 3. |
+| [Nutrition Fruit & Veg Q - Daily Eater Example](QuestionnaireResponse-nutrition-fruitvegetable-response-daily-example.md) | Example response for a daily fruit and vegetable eater: fruit daily (DH1), 3 portions of fruit (DH2), vegetables daily (DH3), 2 portions of vegetables (DH4). |
+| [Nutrition Fruit & Veg Q - Non-Daily Eater Example](QuestionnaireResponse-nutrition-fruitvegetable-response-nondaily-example.md) | Example response for a non-daily fruit and vegetable eater: fruit 4–6 times per week (DH1, DH2 not enabled), vegetables 1–3 times per week (DH3, DH4 not enabled). |
+| [Nutrition Fruit Portions O mapped from Q - High Intake Example](Observation-nutrition-fruitportions-high-example.md) | Example of 5 daily fruit portions, indicating high fruit intake. |
+| [Nutrition Fruit Portions O mapped from Q - Normal Example](Observation-nutrition-fruitportions-normal-example.md) | Example of 3 daily fruit portions, derived from a questionnaire response (daily eater, DH2 = 3). |
+| [Nutrition Sugar Salty Frequency O mapped from Q - Daily Example](Observation-nutrition-sugarsalty-daily-example.md) | Example of daily consumption of sugary, fatty, and salty foods, derived from a questionnaire response (DH6 = code#1). |
+| [Nutrition Sugar Salty Frequency O mapped from Q - Rare Example](Observation-nutrition-sugarsalty-rare-example.md) | Example of less-than-once-weekly consumption of sugary, fatty, and salty foods (DH6 = code#4). |
+| [Nutrition Sugar Salty Q - Daily Consumption Example](QuestionnaireResponse-nutrition-sugarsalty-response-daily-example.md) | Example response for daily or multiple-times-daily consumption of sugary, fatty, and salty foods (DH6 = code#1). |
+| [Nutrition Sugar Salty Q - Rare Consumption Example](QuestionnaireResponse-nutrition-sugarsalty-response-rare-example.md) | Example response for less-than-once-weekly consumption of sugary, fatty, and salty foods (DH6 = code#4). |
+| [Nutrition Vegetable Portions O mapped from Q - High Intake Example](Observation-nutrition-vegetableportions-high-example.md) | Example of 4 daily vegetable and salad portions, indicating high vegetable intake. |
+| [Nutrition Vegetable Portions O mapped from Q - Normal Example](Observation-nutrition-vegetableportions-normal-example.md) | Example of 2 daily vegetable and salad portions, derived from a questionnaire response (daily eater, DH4 = 2). |
 | [Sleep Duration O - Normal Automated Example](Observation-sleep-duration-normal-automated-example.md) | Example of a normal average sleep duration (7.5 h) measured by a wearable device. |
 | [Sleep Duration O - Short Automated Example](Observation-sleep-duration-short-automated-example.md) | Example of a short average sleep duration (5.5 h) measured by a wearable device, indicating insufficient sleep. |
 | [Sleep Duration O mapped from Q - Normal Example](Observation-sleep-duration-normal-manual-example.md) | Example of a self-reported average sleep duration (7 h) derived from a questionnaire response. |
@@ -168,7 +188,7 @@ These are example instances that show what data produced and consumed by systems
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-24
+2026-06-29
 
 Links:
 [Table of Contents](toc.md)|

@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation | *Version*:0.1.0 | |
-| Draft as of 2026-06-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
+| Draft as of 2026-06-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
 
  
 This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all observations must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/. 
 
 **Usages:**
 
-* Derived from this Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md), [AT PreNUDGE Observation Body Mass Index](StructureDefinition-at-prenudge-bmi-observation.md), [AT PreNUDGE Observation Body Height](StructureDefinition-at-prenudge-bodyheight-observation.md), [AT PreNUDGE Observation Body Weight](StructureDefinition-at-prenudge-bodyweight-observation.md)... Show 8 more, [AT PreNUDGE Observation Highest Completed Education](StructureDefinition-at-prenudge-education-observation.md), [AT PreNUDGE Observation Other not Quantities](StructureDefinition-at-prenudge-observation-other-not-quantities.md), [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md), [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-duration-observation.md), [AT PreNUDGE Observation Sleep Quality](StructureDefinition-at-prenudge-sleep-quality-observation.md), [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md), [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) and [AT PreNUDGE Observation Work-SoC Category Score](StructureDefinition-at-prenudge-work-soc-score-observation.md)
+* Derived from this Profile: [AT PreNUDGE Observation Blood Glucose (only in mg/dL)](StructureDefinition-at-prenudge-bloodglucose-observation.md), [AT PreNUDGE Observation Body Mass Index](StructureDefinition-at-prenudge-bmi-observation.md), [AT PreNUDGE Observation Body Height](StructureDefinition-at-prenudge-bodyheight-observation.md), [AT PreNUDGE Observation Body Weight](StructureDefinition-at-prenudge-bodyweight-observation.md)... Show 11 more, [AT PreNUDGE Observation Highest Completed Education](StructureDefinition-at-prenudge-education-observation.md), [AT PreNUDGE Observation Nutrition Fruit Portions](StructureDefinition-at-prenudge-nutrition-fruitportions-observation.md), [AT PreNUDGE Observation Nutrition Sugar Salty Frequency](StructureDefinition-at-prenudge-nutrition-sugarsalty-observation.md), [AT PreNUDGE Observation Nutrition Vegetable Portions](StructureDefinition-at-prenudge-nutrition-vegetableportions-observation.md), [AT PreNUDGE Observation Other not Quantities](StructureDefinition-at-prenudge-observation-other-not-quantities.md), [AT PreNUDGE Observation Other Quantities](StructureDefinition-at-prenudge-observation-other-quantities.md), [AT PreNUDGE Observation Sleep Duration](StructureDefinition-at-prenudge-sleep-duration-observation.md), [AT PreNUDGE Observation Sleep Quality](StructureDefinition-at-prenudge-sleep-quality-observation.md), [AT PreNUDGE Observation Step Count](StructureDefinition-at-prenudge-stepcount-observation.md), [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-prenudge-whoqol-bref-score-observation.md) and [AT PreNUDGE Observation Work-SoC Category Score](StructureDefinition-at-prenudge-work-soc-score-observation.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-observation.json)
 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-24
+2026-06-29
 
 Links:
 [Table of Contents](toc.md)|
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservation",
   "title" : "AT PreNUDGE Observation",
   "status" : "draft",
-  "date" : "2026-06-24T13:18:54+00:00",
+  "date" : "2026-06-29T10:23:22+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

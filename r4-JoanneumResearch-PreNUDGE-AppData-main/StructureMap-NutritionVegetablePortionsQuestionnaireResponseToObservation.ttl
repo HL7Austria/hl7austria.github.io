@@ -1,0 +1,280 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/NutritionVegetablePortionsQuestionnaireResponseToObservation> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "NutritionVegetablePortionsQuestionnaireResponseToObservation"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureMap NutritionVegetablePortionsQuestionnaireResponseToObservation</b></p><a name=\"NutritionVegetablePortionsQuestionnaireResponseToObservation\"> </a><a name=\"hcNutritionVegetablePortionsQuestionnaireResponseToObservation\"> </a><pre class=\"fml\">#xD;\n<b>map</b><span style=\"color: navy\"> \"</span>https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/NutritionVegetablePortionsQuestionnaireResponseToObservation<span style=\"color: navy\">\" = \"</span>NutritionVegetablePortionsQuestionnaireResponseToObservation<span style=\"color: navy\">\"#xD;\n#xD;\n</span><span style=\"color: navy\">// </span><span style=\"color: green\">Nutrition Vegetable Portions Q to O</span>#xD;\n#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/questionnaireresponse.html\" title=\"QuestionnaireResponse\">http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse</a><span style=\"color: navy\">\" </span><b>alias </b>QR <b>as </b><b>source</b>#xD;\n<b>uses</b><span style=\"color: navy\"> \"</span><a href=\"http://hl7.org/fhir/R4/observation.html\" title=\"Observation\">http://hl7.org/fhir/StructureDefinition/Observation</a><span style=\"color: navy\">\" </span><b>alias </b>Obs <b>as </b><b>target</b>#xD;\n#xD;\n<b>imports</b><span style=\"color: navy\"> \"</span>http://hl7.org/fhir/StructureMap/*<span style=\"color: navy\">\"#xD;\n</span><b>imports</b><span style=\"color: navy\"> \"</span><a href=\"StructureMap-QuestionnaireResponseToObservationBase.html\" title=\"Shared base for Q to O\">https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase</a><span style=\"color: navy\">\"#xD;\n</span>#xD;\n<b>group </b>NutritionVegetablePortionsQuestionnaireResponseToObservation<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src<b> then </b>SetObservationBase<span style=\"color: navy\">(</span><span style=\"color: maroon\">src</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"Base\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Meta'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">meta</span><span style=\"color: navy\">, </span> meta.profile = <span style=\"color: blue\">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation'</span> <i>\"SetProfile\"</i><span style=\"color: navy\">;</span>#xD;\n  src<span style=\"color: navy\"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'http://loinc.org'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'89764-8'</span><span style=\"color: navy\">, </span><span style=\"color: blue\">'Servings of vegetables per day [PhenX]'</span><span style=\"color: navy\">)</span> <i>\"SetCode\"</i><span style=\"color: navy\">;</span>#xD;\n  src.item<b> as </b><span style=\"color: maroon\">item</span><b> where </b>linkId = 'DH4'<b> then </b>MapVegetablePortions<span style=\"color: navy\">(</span><span style=\"color: maroon\">item</span><span style=\"color: navy\">, </span><span style=\"color: maroon\">tgt</span><span style=\"color: navy\">)</span> <i>\"ProcessDH4\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span><b>group </b>MapVegetablePortions<span style=\"color: navy\">(</span><b>source</b> <span style=\"color: maroon\">src</span><span style=\"color: navy\"> : </span>QR, <b>target</b> <span style=\"color: maroon\">tgt</span><span style=\"color: navy\"> : </span>Obs<span style=\"color: navy\">)</span><span style=\"color: navy\"> {#xD;\n</span>  src.answer<b> as </b><span style=\"color: maroon\">answer</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>    answer.valueInteger<b> as </b><span style=\"color: maroon\">intObj</span><b> then</b><span style=\"color: navy\"> {#xD;\n</span>      intObj.value<b> as </b><span style=\"color: maroon\">numVal</span><span style=\"color: navy\"><b> -&gt; </b></span> tgt.value = <b>create</b><span style=\"color: navy\">(</span><span style=\"color: blue\">'Quantity'</span><span style=\"color: navy\">)</span><b> as </b><span style=\"color: maroon\">qty</span><span style=\"color: navy\">, </span> qty.value = <span style=\"color: maroon\">numVal</span><span style=\"color: navy\">, </span> qty.unit = <span style=\"color: blue\">'Portionen'</span><span style=\"color: navy\">, </span> qty.system = <span style=\"color: blue\">'http://unitsofmeasure.org'</span><span style=\"color: navy\">, </span> qty.code = <span style=\"color: blue\">'{serving}'</span> <i>\"SetQuantity\"</i><span style=\"color: navy\">;</span>#xD;\n    <span style=\"color: navy\">}</span> <i>\"ExtractValue\"</i><span style=\"color: navy\">;</span>#xD;\n  <span style=\"color: navy\">}</span> <i>\"ProcessAnswer\"</i><span style=\"color: navy\">;</span>#xD;\n<span style=\"color: navy\">}#xD;\n#xD;\n</span></pre></div>"
+  ] ;
+  fhir:StructureMap.url [ fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/NutritionVegetablePortionsQuestionnaireResponseToObservation"] ;
+  fhir:StructureMap.version [ fhir:value "0.1.0"] ;
+  fhir:StructureMap.name [ fhir:value "NutritionVegetablePortionsQuestionnaireResponseToObservation"] ;
+  fhir:StructureMap.title [ fhir:value "Nutrition Vegetable Portions Q to O"] ;
+  fhir:StructureMap.status [ fhir:value "active"] ;
+  fhir:StructureMap.date [ fhir:value "2026-06-29T10:23:22+00:00"^^xsd:dateTime] ;
+  fhir:StructureMap.publisher [ fhir:value "The PreNUDGE Consortium"] ;
+  fhir:StructureMap.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "The PreNUDGE Consortium" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://prenudge.at" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "The PreNUDGE Consortium" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://prenudge.at" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:StructureMap.description [ fhir:value "Nutrition Vegetable Portions Q to O"] ;
+  fhir:StructureMap.structure [
+     fhir:index 0 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "source" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "QR" ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.structure.url [
+       fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+       fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+     ] ;
+     fhir:StructureMap.structure.mode [ fhir:value "target" ] ;
+     fhir:StructureMap.structure.alias [ fhir:value "Obs" ]
+  ] ;
+  fhir:StructureMap.import [
+     fhir:value "http://hl7.org/fhir/StructureMap/*" ;
+     fhir:index 0 ;
+     fhir:link <http://hl7.org/fhir/StructureMap/*>
+  ], [
+     fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase" ;
+     fhir:index 1 ;
+     fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase>
+  ] ;
+  fhir:StructureMap.group [
+     fhir:index 0 ;
+     fhir:StructureMap.group.name [ fhir:value "NutritionVegetablePortionsQuestionnaireResponseToObservation" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "QR" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Obs" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "Base" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "SetObservationBase" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "src" ;
+           fhir:index 0
+         ], [
+           fhir:value "tgt" ;
+           fhir:index 1
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetProfile" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.variable [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Meta" ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "meta" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "profile" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "SetCode" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ]
+       ] ;
+       fhir:StructureMap.group.rule.target [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+         fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+         fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+         fhir:StructureMap.group.rule.target.transform [ fhir:value "cc" ] ;
+         fhir:StructureMap.group.rule.target.parameter [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://loinc.org" ]
+         ], [
+           fhir:index 1 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "89764-8" ]
+         ], [
+           fhir:index 2 ;
+           fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Servings of vegetables per day [PhenX]" ]
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "ProcessDH4" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "item" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "item" ] ;
+         fhir:StructureMap.group.rule.source.condition [ fhir:value "linkId = 'DH4'" ]
+       ] ;
+       fhir:StructureMap.group.rule.dependent [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.dependent.name [ fhir:value "MapVegetablePortions" ] ;
+         fhir:StructureMap.group.rule.dependent.variable [
+           fhir:value "item" ;
+           fhir:index 0
+         ], [
+           fhir:value "tgt" ;
+           fhir:index 1
+         ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:StructureMap.group.name [ fhir:value "MapVegetablePortions" ] ;
+     fhir:StructureMap.group.typeMode [ fhir:value "none" ] ;
+     fhir:StructureMap.group.input [
+       fhir:index 0 ;
+       fhir:StructureMap.group.input.name [ fhir:value "src" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "QR" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "source" ]
+     ], [
+       fhir:index 1 ;
+       fhir:StructureMap.group.input.name [ fhir:value "tgt" ] ;
+       fhir:StructureMap.group.input.type [ fhir:value "Obs" ] ;
+       fhir:StructureMap.group.input.mode [ fhir:value "target" ]
+     ] ;
+     fhir:StructureMap.group.rule [
+       fhir:index 0 ;
+       fhir:StructureMap.group.rule.name [ fhir:value "ProcessAnswer" ] ;
+       fhir:StructureMap.group.rule.source [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.source.context [ fhir:value "src" ] ;
+         fhir:StructureMap.group.rule.source.element [ fhir:value "answer" ] ;
+         fhir:StructureMap.group.rule.source.variable [ fhir:value "answer" ]
+       ] ;
+       fhir:StructureMap.group.rule.rule [
+         fhir:index 0 ;
+         fhir:StructureMap.group.rule.name [ fhir:value "ExtractValue" ] ;
+         fhir:StructureMap.group.rule.source [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.source.context [ fhir:value "answer" ] ;
+           fhir:StructureMap.group.rule.source.element [ fhir:value "valueInteger" ] ;
+           fhir:StructureMap.group.rule.source.variable [ fhir:value "intObj" ]
+         ] ;
+         fhir:StructureMap.group.rule.rule [
+           fhir:index 0 ;
+           fhir:StructureMap.group.rule.name [ fhir:value "SetQuantity" ] ;
+           fhir:StructureMap.group.rule.source [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.source.context [ fhir:value "intObj" ] ;
+             fhir:StructureMap.group.rule.source.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.source.variable [ fhir:value "numVal" ]
+           ] ;
+           fhir:StructureMap.group.rule.target [
+             fhir:index 0 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "tgt" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.variable [ fhir:value "qty" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "create" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Quantity" ]
+             ]
+           ], [
+             fhir:index 1 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "value" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueId [ fhir:value "numVal" ]
+             ]
+           ], [
+             fhir:index 2 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "unit" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "Portionen" ]
+             ]
+           ], [
+             fhir:index 3 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "system" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "http://unitsofmeasure.org" ]
+             ]
+           ], [
+             fhir:index 4 ;
+             fhir:StructureMap.group.rule.target.context [ fhir:value "qty" ] ;
+             fhir:StructureMap.group.rule.target.contextType [ fhir:value "variable" ] ;
+             fhir:StructureMap.group.rule.target.element [ fhir:value "code" ] ;
+             fhir:StructureMap.group.rule.target.transform [ fhir:value "copy" ] ;
+             fhir:StructureMap.group.rule.target.parameter [
+               fhir:index 0 ;
+               fhir:StructureMap.group.rule.target.parameter.valueString [ fhir:value "{serving}" ]
+             ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/NutritionVegetablePortionsQuestionnaireResponseToObservation.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

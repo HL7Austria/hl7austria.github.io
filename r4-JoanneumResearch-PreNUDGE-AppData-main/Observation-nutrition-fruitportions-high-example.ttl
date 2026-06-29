@@ -1,0 +1,71 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/nutrition-fruitportions-high-example> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "nutrition-fruitportions-high-example"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation nutrition-fruitportions-high-example</b></p><a name=\"nutrition-fruitportions-high-example\"> </a><a name=\"hcnutrition-fruitportions-high-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-prenudge-nutrition-fruitportions-observation.html\">AT PreNUDGE Observation Nutrition Fruit Portions</a></p></div><p><b>identifier</b>: <code>https://www.joanneum.at</code>/obs-nut-fp-2026-06-02-001</p><p><b>status</b>: Final</p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 89765-5}\">Servings of fruit per day [PhenX]</span></p><p><b>subject</b>: <a href=\"Patient-example.html\">James Pond  Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)</a></p><p><b>effective</b>: 2026-06-02</p><p><b>issued</b>: 2026-06-02 09:00:00+0000</p><p><b>value</b>: 5 Portionen<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{serving} = '{serving}')</span></p><p><b>note</b>: </p><blockquote><div><p>Selbstberichtet: hoher Obstkonsum, 5 Portionen täglich.</p>\n</div></blockquote><p><b>method</b>: <span title=\"Codes:{http://snomed.info/sct 87982008}\">Manual</span></p></div>"
+  ] ;
+  fhir:Observation.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://www.joanneum.at" ] ;
+     fhir:Identifier.value [ fhir:value "obs-nut-fp-2026-06-02-001" ]
+  ] ;
+  fhir:Observation.status [ fhir:value "final"] ;
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a loinc:89765-5 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "89765-5" ] ;
+       fhir:Coding.display [ fhir:value "Servings of fruit per day [PhenX]" ]
+     ]
+  ] ;
+  fhir:Observation.subject [
+     fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Patient/example> ;
+     fhir:Reference.reference [ fhir:value "Patient/example" ]
+  ] ;
+  fhir:Observation.effectiveDateTime [ fhir:value "2026-06-02"^^xsd:date] ;
+  fhir:Observation.issued [ fhir:value "2026-06-02T09:00:00Z"^^xsd:dateTime] ;
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ] ;
+     fhir:Quantity.unit [ fhir:value "Portionen" ] ;
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+     fhir:Quantity.code [ fhir:value "{serving}" ]
+  ] ;
+  fhir:Observation.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Selbstberichtet: hoher Obstkonsum, 5 Portionen täglich." ]
+  ] ;
+  fhir:Observation.method [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:87982008 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "87982008" ] ;
+       fhir:Coding.display [ fhir:value "Manual" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/prenudge/appdata/r4/Observation/nutrition-fruitportions-high-example.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
