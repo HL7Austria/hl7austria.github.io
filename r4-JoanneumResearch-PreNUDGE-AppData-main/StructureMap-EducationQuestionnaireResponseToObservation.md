@@ -34,7 +34,7 @@ Links:
   "name" : "EducationQuestionnaireResponseToObservation",
   "title" : "Highest Completed Education Q to O",
   "status" : "active",
-  "date" : "2026-06-30T08:18:50+00:00",
+  "date" : "2026-06-30T14:49:39+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -255,7 +255,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -279,7 +279,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -303,7 +303,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -327,7 +327,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -351,7 +351,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -375,7 +375,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -399,7 +399,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -423,7 +423,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -447,7 +447,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -471,7 +471,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
@@ -495,7 +495,7 @@ Links:
         "target" : [{
           "context" : "tgt",
           "contextType" : "variable",
-          "element" : "value",
+          "element" : "valueCodeableConcept",
           "transform" : "cc",
           "parameter" : [{
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"

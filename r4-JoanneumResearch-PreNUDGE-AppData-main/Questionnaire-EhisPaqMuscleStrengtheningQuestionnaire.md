@@ -37,7 +37,7 @@ Links:
   "name" : "EhisPaqMuscleStrengtheningQuestionnaire",
   "title" : "EHIS-PAQ Q8 / ATHIS PE8: Muskelkräftigungsübungen",
   "status" : "active",
-  "date" : "2026-06-30T08:18:50+00:00",
+  "date" : "2026-06-30T14:49:39+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
