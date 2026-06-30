@@ -8,11 +8,15 @@
 
 ### Sub_UC_eMed_09_01 - Durchgeführte Abgabe schreiben
 
-In Arbeit: Zugriffsarten.
+Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer [Durchgeführten Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md).
 
-### Ablauf Durchgeführte Abgabe schreiben
+Erfolgt die Authorisierung des ELGA-Teilnehmers mit einer Kontaktbestätigung (z.B. mittels e-card), können alle Arzneimittelabgaben in e-Medikation dokumentiert werden. Beispielsweise können zusätzlich erfolgte OTC Abgaben in e-Medikation dokumentiert werden. Erfolgt der Zugriff über den im QR-Code eines e-Rezepts enhaltenen **e‑Med GroupIdentifier**, kann der GDA nur **Durchgeführte Abgaben** in e-Medikation speichern, welche sich auf die zugehörigen **Geplanten Abgaben** beziehen.
 
-Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer [Durchgeführten Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md):
+### Ablauf
+
+![](plantuml/UC_eMed_09_01.svg)
+
+Der GDA dokumentiert die Durchgeführte Abgabe wie folgt:
 
 * Wenn eine zugehörige [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) vorliegt, **MUSS** diese im Element **MedicationDispense.authorizingPrescription[geplanteAbgabe]** referenziert werden. Der zugehörige [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) **MUSS** über **MedicationDispense.authorizingPrescription[planeintrag]** referenziert werden.  
 * Die maximale Anzahl an **Durchgeführten Abgaben** wird durch die Anzahl der zulässigen Einlösungen der zugehörigen **Geplanten Abgabe** bestimmt.
@@ -21,6 +25,8 @@ Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-ber
 * Über **MedicationDispense.type** werden Einzelabgabe, Teilabgaben/Besorgerprozess und Leerabgabe unterschieden (siehe [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)). Für Teilabgaben, Besorgerprozesse und Leerabgaben **MUSS** die jeweils vorgegebene Sequenz der zulässigen **MedicationDispense.type**-Werte eingehalten werden.
  
 * Die tatsächlich abgegebene Packungsmenge **MUSS** in **MedicationDispense.quantity** angegeben werden. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden **Geplanten Abgabe**. Eine Einlösung gilt als vollständig, wenn für **MedicationDispense.type** den Wert **FFC (First Fill – Complete)** oder **PFC (Part Fill - Complete)** enthält. Die Anzahl der abgegebenen Packungen ist hierfür nicht maßgeblich.
+
+Im Anschluss übermittelt der GDA mit POST $dispense-write die **Durchgeführten Abgaben** in einem Transaction Bundle.
 
 Die unterschiedlichen Arten der Abgabe und deren Abfolge sind dargestellt unter [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)).
 
@@ -140,11 +146,11 @@ In folgenden Fällen liegt bei der Erfassung einer **Durchgeführten Abgabe** ke
 * Abgabe von nicht verordneten Arzneimitteln (Abgabe von wechselwirkungsrelevanten OTC)
 * wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist, aber keine zugehörige **Geplante Abgabe** in e-Medikation existiert.
 
+Die Felder authorizingPrescription[geplanteabgabe] für die Referenz auf die zugehörige Geplante Abgabe und authorizingPrescription[planeintrag] für die Verpflichtende Referenz auf den Planeintrag bleiben leer. Ein berechtigter GDA kann im Nachhinein einen Bezug zwischen der **Durchgeführten Abgabe** und einem **Planeintrag** herstellen, (siehe Sub_UC_eMed_09_03 - Bezug zu einer Geplanten Abgabe herstellen).
+
 Analog zu [Sub_UC_eMed_09_01_01 - Vollständige Einzelabgabe erfassen](Sub_UC_eMed_09.md#sub_uc_emed_09_01_01---vollständige-einzelabgabe-erfassen) gilt bei der Erstellung der **Durchgeführten Abgabe**:
 
 * **MedicationDispense.type = FFC (First Fill – Complete)** und **MedicationDispense.status = completed**
-
-Sofern für die **Durchgeführten Abgabe** im nachhinein ein **Planeintrag** erstellt wird, **KANN** mit $reference-plan der **Planeintrag** (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
 
 #### Sub_UC_eMed_09_01_06 - Durchgeführte Abgabe nacherfassen
 
@@ -169,14 +175,18 @@ Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Ref
 
 Ein GDA (Apotheke) kann von ihm erstellte [Durchgeführte Abgaben](design_choices.md#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense), die sich im Status **completed** oder **cancelled** befinden, aufgrund eines Fehlers verwerfen.
 
-Um eine **Durchgeführte Abgabe** zu verwerfen, ruft der GDA diese mittels GET MedicationDispense ab und bearbeitet diese wie folgt:
+Um eine **Durchgeführte Abgabe** zu verwerfen, führt der GDA POST $dispense-discard aus:
 
 * Der Status wird auf **entered-in-error** gesetzt,
 * der verantwortliche GDA (**requester**) und das Datum in **recorded** werden entsprechend aktualisiert.
 
 Eine verworfene **Durchgeführte Abgabe** kann nicht mehr bearbeitet werden und ist nur noch aber über die Historie einsehbar. Wenn eine verworfene **Durchgeführte Abgabe** Teil eines e-Rezepts mit weiteren **Geplanten Abgaben** ist (gleicher **e-Med GroupIdentifier**), wirkt sich dies nicht auf den Status der anderen Geplanten Abgaben aus. 
 
-### Sub_UC_eMed_09_03 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)
+#### Sub_UC_eMed_09_03 - Bezug zu einem Planeintrag herstellen
+
+Sofern für die **Durchgeführten Abgabe** im nachhinein ein **Planeintrag** erstellt wird, **KANN** mit $reference-plan der **Planeintrag** (in **MedicationDispense.authorizingPrescription[planeintrag]**) referenziert werden.
+
+### Sub_UC_eMed_09_04 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)
 
 Der ELGA-Teilnehmer kann eine **Durchgeführte Abgabe** endgültig löschen.
 
