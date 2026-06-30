@@ -75,7 +75,7 @@ If neither `value[x]` nor `dataAbsentReason` is present, the Observation is inco
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-29
+2026-06-30
 
 Links:
 [Table of Contents](toc.md)|
@@ -92,7 +92,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-29T17:35:07+00:00",
+  "date" : "2026-06-30T08:18:50+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -830,18 +830,6 @@ Links:
       },
       "name" : "AT PreNUDGE Code-to-Unit Mapping",
       "description" : "Maps observation codes to their expected UCUM units for the 'Other Quantities' observation profile.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/at-prenudge-physicalactivity-codesystem-ehispaq"
-      },
-      "name" : "AT PreNUDGE EHIS-PAQ Answer Set",
-      "description" : "Consolidated CodeSystem for all options from the EHIS-PAQ questionnaires (European Health Interview Survey Physical Activity Questionnaire) used in PreNUDGE. Contains two answer scales: days per week (Q4, Q6 in EhisPaqPhysicalActivityQuestionnaire; also Q2 in StepCountEhisPaqQuestionnaire) and activity duration per day (Q3 in StepCountEhisPaqQuestionnaire, Q5 in EhisPaqPhysicalActivityQuestionnaire). Codes are in English; display values remain in German.",
       "exampleBoolean" : false
     },
     {

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-physical-activity-classification-method-cs | *Version*:0.1.0 | |
-| Active as of 2026-06-29 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgePhysicalActivityClassificationMethodCS |
+| Active as of 2026-06-30 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgePhysicalActivityClassificationMethodCS |
 
  
 Codes for the algorithm or technique used to classify the intensity of a physical activity measurement into moderate / vigorous categories. 
@@ -21,7 +21,7 @@ Codes for the algorithm or technique used to classify the intensity of a physica
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-29
+2026-06-30
 
 Links:
 [Table of Contents](toc.md)|
@@ -39,7 +39,7 @@ Links:
   "title" : "AT PreNUDGE Physical Activity Classification Method CodeSystem",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-29T17:35:07+00:00",
+  "date" : "2026-06-30T08:18:50+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

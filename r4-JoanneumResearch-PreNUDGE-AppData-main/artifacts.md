@@ -101,7 +101,6 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
-| [AT PreNUDGE EHIS-PAQ Answer Set](CodeSystem-at-prenudge-physicalactivity-codesystem-ehispaq.md) | Consolidated CodeSystem for all options from the EHIS-PAQ questionnaires (European Health Interview Survey Physical Activity Questionnaire) used in PreNUDGE. Contains two answer scales: days per week (Q4, Q6 in EhisPaqPhysicalActivityQuestionnaire; also Q2 in StepCountEhisPaqQuestionnaire) and activity duration per day (Q3 in StepCountEhisPaqQuestionnaire, Q5 in EhisPaqPhysicalActivityQuestionnaire). Codes are in English; display values remain in German. |
 | [AT PreNUDGE ISCED 2011 Education Level Codes](CodeSystem-prenudge-isced-2011-education-level.md) | Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation |
 | [AT PreNUDGE PSS Frequency Answer Scale](CodeSystem-at-prenudge-pss-frequency-codesystem.md) | 5-point frequency answer scale (0–4) used by the Perceived Stress Scale (PSS-4 and PSS-10) instruments. Based on Cohen, S., Kamarck, T., & Mermelstein, R. (1983). A global measure of perceived stress. Journal of Health and Social Behavior, 24(4), 385–396. |
 | [AT PreNUDGE PSS Instrument Codes](CodeSystem-at-prenudge-pss-codes-codesystem.md) | IG-internal codes for PSS-4 instrument identification and per-item Observation component codes for PSS-4 and PSS-10. |
@@ -238,7 +237,7 @@ These are example instances that show what data produced and consumed by systems
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-29
+2026-06-30
 
 Links:
 [Table of Contents](toc.md)|
