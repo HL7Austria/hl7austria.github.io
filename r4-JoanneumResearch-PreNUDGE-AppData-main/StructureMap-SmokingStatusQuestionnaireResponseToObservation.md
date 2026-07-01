@@ -34,7 +34,7 @@ Links:
   "name" : "SmokingStatusQuestionnaireResponseToObservation",
   "title" : "ATHIS-based Smoking Status Q to O",
   "status" : "active",
-  "date" : "2026-07-01T08:47:20+00:00",
+  "date" : "2026-07-01T10:20:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationSleepQuality",
   "title" : "AT PreNUDGE Observation Sleep Quality",
   "status" : "draft",
-  "date" : "2026-07-01T08:47:20+00:00",
+  "date" : "2026-07-01T10:20:10+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
