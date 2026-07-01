@@ -12,7 +12,7 @@ Profile: [AT PreNUDGE Observation Nutrition Vegetable Portions](StructureDefinit
 
 **status**: Final
 
-**code**: Servings of vegetables per day [PhenX]
+**code**: Vegetable servings 24 hour Estimated
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
@@ -36,7 +36,7 @@ Selbstberichtet: täglich 2 Portionen Gemüse oder Salat.
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-30
+2026-07-01
 
 Links:
 [Table of Contents](toc.md)|
@@ -59,8 +59,8 @@ Links:
   "code" : {
     "coding" : [{
       "system" : "http://loinc.org",
-      "code" : "89764-8",
-      "display" : "Servings of vegetables per day [PhenX]"
+      "code" : "80459-1",
+      "display" : "Vegetable servings 24 hour Estimated"
     }]
   },
   "subject" : {

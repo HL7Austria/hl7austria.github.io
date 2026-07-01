@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/PhysicalActivityMinutesQtoO | *Version*:0.1.0 | |
-| Draft as of 2026-06-30 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Physical Activity Minutes Q to O |
+| Draft as of 2026-07-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Physical Activity Minutes Q to O |
 
  
 Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant) 
@@ -17,7 +17,7 @@ Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-30
+2026-07-01
 
 Links:
 [Table of Contents](toc.md)|
@@ -33,7 +33,7 @@ Links:
   "version" : "0.1.0",
   "name" : "Physical Activity Minutes Q to O",
   "status" : "draft",
-  "date" : "2026-06-30T14:49:39+00:00",
+  "date" : "2026-07-01T08:47:20+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

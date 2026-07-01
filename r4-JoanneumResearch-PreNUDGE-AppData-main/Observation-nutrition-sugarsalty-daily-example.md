@@ -12,7 +12,7 @@ Profile: [AT PreNUDGE Observation Nutrition Sugar Salty Frequency](StructureDefi
 
 **status**: Final
 
-**code**: Pattern of food and drink intake (observable entity)
+**code**: Dietary intake (observable entity)
 
 **subject**: [James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)](Patient-example.md)
 
@@ -36,7 +36,7 @@ Selbstberichtet: täglicher Konsum zuckerhaltiger und fettreicher Lebensmittel.
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-30
+2026-07-01
 
 Links:
 [Table of Contents](toc.md)|
@@ -60,7 +60,7 @@ Links:
     "coding" : [{
       "system" : "http://snomed.info/sct",
       "code" : "364395008",
-      "display" : "Pattern of food and drink intake (observable entity)"
+      "display" : "Dietary intake (observable entity)"
     }]
   },
   "subject" : {

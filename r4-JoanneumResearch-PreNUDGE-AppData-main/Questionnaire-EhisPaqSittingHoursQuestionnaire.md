@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/EhisPaqSittingHoursQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-06-30 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EhisPaqSittingHoursQuestionnaire |
+| Active as of 2026-07-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EhisPaqSittingHoursQuestionnaire |
 
  
 EHIS-PAQ Q9 / ATHIS PE9: total time spent sitting or resting on a typical day (excluding sleep), captured as two integer sub-items (hours 0–23, minutes 0–60). Mapped to AtPrenudgeObservationSittingHours via SittingHoursQuestionnaireResponseToObservation (hours + minutes/60 → valueQuantity in h). 
@@ -17,7 +17,7 @@ EHIS-PAQ Q9 / ATHIS PE9: total time spent sitting or resting on a typical day (e
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-30
+2026-07-01
 
 Links:
 [Table of Contents](toc.md)|
@@ -37,7 +37,7 @@ Links:
   "name" : "EhisPaqSittingHoursQuestionnaire",
   "title" : "EHIS-PAQ Q9 / ATHIS PE9: Sitzen und Ruhen",
   "status" : "active",
-  "date" : "2026-06-30T14:49:39+00:00",
+  "date" : "2026-07-01T08:47:20+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -58,8 +58,7 @@ Links:
   "item" : [{
     "linkId" : "Intro_Q9",
     "text" : "Bei der nächsten Frage geht es um die Zeit, die Sie mit Sitzen oder Ruhen verbringen, bei der Arbeit, zu Hause, zur Fortbewegung oder mit Freund:innen, zum Beispiel am Schreibtisch sitzen, mit Freund:innen zusammensitzen.",
-    "type" : "display",
-    "required" : false
+    "type" : "display"
   },
   {
     "linkId" : "Q9",
@@ -74,14 +73,12 @@ Links:
     "item" : [{
       "linkId" : "Q9-help",
       "text" : "Angabe von Stunden und Minuten pro Tag",
-      "type" : "display",
-      "required" : false
+      "type" : "display"
     },
     {
       "linkId" : "Q9-examples",
       "text" : "Beispiele für „Sitzen und Ruhen\" sind: Am Schreibtisch sitzen, Mit der Familie oder mit Freund:innen zusammensitzen, Auto, Bus, Zug fahren, Lesen, Fernsehen",
-      "type" : "display",
-      "required" : false
+      "type" : "display"
     },
     {
       "extension" : [{

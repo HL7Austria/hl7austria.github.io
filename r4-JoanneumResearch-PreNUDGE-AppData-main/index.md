@@ -75,7 +75,7 @@ If neither `value[x]` nor `dataAbsentReason` is present, the Observation is inco
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-06-30
+2026-07-01
 
 Links:
 [Table of Contents](toc.md)|
@@ -92,7 +92,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-06-30T14:49:39+00:00",
+  "date" : "2026-07-01T08:47:20+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -997,7 +997,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-nutrition-fruitportions-observation"
       },
       "name" : "AT PreNUDGE Observation Nutrition Fruit Portions",
-      "description" : "Records self-reported daily portions of fruit based on ATHIS 2025 question DH2. Applicable only for respondents who eat fruit daily (DH1 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89765-5 'Servings of fruit per day [PhenX]'.",
+      "description" : "Records self-reported daily portions of fruit based on ATHIS 2025 question DH2. Applicable only for respondents who eat fruit daily (DH1 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 80457-5 'Fruit servings 24 hour Estimated'.",
       "exampleBoolean" : false
     },
     {
@@ -1009,7 +1009,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-nutrition-sugarsalty-observation"
       },
       "name" : "AT PreNUDGE Observation Nutrition Sugar Salty Frequency",
-      "description" : "Records self-reported consumption frequency of sugary, fatty, and salty foods and energy-dense drinks, based on ATHIS 2025 question DH6. Coded using SNOMED CT 364395008 'Pattern of food and drink intake (observable entity)' as the observation concept; update if a more specific LOINC code is identified for this measurement.",
+      "description" : "Records self-reported consumption frequency of sugary, fatty, and salty foods and energy-dense drinks, based on ATHIS 2025 question DH6. Coded using SNOMED CT 364395008 'Dietary intake (observable entity)' as the observation concept; update if a more specific LOINC code is identified for this measurement.",
       "exampleBoolean" : false
     },
     {
@@ -1021,7 +1021,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-nutrition-vegetableportions-observation"
       },
       "name" : "AT PreNUDGE Observation Nutrition Vegetable Portions",
-      "description" : "Records self-reported daily portions of vegetables or salad based on ATHIS 2025 question DH4. Applicable only for respondents who eat vegetables daily (DH3 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 89764-8 'Servings of vegetables per day [PhenX]'.",
+      "description" : "Records self-reported daily portions of vegetables or salad based on ATHIS 2025 question DH4. Applicable only for respondents who eat vegetables daily (DH3 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 80459-1 'Vegetable servings 24 hour Estimated'.",
       "exampleBoolean" : false
     },
     {
