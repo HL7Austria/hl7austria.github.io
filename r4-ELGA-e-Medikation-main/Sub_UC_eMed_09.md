@@ -10,7 +10,9 @@
 
 Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer [Durchgeführten Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md).
 
-Erfolgt die Authorisierung des ELGA-Teilnehmers mit einer Kontaktbestätigung (z.B. mittels e-card), können alle Arzneimittelabgaben in e-Medikation dokumentiert werden. Beispielsweise können zusätzlich erfolgte OTC Abgaben in e-Medikation dokumentiert werden. Erfolgt der Zugriff über den im QR-Code eines e-Rezepts enhaltenen **e‑Med GroupIdentifier**, kann der GDA nur **Durchgeführte Abgaben** in e-Medikation speichern, welche sich auf die zugehörigen **Geplanten Abgaben** beziehen.
+Erfolgt die Autorisierung des ELGA-Teilnehmers mittels Kontaktbestätigung (z. B. über die e-card), können sämtliche Arzneimittelabgaben in der e-Medikation dokumentiert werden. Dies umfasst sowohl Arzneimittelabgaben, zu denen offene geplante Abgaben vorliegen, als auch Arzneimittelabgaben ohne zugehörige geplante Abgabe, beispielsweise OTC-Abgaben.
+
+Erfolgt der Zugriff über den **e-Med GroupIdentifier** (z.B. codiert auf dem Papierrezept), kann der GDA ausschließlich **Durchgeführte Abgaben** in der e-Medikation speichern, die sich auf die dem **e-Med GroupIdentifier** zugeordneten Geplanten Abgaben beziehen.
 
 ### Ablauf
 
@@ -28,7 +30,7 @@ Der GDA dokumentiert die Durchgeführte Abgabe wie folgt:
 
 Im Anschluss übermittelt der GDA mit POST $dispense-write die **Durchgeführten Abgaben** in einem Transaction Bundle.
 
-Die unterschiedlichen Arten der Abgabe und deren Abfolge sind dargestellt unter [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)).
+Die unterschiedlichen Arten der Abgabe und deren Abfolge sind dargestellt unter [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe).
 
 #### Sub_UC_eMed_09_01_01 - Vollständige Einzelabgabe erfassen
 
@@ -47,6 +49,7 @@ Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationReques
 ```
 AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
     recorded: Datum der Erstellung der Durchgeführten Abgabe
+    identifier: e-Med Groupidentifier  // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
     status: completed    
     medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
     subject: Patient
@@ -94,6 +97,7 @@ Um die durch **MedicationDispense.type** definierte Sequenz **FFP → RFP → RF
 ```
 AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
     recorded: Datum der Erstellung der Durchgeführten Abgabe
+    identifier: e-Med Groupidentifier  
     status: completed    
     medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
     subject: Patient

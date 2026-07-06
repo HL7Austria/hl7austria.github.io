@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-07-06T12:58:40+00:00",
+  "date" : "2026-07-06T16:22:02+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -136,8 +136,9 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationDispense.identifier",
       "path" : "MedicationDispense.identifier",
-      "short" : "Durchgeführte-Abgabe-ID. Keine Verwendung in der Durchgeführten Abgabe.",
-      "max" : "0"
+      "short" : "Verpflichtende Angabe des 'e-Med Groupidentifiers' der Geplanten Abgabe, sofern diese existiert.",
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.partOf",
