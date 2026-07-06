@@ -55,6 +55,8 @@ These are custom operations that can be supported by and/or invoked by systems c
 | :--- | :--- |
 | [e-Med Operation für Plan-Read](OperationDefinition-AtEmed.List.PlanRead.md) | Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird. |
 | [e-Med Operation für Plan-Write](OperationDefinition-AtEmed.List.PlanWrite.md) | Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird. |
+| [eMed Operation für GroupIdentifier Prescription Search](OperationDefinition-at-emed-operation-groupidentifier-prescription-search.md) | Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll. |
+| [eMed Operation für GroupIdentifier-Create](OperationDefinition-at-emed-operation-groupidentifier-create.md) | Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll. |
 
 ### Structures: Data Type Profiles 
 

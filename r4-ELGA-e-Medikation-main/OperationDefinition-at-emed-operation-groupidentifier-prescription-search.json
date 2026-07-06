@@ -1,0 +1,63 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "at-emed-operation-groupidentifier-prescription-search",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-emed-operation-groupidentifier-prescription-search</b></p><a name=\"at-emed-operation-groupidentifier-prescription-search\"> </a><a name=\"hcat-emed-operation-groupidentifier-prescription-search\"> </a><p>URL: [base]/$groupidentifier-prescription-search</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>groupidentifier</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Der <em>groupidentifier</em> Parameter enthält den angefragten GroupIdentifier.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R4/bundle.html\" title=\"http://hl7.org/fhir/StructureDefinition/Bundle\">Bundle</a>)</td><td/><td><div><p>Der <em>return</em> Parameter enthält die angefragte(n) geplante(n) Abgabe(n).</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"http://hl7.org/fhir/R4/operationoutcome.html\" title=\"http://hl7.org/fhir/StructureDefinition/OperationOutcome\">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter gibt Auskunft über den Erfolg der Operation.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-emed-operation-groupidentifier-prescription-search",
+  "version" : "0.1.1",
+  "name" : "AtEmedGroupIdentifierPrescriptionSearch",
+  "title" : "eMed Operation für GroupIdentifier Prescription Search",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-07-06T12:58:40+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll.",
+  "affectsState" : false,
+  "code" : "groupidentifier-prescription-search",
+  "system" : true,
+  "type" : false,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "groupidentifier",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *groupidentifier* Parameter enthält den angefragten GroupIdentifier.",
+    "type" : "string"
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter enthält die angefragte(n) geplante(n) Abgabe(n).",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Bundle"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}

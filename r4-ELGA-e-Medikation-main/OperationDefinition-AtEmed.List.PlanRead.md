@@ -28,7 +28,7 @@ Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Inten
   "title" : "e-Med Operation für Plan-Read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-07-06T05:37:07+00:00",
+  "date" : "2026-07-06T12:58:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -62,16 +62,16 @@ Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Inten
   {
     "name" : "return",
     "use" : "out",
-    "min" : 1,
+    "min" : 0,
     "max" : "1",
-    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "documentation" : "Der *return* Parameter gibt gibt den Medikationsplan zurück.",
     "type" : "Resource",
     "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
   },
   {
     "name" : "return",
     "use" : "out",
-    "min" : 1,
+    "min" : 0,
     "max" : "1",
     "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
     "type" : "Bundle",
