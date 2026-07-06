@@ -22,7 +22,9 @@ project_dict = {
     'r5-LinkedCare': 'LinkedCare',
     'r5-pica': 'AIST-PICA-R5',
     'r5-TC-FHIR-AG-Scheduling-R5': 'TC-FHIR-AG-Scheduling-R5',
-    'HL7-AT-Reference-IG': 'HL7-AT-Reference-IG'
+    'HL7-AT-Reference-IG': 'HL7-AT-Reference-IG',
+    'r4-JoanneumResearch-PreNUDGE-AppData': 'JoanneumResearch-PreNUDGE-AppData-R4',
+    'r5-aist-trustworthyai': 'AIST-TrustworthyAI-R5'
 }
 
 # list of everything in this directory
