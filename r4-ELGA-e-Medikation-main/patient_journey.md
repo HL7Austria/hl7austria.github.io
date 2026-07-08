@@ -6,11 +6,11 @@
 
 ## Patient Journey
 
-Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der Medikationsplan eines Patienten mit den zugehörigen geplanten Abgaben und den Durchgeführten Abgaben verändern kann.
+Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der Medikationsplan eines Patienten mit den zugehörigen **Geplanten Abgaben** und den **Durchgeführten Abgaben** verändern kann.
 
 ### 27.2.2026: Arztbesuch
 
-Dr. Musterärztin möchte ihrem Patienten Max Mustermann mehrere Medikamente verschreiben. Daher ruft sie seinen Medikationsplan ab, um eine Übersicht über seine gesamte, aktuell von ihm einzunehmende Medikation zu erhalten.
+Dr. Musterärztin möchte ihrem Patienten Max Mustermann mehrere Medikamente verschreiben. Daher ruft sie seinen Medikationsplan ab, um eine Übersicht über seine gesamte, aktuell von ihm einzunehmende Medikation zu erhalten [1](#fn:1).
 
 Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum [Patienten](Patient-At-Emed-Example-Patient-01.md), die erstellende e-Medikation-Fachwanwendung ([Device](Device-At-Emed-Example-Device-01.md)), das Datum der Erstellung und der Grund, warum der Plan noch leer ist (EmptyReason **notstarted**).
 
@@ -63,4 +63,6 @@ Das Medikament EBETREXAT soll der Patient noch bis zum 17.3. einnehmen, aber in 
 * Medikationsplaneinträge ändern: 
 * Beispiel: [Transaction Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
  
+
+1. [Sub_UC_eMed_05_01 - Medikationsplan lesen - Plan-Read](Sub_UC_eMed_05.md#plan-read) [↩](#fnref:1)
 

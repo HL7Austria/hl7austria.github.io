@@ -5,6 +5,14 @@
 
 ## Designentscheidungen
 
+### Übersicht
+
+Die folgende Abbildung zeigt den Aufbau des Medikationsplans sowie das Zusammenwirken der dabei verwendeten FHIR-Ressourcen.
+
+Zentrale Ressource ist der Medikationsplan (**List**), der die einzelnen Medikationsplaneinträge (**MedicationRequest**) referenziert. Basierend auf diesen Planeinträgen werden **Geplante Abgaben** (**MedicationRequest**) erstellt, auf deren Grundlage **Durchgeführte Abgaben** (**MedicationDispense**) dokumentiert werden können.
+
+ ![](Uebersicht_e_Medikation_Ressourcen.svg)
+
 ### Relevante Profile
 
 #### Medikationsplan: AtElgaEmedListMedikationsplan (List)
