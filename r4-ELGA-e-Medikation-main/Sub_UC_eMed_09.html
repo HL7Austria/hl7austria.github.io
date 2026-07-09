@@ -41,8 +41,8 @@
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.8"}
-    h3,h4,h5,h6{--heading-prefix:"9.8"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.9"}
+    h3,h4,h5,h6{--heading-prefix:"9.9"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -148,10 +148,16 @@
         <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
       </li>
       <li>
+        <a href="Sub_UC_eMed_07_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+      </li>
+      <li>
         <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
       </li>
       <li>
         <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
       </li>
       <li>
         <a href="patient_journey.html">Patient Journey</a>
@@ -390,7 +396,7 @@ wird je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt. Der Status der 
 
 <p>Eine Teilabgabe liegt vor, wenn die in der <em>Geplanten Abgabe</em> verordneten Arzneimenge nicht vollständig abgegeben wird, weil nur ein Teil der verordneten Arzneimenge eingelöst werden soll oder kann.</p>
 
-<p><a name="l663">​</a>Sonderfälle von Teilabgaben sind Besorgerprozess (siehe <a href="sub_uc_emed_09_01_03---besorgerprozess">Sub_UC_eMed_09_01_03 - Besorgerprozess</a>) und Leerabgabe (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05-leerabgabe-erfassen">Sub_UC_eMed_09_01_05 Leerabgabe erfassen</a>).</p>
+<p><a name="l675">​</a>Sonderfälle von Teilabgaben sind Besorgerprozess (siehe <a href="sub_uc_emed_09_01_03---besorgerprozess">Sub_UC_eMed_09_01_03 - Besorgerprozess</a>) und Leerabgabe (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05-leerabgabe-erfassen">Sub_UC_eMed_09_01_05 Leerabgabe erfassen</a>).</p>
 
 <p>Für jede Teilabgabe <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> erstellt werden. Dabei gelten folgende Regeln:</p>
 <ul>
@@ -519,7 +525,7 @@ Dieser Einlösevorgang ist damit beendet.</li>
 
 <h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
 
-<p><a name="l1103">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
+<p><a name="l1115">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
 
 <p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, führt der GDA POST $dispense-discard aus:</p>
 <ul>
@@ -584,7 +590,7 @@ Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Jul 9, 2026 13:13+0000">2026-07-09</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Jul 9, 2026 17:30+0000">2026-07-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

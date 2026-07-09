@@ -148,10 +148,16 @@
         <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
       </li>
       <li>
+        <a href="Sub_UC_eMed_07_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+      </li>
+      <li>
         <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
       </li>
       <li>
         <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
       </li>
       <li>
         <a href="patient_journey.html">Patient Journey</a>
@@ -299,44 +305,33 @@ width: 100%;}
 
 <!-- Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_07) -->
 
-<h3 id="sub_uc_emed_07_02---durchgeführte-abgaben-lesen">Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen</h3>
+<p>Ein berechtigter GDA (siehe <a href="actors.html#rollen-und-berechtigungen">Rollen und Berechtigungen</a>) kann <em>Durchgeführte Abgaben</em> eines ELGA-Teilnehmers abrufen, um bereits abgegebene Arzneimittel bzw. den Status der <em>Durchgeführten Abgaben</em> einzusehen.</p>
 
-<p>Ein berechtigter GDA (siehe <a href="actors.html#rollen-und-berechtigungen">Rollen und Berechtigungen</a>) kann <em>Durchgeführte Abgaben</em> eines ELGA-Teilnehmers abrufen, um bereits abgegebene Arzneimittel bzw. den Status der <em>Durchgeführten Abgaben</em> einzusehen. Sofern ein zugehöriges e-Rezept vorliegt, spielgeln <em>Durchgeführten Abgaben</em> den Status der Abgaben in der e-Rezept Anwendung wider.</p>
+<p>ELGA-Teilnehmer können <em>Durchgeführte Abgaben</em> über das ELGA-Portal einsehen.</p>
 
-<p>Der Zugriff auf <em>Durchgeführte Abgaben</em> erfolgt abhängig davon, ob eine Kontaktbestätigung des ELGA-Teilnehmers (z.B. mittels e-card) vorliegt oder ob der Zugriff mittels QR-Code des e-Rezepts erfolgt.
-ELGA-Teilnehmer können <em>Durchgeführte Abgaben</em> über das ELGA-Portal abrufen.</p>
+<p>Sofern ein zugehöriges e-Rezept vorliegt, spiegeln <em>Durchgeführten Abgaben</em> den Status der Abgaben in der e-Rezept Anwendung wider.</p>
 
-<!-- TODO: Welcher Zeitraum / Status relevant für Abfrage -->
+<p>Der Standard-Zugriff auf <em>Durchgeführte Abgaben</em> erfolgt mittels Kontaktbestätigung des ELGA-Teilnehmers (z.B. über die e-card). Dadurch erhält der GDA lesenden Zugriff auf alle <em>Durchgeführten Abgaben</em> und erhält Einblick auf bereits durchgeführte Arzneimittelabgaben. Zusätzlich kann der GDA (Arzt/Apothekter) lesend auf <em>Geplante Abgaben</em> und den <em>Medikationsplan</em> des ELGA-Teilnehmers zugreifen.
+<!-- TODO: Link auf Medikationsplan lesen + Geplante Abgaben lesen einfügen --></p>
 
-<h4 id="dispense-search">Dispense-Search</h4>
+<p>Der Zugriff mittels <em>e-Med Groupidentifier</em> (z.B. bei Vorlage eines Papierrezepts) ermöglicht nur eingeschränkten ELGA-Zugriff und wird in <a href="Sub_UC_eMed_07_03.html">Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a> beschrieben.</p>
 
-<p>Im Folgenden wird exemplarisch der lesende Zugriff auf <em>Durchgeführte Abgaben</em> mittels e-card bzw. e-Rezept in der Apotheke dargestellt.</p>
+<h3 id="sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)</h3>
 
-<h5 id="variante-a-zugriff-mit-kontaktbestätigung-am-beispiel-der-e-card">Variante A: Zugriff mit Kontaktbestätigung am Beispiel der e-card</h5>
+<p>Bei der Dispense-Search stellt die Fachanwendung alle MedicationDispenses des ELGA-Teilnehmers bereit.
+Status und Zeitraum können bei der Abfrage eingeschränkt werden.</p>
 
-<p>Erfolgt der Zugriff in der Apotheke nach Identifikation des ELGA-Teilnehmers mittels e-card, erhält der GDA Zugriff auf alle <em>Durchgeführten Abgaben</em>.
-<!-- TODO: definition "relevant": default: Status offen / relevanter Zeitraum? --></p>
+<h5 id="ablauf">Ablauf</h5>
+
+<p>In Arbeit.</p>
+
+<h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
 
 <p><a href="plantuml/UC_eMed_07_02_a.svg"><img src="plantuml/UC_eMed_07_02_a.svg" alt="overview" class="mx-auto" style="width:50%;" /></a></p>
 
-<p><br /></p>
+<h6 id="suchparameter">Suchparameter</h6>
 
-<h5 id="variante-b-zugriff-mittels-e-rezept">Variante B: Zugriff mittels e-Rezept</h5>
-
-<p>Erfolgt die Arzneimittelabgabe in der Apotheke auf Basis eines vorgelegten e-Rezepts (papiergebunden oder digital), erhält der GDA ausschließlich lesenden Zugriff auf die zugehörigen <em>Durchgeführten Abgaben</em>.</p>
-
-<p>Diese werden über den im QR‑Code enthaltenen gemeinsamen <em>e‑Med GroupIdentifier</em> in der e‑Medikation identifiziert und abgerufen, sofern sie:</p>
-<ul>
-  <li>einen relevanten Status aufweisen, 
-<!-- Welche Status der Durchgeführten Abgaben sind relevant? type mit completed? status kann auch cancelled sein! --></li>
-  <li>der <em>e‑Med GroupIdentifier</em> noch gültig ist (d.h. noch zugehörige offene <em>Geplante Abgaben</em> vorliegen). 
-<!-- TODO: *Durchgeführte Abgaben* müssen mit dem *e-Med GroupIdentifier* ergänzt werden --></li>
-</ul>
-
-<p><a href="plantuml/UC_eMed_07_02_b.svg"><img src="plantuml/UC_eMed_07_02_b.svg" alt="overview" class="mx-auto" style="width:50%;" /></a></p>
-
-<p><br />
-<!-- ##### Custom Operations --></p>
+<p>In Arbeit.</p>
 
 
 
@@ -357,7 +352,7 @@ ELGA-Teilnehmer können <em>Durchgeführte Abgaben</em> über das ELGA-Portal ab
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jul 9, 2026 13:13+0000">2026-07-09</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jul 9, 2026 17:30+0000">2026-07-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

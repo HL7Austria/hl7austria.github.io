@@ -6,8 +6,6 @@
 
 ## ​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)
 
-#### Sub_UC_eMed_06_01 - Medikationsplan schreiben
-
 Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) kann den Medikationsplan eines ELGA-Teilnehmers bearbeiten.
 
 Ein ELGA-Teilnehmer kann Medikationsplaneinträge bzw. Medikationspläne über das Zugangsportal unwiderruflich löschen.
@@ -20,9 +18,9 @@ Alle Schreibvorgänge auf einem Medikationsplan folgen demselben technischen Gru
 
 Die nachfolgenden technischen Use Cases beschreiben die jeweils erforderlichen Änderungen an den Ressourcen sowie die Inhalte des Medikationsplan-Transaction-Bundles. Der technische Ablauf von **$plan-write** einschließlich der Integritätsprüfung mittels **ETag** ist für alle Schreiboperationen identisch und wird im folgenden Abschnitt beschrieben.
 
-#### Plan-Write
+#### Sub_UC_eMed_06_01 - Medikationsplan schreiben (Plan-Write)
 
-Alle Schreiboperationen erfolgen über die Custom Operation [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md). Die Fachanwendung verwendet den im Request übermittelten **ETag** zur Integritätsprüfung (Optimistic Locking), um konkurrierende Änderungen am Medikationsplan zu erkennen.
+Alle Schreiboperationen erfolgen über die Custom Operation [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md). Die Fachanwendung verwendet den im Request übermittelten **ETag** zur Integritätsprüfung (Optimistic Locking), um konkurrierende Änderungen am Medikationsplan zu erkennen. 
 
 ##### Ablauf
 

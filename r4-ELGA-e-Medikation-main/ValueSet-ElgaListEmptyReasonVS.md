@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA List Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-07-09T13:13:16+00:00",
+  "date" : "2026-07-09T17:30:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

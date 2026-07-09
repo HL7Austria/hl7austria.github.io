@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-07-09T13:13:16+00:00",
+  "date" : "2026-07-09T17:30:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1446,6 +1446,15 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_07_03.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_07_03.html",
+          "title" : "​Technische Use Cases für Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_07)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "Sub_UC_eMed_08.html"
           }],
           "nameUrl" : "Sub_UC_eMed_08.html",
@@ -1459,6 +1468,15 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }],
           "nameUrl" : "Sub_UC_eMed_09.html",
           "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "Sub_UC_eMed_09_01.html"
+          }],
+          "nameUrl" : "Sub_UC_eMed_09_01.html",
+          "title" : "​Technische Use Cases für Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben (UC_eMed_09)",
           "generation" : "markdown"
         }]
       }]

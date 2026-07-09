@@ -6,30 +6,29 @@
 
 ## ​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_07)
 
-### Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen
+Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) kann **Durchgeführte Abgaben** eines ELGA-Teilnehmers abrufen, um bereits abgegebene Arzneimittel bzw. den Status der **Durchgeführten Abgaben** einzusehen.
 
-Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) kann **Durchgeführte Abgaben** eines ELGA-Teilnehmers abrufen, um bereits abgegebene Arzneimittel bzw. den Status der **Durchgeführten Abgaben** einzusehen. Sofern ein zugehöriges e-Rezept vorliegt, spielgeln **Durchgeführten Abgaben** den Status der Abgaben in der e-Rezept Anwendung wider.
+ELGA-Teilnehmer können **Durchgeführte Abgaben** über das ELGA-Portal einsehen.
 
-Der Zugriff auf **Durchgeführte Abgaben** erfolgt abhängig davon, ob eine Kontaktbestätigung des ELGA-Teilnehmers (z.B. mittels e-card) vorliegt oder ob der Zugriff mittels QR-Code des e-Rezepts erfolgt. ELGA-Teilnehmer können **Durchgeführte Abgaben** über das ELGA-Portal abrufen.
+Sofern ein zugehöriges e-Rezept vorliegt, spiegeln **Durchgeführten Abgaben** den Status der Abgaben in der e-Rezept Anwendung wider.
 
-#### Dispense-Search
+Der Standard-Zugriff auf **Durchgeführte Abgaben** erfolgt mittels Kontaktbestätigung des ELGA-Teilnehmers (z.B. über die e-card). Dadurch erhält der GDA lesenden Zugriff auf alle **Durchgeführten Abgaben** und erhält Einblick auf bereits durchgeführte Arzneimittelabgaben. Zusätzlich kann der GDA (Arzt/Apothekter) lesend auf **Geplante Abgaben** und den **Medikationsplan** des ELGA-Teilnehmers zugreifen. 
 
-Im Folgenden wird exemplarisch der lesende Zugriff auf **Durchgeführte Abgaben** mittels e-card bzw. e-Rezept in der Apotheke dargestellt.
+Der Zugriff mittels **e-Med Groupidentifier** (z.B. bei Vorlage eines Papierrezepts) ermöglicht nur eingeschränkten ELGA-Zugriff und wird in [Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen](Sub_UC_eMed_07_03.md) beschrieben.
 
-##### Variante A: Zugriff mit Kontaktbestätigung am Beispiel der e-card
+### Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)
 
-Erfolgt der Zugriff in der Apotheke nach Identifikation des ELGA-Teilnehmers mittels e-card, erhält der GDA Zugriff auf alle **Durchgeführten Abgaben**. 
+Bei der Dispense-Search stellt die Fachanwendung alle MedicationDispenses des ELGA-Teilnehmers bereit. Status und Zeitraum können bei der Abfrage eingeschränkt werden.
+
+##### Ablauf
+
+In Arbeit.
+
+##### Sequenzdiagramm
 
 ![](plantuml/UC_eMed_07_02_a.svg)
 
-##### Variante B: Zugriff mittels e-Rezept
+###### Suchparameter
 
-Erfolgt die Arzneimittelabgabe in der Apotheke auf Basis eines vorgelegten e-Rezepts (papiergebunden oder digital), erhält der GDA ausschließlich lesenden Zugriff auf die zugehörigen **Durchgeführten Abgaben**.
-
-Diese werden über den im QR‑Code enthaltenen gemeinsamen **e‑Med GroupIdentifier** in der e‑Medikation identifiziert und abgerufen, sofern sie:
-
-* einen relevanten Status aufweisen, 
-* der **e‑Med GroupIdentifier** noch gültig ist (d.h. noch zugehörige offene **Geplante Abgaben** vorliegen). 
-
-![](plantuml/UC_eMed_07_02_b.svg)
+In Arbeit.
 
