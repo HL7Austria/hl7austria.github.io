@@ -28,7 +28,7 @@ Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben 
   "title" : "e-Med Operation für Plan-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-07-09T09:27:37+00:00",
+  "date" : "2026-07-09T10:22:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

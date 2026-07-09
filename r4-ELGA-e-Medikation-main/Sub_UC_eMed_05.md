@@ -21,21 +21,25 @@ Beim Plan-History-Read stellt die Fachanwendung eine [persistierte Version des M
 
 ##### Ablauf
 
-1. Der GDA führt ein**GET**auf das[persistierte Medikationsplan-Collection-Bundle](design_choices.md#persistiertes-medikationsplan-collection-bundle)aus.
-1. Die Fachanwendung prüft, ob bereits ein Medikationsplan existiert.
-1. Existiert ein Medikationsplan, wird das angeforderte persistierte Medikationsplan-Collection-Bundle zurückgeliefert.
-Das**Collection Bundle**enthält:
+1. Der Client führt einen**POST**$plan-history-read aus.
+1. Die Fachanwendung prüft, ob Medikationspläne[persistierte Medikationsplan-Collection-Bundles](design_choices.md#persistiertes-medikationsplan-collection-bundle)entsprechend den Suchparametern existieren.
+1. Existieren ein oder mehrere Medikationsplan-Collection-Bundles, werden diese als Bundle (type=searchset) zurückgeliefert. Jedes**Medikationsplan-Collection-Bundle**enthält:
 
 * die List-Ressource des Medikationsplans 
 
 * alle referenzierten Ressourcen vollständig (inline).
 
-1. Existiert**kein Medikationsplan**, wird ein**leeres Ergebnis**zurückgegeben.
+1. Existiert**kein**Medikationsplan-Collection-Bundle, wird ein**leeres Bundle**(type=searchset) zurückgegeben.
+1. Im Fehlerfall erfolgt eine entsprechende Meldung an den Client.
 
-Beim Plan-History-Read erfolgt **keine Änderung** am Medikationsplan durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. 
+Beim Plan-History-Read erfolgt **keine Änderung** der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. 
  Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.
 
-##### Sequenzdiagramm Plan-History-Read
+##### Custom Operations
+
+**$plan-history-read**: in Arbeit.
+
+##### Sequenzdiagramm
 
 ###### Beispiele für Zugriffe mittels Suchparameter
 
@@ -72,7 +76,7 @@ Nachfolgend kann der Medikationsplan vom GDA bearbeitet werden und ein Plan-Writ
 
 [$plan-read](OperationDefinition-AtEmed.List.Planread.md)
 
-##### Sequenzdiagramm Plan-Read
+##### Sequenzdiagramm
 
 #### Sub_UC_eMed_05_03 - Initial erstellter Medikationsplan
 
@@ -94,7 +98,7 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 1. Für das Plan-Read erzeugt die Fachanwendung daraus ein Auslieferungs-Medikationsplan-Collection-Bundle.
 1. Dieses wird mit demselben**List.emptyReason = notstarted**sowie dem zugehörigen ETag an den Client zurückgeliefert.
 
-##### Sequenzdiagramm Plan-Read - Initial erstellter Medikationsplan
+##### Sequenzdiagramm
 
 ##### Relevante Elemente (List)
 
