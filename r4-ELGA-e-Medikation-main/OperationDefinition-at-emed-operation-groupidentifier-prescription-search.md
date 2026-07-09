@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-emed-operation-groupidentifier-prescription-search | *Version*:0.1.1 | |
-| Draft as of 2026-07-08 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedGroupIdentifierPrescriptionSearch |
+| Draft as of 2026-07-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmedGroupIdentifierPrescriptionSearch |
 
  
 Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll. 
@@ -28,7 +28,7 @@ Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zug
   "title" : "eMed Operation für GroupIdentifier Prescription Search",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-07-08T22:06:32+00:00",
+  "date" : "2026-07-09T09:27:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
