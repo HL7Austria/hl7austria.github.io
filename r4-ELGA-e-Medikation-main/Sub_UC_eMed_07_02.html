@@ -305,33 +305,57 @@ width: 100%;}
 
 <!-- Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_07) -->
 
-<p>Ein berechtigter GDA (siehe <a href="actors.html#rollen-und-berechtigungen">Rollen und Berechtigungen</a>) kann <em>Durchgeführte Abgaben</em> eines ELGA-Teilnehmers abrufen, um bereits abgegebene Arzneimittel bzw. den Status der <em>Durchgeführten Abgaben</em> einzusehen.</p>
+<h3 id="sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)</h3>
+
+<p>Ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> kann <em>Durchgeführte Abgaben</em> eines ELGA-Teilnehmers abrufen, um bereits abgegebene Arzneimittel bzw. den Status der <em>Durchgeführten Abgaben</em> einzusehen.</p>
 
 <p>ELGA-Teilnehmer können <em>Durchgeführte Abgaben</em> über das ELGA-Portal einsehen.</p>
 
-<p>Sofern ein zugehöriges e-Rezept vorliegt, spiegeln <em>Durchgeführten Abgaben</em> den Status der Abgaben in der e-Rezept Anwendung wider.</p>
+<p>Sofern ein zugehöriges e-Rezept vorliegt, spiegeln die <em>Durchgeführten Abgaben</em> den Status der Abgaben des e-Rezepts Anwendung wider.</p>
 
-<p>Der Standard-Zugriff auf <em>Durchgeführte Abgaben</em> erfolgt mittels Kontaktbestätigung des ELGA-Teilnehmers (z.B. über die e-card). Dadurch erhält der GDA lesenden Zugriff auf alle <em>Durchgeführten Abgaben</em> und erhält Einblick auf bereits durchgeführte Arzneimittelabgaben. Zusätzlich kann der GDA (Arzt/Apothekter) lesend auf <em>Geplante Abgaben</em> und den <em>Medikationsplan</em> des ELGA-Teilnehmers zugreifen.
+<p>Der Standardzugriff auf <em>Durchgeführte Abgaben</em> erfolgt mittels Kontaktbestätigung des ELGA-Teilnehmers (z.B. über die e-card). Dadurch erhält der GDA lesenden Zugriff auf alle <em>Durchgeführten Abgaben</em>. 
+Zusätzlich kann der GDA lesend auf <em>Geplante Abgaben</em> und den <em>Medikationsplan</em> zugreifen, um die <em>Durchgeführten Abgaben</em> im Kontext der gesamten Medikation zu beurteilen.
 <!-- TODO: Link auf Medikationsplan lesen + Geplante Abgaben lesen einfügen --></p>
 
-<p>Der Zugriff mittels <em>e-Med Groupidentifier</em> (z.B. bei Vorlage eines Papierrezepts) ermöglicht nur eingeschränkten ELGA-Zugriff und wird in <a href="Sub_UC_eMed_07_03.html">Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a> beschrieben.</p>
+<p>Der Zugriff mittels <em>e-Med GroupIdentifier</em> (z.B. mittels DataMatrix-Code eines e-Rezepts)  ermöglicht nur eingeschränkten ELGA-Zugriff und wird in <a href="Sub_UC_eMed_07_03.html">Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a> beschrieben.</p>
 
-<h3 id="sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)</h3>
-
-<p>Bei der Dispense-Search stellt die Fachanwendung alle MedicationDispenses des ELGA-Teilnehmers bereit.
-Status und Zeitraum können bei der Abfrage eingeschränkt werden.</p>
+<p>Bei der <strong>Dispense-Search</strong> stellt die Fachanwendung alle <em>MedicationDispense</em>-Ressourcen des ELGA-Teilnehmers bereit, die den angegebenen Suchkriterien entsprechen. Die Suche kann insbesondere nach Status und Zeitraum eingeschränkt werden.</p>
 
 <h5 id="ablauf">Ablauf</h5>
 
-<p>In Arbeit.</p>
+<ol>
+  <li>Der GDA führt ein <strong>GET</strong> auf <strong>MedicationDispense</strong> aus. Die Suche kann optional anhand von Suchparametern eingeschränkt werden (siehe Suchparameter).</li>
+  <li>Die Fachanwendung ermittelt alle den Suchkriterien entsprechenden <em>Durchgeführten Abgaben</em> des ELGA-Teilnehmers.</li>
+  <li>Die Fachanwendung liefert das Suchergebnis als <strong>Bundle (type = searchset)</strong> mit sämtlichen den Suchkriterien entsprechenden <em>MedicationDispense</em>-Ressourcen.</li>
+  <li>Werden keine passenden Ressourcen gefunden, wird ein <strong>leeres Searchset-Bundle</strong> zurückgegeben.</li>
+  <li>Kann die Anfrage nicht verarbeitet werden, antwortet die Fachanwendung mit einer geeigneten <strong>HTTP-4xx</strong>-Antwort und einem <strong>OperationOutcome</strong>.</li>
+  <li>Optional kann der GDA zusätzlich den <em>Medikationsplan</em> oder <em>Geplante Abgaben</em> abrufen.</li>
+</ol>
 
 <h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
 
-<p><a href="plantuml/UC_eMed_07_02_a.svg"><img src="plantuml/UC_eMed_07_02_a.svg" alt="overview" class="mx-auto" style="width:50%;" /></a></p>
+<p><a href="plantuml/UC_eMed_07_02.svg"><img src="plantuml/UC_eMed_07_02.svg" alt="overview" class="mx-auto" style="width:50%;" /></a></p>
 
 <h6 id="suchparameter">Suchparameter</h6>
 
-<p>In Arbeit.</p>
+<p>Mögliche Suchparamter: (in Arbeit)</p>
+<ul>
+  <li>identifier (e-Med GroupIdentifier)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="ValueSet-DurchgefuehrteAbgabeStatusVS.html">status</a> [completed</td>
+          <td>cancelled</td>
+          <td>entered-in-error]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><a href="ValueSet-DurchgefuehrteAbgabeTypVS.html">type</a> (Abgabeart)</li>
+  <li>recorded (Datum und Uhrzeit der Erfassung)
+<!-- Todo: entered-in-error nicht, weil nur eigene verworfen werden können? --></li>
+</ul>
 
 
 
@@ -352,7 +376,7 @@ Status und Zeitraum können bei der Abfrage eingeschränkt werden.</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Jul 9, 2026 17:30+0000">2026-07-09</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jul 10, 2026 13:02+0000">2026-07-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -6,28 +6,28 @@
 
 ## ​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_07)
 
-Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) kann **Geplante Abgaben** eines ELGA-Teilnehmers abrufen, um verordnete (rezeptierte) Arzneimittel bzw. den Status der **Geplanten Abgaben** einzusehen und eine entsprechende Arzneimittelabgabe durchzuführen.
+### Sub_UC_eMed_07_01 - Geplante Abgaben lesen (Prescription-Search)
+
+Ein [berechtigter GDA](actors.md#rollen-und-berechtigungen) kann **Geplante Abgaben** eines ELGA-Teilnehmers abrufen, um verordnete (rezeptierte) Arzneimittel einzusehen.
 
 ELGA-Teilnehmer können **Geplante Abgaben** über das ELGA-Portal einsehen.
 
-Sofern ein zugehöriges e-Rezept vorliegt, spiegeln **Geplanten Abgaben** den Status der Verordnungen eines e-Rezepts wider.
+Sofern ein zugehöriges e-Rezept vorliegt, spiegeln die **Geplanten Abgaben** den aktuellen Status der Verordnungen des e-Rezepts wider.
 
-Der Standard-Zugriff auf **Geplante Abgaben** erfolgt mittels Kontaktbestätigung des ELGA-Teilnehmers (z.B. über die e-card). Dadurch erhält der GDA lesenden Zugriff auf alle **Geplante Abgaben** und kann entsprechende Arzneimittelabgaben durchführen und dokumentieren (siehe [Sub_UC_eMed_09_01 - Durchgeführte Abgabe schreiben](Sub_UC_eMed_09.md#sub_uc_emed_09_01---durchgeführte-abgabe-schreiben)). Zusätzlich kann der GDA (Arzt/Apothekter) lesend auf den **Medikationsplan** des ELGA-Teilnehmers zugreifen, um zuvor evtl. Wechselwirkungen zu prüfen ([Plan-Read](interactions.md#plan-read)). 
+Der Standardzugriff erfolgt nach Kontaktbestätigung des ELGA-Teilnehmers (z.B. mittels e-card). Der GDA erhält dadurch lesenden Zugriff auf alle **Geplanten Abgaben** und kann entsprechende Arzneimittelabgaben durchführen und dokumentieren (siehe [Sub_UC_eMed_09_01 - Durchgeführte Abgabe schreiben](Sub_UC_eMed_09.md#sub_uc_emed_09_01---durchgeführte-abgabe-schreiben)). Zusätzlich kann der GDA lesend auf **Durchgeführte Abgaben** und den **Medikationsplan** zugreifen, um die **Geplanten Abgaben** im Kontext der gesamten Medikation zu beurteilen. 
 
-Der Zugriff mittels **e-Med Groupidentifier** (z.B. bei Vorlage eines Papierrezepts) ermöglicht nur eingeschränkten ELGA-Zugriff und wird in [Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen](Sub_UC_eMed_07_03.md) beschrieben.
+Der Zugriff mittels **e-Med GroupIdentifier** (z.B. mittels DataMatrix-Code eines e-Rezepts) ermöglicht ausschließlich einen eingeschränkten ELGA-Zugriff und wird in [Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen](Sub_UC_eMed_07_03.md) beschrieben.
 
-### Sub_UC_eMed_07_01 - Geplante Abgaben lesen (Prescription-Search)
-
-Bei der Prescription-Search stellt die Fachanwendung alle MedicationRequests des ELGA-Teilnehmers mit der Kategorie **Geplante Abgabe** bereit. Status und Zeitraum können bei der Abfrage eingeschränkt werden. 
+Bei der **Prescription-Search** stellt die Fachanwendung alle **MedicationRequest**-Ressourcen mit der Kategorie **Geplante Abgabe** des ELGA-Teilnehmers bereit, die den angegebenen Suchkriterien entsprechen. Die Suche kann insbesondere nach Status und Zeitraum eingeschränkt werden. 
 
 ##### Ablauf
 
 1. Der GDA führt ein**GET**auf**MedicationRequest**mit der Kategorie**Geplante Abgabe**aus. Optional können weitere Suchparameter, z.B. Status oder Zeitraum, angegeben werden.
-1. Die Fachanwendung ermittelt alle den Suchkriterien entsprechenden MedicationRequests.
-1. Die Fachanwendung liefert das Suchergebnis als**Bundle (type = searchset)**mit sämtlichen den Suchkriterien entsprechenden MedicationRequest zurück.
-1. Werden keine passenden MedicationRequests gefunden, wird ein**leeres Searchset-Bundle**zurückgegeben.
+1. Die Fachanwendung ermittelt alle den Suchkriterien entsprechenden**Geplanten Abgaben**des ELGA-Teilnehmers.
+1. Die Fachanwendung liefert das Suchergebnis als**Bundle (type = searchset)**mit sämtlichen den Suchkriterien entsprechenden**MedicationRequest**-Ressourcen.
+1. Werden keine passenden Ressourcen gefunden, wird ein**leeres Searchset-Bundle**zurückgegeben.
 1. Kann die Anfrage nicht verarbeitet werden, antwortet die Fachanwendung mit einer geeigneten**HTTP-4xx**-Antwort und einem**OperationOutcome**.
-1. Optional kann der GDA zusätzlich den Medikationsplan mittels**$plan-read**abrufen, um die**Geplanten Abgaben**im Kontext der aktuellen Gesamtmedikation zu beurteilen.
+1. Optional kann der GDA zusätzlich den**Medikationsplan**oder**Durchgeführte Abgaben**abrufen.
 
 ##### Sequenzdiagramm
 
@@ -35,5 +35,10 @@ Bei der Prescription-Search stellt die Fachanwendung alle MedicationRequests des
 
 ###### Suchparameter
 
-In Arbeit.
+Mögliche Suchparamter: (in Arbeit)
+
+* category
+* status
+* validityPeriod
+* groupIdentifier
 

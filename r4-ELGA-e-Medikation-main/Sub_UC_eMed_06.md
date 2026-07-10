@@ -6,7 +6,7 @@
 
 ## ​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)
 
-Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) kann den Medikationsplan eines ELGA-Teilnehmers bearbeiten.
+Ein [berechtigter GDA](actors.md#rollen-und-berechtigungen) kann den Medikationsplan eines ELGA-Teilnehmers bearbeiten.
 
 Ein ELGA-Teilnehmer kann Medikationsplaneinträge bzw. Medikationspläne über das Zugangsportal unwiderruflich löschen.
 

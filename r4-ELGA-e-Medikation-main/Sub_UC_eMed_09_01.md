@@ -6,5 +6,9 @@
 
 ## ​Technische Use Cases für Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben (UC_eMed_09)
 
+In Arbeit.
+
 ### Sub_UC_eMed_09_01 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben
+
+In Arbeit.
 
