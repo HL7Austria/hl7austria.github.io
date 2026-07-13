@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (Medi
   "title" : "ELGA e-Med Geplante Abgabe Status ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-07-13T05:47:45+00:00",
+  "date" : "2026-07-13T07:18:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
