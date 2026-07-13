@@ -16,8 +16,6 @@ Erfolgt der Zugriff über den **e-Med GroupIdentifier** (z.B. codiert auf dem Pa
 
 ### Ablauf
 
-![](plantuml/UC_eMed_09_01.svg)
-
 Der GDA dokumentiert die Durchgeführte Abgabe wie folgt:
 
 * Wenn eine zugehörige [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) vorliegt, **MUSS** diese im Element **MedicationDispense.authorizingPrescription[geplanteAbgabe]** referenziert werden. Der zugehörige [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) **MUSS** über **MedicationDispense.authorizingPrescription[planeintrag]** referenziert werden.  

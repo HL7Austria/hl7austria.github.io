@@ -543,7 +543,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td><strong>cancelled</strong></td>
-      <td><em>Durchgeführte Abgabe</em> gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (Medikation "abgesetzt")</td>
+      <td><em>Durchgeführte Abgabe</em> gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (z.B. Medikation "abgesetzt" oder Medikation noch ausreichend vorhanden)</td>
     </tr>
     <tr>
       <td><strong>entered-in-error</strong></td>
@@ -560,10 +560,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="abhängigkeiten-der-geplanten-abgabe-und-der-durchgeführten-abgaben">Abhängigkeiten der <em>Geplanten Abgabe</em> und der <em>Durchgeführten Abgaben</em></h4>
 
+<style> 
+/*TODO: falls table-responsive verwendet werden soll, sollte dieser style ausgelagert werden damit er auf allen pages verfügbar ist*/
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    max-height: 800px;
+    overflow-y: auto;
+}
+.table-responsive > table { width: 100%; }
+.table-responsive th, .table-responsive td { padding: 15px; background: #f5f5f5; }
+.table-responsive table { border-collapse: separate; border-spacing: 3px; }
+/* Sticky header */
+.table-responsive th { position: sticky; top: 0; background: rgb(228, 228, 228); z-index: 2; }
+</style>
+
+<div class="table-responsive">
 <table>
   <thead>
     <tr>
-      <th>Use Case</th>
+      <th>Use Case - Geplante Abgabe</th>
       <th>Planeintrag (MedicationRequest-Status)</th>
       <th>Beschreibung</th>
       <th><em>Geplante Abgabe</em> (MedicationRequest-Status)</th>
@@ -572,7 +589,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <th><em>Durchgeführte Abgabe</em> (MedicationDispense-Status)</th>
       <th>Status Abgabe CDA</th>
       <th>Beschreibung</th>
-      <th>Use Case</th>
+      <th>Use Case - Durchgeführte Abgabe</th>
     </tr>
   </thead>
   <tbody>
@@ -650,6 +667,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
   </tbody>
 </table>
+</div>
 
 <p><br/>(*) solange ein evtl. Behandlungszeitraum nicht überschritten</p>
 
@@ -727,14 +745,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>Leerabgabe beendet Einzelabgabe</td>
       <td>cancelled</td>
-      <td>wenn alle möglichen Einlösungen <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</td>
+      <td>wenn alle möglichen Einlösungen mit <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</td>
       <td>type: FFC (First Fill - Complete)<br/>quantity:&nbsp; 0 Packungen<br/>status: „cancelled“</td>
       <td>Das Arzneimittel einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt.</td>
     </tr>
     <tr>
       <td>Leerabgabe beendet Teilabgabe</td>
       <td>completed oder cancelled</td>
-      <td>wenn alle möglichen Einlösungen <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</td>
+      <td>wenn alle möglichen Einlösungen mit <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</td>
       <td>type: RFC (Refill - Complete)<br/>quantity: 0 Packungen<br/>status: „cancelled“</td>
       <td>Teilabgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet.</td>
     </tr>
@@ -780,7 +798,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jul 10, 2026 13:02+0000">2026-07-10</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 13, 2026 07:52+0000">2026-07-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

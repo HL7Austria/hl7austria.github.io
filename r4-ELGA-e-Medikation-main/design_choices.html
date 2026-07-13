@@ -320,7 +320,7 @@ width: 100%;}
 
 <h4 id="medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan: AtElgaEmedListMedikationsplan (<em>List</em>)</h4>
 
-<p>Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jedes Entry genau eine Referenz (<em>Reference</em>) auf einen Medikationsplaneintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
+<p>Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jeder Entry genau eine Referenz (<em>Reference</em>) auf einen Medikationsplaneintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
 
 <p><a name="l472">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Medikationsplaneintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
 
@@ -333,12 +333,12 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 
 <p>Der aktuelle Status eines Medikationsplaneintrags wird im <em>status</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a>).</p>
 
-<p>Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur eingeschränkte Status einnehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</p>
+<p>Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur bestimmte Statuswerte annehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</p>
 
-<h4 id="medikationsplan-collection-bundle-atemedbundlemedikationsplan-collection-bundle">Medikationsplan-Collection-Bundle: AtEmedBundleMedikationsplan (<em>Collection Bundle</em>)</h4>
+<h4 id="medikationsplan-collection-bundle-atelgaemedbundlemedikationsplan-collection-bundle">Medikationsplan-Collection-Bundle: AtElgaEmedBundleMedikationsplan (<em>Collection Bundle</em>)</h4>
 
 <p>Version des Medikationsplans inklusive aller relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine <em>Bundle</em>-Ressource vom Typ Collection abgebildet.
-Dient einerseits der 1. Persistierung nach einem Plan-Write und 2. der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.</p>
+Dient einerseits der Persistierung nach einem Plan-Write und andererseits der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.</p>
 
 <h5 id="persistiertes-medikationsplan-collection-bundle">Persistiertes Medikationsplan-Collection-Bundle</h5>
 <p><a name="l528">​</a>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <em>Medikationsplan-Transaction-Bundle</em> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierter Planeinträge) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
@@ -348,17 +348,17 @@ Dient einerseits der 1. Persistierung nach einem Plan-Write und 2. der Ausliefer
 Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag <em>removed</em>) werden aus dem Medikationsplan entfernt.
 Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason <em>nilknown</em>.</p>
 
-<h4 id="geplante-abgabe-transaction-bundle-atemedbundlegeplanteabgabetx-transaction-bundle">Geplante Abgabe Transaction-Bundle: AtEmedBundleGeplanteAbgabeTX (<em>Transaction Bundle</em>)</h4>
+<h4 id="geplante-abgabe-transaction-bundle-atelgaemedbundlegeplanteabgabetx-transaction-bundle">Geplante Abgabe Transaction-Bundle: AtElgaEmedBundleGeplanteAbgabeTX (<em>Transaction Bundle</em>)</h4>
 
 <p><a name="l573">​</a>Ein Bundle vom Typ Transaction, das beim Speichern von <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplanten Abgaben</a> mittels <a href="interactions.html#prescription-write">Prescription-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird.</p>
 
-<p>Die im Bundle enthaltenen <em>Geplanten Abgaben</em> müssen mit dem gleichen <em>e-Med GroupIdentifier</em> gekennzeichnet sein. Fehlt dieser, wird er von der Fachanwendung ergänzt.</p>
+<p>Die im Bundle enthaltenen <em>Geplanten Abgaben</em> müssen mit dem gleichen <em>e-Med GroupIdentifier</em> gekennzeichnet sein. Fehlt dieser bei allen geplanten Abgaben im Transaction Bundle, wird er von der Fachanwendung ergänzt.</p>
 
 <p>Profil in Arbeit.</p>
 
   <!-- TODO: Erklärung Planreferenz in Durchgeführte Abgabe, damit ersichtlich, wenn Abgabe (Arznei/Dosierung) abweichend (/Substituion) -->
 
-  <!-- #### Medikationsplan-Transaction-Bundle: AtEmedBundleMedikationsplanTx (*Transaction Bundle*)
+  <!-- #### Medikationsplan-Transaction-Bundle: AtElgaEmedBundleMedikationsplanTx (*Transaction Bundle*)
 
 Ein Bundle vom Typ Transaction, das beim [Plan-Write](interactions.html#plan-write) an die Fachanwendung übermittelt wird. 
 Das Bundle enthält den [Medikationsplan](design_choices.html#medikationsplan-atelgaemedlistmedikationsplan-list) mit Referenzen auf die *Medikationsplaneinträge*. Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
@@ -402,7 +402,7 @@ Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *t
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jul 10, 2026 13:02+0000">2026-07-10</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 13, 2026 07:52+0000">2026-07-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

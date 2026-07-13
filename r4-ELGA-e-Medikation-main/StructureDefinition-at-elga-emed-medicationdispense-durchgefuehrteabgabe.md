@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe | *Version*:0.1.1 | |
-| Draft as of 2026-07-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
+| Draft as of 2026-07-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe |
 
  
 Dokumentiert eine "Durchgeführte Abgabe" eines Arzneimittels ("MedicationDispense"-Ressource). Die "Durchgeführte Abgabe" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. Es können Abweichungen zur "Geplanten Abgabe" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden. Sofern eine zugehörige "Geplanten Abgabe" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige "Geplante Abgabe", ersichtlich. Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "type"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-07-10T13:02:50+00:00",
+  "date" : "2026-07-13T07:52:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

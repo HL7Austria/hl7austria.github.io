@@ -229,22 +229,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Alle Schreibvorgänge auf einem Medikationsplan folgen demselben technischen Grundablauf:</p>
 
 <ol>
-  <li>Die aktuelle Bearbeitungssicht des Medikationsplans wird mittels <a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a> abgerufen (siehe <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_02---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_05_02 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
+  <li>Die aktuelle Bearbeitungssicht des Medikationsplans wird mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> abgerufen (siehe <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_05_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
   <li>Die im <a href="design_choices.html#auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</a> enthaltenen Ressourcen werden entsprechend des gewünschten Schreibszenarios bearbeitet.</li>
-  <li>Der aktualisierte Medikationsplan wird mittels <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a> an die Fachanwendung übermittelt.</li>
+  <li>Der aktualisierte Medikationsplan wird mittels <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a> an die Fachanwendung übermittelt.</li>
 </ol>
 
 <p>Die nachfolgenden technischen Use Cases beschreiben die jeweils erforderlichen Änderungen an den Ressourcen sowie die Inhalte des Medikationsplan-Transaction-Bundles. Der technische Ablauf von <em>$plan-write</em> einschließlich der Integritätsprüfung mittels <em>ETag</em> ist für alle Schreiboperationen identisch und wird im folgenden Abschnitt beschrieben.</p>
 
 <h4 id="sub_uc_emed_06_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_06_01 - Medikationsplan schreiben (Plan-Write)</h4>
 
-<p>Alle Schreiboperationen erfolgen über die Custom Operation <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (Optimistic Locking), um konkurrierende Änderungen am Medikationsplan zu erkennen.
+<p>Alle Schreiboperationen erfolgen über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (Optimistic Locking), um konkurrierende Änderungen am Medikationsplan zu erkennen.
   <!-- TODO: Link zur ETag-Beschreibung im ELGA-Core ergänzen --></p>
 
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li><a name="l469">​</a>Der GDA übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> als <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
+  <li><a name="l469">​</a>Der GDA übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
     <ul>
       <li>alle <strong>neuen</strong>, <strong>geänderten</strong> und <strong>zu entfernenden</strong> Ressourcen sind <strong>inline</strong> im Transaction Bundle enthalten</li>
       <li>den <em>ETag</em> des zuvor abgerufenen Auslieferungs-Medikationsplan-Collection-Bundles (zur Durchführung des <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>)</li>
@@ -262,12 +262,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li>Die Fachanwendung bestätigt die erfolgreiche Aktualisierung des Medikationsplans mit <strong>HTTP 200 OK</strong>.</li>
   <li>Schlägt die Validierung fehl, wird der Schreibvorgang mit einer geeigneten <strong>HTTP-4xx</strong>-Antwort und einem <strong>OperationOutcome</strong> abgelehnt.</li>
-  <li>Stimmt der <em>ETag</em> nicht mit der aktuell persistierten Medikationsplan-Version überein, wird der Schreibvorgang mit <strong>HTTP 412 Precondition Failes</strong> und einem <strong>OperationOutcome</strong> abgelehnt. Vor einem erneuten Schreibversuch muss der Medikationsplan mittels <a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a> erneut abgerufen und auf Basis der aktuellen Version bearbeitet werden.</li>
+  <li>Stimmt der <em>ETag</em> nicht mit der aktuell persistierten Medikationsplan-Version überein, wird der Schreibvorgang mit <strong>HTTP 412 Precondition Failes</strong> und einem <strong>OperationOutcome</strong> abgelehnt. Vor einem erneuten Schreibversuch muss der Medikationsplan mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> erneut abgerufen und auf Basis der aktuellen Version bearbeitet werden.</li>
 </ol>
 
 <h5 id="custom-operations">Custom Operations</h5>
 
-<p><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></p>
+<p><a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a></p>
 
 <h5 id="sequenzdiagramm-plan-write">Sequenzdiagramm Plan-Write</h5>
 
@@ -285,7 +285,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>Ein GDA hat <strong>alle Medikationsplaneinträge abgesetzt, beendet oder storniert</strong> oder ein ELGA-Teilnehmer hat <strong>alle Medikationsplaneinträge unwiderruflich gelöscht</strong>, sodass sämtliche Einträge der <em>List</em> das <em>List.entry.flag = removed</em> besitzen.
-Beim nächsten <a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a> erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit <em>List.emptyReason = nilknown</em> aus.</li>
+Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit <em>List.emptyReason = nilknown</em> aus.</li>
 </ul>
 
   <!-- (TODO: Invariante zur Überprüfung) -->
@@ -857,7 +857,7 @@ Die Fachanwendung bearbeitet das Collection Bundle wie folgt:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jul 10, 2026 13:02+0000">2026-07-10</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 13, 2026 07:52+0000">2026-07-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

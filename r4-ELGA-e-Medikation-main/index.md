@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-07-10T13:02:50+00:00",
+  "date" : "2026-07-13T07:52:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -715,7 +715,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-elga-emed-list-medikationsplan"
       },
       "name" : "AT ELGA e-Medikation List Medikationsplan",
-      "description" : "Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. \nDiese enthält 0..* Einträge (List.entry), wobei jedes Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.\nDie Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.",
+      "description" : "Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. \nDiese enthält 0..* Einträge (List.entry), wobei jeder Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.\nDie Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
     },
@@ -1139,7 +1139,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/AtEmed.List.PlanRead"
+        "reference" : "OperationDefinition/AtElgaEmed.List.PlanRead"
       },
       "name" : "e-Med Operation für Plan-Read",
       "description" : "Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.",
@@ -1151,7 +1151,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/AtEmed.List.PlanWrite"
+        "reference" : "OperationDefinition/AtElgaEmed.List.PlanWrite"
       },
       "name" : "e-Med Operation für Plan-Write",
       "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",

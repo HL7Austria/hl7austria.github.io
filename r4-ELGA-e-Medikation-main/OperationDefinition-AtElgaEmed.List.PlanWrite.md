@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.PlanWrite | *Version*:0.1.1 | |
-| Draft as of 2026-07-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEmed_List_PlanWrite |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtElgaEmed.List.PlanWrite | *Version*:0.1.1 | |
+| Draft as of 2026-07-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmed_List_PlanWrite |
 
  
 Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird. 
@@ -21,14 +21,14 @@ Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben 
 ```json
 {
   "resourceType" : "OperationDefinition",
-  "id" : "AtEmed.List.PlanWrite",
-  "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtEmed.List.PlanWrite",
+  "id" : "AtElgaEmed.List.PlanWrite",
+  "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtElgaEmed.List.PlanWrite",
   "version" : "0.1.1",
-  "name" : "AtEmed_List_PlanWrite",
+  "name" : "AtElgaEmed_List_PlanWrite",
   "title" : "e-Med Operation für Plan-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-07-10T13:02:50+00:00",
+  "date" : "2026-07-13T07:52:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
