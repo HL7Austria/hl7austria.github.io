@@ -94,7 +94,7 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 1. Ein Client führt für einen ELGA-Teilnehmer erstmalig ein**POST**[$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)aus.
 1. Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.
 1. Existiert noch kein persistierter Medikationsplan, erstellt die Fachanwendung ein persistiertes Medikationsplan-Collection-Bundle mit:
-* einer List Ressource welche den Wert **emptyReason = notstarted** besitzt und keine List.entry Einträge enthält
+* einer List Ressource, welche den Wert **emptyReason = notstarted** besitzt und keine List.entry Einträge enthält
 * einer Patient Ressource
 
 1. Das erzeugte Medikationsplan-Collection-Bundle wird als initialer Medikationsplan persistiert.
