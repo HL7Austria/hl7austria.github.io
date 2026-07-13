@@ -73,11 +73,13 @@ Beim Plan-History-Read erfolgt **keine Änderung** der Medikationspläne durch d
 
 ##### Sequenzdiagramm
 
-###### Beispiele für Zugriffe mittels Suchparameter
+###### Beispiele für Zugriffe
+
+In Arbeit <!–TODO: wenn plan-history-read eine Operation bleibt stimmt dieser Teil nicht mehr -> dann würden Operation IN Parameter zum Einsatz kommen
 
 * **Aktuelle Planversion** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_count=1&_sort=-timestamp&list.subject={bPK-GH}
 * **Alle Planversionen** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_sort=-timestamp&list.subject={bPK-GH}
-* Abfrage aller **historischen Medikationsplan-Versionen** eines Patienten, die nach dem angegebenen Datum persistiert wurden und Plan-Einträge enthalten, die als **storniert, beendet oder abgesetzt** gekennzeichnet sind: GET [base]/Bundle?type=collection&_sort=-timestamp&timestamp=ge2025-01-01&list.subject={bPK-GH}&list.entry.flag=removed
+* Abfrage aller **historischen Medikationsplan-Versionen** eines Patienten, die nach dem angegebenen Datum persistiert wurden und Plan-Einträge enthalten, die als **storniert, beendet oder abgesetzt** gekennzeichnet sind: GET [base]/Bundle?type=collection&_sort=-timestamp&timestamp=ge2025-01-01&list.subject={bPK-GH}&list.entry.flag=removed –> 
 
 #### Sub_UC_eMed_05_03 - Initial erstellter Medikationsplan
 
