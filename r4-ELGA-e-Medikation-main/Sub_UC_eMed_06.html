@@ -267,7 +267,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h5 id="custom-operations">Custom Operations</h5>
 
-<p><a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a></p>
+<ul>
+  <li><a name="l583">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l587">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+</ul>
 
 <h5 id="sequenzdiagramm-plan-write">Sequenzdiagramm Plan-Write</h5>
 
@@ -295,6 +298,8 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 
 <h5 id="relevante-elemente-list">Relevante Elemente (List)</h5>
 
+<p>Der GDA übermittelt ein Medikationsplan-Transaction-Bundle mit:</p>
+
 <pre><code class="language-JSON">AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
@@ -304,34 +309,38 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
     emptyReason: nilknown   // Patient nimmt derzeit kein Medikation ein
 </code></pre>
 
+<h5 id="beispiel">Beispiel</h5>
+
+<p>In Arbeit.
+  <!-- JSON Link --></p>
+
 <h4 id="sub_uc_emed_06_03---medikationsplaneintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen</h4>
 
-<p>Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen. Dabei muss er dokumentieren, ob es sich bei dem Eintrag um Fremdmedikation handelt (d.h. ein anderer Arzt hat das Medikament ursprünglich verordnet).</p>
+<p>Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen. 
+Dabei muss er dokumentieren, ob die Verordnung von ihm selbst stammt oder er Fremdmedikation oder Selbstmedikation des Patienten dokumentiert.</p>
 
-<p>Hierfür führt der GDA ein $plan-read aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:</p>
 <ul>
-  <li>Im Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</li>
+  <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</li>
   <li>Entsprechende Medikationsplaneinträge (<em>MedicationRequests</em>) werden neu erstellt und in der <em>List</em>-Ressouce referenziert:
     <ul>
-      <li>Das List.entry.flag des referenzierten MedicationRequests erhält den Wert <em>new</em>,</li>
+      <li>Das <em>List.entry.flag</em> des referenzierten MedicationRequests erhält den Wert <em>new</em>,</li>
       <li>der MedicationRequest kann den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</li>
-      <li>für die Dokumentation des Arzneimittels ist Medication Ressource zu verwenden, diese muss immer im MedicationRequest enthalten sein (contained)</li>
+      <li><em>intent = order</em> und <em>category = "Medikationsplaneintrag"</em> sind für alle Planeinträge verpflichtend zu dokumentieren</li>
+      <li><em>reported</em> erhält den Wert <em>true</em>, wenn Fremdmedikation oder Eigenmedikation des Patienten vorliegt, anderenfalls den Wert <em>false</em></li>
+      <li>für die Dokumentation des Arzneimittels ist <em>Medication</em>-Ressource zu verwenden, diese muss immer im MedicationRequest enthalten sein (contained)</li>
       <li>der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen</li>
     </ul>
   </li>
 </ul>
 
-<p>Im Anschluss übermittelt der GDA (via POST $plan-write) den aktualisierten Medikationsplan in einem Transaction Bundle:</p>
+<p>Im Anschluss übermittelt der GDA mit <em>POST $plan-write</em> den aktualisierten Medikationsplan in einem <em>Transaction Bundle</em>:</p>
 <ul>
-  <li>alle neuen MedicationRequests sind inline im Bundle enthalten</li>
+  <li>alle neuen <em>MedicationRequests</em> sind inline im Bundle enthalten</li>
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
 </ul>
 
-<p>Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten Collection Bundle den Status der Einträge mit <em>new</em> automatisch auf <em>unchanged</em>.</p>
-
-<h5 id="ablauf-1">Ablauf</h5>
-
-<div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 544 624" zoomAndPan="magnify" preserveAspectRatio="none" width="544px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:544px;height:624px;background:#F5F5F5;" version="1.1" height="624px"><defs><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g1aysan5dqnskv0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><a name="l935">​</a><rect width="544" x="0" y="0" style="stroke:none;stroke-width:1.0;" fill="#F5F5F5" height="624"></rect><text font-weight="bold" lengthAdjust="spacing" x="118" font-size="14" textLength="300" y="28.1318" font-family="Arial" fill="#000000">Planeintrag in Medikationsplan hinzufügen</text><rect width="10" x="145" y="128.1973" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="406.8325"></rect><line y1="118.1973" x1="150" y2="544.0298" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="150"></line><line y1="118.1973" x1="411" y2="544.0298" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="411"></line><text lengthAdjust="spacing" x="126" font-size="14" textLength="42" y="115.2305" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="150" cy="50.5986" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M150,58.5986 L150,85.5986 M137,66.5986 L163,66.5986 M150,85.5986 L137,100.5986 M150,85.5986 L163,100.5986 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="126" font-size="14" textLength="42" y="556.1616" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="150" cy="567.6284" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M150,575.6284 L150,602.6284 M137,583.6284 L163,583.6284 M150,602.6284 L137,617.6284 M150,602.6284 L163,617.6284 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="5" ry="5" width="76" x="373" y="87.0986" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="380" font-size="14" textLength="62" y="107.2305" font-family="Arial" fill="#000000">e-Med FA</text><rect rx="5" ry="5" width="76" x="373" y="543.0298" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="380" font-size="14" textLength="62" y="563.1616" font-family="Arial" fill="#000000">e-Med FA</text><rect width="10" x="145" y="128.1973" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="406.8325"></rect><rect rx="5" ry="5" width="537" x="0" y="149.2466" style="stroke:#EEEEEE;stroke-width:1.0;" fill="#EEEEEE" height="3"></rect><line y1="149.2466" x1="0" y2="149.2466" style="stroke:#000000;stroke-width:1.0;" x2="537"></line><line y1="152.2466" x1="0" y2="152.2466" style="stroke:#000000;stroke-width:1.0;" x2="537"></line><rect rx="5" ry="5" width="193" x="172" y="138.1973" style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE" height="24.0986"></rect><text font-weight="bold" lengthAdjust="spacing" x="178" font-size="14" textLength="175" y="155.3291" font-family="Arial" fill="#000000">Medikationsplan abrufen</text><rect rx="5" ry="5" width="349" x="123" y="172.2959" style="stroke:#000000;stroke-width:1.5;" fill="none" height="42.1973"></rect><path d="M128,172.2959 L188,172.2959 L188,180.2959 L178,190.2959 L123,190.2959 L123,177.2959 A5,5 0 0 1 128,172.2959 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="136" font-size="14" textLength="20" y="187.4277" font-family="Arial" fill="#000000">ref</text><a xlink:type="simple" xlink:show="new" xlink:title="interactions.html#sequenzdiagramm-plan-read" href="interactions.html#sequenzdiagramm-plan-read" xlink:actuate="onRequest" title="interactions.html#sequenzdiagramm-plan-read" xlink:href="interactions.html#sequenzdiagramm-plan-read" target="_top"><text lengthAdjust="spacing" x="264" font-size="14" textLength="67" y="207.4277" font-family="Arial" fill="#0000EE">Plan-Read</text></a><path d="M5,229.4932 L5,261.4932 A5,5 0 0 0 10,266.4932 L290,266.4932 A5,5 0 0 0 295,261.4932 L295,234.4932 L285,224.4932 L10,224.4932 A5,5 0 0 0 5,229.4932 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1aysan5dqnskv0)"></path><path d="M285,224.4932 L285,231.9932 A2.5,2.5 0 0 0 287.5,234.4932 L295,234.4932 L285,224.4932 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1aysan5dqnskv0)"></path><text lengthAdjust="spacing" x="11" font-size="14" textLength="265" y="242.625" font-family="Arial" fill="#111827">GDA erhält den aktuellen Medikationsplan</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="153" y="258.7236" font-family="Arial" fill="#111827">im Auslieferungs-Bundle</text><rect rx="5" ry="5" width="537" x="0" y="292.7397" style="stroke:#EEEEEE;stroke-width:1.0;" fill="#EEEEEE" height="3"></rect><line y1="292.7397" x1="0" y2="292.7397" style="stroke:#000000;stroke-width:1.0;" x2="537"></line><line y1="295.7397" x1="0" y2="295.7397" style="stroke:#000000;stroke-width:1.0;" x2="537"></line><rect rx="5" ry="5" width="328" x="104.5" y="281.6904" style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE" height="24.0986"></rect><text font-weight="bold" lengthAdjust="spacing" x="110.5" font-size="14" textLength="310" y="298.8223" font-family="Arial" fill="#000000">Medikationsplan vorbereiten und schreiben</text><line y1="336.7378" x1="155" y2="336.7378" style="stroke:#111827;stroke-width:1.0;" x2="197"></line><line y1="336.7378" x1="197" y2="349.7378" style="stroke:#111827;stroke-width:1.0;" x2="197"></line><line y1="349.7378" x1="156" y2="349.7378" style="stroke:#111827;stroke-width:1.0;" x2="197"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="166,345.7378,156,349.7378,166,353.7378,162,349.7378"></polygon><text font-weight="bold" lengthAdjust="spacing" x="162" font-size="13" textLength="7" y="331.9829" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="173" font-size="13" textLength="159" y="331.9829" font-family="Arial" fill="#000000">Neuen Planeintrag erstellen</text><line y1="393.6353" x1="155" y2="393.6353" style="stroke:#111827;stroke-width:1.0;" x2="197"></line><line y1="393.6353" x1="197" y2="406.6353" style="stroke:#111827;stroke-width:1.0;" x2="197"></line><line y1="406.6353" x1="156" y2="406.6353" style="stroke:#111827;stroke-width:1.0;" x2="197"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="166,402.6353,156,406.6353,166,410.6353,162,406.6353"></polygon><text font-weight="bold" lengthAdjust="spacing" x="162" font-size="13" textLength="7" y="381.406" font-family="Arial" fill="#000000">2</text><text lengthAdjust="spacing" x="173" font-size="13" textLength="169" y="373.9316" font-family="Arial" fill="#000000">Planeintrag mit List.entry.flag</text><text lengthAdjust="spacing" x="173" font-size="13" textLength="226" y="388.8804" font-family="Arial" fill="#000000">"new" dem Medikationsplan hinzufügen</text><path d="M30,424.6353 L30,440.6353 A5,5 0 0 0 35,445.6353 L265,445.6353 A5,5 0 0 0 270,440.6353 L270,429.6353 L260,419.6353 L35,419.6353 A5,5 0 0 0 30,424.6353 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1aysan5dqnskv0)"></path><path d="M260,419.6353 L260,427.1353 A2.5,2.5 0 0 0 262.5,429.6353 L270,429.6353 L260,419.6353 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1aysan5dqnskv0)"></path><text lengthAdjust="spacing" x="36" font-size="14" textLength="219" y="437.7671" font-family="Arial" fill="#111827">Medikationsplaneintrag hinzufügen</text><rect rx="5" ry="5" width="349" x="123" y="450.7339" style="stroke:#000000;stroke-width:1.5;" fill="none" height="42.1973"></rect><path d="M128,450.7339 L188,450.7339 L188,458.7339 L178,468.7339 L123,468.7339 L123,455.7339 A5,5 0 0 1 128,450.7339 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="136" font-size="14" textLength="20" y="465.8657" font-family="Arial" fill="#000000">ref</text><a xlink:type="simple" xlink:show="new" xlink:title="interactions.html#plan-write" href="interactions.html#plan-write" xlink:actuate="onRequest" title="interactions.html#plan-write" xlink:href="interactions.html#plan-write" target="_top"><text lengthAdjust="spacing" x="264.5" font-size="14" textLength="66" y="485.8657" font-family="Arial" fill="#0000EE">Plan-Write</text></a><path d="M289,507.9312 L289,523.9312 A5,5 0 0 0 294,528.9312 L527,528.9312 A5,5 0 0 0 532,523.9312 L532,512.9312 L522,502.9312 L294,502.9312 A5,5 0 0 0 289,507.9312 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1aysan5dqnskv0)"></path><path d="M522,502.9312 L522,510.4312 A2.5,2.5 0 0 0 524.5,512.9312 L532,512.9312 L522,502.9312 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1aysan5dqnskv0)"></path><text lengthAdjust="spacing" x="295" font-size="14" textLength="222" y="521.063" font-family="Arial" fill="#111827">Neuer Medikationsplan gespeichert</text>  <!-- SRC=[bLNTRjem5BxtKvp1nMv6bOJnaqfCWXAwQMr1b6dIkWePSW8MYSCSfwoTzZPxZDtrnUOu59o4JPfpO_jyFkSxtx5F99CXmYIa71cNWgw0SRX6dsseP35Fjie2QyQVqk3vzmev8Q-J3UDRAcW4T2bZSIiVbGUwmoIEa92ZTH4B7yL57CO2wfOUffKkDoiHfzpV8u9MzXc8P4tzUCVu2W8Q9cXOziS4Hm6swTJ7WAQX7CLStj08eTONZ8QrquXRzeHWlprj_1ljzuzR527Z6mFWUQS0dxYl9rYXFuY_JwZlPvavLd5_O6hMqiEKbCSIuGS169JLGmjRWTMe-xRlOZj3c9ww2xT5MuVTsPejDnoJ16orDpNKjDJwXLlcnP32jkskqr5xjwMw_3GP9lWjHRxCMKwea6p9jfJBKuaL0PNxe4SHLArCnVnIrOB1a1kWBqIyAoUbDukwwArJ4G-6F5PJRLqgvjj2ZWVFkQbIBmmSdPrnyXZUoKHzfQvZTdqknbVZwVnos9_Re4RTRhMjhjErJW0S3N3RRQiph00c_Ta7xsQMUN3R0-Tj1T2VZ46FkZLolM7BBGEyQsyu7_KL0DsEqtGMVXamdtfVlCaCwak_sMawr2sdCVu8XHXEg-nYEXrFDS1pEtRJQQe7eFiCv0hG16fg1dRD58PiZyK6LFqhevb1iQ4MCEhNYYaedwcCUHejK102fDUhD3sw46c077ezJO0zKFNsSWvcO28mWFW1z_pU7AAVmzsTQgaeiiFAwTbQHc4zVnzFFgChzLoYHXQg8P3wkWStfcfsVq-8VkX7hoJB6CNw-LSeLPTIv3OonJ34QgycB89-ceGC0nGfNoMDWRfrgaCJvBvk8EHKjW-nK58WaygbmaEoNAlLOfz_ddRZNSxc76vG9L7uQw18f2PKmPgeY4cuOeayGxL-F0j2klhAQnntDPLLzE__JbcI4lWbX7dccF7_5KaNPIUK67bLFcVJObds3aYcXAWGNs6oHRPSev174dy0] --></g></svg></div>
+<p>Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten <em>Collection Bundle</em> den Status der Einträge mit <em>new</em> automatisch auf <em>unchanged</em>.</p>
 
 <h5 id="relevante-elemente-list-1">Relevante Elemente (List)</h5>
 
@@ -339,8 +348,8 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
-    date: Datum der Bearbeitung des Medikationsplans
-    source: veranwortlicher GDA 
+    date: Datum der aktuellen Bearbeitung des Medikationsplans
+    source: für die Bearbeitung veranwortlicher GDA 
     entry[0]:  // 1. Medikationsplaneintrag wird hinzufgefügt
         flag: new
         date: Datum der Aufnahme des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
@@ -356,47 +365,49 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
     identifier: neue Medikationsplaneintrag-ID
     status: active | on-hold
-    reportedBoolean: true | false  // true, wenn Fremdmedikation
+    intent: order                       // fester Wert
+    category: "Medikationsplaneintrag"  // fester Wert
+    reportedBoolean: true | false       // true, wenn Fremdmedikation
     medicationReference.reference: Medikation mit PZN oder Magistrale Anwendung // Contained Medication 
     authoredOn: Datum der Erstellung des Medikationsplaneintrags    
-    requester: veranwortlicher GDA  // wird auf Übereinstimmung mit List.source geprüft
+    requester: veranwortlicher GDA      // wird auf Übereinstimmung mit List.source geprüft
     dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)
 </code></pre>
-  <!-- TODO: muss PZN mit Displayname angegeben werden? oder reicht auch nur pzn. eher nur pzn -> server ergänzt und gibt ausgefülltes zurück -> client kann nochmal prüfen; adapter mach das derzeit so -->
-  <!-- wenn software beides angeben kann müsste es ergänzt werden. -->
+  <!-- TODO: muss PZN mit Displayname dokumentiert werden? wenn ja, muss geprüft werden. sonst durch Server ergänzt und zwecks Prüfung zurückgeben. -->
 
   <!-- TODO: noch offen für AtElgaEmedMedicationRequestPlaneintrag: -->
   <!-- ergänzen: * courseOfTherapyType: Gesamtmuster der Medikamentengabe continuous | acute | seasonal. -->
 
-<h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-neuer-medikationsplaneintrag">Auswirkung der Zugriffsart auf List-Status und Bundles: neuer Medikationsplaneintrag</h5>
+<h5 id="beispiel-1">Beispiel</h5>
 
-<p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
+<p>In Arbeit.
+  <!-- JSON Link --></p>
+
+<h5 id="ablauf-1">Ablauf</h5>
+
+<div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 617 617" zoomAndPan="magnify" contentStyleType="text/css" data-diagram-type="SEQUENCE" width="617px" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:617px;height:617px;background:#F5F5F5;" version="1.1" height="617px">  <!-- ?plantuml 1.2026.7beta8? --><defs><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="gr2d6ftoioef20"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g lengthAdjust="spacing" font-family="sans-serif"><a name="l1018">​</a><rect x="0" width="617" y="0" style="stroke:none;" fill="#F5F5F5" height="617"></rect><g class="title" data-source-line="1"><text font-weight="700" x="203.87" y="27.995" font-size="14" textLength="207.614" font-family="'Arial'" fill="#000">Medikationsplaneintrag in</text><text font-weight="700" x="195.722" y="44.292" font-size="14" textLength="223.911" font-family="'Arial'" fill="#000">Medikationsplan hinzufügen</text></g><g><title>GDA 1</title><rect x="172.227" width="8" y="139.891" fill="#000" fill-opacity="0" height="390.07"></rect><line y1="139.891" x1="175.727" y2="529.961" x2="175.727" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;"></line></g><g><title>?html-link?</title><rect x="170.727" width="10" y="192.188" style="stroke:#181818;stroke-width:1;" fill="#156082" fill-opacity="0.502" height="337.773"></rect></g><g><title>e-Med FA</title><rect x="463.187" width="8" y="139.891" fill="#000" fill-opacity="0" height="390.07"></rect><line y1="139.891" x1="466.687" y2="529.961" x2="466.687" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;"></line></g><text x="150.445" y="136.589" font-size="14" textLength="44.563" font-family="'Arial'" fill="#000">GDA 1</text><ellipse cx="175.727" cy="72.094" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.502"></ellipse><path d="M175.727,80.094 L175.727,107.094 M162.727,88.094 L188.727,88.094 M175.727,107.094 L162.727,122.094 M175.727,107.094 L188.727,122.094" style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="5" ry="5" x="427.024" width="79.324" y="108.594" style="stroke:#555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.741" height="30.297"></rect><text x="434.024" y="128.589" font-size="14" textLength="65.324" font-family="'Arial'" fill="#000">e-Med FA</text><text x="150.445" y="542.956" font-size="14" textLength="44.563" font-family="'Arial'" fill="#000">GDA 1</text><ellipse cx="175.727" cy="554.758" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.502"></ellipse><path d="M175.727,562.758 L175.727,589.758 M162.727,570.758 L188.727,570.758 M175.727,589.758 L162.727,604.758 M175.727,589.758 L188.727,604.758" style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="5" ry="5" x="427.024" width="79.324" y="529.961" style="stroke:#555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.741" height="30.297"></rect><text x="434.024" y="549.956" font-size="14" textLength="65.324" font-family="'Arial'" fill="#000">e-Med FA</text><rect rx="5" ry="5" x="10" width="596.354" y="169.039" style="stroke:#EEE;stroke-width:1;" fill="#EEE" height="3"></rect><line y1="169.039" x1="10" y2="169.039" x2="606.354" style="stroke:#000;stroke-width:1;"></line><line y1="172.039" x1="10" y2="172.039" x2="606.354" style="stroke:#000;stroke-width:1;"></line><rect rx="5" ry="5" x="200.033" width="216.289" y="157.891" style="stroke:#000;stroke-width:2;" fill="#EEE" height="24.297"></rect><text font-weight="700" x="206.033" y="174.886" font-size="14" textLength="197.415" font-family="'Arial'" fill="#000">Medikationsplan abrufen</text><rect rx="5" ry="5" x="152.445" width="351.904" y="192.188" style="stroke:#000;stroke-width:1.5;" fill="none" height="42.594"></rect><path d="M157.445,192.188 L219.445,192.188 L219.445,200.188 L209.445,210.188 L152.445,210.188 L152.445,197.188 A5,5 0 0 1 157.445,192.188" style="stroke:#000;stroke-width:2;" fill="#EEE"></path><text font-weight="700" x="165.445" y="207.183" font-size="14" textLength="22.49" font-family="'Arial'" fill="#000">ref</text><a xlink:type="simple" xlink:show="new" xlink:title="interactions.html#sequenzdiagramm-plan-read" href="interactions.html#sequenzdiagramm-plan-read" xlink:actuate="onRequest" title="interactions.html#sequenzdiagramm-plan-read" xlink:href="interactions.html#sequenzdiagramm-plan-read" target="_top"><text x="293.075" y="227.183" font-size="14" textLength="70.643" font-family="'Arial'" fill="#00E">Plan-Read</text></a><path d="M15,249.781 L15,281.781 A5,5 0 0 0 20,286.781 L331,286.781 A5,5 0 0 0 336,281.781 L336,254.781 L326,244.781 L20,244.781 A5,5 0 0 0 15,249.781" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gr2d6ftoioef20)"></path><path d="M326,244.781 L326,252.281 A2.5,2.5 0 0 0 328.5,254.781 L336,254.781 L326,244.781" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gr2d6ftoioef20)"></path><text x="21" y="262.776" font-size="14" textLength="296.003" font-family="'Arial'" fill="#111827">GDA erhält den aktuellen Medikationsplan</text><text x="21" y="279.073" font-size="14" textLength="171.131" font-family="'Arial'" fill="#111827">im Auslieferungs-Bundle</text><rect rx="5" ry="5" x="10" width="596.354" y="313.523" style="stroke:#EEE;stroke-width:1;" fill="#EEE" height="3"></rect><line y1="313.523" x1="10" y2="313.523" x2="606.354" style="stroke:#000;stroke-width:1;"></line><line y1="316.523" x1="10" y2="316.523" x2="606.354" style="stroke:#000;stroke-width:1;"></line><rect rx="5" ry="5" x="111.904" width="392.547" y="302.375" style="stroke:#000;stroke-width:2;" fill="#EEE" height="24.297"></rect><text font-weight="700" x="117.904" y="319.37" font-size="14" textLength="373.673" font-family="'Arial'" fill="#000">Medikationsplan bearbeiten und und schreiben</text><line y1="357.805" x1="180.727" y2="357.805" x2="222.727" style="stroke:#111827;stroke-width:1;"></line><line y1="357.805" x1="222.727" y2="370.805" x2="222.727" style="stroke:#111827;stroke-width:1;"></line><line y1="370.805" x1="181.727" y2="370.805" x2="222.727" style="stroke:#111827;stroke-width:1;"></line><polygon style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" fill="#111827" points="191.727,366.805,181.727,370.805,191.727,374.805,187.727,370.805"></polygon><text font-weight="700" x="187.727" y="352.739" font-size="13" font-family="'Arial'" fill="#000">1</text><text x="200.772" y="352.739" font-size="13" textLength="181.302" font-family="'Arial'" fill="#000">Neuen Planeintrag erstellen</text><line y1="415.07" x1="180.727" y2="415.07" x2="222.727" style="stroke:#111827;stroke-width:1;"></line><line y1="415.07" x1="222.727" y2="428.07" x2="222.727" style="stroke:#111827;stroke-width:1;"></line><line y1="428.07" x1="181.727" y2="428.07" x2="222.727" style="stroke:#111827;stroke-width:1;"></line><polygon style="stroke:#111827;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:10;" fill="#111827" points="191.727,424.07,181.727,428.07,191.727,432.07,187.727,428.07"></polygon><text font-weight="700" x="187.727" y="402.438" font-size="13" font-family="'Arial'" fill="#000">2</text><text x="200.772" y="394.872" font-size="13" textLength="193.572" font-family="'Arial'" fill="#000">Planeintrag mit List.entry.flag</text><text x="200.772" y="410.004" font-size="13" textLength="258.915" font-family="'Arial'" fill="#000">"new" dem Medikationsplan hinzufügen</text><rect rx="5" ry="5" x="152.445" width="351.904" y="436.07" style="stroke:#000;stroke-width:1.5;" fill="none" height="42.594"></rect><path d="M157.445,436.07 L219.445,436.07 L219.445,444.07 L209.445,454.07 L152.445,454.07 L152.445,441.07 A5,5 0 0 1 157.445,436.07" style="stroke:#000;stroke-width:2;" fill="#EEE"></path><text font-weight="700" x="165.445" y="451.065" font-size="14" textLength="22.49" font-family="'Arial'" fill="#000">ref</text><a xlink:type="simple" xlink:show="new" xlink:title="interactions.html#plan-write" href="interactions.html#plan-write" xlink:actuate="onRequest" title="interactions.html#plan-write" xlink:href="interactions.html#plan-write" target="_top"><text x="292.183" y="471.065" font-size="14" textLength="72.427" font-family="'Arial'" fill="#00E">Plan-Write</text></a><path d="M332.019,493.664 L332.019,509.664 A5,5 0 0 0 337.019,514.664 L596.019,514.664 A5,5 0 0 0 601.019,509.664 L601.019,498.664 L591.019,488.664 L337.019,488.664 A5,5 0 0 0 332.019,493.664" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gr2d6ftoioef20)"></path><path d="M591.019,488.664 L591.019,496.164 A2.5,2.5 0 0 0 593.519,498.664 L601.019,498.664 L591.019,488.664" style="stroke:#8B95A5;stroke-width:1;" fill="url(#gr2d6ftoioef20)"></path><text x="338.019" y="506.659" font-size="14" textLength="248.336" font-family="'Arial'" fill="#111827">Neuer Medikationsplan gespeichert</text>  <!-- ?plantuml-src bLLTRzem57tthxY3XxsCAWdb8vMO12NjfhK5KQP9Qola93TWaJZCSShQQVzcFsDl_MDp70hvO9DcXEJudjnxph5z8vaC4QxHPsigMSoJJKWvCYu5NGBZzxmIWXNZpsdmydk9d92toPhn3HKq0kh9MDpA9vMDRZ698oJa47LZuQCuZyDOGDFGenYbtdefufJxEqJGoNu5HBAYVhnbV0a13HCiH7Ql2Ou2p69I7mEQXl8YvlA6HWYDeM0qR1n7tB9d1FFqUF1lj3yyRL24ZAyB0CSv1lZCVJt16lrH_7rAVJzJPXdbzL7HiuuUHKjvB15-481HrJqqi1COhQPl-ZPsCqGnKz-rExIpNvslcBVcc2HWghLPmKr3FRzoox8Kh31Dis_rrDfjPLz-5Xac-2r5xkKifrH8vh4DvVAOi3AWTXxqA8FgErCBl-vgAL2m6s0eHBojYjABPL_qqh6A-q1UgwsMBXNpJKdZFdCUgkqN1fPMLtZpKDxAJ7sZZcDsVCudLvFPud8yN9YWHjFiT8s-rJUE02mDiBjTepUk0QR3-KVdPfvbiBiZwxG664ude4VJkB2TSSUk0fnhPxou62e0sZshRRb-5R2OEL-TwHoQdj_kjIrgLsLCFa6fXjMfffZD9ZCDSEoUsRRQwWBeFWEv0pI1Xfg1sIWQGpQ7pGPK_IkZcK6nfHxWOjWeIr0vKndpD79H409aCAZsGw2kI0FaC1Xe0koHghkNSoWM9W83Y1znn-_TllePtDsfdeeYUrabFLd9A6pcz-FPPtIfhalKoagr158VfjbifcOF3uJeYtx8IZB5A5OllqAfkfGYjvOfXg6QLMaJ5i4mJKA60OgKBvFMI9qwrQ49Sbyt479ChOjKkCYaogZW-fzuAu7CtLcGAs-zpmcTmGqg7PhqwvS3HI8rfngsY8gOX2kMo1DKpqydGKYNzxp1STjGmYBuvwVd_wpMrcw5qfHx-oMRbitT9I2P656hlSHaWynReP1xy_u0? --></g></svg></div>
 
 <h4 id="sub_uc_emed_06_04---medikationsplaneintrag-im-medikationsplan-beibehalten">Sub_UC_eMed_06_04 - Medikationsplaneintrag im Medikationsplan beibehalten</h4>
 
-<p>Der GDA kann im Medikationsplan ein oder mehrere Medikationsplaneinträge beibehalten und unverändert zur Kennntis nehmen.</p>
+<p>Der GDA kann ein oder mehrere Medikationsplaneinträge im Medikationsplan beibehalten und unverändert zur Kennntis nehmen.</p>
 
-<p>Hierfür führt der GDA ein $plan-read aus und lässt die entsprechenen Medikationsplaneinträge (<em>MedicationRequests</em>) des von der Fachanwendung übermittelten Collection Bundles <strong>unverändert</strong> (im Status <em>active</em> oder <em>on-hold</em>). Ist der Behandlungszeitraum der Medikationsplaneinträge abgelaufen, muss dieser angepasst werden (siehe <em>Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern</em>).</p>
-
-<p>Im Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</p>
-
-<p>Der GDA übermittelt (via POST $plan-write) den aktualisierten Medikationsplan in einem Transaction Bundle:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:</p>
 <ul>
-  <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
+  <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</li>
+  <li>Die zu behaltenden Medikationsplaneinträge (<em>MedicationRequests</em>) des von der Fachanwendung übermittelten Collection Bundles bleiben <strong>unverändert</strong> (im Status <em>active</em> oder <em>on-hold</em>).</li>
+  <li>Ist der Behandlungszeitraum der Medikationsplaneinträge abgelaufen, muss dieser angepasst werden (siehe <em>Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern</em>), da die Fachanwendung die Speicherung abgelaufener Planeinträge ablehnt.</li>
 </ul>
 
-<h5 id="ablauf-2">Ablauf</h5>
-
-<p><a name="l1093">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
+<p>Der GDA übermittelt mit <em>POST $plan-write</em> den aktualisierten Medikationsplan in einem <em>Transaction Bundle</em>:</p>
+<ul>
+  <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.</li>
+</ul>
 
 <h5 id="relevante-elemente-list-2">Relevante Elemente (List)</h5>
 
 <pre><code class="language-JSON">AtElgaEmedListMedikationsplan
-    identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
-    status: current
-    mode: working
-    date: Datum der Bearbeitung des Medikationsplans
-    source: Veranwortlicher GDA 
+    date: Datum der aktuellen Bearbeitung des Medikationsplans
+    source: für die Bearbeitung veranwortlicher GDA 
     entry[0]:  // 1. Medikationsplaneintrag bleibt unverändert
         flag: unchanged 
         date: Datum der Aufnahme des Medikationsplaneintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
@@ -409,46 +420,33 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
     // unverändert (verantwortlicher GDA, Datum, Status bleiben bestehen)
 </code></pre>
 
-<h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-medikationsplaneintrag-beibehalten">Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag beibehalten</h5>
-
-<p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
-
 <h4 id="sub_uc_emed_06_05---medikationsplaneintrag-pausieren">Sub_UC_eMed_06_05 - Medikationsplaneintrag pausieren</h4>
 
-<p>Ein GDA kann die Therapie eines Patienten vorübergehend unterbrechen (die Wiederaufnahme ist vorgesehen).</p>
+<p>Ein GDA kann die Therapie eines Patienten vorübergehend unterbrechen (die Wiederaufnahme ist vorgesehen). Eine Freitext-Begründung kann dokumentiert werden.</p>
 
-<p>Hierfür führt der GDA ein $plan-read aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle. Die zu pausierenden Medikationsplaneinträge (<em>MedicationRequests</em>) und das entsprechende Entry der <em>List</em>-Ressouce werden angepasst:</p>
 <ul>
-  <li>Im Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</li>
-  <li>Die zu pausierenden Medikationsplaneinträge (<em>MedicationRequests</em>) und das entsprechende Entry der <em>List</em>-Ressouce werden angepasst:
-    <ul>
-      <li>Das List.entry.flag des referenzierten MedicationRequests erhält den Wert <em>changed</em>,</li>
-      <li>der MedicationRequest erhält den Status <em>on-hold</em> (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
-    </ul>
-  </li>
-  <li>der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen</li>
+  <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</li>
+  <li>Das <em>List.entry.flag</em> des referenzierten MedicationRequests erhält den Wert <em>changed</em>,</li>
+  <li>der MedicationRequest erhält den Status <em>on-hold</em> (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
+  <li>In <em>statusReason.text</em> kann ein Grund für die Pausierung als Freitext dokumentiert werden.</li>
+  <li><em>reportedBoolean</em> wird auf <em>true</em> gesetzt, wenn die Information über die Pausierung vom Patienten berichtet wurde und auf <em>false</em>, wenn die Pausierung vom GDA angeordnet wurde – unabhängig davon, welcher Status zuvor dokumentiert war.</li>
+  <li>der Behandlungszeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen.</li>
 </ul>
 
-<p>Im Anschluss übermittelt der GDA (via POST $plan-write) den aktualisierten Medikationsplan in einem Transaction Bundle:</p>
+<p>Im Anschluss übermittelt der GDA mit <em>POST $plan-write</em> den aktualisierten Medikationsplan in einem <em>Transaction Bundle</em>:</p>
 <ul>
   <li>alle geänderten Ressourcen sind inline im Bundle enthalten</li>
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.</li>
 </ul>
 
-<p>Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten Collection Bundle den Status der Einträge mit <em>changed</em> automatisch auf <em>unchanged</em>.</p>
-
-<h5 id="ablauf-3">Ablauf</h5>
-
-<p><a name="l1200">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
+<p>Anmerkung: Beim nächsten <em>Plan-Read</em> ändert die Fachanwendung im zur Auslieferung bereitgestellten <em>Collection Bundle</em> den Status der Einträge mit <em>changed</em> automatisch auf <em>unchanged</em>.</p>
 
 <h5 id="relevante-elemente-list-3">Relevante Elemente (List)</h5>
 
 <pre><code class="language-JSON">AtElgaEmedListMedikationsplan
-    identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
-    status: current
-    mode: working
-    date: Datum der Bearbeitung des Medikationsplans
-    source: Veranwortlicher GDA 
+    date: Datum der aktuellen Bearbeitung des Medikationsplans
+    source: für die Bearbeitung veranwortlicher GDA 
     entry[0]:  // 1. Medikationsplaneintrag wird pausiert
         flag: changed 
         date: Datum der Änderung des Medikationsplaneintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
@@ -464,12 +462,14 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
     identifier: Medikationsplaneintrag-ID bleibt bestehen
     status: on-hold
-    statusReason.text: Freitextbegrüdung  
+    statusReason.text: Freitextbegrüdung  // optional
     reportedBoolean: false  // Fremdmedikation
     authoredOn: Datum der Pausierung des Medikationsplaneintrags    
     requester: für die Pausierung verantwortlicher GDA 
     priorPrescription: Referenz auf ersetzten Medikationsplaneintrag
 </code></pre>
+  <!-- reportedBoolean: false  // auch wenn zuvor Fremdmedikation = true war? -->
+
 <h5 id="auswirkung-der-zugriffsart-auf-list-status-und-bundles-medikationsplaneintrag-ändern">Auswirkung der Zugriffsart auf List-Status und Bundles: Medikationsplaneintrag ändern</h5>
 
 <p>Siehe <a href="workflowmanagement.html#auswirkung-der-zugriffsart-auf-listentryflags-und-bundle-inhalte">Auswirkung der Zugriffsart auf List.entry.flags und Bundle-Inhalte</a>.</p>
@@ -501,9 +501,9 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Medikationsplaneintr
 
 <p>Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten Collection Bundle den Status der Einträge mit <em>changed</em> automatisch auf <em>unchanged</em>.</p>
 
-<h5 id="ablauf-4">Ablauf</h5>
+<h5 id="ablauf-2">Ablauf</h5>
 
-<p><a name="l1316">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
+<p><a name="l1393">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
 
 <h5 id="relevante-elemente-list-4">Relevante Elemente (List)</h5>
 
@@ -544,7 +544,7 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Medikationsplaneintr
 
 <h4 id="sub_uc_emed_06_07---medikationsplaneintrag-im-medikationsplan-stornieren">Sub_UC_eMed_06_07 - Medikationsplaneintrag im Medikationsplan stornieren</h4>
 
-<p><a name="l1354">​</a>Der GDA kann einen oder mehrere Medikationsplaneinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
+<p><a name="l1431">​</a>Der GDA kann einen oder mehrere Medikationsplaneinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Hierfür führt der GDA ein $plan-read aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:</p>
 <ul>
@@ -564,9 +564,9 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Medikationsplaneintr
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
 </ul>
 
-<h5 id="ablauf-5">Ablauf</h5>
+<h5 id="ablauf-3">Ablauf</h5>
 
-<p><a name="l1418">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
+<p><a name="l1495">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
 
 <h5 id="relevante-elemente-list-5">Relevante Elemente (List)</h5>
 
@@ -604,7 +604,7 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Medikationsplaneintr
 
 <h4 id="sub_uc_emed_06_08---medikationsplaneintrag-im-medikationsplan-absetzen">Sub_UC_eMed_06_08 - Medikationsplaneintrag im Medikationsplan absetzen</h4>
 
-<p><a name="l1456">​</a>Der GDA möchte das Medikament (welches in einen Medikationsplaneintrag dokumentiert ist) absetzen, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden.
+<p><a name="l1533">​</a>Der GDA möchte das Medikament (welches in einen Medikationsplaneintrag dokumentiert ist) absetzen, bevor alle geplanten Einnahmen oder Verabreichungen durchgeführt wurden.
 Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Hierfür führt der GDA ein $plan-read aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:</p>
@@ -625,9 +625,9 @@ Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-r
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
 </ul>
 
-<h5 id="ablauf-6">Ablauf</h5>
+<h5 id="ablauf-4">Ablauf</h5>
 
-<p><a name="l1520">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
+<p><a name="l1597">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
 
 <h5 id="relevante-elemente-list-6">Relevante Elemente (List)</h5>
 
@@ -664,7 +664,7 @@ Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-r
 
 <h4 id="sub_uc_emed_06_09---behandlungszeitraum-eines-medikationsplaneintrags-ist-abgelaufen">Sub_UC_eMed_06_09 - Behandlungszeitraum eines Medikationsplaneintrags ist abgelaufen</h4>
 
-<p><a name="l1555">​</a>Erhält ein GDA nach einem <a href="interactions.html#plan-read">Plan-Read</a> Medikationsplaneinträge, deren Behandlungszeitraum (effectiveDosePeriod.end) abgelaufen ist, muss der GDA diese Einträge beenden oder bearbeiten (zumindest den Behandlungszeitraum anpassen) bevor ein erneutes Speichern des Medikationsplans zulässig ist (siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern</a>). 
+<p><a name="l1632">​</a>Erhält ein GDA nach einem <a href="interactions.html#plan-read">Plan-Read</a> Medikationsplaneinträge, deren Behandlungszeitraum (effectiveDosePeriod.end) abgelaufen ist, muss der GDA diese Einträge beenden oder bearbeiten (zumindest den Behandlungszeitraum anpassen) bevor ein erneutes Speichern des Medikationsplans zulässig ist (siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_05 - Medikationsplaneintrag im Medikationsplan ändern</a>). 
 Beendete Planeinträge sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Um Planeinträge zu beenden bearbeitet der GDA nach einem $plan-read das von der Fachanwendung übermittelte Collection Bundle wie folgt:</p>
@@ -684,9 +684,9 @@ Beendete Planeinträge sind beim nächsten <a href="interactions.html#plan-read"
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
 </ul>
 
-<h5 id="ablauf-7">Ablauf</h5>
+<h5 id="ablauf-5">Ablauf</h5>
 
-<p><a name="l1624">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
+<p><a name="l1701">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
 
 <h5 id="relevante-elemente-list-7">Relevante Elemente (List)</h5>
 
@@ -729,7 +729,7 @@ Beendete Planeinträge sind beim nächsten <a href="interactions.html#plan-read"
 <ul>
   <li>Im Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>date</em> aktualisiert.</li>
   <li>Die Reihenfolge der Planeinträge wird in der <em>List</em>-Ressouce angepasst, indem die Entries entsprechend gereiht werden.</li>
-  <li><a name="l1682">​</a>Der Behandlungszeitraum der Planeinträge darf noch nicht abgelaufen sein (ansonsten muss dieser bearbeitet werden - siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern</a>).</li>
+  <li><a name="l1759">​</a>Der Behandlungszeitraum der Planeinträge darf noch nicht abgelaufen sein (ansonsten muss dieser bearbeitet werden - siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_06_06 - Medikationsplaneintrag im Medikationsplan ändern</a>).</li>
 </ul>
 
 <p>Der GDA übermittelt (via POST $plan-write) den aktualisierten Medikationsplan in einem Transaction Bundle:</p>
@@ -737,9 +737,9 @@ Beendete Planeinträge sind beim nächsten <a href="interactions.html#plan-read"
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
 </ul>
 
-<h5 id="ablauf-8">Ablauf</h5>
+<h5 id="ablauf-6">Ablauf</h5>
 
-<p><a name="l1701">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
+<p><a name="l1778">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#plan-write">Plan-Write</a>.</p>
 
 <h5 id="relevante-elemente-list-8">Relevante Elemente (List)</h5>
 
@@ -773,7 +773,7 @@ Beendete Planeinträge sind beim nächsten <a href="interactions.html#plan-read"
 
 <h4 id="sub_uc_emed_06_11---medikationsplaneintrag-durch-elga-teilnehmer-löschen">Sub_UC_eMed_06_11 - Medikationsplaneintrag durch ELGA-Teilnehmer löschen</h4>
 
-<p><a name="l1739">​</a>Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Medikationsplaneinträge unwiderruflich löschen, wodurch eine neue Medikationsplanversion entsteht. Wurden durch den ELGA-Teilnehmer alle Planeinträge gelöscht, erhält der von der Fachanwendung erstellte, neue Medikationsplan das emptyReason <em>nilknown</em> (siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_02---leerer-medikationsplan-keine-medikation-einnehmen">Sub_UC_eMed_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)</a>).</p>
+<p><a name="l1816">​</a>Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Medikationsplaneinträge unwiderruflich löschen, wodurch eine neue Medikationsplanversion entsteht. Wurden durch den ELGA-Teilnehmer alle Planeinträge gelöscht, erhält der von der Fachanwendung erstellte, neue Medikationsplan das emptyReason <em>nilknown</em> (siehe <a href="Sub_UC_eMed_06.html#sub_UC_eMed_06_02---leerer-medikationsplan-keine-medikation-einnehmen">Sub_UC_eMed_06_02 - Leerer Medikationsplan (keine Medikation einnehmen)</a>).</p>
 
 <p>Im Unterschied zu einem Entfernen von Einträgen mittels stornieren, absetzen und beenden durch den GDA, wird beim Löschen durch den ELGA-Teilnehmer der betreffende Medikationsplaneintrag aus dem List.Entry entfernt und der betroffene Planeintrag (<em>MedicationRequest</em>) gelöscht (und nicht nur als <em>removed</em> gekennzeichnet).</p>
 
@@ -792,9 +792,9 @@ Die Fachanwendung bearbeitet das Collection Bundle wie folgt:</p>
 
 <p>Anmerkung: Im persistierten Collection Bundle sind die gelöschten Medikationsplaneiträge nicht mehr enthalten.</p>
 
-<h5 id="ablauf-9">Ablauf</h5>
+<h5 id="ablauf-7">Ablauf</h5>
 
-<p><a name="l1799">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#patient-plan-write">Patient-Plan-Write</a>.</p>
+<p><a name="l1876">​</a>Siehe <a href="interactions.html#plan-read">Plan-Read</a> und <a href="interactions.html#patient-plan-write">Patient-Plan-Write</a>.</p>
 
 <h5 id="relevante-elemente-list-9">Relevante Elemente (List)</h5>
 
@@ -857,7 +857,7 @@ Die Fachanwendung bearbeitet das Collection Bundle wie folgt:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 13, 2026 07:52+0000">2026-07-13</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 14, 2026 09:15+0000">2026-07-14</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

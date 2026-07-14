@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-07-13T07:52:05+00:00",
+  "date" : "2026-07-14T09:15:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -126,6 +126,28 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "no-ig-database"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -405,6 +427,28 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       {
         "url" : "value",
         "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "no-ig-database"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1482,6 +1526,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       }]
     },
     "parameter" : [{
+      "code" : "generate-turtle",
+      "value" : "false"
+    },
+    {
       "code" : "path-resource",
       "value" : "input/capabilities"
     },
