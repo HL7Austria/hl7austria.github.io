@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-07-14T08:56:46+00:00",
+  "date" : "2026-07-14T09:07:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -221,6 +221,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.reported[x]:reportedReference",
       "path" : "MedicationRequest.reported[x]",
       "sliceName" : "reportedReference",
+      "short" : "Im Falle einer Fremdmedikation Angabe einer Referenz auf: (Patient | Practitioner | PractitionerRole | RelatedPerson | Organization). Keine Verwendung im Medikationsplan.",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -236,7 +237,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.reported[x]:reportedBoolean",
       "path" : "MedicationRequest.reported[x]",
       "sliceName" : "reportedBoolean",
-      "short" : "Quelle der Information. Mögliche Ausprägungen: [ true | false ]. Bedeutung: false: Verordnung durch den Planeintrag erstellenden GDA | true: Fremdmedikation oder Eigenmedikation des Patienten.",
+      "short" : "Quelle der Information. Bedeutung: false: Verordnung durch den Planeintrag erstellenden GDA | true: Fremdmedikation oder Eigenmedikation des Patienten.",
       "min" : 1,
       "max" : "1",
       "type" : [{

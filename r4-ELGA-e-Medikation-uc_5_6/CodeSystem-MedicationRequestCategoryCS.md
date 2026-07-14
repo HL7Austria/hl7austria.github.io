@@ -32,7 +32,7 @@ Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient 
   "title" : "ELGA e-Med MedicationRequest Kategorie CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-14T08:56:46+00:00",
+  "date" : "2026-07-14T09:07:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
