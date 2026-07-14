@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Medikationsplan lesen (UC_eMed_05) - FHIR&reg; v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.3"}
+    h3,h4,h5,h6{--heading-prefix:"9.3"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="assets/images/hl7atlogo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_06.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>​Technische Use Cases für Medikationsplan lesen (UC_eMed_05)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>​Technische Use Cases für Medikationsplan lesen (UC_eMed_05)</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+</div>
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+
+</style>
+
+<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
+
+  <!-- Technische Use Cases für Medikationsplan lesen (UC_eMed_05) -->
+
+<p>Ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> kann den Medikationsplan eines ELGA-Teilnehmers lesen.</p>
+
+<p>Ein ELGA-Teilnehmer kann seinen Medikationsplan über das Zugangsportal einsehen.</p>
+
+<p>Für den lesenden Zugriff werden zwei Zugriffsarten unterschieden:</p>
+
+<ul>
+  <li><a name="l423">​</a><strong>Plan-Read</strong> zum Abruf des aktuellen Medikationsplans. Hierfür wird aus dem persistierten Medikationsplan ein temporäres Auslieferungs-Medikationsplan-Collection-Bundle erzeugt, das für eine mögliche Bearbeitung aufbereitet ist. Der Abruf erfolgt mit der Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</li>
+  <li><strong>Plan-History-Read</strong> zum Abruf historischer, unveränderlicher Versionen eines persistierten Medikationsplans.</li>
+</ul>
+
+<h4 id="sub_uc_emed_05_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_05_01 - Aktuellen Medikationsplan lesen (Plan-Read)</h4>
+
+<p><a name="l440">​</a>Plan-Read dient dem <strong>Abruf des Medikationsplans</strong> in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.
+Hierfür erzeugt die Fachanwendung aus dem zuletzt persistierten Medikationsplan ein Auslieferungs-Medikationsplan-Collection-Bundle. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
+
+<h5 id="ablauf">Ablauf</h5>
+
+<ol>
+  <li><a name="l457">​</a>Der Client führt einen <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.</li>
+  <li>Existiert dieser (<a href="design_choices.html#persistiertes-medikationsplan-collection-bundle">persistiertes Medikationsplan-Collection-Bundle</a>) und ist nicht leer (nicht mit einem emptyReason gekennzeichnet), wird daraus ein <em>Auslieferungs-Medikationsplan-Collection-Bundle</em> erzeugt. Dabei werden folgende Transformationen durchgeführt:
+    <ul>
+      <li><em>List.entry.flag = new</em> und <em>changed</em> werden auf <em>unchanged</em> gesetzt.</li>
+      <li>Einträge mit <em>List.entry.flag = removed</em> werden aus der <em>List.entry</em> und aus dem Bundle entfernt.</li>
+      <li>Einträge mit abgelaufenem Behandlungszeitraum bleiben erhalten.</li>
+      <li>Das persistierte Medikationsplan-Collection-Bundle bleibt unverändert.</li>
+    </ul>
+  </li>
+  <li>Die Fachanwendung prüft, ob nach dem Entfernen aller mit <em>removed</em> gekennzeichneten Listeneinträge noch Planeinträge vorhanden sind.</li>
+  <li>Sind noch Einträge vorhanden, liefert die Fachanwendung das <a href="design_choices.html#auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</a> zurück. Dieses enthält:
+    <ul>
+      <li>im HTTP-Header den <em>ETag</em> der zugrunde liegenden persistierten Version für <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a></li>
+      <li>die <em>List</em>-Ressource</li>
+      <li>sämtliche in der <em>List</em>-Ressource referenzierten Ressourcen</li>
+    </ul>
+  </li>
+  <li>Wurden sämtliche Einträge entfernt, wird <em>List.emptyReason = nilknown</em> gesetzt und das<a href="design_choices.html#auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</a> mit einer leeren Liste <em>List.emptyReason = nilknown</em> zurückgeliefert.</li>
+  <li><a name="l554">​</a>Wurde ein leerer Medikationsplan persistiert (<em>List.emptyReason = nilknown</em>) (siehe <a href="Sub_UC_eMed_06.html#sub_uc_emed_06_02---leerer-medikationsplan-keine-medikation">Sub_UC_eMed_06_02 - Leerer Medikationsplan (keine Medikation)</a>) oder nach derm initialen Abruf keine Planänderung vorgenommen (<em>List.emptyReason = notstarted</em>), ist keine Transformation erforderlich und das erzeugte <a href="design_choices.html#auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</a> wird unverändert inkl. <em>ETag</em> im Header zurückgeliefert.</li>
+  <li>Existiert <strong>kein Medikationsplan</strong>, wird dieser gemäß <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_03---initial-erstellter-medikationsplan">Sub_UC_eMed_05_03 - Initial erstellter Medikationsplan</a> automatisch initial erstellt und wie oben beschrieben ausgeliefert. 
+  <!-- TODO: Wird dieser initiale Plan persistiert? Ja -> Wird daraus ein Auslieferungsbundle erstellt? Ja --></li>
+</ol>
+
+<p>Nachfolgend kann der Medikationsplan vom GDA bearbeitet werden und ein Plan-Write erfolgen.</p>
+
+<h5 id="custom-operations">Custom Operations</h5>
+
+<p><a name="l589">​</a><a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+
+<h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
+  <!-- TODO: Diagramm anpassen und Komplexität verringern! -->
+<div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 739 1176" zoomAndPan="magnify" preserveAspectRatio="none" width="739px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:739px;height:1176px;background:#F5F5F5;" version="1.1" height="1176px"><defs><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g1vv9j5j5pqm10"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="739" x="0" y="0" style="stroke:none;stroke-width:1.0;" fill="#F5F5F5" height="1176"></rect><text font-weight="bold" lengthAdjust="spacing" x="330" font-size="14" textLength="71" y="28.1318" font-family="Arial" fill="#000000">Plan-Read</text><rect width="10" x="122" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="893.8486"></rect><rect width="10" x="360" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#E97232" fill-opacity="0.74118" height="728.1582"></rect><rect rx="5" ry="5" width="639" x="83" y="317.3394" style="stroke:#111827;stroke-width:2.0;" fill="#0F9ED5" fill-opacity="0.14510" height="693.458"></rect><rect rx="5" ry="5" width="521" x="93" y="554.375" style="stroke:#111827;stroke-width:2.0;" fill="#0F9ED5" fill-opacity="0.14510" height="181.9883"></rect><path d="M93,617.4697 L614,617.4697 L614,731.3633 A5,5 0 0 1 609,736.3633 L98,736.3633 A5,5 0 0 1 93,731.3633 L93,617.4697 " style="stroke:none;stroke-width:1.0;" fill="#E97132" fill-opacity="0.20784"></path><path d="M83,743.3633 L722,743.3633 L722,924.4028 A5,5 0 0 1 717,929.4028 L88,929.4028 A5,5 0 0 1 83,924.4028 L83,743.3633 " style="stroke:none;stroke-width:1.0;" fill="#34738D" fill-opacity="0.30588"></path><path d="M83,929.4028 L722,929.4028 L722,1005.7974 A5,5 0 0 1 717,1010.7974 L88,1010.7974 A5,5 0 0 1 83,1005.7974 L83,929.4028 " style="stroke:none;stroke-width:1.0;" fill="#E97132" fill-opacity="0.20784"></path><line y1="118.1973" x1="127" y2="1096.0933" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="127"></line><line y1="118.1973" x1="365" y2="1096.0933" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="365"></line><text lengthAdjust="spacing" x="103" font-size="14" textLength="42" y="115.2305" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="127" cy="50.5986" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M127,58.5986 L127,85.5986 M114,66.5986 L140,66.5986 M127,85.5986 L114,100.5986 M127,85.5986 L140,100.5986 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="103" font-size="14" textLength="42" y="1108.2251" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="127" cy="1119.6919" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M127,1127.6919 L127,1154.6919 M114,1135.6919 L140,1135.6919 M127,1154.6919 L114,1169.6919 M127,1154.6919 L140,1169.6919 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="5" ry="5" width="76" x="327" y="87.0986" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="334" font-size="14" textLength="62" y="107.2305" font-family="Arial" fill="#000000">e-Med FA</text><rect rx="5" ry="5" width="76" x="327" y="1095.0933" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="334" font-size="14" textLength="62" y="1115.2251" font-family="Arial" fill="#000000">e-Med FA</text><rect width="10" x="122" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="893.8486"></rect><rect width="10" x="360" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#E97232" fill-opacity="0.74118" height="728.1582"></rect><rect rx="5" ry="5" width="732" x="0" y="149.2466" style="stroke:#EEEEEE;stroke-width:1.0;" fill="#EEEEEE" height="3"></rect><line y1="149.2466" x1="0" y2="149.2466" style="stroke:#000000;stroke-width:1.0;" x2="732"></line><line y1="152.2466" x1="0" y2="152.2466" style="stroke:#000000;stroke-width:1.0;" x2="732"></line><rect rx="5" ry="5" width="247" x="242.5" y="138.1973" style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE" height="24.0986"></rect><text font-weight="bold" lengthAdjust="spacing" x="248.5" font-size="14" textLength="229" y="155.3291" font-family="Arial" fill="#000000">Aktuellen Medikationsplan lesen</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="348,189.2446,358,193.2446,348,197.2446,352,193.2446"></polygon><line y1="193.2446" x1="132" y2="193.2446" style="stroke:#111827;stroke-width:1.0;" x2="354"></line><text font-weight="bold" lengthAdjust="spacing" x="139" font-size="13" textLength="7" y="188.4897" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="150" font-size="13" textLength="99" y="188.4897" font-family="Arial" fill="#000000">POST $plan-read</text><path d="M29,211.2446 L29,243.2446 A5,5 0 0 0 34,248.2446 L219,248.2446 A5,5 0 0 0 224,243.2446 L224,216.2446 L214,206.2446 L34,206.2446 A5,5 0 0 0 29,211.2446 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><path d="M214,206.2446 L214,213.7446 A2.5,2.5 0 0 0 216.5,216.2446 L224,216.2446 L214,206.2446 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><text lengthAdjust="spacing" x="35" font-size="14" textLength="174" y="224.3765" font-family="Arial" fill="#111827">Abruf des Medikationsplans</text><text lengthAdjust="spacing" x="35" font-size="14" textLength="100" y="240.4751" font-family="Arial" fill="#111827">zur Bearbeitung</text><line y1="289.3394" x1="370" y2="289.3394" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="289.3394" x1="412" y2="302.3394" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="302.3394" x1="371" y2="302.3394" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="381,298.3394,371,302.3394,381,306.3394,377,302.3394"></polygon><text font-weight="bold" lengthAdjust="spacing" x="377" font-size="13" textLength="7" y="277.1101" font-family="Arial" fill="#000000">2</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="141" y="269.6357" font-family="Arial" fill="#000000">Existiert ein persistierter</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="101" y="284.5845" font-family="Arial" fill="#000000">Medikationsplan?</text><path d="M88,317.3394 L359,317.3394 L359,325.438 L349,335.438 L83,335.438 L83,322.3394 A5,5 0 0 1 88,317.3394 " style="stroke:#111827;stroke-width:1.5;" fill="#EEF2FF"></path><rect rx="5" ry="5" width="639" x="83" y="317.3394" style="stroke:#111827;stroke-width:2.0;" fill="none" height="693.458"></rect><text font-weight="bold" lengthAdjust="spacing" x="98" font-size="14" textLength="227" y="331.4712" font-family="Arial" fill="#000000">alt: Medikationsplan persistiert?</text><text font-weight="bold" lengthAdjust="spacing" x="374" font-size="14" textLength="343" y="332.4712" font-family="Arial" fill="#000000">[ja: Planeinträge vorhanden (kein emptyReason)]</text><line y1="417.2803" x1="370" y2="417.2803" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="417.2803" x1="412" y2="430.2803" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="430.2803" x1="371" y2="430.2803" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="381,426.2803,371,430.2803,381,434.2803,377,430.2803"></polygon><text font-weight="bold" lengthAdjust="spacing" x="377" font-size="13" textLength="7" y="382.6279" font-family="Arial" fill="#000000">3</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="131" y="352.7305" font-family="Arial" fill="#000000">Erzeugt Auslieferungs-</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="101" y="367.6792" font-family="Arial" fill="#000000">Collection Bundle</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="89" y="382.6279" font-family="Arial" fill="#000000">Transformation:</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="167" y="397.5767" font-family="Arial" fill="#000000">- new|changed → unchanged</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="248" y="412.5254" font-family="Arial" fill="#000000">- removed -&gt; aus List und Bundle entfernen</text><path d="M238,448.2803 L238,480.2803 A5,5 0 0 0 243,485.2803 L487,485.2803 A5,5 0 0 0 492,480.2803 L492,453.2803 L482,443.2803 L243,443.2803 A5,5 0 0 0 238,448.2803 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><path d="M482,443.2803 L482,450.7803 A2.5,2.5 0 0 0 484.5,453.2803 L492,453.2803 L482,443.2803 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><text lengthAdjust="spacing" x="244" font-size="14" textLength="210" y="461.4121" font-family="Arial" fill="#111827">Das persistierte Medikationsplan-</text><text lengthAdjust="spacing" x="244" font-size="14" textLength="233" y="477.5107" font-family="Arial" fill="#111827">Collection Bundle bleibt unverändert.</text><line y1="526.375" x1="370" y2="526.375" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="526.375" x1="412" y2="539.375" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="539.375" x1="371" y2="539.375" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="381,535.375,371,539.375,381,543.375,377,539.375"></polygon><text font-weight="bold" lengthAdjust="spacing" x="377" font-size="13" textLength="7" y="514.1458" font-family="Arial" fill="#000000">4</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="169" y="506.6714" font-family="Arial" fill="#000000">Sind nach der Transformation</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="150" y="521.6201" font-family="Arial" fill="#000000">Listeneinträge vorhanden?</text><path d="M98,554.375 L346,554.375 L346,562.4736 L336,572.4736 L93,572.4736 L93,559.375 A5,5 0 0 1 98,554.375 " style="stroke:#111827;stroke-width:1.5;" fill="#EEF2FF"></path><rect rx="5" ry="5" width="521" x="93" y="554.375" style="stroke:#111827;stroke-width:2.0;" fill="none" height="181.9883"></rect><text font-weight="bold" lengthAdjust="spacing" x="108" font-size="14" textLength="204" y="568.5068" font-family="Arial" fill="#000000">alt: Planeinträge vorhanden?</text><text font-weight="bold" lengthAdjust="spacing" x="361" font-size="14" textLength="22" y="569.5068" font-family="Arial" fill="#000000">[ja]</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="143,605.4697,133,609.4697,143,613.4697,139,609.4697"></polygon><line y1="609.4697" x1="137" y2="609.4697" style="stroke:#111827;stroke-width:1.0;" x2="359"></line><text font-weight="bold" lengthAdjust="spacing" x="149" font-size="13" textLength="7" y="597.2405" font-family="Arial" fill="#000000">5</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="183" y="589.7661" font-family="Arial" fill="#000000">Auslieferungs-Collection Bundle</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="42" y="604.7148" font-family="Arial" fill="#000000">+ ETag</text><line y1="618.4697" x1="93" y2="618.4697" style="stroke:#111827;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="614"></line><text font-weight="bold" lengthAdjust="spacing" x="98" font-size="14" textLength="216" y="631.6016" font-family="Arial" fill="#000000">[nein: Leerer Medikationsplan]</text><line y1="656.5171" x1="370" y2="656.5171" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="656.5171" x1="412" y2="669.5171" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="669.5171" x1="371" y2="669.5171" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="381,665.5171,371,669.5171,381,673.5171,377,669.5171"></polygon><text font-weight="bold" lengthAdjust="spacing" x="377" font-size="13" textLength="7" y="651.7622" font-family="Arial" fill="#000000">6</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="214" y="651.7622" font-family="Arial" fill="#000000">List.emptyReason = nilknown setzen</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="143,724.3633,133,728.3633,143,732.3633,139,728.3633"></polygon><line y1="728.3633" x1="137" y2="728.3633" style="stroke:#111827;stroke-width:1.0;" x2="359"></line><text font-weight="bold" lengthAdjust="spacing" x="149" font-size="13" textLength="7" y="708.6597" font-family="Arial" fill="#000000">7</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="183" y="693.7109" font-family="Arial" fill="#000000">Auslieferungs-Collection Bundle</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="193" y="708.6597" font-family="Arial" fill="#000000">mit List.emptyReason = nilknown</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="42" y="723.6084" font-family="Arial" fill="#000000">+ ETag</text><line y1="744.3633" x1="83" y2="744.3633" style="stroke:#111827;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="722"></line><text font-weight="bold" lengthAdjust="spacing" x="88" font-size="14" textLength="490" y="757.4951" font-family="Arial" fill="#000000">[ja: leerer Medikationsplan (mit emptyReason = notstarted | nilknown)]</text><line y1="797.3594" x1="370" y2="797.3594" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="797.3594" x1="412" y2="810.3594" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><line y1="810.3594" x1="371" y2="810.3594" style="stroke:#111827;stroke-width:1.0;" x2="412"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="381,806.3594,371,810.3594,381,814.3594,377,810.3594"></polygon><text font-weight="bold" lengthAdjust="spacing" x="377" font-size="13" textLength="7" y="785.1301" font-family="Arial" fill="#000000">8</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="131" y="777.6558" font-family="Arial" fill="#000000">Erzeugt Auslieferungs-</text><text lengthAdjust="spacing" x="388" font-size="13" textLength="101" y="792.6045" font-family="Arial" fill="#000000">Collection Bundle</text><path d="M236,828.3594 L236,860.3594 A5,5 0 0 0 241,865.3594 L488,865.3594 A5,5 0 0 0 493,860.3594 L493,833.3594 L483,823.3594 L241,823.3594 A5,5 0 0 0 236,828.3594 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><path d="M483,823.3594 L483,830.8594 A2.5,2.5 0 0 0 485.5,833.3594 L493,833.3594 L483,823.3594 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><text lengthAdjust="spacing" x="242" font-size="14" textLength="216" y="841.4912" font-family="Arial" fill="#111827">Keine Transformation erforderlich.</text><text lengthAdjust="spacing" x="242" font-size="14" textLength="236" y="857.5898" font-family="Arial" fill="#111827">List.emptyReason bleibt unverändert.</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="143,917.4028,133,921.4028,143,925.4028,139,921.4028"></polygon><line y1="921.4028" x1="137" y2="921.4028" style="stroke:#111827;stroke-width:1.0;" x2="364"></line><text font-weight="bold" lengthAdjust="spacing" x="149" font-size="13" textLength="7" y="901.6992" font-family="Arial" fill="#000000">9</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="183" y="886.7505" font-family="Arial" fill="#000000">Auslieferungs-Collection Bundle</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="135" y="901.6992" font-family="Arial" fill="#000000">(mit List.emptyReason)</text><text lengthAdjust="spacing" x="160" font-size="13" textLength="42" y="916.6479" font-family="Arial" fill="#000000">+ ETag</text><line y1="930.4028" x1="83" y2="930.4028" style="stroke:#111827;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="722"></line><text font-weight="bold" lengthAdjust="spacing" x="88" font-size="14" textLength="276" y="943.5347" font-family="Arial" fill="#000000">[nein: kein Medikationsplan persistiert]</text><rect rx="5" ry="5" width="326" x="100" y="947.5015" style="stroke:#000000;stroke-width:1.5;" fill="none" height="58.2959"></rect><path d="M105,947.5015 L165,947.5015 L165,955.5015 L155,965.5015 L100,965.5015 L100,952.5015 A5,5 0 0 1 105,947.5015 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="113" font-size="14" textLength="20" y="962.6333" font-family="Arial" fill="#000000">ref</text><text lengthAdjust="spacing" x="165" font-size="14" textLength="192" y="982.6333" font-family="Arial" fill="#000000">Siehe Sub_UC_eMed_05_03 -</text><text lengthAdjust="spacing" x="164.5" font-size="14" textLength="197" y="998.7319" font-family="Arial" fill="#000000">Initial erstellter Medikationsplan</text><path d="M5,1027.7974 L5,1075.7974 A5,5 0 0 0 10,1080.7974 L245,1080.7974 A5,5 0 0 0 250,1075.7974 L250,1032.7974 L240,1022.7974 L10,1022.7974 A5,5 0 0 0 5,1027.7974 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><path d="M240,1022.7974 L240,1030.2974 A2.5,2.5 0 0 0 242.5,1032.7974 L250,1032.7974 L240,1022.7974 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g1vv9j5j5pqm10)"></path><text lengthAdjust="spacing" x="11" font-size="14" textLength="139" y="1040.9292" font-family="Arial" fill="#111827">Nachfolgend kann der</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="220" y="1057.0278" font-family="Arial" fill="#111827">Medikationsplan bearbeitet werden</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="177" y="1073.1265" font-family="Arial" fill="#111827">und ein Plan-Write erfolgen.</text>  <!-- SRC=[fLRRRY9747tlhwYOIB6LOCqCnXWanm8RRrRhDGXOHKeSeOQfWGv33zlJOzREvZKVa6_OFza_oPUakhdDpQjScXUc-anLdLFLrQE53X7w8PVL0NAViM_YXP0hhlWI-5H7QgYV2C3N64TBPEomEucKZ-ew2YC55SUkz2wVBcOgIgI_HGHryqiXuZdtexMGCmXu66DgP_kQagZ0JJlrCU19g6yZgU_v4k6ehGGFZyeHG_6Cu9wLRxwKzWzFArIXa8iKeDij0xoJlls3XVGxqOS-ztt3p7EozavQixfTQKbbf15-Om2Tl7heO3rmgXNVzPjuRX1fJnUJPftNzzRHN4mN4kCONB8DKcewzBpBpNX9IU6wxeNN8DimLvVVqnd6-3v1ETrasUTAYwbOSQdBY6K1XNwmAmigLgQmlQjgPYCbDq1RgMYT9sMDMLsigIpYVcCJgqQcLvJvAiDnxtcpLQWN1fvbbthp4Dupedv5xMZQvxftrnkCNzsqnoxGghZrS-V2kt1A09u5DC_FdSPD0T1lZrvtxqV6G_EyuvqL0Er-3-ogEBVDxaszcGTqttPlnhTj0c2puTMyYPy7Z0VTdxhz4LIcVgrHytWpJwFt1Z8nl7e1i641bTfPetRXds4-nc3G6rX0jzbmQrwDJeWTHB2HYCTmHF_0FKehnrQ7RW1yYxxXOQ1OfGUuRHzbEJ9ockX89ii9AiOkBw6zq0c68KgW5yI2Qn79U4Lp4KACoNfvoTWcW-htkmWjwFU68_ZQmAhAZ4_AL3noEiKRQ3f3Paztz8XR9gmzKKb0GodEHupPSwAWWrnDKEX4pXXAtmu7TWYm8vcbjREcS-n-4B4Mg4WO8O76LxnzHlKWSw6l63Dzl3gKauUwLP0avUGAVlwLj-mDGkwr-lnfXl0OgJcd0IdXU662udAbd-X-YIDvyWkTYj8qrJCcCmtj90u51gY8U5nza7IYGfoQsD2X0nRYWnmf4Yc8rDAcr7gGLP2u_ZYbc3Egzbz__0c9t3wPJOLBqjqtuNWImnsbJW1_wmzGQWedKL9cXoBjSYJZ3NLIMhUy7bN25DA4IOXYOWAHjy-Vp7MXJmttNItBPHWAiy-dS-eC1Lcc3zAaZcL2Nm4ZXsMrUw4ojcwc5faqR6UsSZKegS2tq1tncOs9T4bapgw9re8xH4K4yfrZ0-QZxiaRUgUfPe5Ba29So6WjwUhHpxP4_odXfT1Vyhvdj5biKoV6KkJiv3Aj7fOpEpOXSjuZ7MiQJDHw7_UXJZRU_yy9AEjJihr1CqQpBGEe0dlxX68wFpNA5rJuLttwJ_K-BXFy9DKux8M-iVFY2_F6YASmI0tIxmuA30NE4OR9PFpkUcpDJdtirA1gYB-MGjFd8Yb2PoWCTR66MzRataJnCJzicUs9_1o_fyCQHE7ClBhWKjg3o_8K9jjnZXhMgCneP6O46RRsw_j79KmWjV5qUXZvVmC0] --></g></svg></div>
+<p><br/></p>
+
+<h4 id="sub_uc_emed_05_02---historische-medikationsplanversion-lesen-plan-history-read">Sub_UC_eMed_05_02 - Historische Medikationsplanversion lesen (Plan-History-Read)</h4>
+
+<p>Beim Plan-History-Read stellt die Fachanwendung eine <a href="design_choices.html#persistiertes-medikationsplan-collection-bundle">persistierte Version des Medikationsplan-Collection-Bundles</a> einschließlich aller referenzierten Ressourcen <strong>unverändert</strong> bereit.</p>
+
+<h5 id="ablauf-1">Ablauf</h5>
+
+<ol>
+  <li>Der Client führt einen <strong>POST</strong> $plan-history-read aus.</li>
+  <li>Die Fachanwendung prüft, ob Medikationspläne (<a href="design_choices.html#persistiertes-medikationsplan-collection-bundle">persistierte Medikationsplan-Collection-Bundles</a>) entsprechend den Suchparametern existieren.</li>
+  <li>Existieren ein oder mehrere Medikationsplan-Collection-Bundles, werden diese als Bundle (type=searchset) zurückgeliefert.
+Jedes <strong>Medikationsplan-Collection-Bundle</strong> enthält:<br/>
+    <ul>
+      <li>die List-Ressource des Medikationsplans <br/></li>
+      <li>alle referenzierten Ressourcen vollständig (inline).</li>
+    </ul>
+  </li>
+  <li>Existiert <strong>kein</strong> Medikationsplan-Collection-Bundle, wird ein <strong>leeres Bundle</strong> (type=searchset) zurückgegeben.</li>
+  <li>Im Fehlerfall erfolgt eine entsprechende Meldung an den Client.</li>
+</ol>
+
+<p>Beim Plan-History-Read erfolgt <strong>keine Änderung</strong> der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert.
+<br/>
+Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.</p>
+
+<h5 id="custom-operations-1">Custom Operations</h5>
+
+<p><em>$plan-history-read</em>: in Arbeit.</p>
+
+<h5 id="sequenzdiagramm-1">Sequenzdiagramm</h5>
+
+<div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 844 604" zoomAndPan="magnify" preserveAspectRatio="none" width="844px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:844px;height:604px;background:#F5F5F5;" version="1.1" height="604px"><defs><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="g33srfomro81o0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="844" x="0" y="0" style="stroke:none;stroke-width:1.0;" fill="#F5F5F5" height="604"></rect><text font-weight="bold" lengthAdjust="spacing" x="355.5" font-size="14" textLength="125" y="28.1318" font-family="Arial" fill="#000000">Plan-History-Read</text><rect width="10" x="39" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="221.0869"></rect><rect width="10" x="351" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#E97232" fill-opacity="0.74118" height="221.0869"></rect><rect rx="5" ry="5" width="817" x="10" y="265.1421" style="stroke:#111827;stroke-width:2.0;" fill="#0F9ED5" fill-opacity="0.14510" height="157.1895"></rect><path d="M10,328.2368 L827,328.2368 L827,370.2842 A5,5 0 0 1 822,375.2842 L15,375.2842 A5,5 0 0 1 10,370.2842 L10,328.2368 " style="stroke:none;stroke-width:1.0;" fill="#0F9ED5" fill-opacity="0.14510"></path><path d="M10,375.2842 L827,375.2842 L827,417.3315 A5,5 0 0 1 822,422.3315 L15,422.3315 A5,5 0 0 1 10,417.3315 L10,375.2842 " style="stroke:none;stroke-width:1.0;" fill="#E97132" fill-opacity="0.20784"></path><line y1="118.1973" x1="44" y2="523.7261" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="44"></line><line y1="118.1973" x1="356" y2="523.7261" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="356"></line><text lengthAdjust="spacing" x="20" font-size="14" textLength="42" y="115.2305" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="44" cy="50.5986" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M44,58.5986 L44,85.5986 M31,66.5986 L57,66.5986 M44,85.5986 L31,100.5986 M44,85.5986 L57,100.5986 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="20" font-size="14" textLength="42" y="535.8579" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="44" cy="547.3247" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M44,555.3247 L44,582.3247 M31,563.3247 L57,563.3247 M44,582.3247 L31,597.3247 M44,582.3247 L57,597.3247 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="5" ry="5" width="76" x="318" y="87.0986" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="325" font-size="14" textLength="62" y="107.2305" font-family="Arial" fill="#000000">e-Med FA</text><rect rx="5" ry="5" width="76" x="318" y="522.7261" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="325" font-size="14" textLength="62" y="542.8579" font-family="Arial" fill="#000000">e-Med FA</text><rect width="10" x="39" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="221.0869"></rect><rect width="10" x="351" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#E97232" fill-opacity="0.74118" height="221.0869"></rect><rect rx="5" ry="5" width="837" x="0" y="149.2466" style="stroke:#EEEEEE;stroke-width:1.0;" fill="#EEEEEE" height="3"></rect><line y1="149.2466" x1="0" y2="149.2466" style="stroke:#000000;stroke-width:1.0;" x2="837"></line><line y1="152.2466" x1="0" y2="152.2466" style="stroke:#000000;stroke-width:1.0;" x2="837"></line><rect rx="5" ry="5" width="270" x="283.5" y="138.1973" style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE" height="24.0986"></rect><text font-weight="bold" lengthAdjust="spacing" x="289.5" font-size="14" textLength="252" y="155.3291" font-family="Arial" fill="#000000">Historische Medikationspläne lesen</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="339,189.2446,349,193.2446,339,197.2446,343,193.2446"></polygon><line y1="193.2446" x1="49" y2="193.2446" style="stroke:#111827;stroke-width:1.0;" x2="345"></line><text font-weight="bold" lengthAdjust="spacing" x="56" font-size="13" textLength="7" y="188.4897" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="67" font-size="13" textLength="142" y="188.4897" font-family="Arial" fill="#000000">POST $plan-history-read</text><line y1="237.1421" x1="361" y2="237.1421" style="stroke:#111827;stroke-width:1.0;" x2="403"></line><line y1="237.1421" x1="403" y2="250.1421" style="stroke:#111827;stroke-width:1.0;" x2="403"></line><line y1="250.1421" x1="362" y2="250.1421" style="stroke:#111827;stroke-width:1.0;" x2="403"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="372,246.1421,362,250.1421,372,254.1421,368,250.1421"></polygon><text font-weight="bold" lengthAdjust="spacing" x="368" font-size="13" textLength="7" y="224.9128" font-family="Arial" fill="#000000">2</text><text lengthAdjust="spacing" x="379" font-size="13" textLength="139" y="217.4385" font-family="Arial" fill="#000000">Prüfung auf existierende</text><text lengthAdjust="spacing" x="379" font-size="13" textLength="206" y="232.3872" font-family="Arial" fill="#000000">Medikationsplan-Collection-Bundles</text><path d="M15,265.1421 L420,265.1421 L420,273.2407 L410,283.2407 L10,283.2407 L10,270.1421 A5,5 0 0 1 15,265.1421 " style="stroke:#111827;stroke-width:1.5;" fill="#EEF2FF"></path><rect rx="5" ry="5" width="817" x="10" y="265.1421" style="stroke:#111827;stroke-width:2.0;" fill="none" height="157.1895"></rect><text font-weight="bold" lengthAdjust="spacing" x="25" font-size="14" textLength="361" y="279.2739" font-family="Arial" fill="#000000">alt: Medikationsplan-Collection-Bundles gefunden?</text><text font-weight="bold" lengthAdjust="spacing" x="435" font-size="14" textLength="387" y="280.2739" font-family="Arial" fill="#000000">[ja: Collection-Bundles entsprechend Suchparametern]</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="60,316.2368,50,320.2368,60,324.2368,56,320.2368"></polygon><line y1="320.2368" x1="54" y2="320.2368" style="stroke:#111827;stroke-width:1.0;" x2="350"></line><text font-weight="bold" lengthAdjust="spacing" x="66" font-size="13" textLength="7" y="308.0076" font-family="Arial" fill="#000000">3</text><text lengthAdjust="spacing" x="77" font-size="13" textLength="267" y="300.5332" font-family="Arial" fill="#000000">Bundle (type=searchset) mit zumindest einem</text><text lengthAdjust="spacing" x="77" font-size="13" textLength="199" y="315.4819" font-family="Arial" fill="#000000">Medikationsplan-Collection-Bundle</text><line y1="329.2368" x1="10" y2="329.2368" style="stroke:#111827;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="827"></line><text font-weight="bold" lengthAdjust="spacing" x="15" font-size="14" textLength="553" y="342.3687" font-family="Arial" fill="#000000">[nein: kein Medikationsplan-Collection-Bundle entsprechend Suchparametern]</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="60,363.2842,50,367.2842,60,371.2842,56,367.2842"></polygon><line y1="367.2842" x1="54" y2="367.2842" style="stroke:#111827;stroke-width:1.0;" x2="350"></line><text font-weight="bold" lengthAdjust="spacing" x="66" font-size="13" textLength="7" y="362.5293" font-family="Arial" fill="#000000">4</text><text lengthAdjust="spacing" x="77" font-size="13" textLength="226" y="362.5293" font-family="Arial" fill="#000000">Bundle (type=searchset) ohne Einträge</text><line y1="376.2842" x1="10" y2="376.2842" style="stroke:#111827;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="827"></line><text font-weight="bold" lengthAdjust="spacing" x="15" font-size="14" textLength="56" y="389.416" font-family="Arial" fill="#000000">[Fehler]</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="55,410.3315,45,414.3315,55,418.3315,51,414.3315"></polygon><line y1="414.3315" x1="49" y2="414.3315" style="stroke:#111827;stroke-width:1.0;" x2="355"></line><text font-weight="bold" lengthAdjust="spacing" x="61" font-size="13" textLength="7" y="409.5767" font-family="Arial" fill="#000000">5</text><text lengthAdjust="spacing" x="72" font-size="13" textLength="109" y="409.5767" font-family="Arial" fill="#000000">OperationOutcome</text><path d="M175,439.3315 L175,503.3315 A5,5 0 0 0 180,508.3315 L532,508.3315 A5,5 0 0 0 537,503.3315 L537,444.3315 L527,434.3315 L180,434.3315 A5,5 0 0 0 175,439.3315 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g33srfomro81o0)"></path><path d="M527,434.3315 L527,441.8315 A2.5,2.5 0 0 0 529.5,444.3315 L537,444.3315 L527,434.3315 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#g33srfomro81o0)"></path><text lengthAdjust="spacing" x="181" font-size="14" textLength="337" y="452.4634" font-family="Arial" fill="#111827">Die Fachanwendung liefert die den Suchparamentern</text><text lengthAdjust="spacing" x="181" font-size="14" textLength="303" y="468.562" font-family="Arial" fill="#111827">entsprechenden, persistierten Medikationspläne</text><text lengthAdjust="spacing" x="181" font-size="14" textLength="323" y="484.6606" font-family="Arial" fill="#111827">(unverändert, inkl. aller referenzierten Ressourcen)</text><text lengthAdjust="spacing" x="181" font-size="14" textLength="192" y="500.7593" font-family="Arial" fill="#111827">oder ein leeres Bundle zurück.</text>  <!-- SRC=[bLLjZzf64Fw-ls8AbPf88R9DW3CIhI2Of6eJ4D0lVT5fpnwEBMRjxAvpkQlwR_8p-kt-M6TjEDRWDkqY8NlccPbdNZnhX4aH5YcNdRT2cqpTTvR84yQ-qJiXSwxu7dXCyfMv9o2_GvtjaR6JzYPJ2QhNMPefQ7lbSRKytjsgh9390R7fsP-3q5kUP7T2tiA6fneTpS5CILJWkquJtF0YDRDCclTyZz0QAy7JLZDY9HuG_5VDod-Y_VO-HvKAkNC0KTG4-4acvGDUq9zadnOyIMncWLUNJzoQzShZbbHc1k4F1Z0vhnvwsDjudNRY9o7sBSBrT7KJzdZlIRhUYdWdKMlmIRPqgkdH-v6RzUAKmlVzgs10ijLPN_vq6MhyKA2CAvOBheo8HSwbQKgi3hYOX_BKGPUTkL0VkrfJEEK662kLtPqdLGhhTIb5JH6V55MiBedU4FEybkEJvqfrqI_S16LsZkKfV62B-XMDensVr_CVvylhDzFnjGzqsdwlxrq5Lru382W1OR_l3QONWCLu_NtqVcqzXFr9yEe2C5xCeJnjRnP6qrvu3eZUHTFhsPW060w2Rd2Jd0Ekbz7FqM8DxJZf3he13y_JcFy0jHX1xzp5SZbVbe0e7FZTe4iV02iN3LGbu1fQz0H-owqCoq_T1do7YULfeTYX5vYDM_KShDF2PBBOtw1YR3I2Qii97MyHo4Jik16Pr7dw-9d8fQXHmcZ4MCMYy-qnoX0MyzKQlixjgjmULgMogv9OYu-SljZAn6LxqXsvrjaTfRKmwl6lJK5Jp8iDu2UA950XRPbVPOqlqQ0XIp6sxvq9pHoHPyoENtxg0a_D4Bvi1xT8CHEKty4ll_CXD21G6fqhfBh915P5l2qt0HfKyZSQS2ULClSXL8RmpD2g76daAjvgDCzXBmmy57j1uJGraMPY_nzI0uQqXKw9IJ8Smex-lvpUlt7_NzIpBSr89AHHZvzlqMLKpVCCjodDMPFBETqN9STvOM9xXGBTG_NHgOiEBXXHPgoy4RAFjBgFugb0cF5uo-KT8Uoyf08tg0mafA5EEdbAcoWLqAa2oXT0Z7GrNWPbmyV0dXMIGj8pRItp0kYsIr_IH56Ae6mib0y7uoMjiwnGCShdmBB4ygJ6f4WOVQpcGq6J7UzUsepAAuwnlm40] --></g></svg></div>
+<p><br/></p>
+
+<h6 id="beispiele-für-zugriffe">Beispiele für Zugriffe</h6>
+<p>In Arbeit
+ &lt;!–TODO: wenn plan-history-read eine Operation bleibt stimmt dieser Teil nicht mehr -&gt; dann würden Operation IN Parameter zum Einsatz kommen</p>
+<ul>
+  <li><strong>Aktuelle Planversion</strong> mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&amp;_count=1&amp;_sort=-timestamp&amp;list.subject={bPK-GH}</li>
+  <li><strong>Alle Planversionen</strong> mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&amp;_sort=-timestamp&amp;list.subject={bPK-GH}</li>
+  <li>Abfrage aller <strong>historischen Medikationsplan-Versionen</strong> eines Patienten, die nach dem angegebenen Datum persistiert wurden und Plan-Einträge enthalten, die als <strong>storniert, beendet oder abgesetzt</strong> gekennzeichnet sind: GET [base]/Bundle?type=collection&amp;_sort=-timestamp&amp;timestamp=ge2025-01-01&amp;list.subject={bPK-GH}&amp;list.entry.flag=removed 
+–&gt;
+  <!-- list.code= 736378000 in Abfragen ergänzen --></li>
+</ul>
+
+<h4 id="sub_uc_emed_05_03---initial-erstellter-medikationsplan">Sub_UC_eMed_05_03 - Initial erstellter Medikationsplan</h4>
+
+<p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> noch kein Medikationsplan für den ELGA-Teilnehmer existiert.</p>
+
+<p>Der dabei erzeugte initiale Medikationsplan besitzt den Wert <em>List.emptyReason = notstarted</em>. Dieser kennzeichnet ausschließlich den <strong>Initialzustand</strong> des Medikationsplans. Er bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden, trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.</p>
+
+<p>Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Portal ausgelöst werden, indem erstmals ein <em>$plan-read</em> aufgerufen wird.</p>
+
+<h5 id="ablauf-2">Ablauf</h5>
+
+<ol>
+  <li><a name="l1028">​</a>Ein Client führt für einen ELGA-Teilnehmer erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.</li>
+  <li>Existiert noch kein persistierter Medikationsplan, erstellt die Fachanwendung ein persistiertes Medikationsplan-Collection-Bundle mit:
+    <ul>
+      <li>einer List Ressource, welche den Wert <em>emptyReason = notstarted</em> besitzt und keine List.entry Einträge enthält</li>
+      <li>einer Patient Ressource</li>
+    </ul>
+  </li>
+  <li>Das erzeugte Medikationsplan-Collection-Bundle wird als initialer Medikationsplan persistiert.</li>
+  <li>Für das Plan-Read erzeugt die Fachanwendung daraus ein Auslieferungs-Medikationsplan-Collection-Bundle.</li>
+  <li>Dieses wird mit demselben <em>List.emptyReason = notstarted</em> sowie dem zugehörigen ETag an den Client zurückgeliefert.</li>
+</ol>
+
+<h5 id="sequenzdiagramm-2">Sequenzdiagramm</h5>
+
+<div>  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? --><svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 597 796" zoomAndPan="magnify" preserveAspectRatio="none" width="597px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:597px;height:796px;background:#F5F5F5;" version="1.1" height="796px"><defs><linearGradient y1="0%" x1="50%" y2="100%" x2="50%" id="gmu87im2qkk9v0"><stop offset="0%" stop-color="#E0E5F0"></stop><stop offset="100%" stop-color="#D1D9E6"></stop></linearGradient></defs><g><rect width="597" x="0" y="0" style="stroke:none;stroke-width:1.0;" fill="#F5F5F5" height="796"></rect><text font-weight="bold" lengthAdjust="spacing" x="181" font-size="14" textLength="227" y="28.1318" font-family="Arial" fill="#000000">Initial erstellter Medikationsplan</text><rect width="10" x="97" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="431.9766"></rect><rect width="10" x="329" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#E97232" fill-opacity="0.74118" height="431.9766"></rect><rect rx="5" ry="5" width="512" x="68" y="317.3394" style="stroke:#111827;stroke-width:2.0;" fill="#0F9ED5" fill-opacity="0.14510" height="381.1777"></rect><path d="M68,633.2212 L580,633.2212 L580,693.5171 A5,5 0 0 1 575,698.5171 L73,698.5171 A5,5 0 0 1 68,693.5171 L68,633.2212 " style="stroke:none;stroke-width:1.0;" fill="#E97132" fill-opacity="0.20784"></path><line y1="118.1973" x1="102" y2="715.5171" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="102"></line><line y1="118.1973" x1="334" y2="715.5171" style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x2="334"></line><text lengthAdjust="spacing" x="78" font-size="14" textLength="42" y="115.2305" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="102" cy="50.5986" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M102,58.5986 L102,85.5986 M89,66.5986 L115,66.5986 M102,85.5986 L89,100.5986 M102,85.5986 L115,100.5986 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><text lengthAdjust="spacing" x="78" font-size="14" textLength="42" y="727.6489" font-family="Arial" fill="#000000">GDA 1</text><ellipse cx="102" cy="739.1157" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;" fill="#156082" fill-opacity="0.50196"></ellipse><path d="M102,747.1157 L102,774.1157 M89,755.1157 L115,755.1157 M102,774.1157 L89,789.1157 M102,774.1157 L115,789.1157 " style="stroke:#181818;stroke-width:0.5;" fill="none"></path><rect rx="5" ry="5" width="76" x="296" y="87.0986" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="303" font-size="14" textLength="62" y="107.2305" font-family="Arial" fill="#000000">e-Med FA</text><rect rx="5" ry="5" width="76" x="296" y="714.5171" style="stroke:#555555;stroke-width:0.5;" fill="#E97232" fill-opacity="0.74118" height="30.0986"></rect><text lengthAdjust="spacing" x="303" font-size="14" textLength="62" y="734.6489" font-family="Arial" fill="#000000">e-Med FA</text><rect width="10" x="97" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#156082" fill-opacity="0.50196" height="431.9766"></rect><rect width="10" x="329" y="193.2446" style="stroke:#181818;stroke-width:1.0;" fill="#E97232" fill-opacity="0.74118" height="431.9766"></rect><rect rx="5" ry="5" width="590" x="0" y="149.2466" style="stroke:#EEEEEE;stroke-width:1.0;" fill="#EEEEEE" height="3"></rect><line y1="149.2466" x1="0" y2="149.2466" style="stroke:#000000;stroke-width:1.0;" x2="590"></line><line y1="152.2466" x1="0" y2="152.2466" style="stroke:#000000;stroke-width:1.0;" x2="590"></line><rect rx="5" ry="5" width="175" x="207.5" y="138.1973" style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE" height="24.0986"></rect><text font-weight="bold" lengthAdjust="spacing" x="213.5" font-size="14" textLength="157" y="155.3291" font-family="Arial" fill="#000000">Erstmaliges Plan-Read</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="317,189.2446,327,193.2446,317,197.2446,321,193.2446"></polygon><line y1="193.2446" x1="107" y2="193.2446" style="stroke:#111827;stroke-width:1.0;" x2="323"></line><text font-weight="bold" lengthAdjust="spacing" x="114" font-size="13" textLength="7" y="188.4897" font-family="Arial" fill="#000000">1</text><text lengthAdjust="spacing" x="125" font-size="13" textLength="99" y="188.4897" font-family="Arial" fill="#000000">POST $plan-read</text><path d="M5,211.2446 L5,243.2446 A5,5 0 0 0 10,248.2446 L195,248.2446 A5,5 0 0 0 200,243.2446 L200,216.2446 L190,206.2446 L10,206.2446 A5,5 0 0 0 5,211.2446 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#gmu87im2qkk9v0)"></path><path d="M190,206.2446 L190,213.7446 A2.5,2.5 0 0 0 192.5,216.2446 L200,216.2446 L190,206.2446 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#gmu87im2qkk9v0)"></path><text lengthAdjust="spacing" x="11" font-size="14" textLength="174" y="224.3765" font-family="Arial" fill="#111827">Abruf des Medikationsplans</text><text lengthAdjust="spacing" x="11" font-size="14" textLength="100" y="240.4751" font-family="Arial" fill="#111827">zur Bearbeitung</text><line y1="289.3394" x1="339" y2="289.3394" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="289.3394" x1="381" y2="302.3394" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="302.3394" x1="340" y2="302.3394" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="350,298.3394,340,302.3394,350,306.3394,346,302.3394"></polygon><text font-weight="bold" lengthAdjust="spacing" x="346" font-size="13" textLength="7" y="277.1101" font-family="Arial" fill="#000000">2</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="141" y="269.6357" font-family="Arial" fill="#000000">Existiert ein persistierter</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="101" y="284.5845" font-family="Arial" fill="#000000">Medikationsplan?</text><path d="M73,317.3394 L130,317.3394 L130,325.438 L120,335.438 L68,335.438 L68,322.3394 A5,5 0 0 1 73,317.3394 " style="stroke:#111827;stroke-width:1.5;" fill="#EEF2FF"></path><rect rx="5" ry="5" width="512" x="68" y="317.3394" style="stroke:#111827;stroke-width:2.0;" fill="none" height="381.1777"></rect><text font-weight="bold" lengthAdjust="spacing" x="83" font-size="14" textLength="17" y="331.4712" font-family="Arial" fill="#000000">alt</text><text font-weight="bold" lengthAdjust="spacing" x="145" font-size="14" textLength="276" y="332.4712" font-family="Arial" fill="#000000">[nein: kein Medikationsplan persistiert]</text><line y1="372.4341" x1="339" y2="372.4341" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="372.4341" x1="381" y2="385.4341" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="385.4341" x1="340" y2="385.4341" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="350,381.4341,340,385.4341,350,389.4341,346,385.4341"></polygon><text font-weight="bold" lengthAdjust="spacing" x="346" font-size="13" textLength="7" y="360.2048" font-family="Arial" fill="#000000">3</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="182" y="352.7305" font-family="Arial" fill="#000000">Erzeugt leeren Medikationsplan</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="211" y="367.6792" font-family="Arial" fill="#000000">List mit emptyReason = "notstarted"</text><line y1="444.2803" x1="339" y2="444.2803" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="444.2803" x1="381" y2="457.2803" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="457.2803" x1="340" y2="457.2803" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="350,453.2803,340,457.2803,350,461.2803,346,457.2803"></polygon><text font-weight="bold" lengthAdjust="spacing" x="346" font-size="13" textLength="7" y="424.5767" font-family="Arial" fill="#000000">4</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="59" y="409.6279" font-family="Arial" fill="#000000">Persistiert</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="98" y="424.5767" font-family="Arial" fill="#000000">Medikationsplan-</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="101" y="439.5254" font-family="Arial" fill="#000000">Collection Bundle</text><line y1="501.1777" x1="339" y2="501.1777" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="501.1777" x1="381" y2="514.1777" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><line y1="514.1777" x1="340" y2="514.1777" style="stroke:#111827;stroke-width:1.0;" x2="381"></line><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="350,510.1777,340,514.1777,350,518.1777,346,514.1777"></polygon><text font-weight="bold" lengthAdjust="spacing" x="346" font-size="13" textLength="7" y="488.9485" font-family="Arial" fill="#000000">5</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="131" y="481.4741" font-family="Arial" fill="#000000">Erzeugt Auslieferungs-</text><text lengthAdjust="spacing" x="357" font-size="13" textLength="101" y="496.4229" font-family="Arial" fill="#000000">Collection Bundle</text><path d="M255,532.1777 L255,564.1777 A5,5 0 0 0 260,569.1777 L407,569.1777 A5,5 0 0 0 412,564.1777 L412,537.1777 L402,527.1777 L260,527.1777 A5,5 0 0 0 255,532.1777 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#gmu87im2qkk9v0)"></path><path d="M402,527.1777 L402,534.6777 A2.5,2.5 0 0 0 404.5,537.1777 L412,537.1777 L402,527.1777 " style="stroke:#8B95A5;stroke-width:1.0;" fill="url(#gmu87im2qkk9v0)"></path><text lengthAdjust="spacing" x="261" font-size="14" textLength="136" y="545.3096" font-family="Arial" fill="#111827">Keine Transformation</text><text lengthAdjust="spacing" x="261" font-size="14" textLength="76" y="561.4082" font-family="Arial" fill="#111827">erforderlich.</text><polygon style="stroke:#111827;stroke-width:1.0;" fill="#111827" points="113,621.2212,103,625.2212,113,629.2212,109,625.2212"></polygon><line y1="625.2212" x1="107" y2="625.2212" style="stroke:#111827;stroke-width:1.0;" x2="333"></line><text font-weight="bold" lengthAdjust="spacing" x="119" font-size="13" textLength="7" y="605.5176" font-family="Arial" fill="#000000">6</text><text lengthAdjust="spacing" x="130" font-size="13" textLength="183" y="590.5688" font-family="Arial" fill="#000000">Auslieferungs-Collection Bundle</text><text lengthAdjust="spacing" x="130" font-size="13" textLength="187" y="605.5176" font-family="Arial" fill="#000000">(List.emptyReason = notstarted)</text><text lengthAdjust="spacing" x="130" font-size="13" textLength="42" y="620.4663" font-family="Arial" fill="#000000">+ ETag</text><line y1="634.2212" x1="68" y2="634.2212" style="stroke:#111827;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x2="580"></line><text font-weight="bold" lengthAdjust="spacing" x="73" font-size="14" textLength="223" y="647.353" font-family="Arial" fill="#000000">[ja: Medikationsplan persistiert]</text><rect rx="5" ry="5" width="320" x="75" y="651.3198" style="stroke:#000000;stroke-width:1.5;" fill="none" height="42.1973"></rect><path d="M80,651.3198 L140,651.3198 L140,659.3198 L130,669.3198 L75,669.3198 L75,656.3198 A5,5 0 0 1 80,651.3198 " style="stroke:#000000;stroke-width:2.0;" fill="#EEEEEE"></path><text font-weight="bold" lengthAdjust="spacing" x="88" font-size="14" textLength="20" y="666.4517" font-family="Arial" fill="#000000">ref</text><text lengthAdjust="spacing" x="157.5" font-size="14" textLength="155" y="686.4517" font-family="Arial" fill="#000000">Siehe Ablauf Plan-Read.</text>  <!-- SRC=[XLHjZzf64Fw-ls8AbTgg9R9DWFD9j38vNnhb1GJqIuLqMl2OssBMP7UTorsK_zvP0-UrpIaB7xmppyuyysg4oH3UIM44pm2LDfXb1XLyn4Jik16vr8UCIyP-qJiX3rpnFV2DoTN2FD9B_e0wtoDZbNQTgmJLcppB5NIzyhXQljbjLLx8v8H81_Rd8FGzJ_878RUGyaoZepazKvBu-QxH15DUPEOsb-OJtoDq8aNXT2uZ5k89mNzzMVaIxRyV3wWo8NSE88ul0VwHIVc1BVgJ_EkC9ucDBF3gyecRiq5vt9JAt21yOm2JPlRGmq7gzRg9duGuj0ZNqjKw7F31itHvBpOxYLg3JxAvaqsFxcTkregJ2j_thu8HoHQDkdnt6MhyNA3S75dEk39Y8mvScak1rG6jVYXF7TIkJ4jzhcfDuQGR858gVsW6LGhhUIb5bpm-Auw- -YHwIymFjHYVBHzLhNfX6fJHEIyhzu5Dwa_KZhPztam_JETtRs-YEn_eTFt1qBiAhhmBWA04XCEXDxff0MRHybtyQMajXCD9yBe5Y6PJA4_NkmtZcq7O1CGVuvkxsuW068w2Vh1Ece2xUVnlF5j2TvFqH_s0Xyqmfk-XvYCOD4tCvzDv2OZ3aTyF-ZG0vPw1OmQuXWvzWTzn4yCELR41QMTPcXQAFRh0RTIfXq0s2vFBOhz6nTXu335jl3tFn1Orp6ZFzUR84nYF6JkwxVrvDdiDi-bY2J_RRTXJXBBqn1TEatc4khHOER7v5ppHPz5Q5Iaj6jrSh9ez5GecoDKQXIdabg5Coe5dbODpPFLOpbANO_nLQ2DGKJQ415f9-dH7jP8Drt-HXynK1PBqv1fszc43wHe2HjrxqRLwmc9h84DKs3AnaX_80Em5CTiVp2FbMUSInj2XMBMXCcBIUS7ohFBU2gAtaZHQ6Mwi12OqQHd-W61Kw4nWYegohLzuJ_-gX2SB97kFjcENYkgMvcfVqh3UL5fESYOszw_i_Lp26f6o4wuRxblEL_9NcwbNzInLIVfj9N-7UCctbcE2pHvXZ25jvzfK_SUlVrXHXQdJhtzK8Iy4tYD4wunJ0p-Fo3bAUiQOm-BOxQHXx7y0] --></g></svg></div>
+
+<h5 id="relevante-elemente-list">Relevante Elemente (List)</h5>
+
+<pre><code class="language-JSON">AtElgaEmedListMedikationsplan
+    identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
+    status: current
+    mode: working
+    date: Datum der Erstellung durch die Fachanwendung
+    source: Intitiale Erstellung durch die Fachanwendung
+    emptyReason: notstarted    // noch keine Medikationsplaneinträge erfasst
+</code></pre>
+
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 14, 2026 08:56+0000">2026-07-14</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
