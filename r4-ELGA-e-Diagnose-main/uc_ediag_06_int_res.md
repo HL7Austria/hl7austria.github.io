@@ -20,7 +20,9 @@ Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyp
 Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:
 
 * **Gesamtansicht**: Abruf aller vorhandenen Diagnosen, Prozeduren oder Allergien und Intoleranzen eines Patienten.
-* **Gezielte Suche**: Einschränkung der Ergebnismenge durch Suchparameter, z. B. Suche nach bestimmten Diagnosen oder Ressourcen mit bestimmten Merkmalen.
+* **Gezielte Suche**: Einschränkung der Ergebnismenge durch Suchparameter, z. B. Suche nach bestimmten Diagnosen oder Ressourcen mit bestimmten Merkmalen. 
+* Mit der **gezielten Suche** kann auch der Verlauf einer Krankheit dargestellt werden, indem nach allen Ressourcen (eines Typs) gesucht wird, die denselben Business-Identifier haben.
+ 
 * **Auswahl für Folgeoperationen**: Ermittlung einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.
 
 #### Ablauf
@@ -36,7 +38,7 @@ Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwende
 
 Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert.
 
-Sollte die Diagnose als relevant gekennzeichnet gewesen sein, kann nur ein GDA diese aus der Liste der relevanten Einträge entfernen (siehe [Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen](uc_ediag_06_int_list.md#sub_uc_ediag_06_05---einträge-aus-einer-liste-entfernen)).
+Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.
 
 #### Ablauf
 
@@ -55,6 +57,7 @@ Sollte die Diagnose als relevant gekennzeichnet gewesen sein, kann nur ein GDA d
  
  
  
+* Die Fachanwendung erstellt eine neue Version der Liste, sollte die zu löschende Diagnose Teil der aktuellen Liste gewesen sein.
 
 ![](patient_delete.drawio.svg)
 

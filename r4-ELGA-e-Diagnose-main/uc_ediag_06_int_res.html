@@ -293,7 +293,11 @@ Lesen/Suchen nach bestimmten Diagnosen</p>
 <p>Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:</p>
 <ul>
   <li><strong>Gesamtansicht</strong>: Abruf aller vorhandenen Diagnosen, Prozeduren oder Allergien und Intoleranzen eines Patienten.</li>
-  <li><strong>Gezielte Suche</strong>: Einschränkung der Ergebnismenge durch Suchparameter, z. B. Suche nach bestimmten Diagnosen oder Ressourcen mit bestimmten Merkmalen.</li>
+  <li><strong>Gezielte Suche</strong>: Einschränkung der Ergebnismenge durch Suchparameter, z. B. Suche nach bestimmten Diagnosen oder Ressourcen mit bestimmten Merkmalen.
+    <ul>
+      <li>Mit der <strong>gezielten Suche</strong> kann auch der Verlauf einer Krankheit dargestellt werden, indem nach allen Ressourcen (eines Typs) gesucht wird, die denselben Business-Identifier haben.</li>
+    </ul>
+  </li>
   <li><strong>Auswahl für Folgeoperationen</strong>: Ermittlung einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.</li>
 </ul>
 
@@ -301,7 +305,7 @@ Lesen/Suchen nach bestimmten Diagnosen</p>
 
 <ol>
   <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.</li>
-  <li><a name="l406">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.md#Transaktionen">Transaktionen</a>.</li>
+  <li><a name="l415">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.md#Transaktionen">Transaktionen</a>.</li>
   <li>Optional können Suchparameter angegeben werden, um die Treffermenge einzuschränken.</li>
   <li>Die Fachanwendung führt die Suche anhand der angegebenen Kriterien durch.</li>
   <li>Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.</li>
@@ -312,12 +316,12 @@ Lesen/Suchen nach bestimmten Diagnosen</p>
 
 <p>Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert.</p>
 
-<p><a name="l434">​</a>Sollte die Diagnose als relevant gekennzeichnet gewesen sein, kann nur ein GDA diese aus der Liste der relevanten Einträge entfernen (siehe <a href="uc_ediag_06_int_list.md#sub_uc_ediag_06_05---einträge-aus-einer-liste-entfernen">Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen</a>).</p>
+<p>Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.</p>
 
 <h4 id="ablauf-1">Ablauf</h4>
 
 <ul>
-  <li><a name="l445">​</a>Um einen Eintrag zu löschen, führt der ELGA-Teilnehmer über das Portal ein <code class="language-plaintext highlighter-rouge">$list-read</code> oder ein <code class="language-plaintext highlighter-rouge">GET</code> auf die Gesamtmenge der Diagnosen aus (siehe 
+  <li><a name="l451">​</a>Um einen Eintrag zu löschen, führt der ELGA-Teilnehmer über das Portal ein <code class="language-plaintext highlighter-rouge">$list-read</code> oder ein <code class="language-plaintext highlighter-rouge">GET</code> auf die Gesamtmenge der Diagnosen aus (siehe 
 <a href="uc_ediag_06_int_list.md#read-search-von-diagnosen-prozeduren-sowie-allergien-und-intoleranzen">Read/Search von Diagnosen, Prozeduren sowie Allergien und Intoleranzen</a>) und markiert die zu löschenden Einträge.</li>
   <li>Durch Bestätigung wird die <code class="language-plaintext highlighter-rouge">$delete</code>-Operation ausgeführt.</li>
   <li>Die Fachanwendung bearbeitet die zu löschende Diagnose folgendermaßen:
@@ -339,12 +343,13 @@ Lesen/Suchen nach bestimmten Diagnosen</p>
       </li>
     </ul>
   </li>
+  <li>Die Fachanwendung erstellt eine neue Version der Liste, sollte die zu löschende Diagnose Teil der aktuellen Liste gewesen sein.</li>
 </ul>
 
 <p><a href="patient_delete.drawio.svg"><img src="patient_delete.drawio.svg" alt="overview" style="width: 60%"/></a></p>
 
 <h3 id="sub_uc_ediag_06_09---diagnosen-prozeduren-sowie-allergien-und-intoleranzen-erfassen">Sub_UC_eDiag_06_09 - Diagnosen, Prozeduren sowie Allergien und Intoleranzen erfassen</h3>
-<p><a name="l530">​</a>Der GDA erfasst neue Diagnosen, Prozeduren sowie Allergien und Intoleranzen über die e-Diagnose Fachanwendung, siehe <a href="transaction.md#Transaktionen">Transaktionen</a>.<br/></p>
+<p><a name="l539">​</a>Der GDA erfasst neue Diagnosen, Prozeduren sowie Allergien und Intoleranzen über die e-Diagnose Fachanwendung, siehe <a href="transaction.md#Transaktionen">Transaktionen</a>.<br/></p>
 
 <h4 id="ablauf-2">Ablauf</h4>
 <ol>
@@ -365,12 +370,12 @@ aus und übermittelt die neue Ressource an die e-Diagnose Fachanwendung.</li>
 <h3 id="sub_uc_ediag_06_10---diagnosen-prozeduren-sowie-allergien-und-intoleranzen-stornieren">Sub_UC_eDiag_06_10 - Diagnosen, Prozeduren sowie Allergien und Intoleranzen stornieren</h3>
 <p>Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose als relevant gekennzeichnet ist oder nicht.</p>
 
-<p><a name="l677">​</a>Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden (siehe <a href="uc_ediag_06_int_list.md#sub_uc_ediag_06_05---einträge-aus-einer-liste-entfernen">Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen</a>).</p>
+<p><a name="l686">​</a>Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden (siehe <a href="uc_ediag_06_int_list.md#sub_uc_ediag_06_05---einträge-aus-einer-liste-entfernen">Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen</a>).</p>
 
 <h4 id="ablauf-3">Ablauf</h4>
 
 <ul>
-  <li><a name="l688">​</a>Um einen Eintrag zu stornieren, führt der GDA ein <code class="language-plaintext highlighter-rouge">$list-read</code> oder ein <code class="language-plaintext highlighter-rouge">GET</code> auf die Gesamtmenge der Diagnosen aus (siehe 
+  <li><a name="l697">​</a>Um einen Eintrag zu stornieren, führt der GDA ein <code class="language-plaintext highlighter-rouge">$list-read</code> oder ein <code class="language-plaintext highlighter-rouge">GET</code> auf die Gesamtmenge der Diagnosen aus (siehe 
 <a href="uc_ediag_06_int_list.md#read-search-von-diagnosen-prozeduren-sowie-allergien-und-intoleranzen">Read/Search von Diagnosen, Prozeduren sowie Allergien und Intoleranzen</a>) und markiert die zu stornierenden Einträge.</li>
   <li>Durch Bestätigung wird die <code class="language-plaintext highlighter-rouge">$storno</code>-Operation ausgeführt.</li>
   <li>Die Fachanwendung bearbeitet die zu stornierende Diagnose folgendermaßen:
@@ -401,7 +406,7 @@ aus und übermittelt die neue Ressource an die e-Diagnose Fachanwendung.</li>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Jul 15, 2026 12:32+0000">2026-07-15</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Jul 15, 2026 14:55+0000">2026-07-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

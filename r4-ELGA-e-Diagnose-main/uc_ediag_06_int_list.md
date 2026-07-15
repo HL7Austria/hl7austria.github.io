@@ -127,11 +127,9 @@ Der GDA kann die Reihenfolge der Listeinträge ändern. Die Einträge selbst ble
 
 ### Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen
 
-Die Referenz auf die Ressource wird aus der Liste entfernt (removed). Die referenzierte Ressource bleibt unverändert bestehen. Die Fachanwendung entfernt die Kennzeichnung als relevant (meta.tag = relevant).
+Die Referenz auf die Ressource wird aus der Liste entfernt (removed). Die referenzierte Ressource bleibt unverändert bestehen. Die Fachanwendung entfernt die Kennzeichnung als relevant (meta.tag = not-relevant).
 
 #### Ablauf
-
-List.entry wird entfernt, die referenzierte Ressource bleibt bestehen.
 
 ### Sub_UC_eDiag_06_08 - Liste durch ELGA-Teilnehmer:in löschen
 
