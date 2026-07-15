@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="At-Ediag-Journey-01-Bundle-Liste-Tx"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-bundle-liste-tx"/>
+  </meta>
+  <type value="transaction"/>
+  <timestamp value="2026-03-01T08:10:00+00:00"/>
+  <entry>
+    <fullUrl value="urn:uuid:3b2f7c16-1c47-4c08-a4ef-9b4d8c7c5f12"/>
+    <resource>
+      <List>
+        <id value="ListExample02"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="List_ListExample02"> </a><p class="res-header-id"><b>Generated Narrative: List ListExample02</b></p><a name="ListExample02"> </a><a name="hcListExample02"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-elga-ediag-list.html">AT ELGA e-Diagnose List</a></p></div><table class="clstu"><tr><td>Date: 2026-03-01 00:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Problem list - Reported </td></tr><tr><td>Subject: <a href="Patient-PatientExample.html">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: </td></tr></table><table class="grid"><tr style="backgound-color: #eeeeee"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href="Condition-DiagnoseCurrentlyRelevantExample.html">Condition Hypothyroidism</a></td><td>Neuer Planeintrag</td></tr></table></div>
+        </text>
+        <identifier>
+          <system value="urn:ietf:rfc:3986"/>
+          <value value="urn:uuid:list-02"/>
+        </identifier>
+        <status value="current"/>
+        <mode value="working"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="11450-4"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/PatientExample"/>
+        </subject>
+        <date value="2026-03-01T00:00:00+00:00"/>
+        <source>
+          <reference value="Practitioner/PractitionerExample"/>
+        </source>
+        <entry>
+          <flag>
+            <coding>
+              <system value="https://fhir.hl7.at/elga/core/r4/CodeSystem/ElgaListEntryFlagCS"/>
+              <code value="new"/>
+            </coding>
+          </flag>
+          <item>
+            <reference value="Condition/DiagnoseCurrentlyRelevantExample"/>
+          </item>
+        </entry>
+      </List>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="List"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:9c1f1d2a-aaaa-bbbb-cccc-123456789abc"/>
+    <resource>
+      <Condition>
+        <id value="DiagnoseCurrentlyRelevantExample"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+          <tag>
+            <system value="https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-diagnose-type"/>
+            <code value="relevant"/>
+            <display value="currently relevant"/>
+          </tag>
+        </meta>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_DiagnoseCurrentlyRelevantExample"> </a><p class="res-header-id"><b>Generated Narrative: Condition DiagnoseCurrentlyRelevantExample</b></p><a name="DiagnoseCurrentlyRelevantExample"> </a><a name="hcDiagnoseCurrentlyRelevantExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-elga-ediag-condition.html">AT ELGA e-Diagnose Condition</a></p><p style="margin-bottom: 0px">Tag: <a href="CodeSystem-at-ediag-codesystem-diagnose-type.html">currently relevant (Details: AT e-Diagnose Diagnose Typ code relevant = 'currently relevant')</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: false</p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 40930008}">Hypothyroidism</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2024-06-01</p><p><b>recordedDate</b>: 2026-03-01 00:00:00+0000</p><p><b>recorder</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut eingestellt.</p>
+</div></blockquote></div>
+        </text>
+        <extension url="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported">
+          <valueBoolean value="false"/>
+        </extension>
+        <clinicalStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+          </coding>
+        </clinicalStatus>
+        <verificationStatus>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+          </coding>
+        </verificationStatus>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="40930008"/>
+            <display value="Hypothyroidism"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/PatientExample"/>
+        </subject>
+        <onsetDateTime value="2024-06-01"/>
+        <recordedDate value="2026-03-01T00:00:00+00:00"/>
+        <recorder>
+          <reference value="Practitioner/PractitionerExample"/>
+        </recorder>
+        <asserter>
+          <reference value="Practitioner/PractitionerExample"/>
+        </asserter>
+        <note>
+          <text value="Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut eingestellt."/>
+        </note>
+      </Condition>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Condition"/>
+    </request>
+  </entry>
+</Bundle>
