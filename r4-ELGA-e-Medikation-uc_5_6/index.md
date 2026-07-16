@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-07-14T09:07:25+00:00",
+  "date" : "2026-07-16T16:15:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -729,6 +729,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-bundle-medikationsplan.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-bundle-medikationsplan"
@@ -742,6 +746,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-dosierung.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-dosage-dosierung"
@@ -754,6 +762,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-list-medikationsplan.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-list-medikationsplan"
@@ -767,6 +779,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-medication-medikation.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medication-medikation"
@@ -780,6 +796,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
@@ -793,6 +813,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
@@ -806,6 +830,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
@@ -819,6 +847,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-substance-wirkstoff.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-substance-wirkstoff"
@@ -832,6 +864,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-timing.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-timing"
@@ -844,6 +880,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-bundle-medikationsplantx.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-bundle-medikationsplantx"
@@ -857,6 +897,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-At-Emed-Example-Durchgefuehrte-Abgabe-01.html"
       }],
       "reference" : {
         "reference" : "MedicationDispense/At-Emed-Example-Durchgefuehrte-Abgabe-01"
@@ -869,6 +913,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Example-Mr-Planeintrag.html"
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Example-Mr-Planeintrag"
@@ -881,6 +929,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Substance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Substance-At-Emed-Example-Substance-Clotrimazol.html"
       }],
       "reference" : {
         "reference" : "Substance/At-Emed-Example-Substance-Clotrimazol"
@@ -893,6 +945,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Substance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Substance-At-Emed-Example-Substance-Hydrocortison.html"
       }],
       "reference" : {
         "reference" : "Substance/At-Emed-Example-Substance-Hydrocortison"
@@ -905,6 +961,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-01-Bundle-Medikationsplan"
@@ -917,6 +977,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Device"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Device-At-Emed-Example-Device-01.html"
       }],
       "reference" : {
         "reference" : "Device/At-Emed-Example-Device-01"
@@ -929,6 +993,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-At-Emed-Journey-01-List-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "List/At-Emed-Journey-01-List-Medikationsplan"
@@ -941,6 +1009,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan"
@@ -953,6 +1025,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-02-Bundle-Medikationsplan"
@@ -965,6 +1041,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-At-Emed-Example-Medication-Magistral-01.html"
       }],
       "reference" : {
         "reference" : "Medication/At-Emed-Example-Medication-Magistral-01"
@@ -977,6 +1057,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-At-Emed-Journey-02-List-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "List/At-Emed-Journey-02-List-Medikationsplan"
@@ -989,6 +1073,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.html"
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01"
@@ -1001,6 +1089,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html"
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"
@@ -1013,6 +1105,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-02-Bundle-Tx-Medikationsplan"
@@ -1025,6 +1121,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe.html"
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe"
@@ -1037,6 +1137,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan"
@@ -1049,6 +1153,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-At-Emed-Journey-05-a-List-Reihenfolge.html"
       }],
       "reference" : {
         "reference" : "List/At-Emed-Journey-05-a-List-Reihenfolge"
@@ -1061,6 +1169,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx"
@@ -1073,6 +1185,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan"
@@ -1085,6 +1201,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-At-Emed-Journey-05-b-List-Aenderung.html"
       }],
       "reference" : {
         "reference" : "List/At-Emed-Journey-05-b-List-Aenderung"
@@ -1097,6 +1217,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan"
@@ -1109,6 +1233,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.html"
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-05-b-Mr-Planeintrag-01"
@@ -1121,6 +1249,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-At-Emed-Example-Organization-Apo-01.html"
       }],
       "reference" : {
         "reference" : "Organization/At-Emed-Example-Organization-Apo-01"
@@ -1133,6 +1265,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-At-Emed-Example-Patient-01.html"
       }],
       "reference" : {
         "reference" : "Patient/At-Emed-Example-Patient-01"
@@ -1145,6 +1281,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-At-Emed-Example-Practitioner-01.html"
       }],
       "reference" : {
         "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
@@ -1157,6 +1297,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-At-Emed-Example-Practitioner-02.html"
       }],
       "reference" : {
         "reference" : "Practitioner/At-Emed-Example-Practitioner-02"
@@ -1169,6 +1313,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Example-Mr-Geplante-Abgabe.html"
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Example-Mr-Geplante-Abgabe"
@@ -1181,6 +1329,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-AtElgaEmed.List.PlanRead.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/AtElgaEmed.List.PlanRead"
@@ -1193,6 +1345,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-AtElgaEmed.List.PlanWrite.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/AtElgaEmed.List.PlanWrite"
@@ -1205,6 +1361,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-DurchgefuehrteAbgabeStatusVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/DurchgefuehrteAbgabeStatusVS"
@@ -1217,6 +1377,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-DurchgefuehrteAbgabeTypVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/DurchgefuehrteAbgabeTypVS"
@@ -1229,6 +1393,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-GeplanteAbgabeStatusVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/GeplanteAbgabeStatusVS"
@@ -1241,6 +1409,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-MedicationRequestCategoryCS.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/MedicationRequestCategoryCS"
@@ -1253,6 +1425,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-MedicationRequestCategoryVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/MedicationRequestCategoryVS"
@@ -1265,6 +1441,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-MedikationsplaneintragStatusVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/MedikationsplaneintragStatusVS"
@@ -1277,6 +1457,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ElgaListEmptyReasonVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/ElgaListEmptyReasonVS"
@@ -1289,6 +1473,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ElgaListStatusVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/ElgaListStatusVS"
@@ -1301,6 +1489,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ElgaListEntryFlagCS.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/ElgaListEntryFlagCS"
@@ -1313,6 +1505,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ElgaListEntryFlagVS.html"
       }],
       "reference" : {
         "reference" : "ValueSet/ElgaListEntryFlagVS"
@@ -1325,6 +1521,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-emed-operation-groupidentifier-prescription-search.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/at-emed-operation-groupidentifier-prescription-search"
@@ -1337,6 +1537,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-emed-operation-groupidentifier-create.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/at-emed-operation-groupidentifier-create"

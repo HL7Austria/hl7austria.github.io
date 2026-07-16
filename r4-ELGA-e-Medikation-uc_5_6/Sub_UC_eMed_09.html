@@ -319,17 +319,33 @@ width: 100%;}
 
 <p>Erfolgt der Zugriff über den <em>e-Med GroupIdentifier</em> (z.B. codiert auf dem Papierrezept), kann der GDA ausschließlich <em>Durchgeführte Abgaben</em> in der e-Medikation speichern, die sich auf die dem <em>e-Med GroupIdentifier</em> zugeordneten Geplanten Abgaben beziehen.</p>
 
-  <!-- #### Variante A: Zugriff mittels e-card
+<h4 id="variante-a-zugriff-mittels-kontaktbestätigung">Variante A: Zugriff mittels Kontaktbestätigung</h4>
 
-<br>
+<p>In Arbeit.
+  <!-- <br>
 [![overview](plantuml/UC_eMed_09_01_a.svg){: .mx-auto style="width:80%;"}](plantuml/UC_eMed_09_01_a.svg)
-<br>
+<br> --></p>
 
-#### Variante B: Zugriff mittels e-Rezept
+  <!-- darf jede zulässige MedicationDispense schreiben
+OTC möglich
+Referenz auf Planeintrag optional
+Referenz auf geplante Abgabe optional -->
 
-<br>
+<h4 id="variante-b-zugriff-mittels-e-med-groupidentifier">Variante B: Zugriff mittels e-Med GroupIdentifier</h4>
+
+<p>In Arbeit.
+  <!-- <br>
 [![overview](plantuml/UC_eMed_09_01_a.svg){: .mx-auto style="width:80%;"}](plantuml/UC_eMed_09_01_b.svg)
-<br> -->
+<br> --> –&gt;</p>
+
+  <!-- Custom Operation $groupidentifier-search
+liefert ausschließlich offene geplante Abgaben dieses GroupIdentifiers
+es dürfen ausschließlich MedicationDispense erzeugt werden,
+die sich auf eine dieser geplanten Abgaben beziehen,
+und denselben GroupIdentifier besitzen.
+OTC nicht zulässig.
+kein Zugriff auf Medikationsplan.
+keine weiteren Suchoperationen. -->
 
 <h3 id="ablauf">Ablauf</h3>
 
@@ -396,7 +412,7 @@ wird je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt. Der Status der 
 
 <p>Eine Teilabgabe liegt vor, wenn die in der <em>Geplanten Abgabe</em> verordneten Arzneimenge nicht vollständig abgegeben wird, weil nur ein Teil der verordneten Arzneimenge eingelöst werden soll oder kann.</p>
 
-<p><a name="l667">​</a>Sonderfälle von Teilabgaben sind Besorgerprozess (siehe <a href="sub_uc_emed_09_01_03---besorgerprozess">Sub_UC_eMed_09_01_03 - Besorgerprozess</a>) und Leerabgabe (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05-leerabgabe-erfassen">Sub_UC_eMed_09_01_05 Leerabgabe erfassen</a>).</p>
+<p><a name="l684">​</a>Sonderfälle von Teilabgaben sind Besorgerprozess (siehe <a href="sub_uc_emed_09_01_03---besorgerprozess">Sub_UC_eMed_09_01_03 - Besorgerprozess</a>) und Leerabgabe (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01_05-leerabgabe-erfassen">Sub_UC_eMed_09_01_05 Leerabgabe erfassen</a>).</p>
 
 <p>Für jede Teilabgabe <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> erstellt werden. Dabei gelten folgende Regeln:</p>
 <ul>
@@ -525,7 +541,7 @@ Dieser Einlösevorgang ist damit beendet.</li>
 
 <h3 id="sub_uc_emed_09_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_09_02 - Durchgeführte Abgabe verwerfen</h3>
 
-<p><a name="l1107">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
+<p><a name="l1124">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
 
 <p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, führt der GDA POST $dispense-discard aus:</p>
 <ul>
@@ -590,7 +606,7 @@ Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 14, 2026 09:07+0000">2026-07-14</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Jul 16, 2026 16:15+0000">2026-07-16</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
