@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-07-15T14:55:56+00:00",
+  "date" : "2026-07-16T09:23:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -676,6 +676,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-allergyintolerance-codes.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-ediag-allergyintolerance-codes"
@@ -688,6 +692,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-at-ediag-codesystem-diagnose-type.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/at-ediag-codesystem-diagnose-type"
@@ -700,6 +708,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-diagnosen-codes.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-ediag-diagnosen-codes"
@@ -712,6 +724,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-diagnosen-type.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-ediag-diagnosen-type"
@@ -724,6 +740,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-procedure-status.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-ediag-procedure-status"
@@ -736,6 +756,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-prozeduren-codes.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-ediag-prozeduren-codes"
@@ -748,6 +772,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-reaction-time-vs.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-ediag-reaction-time-vs"
@@ -760,6 +788,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-allergyintolerance.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-allergyintolerance"
@@ -772,6 +804,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-bundle-liste-cl.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-bundle-liste-cl"
@@ -784,6 +820,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-condition.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-condition"
@@ -796,6 +836,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-list.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-list"
@@ -808,6 +852,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-procedure.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-procedure"
@@ -820,6 +868,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-bundle-liste-tx.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-bundle-liste-tx"
@@ -832,6 +884,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-reaction-time.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-reaction-time"
@@ -844,6 +900,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-reported.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-elga-ediag-reported"
@@ -856,6 +916,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "AllergyIntolerance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AllergyIntolerance-AllergyExample.html"
       }],
       "reference" : {
         "reference" : "AllergyIntolerance/AllergyExample"
@@ -868,6 +932,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Device"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Device-DeviceExample.html"
       }],
       "reference" : {
         "reference" : "Device/DeviceExample"
@@ -880,6 +948,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-DiagnoseCurrentlyRelevantExample.html"
       }],
       "reference" : {
         "reference" : "Condition/DiagnoseCurrentlyRelevantExample"
@@ -892,6 +964,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-DiagnoseNotCurrentlyRelevantExample.html"
       }],
       "reference" : {
         "reference" : "Condition/DiagnoseNotCurrentlyRelevantExample"
@@ -904,6 +980,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListExample01.html"
       }],
       "reference" : {
         "reference" : "List/ListExample01"
@@ -916,6 +996,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Ediag-Journey-01-Bundle-Liste-Cl.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Ediag-Journey-01-Bundle-Liste-Cl"
@@ -928,6 +1012,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Ediag-Journey-01-Bundle-Liste-Tx.html"
       }],
       "reference" : {
         "reference" : "Bundle/At-Ediag-Journey-01-Bundle-Liste-Tx"
@@ -940,6 +1028,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-PatientExample.html"
       }],
       "reference" : {
         "reference" : "Patient/PatientExample"
@@ -952,6 +1044,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-PractitionerExample.html"
       }],
       "reference" : {
         "reference" : "Practitioner/PractitionerExample"
@@ -964,6 +1060,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ProcedureExample.html"
       }],
       "reference" : {
         "reference" : "Procedure/ProcedureExample"
@@ -976,6 +1076,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-ediag-operation-listread.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/at-ediag-operation-listread"
@@ -988,6 +1092,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-ediag-operation-listwrite.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/at-ediag-operation-listwrite"
@@ -1000,6 +1108,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListExample02.html"
       }],
       "reference" : {
         "reference" : "List/ListExample02"
@@ -1011,6 +1123,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-list-code-vs.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-ediag-list-code-vs"
@@ -1023,6 +1139,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-at-ediag-codesystem-reaction-time-cs.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/at-ediag-codesystem-reaction-time-cs"
@@ -1123,19 +1243,19 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "uc_ediag_06_int_list.html"
+          "valueUrl" : "uc_ediag_01_lesen.html"
         }],
-        "nameUrl" : "uc_ediag_06_int_list.html",
-        "title" : "Interaktionen mit Listenressourcen",
+        "nameUrl" : "uc_ediag_01_lesen.html",
+        "title" : "Lesen",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "uc_ediag_06_int_res.html"
+          "valueUrl" : "uc_ediag_02_schreiben.html"
         }],
-        "nameUrl" : "uc_ediag_06_int_res.html",
-        "title" : "Interaktionen mit fachlichen Einzelressourcen",
+        "nameUrl" : "uc_ediag_02_schreiben.html",
+        "title" : "Schreiben",
         "generation" : "markdown"
       }]
     },

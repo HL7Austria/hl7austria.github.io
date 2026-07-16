@@ -1,15 +1,13 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Interaktionen mit Listenressourcen - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Lesen - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* **Interaktionen mit Listenressourcen**
+* **Lesen**
 
-## Interaktionen mit Listenressourcen
+## Lesen
 
-ToDo: Wording Liste, eDiagnosenliste,…
+# Lesen
 
-Listenressourcen bilden die organisatorische Struktur der e-Diagnose und dienen der Zusammenstellung fachlicher Einzelressourcen zu den Kategorien Diagnosen, Prozeduren sowie Allergien und Intoleranzen. Die Zugehörigkeit zu einer Liste bestimmt die fachliche Relevanz einer Ressource (meta.tag=relevant). Die nachfolgenden Sub-Use-Cases beschreiben die Initialisierung und Verwaltung dieser Listen sowie das Aufnehmen, Entfernen und Umordnen von Einträgen. Fachliche Änderungen an Diagnosen, Prozeduren sowie Allergien und Intoleranzen erfolgen ausschließlich über die jeweiligen Einzelressourcen.
-
-### List-History-Read
+### Sub_UC_eDiag_01_01 - Vergangene Versionen einer Liste abrufen (List-History-Read)
 
 Der History Read dient ausschließlich der Anzeige historischer Versionen einer Liste. Die Fachanwendung stellt bereits persistierte historische Collection Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Liste.
 
@@ -27,7 +25,7 @@ Dieses**Search-Bundle**enthält:
 Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inhalten durch die Fachanwendung.
  Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktueller oder historischer Listversionen.
 
-#### Sequenzdiagramm List History Read
+#### Sequenzdiagramm
 
 **Beispiele für Zugriffe mittels Suchparameter:**
 
@@ -40,8 +38,8 @@ List Read dient dem **Abruf der Liste und der Vorbereitung einer nachfolgenden �
 
 #### Ablauf
 
-1. Der GDA führt einen**POST $list-read**auf das Search-Bundle aus, dass die Liste mit allen zugehörigen relevanten Ressourcen enthält.
-1. Die Fachanwendung**prüft auf Existenz**der Liste für die angegebene Patientin bzw. den angegebenen Patienten.
+1. Der GDA führt einen**POST $list-read**aus.
+1. Die Fachanwendung**prüft auf Existenz**der Liste/n für die angegebene Patientin bzw. den angegebenen Patienten.
 1. Ist keine Liste vorhanden, wird dieser erstellt siehe Liste-initialisieren und
 1. eine leere Liste mit dem emptyReason notstarted wird zurückgeliefert.
 1. Existiert bereits eine Liste, wird von der Fachanwendung aus diesem ein Search-Bundle zur Auslieferung bereitgestellt. Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
@@ -63,16 +61,16 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 #### Ablauf
 
-1. Der GDA übermittelt via**POST $ListWrite**die aktualisierte Liste als**List Bundle**:
+1. Der GDA übermittelt via**POST $list-write**die aktualisierte Liste als**List Bundle**:
 * alle **neuen und geänderten und zu entfernenden Ressourcen** sind **inline** im Bundle enthalten,
 * alle **unveränderten Ressourcen** werden nur **referenziert**.
 
 1. Die Fachanwendung prüft, ob der übermittelte**List.identifier**mit dem List.identifier der temporär gespeicherten Listenversion**übereinstimmt**(d.h. es wurde zwischenzeitlich kein anderer Schreibvorgang durchgeführt).
-1. Stimmt der List.identifier nicht überein, lehnt die Fachanwendung das Speichern ab. Es muss erneut ein List Read ausgeführt werden. Die Änderungen sind anschließend auf Basis der aktuellen Listversion erneut vorzunehmen und zu speichern.
+1. Stimmt der List.identifier nicht überein, lehnt die Fachanwendung das Speichern ab. Es muss erneut ein List-Read ausgeführt werden. Die Änderungen sind anschließend auf Basis der aktuellen Listversion erneut vorzunehmen und zu speichern.
 1. Ist die Prüfung erfolgreich, validiert die Fachanwendung die neue Liste und stellt sicher, dass keine unzulässigen Zustandsübergänge vorgenommen wurden.
 1. Bei erfolgreicher Validierung:
 * werden die übermittelten Änderungen in die Ressourcen übernommen,
-* und auf Basis der aktualisierten Ressource erstellt die Fachanwendung ein neues Collection Bundle, das als **neue Lsite persistiert** wird.
+* und auf Basis der aktualisierten Ressource erstellt die Fachanwendung ein neue Version der Liste als eigene List-Instanz, die als **neue Liste persistiert** wird.
 
 1. Der GDA erhält eine Meldung, dass die Liste erfolgreich aktualisiert wurde.
 
@@ -82,14 +80,14 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 #### Ablauf
 
-1. **GDA 1**führt einen**POST $ListRead**auf die Liste einer Patientin bzw. eines Patienten durch.
+1. **GDA 1**führt einen**POST $list-read**auf die Liste einer Patientin bzw. eines Patienten durch.
 1. Die Fachanwendung prüft, ob eine Liste existiert.
 1. Die Fachanwendung liefert die aktuelle Liste als**Collection Bundl**mit dem aktuellen**List.identifier**„123" an GDA 1 aus.
 1. **GDA 1**beginnt mit der**fachlichen Bearbeitung**der Liste.
-1. Währenddessen führt**GDA 2**ebenfalls ein**List Read**auf dieselbe Liste durch.
+1. Währenddessen führt**GDA 2**ebenfalls ein**List-Read**auf dieselbe Liste durch.
 1. Die Fachanwendung liefert auch an GDA 2 die aktuelle Liste mit dem List.identifier „123" aus.
 1. GDA 2 bearbeitet die Liste.
-1. GDA 2 sendet zuerst mittels**POST $ListWrite**ein Transaction Bundle mit den vorgenommenen Änderungen.
+1. GDA 2 sendet zuerst mittels**POST $list-write**ein Transaction Bundle mit den vorgenommenen Änderungen.
 1. Die Fachanwendung prüft, ob der im Transaction Bundle enthaltene**List.identifier**mit dem aktuellen List.identifier der zuletzt gespeicherten Liste übereinstimmt.
 1. Die Prüfung verläuft erfolgreich, da beide den Wert „123" besitzen.
 1. Die Fachanwendung validiert die übermittelten Änderungen und prüft insbesondere, ob keine unzulässigen Zustandsübergänge vorliegen.
@@ -101,39 +99,32 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 1. Die Prüfung schlägt fehl, da die aktuelle Liste mittlerweile den List.identifier „124" besitzt.
 1. Die Fachanwendung lehnt das Speichern ab.
 1. GDA 1 erhält eine Fehlermeldung, dass zwischenzeitlich eine neuere Version der Liste gespeichert wurde.
-1. GDA 1 muss erneut einen**POST $ListRead**durchführen, die zwischenzeitlich vorgenommenen Änderungen prüfen und gegebenenfalls in die aktuelle Version übernehmen, bevor ein neuer Schreibvorgang erfolgen kann.
+1. GDA 1 muss erneut einen**POST $list-read**durchführen, die zwischenzeitlich vorgenommenen Änderungen prüfen und gegebenenfalls in die aktuelle Version übernehmen, bevor ein neuer Schreibvorgang erfolgen kann.
 
 #### Sequenzdiagramm Abgelehnter List Write
 
-### Sub_UC_eDiag_06_01 - Nach Initialisierung leere Liste bestätigen
+### Read/Search von Diagnosen, Prozeduren sowie Allergien und Intoleranzen
 
-ToDo: Die Überprüfung aus diesem UC wird bereits bei List-Read durchgeführt. Teil des ELGA Core. emptyReason #nilknown. Im eDiag wir müssen zusätzlich angeben welcher ListType es ist. Eine leere Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine relevanten Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von relevanten Einträgen und ist von einer noch nicht befüllten Liste zu unterscheiden.
+Read/Search ermöglicht den lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden.
 
-### Sub_UC_eDiag_06_02 - Bestehende Ressource in eine Liste aufnehmen
+Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.
 
-Nach dem Erfassen einer neuen medizinischen Ressource [Sub_UC_eDiag_06_09](uc_ediag_06_int_res.md#sub-uc-ediag-06-09) kann diese in eine Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
+#### Anwendungsbeispiele
 
-#### Ablauf
+Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:
 
-### Sub_UC_eDiag_06_03 - Bestehende relevante Listeinträge fachlich bearbeiten
-
-TODo: Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann.
-
-#### Ablauf
-
-### Sub_UC_eDiag_06_04 - Reihenfolge von Listeinträge ändern
-
-Der GDA kann die Reihenfolge der Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. Evtl. auch in den ELGA Core mitnehmen.
-
-### Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen
-
-Die Referenz auf die Ressource wird aus der Liste entfernt (removed). Die referenzierte Ressource bleibt unverändert bestehen. Die Fachanwendung entfernt die Kennzeichnung als relevant (meta.tag = not-relevant).
+* **Gesamtansicht**: Abruf aller vorhandenen Diagnosen, Prozeduren oder Allergien und Intoleranzen eines Patienten.
+* **Gezielte Suche**: Einschränkung der Ergebnismenge durch Suchparameter, z. B. Suche nach bestimmten Diagnosen oder Ressourcen mit bestimmten Merkmalen. 
+* Mit der **gezielten Suche** kann auch der Verlauf einer Krankheit dargestellt werden, indem nach allen Ressourcen (eines Typs) gesucht wird, die denselben Business-Identifier haben.
+ 
+* **Auswahl für Folgeoperationen**: Ermittlung einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.
 
 #### Ablauf
 
-### Sub_UC_eDiag_06_08 - Liste durch ELGA-Teilnehmer:in löschen
-
-Der ELGA-Teilnehmer kann via ELGA-Portal eine aktuelle, einzelne oder alle historischen Versionen einer Liste unwiderruflich löschen.
-
-Hierfür markiert der Patient die zu löschende Liste und führt über das Portal ein `DELETE` aus, mit dem Resultat, dass die ausgewählten Listen durch die Fachanwendung gelöscht werden.
+1. Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.
+1. Der GDA oder ELGA-Teilnehmer führt ein**GET**auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe[Transaktionen](transaction.md#Transaktionen).
+1. Optional können Suchparameter angegeben werden, um die Treffermenge einzuschränken.
+1. Die Fachanwendung führt die Suche anhand der angegebenen Kriterien durch.
+1. Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.
+1. Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein Search-Bundle ohne Einträge zurückgeliefert.
 

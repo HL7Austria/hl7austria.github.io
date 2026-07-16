@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type | *Version*:0.1.0 | |
-| Active as of 2026-07-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagDiagnosisTypeVS |
+| Active as of 2026-07-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagDiagnosisTypeVS |
 
  
 ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuell relevant ist. 
@@ -53,7 +53,7 @@ ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuel
   "title" : "AT e-Diagnose Diagnosis Type Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-15T14:55:56+00:00",
+  "date" : "2026-07-16T09:23:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
