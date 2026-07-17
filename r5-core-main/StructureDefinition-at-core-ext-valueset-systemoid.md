@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-valueset-systemoid | *Version*:2.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:SystemOID |
+| Active as of 2026-07-17 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:SystemOID |
 
 HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from. The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines.
 
@@ -21,7 +21,7 @@ HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to ref
 
 * Use this Extension: [HL7® AT Core ValueSet Profile](StructureDefinition-at-core-valueset.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r5|current/StructureDefinition/at-core-ext-valueset-systemoid)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-ext-valueset-systemoid.json)
 
 ### Formal Views of Extension Content
 
@@ -50,7 +50,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-valueset
   "name" : "SystemOID",
   "title" : "System OID",
   "status" : "active",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-address | *Version*:2.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreAddress |
+| Active as of 2026-07-17 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreAddress |
 
  
 HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.md). 
@@ -18,7 +18,7 @@ HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extens
 
 * Use this DataType Profile: [HL7® AT Core ExtendedContactDetail Profile](StructureDefinition-at-core-extendedContactDetail.md), [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md), [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md) and [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r5|current/StructureDefinition/at-core-address)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-address.json)
 
 ### Formal Views of Profile Content
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-address.csv)
   "name" : "HL7ATCoreAddress",
   "title" : "HL7® AT Core Address Profile",
   "status" : "active",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

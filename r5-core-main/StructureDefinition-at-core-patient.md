@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-patient | *Version*:2.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePatient |
+| Active as of 2026-07-17 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePatient |
 
  
 HL7® Austria FHIR® Core Profile for patient data in Austria. The HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems. 
@@ -18,7 +18,7 @@ HL7® Austria FHIR® Core Profile for patient data in Austria. The HL7® AT Core
 
 * Examples for this Profile: [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample02-deceasedTime](Patient-HL7ATCorePatientExample02-deceasedTime.md), [Patient/HL7ATCorePatientExample03-deceasedBoolean](Patient-HL7ATCorePatientExample03-deceasedBoolean.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md)... Show 3 more, [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md) and [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r5|current/StructureDefinition/at-core-patient)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-patient.json)
 
 ### Formal Views of Profile Content
 
@@ -50,7 +50,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

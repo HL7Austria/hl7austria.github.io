@@ -25,7 +25,7 @@ Alexander Robert Wolfesberger Male, DoB: 1961-12-24 ( Social Security number: 11
 * Heimstrasse 1 Wien 1220 AUT 
 * [+43.664.12345678](tel:+43.664.12345678)
  |
-| [Patient Religion](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-religion.html) | Römisch-Katholisch |
+| [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Römisch-Katholisch |
 
 
 

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-municipalityCode | *Version*:2.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
+| Active as of 2026-07-17 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
 
 HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address
 
@@ -22,7 +22,7 @@ HL7® Austria FHIR® Core Extension for the municipality code part of the Austri
 * Use this Extension: [HL7® AT Core Address Profile](StructureDefinition-at-core-address.md)
 * Examples for this Extension: [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r5|current/StructureDefinition/at-core-ext-address-municipalityCode)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-ext-address-municipalityCode.json)
 
 ### Formal Views of Extension Content
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
   "name" : "AddressMunicipalityCode",
   "title" : "Address Municipality Code",
   "status" : "active",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

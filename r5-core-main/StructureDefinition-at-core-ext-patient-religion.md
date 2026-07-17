@@ -19,9 +19,9 @@
 
 **Usages:**
 
-* This Extension is not used by any profiles in this Implementation Guide
+* This Extension is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r5|current/StructureDefinition/at-core-ext-patient-religion)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-ext-patient-religion.json)
 
 ### Formal Views of Extension Content
 
@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-patient-
   "name" : "PatientReligion",
   "title" : "Patient Religion",
   "status" : "retired",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

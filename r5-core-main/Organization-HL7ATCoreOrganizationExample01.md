@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.0.1/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.3, `urn:oid:1.2.40.0.34.4.10`/K101, `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.2.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.3, `urn:oid:1.2.40.0.34.4.10`/K101, `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
 
 **type**: Allgemeine Krankenanstalt
 

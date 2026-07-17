@@ -21,7 +21,7 @@ Max Musterperson Other, DoB: 1960-01-01 ( Social Security number: 6789010160)
 * [+436500987654321](tel:+436500987654321)
 * Eine Strasse 15 Tür 42 Linz Oberösterreich 4020 AUT (home)
  |
-| [Patient Religion](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-religion.html) | Konfessionslos |
+| [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Konfessionslos |
 | Patient Citizenship: | * code: Österreich
  |
 

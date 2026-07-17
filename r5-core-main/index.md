@@ -7,7 +7,7 @@
 
 ### Introduction
 
-> This is the implementation guide for the **Core Profiles (v2.1.0: [STU](https://www.hl7.org/fhir/versions.html) 3)** based on HL7® FHIR® R5. It is a **ballot** implementation guide that is hosted on the [HL7® Austria github project](https://github.com/HL7Austria). The most recent version of this implementation guide can be found at the [HL7® Austria FHIR® Website](http://fhir.at).
+> This is the implementation guide for the **Core Profiles (v2.1.0: [STU](https://www.hl7.org/fhir/versions.html) 3)** based on HL7® FHIR® R5. It is a **ballot** implementation guide that is hosted on the [HL7® Austria github project](https://github.com/HL7Austria). The most recent version of this implementation guide can be found at the [HL7® Austria FHIR® Website](https://fhir.hl7.at/).
 
 This implementation guide is provided to support the use of FHIR® in Austria.
 
@@ -58,7 +58,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -86,7 +86,7 @@ This Implementation Guide contains and references intellectual property owned by
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.0.1"
+    "version" : "7.2.0"
   },
   {
     "id" : "hl7ext",
@@ -96,17 +96,21 @@ This Implementation Guide contains and references intellectual property owned by
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r5",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   }],
   "definition" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r5#0.9.0"
+      "valueCode" : "hl7.fhir.uv.tools.r5#1.1.2"
     }],
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-address-additionalInformation.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-address-additionalInformation"
@@ -119,6 +123,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-address-municipalityCode.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-address-municipalityCode"
@@ -131,6 +139,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-gender-administrativeGenderAddition.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-gender-administrativeGenderAddition"
@@ -143,6 +155,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-HL7ATCoreLocationGraz.html"
       }],
       "reference" : {
         "reference" : "Location/HL7ATCoreLocationGraz"
@@ -156,6 +172,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-HL7ATCoreLocationLinz.html"
       }],
       "reference" : {
         "reference" : "Location/HL7ATCoreLocationLinz"
@@ -169,6 +189,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-HL7ATCoreOrganizationExample01.html"
       }],
       "reference" : {
         "reference" : "Organization/HL7ATCoreOrganizationExample01"
@@ -182,6 +206,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-HL7ATCoreOrganizationExample02-MultipleVPNR.html"
       }],
       "reference" : {
         "reference" : "Organization/HL7ATCoreOrganizationExample02-MultipleVPNR"
@@ -195,6 +223,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample01.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample01"
@@ -208,6 +240,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample02-deceasedTime.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample02-deceasedTime"
@@ -221,6 +257,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample03-deceasedBoolean.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample03-deceasedBoolean"
@@ -234,6 +274,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample04-Full.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample04-Full"
@@ -247,6 +291,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample05-FullElga.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample05-FullElga"
@@ -260,6 +308,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample06-GenderExtension.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample06-GenderExtension"
@@ -273,6 +325,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample07-MunicipalityCode.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample07-MunicipalityCode"
@@ -286,6 +342,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-HL7ATCorePractitionerExample01.html"
       }],
       "reference" : {
         "reference" : "Practitioner/HL7ATCorePractitionerExample01"
@@ -299,6 +359,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-HL7ATCorePractitionerRoleExample01.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/HL7ATCorePractitionerRoleExample01"
@@ -312,6 +376,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-address.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-address"
@@ -324,6 +392,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-extendedContactDetail.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-extendedContactDetail"
@@ -336,6 +408,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-location.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-location"
@@ -348,6 +424,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-organization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-organization"
@@ -360,6 +440,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-patient.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-patient"
@@ -372,6 +456,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-practitioner.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-practitioner"
@@ -384,6 +472,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-practitionerRole.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-practitionerRole"
@@ -396,6 +488,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-valueset.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-valueset"
@@ -408,6 +504,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-patient-religion.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-patient-religion"
@@ -420,6 +520,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-valueset-systemoid.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-valueset-systemoid"

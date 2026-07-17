@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization | *Version*:2.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreOrganization |
+| Active as of 2026-07-17 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreOrganization |
 
  
 HL7® Austria FHIR® Core Profile for organization data in Austria. 
@@ -26,7 +26,7 @@ The goal of this profile is to cover all kind of organizations that are active i
 * Refer to this Profile: [HL7® AT Core ExtendedContactDetail Profile](StructureDefinition-at-core-extendedContactDetail.md), [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md) and [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
 * Examples for this Profile: [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md) and [Landeskrankenhaus Hall in Tirol](Organization-HL7ATCoreOrganizationExample02-MultipleVPNR.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r5|current/StructureDefinition/at-core-organization)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-organization.json)
 
 ### Formal Views of Profile Content
 
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-organization
   "name" : "HL7ATCoreOrganization",
   "title" : "HL7® AT Core Organization Profile",
   "status" : "active",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

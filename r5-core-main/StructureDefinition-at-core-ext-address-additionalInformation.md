@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-address-additionalInformation | *Version*:2.1.0 | |
-| Active as of 2026-03-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressAdditionalInformation |
+| Active as of 2026-07-17 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressAdditionalInformation |
 
 HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address.
 
@@ -22,7 +22,7 @@ HL7® Austria FHIR® Core Extension for the additional information part of the A
 * Use this Extension: [HL7® AT Core Address Profile](StructureDefinition-at-core-address.md)
 * Examples for this Extension: [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md), [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md), [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md)... Show 3 more, [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md) and [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r5|current/StructureDefinition/at-core-ext-address-additionalInformation)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-ext-address-additionalInformation.json)
 
 ### Formal Views of Extension Content
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
   "name" : "AddressAdditionalInformation",
   "title" : "Address Additional Information",
   "status" : "active",
-  "date" : "2026-03-01T19:31:53+00:00",
+  "date" : "2026-07-17T05:18:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
