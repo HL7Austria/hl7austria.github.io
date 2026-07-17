@@ -71,7 +71,7 @@ Below are some representative IGs that belong to this category:
   "name" : "HL7AustriaReferenceIG",
   "title" : "HL7 Austria Reference IG",
   "status" : "draft",
-  "date" : "2026-07-13T05:22:13+00:00",
+  "date" : "2026-07-17T05:11:09+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
