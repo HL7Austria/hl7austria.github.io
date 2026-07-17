@@ -1,7 +1,7 @@
 ELGAeDiagnoseR4 : Validation Results
 =========================================
 
-err = 0, warn = 51, info = 25
+err = 3, warn = 53, info = 27
 $--
 Generated $--. FHIR version $-- for hl7.at.fhir.elga.ediag.r4#$-- (canonical = https://fhir.hl7.at/elga/ediag/r4)
  Build Errors : 18 / 5 / 0
@@ -25,9 +25,11 @@ Generated $--. FHIR version $-- for hl7.at.fhir.elga.ediag.r4#$-- (canonical = h
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-bundle-liste-cl : 0 / 0 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-bundle-liste-tx : 0 / 0 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-condition : 0 / 2 / 2
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-ext-entered-in-error : 3 / 1 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-list : 0 / 5 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-procedure : 0 / 6 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-reaction-time : 0 / 0 / 2
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-reference : 0 / 1 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-reported : 0 / 1 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/ValueSet-at-ediag-allergyintolerance-codes : 0 / 1 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/ValueSet-at-ediag-diagnosen-codes : 0 / 1 / 1
@@ -127,6 +129,12 @@ INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-bundle-lis
 WARNING: StructureDefinition/at-elga-ediag-condition: StructureDefinition.differential.element[2].binding: The definition for the element 'Condition.meta.tag' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type' which is experimental, but this structure is not labeled as experimental
 WARNING: StructureDefinition/at-elga-ediag-condition: StructureDefinition.snapshot.element[11].binding: The definition for the element 'Condition.meta.tag' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type' which is experimental, but this structure is not labeled as experimental
 INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-condition could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== fsh-generated/resources/StructureDefinition-at-elga-ediag-ext-entered-in-error.json ==
+ERROR: StructureDefinition/at-elga-ediag-ext-entered-in-error: StructureDefinition.context[0]: The element https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition#Condition is not valid
+ERROR: StructureDefinition/at-elga-ediag-ext-entered-in-error: StructureDefinition.context[1]: The element https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure#Procedure is not valid
+ERROR: StructureDefinition/at-elga-ediag-ext-entered-in-error: StructureDefinition.context[2]: The element https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance#AllergyIntolerance is not valid
+INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-ext-entered-in-error could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: StructureDefinition.where(url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-at-elga-ediag-list.json ==
 WARNING: StructureDefinition/at-elga-ediag-list: StructureDefinition.differential.element[4].binding: The definition for the element 'List.code' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-code-vs' which is experimental, but this structure is not labeled as experimental
 WARNING: StructureDefinition/at-elga-ediag-list: StructureDefinition.snapshot.element[10].binding: The definition for the element 'List.status' binds to the value set 'https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListStatusVS' which is experimental, but this structure is not labeled as experimental
@@ -136,14 +144,17 @@ WARNING: StructureDefinition/at-elga-ediag-list: StructureDefinition.snapshot.el
 INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-list could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-at-elga-ediag-procedure.json ==
 WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.differential.element[2].binding: The definition for the element 'Procedure.meta.tag' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type' which is experimental, but this structure is not labeled as experimental
-WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.differential.element[10].binding: The definition for the element 'Procedure.status' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-status' which is experimental, but this structure is not labeled as experimental
-WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.differential.element[13].binding: The definition for the element 'Procedure.code' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-prozeduren-codes' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.differential.element[11].binding: The definition for the element 'Procedure.status' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-status' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.differential.element[14].binding: The definition for the element 'Procedure.code' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-prozeduren-codes' which is experimental, but this structure is not labeled as experimental
 WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.snapshot.element[11].binding: The definition for the element 'Procedure.meta.tag' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type' which is experimental, but this structure is not labeled as experimental
-WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.snapshot.element[24].binding: The definition for the element 'Procedure.status' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-status' which is experimental, but this structure is not labeled as experimental
-WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.snapshot.element[27].binding: The definition for the element 'Procedure.code' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-prozeduren-codes' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.snapshot.element[25].binding: The definition for the element 'Procedure.status' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-status' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/at-elga-ediag-procedure: StructureDefinition.snapshot.element[28].binding: The definition for the element 'Procedure.code' binds to the value set 'https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-prozeduren-codes' which is experimental, but this structure is not labeled as experimental
 INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-procedure could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-at-elga-ediag-reaction-time.json ==
 INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-reaction-time could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+== fsh-generated/resources/StructureDefinition-at-elga-ediag-reference.json ==
+INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-reference could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+WARNING: StructureDefinition.where(url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reference'): The Implementation Guide contains no examples for this data type profile
 == fsh-generated/resources/StructureDefinition-at-elga-ediag-reported.json ==
 WARNING: StructureDefinition/at-elga-ediag-reported: StructureDefinition.context[0]: Review the extension type for at-elga-ediag-reported: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-reported could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)

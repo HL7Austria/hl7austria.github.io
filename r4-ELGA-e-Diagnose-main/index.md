@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-07-16T09:23:28+00:00",
+  "date" : "2026-07-17T06:35:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -867,6 +867,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-reference.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-ediag-reference"
+      },
+      "name" : "AT ELGA e-Diagnose Reference",
+      "description" : "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -878,6 +894,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT ELGA e-Diagnose Transaction Bundle",
       "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf die Liste bestehend aus und klinischen KOntextressourcen",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-ext-entered-in-error.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-ediag-ext-entered-in-error"
+      },
+      "name" : "AT ELGA Entered In Error",
+      "description" : "Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde.",
       "exampleBoolean" : false
     },
     {

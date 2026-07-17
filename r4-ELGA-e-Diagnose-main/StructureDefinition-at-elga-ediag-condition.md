@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition | *Version*:0.1.0 | |
-| Active as of 2026-07-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
+| Active as of 2026-07-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
 
  
 Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-07-16T09:23:28+00:00",
+  "date" : "2026-07-17T06:35:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -146,6 +146,17 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported"]
+      }]
+    },
+    {
+      "id" : "Condition.extension:entered-in-error",
+      "path" : "Condition.extension",
+      "sliceName" : "entered-in-error",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error"]
       }]
     },
     {

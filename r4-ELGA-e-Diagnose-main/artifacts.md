@@ -29,12 +29,21 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md) | Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
 | [AT ELGA e-Diagnose Transaction Bundle](StructureDefinition-at-elga-ediag-bundle-liste-tx.md) | Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf die Liste bestehend aus und klinischen KOntextressourcen |
 
+### Structures: Data Type Profiles 
+
+These define constraints on FHIR data types for systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [AT ELGA e-Diagnose Reference](StructureDefinition-at-elga-ediag-reference.md) | Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
+
 ### Structures: Extension Definitions 
 
 These define constraints on FHIR data types for systems conforming to this implementation guide.
 
 | | |
 | :--- | :--- |
+| [AT ELGA Entered In Error](StructureDefinition-at-elga-ediag-ext-entered-in-error.md) | Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde. |
 | [AT ELGA Reaktionszeit](StructureDefinition-at-elga-ediag-reaction-time.md) | Zeitlicher Verlauf der Manifestation (<6h, 6-24h, >24h, unknown) |
 | [AT ELGA Reported (Fremdangabe)](StructureDefinition-at-elga-ediag-reported.md) | Kennzeichnet, ob eine Information fremdberichtet ist (z. B. vom Patienten oder Dritten). |
 
