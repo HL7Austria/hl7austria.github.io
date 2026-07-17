@@ -80,7 +80,7 @@ In Arbeit.
 
 #### Sub_UC_eMed_06_03 - Medikationsplaneintrag in Medikationsplan hinzufügen
 
-Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen. Dabei muss er dokumentieren, ob die Verordnung von ihm selbst stammt oder er Fremdmedikation oder Selbstmedikation des Patienten dokumentiert.
+Der GDA kann dem Medikationsplan ein oder mehrere Medikationsplaneinträge hinzufügen. Dabei muss er dokumentieren, ob die Verordnung von ihm selbst stammt oder er Fremdmedikation oder Eigenmedikation des Patienten dokumentiert.
 
 Hierfür führt der GDA ein **$plan-read** aus und bearbeitet das von der Fachanwendung übermittelte Collection Bundle:
 

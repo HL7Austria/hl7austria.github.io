@@ -14,6 +14,14 @@ Erfolgt die Autorisierung des ELGA-Teilnehmers mittels Kontaktbestätigung (z. B
 
 Erfolgt der Zugriff über den **e-Med GroupIdentifier** (z.B. codiert auf dem Papierrezept), kann der GDA ausschließlich **Durchgeführte Abgaben** in der e-Medikation speichern, die sich auf die dem **e-Med GroupIdentifier** zugeordneten Geplanten Abgaben beziehen.
 
+#### Variante A: Zugriff mittels Kontaktbestätigung
+
+In Arbeit. 
+
+#### Variante B: Zugriff mittels e-Med GroupIdentifier
+
+In Arbeit.  –>
+
 ### Ablauf
 
 Der GDA dokumentiert die Durchgeführte Abgabe wie folgt:
