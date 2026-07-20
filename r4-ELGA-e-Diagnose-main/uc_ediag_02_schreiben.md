@@ -11,6 +11,54 @@ ToDo: Wording Liste, eDiagnosenliste,…
 
 Listenressourcen bilden die organisatorische Struktur der e-Diagnose und dienen der Zusammenstellung fachlicher Einzelressourcen zu den Kategorien Diagnosen, Prozeduren sowie Allergien und Intoleranzen. Die Zugehörigkeit zu einer Liste bestimmt die fachliche Relevanz einer Ressource (meta.tag=relevant). Die nachfolgenden Sub-Use-Cases beschreiben die Initialisierung und Verwaltung dieser Listen sowie das Aufnehmen, Entfernen und Umordnen von Einträgen. Fachliche Änderungen an Diagnosen, Prozeduren sowie Allergien und Intoleranzen erfolgen ausschließlich über die jeweiligen Einzelressourcen.
 
+### Liste aktualisieren (List-Write)
+
+List Write ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](interactions.md#list-read) erfolgen darf.
+
+#### Ablauf
+
+1. Der GDA übermittelt via**POST $list-write**die aktualisierte Liste als**List Bundle**:
+* alle **neuen und geänderten und zu entfernenden Ressourcen** sind **inline** im Bundle enthalten,
+* alle **unveränderten Ressourcen** werden nur **referenziert**.
+
+1. Die Fachanwendung prüft, ob der übermittelte**List.identifier**mit dem List.identifier der temporär gespeicherten Listenversion**übereinstimmt**(d.h. es wurde zwischenzeitlich kein anderer Schreibvorgang durchgeführt).
+1. Stimmt der List.identifier nicht überein, lehnt die Fachanwendung das Speichern ab. Es muss erneut ein List-Read ausgeführt werden. Die Änderungen sind anschließend auf Basis der aktuellen Listversion erneut vorzunehmen und zu speichern.
+1. Ist die Prüfung erfolgreich, validiert die Fachanwendung die neue Liste und stellt sicher, dass keine unzulässigen Zustandsübergänge vorgenommen wurden.
+1. Bei erfolgreicher Validierung:
+* werden die übermittelten Änderungen in die Ressourcen übernommen,
+* und auf Basis der aktualisierten Ressource erstellt die Fachanwendung ein neue Version der Liste als eigene List-Instanz, die als **neue Liste persistiert** wird.
+
+1. Der GDA erhält eine Meldung, dass die Liste erfolgreich aktualisiert wurde.
+
+#### Sequenzdiagramm
+
+### Abgelehnter List Write
+
+#### Ablauf
+
+1. **GDA 1**führt einen**POST $list-read**auf die Liste einer Patientin bzw. eines Patienten durch.
+1. Die Fachanwendung prüft, ob eine Liste existiert.
+1. Die Fachanwendung liefert die aktuelle Liste als**Collection Bundl**mit dem aktuellen**List.identifier**„123" an GDA 1 aus.
+1. **GDA 1**beginnt mit der**fachlichen Bearbeitung**der Liste.
+1. Währenddessen führt**GDA 2**ebenfalls ein**List-Read**auf dieselbe Liste durch.
+1. Die Fachanwendung liefert auch an GDA 2 die aktuelle Liste mit dem List.identifier „123" aus.
+1. GDA 2 bearbeitet die Liste.
+1. GDA 2 sendet zuerst mittels**POST $list-write**ein Transaction Bundle mit den vorgenommenen Änderungen.
+1. Die Fachanwendung prüft, ob der im Transaction Bundle enthaltene**List.identifier**mit dem aktuellen List.identifier der zuletzt gespeicherten Liste übereinstimmt.
+1. Die Prüfung verläuft erfolgreich, da beide den Wert „123" besitzen.
+1. Die Fachanwendung validiert die übermittelten Änderungen und prüft insbesondere, ob keine unzulässigen Zustandsübergänge vorliegen.
+1. Die Änderungen werden übernommen und eine neue Version der Liste wird persistiert.
+1. Dabei wird ein neuer List.identifier erzeugt, beispielsweise „124".
+1. GDA 2 erhält eine Meldung, dass die Aktualisierung erfolgreich durchgeführt wurde.
+1. Anschließend sendet GDA 1 mittels**POST $ListWrite**seine ebenfalls auf Basis des ursprünglichen List.identifier „123" vorgenommenen Änderungen.
+1. Die Fachanwendung prüft erneut den übermittelten List.identifier gegen die aktuell persistierte Diagnosenliste.
+1. Die Prüfung schlägt fehl, da die aktuelle Liste mittlerweile den List.identifier „124" besitzt.
+1. Die Fachanwendung lehnt das Speichern ab.
+1. GDA 1 erhält eine Fehlermeldung, dass zwischenzeitlich eine neuere Version der Liste gespeichert wurde.
+1. GDA 1 muss erneut einen**POST $list-read**durchführen, die zwischenzeitlich vorgenommenen Änderungen prüfen und gegebenenfalls in die aktuelle Version übernehmen, bevor ein neuer Schreibvorgang erfolgen kann.
+
+#### Sequenzdiagramm Abgelehnter List Write
+
 ### Sub_UC_eDiag_06_01 - Nach Initialisierung leere Liste bestätigen
 
 ToDo: Die Überprüfung aus diesem UC wird bereits bei List-Read durchgeführt. Teil des ELGA Core. emptyReason #nilknown. Im eDiag wir müssen zusätzlich angeben welcher ListType es ist. Eine leere Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine relevanten Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von relevanten Einträgen und ist von einer noch nicht befüllten Liste zu unterscheiden.
