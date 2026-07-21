@@ -5,9 +5,9 @@
 
 ## Lesen
 
-# Lesen
+# UC-01-Lesen
 
-Dieses Kapitel beschreibt die lesenden Zugriffe auf Listen sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verf체gung. 
+Dieses Kapitel beschreibt die lesenden Zugriffe auf Listen sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verf체gung.
 
 ### Sub_UC_eDiag_01_01 - Vergangene Versionen einer Liste abrufen (List-History-Read)
 
@@ -42,8 +42,7 @@ List Read dient dem **Abruf der Liste und der Vorbereitung einer nachfolgenden �
 
 1. Der GDA f체hrt einen**POST $list-read**aus.
 1. Die Fachanwendung**pr체ft auf Existenz**der Liste/n f체r die angegebene Patientin bzw. den angegebenen Patienten.
-1. Ist keine Liste vorhanden, wird dieser erstellt siehe Liste-initialisieren und
-1. eine leere Liste mit dem emptyReason notstarted wird zur체ckgeliefert.
+1. Ist keine Liste vorhanden, wird dieser erstellt siehe Liste-initialisieren, siehe[Schreiben](uc_ediag_02_schreiben.md#nach-intialisierung-leere-liste-best채tigen)und eine leere Liste mit dem emptyReason notstarted wird zur체ckgeliefert.
 1. Existiert bereits eine Liste, wird von der Fachanwendung aus diesem ein Search-Bundle zur Auslieferung bereitgestellt. Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
 * Falls der vorherige GDA neue Listeneintr채ge hinzugef체gt hat (List.entry.flag hat den Wert **new**), werden diese auf **unchanged** gesetzt.
 
@@ -52,7 +51,7 @@ List Read dient dem **Abruf der Liste und der Vorbereitung einer nachfolgenden �
 * Falls der vorherige GDA **alle vorhandenen Eintr채ge** mit removed gekennzeichnet hat, wird List.emptyReason mit **nilknown** zur체ckgeliefert, um nachfolgenden GDA zu signalisieren, dass der Patient zum Zeitpunkt des letzten Schreibens keine Eintr채ge hatte.
 
 
-1. Die Fachanwendung liefert an den GDA die Liste und alle referenzierten Ressourcen.
+1. Die Fachanwendung liefert an den GDA die Liste inkl. ETag f체r[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)und alle referenzierten Ressourcen.
 1. Ziel ist ein neutraler, weiterbearbeitbarer Zustand f체r den abrufenden GDA.
 
 #### Sequenzdiagramm

@@ -195,7 +195,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p>  <!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#lesen" id="markdown-toc-lesen">Lesen</a>    <ul>
+  <li><a href="#uc-01-lesen" id="markdown-toc-uc-01-lesen">UC-01-Lesen</a>    <ul>
       <li><a href="#sub_uc_ediag_01_01---vergangene-versionen-einer-liste-abrufen-list-history-read" id="markdown-toc-sub_uc_ediag_01_01---vergangene-versionen-einer-liste-abrufen-list-history-read">Sub_UC_eDiag_01_01 - Vergangene Versionen einer Liste abrufen (List-History-Read)</a></li>
       <li><a href="#sub_uc_ediag_01_02---liste-und-zugehörige-ressourcen-abrufen-list-read" id="markdown-toc-sub_uc_ediag_01_02---liste-und-zugehörige-ressourcen-abrufen-list-read">Sub_UC_eDiag_01_02 - Liste und zugehörige Ressourcen abrufen (List-Read)</a></li>
       <li><a href="#sub_ucediag_01_03---diagnosen-prozeduren-sowie-allergien-und-intoleranzen-als-einzelressource-lesen-und-suchen-readsearch" id="markdown-toc-sub_ucediag_01_03---diagnosen-prozeduren-sowie-allergien-und-intoleranzen-als-einzelressource-lesen-und-suchen-readsearch">Sub_UC:eDiag_01_03 - Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen und suchen (Read/Search)</a></li>
@@ -204,11 +204,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<h1 id="lesen">Lesen</h1>
-<p>Dieses Kapitel beschreibt die lesenden Zugriffe auf Listen sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.
-  <!-- ToDo: Lesen - Standardoperation plan.read - get.search mit suchparameter? Wir brauchen einen Standardfall lesen und ich habe den Fall dass ich einen tiefgang machen möchte und diese lesen will. 
-Lesen der Gesamtliste
-Lesen/Suchen nach bestimmten Diagnosen --></p>
+<h1 id="uc-01-lesen">UC-01-Lesen</h1>
+<p>Dieses Kapitel beschreibt die lesenden Zugriffe auf Listen sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.</p>
 
 <h3 id="sub_uc_ediag_01_01---vergangene-versionen-einer-liste-abrufen-list-history-read">Sub_UC_eDiag_01_01 - Vergangene Versionen einer Liste abrufen (List-History-Read)</h3>
 <p>Der History Read dient ausschließlich der Anzeige historischer Versionen einer Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Liste.</p>
@@ -254,8 +251,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 <ol>
   <li>Der GDA führt einen <strong>POST $list-read</strong> aus.</li>
   <li>Die Fachanwendung <strong>prüft auf Existenz</strong> der Liste/n für die angegebene Patientin bzw. den angegebenen Patienten.</li>
-  <li>Ist keine Liste vorhanden, wird dieser erstellt siehe Liste-initialisieren und</li>
-  <li>eine leere Liste mit dem emptyReason notstarted wird zurückgeliefert.</li>
+  <li><a name="l591">​</a>Ist keine Liste vorhanden, wird dieser erstellt siehe Liste-initialisieren, siehe <a href="uc_ediag_02_schreiben.html#nach-intialisierung-leere-liste-bestätigen">Schreiben</a> und eine leere Liste mit dem emptyReason notstarted wird zurückgeliefert.</li>
   <li>Existiert bereits eine Liste, wird von der Fachanwendung aus diesem ein Search-Bundle zur Auslieferung bereitgestellt. Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
     <ul>
       <li>Falls der vorherige GDA neue Listeneinträge hinzugefügt hat (List.entry.flag hat den Wert <strong>new</strong>), werden diese auf <strong>unchanged</strong> gesetzt.<br/></li>
@@ -263,7 +259,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
       <li>Falls der vorherige GDA <strong>alle vorhandenen Einträge</strong> mit removed gekennzeichnet hat, wird List.emptyReason mit <em>nilknown</em> zurückgeliefert, um nachfolgenden GDA zu signalisieren, dass der Patient zum Zeitpunkt des letzten Schreibens keine Einträge hatte.<br/></li>
     </ul>
   </li>
-  <li>Die Fachanwendung liefert an den GDA die Liste und alle referenzierten Ressourcen.</li>
+  <li>Die Fachanwendung liefert an den GDA die Liste inkl. ETag für <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a> und alle referenzierten Ressourcen.</li>
   <li>Ziel ist ein neutraler, weiterbearbeitbarer Zustand für den abrufenden GDA.</li>
 </ol>
 
@@ -293,7 +289,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <ol>
   <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.</li>
-  <li><a name="l861">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
+  <li><a name="l863">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
   <li>Optional können Suchparameter angegeben werden, um die Treffermenge einzuschränken.</li>
   <li>Die Fachanwendung führt die Suche anhand der angegebenen Kriterien durch.</li>
   <li>Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.</li>
@@ -318,7 +314,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 20, 2026 14:28+0000">2026-07-20</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 21, 2026 08:19+0000">2026-07-21</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

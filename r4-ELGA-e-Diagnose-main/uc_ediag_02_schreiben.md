@@ -5,15 +5,13 @@
 
 ## Schreiben
 
-# Schreiben
+# UC-02-Schreiben
 
-ToDo: Wording Liste, eDiagnosenliste,…
+Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. Im Mittelpunkt stehen die Aktualisierung von Listen sowie die Erfassung, Zuordnung, Entfernung, Stornierung und Löschung von Diagnosen, Prozeduren oder Allergien und Intoleranzen.
 
-Listenressourcen bilden die organisatorische Struktur der e-Diagnose und dienen der Zusammenstellung fachlicher Einzelressourcen zu den Kategorien Diagnosen, Prozeduren sowie Allergien und Intoleranzen. Die Zugehörigkeit zu einer Liste bestimmt die fachliche Relevanz einer Ressource (meta.tag=relevant). Die nachfolgenden Sub-Use-Cases beschreiben die Initialisierung und Verwaltung dieser Listen sowie das Aufnehmen, Entfernen und Umordnen von Einträgen. Fachliche Änderungen an Diagnosen, Prozeduren sowie Allergien und Intoleranzen erfolgen ausschließlich über die jeweiligen Einzelressourcen.
+### Sub_UC_eDiag_02_01 - Liste aktualisieren (List-Write)
 
-### Liste aktualisieren (List-Write)
-
-List Write ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](interactions.md#list-read) erfolgen darf.
+List Write ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [Lesen](uc_ediag_01_lesen.md#list-read) erfolgen darf.
 
 #### Ablauf
 
@@ -21,8 +19,8 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 * alle **neuen und geänderten und zu entfernenden Ressourcen** sind **inline** im Bundle enthalten,
 * alle **unveränderten Ressourcen** werden nur **referenziert**.
 
-1. Die Fachanwendung prüft, ob der übermittelte**List.identifier**mit dem List.identifier der temporär gespeicherten Listenversion**übereinstimmt**(d.h. es wurde zwischenzeitlich kein anderer Schreibvorgang durchgeführt).
-1. Stimmt der List.identifier nicht überein, lehnt die Fachanwendung das Speichern ab. Es muss erneut ein List-Read ausgeführt werden. Die Änderungen sind anschließend auf Basis der aktuellen Listversion erneut vorzunehmen und zu speichern.
+1. Die Fachanwendung prüft anhand des im HTTP-Header übermittelten**ETag**, siehe auch[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)ob die vom GDA bearbeitete Listenversion noch der aktuellen Version entspricht.
+1. Stimmen die ETags nicht überein, lehnt die Fachanwendung den Schreibvorgang ab. Der GDA muss erneut ein $list-read durchführen und seine Änderungen auf Basis der aktuellen Listversion erneut vornehmen.
 1. Ist die Prüfung erfolgreich, validiert die Fachanwendung die neue Liste und stellt sicher, dass keine unzulässigen Zustandsübergänge vorgenommen wurden.
 1. Bei erfolgreicher Validierung:
 * werden die übermittelten Änderungen in die Ressourcen übernommen,
@@ -32,16 +30,16 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 #### Sequenzdiagramm
 
-### Abgelehnter List Write
+### Sub_UC_eDiag_02_01 - Abgelehnter List Write
 
 #### Ablauf
 
 1. **GDA 1**führt einen**POST $list-read**auf die Liste einer Patientin bzw. eines Patienten durch.
 1. Die Fachanwendung prüft, ob eine Liste existiert.
-1. Die Fachanwendung liefert die aktuelle Liste als**Collection Bundl**mit dem aktuellen**List.identifier**„123" an GDA 1 aus.
+1. Die Fachanwendung liefert die aktuelle Liste als**List Bundle**mit dem aktuellen**ETag**„123" an GDA 1 aus.
 1. **GDA 1**beginnt mit der**fachlichen Bearbeitung**der Liste.
 1. Währenddessen führt**GDA 2**ebenfalls ein**List-Read**auf dieselbe Liste durch.
-1. Die Fachanwendung liefert auch an GDA 2 die aktuelle Liste mit dem List.identifier „123" aus.
+1. Die Fachanwendung liefert auch an GDA 2 die aktuelle Liste mit dem ETag „123" aus.
 1. GDA 2 bearbeitet die Liste.
 1. GDA 2 sendet zuerst mittels**POST $list-write**ein Transaction Bundle mit den vorgenommenen Änderungen.
 1. Die Fachanwendung prüft, ob der im Transaction Bundle enthaltene**List.identifier**mit dem aktuellen List.identifier der zuletzt gespeicherten Liste übereinstimmt.
@@ -57,7 +55,7 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 1. GDA 1 erhält eine Fehlermeldung, dass zwischenzeitlich eine neuere Version der Liste gespeichert wurde.
 1. GDA 1 muss erneut einen**POST $list-read**durchführen, die zwischenzeitlich vorgenommenen Änderungen prüfen und gegebenenfalls in die aktuelle Version übernehmen, bevor ein neuer Schreibvorgang erfolgen kann.
 
-#### Sequenzdiagramm Abgelehnter List Write
+#### Sequenzdiagramm
 
 ### Sub_UC_eDiag_06_01 - Nach Initialisierung leere Liste bestätigen
 
