@@ -251,11 +251,11 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 <ol>
   <li>Der GDA führt einen <strong>POST $list-read</strong> aus.</li>
   <li>Die Fachanwendung <strong>prüft auf Existenz</strong> der Liste/n für die angegebene Patientin bzw. den angegebenen Patienten.</li>
-  <li>Ist keine Liste vorhanden, wird dieser erstellt und eine leere Liste mit dem emptyReason notstarted, siehe <a href="uc_ediag_02_schreiben.html#">Leere Liste</a> wird zurückgeliefert.</li>
+  <li>Ist keine Liste vorhanden, wird dieser erstellt und eine leere Liste mit dem emptyReason notstarted wird zurückgeliefert.</li>
   <li>Existiert bereits eine Liste, wird von der Fachanwendung aus diesem ein Search-Bundle zur Auslieferung bereitgestellt. Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
     <ul>
       <li>Falls der vorherige GDA neue Listeneinträge hinzugefügt hat (List.entry.flag hat den Wert <strong>new</strong>), werden diese auf <strong>unchanged</strong> gesetzt.<br/></li>
-      <li><a name="l611">​</a>Falls der vorherige GDA Listenneinträge beendet hat (deren List.entry.flag haben den Wert <strong>removed</strong>), werden diese Einträge aus der Liste <strong>entfernt</strong>, siehe <a href="workflowmanagement.html#auswirkung-derzugriffsart-auf-list-entry-flag">Workflowmanagement</a>.<br/></li>
+      <li><a name="l608">​</a>Falls der vorherige GDA Listenneinträge beendet hat (deren List.entry.flag haben den Wert <strong>removed</strong>), werden diese Einträge aus der Liste <strong>entfernt</strong>, siehe <a href="workflowmanagement.html#auswirkung-derzugriffsart-auf-list-entry-flag">Workflowmanagement</a>.<br/></li>
       <li>Falls der vorherige GDA <strong>alle vorhandenen Einträge</strong> mit removed gekennzeichnet hat, wird List.emptyReason mit <em>nilknown</em> zurückgeliefert, um nachfolgenden GDA zu signalisieren, dass der Patient zum Zeitpunkt des letzten Schreibens keine Einträge hatte.<br/></li>
     </ul>
   </li>
@@ -289,7 +289,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <ol>
   <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.</li>
-  <li><a name="l866">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
+  <li><a name="l863">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
   <li>Optional können Suchparameter angegeben werden, um die Treffermenge einzuschränken.</li>
   <li>Die Fachanwendung führt die Suche anhand der angegebenen Kriterien durch.</li>
   <li>Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.</li>
@@ -314,7 +314,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 21, 2026 09:53+0000">2026-07-21</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 21, 2026 13:00+0000">2026-07-21</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

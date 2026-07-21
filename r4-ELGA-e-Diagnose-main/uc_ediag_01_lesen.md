@@ -42,7 +42,7 @@ List Read dient dem **Abruf der Liste und der Vorbereitung einer nachfolgenden �
 
 1. Der GDA f체hrt einen**POST $list-read**aus.
 1. Die Fachanwendung**pr체ft auf Existenz**der Liste/n f체r die angegebene Patientin bzw. den angegebenen Patienten.
-1. Ist keine Liste vorhanden, wird dieser erstellt und eine leere Liste mit dem emptyReason notstarted, siehe[Leere Liste](uc_ediag_02_schreiben.md#)wird zur체ckgeliefert.
+1. Ist keine Liste vorhanden, wird dieser erstellt und eine leere Liste mit dem emptyReason notstarted wird zur체ckgeliefert.
 1. Existiert bereits eine Liste, wird von der Fachanwendung aus diesem ein Search-Bundle zur Auslieferung bereitgestellt. Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
 * Falls der vorherige GDA neue Listeneintr채ge hinzugef체gt hat (List.entry.flag hat den Wert **new**), werden diese auf **unchanged** gesetzt.
 

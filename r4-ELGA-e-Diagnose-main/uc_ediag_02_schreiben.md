@@ -20,23 +20,21 @@ Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leere
 1. Ist**List.emptyReason = notstarted**, handelt es sich um eine initialisierte, aber noch nicht fachlich bestätigte leere Liste.
 1. Die Fachanwendung stellt dem GDA die leere Liste zur Bestätigung bereit.
 1. Der GDA bestätigt, dass für die Person aktuell keine Einträge dokumentiert werden müssen.
-1. Die Fachanwendung setzt daraufhin**List.emptyReason = nilknown**.
-1. Anschließend führt die Fachanwendung einen POST $list-write aus, um den bestätigten Zustand der Liste zu speichern.
+1. Die Fachanwendung setzt daraufhin**List.emptyReason = nilknown**und liefert die aktualísierte Liste inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)zurück.
+1. Anschließend führt die Fachanwendung einen**POST $list-write**aus, um den bestätigten Zustand der Liste zu speichern, siehe Sequenzdiagramm[List-Read](uc_ediag_01_lesen.md#list-read).
 
-#### Sequenzdiagramm
+### Sub_UC_eDiag_02_02 - Liste aktualisieren (List-Write)
 
-### Sub_UC_eDiag_02_01 - Liste aktualisieren (List-Write)
-
-List Write ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [Lesen](uc_ediag_01_lesen.md#list-read) erfolgen darf.
+List Write ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](uc_ediag_01_lesen.md#list-read) erfolgen darf.
 
 #### Ablauf
 
-1. Der GDA übermittelt via**POST $list-write**die aktualisierte Liste als**List Bundle**:
+1. Der GDA übermittelt via**POST $list-write**die aktualisierte Liste als**List Bundle**inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency):
 * alle **neuen und geänderten und zu entfernenden Ressourcen** sind **inline** im Bundle enthalten,
 * alle **unveränderten Ressourcen** werden nur **referenziert**.
 
-1. Die Fachanwendung prüft anhand des im HTTP-Header übermittelten**ETag**, siehe auch[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency), ob die vom GDA bearbeitete Listenversion noch der aktuellen Version entspricht.
-1. Stimmen die ETags nicht überein, lehnt die Fachanwendung den Schreibvorgang ab. Der GDA muss erneut ein $list-read durchführen und seine Änderungen auf Basis der aktuellen Listversion erneut vornehmen.
+1. Die Fachanwendung prüft anhand des im HTTP-Header übermittelten**ETag**, ob die vom GDA bearbeitete Listenversion noch der aktuellen Version entspricht.
+1. Stimmen die ETags nicht überein, lehnt die Fachanwendung den Schreibvorgang ab, siehe[Abgelehntes Write](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/branches/main/interactions.html#abgelehntes-plan-write). Der GDA muss erneut ein $list-read durchführen und seine Änderungen auf Basis der aktuellen Listversion erneut vornehmen.
 1. Ist die Prüfung erfolgreich, validiert die Fachanwendung die neue Liste und stellt sicher, dass keine unzulässigen Zustandsübergänge vorgenommen wurden.
 1. Bei erfolgreicher Validierung:
 * werden die übermittelten Änderungen in die Ressourcen übernommen,
@@ -46,76 +44,63 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 #### Sequenzdiagramm
 
-#### Alternativ - Abgelehnter List Write
+</g></svg></div> 
+ –>
+
+### Sub_UC_eDiag_02_03 - Einträge zur Liste hinzufügen
+
+Nach dem Erfassen einer neuen medizinischen Ressource [Ressource erfassen](uc_ediag_02_schreiben.md#ressource-erfassen) kann dieser Eintrag in eine Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
 
 #### Ablauf
 
-1. **GDA 1**führt ein**POST $list-read**auf die Liste einer Person aus.
-1. Die Fachanwendung prüft, ob eine Liste existiert.
-1. Die Fachanwendung liefert die aktuelle Liste als**List Bundle**mit dem aktuellen**ETag**„123" an GDA 1 aus.
-1. **GDA 1**beginnt mit der**fachlichen Bearbeitung**der Liste.
-1. Währenddessen führt**GDA 2**ebenfalls ein**List-Read**auf dieselbe Liste durch.
-1. Die Fachanwendung liefert auch an GDA 2 die aktuelle Liste mit dem ETag „123" aus.
-1. GDA 2 bearbeitet die Liste.
-1. GDA 2 sendet zuerst mittels**POST $list-write**ein Transaction Bundle mit den vorgenommenen Änderungen.
-1. Die Fachanwendung prüft, ob der im Transaction Bundle enthaltene**List.identifier**mit dem aktuellen List.identifier der zuletzt gespeicherten Liste übereinstimmt.
-1. Die Prüfung verläuft erfolgreich, da beide den Wert „123" besitzen.
-1. Die Fachanwendung validiert die übermittelten Änderungen und prüft insbesondere, ob keine unzulässigen Zustandsübergänge vorliegen.
-1. Die Änderungen werden übernommen und eine neue Version der Liste wird persistiert.
-1. Dabei wird ein neuer List.identifier erzeugt, beispielsweise „124".
-1. GDA 2 erhält eine Meldung, dass die Aktualisierung erfolgreich durchgeführt wurde.
-1. Anschließend sendet GDA 1 mittels**POST $ListWrite**seine ebenfalls auf Basis des ursprünglichen List.identifier „123" vorgenommenen Änderungen.
-1. Die Fachanwendung prüft erneut den übermittelten List.identifier gegen die aktuell persistierte Diagnosenliste.
-1. Die Prüfung schlägt fehl, da die aktuelle Liste mittlerweile den List.identifier „124" besitzt.
-1. Die Fachanwendung lehnt das Speichern ab.
-1. GDA 1 erhält eine Fehlermeldung, dass zwischenzeitlich eine neuere Version der Liste gespeichert wurde.
-1. GDA 1 muss erneut einen**POST $list-read**durchführen, die zwischenzeitlich vorgenommenen Änderungen prüfen und gegebenenfalls in die aktuelle Version übernehmen, bevor ein neuer Schreibvorgang erfolgen kann.
+1. Der GDA legt eine neue (Condition, Procedure oder AllergyIntolerance), siehe[Ressource erfassen](uc_ediag_02_schreiben.md#ressource-erfassen)an oder eine bestehende Ressource, die in die Liste aufgenommen werden soll.
+1. Dafür führt der GDA ein**POST $list-read**aus und erhält das aktuelle Search-Bundle der ausgewählten List-Ressource.
+1. Der GDA wählt die bestehende Ressource aus und fügt sie als neuen List.entry in die Liste ein.
+* **List.entry.flag = new**
+* **List.entry.item** referenziert die bestehende Ressource.
+
+1. Der GDA führt ein**POST $list-write**aus und übermittelt die aktualisierte Liste an die Fachanwendung.
+1. Die Fachanwendung kennzeichnet die referenzierte Ressource mit**meta.tag = relevant**, wodurch ihre Zugehörigkeit zur Liste gekennzeichnet wird.
 
 #### Sequenzdiagramm
 
-Listeneinträge hinzufügen Listeneinträge entfernen Reihenfolge der Listeneinträge ändern Gesamte Liste löschen
+### Sub_UC_eDiag_02_04 - Eintrag aus der Liste löschen
 
-Ressource erfassen Ressource bearbeiten Ressource stornieren/löschen (falls fachlich erforderlich)
+Löschen kann nur der Bürger. Die Referenz auf die Ressource wird aus der Liste entfernt (removed). Die referenzierte Ressource bleibt unverändert bestehen. Die Fachanwendung entfernt die Kennzeichnung als relevant (meta.tag = relevant). ToDo: Aus Liste entfernen, Ressource bleibt bestehen, verliert nur Listzugehörigkeit oder Löschen - Ressource wird vollständig entfernt Ausblenden und Löschen? Löscht der Teilnehmer einen Eintrag, muss die Historienversion mitgelöscht werden? Betsehende Referenzen auf gelöschte Ressourcen. Lösche ich C, sage ich such mir alle List-Versionen mit C, und lösch mir alle C. Wie weit greifen, muss ich mich als Bürger durch alle Vorversionen durchklicken. FHIR Spezifikation über Historie - nachlesen, wie die Regel ist! Was bedeutet eine Aktualisierung auf eine historische Version?
 
-### Sub_UC_eDiag_06_02 - Bestehende Ressource in eine Liste aufnehmen
-
-Nach dem Erfassen einer neuen medizinischen Ressource [Sub_UC_eDiag_06_09](uc_ediag_06_int_res.md#sub-uc-ediag-06-09) kann diese in eine Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
-
-#### Ablauf
-
-### Sub_UC_eDiag_06_03 - Bestehende relevante Listeinträge fachlich bearbeiten
-
-TODo: Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann.
-
-#### Ablauf
-
-### Sub_UC_eDiag_06_04 - Reihenfolge von Listeinträge ändern
+### Sub_UC_eDiag_02_05 - Reihenfolge der Listeneinträge ändern
 
 Der GDA kann die Reihenfolge der Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. Evtl. auch in den ELGA Core mitnehmen.
 
-#### Ablauf
-
-### Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen
-
-Die Referenz auf die Ressource wird aus der Liste entfernt (removed). Die referenzierte Ressource bleibt unverändert bestehen. Die Fachanwendung entfernt die Kennzeichnung als relevant (meta.tag = relevant).
-
-#### Ablauf
-
-### Sub_UC_eDiag_06_07 - Eintrag innerhalb einer Liste durch ELGA-Teilnehmer:in löschen
-
-ToDo: Aus Liste entfernen, Ressource bleibt bestehen, verliert nur Listzugehörigkeit oder Löschen - Ressource wird vollständig entfernt Ausblenden und Löschen? Löscht der Teilnehmer einen Eintrag, muss die Historienversion mitgelöscht werden? Betsehende Referenzen auf gelöschte Ressourcen. Lösche ich C, sage ich such mir alle List-Versionen mit C, und lösch mir alle C. Wie weit greifen, muss ich mich als Bürger durch alle Vorversionen durchklicken. FHIR Spezifikation über Historie - nachlesen, wie die Regel ist! Was bedeutet eine Aktualisierung auf eine historische Version?
-
-### Sub_UC_eDiag_06_08 - Liste durch ELGA-Teilnehmer:in löschen
+### Sub_UC_eDiag_02_06 - Liste löschen
 
 ToDo: fachliche Auswirkungen klären; gesamte List-Ressouce löschen, alle Referenzen - alle enthaltenen Diagnosen?
 
 Fachliche Einzelressourcen repräsentieren die medizinischen Inhalte der e-Diagnose. Hierzu zählen insbesondere Diagnosen (Condition), Prozeduren (Procedure) sowie Allergien und Intoleranzen (AllergyIntolerance). Die nachfolgenden Sub-Use-Cases beschreiben die Erfassung, das Abrufen und die Stornierung dieser Ressourcen. Bestehende Ressourcen werden weder bearbeitet noch gelöscht; fachliche Änderungen erfolgen durch das Anlegen neuer Ressourcen.
 
-### Sub_UC_eDiag_06_07 - Diagnosen, Prozeduren sowie Allergien und Intoleranzen durch ELGA-Teilnehmer löschen
+### Sub_UC_eDiag_02_07 - Ressource erfassen
 
-Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert.
+Der GDA erfasst neue Diagnosen, Prozeduren sowie Allergien und Intoleranzen über die e-Diagnose Fachanwendung, siehe [Transaktionen](transaction.md#Transaktionen).
 
-Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.
+#### Ablauf
+
+1. Der GDA wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.
+1. Der GDA erstellt eine neue Ressource und erfasst die erforderlichen fachlichen Informationen.
+1. Der GDA führt ein**POST**auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ oder /Patient/[id]/AllergyIntolerance/ aus und übermittelt die neue Ressource an die e-Diagnose Fachanwendung.
+1. Die**Fachanwendung**validiert die übermittelte Ressource.
+1. Ist die Validierung erfolgreich, wird die neue Ressource gespeichert und dem GDA eine erfolgreiche Erstellung mittels**HTTP 201 Created**bestätigt. Ist die Validierung nicht erfolgreich, wird die Ressource nicht gespeichert. Die Fachanwendung liefert ein**OperationOutcome**mit den aufgetretenen Validierungsfehlern zurück.
+
+#### Sequenzdiagramm
+
+### Sub_UC_eDiag_02_08 - Ressource bearbeiten
+
+Bestehende relevante Listeinträge fachlich bearbeiten TODo: Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann.
+
+#### Ablauf
+
+### Sub_UC_eDiag_02_09 - Ressource löschen
+
+Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert. Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.
 
 #### Ablauf
 
@@ -138,21 +123,7 @@ Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Facha
 
 ![](patient_delete.drawio.svg)
 
-### Sub_UC_eDiag_06_09 - Diagnosen, Prozeduren sowie Allergien und Intoleranzen erfassen
-
-Der GDA erfasst neue Diagnosen, Prozeduren sowie Allergien und Intoleranzen über die e-Diagnose Fachanwendung, siehe [Transaktionen](transaction.md#Transaktionen).
-
-#### Ablauf
-
-1. Der GDA wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.
-1. Der GDA erstellt eine neue Ressource und erfasst die erforderlichen fachlichen Informationen.
-1. Der GDA führt ein**POST**auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ oder /Patient/[id]/AllergyIntolerance/ aus und übermittelt die neue Ressource an die e-Diagnose Fachanwendung.
-1. Die**Fachanwendung**validiert die übermittelte Ressource.
-1. Ist die Validierung erfolgreich, wird die neue Ressource gespeichert und dem GDA eine erfolgreiche Erstellung mittels**HTTP 201 Created**bestätigt. Ist die Validierung nicht erfolgreich, wird die Ressource nicht gespeichert. Die Fachanwendung liefert ein**OperationOutcome**mit den aufgetretenen Validierungsfehlern zurück.
-
-#### Sequenzdiagramm Eintrag erfassen
-
-### Sub_UC_eDiag_06_10 - Diagnosen, Prozeduren sowie Allergien und Intoleranzen stornieren
+### Sub_UC_eDiag_02_10 - Ressource stornieren
 
 Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose als relevant gekennzeichnet ist oder nicht.
 
