@@ -32,7 +32,7 @@ Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant
   "title" : "AT e-Diagnose Diagnose Typ",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-21T08:48:20+00:00",
+  "date" : "2026-07-21T09:53:07+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

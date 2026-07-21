@@ -9,6 +9,22 @@
 
 Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. Im Mittelpunkt stehen die Aktualisierung von Listen sowie die Erfassung, Zuordnung, Entfernung, Stornierung und Löschung von Diagnosen, Prozeduren oder Allergien und Intoleranzen.
 
+### Sub_UC_eDiag_02_01 - Leere Liste fachlich bestätigen
+
+Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leeren Liste durch den GDA und die anschließende Speicherung des bestätigten Zustands in der Fachanwendung. Eine leere Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von relevanten Einträgen und ist von einer noch nicht befüllten Liste **emptyReason = notstarted** zu unterscheiden.
+
+#### Ablauf
+
+1. Der GDA führt einen**POST $list-read**aus.
+1. Die Fachanwendung prüft die angeforderte Liste und stellt fest, dass keine List.entry vorhanden sind.
+1. Ist**List.emptyReason = notstarted**, handelt es sich um eine initialisierte, aber noch nicht fachlich bestätigte leere Liste.
+1. Die Fachanwendung stellt dem GDA die leere Liste zur Bestätigung bereit.
+1. Der GDA bestätigt, dass für die Person aktuell keine Einträge dokumentiert werden müssen.
+1. Die Fachanwendung setzt daraufhin**List.emptyReason = nilknown**.
+1. Anschließend führt die Fachanwendung einen POST $list-write aus, um den bestätigten Zustand der Liste zu speichern.
+
+#### Sequenzdiagramm
+
 ### Sub_UC_eDiag_02_01 - Liste aktualisieren (List-Write)
 
 List Write ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [Lesen](uc_ediag_01_lesen.md#list-read) erfolgen darf.
@@ -19,7 +35,7 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 * alle **neuen und geänderten und zu entfernenden Ressourcen** sind **inline** im Bundle enthalten,
 * alle **unveränderten Ressourcen** werden nur **referenziert**.
 
-1. Die Fachanwendung prüft anhand des im HTTP-Header übermittelten**ETag**, siehe auch[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)ob die vom GDA bearbeitete Listenversion noch der aktuellen Version entspricht.
+1. Die Fachanwendung prüft anhand des im HTTP-Header übermittelten**ETag**, siehe auch[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency), ob die vom GDA bearbeitete Listenversion noch der aktuellen Version entspricht.
 1. Stimmen die ETags nicht überein, lehnt die Fachanwendung den Schreibvorgang ab. Der GDA muss erneut ein $list-read durchführen und seine Änderungen auf Basis der aktuellen Listversion erneut vornehmen.
 1. Ist die Prüfung erfolgreich, validiert die Fachanwendung die neue Liste und stellt sicher, dass keine unzulässigen Zustandsübergänge vorgenommen wurden.
 1. Bei erfolgreicher Validierung:
@@ -30,11 +46,11 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 #### Sequenzdiagramm
 
-### Sub_UC_eDiag_02_01 - Abgelehnter List Write
+#### Alternativ - Abgelehnter List Write
 
 #### Ablauf
 
-1. **GDA 1**führt einen**POST $list-read**auf die Liste einer Patientin bzw. eines Patienten durch.
+1. **GDA 1**führt ein**POST $list-read**auf die Liste einer Person aus.
 1. Die Fachanwendung prüft, ob eine Liste existiert.
 1. Die Fachanwendung liefert die aktuelle Liste als**List Bundle**mit dem aktuellen**ETag**„123" an GDA 1 aus.
 1. **GDA 1**beginnt mit der**fachlichen Bearbeitung**der Liste.
@@ -57,9 +73,9 @@ List Write ist eine eigenständige Operation, die ausschließlich im Kontext ein
 
 #### Sequenzdiagramm
 
-### Sub_UC_eDiag_06_01 - Nach Initialisierung leere Liste bestätigen
+Listeneinträge hinzufügen Listeneinträge entfernen Reihenfolge der Listeneinträge ändern Gesamte Liste löschen
 
-ToDo: Die Überprüfung aus diesem UC wird bereits bei List-Read durchgeführt. Teil des ELGA Core. emptyReason #nilknown. Im eDiag wir müssen zusätzlich angeben welcher ListType es ist. Eine leere Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine relevanten Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von relevanten Einträgen und ist von einer noch nicht befüllten Liste zu unterscheiden.
+Ressource erfassen Ressource bearbeiten Ressource stornieren/löschen (falls fachlich erforderlich)
 
 ### Sub_UC_eDiag_06_02 - Bestehende Ressource in eine Liste aufnehmen
 
