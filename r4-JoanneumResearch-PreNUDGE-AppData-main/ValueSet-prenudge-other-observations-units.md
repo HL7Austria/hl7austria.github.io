@@ -58,7 +58,7 @@ Links:
   "title" : "AT PreNUDGE Other Observations Units",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-22T10:33:49+00:00",
+  "date" : "2026-07-22T11:37:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
