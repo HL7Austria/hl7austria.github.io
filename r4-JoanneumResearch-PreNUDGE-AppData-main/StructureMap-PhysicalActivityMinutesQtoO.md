@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/PhysicalActivityMinutesQtoO | *Version*:0.1.0 | |
-| Draft as of 2026-07-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Physical Activity Minutes Q to O |
+| Draft as of 2026-07-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Physical Activity Minutes Q to O |
 
  
 Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant) 
@@ -17,7 +17,7 @@ Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-07-01
+2026-07-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -33,7 +33,7 @@ Links:
   "version" : "0.1.0",
   "name" : "Physical Activity Minutes Q to O",
   "status" : "draft",
-  "date" : "2026-07-01T10:20:10+00:00",
+  "date" : "2026-07-22T09:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -85,7 +85,8 @@ Links:
       "dependent" : [{
         "name" : "SetObservationBase",
         "variable" : ["src", "tgt"]
-      }]
+      }],
+      "documentation" : "Shared base: identifier copy, derivedFrom, subject, issued.\r\nSetObservationBase also sets method = SCT 87982008 (Manual) — correct for\r\nall questionnaire-derived observations in this IG."
     },
     {
       "name" : "SetMethodManual",
@@ -106,7 +107,8 @@ Links:
         {
           "valueString" : "Manual"
         }]
-      }]
+      }],
+      "documentation" : "Explicitly confirm method = Manual (base already does this; listed for clarity)."
     },
     {
       "name" : "SetProfile",
@@ -131,7 +133,8 @@ Links:
         "parameter" : [{
           "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"
         }]
-      }]
+      }],
+      "documentation" : "Target profile"
     },
     {
       "name" : "SetCode",
@@ -152,7 +155,8 @@ Links:
         {
           "valueString" : "Duration of physical activity"
         }]
-      }]
+      }],
+      "documentation" : "Panel code"
     },
     {
       "name" : "SetEffectiveDateTime",
@@ -169,7 +173,8 @@ Links:
         "parameter" : [{
           "valueId" : "authored"
         }]
-      }]
+      }],
+      "documentation" : "effectiveDateTime from authored (EHIS-PAQ Q7 has no embedded date item)"
     },
     {
       "name" : "ProcessQ7",
@@ -182,7 +187,8 @@ Links:
       "dependent" : [{
         "name" : "MapQ7ToAggregate",
         "variable" : ["q7", "tgt"]
-      }]
+      }],
+      "documentation" : "Map Q7 group to component[aggregateActivity]"
     }]
   },
   {
@@ -297,7 +303,8 @@ Links:
             }]
           }]
         }]
-      }]
+      }],
+      "documentation" : "src is the Q7 group item; Q7-total-minutes is a calculated child item."
     }]
   }]
 }

@@ -28,46 +28,46 @@
 </span>    id<span style="color: navy"><b> -&gt; </b></span>reference.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'QuestionnaireResponse/'</span><span style="color: navy">, </span><span style="color: maroon">id</span><span style="color: navy">)</span> <i>&quot;setDerivedFromReference&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;setDerivedFrom&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">ATHIS answer mapping to the clinical SNOMED CT valueCodeableConcept.</span>
-  src.item<b> as </b><span style="color: maroon">groupItem</span><b> where </b>groupItem.linkId = 'smoking-status-athis'<b> then </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><span style="color: maroon">groupItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;mapSmokingStatusGroup&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">groupItem</span><b> where </b><span style="color: navy">(</span>groupItem.linkId = 'smoking-status-athis'<span style="color: navy">)</span><b> then </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><span style="color: maroon">groupItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;mapSmokingStatusGroup&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><b>group </b>SmokingStatusGroupToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  <span style="color: navy">// </span><span style="color: green">SK1 = Ja, täglich -&gt; current every day smoker.</span>
-  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
+  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b><span style="color: navy">(</span>sk1.linkId = 'sk1'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'449868002'</span><span style="color: navy">, </span><span style="color: blue">'Smokes tobacco daily'</span><span style="color: navy">)</span> <i>&quot;mapCurrentDailySmoker&quot;</i><span style="color: navy">;</span>
+</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'449868002'</span><span style="color: navy">, </span><span style="color: blue">'Smokes tobacco daily'</span><span style="color: navy">)</span> <i>&quot;mapCurrentDailySmoker&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;evaluateSk1Daily&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;sk1Daily&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">SK1 = Ja, gelegentlich -&gt; current occasional smoker.</span>
-  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
+  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b><span style="color: navy">(</span>sk1.linkId = 'sk1'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'428041000124106'</span><span style="color: navy">, </span><span style="color: blue">'Occasional tobacco smoker'</span><span style="color: navy">)</span> <i>&quot;mapCurrentOccasionalSmoker&quot;</i><span style="color: navy">;</span>
+</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'428041000124106'</span><span style="color: navy">, </span><span style="color: blue">'Occasional tobacco smoker'</span><span style="color: navy">)</span> <i>&quot;mapCurrentOccasionalSmoker&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;evaluateSk1Occasional&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;sk1Occasional&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">SK1 = Nein and past tobacco smoking = Ja, täglich or Ja, gelegentlich -&gt; former smoker.</span>
   <span style="color: navy">// </span><span style="color: green">The past-tobacco-smoking item is enabled only when SK1 is negative.</span>
-  groupItem.item<b> as </b><span style="color: maroon">past</span><b> where </b>past.linkId = 'past-tobacco-smoking'<b> then</b><span style="color: navy"> {
+  groupItem.item<b> as </b><span style="color: maroon">past</span><b> where </b><span style="color: navy">(</span>past.linkId = 'past-tobacco-smoking'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    past.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'8517006'</span><span style="color: navy">, </span><span style="color: blue">'Ex-smoker'</span><span style="color: navy">)</span> <i>&quot;mapPastDailyToFormerSmoker&quot;</i><span style="color: navy">;</span>
-      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'8517006'</span><span style="color: navy">, </span><span style="color: blue">'Ex-smoker'</span><span style="color: navy">)</span> <i>&quot;mapPastOccasionalToFormerSmoker&quot;</i><span style="color: navy">;</span>
+</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-daily')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'8517006'</span><span style="color: navy">, </span><span style="color: blue">'Ex-smoker'</span><span style="color: navy">)</span> <i>&quot;mapPastDailyToFormerSmoker&quot;</i><span style="color: navy">;</span>
+      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-yes-occasionally')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'8517006'</span><span style="color: navy">, </span><span style="color: blue">'Ex-smoker'</span><span style="color: navy">)</span> <i>&quot;mapPastOccasionalToFormerSmoker&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;evaluatePastSmoking&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;pastSmokingFormer&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">SK1 = Nein and past tobacco smoking = Nein -&gt; never smoker.</span>
-  groupItem.item<b> as </b><span style="color: maroon">past</span><b> where </b>past.linkId = 'past-tobacco-smoking'<b> then</b><span style="color: navy"> {
+  groupItem.item<b> as </b><span style="color: maroon">past</span><b> where </b><span style="color: navy">(</span>past.linkId = 'past-tobacco-smoking'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    past.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-no')<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'266919005'</span><span style="color: navy">, </span><span style="color: blue">'Never smoked tobacco'</span><span style="color: navy">)</span> <i>&quot;mapPastNoToNeverSmoker&quot;</i><span style="color: navy">;</span>
+</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'yn-no')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'266919005'</span><span style="color: navy">, </span><span style="color: blue">'Never smoked tobacco'</span><span style="color: navy">)</span> <i>&quot;mapPastNoToNeverSmoker&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;evaluatePastNo&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;pastSmokingNever&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">SK1 = Weiß nicht</span>
-  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
+  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b><span style="color: navy">(</span>sk1.linkId = 'sk1'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-unknown')<span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-unknown'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Unknown'</span><span style="color: navy">)</span> <i>&quot;mapSk1Unknown&quot;</i><span style="color: navy">;</span>
+</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-unknown')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-unknown'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Unknown'</span><span style="color: navy">)</span> <i>&quot;mapSk1Unknown&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;evaluateSk1Unknown&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;sk1Unknown&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">SK1 = Keine Angabe</span>
-  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b>sk1.linkId = 'sk1'<b> then</b><span style="color: navy"> {
+  groupItem.item<b> as </b><span style="color: maroon">sk1</span><b> where </b><span style="color: navy">(</span>sk1.linkId = 'sk1'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    sk1.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-not-stated')<span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-declined'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Declined'</span><span style="color: navy">)</span> <i>&quot;mapSk1NotStated&quot;</i><span style="color: navy">;</span>
+</span>      answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.system = 'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers') and (coding.code = 'meta-not-stated')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-declined'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Declined'</span><span style="color: navy">)</span> <i>&quot;mapSk1NotStated&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;evaluateSk1NotStated&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;sk1NotStated&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
@@ -79,7 +79,7 @@
   <name value="SmokingStatusQuestionnaireResponseToObservation"/>
   <title value="ATHIS-based Smoking Status Q to O"/>
   <status value="active"/>
-  <date value="2026-07-01T10:20:10+00:00"/>
+  <date value="2026-07-22T09:38:36+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -134,6 +134,7 @@
           <valueString value="final"/>
         </parameter>
       </target>
+      <documentation value="Administrative metadata. Implementations may replace or enrich the identifier&#xD;&#xA;if the Observation needs a separate stable business identifier."/>
     </rule>
     <rule>
       <name value="copyIdentifier"/>
@@ -223,6 +224,7 @@
           <valueString value="Tobacco smoking status"/>
         </parameter>
       </target>
+      <documentation value="IPS/APS-style tobacco smoking status coding."/>
     </rule>
     <rule>
       <name value="setManualMethod"/>
@@ -244,6 +246,7 @@
           <valueString value="Manual"/>
         </parameter>
       </target>
+      <documentation value="User-entered QuestionnaireResponse data is considered manual input."/>
     </rule>
     <rule>
       <name value="setDerivedFrom"/>
@@ -280,6 +283,7 @@
           </parameter>
         </target>
       </rule>
+      <documentation value="Keep the derivation from QuestionnaireResponse to Observation traceable."/>
     </rule>
     <rule>
       <name value="mapSmokingStatusGroup"/>
@@ -294,6 +298,7 @@
         <variable value="groupItem"/>
         <variable value="tgt"/>
       </dependent>
+      <documentation value="ATHIS answer mapping to the clinical SNOMED CT valueCodeableConcept."/>
     </rule>
   </group>
   <group>
@@ -349,6 +354,7 @@
           </target>
         </rule>
       </rule>
+      <documentation value="SK1 = Ja, täglich -&gt; current every day smoker."/>
     </rule>
     <rule>
       <name value="sk1Occasional"/>
@@ -390,6 +396,7 @@
           </target>
         </rule>
       </rule>
+      <documentation value="SK1 = Ja, gelegentlich -&gt; current occasional smoker."/>
     </rule>
     <rule>
       <name value="pastSmokingFormer"/>
@@ -455,6 +462,7 @@
           </target>
         </rule>
       </rule>
+      <documentation value="SK1 = Nein and past tobacco smoking = Ja, täglich or Ja, gelegentlich -&gt; former smoker.&#xD;&#xA;The past-tobacco-smoking item is enabled only when SK1 is negative."/>
     </rule>
     <rule>
       <name value="pastSmokingNever"/>
@@ -496,6 +504,7 @@
           </target>
         </rule>
       </rule>
+      <documentation value="SK1 = Nein and past tobacco smoking = Nein -&gt; never smoker."/>
     </rule>
     <rule>
       <name value="sk1Unknown"/>
@@ -537,6 +546,7 @@
           </target>
         </rule>
       </rule>
+      <documentation value="SK1 = Weiß nicht"/>
     </rule>
     <rule>
       <name value="sk1NotStated"/>
@@ -578,6 +588,7 @@
           </target>
         </rule>
       </rule>
+      <documentation value="SK1 = Keine Angabe"/>
     </rule>
   </group>
 </StructureMap>

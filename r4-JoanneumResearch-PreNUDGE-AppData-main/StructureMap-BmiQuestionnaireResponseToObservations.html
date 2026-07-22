@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -279,8 +279,8 @@
 </span>    identifier.system<b> as </b><span style="color: maroon">system</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.system = <span style="color: maroon">system</span> <i>&quot;SetIdentifierSystem&quot;</i><span style="color: navy">;</span>
     identifier.value<b> as </b><span style="color: maroon">value</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.value = <b>append</b><span style="color: navy">(</span><span style="color: maroon">value</span><span style="color: navy">, </span><span style="color: blue">'-bodyheight'</span><span style="color: navy">)</span> <i>&quot;SetIdentifierValue&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;SetIdentifier&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b>bmiGroup.linkId = 'bmi'<b> then</b><span style="color: navy"> {
-</span>    bmiGroup.item<b> as </b><span style="color: maroon">heightItem</span><b> where </b>heightItem.linkId = 'height-cm'<b> then</b><span style="color: navy"> {
+  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b><span style="color: navy">(</span>bmiGroup.linkId = 'bmi'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    bmiGroup.item<b> as </b><span style="color: maroon">heightItem</span><b> where </b><span style="color: navy">(</span>heightItem.linkId = 'height-cm'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>      heightItem.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
 </span>        answer.value<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
 </span>          val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'cm'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'cm'</span> <i>&quot;SetValue&quot;</i><span style="color: navy">;</span>
@@ -299,8 +299,8 @@
 </span>    identifier.system<b> as </b><span style="color: maroon">system</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.system = <span style="color: maroon">system</span> <i>&quot;SetIdentifierSystem&quot;</i><span style="color: navy">;</span>
     identifier.value<b> as </b><span style="color: maroon">value</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.value = <b>append</b><span style="color: navy">(</span><span style="color: maroon">value</span><span style="color: navy">, </span><span style="color: blue">'-bodyweight'</span><span style="color: navy">)</span> <i>&quot;SetIdentifierValue&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;SetIdentifier&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b>bmiGroup.linkId = 'bmi'<b> then</b><span style="color: navy"> {
-</span>    bmiGroup.item<b> as </b><span style="color: maroon">weightItem</span><b> where </b>weightItem.linkId = 'weight-kg'<b> then</b><span style="color: navy"> {
+  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b><span style="color: navy">(</span>bmiGroup.linkId = 'bmi'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    bmiGroup.item<b> as </b><span style="color: maroon">weightItem</span><b> where </b><span style="color: navy">(</span>weightItem.linkId = 'weight-kg'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>      weightItem.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
 </span>        answer.value<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
 </span>          val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'kg'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'kg'</span> <i>&quot;SetValue&quot;</i><span style="color: navy">;</span>
@@ -319,8 +319,8 @@
 </span>    identifier.system<b> as </b><span style="color: maroon">system</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.system = <span style="color: maroon">system</span> <i>&quot;SetIdentifierSystem&quot;</i><span style="color: navy">;</span>
     identifier.value<b> as </b><span style="color: maroon">value</span><span style="color: navy"><b> -&gt; </b></span>targetIdentifier.value = <b>append</b><span style="color: navy">(</span><span style="color: maroon">value</span><span style="color: navy">, </span><span style="color: blue">'-bmi'</span><span style="color: navy">)</span> <i>&quot;SetIdentifierValue&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;SetIdentifier&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b>bmiGroup.linkId = 'bmi'<b> then</b><span style="color: navy"> {
-</span>    bmiGroup.item<b> as </b><span style="color: maroon">bmiItem</span><b> where </b>bmiItem.linkId = 'bmi-kg-m2'<b> then</b><span style="color: navy"> {
+  src.item<b> as </b><span style="color: maroon">bmiGroup</span><b> where </b><span style="color: navy">(</span>bmiGroup.linkId = 'bmi'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    bmiGroup.item<b> as </b><span style="color: maroon">bmiItem</span><b> where </b><span style="color: navy">(</span>bmiItem.linkId = 'bmi-kg-m2'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>      bmiItem.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
 </span>        answer.value<b> as </b><span style="color: maroon">val</span><b> then</b><span style="color: navy"> {
 </span>          val.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'kg/m2'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'kg/m2'</span> <i>&quot;SetValue&quot;</i><span style="color: navy">;</span>
@@ -355,7 +355,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -261,7 +261,7 @@
   <span style="color: navy">// </span><span style="color: green">effectiveDateTime from authored (Q9 has no embedded date sub-item)</span>
   src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">authored</span> <i>&quot;SetEffectiveDateTime&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">Map Q9 group to Observation.value</span>
-  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'Q9'<b> then </b>MapQ9ToSittingHours<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ9&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b><span style="color: navy">(</span>linkId = 'Q9'<span style="color: navy">)</span><b> then </b>MapQ9ToSittingHours<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ9&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
@@ -272,7 +272,7 @@
 <span style="color: navy">// </span><span style="color: green">questionnaire; this map copies the result without evaluate().</span>
 <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <b>group </b>MapQ9ToSittingHours<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  src.item<b> as </b><span style="color: maroon">totHours</span><b> where </b>linkId = 'Q9-total-hours'<b> then</b><span style="color: navy"> {
+</span>  src.item<b> as </b><span style="color: maroon">totHours</span><b> where </b><span style="color: navy">(</span>linkId = 'Q9-total-hours'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    totHours.answer<b> as </b><span style="color: maroon">ans</span><b> then</b><span style="color: navy"> {
 </span>      ans.valueDecimal<b> as </b><span style="color: maroon">decElem</span><b> then</b><span style="color: navy"> {
 </span>        decElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'h'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'h'</span> <i>&quot;SetSittingQuantity&quot;</i><span style="color: navy">;</span>
@@ -306,7 +306,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -183,7 +183,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -221,7 +221,7 @@
   src&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt; tgt.meta = &lt;b&gt;create&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Meta'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;meta&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; meta.profile = &lt;span style=&quot;color: blue&quot;&gt;'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation'&lt;/span&gt; &lt;i&gt;&amp;quot;SetProfile&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   src&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.code = &lt;b&gt;cc&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'http://loinc.org'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'41950-7'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Number of steps in 24 hour Measured'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;SetCode&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Quantity step count entry&lt;/span&gt;
-  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;linkId = 'step-count'&lt;b&gt; then &lt;/b&gt;MapStepCount&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;ProcessQuantityStepCount&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;linkId = 'step-count'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;MapStepCount&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;ProcessQuantityStepCount&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;EHIS-PAQ walking survey&lt;/span&gt;
 &lt;span style=&quot;color: #b36b00&quot; title=&quot;This element was not defined prior to R5&quot;&gt;// src.item as item where linkId = 'Q2-walking-days' then MapEhisPaqToStepCount(item, tgt) &amp;quot;ProcessEhisPaq&amp;quot;;&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;}
@@ -230,7 +230,7 @@
 &lt;b&gt;group &lt;/b&gt;MapStepCount&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;src&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;QR, &lt;b&gt;target&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;Obs&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;  src.answer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;answer&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;    &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;effectiveDateTime from nested item with linkId = 'date'&lt;/span&gt;
-    answer.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dtItem&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;linkId = 'date'&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+    answer.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dtItem&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;linkId = 'date'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;      dtItem.answer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dtAns&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;        dtAns.valueDate&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.effectiveDateTime = &lt;span style=&quot;color: maroon&quot;&gt;dt&lt;/span&gt; &lt;i&gt;&amp;quot;SetEffectiveFromDate&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
       &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;ExtractDate&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
@@ -256,7 +256,7 @@
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;StepCountQuestionnaireResponseToObservation&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Step Count Q to O&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-07-01T10:20:10+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-07-22T09:38:36+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
@@ -377,6 +377,7 @@
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;item&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;tgt&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Quantity step count entry&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
@@ -433,6 +434,8 @@
             &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                       <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;effectiveDateTime from nested item with linkId = 'date'&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;MapValueQuantity&quot;/&gt;
@@ -567,7 +570,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

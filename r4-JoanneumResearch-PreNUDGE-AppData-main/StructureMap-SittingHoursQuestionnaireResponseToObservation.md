@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SittingHoursQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-07-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SittingHoursQuestionnaireResponseToObservation |
+| Active as of 2026-07-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SittingHoursQuestionnaireResponseToObservation |
 
  
 Sitting Hours EHIS-PAQ Q9 / ATHIS PE9 to O 
@@ -17,7 +17,7 @@ Sitting Hours EHIS-PAQ Q9 / ATHIS PE9 to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-07-01
+2026-07-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "SittingHoursQuestionnaireResponseToObservation",
   "title" : "Sitting Hours Q to O",
   "status" : "active",
-  "date" : "2026-07-01T10:20:10+00:00",
+  "date" : "2026-07-22T09:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -86,7 +86,8 @@ Links:
       "dependent" : [{
         "name" : "SetObservationBase",
         "variable" : ["src", "tgt"]
-      }]
+      }],
+      "documentation" : "Shared base: identifier copy, derivedFrom, subject, issued, status, method."
     },
     {
       "name" : "SetProfile",
@@ -111,7 +112,8 @@ Links:
         "parameter" : [{
           "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation"
         }]
-      }]
+      }],
+      "documentation" : "Target profile"
     },
     {
       "name" : "SetCode",
@@ -132,7 +134,8 @@ Links:
         {
           "valueString" : "Sedentary activity 24 hour"
         }]
-      }]
+      }],
+      "documentation" : "Observation code"
     },
     {
       "name" : "SetEffectiveDateTime",
@@ -149,7 +152,8 @@ Links:
         "parameter" : [{
           "valueId" : "authored"
         }]
-      }]
+      }],
+      "documentation" : "effectiveDateTime from authored (Q9 has no embedded date sub-item)"
     },
     {
       "name" : "ProcessQ9",
@@ -162,7 +166,8 @@ Links:
       "dependent" : [{
         "name" : "MapQ9ToSittingHours",
         "variable" : ["item", "tgt"]
-      }]
+      }],
+      "documentation" : "Map Q9 group to Observation.value"
     }]
   },
   {

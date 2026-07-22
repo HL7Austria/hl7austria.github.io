@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -254,20 +254,20 @@
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'405152002'</span><span style="color: navy">, </span><span style="color: blue">'Quality of life'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">EffectiveDateTime from authored</span>
   src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effectiveDateTime = <b>create</b><span style="color: navy">(</span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dt</span><span style="color: navy">, </span> dt.value = <span style="color: maroon">authored</span> <i>&quot;SetEffective&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">generalGroup</span><b> where </b>linkId = 'general'<b> then</b><span style="color: navy"> {
-</span>    generalGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'general-score'<b> then </b>MapGeneralScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapGeneralScore&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">generalGroup</span><b> where </b><span style="color: navy">(</span>linkId = 'general'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    generalGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'general-score'<span style="color: navy">)</span><b> then </b>MapGeneralScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapGeneralScore&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessGeneral&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">domain1Group</span><b> where </b>linkId = 'domain1'<b> then</b><span style="color: navy"> {
-</span>    domain1Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain1-score'<b> then </b>MapPhysicalScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain1Score&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain1Group</span><b> where </b><span style="color: navy">(</span>linkId = 'domain1'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    domain1Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'domain1-score'<span style="color: navy">)</span><b> then </b>MapPhysicalScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain1Score&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessDomain1&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">domain2Group</span><b> where </b>linkId = 'domain2'<b> then</b><span style="color: navy"> {
-</span>    domain2Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain2-score'<b> then </b>MapPsychologicalScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain2Score&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain2Group</span><b> where </b><span style="color: navy">(</span>linkId = 'domain2'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    domain2Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'domain2-score'<span style="color: navy">)</span><b> then </b>MapPsychologicalScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain2Score&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessDomain2&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">domain3Group</span><b> where </b>linkId = 'domain3'<b> then</b><span style="color: navy"> {
-</span>    domain3Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain3-score'<b> then </b>MapRelationshipsScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain3Score&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain3Group</span><b> where </b><span style="color: navy">(</span>linkId = 'domain3'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    domain3Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'domain3-score'<span style="color: navy">)</span><b> then </b>MapRelationshipsScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain3Score&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessDomain3&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">domain4Group</span><b> where </b>linkId = 'domain4'<b> then</b><span style="color: navy"> {
-</span>    domain4Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'domain4-score'<b> then </b>MapEnvironmentScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain4Score&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">domain4Group</span><b> where </b><span style="color: navy">(</span>linkId = 'domain4'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    domain4Group.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'domain4-score'<span style="color: navy">)</span><b> then </b>MapEnvironmentScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapDomain4Score&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessDomain4&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">// </span><span style="color: green">TODO: Comment/Note mapping disabled due to MaLaC-HD limitation</span>
 <span style="color: navy">// </span><span style="color: green">See: https://gitlab.com/cdehealth/malac-hd/-/issues/128</span>
@@ -338,7 +338,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -253,14 +253,14 @@
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss4-score-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/at-prenudge-pss-codes-codesystem'</span><span style="color: navy">, </span><span style="color: blue">'pss4'</span><span style="color: navy">, </span><span style="color: blue">'PSS-4 Perceived Stress Scale (4-item)'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
   src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span> tgt.effectiveDateTime = <b>create</b><span style="color: navy">(</span><span style="color: blue">'dateTime'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">dt</span><span style="color: navy">, </span> dt.value = <span style="color: maroon">authored</span> <i>&quot;SetEffective&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">pss4Group</span><b> where </b>linkId = 'pss4'<b> then</b><span style="color: navy"> {
+  src.item<b> as </b><span style="color: maroon">pss4Group</span><b> where </b><span style="color: navy">(</span>linkId = 'pss4'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    <span style="color: navy">// </span><span style="color: green">Map individual item codings → Observation components (raw categorical answers)</span>
-    pss4Group.item<b> as </b><span style="color: maroon">q1</span><b> where </b>linkId = 'pss4-q1'<b> then </b>MapPss4Q1<span style="color: navy">(</span><span style="color: maroon">q1</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ1&quot;</i><span style="color: navy">;</span>
-    pss4Group.item<b> as </b><span style="color: maroon">q2</span><b> where </b>linkId = 'pss4-q2'<b> then </b>MapPss4Q2<span style="color: navy">(</span><span style="color: maroon">q2</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ2&quot;</i><span style="color: navy">;</span>
-    pss4Group.item<b> as </b><span style="color: maroon">q3</span><b> where </b>linkId = 'pss4-q3'<b> then </b>MapPss4Q3<span style="color: navy">(</span><span style="color: maroon">q3</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ3&quot;</i><span style="color: navy">;</span>
-    pss4Group.item<b> as </b><span style="color: maroon">q4</span><b> where </b>linkId = 'pss4-q4'<b> then </b>MapPss4Q4<span style="color: navy">(</span><span style="color: maroon">q4</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ4&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q1</span><b> where </b><span style="color: navy">(</span>linkId = 'pss4-q1'<span style="color: navy">)</span><b> then </b>MapPss4Q1<span style="color: navy">(</span><span style="color: maroon">q1</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ1&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q2</span><b> where </b><span style="color: navy">(</span>linkId = 'pss4-q2'<span style="color: navy">)</span><b> then </b>MapPss4Q2<span style="color: navy">(</span><span style="color: maroon">q2</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ2&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q3</span><b> where </b><span style="color: navy">(</span>linkId = 'pss4-q3'<span style="color: navy">)</span><b> then </b>MapPss4Q3<span style="color: navy">(</span><span style="color: maroon">q3</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ3&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">q4</span><b> where </b><span style="color: navy">(</span>linkId = 'pss4-q4'<span style="color: navy">)</span><b> then </b>MapPss4Q4<span style="color: navy">(</span><span style="color: maroon">q4</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapQ4&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">// </span><span style="color: green">Map pre-computed total score → Observation.value</span>
-    pss4Group.item<b> as </b><span style="color: maroon">totalItem</span><b> where </b>linkId = 'pss4-total-score'<b> then </b>MapPss4TotalScore<span style="color: navy">(</span><span style="color: maroon">totalItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapTotal&quot;</i><span style="color: navy">;</span>
+    pss4Group.item<b> as </b><span style="color: maroon">totalItem</span><b> where </b><span style="color: navy">(</span>linkId = 'pss4-total-score'<span style="color: navy">)</span><b> then </b>MapPss4TotalScore<span style="color: navy">(</span><span style="color: maroon">totalItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapTotal&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessPss4&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
@@ -323,7 +323,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

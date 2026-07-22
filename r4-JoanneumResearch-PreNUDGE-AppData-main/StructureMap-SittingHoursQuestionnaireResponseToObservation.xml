@@ -27,7 +27,7 @@
   <span style="color: navy">// </span><span style="color: green">effectiveDateTime from authored (Q9 has no embedded date sub-item)</span>
   src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">authored</span> <i>&quot;SetEffectiveDateTime&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">Map Q9 group to Observation.value</span>
-  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'Q9'<b> then </b>MapQ9ToSittingHours<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ9&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b><span style="color: navy">(</span>linkId = 'Q9'<span style="color: navy">)</span><b> then </b>MapQ9ToSittingHours<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ9&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
@@ -38,7 +38,7 @@
 <span style="color: navy">// </span><span style="color: green">questionnaire; this map copies the result without evaluate().</span>
 <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <b>group </b>MapQ9ToSittingHours<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  src.item<b> as </b><span style="color: maroon">totHours</span><b> where </b>linkId = 'Q9-total-hours'<b> then</b><span style="color: navy"> {
+</span>  src.item<b> as </b><span style="color: maroon">totHours</span><b> where </b><span style="color: navy">(</span>linkId = 'Q9-total-hours'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    totHours.answer<b> as </b><span style="color: maroon">ans</span><b> then</b><span style="color: navy"> {
 </span>      ans.valueDecimal<b> as </b><span style="color: maroon">decElem</span><b> then</b><span style="color: navy"> {
 </span>        decElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'h'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'h'</span> <i>&quot;SetSittingQuantity&quot;</i><span style="color: navy">;</span>
@@ -54,7 +54,7 @@
   <name value="SittingHoursQuestionnaireResponseToObservation"/>
   <title value="Sitting Hours Q to O"/>
   <status value="active"/>
-  <date value="2026-07-01T10:20:10+00:00"/>
+  <date value="2026-07-22T09:38:36+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -108,6 +108,7 @@
         <variable value="src"/>
         <variable value="tgt"/>
       </dependent>
+      <documentation value="Shared base: identifier copy, derivedFrom, subject, issued, status, method."/>
     </rule>
     <rule>
       <name value="SetProfile"/>
@@ -133,6 +134,7 @@
           <valueString value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation"/>
         </parameter>
       </target>
+      <documentation value="Target profile"/>
     </rule>
     <rule>
       <name value="SetCode"/>
@@ -154,6 +156,7 @@
           <valueString value="Sedentary activity 24 hour"/>
         </parameter>
       </target>
+      <documentation value="Observation code"/>
     </rule>
     <rule>
       <name value="SetEffectiveDateTime"/>
@@ -171,6 +174,7 @@
           <valueId value="authored"/>
         </parameter>
       </target>
+      <documentation value="effectiveDateTime from authored (Q9 has no embedded date sub-item)"/>
     </rule>
     <rule>
       <name value="ProcessQ9"/>
@@ -185,6 +189,7 @@
         <variable value="item"/>
         <variable value="tgt"/>
       </dependent>
+      <documentation value="Map Q9 group to Observation.value"/>
     </rule>
   </group>
   <group>

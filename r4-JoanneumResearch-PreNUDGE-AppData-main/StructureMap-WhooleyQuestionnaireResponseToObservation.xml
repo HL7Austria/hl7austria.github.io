@@ -24,26 +24,26 @@
   src.id<b> as </b><span style="color: maroon">id</span><span style="color: navy"><b> -&gt; </b></span>tgt.derivedFrom = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Reference'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">reference</span><b> then</b><span style="color: navy"> {
 </span>    id<span style="color: navy"><b> -&gt; </b></span>reference.reference = <b>append</b><span style="color: navy">(</span><span style="color: blue">'QuestionnaireResponse/'</span><span style="color: navy">, </span><span style="color: maroon">id</span><span style="color: navy">)</span> <i>&quot;setDerivedFromReference&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;setDerivedFrom&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">whooleyGroup</span><b> where </b>whooleyGroup.linkId = 'whooley'<b> then </b>WhooleyGroupToObservation<span style="color: navy">(</span><span style="color: maroon">whooleyGroup</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;mapWhooleyGroup&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">whooleyGroup</span><b> where </b><span style="color: navy">(</span>whooleyGroup.linkId = 'whooley'<span style="color: navy">)</span><b> then </b>WhooleyGroupToObservation<span style="color: navy">(</span><span style="color: maroon">whooleyGroup</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;mapWhooleyGroup&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><span style="color: navy">// </span><span style="color: green">Routes based on q1 answer.</span>
 <span style="color: navy">// </span><span style="color: green">If q1 = SNOMED 373066001 (Ja): delegates to WhooleyQ2Check to test q2.</span>
 <span style="color: navy">// </span><span style="color: green">If q1 = SNOMED 373067005 (Nein): sets Negative result immediately.</span>
 <b>group </b>WhooleyGroupToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  groupItem.item<b> as </b><span style="color: maroon">q1</span><b> where </b>q1.linkId = '/whooley-q1'<b> then</b><span style="color: navy"> {
-</span>    q1.answer<b> as </b><span style="color: maroon">a1</span><b> where </b>a1.valueCoding.code = '373066001'<b> then </b>WhooleyQ2Check<span style="color: navy">(</span><span style="color: maroon">groupItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;whenQ1Ja&quot;</i><span style="color: navy">;</span>
+</span>  groupItem.item<b> as </b><span style="color: maroon">q1</span><b> where </b><span style="color: navy">(</span>q1.linkId = '/whooley-q1'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    q1.answer<b> as </b><span style="color: maroon">a1</span><b> where </b><span style="color: navy">(</span>a1.valueCoding.code = '373066001'<span style="color: navy">)</span><b> then </b>WhooleyQ2Check<span style="color: navy">(</span><span style="color: maroon">groupItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;whenQ1Ja&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;q1Ja&quot;</i><span style="color: navy">;</span>
-  groupItem.item<b> as </b><span style="color: maroon">q1</span><b> where </b>q1.linkId = '/whooley-q1'<b> then</b><span style="color: navy"> {
-</span>    q1.answer<b> as </b><span style="color: maroon">a1</span><b> where </b>a1.valueCoding.code = '373067005'<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'260385009'</span><span style="color: navy">, </span><span style="color: blue">'Negative (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;q1Nein&quot;</i><span style="color: navy">;</span>
+  groupItem.item<b> as </b><span style="color: maroon">q1</span><b> where </b><span style="color: navy">(</span>q1.linkId = '/whooley-q1'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    q1.answer<b> as </b><span style="color: maroon">a1</span><b> where </b><span style="color: navy">(</span>a1.valueCoding.code = '373067005'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'260385009'</span><span style="color: navy">, </span><span style="color: blue">'Negative (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;q1Nein&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;q1Nein&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><span style="color: navy">// </span><span style="color: green">Called only when q1 = Ja. Sets Positive if q2 = Ja, Negative if q2 = Nein.</span>
 <b>group </b>WhooleyQ2Check<span style="color: navy">(</span><b>source</b> <span style="color: maroon">groupItem</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
-</span>  groupItem.item<b> as </b><span style="color: maroon">q2</span><b> where </b>q2.linkId = '/whooley-q2'<b> then</b><span style="color: navy"> {
-</span>    q2.answer<b> as </b><span style="color: maroon">a2</span><b> where </b>a2.valueCoding.code = '373066001'<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'10828004'</span><span style="color: navy">, </span><span style="color: blue">'Positive (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;bothJa&quot;</i><span style="color: navy">;</span>
-    q2.answer<b> as </b><span style="color: maroon">a2</span><b> where </b>a2.valueCoding.code = '373067005'<span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'260385009'</span><span style="color: navy">, </span><span style="color: blue">'Negative (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;q2Nein&quot;</i><span style="color: navy">;</span>
+</span>  groupItem.item<b> as </b><span style="color: maroon">q2</span><b> where </b><span style="color: navy">(</span>q2.linkId = '/whooley-q2'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    q2.answer<b> as </b><span style="color: maroon">a2</span><b> where </b><span style="color: navy">(</span>a2.valueCoding.code = '373066001'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'10828004'</span><span style="color: navy">, </span><span style="color: blue">'Positive (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;bothJa&quot;</i><span style="color: navy">;</span>
+    q2.answer<b> as </b><span style="color: maroon">a2</span><b> where </b><span style="color: navy">(</span>a2.valueCoding.code = '373067005'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.valueCodeableConcept = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'260385009'</span><span style="color: navy">, </span><span style="color: blue">'Negative (qualifier value)'</span><span style="color: navy">)</span> <i>&quot;q2Nein&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;processQ2&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
@@ -54,7 +54,7 @@
   <name value="WhooleyQuestionnaireResponseToObservation"/>
   <title value="PHQ-2/Whooley Q to O"/>
   <status value="active"/>
-  <date value="2026-07-01T10:20:10+00:00"/>
+  <date value="2026-07-22T09:38:36+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -198,6 +198,7 @@
           <valueString value="Adult depression screening assessment"/>
         </parameter>
       </target>
+      <documentation value="LOINC 55757-9: closest available code for a PHQ-2 screening result.&#xD;&#xA;The Whooley Ja/Nein variant over the last month differs from the standard scored PHQ-2."/>
     </rule>
     <rule>
       <name value="setManualMethod"/>

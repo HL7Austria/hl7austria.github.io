@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/QuestionnaireResponseToObservationBase | *Version*:0.1.0 | |
-| Active as of 2026-07-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:QuestionnaireResponseToObservationBase |
+| Active as of 2026-07-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:QuestionnaireResponseToObservationBase |
 
  
 Shared base for Q to O 
@@ -17,7 +17,7 @@ Shared base for Q to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-07-01
+2026-07-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "QuestionnaireResponseToObservationBase",
   "title" : "Shared base for Q to O",
   "status" : "active",
-  "date" : "2026-07-01T10:20:10+00:00",
+  "date" : "2026-07-22T09:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -88,7 +88,8 @@ Links:
         "parameter" : [{
           "valueString" : "final"
         }]
-      }]
+      }],
+      "documentation" : "Fixed values"
     },
     {
       "name" : "SetMethod",
@@ -178,7 +179,8 @@ Links:
             "valueId" : "u"
           }]
         }]
-      }]
+      }],
+      "documentation" : "Copy identifier from QuestionnaireResponse to Observation"
     },
     {
       "name" : "SetDerivedFrom",
@@ -208,7 +210,8 @@ Links:
         {
           "valueId" : "srcRefId"
         }]
-      }]
+      }],
+      "documentation" : "Set derivedFrom reference back to the QuestionnaireResponse"
     },
     {
       "name" : "SetSubject",
@@ -243,7 +246,8 @@ Links:
             "valueId" : "r"
           }]
         }]
-      }]
+      }],
+      "documentation" : "Subject reference"
     },
     {
       "name" : "SetEffective",
@@ -260,7 +264,8 @@ Links:
         "parameter" : [{
           "valueId" : "authored"
         }]
-      }]
+      }],
+      "documentation" : "Instance creation datetime"
     }]
   }]
 }

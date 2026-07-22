@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -253,20 +253,20 @@
 </span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'41653-7'</span><span style="color: navy">, </span><span style="color: blue">'Glucose [Mass/volume] in Capillary blood by Glucometer'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">item</span><b> where </b>linkId = 'blood-glucose'<b> then </b>MapBloodGlucose<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessItem&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b><span style="color: navy">(</span>linkId = 'blood-glucose'<span style="color: navy">)</span><b> then </b>MapBloodGlucose<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessItem&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><b>group </b>MapBloodGlucose<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  <span style="color: navy">// </span><span style="color: green">Process the answer first to get access to nested items</span>
   src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
 </span>    <span style="color: navy">// </span><span style="color: green">effectiveDateTime from nested item</span>
-    answer.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b>linkId = 'datetime'<b> then</b><span style="color: navy"> {
+    answer.item<b> as </b><span style="color: maroon">dtItem</span><b> where </b><span style="color: navy">(</span>linkId = 'datetime'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>      dtItem.answer<b> as </b><span style="color: maroon">dtAns</span><b> then</b><span style="color: navy"> {
 </span>        dtAns.valueDateTime<b> as </b><span style="color: maroon">dt</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">dt</span> <i>&quot;SetEffectiveFromDatetime&quot;</i><span style="color: navy">;</span>
       <span style="color: navy">}</span> <i>&quot;ExtractDateTime&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">}</span> <i>&quot;ProcessDatetime&quot;</i><span style="color: navy">;</span>
     <span style="color: navy">// </span><span style="color: green">Meal context → component[mealContext]</span>
-    answer.item<b> as </b><span style="color: maroon">mcItem</span><b> where </b>linkId = 'meal-context'<b> then</b><span style="color: navy"> {
+    answer.item<b> as </b><span style="color: maroon">mcItem</span><b> where </b><span style="color: navy">(</span>linkId = 'meal-context'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>      mcItem.answer<b> as </b><span style="color: maroon">mcAns</span><b> then</b><span style="color: navy"> {
 </span>        mcAns.valueCoding<b> as </b><span style="color: maroon">coding</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">comp</span><span style="color: navy">, </span> comp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://snomed.info/sct'</span><span style="color: navy">, </span><span style="color: blue">'309602000'</span><span style="color: navy">, </span><span style="color: blue">'Temporal periods relating to feeding and eating'</span><span style="color: navy">)</span><span style="color: navy">, </span> comp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc</span><span style="color: navy">, </span> cc.coding = <span style="color: maroon">coding</span> <i>&quot;SetMealContextCoding&quot;</i><span style="color: navy">;</span>
       <span style="color: navy">}</span> <i>&quot;ExtractCoding&quot;</i><span style="color: navy">;</span>
@@ -307,7 +307,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

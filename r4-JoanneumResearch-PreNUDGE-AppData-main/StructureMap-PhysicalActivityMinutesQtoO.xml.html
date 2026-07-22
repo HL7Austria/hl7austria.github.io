@@ -183,7 +183,7 @@
         
           Draft
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -232,7 +232,7 @@
   &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;effectiveDateTime from authored (EHIS-PAQ Q7 has no embedded date item)&lt;/span&gt;
   src.authored&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.effectiveDateTime = &lt;span style=&quot;color: maroon&quot;&gt;authored&lt;/span&gt; &lt;i&gt;&amp;quot;SetEffectiveDateTime&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Map Q7 group to component[aggregateActivity]&lt;/span&gt;
-  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;q7&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;linkId = 'Q7'&lt;b&gt; then &lt;/b&gt;MapQ7ToAggregate&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;q7&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;ProcessQ7&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;q7&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;linkId = 'Q7'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;MapQ7ToAggregate&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;q7&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;ProcessQ7&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;component[moderateActivity] : NOT mapped&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Q7 asks for total leisure activity time without separating intensity levels.&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;There is no questionnaire source for a moderate-only figure.&lt;/span&gt;
@@ -261,7 +261,7 @@
 &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;---------------------------------------------------------------------------&lt;/span&gt;
 &lt;b&gt;group &lt;/b&gt;MapQ7ToAggregate&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;src&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;QR, &lt;b&gt;target&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;Obs&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;src is the Q7 group item; Q7-total-minutes is a calculated child item.&lt;/span&gt;
-  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;totMins&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;linkId = 'Q7-total-minutes'&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;totMins&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;linkId = 'Q7-total-minutes'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;    totMins.answer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;ans&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;      ans.valueInteger&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;intElem&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;        intElem.value&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;numVal&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt; tgt.component&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;aggComp&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; aggComp.code = &lt;b&gt;cc&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'http://loinc.org'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'101691-4'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Duration of physical activity'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; aggComp.value = &lt;b&gt;create&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Quantity'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;qty&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; qty.value = &lt;span style=&quot;color: maroon&quot;&gt;numVal&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; qty.unit = &lt;span style=&quot;color: blue&quot;&gt;'min/wk'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; qty.system = &lt;span style=&quot;color: blue&quot;&gt;'http://unitsofmeasure.org'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; qty.code = &lt;span style=&quot;color: blue&quot;&gt;'min/wk'&lt;/span&gt; &lt;i&gt;&amp;quot;SetAggregateComponent&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
@@ -277,7 +277,7 @@
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.1.0&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Physical Activity Minutes Q to O&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-07-01T10:20:10+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-07-22T09:38:36+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
@@ -337,6 +337,10 @@ Main entry group
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;src&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;tgt&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Shared base: identifier copy, derivedFrom, subject, issued.
+SetObservationBase also sets method = SCT 87982008 (Manual) — correct for
+all questionnaire-derived observations in this IG.&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;SetMethodManual&quot;/&gt;
@@ -358,6 +362,8 @@ Main entry group
           &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Manual&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Explicitly confirm method = Manual (base already does this; listed for clarity).&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;SetProfile&quot;/&gt;
@@ -384,6 +390,7 @@ Main entry group
                        <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Target profile&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;SetCode&quot;/&gt;
@@ -405,6 +412,7 @@ Main entry group
           &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueString</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Duration of physical activity&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Panel code&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;SetEffectiveDateTime&quot;/&gt;
@@ -422,6 +430,8 @@ Main entry group
           &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter.value_x_">valueId</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;authored&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target.parameter">parameter</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;effectiveDateTime from authored (EHIS-PAQ Q7 has no embedded date item)&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;ProcessQ7&quot;/&gt;
@@ -436,6 +446,7 @@ Main entry group
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;q7&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;tgt&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Map Q7 group to component[aggregateActivity]&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
@@ -566,6 +577,8 @@ no cross-scope variable reference occurs (also a MaLaC-HD limitation).
           &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;src is the Q7 group item; Q7-total-minutes is a calculated child item.&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
 &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap">StructureMap</a>&gt;</code></pre>
@@ -592,7 +605,7 @@ no cross-scope variable reference occurs (also a MaLaC-HD limitation).
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

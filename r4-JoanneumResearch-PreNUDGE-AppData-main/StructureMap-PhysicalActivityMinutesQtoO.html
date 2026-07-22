@@ -196,7 +196,7 @@
         
           Draft
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -265,7 +265,7 @@
   <span style="color: navy">// </span><span style="color: green">effectiveDateTime from authored (EHIS-PAQ Q7 has no embedded date item)</span>
   src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">authored</span> <i>&quot;SetEffectiveDateTime&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">Map Q7 group to component[aggregateActivity]</span>
-  src.item<b> as </b><span style="color: maroon">q7</span><b> where </b>linkId = 'Q7'<b> then </b>MapQ7ToAggregate<span style="color: navy">(</span><span style="color: maroon">q7</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ7&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">q7</span><b> where </b><span style="color: navy">(</span>linkId = 'Q7'<span style="color: navy">)</span><b> then </b>MapQ7ToAggregate<span style="color: navy">(</span><span style="color: maroon">q7</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ7&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">// </span><span style="color: green">component[moderateActivity] : NOT mapped</span>
 <span style="color: navy">// </span><span style="color: green">Q7 asks for total leisure activity time without separating intensity levels.</span>
 <span style="color: navy">// </span><span style="color: green">There is no questionnaire source for a moderate-only figure.</span>
@@ -294,7 +294,7 @@
 <span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
 <b>group </b>MapQ7ToAggregate<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  <span style="color: navy">// </span><span style="color: green">src is the Q7 group item; Q7-total-minutes is a calculated child item.</span>
-  src.item<b> as </b><span style="color: maroon">totMins</span><b> where </b>linkId = 'Q7-total-minutes'<b> then</b><span style="color: navy"> {
+  src.item<b> as </b><span style="color: maroon">totMins</span><b> where </b><span style="color: navy">(</span>linkId = 'Q7-total-minutes'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
 </span>    totMins.answer<b> as </b><span style="color: maroon">ans</span><b> then</b><span style="color: navy"> {
 </span>      ans.valueInteger<b> as </b><span style="color: maroon">intElem</span><b> then</b><span style="color: navy"> {
 </span>        intElem.value<b> as </b><span style="color: maroon">numVal</span><span style="color: navy"><b> -&gt; </b></span> tgt.component<b> as </b><span style="color: maroon">aggComp</span><span style="color: navy">, </span> aggComp.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'101691-4'</span><span style="color: navy">, </span><span style="color: blue">'Duration of physical activity'</span><span style="color: navy">)</span><span style="color: navy">, </span> aggComp.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Quantity'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">qty</span><span style="color: navy">, </span> qty.value = <span style="color: maroon">numVal</span><span style="color: navy">, </span> qty.unit = <span style="color: blue">'min/wk'</span><span style="color: navy">, </span> qty.system = <span style="color: blue">'http://unitsofmeasure.org'</span><span style="color: navy">, </span> qty.code = <span style="color: blue">'min/wk'</span> <i>&quot;SetAggregateComponent&quot;</i><span style="color: navy">;</span>
@@ -328,7 +328,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

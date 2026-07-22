@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/SmokingStatusQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-07-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaireResponseToObservation |
+| Active as of 2026-07-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:SmokingStatusQuestionnaireResponseToObservation |
 
  
 ATHIS-based Smoking Status Q to O 
@@ -17,7 +17,7 @@ ATHIS-based Smoking Status Q to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-07-01
+2026-07-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "SmokingStatusQuestionnaireResponseToObservation",
   "title" : "ATHIS-based Smoking Status Q to O",
   "status" : "active",
-  "date" : "2026-07-01T10:20:10+00:00",
+  "date" : "2026-07-22T09:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -88,7 +88,8 @@ Links:
         "parameter" : [{
           "valueString" : "final"
         }]
-      }]
+      }],
+      "documentation" : "Administrative metadata. Implementations may replace or enrich the identifier\r\nif the Observation needs a separate stable business identifier."
     },
     {
       "name" : "copyIdentifier",
@@ -177,7 +178,8 @@ Links:
         {
           "valueString" : "Tobacco smoking status"
         }]
-      }]
+      }],
+      "documentation" : "IPS/APS-style tobacco smoking status coding."
     },
     {
       "name" : "setManualMethod",
@@ -198,7 +200,8 @@ Links:
         {
           "valueString" : "Manual"
         }]
-      }]
+      }],
+      "documentation" : "User-entered QuestionnaireResponse data is considered manual input."
     },
     {
       "name" : "setDerivedFrom",
@@ -234,7 +237,8 @@ Links:
             "valueId" : "id"
           }]
         }]
-      }]
+      }],
+      "documentation" : "Keep the derivation from QuestionnaireResponse to Observation traceable."
     },
     {
       "name" : "mapSmokingStatusGroup",
@@ -247,7 +251,8 @@ Links:
       "dependent" : [{
         "name" : "SmokingStatusGroupToObservation",
         "variable" : ["groupItem", "tgt"]
-      }]
+      }],
+      "documentation" : "ATHIS answer mapping to the clinical SNOMED CT valueCodeableConcept."
     }]
   },
   {
@@ -302,7 +307,8 @@ Links:
             }]
           }]
         }]
-      }]
+      }],
+      "documentation" : "SK1 = Ja, täglich -> current every day smoker."
     },
     {
       "name" : "sk1Occasional",
@@ -343,7 +349,8 @@ Links:
             }]
           }]
         }]
-      }]
+      }],
+      "documentation" : "SK1 = Ja, gelegentlich -> current occasional smoker."
     },
     {
       "name" : "pastSmokingFormer",
@@ -408,7 +415,8 @@ Links:
             }]
           }]
         }]
-      }]
+      }],
+      "documentation" : "SK1 = Nein and past tobacco smoking = Ja, täglich or Ja, gelegentlich -> former smoker.\r\nThe past-tobacco-smoking item is enabled only when SK1 is negative."
     },
     {
       "name" : "pastSmokingNever",
@@ -449,7 +457,8 @@ Links:
             }]
           }]
         }]
-      }]
+      }],
+      "documentation" : "SK1 = Nein and past tobacco smoking = Nein -> never smoker."
     },
     {
       "name" : "sk1Unknown",
@@ -490,7 +499,8 @@ Links:
             }]
           }]
         }]
-      }]
+      }],
+      "documentation" : "SK1 = Weiß nicht"
     },
     {
       "name" : "sk1NotStated",
@@ -531,7 +541,8 @@ Links:
             }]
           }]
         }]
-      }]
+      }],
+      "documentation" : "SK1 = Keine Angabe"
     }]
   }]
 }

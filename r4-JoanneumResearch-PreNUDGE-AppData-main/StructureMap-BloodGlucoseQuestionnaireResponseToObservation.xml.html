@@ -183,7 +183,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -220,20 +220,20 @@
 &lt;/span&gt;  src&lt;b&gt; then &lt;/b&gt;SetObservationBase&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;src&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;Base&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   src&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt; tgt.meta = &lt;b&gt;create&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Meta'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;meta&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; meta.profile = &lt;span style=&quot;color: blue&quot;&gt;'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation'&lt;/span&gt; &lt;i&gt;&amp;quot;SetProfile&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
   src&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.code = &lt;b&gt;cc&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'http://loinc.org'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'41653-7'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Glucose [Mass/volume] in Capillary blood by Glucometer'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;SetCode&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
-  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;linkId = 'blood-glucose'&lt;b&gt; then &lt;/b&gt;MapBloodGlucose&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;ProcessItem&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
+  src.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;linkId = 'blood-glucose'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; then &lt;/b&gt;MapBloodGlucose&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;item&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt; &lt;i&gt;&amp;quot;ProcessItem&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
 &lt;span style=&quot;color: navy&quot;&gt;}
 
 &lt;/span&gt;&lt;b&gt;group &lt;/b&gt;MapBloodGlucose&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;b&gt;source&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;src&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;QR, &lt;b&gt;target&lt;/b&gt; &lt;span style=&quot;color: maroon&quot;&gt;tgt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; : &lt;/span&gt;Obs&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;  &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Process the answer first to get access to nested items&lt;/span&gt;
   src.answer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;answer&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;    &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;effectiveDateTime from nested item&lt;/span&gt;
-    answer.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dtItem&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;linkId = 'datetime'&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+    answer.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dtItem&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;linkId = 'datetime'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;      dtItem.answer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dtAns&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;        dtAns.valueDateTime&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;dt&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt;tgt.effectiveDateTime = &lt;span style=&quot;color: maroon&quot;&gt;dt&lt;/span&gt; &lt;i&gt;&amp;quot;SetEffectiveFromDatetime&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
       &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;ExtractDateTime&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
     &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;ProcessDatetime&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
     &lt;span style=&quot;color: navy&quot;&gt;// &lt;/span&gt;&lt;span style=&quot;color: green&quot;&gt;Meal context → component[mealContext]&lt;/span&gt;
-    answer.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;mcItem&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;linkId = 'meal-context'&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
+    answer.item&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;mcItem&lt;/span&gt;&lt;b&gt; where &lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;linkId = 'meal-context'&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;      mcItem.answer&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;mcAns&lt;/span&gt;&lt;b&gt; then&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt; {
 &lt;/span&gt;        mcAns.valueCoding&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;coding&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;&lt;b&gt; -&amp;gt; &lt;/b&gt;&lt;/span&gt; tgt.component&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;comp&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; comp.code = &lt;b&gt;cc&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'http://snomed.info/sct'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'309602000'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'Temporal periods relating to feeding and eating'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; comp.value = &lt;b&gt;create&lt;/b&gt;&lt;span style=&quot;color: navy&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: blue&quot;&gt;'CodeableConcept'&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;)&lt;/span&gt;&lt;b&gt; as &lt;/b&gt;&lt;span style=&quot;color: maroon&quot;&gt;cc&lt;/span&gt;&lt;span style=&quot;color: navy&quot;&gt;, &lt;/span&gt; cc.coding = &lt;span style=&quot;color: maroon&quot;&gt;coding&lt;/span&gt; &lt;i&gt;&amp;quot;SetMealContextCoding&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
       &lt;span style=&quot;color: navy&quot;&gt;}&lt;/span&gt; &lt;i&gt;&amp;quot;ExtractCoding&amp;quot;&lt;/i&gt;&lt;span style=&quot;color: navy&quot;&gt;;&lt;/span&gt;
@@ -257,7 +257,7 @@
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;BloodGlucoseQuestionnaireResponseToObservation&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Blood Glucose Q to O&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-07-01T10:20:10+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2026-07-22T09:38:36+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;The PreNUDGE Consortium&quot;/&gt;
@@ -434,6 +434,7 @@
             &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;effectiveDateTime from nested item&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;ProcessMealContext&quot;/&gt;
@@ -500,6 +501,7 @@
             &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.target">target</a>&gt;
           &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Meal context → component[mealContext]&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;MapValueQuantity&quot;/&gt;
@@ -513,7 +515,10 @@
           &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;srcQty&quot;/&gt;
           &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent.variable">variable</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;tgt&quot;/&gt;
         &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.dependent">dependent</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Map the blood glucose value&quot;/&gt;
       &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.rule">rule</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule.documentation">documentation</a>
+                     <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Process the answer first to get access to nested items&quot;/&gt;
     &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group.rule">rule</a>&gt;
   &lt;/<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuremap.html#StructureMap.group">group</a>&gt;
@@ -616,7 +621,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

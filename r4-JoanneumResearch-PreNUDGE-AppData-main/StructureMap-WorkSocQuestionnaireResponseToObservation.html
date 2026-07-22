@@ -196,7 +196,7 @@
         
           Active
           
-            as of 2026-07-01
+            as of 2026-07-22
           
         
       </td>
@@ -252,10 +252,10 @@
 </span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta<b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability'</span><span style="color: navy">, </span><span style="color: blue">'work-soc-category-score'</span><span style="color: navy">, </span><span style="color: blue">'Work-SoC category score'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
-  src.item<b> as </b><span style="color: maroon">workSocGroup</span><b> where </b>linkId = 'work-soc'<b> then</b><span style="color: navy"> {
-</span>    workSocGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'work-soc-comprehensibility-score'<b> then </b>MapComprehensibilityScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapComprehensibilityScore&quot;</i><span style="color: navy">;</span>
-    workSocGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'work-soc-manageability-score'<b> then </b>MapManageabilityScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapManageabilityScore&quot;</i><span style="color: navy">;</span>
-    workSocGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b>linkId = 'work-soc-meaningfulness-score'<b> then </b>MapMeaningfulnessScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapMeaningfulnessScore&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">workSocGroup</span><b> where </b><span style="color: navy">(</span>linkId = 'work-soc'<span style="color: navy">)</span><b> then</b><span style="color: navy"> {
+</span>    workSocGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'work-soc-comprehensibility-score'<span style="color: navy">)</span><b> then </b>MapComprehensibilityScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapComprehensibilityScore&quot;</i><span style="color: navy">;</span>
+    workSocGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'work-soc-manageability-score'<span style="color: navy">)</span><b> then </b>MapManageabilityScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapManageabilityScore&quot;</i><span style="color: navy">;</span>
+    workSocGroup.item<b> as </b><span style="color: maroon">scoreItem</span><b> where </b><span style="color: navy">(</span>linkId = 'work-soc-meaningfulness-score'<span style="color: navy">)</span><b> then </b>MapMeaningfulnessScore<span style="color: navy">(</span><span style="color: maroon">scoreItem</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;MapMeaningfulnessScore&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessWorkSoc&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">// </span><span style="color: green">TODO: Comment/Note mapping disabled due to MaLaC-HD limitation</span>
 <span style="color: navy">// </span><span style="color: green">See: https://gitlab.com/cdehealth/malac-hd/-/issues/128</span>
@@ -310,7 +310,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 1, 2026 10:20+0000">2026-07-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Jul 22, 2026 09:38+0000">2026-07-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss4-score-observation | *Version*:0.1.0 | |
-| Draft as of 2026-07-01 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationPss4Score |
+| Draft as of 2026-07-22 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationPss4Score |
 
  
 Observation profile for recording the calculated PSS-4 total score. Observation.value holds the integer total score (0–16). Components hold the raw categorical answers per item (bound to the PSS frequency ValueSet). Derived from a completed PSS-4 QuestionnaireResponse. 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-pss4-sco
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-07-01
+2026-07-22
 
 Links:
 [Table of Contents](toc.md)|
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationPss4Score",
   "title" : "AT PreNUDGE Observation PSS-4 Score",
   "status" : "draft",
-  "date" : "2026-07-01T10:20:10+00:00",
+  "date" : "2026-07-22T09:38:36+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
