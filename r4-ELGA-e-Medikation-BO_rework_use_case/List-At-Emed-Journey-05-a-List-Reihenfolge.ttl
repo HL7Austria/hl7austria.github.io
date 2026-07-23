@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/List/At-Emed-Journey-05-a-List-Reihenfolge> a fhir:List ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "At-Emed-Journey-05-a-List-Reihenfolge"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-05-a-List-Reihenfolge</b></p><a name=\"At-Emed-Journey-05-a-List-Reihenfolge\"> </a><a name=\"hcAt-Emed-Journey-05-a-List-Reihenfolge\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-05 12:20:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-16,1 täglich auftragen; identifier = 4713_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-02-27 10:20:00+0000</a></td><td>Neuer Planeintrag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.html\">MedicationRequest: extension = 1-0-1-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Medikationsplaneintrag; reported[x] = false; medication[x] = -&gt;Medication EBETREXAT TBL 10MG; authoredOn = 2026-02-27 10:20:00+0000; note = Freitext Informationen zum Medikationsplaneintrag.</a></td><td>Neuer Planeintrag</td></tr></table></div>"
+  ] ;
+  fhir:List.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.value [ fhir:value "123" ]
+  ] ;
+  fhir:List.status [ fhir:value "current"] ;
+  fhir:List.mode [ fhir:value "working"] ;
+  fhir:List.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:736378000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "736378000" ] ;
+       fhir:Coding.display [ fhir:value "Medikationsplan" ]
+     ]
+  ] ;
+  fhir:List.subject [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/At-Emed-Example-Patient-01" ]
+  ] ;
+  fhir:List.date [ fhir:value "2026-03-05T12:20:00+00:00"^^xsd:dateTime] ;
+  fhir:List.source [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/At-Emed-Example-Patient-01" ]
+  ] ;
+  fhir:List.entry [
+     fhir:index 0 ;
+     fhir:List.entry.flag [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS" ] ;
+         fhir:Coding.code [ fhir:value "new" ] ;
+         fhir:Coding.display [ fhir:value "Neuer Planeintrag" ]
+       ]
+     ] ;
+     fhir:List.entry.item [
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02> ;
+       fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:List.entry.flag [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS" ] ;
+         fhir:Coding.code [ fhir:value "new" ] ;
+         fhir:Coding.display [ fhir:value "Neuer Planeintrag" ]
+       ]
+     ] ;
+     fhir:List.entry.item [
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01> ;
+       fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/List/At-Emed-Journey-05-a-List-Reihenfolge.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
