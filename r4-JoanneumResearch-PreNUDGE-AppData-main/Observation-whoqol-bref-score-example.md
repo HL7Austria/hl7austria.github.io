@@ -22,7 +22,7 @@ Profile: [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pren
 
 **method**: Manual
 
-**derivedFrom**: [Response to Questionnaire 'https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/QolQuestionnaire' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-whoqol-bref-response-example.md)
+**derivedFrom**: [Response to Questionnaire '->WHOQOL-BREF Lebensstil Selbsteinschätzung' about '->James Pond Male, DoB: 1990-01-01 ( urn:oid:1.2.40.0.10.1.4.3.1#1234567890)'](QuestionnaireResponse-whoqol-bref-response-example.md)
 
 > **component****code**: Generalized**value**: 75 score (Details: UCUM code{score} = '{score}')
 
@@ -37,7 +37,7 @@ Profile: [AT PreNUDGE Observation WHOQOL-BREF Score](StructureDefinition-at-pren
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-07-22
+2026-07-23
 
 Links:
 [Table of Contents](toc.md)|
