@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-Bundle-Medikationsplan> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "At-Emed-Journey-01-Bundle-Medikationsplan"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
+     ]
+  ] ;
+  fhir:Bundle.type [ fhir:value "collection"] ;
+  fhir:Bundle.timestamp [ fhir:value "2026-02-27T08:00:00+00:00"^^xsd:dateTime] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a55" ] ;
+     fhir:Bundle.entry.resource <urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a55>
+  ] .
+
+<urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a55> a fhir:List ;
+  fhir:Resource.id [ fhir:value "At-Emed-Journey-01-List-Medikationsplan"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-01-List-Medikationsplan\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-01-List-Medikationsplan</b></p><a name=\"At-Emed-Journey-01-List-Medikationsplan\"> </a><a name=\"hcAt-Emed-Journey-01-List-Medikationsplan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-02-27 08:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr></table></div>"
+  ] ;
+  fhir:List.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.value [ fhir:value "123" ]
+  ] ;
+  fhir:List.status [ fhir:value "current"] ;
+  fhir:List.mode [ fhir:value "working"] ;
+  fhir:List.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:736378000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "736378000" ] ;
+       fhir:Coding.display [ fhir:value "Medikationsplan" ]
+     ]
+  ] ;
+  fhir:List.subject [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/At-Emed-Example-Patient-01" ]
+  ] ;
+  fhir:List.date [ fhir:value "2026-02-27T08:00:00+00:00"^^xsd:dateTime] ;
+  fhir:List.source [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Device/At-Emed-Example-Device-01> ;
+     fhir:Reference.reference [ fhir:value "Device/At-Emed-Example-Device-01" ]
+  ] ;
+  fhir:List.emptyReason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/list-empty-reason" ] ;
+       fhir:Coding.code [ fhir:value "notstarted" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-Bundle-Medikationsplan.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

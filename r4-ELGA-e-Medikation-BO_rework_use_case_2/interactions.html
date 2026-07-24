@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\Transaktionen - FHIR® v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img id="header-logo" src="assets/images/hl7atlogo.png"/>
+          </div>
+          <div class="col-11">
+        <!-- at-fhir-ig-template end -->
+            <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+        <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+        <!-- at-fhir-ig-template end -->
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR®</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_07_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_09_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Transaktionen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Transaktionen</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+
+</style>
+
+<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
+
+<!-- Transaktionen -->
+
+<!-- <br>
+[![diagram](eMed_Interactions.png){: style="width: 60%"}](eMed_Interactions.png) -->
+
+<p><br /></p>
+<div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" data-diagram-type="CLASS" style="width:634px;height:684px;background:#FFFFFF;" width="634px" height="684px" viewBox="0 0 634 684" zoomAndPan="magnify" preserveAspectRatio="none" contentStyleType="text/css"><?plantuml 1.2026.7beta8?><defs /><g font-family="sans-serif" lengthAdjust="spacing"><g class="title" data-source-line="44"><text x="170.093" y="22.995" fill="#000" font-size="14" textLength="286.925" font-weight="700" font-family="'Arial'">REST-Schnittstellen: https://[server]</text></g><!--cluster Server--><g class="cluster" data-qualified-name="Server" id="ent0005" data-source-line="80"><rect x="375.11" y="185.267" width="245" height="219" fill="#E97232" fill-opacity="0.741" style="stroke:#181818;stroke-width:1;" rx="2" ry="2" /><rect x="600.11" y="190.267" width="15" height="10" fill="#E97232" fill-opacity="0.741" style="stroke:#181818;stroke-width:1;" /><rect x="598.11" y="192.267" width="4" height="2" fill="#E97232" fill-opacity="0.741" style="stroke:#181818;stroke-width:1;" /><rect x="598.11" y="196.267" width="4" height="2" fill="#E97232" fill-opacity="0.741" style="stroke:#181818;stroke-width:1;" /><text x="480.12" y="209.406" fill="#000" font-size="12" textLength="34.98" font-weight="700" font-family="'Arial'">ELGA</text><text x="453.301" y="223.374" fill="#000" font-size="12" textLength="88.617" font-weight="700" font-family="'Arial'">e-Medikation</text></g><g class="entity" data-qualified-name="Server.p4" id="ent0006" data-source-line="81"><text x="371.122" y="227.468" fill="#000" font-size="12" textLength="20.977" font-family="'Arial'">List</text><text x="327.859" y="241.437" fill="#000" font-size="12" textLength="107.502" font-family="'Arial'">(Medikationsplan)</text><rect x="375.61" y="256.267" width="12" height="12" fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;" /></g><g class="entity" data-qualified-name="Server.p3" id="ent0007" data-source-line="82"><text x="327.264" y="421.406" fill="#000" font-size="12" textLength="120.691" font-family="'Arial'">MedicationDispense</text><text x="310.6" y="435.374" fill="#000" font-size="12" textLength="154.02" font-family="'Arial'">(Durchgeführte Abgaben)</text><rect x="381.61" y="398.267" width="12" height="12" fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;" /></g><g class="entity" data-qualified-name="Server.p2" id="ent0008" data-source-line="83"><text x="325.656" y="350.406" fill="#000" font-size="12" textLength="114.908" font-family="'Arial'">MedicationRequest</text><text x="329.526" y="364.374" fill="#000" font-size="12" textLength="107.168" font-family="'Arial'">(Planeinträge und</text><text x="324.821" y="378.343" fill="#000" font-size="12" textLength="116.578" font-family="'Arial'">Geplante Abgaben)</text><rect x="377.11" y="327.267" width="12" height="12" fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;" /></g><g class="entity" data-qualified-name="Server.p1" id="ent0009" data-source-line="84"><text x="358.742" y="182.437" fill="#000" font-size="12" textLength="32.736" font-family="'Arial'">eMed</text><rect x="369.11" y="197.267" width="12" height="12" fill="#F1F1F1" style="stroke:#181818;stroke-width:1.5;" /></g><!--class IEmed--><g class="entity" data-qualified-name="IEmed" id="ent0001" data-source-line="47"><rect x="7" y="44.297" width="243.111" height="73.938" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2" ry="2" /><ellipse cx="122.534" cy="59.297" rx="10" ry="10" fill="#B4A7E5" style="stroke:#181818;stroke-width:1;" /><path d="M119.55,56.578 L119.55,55.047 L124.753,55.047 L124.753,56.578 L123.019,56.578 L123.019,62.266 L124.753,62.266 L124.753,63.797 L119.55,63.797 L119.55,62.266 L121.284,62.266 L121.284,56.578 L119.55,56.578 Z " fill="#000" /><text x="141.534" y="63.451" fill="#000" font-size="12" font-style="italic" font-family="'Arial'">/</text><line x1="8" y1="74.297" x2="249.111" y2="74.297" style="stroke:#181818;stroke-width:0.5;" /><text x="13" y="89.436" fill="#000" font-size="12" textLength="229.342" font-family="'Arial'">«POST» $groupidentifier-create [GDA]</text><text x="13" y="103.404" fill="#000" font-size="12" textLength="231.111" font-family="'Arial'">«POST» $groupidentifier-search [GDA]</text><line x1="8" y1="110.234" x2="249.111" y2="110.234" style="stroke:#181818;stroke-width:0.5;" /></g><!--class IList--><g class="entity" data-qualified-name="IList" id="ent0002" data-source-line="52"><rect x="9.4" y="153.357" width="238.318" height="129.813" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2" ry="2" /><ellipse cx="74.667" cy="168.357" rx="10" ry="10" fill="#B4A7E5" style="stroke:#181818;stroke-width:1;" /><path d="M71.682,165.638 L71.682,164.107 L76.885,164.107 L76.885,165.638 L75.151,165.638 L75.151,171.326 L76.885,171.326 L76.885,172.857 L71.682,172.857 L71.682,171.326 L73.417,171.326 L73.417,165.638 L71.682,165.638 Z " fill="#000" /><text x="93.667" y="172.511" fill="#000" font-size="12" textLength="99.785" font-style="italic" font-family="'Arial'">/Patient/[id]/List/</text><line x1="10.4" y1="183.357" x2="246.718" y2="183.357" style="stroke:#181818;stroke-width:0.5;" /><text x="15.4" y="198.496" fill="#000" font-size="12" textLength="185.619" font-family="'Arial'">«POST» $plan-read [GDA, PAT]</text><text x="15.4" y="212.464" fill="#000" font-size="12" textLength="158.098" font-family="'Arial'">«POST» $plan-write [GDA]</text><text x="15.4" y="226.433" fill="#000" font-size="12" textLength="201.158" font-family="'Arial'">«POST» $patient-plan-write [PAT]</text><text x="15.4" y="240.402" fill="#000" font-size="12" textLength="161.76" font-family="'Arial'">«POST» $plan-delete [PAT]</text><line x1="10.4" y1="247.232" x2="246.718" y2="247.232" style="stroke:#181818;stroke-width:0.5;" /><text x="15.4" y="262.371" fill="#000" font-size="12" textLength="168.041" font-family="'Arial'">«GET» (plan-history-search)</text><text x="15.4" y="276.339" fill="#000" font-size="12" textLength="226.318" font-family="'Arial'">«GET» (plan-history-directory-search)</text></g><!--class IMedicationRequest--><g class="entity" data-qualified-name="IMedicationRequest" id="ent0003" data-source-line="61"><rect x="10.75" y="318.347" width="235.605" height="115.844" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2" ry="2" /><ellipse cx="30.1" cy="333.347" rx="10" ry="10" fill="#B4A7E5" style="stroke:#181818;stroke-width:1;" /><path d="M27.116,330.628 L27.116,329.097 L32.319,329.097 L32.319,330.628 L30.584,330.628 L30.584,336.316 L32.319,336.316 L32.319,337.847 L27.116,337.847 L27.116,336.316 L28.85,336.316 L28.85,330.628 L27.116,330.628 Z " fill="#000" /><text x="44.289" y="337.501" fill="#000" font-size="12" textLength="193.717" font-style="italic" font-family="'Arial'">/Patient/[id]/MedicationRequest/</text><line x1="11.75" y1="348.347" x2="245.355" y2="348.347" style="stroke:#181818;stroke-width:0.5;" /><text x="16.75" y="363.486" fill="#000" font-size="12" textLength="203.842" font-family="'Arial'">«POST» $prescription-write [GDA]</text><text x="16.75" y="377.454" fill="#000" font-size="12" textLength="217.377" font-family="'Arial'">«POST» $prescription-discard [GDA]</text><line x1="11.75" y1="384.284" x2="245.355" y2="384.284" style="stroke:#181818;stroke-width:0.5;" /><text x="16.75" y="399.423" fill="#000" font-size="12" textLength="168.182" font-family="'Arial'">«GET» (prescription-search)</text><text x="16.75" y="413.392" fill="#000" font-size="12" textLength="154.166" font-family="'Arial'">«GET» (planentry-search)</text><text x="16.75" y="427.361" fill="#000" font-size="12" textLength="223.605" font-family="'Arial'">«DELETE» (prescription-delete) [PAT]</text></g><!--class IDurchgAbgabe--><g class="entity" data-qualified-name="IDurchgAbgabe" id="ent0004" data-source-line="69"><rect x="12.41" y="469.347" width="232.301" height="115.844" fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;" rx="2" ry="2" /><ellipse cx="27.67" cy="484.347" rx="10" ry="10" fill="#B4A7E5" style="stroke:#181818;stroke-width:1;" /><path d="M24.686,481.628 L24.686,480.097 L29.889,480.097 L29.889,481.628 L28.155,481.628 L28.155,487.316 L29.889,487.316 L29.889,488.847 L24.686,488.847 L24.686,487.316 L26.42,487.316 L26.42,481.628 L24.686,481.628 Z " fill="#000" /><text x="40.95" y="488.501" fill="#000" font-size="12" textLength="199.5" font-style="italic" font-family="'Arial'">/Patient/[id]/MedicationDispense/</text><line x1="13.41" y1="499.347" x2="243.711" y2="499.347" style="stroke:#181818;stroke-width:0.5;" /><text x="18.41" y="514.486" fill="#000" font-size="12" textLength="185.631" font-family="'Arial'">«POST» $dispense-write [GDA]</text><text x="18.41" y="528.454" fill="#000" font-size="12" textLength="199.166" font-family="'Arial'">«POST» $dispense-discard [GDA]</text><text x="18.41" y="542.423" fill="#000" font-size="12" textLength="185.754" font-family="'Arial'">«POST» $reference-plan [GDA]</text><line x1="13.41" y1="549.253" x2="243.711" y2="549.253" style="stroke:#181818;stroke-width:0.5;" /><text x="18.41" y="564.392" fill="#000" font-size="12" textLength="220.301" font-family="'Arial'">«GET» (dispense-search) [GDA, PAT]</text><text x="18.41" y="578.361" fill="#000" font-size="12" textLength="205.395" font-family="'Arial'">«DELETE» (dispense-delete) [PAT]</text></g><!--link IDurchgAbgabe to p3--><g class="link" data-entity-1="ent0004" data-entity-2="ent0007" id="lnk11" data-source-line="88" data-link-type="association"><path d="M245.15,472.057 C302.65,444.597 363.7,415.447 381.78,406.807" style="stroke:#181818;stroke-width:1;" fill="none" id="IDurchgAbgabe-p3" codeLine="88" /></g><!--link IMedicationRequest to p2--><g class="link" data-entity-1="ent0003" data-entity-2="ent0008" id="lnk13" data-source-line="89" data-link-type="association"><path d="M246.59,356.337 C302.33,346.847 360.49,336.947 377.3,334.087" style="stroke:#181818;stroke-width:1;" fill="none" id="IMedicationRequest-p2" codeLine="89" /></g><!--link IList to p4--><g class="link" data-entity-1="ent0002" data-entity-2="ent0006" id="lnk15" data-source-line="90" data-link-type="association"><path d="M247.97,238.977 C302.51,248.517 358.9,258.377 375.94,261.357" style="stroke:#181818;stroke-width:1;" fill="none" id="IList-p4" codeLine="90" /></g><!--link IEmed to p1--><g class="link" data-entity-1="ent0001" data-entity-2="ent0009" id="lnk17" data-source-line="91" data-link-type="association"><path d="M213.56,118.707 C225.88,124.457 238.37,130.427 250.11,136.267 C296.99,159.587 352.14,190.737 368.98,200.327" style="stroke:#181818;stroke-width:1;" fill="none" id="IEmed-p1" codeLine="91" /></g><g class="legend" data-source-line="94"><rect x="340.334" y="606.191" width="274.776" height="58.891" fill="none" style="stroke:#000;stroke-width:1;" rx="2" ry="2" /><text x="345.334" y="624.186" fill="#000" font-size="14" textLength="203.649" font-weight="700" font-family="'Arial'">Legende Berechtigungen:</text><text x="345.334" y="640.483" fill="#000" font-size="14" textLength="260.668" font-family="'Arial'">[GDA] = Gesundheitsdiensteanbieter</text><text x="345.334" y="656.779" fill="#000" font-size="14" textLength="264.776" font-family="'Arial'">[PAT] = PATIENT: ELGA-Teilnehmer:in</text></g><?plantuml-src ZLPVJzj847-kFyMMdWH1E840FHtIFJYE2H59Z6AtqhL5qSQUn2isQtTt0-LEV9k-tKUuUofVx6RN9ZW9L9UNmCnl_lrcTYQKy_nkmRunCNTsoLic4hvCWUnaMXVghDMIzAuvPpfRJfSAP98B3K8tatpHqik2flAuLN0gz7B1NOPQTuO8LnMIQL2js-FcOVEmPHIgPJNq3bI-0FUqPTnDqZpHkMmMQBxZO7pDD0UICZgNTB50GTyFHvDkwE-Lo8D1_sDmK3Czc7AQt3J8kt5-Jtc7By6uKHfqbgiaB-1DB_muYU8WlWWZFxmAK3kbc7424vLG3c_ElTD9nnju8p-OHButC8WPf-h6Qiu7NdI9aeoAT9BbF4MU9Wj86TfQm8Ktwaukma6tF-fDXa6tZouC7gZKKw2w10NUEEu4NemQf6w15AuvySFXC1Z5DVk4Cy6ITT2WF-hxAupZg1ic2ef46Pz5Bj1hfE-HFsIpNTCMo12TGwcJa6WgvXpgzjDSfY3zdEUIl3krdxeMxUSoNugqGfpRJmsXCfhcTqWDcL6keAQfpAG0IKvgyXHcTCdrESx4Y2vmtZp9ACx0YuY8_GdagFsoiihfq7uSvosgc03YXuDmF0cGhScvHyWx-EtNzd5xcfhnC4pOP1__bUJ3SE1UFl47Wc2-94eomRJ6CU8SHNkNE0-AgII34XzfnXilyK_-SWZfRF2rbWhgTpjrkW-Ftx_llZVYxMegOTcvAKwVyr1l6yE4vOmcOCFkTbxfqrR4mrFVFpMkECmqqJcHR9vfV7PcE5Wk7ATyX-CWYjrrBix8qsBuZ8_m5kGr3k9p7Zkj7K8LwGSuk3Qf7tzVXL7yun_oYyciO2cIn6OCf9j8V1r0FlUwtlLFWGgVKf9Lm8VrQ5TKCmIsFhFqkZLWIbVnpPyRySsQSZ5cQZqTa2illju6t9d5zK9IHHd8hODUzf02XpLjBp3AFQlCCAzStbSrDLxLbwse8tzM-D1k2TEvCNnTmeg5BVac9H9K8bbX4AzNNWUb-0YeJ6kmf-phg5UgmtmtIky6Wo0EjknB2XiLXm_aVvNUPQe0eQ2glRl4A7DlEgTJs2WxhP2lbhm2R9Vx194m0mbuHUn4RFEnSb6LkpbqpvK_1rklsZ6RodLT4ls1vsju6GwlmX4UYO3iVSAlCLwgCOc2ySTWt30untdUGZl1eETz4U0QUcuiFPQLo3vPIqUHIyIPT_95x3t3b2cdOS75oGgspJ8QbGm3Bj5C8eqbrK-sno_OLaE8fbTc6h2dyl7x7Cp6_I9wO7z7RFffh_m0EYfbHvQSufYuoy9TxxHJj2lfLbYdEAbKfcYdEAh-CwlACQjm3hZvxIR4cFlx0oi0qi4-9vbcywL0mTd-Fcfjkydlf0SAay-0QPNYJEAEf6BAi8lIW4mV4OHVVMpO6J5DSMDWN42s07d6X6D2bf6VkksD_Oj-75p67yRkA8pxsEkokxj4vDfS0Qtp1SbdLJDHRhB5gqJQpKFYhsOWAY311LfoW5aRt2Vp1F57ZoBrqL1kT8-fByWDBHHmJGgGUEtmbM5VhHqU3bwU1jB1Wes3lTlc4McHssQxOKzcBAbGT0tJH5jJeCbxbNzvQZ3zVecgyX-3KZas4WGUOno3R_gioZaGEdlyZbbjTVJ0wgjrW6zBcl163x8U-Zy0?></g></svg></div>
+<p><br /></p>
+
+<style>
+table thead th {
+  border: none !important;
+}
+</style>
+
+<table class="table table-striped table-bordered">
+
+<thead>
+<tr>
+<th style="width:10%">HTTP</th>
+<th style="width:30%">Endpunkt</th>
+<th style="width:25%">Operation</th>
+<th style="width:25%">Beschreibung</th>
+<th style="width:10%; text-align:center;">Rollen</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/</code></td>
+<td><code>$groupidentifier-create</code></td>
+<td>Erzeugen eines neuen e-Med GroupIdentifiers für Geplante Abgaben</td>
+<td>GDA</td>
+</tr>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/</code></td>
+<td><code>$groupidentifier-search</code></td>
+<td>Geplante und durchgeführte Abgaben mittels e-Med GroupIdentifier lesen</td>
+<td>GDA</td>
+</tr>
+
+<tr style="border-top:3px solid #666;">
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/List</code></td>
+<td><code>$plan-read</code></td>
+<td>Aktuelle Medikationsplanversion lesen</td>
+<td>GDA, PAT</td>
+</tr>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/List</code></td>
+<td><code>$plan-write</code></td>
+<td>Neue Version eines Medikationsplans schreiben</td>
+<td>GDA</td>
+</tr>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/List</code></td>
+<td><code>$patient-plan-write</code></td>
+<td>Medikationsplaneinträge löschen</td>
+<td>PAT</td>
+</tr>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/List</code></td>
+<td><code>$plan-delete</code></td>
+<td>Aktuelle oder historische Medikationsplanversion löschen</td>
+<td>PAT</td>
+</tr>
+
+<tr>
+<td><strong>GET</strong></td>
+<td><code>/Patient/{id}/List</code></td>
+<td><code>plan-history-search</code></td>
+<td>
+Historische Medikationsplanversion(en) lesen<br />
+(<code>_history?_include=*</code> bzw.<br />
+<code>_include=*&amp;item=MedicationRequest/{id}&amp;subject=Patient/{id}&amp;date=...</code>)
+</td>
+<td>GDA, PAT</td>
+</tr>
+
+<tr>
+<td><strong>GET</strong></td>
+<td><code>/Patient/{id}/List</code></td>
+<td><code>plan-history-directory-search</code></td>
+<td>
+Verzeichnis historischer Medikationspläne abrufen<br />
+(<code>_history?_elements=date,source</code>)
+</td>
+<td>GDA, PAT</td>
+</tr>
+
+<tr style="border-top:3px solid #666;">
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/MedicationRequest</code></td>
+<td><code>$prescription-write</code></td>
+<td>Geplante Abgabe schreiben</td>
+<td>GDA</td>
+</tr>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/MedicationRequest</code></td>
+<td><code>$prescription-discard</code></td>
+<td>Eigene geplante Abgabe verwerfen</td>
+<td>GDA</td>
+</tr>
+
+<tr>
+<td><strong>GET</strong></td>
+<td><code>/Patient/{id}/MedicationRequest</code></td>
+<td><code>prescription-search</code></td>
+<td>Geplante Abgaben suchen (<code>?category=GeplAbgabe</code>)</td>
+<td>GDA, PAT</td>
+</tr>
+
+<tr>
+<td><strong>GET</strong></td>
+<td><code>/Patient/{id}/MedicationRequest</code></td>
+<td><code>planentry-search</code></td>
+<td>Medikationsplaneinträge suchen (<code>?category=Planeintrag</code>)</td>
+<td>GDA, PAT</td>
+</tr>
+
+<tr>
+<td><strong>DELETE</strong></td>
+<td><code>/Patient/{id}/MedicationRequest</code></td>
+<td><code>prescription-delete</code></td>
+<td>Geplante Abgabe löschen</td>
+<td>PAT</td>
+</tr>
+
+<tr style="border-top:3px solid #666;">
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/MedicationDispense</code></td>
+<td><code>$dispense-write</code></td>
+<td>Durchgeführte Abgabe schreiben</td>
+<td>GDA</td>
+</tr>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/MedicationDispense</code></td>
+<td><code>$dispense-discard</code></td>
+<td>Eigene durchgeführte Abgabe verwerfen</td>
+<td>GDA</td>
+</tr>
+
+<tr>
+<td><strong>POST</strong></td>
+<td><code>/Patient/{id}/MedicationDispense</code></td>
+<td><code>$reference-plan</code></td>
+<td>Referenz auf Medikationsplan erstellen</td>
+<td>GDA</td>
+</tr>
+
+<tr>
+<td><strong>GET</strong></td>
+<td><code>/Patient/{id}/MedicationDispense</code></td>
+<td><code>dispense-search</code></td>
+<td>Durchgeführte Abgaben suchen</td>
+<td>GDA, PAT</td>
+</tr>
+
+<tr>
+<td><strong>DELETE</strong></td>
+<td><code>/Patient/{id}/MedicationDispense</code></td>
+<td><code>dispense-delete</code></td>
+<td>Durchgeführte Abgabe löschen</td>
+<td>PAT</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Jul 24, 2026 15:46+0000">2026-07-24</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+
+<!-- Analytics Below
+================================================== -->
+</body>
+</html>
+
