@@ -105,7 +105,7 @@ Im Rahmen der Anwendung eDiagnose werden unter dem Begriff „Diagnose“ die FH
 
 ### Daignose bearbeiten
 
-> Sub:UC_02_07 - Bestehende relevante Listeinträge fachlich bearbeiten TODo: Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann.
+> Sub:UC_02_07 - Bestehende relevante Listeinträge fachlich bearbeiten TODo: Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar.
 
 #### Ablauf
 
@@ -139,7 +139,7 @@ Im Rahmen der Anwendung eDiagnose werden unter dem Begriff „Diagnose“ die FH
 
 > Sub:UC_02_09 - Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose als relevant gekennzeichnet ist oder nicht.
 
-Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden, siehe Einträge aus einer Liste entfernen.
+Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden, siehe Einträge aus einer Liste entfernen. In Ergänzung müssen der GDA, der die Stornierung durchgeführt hat, den Stornierungszeitpunkt und den Vermerk festhalten.
 
 #### Ablauf
 

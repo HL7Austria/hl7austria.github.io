@@ -13,7 +13,7 @@
 
 ### Vergangene Versionen einer Summary-Liste abrufen (List-History-Read)
 
-> Sub:UC_01_01 - Der History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Liste.
+> Sub:UC_01_01 - Der History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
 
 #### Ablauf
 
@@ -27,7 +27,7 @@ Dieses**Search-Bundle**enthält:
 * alle referenzierten Ressourcen (Patient, Practitioner, Condition, Procedure, AllergyIntolerance)
 
 Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inhalten durch die Fachanwendung.
- Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktueller oder historischer Listversionen.
+ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktueller oder historischer Summary-Listversionen.
 
 #### Sequenzdiagramm
 
@@ -70,7 +70,7 @@ Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyp
 
 Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:
 
-* **Gesamtansicht**: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert.
+* **Gesamtansicht**: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert. Nach dem Abruf kann eine eigene Filterung der Einträge durch das Clientsystem erfolgen.
 * **Gezielte Suche**: Einschränkung der Ergebnismenge durch Suchparameter, z. B. zur Suche nach bestimmten Diagnosen, Ressourcen mit definierten Merkmalen oder zur Festlegung der Anzahl der zurückzuliefernden Einträge. 
 * Mit der **gezielten Suche** kann auch der historische Verlauf einer Ressource (z.B. einer Erkrankung) dargestellt werden, indem nach allen Ressourcen desselben Typs (Business-Identifier) gesucht wird.
  
