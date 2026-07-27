@@ -84,12 +84,12 @@ Die erzeugten Collection Bundles dienen ausschließlich der Auslieferung und wer
 
 ##### Ablauf
 
-1. Der Client führt ein GET auf**/Patient/{id}/List/_history**mit den gewünschten Suchparametern aus.
+1. Der Client führt ein GET auf**[base]/Patient/[id]/List/_history**mit den gewünschten Suchparametern aus.
 1. Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource.
 1. Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und erzeugt daraus ein Collection Bundle.
 1. Die Fachanwendung liefert ein Bundle vom Typ**searchset**zurück, das alle erzeugten Collection Bundles enthält.
 1. Werden keine passenden historischen Medikationsplanversionen gefunden, enthält das zurückgelieferte**searchset**keine Einträge.
-1. Im Fehlerfall wird ein entsprechendes**OperationOutcome**zurückgegeben.
+1. Im Fehlerfall wird einen entsprechenden**OperationOutcome**zurückgegeben.
 
 Beim Plan-History-Search erfolgt **keine Änderung** der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert.
 
@@ -135,7 +135,8 @@ Der Abruf erfolgt mittels **GET** unter Angabe geeigneter Suchparameter:
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
 * **Erstellungszeitpunkt**
-* **Status** des Medikationsplaneintrags (z.B. **active** oder **on-hold**) 
+* **Status** des Medikationsplaneintrags (z.B. **active** oder **on-hold**)
+* **Historisch oder aktuell** (_history) 
 
 Die Suchergebnisse ermöglichen die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.
 
@@ -151,7 +152,7 @@ Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt 
 1. Die Fachanwendung ermittelt anhand der Suchparameter die passenden Medikationsplaneinträge.
 1. Die Fachanwendung liefert die Suchergebnisse als Bundle vom Typ**searchset**zurück.
 1. Werden keine passenden Medikationsplaneinträge gefunden, enthält das zurückgelieferte**searchset**keine Einträge.
-1. Im Fehlerfall wird ein entsprechendes**OperationOutcome**zurückgegeben.
+1. Im Fehlerfall wird ein entsprechender**OperationOutcome**zurückgegeben.
 
 ##### Sequenzdiagramm
 

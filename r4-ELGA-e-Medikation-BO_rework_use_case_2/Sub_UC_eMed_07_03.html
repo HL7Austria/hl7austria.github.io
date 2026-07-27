@@ -301,8 +301,6 @@ width: 100%;}
 
 </style>
 
-<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
-
   <!-- Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_07) -->
 
 <h3 id="sub_uc_emed_07_03---geplante-und-durchgeführte-abgaben-mit-e-med-groupidentifier-lesen-groupidentifier-search">Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (Groupidentifier-Search)</h3>
@@ -318,7 +316,7 @@ width: 100%;}
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li><a name="l457">​</a>Der GDA führt die Custom Operation <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.GroupIdentifier.Search.html">$groupidentifier-search</a> aus und übermittelt einen <em>e-Med GroupIdentifier</em>.</li>
+  <li><a name="l454">​</a>Der GDA führt die Custom Operation <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.GroupIdentifier.Search.html">$groupidentifier-search</a> aus und übermittelt einen <em>e-Med GroupIdentifier</em>.</li>
   <li>Die Fachanwendung führt eine <strong>syntaktische Prüfung</strong> des übermittelten <em>e-Med GroupIdentifier</em> durch.</li>
   <li>Ist der <em>e-Med GroupIdentifier</em> syntaktisch gültig, ermittelt die Fachanwendung alle <em>MedicationRequest</em>-Ressourcen mit:
     <ul>
@@ -344,7 +342,7 @@ width: 100%;}
   </li>
   <li>Die Fachanwendung liefert ein <strong>Bundle</strong> vom Typ <em>searchset</em> mit den ermittelten <em>MedicationRequest</em>- und <em>MedicationDispense</em>-Ressourcen zurück.</li>
   <li>Ergibt die Suche <strong>keine offene Geplante Abgabe</strong>, liefert die Fachanwendung ein <strong>leeres Bundle</strong> vom Typ <em>searchset</em> zurück.</li>
-  <li>Ist der <em>e-Med GroupIdentifier</em> syntaktisch ungültig, lehnt die Fachanwendung die Operation ab und liefert ein entsprechendes <em>OperationOutcome</em> zurück.</li>
+  <li>Ist der <em>e-Med GroupIdentifier</em> syntaktisch ungültig, lehnt die Fachanwendung die Operation ab und liefert einen entsprechenden <em>OperationOutcome</em> zurück.</li>
 </ol>
 
 <h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
@@ -374,7 +372,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jul 24, 2026 15:46+0000">2026-07-24</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 22:40+0000">2026-07-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
