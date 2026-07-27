@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-substan
   "name" : "AtElgaEmedSubstanceWirkstoff",
   "title" : "At ELGA e-Medikation Substance Wirkstoff",
   "status" : "draft",
-  "date" : "2026-07-27T20:12:18+00:00",
+  "date" : "2026-07-27T22:11:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
