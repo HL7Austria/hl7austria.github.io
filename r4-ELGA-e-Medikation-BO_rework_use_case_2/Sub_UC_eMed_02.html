@@ -231,7 +231,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><a name="l417">​</a>Der aktuelle Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> abgerufen werden (siehe <a href="Sub_UC_eMed_01.html#Sub_UC_eMed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
   <li>Die durch $plan-read bereitgestellten Ressourcen werden entsprechend des gewünschten Schreibszenarios bearbeitet.</li>
-  <li>Der aktualisierte Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als Transaction Bundle (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a>) an die Fachanwendung übermittelt.</li>
+  <li>Der aktualisierte Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als Transaction Bundle (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a>) an die Fachanwendung übermittelt werden.</li>
 </ol>
 
 <p>Die nachfolgenden technischen Use Cases beschreiben die jeweils erforderlichen Änderungen an den Ressourcen sowie die Inhalte des Medikationsplan-Transaction-Bundles. Der technische Ablauf von <em>$plan-write</em> einschließlich der Integritätsprüfung mittels <em>ETag</em> ist für alle Schreiboperationen identisch und wird im folgenden Abschnitt beschrieben.</p>
@@ -272,53 +272,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <a href="plantuml/UC_eMed_02_01.svg"><img src="plantuml/UC_eMed_02_01.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
 <br/></p>
 
-<h4 id="sub_uc_emed_02_02---leeren-medikationsplan-dokumentieren">Sub_UC_eMed_02_02 - Leeren Medikationsplan dokumentieren</h4>
-
-<p>Ein Medikationsplan mit <strong>List.emptyReason = nilknown</strong> dokumentiert, dass für den Patienten derzeit <strong>keine Medikation vorgesehen</strong> ist.</p>
-
-<p>Der Wert <em>nilknown</em> dient der Unterscheidung zwischen einem <strong>noch nie befüllten Medikationsplan</strong> (<em>notstarted</em>) und einem Medikationsplan, für den <strong>bewusst keine Medikation dokumentiert</strong> ist (<em>nilknown</em>).</p>
-
-<p>Der Medikationsplan erhält den Status <strong>List.emptyReason = nilknown</strong> in folgenden Fällen:</p>
-
-<ul>
-  <li>Ein GDA hat <strong>alle Planeinträge abgesetzt, beendet oder storniert</strong> oder ein ELGA-Teilnehmer hat <strong>alle Planeinträge unwiderruflich gelöscht</strong>, sodass sämtliche Einträge der <em>List</em> das <em>List.entry.flag = removed</em> besitzen.
-Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit <em>List.emptyReason = nilknown</em> aus.</li>
-</ul>
-
-  <!-- (TODO: Invariante zur Überprüfung) -->
-<ul>
-  <li>Ein GDA möchte explizit dokumentieren, dass derzeit keine Medikation vorgesehen ist, der Medikationsplan befindet sich aber noch im Initialzustand (<em>List.emptyReason = notstarted</em>). In diesem Fall kann der GDA <em>List.emptyReason</em> zu <em>nilknown</em> ändern und im Anschluss ein <em>Plan-Write</em> ausführen.</li>
-</ul>
-
-<h5 id="relevante-elemente-list">Relevante Elemente (List)</h5>
-
-<p>Der GDA übermittelt ein Medikationsplan-Transaction-Bundle mit:</p>
-
-<pre><code class="language-JSON">AtElgaEmedListMedikationsplan
-    identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
-    status: current
-    mode: working
-    date: Datum der Bearbeitung
-    source: veranwortlicher GDA 
-    emptyReason: nilknown   // Patient nimmt derzeit kein Medikation ein
-</code></pre>
-
-<h5 id="custom-operations-1">Custom Operations</h5>
-
-<ul>
-  <li><a name="l682">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l686">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
-</ul>
-
-<h4 id="sequenzdiagramm---allgemeiner-ablauf-von-planeinträge-bearbeiten">Sequenzdiagramm - Allgemeiner Ablauf von Planeinträge bearbeiten</h4>
-
-<p>Im Weiteren wird beschrieben, wie Planeinträge bearbeitet werden können. Das Sequenzdiagramm zeigt den allgemeinen Ablauf.</p>
-
-<p><br/>
-<a href="plantuml/UC_eMed_02_03.svg"><img src="plantuml/UC_eMed_02_03.svg" alt="overview" style="width:40%;" class="mx-auto"/></a>
-<br/></p>
-
-<h4 id="sub_uc_emed_02_03---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_03 - Planeintrag in Medikationsplan hinzufügen</h4>
+<h4 id="sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</h4>
 
 <p>Der GDA kann dem Medikationsplan ein oder mehrere Planeinträge hinzufügen. 
 Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedikation (durch einen anderen GDA) bzw. Eigenmedikation des Patienten dokumentiert.</p>
@@ -352,7 +306,7 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
 
   <!-- Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten Bundle den Status der Einträge mit *new* automatisch auf *unchanged*. -->
 
-<h5 id="relevante-elemente-list-1">Relevante Elemente (List)</h5>
+<h5 id="relevante-elemente-list">Relevante Elemente (List)</h5>
 
 <pre><code class="language-JSON">AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
@@ -387,16 +341,91 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
 
   <!-- TODO: muss PZN mit Displayname dokumentiert werden? wenn ja, muss geprüft werden. sonst durch Server ergänzt und zwecks Prüfung zurückgeben. -->
 
+<h5 id="custom-operations-1">Custom Operations</h5>
+
+<ul>
+  <li><a name="l736">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l740">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+</ul>
+
+<h4 id="sequenzdiagramm---allgemeiner-ablauf-von-planeinträge-bearbeiten">Sequenzdiagramm - Allgemeiner Ablauf von Planeinträge bearbeiten</h4>
+
+<p>Im Weiteren wird beschrieben, wie Planeinträge bearbeitet werden können. Das Sequenzdiagramm zeigt den allgemeinen Ablauf.</p>
+
+<p><br/>
+<a href="plantuml/UC_eMed_02_02.svg"><img src="plantuml/UC_eMed_02_02.svg" alt="overview" style="width:40%;" class="mx-auto"/></a>
+<br/></p>
+
+<h4 id="sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</h4>
+
+<p>Der GDA kann im Medikationsplan ein oder mehrere Planeinträge ändern.</p>
+
+<p>Die Änderung des Planeintrag kann alle Inhalte umfassen, z.B.: Änderung des Status (pausieren/aktivieren), Änderung des Einnahmezeitraums, der Dosierung oder der Medikation. Wird die Planeintrag-ID (<em>identifier</em>) geändert, kann über diese kein Bezug mehr zu vorherehenden Planeinträgen hergestellt werden.   <!-- Todo: Planeintrag-ID nicht mehr relevant! Die id muss erhalten bleiben. zu korrigieren -->
+Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. Änderung PZN; Blutdruckmittel auf Antibiotikum) <strong>SOLL</strong> ein neuer Planeintrag erfasst und kein bestehender Eintrag weiterverwendet werden.</p>
+
+<p>Um Planeinträge zu ändern, führt der GDA ein $plan-read aus und bearbeitet die von der Fachanwendung bereitgestellten Ressourcen:</p>
+<ul>
+  <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>List.date</em> aktualisiert.</li>
+  <li>Entsprechende Planeinträge (<em>MedicationRequests</em>) werden geändert und das entsprechende Entry der <em>List</em>-Ressouce angepasst:
+    <ul>
+      <li>Das List.entry.flag erhält den Wert <em>changed</em>,</li>
+      <li>der MedicationRequest selbst kann den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
+      <li>der Einnahmezeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Der GDA übermittelt (via POST $plan-write) den aktualisierten Medikationsplan in einem Transaction Bundle:</p>
+<ul>
+  <li>alle geänderten Ressourcen sind inline im Bundle enthalten</li>
+  <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.</li>
+</ul>
+
+  <!-- Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten Bundle den Status der Einträge mit *changed* automatisch auf *unchanged*. -->
+
+<h5 id="relevante-elemente-list-1">Relevante Elemente (List)</h5>
+
+<pre><code class="language-JSON">AtElgaEmedListMedikationsplan
+    identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
+    status: current
+    mode: working
+    date: Datum der Bearbeitung des Medikationsplans
+    source: Veranwortlicher GDA 
+    entry[0]:  // 1. Planeintrag wird geändert
+        flag: changed 
+        date: Datum der Änderung des Planeintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
+        item: Referenz auf den Planeintrag 1  
+    entry[1]:  // 2. Planeintrag bleibt unverändert
+        flag: unchanged 
+        date: Datum der Aufnahme des Planeintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
+        item: Referenz auf den Planeintrag 2  
+</code></pre>
+
+<h5 id="relevante-elemente-medicationrequest---planeintrag-1-1">Relevante Elemente (MedicationRequest - Planeintrag 1)</h5>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
+    identifier: Planeintrag-ID bleibt bestehen  // sofern der Bezug erhalten bleiben soll
+    status: active | on-hold
+    statusReason.text: Freitextbegrüdung für die Änderung 
+    reportedBoolean: false  // Fremdmedikation
+    medicationReference.reference: Änderungen betreffend der Medikation // Contained Medication 
+    authoredOn: Datum der Änderung des Planeintrags    
+    requester: für die Änderung verantwortlicher GDA 
+    dosageInstruction: Änderung betreffend Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)
+    priorPrescription: Referenz auf ersetzten Planeintrag
+</code></pre>
+<p>  <!-- statusReason.text: optional TODO: Verwendung zu prüfen, Ressource anzupassen --></p>
+
 <h5 id="custom-operations-2">Custom Operations</h5>
 
 <ul>
-  <li><a name="l854">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l858">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l860">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l864">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-1">Sequenzdiagramm</h5>
 
-<p><a name="l866">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l872">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten">Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten</h4>
 
@@ -432,7 +461,7 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
         item: Referenz auf den Planeintrag 1  
 </code></pre>
 
-<h5 id="relevante-elemente-medicationrequest---planeintrag-1-1">Relevante Elemente (MedicationRequest - Planeintrag 1)</h5>
+<h5 id="relevante-elemente-medicationrequest---planeintrag-1-2">Relevante Elemente (MedicationRequest - Planeintrag 1)</h5>
 
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
     // unverändert (verantwortlicher GDA, Datum, Status bleiben bestehen)
@@ -441,13 +470,13 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
 <h5 id="custom-operations-3">Custom Operations</h5>
 
 <ul>
-  <li><a name="l969">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l973">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l975">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l979">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-2">Sequenzdiagramm</h5>
 
-<p><a name="l981">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l987">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_05---planeintrag-pausieren">Sub_UC_eMed_02_05 - Planeintrag pausieren</h4>
 
@@ -484,7 +513,7 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
         item: Referenz auf den Planeintrag 2  
 </code></pre>
 
-<h5 id="relevante-elemente-medicationrequest---planeintrag-1-2">Relevante Elemente (MedicationRequest - Planeintrag 1)</h5>
+<h5 id="relevante-elemente-medicationrequest---planeintrag-1-3">Relevante Elemente (MedicationRequest - Planeintrag 1)</h5>
 
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
     identifier: Planeintrag-ID bleibt bestehen
@@ -500,73 +529,44 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
 <h5 id="custom-operations-4">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1103">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1107">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1109">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1113">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-3">Sequenzdiagramm</h5>
 
-<p><a name="l1115">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1121">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
-<h4 id="sub_uc_emed_02_06---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_06 - Planeintrag im Medikationsplan ändern</h4>
+<h4 id="sub_uc_emed_02_06---leeren-medikationsplan-dokumentieren">Sub_UC_eMed_02_06 - Leeren Medikationsplan dokumentieren</h4>
 
-<p>Der GDA kann im Medikationsplan ein oder mehrere Planeinträge ändern.</p>
+<p>Ein Medikationsplan mit <strong>List.emptyReason = nilknown</strong> dokumentiert, dass für den Patienten derzeit <strong>keine Medikation vorgesehen</strong> ist.</p>
 
-<p>Die Änderung des Planeintrag kann alle Inhalte umfassen, z.B.: Änderung des Status (pausieren/aktivieren), Änderung des Einnahmezeitraums, der Dosierung oder der Medikation. Wird die Planeintrag-ID (<em>identifier</em>) geändert, kann über diese kein Bezug mehr zu vorherehenden Planeinträgen hergestellt werden.   <!-- Todo: Planeintrag-ID nicht mehr relevant! Die id muss erhalten bleiben. zu korrigieren -->
-Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. Änderung PZN; Blutdruckmittel auf Antibiotikum) <strong>SOLL</strong> ein neuer Planeintrag erfasst und kein bestehender Eintrag weiterverwendet werden.</p>
+<p>Der Wert <em>nilknown</em> dient der Unterscheidung zwischen einem <strong>noch nie befüllten Medikationsplan</strong> (<em>notstarted</em>) und einem Medikationsplan, für den <strong>bewusst keine Medikation dokumentiert</strong> ist (<em>nilknown</em>).</p>
 
-<p>Um Planeinträge zu ändern, führt der GDA ein $plan-read aus und bearbeitet die von der Fachanwendung bereitgestellten Ressourcen:</p>
+<p>Der Medikationsplan erhält den Status <strong>List.emptyReason = nilknown</strong> in folgenden Fällen:</p>
+
 <ul>
-  <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, das Datum in <em>List.date</em> aktualisiert.</li>
-  <li>Entsprechende Planeinträge (<em>MedicationRequests</em>) werden geändert und das entsprechende Entry der <em>List</em>-Ressouce angepasst:
-    <ul>
-      <li>Das List.entry.flag erhält den Wert <em>changed</em>,</li>
-      <li>der MedicationRequest selbst kann den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
-      <li>der Einnahmezeitraum im MedicationRequest kann sich auf das aktuelle Datum beziehen oder in der Zukunft liegen</li>
-    </ul>
-  </li>
+  <li>Ein GDA hat <strong>alle Planeinträge abgesetzt, beendet oder storniert</strong> oder ein ELGA-Teilnehmer hat <strong>alle Planeinträge unwiderruflich gelöscht</strong>, sodass sämtliche Einträge der <em>List</em> das <em>List.entry.flag = removed</em> besitzen.
+Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit <em>List.emptyReason = nilknown</em> aus.</li>
 </ul>
 
-<p>Der GDA übermittelt (via POST $plan-write) den aktualisierten Medikationsplan in einem Transaction Bundle:</p>
+  <!-- (TODO: Invariante zur Überprüfung) -->
 <ul>
-  <li>alle geänderten Ressourcen sind inline im Bundle enthalten</li>
-  <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.</li>
+  <li>Ein GDA möchte explizit dokumentieren, dass derzeit keine Medikation vorgesehen ist, der Medikationsplan befindet sich aber noch im Initialzustand (<em>List.emptyReason = notstarted</em>). In diesem Fall kann der GDA <em>List.emptyReason</em> zu <em>nilknown</em> ändern und im Anschluss ein <em>Plan-Write</em> ausführen.</li>
 </ul>
-
-  <!-- Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten Bundle den Status der Einträge mit *changed* automatisch auf *unchanged*. -->
 
 <h5 id="relevante-elemente-list-4">Relevante Elemente (List)</h5>
+
+<p>Der GDA übermittelt ein Medikationsplan-Transaction-Bundle mit:</p>
 
 <pre><code class="language-JSON">AtElgaEmedListMedikationsplan
     identifier: von der Fachanwendung übermittelt (Integritätsprüfung) 
     status: current
     mode: working
-    date: Datum der Bearbeitung des Medikationsplans
-    source: Veranwortlicher GDA 
-    entry[0]:  // 1. Planeintrag wird geändert
-        flag: changed 
-        date: Datum der Änderung des Planeintrags  // in diesem Fall gleich mit dem Datum der Bearbeitung des Medikationsplans
-        item: Referenz auf den Planeintrag 1  
-    entry[1]:  // 2. Planeintrag bleibt unverändert
-        flag: unchanged 
-        date: Datum der Aufnahme des Planeintrags // in diesem Fall unterschiedlich mit dem Datum der Bearbeitung des Medikationsplans
-        item: Referenz auf den Planeintrag 2  
+    date: Datum der Bearbeitung
+    source: veranwortlicher GDA 
+    emptyReason: nilknown   // Patient nimmt derzeit kein Medikation ein
 </code></pre>
-
-<h5 id="relevante-elemente-medicationrequest---planeintrag-1-3">Relevante Elemente (MedicationRequest - Planeintrag 1)</h5>
-
-<pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
-    identifier: Planeintrag-ID bleibt bestehen  // sofern der Bezug erhalten bleiben soll
-    status: active | on-hold
-    statusReason.text: Freitextbegrüdung für die Änderung 
-    reportedBoolean: false  // Fremdmedikation
-    medicationReference.reference: Änderungen betreffend der Medikation // Contained Medication 
-    authoredOn: Datum der Änderung des Planeintrags    
-    requester: für die Änderung verantwortlicher GDA 
-    dosageInstruction: Änderung betreffend Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)
-    priorPrescription: Referenz auf ersetzten Planeintrag
-</code></pre>
-<p>  <!-- statusReason.text: optional TODO: Verwendung zu prüfen, Ressource anzupassen --></p>
 
 <h5 id="custom-operations-5">Custom Operations</h5>
 
@@ -912,7 +912,7 @@ Das Portal führt folgende Änderungen durch:</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 22:40+0000">2026-07-27</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 23:37+0000">2026-07-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
