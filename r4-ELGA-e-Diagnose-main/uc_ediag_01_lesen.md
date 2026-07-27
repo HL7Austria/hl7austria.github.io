@@ -70,9 +70,9 @@ Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyp
 
 Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:
 
-* **Gesamtansicht**: Abruf aller vorhandenen Diagnosen, Prozeduren oder Allergien und Intoleranzen eines Patienten.
-* **Gezielte Suche**: Einschränkung der Ergebnismenge durch Suchparameter, z. B. Suche nach bestimmten Diagnosen oder Ressourcen mit bestimmten Merkmalen. 
-* Mit der **gezielten Suche** kann auch der Verlauf einer Ressource (Krankheit, Prozedure,…) dargestellt werden, indem nach allen Ressourcen (eines Typs) gesucht wird, die denselben Business-Identifier haben.
+* **Gesamtansicht**: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert.
+* **Gezielte Suche**: Einschränkung der Ergebnismenge durch Suchparameter, z. B. zur Suche nach bestimmten Diagnosen, Ressourcen mit definierten Merkmalen oder zur Festlegung der Anzahl der zurückzuliefernden Einträge. 
+* Mit der **gezielten Suche** kann auch der historische Verlauf einer Ressource (z.B. einer Erkrankung) dargestellt werden, indem nach allen Ressourcen desselben Typs (Business-Identifier) gesucht wird.
  
 * **Auswahl für Folgeoperationen**: Ermittlung einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.
 
