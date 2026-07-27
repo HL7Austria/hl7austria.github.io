@@ -411,7 +411,7 @@ width: 100%;}
 <h5 id="ablauf-1">Ablauf</h5>
 
 <ol>
-  <li>Der Client führt ein GET auf <em>/Patient/{id}/List/_history</em> mit den gewünschten Suchparametern aus.</li>
+  <li>Der Client führt ein GET auf <em>[base]/Patient/[id]/List/_history</em> mit den gewünschten Suchparametern aus.</li>
   <li>Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource.</li>
   <li>Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und erzeugt daraus ein Collection Bundle.</li>
   <li>Die Fachanwendung liefert ein Bundle vom Typ <em>searchset</em> zurück, das alle erzeugten Collection Bundles enthält.</li>
@@ -437,15 +437,15 @@ width: 100%;}
   <!-- list.code= 736378000 in Abfragen ergänzen --></p>
 
   <!-- * Aktuelle Medikationsplanversion lesen:
-GET [base]/Patient/{id}/List -->
+GET [base]/Patient/[id]/List -->
   <!-- * Historische Versionen eines Medikationsplans lesen:
-GET [base]/Patient/{id}/List/_history -->
+GET [base]/Patient/[id]/List/_history -->
   <!-- * Historische Medikationsplanversionen lesen, die ab einem bestimmten Datum erstellt wurden:
-GET [base]/Patient/{id}/List/_history?date=ge2025-01-01 -->
+GET [base]/Patient/[id]/List/_history?date=ge2025-01-01 -->
   <!-- * Historische Medikationsplanversionen lesen, die einen bestimmten Planeintrag enthalten:
-GET [base]/Patient/{id}/List/_history?_include=*&item=MedicationRequest/{id} -->
+GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id] -->
   <!-- * Historische Medikationsplanversionen lesen, die nach einem bestimmten Datum erstellt wurden und einen bestimmten Planeintrag enthalten:
-GET [base]/Patient/{id}/List/_history?_include=*&item=MedicationRequest/{id}&date=ge2025-01-01 -->
+GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&date=ge2025-01-01 -->
 
 <h4 id="sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</h4>
 
@@ -518,15 +518,15 @@ GET [base]/Patient/{id}/List/_history?_include=*&item=MedicationRequest/{id}&dat
 
 <p>In Arbeit. 
   <!-- * Alle aktiven Medikationsplaneinträge eines Patienten:
-  `GET /Patient/{id}/MedicationRequest?status=active` --></p>
+  `GET /Patient/[id]/MedicationRequest?status=active` --></p>
 
   <!-- * Medikationsplaneinträge zu einem bestimmten Arzneimittel:
-  `GET /Patient/{id}/MedicationRequest?medication=<PZN>` -->
+  `GET /Patient/[id]/MedicationRequest?medication=<PZN>` -->
 
   <!-- * Medikationsplaneinträge innerhalb eines Erstellungszeitraums:
-  `GET /Patient/{id}/MedicationRequest?authoredon=ge2026-01-01&authoredon=le2026-12-31` -->
+  `GET /Patient/[id]/MedicationRequest?authoredon=ge2026-01-01&authoredon=le2026-12-31` -->
   <!-- * Historische und aktuelle Medikationsplaneinträge eines bestimmten Wirkstoffs:
-  `GET /Patient/{id}/MedicationRequest?ingredient=<Wirkstoff>` -->
+  `GET /Patient/[id]/MedicationRequest?ingredient=<Wirkstoff>` -->
 
 
 
@@ -547,7 +547,7 @@ GET [base]/Patient/{id}/List/_history?_include=*&item=MedicationRequest/{id}&dat
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 19:55+0000">2026-07-27</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 20:12+0000">2026-07-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

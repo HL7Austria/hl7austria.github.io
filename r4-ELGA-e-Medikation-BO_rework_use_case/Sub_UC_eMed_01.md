@@ -84,7 +84,7 @@ Die erzeugten Collection Bundles dienen ausschließlich der Auslieferung und wer
 
 ##### Ablauf
 
-1. Der Client führt ein GET auf**/Patient/{id}/List/_history**mit den gewünschten Suchparametern aus.
+1. Der Client führt ein GET auf**[base]/Patient/[id]/List/_history**mit den gewünschten Suchparametern aus.
 1. Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource.
 1. Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und erzeugt daraus ein Collection Bundle.
 1. Die Fachanwendung liefert ein Bundle vom Typ**searchset**zurück, das alle erzeugten Collection Bundles enthält.
