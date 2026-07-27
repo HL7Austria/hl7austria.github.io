@@ -28,7 +28,7 @@ Die $list-write Operation wird aufgerufen, wenn eine Liste geschrieben wird.
   "title" : "e-Diagnose Operation für List-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-07-27T07:32:14+00:00",
+  "date" : "2026-07-27T07:43:34+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

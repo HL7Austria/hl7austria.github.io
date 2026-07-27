@@ -9,6 +9,8 @@
 
 > UC-02 -Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. Im Mittelpunkt stehen die Aktualisierung von Listen sowie die Erfassung, Zuordnung, Entfernung, Stornierung und Löschung von Diagnosen, Prozeduren oder Allergien und Intoleranzen.
 
+## Interaktionen auf Listenressourcen
+
 ### Leere Liste fachlich bestätigen
 
 ToDo: Die Überprüfung aus diesem UC wird bereits bei List-Read durchgeführt. Teil des ELGA Core. emptyReason #nilknown. Im eDiag wir müssen zusätzlich angeben welcher ListType es ist. Eine leere Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine relevanten Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von relevanten Einträgen und ist von einer noch nicht befüllten Liste zu unterscheiden.
@@ -84,7 +86,11 @@ Vorschlag: Einträge innerhalb einer Liste durch ELGA-Teilnehmer:in löschen. Di
 
 > Sub_UC_eDiag_02_05 -Der GDA kann die Reihenfolge der Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. Evtl. auch in den ELGA Core mitnehmen.
 
-### Ressource erfassen
+## Interaktionen auf Einzelressourcen
+
+Unter dem Begriff „Diagnose“ werden in diesem Implementierungsleitfaden die FHIR-Ressourcen Condition zur Abbildung von Diagnosen, Procedure zur Abbildung von Prozeduren sowie AllergyIntolerance zur Abbildung von Allergien und Intoleranzen zusammengefasst.
+
+### Diagnose erfassen
 
 > Sub_UC_eDiag_02_06 - Der GDA erfasst neue Diagnosen, Prozeduren sowie Allergien und Intoleranzen über die e-Diagnose Fachanwendung, siehe [Transaktionen](transaction.md#Transaktionen).
 
@@ -98,14 +104,14 @@ Vorschlag: Einträge innerhalb einer Liste durch ELGA-Teilnehmer:in löschen. Di
 
 #### Sequenzdiagramm
 
-### Ressource bearbeiten
+### Daignose bearbeiten
 
 > Sub_UC_eDiag_02_07 - Bestehende relevante Listeinträge fachlich bearbeiten TODo: Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann.
 
 #### Ablauf
 
 
-### Ressource löschen
+### Diagnose löschen
 
 > Sub_UC_eDiag_02_08 - Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert. Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.
 
@@ -130,7 +136,7 @@ Vorschlag: Einträge innerhalb einer Liste durch ELGA-Teilnehmer:in löschen. Di
 
 ![](patient_delete.drawio.svg)
 
-### Ressource stornieren
+### Diagnose stornieren
 
 > Sub_UC_eDiag_02_09 - Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose als relevant gekennzeichnet ist oder nicht.
 
