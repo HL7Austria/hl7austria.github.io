@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-07-23T13:59:43+00:00",
+  "date" : "2026-07-27T19:55:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -64,7 +64,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.2.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
