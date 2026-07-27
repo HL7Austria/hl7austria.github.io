@@ -29,7 +29,9 @@ ToDo: Nur der GDA setzt das nilknown und nicht die Fachanwendung
 1. Die Fachanwendung stellt dem GDA die leere Liste zur Bestätigung bereit.
 1. Der GDA bestätigt, dass für die Person aktuell keine Einträge dokumentiert werden müssen.
 1. Die Fachanwendung setzt daraufhin**List.emptyReason = nilknown**und liefert die aktualísierte Liste inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)zurück.
-1. Anschließend führt die Fachanwendung einen**POST $list-write**aus, um den bestätigten Zustand der Liste zu speichern, siehe Sequenzdiagramm[List-Read](uc_ediag_01_lesen.md#list-read).
+1. Anschließend führt die Fachanwendung einen**POST $list-write**aus, um den bestätigten Zustand der Liste zu speichern.
+
+#### Sequenzdiagramm
 
 ### Liste aktualisieren (List-Write)
 
@@ -88,7 +90,7 @@ Vorschlag: Einträge innerhalb einer Liste durch ELGA-Teilnehmer:in löschen. Di
 
 ## Interaktionen auf Einzelressourcen
 
-Unter dem Begriff „Diagnose“ werden in diesem Implementierungsleitfaden die FHIR-Ressourcen Condition zur Abbildung von Diagnosen, Procedure zur Abbildung von Prozeduren sowie AllergyIntolerance zur Abbildung von Allergien und Intoleranzen zusammengefasst.
+Im Rahmen der Anwendung eDiagnose werden unter dem Begriff „Diagnose“ die FHIR-Ressourcen Condition (Diagnosen), Procedure (Prozeduren) sowie AllergyIntolerance (Allergien und Intoleranzen) zusammengefasst.
 
 ### Diagnose erfassen
 
@@ -140,7 +142,7 @@ Unter dem Begriff „Diagnose“ werden in diesem Implementierungsleitfaden die 
 
 > Sub_UC_eDiag_02_09 - Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose als relevant gekennzeichnet ist oder nicht.
 
-Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden (siehe [Sub_UC_eDiag_06_05 - Einträge aus einer Liste entfernen](uc_ediag_06_int_list.md#sub_uc_ediag_06_05---einträge-aus-einer-liste-entfernen)).
+Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden, siehe Einträge aus einer Liste entfernen.
 
 #### Ablauf
 
