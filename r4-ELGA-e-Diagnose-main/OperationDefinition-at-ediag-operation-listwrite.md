@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-listwrite | *Version*:0.1.0 | |
-| Draft as of 2026-07-21 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListWrite |
+| Draft as of 2026-07-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListWrite |
 
  
 Die $list-write Operation wird aufgerufen, wenn eine Liste geschrieben wird. 
@@ -28,7 +28,7 @@ Die $list-write Operation wird aufgerufen, wenn eine Liste geschrieben wird.
   "title" : "e-Diagnose Operation für List-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-07-21T13:00:05+00:00",
+  "date" : "2026-07-27T06:31:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
