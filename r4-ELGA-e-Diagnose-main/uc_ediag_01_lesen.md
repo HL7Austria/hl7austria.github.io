@@ -7,7 +7,7 @@
 
 # Lesen
 
-> UC-01 - Dieses Kapitel beschreibt die lesenden Zugriffe auf Listen sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.
+> UC-01 - Dieses Kapitel beschreibt die lesenden Zugriffe auf Summary-Listen, Gesamtansicht sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.
 
 ## Interaktionen auf Listenressourcen
 
@@ -18,7 +18,7 @@
 #### Ablauf
 
 1. Der GDA fürht ein**GET**(Suche) auf den List-Typ aus.
-1. Die Fachanwendung prüft, ob Listen entsprechend der Suchparameter vorhanden sind.
+1. Die Fachanwendung führt die Suche anhand der angegebenen Suchparameter durch.
 1. Werden keine Listen gebunden, wird ein leeres Ergebnis zurückgeliefert.
 1. Wird zumindest eine Liste gefunden, liefert die Fachanwendung ein**Search-Bundle**zurück.
 Dieses**Search-Bundle**enthält:
