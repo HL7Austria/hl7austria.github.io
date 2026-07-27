@@ -83,7 +83,7 @@ Vorschlag: Einträge innerhalb einer Liste durch ELGA-Teilnehmer:in löschen. Di
 
 ### Reihenfolge der Listeneinträge ändern
 
-> Sub:UC_02_05 -Der GDA kann die Reihenfolge der Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. Evtl. auch in den ELGA Core mitnehmen.
+> Sub:UC_02_05 - Der GDA kann die gemeinsame Reihenfolge der Summary-Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. Evtl. auch in den ELGA Core mitnehmen.
 
 ## Interaktionen auf Einzelressourcen
 
