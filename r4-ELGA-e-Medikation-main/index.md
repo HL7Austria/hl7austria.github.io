@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-07-17T15:29:52+00:00",
+  "date" : "2026-07-27T22:31:32+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -64,7 +64,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.2.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
@@ -1658,19 +1658,19 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_05.html"
+            "valueUrl" : "Sub_UC_eMed_01.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_05.html",
-          "title" : "​Technische Use Cases für Medikationsplan lesen (UC_eMed_05)",
+          "nameUrl" : "Sub_UC_eMed_01.html",
+          "title" : "​Technische Use Cases für Medikationsplan lesen (UC_eMed_01)",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_06.html"
+            "valueUrl" : "Sub_UC_eMed_02.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_06.html",
-          "title" : "​Technische Use Cases für Medikationsplan schreiben (UC_eMed_06)",
+          "nameUrl" : "Sub_UC_eMed_02.html",
+          "title" : "​Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)",
           "generation" : "markdown"
         },
         {

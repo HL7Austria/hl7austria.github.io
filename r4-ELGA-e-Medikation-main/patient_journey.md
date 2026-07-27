@@ -64,5 +64,5 @@ Das Medikament EBETREXAT soll der Patient noch bis zum 17.3. einnehmen, aber in 
 * Beispiel: [Transaction Bundle](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md)
  
 
-1. [Sub_UC_eMed_05_01 - Medikationsplan lesen - Plan-Read](Sub_UC_eMed_05.md#plan-read) [↩](#fnref:1)
+1. [Sub_UC_eMed_01_01 - Medikationsplan lesen - Plan-Read](Sub_UC_eMed_01.md#plan-read) [↩](#fnref:1)
 

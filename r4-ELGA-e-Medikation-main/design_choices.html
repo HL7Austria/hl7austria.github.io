@@ -136,10 +136,10 @@
         <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_05.html">Medikationsplan lesen</a>
+        <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_06.html">Medikationsplan schreiben</a>
+        <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
       </li>
       <li>
         <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
@@ -313,6 +313,8 @@ width: 100%;}
 
 <p>Zentrale Ressource ist der Medikationsplan (<em>List</em>), der die einzelnen Medikationsplaneinträge (<em>MedicationRequest</em>) referenziert. Basierend auf diesen Planeinträgen werden <em>Geplante Abgaben</em> (<em>MedicationRequest</em>) erstellt, auf deren Grundlage <em>Durchgeführte Abgaben</em> (<em>MedicationDispense</em>) dokumentiert werden können.</p>
 
+<p>Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Collection Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.</p>
+
 <p><br/>
 <a href="Uebersicht_e_Medikation_Ressourcen.svg"><img src="Uebersicht_e_Medikation_Ressourcen.svg" alt="diagram" style="width: 100%"/></a></p>
 
@@ -322,7 +324,9 @@ width: 100%;}
 
 <p>Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jeder Entry genau eine Referenz (<em>Reference</em>) auf einen Medikationsplaneintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
 
-<p><a name="l472">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Medikationsplaneintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+<p><a name="l475">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Medikationsplaneintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+
+<p>Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.</p>
 
   <!-- TODO: Wiederverwendbarkeit der Liste für e-Diagnose und e-Behandlungsplan -->
 
@@ -337,20 +341,11 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
 
 <h4 id="medikationsplan-collection-bundle-atelgaemedbundlemedikationsplan-collection-bundle">Medikationsplan-Collection-Bundle: AtElgaEmedBundleMedikationsplan (<em>Collection Bundle</em>)</h4>
 
-<p>Version des Medikationsplans inklusive aller relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine <em>Bundle</em>-Ressource vom Typ Collection abgebildet.
-Dient einerseits der Persistierung nach einem Plan-Write und andererseits der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.</p>
-
-<h5 id="persistiertes-medikationsplan-collection-bundle">Persistiertes Medikationsplan-Collection-Bundle</h5>
-<p><a name="l528">​</a>Nachdem die Fachanwendung beim <a href="interactions.html#plan-write">Plan-Write</a>, mittels <em>Medikationsplan-Transaction-Bundle</em> alle Ressourcen aktualisiert hat, erstellt diese ein <em>Medikationsplan-Collection-Bundle</em> zur <strong>Persistierung</strong>, welches den vom GDA übermittelten Medikationsplan <strong>unverändert</strong> (keine Statusänderungen oder Entfernung entsprechend markierter Planeinträge) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.</p>
-
-<h5 id="auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Medikationsplan-Collection-Bundle</h5>
-<p><a name="l549">​</a>Bei einem <a href="interactions.html#plan-read">Plan-Read</a> wird von der Fachanwendung ein <strong>Auslieferungs-Bundle</strong> bereitgestellt und wie folgt <strong>angepasst</strong>: 
-Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag <em>removed</em>) werden aus dem Medikationsplan entfernt.
-Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason <em>nilknown</em>.</p>
+<p>Das Medikationsplan-Collection-Bundle dient ausschließlich der Auslieferung eines Medikationsplans an Clients. Es wird von der Fachanwendung bei Bedarf aus einer List-Ressource sowie den von dieser referenzierten Ressourcenversionen erzeugt und <strong>nicht persistiert</strong>.</p>
 
 <h4 id="geplante-abgabe-transaction-bundle-atelgaemedbundlegeplanteabgabetx-transaction-bundle">Geplante Abgabe Transaction-Bundle: AtElgaEmedBundleGeplanteAbgabeTX (<em>Transaction Bundle</em>)</h4>
 
-<p><a name="l573">​</a>Ein Bundle vom Typ Transaction, das beim Speichern von <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplanten Abgaben</a> mittels <a href="interactions.html#prescription-write">Prescription-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird.</p>
+<p><a name="l537">​</a>Ein Bundle vom Typ Transaction, das beim Speichern von <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplanten Abgaben</a> mittels <a href="interactions.html#prescription-write">Prescription-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird.</p>
 
 <p>Die im Bundle enthaltenen <em>Geplanten Abgaben</em> müssen mit dem gleichen <em>e-Med GroupIdentifier</em> gekennzeichnet sein. Fehlt dieser bei allen geplanten Abgaben im Transaction Bundle, wird er von der Fachanwendung ergänzt.</p>
 
@@ -402,7 +397,7 @@ Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *t
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jul 17, 2026 15:29+0000">2026-07-17</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 22:31+0000">2026-07-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

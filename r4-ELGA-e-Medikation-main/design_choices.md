@@ -11,6 +11,8 @@ Die folgende Abbildung zeigt den Aufbau des Medikationsplans sowie das Zusammenw
 
 Zentrale Ressource ist der Medikationsplan (**List**), der die einzelnen Medikationsplaneinträge (**MedicationRequest**) referenziert. Basierend auf diesen Planeinträgen werden **Geplante Abgaben** (**MedicationRequest**) erstellt, auf deren Grundlage **Durchgeführte Abgaben** (**MedicationDispense**) dokumentiert werden können.
 
+Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Collection Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.
+
  ![](Uebersicht_e_Medikation_Ressourcen.svg)
 
 ### Relevante Profile
@@ -20,6 +22,8 @@ Zentrale Ressource ist der Medikationsplan (**List**), der die einzelnen Medikat
 Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine **List**-Ressource abgebildet. Diese enthält 0..* Einträge (**List.entry**), wobei jeder Entry genau eine Referenz (**Reference**) auf einen Medikationsplaneintrag (**MedicationRequest**) in **List.entry.item** beinhaltet.
 
 Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element **List.entry.flag** den Änderungsstatus des jeweiligen Medikationsplaneintrags (siehe [Status der List.entry.flag (Medikationsplan)](workflowmanagement.md#status-der-list-entry-flag-medikationsplan)).
+
+Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.
 
 #### Medikationsplaneintrag bzw. Planeintrag: AtElgaEmedMedicationRequestPlaneintrag (MedicationRequest)
 
@@ -31,15 +35,7 @@ Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur bestimmte Stat
 
 #### Medikationsplan-Collection-Bundle: AtElgaEmedBundleMedikationsplan (Collection Bundle)
 
-Version des Medikationsplans inklusive aller relevanten Ressourcen (List, MedicationRequests, Patient, Practitioners) wird durch eine **Bundle**-Ressource vom Typ Collection abgebildet. Dient einerseits der Persistierung nach einem Plan-Write und andererseits der Auslieferung des Medikationsplans bei einem Plan-Read-Zugriff an den GDA.
-
-##### Persistiertes Medikationsplan-Collection-Bundle
-
-Nachdem die Fachanwendung beim [Plan-Write](interactions.md#plan-write), mittels **Medikationsplan-Transaction-Bundle** alle Ressourcen aktualisiert hat, erstellt diese ein **Medikationsplan-Collection-Bundle** zur **Persistierung**, welches den vom GDA übermittelten Medikationsplan **unverändert** (keine Statusänderungen oder Entfernung entsprechend markierter Planeinträge) abbildet und die Gesamtheit aller referenzierten Ressourcen enthält. Dies stellt sicher, dass in den historischen Versionen des Medikationsplans alle relevanten Informationen verfügbar sind.
-
-##### Auslieferungs-Medikationsplan-Collection-Bundle
-
-Bei einem [Plan-Read](interactions.md#plan-read) wird von der Fachanwendung ein **Auslieferungs-Bundle** bereitgestellt und wie folgt **angepasst**: Neue oder gänderte Planeinträge erhalten das List.entry.flag unchanged, zum Entfernen markierte Planeinträge (mit List.entry.flag **removed**) werden aus dem Medikationsplan entfernt. Wurden alle Planeinträge entfernt, erhält der Medikationsplan das List.emptyReason **nilknown**.
+Das Medikationsplan-Collection-Bundle dient ausschließlich der Auslieferung eines Medikationsplans an Clients. Es wird von der Fachanwendung bei Bedarf aus einer List-Ressource sowie den von dieser referenzierten Ressourcenversionen erzeugt und **nicht persistiert**.
 
 #### Geplante Abgabe Transaction-Bundle: AtElgaEmedBundleGeplanteAbgabeTX (Transaction Bundle)
 
