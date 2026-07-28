@@ -28,33 +28,44 @@
 
 ### Liste aktualisieren (List-Write)
 
-> Sub:UC_02_02 Nach dem Erfassen einer neuen medizinischen Ressource Sub:UC_02_07 - Ressource erfassen, kann diese in eine Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
+> Sub:UC_02_02 List Write, siehe [List-Write](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/branches/main/interactions.html#list-write) ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](uc_ediag_01_lesen.md#list-read) erfolgen darf. Nach dem Erfassen einer neuen medizinischen Ressource, siehe [Diagnose erfassen](uc_ediag_02_schreiben.md#diagnose-erfassen), kann diese in einer Summary-Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
 
-Vorschlag: List Write ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](uc_ediag_01_lesen.md#list-read) erfolgen darf.
+ToDo: Patient Compartment für die Endpunkte
+
+</g></svg></div> 
+
+#### Alternativ - Abgelehnter List Write
 
 #### Ablauf
 
-1. Der GDA übermittelt via**POST $list-write**die aktualisierte Liste als**List Bundle**inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency):
-* alle **neuen und geänderten und zu entfernenden Ressourcen** sind **inline** im Bundle enthalten,
-* alle **unveränderten Ressourcen** werden nur **referenziert**.
-
-1. Die Fachanwendung prüft anhand des im HTTP-Header übermittelten**ETag**, ob die vom GDA bearbeitete Listenversion noch der aktuellen Version entspricht.
-1. Stimmen die ETags nicht überein, lehnt die Fachanwendung den Schreibvorgang ab, siehe[Abgelehntes Write](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/branches/main/interactions.html#abgelehntes-plan-write). Der GDA muss erneut ein $list-read durchführen und seine Änderungen auf Basis der aktuellen Listversion erneut vornehmen.
-1. Ist die Prüfung erfolgreich, validiert die Fachanwendung die neue Liste und stellt sicher, dass keine unzulässigen Zustandsübergänge vorgenommen wurden.
-1. Bei erfolgreicher Validierung:
-* werden die übermittelten Änderungen in die Ressourcen übernommen,
-* und auf Basis der aktualisierten Ressource erstellt die Fachanwendung ein neue Version der Liste als eigene List-Instanz, die als **neue Liste persistiert** wird.
-
-1. Der GDA erhält eine Meldung, dass die Liste erfolgreich aktualisiert wurde.
+1. **GDA 1**führt ein**POST $list-read**auf die Liste einer Person aus.
+1. Die Fachanwendung prüft, ob eine Liste existiert.
+1. Die Fachanwendung liefert die aktuelle Liste als**List Bundle**mit dem aktuellen**ETag**„123" an GDA 1 aus.
+1. **GDA 1**beginnt mit der**fachlichen Bearbeitung**der Liste.
+1. Währenddessen führt**GDA 2**ebenfalls ein**List-Read**auf dieselbe Liste durch.
+1. Die Fachanwendung liefert auch an GDA 2 die aktuelle Liste mit dem ETag „123" aus.
+1. GDA 2 bearbeitet die Liste.
+1. GDA 2 sendet zuerst mittels**POST $list-write**ein Transaction Bundle mit den vorgenommenen Änderungen.
+1. Die Fachanwendung prüft, ob der im Transaction Bundle enthaltene**List.identifier**mit dem aktuellen List.identifier der zuletzt gespeicherten Liste übereinstimmt.
+1. Die Prüfung verläuft erfolgreich, da beide den Wert „123" besitzen.
+1. Die Fachanwendung validiert die übermittelten Änderungen und prüft insbesondere, ob keine unzulässigen Zustandsübergänge vorliegen.
+1. Die Änderungen werden übernommen und eine neue Version der Liste wird persistiert.
+1. Dabei wird ein neuer List.identifier erzeugt, beispielsweise „124".
+1. GDA 2 erhält eine Meldung, dass die Aktualisierung erfolgreich durchgeführt wurde.
+1. Anschließend sendet GDA 1 mittels**POST $ListWrite**seine ebenfalls auf Basis des ursprünglichen List.identifier „123" vorgenommenen Änderungen.
+1. Die Fachanwendung prüft erneut den übermittelten List.identifier gegen die aktuell persistierte Diagnosenliste.
+1. Die Prüfung schlägt fehl, da die aktuelle Liste mittlerweile den List.identifier „124" besitzt.
+1. Die Fachanwendung lehnt das Speichern ab.
+1. GDA 1 erhält eine Fehlermeldung, dass zwischenzeitlich eine neuere Version der Liste gespeichert wurde.
+1. GDA 1 muss erneut einen**POST $list-read**durchführen, die zwischenzeitlich vorgenommenen Änderungen prüfen und gegebenenfalls in die aktuelle Version übernehmen, bevor ein neuer Schreibvorgang erfolgen kann.
 
 #### Sequenzdiagramm
 
-</g></svg></div> 
  –>
 
 ### Einträge zur Liste hinzufügen
 
-> Sub:UC_02_03 -Nach dem Erfassen einer neuen medizinischen Ressource [Ressource erfassen](uc_ediag_02_schreiben.md#ressource-erfassen) kann dieser Eintrag in eine Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
+> Sub:UC_02_03 Nach dem Erfassen einer neuen medizinischen Ressource [Ressource erfassen](uc_ediag_02_schreiben.md#ressource-erfassen) kann dieser Eintrag in eine Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
 
 #### Ablauf
 
@@ -79,14 +90,13 @@ Vorschlag: Einträge innerhalb einer Liste durch ELGA-Teilnehmer:in löschen. Di
 
 ### Reihenfolge der Listeneinträge ändern
 
-> Sub:UC_02_05 - Der GDA kann die gemeinsame Reihenfolge der Summary-Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. Evtl. auch in den ELGA Core mitnehmen.
+> Sub:UC_02_05 Der GDA kann die gemeinsame Reihenfolge der Summary-Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. Evtl. auch in den ELGA Core mitnehmen.
 
 ### Diagnose in der Liste bearbeiten
 
-> Sub:UC_02_07 - Bestehende Einträge fachlich bearbeiten TODo: Dieser UC setzt sich zusammen aus mehreren anderen und wird zur besseren verständnis hier nochmals beschrieben. Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar.
+> Sub:UC_02_07 Bestehende Einträge fachlich bearbeiten TODo: Dieser UC setzt sich zusammen aus mehreren anderen und wird zur besseren verständnis hier nochmals beschrieben. Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar.
 
 #### Ablauf
-
 
 ## Interaktionen auf Einzelressourcen
 
@@ -108,7 +118,7 @@ Im Rahmen der Anwendung eDiagnose werden unter dem Begriff „Diagnose“ die FH
 
 ### Diagnose stornieren
 
-> Sub:UC_02_09 - Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose als relevant gekennzeichnet ist oder nicht.
+> Sub:UC_02_09 Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose als relevant gekennzeichnet ist oder nicht.
 
 Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden, siehe Einträge aus einer Liste entfernen. In Ergänzung müssen der GDA, der die Stornierung durchgeführt hat, den Stornierungszeitpunkt und den Vermerk festhalten.
 
