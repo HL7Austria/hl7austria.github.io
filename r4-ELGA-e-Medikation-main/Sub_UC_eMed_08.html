@@ -309,18 +309,16 @@ width: 100%;}
 
 </style>
 
-<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
-
   <!-- Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08) -->
 
 <h3 id="sub_uc_emed_08_01---geplante-abgabe-erfassen">Sub_UC_eMed_08_01 - Geplante Abgabe erfassen</h3>
 
 <p>Ein berechtigter GDA (siehe <a href="actors.html#rollen-und-berechtigungen">Rollen und Berechtigungen</a>) kann basierend auf einem <strong>bestehenden</strong> <em>Medikationsplaneintrag</em> eine oder mehrere <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplanten Abgaben</a> erstellen. Je verordnetes Medikament <strong>muss</strong> eine <em>Geplante Abgabe</em> erstellt werden.</p>
 
-<p><a name="l458">​</a>Sollte für eine <em>Geplante Abgabe</em> noch kein Medikationsplaneintrag existieren, muss dieser zuerst erstellt werden (siehe <a href="Sub_UC_eMed_02.html#Sub_UC_eMed_02_03---medikationsplaneintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_03 - Medikationsplaneintrag in Medikationsplan hinzufügen</a>). 
+<p><a name="l455">​</a>Sollte für eine <em>Geplante Abgabe</em> noch kein Medikationsplaneintrag existieren, muss dieser zuerst erstellt werden (siehe <a href="Sub_UC_eMed_02.html#Sub_UC_eMed_02_03---medikationsplaneintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_03 - Medikationsplaneintrag in Medikationsplan hinzufügen</a>). 
 Bei Bedarf kann ein bestehender Medikationsplaneintrag angepasst werden (siehe <a href="Sub_UC_eMed_02.html#Sub_UC_eMed_02_06---medikationsplaneintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_06 - Medikationsplaneintrag im Medikationsplan ändern</a>).</p>
 
-<p><a name="l470">​</a>Ist keine Anpassung des Medikationsplaneintrags erforderlich, führt der GDA ein <a href="interactions.html#plan-read">$plan-read</a> aus und erhält von der Fachanwendung das <a href="design_choices.html#auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Collection-Bundle</a>, das den Medikationsplan mit allen relevanten Ressourcen enthält.</p>
+<p><a name="l467">​</a>Ist keine Anpassung des Medikationsplaneintrags erforderlich, führt der GDA ein <a href="interactions.html#plan-read">$plan-read</a> aus und erhält von der Fachanwendung das <a href="design_choices.html#auslieferungs-medikationsplan-collection-bundle">Auslieferungs-Collection-Bundle</a>, das den Medikationsplan mit allen relevanten Ressourcen enthält.</p>
 
 <p>Basierend auf darin vorhandenen Planeinträgen erstellt der GDA neue <em>Geplante Abgabe</em>n wie folgt:</p>
 <ul>
@@ -343,7 +341,7 @@ Bei Bedarf kann ein bestehender Medikationsplaneintrag angepasst werden (siehe <
   <li>Die <strong>Menge</strong> (Anzahl Packungen), die bei jeder Abgabe bereitgestellt werden soll, ist verpflichtend zu dokumentieren (<em>dispenseRequest.quantity</em>).</li>
 </ul>
 
-<p><a name="l599">​</a>Die erstellten <em>Geplanten Abgaben</em> werden in einem Bundle vom Typ Transaction mittels <a href="interactions.html#prescription-write">Prescription-Write</a> an die Fachanwendung übermittelt wird.</p>
+<p><a name="l596">​</a>Die erstellten <em>Geplanten Abgaben</em> werden in einem Bundle vom Typ Transaction mittels <a href="interactions.html#prescription-write">Prescription-Write</a> an die Fachanwendung übermittelt wird.</p>
 
   <!-- TODO Suchparameter emed-id: alle geplanten abgaben zu einer e-med-id finden -->
 
@@ -353,7 +351,7 @@ Bei Bedarf kann ein bestehender Medikationsplaneintrag angepasst werden (siehe <
 
 <h5 id="variante-a-vorab-ermittlung-des-e-med-groupidentifiers">Variante A: Vorab-Ermittlung des e-Med GroupIdentifiers</h5>
 
-<p><a name="l625">​</a>Der <em>e-Med GroupIdentifier</em> ("Rezeptklammer") wird via POST $groupidentifier-create vorab von der Fachanwendung bezogen, in den <em>Geplanten Abgaben</em> ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den <em>Geplanten Abgaben</em> zu verknüpfen.
+<p><a name="l622">​</a>Der <em>e-Med GroupIdentifier</em> ("Rezeptklammer") wird via POST $groupidentifier-create vorab von der Fachanwendung bezogen, in den <em>Geplanten Abgaben</em> ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den <em>Geplanten Abgaben</em> zu verknüpfen.
 Der Trigger zu Erstellung des e-Rezepts und <a href="interactions.html#prescription-write">Prescription-Write</a> können parallel erfolgen (siehe Normalfall).</p>
 
 <p>Liefert e-Rezept einen Fehler zurück, können mittels POST $prescription-discard bereits in der e-Medikation erstellte <em>Geplante Abgaben</em> verworfen werden (siehe Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen).
@@ -387,7 +385,7 @@ Im Anschluss kann der Trigger zur Erstellung des e-Rezepts inkl. <em>e-Med Group
 
 <h5 id="variante-c-nachträgliche-verknüpfung-des-e-rezepts-mit-dem-e-med-groupidentifier">Variante C: Nachträgliche Verknüpfung des e-Rezepts mit dem e-Med GroupIdentifier</h5>
 
-<p><a name="l707">​</a>Der Trigger zu Erstellung des e-Rezepts und <a href="interactions.html#prescription-write">Prescription-Write</a> können parallel erfolgen (Variante A), allerdings noch ohne <em>e-Med GroupIdentifier</em>.
+<p><a name="l704">​</a>Der Trigger zu Erstellung des e-Rezepts und <a href="interactions.html#prescription-write">Prescription-Write</a> können parallel erfolgen (Variante A), allerdings noch ohne <em>e-Med GroupIdentifier</em>.
 Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zurück (wie in Variante B), der Client führt im Anschluss eine nachträgliche Verknüfung des bereits erstellten e-Rezepts mit den geplanten Abgaben mittels <em>e-Med GroupIdentifier</em> durch.</p>
 
 <p><br/></p>
@@ -420,7 +418,7 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
   <!-- TODO Klären STORNO vs VERWERFEN: https://www.chipkarte.at/cdscontent/load?contentid=10008.781687&version=1698069647: gemäß dieser Logik wäre ein fachliches Storno fremder Verordnungen mittel PADV möglich (Storno mit ITI-57 (eigene) ist immer möglich). Evtl brauchen wir den Status "verwerfen" gar nicht, weil ein GDA nun direkt den Planeintrag anpassen würde, anstatt die Verodnung zu verwerfen, für die das e-Rezept ja bereits ausgehändigt wurde und die sowieso nach Ablauf der Frist rausfällt? -->
   <!-- TODO: Suchparameter nach stornierten *Geplante Abgaben*? --></p>
 
-<p><a name="l757">​</a>Um eine <em>Geplante Abgabe</em> zu verwerfen, führt der GDA die Operation <a href="interactions.html#prescription-discard">$prescription-discard​</a> aus:</p>
+<p><a name="l754">​</a>Um eine <em>Geplante Abgabe</em> zu verwerfen, führt der GDA die Operation <a href="interactions.html#prescription-discard">$prescription-discard​</a> aus:</p>
 <ul>
   <li>Der Status der <em>Geplante Abgaben</em> wird auf <em>entered-in-error</em> gesetzt (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>),</li>
   <li>das Datum in <em>authoredOn</em> wird aktualisiert.</li>
@@ -438,7 +436,7 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 
 <h3 id="sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</h3>
 
-<p><a name="l799">​</a>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <em>completed</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
+<p><a name="l796">​</a>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt (siehe <a href="Sub_UC_eMed_09.html#sub_uc_emed_09_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_09_01 - Durchgeführte Abgabe erfassen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <em>completed</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
 
 <p>Sonderfall: Wenn die letzte <em>Durchgeführte Abgabe</em> danach verworfen wird (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
 
@@ -520,7 +518,7 @@ Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zur
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 22:31+0000">2026-07-27</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 28, 2026 00:05+0000">2026-07-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

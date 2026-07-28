@@ -301,8 +301,6 @@ width: 100%;}
 
 </style>
 
-<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';</script>
-
   <!-- Technische Use Cases für Medikationsplan lesen (UC_eMed_01) -->
 
 <p>Ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> kann den Medikationsplan von ELGA-Teilnehmer:innen lesen.</p>
@@ -311,7 +309,7 @@ width: 100%;}
 
 <p>Sowohl berechtigte GDA als auch ELGA-Teilnehmer können auf einzelne Planeinträge lesend zugreifen und diese durchsuchen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Planentry-Search</a>).</p>
 
-<p><a name="l424">​</a>Die fachlichen Anforderungen werden im <a href="Sub_UC_eMed_01.hml">UC_eMed_01 Medikationsplan lesen</a> beschrieben.</p>
+<p><a name="l421">​</a>Die fachlichen Anforderungen werden im <a href="Sub_UC_eMed_01.hml">UC_eMed_01 Medikationsplan lesen</a> beschrieben.</p>
 
 <p>Für den lesenden Zugriff auf Medikationspläne werden zwei Zugriffsarten unterschieden:</p>
 
@@ -328,16 +326,16 @@ width: 100%;}
 
 <p>Plan-Read dient dem <strong>Abruf des Medikationsplans</strong> in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
 
-<p><a name="l464">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <em>List</em>-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres <strong>Collection-Bundle</strong> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
+<p><a name="l461">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <em>List</em>-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres <strong>Collection-Bundle</strong> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
 
 <h5 id="custom-operation">Custom Operation</h5>
 
-<p><a name="l479">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+<p><a name="l476">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
 
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li><a name="l489">​</a>Der Client führt einen <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li><a name="l486">​</a>Der Client führt einen <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Collection-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-collection-bundles">Prüfung des Planzustands und Erzeugung des Collection-Bundles</a>).</li>
   <li>Die Fachanwendung liefert das Collection-Bundle zurück. Dieses enthält:
     <ul>
@@ -365,7 +363,7 @@ width: 100%;}
 <ol>
   <li><strong>Es existiert kein Medikationsplan.</strong>
     <ul>
-      <li><a name="l572">​</a>Es wird gemäß <a href="Sub_UC_eMed_01.html#Sub_UC_eMed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a> ein initialer Medikationsplan erstellt (<em>List.emptyReason = notstarted</em>).</li>
+      <li><a name="l569">​</a>Es wird gemäß <a href="Sub_UC_eMed_01.html#Sub_UC_eMed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a> ein initialer Medikationsplan erstellt (<em>List.emptyReason = notstarted</em>).</li>
     </ul>
   </li>
   <li><strong>Es existiert ein Medikationsplan mit Planeinträgen.</strong>
@@ -458,7 +456,7 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
 <h5 id="ablauf-2">Ablauf</h5>
 
 <ol>
-  <li><a name="l803">​</a>Ein Client führt für einen ELGA-Teilnehmer erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li><a name="l800">​</a>Ein Client führt für einen ELGA-Teilnehmer erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.</li>
   <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
   <li>Die List-Ressource wird als erste Version persistiert.</li>
@@ -548,7 +546,7 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Jul 27, 2026 22:31+0000">2026-07-27</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 28, 2026 00:05+0000">2026-07-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
