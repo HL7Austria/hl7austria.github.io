@@ -13,7 +13,7 @@
 
 ### Vergangene Versionen einer Summary-Liste abrufen (List-History-Read)
 
-> Sub:UC_01_01 - Der History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
+> Sub:UC_01_01 History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
 
 #### Ablauf
 
@@ -38,7 +38,8 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 
 ### Liste und zugehörige Ressourcen abrufen (List-Read)
 
-> Sub:UC_01_02 - List Read dient dem **Abruf der Summary-Liste und der Vorbereitung einer nachfolgenden Änderung**. 
+> Sub:UC_01_02
+ List Read dient dem **Abruf der Summary-Liste und der Vorbereitung einer nachfolgenden Änderung**. 
 
 #### Ablauf
 
@@ -62,7 +63,7 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 
 ### Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen und suchen (Read/Search)
 
-> Sub:UC_01_03 - Read/Search ermöglicht den gezielten lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden.
+> Sub:UC_01_03 Read/Search ermöglicht den gezielten lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden.
 
 Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.
 
@@ -70,10 +71,7 @@ Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyp
 
 Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:
 
-* **Gesamtansicht**: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert. Nach dem Abruf kann eine eigene Filterung der Einträge durch das Clientsystem erfolgen.
-* **Gezielte Suche**: Einschränkung der Ergebnismenge durch Suchparameter, z. B. zur Suche nach bestimmten Diagnosen, Ressourcen mit definierten Merkmalen oder zur Festlegung der Anzahl der zurückzuliefernden Einträge. 
-* Mit der **gezielten Suche** kann auch der historische Verlauf einer Ressource (z.B. einer Erkrankung) dargestellt werden, indem nach allen Ressourcen desselben Typs (Business-Identifier) gesucht wird.
- 
+* **Gesamtansicht**: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert. Nach dem Abruf kann eine eigene Filterung oder gezieltes Suchen der Einträge durch das Clientsystem erfolgen.
 * **Auswahl für Folgeoperationen**: Ermittlung einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.
 
 #### Ablauf

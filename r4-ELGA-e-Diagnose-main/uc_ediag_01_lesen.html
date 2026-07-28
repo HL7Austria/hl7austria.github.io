@@ -222,7 +222,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="vergangene-versionen-einer-summary-liste-abrufen-list-history-read">Vergangene Versionen einer Summary-Liste abrufen (List-History-Read)</h3>
 <blockquote>
-  <p>Sub:UC_01_01 - Der History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste.
+  <p>Sub:UC_01_01 
+History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste.
 Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.</p>
 </blockquote>
 
@@ -259,7 +260,8 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <h3 id="liste-und-zugehörige-ressourcen-abrufen-list-read">Liste und zugehörige Ressourcen abrufen (List-Read)</h3>
 <blockquote>
-  <p>Sub:UC_01_02 - List Read dient dem <strong>Abruf der Summary-Liste und der Vorbereitung einer nachfolgenden Änderung</strong>.
+  <p>Sub:UC_01_02<br/>
+List Read dient dem <strong>Abruf der Summary-Liste und der Vorbereitung einer nachfolgenden Änderung</strong>.
   <!--  --></p>
 </blockquote>
 
@@ -272,7 +274,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
   <li>Existiert bereits eine Liste, stellt die Fachanwendung ein Search-Bundle einschließlich aller referenzierten Ressourcen zur Auslieferung bereit.
     <ul>
       <li>Falls der vorherige GDA neue Listeneinträge hinzugefügt hat (List.entry.flag hat den Wert <strong>new</strong>), werden diese auf <strong>unchanged</strong> gesetzt.<br/></li>
-      <li><a name="l642">​</a>Falls der vorherige GDA Listenneinträge beendet hat (deren List.entry.flag haben den Wert <strong>removed</strong>), werden diese Einträge aus der Liste <strong>entfernt</strong>, siehe <a href="workflowmanagement.html#auswirkung-derzugriffsart-auf-list-entry-flag">Workflowmanagement</a>.<br/></li>
+      <li><a name="l644">​</a>Falls der vorherige GDA Listenneinträge beendet hat (deren List.entry.flag haben den Wert <strong>removed</strong>), werden diese Einträge aus der Liste <strong>entfernt</strong>, siehe <a href="workflowmanagement.html#auswirkung-derzugriffsart-auf-list-entry-flag">Workflowmanagement</a>.<br/></li>
       <li>Falls der vorherige GDA <strong>alle vorhandenen Einträge</strong> mit removed gekennzeichnet hat, wird List.emptyReason mit <em>nilknown</em> zurückgeliefert, um nachfolgenden GDA zu signalisieren, dass der Patient zum Zeitpunkt des letzten Schreibens keine Einträge hatte.<br/></li>
     </ul>
   </li>
@@ -289,7 +291,8 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <h3 id="diagnosen-prozeduren-sowie-allergien-und-intoleranzen-als-einzelressource-lesen-und-suchen-readsearch">Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen und suchen (Read/Search)</h3>
 <blockquote>
-  <p>Sub:UC_01_03 - Read/Search ermöglicht den gezielten lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden.</p>
+  <p>Sub:UC_01_03 
+Read/Search ermöglicht den gezielten lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden.</p>
 </blockquote>
 
 <p>Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.</p>
@@ -297,12 +300,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 <h4 id="anwendungsbeispiele">Anwendungsbeispiele</h4>
 <p>Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:</p>
 <ul>
-  <li><strong>Gesamtansicht</strong>: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert. Nach dem Abruf kann eine eigene Filterung der Einträge durch das Clientsystem erfolgen.</li>
-  <li><strong>Gezielte Suche</strong>: Einschränkung der Ergebnismenge durch Suchparameter, z. B. zur Suche nach bestimmten Diagnosen, Ressourcen mit definierten Merkmalen oder zur Festlegung der Anzahl der zurückzuliefernden Einträge.
-    <ul>
-      <li>Mit der <strong>gezielten Suche</strong> kann auch der historische Verlauf einer Ressource (z.B. einer Erkrankung) dargestellt werden, indem nach allen Ressourcen desselben Typs (Business-Identifier) gesucht wird.</li>
-    </ul>
-  </li>
+  <li><strong>Gesamtansicht</strong>: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert. Nach dem Abruf kann eine eigene Filterung oder gezieltes Suchen der Einträge durch das Clientsystem erfolgen.</li>
   <li><strong>Auswahl für Folgeoperationen</strong>: Ermittlung einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.</li>
 </ul>
 
@@ -310,7 +308,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <ol>
   <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.</li>
-  <li><a name="l903">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
+  <li><a name="l891">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
   <li>Optional können Suchparameter angegeben werden, um die Treffermenge einzuschränken.</li>
   <li>Die Fachanwendung führt die Suche anhand der übergebenen Suchparameter durch.</li>
   <li>Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.</li>
@@ -335,7 +333,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 28, 2026 06:47+0000">2026-07-28</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Jul 28, 2026 13:00+0000">2026-07-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
