@@ -72,7 +72,7 @@ Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyp
 Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:
 
 * **Gesamtansicht**: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert. Nach dem Abruf kann eine eigene Filterung oder gezieltes Suchen der Einträge durch das Clientsystem erfolgen.
-* **Auswahl für Folgeoperationen**: Ermittlung einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.
+* **Auswahl für Folgeoperationen**: Ermittlung bestehender einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.
 
 #### Ablauf
 
