@@ -45,7 +45,7 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 1. Der GDA führt einen**POST $list-read**aus.
 1. Die Fachanwendung**prüft auf Existenz**der Liste/n für die angegebene Patientin bzw. den angegebenen Patienten.
 1. Ist keine Liste vorhanden, wird dieser erstellt und eine leere Liste mit dem emptyReason notstarted wird zurückgeliefert.
-1. Existiert bereits eine Liste, wird von der Fachanwendung aus diesem ein Search-Bundle zur Auslieferung bereitgestellt. Die Inhalte werden von der Fachanwendung wie folgt aufbereitet:
+1. Existiert bereits eine Liste, stellt die Fachanwendung ein Search-Bundle einschließlich aller referenzierten Ressourcen zur Auslieferung bereit.
 * Falls der vorherige GDA neue Listeneinträge hinzugefügt hat (List.entry.flag hat den Wert **new**), werden diese auf **unchanged** gesetzt.
 
 * Falls der vorherige GDA Listenneinträge beendet hat (deren List.entry.flag haben den Wert **removed**), werden diese Einträge aus der Liste **entfernt**, siehe [Workflowmanagement](workflowmanagement.md#auswirkung-derzugriffsart-auf-list-entry-flag).
@@ -54,7 +54,7 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 
 
 1. Die Fachanwendung liefert an den GDA die Liste inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)und alle referenzierten Ressourcen.
-1. Ziel ist ein neutraler, weiterbearbeitbarer Zustand für den abrufenden GDA.
+1. Die zurückgelieferte Liste bildet die Grundlage für nachfolgende Änderungsoperationen.
 
 #### Sequenzdiagramm
 
