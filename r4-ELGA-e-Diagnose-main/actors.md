@@ -7,7 +7,7 @@
 
 Das Kapitel gibt einen Überblick über die zentralen Anwendungsfälle der e-Diagnose und zeigt, wie die verschiedenen Akteure mit den Funktionen interagieren.
 
-Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf die Liste(n) und die Einträge erhalten sollen.
+Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf die Summary-Liste(n) und die Einträge erhalten sollen.
 
 ### Use Case Diagramm
 

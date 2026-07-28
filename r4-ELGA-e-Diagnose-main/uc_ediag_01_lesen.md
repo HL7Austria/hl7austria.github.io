@@ -13,7 +13,7 @@
 
 ### Vergangene Versionen einer Summary-Liste abrufen (List-History-Read)
 
-> Sub:UC_01_01 - Der History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
+> Sub:UC_01_01 - Der History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
 
 #### Ablauf
 
@@ -38,7 +38,7 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 
 ### Liste und zugehörige Ressourcen abrufen (List-Read)
 
-> Sub:UC_01_02 - List Read dient dem **Abruf der Liste und der Vorbereitung einer nachfolgenden Änderung**. 
+> Sub:UC_01_02 - List Read dient dem **Abruf der Summary-Liste und der Vorbereitung einer nachfolgenden Änderung**. 
 
 #### Ablauf
 
@@ -81,7 +81,7 @@ Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwende
 1. Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.
 1. Der GDA oder ELGA-Teilnehmer führt ein**GET**auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe[Transaktionen](transaction.md#Transaktionen).
 1. Optional können Suchparameter angegeben werden, um die Treffermenge einzuschränken.
-1. Die Fachanwendung führt die Suche anhand der angegebenen Kriterien durch.
+1. Die Fachanwendung führt die Suche anhand der übergebenen Suchparameter durch.
 1. Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.
 1. Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein Search-Bundle ohne Einträge zurückgeliefert.
 

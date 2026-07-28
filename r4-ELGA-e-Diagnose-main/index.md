@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-07-28T05:51:13+00:00",
+  "date" : "2026-07-28T06:19:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1288,6 +1288,15 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         }],
         "nameUrl" : "uc_ediag_02_schreiben.html",
         "title" : "Schreiben",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "uc_ediag_03_teilnehmer.html"
+        }],
+        "nameUrl" : "uc_ediag_03_teilnehmer.html",
+        "title" : "Teilnehmerrechte ausüben",
         "generation" : "markdown"
       }]
     },
