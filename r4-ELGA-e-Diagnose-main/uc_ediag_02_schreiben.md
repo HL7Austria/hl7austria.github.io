@@ -52,15 +52,14 @@ Dieser Sub-UC fasst die zur fachlichen Bearbeitung einer bestehenden Ressource e
 
 #### Ablauf
 
-1. **GDA**führt ein**POST $list-read**auf die Summary-Liste der Person aus.
+1. **GDA**führt ein**POST $list-read**gemäß List-Read
 1. Die Fachanwendung liefert die aktuelle Summary-Liste inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)und alle referenzierten Ressourcen.
-1. **GDA**wählt die fachlich zu bearbeitende(n) Ressourcen aus.
-* GDA übernimmt den Identifier der bestehenden Ressource für die weitere Bearbeitung ?
+1. **GDA**wählt die fachlich zu bearbeitende(n) Ressourcen aus und übernimmt den Business-Identifier der bestehenden Ressource.
 * GDA storniert die bestehende Ressource gemäß Sub:UC_02_08 – Diagnose stornieren.
 * GDA erfasst die fachlich geänderte Ressource gemäß Sub:UC_02_07 – Diagnose erfassen und übernimmt dabei den Identifier der stornierten Ressource.
 
 1. übernhame des Identifier der bisherigenb Ressource
-1. **GDA**führt ein**POST $list-write**aus und übermittelt die aktualisierte Summary-Liste.
+1. **GDA**führt ein**POST $list-write**gemäß List-Write durch und übermittelt die aktualisierte Summary-Liste.
 
 #### Sequenzdiagramm
 
