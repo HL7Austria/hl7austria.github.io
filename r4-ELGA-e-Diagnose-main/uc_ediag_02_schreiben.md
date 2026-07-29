@@ -48,15 +48,19 @@ Der GDA kann die gemeinsame Reihenfolge der Summary-Listeinträge ändern. Die E
 
 > Sub:UC_02_06 
 
-Bestehende Einträge fachlich bearbeiten TODo: Dieser UC setzt sich zusammen aus mehreren anderen und wird zur besseren verständnis hier nochmals beschrieben. Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar.
+Dieser Sub-UC fasst die zur fachlichen Bearbeitung einer bestehenden Ressource erforderlichen Einzelschritte zusammen. Die Bearbeitung erfolgt durch Stornierung der bestehenden Ressource und Erfassung einer neuen fachlich korrigierten Ressource. Dadurch bleiben Änderungen nachvollziehbar und versioniert.
 
 #### Ablauf
 
-1. **GDA**führt ein**POST $list-read**auf eine Summary-Liste einer Person aus.
-1. Die Fachanwendung prüft, ob eine Liste existiert.
-1. Die Fachanwendung liefert die aktuelle Liste als**Search-Bundle**aus.
-1. Der**GDA**startet mit der**fachlichen Bearbeitung**in dem eine oder mehrere Diagnosen in der Summary-Liste edidiert werden
-1. …ToDo
+1. **GDA**führt ein**POST $list-read**auf die Summary-Liste der Person aus.
+1. Die Fachanwendung liefert die aktuelle Summary-Liste inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)und alle referenzierten Ressourcen.
+1. **GDA**wählt die fachlich zu bearbeitende(n) Ressourcen aus.
+* GDA übernimmt den Identifier der bestehenden Ressource für die weitere Bearbeitung ?
+* GDA storniert die bestehende Ressource gemäß Sub:UC_02_08 – Diagnose stornieren.
+* GDA erfasst die fachlich geänderte Ressource gemäß Sub:UC_02_07 – Diagnose erfassen und übernimmt dabei den Identifier der stornierten Ressource.
+
+1. übernhame des Identifier der bisherigenb Ressource
+1. **GDA**führt ein**POST $list-write**aus und übermittelt die aktualisierte Summary-Liste.
 
 #### Sequenzdiagramm
 
@@ -95,6 +99,4 @@ Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GD
 * `Condition.verificationStatus = entered-in-error`
 * `Procedure.status = entered-in-error`
  
-
-Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen und suchen (Read/Search)
 

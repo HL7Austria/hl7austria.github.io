@@ -53,7 +53,7 @@ ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuel
   "title" : "AT e-Diagnose Diagnosis Type Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-29T11:08:45+00:00",
+  "date" : "2026-07-29T11:32:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
