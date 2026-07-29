@@ -1,9 +1,9 @@
 ELGAeMedikationR4 : Validation Results
 =========================================
 
-err = 101, warn = 214, info = 93
+err = 101, warn = 218, info = 93
 IG Publisher Version: 2.2.11
-Generated Tue Jul 28 00:09:39 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.emed.r4#0.1.1 (canonical = https://fhir.hl7.at/elga/emed/r4)
+Generated Wed Jul 29 17:43:35 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.emed.r4#0.1.1 (canonical = https://fhir.hl7.at/elga/emed/r4)
  Build Errors : 90 / 4 / 0
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/Bundle-At-Emed-Journey-01-Bundle-Medikationsplan : 1 / 0 / 5
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan : 1 / 0 / 5
@@ -44,7 +44,7 @@ Generated Tue Jul 28 00:09:39 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-elga-emed-medication-medikation : 0 / 4 / 2
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe : 0 / 3 / 3
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe : 0 / 6 / 4
- /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-elga-emed-medicationrequest-planeintrag : 2 / 4 / 4
+ /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-elga-emed-medicationrequest-planeintrag : 2 / 8 / 4
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-elga-emed-substance-wirkstoff : 0 / 0 / 2
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/StructureDefinition-at-elga-emed-timing : 0 / 6 / 2
  /home/runner/work/ELGA-e-Medikation-R4/ELGA-e-Medikation-R4/fsh-generated/resources/Substance-At-Emed-Example-Substance-Clotrimazol : 0 / 1 / 1
@@ -564,6 +564,10 @@ WARNING: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: Structu
 INFORMATION: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.differential.element[10].pattern.ofType(CodeableConcept): Reference to experimental CodeSystem https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS|0.1.1
 ERROR: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.differential.element[10].pattern.ofType(CodeableConcept).coding[0].display: Wrong Display Name 'Medikationsplaneintrag' for https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS#1. Valid display is 'Planeintrag' (for the language(s) 'en-US')
 WARNING: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.differential.element[5].binding: The definition for the element 'MedicationRequest.status' binds to the value set 'https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS' which is experimental, but this structure is not labeled as experimental
+WARNING: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.snapshot.element[0].constraint[5]: e-med-continuous-medication-effectiveDosePeriod: The left side is inherently a collection, and so the expression 'coding.code = 'continuous'' may fail or return false if there is more than one item in the content being evaluated
+WARNING: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.snapshot.element[0].constraint[5]: e-med-continuous-medication-effectiveDosePeriod: The left side is inherently a collection, and so the expression 'coding.system = 'http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy'' may fail or return false if there is more than one item in the content being evaluated
+WARNING: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.snapshot.element[0].constraint[6]: e-med-acute-medication-effectiveDosePeriod: The left side is inherently a collection, and so the expression 'coding.code = 'acute'' may fail or return false if there is more than one item in the content being evaluated
+WARNING: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.snapshot.element[0].constraint[6]: e-med-acute-medication-effectiveDosePeriod: The left side is inherently a collection, and so the expression 'coding.system = 'http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy'' may fail or return false if there is more than one item in the content being evaluated
 WARNING: StructureDefinition/at-elga-emed-medicationrequest-planeintrag: StructureDefinition.snapshot.element[12].binding: The definition for the element 'MedicationRequest.status' binds to the value set 'https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS' which is experimental, but this structure is not labeled as experimental
 INFORMATION: Resource: The resource StructureDefinition/at-elga-emed-medicationrequest-planeintrag could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/StructureDefinition-at-elga-emed-substance-wirkstoff.json ==

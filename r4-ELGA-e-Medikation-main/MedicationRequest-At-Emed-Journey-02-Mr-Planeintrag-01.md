@@ -32,6 +32,12 @@
     }
   }],
   "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+    "valuePeriod" : {
+      "start" : "2026-02-27"
+    }
+  },
+  {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
     "valueMarkdown" : "1-0-1-0 Stück"
   }],
@@ -57,6 +63,12 @@
   "authoredOn" : "2026-02-27T10:20:00+00:00",
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
+  },
+  "courseOfTherapyType" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+      "code" : "continuous"
+    }]
   },
   "note" : [{
     "text" : "Freitext Informationen zum Medikationsplaneintrag."

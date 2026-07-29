@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-07-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
+| Draft as of 2026-07-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
 
  
 Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-07-28T00:05:30+00:00",
+  "date" : "2026-07-29T17:39:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -96,7 +96,21 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     "element" : [{
       "id" : "MedicationRequest",
       "path" : "MedicationRequest",
-      "short" : "Medikationsplaneintrag"
+      "short" : "Medikationsplaneintrag",
+      "constraint" : [{
+        "key" : "e-med-continuous-medication-effectiveDosePeriod",
+        "severity" : "error",
+        "human" : "Eine Dauermedikation (courseOfTherapyType = #continuous) darf kein Enddatum besitzen.",
+        "expression" : "courseOfTherapyType.where(coding.code='continuous' and coding.system = 'http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy').exists() implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod').value.ofType(Period).end.exists().not()",
+        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+      },
+      {
+        "key" : "e-med-acute-medication-effectiveDosePeriod",
+        "severity" : "error",
+        "human" : "Eine Akutmedikation (courseOfTherapyType = #acute) muss ein Enddatum besitzen.",
+        "expression" : "courseOfTherapyType.where(coding.code='acute' and coding.system = 'http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy').exists() implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod').value.ofType(Period).end.exists()",
+        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+      }]
     },
     {
       "id" : "MedicationRequest.extension",
@@ -108,7 +122,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "min" : 1
     },
     {
       "id" : "MedicationRequest.extension:effectiveDosePeriod",
@@ -116,7 +131,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "sliceName" : "effectiveDosePeriod",
       "short" : "Zeitraum, in dem die Medikation eingenommen werden soll.",
       "definition" : "Zeitraum, über den die Medikation eingenommen werden soll. Wenn mehrere dosageInstruction-Zeilen vorhanden sind (z. B. bei einer ausschleichenden Dosierung), entspricht dieser Zeitraum dem frühesten Startdatum und dem spätesten Enddatum der dosageInstructions.",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
@@ -355,6 +370,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.courseOfTherapyType",
       "path" : "MedicationRequest.courseOfTherapyType",
       "short" : "Gesamtmuster der Medikamentengabe. Mögliche Ausprägungen: [continuous | acute ]",
+      "min" : 1,
       "mustSupport" : true
     },
     {

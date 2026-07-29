@@ -127,6 +127,12 @@
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
+  "courseOfTherapyType" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+      "code" : "acute"
+    }]
+  },
   "dosageInstruction" : [{
     "patientInstruction" : "Abends sehr dünn auf die betroffene Stelle auftragen.",
     "timing" : {

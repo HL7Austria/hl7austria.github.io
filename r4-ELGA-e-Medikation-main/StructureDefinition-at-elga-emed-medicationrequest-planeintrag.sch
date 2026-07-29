@@ -12,6 +12,7 @@
   <sch:pattern>
     <sch:title>f:MedicationRequest</sch:title>
     <sch:rule context="f:MedicationRequest">
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod']) &gt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:identifier) &gt;= 1">identifier: minimum cardinality of 'identifier' is 1</sch:assert>
@@ -33,6 +34,7 @@
       <sch:assert test="count(f:instantiatesUri) &lt;= 0">instantiatesUri: maximum cardinality of 'instantiatesUri' is 0</sch:assert>
       <sch:assert test="count(f:basedOn) &lt;= 0">basedOn: maximum cardinality of 'basedOn' is 0</sch:assert>
       <sch:assert test="count(f:groupIdentifier) &lt;= 0">groupIdentifier: maximum cardinality of 'groupIdentifier' is 0</sch:assert>
+      <sch:assert test="count(f:courseOfTherapyType) &gt;= 1">courseOfTherapyType: minimum cardinality of 'courseOfTherapyType' is 1</sch:assert>
       <sch:assert test="count(f:insurance) &lt;= 0">insurance: maximum cardinality of 'insurance' is 0</sch:assert>
       <sch:assert test="count(f:dosageInstruction) &gt;= 1">dosageInstruction: minimum cardinality of 'dosageInstruction' is 1</sch:assert>
       <sch:assert test="count(f:dispenseRequest) &lt;= 0">dispenseRequest: maximum cardinality of 'dispenseRequest' is 0</sch:assert>
