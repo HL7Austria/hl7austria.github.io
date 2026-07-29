@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-refere
   "name" : "AtEdiagReference",
   "title" : "AT ELGA e-Diagnose Reference",
   "status" : "active",
-  "date" : "2026-07-29T06:44:02+00:00",
+  "date" : "2026-07-29T11:08:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

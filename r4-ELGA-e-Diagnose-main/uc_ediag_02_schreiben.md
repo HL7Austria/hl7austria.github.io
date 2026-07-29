@@ -7,13 +7,17 @@
 
 # Schreiben
 
-> UC-02 -Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. Im Mittelpunkt stehen die Aktualisierung von Listen sowie die Erfassung, Zuordnung, Entfernung, Stornierung und Löschung von Diagnosen, Prozeduren oder Allergien und Intoleranzen.
+> UC-02 
+
+Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. Im Mittelpunkt stehen die Aktualisierung von Listen sowie die Erfassung, Zuordnung, Entfernung, Stornierung und Löschung von Diagnosen, Prozeduren oder Allergien und Intoleranzen.
 
 ## Interaktionen auf Listenressourcen
 
 ### Leere Liste fachlich bestätigen
 
-> Sub:UC_02_01 Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leeren Liste durch den GDA und die anschließende Speicherung des bestätigten Zustands in der Fachanwendung. Eine leere Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von relevanten Einträgen und ist von einer noch nicht befüllten Liste **emptyReason = notstarted** zu unterscheiden.
+> Sub:UC_02_01 
+
+Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leeren Liste durch den GDA und die anschließende Speicherung des bestätigten Zustands in der Fachanwendung. Eine leere Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von relevanten Einträgen und ist von einer noch nicht befüllten Liste **emptyReason = notstarted** zu unterscheiden.
 
 #### Ablauf
 
@@ -28,17 +32,23 @@
 
 ### Liste aktualisieren (List-Write)
 
-> Sub:UC_02_02 List Write, siehe [List-Write](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/branches/main/interactions.html#list-write) ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](uc_ediag_01_lesen.md#list-read) erfolgen darf. Nach dem Erfassen einer neuen medizinischen Ressource, siehe [Diagnose erfassen](uc_ediag_02_schreiben.md#diagnose-erfassen), kann diese in einer Summary-Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
+> Sub:UC_02_02 
+
+List Write, siehe [List-Write](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/branches/main/interactions.html#list-write) ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](uc_ediag_01_lesen.md#list-read) erfolgen darf. Nach dem Erfassen einer neuen medizinischen Ressource, siehe [Diagnose erfassen](uc_ediag_02_schreiben.md#diagnose-erfassen), kann diese in einer Summary-Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
 
 ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/`, `GET [base]/Patient/[id]/Procedure/` oder `GET [base]/Patient/[id]/AllergyIntolerance/`
 
 ### Reihenfolge der Listeneinträge ändern
 
-> Sub:UC_02_05 Der GDA kann die gemeinsame Reihenfolge der Summary-Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. ToDo: Evtl. auch in den ELGA Core mitnehmen.
+> Sub:UC_02_05 
+
+Der GDA kann die gemeinsame Reihenfolge der Summary-Listeinträge ändern. Die Einträge selbst bleiben dabei unverändert. ToDo: Evtl. auch in den ELGA Core mitnehmen.
 
 ### Diagnose in der Liste bearbeiten
 
-> Sub:UC_02_06 Bestehende Einträge fachlich bearbeiten TODo: Dieser UC setzt sich zusammen aus mehreren anderen und wird zur besseren verständnis hier nochmals beschrieben. Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar.
+> Sub:UC_02_06 
+
+Bestehende Einträge fachlich bearbeiten TODo: Dieser UC setzt sich zusammen aus mehreren anderen und wird zur besseren verständnis hier nochmals beschrieben. Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar.
 
 #### Ablauf
 
@@ -54,7 +64,9 @@ ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/
 
 ### Diagnose erfassen
 
-> Sub:UC_02_07 Der GDA erfasst eine neue Diagnose, Prozedure oder Allergie und Intoleranz über die e-Diagnose Fachanwendung, die nicht Teil der Summary-Liste ist, siehe [Transaktionen](transaction.md#Transaktionen) kann in der Folge durch eine Änderung, siehe Sub:UC_02_03 zur Liste hinzugefügtr werden.
+> Sub:UC_02_07 
+
+Der GDA erfasst eine neue Diagnose, Prozedure oder Allergie und Intoleranz über die e-Diagnose Fachanwendung, die nicht Teil der Summary-Liste ist, siehe [Transaktionen](transaction.md#Transaktionen) kann in der Folge durch eine Änderung, siehe Sub:UC_02_03 zur Liste hinzugefügtr werden.
 
 #### Ablauf
 
@@ -68,7 +80,9 @@ ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/
 
 ### Diagnose stornieren
 
-> Sub:UC_02_08 Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose in der Summary-List referenziert wird oder nicht.
+> Sub:UC_02_08 
+
+Der GDA kann einen oder mehrere Diagnosen aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob eine zu stornierende Diagnose in der Summary-List referenziert wird oder nicht.
 
 Sollte die Diagnose als relevant gekennzeichnet gewesen sein und will sie der GDA nach der Stornierung nicht mehr in der Liste der relevanten Einträge haben, muss die Diagnose aus der Liste der relevanten Einträge entfernt werden, siehe Einträge aus einer Liste entfernen. In Ergänzung müssen der GDA, der die Stornierung durchgeführt hat, den Stornierungszeitpunkt und den Vermerk festhalten.
 

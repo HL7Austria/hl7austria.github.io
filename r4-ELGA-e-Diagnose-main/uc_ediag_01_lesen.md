@@ -7,13 +7,17 @@
 
 # Lesen
 
-> UC-01 - Dieses Kapitel beschreibt die lesenden Zugriffe auf Summary-Listen, Gesamtansicht sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.
+> UC-01 
+
+Dieses Kapitel beschreibt die lesenden Zugriffe auf Summary-Listen, Gesamtansicht sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.
 
 ## Interaktionen auf Listenressourcen
 
 ### Vergangene Versionen einer Summary-Liste abrufen (List-History-Read)
 
-> Sub:UC_01_01 History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
+> Sub:UC_01_01 
+
+History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
 
 #### Ablauf
 
@@ -39,7 +43,9 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 ### Liste und zugehörige Ressourcen abrufen (List-Read)
 
 > Sub:UC_01_02
- List Read dient dem **Abruf der Summary-Liste und der Vorbereitung einer nachfolgenden Änderung**. 
+ 
+
+List Read dient dem **Abruf der Summary-Liste und der Vorbereitung einer nachfolgenden Änderung**. 
 
 #### Ablauf
 
@@ -63,9 +69,9 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 
 ### Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen und suchen (Read/Search)
 
-> Sub:UC_01_03 Read/Search ermöglicht den gezielten lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden.
+> Sub:UC_01_03 
 
-Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.
+Read/Search ermöglicht den gezielten lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden. Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.
 
 #### Anwendungsbeispiele
 

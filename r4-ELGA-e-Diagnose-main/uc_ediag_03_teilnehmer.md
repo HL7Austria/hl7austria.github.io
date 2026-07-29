@@ -9,13 +9,17 @@
 
 ### Eine gesamte Liste löschen
 
-> Sub:UC_03_01 ToDo: Es wird nur diese eine Ansicht der Liste gelöscht und nicht die Diagnosen.
+> Sub:UC_03_01 
+
+ToDo: Es wird nur diese eine Ansicht der Liste gelöscht und nicht die Diagnosen.
 
 Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt. Sobald alle List-Versionen gelöscht sind, ist die Summary-Liste beim nächsten Abrtuf leer und hat den emptyReason: nilknown.
 
 ### Diagnose löschen
 
-> Sub:UC_02_08 Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert. Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.
+> Sub:UC_02_08 
+
+Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert. Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.
 
 #### Ablauf
 
