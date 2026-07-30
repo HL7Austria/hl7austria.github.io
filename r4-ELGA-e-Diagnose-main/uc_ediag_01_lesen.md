@@ -67,25 +67,17 @@ List Read dient dem **Abruf der Summary-Liste und der Vorbereitung einer nachfol
 
 ## Interaktionen auf Einzelressourcen
 
-### Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen und suchen (Read/Search)
+### Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen
 
 > Sub:UC_01_03 
 
-Read/Search ermöglicht den gezielten lesenden Zugriff auf Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Über die Interaktion können sowohl alle vorhandenen Ressourcen eines Ressourcentyps als auch durch Angabe von Suchparametern eingeschränkte Ergebnismengen abgerufen werden. Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.
-
-#### Anwendungsbeispiele
-
-Die Read/Search-Interaktion kann beispielsweise für folgende Szenarien verwendet werden:
-
-* **Gesamtansicht**: Abruf aller vorhandenen Einträge eines Patienten, z.B. Diagnosen, Prozeduren oder Allergien und Intoleranzen, unabhängig davon, ob sie Teil der Summary-Liste sind. Standardmäßig werden die letzten 30 Einträge, absteigend nach Datum sortiert zurückgeliefert. Nach dem Abruf kann eine eigene Filterung oder gezieltes Suchen der Einträge durch das Clientsystem erfolgen.
-* **Auswahl für Folgeoperationen**: Ermittlung bestehender einzelner Ressourcen, die anschließend gelöscht ($delete) oder storniert ($storno) werden sollen.
+Read ermöglicht den lesenden Zugriff auf die Gesamtansicht der Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Die Interaktion liefert standardmäßig die letzten 30 Einträge, absteigend nach Datum sortiert zurück. Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.
 
 #### Ablauf
 
 1. Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.
 1. Der GDA oder ELGA-Teilnehmer führt ein**GET**auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe[Transaktionen](transaction.md#Transaktionen).
-1. Optional können Suchparameter angegeben werden, um die Treffermenge einzuschränken.
-1. Die Fachanwendung führt die Suche anhand der übergebenen Suchparameter durch.
+1. Optional kann der Abfrageparameter _count angegeben werden um die Treffermenge einzustellen. Standarmäßig werden die letzten 30 Einträge, absteigend nach Datum zurück gegebenen.
 1. Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.
 1. Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein Search-Bundle ohne Einträge zurückgeliefert.
 

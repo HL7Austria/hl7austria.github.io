@@ -7,7 +7,7 @@
 
 # Teilnehmerrechte ausüben
 
-### Eine gesamte Liste löschen
+### Eine Listen-Version löschen
 
 > Sub:UC_03_01 
 
