@@ -7,25 +7,25 @@
 
 # Teilnehmerrechte ausüben
 
-### Eine Listen-Version löschen
+### Eine Summary-Listenversion löschen
 
 > Sub:UC_03_01 
 
 ToDo: Es wird nur diese eine Ansicht der Liste gelöscht und nicht die Diagnosen.
 
-Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt. Sobald alle List-Versionen gelöscht sind, ist die Summary-Liste beim nächsten Abrtuf leer und hat den emptyReason: nilknown.
+Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt. Sobald alle Summary-Listversionen gelöscht sind, ist die Summary-Liste beim nächsten Abrtuf leer und emptyReason:nilknown gesetzt.
 
-### Diagnose löschen
+### Einträge löschen
 
 > Sub:UC_02_08 
 
-Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruflich löschen. Dabei ist es irrelevant, ob eine zu löschende Diagnose als relevant gekennzeichnet ist oder nicht. Die Inhalte der zu löschenden Diagnose werden durch die Fachanwendung entfernt und die Diagnose als "gelöscht" markiert. Sollte die Diagnose in der aktuellen Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Liste ohne die gelöschte Diagnose.
+Ein:e ELGA-Teilnehmer:in kann via ELGA-Portal einzelne oder alle Einträge unwiderruflich löschen. Dabei ist es irrelevant, ob ein zu löschender Eintrag Teil der Summary-Liste ist oder nicht. Die Inhalte des zu löschenden Eintrags werden durch die Fachanwendung entfernt und der Eintrag als "gelöscht" markiert. Sollte der Eintrag in der aktuellen Summary-Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Summary-Liste ohne den gelöschten Eintrag.
 
 #### Ablauf
 
-* Um einen Eintrag zu löschen, führt der ELGA-Teilnehmer über das Portal ein `$list-read` oder ein `GET` auf die Gesamtmenge der Diagnosen aus (siehe [Read/Search von Diagnosen, Prozeduren sowie Allergien und Intoleranzen](uc_ediag_06_int_list.md#read-search-von-diagnosen-prozeduren-sowie-allergien-und-intoleranzen)) und markiert die zu löschenden Einträge.
+* Um einen Eintrag zu löschen, führt die ELGA:Teilnehmerin oder der ELGA-Teilnehmer über das Portal ein `$list-read` oder ein `GET` auf die Gesamtmenge der Diagnosen aus (siehe [Einträge als Einzelressource abrufen](uc_ediag_01_lesen.md#einträge-als-einzelressource-abrufen)) und markiert die zu löschenden Einträge.
 * Durch Bestätigung wird die `$delete`-Operation ausgeführt.
-* Die Fachanwendung bearbeitet die zu löschende Diagnose folgendermaßen: 
+* Die Fachanwendung bearbeitet den zu löschenden Eintrag folgendermaßen: 
 * Alle optionalen Felder `0..` werden geleert.
 * Alle verpflichtenden Felder `1..` werden 
 * mit der [data-absent-reason-Extension](http://hl7.org/fhir/StructureDefinition/data-absent-reason) und dem Wert `unknown` versehen
@@ -38,7 +38,7 @@ Der ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Diagnosen unwiderruf
  
  
  
-* Die Fachanwendung erstellt eine neue Version der Liste, sollte die zu löschende Diagnose Teil der aktuellen Liste gewesen sein.
+* Die Fachanwendung erstellt eine neue Version der Summary-Liste, sollte der zu löschende Eintrag Teil der aktuellen Summary-Liste gewesen sein.
 
 ![](patient_delete.drawio.svg)
 
