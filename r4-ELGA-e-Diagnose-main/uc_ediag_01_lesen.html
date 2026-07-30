@@ -205,7 +205,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         </ul>
       </li>
       <li><a href="#interaktionen-auf-einzelressourcen" id="markdown-toc-interaktionen-auf-einzelressourcen">Interaktionen auf Einzelressourcen</a>        <ul>
-          <li><a href="#diagnosen-prozeduren-sowie-allergien-und-intoleranzen-als-einzelressource-lesen" id="markdown-toc-diagnosen-prozeduren-sowie-allergien-und-intoleranzen-als-einzelressource-lesen">Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen</a></li>
+          <li><a href="#einträge-als-einzelressource-lesen" id="markdown-toc-einträge-als-einzelressource-lesen">Einträge als Einzelressource lesen</a></li>
         </ul>
       </li>
     </ul>
@@ -219,8 +219,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <br/></p>
 </blockquote>
 
-<p>Dieses Kapitel beschreibt die lesenden Zugriffe auf Summary-Listen, Gesamtansicht sowie auf die Einzelressourcen Diagnosen, Prozeduren oder Allergien und Intoleranzen. 
-Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.</p>
+<p>Dieses Kapitel beschreibt die lesenden Zugriffe auf Summary-Listen, Gesamtansicht sowie auf die Einträge in den Einzelressourcen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.</p>
 
 <h2 id="interaktionen-auf-listenressourcen">Interaktionen auf Listenressourcen</h2>
 
@@ -238,7 +237,7 @@ Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestel
 <ol>
   <li>Der GDA fürht ein <strong>GET</strong> (Suche) auf den List-Typ aus.</li>
   <li>Die Fachanwendung führt die Suche anhand der angegebenen Suchparameter durch.</li>
-  <li>Werden keine Listen gebunden, wird ein leeres Ergebnis zurückgeliefert.</li>
+  <li>Werden keine Listen gefunden, wird ein leeres Ergebnis zurückgeliefert.</li>
   <li>Wird zumindest eine Liste gefunden, liefert die Fachanwendung ein <strong>Search-Bundle</strong> zurück. <br/>
 Dieses <strong>Search-Bundle</strong> enthält:
     <ul>
@@ -260,8 +259,8 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
   <!-- TODO: Es muss noch definiert werden, wie zwischen den Listen von Conditions, Procedures, AllergyIntolerances unterschieden wird. -->
 <p><strong>Beispiele für Zugriffe mittels Suchparameter:</strong></p>
 <ul>
-  <li><strong>Aktuelle Listenversion</strong> der relevanten Diagnosen (Conditions) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET [base]/Patient/[id]/List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_count=1&amp;_sort=-date&amp;code=http://loinc.org|11450-4</code></li>
-  <li><strong>Alle Listenversionen</strong> der relevanten Operationen (Procedures) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET [base]/Patient/[id]/List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_sort=-date&amp;code=http://loinc.org|47519-4</code></li>
+  <li><strong>Aktuelle Listenversion</strong> der Summary-Einträge (Conditions) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET [base]/Patient/[id]/List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_count=1&amp;_sort=-date&amp;code=http://loinc.org|11450-4</code></li>
+  <li><strong>Alle Listenversionen</strong> der Summary-Einträge (Procedures) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET [base]/Patient/[id]/List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_sort=-date&amp;code=http://loinc.org|47519-4</code></li>
 </ul>
 
 <h3 id="liste-und-zugehörige-ressourcen-abrufen-list-read">Liste und zugehörige Ressourcen abrufen (List-Read)</h3>
@@ -277,7 +276,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <ol>
   <li>Der GDA führt einen <strong>POST $list-read</strong> aus.</li>
-  <li>Die Fachanwendung <strong>prüft auf Existenz</strong> der Liste/n für die angegebene Patientin bzw. den angegebenen Patienten.</li>
+  <li>Die Fachanwendung <strong>prüft auf Existenz</strong> der Liste/n.</li>
   <li>Ist keine Liste vorhanden, wird dieser erstellt und eine leere Liste mit dem emptyReason notstarted wird zurückgeliefert.</li>
   <li>Existiert bereits eine Liste, stellt die Fachanwendung ein Search-Bundle einschließlich aller referenzierten Ressourcen zur Auslieferung bereit.
     <ul>
@@ -297,13 +296,13 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <h2 id="interaktionen-auf-einzelressourcen">Interaktionen auf Einzelressourcen</h2>
 
-<h3 id="diagnosen-prozeduren-sowie-allergien-und-intoleranzen-als-einzelressource-lesen">Diagnosen, Prozeduren sowie Allergien und Intoleranzen als Einzelressource lesen</h3>
+<h3 id="einträge-als-einzelressource-lesen">Einträge als Einzelressource lesen</h3>
 <blockquote>
   <p>Sub:UC_01_03 
 <br/></p>
 </blockquote>
 
-<p>Read ermöglicht den lesenden Zugriff auf die Gesamtansicht der Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten. Die Interaktion liefert standardmäßig die letzten 30 Einträge, absteigend nach Datum sortiert zurück.
+<p>Read ermöglicht den lesenden Zugriff auf Einträge von Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten jeweils als Gesamtansicht. Die Interaktion liefert standardmäßig die letzten 30 Einträge, absteigend nach Datum sortiert zurück.
 Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.</p>
 
 <h4 id="ablauf-2">Ablauf</h4>
@@ -311,7 +310,7 @@ Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyp
 <ol>
   <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.</li>
   <li><a name="l885">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
-  <li>Optional kann der Abfrageparameter _count angegeben werden um die Treffermenge einzustellen. Standarmäßig werden die letzten 30 Einträge, absteigend nach Datum zurück gegebenen.</li>
+  <li><strong>Optional</strong> kann der Abfrageparameter <strong>_count</strong> angegeben werden um die Treffermenge einzustellen. Standarmäßig werden die letzten 30 Einträge, absteigend nach Datum zurück gegebenen.</li>
   <li>Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Ressourcen zurück.</li>
   <li>Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein Search-Bundle ohne Einträge zurückgeliefert.</li>
 </ol>
@@ -334,7 +333,7 @@ Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyp
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Jul 30, 2026 06:46+0000">2026-07-30</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Jul 30, 2026 07:01+0000">2026-07-30</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
