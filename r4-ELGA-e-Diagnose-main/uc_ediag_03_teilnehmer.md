@@ -7,17 +7,30 @@
 
 # Teilnehmerrechte ausüben
 
+## Interaktionen auf Listenressourcen
+
 ### Eine Summary-Listenversion löschen
 
 > Sub:UC_03_01 
 
-ToDo: Es wird nur diese eine Ansicht der Liste gelöscht und nicht die Diagnosen.
+Eine ELGA-Teilnehmerin bzw. ein ELGA-Teilnehmer kann einzelne historische Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit List.emptyReason = nilknown zurück.
 
-Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt. Sobald alle Summary-Listversionen gelöscht sind, ist die Summary-Liste beim nächsten Abrtuf leer und emptyReason:nilknown gesetzt.
+#### Ablauf
 
-### Einträge löschen
+1. Ein:e ELGA-Teilnehmer:in führt ein**GET**auf den List-Typ gemäß[List-History-Read](uc_ediag_01_lesen.md#vergangene-versionen-einer-summary-liste-abrufen)aus.
+1. Die Fachanwendung liefert die vorhandenen Summary-Listversionen als Search-Bundle zurück.
+1. ELGA-Teilnehmer:in wählt die zu löschende Summary-Listversion aus.
+1. Durch Bestätigung wird das**DELETE**für die ausgewählte Summary-Listversion ausgeführt.
+1. Die Fachanwendung entfernt die ausgewählte Summary-Listversion aus der Historie.
+1. Sind keine Summary-Listversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit**List.emptyReason = nilknown**.
 
-> Sub:UC_02_08 
+![](summary_delete.drawio.svg)
+
+## Interaktionen auf Einzelressourcen
+
+### Eintrag löschen
+
+> Sub:UC_03_02 
 
 Ein:e ELGA-Teilnehmer:in kann via ELGA-Portal einzelne oder alle Einträge unwiderruflich löschen. Dabei ist es irrelevant, ob ein zu löschender Eintrag Teil der Summary-Liste ist oder nicht. Die Inhalte des zu löschenden Eintrags werden durch die Fachanwendung entfernt und der Eintrag als "gelöscht" markiert. Sollte der Eintrag in der aktuellen Summary-Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Summary-Liste ohne den gelöschten Eintrag.
 

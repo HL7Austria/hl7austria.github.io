@@ -199,38 +199,59 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#teilnehmerrechte-ausüben" id="markdown-toc-teilnehmerrechte-ausüben">Teilnehmerrechte ausüben</a>    <ul>
-      <li><a href="#eine-summary-listenversion-löschen" id="markdown-toc-eine-summary-listenversion-löschen">Eine Summary-Listenversion löschen</a></li>
-      <li><a href="#einträge-löschen" id="markdown-toc-einträge-löschen">Einträge löschen</a></li>
+      <li><a href="#interaktionen-auf-listenressourcen" id="markdown-toc-interaktionen-auf-listenressourcen">Interaktionen auf Listenressourcen</a>        <ul>
+          <li><a href="#eine-summary-listenversion-löschen" id="markdown-toc-eine-summary-listenversion-löschen">Eine Summary-Listenversion löschen</a></li>
+        </ul>
+      </li>
+      <li><a href="#interaktionen-auf-einzelressourcen" id="markdown-toc-interaktionen-auf-einzelressourcen">Interaktionen auf Einzelressourcen</a>        <ul>
+          <li><a href="#eintrag-löschen" id="markdown-toc-eintrag-löschen">Eintrag löschen</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
 
 </div>
 <h1 id="teilnehmerrechte-ausüben">Teilnehmerrechte ausüben</h1>
-
   <!-- Löschen von Einträgen bzw. Versionen der Summary-Liste -->
+<h2 id="interaktionen-auf-listenressourcen">Interaktionen auf Listenressourcen</h2>
+
 <h3 id="eine-summary-listenversion-löschen">Eine Summary-Listenversion löschen</h3>
 <blockquote>
   <p>Sub:UC_03_01 
 <br/></p>
 </blockquote>
 
-<p>ToDo: Es wird nur diese eine Ansicht der Liste gelöscht und nicht die Diagnosen.</p>
+  <!-- ToDo: Es wird nur diese eine Ansicht der Liste gelöscht und nicht die Diagnosen. 
+Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt. Sobald alle Summary-Listversionen gelöscht sind, ist die Summary-Liste beim nächsten Abrtuf leer und emptyReason:nilknown gesetzt. -->
+<p>Eine ELGA-Teilnehmerin bzw. ein ELGA-Teilnehmer kann einzelne historische Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit List.emptyReason = nilknown zurück.</p>
 
-<p>Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt. Sobald alle Summary-Listversionen gelöscht sind, ist die Summary-Liste beim nächsten Abrtuf leer und emptyReason:nilknown gesetzt.</p>
+<h4 id="ablauf">Ablauf</h4>
+<ol>
+  <li><a name="l418">​</a>Ein:e ELGA-Teilnehmer:in führt ein <strong>GET</strong> auf den List-Typ gemäß <a href="uc_ediag_01_lesen.md#vergangene-versionen-einer-summary-liste-abrufen">List-History-Read</a> aus.</li>
+  <li>Die Fachanwendung liefert die vorhandenen Summary-Listversionen als Search-Bundle zurück.</li>
+  <li>ELGA-Teilnehmer:in wählt die zu löschende Summary-Listversion aus.</li>
+  <li>Durch Bestätigung wird das <strong>DELETE</strong> für die ausgewählte Summary-Listversion ausgeführt.</li>
+  <li>Die Fachanwendung entfernt die ausgewählte Summary-Listversion aus der Historie.</li>
+  <li>Sind keine Summary-Listversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit <strong>List.emptyReason = nilknown</strong>.</li>
+</ol>
 
-<h3 id="einträge-löschen">Einträge löschen</h3>
+<p><a href="summary_delete.drawio.svg"><img src="summary_delete.drawio.svg" alt="overview" style="width: 60%"/></a></p>
+
+<h2 id="interaktionen-auf-einzelressourcen">Interaktionen auf Einzelressourcen</h2>
+
+<h3 id="eintrag-löschen">Eintrag löschen</h3>
 <blockquote>
-  <p>Sub:UC_02_08 
+  <p>Sub:UC_03_02 
 <br/></p>
 </blockquote>
 
 <p>Ein:e ELGA-Teilnehmer:in kann via ELGA-Portal einzelne oder alle Einträge unwiderruflich löschen. Dabei ist es irrelevant, ob ein zu löschender Eintrag Teil der Summary-Liste ist oder nicht. Die Inhalte des zu löschenden Eintrags werden durch die Fachanwendung entfernt und der Eintrag als "gelöscht" markiert. Sollte der Eintrag in der aktuellen Summary-Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Summary-Liste ohne den gelöschten Eintrag.</p>
 
-<h4 id="ablauf">Ablauf</h4>
+<h4 id="ablauf-1">Ablauf</h4>
 
 <ul>
-  <li><a name="l413">​</a>Um einen Eintrag zu löschen, führt die ELGA:Teilnehmerin oder der ELGA-Teilnehmer über das Portal ein <code class="language-plaintext highlighter-rouge">$list-read</code> oder ein <code class="language-plaintext highlighter-rouge">GET</code> auf die Gesamtmenge der Diagnosen aus (siehe 
+  <li><a name="l474">​</a>Um einen Eintrag zu löschen, führt die ELGA:Teilnehmerin oder der ELGA-Teilnehmer über das Portal ein <code class="language-plaintext highlighter-rouge">$list-read</code> oder ein <code class="language-plaintext highlighter-rouge">GET</code> auf die Gesamtmenge der Diagnosen aus (siehe 
 <a href="uc_ediag_01_lesen.md#einträge-als-einzelressource-abrufen">Einträge als Einzelressource abrufen</a>) und markiert die zu löschenden Einträge.</li>
   <li>Durch Bestätigung wird die <code class="language-plaintext highlighter-rouge">$delete</code>-Operation ausgeführt.</li>
   <li>Die Fachanwendung bearbeitet den zu löschenden Eintrag folgendermaßen:
@@ -275,7 +296,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jul 31, 2026 07:01+0000">2026-07-31</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Jul 31, 2026 08:34+0000">2026-07-31</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
