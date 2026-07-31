@@ -1,18 +1,18 @@
-# AI Performance Metric ValueSet - v0.1.0
+# EU AI Performance Metric Value Set - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AI Performance Metric ValueSet**
+* **EU AI Performance Metric Value Set**
 
-## ValueSet: AI Performance Metric ValueSet 
+## ValueSet: EU AI Performance Metric Value Set 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-performance-metric-vs | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:EU_AI_PerformanceMetricVS |
+| Active as of 2026-07-31 | *Computable Name*:EUAIPerformanceMetricVS |
 
  
-Codes for technical quality and performance metrics (QUAL-01). 
+Performance characteristics that may be documented for an AI system. 
 
  **References** 
 
@@ -47,28 +47,16 @@ Codes for technical quality and performance metrics (QUAL-01).
   "id" : "eu-ai-performance-metric-vs",
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-performance-metric-vs",
   "version" : "0.1.0",
-  "name" : "EU_AI_PerformanceMetricVS",
-  "title" : "AI Performance Metric ValueSet",
+  "name" : "EUAIPerformanceMetricVS",
+  "title" : "EU AI Performance Metric Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes for technical quality and performance metrics (QUAL-01).",
+  "description" : "Performance characteristics that may be documented for an AI system.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-      "concept" : [{
-        "code" : "accuracy"
-      },
-      {
-        "code" : "sensitivity"
-      },
-      {
-        "code" : "specificity"
-      },
-      {
-        "code" : "robustness"
-      }]
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-performance-metric-cs"
     }]
   }
 }

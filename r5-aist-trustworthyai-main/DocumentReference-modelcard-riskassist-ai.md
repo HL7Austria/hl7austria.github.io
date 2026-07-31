@@ -10,23 +10,27 @@ Profile: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
 
 **AI Clinical Validation Status**: Not Clinically Validated
 
-> **AI Performance Metrics**
-* biasDisclosure: No bias evaluation is claimed for this synthetic PoC model.
+> **AI Performance Metrics****type**: Accuracy**value**: 0.86 1 (Details: UCUM code1 = '1')
+> **url**metric
+
+> **url**biasDisclosure
+**value**: No bias evaluation is claimed for this synthetic PoC model.
 
 > **AI Training Data Metadata**
 * provenance: No real training data are used. The component is used only to simulate AI-like outputs for the PoC.
-* ehdsCategory: Electronic Health Records (EHRs)
+* ehdsCategory: Electronic Health Records
 * dataQuality: Complete
 
-> **AI Privacy Metadata**
+> **AI Retention Information**
 * retention: No display for Duration (value: 10; unit: years; system: http://unitsofmeasure.org; code: a)
-* transferFlag: false
 
 **status**: Current
 
 **type**: AI Model Card
 
-**subject**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**subject**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+
+**date**: 2026-03-01 10:00:00+0000
 
 **description**: 
 
@@ -67,7 +71,7 @@ Synthetic model card for a deterministic AI-output simulation component used in 
     "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status",
     "valueCodeableConcept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-clinical-validation-status-cs",
         "code" : "not-clinically-validated",
         "display" : "Not Clinically Validated"
       }]
@@ -75,6 +79,28 @@ Synthetic model card for a deterministic AI-output simulation component used in 
   },
   {
     "extension" : [{
+      "extension" : [{
+        "url" : "type",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-performance-metric-cs",
+            "code" : "accuracy",
+            "display" : "Accuracy"
+          }]
+        }
+      },
+      {
+        "url" : "value",
+        "valueQuantity" : {
+          "value" : 0.86,
+          "unit" : "1",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "1"
+        }
+      }],
+      "url" : "metric"
+    },
+    {
       "url" : "biasDisclosure",
       "valueString" : "No bias evaluation is claimed for this synthetic PoC model."
     }],
@@ -89,9 +115,8 @@ Synthetic model card for a deterministic AI-output simulation component used in 
       "url" : "ehdsCategory",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-          "code" : "ehr",
-          "display" : "Electronic Health Records (EHRs)"
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-data-category-cs",
+          "code" : "ehr"
         }]
       }
     },
@@ -99,7 +124,7 @@ Synthetic model card for a deterministic AI-output simulation component used in 
       "url" : "dataQuality",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-data-quality-cs",
           "code" : "complete",
           "display" : "Complete"
         }]
@@ -116,25 +141,21 @@ Synthetic model card for a deterministic AI-output simulation component used in 
         "system" : "http://unitsofmeasure.org",
         "code" : "a"
       }
-    },
-    {
-      "url" : "transferFlag",
-      "valueBoolean" : false
     }],
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-privacy-metadata"
+    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-retention-information"
   }],
   "status" : "current",
   "type" : {
     "coding" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-artifact-type-cs",
       "code" : "model-card",
       "display" : "AI Model Card"
-    }],
-    "text" : "AI Model Card"
+    }]
   },
   "subject" : {
     "reference" : "Device/device-riskassist-ai"
   },
+  "date" : "2026-03-01T10:00:00Z",
   "description" : "Synthetic model card for a deterministic AI-output simulation component used in the PoC.",
   "content" : [{
     "attachment" : {

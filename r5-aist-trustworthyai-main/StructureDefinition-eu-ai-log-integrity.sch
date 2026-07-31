@@ -20,6 +20,7 @@
     <sch:rule context="f:Extension/f:value[x]">
       <sch:assert test="count(f:type) &gt;= 1">type: minimum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:when) &gt;= 1">when: minimum cardinality of 'when' is 1</sch:assert>
+      <sch:assert test="count(f:sigFormat) &gt;= 1">sigFormat: minimum cardinality of 'sigFormat' is 1</sch:assert>
       <sch:assert test="count(f:data) &gt;= 1">data: minimum cardinality of 'data' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

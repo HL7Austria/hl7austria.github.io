@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIProvenance |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIProvenance |
 
  
 A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context. 
 
 **Usages:**
 
-* Examples for this Profile: [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md)
+* Examples for this Profile: [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md), [Provenance/sc-01-ai-only-provenance-ai-output-001](Provenance-sc-01-ai-only-provenance-ai-output-001.md), [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md), [Provenance/sc-03-override-provenance-ai-output-001](Provenance-sc-03-override-provenance-ai-output-001.md) and [Provenance/sc-04-correction-exp-provenance-ai-output-001](Provenance-sc-04-correction-exp-provenance-ai-output-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-provenance.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
   "name" : "EU_AIProvenance",
   "title" : "EU AI Provenance",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context.",
   "fhirVersion" : "5.0.0",
@@ -97,7 +97,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       "id" : "Provenance.extension:usageCategory",
       "path" : "Provenance.extension",
       "sliceName" : "usageCategory",
-      "short" : "Primary vs. Secondary Use Category",
+      "short" : "Primary or secondary use category",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -110,6 +110,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       "id" : "Provenance.extension:secondaryUsePurpose",
       "path" : "Provenance.extension",
       "sliceName" : "secondaryUsePurpose",
+      "short" : "Purpose of secondary use, where applicable",
       "min" : 0,
       "max" : "*",
       "type" : [{
@@ -122,7 +123,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       "id" : "Provenance.extension:dataPermit",
       "path" : "Provenance.extension",
       "sliceName" : "dataPermit",
-      "short" : "Reference to the EHDS Data Access Permit",
+      "short" : "EHDS data permit, where applicable",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -144,11 +145,32 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
     {
       "id" : "Provenance.occurred[x]",
       "path" : "Provenance.occurred[x]",
-      "short" : "Exact execution period (Start/End) of the AI model",
+      "short" : "Execution period of the AI processing activity",
       "min" : 1,
       "type" : [{
         "code" : "Period"
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Provenance.occurred[x].start",
+      "path" : "Provenance.occurred[x].start",
+      "short" : "Start of the AI processing activity",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Provenance.occurred[x].end",
+      "path" : "Provenance.occurred[x].end",
+      "short" : "End of the AI processing activity",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Provenance.recorded",
+      "path" : "Provenance.recorded",
+      "short" : "Time when the provenance record was created",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -165,9 +187,10 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       "mustSupport" : true
     },
     {
-      "id" : "Provenance.authorization:gdprBasis",
+      "id" : "Provenance.authorization:gdprArt6Basis",
       "path" : "Provenance.authorization",
-      "sliceName" : "gdprBasis",
+      "sliceName" : "gdprArt6Basis",
+      "short" : "Legal basis under GDPR Article 6",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true,
@@ -177,38 +200,59 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       }
     },
     {
-      "id" : "Provenance.authorization:gdprBasis.concept",
+      "id" : "Provenance.authorization:gdprArt6Basis.concept",
       "path" : "Provenance.authorization.concept",
       "min" : 1
     },
     {
-      "id" : "Provenance.authorization:gdprBasis.concept.coding.system",
+      "id" : "Provenance.authorization:gdprArt6Basis.concept.coding",
+      "path" : "Provenance.authorization.concept.coding",
+      "min" : 1
+    },
+    {
+      "id" : "Provenance.authorization:gdprArt6Basis.concept.coding.system",
       "path" : "Provenance.authorization.concept.coding.system",
       "min" : 1,
       "patternUri" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem"
     },
     {
-      "id" : "Provenance.authorization:gdprException",
+      "id" : "Provenance.authorization:gdprArt6Basis.reference",
+      "path" : "Provenance.authorization.reference",
+      "max" : "0"
+    },
+    {
+      "id" : "Provenance.authorization:gdprArt9Condition",
       "path" : "Provenance.authorization",
-      "sliceName" : "gdprException",
+      "sliceName" : "gdprArt9Condition",
+      "short" : "Condition under GDPR Article 9 for processing health data",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-exception-vs"
+        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-condition-vs"
       }
     },
     {
-      "id" : "Provenance.authorization:gdprException.concept",
+      "id" : "Provenance.authorization:gdprArt9Condition.concept",
       "path" : "Provenance.authorization.concept",
       "min" : 1
     },
     {
-      "id" : "Provenance.authorization:gdprException.concept.coding.system",
+      "id" : "Provenance.authorization:gdprArt9Condition.concept.coding",
+      "path" : "Provenance.authorization.concept.coding",
+      "min" : 1
+    },
+    {
+      "id" : "Provenance.authorization:gdprArt9Condition.concept.coding.system",
       "path" : "Provenance.authorization.concept.coding.system",
       "min" : 1,
       "patternUri" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem"
+    },
+    {
+      "id" : "Provenance.authorization:gdprArt9Condition.reference",
+      "path" : "Provenance.authorization.reference",
+      "max" : "0"
     },
     {
       "id" : "Provenance.agent",
@@ -218,7 +262,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
     {
       "id" : "Provenance.agent.who",
       "path" : "Provenance.agent.who",
-      "short" : "Link to the AI Device that executed the action",
+      "short" : "AI system that performed the processing activity",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"]

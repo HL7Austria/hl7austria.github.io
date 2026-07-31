@@ -17,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization organization-examplehospital</b></p><a name=\"organization-examplehospital\"> </a><a name=\"hcorganization-examplehospital\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-organization.html\">EU AI Responsible Organization</a></p></div><p><b>active</b>: true</p><p><b>type</b>: <span title=\"Codes:\">healthcare-provider</span></p><p><b>name</b>: Example Hospital</p><h3>Contacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Purpose</b></td><td><b>Name</b></td><td><b>Telecom</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/contactentity-type ADMIN}\">Data Protection Officer</span></td><td>Data Protection Officer</td><td><a href=\"mailto:dpo@examplehospital.example\">dpo@examplehospital.example</a></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/contactentity-type PATINF}\">AI Incident Reporting Contact</span></td><td>AI Incident Reporting Contact</td><td><a href=\"mailto:incidents@examplehospital.example\">incidents@examplehospital.example</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization organization-examplehospital</b></p><a name=\"organization-examplehospital\"> </a><a name=\"hcorganization-examplehospital\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-organization.html\">EU AI Responsible Organization</a></p></div><p><b>active</b>: true</p><p><b>type</b>: <span title=\"Codes:\">healthcare-provider</span></p><p><b>name</b>: Example Hospital</p><h3>Contacts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Purpose</b></td><td><b>Name</b></td><td><b>Telecom</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/contactentity-type ADMIN}\">Administrative</span></td><td> </td><td><a href=\"mailto:contact@examplehospital.example\">contact@examplehospital.example</a></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs dpo}\">Data Protection Officer</span></td><td>Data Protection Officer</td><td><a href=\"mailto:dpo@examplehospital.example\">dpo@examplehospital.example</a></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs ai-incident-reporting}\">AI Incident Reporting Contact</span></td><td>AI Incident Reporting Contact</td><td><a href=\"mailto:incidents@examplehospital.example\">incidents@examplehospital.example</a></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
   fhir:active [ fhir:v true] ; # 
   fhir:type ( [
@@ -28,10 +28,21 @@
      fhir:purpose [
        fhir:coding ( [
          fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/contactentity-type"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "ADMIN" ] ;
-         fhir:display [ fhir:v "Administrative" ]
-       ] ) ;
-       fhir:text [ fhir:v "Data Protection Officer" ]
+         fhir:code [ fhir:v "ADMIN" ]
+       ] )
+     ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "contact@examplehospital.example" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] [
+     fhir:purpose [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "dpo" ] ;
+         fhir:display [ fhir:v "Data Protection Officer" ]
+       ] )
      ] ;
      fhir:name ( [
        fhir:text [ fhir:v "Data Protection Officer" ]
@@ -44,11 +55,10 @@
   ] [
      fhir:purpose [
        fhir:coding ( [
-         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/contactentity-type"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "PATINF" ] ;
-         fhir:display [ fhir:v "Patient" ]
-       ] ) ;
-       fhir:text [ fhir:v "AI Incident Reporting Contact" ]
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ai-incident-reporting" ] ;
+         fhir:display [ fhir:v "AI Incident Reporting Contact" ]
+       ] )
      ] ;
      fhir:name ( [
        fhir:text [ fhir:v "AI Incident Reporting Contact" ]

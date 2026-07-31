@@ -12,8 +12,6 @@
   <sch:pattern>
     <sch:title>f:Communication</sch:title>
     <sch:rule context="f:Communication">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-explanation-requested']) &gt;= 1">extension with URL = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-explanation-requested': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-explanation-requested']) &lt;= 1">extension with URL = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-explanation-requested': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
       <sch:assert test="count(f:about) &gt;= 1">about: minimum cardinality of 'about' is 1</sch:assert>
       <sch:assert test="count(f:sent) &gt;= 1">sent: minimum cardinality of 'sent' is 1</sch:assert>

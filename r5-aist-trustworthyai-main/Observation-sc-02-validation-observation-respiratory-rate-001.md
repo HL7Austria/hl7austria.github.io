@@ -1,10 +1,10 @@
-# Input Observation: Respiratory Rate - v0.1.0
+# Input Observation: Respiratory Rate (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Input Observation: Respiratory Rate**
+* **Input Observation: Respiratory Rate (2)**
 
-## Example Observation: Input Observation: Respiratory Rate
+## Example Observation: Input Observation: Respiratory Rate (2)
 
 **status**: Final
 

@@ -1,18 +1,18 @@
-# EHDS Data Category ValueSet - v0.1.0
+# EHDS Data Category Value Set - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EHDS Data Category ValueSet**
+* **EHDS Data Category Value Set**
 
-## ValueSet: EHDS Data Category ValueSet 
+## ValueSet: EHDS Data Category Value Set 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-data-category-vs | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:EHDS_DataCategoryVS |
+| Active as of 2026-07-31 | *Computable Name*:EHDSDataCategoryVS |
 
  
-Categories of electronic health data relevant for secondary-use documentation under the EHDS (EHDS Art. 51). 
+Categories of electronic health data that may be documented for secondary-use and AI-development contexts. 
 
  **References** 
 
@@ -47,67 +47,16 @@ Categories of electronic health data relevant for secondary-use documentation un
   "id" : "ehds-data-category-vs",
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-data-category-vs",
   "version" : "0.1.0",
-  "name" : "EHDS_DataCategoryVS",
-  "title" : "EHDS Data Category ValueSet",
+  "name" : "EHDSDataCategoryVS",
+  "title" : "EHDS Data Category Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Categories of electronic health data relevant for secondary-use documentation under the EHDS (EHDS Art. 51).",
+  "description" : "Categories of electronic health data that may be documented for secondary-use and AI-development contexts.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-      "concept" : [{
-        "code" : "ehr"
-      },
-      {
-        "code" : "health-factors"
-      },
-      {
-        "code" : "healthcare-resources"
-      },
-      {
-        "code" : "pathogen-data"
-      },
-      {
-        "code" : "admin-claims"
-      },
-      {
-        "code" : "human-genomic"
-      },
-      {
-        "code" : "molecular-omics"
-      },
-      {
-        "code" : "device-generated-personal"
-      },
-      {
-        "code" : "wellness-apps"
-      },
-      {
-        "code" : "professional-status"
-      },
-      {
-        "code" : "public-health-registry"
-      },
-      {
-        "code" : "medical-mortality-registry"
-      },
-      {
-        "code" : "clinical-trial"
-      },
-      {
-        "code" : "medical-device-other"
-      },
-      {
-        "code" : "medicinal-device-registry"
-      },
-      {
-        "code" : "research-cohort-survey"
-      },
-      {
-        "code" : "biobank"
-      }]
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-data-category-cs"
     }]
   }
 }

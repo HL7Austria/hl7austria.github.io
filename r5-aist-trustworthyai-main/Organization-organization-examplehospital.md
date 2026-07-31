@@ -19,6 +19,7 @@ Profile: [EU AI Responsible Organization](StructureDefinition-eu-ai-organization
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **Purpose** | **Name** | **Telecom** |
+| * | Administrative |  | [contact@examplehospital.example](mailto:contact@examplehospital.example) |
 | * | Data Protection Officer | Data Protection Officer | [dpo@examplehospital.example](mailto:dpo@examplehospital.example) |
 | * | AI Incident Reporting Contact | AI Incident Reporting Contact | [incidents@examplehospital.example](mailto:incidents@examplehospital.example) |
 
@@ -42,10 +43,22 @@ Profile: [EU AI Responsible Organization](StructureDefinition-eu-ai-organization
     "purpose" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
-        "code" : "ADMIN",
-        "display" : "Administrative"
-      }],
-      "text" : "Data Protection Officer"
+        "code" : "ADMIN"
+      }]
+    },
+    "telecom" : [{
+      "system" : "email",
+      "value" : "contact@examplehospital.example",
+      "use" : "work"
+    }]
+  },
+  {
+    "purpose" : {
+      "coding" : [{
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs",
+        "code" : "dpo",
+        "display" : "Data Protection Officer"
+      }]
     },
     "name" : [{
       "text" : "Data Protection Officer"
@@ -59,11 +72,10 @@ Profile: [EU AI Responsible Organization](StructureDefinition-eu-ai-organization
   {
     "purpose" : {
       "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
-        "code" : "PATINF",
-        "display" : "Patient"
-      }],
-      "text" : "AI Incident Reporting Contact"
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs",
+        "code" : "ai-incident-reporting",
+        "display" : "AI Incident Reporting Contact"
+      }]
     },
     "name" : [{
       "text" : "AI Incident Reporting Contact"

@@ -1,18 +1,18 @@
-# GDPR Article 6 Legal Basis ValueSet - v0.1.0
+# GDPR Article 6 Legal Basis Value Set - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **GDPR Article 6 Legal Basis ValueSet**
+* **GDPR Article 6 Legal Basis Value Set**
 
-## ValueSet: GDPR Article 6 Legal Basis ValueSet 
+## ValueSet: GDPR Article 6 Legal Basis Value Set 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:GDPR_Art6_LegalBasisVS |
+| Active as of 2026-07-31 | *Computable Name*:GDPRArt6LegalBasisVS |
 
  
-Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data. 
+Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data. 
 
  **References** 
 
@@ -47,13 +47,13 @@ Value set including GDPR Article 6 legal bases relevant for documenting the lawf
   "id" : "gdpr-art6-legal-basis-vs",
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs",
   "version" : "0.1.0",
-  "name" : "GDPR_Art6_LegalBasisVS",
-  "title" : "GDPR Article 6 Legal Basis ValueSet",
+  "name" : "GDPRArt6LegalBasisVS",
+  "title" : "GDPR Article 6 Legal Basis Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data.",
+  "description" : "Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data.",
   "compose" : {
     "include" : [{
       "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem"

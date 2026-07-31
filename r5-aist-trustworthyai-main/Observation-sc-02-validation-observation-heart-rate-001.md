@@ -1,10 +1,10 @@
-# Input Observation: Heart Rate - v0.1.0
+# Input Observation: Heart Rate (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Input Observation: Heart Rate**
+* **Input Observation: Heart Rate (2)**
 
-## Example Observation: Input Observation: Heart Rate
+## Example Observation: Input Observation: Heart Rate (2)
 
 **status**: Final
 

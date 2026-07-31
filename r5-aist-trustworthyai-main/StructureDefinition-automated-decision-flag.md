@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:AutomatedDecisionFlag |
+| Draft as of 2026-07-31 | *Computable Name*:AutomatedDecisionFlag |
 
-Indicates whether the AI-generated output was used as part of a solely automated decision-making process within the meaning of GDPR Article 22.
+Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.
 
 **Context of Use**
 
@@ -20,7 +20,7 @@ Indicates whether the AI-generated output was used as part of a solely automated
 **Usages:**
 
 * Use this Extension: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
-* Examples for this Extension: [Observation/sc-02-validation-ai-observation-risk-001](Observation-sc-02-validation-ai-observation-risk-001.md)
+* Examples for this Extension: [Observation/sc-01-ai-only-ai-observation-risk-001](Observation-sc-01-ai-only-ai-observation-risk-001.md), [Observation/sc-02-validation-ai-observation-risk-001](Observation-sc-02-validation-ai-observation-risk-001.md), [Observation/sc-03-override-ai-observation-risk-001](Observation-sc-03-override-ai-observation-risk-001.md) and [Observation/sc-04-correction-exp-ai-observation-risk-001](Observation-sc-04-correction-exp-ai-observation-risk-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-automated-decision-flag.json)
 
@@ -51,9 +51,9 @@ Other representations of profile: [CSV](StructureDefinition-automated-decision-f
   "name" : "AutomatedDecisionFlag",
   "title" : "Automated Decision-Making Flag",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Indicates whether the AI-generated output was used as part of a solely automated decision-making process within the meaning of GDPR Article 22.",
+  "description" : "Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -74,7 +74,7 @@ Other representations of profile: [CSV](StructureDefinition-automated-decision-f
       "id" : "Extension",
       "path" : "Extension",
       "short" : "Automated Decision-Making Flag",
-      "definition" : "Indicates whether the AI-generated output was used as part of a solely automated decision-making process within the meaning of GDPR Article 22."
+      "definition" : "Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means."
     },
     {
       "id" : "Extension.extension",
@@ -89,6 +89,7 @@ Other representations of profile: [CSV](StructureDefinition-automated-decision-f
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "boolean"
       }]

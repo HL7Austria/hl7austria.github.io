@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIAuditEvent |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIAuditEvent |
 
  
 An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability. 
 
 **Usages:**
 
-* Examples for this Profile: [AuditEvent/sc-02-validation-audit-event-ai-execution-001](AuditEvent-sc-02-validation-audit-event-ai-execution-001.md)
+* Examples for this Profile: [AuditEvent/sc-01-ai-only-audit-event-ai-execution-001](AuditEvent-sc-01-ai-only-audit-event-ai-execution-001.md), [AuditEvent/sc-02-validation-audit-event-ai-execution-001](AuditEvent-sc-02-validation-audit-event-ai-execution-001.md), [AuditEvent/sc-03-override-audit-event-ai-execution-001](AuditEvent-sc-03-override-audit-event-ai-execution-001.md) and [AuditEvent/sc-04-correction-exp-audit-event-ai-execution-001](AuditEvent-sc-04-correction-exp-audit-event-ai-execution-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-machine-execution-audit-event.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
   "name" : "EU_AIAuditEvent",
   "title" : "EU AI Execution Audit Event",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability.",
   "fhirVersion" : "5.0.0",
@@ -95,15 +95,14 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
         }],
         "ordered" : false,
         "rules" : "open"
-      },
-      "min" : 1
+      }
     },
     {
       "id" : "AuditEvent.extension:logIntegrity",
       "path" : "AuditEvent.extension",
       "sliceName" : "logIntegrity",
       "short" : "Cryptographic signature of this log entry",
-      "min" : 1,
+      "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
@@ -112,44 +111,22 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
       "mustSupport" : true
     },
     {
-      "id" : "AuditEvent.code",
-      "path" : "AuditEvent.code",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/audit-event-type",
-          "code" : "rest",
-          "display" : "RESTful Operation"
-        }]
-      }
-    },
-    {
-      "id" : "AuditEvent.action",
-      "path" : "AuditEvent.action",
-      "patternCode" : "C"
-    },
-    {
       "id" : "AuditEvent.occurred[x]",
       "path" : "AuditEvent.occurred[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "min" : 1
-    },
-    {
-      "id" : "AuditEvent.occurred[x]:occurredPeriod",
-      "path" : "AuditEvent.occurred[x]",
-      "sliceName" : "occurredPeriod",
-      "short" : "Exact execution period (Start/End)",
-      "min" : 1,
-      "max" : "1",
       "type" : [{
         "code" : "Period"
-      }],
+      }]
+    },
+    {
+      "id" : "AuditEvent.occurred[x].start",
+      "path" : "AuditEvent.occurred[x].start",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.occurred[x].end",
+      "path" : "AuditEvent.occurred[x].end",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -165,15 +142,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
     {
       "id" : "AuditEvent.agent.who",
       "path" : "AuditEvent.agent.who",
+      "short" : "AI system that performed the processing activity",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"]
       }]
-    },
-    {
-      "id" : "AuditEvent.agent.requestor",
-      "path" : "AuditEvent.agent.requestor",
-      "patternBoolean" : false
     },
     {
       "id" : "AuditEvent.source",
@@ -183,6 +156,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
     {
       "id" : "AuditEvent.source.observer",
       "path" : "AuditEvent.source.observer",
+      "short" : "AI system that generated this audit record",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"]
@@ -198,35 +172,21 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
         }],
         "rules" : "open"
       },
-      "min" : 2
-    },
-    {
-      "id" : "AuditEvent.entity:inputData",
-      "path" : "AuditEvent.entity",
-      "sliceName" : "inputData",
-      "short" : "Input Data Processed",
-      "min" : 1,
-      "max" : "*",
-      "mustSupport" : true
-    },
-    {
-      "id" : "AuditEvent.entity:inputData.role",
-      "path" : "AuditEvent.entity.role",
-      "min" : 1,
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-          "code" : "4"
-        }]
-      }
+      "min" : 1
     },
     {
       "id" : "AuditEvent.entity:referenceDb",
       "path" : "AuditEvent.entity",
       "sliceName" : "referenceDb",
-      "short" : "Identification of specific reference databases or versions (e.g., Clinical Guidelines)",
+      "short" : "Reference database or knowledge source used by the AI system",
       "min" : 0,
-      "max" : "*"
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "AuditEvent.entity:referenceDb.what",
+      "path" : "AuditEvent.entity.what",
+      "min" : 1
     },
     {
       "id" : "AuditEvent.entity:referenceDb.role",
@@ -234,8 +194,8 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
       "min" : 1,
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-          "code" : "17"
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role",
+          "code" : "reference-database"
         }]
       }
     },
@@ -243,7 +203,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
       "id" : "AuditEvent.entity:outputData",
       "path" : "AuditEvent.entity",
       "sliceName" : "outputData",
-      "short" : "The resulting AI-generated Observation",
+      "short" : "A FHIR resource representing an output generated by the AI system during the audited execution",
       "min" : 1,
       "max" : "*",
       "mustSupport" : true
@@ -251,10 +211,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
     {
       "id" : "AuditEvent.entity:outputData.what",
       "path" : "AuditEvent.entity.what",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
-      }]
+      "min" : 1
     },
     {
       "id" : "AuditEvent.entity:outputData.role",
@@ -262,8 +219,8 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
       "min" : 1,
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-          "code" : "3"
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role",
+          "code" : "ai-output"
         }]
       }
     }]

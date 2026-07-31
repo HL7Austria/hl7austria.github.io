@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EHDSPUsageCategory |
+| Draft as of 2026-07-31 | *Computable Name*:EHDSUsageCategory |
 
-Categorizes the data processing as Primary Care or Secondary Use according to the EHDS.
+Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.
 
 **Context of Use**
 
@@ -20,7 +20,7 @@ Categorizes the data processing as Primary Care or Secondary Use according to th
 **Usages:**
 
 * Use this Extension: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
-* Examples for this Extension: [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md)
+* Examples for this Extension: [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md), [Provenance/sc-01-ai-only-provenance-ai-output-001](Provenance-sc-01-ai-only-provenance-ai-output-001.md), [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md), [Provenance/sc-03-override-provenance-ai-output-001](Provenance-sc-03-override-provenance-ai-output-001.md) and [Provenance/sc-04-correction-exp-provenance-ai-output-001](Provenance-sc-04-correction-exp-provenance-ai-output-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ehds-usage-category.json)
 
@@ -50,12 +50,12 @@ Other representations of profile: [CSV](StructureDefinition-ehds-usage-category.
   }],
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category",
   "version" : "0.1.0",
-  "name" : "EHDSPUsageCategory",
+  "name" : "EHDSUsageCategory",
   "title" : "EHDS Usage Category",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Categorizes the data processing as Primary Care or Secondary Use according to the EHDS.",
+  "description" : "Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -76,7 +76,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-usage-category.
       "id" : "Extension",
       "path" : "Extension",
       "short" : "EHDS Usage Category",
-      "definition" : "Categorizes the data processing as Primary Care or Secondary Use according to the EHDS."
+      "definition" : "Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context."
     },
     {
       "id" : "Extension.extension",
@@ -91,6 +91,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-usage-category.
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],

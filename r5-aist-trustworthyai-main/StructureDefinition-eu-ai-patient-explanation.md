@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIPatientExplanation |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIPatientExplanation |
 
  
-A Communication profile documenting patient-facing information about the AI-supported workflow, including the role of the AI system and the related clinical review where applicable. 
+A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act. 
 
 **Usages:**
 
-* Examples for this Profile: [Communication/Communication-sc-02-patient-explanation-001](Communication-Communication-sc-02-patient-explanation-001.md)
+* Examples for this Profile: [Communication/sc-04-correction-exp-patient-explanation-001](Communication-sc-04-correction-exp-patient-explanation-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-patient-explanation.json)
 
@@ -41,9 +41,9 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
   "name" : "EU_AIPatientExplanation",
   "title" : "EU AI Patient Explanation Communication",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "A Communication profile documenting patient-facing information about the AI-supported workflow, including the role of the AI system and the related clinical review where applicable.",
+  "description" : "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "workflow",
@@ -71,49 +71,6 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
       "path" : "Communication"
     },
     {
-      "id" : "Communication.extension",
-      "path" : "Communication.extension",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "url"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "min" : 1
-    },
-    {
-      "id" : "Communication.extension:explanationRequested",
-      "path" : "Communication.extension",
-      "sliceName" : "explanationRequested",
-      "short" : "Flag: Did the patient/data subject actively request this explanation?",
-      "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-explanation-requested"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Communication.status",
-      "path" : "Communication.status",
-      "short" : "preparation | in-progress | completed | not-done",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Communication.category",
-      "path" : "Communication.category",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/communication-category",
-          "code" : "instruction",
-          "display" : "Instruction"
-        }]
-      }
-    },
-    {
       "id" : "Communication.subject",
       "path" : "Communication.subject",
       "short" : "The patient who received the explanation",
@@ -128,11 +85,8 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
       "id" : "Communication.about",
       "path" : "Communication.about",
       "short" : "The specific decision the patient wants to have explained",
+      "definition" : "References the AI-generated or AI-supported clinical output, related human oversight assessment, provenance record, or other resource representing the decision or workflow addressed by the patient-facing explanation.",
       "min" : 1,
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
-      }],
       "mustSupport" : true
     },
     {
@@ -156,7 +110,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
     {
       "id" : "Communication.payload",
       "path" : "Communication.payload",
-      "short" : "The explanation text OR a reference to a formal explanation document",
+      "short" : "Patient-facing explanation or reference to an explanation document",
       "min" : 1,
       "mustSupport" : true
     },
@@ -164,11 +118,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
       "id" : "Communication.payload.content[x]",
       "path" : "Communication.payload.content[x]",
       "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/DocumentReference"]
+        "code" : "Attachment"
       },
       {
-        "code" : "CodeableConcept"
+        "code" : "Reference",
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/DocumentReference"]
       }]
     }]
   }

@@ -1,0 +1,94 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/AuditEvent/sc-04-correction-exp-audit-event-ai-execution-001> a fhir:AuditEvent ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "sc-04-correction-exp-audit-event-ai-execution-001"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"^^xsd:anyURI ;
+       fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AuditEvent sc-04-correction-exp-audit-event-ai-execution-001</b></p><a name=\"sc-04-correction-exp-audit-event-ai-execution-001\"> </a><a name=\"hcsc-04-correction-exp-audit-event-ai-execution-001\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-machine-execution-audit-event.html\">EU AI Execution Audit Event</a></p></div><p><b>EU AI Log Integrity Signature</b>: No display for Signature  (type: Verification Signature (ASTM Signature Type Codes#1.2.840.10065.1.12.1.5); when: 2026-03-01 10:15:04+0000; who: -&gt;Device: extension = ,-&gt;DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.; sigFormat: text/plain; data: c2hhMjU2LWUwNTFjNDEzNmNhZWEwMmIyOTA5OWEyOWZhNzQ4Yzc3ZDgyNDNmNmEyYTRkMzllOTg3ODQ4ZDhlYzg3NGQ1MTA=)</p><p><b>code</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/audit-event-type rest}\">RESTful Operation</span></p><p><b>action</b>: Create</p><p><b>occurred</b>: 2026-03-01 10:15:00+0000 --&gt; 2026-03-01 10:15:03+0000</p><p><b>recorded</b>: 2026-03-01 10:15:04+0000</p><p><b>authorization</b>: <span title=\"Codes:\">Document simulated AI execution for PoC traceability.</span></p><p><b>patient</b>: <a href=\"Patient-patient-001.html\">Anonymous Patient Female, DoB: 1959-04-12</a></p><p><b>encounter</b>: <a href=\"Encounter-encounter-001.html\">Encounter: status = completed; class = ambulatory; actualPeriod = 2026-03-01 10:00:00+0000 --&gt; 2026-03-01 10:30:00+0000</a></p><h3>Agents</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Who</b></td><td><b>Requestor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Device-device-riskassist-ai.html\">Device: extension = ,-&gt;DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.</a></td><td>false</td></tr></table><h3>Sources</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Observer</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Device-device-riskassist-ai.html\">Device: extension = ,-&gt;DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.</a></td></tr></table><h3>Entities</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>What</b></td><td><b>Role</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Observation-sc-04-correction-exp-ai-observation-risk-001.html\">Observation </a></td><td><span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role ai-output}\">AI Output</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Signature ;
+       fhir:type ( [
+         fhir:system [ fhir:v "urn:iso-astm:E1762-95:2013"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "1.2.840.10065.1.12.1.5" ] ;
+         fhir:display [ fhir:v "Verification Signature" ]
+       ] ) ;
+       fhir:when [ fhir:v "2026-03-01T10:15:04Z"^^xsd:dateTime ] ;
+       fhir:who [
+         fhir:link <http://example.org/fhir/eu-ai-transparency/Device/device-riskassist-ai> ;
+         fhir:reference [ fhir:v "Device/device-riskassist-ai" ]
+       ] ;
+       fhir:sigFormat [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "c2hhMjU2LWUwNTFjNDEzNmNhZWEwMmIyOTA5OWEyOWZhNzQ4Yzc3ZDgyNDNmNmEyYTRkMzllOTg3ODQ4ZDhlYzg3NGQ1MTA="^^xsd:base64Binary ]
+     ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/audit-event-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "rest" ] ;
+       fhir:display [ fhir:v "RESTful Operation" ]
+     ] ) ;
+     fhir:text [ fhir:v "RESTful Operation" ]
+  ] ; # 
+  fhir:action [ fhir:v "C"] ; # 
+  fhir:occurred [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2026-03-01T10:15:00Z"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2026-03-01T10:15:03Z"^^xsd:dateTime ]
+  ] ; # 
+  fhir:recorded [ fhir:v "2026-03-01T10:15:04Z"^^xsd:dateTime] ; # 
+  fhir:authorization ( [
+     fhir:text [ fhir:v "Document simulated AI execution for PoC traceability." ]
+  ] ) ; # 
+  fhir:patient [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-001> ;
+     fhir:reference [ fhir:v "Patient/patient-001" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Encounter/encounter-001> ;
+     fhir:reference [ fhir:v "Encounter/encounter-001" ]
+  ] ; # 
+  fhir:agent ( [
+     fhir:who [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Device/device-riskassist-ai> ;
+       fhir:reference [ fhir:v "Device/device-riskassist-ai" ]
+     ] ;
+     fhir:requestor [ fhir:v false ]
+  ] ) ; # 
+  fhir:source [
+     fhir:observer [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Device/device-riskassist-ai> ;
+       fhir:reference [ fhir:v "Device/device-riskassist-ai" ]
+     ]
+  ] ; # 
+  fhir:entity ( [
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-04-correction-exp-ai-observation-risk-001> ;
+       fhir:reference [ fhir:v "Observation/sc-04-correction-exp-ai-observation-risk-001" ]
+     ] ;
+     fhir:role [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ai-output" ]
+       ] ) ;
+       fhir:text [ fhir:v "AI Output" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

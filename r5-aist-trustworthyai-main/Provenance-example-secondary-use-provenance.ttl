@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Provenance/example-secondary-use-provenance> a fhir:Provenance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example-secondary-use-provenance"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"^^xsd:anyURI ;
+       fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Provenance example-secondary-use-provenance</b></p><a name=\"example-secondary-use-provenance\"> </a><a name=\"hcexample-secondary-use-provenance\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-provenance.html\">EU AI Provenance</a></p></div><p>Provenance for <a href=\"Observation-sc-01-ai-only-ai-observation-risk-001.html\">Observation </a></p><p>Summary</p><table class=\"grid\"><tr><td>Occurrence</td><td>2026-03-01 10:15:00+0000 --&gt; 2026-03-01 10:15:03+0000</td></tr><tr><td>Recorded</td><td>2026-03-01 10:15:04+0000</td></tr><tr><td>Activity</td><td><span title=\"Codes:\">secondary-use-ai-validation</span></td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>who</b></td></tr><tr><td><a href=\"Device-device-riskassist-ai.html\">Device: extension = ,-&gt;DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-usage-category-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "secondary-use" ] ;
+         fhir:display [ fhir:v "Secondary Use" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-secondary-use-purpose-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "scientific-research" ] ;
+         fhir:display [ fhir:v "Scientific Research" ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Identifier ;
+       fhir:system [ fhir:v "http://example.org/fhir/sid/ehds-data-permit"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "EHDS-PERMIT-2026-0001" ]
+     ]
+  ] ) ; # 
+  fhir:target ( [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-01-ai-only-ai-observation-risk-001> ;
+     fhir:reference [ fhir:v "Observation/sc-01-ai-only-ai-observation-risk-001" ]
+  ] ) ; # 
+  fhir:occurred [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2026-03-01T10:15:00Z"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2026-03-01T10:15:03Z"^^xsd:dateTime ]
+  ] ; # 
+  fhir:recorded [ fhir:v "2026-03-01T10:15:04Z"^^xsd:dateTime] ; # 
+  fhir:authorization ( [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "gdpr-art-6-1-d" ]
+       ] )
+     ]
+  ] [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "gdpr-art-9-2-h" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:activity [
+     fhir:text [ fhir:v "secondary-use-ai-validation" ]
+  ] ; # 
+  fhir:patient [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-001> ;
+     fhir:reference [ fhir:v "Patient/patient-001" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Encounter/encounter-001> ;
+     fhir:reference [ fhir:v "Encounter/encounter-001" ]
+  ] ; # 
+  fhir:agent ( [
+     fhir:who [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Device/device-riskassist-ai> ;
+       fhir:reference [ fhir:v "Device/device-riskassist-ai" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-04-correction-exp-observation-temperature-001> ;
+       fhir:reference [ fhir:v "Observation/sc-04-correction-exp-observation-temperature-001" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

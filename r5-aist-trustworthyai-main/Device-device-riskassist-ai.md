@@ -11,9 +11,9 @@ Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md)
 > **Third-Country Data Transfer**
 * transferFlag: false
 
-**Model Card Reference**: [DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.](DocumentReference-modelcard-riskassist-ai.md)
+**Model Card Reference**: [DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.](DocumentReference-modelcard-riskassist-ai.md)
 
-**identifier**: EU AI Database Identifier/EU-AI-000123
+**identifier**: EU AI Registration Number/EU-AI-000123
 
 **status**: Active
 
@@ -40,19 +40,17 @@ Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md)
 | - | **Category** | **Specification** |
 | * | quality-management-system | Synthetic QMS certification reference for PoC purposes. |
 
-> **property****type**: CE Mark**value**: true
+> **property****type**: CE Marking Status**value**: true
 
-> **property****type**: Notified Body ID**value**: NB-0000
+> **property****type**: Notified Body Identifier**value**: NB-0000
 
 > **property****type**: Expected Lifetime**value**: 5 years (Details: UCUM codea = 'a')
 
-> **property****type**: Medical Purpose**value**: Supportive risk stratification in acute care settings
+> **property****type**: Intended Purpose**value**: Supportive risk stratification in acute care settings
 
 > **property****type**: Target Population**value**: Adult patients with suspected infection in an acute care setting
 
 **owner**: [Organization Example Hospital](Organization-organization-examplehospital.md)
-
-**contact**: [contact@examplemed.example](mailto:contact@examplemed.example), [dpo@examplemed.example](mailto:dpo@examplemed.example)
 
 **note**: , 
 
@@ -93,11 +91,9 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
   "identifier" : [{
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-        "code" : "eu-ai-database-id",
-        "display" : "EU AI Database Identifier"
-      }],
-      "text" : "EU AI Database Identifier"
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-identifier-type-cs",
+        "code" : "eu-ai-registration-number"
+      }]
     },
     "system" : "http://example.org/fhir/sid/eu-ai-database",
     "value" : "EU-AI-000123"
@@ -123,7 +119,7 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
   "property" : [{
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
         "code" : "ce-mark"
       }]
     },
@@ -132,7 +128,7 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
   {
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
         "code" : "notified-body-id"
       }]
     },
@@ -141,7 +137,7 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
   {
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
         "code" : "expected-lifetime"
       }]
     },
@@ -155,8 +151,8 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
   {
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-        "code" : "medical-purpose"
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
+        "code" : "intended-purpose"
       }]
     },
     "valueString" : "Supportive risk stratification in acute care settings"
@@ -164,7 +160,7 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
   {
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
         "code" : "target-population"
       }]
     },
@@ -175,16 +171,6 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
   "owner" : {
     "reference" : "Organization/organization-examplehospital"
   },
-  "contact" : [{
-    "system" : "email",
-    "value" : "contact@examplemed.example",
-    "use" : "work"
-  },
-  {
-    "system" : "email",
-    "value" : "dpo@examplemed.example",
-    "use" : "work"
-  }],
   "note" : [{
     "text" : "Synthetic maintenance information for PoC purposes."
   },

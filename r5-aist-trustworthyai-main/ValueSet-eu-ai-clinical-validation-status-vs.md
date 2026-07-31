@@ -1,18 +1,18 @@
-# AI Clinical Validation Status ValueSet - v0.1.0
+# EU AI Clinical Validation Status Value Set - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AI Clinical Validation Status ValueSet**
+* **EU AI Clinical Validation Status Value Set**
 
-## ValueSet: AI Clinical Validation Status ValueSet 
+## ValueSet: EU AI Clinical Validation Status Value Set 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-clinical-validation-status-vs | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:EU_AI_ClinicalValidationStatusVS |
+| Active as of 2026-07-31 | *Computable Name*:EUAIClinicalValidationStatusVS |
 
  
-Codes describing the clinical validation status of an AI system. 
+Clinical validation statuses applicable to an AI system and its documented intended use. 
 
  **References** 
 
@@ -47,28 +47,16 @@ Codes describing the clinical validation status of an AI system.
   "id" : "eu-ai-clinical-validation-status-vs",
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-clinical-validation-status-vs",
   "version" : "0.1.0",
-  "name" : "EU_AI_ClinicalValidationStatusVS",
-  "title" : "AI Clinical Validation Status ValueSet",
+  "name" : "EUAIClinicalValidationStatusVS",
+  "title" : "EU AI Clinical Validation Status Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes describing the clinical validation status of an AI system.",
+  "description" : "Clinical validation statuses applicable to an AI system and its documented intended use.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-      "concept" : [{
-        "code" : "clinically-validated"
-      },
-      {
-        "code" : "not-clinically-validated"
-      },
-      {
-        "code" : "validation-in-progress"
-      },
-      {
-        "code" : "technical-validation-only"
-      }]
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-clinical-validation-status-cs"
     }]
   }
 }

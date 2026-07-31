@@ -12,15 +12,22 @@
   <sch:pattern>
     <sch:title>f:AuditEvent</sch:title>
     <sch:rule context="f:AuditEvent">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity']) &gt;= 1">extension with URL = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity']) &lt;= 1">extension with URL = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:AuditEvent/f:occurred[x] 1</sch:title>
+    <sch:rule context="f:AuditEvent/f:occurred[x]">
+      <sch:assert test="count(f:start) &gt;= 1">start: minimum cardinality of 'start' is 1</sch:assert>
+      <sch:assert test="count(f:end) &gt;= 1">end: minimum cardinality of 'end' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
     <sch:title>f:AuditEvent/f:entity</sch:title>
     <sch:rule context="f:AuditEvent/f:entity">
+      <sch:assert test="count(f:what) &gt;= 1">what: minimum cardinality of 'what' is 1</sch:assert>
       <sch:assert test="count(f:role) &gt;= 1">role: minimum cardinality of 'role' is 1</sch:assert>
-      <sch:assert test="count(f:role) &gt;= 1">role: minimum cardinality of 'role' is 1</sch:assert>
+      <sch:assert test="count(f:what) &gt;= 1">what: minimum cardinality of 'what' is 1</sch:assert>
       <sch:assert test="count(f:role) &gt;= 1">role: minimum cardinality of 'role' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

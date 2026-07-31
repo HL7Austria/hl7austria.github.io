@@ -1,22 +1,22 @@
-# GDPR Article 6 Legal Basis CodeSystem - v0.1.0
+# GDPR Article 6 Legal Basis Code System - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **GDPR Article 6 Legal Basis CodeSystem**
+* **GDPR Article 6 Legal Basis Code System**
 
-## CodeSystem: GDPR Article 6 Legal Basis CodeSystem 
+## CodeSystem: GDPR Article 6 Legal Basis Code System 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:GDPRArt6CodeSystem |
+| Active as of 2026-07-31 | *Computable Name*:GDPRArt6CodeSystem |
 
  
-Code system defining GDPR Article 6 legal bases relevant for documenting legal-basis metadata in AI-supported processing contexts. 
+Codes representing the legal bases listed in Article 6(1) GDPR for processing personal data. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [GDPR_Art6_LegalBasisVS](ValueSet-gdpr-art6-legal-basis-vs.md)
+* [GDPRArt6LegalBasisVS](ValueSet-gdpr-art6-legal-basis-vs.md)
 
 
 
@@ -29,38 +29,44 @@ Code system defining GDPR Article 6 legal bases relevant for documenting legal-b
   "url" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem",
   "version" : "0.1.0",
   "name" : "GDPRArt6CodeSystem",
-  "title" : "GDPR Article 6 Legal Basis CodeSystem",
+  "title" : "GDPR Article 6 Legal Basis Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Code system defining GDPR Article 6 legal bases relevant for documenting legal-basis metadata in AI-supported processing contexts.",
+  "description" : "Codes representing the legal bases listed in Article 6(1) GDPR for processing personal data.",
   "caseSensitive" : true,
   "content" : "complete",
   "count" : 6,
   "concept" : [{
     "code" : "gdpr-art-6-1-a",
-    "display" : "Consent (Art. 6(1)(a))"
+    "display" : "Consent (Art. 6(1)(a))",
+    "definition" : "The data subject has given consent to the processing of personal data for one or more specific purposes."
   },
   {
     "code" : "gdpr-art-6-1-b",
-    "display" : "Contract (Art. 6(1)(b))"
+    "display" : "Contract (Art. 6(1)(b))",
+    "definition" : "Processing is necessary for the performance of a contract with the data subject or for pre-contractual measures requested by the data subject."
   },
   {
     "code" : "gdpr-art-6-1-c",
-    "display" : "Legal Obligation (Art. 6(1)(c))"
+    "display" : "Legal Obligation (Art. 6(1)(c))",
+    "definition" : "Processing is necessary for compliance with a legal obligation to which the controller is subject."
   },
   {
     "code" : "gdpr-art-6-1-d",
-    "display" : "Vital Interests (Art. 6(1)(d))"
+    "display" : "Vital Interests (Art. 6(1)(d))",
+    "definition" : "Processing is necessary to protect the vital interests of the data subject or another natural person."
   },
   {
     "code" : "gdpr-art-6-1-e",
-    "display" : "Public Interest or Official Authority (Art. 6(1)(e))"
+    "display" : "Public Interest or Official Authority (Art. 6(1)(e))",
+    "definition" : "Processing is necessary for a task carried out in the public interest or in the exercise of official authority vested in the controller."
   },
   {
     "code" : "gdpr-art-6-1-f",
-    "display" : "Legitimate Interests (Art. 6(1)(f))"
+    "display" : "Legitimate Interests (Art. 6(1)(f))",
+    "definition" : "Processing is necessary for legitimate interests pursued by the controller or a third party, subject to the conditions and limitations of Article 6(1)(f) GDPR."
   }]
 }
 

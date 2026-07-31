@@ -19,10 +19,7 @@
       <sch:assert test="count(f:manufacturer) &gt;= 1">manufacturer: minimum cardinality of 'manufacturer' is 1</sch:assert>
       <sch:assert test="count(f:name) &gt;= 1">name: minimum cardinality of 'name' is 1</sch:assert>
       <sch:assert test="count(f:version) &gt;= 1">version: minimum cardinality of 'version' is 1</sch:assert>
-      <sch:assert test="count(f:conformsTo) &gt;= 1">conformsTo: minimum cardinality of 'conformsTo' is 1</sch:assert>
       <sch:assert test="count(f:owner) &gt;= 1">owner: minimum cardinality of 'owner' is 1</sch:assert>
-      <sch:assert test="count(f:contact) &gt;= 2">contact: minimum cardinality of 'contact' is 2</sch:assert>
-      <sch:assert test="count(f:note) &gt;= 1">note: minimum cardinality of 'note' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

@@ -1,10 +1,10 @@
-# Input Observation: Consciousness Status - v0.1.0
+# Input Observation: Consciousness Status (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Input Observation: Consciousness Status**
+* **Input Observation: Consciousness Status (2)**
 
-## Example Observation: Input Observation: Consciousness Status
+## Example Observation: Input Observation: Consciousness Status (2)
 
 **status**: Final
 

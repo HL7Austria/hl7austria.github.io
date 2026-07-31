@@ -9,15 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIHumanOversightAssessment |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIHumanOversightAssessment |
 
  
 An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden. 
 
 **Usages:**
 
-* Refer to this Profile: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-patient-explanation.md)
-* Examples for this Profile: [ArtifactAssessment/sc-02-validation-human-oversight-001](ArtifactAssessment-sc-02-validation-human-oversight-001.md)
+* Examples for this Profile: [ArtifactAssessment/sc-02-validation-human-oversight-001](ArtifactAssessment-sc-02-validation-human-oversight-001.md), [ArtifactAssessment/sc-03-override-human-oversight-001](ArtifactAssessment-sc-03-override-human-oversight-001.md) and [ArtifactAssessment/sc-04-correction-exp-human-oversight-001](ArtifactAssessment-sc-04-correction-exp-human-oversight-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-human-oversight.json)
 
@@ -42,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
   "name" : "EU_AIHumanOversightAssessment",
   "title" : "EU AI Human Oversight Assessment",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden.",
   "fhirVersion" : "5.0.0",
@@ -99,27 +98,26 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
       "max" : "1",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Observation"]
+        "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
       }],
       "mustSupport" : true
     },
     {
       "id" : "ArtifactAssessment.content.summary",
       "path" : "ArtifactAssessment.content.summary",
-      "short" : "Medical/Technical rationale for the decision",
-      "min" : 1,
+      "short" : "Clinical or technical rationale for the assessment",
       "mustSupport" : true
     },
     {
       "id" : "ArtifactAssessment.content.classifier",
       "path" : "ArtifactAssessment.content.classifier",
-      "short" : "Intervention Action (e.g., Validation, Override)",
+      "short" : "Human oversight action",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true,
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-intervention-vs"
+        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-human-oversight-action-vs"
       }
     },
     {
@@ -134,33 +132,9 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
       "mustSupport" : true
     },
     {
-      "id" : "ArtifactAssessment.content.author.extension",
-      "path" : "ArtifactAssessment.content.author.extension",
-      "min" : 1
-    },
-    {
-      "id" : "ArtifactAssessment.content.author.extension:aiTraining",
-      "path" : "ArtifactAssessment.content.author.extension",
-      "sliceName" : "aiTraining",
-      "short" : "Did this specific human receive training for this AI?",
-      "min" : 1,
-      "max" : "1",
-      "type" : [{
-        "code" : "Extension",
-        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status"]
-      }]
-    },
-    {
       "id" : "ArtifactAssessment.content.relatedArtifact",
       "path" : "ArtifactAssessment.content.relatedArtifact",
-      "short" : "Reference to heatmap or explainability tool used"
-    },
-    {
-      "id" : "ArtifactAssessment.workflowStatus",
-      "path" : "ArtifactAssessment.workflowStatus",
-      "short" : "draft | active | retired | unknown",
-      "min" : 1,
-      "mustSupport" : true
+      "short" : "Supporting documentation or explainability evidence"
     }]
   }
 }

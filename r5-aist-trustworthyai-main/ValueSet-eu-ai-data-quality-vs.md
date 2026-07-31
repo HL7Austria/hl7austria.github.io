@@ -1,18 +1,18 @@
-# AI Data Quality ValueSet - v0.1.0
+# EU AI Data Quality Value Set - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AI Data Quality ValueSet**
+* **EU AI Data Quality Value Set**
 
-## ValueSet: AI Data Quality ValueSet 
+## ValueSet: EU AI Data Quality Value Set 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-data-quality-vs | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:EU_AI_DataQualityVS |
+| Active as of 2026-07-31 | *Computable Name*:EUAIDataQualityVS |
 
  
-Codes describing data-quality characteristics relevant for training-data documentation (Art. 10 AI Act). 
+Assessed data-quality characteristics relevant to AI-system development, validation, testing, or evaluation. 
 
  **References** 
 
@@ -47,28 +47,16 @@ Codes describing data-quality characteristics relevant for training-data documen
   "id" : "eu-ai-data-quality-vs",
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-data-quality-vs",
   "version" : "0.1.0",
-  "name" : "EU_AI_DataQualityVS",
-  "title" : "AI Data Quality ValueSet",
+  "name" : "EUAIDataQualityVS",
+  "title" : "EU AI Data Quality Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes describing data-quality characteristics relevant for training-data documentation (Art. 10 AI Act).",
+  "description" : "Assessed data-quality characteristics relevant to AI-system development, validation, testing, or evaluation.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-      "concept" : [{
-        "code" : "representative"
-      },
-      {
-        "code" : "error-free"
-      },
-      {
-        "code" : "complete"
-      },
-      {
-        "code" : "relevant"
-      }]
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-data-quality-cs"
     }]
   }
 }

@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:AITrainingData |
+| Draft as of 2026-07-31 | *Computable Name*:AITrainingData |
 
-Details regarding provenance, EHDS categories, and data quality.
+Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.
 
 **Context of Use**
 
@@ -53,9 +53,9 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
   "name" : "AITrainingData",
   "title" : "AI Training Data Metadata",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Details regarding provenance, EHDS categories, and data quality.",
+  "description" : "Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -76,7 +76,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       "id" : "Extension",
       "path" : "Extension",
       "short" : "AI Training Data Metadata",
-      "definition" : "Details regarding provenance, EHDS categories, and data quality."
+      "definition" : "Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system."
     },
     {
       "id" : "Extension.extension",
@@ -104,6 +104,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
     {
       "id" : "Extension.extension:provenance.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "string"
       }]
@@ -129,6 +130,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
     {
       "id" : "Extension.extension:ehdsCategory.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],
@@ -158,6 +160,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
     {
       "id" : "Extension.extension:ehdsSecondaryUsePurpose.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],
@@ -187,6 +190,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
     {
       "id" : "Extension.extension:ehdsPermit.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "Identifier"
       }]
@@ -212,6 +216,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
     {
       "id" : "Extension.extension:dataQuality.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],

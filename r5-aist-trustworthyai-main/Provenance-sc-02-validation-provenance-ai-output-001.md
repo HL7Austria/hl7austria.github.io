@@ -1,10 +1,10 @@
-# Provenance: AI Output Generation - v0.1.0
+# Provenance: AI Output Generation (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Provenance: AI Output Generation**
+* **Provenance: AI Output Generation (2)**
 
-## Example Provenance: Provenance: AI Output Generation
+## Example Provenance: Provenance: AI Output Generation (2)
 
 Profile: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
 
@@ -20,7 +20,7 @@ Summary
 
 **Agents**
 
-* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 
 
@@ -37,16 +37,10 @@ Summary
     "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category",
     "valueCodeableConcept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-usage-category-cs",
         "code" : "primary-use",
         "display" : "Primary Use"
       }]
-    }
-  },
-  {
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit",
-    "valueIdentifier" : {
-      "value" : "EHDS-PERMIT-001"
     }
   }],
   "target" : [{

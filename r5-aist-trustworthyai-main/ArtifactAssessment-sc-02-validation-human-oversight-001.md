@@ -1,10 +1,10 @@
-# Assessment: Human Validation of AI Output - v0.1.0
+# Assessment: Human Validation of AI Output (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Assessment: Human Validation of AI Output**
+* **Assessment: Human Validation of AI Output (2)**
 
-## Example ArtifactAssessment: Assessment: Human Validation of AI Output
+## Example ArtifactAssessment: Assessment: Human Validation of AI Output (2)
 
 Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-oversight.md)
 
@@ -40,16 +40,12 @@ Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-over
     "summary" : "The simulated AI output was reviewed and accepted.",
     "classifier" : [{
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-human-oversight-cs",
         "code" : "human-validation",
         "display" : "Human Validation"
       }]
     }],
     "author" : {
-      "extension" : [{
-        "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status",
-        "valueBoolean" : true
-      }],
       "reference" : "PractitionerRole/practitionerrole-reviewer-001"
     }
   }],

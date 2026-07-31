@@ -1,18 +1,18 @@
-# EHDS Usage Category ValueSet - v0.1.0
+# EHDS Usage Category Value Set - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EHDS Usage Category ValueSet**
+* **EHDS Usage Category Value Set**
 
-## ValueSet: EHDS Usage Category ValueSet 
+## ValueSet: EHDS Usage Category Value Set 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-usage-category-vs | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:EHDS_UsageCategoryVS |
+| Active as of 2026-07-31 | *Computable Name*:EHDSUsageCategoryVS |
 
  
-Codes defining whether data usage is documented as primary use or secondary use (LAW-03.1). 
+Categories distinguishing primary and secondary use of electronic health data in the EHDS context. 
 
  **References** 
 
@@ -47,22 +47,16 @@ Codes defining whether data usage is documented as primary use or secondary use 
   "id" : "ehds-usage-category-vs",
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-usage-category-vs",
   "version" : "0.1.0",
-  "name" : "EHDS_UsageCategoryVS",
-  "title" : "EHDS Usage Category ValueSet",
+  "name" : "EHDSUsageCategoryVS",
+  "title" : "EHDS Usage Category Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Codes defining whether data usage is documented as primary use or secondary use (LAW-03.1).",
+  "description" : "Categories distinguishing primary and secondary use of electronic health data in the EHDS context.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-      "concept" : [{
-        "code" : "primary-use"
-      },
-      {
-        "code" : "secondary-use"
-      }]
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-usage-category-cs"
     }]
   }
 }

@@ -48,8 +48,8 @@ When considering if multiple types are appropriate, you should evaluate if child
 
 We expect that some jurisdictions will profile this optionality to be a single cardinality.","Need to be able to track the kind of organization that this is - different organization types have different uses.","","","","","","","",,"example","Used to categorize the organization.","http://hl7.org/fhir/ValueSet/organization-type|5.0.0","",,,,"Organization.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","FiveWs.class","No equivalent in v2",".code","n/a"
-"Organization.name","Organization.name","","","",0,1,"","","Y","string {[]} {[]}
-","Name used for the organization","A name associated with the organization.","If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"org-1
+"Organization.name","Organization.name","","","",1,1,"Y","","Y","string {[]} {[]}
+","Name of the legal entity","A name associated with the organization.","If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"org-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XON.1",".name","Participant.name",".PreferredName/Name"
 "Organization.alias","Organization.alias","","","",0,*,"","","","string {[]} {[]}
@@ -60,12 +60,46 @@ For searching knowing previous names that the organization was known by can be v
 "Organization.description","Organization.description","","","",0,1,"","","Y","markdown {[]} {[]}
 ","Additional details about the Organization that could be displayed as further information to identify the Organization beyond its name","Description of the organization, which helps provide additional general context on the organization to ensure that the correct organization is selected.","","Humans need additional information to verify a correct Organization has been selected.","","","","","","","",,,,,"",,,,"Organization.description",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playingEntity[classCode=PLC determinerCode=INSTANCE].desc"
-"Organization.contact","Organization.contact","","","",0,*,"","","","ExtendedContactDetail {[]} {[]}
+"Organization.contact","Organization.contact","","","",1,*,"","","","ExtendedContactDetail {[]} {[]}
 ","Official contact details for the Organization","The contact details of communication devices available relevant to the specific Organization. This can include addresses, phone numbers, fax numbers, mobile numbers, email addresses and web sites.","The address/telecom use code 'home' are not to be used. Note that these contacts are not the contact details of people who provide the service (that would be through PractitionerRole), these are official contacts for the Organization itself for specific purposes. E.g. Mailing Addresses, Billing Addresses, Contact numbers for Booking or Billing Enquiries, general web address, web address for online bookings etc.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"","value:purpose}
 ","",,"open","Organization.contact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-3:The telecom of an organization can never be of use 'home' {telecom.where(use = 'home').empty()}org-4:The address of an organization can never be of use 'home' {address.where(use = 'home').empty()}",".contactParty"
+"Organization.contact:officialContact","Organization.contact","officialContact","","",1,1,"Y","","","ExtendedContactDetail {[]} {[]}
+","Official contact details of the legal entity","The contact details of communication devices available relevant to the specific Organization. This can include addresses, phone numbers, fax numbers, mobile numbers, email addresses and web sites.","The address/telecom use code 'home' are not to be used. Note that these contacts are not the contact details of people who provide the service (that would be through PractitionerRole), these are official contacts for the Organization itself for specific purposes. E.g. Mailing Addresses, Billing Addresses, Contact numbers for Booking or Billing Enquiries, general web address, web address for online bookings etc.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+org-3:The telecom of an organization can never be of use 'home' {telecom.where(use = 'home').empty()}org-4:The address of an organization can never be of use 'home' {address.where(use = 'home').empty()}",".contactParty"
+"Organization.contact:officialContact.id","Organization.contact.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+","","n/a"
+"Organization.contact:officialContact.extension","Organization.contact.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
+"Organization.contact:officialContact.purpose","Organization.contact.purpose","","","",1,1,"","","Y","CodeableConcept {[]} {[]}
+","The type of contact","The purpose/type of contact.","If no purpose is defined, then these contact details may be used for any purpose.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
+  <coding>
+    <system value=""http://terminology.hl7.org/CodeSystem/contactentity-type""/>
+    <code value=""ADMIN""/>
+  </coding>
+</valueCodeableConcept>","","","",,"preferred","The purpose for which an extended contact detail should be used.","http://terminology.hl7.org/ValueSet/contactentity-type","",,,,"ExtendedContactDetail.purpose",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"Organization.contact:officialContact.name","Organization.contact.name","","","",0,*,"","","Y","HumanName {[]} {[]}
+","Name of an individual to contact","The name of an individual to contact, some types of contact detail are usually blank.","If there is no named individual, the telecom/address information is not generally monitored by a specific individual.","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.name",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"Organization.contact:officialContact.telecom","Organization.contact.telecom","","","",1,*,"Y","","Y","ContactPoint {[]} {[]}
+","Contact details (e.g.phone/fax/url)","The contact details application for the purpose defined.","","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.telecom",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"Organization.contact:officialContact.address","Organization.contact.address","","","",0,1,"","","Y","Address {[]} {[]}
+","Address for the contact","Address for the contact.","More than 1 address would be for different purposes, and thus should be entered as a different entry,.","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.address",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"Organization.contact:officialContact.organization","Organization.contact.organization","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization|5.0.0]]}
+","This contact detail is handled/monitored by a specific organization","This contact detail is handled/monitored by a specific organization. If the name is provided in the contact, then it is referring to the named individual within this organization.","","Some specific types of contact information can be an handled by an organization (eg legal council is via a specific firm).","","","","","","","",,,,,"",,,,"ExtendedContactDetail.organization",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"Organization.contact:officialContact.period","Organization.contact.period","","","",0,1,"","","Y","Period {[]} {[]}
+","Period that this contact was valid for usage","Period that this contact was valid for usage.","If the details have multiple periods, then enter in a new ExtendedContact with the new period.","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "Organization.contact:dpo","Organization.contact","dpo","","",0,1,"Y","","","ExtendedContactDetail {[]} {[]}
-","Official contact details for the Organization","The contact details of communication devices available relevant to the specific Organization. This can include addresses, phone numbers, fax numbers, mobile numbers, email addresses and web sites.","The address/telecom use code 'home' are not to be used. Note that these contacts are not the contact details of people who provide the service (that would be through PractitionerRole), these are official contacts for the Organization itself for specific purposes. E.g. Mailing Addresses, Billing Addresses, Contact numbers for Booking or Billing Enquiries, general web address, web address for online bookings etc.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Data Protection Officer","The contact details of communication devices available relevant to the specific Organization. This can include addresses, phone numbers, fax numbers, mobile numbers, email addresses and web sites.","The address/telecom use code 'home' are not to be used. Note that these contacts are not the contact details of people who provide the service (that would be through PractitionerRole), these are official contacts for the Organization itself for specific purposes. E.g. Mailing Addresses, Billing Addresses, Contact numbers for Booking or Billing Enquiries, general web address, web address for online bookings etc.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-3:The telecom of an organization can never be of use 'home' {telecom.where(use = 'home').empty()}org-4:The address of an organization can never be of use 'home' {address.where(use = 'home').empty()}",".contactParty"
 "Organization.contact:dpo.id","Organization.contact.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
@@ -78,45 +112,15 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Organization.contact:dpo.purpose","Organization.contact.purpose","","","",1,1,"","","Y","CodeableConcept {[]} {[]}
 ","The type of contact","The purpose/type of contact.","If no purpose is defined, then these contact details may be used for any purpose.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>
-    <system value=""http://terminology.hl7.org/CodeSystem/contactentity-type""/>
-    <code value=""ADMIN""/>
+    <system value=""http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs""/>
+    <code value=""dpo""/>
+    <display value=""Data Protection Officer""/>
   </coding>
 </valueCodeableConcept>","","","",,"preferred","The purpose for which an extended contact detail should be used.","http://terminology.hl7.org/ValueSet/contactentity-type","",,,,"ExtendedContactDetail.purpose",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Organization.contact:dpo.name","Organization.contact.name","","","",0,*,"","","Y","HumanName {[]} {[]}
+"Organization.contact:dpo.name","Organization.contact.name","","","",0,1,"Y","","Y","HumanName {[]} {[]}
 ","Name of an individual to contact","The name of an individual to contact, some types of contact detail are usually blank.","If there is no named individual, the telecom/address information is not generally monitored by a specific individual.","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.name",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Organization.contact:dpo.name.id","Organization.contact.name.id","","","",0,1,"","","","id {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
-","","n/a"
-"Organization.contact:dpo.name.extension","Organization.contact.name.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"Organization.contact:dpo.name.use","Organization.contact.name.use","","","",0,1,"","Y","Y","code {[]} {[]}
-","usual | official | temp | nickname | anonymous | old | maiden","Identifies the purpose for this name.","Applications can assume that a name is current unless it explicitly says that it is temporary or old.","Allows the appropriate name for a particular context of use to be selected from among a set of names.","","","","","","","",,"required","The use of a human name.","http://hl7.org/fhir/ValueSet/name-use|5.0.0","",,,,"HumanName.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.7, but often indicated by which field contains the name","unique(./use)","./NamePurpose"
-"Organization.contact:dpo.name.text","Organization.contact.name.text","","","",0,1,"","","Y","string {[]} {[]}
-","Data Protection Officer","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","implied by XPN.11","./formatted"
-"Organization.contact:dpo.name.family","Organization.contact.name.family","","surname
-","",0,1,"","","Y","string {[]} {[]}
-","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.1/FN.1","./part[partType = FAM]","./FamilyName"
-"Organization.contact:dpo.name.given","Organization.contact.name.given","","first name
-middle name","",0,*,"","","Y","string {[]} {[]}
-","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.2 + XPN.3","./part[partType = GIV]","./GivenNames"
-"Organization.contact:dpo.name.prefix","Organization.contact.name.prefix","","","",0,*,"","","Y","string {[]} {[]}
-","Parts that come before the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","","","","","","","","","",,,,,"",,,,"HumanName.prefix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.5","./part[partType = PFX]","./TitleCode"
-"Organization.contact:dpo.name.suffix","Organization.contact.name.suffix","","","",0,*,"","","Y","string {[]} {[]}
-","Parts that come after the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.","","","","","","","","","",,,,,"",,,,"HumanName.suffix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN/4","./part[partType = SFX]"
-"Organization.contact:dpo.name.period","Organization.contact.name.period","","","",0,1,"","","Y","Period {[]} {[]}
-","Time period when name was/is in use","Indicates the period of time when this name was valid for the named person.","","Allows names to be placed in historical context.","","","","","","","",,,,,"",,,,"HumanName.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.13 + XPN.14","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
 "Organization.contact:dpo.telecom","Organization.contact.telecom","","","",1,*,"Y","","Y","ContactPoint {[]} {[]}
 ","Contact details (e.g.phone/fax/url)","The contact details application for the purpose defined.","","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.telecom",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -130,7 +134,7 @@ middle name","",0,*,"","","Y","string {[]} {[]}
 ","Period that this contact was valid for usage","Period that this contact was valid for usage.","If the details have multiple periods, then enter in a new ExtendedContact with the new period.","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Organization.contact:incident","Organization.contact","incident","","",0,1,"Y","","","ExtendedContactDetail {[]} {[]}
-","Official contact details for the Organization","The contact details of communication devices available relevant to the specific Organization. This can include addresses, phone numbers, fax numbers, mobile numbers, email addresses and web sites.","The address/telecom use code 'home' are not to be used. Note that these contacts are not the contact details of people who provide the service (that would be through PractitionerRole), these are official contacts for the Organization itself for specific purposes. E.g. Mailing Addresses, Billing Addresses, Contact numbers for Booking or Billing Enquiries, general web address, web address for online bookings etc.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","AI Incident Reporting Contact","The contact details of communication devices available relevant to the specific Organization. This can include addresses, phone numbers, fax numbers, mobile numbers, email addresses and web sites.","The address/telecom use code 'home' are not to be used. Note that these contacts are not the contact details of people who provide the service (that would be through PractitionerRole), these are official contacts for the Organization itself for specific purposes. E.g. Mailing Addresses, Billing Addresses, Contact numbers for Booking or Billing Enquiries, general web address, web address for online bookings etc.","Need to keep track of assigned contact points within bigger organization.","","","","","","","",,,,,"",,,,"Organization.contact",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-3:The telecom of an organization can never be of use 'home' {telecom.where(use = 'home').empty()}org-4:The address of an organization can never be of use 'home' {address.where(use = 'home').empty()}",".contactParty"
 "Organization.contact:incident.id","Organization.contact.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
@@ -143,45 +147,15 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Organization.contact:incident.purpose","Organization.contact.purpose","","","",1,1,"","","Y","CodeableConcept {[]} {[]}
 ","The type of contact","The purpose/type of contact.","If no purpose is defined, then these contact details may be used for any purpose.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>
-    <system value=""http://terminology.hl7.org/CodeSystem/contactentity-type""/>
-    <code value=""PATINF""/>
+    <system value=""http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs""/>
+    <code value=""ai-incident-reporting""/>
+    <display value=""AI Incident Reporting Contact""/>
   </coding>
 </valueCodeableConcept>","","","",,"preferred","The purpose for which an extended contact detail should be used.","http://terminology.hl7.org/ValueSet/contactentity-type","",,,,"ExtendedContactDetail.purpose",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Organization.contact:incident.name","Organization.contact.name","","","",0,*,"","","Y","HumanName {[]} {[]}
+"Organization.contact:incident.name","Organization.contact.name","","","",0,1,"Y","","Y","HumanName {[]} {[]}
 ","Name of an individual to contact","The name of an individual to contact, some types of contact detail are usually blank.","If there is no named individual, the telecom/address information is not generally monitored by a specific individual.","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.name",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Organization.contact:incident.name.id","Organization.contact.name.id","","","",0,1,"","","","id {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
-","","n/a"
-"Organization.contact:incident.name.extension","Organization.contact.name.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and managable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"Organization.contact:incident.name.use","Organization.contact.name.use","","","",0,1,"","Y","Y","code {[]} {[]}
-","usual | official | temp | nickname | anonymous | old | maiden","Identifies the purpose for this name.","Applications can assume that a name is current unless it explicitly says that it is temporary or old.","Allows the appropriate name for a particular context of use to be selected from among a set of names.","","","","","","","",,"required","The use of a human name.","http://hl7.org/fhir/ValueSet/name-use|5.0.0","",,,,"HumanName.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.7, but often indicated by which field contains the name","unique(./use)","./NamePurpose"
-"Organization.contact:incident.name.text","Organization.contact.name.text","","","",0,1,"","","Y","string {[]} {[]}
-","AI Incident Reporting Contact","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","implied by XPN.11","./formatted"
-"Organization.contact:incident.name.family","Organization.contact.name.family","","surname
-","",0,1,"","","Y","string {[]} {[]}
-","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.1/FN.1","./part[partType = FAM]","./FamilyName"
-"Organization.contact:incident.name.given","Organization.contact.name.given","","first name
-middle name","",0,*,"","","Y","string {[]} {[]}
-","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.2 + XPN.3","./part[partType = GIV]","./GivenNames"
-"Organization.contact:incident.name.prefix","Organization.contact.name.prefix","","","",0,*,"","","Y","string {[]} {[]}
-","Parts that come before the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","","","","","","","","","",,,,,"",,,,"HumanName.prefix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.5","./part[partType = PFX]","./TitleCode"
-"Organization.contact:incident.name.suffix","Organization.contact.name.suffix","","","",0,*,"","","Y","string {[]} {[]}
-","Parts that come after the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.","","","","","","","","","",,,,,"",,,,"HumanName.suffix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN/4","./part[partType = SFX]"
-"Organization.contact:incident.name.period","Organization.contact.name.period","","","",0,1,"","","Y","Period {[]} {[]}
-","Time period when name was/is in use","Indicates the period of time when this name was valid for the named person.","","Allows names to be placed in historical context.","","","","","","","",,,,,"",,,,"HumanName.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XPN.13 + XPN.14","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
 "Organization.contact:incident.telecom","Organization.contact.telecom","","","",1,*,"Y","","Y","ContactPoint {[]} {[]}
 ","Contact details (e.g.phone/fax/url)","The contact details application for the purpose defined.","","","","","","","","","",,,,,"",,,,"ExtendedContactDetail.telecom",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "

@@ -1,14 +1,14 @@
-# Audit Log: AI Execution Trace - v0.1.0
+# Audit Log: AI Execution Trace (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Audit Log: AI Execution Trace**
+* **Audit Log: AI Execution Trace (2)**
 
-## Example AuditEvent: Audit Log: AI Execution Trace
+## Example AuditEvent: Audit Log: AI Execution Trace (2)
 
 Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
 
-**EU AI Act Log Integrity Signature**: No display for Signature (type: Verification Signature (ASTM Signature Type Codes#1.2.840.10065.1.12.1.5); when: 2026-03-01 10:15:04+0000; who: ->Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.; sigFormat: text/plain; data: c2hhMjU2LTIzNGY0MmQxMzQyN2YyMzRiOWU3YTg5NTJjMGU1ZjA1MmRkZDNiNTBkMWMxMGZjY2Q0OWNjN2EwMWM5OWQ0NjA=)
+**EU AI Log Integrity Signature**: No display for Signature (type: Verification Signature (ASTM Signature Type Codes#1.2.840.10065.1.12.1.5); when: 2026-03-01 10:15:04+0000; who: ->Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.; sigFormat: text/plain; data: c2hhMjU2LTIzNGY0MmQxMzQyN2YyMzRiOWU3YTg5NTJjMGU1ZjA1MmRkZDNiNTBkMWMxMGZjY2Q0OWNjN2EwMWM5OWQ0NjA=)
 
 **code**: RESTful Operation
 
@@ -29,28 +29,21 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
 | | | |
 | :--- | :--- | :--- |
 | - | **Who** | **Requestor** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) | false |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) | false |
 
 ### Sources
 
 | | |
 | :--- | :--- |
 | - | **Observer** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) |
 
-> **entity****what**: [Observation ](Observation-sc-02-validation-observation-temperature-001.md)**role**: Domain Resource
+### Entities
 
-> **entity****what**: [Observation Heart rate](Observation-sc-02-validation-observation-heart-rate-001.md)**role**: Domain Resource
-
-> **entity****what**: [Observation Respiratory rate](Observation-sc-02-validation-observation-respiratory-rate-001.md)**role**: Domain Resource
-
-> **entity****what**: [Observation ](Observation-sc-02-validation-observation-blood-pressure-001.md)**role**: Domain Resource
-
-> **entity****what**: [Observation Oxygen saturation in Arterial blood](Observation-sc-02-validation-observation-oxygen-saturation-001.md)**role**: Domain Resource
-
-> **entity****what**: [Observation ](Observation-sc-02-validation-observation-consciousness-status-001.md)**role**: Domain Resource
-
-> **entity****what**: [Observation ](Observation-sc-02-validation-ai-observation-risk-001.md)**role**: Report
+| | | |
+| :--- | :--- | :--- |
+| - | **What** | **Role** |
+| * | [Observation ](Observation-sc-02-validation-ai-observation-risk-001.md) | AI Output |
 
 
 
@@ -115,93 +108,14 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
   },
   "entity" : [{
     "what" : {
-      "reference" : "Observation/sc-02-validation-observation-temperature-001"
-    },
-    "role" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-        "code" : "4",
-        "display" : "Domain Resource"
-      }],
-      "text" : "Domain Resource"
-    }
-  },
-  {
-    "what" : {
-      "reference" : "Observation/sc-02-validation-observation-heart-rate-001"
-    },
-    "role" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-        "code" : "4",
-        "display" : "Domain Resource"
-      }],
-      "text" : "Domain Resource"
-    }
-  },
-  {
-    "what" : {
-      "reference" : "Observation/sc-02-validation-observation-respiratory-rate-001"
-    },
-    "role" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-        "code" : "4",
-        "display" : "Domain Resource"
-      }],
-      "text" : "Domain Resource"
-    }
-  },
-  {
-    "what" : {
-      "reference" : "Observation/sc-02-validation-observation-blood-pressure-001"
-    },
-    "role" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-        "code" : "4",
-        "display" : "Domain Resource"
-      }],
-      "text" : "Domain Resource"
-    }
-  },
-  {
-    "what" : {
-      "reference" : "Observation/sc-02-validation-observation-oxygen-saturation-001"
-    },
-    "role" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-        "code" : "4",
-        "display" : "Domain Resource"
-      }],
-      "text" : "Domain Resource"
-    }
-  },
-  {
-    "what" : {
-      "reference" : "Observation/sc-02-validation-observation-consciousness-status-001"
-    },
-    "role" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-        "code" : "4",
-        "display" : "Domain Resource"
-      }],
-      "text" : "Domain Resource"
-    }
-  },
-  {
-    "what" : {
       "reference" : "Observation/sc-02-validation-ai-observation-risk-001"
     },
     "role" : {
       "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/object-role",
-        "code" : "3",
-        "display" : "Report"
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role",
+        "code" : "ai-output"
       }],
-      "text" : "Report"
+      "text" : "AI Output"
     }
   }]
 }

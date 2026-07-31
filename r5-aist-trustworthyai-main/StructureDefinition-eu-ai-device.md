@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIDevice |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIDevice |
 
  
 A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
   "name" : "EU_AIDevice",
   "title" : "EU AI System Device",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata.",
   "fhirVersion" : "5.0.0",
@@ -106,6 +106,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "id" : "Device.extension:modelCard",
       "path" : "Device.extension",
       "sliceName" : "modelCard",
+      "short" : "Reference to the AI model card",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -130,8 +131,8 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "id" : "Device.identifier:euDatabaseId",
       "path" : "Device.identifier",
       "sliceName" : "euDatabaseId",
-      "short" : "EU AI database registration identifier",
-      "definition" : "Identifier used to document the AI system's registration entry in the EU AI database or an equivalent AI system registry.",
+      "short" : "EU AI database registration number",
+      "definition" : "The unique registration number assigned to the high-risk AI system in the official EU AI database.",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
@@ -142,29 +143,25 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "min" : 1,
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-          "code" : "eu-ai-database-id",
-          "display" : "EU AI Database Identifier"
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-identifier-type-cs",
+          "code" : "eu-ai-registration-number"
         }]
-      },
-      "mustSupport" : true
+      }
     },
     {
       "id" : "Device.identifier:euDatabaseId.system",
       "path" : "Device.identifier.system",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Device.identifier:euDatabaseId.value",
       "path" : "Device.identifier.value",
-      "min" : 1,
-      "mustSupport" : true
+      "min" : 1
     },
     {
       "id" : "Device.manufacturer",
       "path" : "Device.manufacturer",
-      "short" : "Name of the AI developer/manufacturer",
+      "short" : "Name of the AI manufacturer",
       "min" : 1,
       "mustSupport" : true
     },
@@ -177,8 +174,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
     {
       "id" : "Device.name.value",
       "path" : "Device.name.value",
-      "short" : "System Name",
-      "mustSupport" : true
+      "short" : "System Name"
     },
     {
       "id" : "Device.version",
@@ -189,19 +185,19 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
     {
       "id" : "Device.version.value",
       "path" : "Device.version.value",
-      "short" : "System Version",
-      "mustSupport" : true
+      "short" : "System Version"
     },
     {
       "id" : "Device.conformsTo",
       "path" : "Device.conformsTo",
-      "min" : 1,
+      "short" : "Applicable standards and certifications",
       "mustSupport" : true
     },
     {
       "id" : "Device.conformsTo.specification",
       "path" : "Device.conformsTo.specification",
-      "short" : "QMS Certification"
+      "short" : "Standard, specification, or certification",
+      "mustSupport" : true
     },
     {
       "id" : "Device.property",
@@ -219,6 +215,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "id" : "Device.property:ceMark",
       "path" : "Device.property",
       "sliceName" : "ceMark",
+      "short" : "CE marking status",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
@@ -228,22 +225,16 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "path" : "Device.property.type",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
           "code" : "ce-mark"
         }]
       }
     },
     {
-      "id" : "Device.property:ceMark.value[x]",
-      "path" : "Device.property.value[x]",
-      "type" : [{
-        "code" : "boolean"
-      }]
-    },
-    {
       "id" : "Device.property:notifiedBody",
       "path" : "Device.property",
       "sliceName" : "notifiedBody",
+      "short" : "Notified body identification number",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
@@ -253,22 +244,16 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "path" : "Device.property.type",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
           "code" : "notified-body-id"
         }]
       }
     },
     {
-      "id" : "Device.property:notifiedBody.value[x]",
-      "path" : "Device.property.value[x]",
-      "type" : [{
-        "code" : "string"
-      }]
-    },
-    {
       "id" : "Device.property:expectedLifetime",
       "path" : "Device.property",
       "sliceName" : "expectedLifetime",
+      "short" : "Expected system lifetime",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
@@ -278,47 +263,35 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "path" : "Device.property.type",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
           "code" : "expected-lifetime"
         }]
       }
     },
     {
-      "id" : "Device.property:expectedLifetime.value[x]",
-      "path" : "Device.property.value[x]",
-      "type" : [{
-        "code" : "Quantity"
-      }]
-    },
-    {
-      "id" : "Device.property:medicalPurpose",
+      "id" : "Device.property:intendedPurpose",
       "path" : "Device.property",
-      "sliceName" : "medicalPurpose",
+      "sliceName" : "intendedPurpose",
+      "short" : "Intended purpose",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Device.property:medicalPurpose.type",
+      "id" : "Device.property:intendedPurpose.type",
       "path" : "Device.property.type",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-          "code" : "medical-purpose"
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
+          "code" : "intended-purpose"
         }]
       }
-    },
-    {
-      "id" : "Device.property:medicalPurpose.value[x]",
-      "path" : "Device.property.value[x]",
-      "type" : [{
-        "code" : "string"
-      }]
     },
     {
       "id" : "Device.property:targetPopulation",
       "path" : "Device.property",
       "sliceName" : "targetPopulation",
+      "short" : "Target population",
       "min" : 1,
       "max" : "*",
       "mustSupport" : true
@@ -328,41 +301,20 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
       "path" : "Device.property.type",
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
           "code" : "target-population"
         }]
       }
     },
     {
-      "id" : "Device.property:targetPopulation.value[x]",
-      "path" : "Device.property.value[x]",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }]
-    },
-    {
       "id" : "Device.owner",
       "path" : "Device.owner",
-      "short" : "Healthcare provider responsible for the AI system",
+      "short" : "Organization responsible for the AI system",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"]
       }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "Device.contact",
-      "path" : "Device.contact",
-      "short" : "Manufacturer Contact AND DPO Contact Details",
-      "min" : 2,
-      "mustSupport" : true
-    },
-    {
-      "id" : "Device.note",
-      "path" : "Device.note",
-      "short" : "Maintenance Requirements",
-      "min" : 1,
       "mustSupport" : true
     }]
   }

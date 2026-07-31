@@ -1,12 +1,14 @@
-# Input Observation: Body Temperature - v0.1.0
+# Input Observation: Body Temperature (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Input Observation: Body Temperature**
+* **Input Observation: Body Temperature (2)**
 
-## Example Observation: Input Observation: Body Temperature
+## Example Observation: Input Observation: Body Temperature (2)
 
 **status**: Final
+
+**category**: Vital Signs
 
 **code**: Body temperature
 
@@ -29,8 +31,19 @@
   "resourceType" : "Observation",
   "id" : "sc-02-validation-observation-temperature-001",
   "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "vital-signs",
+      "display" : "Vital Signs"
+    }]
+  }],
   "code" : {
-    "text" : "Body temperature"
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "8310-5",
+      "display" : "Body temperature"
+    }]
   },
   "subject" : {
     "reference" : "Patient/patient-001"

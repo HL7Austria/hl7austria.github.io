@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:AIClinicalValidationStatus |
+| Draft as of 2026-07-31 | *Computable Name*:AIClinicalValidationStatus |
 
-Documents whether the AI system is clinically validated, not clinically validated, under validation, or only technically validated.
+Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.
 
 **Context of Use**
 
@@ -53,9 +53,9 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
   "name" : "AIClinicalValidationStatus",
   "title" : "AI Clinical Validation Status",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Documents whether the AI system is clinically validated, not clinically validated, under validation, or only technically validated.",
+  "description" : "Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -76,7 +76,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
       "id" : "Extension",
       "path" : "Extension",
       "short" : "AI Clinical Validation Status",
-      "definition" : "Documents whether the AI system is clinically validated, not clinically validated, under validation, or only technically validated."
+      "definition" : "Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated."
     },
     {
       "id" : "Extension.extension",
@@ -91,6 +91,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],

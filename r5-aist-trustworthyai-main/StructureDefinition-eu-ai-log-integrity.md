@@ -1,17 +1,17 @@
-# EU AI Act Log Integrity Signature - v0.1.0
+# EU AI Log Integrity Signature - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EU AI Act Log Integrity Signature**
+* **EU AI Log Integrity Signature**
 
-## Extension: EU AI Act Log Integrity Signature 
+## Extension: EU AI Log Integrity Signature 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:LogIntegritySignature |
+| Draft as of 2026-07-31 | *Computable Name*:LogIntegritySignature |
 
-Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log.
+Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record.
 
 **Context of Use**
 
@@ -20,7 +20,7 @@ Cryptographic signature or verification hash to ensure the integrity, accountabi
 **Usages:**
 
 * Use this Extension: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
-* Examples for this Extension: [AuditEvent/sc-02-validation-audit-event-ai-execution-001](AuditEvent-sc-02-validation-audit-event-ai-execution-001.md)
+* Examples for this Extension: [AuditEvent/sc-01-ai-only-audit-event-ai-execution-001](AuditEvent-sc-01-ai-only-audit-event-ai-execution-001.md), [AuditEvent/sc-02-validation-audit-event-ai-execution-001](AuditEvent-sc-02-validation-audit-event-ai-execution-001.md), [AuditEvent/sc-03-override-audit-event-ai-execution-001](AuditEvent-sc-03-override-audit-event-ai-execution-001.md) and [AuditEvent/sc-04-correction-exp-audit-event-ai-execution-001](AuditEvent-sc-04-correction-exp-audit-event-ai-execution-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-log-integrity.json)
 
@@ -51,11 +51,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-log-integrity.
   "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity",
   "version" : "0.1.0",
   "name" : "LogIntegritySignature",
-  "title" : "EU AI Act Log Integrity Signature",
+  "title" : "EU AI Log Integrity Signature",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log.",
+  "description" : "Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -75,8 +75,8 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-log-integrity.
     "element" : [{
       "id" : "Extension",
       "path" : "Extension",
-      "short" : "EU AI Act Log Integrity Signature",
-      "definition" : "Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log."
+      "short" : "EU AI Log Integrity Signature",
+      "definition" : "Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record."
     },
     {
       "id" : "Extension.extension",
@@ -113,6 +113,11 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-log-integrity.
         "code" : "Reference",
         "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Device"]
       }]
+    },
+    {
+      "id" : "Extension.value[x].sigFormat",
+      "path" : "Extension.value[x].sigFormat",
+      "min" : 1
     },
     {
       "id" : "Extension.value[x].data",

@@ -1,0 +1,46 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Communication/sc-04-correction-exp-patient-explanation-001> a fhir:Communication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "sc-04-correction-exp-patient-explanation-001"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation"^^xsd:anyURI ;
+       fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Communication sc-04-correction-exp-patient-explanation-001</b></p><a name=\"sc-04-correction-exp-patient-explanation-001\"> </a><a name=\"hcsc-04-correction-exp-patient-explanation-001\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-patient-explanation.html\">EU AI Patient Explanation Communication</a></p></div><p><b>status</b>: Completed</p><p><b>subject</b>: <a href=\"Patient-patient-001.html\">Anonymous Patient Female, DoB: 1959-04-12</a></p><p><b>about</b>: <a href=\"ArtifactAssessment-sc-04-correction-exp-human-oversight-001.html\">ArtifactAssessment: date = 2026-03-01 10:20:00+0000; artifact[x] = -&gt;Observation ; workflowStatus = published</a></p><p><b>sent</b>: 2026-03-01 10:30:00+0000</p><p><b>sender</b>: <a href=\"PractitionerRole-practitionerrole-reviewer-001.html\">PractitionerRole </a></p><h3>Payloads</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Content[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain: VGhlIEFJLXN1cHBvcnRlZCBhc3Nlc3NtZW50IHdhcyByZXZpZXdlZCBieSBhIHF1YWxpZmllZCBjbGluaWNpYW4uIFRoZSBpbml0aWFsIEFJIHJlY29tbWVuZGF0aW9uIHdhcyBjb3JyZWN0ZWQgYmVmb3JlIHRoZSBmaW5hbCBjbGluaWNhbCBkZWNpc2lvbiB3YXMgbWFkZS4=</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-001> ;
+     fhir:reference [ fhir:v "Patient/patient-001" ]
+  ] ; # 
+  fhir:about ( [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/ArtifactAssessment/sc-04-correction-exp-human-oversight-001> ;
+     fhir:reference [ fhir:v "ArtifactAssessment/sc-04-correction-exp-human-oversight-001" ]
+  ] ) ; # 
+  fhir:sent [ fhir:v "2026-03-01T10:30:00Z"^^xsd:dateTime] ; # 
+  fhir:sender [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/PractitionerRole/practitionerrole-reviewer-001> ;
+     fhir:reference [ fhir:v "PractitionerRole/practitionerrole-reviewer-001" ]
+  ] ; # 
+  fhir:payload ( [
+     fhir:content [
+       a fhir:Attachment ;
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "VGhlIEFJLXN1cHBvcnRlZCBhc3Nlc3NtZW50IHdhcyByZXZpZXdlZCBieSBhIHF1YWxpZmllZCBjbGluaWNpYW4uIFRoZSBpbml0aWFsIEFJIHJlY29tbWVuZGF0aW9uIHdhcyBjb3JyZWN0ZWQgYmVmb3JlIHRoZSBmaW5hbCBjbGluaWNhbCBkZWNpc2lvbiB3YXMgbWFkZS4="^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "Patient-facing AI explanation" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

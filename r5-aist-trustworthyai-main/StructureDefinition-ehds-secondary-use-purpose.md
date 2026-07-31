@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-secondary-use-purpose | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EHDSSecondaryUsePurpose |
+| Draft as of 2026-07-31 | *Computable Name*:EHDSSecondaryUsePurpose |
 
-Documents the permitted purpose for secondary use of electronic health data under the EHDS.
+Records the documented purpose for secondary use of electronic health data in the EHDS context.
 
 **Context of Use**
 
@@ -20,6 +20,7 @@ Documents the permitted purpose for secondary use of electronic health data unde
 **Usages:**
 
 * Use this Extension: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
+* Examples for this Extension: [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ehds-secondary-use-purpose.json)
 
@@ -52,9 +53,9 @@ Other representations of profile: [CSV](StructureDefinition-ehds-secondary-use-p
   "name" : "EHDSSecondaryUsePurpose",
   "title" : "EHDS Secondary Use Purpose",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Documents the permitted purpose for secondary use of electronic health data under the EHDS.",
+  "description" : "Records the documented purpose for secondary use of electronic health data in the EHDS context.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -66,10 +67,6 @@ Other representations of profile: [CSV](StructureDefinition-ehds-secondary-use-p
   "context" : [{
     "type" : "element",
     "expression" : "Provenance"
-  },
-  {
-    "type" : "element",
-    "expression" : "DocumentReference"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -79,7 +76,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-secondary-use-p
       "id" : "Extension",
       "path" : "Extension",
       "short" : "EHDS Secondary Use Purpose",
-      "definition" : "Documents the permitted purpose for secondary use of electronic health data under the EHDS."
+      "definition" : "Records the documented purpose for secondary use of electronic health data in the EHDS context."
     },
     {
       "id" : "Extension.extension",
@@ -94,6 +91,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-secondary-use-p
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],

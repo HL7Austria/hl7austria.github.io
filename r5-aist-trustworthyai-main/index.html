@@ -82,8 +82,62 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guide
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">Profiles</a>
+      </li>
+      <li>
+        <a href="extensions.html">Extensions</a>
+      </li>
+      <li>
+        <a href="terminology.html">Terminology</a>
+      </li>
+      <li>
+        <a href="examples.html">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">All Artifacts</a>
+      </li>
+      <li>
+        <a href="artifacts.html#structures-resource-profiles">Resource Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#structures-extension-definitions">Extension Definitions</a>
+      </li>
+      <li>
+        <a href="artifacts.html#terminology-value-sets">Value Sets</a>
+      </li>
+      <li>
+        <a href="artifacts.html#terminology-code-systems">Code Systems</a>
+      </li>
+      <li>
+        <a href="artifacts.html#example-example-instances">Example Instances</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technical
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="ip-statements.html">Intellectual Property</a>
+      </li>
+    </ul>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -148,7 +202,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2026-06-18
+            as of 2026-07-31
           
         
       </td>
@@ -172,24 +226,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#eu-ai-transparency-implementation-guide" id="markdown-toc-eu-ai-transparency-implementation-guide">EU AI Transparency Implementation Guide</a>    <ul>
-      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-      <li><a href="#purpose" id="markdown-toc-purpose">Purpose</a></li>
-      <li><a href="#scope" id="markdown-toc-scope">Scope</a></li>
-      <li><a href="#architectural-structure" id="markdown-toc-architectural-structure">Architectural Structure</a>        <ul>
-          <li><a href="#1-static-system-context" id="markdown-toc-1-static-system-context">1. Static System Context</a></li>
-          <li><a href="#2-ai-output-and-execution-context" id="markdown-toc-2-ai-output-and-execution-context">2. AI Output and Execution Context</a></li>
-          <li><a href="#3-clinical-decision-and-patient-facing-context" id="markdown-toc-3-clinical-decision-and-patient-facing-context">3. Clinical Decision and Patient-Facing Context</a></li>
-        </ul>
-      </li>
-      <li><a href="#validated-clinical-use-case-instances" id="markdown-toc-validated-clinical-use-case-instances">Validated Clinical Use Case (Instances)</a></li>
-      <li><a href="#terminology" id="markdown-toc-terminology">Terminology</a></li>
-    </ul>
-  </li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <h1 id="eu-ai-transparency-implementation-guide">EU AI Transparency Implementation Guide</h1>
 
@@ -212,86 +250,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>The IG covers selected metadata areas relevant to AI-supported processing in healthcare:</p>
 
 <ul>
-  <li>AI system identification and system-level metadata,</li>
-  <li>organizational accountability and contact information,</li>
-  <li>model-card and technical-documentation metadata,</li>
-  <li>training-data and data-quality context,</li>
-  <li>privacy and data-use metadata,</li>
-  <li>AI-generated clinical outputs,</li>
-  <li>execution traceability and audit metadata,</li>
-  <li>provenance and legal-context documentation,</li>
-  <li>human oversight actions,</li>
-  <li>patient-facing information and explanation documentation.</li>
+  <li>AI system identification and system-level metadata</li>
+  <li>Organizational accountability and contact information</li>
+  <li>Model-card and technical-documentation metadata</li>
+  <li>Training-data and data-quality context</li>
+  <li>Privacy and data-use metadata</li>
+  <li>AI-generated clinical outputs</li>
+  <li>Execution traceability and audit metadata</li>
+  <li>Provenance and legal-context documentation</li>
+  <li>Human oversight actions</li>
+  <li>Patient-facing information and explanation documentation</li>
 </ul>
 
 <p>The IG does not replace clinical validation, conformity assessment, data protection assessment, national legal review, or organization-specific governance processes.</p>
 
-<h2 id="architectural-structure">Architectural Structure</h2>
+<h2 id="architecture">Architecture</h2>
 
-<p>The IG organizes the profiles into three main contexts.</p>
-
-<h3 id="1-static-system-context">1. Static System Context</h3>
-
-<p>These profiles describe the AI system, responsible organizations, and technical documentation independently of a specific clinical execution.</p>
+<p>The Implementation Guide is organized into three main architectural contexts:</p>
 
 <ul>
-  <li><strong>EU_AIDevice</strong> (<code class="language-plaintext highlighter-rouge">Device</code>): Represents the AI system as an identifiable and versioned system component. It includes metadata such as system name, version, manufacturer, owner, CE marking information, intended purpose, target population, expected lifetime, and EU AI database identifier where applicable.</li>
-  <li><strong>EU_AIOrganization</strong> (<code class="language-plaintext highlighter-rouge">Organization</code>): Represents organizations involved in the AI system context, such as the manufacturer, deployer, or healthcare provider. It can document relevant contact points such as data protection or incident-reporting contacts.</li>
-  <li><strong>EU_AIModelCard</strong> (<code class="language-plaintext highlighter-rouge">DocumentReference</code>): Represents model-card and technical-documentation metadata. It can reference documentation artifacts and includes structured extensions for performance information, training-data context, privacy metadata, and clinical validation status.</li>
+  <li>Static System Context</li>
+  <li>AI Output and Execution Context</li>
+  <li>Clinical Decision and Patient-Facing Context</li>
 </ul>
 
-<h3 id="2-ai-output-and-execution-context">2. AI Output and Execution Context</h3>
+<p>Detailed descriptions of all profiles are available in the <strong>Profiles</strong> section.</p>
 
-<p>These profiles document AI-generated outputs, execution events, provenance, and selected legal-context metadata.</p>
+<h2 id="contents">Contents</h2>
+
+<p>This Implementation Guide contains:</p>
 
 <ul>
-  <li><strong>EU_AIObservation</strong> (<code class="language-plaintext highlighter-rouge">Observation</code>): Represents an AI-generated clinical output, such as a risk classification, recommendation, or other clinical result. It documents the case-specific indication and whether the output was used in a solely automated decision-making context.</li>
-  <li><strong>EU_AIAuditEvent</strong> (<code class="language-plaintext highlighter-rouge">AuditEvent</code>): Records the technical execution trace, including references to input data, output data, the AI system, and log-integrity metadata.</li>
-  <li><strong>EU_AIProvenance</strong> (<code class="language-plaintext highlighter-rouge">Provenance</code>): Links the AI-generated output to the AI system, source data, execution context, and selected legal-context metadata, including GDPR Article 6 and Article 9 documentation.</li>
-  <li><strong>EU_AIConsent</strong> (<code class="language-plaintext highlighter-rouge">Consent</code>): Documents patient-facing processing context, including whether AI-related information was provided and whether the documented processing context is permitted or denied, for example in relation to an opt-out. It is not used as the sole GDPR legal basis.</li>
+  <li>Profiles</li>
+  <li>Extensions</li>
+  <li>Code Systems</li>
+  <li>Value Sets</li>
+  <li>Example Instances</li>
+  <li>Downloads</li>
+  <li>Dependency Information</li>
 </ul>
 
-<h3 id="3-clinical-decision-and-patient-facing-context">3. Clinical Decision and Patient-Facing Context</h3>
-
-<p>These profiles document human oversight and patient-facing explanation.</p>
-
-<ul>
-  <li><strong>EU_AIHumanOversightAssessment</strong> (<code class="language-plaintext highlighter-rouge">ArtifactAssessment</code>): Documents the human review of an AI-generated output. It can represent validation, override, or correction by a human reviewer without overwriting the original AI output.</li>
-  <li><strong>EU_AIPractitionerRole</strong> (<code class="language-plaintext highlighter-rouge">PractitionerRole</code>): Represents the reviewer in their clinical and organizational role, including whether AI-specific training was completed.</li>
-  <li><strong>EU_AIPatientExplanation</strong> (<code class="language-plaintext highlighter-rouge">Communication</code>): Documents patient-facing explanation related to the AI-supported process, where such an explanation is requested or provided.</li>
-</ul>
-
-<h2 id="validated-clinical-use-case-instances">Validated Clinical Use Case (Instances)</h2>
-
-<p>To demonstrate the practical application and interoperability of these profiles, this IG includes a fully validated example instance graph.</p>
-
-<p>The scenario follows a fictitious patient (Elias Vance) undergoing a Thorax CT scan evaluated by the <strong>AuraScan Pulmo-Net v3</strong> AI system at <strong>St. Chronos Medical Center</strong>. It demonstrates the complete lifecycle of AI compliance:</p>
-<ol>
-  <li>Recording the patient's processing consent and EHDS opt-out preferences (<code class="language-plaintext highlighter-rouge">EU_AIConsent</code>).</li>
-  <li>The AI's preliminary (false-positive) finding of a pulmonary nodule (<code class="language-plaintext highlighter-rouge">EU_AIObservation</code>).</li>
-  <li>The cryptographic audit logging and data lineage of the execution (<code class="language-plaintext highlighter-rouge">EU_AIAuditEvent</code> &amp; <code class="language-plaintext highlighter-rouge">EU_AIProvenance</code>).</li>
-  <li>The final clinical override by a specially trained human radiologist, Dr. Thorne, based on an explainability heatmap (<code class="language-plaintext highlighter-rouge">EU_AIHumanOversightAssessment</code>).</li>
-  <li>The subsequent communication of the human-AI decision workflow to the patient (<code class="language-plaintext highlighter-rouge">EU_AIPatientExplanation</code>).</li>
-</ol>
-
-<h2 id="terminology">Terminology</h2>
-
-<p>The IG defines custom terminology where existing FHIR or clinical terminologies do not directly represent the required AI transparency and legal-context concepts.</p>
-
-<p>The terminology includes:</p>
-
-<ul>
-  <li>EU AI transparency and human-oversight codes,</li>
-  <li>case-specific AI indication codes,</li>
-  <li>AI performance and clinical-validation status codes,</li>
-  <li>EHDS usage and data-category codes,</li>
-  <li>EHDS secondary-use purpose codes,</li>
-  <li>GDPR Article 6 legal-basis codes,</li>
-  <li>GDPR Article 9 exception codes.</li>
-</ul>
-
-<p>These codes are used to support structured bindings in the profiles and to make the selected metadata explicit and machine-readable.</p>
-
+<hr />
 <hr />
 <p><strong>Author:</strong> Selina Adlberger<br />
 <strong>Context:</strong> Developed as part of a Master's Thesis at the University of Applied Sciences Upper Austria (Hagenberg).</p>
@@ -314,7 +313,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.eu.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Thu, Jun 18, 2026 12:04+0000">2026-06-18</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.eu.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Fri, Jul 31, 2026 11:07+0000">2026-07-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -12,7 +12,6 @@
   <sch:pattern>
     <sch:title>f:PractitionerRole</sch:title>
     <sch:rule context="f:PractitionerRole">
-      <sch:assert test="count(f:extension[@url = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status']) &gt;= 1">extension with URL = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status']) &lt;= 1">extension with URL = 'http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:practitioner) &gt;= 1">practitioner: minimum cardinality of 'practitioner' is 1</sch:assert>
       <sch:assert test="count(f:organization) &gt;= 1">organization: minimum cardinality of 'organization' is 1</sch:assert>

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIPractitionerRole |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIPractitionerRole |
 
  
 A PractitionerRole profile representing the role, qualification context, specialty, and AI-related training information of the human reviewer involved in oversight of an AI-supported workflow. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-practitionerro
   "name" : "EU_AIPractitionerRole",
   "title" : "EU AI Practitioner Role",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A PractitionerRole profile representing the role, qualification context, specialty, and AI-related training information of the human reviewer involved in oversight of an AI-supported workflow.",
   "fhirVersion" : "5.0.0",
@@ -91,15 +91,14 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-practitionerro
         }],
         "ordered" : false,
         "rules" : "open"
-      },
-      "min" : 1
+      }
     },
     {
-      "id" : "PractitionerRole.extension:trainingFlag",
+      "id" : "PractitionerRole.extension:trainingStatus",
       "path" : "PractitionerRole.extension",
-      "sliceName" : "trainingFlag",
-      "short" : "Flag indicating system-specific training completed",
-      "min" : 1,
+      "sliceName" : "trainingStatus",
+      "short" : "Whether relevant AI training has been documented",
+      "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
@@ -117,7 +116,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-practitionerro
     {
       "id" : "PractitionerRole.organization",
       "path" : "PractitionerRole.organization",
-      "short" : "Organization responsible for the oversight process",
+      "short" : "Organization in which the practitioner performs the oversight role",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -128,14 +127,14 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-practitionerro
     {
       "id" : "PractitionerRole.code",
       "path" : "PractitionerRole.code",
-      "short" : "Specific role or seniority (e.g., Senior Physician, Medical Lead)",
+      "short" : "Professional role relevant to the human oversight activity",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "PractitionerRole.specialty",
       "path" : "PractitionerRole.specialty",
-      "short" : "Clinical specialty required for oversight",
+      "short" : "Clinical specialty supporting competence for human oversight",
       "min" : 1,
       "mustSupport" : true
     }]

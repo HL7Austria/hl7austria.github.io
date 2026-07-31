@@ -1,16 +1,16 @@
-# Input Observation: Oxygen Saturation - v0.1.0
+# Input Observation: Oxygen Saturation (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Input Observation: Oxygen Saturation**
+* **Input Observation: Oxygen Saturation (2)**
 
-## Example Observation: Input Observation: Oxygen Saturation
+## Example Observation: Input Observation: Oxygen Saturation (2)
 
 **status**: Final
 
 **category**: Vital Signs
 
-**code**: Oxygen saturation in Arterial blood
+**code**: Oxygen saturation in Arterial blood by Pulse oximetry
 
 **subject**: [Anonymous Patient Female, DoB: 1959-04-12](Patient-patient-001.md)
 
@@ -21,6 +21,13 @@
 **performer**: [Practitioner Clinical Reviewer ](Practitioner-practitioner-001.md)
 
 **value**: 92 % (Details: UCUM code% = '%')
+
+**note**: 
+
+> 
+
+NEWS2 SpO2 scale: scale-1; supplemental oxygen: false
+
 
 
 
@@ -43,7 +50,13 @@
       "system" : "http://loinc.org",
       "code" : "2708-6",
       "display" : "Oxygen saturation in Arterial blood"
-    }]
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "59408-5",
+      "display" : "Oxygen saturation in Arterial blood by Pulse oximetry"
+    }],
+    "text" : "Oxygen saturation in Arterial blood by Pulse oximetry"
   },
   "subject" : {
     "reference" : "Patient/patient-001"
@@ -60,7 +73,10 @@
     "unit" : "%",
     "system" : "http://unitsofmeasure.org",
     "code" : "%"
-  }
+  },
+  "note" : [{
+    "text" : "NEWS2 SpO2 scale: scale-1; supplemental oxygen: false"
+  }]
 }
 
 ```

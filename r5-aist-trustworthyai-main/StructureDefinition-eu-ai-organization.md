@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIOrganization |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIOrganization |
 
  
 An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
   "name" : "EU_AIOrganization",
   "title" : "EU AI Responsible Organization",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information.",
   "fhirVersion" : "5.0.0",
@@ -82,6 +82,13 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
       "path" : "Organization"
     },
     {
+      "id" : "Organization.name",
+      "path" : "Organization.name",
+      "short" : "Name of the legal entity",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "Organization.contact",
       "path" : "Organization.contact",
       "slicing" : {
@@ -90,18 +97,20 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
           "path" : "purpose"
         }],
         "rules" : "open"
-      }
+      },
+      "min" : 1
     },
     {
-      "id" : "Organization.contact:dpo",
+      "id" : "Organization.contact:officialContact",
       "path" : "Organization.contact",
-      "sliceName" : "dpo",
-      "min" : 0,
+      "sliceName" : "officialContact",
+      "short" : "Official contact details of the legal entity",
+      "min" : 1,
       "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "Organization.contact:dpo.purpose",
+      "id" : "Organization.contact:officialContact.purpose",
       "path" : "Organization.contact.purpose",
       "min" : 1,
       "patternCodeableConcept" : {
@@ -112,9 +121,37 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
       }
     },
     {
-      "id" : "Organization.contact:dpo.name.text",
-      "path" : "Organization.contact.name.text",
-      "short" : "Data Protection Officer"
+      "id" : "Organization.contact:officialContact.telecom",
+      "path" : "Organization.contact.telecom",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.contact:dpo",
+      "path" : "Organization.contact",
+      "sliceName" : "dpo",
+      "short" : "Data Protection Officer",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.contact:dpo.purpose",
+      "path" : "Organization.contact.purpose",
+      "min" : 1,
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs",
+          "code" : "dpo",
+          "display" : "Data Protection Officer"
+        }]
+      }
+    },
+    {
+      "id" : "Organization.contact:dpo.name",
+      "path" : "Organization.contact.name",
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Organization.contact:dpo.telecom",
@@ -126,6 +163,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
       "id" : "Organization.contact:incident",
       "path" : "Organization.contact",
       "sliceName" : "incident",
+      "short" : "AI Incident Reporting Contact",
       "min" : 0,
       "max" : "1",
       "mustSupport" : true
@@ -136,15 +174,17 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
       "min" : 1,
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
-          "code" : "PATINF"
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs",
+          "code" : "ai-incident-reporting",
+          "display" : "AI Incident Reporting Contact"
         }]
       }
     },
     {
-      "id" : "Organization.contact:incident.name.text",
-      "path" : "Organization.contact.name.text",
-      "short" : "AI Incident Reporting Contact"
+      "id" : "Organization.contact:incident.name",
+      "path" : "Organization.contact.name",
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Organization.contact:incident.telecom",

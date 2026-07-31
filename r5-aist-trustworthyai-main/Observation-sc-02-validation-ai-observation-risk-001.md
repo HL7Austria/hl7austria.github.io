@@ -1,10 +1,10 @@
-# AI Output: Early Warning Risk Assessment - v0.1.0
+# AI Output: Early Warning Risk Assessment (2) - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AI Output: Early Warning Risk Assessment**
+* **AI Output: Early Warning Risk Assessment (2)**
 
-## Example Observation: AI Output: Early Warning Risk Assessment
+## Example Observation: AI Output: Early Warning Risk Assessment (2)
 
 Profile: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
 
@@ -35,7 +35,7 @@ Profile: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
 Urgent clinical review recommended
 
 
-**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Database Identifier: EU-AI-000123; status = active; manufacturer = ExampleMed AI GmbH; contact = contact@examplemed.example(Work),dpo@examplemed.example(Work); note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 > **component****code**: Confidence**value**: 0.86 1 (Details: UCUM code1 = '1')
 
@@ -56,7 +56,7 @@ Urgent clinical review recommended
     "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication",
     "valueCodeableConcept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-case-specific-indication-cs",
         "code" : "prognosis",
         "display" : "Prognostic Prediction"
       }]
@@ -85,9 +85,8 @@ Urgent clinical review recommended
   },
   "interpretation" : [{
     "coding" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
-      "code" : "ai-generated",
-      "display" : "AI Generated Result"
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs",
+      "code" : "ai-generated"
     }],
     "text" : "AI Generated Result"
   }],

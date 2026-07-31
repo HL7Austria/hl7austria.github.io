@@ -1,18 +1,18 @@
-# EHDS Secondary Use Purpose ValueSet - v0.1.0
+# EHDS Secondary-Use Purpose Value Set - v0.1.0
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **EHDS Secondary Use Purpose ValueSet**
+* **EHDS Secondary-Use Purpose Value Set**
 
-## ValueSet: EHDS Secondary Use Purpose ValueSet 
+## ValueSet: EHDS Secondary-Use Purpose Value Set 
 
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs | *Version*:0.1.0 |
-| Active as of 2026-06-18 | *Computable Name*:EHDS_SecondaryUsePurposeVS |
+| Active as of 2026-07-31 | *Computable Name*:EHDSSecondaryUsePurposeVS |
 
  
-Permitted purposes for secondary use of electronic health data under the EHDS. 
+Purpose categories used to document the secondary use of electronic health data under the EHDS. 
 
  **References** 
 
@@ -48,40 +48,16 @@ Permitted purposes for secondary use of electronic health data under the EHDS.
   "id" : "ehds-secondary-use-purpose-vs",
   "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs",
   "version" : "0.1.0",
-  "name" : "EHDS_SecondaryUsePurposeVS",
-  "title" : "EHDS Secondary Use Purpose ValueSet",
+  "name" : "EHDSSecondaryUsePurposeVS",
+  "title" : "EHDS Secondary-Use Purpose Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Permitted purposes for secondary use of electronic health data under the EHDS.",
+  "description" : "Purpose categories used to document the secondary use of electronic health data under the EHDS.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-purpose-codesystem",
-      "concept" : [{
-        "code" : "public-health"
-      },
-      {
-        "code" : "policy-regulatory"
-      },
-      {
-        "code" : "statistics"
-      },
-      {
-        "code" : "education-teaching"
-      },
-      {
-        "code" : "scientific-research"
-      },
-      {
-        "code" : "development-innovation"
-      },
-      {
-        "code" : "algorithm-training-testing"
-      },
-      {
-        "code" : "care-improvement"
-      }]
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-secondary-use-purpose-cs"
     }]
   }
 }

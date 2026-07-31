@@ -8,7 +8,7 @@
 
 Profile: [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md)
 
-**AI System Specific Training**: true
+**AI System-Specific Training Status**: true
 
 **practitioner**: [Practitioner Clinical Reviewer ](Practitioner-practitioner-001.md)
 

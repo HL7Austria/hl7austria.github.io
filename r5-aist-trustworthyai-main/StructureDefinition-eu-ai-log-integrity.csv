@@ -1,6 +1,6 @@
 "Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: RIM Mapping"
 "Extension","Extension","","","",0,*,"","","","null {[]} {[]}
-","EU AI Act Log Integrity Signature","Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","EU AI Log Integrity Signature","Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
@@ -38,7 +38,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Extension.value[x].targetFormat","Extension.value[x].targetFormat","","","",0,1,"","","","code {[]} {[]}
 ","The technical format of the signed resources","A mime type that indicates the technical format of the target resources signed by the signature.","""xml"", ""json"" and ""ttl"" are allowed, which describe the simple encodings described in the specification (and imply appropriate bundle support). Otherwise, mime types are legal here.","","","","","","","","",,"required","BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)","http://hl7.org/fhir/ValueSet/mimetypes|5.0.0","",,,,"Signature.targetFormat",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"Extension.value[x].sigFormat","Extension.value[x].sigFormat","","","",0,1,"","","","code {[]} {[]}
+"Extension.value[x].sigFormat","Extension.value[x].sigFormat","","","",1,1,"","","","code {[]} {[]}
 ","The technical format of the signature","A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.","","","","","","","","","",,"required","BCP 13 (RFCs 2045, 2046, 2047, 4288, 4289 and 2049)","http://hl7.org/fhir/ValueSet/mimetypes|5.0.0","",,,,"Signature.sigFormat",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "Extension.value[x].data","Extension.value[x].data","","","",1,1,"","","","base64Binary {[]} {[]}

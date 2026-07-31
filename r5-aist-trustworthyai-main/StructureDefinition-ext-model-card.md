@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIModelCardLink |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIModelCardLink |
 
-A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments.
+References the model card that documents the AI system's intended purpose, limitations, performance, risks, and other relevant technical information.
 
 **Context of Use**
 
@@ -51,9 +51,9 @@ Other representations of profile: [CSV](StructureDefinition-ext-model-card.csv),
   "name" : "EU_AIModelCardLink",
   "title" : "Model Card Reference",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments.",
+  "description" : "References the model card that documents the AI system's intended purpose, limitations, performance, risks, and other relevant technical information.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -74,7 +74,7 @@ Other representations of profile: [CSV](StructureDefinition-ext-model-card.csv),
       "id" : "Extension",
       "path" : "Extension",
       "short" : "Model Card Reference",
-      "definition" : "A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments."
+      "definition" : "References the model card that documents the AI system's intended purpose, limitations, performance, risks, and other relevant technical information."
     },
     {
       "id" : "Extension.extension",
@@ -89,9 +89,10 @@ Other representations of profile: [CSV](StructureDefinition-ext-model-card.csv),
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/DocumentReference"]
+        "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"]
       }]
     }]
   }

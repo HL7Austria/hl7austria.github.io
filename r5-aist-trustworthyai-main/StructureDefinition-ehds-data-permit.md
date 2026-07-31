@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EHDSDataPermit |
+| Draft as of 2026-07-31 | *Computable Name*:EHDSDataPermit |
 
-The unique ID of the Health Data Access Body permit (required if secondary use).
+Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.
 
 **Context of Use**
 
@@ -20,7 +20,7 @@ The unique ID of the Health Data Access Body permit (required if secondary use).
 **Usages:**
 
 * Use this Extension: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
-* Examples for this Extension: [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md)
+* Examples for this Extension: [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ehds-data-permit.json)
 
@@ -51,9 +51,9 @@ Other representations of profile: [CSV](StructureDefinition-ehds-data-permit.csv
   "name" : "EHDSDataPermit",
   "title" : "EHDS Data Permit",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "The unique ID of the Health Data Access Body permit (required if secondary use).",
+  "description" : "Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -74,7 +74,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-data-permit.csv
       "id" : "Extension",
       "path" : "Extension",
       "short" : "EHDS Data Permit",
-      "definition" : "The unique ID of the Health Data Access Body permit (required if secondary use)."
+      "definition" : "Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable."
     },
     {
       "id" : "Extension.extension",
@@ -89,6 +89,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-data-permit.csv
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "Identifier"
       }]

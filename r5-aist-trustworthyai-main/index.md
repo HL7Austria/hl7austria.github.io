@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EUAITransparencyIG |
+| Draft as of 2026-07-31 | *Computable Name*:EUAITransparencyIG |
 
 # EU AI Transparency Implementation Guide
 
@@ -30,75 +30,42 @@ This IG provides a FHIR-based representation of these concepts by defining reusa
 
 The IG covers selected metadata areas relevant to AI-supported processing in healthcare:
 
-* AI system identification and system-level metadata,
-* organizational accountability and contact information,
-* model-card and technical-documentation metadata,
-* training-data and data-quality context,
-* privacy and data-use metadata,
-* AI-generated clinical outputs,
-* execution traceability and audit metadata,
-* provenance and legal-context documentation,
-* human oversight actions,
-* patient-facing information and explanation documentation.
+* AI system identification and system-level metadata
+* Organizational accountability and contact information
+* Model-card and technical-documentation metadata
+* Training-data and data-quality context
+* Privacy and data-use metadata
+* AI-generated clinical outputs
+* Execution traceability and audit metadata
+* Provenance and legal-context documentation
+* Human oversight actions
+* Patient-facing information and explanation documentation
 
 The IG does not replace clinical validation, conformity assessment, data protection assessment, national legal review, or organization-specific governance processes.
 
-## Architectural Structure
+## Architecture
 
-The IG organizes the profiles into three main contexts.
+The Implementation Guide is organized into three main architectural contexts:
 
-### 1. Static System Context
+* Static System Context
+* AI Output and Execution Context
+* Clinical Decision and Patient-Facing Context
 
-These profiles describe the AI system, responsible organizations, and technical documentation independently of a specific clinical execution.
+Detailed descriptions of all profiles are available in the **Profiles** section.
 
-* **EU_AIDevice** (`Device`): Represents the AI system as an identifiable and versioned system component. It includes metadata such as system name, version, manufacturer, owner, CE marking information, intended purpose, target population, expected lifetime, and EU AI database identifier where applicable.
-* **EU_AIOrganization** (`Organization`): Represents organizations involved in the AI system context, such as the manufacturer, deployer, or healthcare provider. It can document relevant contact points such as data protection or incident-reporting contacts.
-* **EU_AIModelCard** (`DocumentReference`): Represents model-card and technical-documentation metadata. It can reference documentation artifacts and includes structured extensions for performance information, training-data context, privacy metadata, and clinical validation status.
+## Contents
 
-### 2. AI Output and Execution Context
+This Implementation Guide contains:
 
-These profiles document AI-generated outputs, execution events, provenance, and selected legal-context metadata.
+* Profiles
+* Extensions
+* Code Systems
+* Value Sets
+* Example Instances
+* Downloads
+* Dependency Information
 
-* **EU_AIObservation** (`Observation`): Represents an AI-generated clinical output, such as a risk classification, recommendation, or other clinical result. It documents the case-specific indication and whether the output was used in a solely automated decision-making context.
-* **EU_AIAuditEvent** (`AuditEvent`): Records the technical execution trace, including references to input data, output data, the AI system, and log-integrity metadata.
-* **EU_AIProvenance** (`Provenance`): Links the AI-generated output to the AI system, source data, execution context, and selected legal-context metadata, including GDPR Article 6 and Article 9 documentation.
-* **EU_AIConsent** (`Consent`): Documents patient-facing processing context, including whether AI-related information was provided and whether the documented processing context is permitted or denied, for example in relation to an opt-out. It is not used as the sole GDPR legal basis.
-
-### 3. Clinical Decision and Patient-Facing Context
-
-These profiles document human oversight and patient-facing explanation.
-
-* **EU_AIHumanOversightAssessment** (`ArtifactAssessment`): Documents the human review of an AI-generated output. It can represent validation, override, or correction by a human reviewer without overwriting the original AI output.
-* **EU_AIPractitionerRole** (`PractitionerRole`): Represents the reviewer in their clinical and organizational role, including whether AI-specific training was completed.
-* **EU_AIPatientExplanation** (`Communication`): Documents patient-facing explanation related to the AI-supported process, where such an explanation is requested or provided.
-
-## Validated Clinical Use Case (Instances)
-
-To demonstrate the practical application and interoperability of these profiles, this IG includes a fully validated example instance graph.
-
-The scenario follows a fictitious patient (Elias Vance) undergoing a Thorax CT scan evaluated by the **AuraScan Pulmo-Net v3** AI system at **St. Chronos Medical Center**. It demonstrates the complete lifecycle of AI compliance:
-
-1. Recording the patient's processing consent and EHDS opt-out preferences (`EU_AIConsent`).
-1. The AI's preliminary (false-positive) finding of a pulmonary nodule (`EU_AIObservation`).
-1. The cryptographic audit logging and data lineage of the execution (`EU_AIAuditEvent`&`EU_AIProvenance`).
-1. The final clinical override by a specially trained human radiologist, Dr. Thorne, based on an explainability heatmap (`EU_AIHumanOversightAssessment`).
-1. The subsequent communication of the human-AI decision workflow to the patient (`EU_AIPatientExplanation`).
-
-## Terminology
-
-The IG defines custom terminology where existing FHIR or clinical terminologies do not directly represent the required AI transparency and legal-context concepts.
-
-The terminology includes:
-
-* EU AI transparency and human-oversight codes,
-* case-specific AI indication codes,
-* AI performance and clinical-validation status codes,
-* EHDS usage and data-category codes,
-* EHDS secondary-use purpose codes,
-* GDPR Article 6 legal-basis codes,
-* GDPR Article 9 exception codes.
-
-These codes are used to support structured bindings in the profiles and to make the selected metadata explicit and machine-readable.
+-------
 
 -------
 
@@ -118,7 +85,7 @@ These codes are used to support structured bindings in the profiles and to make 
   "version" : "0.1.0",
   "name" : "EUAITransparencyIG",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "packageId" : "fhir.ig.eu.aitransparency",
   "license" : "CC0-1.0",
@@ -131,7 +98,7 @@ These codes are used to support structured bindings in the profiles and to make 
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.2.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
@@ -152,121 +119,198 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ai-clinical-validation-status.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ai-clinical-validation-status"
       },
       "name" : "AI Clinical Validation Status",
-      "description" : "Documents whether the AI system is clinically validated, not clinically validated, under validation, or only technically validated.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/eu-ai-clinical-validation-status-vs"
-      },
-      "name" : "AI Clinical Validation Status ValueSet",
-      "description" : "Codes describing the clinical validation status of an AI system.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/eu-ai-data-quality-vs"
-      },
-      "name" : "AI Data Quality ValueSet",
-      "description" : "Codes describing data-quality characteristics relevant for training-data documentation (Art. 10 AI Act).",
+      "description" : "Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-01-ai-only-ai-observation-risk-001.html"
       }],
       "reference" : {
-        "reference" : "Observation/sc-02-validation-ai-observation-risk-001"
+        "reference" : "Observation/sc-01-ai-only-ai-observation-risk-001"
       },
-      "name" : "AI Output: Early Warning Risk Assessment",
-      "description" : "AI-generated early warning risk assessment output.",
+      "name" : "AI Output: Early Warning Risk Assessment (1)",
+      "description" : "Synthetic AI-generated high-risk output derived from NEWS2-inspired input parameters.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-02-validation-ai-observation-risk-001.html"
       }],
       "reference" : {
-        "reference" : "ValueSet/eu-ai-performance-metric-vs"
+        "reference" : "Observation/sc-02-validation-ai-observation-risk-001"
       },
-      "name" : "AI Performance Metric ValueSet",
-      "description" : "Codes for technical quality and performance metrics (QUAL-01).",
-      "isExample" : false
+      "name" : "AI Output: Early Warning Risk Assessment (2)",
+      "description" : "Synthetic AI-generated high-risk output derived from NEWS2-inspired input parameters.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-03-override-ai-observation-risk-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-03-override-ai-observation-risk-001"
+      },
+      "name" : "AI Output: Early Warning Risk Assessment (3)",
+      "description" : "Synthetic AI-generated low-risk output derived from NEWS2-inspired input parameters.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-ai-observation-risk-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-04-correction-exp-ai-observation-risk-001"
+      },
+      "name" : "AI Output: Early Warning Risk Assessment (4)",
+      "description" : "Synthetic AI-generated low-risk output derived from NEWS2-inspired input parameters.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ai-performance-metrics.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ai-performance-metrics"
       },
       "name" : "AI Performance Metrics",
-      "description" : "Captures quantitative metrics and bias disclosures.",
+      "description" : "Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ai-retention-information.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/ai-privacy-metadata"
+        "reference" : "StructureDefinition/ai-retention-information"
       },
-      "name" : "AI Privacy Metadata",
-      "description" : "GDPR and AI Act privacy parameters. Third country transfer flags and data retention policies at the model level.",
+      "name" : "AI Retention Information",
+      "description" : "Documents the stated retention duration for AI-related data, outputs, logs, or documentation.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ai-system-training-status.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ai-system-training-status"
       },
-      "name" : "AI System Specific Training",
-      "description" : "Mandatory flag indicating whether the human actor has received specific training for the utilized AI tool.",
+      "name" : "AI System-Specific Training Status",
+      "description" : "Records whether the practitioner acting in the documented role has completed training specific to the relevant AI system.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ai-training-data.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ai-training-data"
       },
       "name" : "AI Training Data Metadata",
-      "description" : "Details regarding provenance, EHDS categories, and data quality.",
+      "description" : "Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ArtifactAssessment"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ArtifactAssessment-sc-04-correction-exp-human-oversight-001.html"
+      }],
+      "reference" : {
+        "reference" : "ArtifactAssessment/sc-04-correction-exp-human-oversight-001"
+      },
+      "name" : "Assessment: Human Correction of AI Output (4)",
+      "description" : "Synthetic human oversight assessment documenting the clinician's review of the AI output.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ArtifactAssessment"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ArtifactAssessment-sc-03-override-human-oversight-001.html"
+      }],
+      "reference" : {
+        "reference" : "ArtifactAssessment/sc-03-override-human-oversight-001"
+      },
+      "name" : "Assessment: Human Override of AI Output (3)",
+      "description" : "Synthetic human oversight assessment documenting the clinician's review of the AI output.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ArtifactAssessment"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ArtifactAssessment-sc-02-validation-human-oversight-001.html"
       }],
       "reference" : {
         "reference" : "ArtifactAssessment/sc-02-validation-human-oversight-001"
       },
-      "name" : "Assessment: Human Validation of AI Output",
-      "description" : "Human oversight assessment documenting validation of the AI output.",
+      "name" : "Assessment: Human Validation of AI Output (2)",
+      "description" : "Synthetic human oversight assessment documenting the clinician's review of the AI output.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
     },
@@ -274,12 +318,67 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "AuditEvent"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AuditEvent-sc-01-ai-only-audit-event-ai-execution-001.html"
+      }],
+      "reference" : {
+        "reference" : "AuditEvent/sc-01-ai-only-audit-event-ai-execution-001"
+      },
+      "name" : "Audit Log: AI Execution Trace (1)",
+      "description" : "Synthetic audit event documenting the AI execution for PoC traceability.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AuditEvent"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AuditEvent-sc-02-validation-audit-event-ai-execution-001.html"
       }],
       "reference" : {
         "reference" : "AuditEvent/sc-02-validation-audit-event-ai-execution-001"
       },
-      "name" : "Audit Log: AI Execution Trace",
-      "description" : "Audit event documenting the simulated AI execution.",
+      "name" : "Audit Log: AI Execution Trace (2)",
+      "description" : "Synthetic audit event documenting the AI execution for PoC traceability.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AuditEvent"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AuditEvent-sc-03-override-audit-event-ai-execution-001.html"
+      }],
+      "reference" : {
+        "reference" : "AuditEvent/sc-03-override-audit-event-ai-execution-001"
+      },
+      "name" : "Audit Log: AI Execution Trace (3)",
+      "description" : "Synthetic audit event documenting the AI execution for PoC traceability.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AuditEvent"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AuditEvent-sc-04-correction-exp-audit-event-ai-execution-001.html"
+      }],
+      "reference" : {
+        "reference" : "AuditEvent/sc-04-correction-exp-audit-event-ai-execution-001"
+      },
+      "name" : "Audit Log: AI Execution Trace (4)",
+      "description" : "Synthetic audit event documenting the AI execution for PoC traceability.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
     },
@@ -287,153 +386,236 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-automated-decision-flag.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/automated-decision-flag"
       },
       "name" : "Automated Decision-Making Flag",
-      "description" : "Indicates whether the AI-generated output was used as part of a solely automated decision-making process within the meaning of GDPR Article 22.",
+      "description" : "Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-case-specific-indication.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/case-specific-indication"
       },
       "name" : "Case-Specific Indication",
-      "description" : "The clinical reason why the AI was used for this specific patient.",
+      "description" : "Records the clinical indication or case-specific reason for applying the AI system in the documented patient context.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Communication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Communication-sc-04-correction-exp-patient-explanation-001.html"
       }],
       "reference" : {
-        "reference" : "Communication/Communication-sc-02-patient-explanation-001"
+        "reference" : "Communication/sc-04-correction-exp-patient-explanation-001"
       },
-      "name" : "Communication: Patient-Facing AI Explanation",
-      "description" : "Synthetic patient-facing explanation about AI-supported processing.",
+      "name" : "Communication: Patient-Facing AI Explanation (4)",
+      "description" : "Synthetic patient-facing explanation about AI-supported processing and human review.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Consent"
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-corrected-clinical-observation-001.html"
       }],
       "reference" : {
-        "reference" : "Consent/sc-02-validation-consent-ai-use-001"
+        "reference" : "Observation/sc-04-correction-exp-corrected-clinical-observation-001"
       },
-      "name" : "Consent: AI Use for PoC Scenario sc-02-validation",
-      "description" : "Consent and patient information context for AI-related processing.",
-      "isExample" : true,
-      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-consent"]
+      "name" : "Corrected Clinical Observation: Early Warning Risk Assessment (4)",
+      "description" : "Human-corrected clinical result preserving traceability to the original AI-generated output.",
+      "isExample" : true
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Device"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Device-device-riskassist-ai.html"
       }],
       "reference" : {
         "reference" : "Device/device-riskassist-ai"
       },
       "name" : "Device: RiskAssist AI",
-      "description" : "Example AI system used for the NEWS2-inspired PoC scenario.",
+      "description" : "Synthetic AI system for NEWS2-inspired early-warning risk assessment.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ehds-data-category-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehds-data-category-cs"
+      },
+      "name" : "EHDS Data Category Code System",
+      "description" : "Codes representing categories of electronic health data that may be made available for secondary use under the EHDS.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ehds-data-category-vs.html"
       }],
       "reference" : {
         "reference" : "ValueSet/ehds-data-category-vs"
       },
-      "name" : "EHDS Data Category ValueSet",
-      "description" : "Categories of electronic health data relevant for secondary-use documentation under the EHDS (EHDS Art. 51).",
+      "name" : "EHDS Data Category Value Set",
+      "description" : "Categories of electronic health data that may be documented for secondary-use and AI-development contexts.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ehds-data-permit.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ehds-data-permit"
       },
       "name" : "EHDS Data Permit",
-      "description" : "The unique ID of the Health Data Access Body permit (required if secondary use).",
+      "description" : "Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ehds-secondary-use-purpose.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ehds-secondary-use-purpose"
       },
       "name" : "EHDS Secondary Use Purpose",
-      "description" : "Documents the permitted purpose for secondary use of electronic health data under the EHDS.",
+      "description" : "Records the documented purpose for secondary use of electronic health data in the EHDS context.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ehds-secondary-use-purpose-cs.html"
       }],
       "reference" : {
-        "reference" : "CodeSystem/ehds-purpose-codesystem"
+        "reference" : "CodeSystem/ehds-secondary-use-purpose-cs"
       },
-      "name" : "EHDS Secondary Use Purpose CodeSystem",
-      "description" : "Code system defining permitted EHDS secondary-use purposes relevant for documenting secondary use of electronic health data.",
+      "name" : "EHDS Secondary-Use Purpose Code System",
+      "description" : "Codes representing permitted categories of purpose for the secondary use of electronic health data under the EHDS.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ehds-secondary-use-purpose-vs.html"
       }],
       "reference" : {
         "reference" : "ValueSet/ehds-secondary-use-purpose-vs"
       },
-      "name" : "EHDS Secondary Use Purpose ValueSet",
-      "description" : "Permitted purposes for secondary use of electronic health data under the EHDS.",
+      "name" : "EHDS Secondary-Use Purpose Value Set",
+      "description" : "Purpose categories used to document the secondary use of electronic health data under the EHDS.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ehds-usage-category.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ehds-usage-category"
       },
       "name" : "EHDS Usage Category",
-      "description" : "Categorizes the data processing as Primary Care or Secondary Use according to the EHDS.",
+      "description" : "Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-ehds-usage-category-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/ehds-usage-category-cs"
+      },
+      "name" : "EHDS Usage Category Code System",
+      "description" : "Codes distinguishing primary use from secondary use of electronic health data in the context of the European Health Data Space.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ehds-usage-category-vs.html"
       }],
       "reference" : {
         "reference" : "ValueSet/ehds-usage-category-vs"
       },
-      "name" : "EHDS Usage Category ValueSet",
-      "description" : "Codes defining whether data usage is documented as primary use or secondary use (LAW-03.1).",
+      "name" : "EHDS Usage Category Value Set",
+      "description" : "Categories distinguishing primary and secondary use of electronic health data in the EHDS context.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Encounter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Encounter-encounter-001.html"
       }],
       "reference" : {
         "reference" : "Encounter/encounter-001"
@@ -445,31 +627,11 @@ These codes are used to support structured bindings in the profiles and to make 
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/eu-ai-explanation-requested"
-      },
-      "name" : "EU AI Act Explanation Requested Flag",
-      "description" : "Flag indicating if the patient (data subject) explicitly requested a clear and meaningful explanation of the AI's role and the clinical decision.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/eu-ai-log-integrity"
-      },
-      "name" : "EU AI Act Log Integrity Signature",
-      "description" : "Cryptographic signature or verification hash to ensure the integrity, accountability, and non-repudiation of the AI execution audit log.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-model-card.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-model-card"
@@ -481,31 +643,171 @@ These codes are used to support structured bindings in the profiles and to make 
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-artifact-type-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-artifact-type-cs"
+      },
+      "name" : "EU AI Artifact Type Code System",
+      "description" : "Codes identifying AI-related documentation artifacts represented by this implementation guide.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-audit-entity-role.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-audit-entity-role"
+      },
+      "name" : "EU AI Audit Entity Role Code System",
+      "description" : "Roles used to distinguish entities involved in an AI execution audit event.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-eu-ai-audit-entity-role-vs.html"
       }],
       "reference" : {
-        "reference" : "ValueSet/eu-case-specific-indication-vs"
+        "reference" : "ValueSet/eu-ai-audit-entity-role-vs"
       },
-      "name" : "EU AI Case-Specific Indication ValueSet",
-      "description" : "Clinical and administrative reasons for applying an AI system in a specific case (USE-04).",
+      "name" : "EU AI Audit Entity Role Value Set",
+      "description" : "Roles of entities involved in an AI execution audit event.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-case-specific-indication-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-case-specific-indication-cs"
+      },
+      "name" : "EU AI Case-Specific Indication Code System",
+      "description" : "Codes describing the clinical purpose for which an AI system was applied in an individual case.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-eu-ai-case-specific-indication-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eu-ai-case-specific-indication-vs"
+      },
+      "name" : "EU AI Case-Specific Indication Value Set",
+      "description" : "Clinical purposes for applying an AI system in an individual care context.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-clinical-validation-status-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-clinical-validation-status-cs"
+      },
+      "name" : "EU AI Clinical Validation Status Code System",
+      "description" : "Codes indicating the documented clinical validation status of an AI system for its intended clinical use.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-eu-ai-clinical-validation-status-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eu-ai-clinical-validation-status-vs"
+      },
+      "name" : "EU AI Clinical Validation Status Value Set",
+      "description" : "Clinical validation statuses applicable to an AI system and its documented intended use.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-contact-purpose-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-contact-purpose-cs"
+      },
+      "name" : "EU AI Contact Purpose Code System",
+      "description" : "Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-data-quality-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-data-quality-cs"
+      },
+      "name" : "EU AI Data Quality Code System",
+      "description" : "Codes describing assessed data-quality characteristics relevant to the development, validation, testing, or evaluation of an AI system.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-eu-ai-data-quality-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eu-ai-data-quality-vs"
+      },
+      "name" : "EU AI Data Quality Value Set",
+      "description" : "Assessed data-quality characteristics relevant to AI-system development, validation, testing, or evaluation.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/eu-ai-consent"
       },
-      "name" : "EU AI Consent and Processing Context",
-      "description" : "A Consent profile documenting patient-facing information, permission status, and opt-out preferences for AI-supported processing where applicable.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-machine-execution-audit-event.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-machine-execution-audit-event"
@@ -518,6 +820,10 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-observation.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-observation"
@@ -529,7 +835,27 @@ These codes are used to support structured bindings in the profiles and to make 
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-eu-ai-human-oversight-action-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eu-ai-human-oversight-action-vs"
+      },
+      "name" : "EU AI Human Oversight Action Value Set",
+      "description" : "Human oversight actions that may be documented in relation to an AI-generated output or recommendation.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-human-oversight.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-human-oversight"
@@ -541,19 +867,139 @@ These codes are used to support structured bindings in the profiles and to make 
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-human-oversight-cs.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/eu-ai-patient-explanation"
+        "reference" : "CodeSystem/eu-ai-human-oversight-cs"
       },
-      "name" : "EU AI Patient Explanation Communication",
-      "description" : "A Communication profile documenting patient-facing information about the AI-supported workflow, including the role of the AI system and the related clinical review where applicable.",
+      "name" : "EU AI Human Oversight Code System",
+      "description" : "Codes describing actions taken by a human reviewer in response to an AI-generated output or recommendation.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-identifier-type-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-identifier-type-cs"
+      },
+      "name" : "EU AI Identifier Type Code System",
+      "description" : "Codes identifying regulatory identifier types associated with an AI system.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-involvement-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-involvement-cs"
+      },
+      "name" : "EU AI Involvement Code System",
+      "description" : "Codes indicating the manner in which an AI system contributed to the content represented by a FHIR resource.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-eu-ai-involvement-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eu-ai-involvement-vs"
+      },
+      "name" : "EU AI Involvement Value Set",
+      "description" : "Codes used to classify how an AI system contributed to the content of a FHIR resource.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-log-integrity.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eu-ai-log-integrity"
+      },
+      "name" : "EU AI Log Integrity Signature",
+      "description" : "Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-patient-explanation.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eu-ai-patient-explanation"
+      },
+      "name" : "EU AI Patient Explanation Communication",
+      "description" : "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-performance-metric-cs.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/eu-ai-performance-metric-cs"
+      },
+      "name" : "EU AI Performance Metric Code System",
+      "description" : "Codes identifying performance characteristics used to document the evaluation of an AI system.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-eu-ai-performance-metric-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/eu-ai-performance-metric-vs"
+      },
+      "name" : "EU AI Performance Metric Value Set",
+      "description" : "Performance characteristics that may be documented for an AI system.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-practitionerrole.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-practitionerrole"
@@ -566,6 +1012,10 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-provenance.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-provenance"
@@ -578,6 +1028,10 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-organization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-organization"
@@ -590,6 +1044,10 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-device.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/eu-ai-device"
@@ -602,83 +1060,95 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-eu-ai-system-property-cs.html"
       }],
       "reference" : {
-        "reference" : "CodeSystem/EUAIActCodeSystem"
+        "reference" : "CodeSystem/eu-ai-system-property-cs"
       },
-      "name" : "EU AI Transparency Custom Codes",
-      "description" : "Custom codes used in this IG to represent AI transparency, data-use, provenance, technical documentation, data-quality, and human-oversight documentation concepts.",
+      "name" : "EU AI System Property Code System",
+      "description" : "Codes identifying structured properties used to describe regulatory and operational characteristics of an AI system in Device.property.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-gdpr-art6-codesystem.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/gdpr-art6-codesystem"
       },
-      "name" : "GDPR Article 6 Legal Basis CodeSystem",
-      "description" : "Code system defining GDPR Article 6 legal bases relevant for documenting legal-basis metadata in AI-supported processing contexts.",
+      "name" : "GDPR Article 6 Legal Basis Code System",
+      "description" : "Codes representing the legal bases listed in Article 6(1) GDPR for processing personal data.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-gdpr-art6-legal-basis-vs.html"
       }],
       "reference" : {
         "reference" : "ValueSet/gdpr-art6-legal-basis-vs"
       },
-      "name" : "GDPR Article 6 Legal Basis ValueSet",
-      "description" : "Value set including GDPR Article 6 legal bases relevant for documenting the lawful processing of personal data.",
+      "name" : "GDPR Article 6 Legal Basis Value Set",
+      "description" : "Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-gdpr-art9-codesystem.html"
       }],
       "reference" : {
         "reference" : "CodeSystem/gdpr-art9-codesystem"
       },
-      "name" : "GDPR Article 9 Exception CodeSystem",
-      "description" : "Code system defining GDPR Article 9 exceptions relevant for documenting the processing context of special categories of personal data, including health data.",
+      "name" : "GDPR Article 9 Condition Code System",
+      "description" : "Codes representing selected conditions in Article 9(2) GDPR under which special categories of personal data may be processed.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-gdpr-art9-condition-vs.html"
       }],
       "reference" : {
-        "reference" : "ValueSet/gdpr-art9-exception-vs"
+        "reference" : "ValueSet/gdpr-art9-condition-vs"
       },
-      "name" : "GDPR Article 9 Exception ValueSet",
-      "description" : "Value set including GDPR Article 9 exceptions relevant for documenting the processing of special categories of personal data, including health data.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/eu-ai-intervention-vs"
-      },
-      "name" : "Human Intervention Type ValueSet",
-      "description" : "Codes representing the type of human oversight or intervention (HL-03.1).",
+      "name" : "GDPR Article 9 Condition Value Set",
+      "description" : "Selected Article 9(2) GDPR conditions relevant to processing health data and other special categories of personal data in this implementation guide.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-01-ai-only-observation-blood-pressure-001.html"
       }],
       "reference" : {
-        "reference" : "Observation/sc-02-validation-observation-temperature-001"
+        "reference" : "Observation/sc-01-ai-only-observation-blood-pressure-001"
       },
-      "name" : "Input Observation: Body Temperature",
+      "name" : "Input Observation: Blood Pressure (1)",
       "description" : "Synthetic NEWS2-inspired input parameter.",
       "isExample" : true
     },
@@ -686,59 +1156,367 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
-      }],
-      "reference" : {
-        "reference" : "Observation/sc-02-validation-observation-consciousness-status-001"
       },
-      "name" : "Input Observation: Consciousness Status",
-      "description" : "Synthetic NEWS2-inspired input parameter.",
-      "isExample" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      }],
-      "reference" : {
-        "reference" : "Observation/sc-02-validation-observation-heart-rate-001"
-      },
-      "name" : "Input Observation: Heart Rate",
-      "description" : "Synthetic NEWS2-inspired input parameter.",
-      "isExample" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      }],
-      "reference" : {
-        "reference" : "Observation/sc-02-validation-observation-oxygen-saturation-001"
-      },
-      "name" : "Input Observation: Oxygen Saturation",
-      "description" : "Synthetic NEWS2-inspired input parameter.",
-      "isExample" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
-      }],
-      "reference" : {
-        "reference" : "Observation/sc-02-validation-observation-respiratory-rate-001"
-      },
-      "name" : "Input Observation: Respiratory Rate",
-      "description" : "Synthetic NEWS2-inspired input parameter.",
-      "isExample" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-02-validation-observation-blood-pressure-001.html"
       }],
       "reference" : {
         "reference" : "Observation/sc-02-validation-observation-blood-pressure-001"
       },
-      "name" : "Input Observation: Systolic Blood Pressure",
+      "name" : "Input Observation: Blood Pressure (2)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-03-override-observation-blood-pressure-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-03-override-observation-blood-pressure-001"
+      },
+      "name" : "Input Observation: Blood Pressure (3)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-observation-blood-pressure-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-04-correction-exp-observation-blood-pressure-001"
+      },
+      "name" : "Input Observation: Blood Pressure (4)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-01-ai-only-observation-temperature-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-01-ai-only-observation-temperature-001"
+      },
+      "name" : "Input Observation: Body Temperature (1)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-02-validation-observation-temperature-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-02-validation-observation-temperature-001"
+      },
+      "name" : "Input Observation: Body Temperature (2)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-03-override-observation-temperature-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-03-override-observation-temperature-001"
+      },
+      "name" : "Input Observation: Body Temperature (3)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-observation-temperature-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-04-correction-exp-observation-temperature-001"
+      },
+      "name" : "Input Observation: Body Temperature (4)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-01-ai-only-observation-consciousness-status-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-01-ai-only-observation-consciousness-status-001"
+      },
+      "name" : "Input Observation: Consciousness Status (1)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-02-validation-observation-consciousness-status-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-02-validation-observation-consciousness-status-001"
+      },
+      "name" : "Input Observation: Consciousness Status (2)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-03-override-observation-consciousness-status-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-03-override-observation-consciousness-status-001"
+      },
+      "name" : "Input Observation: Consciousness Status (3)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-observation-consciousness-status-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-04-correction-exp-observation-consciousness-status-001"
+      },
+      "name" : "Input Observation: Consciousness Status (4)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-01-ai-only-observation-heart-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-01-ai-only-observation-heart-rate-001"
+      },
+      "name" : "Input Observation: Heart Rate (1)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-02-validation-observation-heart-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-02-validation-observation-heart-rate-001"
+      },
+      "name" : "Input Observation: Heart Rate (2)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-03-override-observation-heart-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-03-override-observation-heart-rate-001"
+      },
+      "name" : "Input Observation: Heart Rate (3)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-observation-heart-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-04-correction-exp-observation-heart-rate-001"
+      },
+      "name" : "Input Observation: Heart Rate (4)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-01-ai-only-observation-oxygen-saturation-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-01-ai-only-observation-oxygen-saturation-001"
+      },
+      "name" : "Input Observation: Oxygen Saturation (1)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-02-validation-observation-oxygen-saturation-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-02-validation-observation-oxygen-saturation-001"
+      },
+      "name" : "Input Observation: Oxygen Saturation (2)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-03-override-observation-oxygen-saturation-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-03-override-observation-oxygen-saturation-001"
+      },
+      "name" : "Input Observation: Oxygen Saturation (3)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-observation-oxygen-saturation-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-04-correction-exp-observation-oxygen-saturation-001"
+      },
+      "name" : "Input Observation: Oxygen Saturation (4)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-01-ai-only-observation-respiratory-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-01-ai-only-observation-respiratory-rate-001"
+      },
+      "name" : "Input Observation: Respiratory Rate (1)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-02-validation-observation-respiratory-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-02-validation-observation-respiratory-rate-001"
+      },
+      "name" : "Input Observation: Respiratory Rate (2)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-03-override-observation-respiratory-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-03-override-observation-respiratory-rate-001"
+      },
+      "name" : "Input Observation: Respiratory Rate (3)",
+      "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-sc-04-correction-exp-observation-respiratory-rate-001.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/sc-04-correction-exp-observation-respiratory-rate-001"
+      },
+      "name" : "Input Observation: Respiratory Rate (4)",
       "description" : "Synthetic NEWS2-inspired input parameter.",
       "isExample" : true
     },
@@ -746,12 +1524,16 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-organization-examplemed.html"
       }],
       "reference" : {
         "reference" : "Organization/organization-examplemed"
       },
       "name" : "Manufacturer Organization: ExampleMed AI GmbH",
-      "description" : "Manufacturer organization for the synthetic AI system.",
+      "description" : "The fictional manufacturer/provider of the RiskAssist AI system.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"]
     },
@@ -759,24 +1541,32 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-ext-model-card.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/ext-model-card"
       },
       "name" : "Model Card Reference",
-      "description" : "A reference to the DocumentReference resource that acts as the Model Card, containing detailed documentation, intended purpose, and risk assessments.",
+      "description" : "References the model card that documents the AI system's intended purpose, limitations, performance, risks, and other relevant technical information.",
       "isExample" : false
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "DocumentReference"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DocumentReference-modelcard-riskassist-ai.html"
       }],
       "reference" : {
         "reference" : "DocumentReference/modelcard-riskassist-ai"
       },
       "name" : "Model Card: RiskAssist AI v1.0.0",
-      "description" : "Synthetic model card for the RiskAssist AI PoC system.",
+      "description" : "Synthetic model card for the deterministic AI-output simulation component used in the PoC.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"]
     },
@@ -784,43 +1574,43 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-organization-examplehospital.html"
       }],
       "reference" : {
         "reference" : "Organization/organization-examplehospital"
       },
       "name" : "Operator Organization: Example Hospital",
-      "description" : "Healthcare organization operating the synthetic AI system.",
+      "description" : "The fictional healthcare organization operating the AI system.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/patient-ai-info-provided"
-      },
-      "name" : "Patient AI Info Provided Flag",
-      "description" : "Confirmation that the patient was informed about the use of AI systems according to AI Act transparency rules.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-patient-001.html"
       }],
       "reference" : {
         "reference" : "Patient/patient-001"
       },
       "name" : "Patient: Synthetic Patient 001",
-      "description" : "A fictional female patient used in the NEWS2-inspired PoC scenario.",
+      "description" : "A fictional female patient used in the NEWS2-inspired PoC scenarios.",
       "isExample" : true
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-practitioner-001.html"
       }],
       "reference" : {
         "reference" : "Practitioner/practitioner-001"
@@ -833,12 +1623,16 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-practitionerrole-reviewer-001.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/practitionerrole-reviewer-001"
       },
       "name" : "PractitionerRole: Human Reviewer",
-      "description" : "Human reviewer role used for AI output validation.",
+      "description" : "Synthetic practitioner role representing a trained internal medicine reviewer.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"]
     },
@@ -846,12 +1640,84 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-sc-01-ai-only-provenance-ai-output-001.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/sc-01-ai-only-provenance-ai-output-001"
+      },
+      "name" : "Provenance: AI Output Generation (1)",
+      "description" : "Synthetic provenance resource linking the AI output to the AI system, input data, and legal processing context.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-sc-02-validation-provenance-ai-output-001.html"
       }],
       "reference" : {
         "reference" : "Provenance/sc-02-validation-provenance-ai-output-001"
       },
-      "name" : "Provenance: AI Output Generation",
-      "description" : "Provenance linking the AI-generated output to the AI system and input observations.",
+      "name" : "Provenance: AI Output Generation (2)",
+      "description" : "Synthetic provenance resource linking the AI output to the AI system, input data, and legal processing context.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-sc-03-override-provenance-ai-output-001.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/sc-03-override-provenance-ai-output-001"
+      },
+      "name" : "Provenance: AI Output Generation (3)",
+      "description" : "Synthetic provenance resource linking the AI output to the AI system, input data, and legal processing context.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-sc-04-correction-exp-provenance-ai-output-001.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/sc-04-correction-exp-provenance-ai-output-001"
+      },
+      "name" : "Provenance: AI Output Generation (4)",
+      "description" : "Synthetic provenance resource linking the AI output to the AI system, input data, and legal processing context.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Provenance-example-secondary-use-provenance.html"
+      }],
+      "reference" : {
+        "reference" : "Provenance/example-secondary-use-provenance"
+      },
+      "name" : "Provenance: Secondary Use Example",
+      "description" : "Example showing EHDS secondary use purpose and data permit.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"]
     },
@@ -859,12 +1725,16 @@ These codes are used to support structured bindings in the profiles and to make 
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-third-country-data-transfer.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/third-country-data-transfer"
       },
       "name" : "Third-Country Data Transfer",
-      "description" : "Captures if patient data is transferred outside the EU by this device.",
+      "description" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.",
       "isExample" : false
     }],
     "page" : {
@@ -876,6 +1746,42 @@ These codes are used to support structured bindings in the profiles and to make 
         "sourceUrl" : "index.html",
         "name" : "index.html",
         "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "profiles.html",
+        "name" : "profiles.html",
+        "title" : "Profiles",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "extensions.html",
+        "name" : "extensions.html",
+        "title" : "Extensions",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "terminology.html",
+        "name" : "terminology.html",
+        "title" : "Terminology",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "examples.html",
+        "name" : "examples.html",
+        "title" : "Examples",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "dependencies.html",
+        "name" : "dependencies.html",
+        "title" : "Dependencies",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "ip-statements.html",
+        "name" : "ip-statements.html",
+        "title" : "Intellectual Property",
         "generation" : "markdown"
       }]
     },

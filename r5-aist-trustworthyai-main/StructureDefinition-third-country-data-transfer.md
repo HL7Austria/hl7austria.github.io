@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/third-country-data-transfer | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:ThirdCountryDataTransfer |
+| Draft as of 2026-07-31 | *Computable Name*:ThirdCountryDataTransfer |
 
-Captures if patient data is transferred outside the EU by this device.
+Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.
 
 **Context of Use**
 
@@ -51,9 +51,9 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
   "name" : "ThirdCountryDataTransfer",
   "title" : "Third-Country Data Transfer",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Captures if patient data is transferred outside the EU by this device.",
+  "description" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -74,7 +74,7 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
       "id" : "Extension",
       "path" : "Extension",
       "short" : "Third-Country Data Transfer",
-      "definition" : "Captures if patient data is transferred outside the EU by this device."
+      "definition" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable."
     },
     {
       "id" : "Extension.extension",
@@ -102,6 +102,7 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
     {
       "id" : "Extension.extension:transferFlag.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "boolean"
       }]
@@ -127,6 +128,7 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
     {
       "id" : "Extension.extension:destinationCountry.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "code"
       }]

@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:CaseSpecificIndication |
+| Draft as of 2026-07-31 | *Computable Name*:CaseSpecificIndication |
 
-The clinical reason why the AI was used for this specific patient.
+Records the clinical indication or case-specific reason for applying the AI system in the documented patient context.
 
 **Context of Use**
 
@@ -20,7 +20,7 @@ The clinical reason why the AI was used for this specific patient.
 **Usages:**
 
 * Use this Extension: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
-* Examples for this Extension: [Observation/sc-02-validation-ai-observation-risk-001](Observation-sc-02-validation-ai-observation-risk-001.md)
+* Examples for this Extension: [Observation/sc-01-ai-only-ai-observation-risk-001](Observation-sc-01-ai-only-ai-observation-risk-001.md), [Observation/sc-02-validation-ai-observation-risk-001](Observation-sc-02-validation-ai-observation-risk-001.md), [Observation/sc-03-override-ai-observation-risk-001](Observation-sc-03-override-ai-observation-risk-001.md) and [Observation/sc-04-correction-exp-ai-observation-risk-001](Observation-sc-04-correction-exp-ai-observation-risk-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-case-specific-indication.json)
 
@@ -53,9 +53,9 @@ Other representations of profile: [CSV](StructureDefinition-case-specific-indica
   "name" : "CaseSpecificIndication",
   "title" : "Case-Specific Indication",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "The clinical reason why the AI was used for this specific patient.",
+  "description" : "Records the clinical indication or case-specific reason for applying the AI system in the documented patient context.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -76,7 +76,7 @@ Other representations of profile: [CSV](StructureDefinition-case-specific-indica
       "id" : "Extension",
       "path" : "Extension",
       "short" : "Case-Specific Indication",
-      "definition" : "The clinical reason why the AI was used for this specific patient."
+      "definition" : "Records the clinical indication or case-specific reason for applying the AI system in the documented patient context."
     },
     {
       "id" : "Extension.extension",
@@ -91,12 +91,13 @@ Other representations of profile: [CSV](StructureDefinition-case-specific-indica
     {
       "id" : "Extension.value[x]",
       "path" : "Extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-case-specific-indication-vs"
+        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-case-specific-indication-vs"
       }
     }]
   }

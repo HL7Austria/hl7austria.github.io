@@ -9,13 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:EU_AIModelCard |
+| Draft as of 2026-07-31 | *Computable Name*:EU_AIModelCard |
 
  
 A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation. 
 
 **Usages:**
 
+* Refer to this Profile: [Model Card Reference](StructureDefinition-ext-model-card.md)
 * Examples for this Profile: [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-model-card.json)
@@ -41,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
   "name" : "EU_AIModelCard",
   "title" : "EU AI Act Model Card",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation.",
   "fhirVersion" : "5.0.0",
@@ -107,7 +108,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
       "id" : "DocumentReference.extension:performance",
       "path" : "DocumentReference.extension",
       "sliceName" : "performance",
-      "short" : "Metrics & Bias",
+      "short" : "Performance metrics and bias information",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -120,7 +121,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
       "id" : "DocumentReference.extension:training",
       "path" : "DocumentReference.extension",
       "sliceName" : "training",
-      "short" : "EHDS Permit & Data Quality",
+      "short" : "Training data provenance and EHDS metadata",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -133,12 +134,12 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
       "id" : "DocumentReference.extension:privacy",
       "path" : "DocumentReference.extension",
       "sliceName" : "privacy",
-      "short" : "Transfer & Retention",
+      "short" : "Privacy and retention metadata",
       "min" : 1,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-privacy-metadata"]
+        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-retention-information"]
       }],
       "mustSupport" : true
     },
@@ -146,6 +147,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
       "id" : "DocumentReference.extension:clinicalValidationStatus",
       "path" : "DocumentReference.extension",
       "sliceName" : "clinicalValidationStatus",
+      "short" : "Clinical validation status",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -157,16 +159,16 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
     {
       "id" : "DocumentReference.status",
       "path" : "DocumentReference.status",
-      "mustSupport" : true
+      "short" : "Publication status of the model card"
     },
     {
       "id" : "DocumentReference.type",
       "path" : "DocumentReference.type",
-      "short" : "AI Model Card",
+      "short" : "AI Model Card document type",
       "min" : 1,
       "patternCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/EUAIActCodeSystem",
+          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-artifact-type-cs",
           "code" : "model-card",
           "display" : "AI Model Card"
         }]
@@ -176,7 +178,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
     {
       "id" : "DocumentReference.subject",
       "path" : "DocumentReference.subject",
-      "short" : "Reference to the specific AI System Device (Traceability)",
+      "short" : "AI system described by this model card",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -185,9 +187,17 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
       "mustSupport" : true
     },
     {
+      "id" : "DocumentReference.date",
+      "path" : "DocumentReference.date",
+      "short" : "Date of model card publication",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "DocumentReference.description",
       "path" : "DocumentReference.description",
-      "short" : "Mandatory high-level clinical summary and limitations of the AI model.",
+      "short" : "Summary of the AI model card",
+      "definition" : "High-level summary of the intended purpose, principal limitations, risks, performance, and operational considerations documented by the model card.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -199,7 +209,8 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
     {
       "id" : "DocumentReference.content.attachment",
       "path" : "DocumentReference.content.attachment",
-      "short" : "Detailed technical documentation and risk assessments (PDF, HTML, etc.)",
+      "short" : "Technical documentation and instructions for use",
+      "definition" : "Technical documentation or instructions for use containing intended purpose, limitations, risk information, required maintenance and support measures, maintenance frequency, and required software updates.",
       "mustSupport" : true
     },
     {
@@ -211,11 +222,12 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
     {
       "id" : "DocumentReference.content.attachment.data",
       "path" : "DocumentReference.content.attachment.data",
-      "mustSupport" : true
+      "max" : "0"
     },
     {
       "id" : "DocumentReference.content.attachment.url",
       "path" : "DocumentReference.content.attachment.url",
+      "min" : 1,
       "mustSupport" : true
     },
     {

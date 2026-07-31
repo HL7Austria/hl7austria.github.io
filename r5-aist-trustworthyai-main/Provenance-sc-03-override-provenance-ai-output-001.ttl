@@ -1,0 +1,114 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Provenance/sc-03-override-provenance-ai-output-001> a fhir:Provenance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "sc-03-override-provenance-ai-output-001"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"^^xsd:anyURI ;
+       fhir:link <http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Provenance sc-03-override-provenance-ai-output-001</b></p><a name=\"sc-03-override-provenance-ai-output-001\"> </a><a name=\"hcsc-03-override-provenance-ai-output-001\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-eu-ai-provenance.html\">EU AI Provenance</a></p></div><p>Provenance for <a href=\"Observation-sc-03-override-ai-observation-risk-001.html\">Observation </a></p><p>Summary</p><table class=\"grid\"><tr><td>Occurrence</td><td>2026-03-01 10:15:00+0000 --&gt; 2026-03-01 10:15:03+0000</td></tr><tr><td>Recorded</td><td>2026-03-01 10:15:04+0000</td></tr><tr><td>Activity</td><td><span title=\"Codes:\">ai-output-generation</span></td></tr></table><p><b>Agents</b></p><table class=\"grid\"><tr><td><b>who</b></td></tr><tr><td><a href=\"Device-device-riskassist-ai.html\">Device: extension = ,-&gt;DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.</a></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-usage-category-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "primary-use" ] ;
+         fhir:display [ fhir:v "Primary Use" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:target ( [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-ai-observation-risk-001> ;
+     fhir:reference [ fhir:v "Observation/sc-03-override-ai-observation-risk-001" ]
+  ] ) ; # 
+  fhir:occurred [
+     a fhir:Period ;
+     fhir:start [ fhir:v "2026-03-01T10:15:00Z"^^xsd:dateTime ] ;
+     fhir:end [ fhir:v "2026-03-01T10:15:03Z"^^xsd:dateTime ]
+  ] ; # 
+  fhir:recorded [ fhir:v "2026-03-01T10:15:04Z"^^xsd:dateTime] ; # 
+  fhir:authorization ( [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "gdpr-art-6-1-d" ]
+       ] )
+     ]
+  ] [
+     fhir:concept [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "gdpr-art-9-2-h" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:activity [
+     fhir:text [ fhir:v "ai-output-generation" ]
+  ] ; # 
+  fhir:patient [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-001> ;
+     fhir:reference [ fhir:v "Patient/patient-001" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Encounter/encounter-001> ;
+     fhir:reference [ fhir:v "Encounter/encounter-001" ]
+  ] ; # 
+  fhir:agent ( [
+     fhir:who [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Device/device-riskassist-ai> ;
+       fhir:reference [ fhir:v "Device/device-riskassist-ai" ]
+     ]
+  ] ) ; # 
+  fhir:entity ( [
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-observation-temperature-001> ;
+       fhir:reference [ fhir:v "Observation/sc-03-override-observation-temperature-001" ]
+     ]
+  ] [
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-observation-heart-rate-001> ;
+       fhir:reference [ fhir:v "Observation/sc-03-override-observation-heart-rate-001" ]
+     ]
+  ] [
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-observation-respiratory-rate-001> ;
+       fhir:reference [ fhir:v "Observation/sc-03-override-observation-respiratory-rate-001" ]
+     ]
+  ] [
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-observation-blood-pressure-001> ;
+       fhir:reference [ fhir:v "Observation/sc-03-override-observation-blood-pressure-001" ]
+     ]
+  ] [
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-observation-oxygen-saturation-001> ;
+       fhir:reference [ fhir:v "Observation/sc-03-override-observation-oxygen-saturation-001" ]
+     ]
+  ] [
+     fhir:role [ fhir:v "source" ] ;
+     fhir:what [
+       fhir:link <http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-observation-consciousness-status-001> ;
+       fhir:reference [ fhir:v "Observation/sc-03-override-observation-consciousness-status-001" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

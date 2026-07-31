@@ -9,9 +9,9 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics | *Version*:0.1.0 |
-| Draft as of 2026-06-18 | *Computable Name*:AIPerformanceMetrics |
+| Draft as of 2026-07-31 | *Computable Name*:AIPerformanceMetrics |
 
-Captures quantitative metrics and bias disclosures.
+Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.
 
 **Context of Use**
 
@@ -53,9 +53,9 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
   "name" : "AIPerformanceMetrics",
   "title" : "AI Performance Metrics",
   "status" : "draft",
-  "date" : "2026-06-18T12:04:51+00:00",
+  "date" : "2026-07-31T11:07:29+00:00",
   "publisher" : "Selina Adlberger",
-  "description" : "Captures quantitative metrics and bias disclosures.",
+  "description" : "Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.",
   "fhirVersion" : "5.0.0",
   "mapping" : [{
     "identity" : "rim",
@@ -76,13 +76,18 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       "id" : "Extension",
       "path" : "Extension",
       "short" : "AI Performance Metrics",
-      "definition" : "Captures quantitative metrics and bias disclosures."
+      "definition" : "Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation."
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "min" : 1
     },
     {
       "id" : "Extension.extension:metric",
       "path" : "Extension.extension",
       "sliceName" : "metric",
-      "min" : 0,
+      "min" : 1,
       "max" : "*",
       "mustSupport" : true
     },
@@ -111,6 +116,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
     {
       "id" : "Extension.extension:metric.extension:type.value[x]",
       "path" : "Extension.extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "CodeableConcept"
       }],
@@ -139,6 +145,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
     {
       "id" : "Extension.extension:metric.extension:value.value[x]",
       "path" : "Extension.extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "Quantity"
       }]
@@ -174,6 +181,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
     {
       "id" : "Extension.extension:biasDisclosure.value[x]",
       "path" : "Extension.extension.value[x]",
+      "min" : 1,
       "type" : [{
         "code" : "string"
       }]
