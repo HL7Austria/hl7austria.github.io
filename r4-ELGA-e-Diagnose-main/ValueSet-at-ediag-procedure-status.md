@@ -51,7 +51,7 @@ ValueSet zur Kennzeichnung, ob eine Prozedur durchgeführt oder irrtümlich doku
   "title" : "AT e-Diagnose Procedure Status Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-31T08:34:12+00:00",
+  "date" : "2026-07-31T10:47:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 
 > UC-02 
 
-Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. Im Mittelpunkt stehen die Aktualisierung von Summary-Listen sowie die Erfassung, Zuordnung, Entfernung, Stornierung und Löschung von Einzeleinträgen.
+Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. Im Mittelpunkt stehen die Aktualisierung von Summary-Listen sowie die Erfassung, Zuordnung, Entfernung, Stornierung und Löschung von medizinischen Einzeleinträgen (Ressourcen).
 
 ## Interaktionen auf Listenressourcen
 
@@ -38,14 +38,15 @@ Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leere
 
 ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/`, `GET [base]/Patient/[id]/Procedure/` oder `GET [base]/Patient/[id]/AllergyIntolerance/`
 
-### Einträge zur Summary-Liste hinzufügen
+### Eintrag zur Summary-Liste hinzufügen
 
 > Sub:UC_02_03 Der GDA verfasst einen neuen Eintrag, siehe [Eintrag erfassen](uc_ediag_02_schreiben.md#ressource-erfassen) oder möchte einen bestehenden Eintrag in die Summary-Liste aufnehmen. Die Fachanwendung kennzeichnet diesen Eintrag anschließend als relevant (meta.tag = relevant).
 
 #### Ablauf
 
 1. Der GDA führt ein**POST $list-read**aus und erhält das aktuelle Search-Bundle.
-1. Der GDA wählt die bestehende Ressource aus und fügt sie als neuen List.entry in die Liste ein.
+1. Der GDA wählt die bestehende Ressource aus
+1. Der GDA fügt die Ressource als List.entry in die Liste ein.
 * **List.entry.flag = new**
 * **List.entry.item** referenziert die bestehende Ressource.
 
@@ -54,34 +55,46 @@ ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/
 
 #### Sequenzdiagramm
 
-### Einträge aus Summary-Liste entfernen
+### Eintrag aus Summary-Liste entfernen
 
-> Sub:UC_02_04 Nur entfernen, das weitere Vorgehen wird hier nicht beschrieben. Stornieren kann als Folge durchgeführt werden. Die Referenz auf die Ressource wird aus der Summary-Liste entfernt (removed). Die referenzierte Ressource bleibt unverändert bestehen. Die Fachanwendung entfernt die Kennzeichnung als relevant (meta.tag = relevant).
+> Sub:UC_02_04 
 
-ToDo: Aus Liste entfernen, Ressource bleibt bestehen, verliert nur Listzugehörigkeit oder Löschen - Ressource wird vollständig entfernt Ausblenden und Löschen? Löscht der Teilnehmer einen Eintrag, muss die Historienversion mitgelöscht werden? Betsehende Referenzen auf gelöschte Ressourcen. Lösche ich C, sage ich such mir alle List-Versionen mit C, und lösch mir alle C. Wie weit greifen, muss ich mich als Bürger durch alle Vorversionen durchklicken. 
+Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass die Ressource selbst gelöscht oder geändert wird. Hierzu wird die Referenz auf die Ressource aus der Summary-Liste entfernt. Die Fachanwendung hebt anschließend die Kennzeichnung der Ressource als relevant (meta.tag = relevant) auf. Die Ressource bleibt weiterhin verfügbar und kann zu einem späteren Zeitpunkt erneut in die Summary-Liste aufgenommen werden.
+
+#### Ablauf
+
+1. Der GDA führt ein**POST $list-read**aus und erhält das aktuelle Search-Bundle.
+1. Der GDA wählt den zu entferndenen Eintrag oder die Einträge aus der Summary-Liste aus.
+1. Der GDA kennzeichnet die entsprechenden List.entry mit**List.entry.flag = removed**.
+1. Der GDA führt ein**POST list-write**aus und übermittelt die aktuelle Summary-Liste.
+1. Die Fachanwendung entfernt die mit List.entry.flag = removed gekennzeichneten Einträge aus der Summary-Liste und entfernt bei den referenzierten Ressourcen die Kennzeichnung meta.tag = relevant.
 
 ### Reihenfolge der Einträge in der Summary-Liste ändern
 
 > Sub:UC_02_05 
+  Der GDA kann die Reihenfolge der Einträge innerhalb einer Summary-Liste ändern. Dabei werden ausschließlich die Listeneinträge neu angeordnet; die referenzierten Ressourcen und deren fachliche Inhalte bleiben unverändert. Durch das Speichern entsteht eine neue Version der Summary-Liste.
 
-Der GDA kann die Reihenfolge der Summary-Einträge ändern. Die Einträge selbst bleiben dabei unverändert. ToDo: Evtl. auch in den ELGA Core mitnehmen.
+#### Ablauf
+
+1. Der GDA führt ein**POST $list-read**aus und erhält das aktuelle Search-Bundle.
+1. Der GDA ordnet die Einträge der Summary-Liste in die gewünschte Reihenfolge.
+1. Der GDA führt einen POST $list-write aus und übermittelt die aktualisierte Summary-Liste.
+1. Die Fachanwendung speichert die neue Reihenfolge als aktuelle Version der Summary-Liste. Die referenzierten Ressourcen bleiben unverändert.
 
 ### Einträge in der Summary-Liste bearbeiten
 
 > Sub:UC_02_06 
-
-Dieser Sub-UC ist eine Kombination aus einzelnen Schritte. Es fasst die zur fachlichen Bearbeitung einer bestehenden Ressource erforderlichen Einzelschritte zusammen. Die Reihenfolge der Schritte kann variieren. Bearbeitung erfolgt durch Stornierung der bestehenden Ressource und Erfassung einer neuen fachlich korrigierten Ressource. Dadurch bleiben Änderungen nachvollziehbar und versioniert.
+ Dieser Sub-UC beschreibt die fachliche Bearbeitung von Einträgen einer Summary-Liste. Die tatsächliche Reihenfolge der Bearbeitungsschritte kann je nach Anwendungsfall variieren. Es ist nicht notwendigerweise vorgesehen, dass $list-read am Anfang und $list-write am Ende des Ablaufs stehen. Durch die Verwendung eines bereits bestehenden Business-Identifier wird bei der Bearbeitung die Zuordnung einer alten Version zu einer neuen Version einer Ressource ermöglicht. Dadurch bleibt die Verbindung zwischen den Versionen erhalten.
 
 #### Ablauf
 
-1. **GDA**führt ein**POST $list-read**gemäß List-Read aus.
-1. Die Fachanwendung liefert die aktuelle Summary-Liste inkl. ETag für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)und alle referenzierten Ressourcen zurück.
-1. **GDA**wählt die fachlich zu bearbeitende(n) Summary-Einträge aus und übernimmt den Business-Identifier der bestehenden Ressource.
-* GDA storniert die bestehende Ressource gemäß Sub:UC_02_08 – Eintrag stornieren.
-* GDA erfasst die fachlich geänderte Ressource gemäß Sub:UC_02_07 – Eintrag erfassen.
+1. Der GDA führt einen POST $list-read aus und erhält das aktuelle Search-Bundle..
+1. Der GDA wählt die fachlich zu bearbeitenden Summary-Einträge aus.
+1. Der GDA führt die erforderlichen Bearbeitungsschritte für den jeweiligen Anwendungsfall aus. Dazu gehört beispielsweise:
+* Übernahme des bestehenden Business-Identifier für die neue Version einer Ressource.
+* Erfassung einer neuen bzw. fachlich geänderten Ressource gemäß Sub – Eintrag erfassen.
 
-1. Übernhame des Identifier der bisherigen zu stornierenden Ressource.
-1. **GDA**führt ein**POST $list-write**gemäß List-Write durch und übermittelt die aktualisierte Summary-Liste.
+1. Der GDA führt einen POST $list-write aus und übermittelt die aktualisierte Summary-Liste an die Fachanwendung. Die fachlich geänderte Ressource wird dabei neu angelegt und erhält durch die Übernahme des Business-Identifier die Verbindung zur bisherigen Ressource.
 
 #### Sequenzdiagramm
 
@@ -106,8 +119,7 @@ Der GDA erfasst einen neuen Eintrag über die e-Diagnose Fachanwendung, die nich
 ### Eintrag stornieren
 
 > Sub:UC_02_08 
-
-ToDo: Kläre, ob die GDA-OID durch den Request automatisch mitkommt!
+ 
 
 Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob ein zu stornierender Eintrag in der Summary-List referenziert wird oder nicht. Im Zuge der Stornierung kann der GDA einen Vermerk festhalten. Die OID des GDA´s und der Stornierungszeitpunkt wird durch die Fachanwendung gesetzt.
 
@@ -123,5 +135,5 @@ Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornie
  
 * Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt ursprünglichen Wert des verification.Status bzw. status
 
-### Einträge bearbeiten in der Gesamtansicht
+### Eintrag bearbeiten in der Gesamtansicht
 
