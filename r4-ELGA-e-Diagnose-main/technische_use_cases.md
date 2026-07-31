@@ -9,7 +9,9 @@ Die nachfolgenden Kapitel beschreiben die fachlichen Anwendungsfälle der e-Diag
 
 Die e-Diagnose dient der Verwaltung von Diagnosen, Prozeduren sowie Allergien und Intoleranzen für ELGA-Teilnehmer. Die Fachanwendung ermöglicht das Laden, Erfassen, Bearbeiten, Stornieren und Löschen der entsprechenden Daten. Darüber hinaus unterstützt sie die Verwaltung dieser Informationen in einer Gesamtansicht.
 
-Vor der Durchführung von Änderungen werden die aktuellen Datenbestände geladen. Anschließend können Listen bearbeitet sowie fachliche Einzelressourcen (z. B. Condition, Procedure, AllergyIntolerance) erfasst, geändert, storniert oder gelöscht werden.
+Vor der Durchführung von Änderungen werden die aktuellen Datenbestände geladen. Anschließend können Listen bearbeitet sowie fachliche Einzelressourcen (z. B. Condition, Procedure, AllergyIntolerance) erfasst, geändert, storniert oder gelöscht werden. Die folgende Darstellung gibt einen Überblick über die in der e-Diagnose verwalteten Kategorien sowie deren Zuordnung auf den jeweiligen Listen- und Einzelressourcenebene.
+
+![](ediag_kategorie.png)
 
 Die nachfolgend beschriebenen Sub-Use-Cases definieren die erforderlichen Interaktionen und Transaktionen zur Umsetzung dieser fachlichen Funktionen. Sie basieren auf den folgenden Interaktionsarten:
 

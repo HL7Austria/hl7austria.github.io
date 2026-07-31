@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-reaction-time-vs | *Version*:0.1.0 | |
-| Active as of 2026-07-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagReactionTimeVS |
+| Active as of 2026-07-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagReactionTimeVS |
 
  
 ValueSet mit zulässigen Ausprägungen der Reaktionszeit einer allergischen Reaktion. 
@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "AT e-Diagnose Reaction Time Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-30T10:22:13+00:00",
+  "date" : "2026-07-31T07:01:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

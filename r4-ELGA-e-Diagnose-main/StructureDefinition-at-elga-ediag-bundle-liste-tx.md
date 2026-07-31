@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-bundle-liste-tx | *Version*:0.1.0 | |
-| Draft as of 2026-07-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagBundleListeTx |
+| Draft as of 2026-07-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagBundleListeTx |
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf die Liste bestehend aus und klinischen KOntextressourcen 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-bundle
   "name" : "AtEdiagBundleListeTx",
   "title" : "AT ELGA e-Diagnose Transaction Bundle",
   "status" : "draft",
-  "date" : "2026-07-30T10:22:13+00:00",
+  "date" : "2026-07-31T07:01:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
