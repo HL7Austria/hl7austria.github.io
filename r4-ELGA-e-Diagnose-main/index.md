@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-07-31T10:47:24+00:00",
+  "date" : "2026-07-31T12:19:34+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -82,12 +82,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "uri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4",
     "packageId" : "hl7.at.fhir.core.r4",
     "version" : "2.0.0"
-  },
-  {
-    "id" : "hl7_at_fhir_elga_aps_r4",
-    "uri" : "https://fhir.hl7.at/elga/aps/r4/ImplementationGuide/hl7.at.fhir.elga.aps.r4",
-    "packageId" : "hl7.at.fhir.elga.aps.r4",
-    "version" : "1.0.0"
   },
   {
     "id" : "hl7_at_fhir_elga_core_r4",
