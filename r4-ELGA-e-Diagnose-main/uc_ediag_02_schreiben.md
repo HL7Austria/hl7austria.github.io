@@ -125,15 +125,21 @@ Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornie
 
 #### Ablauf
 
-* Um einen Eintrag zu stornieren, führt der GDA ein `$list-read` oder ein `GET` auf die Gesamtmenge der Diagnosen aus (siehe [Read/Search von Diagnosen, Prozeduren sowie Allergien und Intoleranzen](uc_ediag_06_int_list.md#read-search-von-diagnosen-prozeduren-sowie-allergien-und-intoleranzen)) und markiert die zu stornierenden Einträge.
-* Optional kann der GDA einen Grund für die Stornierung angeben.
-* Durch Bestätigung wird die `$storno`-Operation ausgeführt.
-* Die Fachanwendung bearbeitet den zu stornierenden Eintrag folgendermaßen: 
+1. Um einen Eintrag zu stornieren, führt der GDA ein`$list-read`oder ein`GET`auf die Gesamtmenge der Diagnosen aus (siehe[Read/Search von Diagnosen, Prozeduren sowie Allergien und Intoleranzen](uc_ediag_01_lesen.md#einträge-als-einzelressource-abrufen)) und markiert die zu stornierenden Einträge.
+1. Optional kann der GDA einen Grund für die Stornierung angeben.
+1. Durch Bestätigung wird die`$storno`-Operation ausgeführt.
+1. Die Fachanwendung bearbeitet den zu stornierenden Eintrag folgendermaßen:
 * `AllergyIntolerance.verificationStatus = entered-in-error`
 * `Condition.verificationStatus = entered-in-error`
 * `Procedure.status = entered-in-error`
- 
-* Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt ursprünglichen Wert des verification.Status bzw. status
+
+1. Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt ursprünglichen Wert des verification.Status bzw. status
 
 ### Eintrag bearbeiten in der Gesamtansicht
+
+Der GDA kann über die Gesamtansicht bestehende Einträge suchen, auswählen und fachlich bearbeiten.
+
+Im Unterschied zur Bearbeitung innerhalb einer Summary-Liste erfolgt die Änderung hier unabhängig von der aktuellen Listenzuordnung. Die Bearbeitung betrifft die referenzierte medizinische Ressource.
+
+#### Ablauf
 
