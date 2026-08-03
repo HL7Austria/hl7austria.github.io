@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-08-03T09:14:34+00:00",
+  "date" : "2026-08-03T10:33:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -162,8 +162,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.identifier",
       "path" : "Condition.identifier",
-      "short" : "Zuordnung der Diagnose in einem internem Dokumentationssystem",
-      "max" : "0"
+      "short" : "Zuordnung der Diagnose in einem internem Dokumentationssystem"
     },
     {
       "id" : "Condition.clinicalStatus",

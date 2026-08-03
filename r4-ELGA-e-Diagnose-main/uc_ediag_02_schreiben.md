@@ -69,6 +69,8 @@ Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass di
 1. Der GDA führt ein**POST list-write**aus und übermittelt die aktuelle Summary-Liste.
 1. Die Fachanwendung entfernt die mit List.entry.flag = removed gekennzeichneten Einträge aus der Summary-Liste und entfernt bei den referenzierten Ressourcen die Kennzeichnung meta.tag = relevant.
 
+#### Sequenzdiagramm
+
 ### Reihenfolge der Einträge in der Summary-Liste ändern
 
 > Sub:UC_02_05 
@@ -142,4 +144,13 @@ Der GDA kann über die Gesamtansicht bestehende Einträge suchen, auswählen und
 Im Unterschied zur Bearbeitung innerhalb einer Summary-Liste erfolgt die Änderung hier unabhängig von der aktuellen Listenzuordnung. Die Bearbeitung betrifft die referenzierte medizinische Ressource.
 
 #### Ablauf
+
+1. Der GDA wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.
+1. Der GDA ruft die gewünschte Ressource über die Gesamtansicht gemäß Sub:UC_01_03 – Einträge als Einzelressource abrufen ab.
+1. Der GDA wählt den fachlich zu bearbeitenden Eintrag aus.
+1. Der GDA nimmt die erforderlichen fachlichen Änderungen an der Ressource vor.
+1. Der GDA erstellt die geänderte Ressource gemäß Sub:UC_02_07 – Eintrag erfassen. Dabei wird der Business-Identifier der bisherigen Ressource übernommen.
+1. Ist der bisherige Eintrag fachlich nicht mehr gültig, storniert der GDA die bisherige Ressource gemäß Sub:UC_02_08 – Eintrag stornieren.
+1. Die Fachanwendung validiert die neue Ressource und speichert sie als neue Version. Der Business-Identifier bleibt unverändert erhalten.
+1. Die Fachanwendung bestätigt die erfolgreiche Bearbeitung der Ressource.
 
