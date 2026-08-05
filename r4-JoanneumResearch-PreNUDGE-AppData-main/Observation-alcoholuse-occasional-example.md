@@ -29,7 +29,7 @@ Profile: [AT PreNUDGE Observation Alcohol Use](StructureDefinition-at-prenudge-a
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-07-23
+2026-08-05
 
 Links:
 [Table of Contents](toc.md)|
