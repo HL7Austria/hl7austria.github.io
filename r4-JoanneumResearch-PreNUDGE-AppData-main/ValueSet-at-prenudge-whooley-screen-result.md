@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/at-prenudge-whooley-screen-result | *Version*:0.1.0 | |
-| Active as of 2026-08-05 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetWhooleyScreenResult |
+| Active as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetWhooleyScreenResult |
 
  
 Binary result of the PHQ-2; "Whooley" Questions (Ja/Nein-Version). Positive = both questions answered 'Ja'; Negative = at least one question answered 'Nein'. 
@@ -40,7 +40,7 @@ Binary result of the PHQ-2; "Whooley" Questions (Ja/Nein-Version). Positive = bo
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-05
+2026-08-06
 
 Links:
 [Table of Contents](toc.md)|
@@ -58,7 +58,7 @@ Links:
   "title" : "AT PreNUDGE ValueSet Whooley Screen Result",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-05T12:30:06+00:00",
+  "date" : "2026-08-06T10:54:53+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

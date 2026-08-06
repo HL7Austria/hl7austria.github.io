@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/Pss4Questionnaire | *Version*:0.1.0 | |
-| Active as of 2026-08-05 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Pss4Questionnaire |
+| Active as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:Pss4Questionnaire |
 | **Copyright/Legal**: PSS items reproduced from Cohen, S., Kamarck, T., & Mermelstein, R. (1983). A global measure of perceived stress. Journal of Health and Social Behavior, 24(4), 385–396. The PSS-4 is in the public domain. | | |
 
  
@@ -18,7 +18,7 @@
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-05
+2026-08-06
 
 Links:
 [Table of Contents](toc.md)|
@@ -41,7 +41,7 @@ Links:
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-08-05T12:30:06+00:00",
+  "date" : "2026-08-06T10:54:53+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

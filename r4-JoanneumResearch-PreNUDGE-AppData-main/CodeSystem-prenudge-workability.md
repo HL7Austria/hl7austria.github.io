@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-workability | *Version*:0.1.0 | |
-| Active as of 2026-08-05 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemWorkability |
+| Active as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemWorkability |
 
  
 Local PreNUDGE codes for workability questionnaires and derived Work-SoC score observations. Work-SoC source DOI: https://doi.org/10.4102/sajip.v39i1.1111 
@@ -21,7 +21,7 @@ Local PreNUDGE codes for workability questionnaires and derived Work-SoC score o
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-05
+2026-08-06
 
 Links:
 [Table of Contents](toc.md)|
@@ -39,7 +39,7 @@ Links:
   "title" : "AT PreNUDGE Workability Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-05T12:30:06+00:00",
+  "date" : "2026-08-06T10:54:53+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
