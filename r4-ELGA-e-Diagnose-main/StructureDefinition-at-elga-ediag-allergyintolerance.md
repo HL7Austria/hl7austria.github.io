@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance | *Version*:0.1.0 | |
-| Active as of 2026-08-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
+| Active as of 2026-08-06 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
 
  
 Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-08-03T10:33:06+00:00",
+  "date" : "2026-08-06T10:46:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -147,8 +147,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.identifier",
       "path" : "AllergyIntolerance.identifier",
-      "short" : "Zuordnung der Allergie in einem internem Dokumentationssystem",
-      "max" : "0"
+      "short" : "Zuordnung der Allergie in einem internem Dokumentationssystem"
     },
     {
       "id" : "AllergyIntolerance.clinicalStatus",

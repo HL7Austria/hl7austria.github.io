@@ -14,7 +14,6 @@
     <sch:rule context="f:Procedure">
       <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:identifier) &lt;= 0">identifier: maximum cardinality of 'identifier' is 0</sch:assert>
       <sch:assert test="count(f:instantiatesCanonical) &lt;= 0">instantiatesCanonical: maximum cardinality of 'instantiatesCanonical' is 0</sch:assert>
       <sch:assert test="count(f:instantiatesUri) &lt;= 0">instantiatesUri: maximum cardinality of 'instantiatesUri' is 0</sch:assert>
       <sch:assert test="count(f:basedOn) &lt;= 0">basedOn: maximum cardinality of 'basedOn' is 0</sch:assert>
