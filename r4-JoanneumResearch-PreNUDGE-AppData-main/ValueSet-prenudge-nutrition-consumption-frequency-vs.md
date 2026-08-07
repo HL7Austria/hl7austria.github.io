@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-nutrition-consumption-frequency-vs | *Version*:0.1.0 | |
-| Active as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetNutritionConsumptionFrequency |
+| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetNutritionConsumptionFrequency |
 
  
 All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025. Includes the 'Weiß nicht' option (code 'unknown'). 
@@ -40,7 +40,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -58,7 +58,7 @@ Links:
   "title" : "AT PreNUDGE Nutrition Consumption Frequency",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-06T10:54:53+00:00",
+  "date" : "2026-08-07T08:52:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

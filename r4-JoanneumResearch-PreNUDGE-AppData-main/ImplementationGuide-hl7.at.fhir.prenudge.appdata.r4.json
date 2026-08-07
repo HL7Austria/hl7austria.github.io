@@ -10,7 +10,7 @@
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-08-06T10:54:53+00:00",
+  "date" : "2026-08-07T08:52:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -758,8 +758,8 @@
       "reference" : {
         "reference" : "CodeSystem/prenudge-isced-2011-education-level"
       },
-      "name" : "AT PreNUDGE ISCED 2011 Education Level Codes",
-      "description" : "Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation",
+      "name" : "AT PreNUDGE ISCED-based Education Category Codes",
+      "description" : "Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE.",
       "exampleBoolean" : false
     },
     {
@@ -770,8 +770,8 @@
       "reference" : {
         "reference" : "ValueSet/prenudge-isced-2011-education-level"
       },
-      "name" : "AT PreNUDGE ISCED 2011 Education Level ValueSet",
-      "description" : "Permitted answer values for the highest completed education level according to ISCED 2011.",
+      "name" : "AT PreNUDGE ISCED-based Education Category ValueSet",
+      "description" : "Permitted ISCED-based answer categories for the highest completed education level.",
       "exampleBoolean" : false
     },
     {
@@ -879,7 +879,7 @@
         "reference" : "StructureDefinition/at-prenudge-education-observation"
       },
       "name" : "AT PreNUDGE Observation Highest Completed Education",
-      "description" : "This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire.",
+      "description" : "This FHIR profile defines the person's highest completed education level using the eight ISCED-based PreNUDGE answer categories. It is intended for sociodemographic data collected by a simple questionnaire.",
       "exampleBoolean" : false
     },
     {
@@ -1440,9 +1440,9 @@
         "valueString" : "Observation"
       }],
       "reference" : {
-        "reference" : "Observation/education-bachelor-example"
+        "reference" : "Observation/education-upper-secondary-example"
       },
-      "name" : "Education O mapped from Q - Bachelor's Level Example",
+      "name" : "Education O mapped from Q - ISCED 3c Example",
       "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
     },
@@ -1452,9 +1452,9 @@
         "valueString" : "Observation"
       }],
       "reference" : {
-        "reference" : "Observation/education-upper-secondary-example"
+        "reference" : "Observation/education-bachelor-example"
       },
-      "name" : "Education O mapped from Q - Upper Secondary Education Example",
+      "name" : "Education O mapped from Q - ISCED 6–8 Higher Education Example",
       "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
     },
@@ -1464,10 +1464,10 @@
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/education-response-bachelor-example"
+        "reference" : "QuestionnaireResponse/education-response-upper-secondary-example"
       },
-      "name" : "Education Q - Bachelor's Level Example",
-      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 6.",
+      "name" : "Education Q - ISCED 3c Example",
+      "description" : "Example of a highest completed education questionnaire response using the ISCED 3c category.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -1476,10 +1476,10 @@
         "valueString" : "QuestionnaireResponse"
       }],
       "reference" : {
-        "reference" : "QuestionnaireResponse/education-response-upper-secondary-example"
+        "reference" : "QuestionnaireResponse/education-response-bachelor-example"
       },
-      "name" : "Education Q - Upper Secondary Education Example",
-      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 3.",
+      "name" : "Education Q - ISCED 6–8 Higher Education Example",
+      "description" : "Example of a highest completed education questionnaire response using the grouped ISCED 6–8 category.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -1575,7 +1575,7 @@
         "reference" : "Questionnaire/EducationQuestionnaire"
       },
       "name" : "Höchster abgeschlossener Bildungsabschluss",
-      "description" : "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels.",
+      "description" : "A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories.",
       "exampleBoolean" : false
     },
     {

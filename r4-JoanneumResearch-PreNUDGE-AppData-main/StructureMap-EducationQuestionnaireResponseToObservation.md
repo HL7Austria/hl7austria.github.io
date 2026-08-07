@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/EducationQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EducationQuestionnaireResponseToObservation |
+| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EducationQuestionnaireResponseToObservation |
 
  
 Highest Completed Education Q to O 
@@ -17,7 +17,7 @@ Highest Completed Education Q to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "EducationQuestionnaireResponseToObservation",
   "title" : "Highest Completed Education Q to O",
   "status" : "active",
-  "date" : "2026-08-06T10:54:53+00:00",
+  "date" : "2026-08-07T08:52:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -245,30 +245,6 @@ Links:
         "condition" : "educationItem.linkId = 'highest-completed-education'"
       }],
       "rule" : [{
-        "name" : "mapIsced0",
-        "source" : [{
-          "context" : "educationItem",
-          "element" : "answer",
-          "variable" : "answer",
-          "condition" : "answer.valueCoding.code = 'isced-0'"
-        }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "valueCodeableConcept",
-          "transform" : "cc",
-          "parameter" : [{
-            "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
-          },
-          {
-            "valueString" : "isced-0"
-          },
-          {
-            "valueString" : "ISCED 0 - Elementarbereich"
-          }]
-        }]
-      },
-      {
         "name" : "mapIsced1",
         "source" : [{
           "context" : "educationItem",
@@ -288,7 +264,7 @@ Links:
             "valueString" : "isced-1"
           },
           {
-            "valueString" : "ISCED 1 - Primarbereich"
+            "valueString" : "ISCED 1: Volksschule"
           }]
         }]
       },
@@ -312,17 +288,17 @@ Links:
             "valueString" : "isced-2"
           },
           {
-            "valueString" : "ISCED 2 - Sekundarbereich I"
+            "valueString" : "ISCED 2: Hauptschule, Mittelschulen, Unterstufen von AHS"
           }]
         }]
       },
       {
-        "name" : "mapIsced3",
+        "name" : "mapIsced3a",
         "source" : [{
           "context" : "educationItem",
           "element" : "answer",
           "variable" : "answer",
-          "condition" : "answer.valueCoding.code = 'isced-3'"
+          "condition" : "answer.valueCoding.code = 'isced-3a'"
         }],
         "target" : [{
           "context" : "tgt",
@@ -333,10 +309,58 @@ Links:
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
           },
           {
-            "valueString" : "isced-3"
+            "valueString" : "isced-3a"
           },
           {
-            "valueString" : "ISCED 3 - Sekundarbereich II"
+            "valueString" : "ISCED 3a: Polytechnische Schule"
+          }]
+        }]
+      },
+      {
+        "name" : "mapIsced3b",
+        "source" : [{
+          "context" : "educationItem",
+          "element" : "answer",
+          "variable" : "answer",
+          "condition" : "answer.valueCoding.code = 'isced-3b'"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "valueCodeableConcept",
+          "transform" : "cc",
+          "parameter" : [{
+            "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+          },
+          {
+            "valueString" : "isced-3b"
+          },
+          {
+            "valueString" : "ISCED 3b: Berufsbildende mittlere Schulen (HASCH, Fachschulen)"
+          }]
+        }]
+      },
+      {
+        "name" : "mapIsced3c",
+        "source" : [{
+          "context" : "educationItem",
+          "element" : "answer",
+          "variable" : "answer",
+          "condition" : "answer.valueCoding.code = 'isced-3c'"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "valueCodeableConcept",
+          "transform" : "cc",
+          "parameter" : [{
+            "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
+          },
+          {
+            "valueString" : "isced-3c"
+          },
+          {
+            "valueString" : "ISCED 3c: Berufsbildende höhere Schulen (HAK, HBLA, HTL) und AHS-Oberstufe"
           }]
         }]
       },
@@ -360,7 +384,7 @@ Links:
             "valueString" : "isced-4"
           },
           {
-            "valueString" : "ISCED 4 - Postsekundärer, nicht-tertiärer Bereich"
+            "valueString" : "ISCED 4: Lehre mit Matura, Gesundheits- und Krankenpflegeschule (nicht-tertiär), Meister- oder Diplomprüfung"
           }]
         }]
       },
@@ -384,17 +408,17 @@ Links:
             "valueString" : "isced-5"
           },
           {
-            "valueString" : "ISCED 5 - Kurzes tertiäres Bildungsprogramm"
+            "valueString" : "ISCED 5: Kolleg, tertiäre Hebammenakademien bzw. medizinisch-technische Ausbildungen im Kurzzyklus"
           }]
         }]
       },
       {
-        "name" : "mapIsced6",
+        "name" : "mapIsced6To8",
         "source" : [{
           "context" : "educationItem",
           "element" : "answer",
           "variable" : "answer",
-          "condition" : "answer.valueCoding.code = 'isced-6'"
+          "condition" : "answer.valueCoding.code = 'isced-6-8'"
         }],
         "target" : [{
           "context" : "tgt",
@@ -405,58 +429,10 @@ Links:
             "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
           },
           {
-            "valueString" : "isced-6"
+            "valueString" : "isced-6-8"
           },
           {
-            "valueString" : "ISCED 6 - Bachelor- bzw. gleichwertiges Bildungsprogramm"
-          }]
-        }]
-      },
-      {
-        "name" : "mapIsced7",
-        "source" : [{
-          "context" : "educationItem",
-          "element" : "answer",
-          "variable" : "answer",
-          "condition" : "answer.valueCoding.code = 'isced-7'"
-        }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "valueCodeableConcept",
-          "transform" : "cc",
-          "parameter" : [{
-            "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
-          },
-          {
-            "valueString" : "isced-7"
-          },
-          {
-            "valueString" : "ISCED 7 - Master- bzw. gleichwertiges Bildungsprogramm"
-          }]
-        }]
-      },
-      {
-        "name" : "mapIsced8",
-        "source" : [{
-          "context" : "educationItem",
-          "element" : "answer",
-          "variable" : "answer",
-          "condition" : "answer.valueCoding.code = 'isced-8'"
-        }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "valueCodeableConcept",
-          "transform" : "cc",
-          "parameter" : [{
-            "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
-          },
-          {
-            "valueString" : "isced-8"
-          },
-          {
-            "valueString" : "ISCED 8 - Doktorat oder gleichwertig"
+            "valueString" : "ISCED 6–8: Hochschulabschlüsse (Bachelor, Master, Doktor)"
           }]
         }]
       },

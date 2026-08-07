@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "PreNUDGEAppdataR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-08-06T10:54:53+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-08-07T08:52:23+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "The PreNUDGE Consortium"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -877,8 +877,8 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level> ;
          fhir:Reference.reference [ fhir:value "CodeSystem/prenudge-isced-2011-education-level" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE ISCED 2011 Education Level Codes" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE ISCED-based Education Category Codes" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 12 ;
@@ -891,8 +891,8 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-isced-2011-education-level> ;
          fhir:Reference.reference [ fhir:value "ValueSet/prenudge-isced-2011-education-level" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE ISCED 2011 Education Level ValueSet" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Permitted answer values for the highest completed education level according to ISCED 2011." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE ISCED-based Education Category ValueSet" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Permitted ISCED-based answer categories for the highest completed education level." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 13 ;
@@ -1018,7 +1018,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-prenudge-education-observation" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE Observation Highest Completed Education" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This FHIR profile defines the person's highest completed education level using the eight ISCED-based PreNUDGE answer categories. It is intended for sociodemographic data collected by a simple questionnaire." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 22 ;
@@ -1699,10 +1699,10 @@
          fhir:Extension.valueString [ fhir:value "Observation" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/education-bachelor-example> ;
-         fhir:Reference.reference [ fhir:value "Observation/education-bachelor-example" ]
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/education-upper-secondary-example> ;
+         fhir:Reference.reference [ fhir:value "Observation/education-upper-secondary-example" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education O mapped from Q - Bachelor's Level Example" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education O mapped from Q - ISCED 3c Example" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a highest completed education observation mapped from the EducationQuestionnaire." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation" ;
@@ -1716,10 +1716,10 @@
          fhir:Extension.valueString [ fhir:value "Observation" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/education-upper-secondary-example> ;
-         fhir:Reference.reference [ fhir:value "Observation/education-upper-secondary-example" ]
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/education-bachelor-example> ;
+         fhir:Reference.reference [ fhir:value "Observation/education-bachelor-example" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education O mapped from Q - Upper Secondary Education Example" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education O mapped from Q - ISCED 6–8 Higher Education Example" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a highest completed education observation mapped from the EducationQuestionnaire." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation" ;
@@ -1733,11 +1733,11 @@
          fhir:Extension.valueString [ fhir:value "QuestionnaireResponse" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/education-response-bachelor-example> ;
-         fhir:Reference.reference [ fhir:value "QuestionnaireResponse/education-response-bachelor-example" ]
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/education-response-upper-secondary-example> ;
+         fhir:Reference.reference [ fhir:value "QuestionnaireResponse/education-response-upper-secondary-example" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education Q - Bachelor's Level Example" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a highest completed education questionnaire response using ISCED 2011 level 6." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education Q - ISCED 3c Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a highest completed education questionnaire response using the ISCED 3c category." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse" ;
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
@@ -1750,11 +1750,11 @@
          fhir:Extension.valueString [ fhir:value "QuestionnaireResponse" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/education-response-upper-secondary-example> ;
-         fhir:Reference.reference [ fhir:value "QuestionnaireResponse/education-response-upper-secondary-example" ]
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/education-response-bachelor-example> ;
+         fhir:Reference.reference [ fhir:value "QuestionnaireResponse/education-response-bachelor-example" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education Q - Upper Secondary Education Example" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a highest completed education questionnaire response using ISCED 2011 level 3." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Education Q - ISCED 6–8 Higher Education Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a highest completed education questionnaire response using the grouped ISCED 6–8 category." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse" ;
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
@@ -1878,7 +1878,7 @@
          fhir:Reference.reference [ fhir:value "Questionnaire/EducationQuestionnaire" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Höchster abgeschlossener Bildungsabschluss" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 80 ;

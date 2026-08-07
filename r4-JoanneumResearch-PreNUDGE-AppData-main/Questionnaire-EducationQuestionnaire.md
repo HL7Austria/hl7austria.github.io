@@ -9,15 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/EducationQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EducationQuestionnaire |
+| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EducationQuestionnaire |
 
  
-A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels. 
+A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories. 
 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -39,7 +39,7 @@ Links:
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-08-06T10:54:53+00:00",
+  "date" : "2026-08-07T08:52:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -56,7 +56,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels.",
+  "description" : "A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories.",
   "item" : [{
     "linkId" : "highest-completed-education",
     "code" : [{
@@ -70,64 +70,57 @@ Links:
     "answerOption" : [{
       "valueCoding" : {
         "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
-        "code" : "isced-0",
-        "display" : "ISCED 0 - Elementarbereich"
-      }
-    },
-    {
-      "valueCoding" : {
-        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
         "code" : "isced-1",
-        "display" : "ISCED 1 - Primarbereich"
+        "display" : "ISCED 1: Volksschule"
       }
     },
     {
       "valueCoding" : {
         "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
         "code" : "isced-2",
-        "display" : "ISCED 2 - Sekundarbereich I"
+        "display" : "ISCED 2: Hauptschule, Mittelschulen, Unterstufen von AHS"
       }
     },
     {
       "valueCoding" : {
         "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
-        "code" : "isced-3",
-        "display" : "ISCED 3 - Sekundarbereich II"
+        "code" : "isced-3a",
+        "display" : "ISCED 3a: Polytechnische Schule"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
+        "code" : "isced-3b",
+        "display" : "ISCED 3b: Berufsbildende mittlere Schulen (HASCH, Fachschulen)"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
+        "code" : "isced-3c",
+        "display" : "ISCED 3c: Berufsbildende höhere Schulen (HAK, HBLA, HTL) und AHS-Oberstufe"
       }
     },
     {
       "valueCoding" : {
         "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
         "code" : "isced-4",
-        "display" : "ISCED 4 - Postsekundarer, nicht tertiärer Bereich"
+        "display" : "ISCED 4: Lehre mit Matura, Gesundheits- und Krankenpflegeschule (nicht-tertiär), Meister- oder Diplomprüfung"
       }
     },
     {
       "valueCoding" : {
         "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
         "code" : "isced-5",
-        "display" : "ISCED 5 - Kurzes tertiäres Bildungsprogramm"
+        "display" : "ISCED 5: Kolleg, tertiäre Hebammenakademien bzw. medizinisch-technische Ausbildungen im Kurzzyklus"
       }
     },
     {
       "valueCoding" : {
         "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
-        "code" : "isced-6",
-        "display" : "ISCED 6 - Bachelor- bzw. gleichwertiges Bildungsprogramm"
-      }
-    },
-    {
-      "valueCoding" : {
-        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
-        "code" : "isced-7",
-        "display" : "ISCED 7 - Master- bzw. gleichwertiges Bildungsprogramm"
-      }
-    },
-    {
-      "valueCoding" : {
-        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
-        "code" : "isced-8",
-        "display" : "ISCED 8 - Promotion bzw. gleichwertiges Bildungsprogramm"
+        "code" : "isced-6-8",
+        "display" : "ISCED 6–8: Hochschulabschlüsse (Bachelor, Master, Doktor)"
       }
     },
     {
@@ -145,11 +138,6 @@ Links:
       }
     }],
     "item" : [{
-      "linkId" : "highest-completed-education-help",
-      "text" : "Orientierungshilfe mit typischen Beispielen: ISCED 0 Kindergarten, Vorschule; ISCED 1 Volksschule; ISCED 2 Mittelschule, AHS-Unterstufe; ISCED 3 Polytechnische Schule, berufsbildende mittlere oder höhere Schule, AHS-Oberstufe; ISCED 4 Lehre mit Matura, Gesundheits- und Krankenpflegeschule, Meister- oder Diplomprüfung; ISCED 5 Kolleg, tertiäre Hebammenakademie bzw. medizinisch-technische Ausbildungen im Kurzzyklus; ISCED 6 Bachelor; ISCED 7 Master oder Diplomstudium; ISCED 8 Doktorat oder PhD.",
-      "type" : "display"
-    },
-    {
       "linkId" : "comment",
       "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",
       "type" : "string"

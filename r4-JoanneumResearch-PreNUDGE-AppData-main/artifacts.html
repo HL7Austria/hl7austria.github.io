@@ -291,7 +291,7 @@ duration of that walking per day (Q3/PE3, coded using ATHIS group 9 answer set).
                   title="Questionnaire/EducationQuestionnaire">Höchster abgeschlossener Bildungsabschluss</a>
             </td>
             <td>
-<p>A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels.</p>
+<p>A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories.</p>
 </td>
          </tr>
          <tr>
@@ -478,7 +478,7 @@ duration of that walking per day (Q3/PE3, coded using ATHIS group 9 answer set).
                   title="StructureDefinition/at-prenudge-education-observation">AT PreNUDGE Observation Highest Completed Education</a>
             </td>
             <td>
-<p>This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire.</p>
+<p>This FHIR profile defines the person's highest completed education level using the eight ISCED-based PreNUDGE answer categories. It is intended for sociodemographic data collected by a simple questionnaire.</p>
 </td>
          </tr>
          <tr>
@@ -681,10 +681,10 @@ the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combina
          <tr>
             <td style="column-width:30%">
                <a href="ValueSet-prenudge-isced-2011-education-level.html"
-                  title="ValueSet/prenudge-isced-2011-education-level">AT PreNUDGE ISCED 2011 Education Level ValueSet</a>
+                  title="ValueSet/prenudge-isced-2011-education-level">AT PreNUDGE ISCED-based Education Category ValueSet</a>
             </td>
             <td>
-<p>Permitted answer values for the highest completed education level according to ISCED 2011.</p>
+<p>Permitted ISCED-based answer categories for the highest completed education level.</p>
 </td>
          </tr>
          <tr>
@@ -788,10 +788,10 @@ the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combina
          <tr>
             <td style="column-width:30%">
                <a href="CodeSystem-prenudge-isced-2011-education-level.html"
-                  title="CodeSystem/prenudge-isced-2011-education-level">AT PreNUDGE ISCED 2011 Education Level Codes</a>
+                  title="CodeSystem/prenudge-isced-2011-education-level">AT PreNUDGE ISCED-based Education Category Codes</a>
             </td>
             <td>
-<p>Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation</p>
+<p>Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE.</p>
 </td>
          </tr>
          <tr>
@@ -1245,17 +1245,8 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Observation-education-bachelor-example.html"
-                  title="Observation/education-bachelor-example">Education O mapped from Q - Bachelor's Level Example</a>
-            </td>
-            <td>
-<p>Example of a highest completed education observation mapped from the EducationQuestionnaire.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="Observation-education-upper-secondary-example.html"
-                  title="Observation/education-upper-secondary-example">Education O mapped from Q - Upper Secondary Education Example</a>
+                  title="Observation/education-upper-secondary-example">Education O mapped from Q - ISCED 3c Example</a>
             </td>
             <td>
 <p>Example of a highest completed education observation mapped from the EducationQuestionnaire.</p>
@@ -1263,20 +1254,29 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="QuestionnaireResponse-education-response-bachelor-example.html"
-                  title="QuestionnaireResponse/education-response-bachelor-example">Education Q - Bachelor's Level Example</a>
+               <a href="Observation-education-bachelor-example.html"
+                  title="Observation/education-bachelor-example">Education O mapped from Q - ISCED 6–8 Higher Education Example</a>
             </td>
             <td>
-<p>Example of a highest completed education questionnaire response using ISCED 2011 level 6.</p>
+<p>Example of a highest completed education observation mapped from the EducationQuestionnaire.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="QuestionnaireResponse-education-response-upper-secondary-example.html"
-                  title="QuestionnaireResponse/education-response-upper-secondary-example">Education Q - Upper Secondary Education Example</a>
+                  title="QuestionnaireResponse/education-response-upper-secondary-example">Education Q - ISCED 3c Example</a>
             </td>
             <td>
-<p>Example of a highest completed education questionnaire response using ISCED 2011 level 3.</p>
+<p>Example of a highest completed education questionnaire response using the ISCED 3c category.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-education-response-bachelor-example.html"
+                  title="QuestionnaireResponse/education-response-bachelor-example">Education Q - ISCED 6–8 Higher Education Example</a>
+            </td>
+            <td>
+<p>Example of a highest completed education questionnaire response using the grouped ISCED 6–8 category.</p>
 </td>
          </tr>
          <tr>
@@ -1855,7 +1855,7 @@ classificationMethod is absent; pa-manual-comp-01 is satisfied by absence.</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Aug 6, 2026 10:54+0000">2026-08-06</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Aug 7, 2026 08:52+0000">2026-08-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

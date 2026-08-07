@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation | *Version*:0.1.0 | |
-| Draft as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
+| Draft as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
 
  
 This FHIR profile is derived from the APS Observation Alcohol Use profile. Additional fields from the PreNUDGE Observation profile are added. 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-alcoholu
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -52,7 +52,7 @@ Links:
   "name" : "AtPrenudgeObservationAlcoholUse",
   "title" : "AT PreNUDGE Observation Alcohol Use",
   "status" : "draft",
-  "date" : "2026-08-06T10:54:53+00:00",
+  "date" : "2026-08-07T08:52:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-08-06T10:54:53+00:00"/>
+  <date value="2026-08-07T08:52:23+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -590,8 +590,8 @@
       <reference>
         <reference value="CodeSystem/prenudge-isced-2011-education-level"/>
       </reference>
-      <name value="AT PreNUDGE ISCED 2011 Education Level Codes"/>
-      <description value="Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation"/>
+      <name value="AT PreNUDGE ISCED-based Education Category Codes"/>
+      <description value="Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -601,8 +601,8 @@
       <reference>
         <reference value="ValueSet/prenudge-isced-2011-education-level"/>
       </reference>
-      <name value="AT PreNUDGE ISCED 2011 Education Level ValueSet"/>
-      <description value="Permitted answer values for the highest completed education level according to ISCED 2011."/>
+      <name value="AT PreNUDGE ISCED-based Education Category ValueSet"/>
+      <description value="Permitted ISCED-based answer categories for the highest completed education level."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -701,7 +701,7 @@
         <reference value="StructureDefinition/at-prenudge-education-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Highest Completed Education"/>
-      <description value="This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire."/>
+      <description value="This FHIR profile defines the person's highest completed education level using the eight ISCED-based PreNUDGE answer categories. It is intended for sociodemographic data collected by a simple questionnaire."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1215,9 +1215,9 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/education-bachelor-example"/>
+        <reference value="Observation/education-upper-secondary-example"/>
       </reference>
-      <name value="Education O mapped from Q - Bachelor's Level Example"/>
+      <name value="Education O mapped from Q - ISCED 3c Example"/>
       <description value="Example of a highest completed education observation mapped from the EducationQuestionnaire."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"/>
     </resource>
@@ -1226,9 +1226,9 @@
         <valueString value="Observation"/>
       </extension>
       <reference>
-        <reference value="Observation/education-upper-secondary-example"/>
+        <reference value="Observation/education-bachelor-example"/>
       </reference>
-      <name value="Education O mapped from Q - Upper Secondary Education Example"/>
+      <name value="Education O mapped from Q - ISCED 6–8 Higher Education Example"/>
       <description value="Example of a highest completed education observation mapped from the EducationQuestionnaire."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"/>
     </resource>
@@ -1237,10 +1237,10 @@
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/education-response-bachelor-example"/>
+        <reference value="QuestionnaireResponse/education-response-upper-secondary-example"/>
       </reference>
-      <name value="Education Q - Bachelor's Level Example"/>
-      <description value="Example of a highest completed education questionnaire response using ISCED 2011 level 6."/>
+      <name value="Education Q - ISCED 3c Example"/>
+      <description value="Example of a highest completed education questionnaire response using the ISCED 3c category."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
@@ -1248,10 +1248,10 @@
         <valueString value="QuestionnaireResponse"/>
       </extension>
       <reference>
-        <reference value="QuestionnaireResponse/education-response-upper-secondary-example"/>
+        <reference value="QuestionnaireResponse/education-response-bachelor-example"/>
       </reference>
-      <name value="Education Q - Upper Secondary Education Example"/>
-      <description value="Example of a highest completed education questionnaire response using ISCED 2011 level 3."/>
+      <name value="Education Q - ISCED 6–8 Higher Education Example"/>
+      <description value="Example of a highest completed education questionnaire response using the grouped ISCED 6–8 category."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"/>
     </resource>
     <resource>
@@ -1339,7 +1339,7 @@
         <reference value="Questionnaire/EducationQuestionnaire"/>
       </reference>
       <name value="Höchster abgeschlossener Bildungsabschluss"/>
-      <description value="A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels."/>
+      <description value="A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

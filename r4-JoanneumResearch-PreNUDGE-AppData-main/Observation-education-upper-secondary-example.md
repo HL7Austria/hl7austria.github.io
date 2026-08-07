@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Education O mapped from Q - Upper Secondary Education Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Education O mapped from Q - ISCED 3c Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Education O mapped from Q - Upper Secondary Education Example**
+* **Education O mapped from Q - ISCED 3c Example**
 
-## Example Observation: Education O mapped from Q - Upper Secondary Education Example
+## Example Observation: Education O mapped from Q - ISCED 3c Example
 
 Profile: [AT PreNUDGE Observation Highest Completed Education](StructureDefinition-at-prenudge-education-observation.md)
 
@@ -20,7 +20,7 @@ Profile: [AT PreNUDGE Observation Highest Completed Education](StructureDefiniti
 
 **issued**: 2026-03-21 10:30:00+0000
 
-**value**: ISCED 3 - Sekundarbereich II
+**value**: ISCED 3c: Berufsbildende höhere Schulen (HAK, HBLA, HTL) und AHS-Oberstufe
 
 **method**: Manual
 
@@ -29,7 +29,7 @@ Profile: [AT PreNUDGE Observation Highest Completed Education](StructureDefiniti
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -64,8 +64,8 @@ Links:
   "valueCodeableConcept" : {
     "coding" : [{
       "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
-      "code" : "isced-3",
-      "display" : "ISCED 3 - Sekundarbereich II"
+      "code" : "isced-3c",
+      "display" : "ISCED 3c: Berufsbildende höhere Schulen (HAK, HBLA, HTL) und AHS-Oberstufe"
     }]
   },
   "method" : {

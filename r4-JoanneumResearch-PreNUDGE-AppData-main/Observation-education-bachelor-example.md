@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Education O mapped from Q - Bachelor's Level Example - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Education O mapped from Q - ISCED 6–8 Higher Education Example - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Education O mapped from Q - Bachelor's Level Example**
+* **Education O mapped from Q - ISCED 6–8 Higher Education Example**
 
-## Example Observation: Education O mapped from Q - Bachelor's Level Example
+## Example Observation: Education O mapped from Q - ISCED 6–8 Higher Education Example
 
 Profile: [AT PreNUDGE Observation Highest Completed Education](StructureDefinition-at-prenudge-education-observation.md)
 
@@ -20,7 +20,7 @@ Profile: [AT PreNUDGE Observation Highest Completed Education](StructureDefiniti
 
 **issued**: 2026-03-20 09:00:00+0000
 
-**value**: ISCED 6 - Bachelor- bzw. gleichwertiges Bildungsprogramm
+**value**: ISCED 6–8: Hochschulabschlüsse (Bachelor, Master, Doktor)
 
 **note**: 
 
@@ -36,7 +36,7 @@ Bachelorabschluss an einer Fachhochschule.
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -71,8 +71,8 @@ Links:
   "valueCodeableConcept" : {
     "coding" : [{
       "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level",
-      "code" : "isced-6",
-      "display" : "ISCED 6 - Bachelor- bzw. gleichwertiges Bildungsprogramm"
+      "code" : "isced-6-8",
+      "display" : "ISCED 6–8: Hochschulabschlüsse (Bachelor, Master, Doktor)"
     }]
   },
   "note" : [{

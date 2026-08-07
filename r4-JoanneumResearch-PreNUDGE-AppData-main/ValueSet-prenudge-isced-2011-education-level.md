@@ -1,18 +1,18 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\AT PreNUDGE ISCED 2011 Education Level ValueSet - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\AT PreNUDGE ISCED-based Education Category ValueSet - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AT PreNUDGE ISCED 2011 Education Level ValueSet**
+* **AT PreNUDGE ISCED-based Education Category ValueSet**
 
-## ValueSet: AT PreNUDGE ISCED 2011 Education Level ValueSet 
+## ValueSet: AT PreNUDGE ISCED-based Education Category ValueSet 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-isced-2011-education-level | *Version*:0.1.0 | |
-| Active as of 2026-08-06 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetIsced2011EducationLevel |
+| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetIsced2011EducationLevel |
 
  
-Permitted answer values for the highest completed education level according to ISCED 2011. 
+Permitted ISCED-based answer categories for the highest completed education level. 
 
  **References** 
 
@@ -40,7 +40,7 @@ Permitted answer values for the highest completed education level according to I
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -55,10 +55,10 @@ Links:
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-isced-2011-education-level",
   "version" : "0.1.0",
   "name" : "AtPrenudgeValueSetIsced2011EducationLevel",
-  "title" : "AT PreNUDGE ISCED 2011 Education Level ValueSet",
+  "title" : "AT PreNUDGE ISCED-based Education Category ValueSet",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-06T10:54:53+00:00",
+  "date" : "2026-08-07T08:52:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -75,7 +75,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "Permitted answer values for the highest completed education level according to ISCED 2011.",
+  "description" : "Permitted ISCED-based answer categories for the highest completed education level.",
   "compose" : {
     "include" : [{
       "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"

@@ -45,11 +45,11 @@ We focus on narrow standardization of the following **PreNUDGE measurements**:
 * PSS-10 (10-item) - from a [**questionnaire**](Questionnaire-Pss10Questionnaire.md) with calculated score as an [**observation**](StructureDefinition-at-prenudge-pss10-score-observation.md)
  
  
-* For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))
 * **Nutrition**: 
 * Portions of fruit and vegetables (per day) from a [**questionnaire**](Questionnaire-NutritionFruitVegetableQuestionnaire.md) and as a [**fruit portions observation**](StructureDefinition-at-prenudge-nutrition-fruitportions-observation.md) and a [**vegetable portions observation**](StructureDefinition-at-prenudge-nutrition-vegetableportions-observation.md)
 * Consumption frequency of sugary and salty foods (per week) from a [**questionnaire**](Questionnaire-NutritionSugarSaltyQuestionnaire.md) and as an [**observation**](StructureDefinition-at-prenudge-nutrition-sugarsalty-observation.md)
  
+* **For Demo Purposes: **Blood glucose** in mg/dL (from a [**questionnaire**](Questionnaire-BloodGlucoseQuestionnaire.md) and from a [**device as an observation**](StructureDefinition-at-prenudge-bloodglucose-observation.md))**
 
 For viewing the full questionnaires use tools like [lhcforms](https://lhcfhirtools.nlm.nih.gov/lhcforms).
 
@@ -75,7 +75,7 @@ If neither `value[x]` nor `dataAbsentReason` is present, the Observation is inco
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-06
+2026-08-07
 
 Links:
 [Table of Contents](toc.md)|
@@ -92,7 +92,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-08-06T10:54:53+00:00",
+  "date" : "2026-08-07T08:52:23+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -888,8 +888,8 @@ Links:
       "reference" : {
         "reference" : "CodeSystem/prenudge-isced-2011-education-level"
       },
-      "name" : "AT PreNUDGE ISCED 2011 Education Level Codes",
-      "description" : "Local representation of ISCED 2011 education levels for the highest completed education level used in PreNUDGE. Austrian levels are described at https://bildungssystem.oead.at/isced-klassifikation",
+      "name" : "AT PreNUDGE ISCED-based Education Category Codes",
+      "description" : "Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE.",
       "exampleBoolean" : false
     },
     {
@@ -904,8 +904,8 @@ Links:
       "reference" : {
         "reference" : "ValueSet/prenudge-isced-2011-education-level"
       },
-      "name" : "AT PreNUDGE ISCED 2011 Education Level ValueSet",
-      "description" : "Permitted answer values for the highest completed education level according to ISCED 2011.",
+      "name" : "AT PreNUDGE ISCED-based Education Category ValueSet",
+      "description" : "Permitted ISCED-based answer categories for the highest completed education level.",
       "exampleBoolean" : false
     },
     {
@@ -1049,7 +1049,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-education-observation"
       },
       "name" : "AT PreNUDGE Observation Highest Completed Education",
-      "description" : "This FHIR profile defines the person's highest completed education level using ISCED 2011. It is intended for sociodemographic data collected by a simple questionnaire.",
+      "description" : "This FHIR profile defines the person's highest completed education level using the eight ISCED-based PreNUDGE answer categories. It is intended for sociodemographic data collected by a simple questionnaire.",
       "exampleBoolean" : false
     },
     {
@@ -1795,12 +1795,12 @@ Links:
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-education-bachelor-example.html"
+        "valueUri" : "Observation-education-upper-secondary-example.html"
       }],
       "reference" : {
-        "reference" : "Observation/education-bachelor-example"
+        "reference" : "Observation/education-upper-secondary-example"
       },
-      "name" : "Education O mapped from Q - Bachelor's Level Example",
+      "name" : "Education O mapped from Q - ISCED 3c Example",
       "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
     },
@@ -1811,30 +1811,14 @@ Links:
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Observation-education-upper-secondary-example.html"
+        "valueUri" : "Observation-education-bachelor-example.html"
       }],
       "reference" : {
-        "reference" : "Observation/education-upper-secondary-example"
+        "reference" : "Observation/education-bachelor-example"
       },
-      "name" : "Education O mapped from Q - Upper Secondary Education Example",
+      "name" : "Education O mapped from Q - ISCED 6–8 Higher Education Example",
       "description" : "Example of a highest completed education observation mapped from the EducationQuestionnaire.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-education-observation"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "QuestionnaireResponse"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "QuestionnaireResponse-education-response-bachelor-example.html"
-      }],
-      "reference" : {
-        "reference" : "QuestionnaireResponse/education-response-bachelor-example"
-      },
-      "name" : "Education Q - Bachelor's Level Example",
-      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 6.",
-      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -1848,8 +1832,24 @@ Links:
       "reference" : {
         "reference" : "QuestionnaireResponse/education-response-upper-secondary-example"
       },
-      "name" : "Education Q - Upper Secondary Education Example",
-      "description" : "Example of a highest completed education questionnaire response using ISCED 2011 level 3.",
+      "name" : "Education Q - ISCED 3c Example",
+      "description" : "Example of a highest completed education questionnaire response using the ISCED 3c category.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-education-response-bachelor-example.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/education-response-bachelor-example"
+      },
+      "name" : "Education Q - ISCED 6–8 Higher Education Example",
+      "description" : "Example of a highest completed education questionnaire response using the grouped ISCED 6–8 category.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -1977,7 +1977,7 @@ Links:
         "reference" : "Questionnaire/EducationQuestionnaire"
       },
       "name" : "Höchster abgeschlossener Bildungsabschluss",
-      "description" : "A simple questionnaire asking for the person's highest completed education level using ISCED 2011 levels.",
+      "description" : "A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories.",
       "exampleBoolean" : false
     },
     {
