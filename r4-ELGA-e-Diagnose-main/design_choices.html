@@ -1,13 +1,9 @@
-<!-- get modelType -->
-
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.ELGA.EDIAG.R4\AT ELGA e-Diagnose Reference - Testing - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.EDIAG.R4\Design Choices - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -43,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"14.9"}
-    h3,h4,h5,h6{--heading-prefix:"14.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -166,7 +162,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>AT ELGA e-Diagnose Reference</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Design Choices</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -178,8 +174,20 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 (Draft) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!-- at-fhir-ig-template begin -->
+  <div class="alert alert-warning" role="alert">
+    <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 (Draft) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  </div>
+  <!-- at-fhir-ig-template end -->
+  <h2>Design Choices</h2>
   
 
 
@@ -190,101 +198,97 @@
 
 
 
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<style>
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
 
 
-<ul class="nav nav-tabs">
+</style>
 
-  <li>
-    <a href="StructureDefinition-at-elga-ediag-reference.html">Content</a>
-  </li>
-
-
-
-  <li>
-    <a href="StructureDefinition-at-elga-ediag-reference-definitions.html">Detailed Descriptions</a>
-  </li>
-
-
-
-  
-    <li>
-      <a href="StructureDefinition-at-elga-ediag-reference-mappings.html">Mappings</a>
-    </li>
-  
-
-
-
-
-
-
-
-  
-    <li>
-      <a href="StructureDefinition-at-elga-ediag-reference.profile.xml.html">XML</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="StructureDefinition-at-elga-ediag-reference.profile.json.html">JSON</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="StructureDefinition-at-elga-ediag-reference.profile.ttl.html">TTL</a>
-    </li>
-  
-
-
-</ul>
-
-
-  <a name="root"> </a>
-  <h2 id="root">Data Type Profile: AtEdiagReference - Testing</h2>
-
-  <table class="colsi">
-    <tr>
-
-      <td colspan="2">
-        
-          Active
-          
-            as of 2026-08-07
-          
-        
-      </td>
-
-    </tr>
-  </table>
-
-
-
-
-<!-- insert intro if present -->
-
-
-
-
-<h3>Test Plans</h3>
-
-  <p><b>No test plans are currently available for the  Profile.</b></p>
-
-
-<h3>Test Scripts</h3>
-
-  <p><b>No test scripts are currently available for the  Profile.</b></p>
-
-
-<!-- insert notes if present -->
-
+<p>In Arbeit.</p>
 
 
 
 </div>
-
 </div>  <!-- /inner-wrapper -->
 </div>  <!-- /row -->
 </div>  <!-- /container -->
@@ -292,8 +296,6 @@
 
 <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
-
-  <script type="text/javascript" src="assets/js/tabs.js"> </script>
 
 <script type="text/javascript" src="assets/js/window-hash.js"> </script>
 <a name="bottom"> </a>

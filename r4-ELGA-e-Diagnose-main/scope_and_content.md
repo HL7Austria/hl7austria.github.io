@@ -1,9 +1,9 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Umfang und Inhalt - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Scope and Content - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* **Umfang und Inhalt**
+* **Scope and Content**
 
-## Umfang und Inhalt
+## Scope and Content
 
 In Arbeit.
 

@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-08-06T10:46:09+00:00",
+  "date" : "2026-08-07T07:27:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1200,7 +1200,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "scope_and_content.html"
         }],
         "nameUrl" : "scope_and_content.html",
-        "title" : "Umfang und Inhalt",
+        "title" : "Scope and Content",
         "generation" : "markdown"
       },
       {
@@ -1209,7 +1209,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "background.html"
         }],
         "nameUrl" : "background.html",
-        "title" : "Hintergrund",
+        "title" : "Background",
         "generation" : "markdown"
       },
       {
@@ -1218,7 +1218,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "challenges.html"
         }],
         "nameUrl" : "challenges.html",
-        "title" : "Herausforderungen",
+        "title" : "Challenges",
         "generation" : "markdown"
       },
       {
@@ -1227,7 +1227,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "transaction.html"
         }],
         "nameUrl" : "transaction.html",
-        "title" : "Transaktionen",
+        "title" : "Transactions",
         "generation" : "markdown"
       },
       {
@@ -1236,7 +1236,16 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "actors.html"
         }],
         "nameUrl" : "actors.html",
-        "title" : "Akteure",
+        "title" : "System Actors",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "design_choices.html"
+        }],
+        "nameUrl" : "design_choices.html",
+        "title" : "Design Choices",
         "generation" : "markdown"
       },
       {

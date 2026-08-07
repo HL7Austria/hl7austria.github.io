@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-diagnose-type | *Version*:0.1.0 | |
-| Active as of 2026-08-06 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagDiagnosisType |
+| Active as of 2026-08-07 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagDiagnosisType |
 
  
 Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant ist 
@@ -32,7 +32,7 @@ Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant
   "title" : "AT e-Diagnose Diagnose Typ",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-08-06T10:46:09+00:00",
+  "date" : "2026-08-07T07:27:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
