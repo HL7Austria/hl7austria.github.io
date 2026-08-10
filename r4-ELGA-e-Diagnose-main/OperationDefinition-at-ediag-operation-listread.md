@@ -28,7 +28,7 @@ Die $list-read Operation wird aufgerufen, wenn eine Liste mit der Intention zu s
   "title" : "e-Diagnose Operation für List-Read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-08-10T09:07:49+00:00",
+  "date" : "2026-08-10T10:07:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -12,6 +12,7 @@
 ### Eintrag löschen
 
 > Sub:UC_03_02 
+ ToDo: Ist ein _history von Einzelressourcen nach einem Löschen von Ressourcen erlaubt?
 
 Ein:e ELGA-Teilnehmer:in kann via ELGA-Portal einzelne oder alle Einträge unwiderruflich löschen. Dabei ist es irrelevant, ob ein zu löschender Eintrag Teil der Summary-Liste ist oder nicht. Die Inhalte des zu löschenden Eintrags werden durch die Fachanwendung entfernt und der Eintrag als "gelöscht" markiert. Sollte der Eintrag in der aktuellen Summary-Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Summary-Liste ohne den gelöschten Eintrag.
 
