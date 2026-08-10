@@ -11,7 +11,7 @@ Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf die
 
 ### Use Case Diagramm
 
-ToDo: Diagram erneuern
+![](ediag_uc_diagramm.drawio.png)
 
 ### Rollen und Berechtigungen
 
