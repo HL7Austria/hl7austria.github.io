@@ -32,7 +32,7 @@ Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.m
   "resourceType" : "Location",
   "id" : "HL7ATCoreLocationGraz",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"]
   },
   "identifier" : [{
     "system" : "urn:oid:1.2.40.0.34.4.10",

@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePatient |
 
  
@@ -45,12 +45,12 @@ Usage of the European Health Insurance Card (EHIC):
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-patient",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient",
   "version" : "2.1.0",
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -183,7 +183,7 @@ Usage of the European Health Insurance Card (EHIC):
       "path" : "Patient.extension.value[x]",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     },
     {
@@ -452,7 +452,7 @@ Usage of the European Health Insurance Card (EHIC):
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
       }]
     },
     {
@@ -531,7 +531,7 @@ Usage of the European Health Insurance Card (EHIC):
       "path" : "Patient.address",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     },
     {
@@ -731,7 +731,7 @@ Usage of the European Health Insurance Card (EHIC):
       "path" : "Patient.contact.address",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     },
     {
@@ -818,7 +818,7 @@ Usage of the European Health Insurance Card (EHIC):
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
       }]
     },
     {

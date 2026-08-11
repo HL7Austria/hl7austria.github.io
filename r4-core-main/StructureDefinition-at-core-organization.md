@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreOrganization |
 
  
@@ -44,12 +44,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-organization
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-organization",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization",
   "version" : "2.1.0",
   "name" : "HL7ATCoreOrganization",
   "title" : "HL7® AT Core Organization Profile",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -220,7 +220,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-organization
       "path" : "Organization.address",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     },
     {
@@ -228,7 +228,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-organization
       "path" : "Organization.contact.address",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     }]
   }

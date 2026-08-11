@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressAdditionalInformation |
 
 HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address.
@@ -42,12 +42,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-ext-address-additionalInformation",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation",
   "version" : "2.1.0",
   "name" : "AddressAdditionalInformation",
   "title" : "Address Additional Information",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -78,7 +78,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address#Address.line"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address#Address.line"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -98,7 +98,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation"
+      "fixedUri" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation"
     },
     {
       "id" : "Extension.value[x]",

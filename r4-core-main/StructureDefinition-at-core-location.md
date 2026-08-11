@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreLocation |
 
  
@@ -37,12 +37,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-location.csv
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-location",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location",
   "version" : "2.1.0",
   "name" : "HL7ATCoreLocation",
   "title" : "HL7® AT Core Location Profile",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -103,7 +103,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-location.csv
         "severity" : "error",
         "human" : "KA-Nr (KANR) must follow the 6-character pattern: 'K' + 3 digits + '.' + 1 digit (e.g., K460.1).",
         "expression" : "value.matches('^K[0-9]{3}[.][0-9]$')",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"
+        "source" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"
       }]
     },
     {
@@ -129,7 +129,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-location.csv
       "path" : "Location.address",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     },
     {
@@ -137,7 +137,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-location.csv
       "path" : "Location.managingOrganization",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"]
       }]
     },
     {
@@ -149,7 +149,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-location.csv
           "valueBoolean" : true
         }],
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"]
       }]
     }]
   }

@@ -53,12 +53,12 @@ This Implementation Guide contains and references intellectual property owned by
 {
   "resourceType" : "ImplementationGuide",
   "id" : "hl7.at.fhir.core.r4",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4",
+  "url" : "https://fhir.hl7.at/core/r4/ImplementationGuide/hl7.at.fhir.core.r4",
   "version" : "2.1.0",
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -216,7 +216,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       {
         "url" : "value",
-        "valueString" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html"
+        "valueString" : "https://fhir.hl7.at/core/r4/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -506,7 +506,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       {
         "url" : "value",
-        "valueString" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html"
+        "valueString" : "https://fhir.hl7.at/core/r4/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -737,7 +737,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCoreLocationGraz",
       "description" : "The Graz location of the Amadeus Spital with 6-character KA-Nr and geolocation",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"
     },
     {
       "extension" : [{
@@ -753,7 +753,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCoreLocationLinz",
       "description" : "The Linz location of the Amadeus Spital with 6-character KA-Nr and geolocation",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"
     },
     {
       "extension" : [{
@@ -769,7 +769,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCoreOrganizationExample01",
       "description" : "Example for the usage of the HL7 AT Core Organization Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"
     },
     {
       "extension" : [{
@@ -785,7 +785,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCoreOrganizationExample02-MultipleVPNR",
       "description" : "Example for the usage of the HL7 AT Core Organization Profile with multiple VPNR identifiers",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"
     },
     {
       "extension" : [{
@@ -801,7 +801,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePatientExample01",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -817,7 +817,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePatientExample02-deceasedTime",
       "description" : "Example with deceasedTime for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -833,7 +833,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePatientExample03-deceasedBoolean",
       "description" : "Example with deceasedBoolean for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -849,7 +849,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePatientExample04-Full",
       "description" : "Example with all elements for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -865,7 +865,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePatientExample05-FullElga",
       "description" : "Example with all ELGA header elements in the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -881,7 +881,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePatientExample06-GenderExtension",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -897,7 +897,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePatientExample07-MunicipalityCode",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile that includes a municipality code",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -913,7 +913,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePractitionerExample01",
       "description" : "Example for the usage of the HL7 AT Core Practitioner Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"
     },
     {
       "extension" : [{
@@ -929,7 +929,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       "name" : "HL7ATCorePractitionerRoleExample01",
       "description" : "Example for the usage of the HL7 AT Core PractitionerRole Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"
     },
     {
       "extension" : [{

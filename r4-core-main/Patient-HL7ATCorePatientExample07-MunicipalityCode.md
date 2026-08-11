@@ -34,7 +34,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
   "resourceType" : "Patient",
   "id" : "HL7ATCorePatientExample07-MunicipalityCode",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/patient-religion",
@@ -120,7 +120,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
   "birthDate" : "1900-01-01",
   "address" : [{
     "extension" : [{
-      "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode",
+      "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode",
       "valueString" : "40101"
     }],
     "use" : "home",
@@ -140,7 +140,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
         "valueString" : "Stock 9 Tür 42"
       },
       {
-        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+        "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation",
         "valueString" : "Lift vorhanden"
       }]
     }],

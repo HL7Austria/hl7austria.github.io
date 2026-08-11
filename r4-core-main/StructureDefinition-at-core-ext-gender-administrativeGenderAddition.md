@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AdministrativeGenderAddition |
 
 HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, …). The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'.
@@ -44,12 +44,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-gender-a
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-ext-gender-administrativeGenderAddition",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition",
   "version" : "2.1.0",
   "name" : "AdministrativeGenderAddition",
   "title" : "Administrative Gender Addition",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -96,15 +96,15 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-gender-a
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient#Patient.gender"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient#Patient.gender"
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient#Patient.contact.gender"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient#Patient.contact.gender"
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner#Practitioner.gender"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner#Practitioner.gender"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -124,7 +124,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-gender-a
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"
+      "fixedUri" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"
     },
     {
       "id" : "Extension.value[x]",
@@ -138,7 +138,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-gender-a
         "severity" : "error",
         "human" : "The extension for the additional administrative gender codes is only applied if the administrative gender itself is set to 'other'",
         "expression" : "%resource.where(gender='other').exists() or %resource.contact.where(gender='other').exists()",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"
+        "source" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"
       }],
       "binding" : {
         "strength" : "required",

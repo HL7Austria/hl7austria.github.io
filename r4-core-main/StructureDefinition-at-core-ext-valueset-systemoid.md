@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-valueset-systemoid | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:SystemOID |
 
 HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from. The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines.
@@ -41,12 +41,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-valueset
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-ext-valueset-systemoid",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-valueset-systemoid",
   "version" : "2.1.0",
   "name" : "SystemOID",
   "title" : "System OID",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -81,11 +81,11 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-valueset
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-valueset#ValueSet.compose.include"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-valueset#ValueSet.compose.include"
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-valueset#ValueSet.expansion.contains"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-valueset#ValueSet.expansion.contains"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -105,7 +105,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-valueset
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid"
+      "fixedUri" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-valueset-systemoid"
     },
     {
       "id" : "Extension.value[x]",

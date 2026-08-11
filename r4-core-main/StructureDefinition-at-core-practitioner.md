@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitioner |
 
  
@@ -43,12 +43,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-practitioner",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner",
   "version" : "2.1.0",
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -194,7 +194,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "path" : "Practitioner.address",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     },
     {
@@ -217,7 +217,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
       }]
     }]
   }

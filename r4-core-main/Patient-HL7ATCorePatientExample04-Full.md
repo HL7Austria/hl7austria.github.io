@@ -49,7 +49,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815Â (use:Â
   "resourceType" : "Patient",
   "id" : "HL7ATCorePatientExample04-Full",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/patient-religion",
@@ -173,7 +173,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815Â (use:Â
         "valueString" : "Stock 3 TÃ¼r 5"
       },
       {
-        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+        "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation",
         "valueString" : "Lift vorhanden"
       }]
     }],

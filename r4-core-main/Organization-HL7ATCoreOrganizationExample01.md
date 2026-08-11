@@ -27,7 +27,7 @@ Profile: [HL7® AT Core Organization Profile](StructureDefinition-at-core-organi
   "resourceType" : "Organization",
   "id" : "HL7ATCoreOrganizationExample01",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"]
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",
@@ -76,7 +76,7 @@ Profile: [HL7® AT Core Organization Profile](StructureDefinition-at-core-organi
         "valueString" : "Haupteingang"
       },
       {
-        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+        "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation",
         "valueString" : "Barrierefreier Zugang"
       }]
     }],

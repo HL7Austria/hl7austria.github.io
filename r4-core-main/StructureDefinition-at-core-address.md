@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address | *Version*:2.1.0 | |
 | Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreAddress |
 
  
@@ -36,12 +36,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-address.csv)
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-address",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address",
   "version" : "2.1.0",
   "name" : "HL7ATCoreAddress",
   "title" : "HL7® AT Core Address Profile",
   "status" : "active",
-  "date" : "2026-08-11T10:57:38+00:00",
+  "date" : "2026-08-11T12:53:53+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -93,21 +93,21 @@ Other representations of profile: [CSV](StructureDefinition-at-core-address.csv)
         "severity" : "error",
         "human" : "If the extension for street name is used then the value for line must not be empty",
         "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"
+        "source" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"
       },
       {
         "key" : "at-addr-2",
         "severity" : "error",
         "human" : "If the extension for street number is used then the value for line must not be empty",
         "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"
+        "source" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"
       },
       {
         "key" : "at-addr-3",
         "severity" : "error",
         "human" : "If the extension for floor/door number is used then the value for line must not be empty",
         "expression" : "line.all($this.extension('http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator').empty() or $this.hasValue())",
-        "source" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"
+        "source" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"
       }]
     },
     {
@@ -118,7 +118,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-address.csv)
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode"]
       }]
     },
     {
@@ -187,7 +187,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-address.csv)
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation"]
       }]
     },
     {
