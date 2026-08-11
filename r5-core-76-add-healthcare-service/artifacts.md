@@ -48,7 +48,7 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
-| [ValueSet for Austrian Funktionscodes Excerpt](ValueSet-at-funktionscode-vs.md) | CodeSystem for Austrian Funktionscodes Excerpt |
+| [ValueSet for Austrian Funktionscodes Excerpt](ValueSet-at-funktionscode-vs.md) | ValueSet for Austrian Funktionscodes Excerpt |
 
 ### Terminology: Code Systems 
 

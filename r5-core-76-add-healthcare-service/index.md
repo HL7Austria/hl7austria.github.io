@@ -58,7 +58,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-08-11T21:17:19+00:00",
+  "date" : "2026-08-11T21:36:48+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -594,7 +594,7 @@ This Implementation Guide contains and references intellectual property owned by
         "reference" : "ValueSet/at-funktionscode-vs"
       },
       "name" : "ValueSet for Austrian Funktionscodes Excerpt",
-      "description" : "CodeSystem for Austrian Funktionscodes Excerpt",
+      "description" : "ValueSet for Austrian Funktionscodes Excerpt",
       "isExample" : false
     }],
     "page" : {

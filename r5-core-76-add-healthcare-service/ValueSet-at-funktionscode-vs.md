@@ -12,7 +12,7 @@
 | Draft as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATFunktionscodeVS |
 
  
-CodeSystem for Austrian Funktionscodes Excerpt 
+ValueSet for Austrian Funktionscodes Excerpt 
 
  **References** 
 
@@ -51,7 +51,7 @@ CodeSystem for Austrian Funktionscodes Excerpt
   "title" : "ValueSet for Austrian Funktionscodes Excerpt",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-08-11T21:17:19+00:00",
+  "date" : "2026-08-11T21:36:48+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -67,7 +67,7 @@ CodeSystem for Austrian Funktionscodes Excerpt
       "value" : "mailto:tc-fhir@hl7.at"
     }]
   }],
-  "description" : "CodeSystem for Austrian Funktionscodes Excerpt",
+  "description" : "ValueSet for Austrian Funktionscodes Excerpt",
   "compose" : {
     "include" : [{
       "system" : "https://fhir.hl7.at/core/r5/CodeSystem/at-funktionscode"
