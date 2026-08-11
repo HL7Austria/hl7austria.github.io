@@ -46,17 +46,17 @@ These define constraints on FHIR data types for systems conforming to this imple
 
 These define sets of codes used by systems conforming to this implementation guide.
 
-| |
-| :--- |
-| [ValueSet for Austrian Funktionscodes Excerpt](ValueSet-at-funktionscode-vs.md) |
+| | |
+| :--- | :--- |
+| [ValueSet for Austrian Funktionscodes Excerpt](ValueSet-at-funktionscode-vs.md) | CodeSystem for Austrian Funktionscodes Excerpt |
 
 ### Terminology: Code Systems 
 
 These define new code systems used by systems conforming to this implementation guide.
 
-| |
-| :--- |
-| [CodeSystem for Austrian Funktionscodes Excerpt](CodeSystem-at-funktionscode.md) |
+| | |
+| :--- | :--- |
+| [CodeSystem for Austrian Funktionscodes Excerpt](CodeSystem-at-funktionscode.md) | CodeSystem for Austrian Funktionscodes Excerpt |
 
 ### Example: Example Instances 
 

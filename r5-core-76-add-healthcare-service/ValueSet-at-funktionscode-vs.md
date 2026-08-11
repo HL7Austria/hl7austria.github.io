@@ -4,12 +4,15 @@
 * [**Artifacts Summary**](artifacts.md)
 * **ValueSet for Austrian Funktionscodes Excerpt**
 
-## ValueSet: ValueSet for Austrian Funktionscodes Excerpt 
+## ValueSet: ValueSet for Austrian Funktionscodes Excerpt (Experimental) 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/core/r5/ValueSet/at-funktionscode-vs | *Version*:2.1.0 | |
 | Draft as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:ATFunktionscodeVS |
+
+ 
+CodeSystem for Austrian Funktionscodes Excerpt 
 
  **References** 
 
@@ -47,7 +50,8 @@
   "name" : "ATFunktionscodeVS",
   "title" : "ValueSet for Austrian Funktionscodes Excerpt",
   "status" : "draft",
-  "date" : "2026-08-11T20:51:56+00:00",
+  "experimental" : true,
+  "date" : "2026-08-11T21:17:19+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -63,6 +67,7 @@
       "value" : "mailto:tc-fhir@hl7.at"
     }]
   }],
+  "description" : "CodeSystem for Austrian Funktionscodes Excerpt",
   "compose" : {
     "include" : [{
       "system" : "https://fhir.hl7.at/core/r5/CodeSystem/at-funktionscode"
