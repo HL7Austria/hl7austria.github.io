@@ -1,0 +1,102 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/PractitionerRole/HL7ATCorePractitionerRoleExample01> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "HL7ATCorePractitionerRoleExample01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole HL7ATCorePractitionerRoleExample01</b></p><a name=\"HL7ATCorePractitionerRoleExample01\"> </a><a name=\"hcHL7ATCorePractitionerRoleExample01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-practitionerRole.html\">HL7® AT Core PractitionerRole Profile</a></p></div><p><b>active</b>: true</p><p><b>practitioner</b>: <a href=\"Practitioner-HL7ATCorePractitionerExample01.html\">Practitioner Melanie Musterärztin </a></p><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole 100}\">Ärztin/Arzt für Allgemeinmedizin</span></p><p><b>specialty</b>: <span title=\"Codes:{http://snomed.info/sct 419772000}\">Family practice</span>, <span title=\"Codes:{http://snomed.info/sct 410005002}\">Dive medicine</span></p><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: Monday</p><p><b>availableStartTime</b>: 07:00:00</p><p><b>availableEndTime</b>: 12:00:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: Tuesday</p><p><b>availableStartTime</b>: 07:30:00</p><p><b>availableEndTime</b>: 12:30:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: Thursday</p><p><b>allDay</b>: true</p></blockquote><blockquote><p><b>notAvailable</b></p><p><b>description</b>: Urlaub</p><p><b>during</b>: 2024-08-01 --&gt; 2024-08-31</p></blockquote><blockquote><p><b>notAvailable</b></p><p><b>description</b>: Zwischen den Feiertagen geschlossen.</p><p><b>during</b>: 2024-12-24 --&gt; 2025-01-06</p></blockquote></div>"
+  ] ;
+  fhir:PractitionerRole.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:PractitionerRole.practitioner [
+     fhir:link <https://fhir.hl7.at/core/r4/Practitioner/HL7ATCorePractitionerExample01> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/HL7ATCorePractitionerExample01" ]
+  ] ;
+  fhir:PractitionerRole.code [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole" ] ;
+       fhir:Coding.code [ fhir:value "100" ] ;
+       fhir:Coding.display [ fhir:value "Ärztin/Arzt für Allgemeinmedizin" ]
+     ]
+  ] ;
+  fhir:PractitionerRole.specialty [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:419772000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "419772000" ] ;
+       fhir:Coding.display [ fhir:value "Family practice" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:410005002 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "410005002" ] ;
+       fhir:Coding.display [ fhir:value "Dive medicine" ]
+     ]
+  ] ;
+  fhir:PractitionerRole.availableTime [
+     fhir:index 0 ;
+     fhir:PractitionerRole.availableTime.daysOfWeek [
+       fhir:value "mon" ;
+       fhir:index 0
+     ] ;
+     fhir:PractitionerRole.availableTime.availableStartTime [ fhir:value "07:00:00"^^xsd:time ] ;
+     fhir:PractitionerRole.availableTime.availableEndTime [ fhir:value "12:00:00"^^xsd:time ]
+  ], [
+     fhir:index 1 ;
+     fhir:PractitionerRole.availableTime.daysOfWeek [
+       fhir:value "tue" ;
+       fhir:index 0
+     ] ;
+     fhir:PractitionerRole.availableTime.availableStartTime [ fhir:value "07:30:00"^^xsd:time ] ;
+     fhir:PractitionerRole.availableTime.availableEndTime [ fhir:value "12:30:00"^^xsd:time ]
+  ], [
+     fhir:index 2 ;
+     fhir:PractitionerRole.availableTime.daysOfWeek [
+       fhir:value "thu" ;
+       fhir:index 0
+     ] ;
+     fhir:PractitionerRole.availableTime.allDay [ fhir:value "true"^^xsd:boolean ]
+  ] ;
+  fhir:PractitionerRole.notAvailable [
+     fhir:index 0 ;
+     fhir:PractitionerRole.notAvailable.description [ fhir:value "Urlaub" ] ;
+     fhir:PractitionerRole.notAvailable.during [
+       fhir:Period.start [ fhir:value "2024-08-01"^^xsd:date ] ;
+       fhir:Period.end [ fhir:value "2024-08-31"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:PractitionerRole.notAvailable.description [ fhir:value "Zwischen den Feiertagen geschlossen." ] ;
+     fhir:PractitionerRole.notAvailable.during [
+       fhir:Period.start [ fhir:value "2024-12-24"^^xsd:date ] ;
+       fhir:Period.end [ fhir:value "2025-01-06"^^xsd:date ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/PractitionerRole/HL7ATCorePractitionerRoleExample01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

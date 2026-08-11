@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/HealthcareService/ExampleHealthcareService> a fhir:HealthcareService ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ExampleHealthcareService"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: HealthcareService ExampleHealthcareService</b></p><a name=\"ExampleHealthcareService\"> </a><a name=\"hcExampleHealthcareService\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-HealthcareService.html\">HL7® AT Core HealthcareService Profile</a></p></div><p><b>active</b>: true</p><p><b>providedBy</b>: <a href=\"Organization-HL7ATCoreOrganizationExample01.html\">Organization Amadeus Spital</a></p><p><b>specialty</b>: <span title=\"Codes:{https://fhir.hl7.at/core/r4/CodeSystem/at-funktionscode 11114}\">Rheumatologie</span></p><p><b>location</b>: <a href=\"Location-HL7ATCoreLocationLinz.html\">Location Campus Linz</a></p><p><b>name</b>: Rheumatology Service</p></div>"
+  ] ;
+  fhir:HealthcareService.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:HealthcareService.providedBy [
+     fhir:link <https://fhir.hl7.at/core/r4/Organization/HL7ATCoreOrganizationExample01> ;
+     fhir:Reference.reference [ fhir:value "Organization/HL7ATCoreOrganizationExample01" ]
+  ] ;
+  fhir:HealthcareService.specialty [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://fhir.hl7.at/core/r4/CodeSystem/at-funktionscode" ] ;
+       fhir:Coding.code [ fhir:value "11114" ] ;
+       fhir:Coding.display [ fhir:value "Rheumatologie" ]
+     ]
+  ] ;
+  fhir:HealthcareService.location [
+     fhir:index 0 ;
+     fhir:link <https://fhir.hl7.at/core/r4/Location/HL7ATCoreLocationLinz> ;
+     fhir:Reference.reference [ fhir:value "Location/HL7ATCoreLocationLinz" ]
+  ] ;
+  fhir:HealthcareService.name [ fhir:value "Rheumatology Service"] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/HealthcareService/ExampleHealthcareService.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
