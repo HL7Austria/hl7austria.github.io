@@ -32,112 +32,90 @@ Muster Andreas Bauer Male, DoB: 1990-12-24 ( Patient internal identifier: 0815 
   "resourceType" : "Patient",
   "id" : "HL7ATCorePatientExample02-deceasedTime",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
   },
-  "identifier" : [
-    {
-      "use" : "official",
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "SS",
-            "display" : "Social Security number"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
-      "value" : "1111241261",
-      "assigner" : {
-        "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-      }
+  "identifier" : [{
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "SS",
+        "display" : "Social Security number"
+      }]
     },
-    {
-      "use" : "official",
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "NI",
-            "display" : "National unique individual identifier"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
-      "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0",
-      "assigner" : {
-        "display" : "Bundesministerium für Inneres"
-      }
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+    "value" : "1111241261",
+    "assigner" : {
+      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+    }
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "NI",
+        "display" : "National unique individual identifier"
+      }]
     },
-    {
-      "use" : "official",
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "PI",
-            "display" : "Patient internal identifier"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.2.3.4.5",
-      "value" : "0815",
-      "assigner" : {
-        "display" : "Ein GDA in Österreich"
-      }
+    "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+    "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0",
+    "assigner" : {
+      "display" : "Bundesministerium für Inneres"
     }
-  ],
-  "name" : [
-    {
-      "family" : "Bauer",
-      "given" : ["Muster", "Andreas"],
-      "prefix" : ["Dipl.Ing.", "Dr."]
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PI",
+        "display" : "Patient internal identifier"
+      }]
+    },
+    "system" : "urn:oid:1.2.3.4.5",
+    "value" : "0815",
+    "assigner" : {
+      "display" : "Ein GDA in Österreich"
     }
-  ],
-  "telecom" : [
-    {
-      "system" : "phone",
-      "value" : "+43.2682.40400",
-      "use" : "home"
-    }
-  ],
+  }],
+  "name" : [{
+    "family" : "Bauer",
+    "given" : ["Muster", "Andreas"],
+    "prefix" : ["Dipl.Ing.", "Dr."]
+  }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "+43.2682.40400",
+    "use" : "home"
+  }],
   "gender" : "male",
   "birthDate" : "1990-12-24",
   "deceasedDateTime" : "2019-01-14T17:22:00+10:00",
-  "address" : [
-    {
-      "use" : "home",
-      "line" : ["Berggasse 13a"],
-      "city" : "Eisenstadt",
-      "state" : "Burgenland",
-      "postalCode" : "7000",
-      "country" : "AUT"
-    }
-  ],
+  "address" : [{
+    "use" : "home",
+    "line" : ["Berggasse 13a"],
+    "city" : "Eisenstadt",
+    "state" : "Burgenland",
+    "postalCode" : "7000",
+    "country" : "AUT"
+  }],
   "maritalStatus" : {
-    "coding" : [
-      {
-        "system" : "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
-        "code" : "M",
-        "display" : "Married"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+      "code" : "M",
+      "display" : "Married"
+    }]
   },
-  "communication" : [
-    {
-      "language" : {
-        "coding" : [
-          {
-            "system" : "urn:ietf:bcp:47",
-            "code" : "de"
-          }
-        ]
-      },
-      "preferred" : true
-    }
-  ]
+  "communication" : [{
+    "language" : {
+      "coding" : [{
+        "system" : "urn:ietf:bcp:47",
+        "code" : "de"
+      }]
+    },
+    "preferred" : true
+  }]
 }
 
 ```

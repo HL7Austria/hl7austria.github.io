@@ -32,16 +32,12 @@ Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.m
   "resourceType" : "Location",
   "id" : "HL7ATCoreLocationLinz",
   "meta" : {
-    "profile" : [
-      "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"
-    ]
+    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:oid:1.2.40.0.34.4.10",
-      "value" : "K101.2"
-    }
-  ],
+  "identifier" : [{
+    "system" : "urn:oid:1.2.40.0.34.4.10",
+    "value" : "K101.2"
+  }],
   "name" : "Campus Linz",
   "address" : {
     "city" : "Linz",

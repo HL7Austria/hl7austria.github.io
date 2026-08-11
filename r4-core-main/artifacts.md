@@ -26,7 +26,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 
 | | |
 | :--- | :--- |
-| [HL7® AT Core Address Profile](StructureDefinition-at-core-address.md) | HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by[Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.md). |
+| [HL7® AT Core Address Profile](StructureDefinition-at-core-address.md) | HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.md). |
 
 ### Structures: Extension Definitions 
 
@@ -37,7 +37,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 | [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.md) | HL7® Austria FHIR® Core Extension for the additional information part of the Austrian address. |
 | [Address Municipality Code](StructureDefinition-at-core-ext-address-municipalityCode.md) | HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address |
 | [Administrative Gender Addition](StructureDefinition-at-core-ext-gender-administrativeGenderAddition.md) | HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, …). The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'. |
-| [Patient Religion](StructureDefinition-at-core-ext-patient-religion.md) | **DEPRECATED**HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient. The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official[HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria)for religion and is therefore aligned with the ELGA ValueSet, respectively. |
+| [Patient Religion](StructureDefinition-at-core-ext-patient-religion.md) | **DEPRECATED** HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient. The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively. |
 | [System OID](StructureDefinition-at-core-ext-valueset-systemoid.md) | HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from. The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines. |
 
 ### Example: Example Instances 

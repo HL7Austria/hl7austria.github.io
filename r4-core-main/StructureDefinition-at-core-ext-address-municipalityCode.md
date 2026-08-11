@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode | *Version*:2.1.0 | |
-| Active as of 2025-12-01 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
+| Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
 
 HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address
 
@@ -22,7 +22,7 @@ HL7® Austria FHIR® Core Extension for the municipality code part of the Austri
 * Use this Extension: [HL7® AT Core Address Profile](StructureDefinition-at-core-address.md)
 * Examples for this Extension: [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r4|current/StructureDefinition/at-core-ext-address-municipalityCode)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-ext-address-municipalityCode.json)
 
 ### Formal Views of Extension Content
 
@@ -47,81 +47,67 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
   "name" : "AddressMunicipalityCode",
   "title" : "Address Municipality Code",
   "status" : "active",
-  "date" : "2025-12-01T11:26:35+00:00",
+  "date" : "2026-08-11T10:57:38+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
-  "contact" : [
-    {
-      "name" : "HL7® Austria, TC FHIR®",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://hl7.at/technische-komitees/tc-fhir/"
-        }
-      ]
-    },
-    {
-      "name" : "Technical Committee for FHIR® at HL7® Austria",
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "mailto:tc-fhir@hl7.at"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "HL7® Austria, TC FHIR®",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://hl7.at/technische-komitees/tc-fhir/"
+    }]
+  },
+  {
+    "name" : "Technical Committee for FHIR® at HL7® Austria",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "mailto:tc-fhir@hl7.at"
+    }]
+  }],
   "description" : "HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address",
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
   "kind" : "complex-type",
   "abstract" : false,
-  "context" : [
-    {
-      "type" : "element",
-      "expression" : "Address"
-    },
-    {
-      "type" : "element",
-      "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address#Address"
-    }
-  ],
+  "context" : [{
+    "type" : "element",
+    "expression" : "Address"
+  },
+  {
+    "type" : "element",
+    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address#Address"
+  }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Extension",
-        "path" : "Extension",
-        "short" : "Address Municipality Code",
-        "definition" : "HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address"
-      },
-      {
-        "id" : "Extension.extension",
-        "path" : "Extension.extension",
-        "max" : "0"
-      },
-      {
-        "id" : "Extension.url",
-        "path" : "Extension.url",
-        "fixedUri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode"
-      },
-      {
-        "id" : "Extension.value[x]",
-        "path" : "Extension.value[x]",
-        "min" : 1,
-        "type" : [
-          {
-            "code" : "string"
-          }
-        ]
-      }
-    ]
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Address Municipality Code",
+      "definition" : "HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address"
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "string"
+      }]
+    }]
   }
 }
 
