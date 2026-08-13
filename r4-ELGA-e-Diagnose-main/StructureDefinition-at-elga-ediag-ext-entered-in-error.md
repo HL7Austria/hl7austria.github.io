@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error | *Version*:0.1.0 | |
-| Draft as of 2026-08-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEdiagExtEnteredInError |
+| Draft as of 2026-08-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEdiagExtEnteredInError |
 
 Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde.
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-ext-en
   "name" : "AtElgaEdiagExtEnteredInError",
   "title" : "AT ELGA Entered In Error",
   "status" : "draft",
-  "date" : "2026-08-12T15:02:16+00:00",
+  "date" : "2026-08-13T10:03:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

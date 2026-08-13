@@ -15,7 +15,7 @@ Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. I
 
 ### Eintrag erfassen
 
-> Sub:UC_02_07 
+> Sub:UC_02_01 
 
 Der GDA erfasst einen neuen Eintrag über die e-Diagnose Fachanwendung, die nicht Teil der Summary-Liste ist. Dieser Eintrag kann in Folge durch eine Änderung, siehe Sub:UC_02_03 zur Liste hinzugefügte werden.
 
@@ -31,7 +31,7 @@ Der GDA erfasst einen neuen Eintrag über die e-Diagnose Fachanwendung, die nich
 
 ### Eintrag stornieren
 
-> Sub:UC_02_08 
+> Sub:UC_02_02 
  
 
 Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob ein zu stornierender Eintrag in der Summary-List referenziert wird oder nicht. Im Zuge der Stornierung kann der GDA einen Vermerk festhalten. Die OID des GDA´s und der Stornierungszeitpunkt wird durch die Fachanwendung gesetzt.
@@ -69,7 +69,7 @@ Im Unterschied zur Bearbeitung innerhalb einer Summary-Liste erfolgt die Änderu
 
 ### Leere Summary-Liste fachlich bestätigen
 
-> Sub:UC_02_01 
+> Sub:UC_02_03 
 
 Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leeren Summary-Liste durch den GDA und die anschließende Speicherung des bestätigten Zustands in der Fachanwendung. Eine leere Summary-Liste mit dem Wert **emptyReason = nilknown** bedeutet, dass für den Patienten derzeit keine Summary-Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von Summary-Einträgen und ist von einer noch nicht befüllten Liste **emptyReason = notstarted** zu unterscheiden.
 
@@ -86,7 +86,9 @@ Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leere
 
 ### Summary-Liste aktualisieren (List-Write)
 
-> Sub:UC_02_02 
+> Sub:UC_02_04 
+
+ToDo: ELGA CORE - an die neue Herangehensweise anpassen!
 
 [List-Write](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/branches/main/interactions.html#list-write) ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](uc_ediag_01_lesen.md#list-read) erfolgen darf. Nach dem Erfassen einer neuen medizinischen Ressource, siehe [Einträge erfassen](uc_ediag_02_schreiben.md#einträge-erfassen), kann diese in einer Summary-Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
 
@@ -94,7 +96,7 @@ ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/
 
 ### Eintrag zur Summary-Liste hinzufügen
 
-> Sub:UC_02_03 Der GDA verfasst einen neuen Eintrag, siehe [Eintrag erfassen](uc_ediag_02_schreiben.md#ressource-erfassen) oder möchte einen bestehenden Eintrag in die Summary-Liste aufnehmen. Die Fachanwendung kennzeichnet diesen Eintrag anschließend als relevant (meta.tag = relevant).
+> Sub:UC_02_05 Der GDA verfasst einen neuen Eintrag, siehe [Eintrag erfassen](uc_ediag_02_schreiben.md#ressource-erfassen) oder möchte einen bestehenden Eintrag in die Summary-Liste aufnehmen. Die Fachanwendung kennzeichnet diesen Eintrag anschließend als relevant (meta.tag = relevant).
 
 #### Ablauf
 
@@ -111,7 +113,7 @@ ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/
 
 ### Eintrag aus Summary-Liste entfernen
 
-> Sub:UC_02_04 
+> Sub:UC_02_06 
 
 Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass die Ressource selbst gelöscht oder geändert wird. Hierzu wird die Referenz auf die Ressource aus der Summary-Liste entfernt. Die Fachanwendung hebt anschließend die Kennzeichnung der Ressource als relevant (meta.tag = relevant) auf. Die Ressource bleibt weiterhin verfügbar und kann zu einem späteren Zeitpunkt erneut in die Summary-Liste aufgenommen werden.
 
@@ -127,7 +129,7 @@ Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass di
 
 ### Reihenfolge der Einträge in der Summary-Liste ändern
 
-> Sub:UC_02_05 
+> Sub:UC_02_07 
   Der GDA kann die Reihenfolge der Einträge innerhalb einer Summary-Liste ändern. Dabei werden ausschließlich die Listeneinträge neu angeordnet; die referenzierten Ressourcen und deren fachliche Inhalte bleiben unverändert. Durch das Speichern entsteht eine neue Version der Summary-Liste.
 
 #### Ablauf
@@ -139,7 +141,7 @@ Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass di
 
 ### Einträge in der Summary-Liste bearbeiten
 
-> Sub:UC_02_06 
+> Sub:UC_02_08 
  Dieser Sub-UC beschreibt die fachliche Bearbeitung von Einträgen einer Summary-Liste. Die tatsächliche Reihenfolge der Bearbeitungsschritte kann je nach Anwendungsfall variieren. Es ist nicht notwendigerweise vorgesehen, dass $list-read am Anfang und $list-write am Ende des Ablaufs stehen. Durch die Verwendung eines bereits bestehenden Business-Identifier wird bei der Bearbeitung die Zuordnung einer alten Version zu einer neuen Version einer Ressource ermöglicht. Dadurch bleibt die Verbindung zwischen den Versionen erhalten.
 
 #### Ablauf

@@ -23,11 +23,9 @@ These define constraints on FHIR resources for systems conforming to this implem
 | | |
 | :--- | :--- |
 | [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md) | Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
-| [AT ELGA e-Diagnose Collection Bundle](StructureDefinition-at-elga-ediag-bundle-liste-cl.md) | Das Bundle vom Typ Collection bestehend aus List und klinischen Kontextressourcen |
 | [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) | Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
 | [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md) | Das AT e-Diagnose List-Profil leitet sich vom HL7-AT-Core-R4-Profil ab und dient der strukturierten Listung von Einträgen. |
 | [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md) | Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
-| [AT ELGA e-Diagnose Transaction Bundle](StructureDefinition-at-elga-ediag-bundle-liste-tx.md) | Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf die Liste bestehend aus und klinischen KOntextressourcen |
 
 ### Structures: Data Type Profiles 
 
@@ -80,8 +78,6 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Device](Device-DeviceExample.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
 | [Beispiel Diagnose currently relevant](Condition-DiagnoseCurrentlyRelevantExample.md) | Beispielinstanz einer Diagnose - currently relevant |
 | [Beispiel Diagnose not currently relevant](Condition-DiagnoseNotCurrentlyRelevantExample.md) | Beispielinstanz einer Diagnose - not currently relevant |
-| [Beispiel Journey 01 Collection Bundle](Bundle-At-Ediag-Journey-01-Bundle-Liste-Cl.md) | Beispiel eines Collection Bundles mit leerer e-Diagnose-Liste (referenziert List-Ressource ohne Einträge). |
-| [Beispiel Journey 01 Transaction Bundle](Bundle-At-Ediag-Journey-01-Bundle-Liste-Tx.md) | Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
 | [Beispiel Prozedur](Procedure-ProcedureExample.md) | Beispielinstanz einer Prozedur |

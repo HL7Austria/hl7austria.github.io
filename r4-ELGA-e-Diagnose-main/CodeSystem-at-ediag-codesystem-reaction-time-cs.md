@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-reaction-time-cs | *Version*:0.1.0 | |
-| Active as of 2026-08-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagReactionTimeCS |
+| Active as of 2026-08-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagReactionTimeCS |
 
  
 Zeitlicher Verlauf der Manifestation 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [AtEdiagReactionTimeVS](ValueSet-at-ediag-reaction-time-vs.md)
+* [AT e-Diagnose Reaction Time Value Set](ValueSet-at-ediag-reaction-time-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Zeitlicher Verlauf der Manifestation
   "title" : "Reaktionszeit Codes",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-08-12T15:02:16+00:00",
+  "date" : "2026-08-13T10:03:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

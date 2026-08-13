@@ -9,14 +9,13 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance | *Version*:0.1.0 | |
-| Active as of 2026-08-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
+| Active as of 2026-08-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
 
  
 Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Diagnose Collection Bundle](StructureDefinition-at-elga-ediag-bundle-liste-cl.md) and [AT ELGA e-Diagnose Transaction Bundle](StructureDefinition-at-elga-ediag-bundle-liste-tx.md)
 * Examples for this Profile: [AllergyIntolerance/AllergyExample](AllergyIntolerance-AllergyExample.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-allergyintolerance.json)
@@ -42,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-08-12T15:02:16+00:00",
+  "date" : "2026-08-13T10:03:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-listread | *Version*:0.1.0 | |
-| Draft as of 2026-08-12 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagListRead |
+| Draft as of 2026-08-13 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagListRead |
 
  
 Die $list-read Operation wird aufgerufen, wenn eine Liste mit der Intention zu schreiben gelesen wird. 
@@ -28,7 +28,7 @@ Die $list-read Operation wird aufgerufen, wenn eine Liste mit der Intention zu s
   "title" : "e-Diagnose Operation für List-Read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-08-12T15:02:16+00:00",
+  "date" : "2026-08-13T10:03:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -75,8 +75,7 @@ Die $list-read Operation wird aufgerufen, wenn eine Liste mit der Intention zu s
     "min" : 0,
     "max" : "1",
     "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
-    "type" : "Bundle",
-    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-bundle-liste-cl"]
+    "type" : "Bundle"
   }]
 }
 
