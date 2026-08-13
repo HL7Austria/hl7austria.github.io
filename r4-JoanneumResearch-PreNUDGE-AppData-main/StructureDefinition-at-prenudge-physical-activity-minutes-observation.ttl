@@ -19,7 +19,7 @@
   fhir:StructureDefinition.name [ fhir:value "AtPrenudgeObservationPhysicalActivity"] ;
   fhir:StructureDefinition.title [ fhir:value "AT PreNUDGE Observation Physical Activity Minutes"] ;
   fhir:StructureDefinition.status [ fhir:value "draft"] ;
-  fhir:StructureDefinition.date [ fhir:value "2026-08-07T08:52:23+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-08-13T06:23:48+00:00"^^xsd:dateTime] ;
   fhir:StructureDefinition.publisher [ fhir:value "The PreNUDGE Consortium"] ;
   fhir:StructureDefinition.contact [
      fhir:index 0 ;
@@ -201,6 +201,16 @@
          ]
        ], [
          fhir:index 7 ;
+         fhir:ElementDefinition.constraint.key [ fhir:value "at-prenudge-result-present" ] ;
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
+         fhir:ElementDefinition.constraint.human [ fhir:value "A PreNUDGE Observation must contain a root result, a root data absent reason, or at least one component result or component data absent reason." ] ;
+         fhir:ElementDefinition.constraint.expression [ fhir:value "value.exists() or dataAbsentReason.exists() or component.where(value.exists() or dataAbsentReason.exists()).exists()" ] ;
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation" ;
+           fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation>
+         ]
+       ], [
+         fhir:index 8 ;
          fhir:ElementDefinition.constraint.key [ fhir:value "pa-panel-01" ] ;
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
          fhir:ElementDefinition.constraint.human [ fhir:value "At least one activity component must be present" ] ;
@@ -210,7 +220,7 @@
            fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
          ]
        ], [
-         fhir:index 8 ;
+         fhir:index 9 ;
          fhir:ElementDefinition.constraint.key [ fhir:value "pa-agg-01" ] ;
          fhir:ElementDefinition.constraint.severity [ fhir:value "warning" ] ;
          fhir:ElementDefinition.constraint.human [ fhir:value "When moderateActivity or vigorousActivity are present, aggregateActivity SHOULD equal moderateActivity (or 0) + (vigorousActivity × 2, or 0)" ] ;
@@ -220,7 +230,7 @@
            fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
          ]
        ], [
-         fhir:index 9 ;
+         fhir:index 10 ;
          fhir:ElementDefinition.constraint.key [ fhir:value "pa-wearable-01" ] ;
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ] ;
          fhir:ElementDefinition.constraint.human [ fhir:value "When method is Automated, aggregateActivity must be present" ] ;
@@ -230,7 +240,7 @@
            fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
          ]
        ], [
-         fhir:index 10 ;
+         fhir:index 11 ;
          fhir:ElementDefinition.constraint.key [ fhir:value "pa-manual-comp-01" ] ;
          fhir:ElementDefinition.constraint.severity [ fhir:value "warning" ] ;
          fhir:ElementDefinition.constraint.human [ fhir:value "When method is Manual, classificationMethod component must be absent or carry only code self-rp" ] ;
@@ -1922,7 +1932,7 @@
        fhir:index 31 ;
        fhir:Element.id [ fhir:value "Observation.dataAbsentReason" ] ;
        fhir:ElementDefinition.path [ fhir:value "Observation.dataAbsentReason" ] ;
-       fhir:ElementDefinition.short [ fhir:value "Why the result is missing" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason why no clinically or analytically meaningful result is available" ] ;
        fhir:ElementDefinition.definition [ fhir:value "Provides a reason why the expected value in the element Observation.value[x] is missing." ] ;
        fhir:ElementDefinition.comment [ fhir:value "Null or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  \"detected\", \"not detected\", \"inconclusive\", or  \"specimen unsatisfactory\".   \n\nThe alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code \"error\" could be used when the measurement was not completed. Note that an observation may only be reported if there are values to report. For example differential cell counts values may be reported only when > 0.  Because of these options, use-case agreements are required to interpret general observations for null or exceptional values." ] ;
        fhir:ElementDefinition.requirements [ fhir:value "For many results it is necessary to handle exceptional values in measurements." ] ;
@@ -1953,6 +1963,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ;
+       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.binding [
@@ -3272,7 +3283,7 @@
        fhir:index 56 ;
        fhir:Element.id [ fhir:value "Observation.component.dataAbsentReason" ] ;
        fhir:ElementDefinition.path [ fhir:value "Observation.component.dataAbsentReason" ] ;
-       fhir:ElementDefinition.short [ fhir:value "Why the component result is missing" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason why no clinically or analytically meaningful component result is available" ] ;
        fhir:ElementDefinition.definition [ fhir:value "Provides a reason why the expected value in the element Observation.component.value[x] is missing." ] ;
        fhir:ElementDefinition.comment [ fhir:value "\"Null\" or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  \"detected\", \"not detected\", \"inconclusive\", or  \"test not done\". \n\nThe alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code \"error\" could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." ] ;
        fhir:ElementDefinition.requirements [ fhir:value "For many results it is necessary to handle exceptional values in measurements." ] ;
@@ -3303,6 +3314,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ;
+       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.binding [
@@ -4081,7 +4093,7 @@
        fhir:index 72 ;
        fhir:Element.id [ fhir:value "Observation.component:moderateActivity.dataAbsentReason" ] ;
        fhir:ElementDefinition.path [ fhir:value "Observation.component.dataAbsentReason" ] ;
-       fhir:ElementDefinition.short [ fhir:value "Why the component result is missing" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason why no clinically or analytically meaningful component result is available" ] ;
        fhir:ElementDefinition.definition [ fhir:value "Provides a reason why the expected value in the element Observation.component.value[x] is missing." ] ;
        fhir:ElementDefinition.comment [ fhir:value "\"Null\" or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  \"detected\", \"not detected\", \"inconclusive\", or  \"test not done\". \n\nThe alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code \"error\" could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." ] ;
        fhir:ElementDefinition.requirements [ fhir:value "For many results it is necessary to handle exceptional values in measurements." ] ;
@@ -4112,6 +4124,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ;
+       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.binding [
@@ -4890,7 +4903,7 @@
        fhir:index 88 ;
        fhir:Element.id [ fhir:value "Observation.component:vigorousActivity.dataAbsentReason" ] ;
        fhir:ElementDefinition.path [ fhir:value "Observation.component.dataAbsentReason" ] ;
-       fhir:ElementDefinition.short [ fhir:value "Why the component result is missing" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason why no clinically or analytically meaningful component result is available" ] ;
        fhir:ElementDefinition.definition [ fhir:value "Provides a reason why the expected value in the element Observation.component.value[x] is missing." ] ;
        fhir:ElementDefinition.comment [ fhir:value "\"Null\" or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  \"detected\", \"not detected\", \"inconclusive\", or  \"test not done\". \n\nThe alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code \"error\" could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." ] ;
        fhir:ElementDefinition.requirements [ fhir:value "For many results it is necessary to handle exceptional values in measurements." ] ;
@@ -4921,6 +4934,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ;
+       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.binding [
@@ -5699,7 +5713,7 @@
        fhir:index 104 ;
        fhir:Element.id [ fhir:value "Observation.component:aggregateActivity.dataAbsentReason" ] ;
        fhir:ElementDefinition.path [ fhir:value "Observation.component.dataAbsentReason" ] ;
-       fhir:ElementDefinition.short [ fhir:value "Why the component result is missing" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason why no clinically or analytically meaningful component result is available" ] ;
        fhir:ElementDefinition.definition [ fhir:value "Provides a reason why the expected value in the element Observation.component.value[x] is missing." ] ;
        fhir:ElementDefinition.comment [ fhir:value "\"Null\" or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  \"detected\", \"not detected\", \"inconclusive\", or  \"test not done\". \n\nThe alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code \"error\" could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." ] ;
        fhir:ElementDefinition.requirements [ fhir:value "For many results it is necessary to handle exceptional values in measurements." ] ;
@@ -5730,6 +5744,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ;
+       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.binding [
@@ -6185,7 +6200,7 @@
        fhir:index 113 ;
        fhir:Element.id [ fhir:value "Observation.component:classificationMethod.dataAbsentReason" ] ;
        fhir:ElementDefinition.path [ fhir:value "Observation.component.dataAbsentReason" ] ;
-       fhir:ElementDefinition.short [ fhir:value "Why the component result is missing" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason why no clinically or analytically meaningful component result is available" ] ;
        fhir:ElementDefinition.definition [ fhir:value "Provides a reason why the expected value in the element Observation.component.value[x] is missing." ] ;
        fhir:ElementDefinition.comment [ fhir:value "\"Null\" or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  \"detected\", \"not detected\", \"inconclusive\", or  \"test not done\". \n\nThe alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code \"error\" could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values." ] ;
        fhir:ElementDefinition.requirements [ fhir:value "For many results it is necessary to handle exceptional values in measurements." ] ;
@@ -6216,6 +6231,7 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ;
+       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ] ;
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ElementDefinition.binding [

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation | *Version*:0.1.0 | |
-| Draft as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
+| Draft as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationAlcoholUse |
 
  
 This FHIR profile is derived from the APS Observation Alcohol Use profile. Additional fields from the PreNUDGE Observation profile are added. 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-alcoholu
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -52,7 +52,7 @@ Links:
   "name" : "AtPrenudgeObservationAlcoholUse",
   "title" : "AT PreNUDGE Observation Alcohol Use",
   "status" : "draft",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -109,7 +109,14 @@ Links:
   "differential" : {
     "element" : [{
       "id" : "Observation",
-      "path" : "Observation"
+      "path" : "Observation",
+      "constraint" : [{
+        "key" : "at-prenudge-result-present",
+        "severity" : "error",
+        "human" : "A PreNUDGE Observation must contain a root result, a root data absent reason, or at least one component result or component data absent reason.",
+        "expression" : "value.exists() or dataAbsentReason.exists() or component.where(value.exists() or dataAbsentReason.exists()).exists()",
+        "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-alcoholuse-observation"
+      }]
     },
     {
       "id" : "Observation.identifier",
@@ -167,6 +174,12 @@ Links:
       }]
     },
     {
+      "id" : "Observation.dataAbsentReason",
+      "path" : "Observation.dataAbsentReason",
+      "short" : "Reason why no clinically or analytically meaningful result is available",
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.note",
       "path" : "Observation.note",
       "short" : "Comments about the observation including patient comments have to be possible",
@@ -191,7 +204,7 @@ Links:
     {
       "id" : "Observation.derivedFrom",
       "path" : "Observation.derivedFrom",
-      "short" : "QuestionnaireResponse or other source this smoking status observation was derived from",
+      "short" : "QuestionnaireResponse or other source this alcohol use observation was derived from",
       "mustSupport" : true
     },
     {

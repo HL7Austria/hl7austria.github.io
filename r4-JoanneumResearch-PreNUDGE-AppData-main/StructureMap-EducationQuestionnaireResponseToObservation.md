@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/EducationQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EducationQuestionnaireResponseToObservation |
+| Active as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EducationQuestionnaireResponseToObservation |
 
  
 Highest Completed Education Q to O 
@@ -17,7 +17,7 @@ Highest Completed Education Q to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "EducationQuestionnaireResponseToObservation",
   "title" : "Highest Completed Education Q to O",
   "status" : "active",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -433,54 +433,6 @@ Links:
           },
           {
             "valueString" : "ISCED 6–8: Hochschulabschlüsse (Bachelor, Master, Doktor)"
-          }]
-        }]
-      },
-      {
-        "name" : "mapUnknown",
-        "source" : [{
-          "context" : "educationItem",
-          "element" : "answer",
-          "variable" : "answer",
-          "condition" : "answer.valueCoding.code = 'unknown'"
-        }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "valueCodeableConcept",
-          "transform" : "cc",
-          "parameter" : [{
-            "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
-          },
-          {
-            "valueString" : "unknown"
-          },
-          {
-            "valueString" : "Weiß nicht"
-          }]
-        }]
-      },
-      {
-        "name" : "mapNotStated",
-        "source" : [{
-          "context" : "educationItem",
-          "element" : "answer",
-          "variable" : "answer",
-          "condition" : "answer.valueCoding.code = 'not-stated'"
-        }],
-        "target" : [{
-          "context" : "tgt",
-          "contextType" : "variable",
-          "element" : "valueCodeableConcept",
-          "transform" : "cc",
-          "parameter" : [{
-            "valueString" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level"
-          },
-          {
-            "valueString" : "not-stated"
-          },
-          {
-            "valueString" : "Keine Angabe"
           }]
         }]
       }]

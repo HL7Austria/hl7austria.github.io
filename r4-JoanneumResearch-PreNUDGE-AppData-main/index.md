@@ -66,16 +66,18 @@ Besides these narrow standardized measurements, **broad standardized measurement
 
 ### Observation values and missing data
 
-PreNUDGE Observations SHOULD contain `value[x]` when a clinically or analytically meaningful value can be derived. If no such value can be derived, `value[x]` SHALL be absent and `dataAbsentReason` SHALL be provided.
+Atomic PreNUDGE Observations SHOULD contain `value[x]` when a clinically or analytically meaningful value can be derived. If no such value can be derived, `value[x]` SHALL be absent and `dataAbsentReason` SHALL be provided. FHIR's `obs-6` invariant ensures that root-level `value[x]` and `dataAbsentReason` are not both present.
 
 This applies especially to observations derived from questionnaires. The original `QuestionnaireResponse` remains the source record for the submitted answer, including answers such as "unknown" or "not stated". The derived `Observation` represents the clinically or analytically usable result.
 
-If neither `value[x]` nor `dataAbsentReason` is present, the Observation is incomplete and does not conform to the PreNUDGE data quality expectation.
+Panel and score Observations may intentionally omit root-level `value[x]` because their results are represented in `component`. In that case, at least one component SHALL contain either `component.value[x]` or `component.dataAbsentReason`. Profiles for fully calculated scores may require all defined component values instead.
+
+An Observation is incomplete and does not conform to the PreNUDGE data quality expectation if it contains none of the following: root-level `value[x]`, root-level `dataAbsentReason`, `component.value[x]`, or `component.dataAbsentReason`.
 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -92,7 +94,7 @@ Links:
   "name" : "PreNUDGEAppdataR4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -921,7 +923,7 @@ Links:
         "reference" : "ValueSet/prenudge-nutrition-consumption-frequency-vs"
       },
       "name" : "AT PreNUDGE Nutrition Consumption Frequency",
-      "description" : "All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025. Includes the 'Weiß nicht' option (code 'unknown').",
+      "description" : "All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025, including the two universal ATHIS metadata answers.",
       "exampleBoolean" : false
     },
     {
@@ -937,7 +939,7 @@ Links:
         "reference" : "ValueSet/prenudge-nutrition-sugarsalty-frequency-vs"
       },
       "name" : "AT PreNUDGE Nutrition Sugar Salty Consumption Frequency",
-      "description" : "Frequency options for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). Excludes 'Weiß nicht' because DH6 does not offer that option.",
+      "description" : "Analytical frequency values for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). The questionnaire's universal metadata answers are represented in Observation.dataAbsentReason and are therefore excluded from this ValueSet.",
       "exampleBoolean" : false
     },
     {
@@ -1081,7 +1083,7 @@ Links:
         "reference" : "StructureDefinition/at-prenudge-muscle-strengthening-observation"
       },
       "name" : "AT PreNUDGE Observation Muscle Strengthening Sessions",
-      "description" : "This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater.",
+      "description" : "This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from questionnaires (method = Manual). A numeric value must be 0 or greater; ATHIS metadata answers are represented using dataAbsentReason.",
       "exampleBoolean" : false
     },
     {
@@ -1887,6 +1889,22 @@ Links:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-muscle-strengthening-ehis-paq-response-unknown-example.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/muscle-strengthening-ehis-paq-response-unknown-example"
+      },
+      "name" : "EHIS-PAQ Q8 / ATHIS PE8 Muscle Strengthening Q - Unknown Example",
+      "description" : "Example QuestionnaireResponse using the universal ATHIS answer 'Weiß nicht'.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Questionnaire"
       },
       {
@@ -2035,6 +2053,22 @@ Links:
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-muscle-strengthening-ehis-paq-unknown-example.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/muscle-strengthening-ehis-paq-unknown-example"
+      },
+      "name" : "Muscle Strengthening Sessions O mapped from ATHIS - Unknown Example",
+      "description" : "Example derived from an ATHIS 'Weiß nicht' response; no numeric frequency is asserted.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "Observation-muscle-strengthening-ehis-paq-derived-example.html"
       }],
       "reference" : {
@@ -2091,6 +2125,22 @@ Links:
       "name" : "Muskelkräftigungs-Trainingseinheiten pro Woche (numerisch)",
       "description" : "A numeric questionnaire for directly entering the number of muscle-strengthening exercise sessions per week. Designed for direct FML mapping to the AT PreNUDGE Observation Muscle Strengthening Sessions profile via MuscleStrengtheningQuestionnaireResponseToObservation. Use EhisPaqMuscleStrengtheningQuestionnaire for the categorical EHIS-PAQ Q8 / ATHIS PE8 representation.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-nutrition-fruitvegetable-response-metadata-example.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/nutrition-fruitvegetable-response-metadata-example"
+      },
+      "name" : "Nutrition Fruit & Veg Q - ATHIS Metadata Answers Example",
+      "description" : "Example response using 'Weiß nicht' for fruit frequency and 'Keine Angabe' for vegetable frequency.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
       "extension" : [{
@@ -2163,6 +2213,22 @@ Links:
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-nutrition-fruitportions-unknown-example.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-fruitportions-unknown-example"
+      },
+      "name" : "Nutrition Fruit Portions O mapped from Q - Unknown Example",
+      "description" : "Example derived from the universal ATHIS answer 'Weiß nicht' to DH1.",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "Observation-nutrition-sugarsalty-daily-example.html"
       }],
       "reference" : {
@@ -2170,6 +2236,22 @@ Links:
       },
       "name" : "Nutrition Sugar Salty Frequency O mapped from Q - Daily Example",
       "description" : "Example of daily consumption of sugary, fatty, and salty foods, derived from a questionnaire response (DH6 = code#1).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-nutrition-sugarsalty-not-stated-example.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-sugarsalty-not-stated-example"
+      },
+      "name" : "Nutrition Sugar Salty Frequency O mapped from Q - Not Stated Example",
+      "description" : "Example derived from the universal ATHIS answer 'Keine Angabe'.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation"
     },
     {
@@ -2202,6 +2284,22 @@ Links:
       },
       "name" : "Nutrition Sugar Salty Q - Daily Consumption Example",
       "description" : "Example response for daily or multiple-times-daily consumption of sugary, fatty, and salty foods (DH6 = code#1).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "QuestionnaireResponse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "QuestionnaireResponse-nutrition-sugarsalty-response-not-stated-example.html"
+      }],
+      "reference" : {
+        "reference" : "QuestionnaireResponse/nutrition-sugarsalty-response-not-stated-example"
+      },
+      "name" : "Nutrition Sugar Salty Q - Not Stated Example",
+      "description" : "Example response using the universal ATHIS answer 'Keine Angabe'.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse"
     },
     {
@@ -2250,6 +2348,22 @@ Links:
       },
       "name" : "Nutrition Vegetable Portions O mapped from Q - Normal Example",
       "description" : "Example of 2 daily vegetable and salad portions, derived from a questionnaire response (daily eater, DH4 = 2).",
+      "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-nutrition-vegetableportions-not-stated-example.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/nutrition-vegetableportions-not-stated-example"
+      },
+      "name" : "Nutrition Vegetable Portions O mapped from Q - Not Stated Example",
+      "description" : "Example derived from the universal ATHIS answer 'Keine Angabe' to DH3.",
       "exampleCanonical" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation"
     },
     {

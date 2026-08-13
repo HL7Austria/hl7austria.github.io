@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/NutritionVegetablePortionsQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:NutritionVegetablePortionsQuestionnaireResponseToObservation |
+| Active as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:NutritionVegetablePortionsQuestionnaireResponseToObservation |
 
  
 Nutrition Vegetable Portions Q to O 
@@ -17,7 +17,7 @@ Nutrition Vegetable Portions Q to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "NutritionVegetablePortionsQuestionnaireResponseToObservation",
   "title" : "Nutrition Vegetable Portions Q to O",
   "status" : "active",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -134,6 +134,19 @@ Links:
       }]
     },
     {
+      "name" : "ProcessDH3Absence",
+      "source" : [{
+        "context" : "src",
+        "element" : "item",
+        "variable" : "item",
+        "condition" : "linkId = 'DH3'"
+      }],
+      "dependent" : [{
+        "name" : "MapVegetableFrequencyAbsence",
+        "variable" : ["item", "tgt"]
+      }]
+    },
+    {
       "name" : "ProcessDH4",
       "source" : [{
         "context" : "src",
@@ -144,6 +157,76 @@ Links:
       "dependent" : [{
         "name" : "MapVegetablePortions",
         "variable" : ["item", "tgt"]
+      }]
+    }]
+  },
+  {
+    "name" : "MapVegetableFrequencyAbsence",
+    "typeMode" : "none",
+    "input" : [{
+      "name" : "src",
+      "type" : "QR",
+      "mode" : "source"
+    },
+    {
+      "name" : "tgt",
+      "type" : "Obs",
+      "mode" : "target"
+    }],
+    "rule" : [{
+      "name" : "ProcessAbsenceAnswer",
+      "source" : [{
+        "context" : "src",
+        "element" : "answer",
+        "variable" : "answer"
+      }],
+      "rule" : [{
+        "name" : "MapUnknown",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueCoding",
+          "variable" : "coding",
+          "condition" : "coding.code = 'meta-unknown'"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "dataAbsentReason",
+          "transform" : "cc",
+          "parameter" : [{
+            "valueString" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+          },
+          {
+            "valueString" : "asked-unknown"
+          },
+          {
+            "valueString" : "Asked But Unknown"
+          }]
+        }]
+      },
+      {
+        "name" : "MapNotStated",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueCoding",
+          "variable" : "coding",
+          "condition" : "coding.code = 'meta-not-stated'"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "dataAbsentReason",
+          "transform" : "cc",
+          "parameter" : [{
+            "valueString" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+          },
+          {
+            "valueString" : "asked-declined"
+          },
+          {
+            "valueString" : "Asked But Declined"
+          }]
+        }]
       }]
     }]
   },

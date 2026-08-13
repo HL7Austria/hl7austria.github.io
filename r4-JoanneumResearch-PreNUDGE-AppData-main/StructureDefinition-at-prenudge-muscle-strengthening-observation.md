@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation | *Version*:0.1.0 | |
-| Draft as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationMuscleStrengthening |
+| Draft as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationMuscleStrengthening |
 
  
-This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater. 
+This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from questionnaires (method = Manual). A numeric value must be 0 or greater; ATHIS metadata answers are represented using dataAbsentReason. 
 
 **Usages:**
 
-* Examples for this Profile: [Observation/muscle-strengthening-ehis-paq-derived-example](Observation-muscle-strengthening-ehis-paq-derived-example.md), [Observation/muscle-strengthening-questionnaire-derived-example](Observation-muscle-strengthening-questionnaire-derived-example.md) and [Observation/muscle-strengthening-wearable-derived-example](Observation-muscle-strengthening-wearable-derived-example.md)
+* Examples for this Profile: [Observation/muscle-strengthening-ehis-paq-derived-example](Observation-muscle-strengthening-ehis-paq-derived-example.md), [Observation/muscle-strengthening-ehis-paq-unknown-example](Observation-muscle-strengthening-ehis-paq-unknown-example.md), [Observation/muscle-strengthening-questionnaire-derived-example](Observation-muscle-strengthening-questionnaire-derived-example.md) and [Observation/muscle-strengthening-wearable-derived-example](Observation-muscle-strengthening-wearable-derived-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-muscle-strengthening-observation.json)
 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-muscle-s
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationMuscleStrengthening",
   "title" : "AT PreNUDGE Observation Muscle Strengthening Sessions",
   "status" : "draft",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -65,7 +65,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater.",
+  "description" : "This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from questionnaires (method = Manual). A numeric value must be 0 or greater; ATHIS metadata answers are represented using dataAbsentReason.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -110,7 +110,7 @@ Links:
         "key" : "muscle-strengthening-range",
         "severity" : "error",
         "human" : "Muscle strengthening sessions per week must be 0 or greater.",
-        "expression" : "value.ofType(Quantity).value >= 0",
+        "expression" : "value.empty() or value.ofType(Quantity).value >= 0",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation"
       }]
     },
@@ -128,7 +128,6 @@ Links:
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "min" : 1,
       "type" : [{
         "code" : "Quantity"
       }]

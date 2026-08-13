@@ -487,7 +487,7 @@ duration of that walking per day (Q3/PE3, coded using ATHIS group 9 answer set).
                   title="StructureDefinition/at-prenudge-muscle-strengthening-observation">AT PreNUDGE Observation Muscle Strengthening Sessions</a>
             </td>
             <td>
-<p>This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater.</p>
+<p>This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from questionnaires (method = Manual). A numeric value must be 0 or greater; ATHIS metadata answers are represented using dataAbsentReason.</p>
 </td>
          </tr>
          <tr>
@@ -693,7 +693,7 @@ the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combina
                   title="ValueSet/prenudge-nutrition-consumption-frequency-vs">AT PreNUDGE Nutrition Consumption Frequency</a>
             </td>
             <td>
-<p>All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025. Includes the 'Weiß nicht' option (code 'unknown').</p>
+<p>All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025, including the two universal ATHIS metadata answers.</p>
 </td>
          </tr>
          <tr>
@@ -702,7 +702,7 @@ the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combina
                   title="ValueSet/prenudge-nutrition-sugarsalty-frequency-vs">AT PreNUDGE Nutrition Sugar Salty Consumption Frequency</a>
             </td>
             <td>
-<p>Frequency options for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). Excludes 'Weiß nicht' because DH6 does not offer that option.</p>
+<p>Analytical frequency values for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). The questionnaire's universal metadata answers are represented in Observation.dataAbsentReason and are therefore excluded from this ValueSet.</p>
 </td>
          </tr>
          <tr>
@@ -1236,6 +1236,15 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="QuestionnaireResponse-muscle-strengthening-ehis-paq-response-unknown-example.html"
+                  title="QuestionnaireResponse/muscle-strengthening-ehis-paq-response-unknown-example">EHIS-PAQ Q8 / ATHIS PE8 Muscle Strengthening Q - Unknown Example</a>
+            </td>
+            <td>
+<p>Example QuestionnaireResponse using the universal ATHIS answer 'Weiß nicht'.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="QuestionnaireResponse-sitting-hours-ehis-paq-response-example.html"
                   title="QuestionnaireResponse/sitting-hours-ehis-paq-response-example">EHIS-PAQ Q9 / ATHIS PE9 Sitting Hours Q – Example Response</a>
             </td>
@@ -1290,6 +1299,15 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-muscle-strengthening-ehis-paq-unknown-example.html"
+                  title="Observation/muscle-strengthening-ehis-paq-unknown-example">Muscle Strengthening Sessions O mapped from ATHIS - Unknown Example</a>
+            </td>
+            <td>
+<p>Example derived from an ATHIS 'Weiß nicht' response; no numeric frequency is asserted.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-muscle-strengthening-ehis-paq-derived-example.html"
                   title="Observation/muscle-strengthening-ehis-paq-derived-example">Muscle Strengthening Sessions O mapped from EHIS-PAQ Q8 / ATHIS PE8 - Example</a>
             </td>
@@ -1313,6 +1331,15 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
             </td>
             <td>
 <p>Example QuestionnaireResponse for MuscleStrengtheningQuantityQuestionnaire: respondent reports 3 muscle-strengthening exercise sessions per week.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-nutrition-fruitvegetable-response-metadata-example.html"
+                  title="QuestionnaireResponse/nutrition-fruitvegetable-response-metadata-example">Nutrition Fruit &amp; Veg Q - ATHIS Metadata Answers Example</a>
+            </td>
+            <td>
+<p>Example response using 'Weiß nicht' for fruit frequency and 'Keine Angabe' for vegetable frequency.</p>
 </td>
          </tr>
          <tr>
@@ -1353,11 +1380,29 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-nutrition-fruitportions-unknown-example.html"
+                  title="Observation/nutrition-fruitportions-unknown-example">Nutrition Fruit Portions O mapped from Q - Unknown Example</a>
+            </td>
+            <td>
+<p>Example derived from the universal ATHIS answer 'Weiß nicht' to DH1.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-nutrition-sugarsalty-daily-example.html"
                   title="Observation/nutrition-sugarsalty-daily-example">Nutrition Sugar Salty Frequency O mapped from Q - Daily Example</a>
             </td>
             <td>
 <p>Example of daily consumption of sugary, fatty, and salty foods, derived from a questionnaire response (DH6 = code#1).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-sugarsalty-not-stated-example.html"
+                  title="Observation/nutrition-sugarsalty-not-stated-example">Nutrition Sugar Salty Frequency O mapped from Q - Not Stated Example</a>
+            </td>
+            <td>
+<p>Example derived from the universal ATHIS answer 'Keine Angabe'.</p>
 </td>
          </tr>
          <tr>
@@ -1376,6 +1421,15 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
             </td>
             <td>
 <p>Example response for daily or multiple-times-daily consumption of sugary, fatty, and salty foods (DH6 = code#1).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="QuestionnaireResponse-nutrition-sugarsalty-response-not-stated-example.html"
+                  title="QuestionnaireResponse/nutrition-sugarsalty-response-not-stated-example">Nutrition Sugar Salty Q - Not Stated Example</a>
+            </td>
+            <td>
+<p>Example response using the universal ATHIS answer 'Keine Angabe'.</p>
 </td>
          </tr>
          <tr>
@@ -1403,6 +1457,15 @@ Q7 maps to physical-activity-questionnaire-example via the StructureMap.</p>
             </td>
             <td>
 <p>Example of 2 daily vegetable and salad portions, derived from a questionnaire response (daily eater, DH4 = 2).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-nutrition-vegetableportions-not-stated-example.html"
+                  title="Observation/nutrition-vegetableportions-not-stated-example">Nutrition Vegetable Portions O mapped from Q - Not Stated Example</a>
+            </td>
+            <td>
+<p>Example derived from the universal ATHIS answer 'Keine Angabe' to DH3.</p>
 </td>
          </tr>
          <tr>
@@ -1855,7 +1918,7 @@ classificationMethod is absent; pa-manual-comp-01 is satisfied by absence.</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Aug 7, 2026 08:52+0000">2026-08-07</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Aug 13, 2026 06:23+0000">2026-08-13</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

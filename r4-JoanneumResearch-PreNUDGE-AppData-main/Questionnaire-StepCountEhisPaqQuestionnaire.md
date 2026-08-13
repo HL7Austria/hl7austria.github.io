@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountEhisPaqQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountEhisPaqQuestionnaire |
+| Active as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountEhisPaqQuestionnaire |
 
  
 EHIS-PAQ Q2–Q3 (equivalent to ATHIS PE2–PE3): number of days per week (Q2/PE2) and duration per day (Q3/PE3) of walking for transport in a typical week. 
@@ -17,7 +17,7 @@ EHIS-PAQ Q2–Q3 (equivalent to ATHIS PE2–PE3): number of days per week (Q2/PE
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -39,7 +39,7 @@ Links:
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -116,6 +116,20 @@ Links:
         "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
         "code" : "activity-3h-or-more",
         "display" : "3 Stunden pro Tag oder mehr"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "meta-unknown",
+        "display" : "Weiß nicht"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "meta-not-stated",
+        "display" : "Keine Angabe"
       }
     }],
     "item" : [{

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation | *Version*:0.1.0 | |
-| Draft as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
+| Draft as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservation |
 
  
 This FHIR profile is defining the overall Observation for PreNUDGE. It is abstract, so no instances of this profile directly are allowed. Be aware that if the user enters values from a device into a questionnaire, it is still considered a manual input. Please keep in mind that all observations must comply with the qualification matrix on https://prenudge.at/qualificationmatrix/. 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-observat
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservation",
   "title" : "AT PreNUDGE Observation",
   "status" : "draft",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -105,7 +105,14 @@ Links:
   "differential" : {
     "element" : [{
       "id" : "Observation",
-      "path" : "Observation"
+      "path" : "Observation",
+      "constraint" : [{
+        "key" : "at-prenudge-result-present",
+        "severity" : "error",
+        "human" : "A PreNUDGE Observation must contain a root result, a root data absent reason, or at least one component result or component data absent reason.",
+        "expression" : "value.exists() or dataAbsentReason.exists() or component.where(value.exists() or dataAbsentReason.exists()).exists()",
+        "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation"
+      }]
     },
     {
       "id" : "Observation.identifier",
@@ -155,6 +162,12 @@ Links:
       "min" : 1
     },
     {
+      "id" : "Observation.dataAbsentReason",
+      "path" : "Observation.dataAbsentReason",
+      "short" : "Reason why no clinically or analytically meaningful result is available",
+      "mustSupport" : true
+    },
+    {
       "id" : "Observation.note",
       "path" : "Observation.note",
       "short" : "Comments about the observation including patient comments have to be possible",
@@ -179,6 +192,12 @@ Links:
       "id" : "Observation.component",
       "path" : "Observation.component",
       "short" : "Components should only be used when multiple values are inseparably connected to a single measurement (e.g., score domains)."
+    },
+    {
+      "id" : "Observation.component.dataAbsentReason",
+      "path" : "Observation.component.dataAbsentReason",
+      "short" : "Reason why no clinically or analytically meaningful component result is available",
+      "mustSupport" : true
     }]
   }
 }

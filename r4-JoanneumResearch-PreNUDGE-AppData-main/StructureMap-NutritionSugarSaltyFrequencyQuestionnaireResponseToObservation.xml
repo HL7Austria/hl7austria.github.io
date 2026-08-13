@@ -23,7 +23,9 @@
 
 </span><b>group </b>MapSugarSaltyFrequency<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
-</span>    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc</span><span style="color: navy">, </span> cc.coding = <span style="color: maroon">coding</span> <i>&quot;SetValueCoding&quot;</i><span style="color: navy">;</span>
+</span>    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>(coding.code != 'meta-unknown') and (coding.code != 'meta-not-stated')<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span> tgt.value = <b>create</b><span style="color: navy">(</span><span style="color: blue">'CodeableConcept'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">cc</span><span style="color: navy">, </span> cc.coding = <span style="color: maroon">coding</span> <i>&quot;SetValueCoding&quot;</i><span style="color: navy">;</span>
+    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>coding.code = 'meta-unknown'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-unknown'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Unknown'</span><span style="color: navy">)</span> <i>&quot;MapUnknown&quot;</i><span style="color: navy">;</span>
+    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>coding.code = 'meta-not-stated'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-declined'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Declined'</span><span style="color: navy">)</span> <i>&quot;MapNotStated&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">}</span> <i>&quot;ProcessAnswer&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
@@ -34,7 +36,7 @@
   <name value="NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation"/>
   <title value="Nutrition Sugar Salty Frequency Q to O"/>
   <status value="active"/>
-  <date value="2026-08-07T08:52:23+00:00"/>
+  <date value="2026-08-13T06:23:48+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -175,6 +177,7 @@
           <context value="answer"/>
           <element value="valueCoding"/>
           <variable value="coding"/>
+          <condition value="(coding.code != 'meta-unknown') and (coding.code != 'meta-not-stated')"/>
         </source>
         <target>
           <context value="tgt"/>
@@ -193,6 +196,54 @@
           <transform value="copy"/>
           <parameter>
             <valueId value="coding"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="MapUnknown"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="coding"/>
+          <condition value="coding.code = 'meta-unknown'"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="dataAbsentReason"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          </parameter>
+          <parameter>
+            <valueString value="asked-unknown"/>
+          </parameter>
+          <parameter>
+            <valueString value="Asked But Unknown"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="MapNotStated"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="coding"/>
+          <condition value="coding.code = 'meta-not-stated'"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="dataAbsentReason"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          </parameter>
+          <parameter>
+            <valueString value="asked-declined"/>
+          </parameter>
+          <parameter>
+            <valueString value="Asked But Declined"/>
           </parameter>
         </target>
       </rule>

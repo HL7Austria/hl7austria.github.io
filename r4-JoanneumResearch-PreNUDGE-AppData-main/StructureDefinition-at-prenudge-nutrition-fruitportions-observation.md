@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation | *Version*:0.1.0 | |
-| Draft as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationNutritionFruitPortions |
+| Draft as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationNutritionFruitPortions |
 
  
 Records self-reported daily portions of fruit based on ATHIS 2025 question DH2. Applicable only for respondents who eat fruit daily (DH1 = 'Täglich oder mehrmals täglich'). Observation code: LOINC 80457-5 'Fruit servings 24 hour Estimated'. 
 
 **Usages:**
 
-* Examples for this Profile: [Observation/nutrition-fruitportions-high-example](Observation-nutrition-fruitportions-high-example.md) and [Observation/nutrition-fruitportions-normal-example](Observation-nutrition-fruitportions-normal-example.md)
+* Examples for this Profile: [Observation/nutrition-fruitportions-high-example](Observation-nutrition-fruitportions-high-example.md), [Observation/nutrition-fruitportions-normal-example](Observation-nutrition-fruitportions-normal-example.md) and [Observation/nutrition-fruitportions-unknown-example](Observation-nutrition-fruitportions-unknown-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-nutrition-fruitportions-observation.json)
 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-nutritio
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationNutritionFruitPortions",
   "title" : "AT PreNUDGE Observation Nutrition Fruit Portions",
   "status" : "draft",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -110,7 +110,7 @@ Links:
         "key" : "nutrition-fruit-portions-range",
         "severity" : "error",
         "human" : "Fruit portions per day must be between 1 and 99.",
-        "expression" : "value.ofType(Quantity).value >= 1 and value.ofType(Quantity).value <= 99",
+        "expression" : "value.empty() or (value.ofType(Quantity).value >= 1 and value.ofType(Quantity).value <= 99)",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation"
       }]
     },
@@ -128,7 +128,6 @@ Links:
     {
       "id" : "Observation.value[x]",
       "path" : "Observation.value[x]",
-      "min" : 1,
       "type" : [{
         "code" : "Quantity"
       }]

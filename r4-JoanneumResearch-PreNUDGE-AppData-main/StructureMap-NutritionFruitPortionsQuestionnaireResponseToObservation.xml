@@ -18,7 +18,15 @@
 </span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'89765-5'</span><span style="color: navy">, </span><span style="color: blue">'Servings of fruit per day [PhenX]'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src.item<b> as </b><span style="color: maroon">item</span><b> where </b><span style="color: navy">(</span>linkId = 'DH1'<span style="color: navy">)</span><b> then </b>MapFruitFrequencyAbsence<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessDH1Absence&quot;</i><span style="color: navy">;</span>
   src.item<b> as </b><span style="color: maroon">item</span><b> where </b><span style="color: navy">(</span>linkId = 'DH2'<span style="color: navy">)</span><b> then </b>MapFruitPortions<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessDH2&quot;</i><span style="color: navy">;</span>
+<span style="color: navy">}
+
+</span><b>group </b>MapFruitFrequencyAbsence<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
+</span>  src.answer<b> as </b><span style="color: maroon">answer</span><b> then</b><span style="color: navy"> {
+</span>    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>coding.code = 'meta-unknown'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-unknown'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Unknown'</span><span style="color: navy">)</span> <i>&quot;MapUnknown&quot;</i><span style="color: navy">;</span>
+    answer.valueCoding<b> as </b><span style="color: maroon">coding</span><b> where </b><span style="color: navy">(</span>coding.code = 'meta-not-stated'<span style="color: navy">)</span><span style="color: navy"><b> -&gt; </b></span>tgt.dataAbsentReason = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://terminology.hl7.org/CodeSystem/data-absent-reason'</span><span style="color: navy">, </span><span style="color: blue">'asked-declined'</span><span style="color: navy">, </span><span style="color: blue">'Asked But Declined'</span><span style="color: navy">)</span> <i>&quot;MapNotStated&quot;</i><span style="color: navy">;</span>
+  <span style="color: navy">}</span> <i>&quot;ProcessAbsenceAnswer&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
 
 </span><b>group </b>MapFruitPortions<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
@@ -36,7 +44,7 @@
   <name value="NutritionFruitPortionsQuestionnaireResponseToObservation"/>
   <title value="Nutrition Fruit Portions Q to O"/>
   <status value="active"/>
-  <date value="2026-08-07T08:52:23+00:00"/>
+  <date value="2026-08-13T06:23:48+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -137,6 +145,20 @@
       </target>
     </rule>
     <rule>
+      <name value="ProcessDH1Absence"/>
+      <source>
+        <context value="src"/>
+        <element value="item"/>
+        <variable value="item"/>
+        <condition value="linkId = 'DH1'"/>
+      </source>
+      <dependent>
+        <name value="MapFruitFrequencyAbsence"/>
+        <variable value="item"/>
+        <variable value="tgt"/>
+      </dependent>
+    </rule>
+    <rule>
       <name value="ProcessDH2"/>
       <source>
         <context value="src"/>
@@ -149,6 +171,76 @@
         <variable value="item"/>
         <variable value="tgt"/>
       </dependent>
+    </rule>
+  </group>
+  <group>
+    <name value="MapFruitFrequencyAbsence"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="src"/>
+      <type value="QR"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="tgt"/>
+      <type value="Obs"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="ProcessAbsenceAnswer"/>
+      <source>
+        <context value="src"/>
+        <element value="answer"/>
+        <variable value="answer"/>
+      </source>
+      <rule>
+        <name value="MapUnknown"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="coding"/>
+          <condition value="coding.code = 'meta-unknown'"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="dataAbsentReason"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          </parameter>
+          <parameter>
+            <valueString value="asked-unknown"/>
+          </parameter>
+          <parameter>
+            <valueString value="Asked But Unknown"/>
+          </parameter>
+        </target>
+      </rule>
+      <rule>
+        <name value="MapNotStated"/>
+        <source>
+          <context value="answer"/>
+          <element value="valueCoding"/>
+          <variable value="coding"/>
+          <condition value="coding.code = 'meta-not-stated'"/>
+        </source>
+        <target>
+          <context value="tgt"/>
+          <contextType value="variable"/>
+          <element value="dataAbsentReason"/>
+          <transform value="cc"/>
+          <parameter>
+            <valueString value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+          </parameter>
+          <parameter>
+            <valueString value="asked-declined"/>
+          </parameter>
+          <parameter>
+            <valueString value="Asked But Declined"/>
+          </parameter>
+        </target>
+      </rule>
     </rule>
   </group>
   <group>

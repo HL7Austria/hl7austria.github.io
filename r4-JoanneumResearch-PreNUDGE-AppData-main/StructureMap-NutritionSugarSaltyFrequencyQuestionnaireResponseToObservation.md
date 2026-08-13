@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureMap/NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation | *Version*:0.1.0 | |
-| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation |
+| Active as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation |
 
  
 Nutrition Sugar Salty Frequency Q to O 
@@ -17,7 +17,7 @@ Nutrition Sugar Salty Frequency Q to O
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -34,7 +34,7 @@ Links:
   "name" : "NutritionSugarSaltyFrequencyQuestionnaireResponseToObservation",
   "title" : "Nutrition Sugar Salty Frequency Q to O",
   "status" : "active",
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -172,7 +172,8 @@ Links:
         "source" : [{
           "context" : "answer",
           "element" : "valueCoding",
-          "variable" : "coding"
+          "variable" : "coding",
+          "condition" : "(coding.code != 'meta-unknown') and (coding.code != 'meta-not-stated')"
         }],
         "target" : [{
           "context" : "tgt",
@@ -191,6 +192,54 @@ Links:
           "transform" : "copy",
           "parameter" : [{
             "valueId" : "coding"
+          }]
+        }]
+      },
+      {
+        "name" : "MapUnknown",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueCoding",
+          "variable" : "coding",
+          "condition" : "coding.code = 'meta-unknown'"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "dataAbsentReason",
+          "transform" : "cc",
+          "parameter" : [{
+            "valueString" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+          },
+          {
+            "valueString" : "asked-unknown"
+          },
+          {
+            "valueString" : "Asked But Unknown"
+          }]
+        }]
+      },
+      {
+        "name" : "MapNotStated",
+        "source" : [{
+          "context" : "answer",
+          "element" : "valueCoding",
+          "variable" : "coding",
+          "condition" : "coding.code = 'meta-not-stated'"
+        }],
+        "target" : [{
+          "context" : "tgt",
+          "contextType" : "variable",
+          "element" : "dataAbsentReason",
+          "transform" : "cc",
+          "parameter" : [{
+            "valueString" : "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+          },
+          {
+            "valueString" : "asked-declined"
+          },
+          {
+            "valueString" : "Asked But Declined"
           }]
         }]
       }]

@@ -9,19 +9,19 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/prenudge-isced-2011-education-level | *Version*:0.1.0 | |
-| Active as of 2026-08-07 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemIsced2011EducationLevel |
+| Active as of 2026-08-13 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemIsced2011EducationLevel |
 
  
 Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [AtPrenudgeValueSetIsced2011EducationLevel](ValueSet-prenudge-isced-2011-education-level.md)
+* [AT PreNUDGE ISCED-based Education Category ValueSet](ValueSet-prenudge-isced-2011-education-level.md)
 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-07
+2026-08-13
 
 Links:
 [Table of Contents](toc.md)|
@@ -39,7 +39,7 @@ Links:
   "title" : "AT PreNUDGE ISCED-based Education Category Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-07T08:52:23+00:00",
+  "date" : "2026-08-13T06:23:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -59,7 +59,7 @@ Links:
   "description" : "Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE.",
   "caseSensitive" : true,
   "content" : "complete",
-  "count" : 10,
+  "count" : 8,
   "concept" : [{
     "code" : "isced-1",
     "display" : "ISCED 1: Volksschule"
@@ -91,14 +91,6 @@ Links:
   {
     "code" : "isced-6-8",
     "display" : "ISCED 6–8: Hochschulabschlüsse (Bachelor, Master, Doktor)"
-  },
-  {
-    "code" : "unknown",
-    "display" : "Weiß nicht"
-  },
-  {
-    "code" : "not-stated",
-    "display" : "Keine Angabe"
   }]
 }
 

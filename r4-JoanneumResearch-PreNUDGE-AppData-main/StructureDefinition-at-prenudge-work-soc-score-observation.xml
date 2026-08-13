@@ -40,7 +40,7 @@
   <name value="AtPrenudgeObservationWorkSocScore"/>
   <title value="AT PreNUDGE Observation Work-SoC Category Score"/>
   <status value="draft"/>
-  <date value="2026-08-07T08:52:23+00:00"/>
+  <date value="2026-08-13T06:23:48+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -175,6 +175,13 @@
         <expression value="value.empty() or component.code.where(coding.intersect(%resource.code.coding).exists()).empty()"/>
         <xpath value="not(f:*[starts-with(local-name(.), 'value')] and (for $coding in f:code/f:coding return f:component/f:code/f:coding[f:code/@value=$coding/f:code/@value] [f:system/@value=$coding/f:system/@value]))"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+      </constraint>
+      <constraint>
+        <key value="at-prenudge-result-present"/>
+        <severity value="error"/>
+        <human value="A PreNUDGE Observation must contain a root result, a root data absent reason, or at least one component result or component data absent reason."/>
+        <expression value="value.exists() or dataAbsentReason.exists() or component.where(value.exists() or dataAbsentReason.exists()).exists()"/>
+        <source value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-observation"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
@@ -1470,7 +1477,7 @@
     </element>
     <element id="Observation.dataAbsentReason">
       <path value="Observation.dataAbsentReason"/>
-      <short value="Why the result is missing"/>
+      <short value="Reason why no clinically or analytically meaningful result is available"/>
       <definition value="Provides a reason why the expected value in the element Observation.value[x] is missing."/>
       <comment value="Null or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;specimen unsatisfactory&quot;.   &#xA;&#xA;The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed. Note that an observation may only be reported if there are values to report. For example differential cell counts values may be reported only when &gt; 0.  Because of these options, use-case agreements are required to interpret general observations for null or exceptional values."/>
       <requirements value="For many results it is necessary to handle exceptional values in measurements."/>
@@ -1493,6 +1500,7 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>
@@ -2509,7 +2517,7 @@
     </element>
     <element id="Observation.component.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason"/>
-      <short value="Why the component result is missing"/>
+      <short value="Reason why no clinically or analytically meaningful component result is available"/>
       <definition value="Provides a reason why the expected value in the element Observation.component.value[x] is missing."/>
       <comment value="&quot;Null&quot; or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;test not done&quot;. &#xA;&#xA;The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values."/>
       <requirements value="For many results it is necessary to handle exceptional values in measurements."/>
@@ -2532,6 +2540,7 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>
@@ -2883,7 +2892,7 @@
     </element>
     <element id="Observation.component:comprehensibility.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason"/>
-      <short value="Why the component result is missing"/>
+      <short value="Reason why no clinically or analytically meaningful component result is available"/>
       <definition value="Provides a reason why the expected value in the element Observation.component.value[x] is missing."/>
       <comment value="&quot;Null&quot; or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;test not done&quot;. &#xA;&#xA;The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values."/>
       <requirements value="For many results it is necessary to handle exceptional values in measurements."/>
@@ -2906,6 +2915,7 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>
@@ -3257,7 +3267,7 @@
     </element>
     <element id="Observation.component:manageability.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason"/>
-      <short value="Why the component result is missing"/>
+      <short value="Reason why no clinically or analytically meaningful component result is available"/>
       <definition value="Provides a reason why the expected value in the element Observation.component.value[x] is missing."/>
       <comment value="&quot;Null&quot; or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;test not done&quot;. &#xA;&#xA;The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values."/>
       <requirements value="For many results it is necessary to handle exceptional values in measurements."/>
@@ -3280,6 +3290,7 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>
@@ -3631,7 +3642,7 @@
     </element>
     <element id="Observation.component:meaningfulness.dataAbsentReason">
       <path value="Observation.component.dataAbsentReason"/>
-      <short value="Why the component result is missing"/>
+      <short value="Reason why no clinically or analytically meaningful component result is available"/>
       <definition value="Provides a reason why the expected value in the element Observation.component.value[x] is missing."/>
       <comment value="&quot;Null&quot; or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  &quot;detected&quot;, &quot;not detected&quot;, &quot;inconclusive&quot;, or  &quot;test not done&quot;. &#xA;&#xA;The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code &quot;error&quot; could be used when the measurement was not completed.  Because of these options, use-case agreements are required to interpret general observations for exceptional values."/>
       <requirements value="For many results it is necessary to handle exceptional values in measurements."/>
@@ -3654,6 +3665,7 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <binding>

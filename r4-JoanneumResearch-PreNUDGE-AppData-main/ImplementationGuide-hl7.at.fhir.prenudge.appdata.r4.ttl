@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "PreNUDGEAppdataR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-08-07T08:52:23+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-08-13T06:23:48+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "The PreNUDGE Consortium"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -906,7 +906,7 @@
          fhir:Reference.reference [ fhir:value "ValueSet/prenudge-nutrition-consumption-frequency-vs" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE Nutrition Consumption Frequency" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025. Includes the 'Weiß nicht' option (code 'unknown')." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "All frequency options for fruit and vegetable consumption questions DH1 and DH3 from ATHIS 2025, including the two universal ATHIS metadata answers." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 14 ;
@@ -920,7 +920,7 @@
          fhir:Reference.reference [ fhir:value "ValueSet/prenudge-nutrition-sugarsalty-frequency-vs" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE Nutrition Sugar Salty Consumption Frequency" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Frequency options for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). Excludes 'Weiß nicht' because DH6 does not offer that option." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Analytical frequency values for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). The questionnaire's universal metadata answers are represented in Observation.dataAbsentReason and are therefore excluded from this ValueSet." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 15 ;
@@ -1046,7 +1046,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-prenudge-muscle-strengthening-observation" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT PreNUDGE Observation Muscle Strengthening Sessions" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from MuscleStrengtheningQuantityQuestionnaire (method = Manual). The value must be 0 or greater." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This FHIR profile defines the Muscle Strengthening Sessions Observation recording the number of muscle-strengthening exercise sessions (e.g. weight training, resistance exercises with weights, resistance bands, or bodyweight) per week. Applicable for both automated wearable measurements (method = Automated) and self-reported values derived from questionnaires (method = Manual). A numeric value must be 0 or greater; ATHIS metadata answers are represented using dataAbsentReason." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 24 ;
@@ -1798,6 +1798,23 @@
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "QuestionnaireResponse" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/muscle-strengthening-ehis-paq-response-unknown-example> ;
+         fhir:Reference.reference [ fhir:value "QuestionnaireResponse/muscle-strengthening-ehis-paq-response-unknown-example" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "EHIS-PAQ Q8 / ATHIS PE8 Muscle Strengthening Q - Unknown Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example QuestionnaireResponse using the universal ATHIS answer 'Weiß nicht'." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse" ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ], [
+       fhir:index 75 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "Questionnaire" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -1808,7 +1825,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "EHIS-PAQ Q8 / ATHIS PE8: number of\ndays per week on which the respondent performs physical activities specifically aimed at\nbuilding or strengthening muscles (e.g. weight training, resistance-band exercises,\nbodyweight exercises, squats, push-ups, sit-ups). Answer options use existing ATHIS\nCodeSystem codes activity-1-day through activity-7-days. Two mapping paths to\nAtPrenudgeObservationMuscleStrengthening are available: (1) directly from this\nquestionnaire via MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation\n(translates coded day-count to numeric sessions/wk: 1 day = 1 session/wk, …, 7 days\n= 7 sessions/wk); (2) via MuscleStrengtheningQuantityQuestionnaire and\nMuscleStrengtheningQuestionnaireResponseToObservation when a numeric quantity answer\nis preferred." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 75 ;
+       fhir:index 76 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1825,7 +1842,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 76 ;
+       fhir:index 77 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1839,7 +1856,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "EHIS-PAQ Q9 / ATHIS PE9: total time spent sitting or resting on a\ntypical day (excluding sleep), captured as two integer sub-items (hours 0–23,\nminutes 0–60). Mapped to AtPrenudgeObservationSittingHours via\nSittingHoursQuestionnaireResponseToObservation (hours + minutes/60 → valueQuantity\nin h)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 77 ;
+       fhir:index 78 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1853,7 +1870,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Questions Q4–Q7 from the European Health Interview Survey Physical Activity\nQuestionnaire (EHIS-PAQ), equivalent to ATHIS PE4–PE7: cycling for transport\n(Q4/PE4: days per week, Q5/PE5: duration per day), leisure sport and physical\nactivity in leisure time (Q6/PE6: days per week, Q7/PE7: total duration per week).\nQ7 is mapped to Observation via PhysicalActivityMinutesQtoO;\nQ4–Q6 are captured only." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 78 ;
+       fhir:index 79 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1867,7 +1884,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Questions Q2–Q3 from the European Health Interview Survey Physical Activity\nQuestionnaire (EHIS-PAQ), equivalent to ATHIS PE2–PE3: number of days per week on\nwhich the respondent walks for transport (Q2/PE2, integer 0–7) and the typical\nduration of that walking per day (Q3/PE3, coded using ATHIS group 9 answer set)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 79 ;
+       fhir:index 80 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1881,7 +1898,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A simple questionnaire asking for the person's highest completed education level using eight ISCED-based answer categories." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 80 ;
+       fhir:index 81 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1895,7 +1912,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Questionnaire based on ATHIS 2025 question DH6 (STATISTIK AUSTRIA) to self-report the weekly consumption frequency of sugary, fatty, and salty foods and energy-dense drinks." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 81 ;
+       fhir:index 82 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1909,7 +1926,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Questionnaire for self-reporting body height and body weight. The Body Mass Index (BMI) is defined as an SDC calculated expression based on height in cm and weight in kg. The QuestionnaireResponse may be mapped to separate body height, body weight and BMI Observations." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 82 ;
+       fhir:index 83 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1926,7 +1943,24 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation>
        ]
      ], [
-       fhir:index 83 ;
+       fhir:index 84 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/muscle-strengthening-ehis-paq-unknown-example> ;
+         fhir:Reference.reference [ fhir:value "Observation/muscle-strengthening-ehis-paq-unknown-example" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Muscle Strengthening Sessions O mapped from ATHIS - Unknown Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example derived from an ATHIS 'Weiß nicht' response; no numeric frequency is asserted." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation" ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation>
+       ]
+     ], [
+       fhir:index 85 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1943,7 +1977,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation>
        ]
      ], [
-       fhir:index 84 ;
+       fhir:index 86 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1960,7 +1994,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-muscle-strengthening-observation>
        ]
      ], [
-       fhir:index 85 ;
+       fhir:index 87 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1977,7 +2011,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 86 ;
+       fhir:index 88 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1991,7 +2025,24 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A numeric questionnaire for directly entering the number of muscle-strengthening exercise sessions per week. Designed for direct FML mapping to the AT PreNUDGE Observation Muscle Strengthening Sessions profile via MuscleStrengtheningQuestionnaireResponseToObservation. Use EhisPaqMuscleStrengtheningQuestionnaire for the categorical EHIS-PAQ Q8 / ATHIS PE8 representation." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 87 ;
+       fhir:index 89 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "QuestionnaireResponse" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/nutrition-fruitvegetable-response-metadata-example> ;
+         fhir:Reference.reference [ fhir:value "QuestionnaireResponse/nutrition-fruitvegetable-response-metadata-example" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Fruit & Veg Q - ATHIS Metadata Answers Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example response using 'Weiß nicht' for fruit frequency and 'Keine Angabe' for vegetable frequency." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse" ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ], [
+       fhir:index 90 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2008,7 +2059,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 88 ;
+       fhir:index 91 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2025,7 +2076,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 89 ;
+       fhir:index 92 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2042,7 +2093,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation>
        ]
      ], [
-       fhir:index 90 ;
+       fhir:index 93 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2059,7 +2110,24 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation>
        ]
      ], [
-       fhir:index 91 ;
+       fhir:index 94 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/nutrition-fruitportions-unknown-example> ;
+         fhir:Reference.reference [ fhir:value "Observation/nutrition-fruitportions-unknown-example" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Fruit Portions O mapped from Q - Unknown Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example derived from the universal ATHIS answer 'Weiß nicht' to DH1." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation" ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-fruitportions-observation>
+       ]
+     ], [
+       fhir:index 95 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2076,7 +2144,24 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation>
        ]
      ], [
-       fhir:index 92 ;
+       fhir:index 96 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/nutrition-sugarsalty-not-stated-example> ;
+         fhir:Reference.reference [ fhir:value "Observation/nutrition-sugarsalty-not-stated-example" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Sugar Salty Frequency O mapped from Q - Not Stated Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example derived from the universal ATHIS answer 'Keine Angabe'." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation" ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation>
+       ]
+     ], [
+       fhir:index 97 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2093,7 +2178,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-sugarsalty-observation>
        ]
      ], [
-       fhir:index 93 ;
+       fhir:index 98 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2110,7 +2195,24 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 94 ;
+       fhir:index 99 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "QuestionnaireResponse" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/QuestionnaireResponse/nutrition-sugarsalty-response-not-stated-example> ;
+         fhir:Reference.reference [ fhir:value "QuestionnaireResponse/nutrition-sugarsalty-response-not-stated-example" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Sugar Salty Q - Not Stated Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example response using the universal ATHIS answer 'Keine Angabe'." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse" ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
+       ]
+     ], [
+       fhir:index 100 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2127,7 +2229,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 95 ;
+       fhir:index 101 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2144,7 +2246,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation>
        ]
      ], [
-       fhir:index 96 ;
+       fhir:index 102 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2161,7 +2263,24 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation>
        ]
      ], [
-       fhir:index 97 ;
+       fhir:index 103 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Observation" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/Observation/nutrition-vegetableportions-not-stated-example> ;
+         fhir:Reference.reference [ fhir:value "Observation/nutrition-vegetableportions-not-stated-example" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Vegetable Portions O mapped from Q - Not Stated Example" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example derived from the universal ATHIS answer 'Keine Angabe' to DH3." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation" ;
+         fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation>
+       ]
+     ], [
+       fhir:index 104 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2175,7 +2294,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "10-item Perceived Stress Scale (PSS-10; LOINC 106875-8) measuring subjective experience of stress over the past four weeks. Scoring: items q4, q5, q7, q8 are positive items reversed (4 – ordinal); items q1, q2, q3, q6, q9, q10 are used as-is. Total score range 0–40; higher scores indicate greater perceived stress." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 98 ;
+       fhir:index 105 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2189,7 +2308,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "4-item short version of the Perceived Stress Scale (PSS-4) measuring subjective experience of stress over the past month. Scoring: items pss4-q2 and pss4-q3 are positive items reversed (4 – ordinal); items pss4-q1 and pss4-q4 are used as-is. Total score range 0–16; higher scores indicate greater perceived stress." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 99 ;
+       fhir:index 106 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2203,7 +2322,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Short screening for emotional burden and depressive disorders (Whooley Questions / PHQ-2 Yes/No version) as referenced in the Nationale VersorgungsLeitlinie (NVL) Depression (AWMF nvl-005, https://register.awmf.org/de/leitlinien/detail/nvl-005). Reference period: last month (deviating from the standard PHQ-2 period of two weeks). When both questions are answered 'Yes', the instrument identifies depressive disorders with a sensitivity of 96% and a specificity of 57%." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 100 ;
+       fhir:index 107 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2220,7 +2339,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
        ]
      ], [
-       fhir:index 101 ;
+       fhir:index 108 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2237,7 +2356,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
        ]
      ], [
-       fhir:index 102 ;
+       fhir:index 109 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2254,7 +2373,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
        ]
      ], [
-       fhir:index 103 ;
+       fhir:index 110 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2271,7 +2390,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
        ]
      ], [
-       fhir:index 104 ;
+       fhir:index 111 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2288,7 +2407,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
        ]
      ], [
-       fhir:index 105 ;
+       fhir:index 112 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2305,7 +2424,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation>
        ]
      ], [
-       fhir:index 106 ;
+       fhir:index 113 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2319,7 +2438,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Questionnaire based on ATHIS 2025 questions DH1–DH4 (STATISTIK AUSTRIA) to self-report daily portions of fruit and vegetables. DH2 is only enabled when DH1 = 'Täglich oder mehrmals täglich'; DH4 is only enabled when DH3 = 'Täglich oder mehrmals täglich'." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 107 ;
+       fhir:index 114 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2333,7 +2452,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a wearable fitness tracker referenced from the physical activity wearable observation example." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 108 ;
+       fhir:index 115 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2350,7 +2469,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 109 ;
+       fhir:index 116 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2367,7 +2486,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss10-score-observation>
        ]
      ], [
-       fhir:index 110 ;
+       fhir:index 117 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2384,7 +2503,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 111 ;
+       fhir:index 118 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2401,7 +2520,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-pss4-score-observation>
        ]
      ], [
-       fhir:index 112 ;
+       fhir:index 119 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2415,7 +2534,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ATHIS 2025-based questionnaire module for smoking status, cigarette consumption, duration of daily smoking, tobacco heaters, electronic cigarettes or similar electronic products, and nicotine pouches. A derived IPS-compatible Observation can be created from SK1 and the past tobacco smoking question." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 113 ;
+       fhir:index 120 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2429,7 +2548,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Standalone questionnaire for self-assessing sleep quality based on WHOQOL-BREF question Q16 ('Wie zufrieden sind Sie mit Ihrem Schlaf?')." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 114 ;
+       fhir:index 121 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2443,7 +2562,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 115 ;
+       fhir:index 122 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2460,7 +2579,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation>
        ]
      ], [
-       fhir:index 116 ;
+       fhir:index 123 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2477,7 +2596,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sitting-hours-observation>
        ]
      ], [
-       fhir:index 117 ;
+       fhir:index 124 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2494,7 +2613,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation>
        ]
      ], [
-       fhir:index 118 ;
+       fhir:index 125 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2511,7 +2630,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation>
        ]
      ], [
-       fhir:index 119 ;
+       fhir:index 126 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2528,7 +2647,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-duration-observation>
        ]
      ], [
-       fhir:index 120 ;
+       fhir:index 127 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2545,7 +2664,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 121 ;
+       fhir:index 128 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2562,7 +2681,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 122 ;
+       fhir:index 129 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2579,7 +2698,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation>
        ]
      ], [
-       fhir:index 123 ;
+       fhir:index 130 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2596,7 +2715,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-sleep-quality-observation>
        ]
      ], [
-       fhir:index 124 ;
+       fhir:index 131 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2613,7 +2732,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 125 ;
+       fhir:index 132 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2630,7 +2749,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 126 ;
+       fhir:index 133 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2647,7 +2766,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation>
        ]
      ], [
-       fhir:index 127 ;
+       fhir:index 134 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2664,7 +2783,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation>
        ]
      ], [
-       fhir:index 128 ;
+       fhir:index 135 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2681,7 +2800,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation>
        ]
      ], [
-       fhir:index 129 ;
+       fhir:index 136 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2698,7 +2817,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-smokingstatus-observation>
        ]
      ], [
-       fhir:index 130 ;
+       fhir:index 137 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2715,7 +2834,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 131 ;
+       fhir:index 138 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2732,7 +2851,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 132 ;
+       fhir:index 139 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2749,7 +2868,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 133 ;
+       fhir:index 140 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2766,7 +2885,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 134 ;
+       fhir:index 141 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2783,7 +2902,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 135 ;
+       fhir:index 142 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2800,7 +2919,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 136 ;
+       fhir:index 143 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2817,7 +2936,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation>
        ]
      ], [
-       fhir:index 137 ;
+       fhir:index 144 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2834,7 +2953,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation>
        ]
      ], [
-       fhir:index 138 ;
+       fhir:index 145 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2851,7 +2970,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-stepcount-observation>
        ]
      ], [
-       fhir:index 139 ;
+       fhir:index 146 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2868,7 +2987,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 140 ;
+       fhir:index 147 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2885,7 +3004,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 141 ;
+       fhir:index 148 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2902,7 +3021,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 142 ;
+       fhir:index 149 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2919,7 +3038,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whooley-observation>
        ]
      ], [
-       fhir:index 143 ;
+       fhir:index 150 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2936,7 +3055,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 144 ;
+       fhir:index 151 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2953,7 +3072,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 145 ;
+       fhir:index 152 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2967,7 +3086,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The WHOQOL-BREF is a 26-item instrument for assessing subjective quality of life in four domains: physical, psychological, social relationships, and environment. Developed by the WHO." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 146 ;
+       fhir:index 153 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -2984,7 +3103,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-whoqol-bref-score-observation>
        ]
      ], [
-       fhir:index 147 ;
+       fhir:index 154 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3001,7 +3120,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 148 ;
+       fhir:index 155 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3018,7 +3137,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaireresponse>
        ]
      ], [
-       fhir:index 149 ;
+       fhir:index 156 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3035,7 +3154,7 @@
          fhir:link <https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-work-soc-score-observation>
        ]
      ], [
-       fhir:index 150 ;
+       fhir:index 157 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3048,7 +3167,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Alcohol Use Q mapping frequency to O drinks per day" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Alcohol Use Q mapping frequency to O drinks per day" ]
      ], [
-       fhir:index 151 ;
+       fhir:index 158 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3061,7 +3180,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Blood Glucose Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Blood Glucose Q to O" ]
      ], [
-       fhir:index 152 ;
+       fhir:index 159 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3074,7 +3193,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BMI Q to Body Height, Body Weight and BMI Observations Bundle" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "BMI Q to Body Height, Body Weight and BMI Observations Bundle" ]
      ], [
-       fhir:index 153 ;
+       fhir:index 160 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3087,7 +3206,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Highest Completed Education Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Highest Completed Education Q to O" ]
      ], [
-       fhir:index 154 ;
+       fhir:index 161 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3100,7 +3219,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Muscle Strengthening EHIS-PAQ Q8 / ATHIS PE8 to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Muscle Strengthening EHIS-PAQ Q8 / ATHIS PE8 to O" ]
      ], [
-       fhir:index 155 ;
+       fhir:index 162 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3113,7 +3232,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Muscle Strengthening Sessions Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Muscle Strengthening Sessions Q to O" ]
      ], [
-       fhir:index 156 ;
+       fhir:index 163 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3126,7 +3245,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Fruit Portions Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Nutrition Fruit Portions Q to O" ]
      ], [
-       fhir:index 157 ;
+       fhir:index 164 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3139,7 +3258,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Sugar Salty Frequency Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Nutrition Sugar Salty Frequency Q to O" ]
      ], [
-       fhir:index 158 ;
+       fhir:index 165 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3152,7 +3271,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Nutrition Vegetable Portions Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Nutrition Vegetable Portions Q to O" ]
      ], [
-       fhir:index 159 ;
+       fhir:index 166 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3165,7 +3284,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Physical Activity Minutes Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Physical Activity EHIS-PAQ Q7 / ATHIS PE7 to O (aggregate-only variant)" ]
      ], [
-       fhir:index 160 ;
+       fhir:index 167 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3178,7 +3297,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PSS-10 Q score to O score" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "PSS-10 Q score to O score" ]
      ], [
-       fhir:index 161 ;
+       fhir:index 168 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3191,7 +3310,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PSS-4 Q score to O score" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "PSS-4 Q score to O score" ]
      ], [
-       fhir:index 162 ;
+       fhir:index 169 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3204,7 +3323,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Shared base for Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Shared base for Q to O" ]
      ], [
-       fhir:index 163 ;
+       fhir:index 170 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3217,7 +3336,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "WHOQOL-BREF Q score to O score" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "WHOQOL-BREF Q score to O score" ]
      ], [
-       fhir:index 164 ;
+       fhir:index 171 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3230,7 +3349,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Sitting Hours Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Sitting Hours EHIS-PAQ Q9 / ATHIS PE9 to O" ]
      ], [
-       fhir:index 165 ;
+       fhir:index 172 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3243,7 +3362,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Sleep Duration Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Sleep Duration Q to O" ]
      ], [
-       fhir:index 166 ;
+       fhir:index 173 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3256,7 +3375,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Sleep Quality Base (WHOQOL-BREF scale to LOINC)" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Sleep Quality Base (WHOQOL-BREF scale to LOINC)" ]
      ], [
-       fhir:index 167 ;
+       fhir:index 174 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3269,7 +3388,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ATHIS-based Smoking Status Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ATHIS-based Smoking Status Q to O" ]
      ], [
-       fhir:index 168 ;
+       fhir:index 175 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3282,7 +3401,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Step Count Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Step Count Q to O" ]
      ], [
-       fhir:index 169 ;
+       fhir:index 176 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -3295,7 +3414,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "PHQ-2/Whooley Q to O" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "PHQ-2/Whooley Q to O" ]
      ], [
-       fhir:index 170 ;
+       fhir:index 177 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
