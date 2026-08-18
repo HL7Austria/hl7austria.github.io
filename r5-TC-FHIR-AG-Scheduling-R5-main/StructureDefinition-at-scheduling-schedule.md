@@ -14,7 +14,7 @@
  
 HL7® Austria FHIR® Scheduling Profile for schedule data in Austria. 
 
-This Profile is used in the [Find available Schedules Interaction](interactions.md#find-available-schedules).
+This Profile is used in the [Find available Schedules Interaction](functional-transactions.md#find-available-schedules).
 
 **Usages:**
 
@@ -58,7 +58,7 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
   "name" : "HL7ATSchedulingSchedule",
   "title" : "HL7® AT Scheduling Schedule Profile",
   "status" : "draft",
-  "date" : "2026-08-18T08:43:24+00:00",
+  "date" : "2026-08-18T13:20:27+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
   "fhirVersion" : "5.0.0",

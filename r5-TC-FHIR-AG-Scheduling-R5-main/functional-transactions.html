@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.TC.WG.SCHEDULING.R5\Interactions - FHIR® v5.0.0</title>
+    <title>HL7.AT.FHIR.TC.WG.SCHEDULING.R5\Transactions - FHIR® v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4"}
-    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -90,13 +90,42 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="scenarios.html">Scenarios</a>
+    <a href="introduction.html">Introduction</a>
   </li>
-  <li>
-    <a href="interactions.html">Interactions</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="functional-transactions.html">Transactions</a>
+      </li>
+      <li>
+        <a href="functional-system-actors.html">System Actors</a>
+      </li>
+      <li>
+        <a href="functional-design-choices.html">Design Choices</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="use-case-simple-appointment-booking.html">Simple Appointment Booking</a>
+      </li>
+      <li>
+        <a href="use-case-central-scheduling-platform.html">Central Scheduling Platform</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="about.html">About</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -110,7 +139,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Interactions</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Transactions</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -135,7 +164,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/tc/wg/scheduling/r5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
-  <h2>Interactions</h2>
+  <h2>Transactions</h2>
   
 
 
@@ -360,10 +389,10 @@ flowchart LR
 
 <h4 id="cancellation-by-scheduling-server">Cancellation by Scheduling Server</h4>
 <figure><img src="interactions/cancel-appointment-server.svg" /></figure>
-<p>When an Appointment is cancelled on the Scheduling Server it's status is set to <code class="language-plaintext highlighter-rouge">cancelled</code>. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the cancellation. Scheduling Clients then can fetch the updated Appointment (see <a href="interactions.html#find-existing-appointments">Find existing Appointments</a>). If the Appointment was cancelled successfully, the status of the Slot to which the Appointment refers should be set to <code class="language-plaintext highlighter-rouge">free</code> again, <code class="language-plaintext highlighter-rouge">Slot.status=free</code>.</p>
+<p>When an Appointment is cancelled on the Scheduling Server it's status is set to <code class="language-plaintext highlighter-rouge">cancelled</code>. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the cancellation. Scheduling Clients then can fetch the updated Appointment (see <a href="functional-transactions.html#find-existing-appointments">Find existing Appointments</a>). If the Appointment was cancelled successfully, the status of the Slot to which the Appointment refers should be set to <code class="language-plaintext highlighter-rouge">free</code> again, <code class="language-plaintext highlighter-rouge">Slot.status=free</code>.</p>
 
 <h3 id="postpone-appointment">Postpone Appointment</h3>
-<p>This interaction moves an existing Appointment to a different time by changing its <code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">end</code>, optionally <code class="language-plaintext highlighter-rouge">minutesDuration</code> and the referenced <code class="language-plaintext highlighter-rouge">slot</code>. To change other information of the Appointment, use the <a href="interactions.html#update-appointment-information">Update Appointment</a> interaction instead.</p>
+<p>This interaction moves an existing Appointment to a different time by changing its <code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">end</code>, optionally <code class="language-plaintext highlighter-rouge">minutesDuration</code> and the referenced <code class="language-plaintext highlighter-rouge">slot</code>. To change other information of the Appointment, use the <a href="functional-transactions.html#update-appointment-information">Update Appointment</a> interaction instead.</p>
 
 <h4 id="postponement-by-scheduling-client">Postponement by Scheduling Client</h4>
 <figure><img src="interactions/postpone-appointment-client.svg" /></figure>
@@ -373,14 +402,14 @@ flowchart LR
 
 <h4 id="postponement-by-scheduling-server">Postponement by Scheduling Server</h4>
 <figure><img src="interactions/postpone-appointment-server.svg" /></figure>
-<p>When an Appointment is postponed on the Scheduling Server, the values for <code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">end</code> and optionally <code class="language-plaintext highlighter-rouge">minutesDuration</code> are updated. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the postponement. Scheduling Clients then can fetch the updated Appointment (see <a href="interactions.html#find-existing-appointments">Find existing Appointments</a>). As with postponement by the Scheduling Client, the affected Slots are updated accordingly: the Slot to which the Appointment previously referred should be set to free again, <code class="language-plaintext highlighter-rouge">Slot.status=free</code>, while the Slot covering the new time should be marked as occupied, <code class="language-plaintext highlighter-rouge">Slot.status=busy</code>.</p>
+<p>When an Appointment is postponed on the Scheduling Server, the values for <code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">end</code> and optionally <code class="language-plaintext highlighter-rouge">minutesDuration</code> are updated. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the postponement. Scheduling Clients then can fetch the updated Appointment (see <a href="functional-transactions.html#find-existing-appointments">Find existing Appointments</a>). As with postponement by the Scheduling Client, the affected Slots are updated accordingly: the Slot to which the Appointment previously referred should be set to free again, <code class="language-plaintext highlighter-rouge">Slot.status=free</code>, while the Slot covering the new time should be marked as occupied, <code class="language-plaintext highlighter-rouge">Slot.status=busy</code>.</p>
 <h3 id="update-appointment-information">Update Appointment information</h3>
 <p>This interaction updates the information (metadata) of an existing Appointment, such as <code class="language-plaintext highlighter-rouge">description</code>, <code class="language-plaintext highlighter-rouge">note</code>, <code class="language-plaintext highlighter-rouge">patientInstruction</code>, <code class="language-plaintext highlighter-rouge">priority</code> or the non-Patient participants. The following SHALL NOT be changed via this interaction:</p>
 
 <ul>
   <li>the participant Patient (<code class="language-plaintext highlighter-rouge">participant[HL7ATCorePatient]</code>);</li>
-  <li>the timing (<code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">end</code>, <code class="language-plaintext highlighter-rouge">minutesDuration</code>, <code class="language-plaintext highlighter-rouge">slot</code>) — use the <a href="interactions.html#postpone-appointment">Postpone Appointment</a> interaction instead;</li>
-  <li>the service (<code class="language-plaintext highlighter-rouge">serviceType</code> and the referenced HealthcareService) — cancel the Appointment (see <a href="interactions.html#cancel-appointment">Cancel Appointment</a>) and book a new one (see <a href="interactions.html#book-appointment-book">Book Appointment</a>) instead.</li>
+  <li>the timing (<code class="language-plaintext highlighter-rouge">start</code>, <code class="language-plaintext highlighter-rouge">end</code>, <code class="language-plaintext highlighter-rouge">minutesDuration</code>, <code class="language-plaintext highlighter-rouge">slot</code>) — use the <a href="functional-transactions.html#postpone-appointment">Postpone Appointment</a> interaction instead;</li>
+  <li>the service (<code class="language-plaintext highlighter-rouge">serviceType</code> and the referenced HealthcareService) — cancel the Appointment (see <a href="functional-transactions.html#cancel-appointment">Cancel Appointment</a>) and book a new one (see <a href="functional-transactions.html#book-appointment-book">Book Appointment</a>) instead.</li>
 </ul>
 
 <h4 id="update-by-scheduling-client">Update by Scheduling Client</h4>
@@ -389,7 +418,7 @@ flowchart LR
 
 <h4 id="update-by-scheduling-server">Update by Scheduling Server</h4>
 <figure><img src="interactions/update-appointment-information-server.svg" /></figure>
-<p>The Scheduling Server may update the same attributes, subject to the same restrictions, and is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the update, if the changed information requires informing them. Scheduling Clients then can fetch the updated Appointment (see <a href="interactions.html#find-existing-appointments">Find existing Appointments</a>).</p>
+<p>The Scheduling Server may update the same attributes, subject to the same restrictions, and is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the update, if the changed information requires informing them. Scheduling Clients then can fetch the updated Appointment (see <a href="functional-transactions.html#find-existing-appointments">Find existing Appointments</a>).</p>
 
 <h3 id="find-existing-appointments">Find existing Appointments</h3>
 <figure><img src="interactions/find-existing-appointments.svg" /></figure>
@@ -417,7 +446,7 @@ flowchart LR
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Aug 18, 2026 08:43+0000">2026-08-18</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Aug 18, 2026 13:20+0000">2026-08-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

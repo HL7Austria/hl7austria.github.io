@@ -16,7 +16,7 @@ HL7® Austria FHIR® Scheduling Profile for slot data in Austria.
 
 A Slot represents the smallest bookable time unit for an appointment for a specific service. E.g. if an examination XY usually takes 30 minutes, 30-minute units will be communicated as Slots. Additionally it contains information about the booking mode and mode of operation.
 
-This Profile is used in the [Find available Slots for potential Appointments](interactions.md#find-available-slots-for-potential-appointments).
+This Profile is used in the [Find available Slots for potential Appointments](functional-transactions.md#find-available-slots-for-potential-appointments).
 
 **Usages:**
 
@@ -64,7 +64,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-08-18T08:43:24+00:00",
+  "date" : "2026-08-18T13:20:27+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",

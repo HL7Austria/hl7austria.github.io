@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.TC.WG.SCHEDULING.R5\Actors - FHIR® v5.0.0</title>
+    <title>HL7.AT.FHIR.TC.WG.SCHEDULING.R5\Simple Appointment Booking - FHIR® v5.0.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +41,8 @@
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2"}
-    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <style type="text/css">h2{--heading-prefix:"6"}
+    h3,h4,h5,h6{--heading-prefix:"6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -90,13 +90,42 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="scenarios.html">Scenarios</a>
+    <a href="introduction.html">Introduction</a>
   </li>
-  <li>
-    <a href="interactions.html">Interactions</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="functional-transactions.html">Transactions</a>
+      </li>
+      <li>
+        <a href="functional-system-actors.html">System Actors</a>
+      </li>
+      <li>
+        <a href="functional-design-choices.html">Design Choices</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="use-case-simple-appointment-booking.html">Simple Appointment Booking</a>
+      </li>
+      <li>
+        <a href="use-case-central-scheduling-platform.html">Central Scheduling Platform</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="about.html">About</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -110,7 +139,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Actors</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Simple Appointment Booking</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -135,7 +164,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/tc/wg/scheduling/r5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
-  <h2>Actors</h2>
+  <h2>Simple Appointment Booking</h2>
   
 
 
@@ -150,13 +179,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>This IG defines two types of actors relevant to the scheduling process: Scheduling Client and Scheduling Server.</p>
+<h3 id="simple-appointment-booking">Simple appointment booking</h3>
 
-<h4 id="scheduling-client">Scheduling Client</h4>
-<p>The <a href="ActorDefinition-at-scheduling-actor-scheduling-client.html">Scheduling Client</a> issues parameterized requests to the Scheduling Server to retrieve Healthcare Service Providers, Healthcare Services, available time slots and other data relevant for Appointment scheduling. It books, edits and cancels Appointments for a specific patient.</p>
+<p>In this scenario a Scheduling Client directly interacts with a Scheduling Server. The Scheduling Server is typically a GP's information system or an HIS offering an appointment booking API according to this implementation guide.</p>
 
-<h4 id="scheduling-server">Scheduling Server</h4>
-<p>A <a href="ActorDefinition-at-scheduling-actor-scheduling-server.html">Scheduling Server</a> provides data relevant to Appointment scheduling, including Healthcare Service Providers, Healthcare Services, available time slots. It offers services such as creating Patients, booking, editing and cancelling Appointments.</p>
+<figure><img src="scenarios/simple-booking.svg" /></figure>
+<figure><img src="scenarios/sequence-simple.svg" /></figure>
+
 
 
 
@@ -176,7 +205,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Aug 18, 2026 08:43+0000">2026-08-18</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Aug 18, 2026 13:20+0000">2026-08-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

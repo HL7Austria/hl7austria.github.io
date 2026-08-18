@@ -14,7 +14,7 @@
  
 HL7® Austria FHIR® Scheduling Profile for appointment data in Austria. 
 
-This Profile is used in the [Find existing Appointments](interactions.md#find-existing-appointments) and the [$book Operation](OperationDefinition-appointment-book.md).
+This Profile is used in the [Find existing Appointments](functional-transactions.md#find-existing-appointments) and the [$book Operation](OperationDefinition-appointment-book.md).
 
 **Usages:**
 
@@ -63,7 +63,7 @@ The following search parameters SHOULD be supported by scheduling servers:
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7® AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2026-08-18T08:43:24+00:00",
+  "date" : "2026-08-18T13:20:27+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",

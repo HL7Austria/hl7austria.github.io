@@ -1,9 +1,9 @@
-# HL7.AT.FHIR.TC.WG.SCHEDULING.R5\Interactions - FHIR® v5.0.0
+# HL7.AT.FHIR.TC.WG.SCHEDULING.R5\Transactions - FHIR® v5.0.0
 
 * [**Table of Contents**](toc.md)
-* **Interactions**
+* **Transactions**
 
-## Interactions
+## Transactions
 
 ### General Information
 
@@ -167,11 +167,11 @@ To cancel an Appointment, the Scheduling Client sends an [HL7® AT Scheduling Ap
 
 #### Cancellation by Scheduling Server
 
-When an Appointment is cancelled on the Scheduling Server it's status is set to `cancelled`. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the cancellation. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](interactions.md#find-existing-appointments)). If the Appointment was cancelled successfully, the status of the Slot to which the Appointment refers should be set to `free` again, `Slot.status=free`.
+When an Appointment is cancelled on the Scheduling Server it's status is set to `cancelled`. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the cancellation. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](functional-transactions.md#find-existing-appointments)). If the Appointment was cancelled successfully, the status of the Slot to which the Appointment refers should be set to `free` again, `Slot.status=free`.
 
 ### Postpone Appointment
 
-This interaction moves an existing Appointment to a different time by changing its `start`, `end`, optionally `minutesDuration` and the referenced `slot`. To change other information of the Appointment, use the [Update Appointment](interactions.md#update-appointment-information) interaction instead.
+This interaction moves an existing Appointment to a different time by changing its `start`, `end`, optionally `minutesDuration` and the referenced `slot`. To change other information of the Appointment, use the [Update Appointment](functional-transactions.md#update-appointment-information) interaction instead.
 
 #### Postponement by Scheduling Client
 
@@ -181,15 +181,15 @@ Because postponing an Appointment changes the time it occupies, the Slots refere
 
 #### Postponement by Scheduling Server
 
-When an Appointment is postponed on the Scheduling Server, the values for `start`, `end` and optionally `minutesDuration` are updated. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the postponement. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](interactions.md#find-existing-appointments)). As with postponement by the Scheduling Client, the affected Slots are updated accordingly: the Slot to which the Appointment previously referred should be set to free again, `Slot.status=free`, while the Slot covering the new time should be marked as occupied, `Slot.status=busy`.
+When an Appointment is postponed on the Scheduling Server, the values for `start`, `end` and optionally `minutesDuration` are updated. The Scheduling Server is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the postponement. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](functional-transactions.md#find-existing-appointments)). As with postponement by the Scheduling Client, the affected Slots are updated accordingly: the Slot to which the Appointment previously referred should be set to free again, `Slot.status=free`, while the Slot covering the new time should be marked as occupied, `Slot.status=busy`.
 
 ### Update Appointment information
 
 This interaction updates the information (metadata) of an existing Appointment, such as `description`, `note`, `patientInstruction`, `priority` or the non-Patient participants. The following SHALL NOT be changed via this interaction:
 
 * the participant Patient (`participant[HL7ATCorePatient]`);
-* the timing (`start`, `end`, `minutesDuration`, `slot`) — use the [Postpone Appointment](interactions.md#postpone-appointment) interaction instead;
-* the service (`serviceType` and the referenced HealthcareService) — cancel the Appointment (see [Cancel Appointment](interactions.md#cancel-appointment)) and book a new one (see [Book Appointment](interactions.md#book-appointment-book)) instead.
+* the timing (`start`, `end`, `minutesDuration`, `slot`) — use the [Postpone Appointment](functional-transactions.md#postpone-appointment) interaction instead;
+* the service (`serviceType` and the referenced HealthcareService) — cancel the Appointment (see [Cancel Appointment](functional-transactions.md#cancel-appointment)) and book a new one (see [Book Appointment](functional-transactions.md#book-appointment-book)) instead.
 
 #### Update by Scheduling Client
 
@@ -197,7 +197,7 @@ The Scheduling Client sends a [HL7® AT Scheduling Appointment Profile](Structur
 
 #### Update by Scheduling Server
 
-The Scheduling Server may update the same attributes, subject to the same restrictions, and is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the update, if the changed information requires informing them. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](interactions.md#find-existing-appointments)).
+The Scheduling Server may update the same attributes, subject to the same restrictions, and is responsible for notifying participants of the Appointment (e.g. via email, text message or push notification) about the update, if the changed information requires informing them. Scheduling Clients then can fetch the updated Appointment (see [Find existing Appointments](functional-transactions.md#find-existing-appointments)).
 
 ### Find existing Appointments
 

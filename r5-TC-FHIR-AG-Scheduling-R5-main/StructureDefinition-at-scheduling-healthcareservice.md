@@ -14,7 +14,7 @@
  
 HL7® Austria FHIR® Scheduling Profile for healthcareservice data in Austria. 
 
-This Profile is used in the [Find available HealthcareServices Interaction](interactions.md#find-available-healthcareservices).
+This Profile is used in the [Find available HealthcareServices Interaction](functional-transactions.md#find-available-healthcareservices).
 
 **Usages:**
 
@@ -70,7 +70,7 @@ The following search parameters SHOULD be supported by scheduling servers:
   "name" : "HL7ATSchedulingHealthcareService",
   "title" : "HL7® AT Scheduling HealthcareService Profile",
   "status" : "draft",
-  "date" : "2026-08-18T08:43:24+00:00",
+  "date" : "2026-08-18T13:20:27+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for healthcareservice data in Austria.",
   "fhirVersion" : "5.0.0",
