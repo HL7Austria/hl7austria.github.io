@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/virtual-service-detail | *Version*:0.2.0 | |
-| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:VirtualServiceDetailExt |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/virtual-service-detail | *Version*:0.2.0 | |
+| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:VirtualServiceDetailExt |
 
 Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead. **Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future**
 
@@ -47,12 +47,12 @@ Other representations of profile: [CSV](StructureDefinition-virtual-service-deta
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/virtual-service-detail",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/virtual-service-detail",
   "version" : "0.2.0",
   "name" : "VirtualServiceDetailExt",
   "title" : "VirtualServiceDetail",
   "status" : "draft",
-  "date" : "2026-06-10T09:07:46+00:00",
+  "date" : "2026-08-18T08:43:24+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead. **Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future**",
   "fhirVersion" : "5.0.0",
@@ -297,7 +297,7 @@ Other representations of profile: [CSV](StructureDefinition-virtual-service-deta
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/virtual-service-detail"
+      "fixedUri" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/virtual-service-detail"
     },
     {
       "id" : "Extension.value[x]",

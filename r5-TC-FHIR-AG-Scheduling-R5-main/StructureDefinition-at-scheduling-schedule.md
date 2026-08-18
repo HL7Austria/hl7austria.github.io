@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule | *Version*:0.2.0 | |
-| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-schedule | *Version*:0.2.0 | |
+| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSchedule |
 
  
 HL7® Austria FHIR® Scheduling Profile for schedule data in Austria. 
@@ -53,12 +53,12 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-scheduling-schedule",
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-schedule",
   "version" : "0.2.0",
   "name" : "HL7ATSchedulingSchedule",
   "title" : "HL7® AT Scheduling Schedule Profile",
   "status" : "draft",
-  "date" : "2026-06-10T09:07:46+00:00",
+  "date" : "2026-08-18T08:43:24+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for schedule data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -92,7 +92,7 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
       "path" : "Schedule.serviceType",
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
+        "valueSet" : "https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType"
       }
     },
     {
@@ -106,7 +106,7 @@ At least one of the parameters [actor](https://www.hl7.org/fhir/schedule-search.
         "http://hl7.org/fhir/StructureDefinition/CareTeam",
         "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
         "http://hl7.org/fhir/StructureDefinition/Device",
-        "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice",
+        "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice",
         "http://hl7.org/fhir/StructureDefinition/Location"]
       }]
     }]

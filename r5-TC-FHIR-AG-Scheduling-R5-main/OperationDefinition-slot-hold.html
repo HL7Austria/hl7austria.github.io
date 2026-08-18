@@ -123,7 +123,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/tc/wg/scheduling/r5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -174,10 +174,10 @@
   <table class="colsi">
 
     <tr>
-      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold"/></span>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/slot-hold<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/slot-hold"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold|0.2.0"/></span>
+      <span class="copy-text">0.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/slot-hold|0.2.0"/></span>
       </td>
     </tr>
 
@@ -193,7 +193,7 @@
         
           Active
           
-            as of 2026-06-10
+            as of 2026-08-18
           
         
       </td>
@@ -234,7 +234,7 @@
   
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="slot-hold"> </a><a name="hcslot-hold"> </a><p>URL: [base]/Slot/$hold</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>slot-reference</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/references.html#Reference">Reference</a> (<a href="StructureDefinition-at-scheduling-slot.html" title="http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot">HL7® AT Scheduling Slot Profile</a>)</td><td/><td><div><p>A resource id for one of proposed Slots returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own slots.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="slot-hold"> </a><a name="hcslot-hold"> </a><p>URL: [base]/Slot/$hold</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>slot-reference</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R5/references.html#Reference">Reference</a> (<a href="StructureDefinition-at-scheduling-slot.html" title="https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot">HL7® AT Scheduling Slot Profile</a>)</td><td/><td><div><p>A resource id for one of proposed Slots returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own slots.</p>
 </div></td></tr><tr><td>IN</td><td>slot-identifier</td><td/><td>0..*</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#Identifier">Identifier</a></td><td/><td><div><p>When slot-identifiers are provided, the server is expected to perform an internal lookup to identify the corresponding slot instance. The server SHALL reject the request if the provided identifiers do not resolve to a single slot instance.</p>
 </div></td></tr><tr><td>IN</td><td>slot-status</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/datatypes.html#code">code</a></td><td><a href="http://hl7.org/fhir/R5/valueset-slotstatus.html">Slot Status</a> (Required)</td><td><div><p>To create a hold on the slot this parameter needs to have the value <code>busy-tentative</code> or <code>free</code> to release it.</p>
 </div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R5/parameters.html">Parameters</a></td><td/><td><div><p>The response will be a Parameters resource consisting of the requested held Slot resource, an OperationOutcome with errors, warnings or information as a result of processing the operation and in upon successful creation of a hold a dateTime <code>held-until</code>, which signals when the hold is automatically released. The Appointment resource will have an updated <code>status</code> of &quot;busy-tentative&quot; if the hold is approved or  &quot;busy-unavailable&quot; if the hold is rejected.</p>
@@ -429,7 +429,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Wed, Jun 10, 2026 09:07+0000">2026-06-10</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Aug 18, 2026 08:43+0000">2026-08-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

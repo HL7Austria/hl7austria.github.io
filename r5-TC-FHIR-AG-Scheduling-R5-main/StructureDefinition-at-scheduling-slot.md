@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot | *Version*:0.2.0 | |
-| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot | *Version*:0.2.0 | |
+| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
 
  
 HL7® Austria FHIR® Scheduling Profile for slot data in Austria. 
@@ -59,12 +59,12 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-scheduling-slot",
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot",
   "version" : "0.2.0",
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-06-10T09:07:46+00:00",
+  "date" : "2026-08-18T08:43:24+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -113,7 +113,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
       "max" : "*",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/slot-encounter-class"]
+        "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/slot-encounter-class"]
       }]
     },
     {
@@ -124,7 +124,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url"]
+        "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/appointment-booking-url"]
       }]
     },
     {
@@ -135,7 +135,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
+        "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
       }]
     },
     {
@@ -143,11 +143,11 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
       "path" : "Slot.serviceType",
       "type" : [{
         "code" : "CodeableReference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice"]
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
+        "valueSet" : "https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType"
       }
     },
     {
@@ -155,7 +155,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
       "path" : "Slot.schedule",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-schedule"]
       }]
     }]
   }

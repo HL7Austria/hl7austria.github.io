@@ -46,13 +46,13 @@ Profile: [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-schedu
   "resourceType" : "Appointment",
   "id" : "HL7ATSchedulingAppointmentExample01",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+    "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment"]
   },
   "status" : "booked",
   "serviceType" : [{
     "concept" : {
       "coding" : [{
-        "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
+        "system" : "http://terminology.hl7.org/CodeSystem/service-type",
         "code" : "65",
         "display" : "Physiotherapy"
       }]

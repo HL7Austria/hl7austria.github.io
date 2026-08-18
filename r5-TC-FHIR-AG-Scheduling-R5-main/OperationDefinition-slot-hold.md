@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold | *Version*:0.2.0 | |
-| Active as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Hold_Slot_Operation |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/slot-hold | *Version*:0.2.0 | |
+| Active as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Hold_Slot_Operation |
 
  
 Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment. This operation follows the appointment availability interaction and precedes the booking. The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. 
@@ -192,12 +192,12 @@ HTTP 200 OK
 {
   "resourceType" : "OperationDefinition",
   "id" : "slot-hold",
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/slot-hold",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/slot-hold",
   "version" : "0.2.0",
   "name" : "Hold_Slot_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-06-10T09:07:46+00:00",
+  "date" : "2026-08-18T08:43:24+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Request for a hold on a selected Slot in order for the user to complete entering data for booking an appointment.  This operation follows the appointment availability interaction and precedes the booking.  The server determines if the nominated slot is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the hold request and updates the resource status accordingly. ",
   "affectsState" : true,
@@ -213,7 +213,7 @@ HTTP 200 OK
     "max" : "1",
     "documentation" : "A resource id for one of proposed Slots returned by a prior $find operation (e.g., Resource/1234).  References can be to an absolute URL, but servers only perform this operation on their own slots.",
     "type" : "Reference",
-    "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+    "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot"]
   },
   {
     "name" : "slot-identifier",

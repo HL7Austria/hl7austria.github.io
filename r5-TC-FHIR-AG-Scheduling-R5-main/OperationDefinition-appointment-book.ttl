@@ -6,22 +6,19 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book> a fhir:OperationDefinition ;
+<https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/appointment-book> a fhir:OperationDefinition ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "appointment-book"] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition appointment-book</b></p><a name=\"appointment-book\"> </a><a name=\"hcappointment-book\"> </a><p>URL: [base]/Appointment/$book</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appointment-resource</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-scheduling-appointment.html\" title=\"http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment\">HL7® AT Scheduling Appointment Profile</a>)</td><td/><td><div><p>The full appointment resource is needed for this operation. The appointment SHALL have the status <code>proposed</code>.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/parameters.html\">Parameters</a></td><td/><td><div><p>The response will be a Parameters resource consisting of the requested Appointment resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated <code>status</code> of <code>booked</code> if the request is approved, <code>pending</code> if it needs to be manually confirmed or  <code>cancelled</code> if it is rejected.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition appointment-book</b></p><a name=\"appointment-book\"> </a><a name=\"hcappointment-book\"> </a><p>URL: [base]/Appointment/$book</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>appointment-resource</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-scheduling-appointment.html\" title=\"https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment\">HL7® AT Scheduling Appointment Profile</a>)</td><td/><td><div><p>The full appointment resource is needed for this operation. The appointment SHALL have the status <code>proposed</code>.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R5/parameters.html\">Parameters</a></td><td/><td><div><p>The response will be a Parameters resource consisting of the requested Appointment resource and an OperationOutcome with errors, warnings or information as a result of processing the operation. The Appointment resource will have an updated <code>status</code> of <code>booked</code> if the request is approved, <code>pending</code> if it needs to be manually confirmed or  <code>cancelled</code> if it is rejected.</p>\n</div></td></tr></table></div>"^^rdf:XMLLiteral ]
   ] ; # 
-  fhir:url [
-     fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book"^^xsd:anyURI ;
-     fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book>
-  ] ; # 
+  fhir:url [ fhir:v "https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/appointment-book"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "Book_Appointment_Operation"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2026-06-10T09:07:46+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-08-18T08:43:24+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "HL7® Austria, TC FHIR®"] ; # 
   fhir:description [ fhir:v "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. "] ; # 
   fhir:affectsState [ fhir:v true] ; # 
@@ -38,8 +35,8 @@
      fhir:documentation [ fhir:v "The full appointment resource is needed for this operation. The appointment SHALL have the status ```proposed```." ] ;
      fhir:type [ fhir:v "Resource" ] ;
      fhir:targetProfile ( [
-       fhir:v "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"^^xsd:anyURI ;
-       fhir:l <http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment>
+       fhir:v "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment>
      ] )
   ] [
      fhir:name [ fhir:v "return" ] ;

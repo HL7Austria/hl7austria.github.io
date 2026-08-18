@@ -30,13 +30,13 @@ Profile: [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-schedulin
   "resourceType" : "Schedule",
   "id" : "HL7ATSchedulingScheduleExample01",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+    "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-schedule"]
   },
   "active" : true,
   "serviceType" : [{
     "concept" : {
       "coding" : [{
-        "system" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType",
+        "system" : "http://terminology.hl7.org/CodeSystem/service-type",
         "code" : "65",
         "display" : "Physiotherapy"
       }]

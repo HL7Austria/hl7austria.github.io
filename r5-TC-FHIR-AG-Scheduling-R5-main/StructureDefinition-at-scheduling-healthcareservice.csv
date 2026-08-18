@@ -26,7 +26,7 @@ dom-4dom-3dom-5","","N/A"
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"HealthcareService.extension:cancellationPolicy","HealthcareService.extension","cancellationPolicy","","",0,1,"","","","Extension {[CanonicalType[http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy]]} {[]}
+"HealthcareService.extension:cancellationPolicy","HealthcareService.extension","cancellationPolicy","","",0,1,"","","","Extension {[CanonicalType[https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy]]} {[]}
 ","The policy for a cancellation","This Extension provides the information about the policy of a cancellation of an appointment. It can contain a time frame until when a cancellation is possible or what the fee for a cancellation will be.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "HealthcareService.modifierExtension","HealthcareService.modifierExtension","","extensions
@@ -44,7 +44,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "HealthcareService.providedBy","HealthcareService.providedBy","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-organization]]}
 ","Organization that provides this service","The organization that provides this healthcare service.","This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated.","","","","","","","","",,,,,"",,,,"HealthcareService.providedBy",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".scopingRole.Organization"
-"HealthcareService.offeredIn","HealthcareService.offeredIn","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice]]}
+"HealthcareService.offeredIn","HealthcareService.offeredIn","","","",0,*,"","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice]]}
 ","The service within which this service is offered","When the HealthcareService is representing a specific, schedulable service, the availableIn property can refer to a generic service.","For example, if there is a generic Radiology service that offers CT Scans, MRIs, etc.  You could have HealthcareService resources for the CT Scans and MRIs, which have an offeredIn reference to the Radiology HealthcareService.","","","","","","","","",,,,,"",,,,"HealthcareService.offeredIn",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "HealthcareService.category","HealthcareService.category","","service category
@@ -53,7 +53,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","FiveWs.class",".code"
 "HealthcareService.type","HealthcareService.type","","service type
 ","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Type of service that may be delivered or performed","The specific type of service that may be delivered or performed.","","","","","","","","","",,"extensible","","http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType","",,,,"HealthcareService.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Type of service that may be delivered or performed","The specific type of service that may be delivered or performed.","","","","","","","","","",,"extensible","","https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType","",,,,"HealthcareService.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".actrelationship[typeCode=COMP.act[classCode=ACT][moodCode=DEF].code"
 "HealthcareService.specialty","HealthcareService.specialty","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Specialties handled by the HealthcareService","Collection of specialties handled by the Healthcare service. This is more of a medical term.","","","","","","","","","",,"preferred","A specialty that a healthcare service may provide.","http://hl7.org/fhir/ValueSet/c80-practice-codes|5.0.0","",,,,"HealthcareService.specialty",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

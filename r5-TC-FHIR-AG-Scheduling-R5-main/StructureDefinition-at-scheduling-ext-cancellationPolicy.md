@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy | *Version*:0.2.0 | |
-| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:CancellationPolicy |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy | *Version*:0.2.0 | |
+| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:CancellationPolicy |
 
 This Extension provides the information about the policy of a cancellation of an appointment. It can contain a time frame until when a cancellation is possible or what the fee for a cancellation will be.
 
@@ -45,12 +45,12 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-ext-ca
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy",
   "version" : "0.2.0",
   "name" : "CancellationPolicy",
   "title" : "The policy for a cancellation",
   "status" : "draft",
-  "date" : "2026-06-10T09:07:46+00:00",
+  "date" : "2026-08-18T08:43:24+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "This Extension provides the information about the policy of a cancellation of an appointment. It can contain a time frame until when a cancellation is possible or what the fee for a cancellation will be.",
   "fhirVersion" : "5.0.0",
@@ -136,7 +136,7 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-ext-ca
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy"
+      "fixedUri" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy"
     },
     {
       "id" : "Extension.value[x]",

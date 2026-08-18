@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment | *Version*:0.2.0 | |
-| Draft as of 2026-06-10 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment | *Version*:0.2.0 | |
+| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
 
  
 HL7® Austria FHIR® Scheduling Profile for appointment data in Austria. 
@@ -58,12 +58,12 @@ The following search parameters SHOULD be supported by scheduling servers:
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-scheduling-appointment",
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment",
   "version" : "0.2.0",
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7® AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2026-06-10T09:07:46+00:00",
+  "date" : "2026-08-18T08:43:24+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -122,7 +122,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-postponementReason"]
+        "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/appointment-postponementReason"]
       }]
     },
     {
@@ -133,7 +133,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
+        "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
       }]
     },
     {
@@ -149,11 +149,11 @@ The following search parameters SHOULD be supported by scheduling servers:
       "path" : "Appointment.serviceType",
       "type" : [{
         "code" : "CodeableReference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice"]
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
+        "valueSet" : "https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType"
       }
     },
     {
@@ -167,7 +167,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "path" : "Appointment.replaces",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment"]
       }]
     },
     {
@@ -175,7 +175,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "path" : "Appointment.previousAppointment",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment"]
       }]
     },
     {
@@ -183,7 +183,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "path" : "Appointment.originatingAppointment",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment"]
       }]
     },
     {
@@ -191,7 +191,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "path" : "Appointment.slot",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot"]
       }]
     },
     {
@@ -236,7 +236,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/virtual-service-detail"]
+        "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/virtual-service-detail"]
       }]
     },
     {
