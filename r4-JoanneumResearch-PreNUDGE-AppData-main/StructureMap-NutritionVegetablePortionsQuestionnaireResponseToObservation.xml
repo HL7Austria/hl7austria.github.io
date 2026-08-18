@@ -17,7 +17,7 @@
 <b>group </b>NutritionVegetablePortionsQuestionnaireResponseToObservation<span style="color: navy">(</span><b>source</b> <span style="color: maroon">src</span><span style="color: navy"> : </span>QR, <b>target</b> <span style="color: maroon">tgt</span><span style="color: navy"> : </span>Obs<span style="color: navy">)</span><span style="color: navy"> {
 </span>  src<b> then </b>SetObservationBase<span style="color: navy">(</span><span style="color: maroon">src</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;Base&quot;</i><span style="color: navy">;</span>
   src<span style="color: navy"><b> -&gt; </b></span> tgt.meta = <b>create</b><span style="color: navy">(</span><span style="color: blue">'Meta'</span><span style="color: navy">)</span><b> as </b><span style="color: maroon">meta</span><span style="color: navy">, </span> meta.profile = <span style="color: blue">'https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-nutrition-vegetableportions-observation'</span> <i>&quot;SetProfile&quot;</i><span style="color: navy">;</span>
-  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'89764-8'</span><span style="color: navy">, </span><span style="color: blue">'Servings of vegetables per day [PhenX]'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
+  src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'80459-1'</span><span style="color: navy">, </span><span style="color: blue">'Vegetable servings 24 hour Estimated'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
   src.item<b> as </b><span style="color: maroon">item</span><b> where </b><span style="color: navy">(</span>linkId = 'DH3'<span style="color: navy">)</span><b> then </b>MapVegetableFrequencyAbsence<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessDH3Absence&quot;</i><span style="color: navy">;</span>
   src.item<b> as </b><span style="color: maroon">item</span><b> where </b><span style="color: navy">(</span>linkId = 'DH4'<span style="color: navy">)</span><b> then </b>MapVegetablePortions<span style="color: navy">(</span><span style="color: maroon">item</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessDH4&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">}
@@ -44,7 +44,7 @@
   <name value="NutritionVegetablePortionsQuestionnaireResponseToObservation"/>
   <title value="Nutrition Vegetable Portions Q to O"/>
   <status value="active"/>
-  <date value="2026-08-13T06:23:48+00:00"/>
+  <date value="2026-08-18T12:08:37+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -137,10 +137,10 @@
           <valueString value="http://loinc.org"/>
         </parameter>
         <parameter>
-          <valueString value="89764-8"/>
+          <valueString value="80459-1"/>
         </parameter>
         <parameter>
-          <valueString value="Servings of vegetables per day [PhenX]"/>
+          <valueString value="Vegetable servings 24 hour Estimated"/>
         </parameter>
       </target>
     </rule>
