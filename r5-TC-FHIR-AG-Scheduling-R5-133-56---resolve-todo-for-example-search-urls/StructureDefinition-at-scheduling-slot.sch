@@ -12,8 +12,8 @@
   <sch:pattern>
     <sch:title>f:Slot</sch:title>
     <sch:rule context="f:Slot">
-      <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/appointment-booking-url': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/appointment-booking-url']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/appointment-booking-url': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

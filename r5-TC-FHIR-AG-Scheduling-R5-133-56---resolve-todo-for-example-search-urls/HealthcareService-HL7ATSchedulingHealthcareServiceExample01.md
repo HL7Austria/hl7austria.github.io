@@ -25,7 +25,7 @@ Profile: [HL7® AT Scheduling HealthcareService Profile](StructureDefinition-at-
   "resourceType" : "HealthcareService",
   "id" : "HL7ATSchedulingHealthcareServiceExample01",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+    "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice"]
   },
   "active" : true,
   "providedBy" : {

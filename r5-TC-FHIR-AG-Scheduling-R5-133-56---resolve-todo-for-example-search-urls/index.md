@@ -15,6 +15,39 @@ This version, 0.1.0 - Informative, is still in its early stage and serves as a r
 
 **Download**: You can download this implementation guide in [NPM format](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification) from [here](package.tgz).
 
+### Relationship to ISiK and IHE Scheduling
+
+This guide draws on two existing scheduling specifications — the German [ISiK Modul "Terminplanung"](https://simplifier.net/guide/isik-terminplanung-stufe-5) (gematik) and [IHE Scheduling](https://profiles.ihe.net/ITI/Scheduling) (IHE ITI) — but adapts them to the Austrian context and to a cross-organizational, online booking setting. The most important differences concern how the FHIR Resources `Slot` and `Appointment` are used to discover availability, and which use cases are in scope.
+
+#### Usage of Resources: Appointment vs. Slot
+
+The central conceptual difference between the three guides is **which Resource a Scheduling Client browses when looking for availability**.
+
+* **This IG (Slot-centric discovery).** Availability is exposed as `Slot` Resources. A client first locates [Schedules](StructureDefinition-at-scheduling-schedule.md) and then retrieves [Slots](StructureDefinition-at-scheduling-slot.md) with `Slot.status = free` (see [Find available Slots](interactions.md#find-available-slots-for-potential-appointments)). A specific Slot can be reserved with the [$hold](OperationDefinition-slot-hold.md) operation (setting `Slot.status` to `busy-tentative`), and only at the final step is an [Appointment](StructureDefinition-at-scheduling-appointment.md) created via [$book](OperationDefinition-appointment-book.md), referencing the chosen Slot. `Slot` is therefore a first-class, client-facing Resource; the `Appointment` represents the resulting booking, and the Scheduling Server keeps the Slot status in sync with it.
+* **IHE Scheduling (Appointment-centric discovery).** Availability is exposed as **proposed** `Appointment` Resources. The **Find Potential Appointments** transaction ([ITI-115](https://profiles.ihe.net/ITI/Scheduling/ITI-115.html)) returns a `searchset` Bundle of `Appointment` Resources, and the subsequent **Hold** ([ITI-116](https://profiles.ihe.net/ITI/Scheduling/ITI-116.html)) and **Book** ([ITI-117](https://profiles.ihe.net/ITI/Scheduling/ITI-117.html)) transactions operate on that same `Appointment`. `Schedule` and `Slot` exist conceptually but remain largely server-internal — the client never browses Slots directly. The entire workflow is Appointment-centric.
+* **ISiK Terminplanung (Slot-based, single-system).** ISiK defines explicit profiles for `Schedule` (**ISiKKalender**), `Slot` (**ISiKTerminblock**) and `Appointment` (**ISiKTermin**). As in this IG, free Slots are queried first and an Appointment is then booked (`$book`). The model is close to this guide's Slot-based approach, but it is scoped to a single confirming system (a hospital information system) rather than to discovery across many independent servers.
+
+This guide deliberately follows the Slot-based model (like ISiK, and unlike IHE) because exposing concrete bookable Slots fits the Austrian online-booking use cases — including the cascading aggregation of availability across many Scheduling Servers — better than exchanging fully-formed candidate Appointments.
+
+#### Covered use cases
+
+* **This IG.** Cross-organizational **online** appointment booking in Austria. It defines two scenarios: [simple appointment booking](scenarios.md#simple-appointment-booking) (a client talking directly to one server, e.g. a GP system or HIS) and the [central scheduling platform](scenarios.md#central-scheduling-platform), where one platform aggregates and cascades requests across multiple Scheduling Servers (a broker/marketplace model). On top of the booking flow it adds **healthcare service provider discovery** via the [$findHSP](OperationDefinition-healthcareService-provider-find.md) operation (find a provider by service type, specialty, region/ZIP, or availability) and explicit support for **virtual appointments** such as video consultations.
+* **IHE Scheduling.** A vendor-neutral, international API for **accessing and booking** a patient's appointments against a single scheduling source. It defines the transactions **Find Potential Appointments** (ITI-115), **Hold** (ITI-116), **Book** (ITI-117) and **Find Existing Appointments** (ITI-118). It does not specify cross-server aggregation/cascading and has no dedicated provider-search transaction.
+* **ISiK Terminplanung.** Part of the German **Informationstechnische Systeme in Krankenhäusern** program (legally anchored in the Krankenhauszukunftsgesetz, KHZG). It targets patient portals and digital intake connecting to a hospital information system, covering retrieval of treatment services, querying of availability, booking, change notifications and patient registration. It explicitly does **not** aim to be a complete model for internal hospital resource planning, and it is intramural (single institution) in scope.
+
+#### Summary
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| FHIR version | R5 | R4 (4.0.1) | R4 (German base profiles) |
+| Availability browsed as | `Slot`(`status = free`) | proposed`Appointment`(Bundle) | `Slot`(**ISiKTerminblock**) |
+| Reservation / hold | `$hold`on`Slot` | ITI-116**Hold**on`Appointment` | — |
+| Booking | `$book`on`Appointment` | ITI-117**Book**on`Appointment` | `$book`on`Appointment` |
+| Provider discovery | `$findHSP`operation | not covered | not covered |
+| Cross-server aggregation | yes (central platform, cascading) | no | no (single system) |
+| Virtual / video appointments | explicitly supported | not specified | not in focus |
+| Primary scope | Austrian, cross-organizational online booking | international, generic access API | German hospitals (KHZG), patient portals |
+
 ### Dependencies
 
 This guide is based on the [FHIR® R5](http://hl7.org/fhir/R5/) specification. In addition, this guide also relies on a number of parent implementation guides:
@@ -45,12 +78,12 @@ This Implementation Guide contains and references intellectual property owned by
 {
   "resourceType" : "ImplementationGuide",
   "id" : "hl7.at.fhir.tc.wg.scheduling.r5",
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ImplementationGuide/hl7.at.fhir.tc.wg.scheduling.r5",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/ImplementationGuide/hl7.at.fhir.tc.wg.scheduling.r5",
   "version" : "0.2.0",
   "name" : "TCFHIRAGSchedulingR5",
   "title" : "Austrian Appointment Scheduling (R5)",
   "status" : "draft",
-  "date" : "2026-04-07T13:33:33+00:00",
+  "date" : "2026-08-18T09:10:41+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "packageId" : "hl7.at.fhir.tc.wg.scheduling.r5",
   "license" : "CC0-1.0",
@@ -63,7 +96,7 @@ This Implementation Guide contains and references intellectual property owned by
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.1.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
@@ -73,7 +106,7 @@ This Implementation Guide contains and references intellectual property owned by
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r5",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "hl7_at_fhir_core_r5",
@@ -90,6 +123,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-appointment-booking-url.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/appointment-booking-url"
@@ -102,6 +139,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-appointment-postponementReason.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/appointment-postponementReason"
@@ -114,6 +155,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-appointment-book.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/appointment-book"
@@ -126,6 +171,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtSchedulingServiceType.html"
       }],
       "reference" : {
         "reference" : "ValueSet/AtSchedulingServiceType"
@@ -138,6 +187,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-healthcareService-provider-find.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/healthcareService-provider-find"
@@ -150,6 +203,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample01.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample01"
@@ -162,6 +219,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Appointment"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Appointment-HL7ATSchedulingAppointmentExample01.html"
       }],
       "reference" : {
         "reference" : "Appointment/HL7ATSchedulingAppointmentExample01"
@@ -169,24 +230,32 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingAppointmentExample01",
       "description" : "Physiotherapie - Einzelbehandlung 30 Minuten",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "HealthcareService"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "HealthcareService-HL7ATSchedulingHealthcareServiceExample01.html"
       }],
       "reference" : {
         "reference" : "HealthcareService/HL7ATSchedulingHealthcareServiceExample01"
       },
       "name" : "HL7ATSchedulingHealthcareServiceExample01",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Schedule"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Schedule-HL7ATSchedulingScheduleExample01.html"
       }],
       "reference" : {
         "reference" : "Schedule/HL7ATSchedulingScheduleExample01"
@@ -194,12 +263,16 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingScheduleExample01",
       "description" : "Schedule with Practitioner",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-schedule"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Schedule"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Schedule-HL7ATSchedulingScheduleExample02.html"
       }],
       "reference" : {
         "reference" : "Schedule/HL7ATSchedulingScheduleExample02"
@@ -207,12 +280,16 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingScheduleExample02",
       "description" : "Schedule with PractitionerRole",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-schedule"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Schedule"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Schedule-HL7ATSchedulingScheduleExample03.html"
       }],
       "reference" : {
         "reference" : "Schedule/HL7ATSchedulingScheduleExample03"
@@ -220,12 +297,16 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingScheduleExample03",
       "description" : "Schedule with HealthcareService",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-schedule"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-schedule"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Slot"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Slot-HL7ATSchedulingSlotExample01-free.html"
       }],
       "reference" : {
         "reference" : "Slot/HL7ATSchedulingSlotExample01-free"
@@ -233,12 +314,16 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingSlotExample01-free",
       "description" : "A simple Slot that is available for Booking",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Slot"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Slot-HL7ATSchedulingSlotExample02-VirtualVisit.html"
       }],
       "reference" : {
         "reference" : "Slot/HL7ATSchedulingSlotExample02-VirtualVisit"
@@ -246,12 +331,16 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingSlotExample02-VirtualVisit",
       "description" : "A free Slot for booking an Appointment that can only be conducted as a virtual visit (e.g. video call)",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Slot"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Slot-HL7ATSchedulingSlotExample03-selectable-encounterClass.html"
       }],
       "reference" : {
         "reference" : "Slot/HL7ATSchedulingSlotExample03-selectable-encounterClass"
@@ -259,12 +348,16 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingSlotExample03-selectable-encounterClass",
       "description" : "A free Slot for booking an Appointment that offers a choice for the encounterClass. It can either be conducted as a virtual visit (e.g. video call) or ambulatory (physically present).",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Slot"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Slot-HL7ATSchedulingSlotExample04-external-booking-URL.html"
       }],
       "reference" : {
         "reference" : "Slot/HL7ATSchedulingSlotExample04-external-booking-URL"
@@ -272,12 +365,16 @@ This Implementation Guide contains and references intellectual property owned by
       "name" : "HL7ATSchedulingSlotExample04-external-booking-URL",
       "description" : "A simple Slot that is available for booking and has an external booking URL",
       "isExample" : true,
-      "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-slot"]
+      "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot"]
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-scheduling-appointment.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-scheduling-appointment"
@@ -290,6 +387,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-scheduling-healthcareservice.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-scheduling-healthcareservice"
@@ -302,6 +403,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-scheduling-schedule.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-scheduling-schedule"
@@ -314,6 +419,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-scheduling-slot.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-scheduling-slot"
@@ -326,6 +435,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-slot-encounter-class.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/slot-encounter-class"
@@ -338,6 +451,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-slot-hold.html"
       }],
       "reference" : {
         "reference" : "OperationDefinition/slot-hold"
@@ -350,6 +467,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-scheduling-ext-cancellationPolicy.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-scheduling-ext-cancellationPolicy"
@@ -362,6 +483,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-virtual-service-detail.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/virtual-service-detail"
@@ -374,6 +499,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ActorDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActorDefinition-at-scheduling-actor-scheduling-client.html"
       }],
       "reference" : {
         "reference" : "ActorDefinition/at-scheduling-actor-scheduling-client"
@@ -385,6 +514,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ActorDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ActorDefinition-at-scheduling-actor-scheduling-server.html"
       }],
       "reference" : {
         "reference" : "ActorDefinition/at-scheduling-actor-scheduling-server"
@@ -595,7 +728,7 @@ This Implementation Guide contains and references intellectual property owned by
         "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
         "code" : "path-history"
       },
-      "value" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/history.html"
+      "value" : "https://fhir.hl7.at/tc/wg/scheduling/r5/history.html"
     },
     {
       "code" : {

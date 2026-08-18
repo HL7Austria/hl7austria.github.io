@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice | *Version*:0.2.0 | |
-| Draft as of 2026-04-07 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingHealthcareService |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice | *Version*:0.2.0 | |
+| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingHealthcareService |
 
  
 HL7® Austria FHIR® Scheduling Profile for healthcareservice data in Austria. 
@@ -21,7 +21,7 @@ This Profile is used in the [Find available HealthcareServices Interaction](inte
 * Refer to this Profile: [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md), [HL7® AT Scheduling HealthcareService Profile](StructureDefinition-at-scheduling-healthcareservice.md), [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-scheduling-schedule.md) and [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-slot.md)
 * Examples for this Profile: [Allgemeinmedizinische Versorgung](HealthcareService-HL7ATSchedulingHealthcareServiceExample01.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.tc.wg.scheduling.r5|current/StructureDefinition/at-scheduling-healthcareservice)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.tc.wg.scheduling.r5|current/StructureDefinition/StructureDefinition-at-scheduling-healthcareservice.json)
 
 ### Formal Views of Profile Content
 
@@ -65,12 +65,12 @@ The following search parameters SHOULD be supported by scheduling servers:
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-scheduling-healthcareservice",
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice",
   "version" : "0.2.0",
   "name" : "HL7ATSchedulingHealthcareService",
   "title" : "HL7® AT Scheduling HealthcareService Profile",
   "status" : "draft",
-  "date" : "2026-04-07T13:33:33+00:00",
+  "date" : "2026-08-18T09:10:41+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for healthcareservice data in Austria.",
   "fhirVersion" : "5.0.0",
@@ -119,7 +119,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
+        "profile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy"]
       }]
     },
     {
@@ -135,7 +135,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "path" : "HealthcareService.offeredIn",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-healthcareservice"]
+        "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-healthcareservice"]
       }]
     },
     {
@@ -143,7 +143,7 @@ The following search parameters SHOULD be supported by scheduling servers:
       "path" : "HealthcareService.type",
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType"
+        "valueSet" : "https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType"
       }
     }]
   }

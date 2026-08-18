@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book | *Version*:0.2.0 | |
-| Active as of 2026-04-07 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Book_Appointment_Operation |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/appointment-book | *Version*:0.2.0 | |
+| Active as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:Book_Appointment_Operation |
 
  
 Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. 
@@ -18,11 +18,11 @@ Request to book a selected Appointment. This operation follows the appointment a
 
 ####  Book a New Appointment 
 
-This operation is used by the Scheduling Client to request the booking of an appointment from a Scheduling Server. The Scheduling Client provides a full Appointment resource that SHALL have the status `proposed`.
+This operation is used by the Scheduling Client to request the booking of an Appointment from a Scheduling Server. The Scheduling Client provides a full Appointment resource that SHALL have the status `proposed`.
 
-If the appointment `$book` operation was successful the Scheduling Server returns an Appointment resource with the the value of `Appointment.status` set to `booked`. If the Appointment needs to be manually confirmed, the Scheduling Server `Appointment.status` of the returned Appointment is set to `pending`.
+If the Appointment `$book` operation was successful the Scheduling Server returns an Appointment resource with the the value of `Appointment.status` set to `booked`. If the Appointment needs to be manually confirmed, the Scheduling Server `Appointment.status` of the returned Appointment is set to `pending`.
 
-The Scheduling Client is expected to convey the outcome to the user who requested the creation of the appointment, and to record the current state of the appointment in the corresponding system(s), including any error conditions..
+The Scheduling Client is expected to convey the outcome to the user who requested the creation of the Appointment, and to record the current state of the Appointment in the corresponding system(s), including any error conditions..
 
 #####  Pre-Conditions 
 
@@ -36,7 +36,7 @@ If any of those pre-conditions are not met, the Scheduling Server SHALL reject t
 
 #####  Examples 
 
-#####  Request the booking of an appointment 
+#####  Request the booking of an Appointment 
 
 ```
 POST: [baseURL]/Appointment/$book
@@ -189,12 +189,12 @@ HTTP 200 OK
 {
   "resourceType" : "OperationDefinition",
   "id" : "appointment-book",
-  "url" : "http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/OperationDefinition/appointment-book",
+  "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/OperationDefinition/appointment-book",
   "version" : "0.2.0",
   "name" : "Book_Appointment_Operation",
   "status" : "active",
   "kind" : "operation",
-  "date" : "2026-04-07T13:33:33+00:00",
+  "date" : "2026-08-18T09:10:41+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Request to book a selected Appointment. This operation follows the appointment availability and optional hold interactions. This operation completes the booking of an appointment. The server determines if the nominated appointment is still available (i.e., all the required actors and physical assets needed for the appointment are still available) and either accepts or rejects the book request and updates the resource status accordingly. ",
   "affectsState" : true,
@@ -210,7 +210,7 @@ HTTP 200 OK
     "max" : "1",
     "documentation" : "The full appointment resource is needed for this operation. The appointment SHALL have the status ```proposed```.",
     "type" : "Resource",
-    "targetProfile" : ["http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/StructureDefinition/at-scheduling-appointment"]
+    "targetProfile" : ["https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment"]
   },
   {
     "name" : "return",
