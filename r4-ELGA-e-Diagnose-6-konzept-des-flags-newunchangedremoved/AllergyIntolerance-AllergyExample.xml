@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AllergyIntolerance xmlns="http://hl7.org/fhir">
+  <id value="AllergyExample"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"/>
+    <tag>
+      <system value="https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-diagnose-type"/>
+      <code value="relevant"/>
+      <display value="currently relevant"/>
+    </tag>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: AllergyIntolerance AllergyExample</b></p><a name="AllergyExample"> </a><a name="hcAllergyExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-elga-ediag-allergyintolerance.html">AT ELGA e-Diagnose AllergyIntolerance</a></p><p style="margin-bottom: 0px">Tag: <a href="CodeSystem-at-ediag-codesystem-diagnose-type.html">currently relevant (Details: AT e-Diagnose Diagnose Typ code relevant = 'currently relevant')</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: false</p><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification refuted}">Refuted</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 294505008}"> Amoxicillin-Allergie</span></p><p><b>patient</b>: <a href="Patient-PatientExample.html">Max Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>recordedDate</b>: 2026-04-20 10:00:00+0200</p><p><b>recorder</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href="Practitioner-PractitionerExample.html">Practitioner Melanie Musterärztin </a></p><blockquote><p><b>reaction</b></p><p><b>AT ELGA Reaktionszeit</b>: <span title="Codes:{https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time-cs lt6h}">&lt;6 Stunden</span></p><p><b>manifestation</b>: <span title="Codes:{http://snomed.info/sct 271807003}">Exanthem</span>, <span title="Codes:{http://snomed.info/sct 422400008}">Emesis</span></p><p><b>onset</b>: 2025-03-15</p><p><b>note</b>: </p><blockquote><div><p>Hautausschlag und Erbrechen nach Penicillin-Einnahme</p>
+</div></blockquote></blockquote></div>
+  </text>
+  <extension url="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported">
+    <valueBoolean value="false"/>
+  </extension>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+      <code value="refuted"/>
+    </coding>
+  </verificationStatus>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="294505008"/>
+      <display value=" Amoxicillin-Allergie"/>
+    </coding>
+  </code>
+  <patient>
+    <reference value="Patient/PatientExample"/>
+  </patient>
+  <recordedDate value="2026-04-20T10:00:00+02:00"/>
+  <recorder>
+    <reference value="Practitioner/PractitionerExample"/>
+  </recorder>
+  <asserter>
+    <reference value="Practitioner/PractitionerExample"/>
+  </asserter>
+  <reaction>
+    <extension url="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time-cs"/>
+          <code value="lt6h"/>
+          <display value="&lt;6 Stunden"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <manifestation>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="271807003"/>
+        <display value="Exanthem"/>
+      </coding>
+    </manifestation>
+    <manifestation>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="422400008"/>
+        <display value="Emesis"/>
+      </coding>
+    </manifestation>
+    <onset value="2025-03-15"/>
+    <note>
+      <text value="Hautausschlag und Erbrechen nach Penicillin-Einnahme"/>
+    </note>
+  </reaction>
+</AllergyIntolerance>
