@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition | *Version*:2.1.0 | |
-| Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AdministrativeGenderAddition |
+| Active as of 2026-08-20 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AdministrativeGenderAddition |
 
 HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, …). The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'.
 
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-gender-a
   "name" : "AdministrativeGenderAddition",
   "title" : "Administrative Gender Addition",
   "status" : "active",
-  "date" : "2026-08-11T12:53:53+00:00",
+  "date" : "2026-08-20T09:19:25+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

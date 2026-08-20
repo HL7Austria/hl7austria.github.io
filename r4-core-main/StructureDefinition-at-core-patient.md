@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient | *Version*:2.1.0 | |
-| Active as of 2026-08-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePatient |
+| Active as of 2026-08-20 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePatient |
 
  
 HL7® Austria FHIR® Core Profile for patient data in Austria. The HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems. 
@@ -50,7 +50,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-08-11T12:53:53+00:00",
+  "date" : "2026-08-20T09:19:25+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -361,7 +361,6 @@ Usage of the European Health Insurance Card (EHIC):
     {
       "id" : "Patient.name",
       "path" : "Patient.name",
-      "min" : 1,
       "mapping" : [{
         "identity" : "at-core-mapping-patient2cdaatv3",
         "map" : ".patient.name"
@@ -426,7 +425,6 @@ Usage of the European Health Insurance Card (EHIC):
     {
       "id" : "Patient.gender",
       "path" : "Patient.gender",
-      "min" : 1,
       "mapping" : [{
         "identity" : "at-core-mapping-patient2cdaatv3",
         "map" : ".patient.administrativeGenderCode.displayName"
