@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/List/ListExample02> a fhir:List ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ListExample02"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: List ListExample02</b></p><a name=\"ListExample02\"> </a><a name=\"hcListExample02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-list.html\">AT ELGA e-Diagnose List</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-01 00:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Problem list - Reported </td></tr><tr><td>Subject: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href=\"Condition-DiagnoseCurrentlyRelevantExample.html\">Condition Hypothyroidism</a></td><td>Neuer Planeintrag</td></tr></table></div>"
+  ] ;
+  fhir:List.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+     fhir:Identifier.value [ fhir:value "urn:uuid:list-02" ]
+  ] ;
+  fhir:List.status [ fhir:value "current"] ;
+  fhir:List.mode [ fhir:value "working"] ;
+  fhir:List.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a loinc:11450-4 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "11450-4" ]
+     ]
+  ] ;
+  fhir:List.subject [
+     fhir:Reference.type [ fhir:value "Patient" ] ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.2.1.1.149" ] ;
+       fhir:Identifier.value [ fhir:value "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=" ]
+     ]
+  ] ;
+  fhir:List.date [ fhir:value "2026-03-01T00:00:00+00:00"^^xsd:dateTime] ;
+  fhir:List.source [
+     fhir:Reference.type [ fhir:value "Practitioner" ] ;
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+       fhir:Identifier.value [ fhir:value "urn:oid:1.2.40.0.34.99.4613.4" ]
+     ]
+  ] ;
+  fhir:List.entry [
+     fhir:index 0 ;
+     fhir:List.entry.flag [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/core/r4/CodeSystem/ElgaListEntryFlagCS" ] ;
+         fhir:Coding.code [ fhir:value "new" ]
+       ]
+     ] ;
+     fhir:List.entry.item [
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/DiagnoseCurrentlyRelevantExample> ;
+       fhir:Reference.reference [ fhir:value "Condition/DiagnoseCurrentlyRelevantExample" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/List/ListExample02.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
