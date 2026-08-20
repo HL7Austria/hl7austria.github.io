@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/ValueSet/prenudge-nutrition-sugarsalty-frequency-vs | *Version*:0.1.0 | |
-| Active as of 2026-08-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetNutritionSugarSaltyFrequency |
+| Active as of 2026-08-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeValueSetNutritionSugarSaltyFrequency |
 
  
 Analytical frequency values for sugary, fatty, and salty food consumption (ATHIS 2025 question DH6). The questionnaire's universal metadata answers are represented in Observation.dataAbsentReason and are therefore excluded from this ValueSet. 
@@ -40,7 +40,7 @@ Analytical frequency values for sugary, fatty, and salty food consumption (ATHIS
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-18
+2026-08-20
 
 Links:
 [Table of Contents](toc.md)|
@@ -58,7 +58,7 @@ Links:
   "title" : "AT PreNUDGE Nutrition Sugar Salty Consumption Frequency",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-18T12:35:51+00:00",
+  "date" : "2026-08-20T08:19:53+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

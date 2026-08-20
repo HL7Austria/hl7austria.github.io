@@ -101,6 +101,7 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
+| [AT PreNUDGE ATHIS Answer Options](CodeSystem-athis-answers.md) | Complete set of answer options from the ATHIS questionnaire (Austrian Health Interview Survey (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, version 2025-03-31). Codes are in English; display values remain in German (original questionnaire wording). Grouped by scale type. Note: existing PreNUDGE CodeSystems remain valid – whoqol-bref-scale (LQ16 satisfaction scale), prenudge-alcoholuse-frequency (AL1, SNOMED-based). |
 | [AT PreNUDGE ISCED-based Education Category Codes](CodeSystem-prenudge-isced-2011-education-level.md) | Local representation of the eight ISCED-based answer categories for the highest completed education level used in PreNUDGE. |
 | [AT PreNUDGE PSS Frequency Answer Scale](CodeSystem-at-prenudge-pss-frequency-codesystem.md) | 5-point frequency answer scale (0–4) used by the Perceived Stress Scale (PSS-4 and PSS-10) instruments. Based on Cohen, S., Kamarck, T., & Mermelstein, R. (1983). A global measure of perceived stress. Journal of Health and Social Behavior, 24(4), 385–396. |
 | [AT PreNUDGE PSS Instrument Codes](CodeSystem-at-prenudge-pss-codes-codesystem.md) | IG-internal codes for PSS-4 instrument identification and per-item Observation component codes for PSS-4 and PSS-10. |
@@ -108,7 +109,6 @@ These define new code systems used by systems conforming to this implementation 
 | [AT PreNUDGE WAI Answer Codes](CodeSystem-prenudge-wai-answer.md) | Local answer codes for categorical Work Ability Index answer options. |
 | [AT PreNUDGE WHOQOL-BREF Answer Scales](CodeSystem-whoqol-bref-scale.md) | Consolidated CodeSystem for all answer scales of the WHOQOL-BREF questionnaire. |
 | [AT PreNUDGE Workability Codes](CodeSystem-prenudge-workability.md) | Local PreNUDGE codes for workability questionnaires and derived Work-SoC score observations. Work-SoC source DOI: https://doi.org/10.4102/sajip.v39i1.1111 |
-| [ATHIS – Antwortmöglichkeiten](CodeSystem-athis-answers.md) | Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). |
 
 ### Terminology: Structure Maps 
 
@@ -244,7 +244,7 @@ These are example instances that show what data produced and consumed by systems
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-18
+2026-08-20
 
 Links:
 [Table of Contents](toc.md)|

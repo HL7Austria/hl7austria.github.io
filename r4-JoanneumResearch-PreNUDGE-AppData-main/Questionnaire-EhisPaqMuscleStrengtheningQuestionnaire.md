@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/EhisPaqMuscleStrengtheningQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-08-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EhisPaqMuscleStrengtheningQuestionnaire |
+| Active as of 2026-08-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:EhisPaqMuscleStrengtheningQuestionnaire |
 
  
 EHIS-PAQ Q8 / ATHIS PE8: number of days per week on which the respondent performs physical activities specifically aimed at building or strengthening muscles (e.g. weight training, resistance-band exercises, bodyweight exercises, squats, push-ups, sit-ups). Answer options use existing ATHIS CodeSystem codes activity-1-day through activity-7-days. Two mapping paths to AtPrenudgeObservationMuscleStrengthening are available: (1) directly from this questionnaire via MuscleStrengtheningEhisPaqQuestionnaireResponseToObservation (translates coded day-count to numeric sessions/wk: 1 day = 1 session/wk, …, 7 days = 7 sessions/wk); (2) via MuscleStrengtheningQuantityQuestionnaire and MuscleStrengtheningQuestionnaireResponseToObservation when a numeric quantity answer is preferred. 
@@ -17,7 +17,7 @@ EHIS-PAQ Q8 / ATHIS PE8: number of days per week on which the respondent perform
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-18
+2026-08-20
 
 Links:
 [Table of Contents](toc.md)|
@@ -37,7 +37,7 @@ Links:
   "name" : "EhisPaqMuscleStrengtheningQuestionnaire",
   "title" : "EHIS-PAQ Q8 / ATHIS PE8: Muskelkräftigungsübungen",
   "status" : "active",
-  "date" : "2026-08-18T12:35:51+00:00",
+  "date" : "2026-08-20T08:19:53+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -1,19 +1,19 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\ATHIS – Antwortmöglichkeiten - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\AT PreNUDGE ATHIS Answer Options - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **ATHIS – Antwortmöglichkeiten**
+* **AT PreNUDGE ATHIS Answer Options**
 
-## CodeSystem: ATHIS – Antwortmöglichkeiten 
+## CodeSystem: AT PreNUDGE ATHIS Answer Options 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers | *Version*:0.1.0 | |
-| Active as of 2026-08-18 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemAthis |
+| Active as of 2026-08-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeCodeSystemAthis |
 | **Copyright/Legal**: STATISTIK AUSTRIA – Bundesanstalt Statistik Österreich. Reproduziert für das PreNUDGE Forschungsprojekt. | | |
 
  
-Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert). 
+Complete set of answer options from the ATHIS questionnaire (Austrian Health Interview Survey (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, version 2025-03-31). Codes are in English; display values remain in German (original questionnaire wording). Grouped by scale type. Note: existing PreNUDGE CodeSystems remain valid – whoqol-bref-scale (LQ16 satisfaction scale), prenudge-alcoholuse-frequency (AL1, SNOMED-based). 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
@@ -23,7 +23,7 @@ Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische G
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-18
+2026-08-20
 
 Links:
 [Table of Contents](toc.md)|
@@ -38,10 +38,10 @@ Links:
   "url" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
   "version" : "0.1.0",
   "name" : "AtPrenudgeCodeSystemAthis",
-  "title" : "ATHIS – Antwortmöglichkeiten",
+  "title" : "AT PreNUDGE ATHIS Answer Options",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-08-18T12:35:51+00:00",
+  "date" : "2026-08-20T08:19:53+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -58,7 +58,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "Vollständige Antwortmöglichkeiten aus dem ATHIS Fragebogen (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, Version 31.03.2025). Codes sind englisch; Display-Werte bleiben deutsch. Gruppiert nach Skalentypen. Hinweis: Bestehende PreNUDGE CodeSystems bleiben gültig – whoqol-bref-scale (LQ16-Zufriedenheitsskala), prenudge-alcoholuse-frequency (AL1 SNOMED-basiert).",
+  "description" : "Complete set of answer options from the ATHIS questionnaire (Austrian Health Interview Survey (Österreichische Gesundheitsbefragung, STATISTIK AUSTRIA, version 2025-03-31). Codes are in English; display values remain in German (original questionnaire wording). Grouped by scale type. Note: existing PreNUDGE CodeSystems remain valid – whoqol-bref-scale (LQ16 satisfaction scale), prenudge-alcoholuse-frequency (AL1, SNOMED-based).",
   "copyright" : "STATISTIK AUSTRIA – Bundesanstalt Statistik Österreich. Reproduziert für das PreNUDGE Forschungsprojekt.",
   "caseSensitive" : true,
   "content" : "complete",
