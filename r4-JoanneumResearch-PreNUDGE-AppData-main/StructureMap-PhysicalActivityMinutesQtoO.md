@@ -33,7 +33,7 @@ Links:
   "version" : "0.1.0",
   "name" : "Physical Activity Minutes Q to O",
   "status" : "draft",
-  "date" : "2026-08-20T08:19:53+00:00",
+  "date" : "2026-08-20T13:42:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -188,13 +188,13 @@ Links:
         "name" : "MapQ7ToAggregate",
         "variable" : ["q7", "tgt"]
       }],
-      "documentation" : "Map Q7 group to component[aggregateActivity]"
+      "documentation" : "Map Q7 group to component[aggregateActivity] (plain, LOINC 101691-4)"
     }]
   },
   {
     "name" : "MapQ7ToAggregate",
     "typeMode" : "none",
-    "documentation" : "---------------------------------------------------------------------------\r\nQ7 → component[aggregateActivity]  (LOINC 101691-4)\r\nFormula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes\r\nThe arithmetic is performed by the questionnaire via the SDC\r\ncalculatedExpression extension on item Q7-total-minutes (FHIRPath:\r\n(%resource.item.where(linkId='Q7').item.where(linkId='Q7-hours').answer.valueInteger * 60)\r\n+ %resource.item.where(linkId='Q7').item.where(linkId='Q7-minutes').answer.valueInteger\r\n). This map reads the pre-computed integer — no evaluate() needed.\r\nMaLaC-HD 1.6.0 integer extraction pattern used here:\r\nanswer.valueInteger as intElem then { intElem.value as numVal → ... }\r\nThe double .value unwrap gives MaLaC-HD a raw primitive it can copy\r\ninto Quantity.value without a type-coercion crash (direct integer→decimal\r\ncopy fails in MaLaC-HD). All Quantity fields are set in one rule so that\r\nno cross-scope variable reference occurs (also a MaLaC-HD limitation).\r\n---------------------------------------------------------------------------",
+    "documentation" : "---------------------------------------------------------------------------\r\nQ7 → component[aggregateActivity]  (LOINC 101691-4 \"Duration of physical activity\", plain/unweighted)\r\nFormula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes\r\nThe arithmetic is performed by the questionnaire via the SDC\r\ncalculatedExpression extension on item Q7-total-minutes (FHIRPath:\r\n(%resource.item.where(linkId='Q7').item.where(linkId='Q7-hours').answer.valueInteger * 60)\r\n+ %resource.item.where(linkId='Q7').item.where(linkId='Q7-minutes').answer.valueInteger\r\n). This map reads the pre-computed integer — no evaluate() needed.\r\nMaLaC-HD 1.6.0 integer extraction pattern used here:\r\nanswer.valueInteger as intElem then { intElem.value as numVal → ... }\r\nThe double .value unwrap gives MaLaC-HD a raw primitive it can copy\r\ninto Quantity.value without a type-coercion crash (direct integer→decimal\r\ncopy fails in MaLaC-HD). All Quantity fields are set in one rule so that\r\nno cross-scope variable reference occurs (also a MaLaC-HD limitation).\r\n---------------------------------------------------------------------------",
     "input" : [{
       "name" : "src",
       "type" : "QR",

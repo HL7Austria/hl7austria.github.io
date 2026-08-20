@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Physical Activity Minutes O - (e) All Three Components (Automated, MET-Cal) - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Physical Activity Minutes O - (e) Moderate + Vigorous + Weighted Aggregate (Automated, MET-Cal, pa-agg-02 warning) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Physical Activity Minutes O - (e) All Three Components (Automated, MET-Cal)**
+* **Physical Activity Minutes O - (e) Moderate + Vigorous + Weighted Aggregate (Automated, MET-Cal, pa-agg-02 warning)**
 
-## Example Observation: Physical Activity Minutes O - (e) All Three Components (Automated, MET-Cal)
+## Example Observation: Physical Activity Minutes O - (e) Moderate + Vigorous + Weighted Aggregate (Automated, MET-Cal, pa-agg-02 warning)
 
 Profile: [AT PreNUDGE Observation Physical Activity Minutes](StructureDefinition-at-prenudge-physical-activity-minutes-observation.md)
 
@@ -28,7 +28,7 @@ Profile: [AT PreNUDGE Observation Physical Activity Minutes](StructureDefinition
 
 > **component****code**: Vigorous physical activity [IPAQ]**value**: 60 min/wk (Details: UCUM codemin/wk = 'min/wk')
 
-> **component****code**: Duration of physical activity**value**: 240 min/wk (Details: UCUM codemin/wk = 'min/wk')
+> **component****code**: Physical activity**value**: 240 min/wk (Details: UCUM codemin/wk = 'min/wk')
 
 > **component****code**: Technique**value**: MET Value Calculated
 
@@ -110,9 +110,9 @@ Links:
   {
     "code" : {
       "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "101691-4",
-        "display" : "Duration of physical activity"
+        "system" : "http://snomed.info/sct",
+        "code" : "68130003",
+        "display" : "Physical activity"
       }]
     },
     "valueQuantity" : {

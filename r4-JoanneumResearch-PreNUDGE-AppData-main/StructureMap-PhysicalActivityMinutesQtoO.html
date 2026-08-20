@@ -264,13 +264,17 @@
   src<span style="color: navy"><b> -&gt; </b></span>tgt.code = <b>cc</b><span style="color: navy">(</span><span style="color: blue">'http://loinc.org'</span><span style="color: navy">, </span><span style="color: blue">'101691-4'</span><span style="color: navy">, </span><span style="color: blue">'Duration of physical activity'</span><span style="color: navy">)</span> <i>&quot;SetCode&quot;</i><span style="color: navy">;</span>
   <span style="color: navy">// </span><span style="color: green">effectiveDateTime from authored (EHIS-PAQ Q7 has no embedded date item)</span>
   src.authored<b> as </b><span style="color: maroon">authored</span><span style="color: navy"><b> -&gt; </b></span>tgt.effectiveDateTime = <span style="color: maroon">authored</span> <i>&quot;SetEffectiveDateTime&quot;</i><span style="color: navy">;</span>
-  <span style="color: navy">// </span><span style="color: green">Map Q7 group to component[aggregateActivity]</span>
+  <span style="color: navy">// </span><span style="color: green">Map Q7 group to component[aggregateActivity] (plain, LOINC 101691-4)</span>
   src.item<b> as </b><span style="color: maroon">q7</span><b> where </b><span style="color: navy">(</span>linkId = 'Q7'<span style="color: navy">)</span><b> then </b>MapQ7ToAggregate<span style="color: navy">(</span><span style="color: maroon">q7</span><span style="color: navy">, </span><span style="color: maroon">tgt</span><span style="color: navy">)</span> <i>&quot;ProcessQ7&quot;</i><span style="color: navy">;</span>
 <span style="color: navy">// </span><span style="color: green">component[moderateActivity] : NOT mapped</span>
 <span style="color: navy">// </span><span style="color: green">Q7 asks for total leisure activity time without separating intensity levels.</span>
 <span style="color: navy">// </span><span style="color: green">There is no questionnaire source for a moderate-only figure.</span>
 <span style="color: navy">// </span><span style="color: green">component[vigorousActivity] : NOT mapped</span>
 <span style="color: navy">// </span><span style="color: green">Total leisure time maps directly to aggregateActivity (see MapQ7ToAggregate).</span>
+<span style="color: navy">// </span><span style="color: green">component[aggregateActivityWeighted] (SNOMED CT 68130003) : NOT mapped</span>
+<span style="color: navy">// </span><span style="color: green">No ×2 weighting is applicable when moderate/vigorous cannot be distinguished;</span>
+<span style="color: navy">// </span><span style="color: green">a consuming system may copy aggregateActivity's value post-transform if it</span>
+<span style="color: navy">// </span><span style="color: green">needs this component too (see profile comment on scenario (f)).</span>
 <span style="color: navy">// </span><span style="color: green">component[classificationMethod] : NOT mapped</span>
 <span style="color: navy">// </span><span style="color: green">method = Manual → component must be absent or self-rp (pa-manual-comp-01).</span>
 <span style="color: navy">// </span><span style="color: green">The map does not set it; a consuming system may add self-rp post-transform</span>
@@ -278,7 +282,7 @@
 <span style="color: navy">}
 
 </span><span style="color: navy">// </span><span style="color: green">---------------------------------------------------------------------------</span>
-<span style="color: navy">// </span><span style="color: green">Q7 → component[aggregateActivity]  (LOINC 101691-4)</span>
+<span style="color: navy">// </span><span style="color: green">Q7 → component[aggregateActivity]  (LOINC 101691-4 &quot;Duration of physical activity&quot;, plain/unweighted)</span>
 <span style="color: navy">// </span><span style="color: green">Formula: aggregateMinutes = (Q7-hours × 60) + Q7-minutes</span>
 <span style="color: navy">// </span><span style="color: green">The arithmetic is performed by the questionnaire via the SDC</span>
 <span style="color: navy">// </span><span style="color: green">calculatedExpression extension on item Q7-total-minutes (FHIRPath:</span>
@@ -328,7 +332,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Aug 20, 2026 08:19+0000">2026-08-20</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Aug 20, 2026 13:42+0000">2026-08-20</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

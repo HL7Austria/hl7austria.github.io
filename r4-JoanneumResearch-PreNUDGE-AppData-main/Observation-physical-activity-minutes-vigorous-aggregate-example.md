@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Physical Activity Minutes O - (d) Vigorous + Aggregate (Automated, HRZ) - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Physical Activity Minutes O - (d) Vigorous + Weighted Aggregate (Automated, HRZ, pa-agg-02 warning) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Physical Activity Minutes O - (d) Vigorous + Aggregate (Automated, HRZ)**
+* **Physical Activity Minutes O - (d) Vigorous + Weighted Aggregate (Automated, HRZ, pa-agg-02 warning)**
 
-## Example Observation: Physical Activity Minutes O - (d) Vigorous + Aggregate (Automated, HRZ)
+## Example Observation: Physical Activity Minutes O - (d) Vigorous + Weighted Aggregate (Automated, HRZ, pa-agg-02 warning)
 
 Profile: [AT PreNUDGE Observation Physical Activity Minutes](StructureDefinition-at-prenudge-physical-activity-minutes-observation.md)
 
@@ -26,7 +26,7 @@ Profile: [AT PreNUDGE Observation Physical Activity Minutes](StructureDefinition
 
 > **component****code**: Vigorous physical activity [IPAQ]**value**: 75 min/wk (Details: UCUM codemin/wk = 'min/wk')
 
-> **component****code**: Duration of physical activity**value**: 150 min/wk (Details: UCUM codemin/wk = 'min/wk')
+> **component****code**: Physical activity**value**: 150 min/wk (Details: UCUM codemin/wk = 'min/wk')
 
 > **component****code**: Technique**value**: Heart Rate Zones
 
@@ -93,9 +93,9 @@ Links:
   {
     "code" : {
       "coding" : [{
-        "system" : "http://loinc.org",
-        "code" : "101691-4",
-        "display" : "Duration of physical activity"
+        "system" : "http://snomed.info/sct",
+        "code" : "68130003",
+        "display" : "Physical activity"
       }]
     },
     "valueQuantity" : {

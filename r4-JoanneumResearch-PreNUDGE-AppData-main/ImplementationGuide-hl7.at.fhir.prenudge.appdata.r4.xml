@@ -11,7 +11,7 @@
   <name value="PreNUDGEAppdataR4"/>
   <title value="PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)"/>
   <status value="draft"/>
-  <date value="2026-08-20T08:19:53+00:00"/>
+  <date value="2026-08-20T13:42:02+00:00"/>
   <publisher value="The PreNUDGE Consortium"/>
   <contact>
     <name value="The PreNUDGE Consortium"/>
@@ -800,7 +800,7 @@
         <reference value="StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
       </reference>
       <name value="AT PreNUDGE Observation Physical Activity Minutes"/>
-      <description value="Observation profile for recording physical activity duration as a panel&#xA;(moderate, vigorous, aggregate components) derived from either a wearable device or&#xA;the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combinations:&#xA;  (a) aggregate only           — questionnaire source (Q7/PE7 → aggregateActivity)&#xA;  (b) moderate only            — manual source; vigorous implicitly 0,&#xA;                                 aggregate = moderateActivity (pa-agg-01 warning&#xA;                                 if aggregateActivity absent)&#xA;  (c) moderate + aggregate     — partial wearable or manual source&#xA;  (d) vigorous + aggregate     — partial wearable source&#xA;  (e) all three                — full wearable source."/>
+      <description value="Observation profile for recording physical activity duration as a panel&#xA;(moderate, vigorous, and two alternative aggregate components) derived from either a&#xA;wearable device or the EHIS-PAQ/ATHIS questionnaire (Q7/PE7).&#xA;&#xA;Two aggregate flavors may be sent independently of each other:&#xA;  - aggregateActivity          — plain/unweighted total: moderateActivity (or 0) +&#xA;                                  vigorousActivity (or 0). Also used standalone when&#xA;                                  moderate/vigorous cannot be distinguished at all&#xA;                                  (e.g. a single questionnaire total). See pa-agg-02.&#xA;  - aggregateActivityWeighted  — WHO/IPAQ moderate-equivalent total: moderateActivity&#xA;                                  (or 0) + (vigorousActivity × 2, or 0). See pa-agg-01.&#xA;Both, either, or neither aggregate MAY be present; pa-panel-01 only requires that at&#xA;least one component (of any kind) exists. Sending only an aggregate (without&#xA;moderateActivity/vigorousActivity) is valid and expected whenever the source cannot&#xA;distinguish intensity levels at all (e.g. a single questionnaire total). However,&#xA;whenever a source CAN distinguish moderate from vigorous activity, it SHOULD send&#xA;moderateActivity and vigorousActivity individually (in addition to any aggregate) —&#xA;sending only a pre-computed aggregate discards information a consumer might need.&#xA;This cannot be enforced by an invariant (an instance cannot express &quot;the source&#xA;could have distinguished this but chose not to&quot;), so it is stated here as&#xA;implementation guidance rather than a machine-checkable rule.&#xA;&#xA;Example component combinations (not exhaustive):&#xA;  (a) aggregateActivity only              — questionnaire source, no intensity split (Q7/PE7)&#xA;  (b) moderate only                       — manual source; vigorous implicitly 0,&#xA;                                             aggregates SHOULD equal moderateActivity&#xA;                                             (pa-agg-01/pa-agg-02 warning if absent)&#xA;  (c) moderate + aggregateActivityWeighted — partial wearable or manual source&#xA;  (d) vigorous + aggregateActivityWeighted — partial wearable source&#xA;  (e) moderate + vigorous + aggregateActivityWeighted            — full wearable source&#xA;  (g) moderate + vigorous + aggregateActivity + aggregateActivityWeighted — full wearable&#xA;      source reporting both aggregate flavors side by side"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1647,7 +1647,7 @@
         <reference value="Observation/physical-activity-minutes-aggregate-only-example"/>
       </reference>
       <name value="Physical Activity Minutes O - (a) Aggregate Only (Manual)"/>
-      <description value="Scenario (a): only component[aggregateActivity] is present.&#xA;Typical for a questionnaire-derived observation that asks only for total activity&#xA;time without splitting moderate and vigorous.  pa-agg-01 passes silently because&#xA;neither moderate nor vigorous is present."/>
+      <description value="Scenario (a): only component[aggregateActivity] (plain) is present.&#xA;Typical for a questionnaire-derived observation that asks only for total activity&#xA;time without splitting moderate and vigorous — the value carries no WHO/IPAQ&#xA;weighting, so it belongs on the plain aggregateActivity component rather than&#xA;aggregateActivityWeighted.  pa-agg-01 and pa-agg-02 both pass silently because&#xA;neither moderate nor vigorous is present."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
     </resource>
     <resource>
@@ -1657,8 +1657,8 @@
       <reference>
         <reference value="Observation/physical-activity-minutes-moderate-only-example"/>
       </reference>
-      <name value="Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 warning)"/>
-      <description value="Scenario (b): only component[moderateActivity] is present; aggregate absent.&#xA;pa-agg-01 fires a WARNING because moderateActivity is present but aggregateActivity&#xA;is not.  The aggregate should equal moderateActivity + (0 × 2) = 150 min/wk;&#xA;a sender should add component[aggregateActivity] = 150 min/wk to suppress the warning.&#xA;This scenario may arise when a source captures moderate activity but omits the aggregate."/>
+      <name value="Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 + pa-agg-02 warning)"/>
+      <description value="Scenario (b): only component[moderateActivity] is present; both aggregates absent.&#xA;pa-agg-01 and pa-agg-02 each fire a WARNING because moderateActivity is present but&#xA;the corresponding aggregate is not. aggregateActivityWeighted should equal&#xA;moderateActivity + (0 × 2) = 150 min/wk; aggregateActivity (plain) should equal&#xA;moderateActivity + 0 = 150 min/wk. A sender should add whichever aggregate(s) it&#xA;supports to suppress the corresponding warning.&#xA;This scenario may arise when a source captures moderate activity but omits the aggregates."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
     </resource>
     <resource>
@@ -1668,8 +1668,8 @@
       <reference>
         <reference value="Observation/physical-activity-minutes-moderate-aggregate-example"/>
       </reference>
-      <name value="Physical Activity Minutes O - (c) Moderate + Aggregate (Manual)"/>
-      <description value="Scenario (c): component[moderateActivity] and component[aggregateActivity] present;&#xA;vigorousActivity absent (implicitly 0).  aggregateActivity = moderateActivity + (0 × 2) = 90 min/wk.&#xA;pa-agg-01 is satisfied.  Typical for a structured questionnaire that reports&#xA;moderate-intensity activity separately and includes the computed aggregate."/>
+      <name value="Physical Activity Minutes O - (c) Moderate + Weighted Aggregate (Manual, pa-agg-02 warning)"/>
+      <description value="Scenario (c): component[moderateActivity] and component[aggregateActivityWeighted] present;&#xA;vigorousActivity and the plain aggregateActivity are absent (vigorous implicitly 0).&#xA;aggregateActivityWeighted = moderateActivity + (0 × 2) = 90 min/wk. pa-agg-01 is satisfied;&#xA;pa-agg-02 fires a WARNING because the plain aggregateActivity was not also sent.&#xA;Typical for a structured questionnaire that reports moderate-intensity activity&#xA;separately and includes only the WHO/IPAQ-weighted aggregate."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
     </resource>
     <resource>
@@ -1679,8 +1679,8 @@
       <reference>
         <reference value="Observation/physical-activity-minutes-vigorous-aggregate-example"/>
       </reference>
-      <name value="Physical Activity Minutes O - (d) Vigorous + Aggregate (Automated, HRZ)"/>
-      <description value="Scenario (d): component[vigorousActivity] and component[aggregateActivity] present;&#xA;moderateActivity absent (implicitly 0).  aggregateActivity = 0 + (vigorousActivity × 2) = 150 min/wk.&#xA;classificationMethod = hrz (Heart Rate Zones, moderate 50–70% HRmax; vigorous &gt;70% HRmax).&#xA;Typical for a wearable that identifies only vigorous bouts via heart rate but does not&#xA;separately count moderate bouts."/>
+      <name value="Physical Activity Minutes O - (d) Vigorous + Weighted Aggregate (Automated, HRZ, pa-agg-02 warning)"/>
+      <description value="Scenario (d): component[vigorousActivity] and component[aggregateActivityWeighted] present;&#xA;moderateActivity and the plain aggregateActivity are absent (moderate implicitly 0).&#xA;aggregateActivityWeighted = 0 + (vigorousActivity × 2) = 150 min/wk. pa-agg-01 is satisfied;&#xA;pa-agg-02 fires a WARNING because the plain aggregateActivity was not also sent.&#xA;classificationMethod = hrz (Heart Rate Zones, moderate 50–70% HRmax; vigorous &gt;70% HRmax).&#xA;Typical for a wearable that identifies only vigorous bouts via heart rate but does not&#xA;separately count moderate bouts."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
     </resource>
     <resource>
@@ -1690,8 +1690,8 @@
       <reference>
         <reference value="Observation/physical-activity-minutes-all-components-example"/>
       </reference>
-      <name value="Physical Activity Minutes O - (e) All Three Components (Automated, MET-Cal)"/>
-      <description value="Scenario (e): all three Quantity components present.&#xA;moderateActivity = 120 min/wk, vigorousActivity = 60 min/wk,&#xA;aggregateActivity = 120 + (60 × 2) = 240 min/wk.&#xA;classificationMethod = met-cal (MET estimated from accelerometer / VO2 proxy).&#xA;This is the richest Observation variant, produced by a full wearable pipeline&#xA;that computes both intensity levels and the WHO/IPAQ weighted aggregate."/>
+      <name value="Physical Activity Minutes O - (e) Moderate + Vigorous + Weighted Aggregate (Automated, MET-Cal, pa-agg-02 warning)"/>
+      <description value="Scenario (e): moderateActivity, vigorousActivity and aggregateActivityWeighted&#xA;are present; the plain aggregateActivity is absent.&#xA;moderateActivity = 120 min/wk, vigorousActivity = 60 min/wk,&#xA;aggregateActivityWeighted = 120 + (60 × 2) = 240 min/wk.&#xA;classificationMethod = met-cal (MET estimated from accelerometer / VO2 proxy).&#xA;pa-agg-01 is satisfied; pa-agg-02 fires a WARNING because the plain aggregateActivity&#xA;was not also sent. Produced by a wearable pipeline that computes both intensity&#xA;levels and only the WHO/IPAQ weighted aggregate — see scenario (g) for a pipeline&#xA;that also sends the plain aggregate."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
     </resource>
     <resource>
@@ -1702,7 +1702,18 @@
         <reference value="Observation/physical-activity-minutes-ehispaq-q7-mapped-example"/>
       </reference>
       <name value="Physical Activity Minutes O - (f) EHIS-PAQ/ATHIS Q7/PE7 Mapped (Aggregate Only)"/>
-      <description value="Scenario (f): Observation produced by applying&#xA;PhysicalActivityMinutesQtoO to&#xA;physical-activity-ehispaq-response-example.&#xA;Q7/PE7 answer: 2 Stunden + 30 Minuten → aggregateActivity = (2×60)+30 = 150 min/wk.&#xA;No intensity weighting is applied because Q7 does not separate moderate from&#xA;vigorous activity.  derivedFrom links back to the source QuestionnaireResponse.&#xA;classificationMethod is absent; pa-manual-comp-01 is satisfied by absence."/>
+      <description value="Scenario (f): Observation produced by applying&#xA;PhysicalActivityMinutesQtoO to&#xA;physical-activity-ehispaq-response-example.&#xA;Q7/PE7 answer: 2 Stunden + 30 Minuten → aggregateActivity (plain) = (2×60)+30 = 150 min/wk.&#xA;No intensity weighting is applied because Q7 does not separate moderate from&#xA;vigorous activity, so the value goes on the plain aggregateActivity component&#xA;rather than aggregateActivityWeighted.  derivedFrom links back to the source&#xA;QuestionnaireResponse.  classificationMethod is absent; pa-manual-comp-01 is&#xA;satisfied by absence."/>
+      <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/physical-activity-minutes-both-aggregates-example"/>
+      </reference>
+      <name value="Physical Activity Minutes O - (g) Both Aggregates (Automated, MET-Cal)"/>
+      <description value="Scenario (g): moderateActivity, vigorousActivity and BOTH aggregate&#xA;components are present. moderateActivity = 120 min/wk, vigorousActivity = 60 min/wk;&#xA;aggregateActivity (plain) = 120 + 60 = 180 min/wk; aggregateActivityWeighted =&#xA;120 + (60 × 2) = 240 min/wk. classificationMethod = met-cal (MET estimated from&#xA;accelerometer / VO2 proxy). pa-agg-01 and pa-agg-02 are both satisfied — the richest&#xA;Observation variant, produced by a wearable pipeline that reports the raw combined&#xA;minutes alongside the WHO/IPAQ moderate-equivalent aggregate for consumers that&#xA;need either figure."/>
       <exampleCanonical value="https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"/>
     </resource>
     <resource>

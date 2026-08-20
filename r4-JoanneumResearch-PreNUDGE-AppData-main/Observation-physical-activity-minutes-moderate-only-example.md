@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 warning) - FHIR® v4.0.1
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 + pa-agg-02 warning) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 warning)**
+* **Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 + pa-agg-02 warning)**
 
-## Example Observation: Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 warning)
+## Example Observation: Physical Activity Minutes O - (b) Moderate Only (Manual, pa-agg-01 + pa-agg-02 warning)
 
 Profile: [AT PreNUDGE Observation Physical Activity Minutes](StructureDefinition-at-prenudge-physical-activity-minutes-observation.md)
 

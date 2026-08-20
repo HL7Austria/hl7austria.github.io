@@ -12,11 +12,16 @@
 | Draft as of 2026-08-20 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationPhysicalActivity |
 
  
-Observation profile for recording physical activity duration as a panel (moderate, vigorous, aggregate components) derived from either a wearable device or the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combinations: (a) aggregate only — questionnaire source (Q7/PE7 → aggregateActivity) (b) moderate only — manual source; vigorous implicitly 0, aggregate = moderateActivity (pa-agg-01 warning if aggregateActivity absent) (c) moderate + aggregate — partial wearable or manual source (d) vigorous + aggregate — partial wearable source (e) all three — full wearable source. 
+Observation profile for recording physical activity duration as a panel (moderate, vigorous, and two alternative aggregate components) derived from either a wearable device or the EHIS-PAQ/ATHIS questionnaire (Q7/PE7). 
+Two aggregate flavors may be sent independently of each other: 
+* aggregateActivity — plain/unweighted total: moderateActivity (or 0) + vigorousActivity (or 0). Also used standalone when moderate/vigorous cannot be distinguished at all (e.g. a single questionnaire total). See pa-agg-02.
+* aggregateActivityWeighted — WHO/IPAQ moderate-equivalent total: moderateActivity (or 0) + (vigorousActivity × 2, or 0). See pa-agg-01. Both, either, or neither aggregate MAY be present; pa-panel-01 only requires that at least one component (of any kind) exists. Sending only an aggregate (without moderateActivity/vigorousActivity) is valid and expected whenever the source cannot distinguish intensity levels at all (e.g. a single questionnaire total). However, whenever a source CAN distinguish moderate from vigorous activity, it SHOULD send moderateActivity and vigorousActivity individually (in addition to any aggregate) — sending only a pre-computed aggregate discards information a consumer might need. This cannot be enforced by an invariant (an instance cannot express "the source could have distinguished this but chose not to"), so it is stated here as implementation guidance rather than a machine-checkable rule.
+ 
+Example component combinations (not exhaustive): (a) aggregateActivity only — questionnaire source, no intensity split (Q7/PE7) (b) moderate only — manual source; vigorous implicitly 0, aggregates SHOULD equal moderateActivity (pa-agg-01/pa-agg-02 warning if absent) (c) moderate + aggregateActivityWeighted — partial wearable or manual source (d) vigorous + aggregateActivityWeighted — partial wearable source (e) moderate + vigorous + aggregateActivityWeighted — full wearable source (g) moderate + vigorous + aggregateActivity + aggregateActivityWeighted — full wearable source reporting both aggregate flavors side by side 
 
 **Usages:**
 
-* Examples for this Profile: [Observation/physical-activity-minutes-aggregate-only-example](Observation-physical-activity-minutes-aggregate-only-example.md), [Observation/physical-activity-minutes-all-components-example](Observation-physical-activity-minutes-all-components-example.md), [Observation/physical-activity-minutes-ehispaq-q7-mapped-example](Observation-physical-activity-minutes-ehispaq-q7-mapped-example.md), [Observation/physical-activity-minutes-moderate-aggregate-example](Observation-physical-activity-minutes-moderate-aggregate-example.md)... Show 2 more, [Observation/physical-activity-minutes-moderate-only-example](Observation-physical-activity-minutes-moderate-only-example.md) and [Observation/physical-activity-minutes-vigorous-aggregate-example](Observation-physical-activity-minutes-vigorous-aggregate-example.md)
+* Examples for this Profile: [Observation/physical-activity-minutes-aggregate-only-example](Observation-physical-activity-minutes-aggregate-only-example.md), [Observation/physical-activity-minutes-all-components-example](Observation-physical-activity-minutes-all-components-example.md), [Observation/physical-activity-minutes-both-aggregates-example](Observation-physical-activity-minutes-both-aggregates-example.md), [Observation/physical-activity-minutes-ehispaq-q7-mapped-example](Observation-physical-activity-minutes-ehispaq-q7-mapped-example.md)... Show 3 more, [Observation/physical-activity-minutes-moderate-aggregate-example](Observation-physical-activity-minutes-moderate-aggregate-example.md), [Observation/physical-activity-minutes-moderate-only-example](Observation-physical-activity-minutes-moderate-only-example.md) and [Observation/physical-activity-minutes-vigorous-aggregate-example](Observation-physical-activity-minutes-vigorous-aggregate-example.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.prenudge.appdata.r4|current/StructureDefinition/StructureDefinition-at-prenudge-physical-activity-minutes-observation.json)
 
@@ -48,7 +53,7 @@ Links:
   "name" : "AtPrenudgeObservationPhysicalActivity",
   "title" : "AT PreNUDGE Observation Physical Activity Minutes",
   "status" : "draft",
-  "date" : "2026-08-20T08:19:53+00:00",
+  "date" : "2026-08-20T13:42:02+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -65,7 +70,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "Observation profile for recording physical activity duration as a panel\n(moderate, vigorous, aggregate components) derived from either a wearable device or\nthe EHIS-PAQ/ATHIS questionnaire (Q7/PE7). Supports four valid component combinations:\n  (a) aggregate only           — questionnaire source (Q7/PE7 → aggregateActivity)\n  (b) moderate only            — manual source; vigorous implicitly 0,\n                                 aggregate = moderateActivity (pa-agg-01 warning\n                                 if aggregateActivity absent)\n  (c) moderate + aggregate     — partial wearable or manual source\n  (d) vigorous + aggregate     — partial wearable source\n  (e) all three                — full wearable source. ",
+  "description" : "Observation profile for recording physical activity duration as a panel\n(moderate, vigorous, and two alternative aggregate components) derived from either a\nwearable device or the EHIS-PAQ/ATHIS questionnaire (Q7/PE7).\n\nTwo aggregate flavors may be sent independently of each other:\n  - aggregateActivity          — plain/unweighted total: moderateActivity (or 0) +\n                                  vigorousActivity (or 0). Also used standalone when\n                                  moderate/vigorous cannot be distinguished at all\n                                  (e.g. a single questionnaire total). See pa-agg-02.\n  - aggregateActivityWeighted  — WHO/IPAQ moderate-equivalent total: moderateActivity\n                                  (or 0) + (vigorousActivity × 2, or 0). See pa-agg-01.\nBoth, either, or neither aggregate MAY be present; pa-panel-01 only requires that at\nleast one component (of any kind) exists. Sending only an aggregate (without\nmoderateActivity/vigorousActivity) is valid and expected whenever the source cannot\ndistinguish intensity levels at all (e.g. a single questionnaire total). However,\nwhenever a source CAN distinguish moderate from vigorous activity, it SHOULD send\nmoderateActivity and vigorousActivity individually (in addition to any aggregate) —\nsending only a pre-computed aggregate discards information a consumer might need.\nThis cannot be enforced by an invariant (an instance cannot express \"the source\ncould have distinguished this but chose not to\"), so it is stated here as\nimplementation guidance rather than a machine-checkable rule.\n\nExample component combinations (not exhaustive):\n  (a) aggregateActivity only              — questionnaire source, no intensity split (Q7/PE7)\n  (b) moderate only                       — manual source; vigorous implicitly 0,\n                                             aggregates SHOULD equal moderateActivity\n                                             (pa-agg-01/pa-agg-02 warning if absent)\n  (c) moderate + aggregateActivityWeighted — partial wearable or manual source\n  (d) vigorous + aggregateActivityWeighted — partial wearable source\n  (e) moderate + vigorous + aggregateActivityWeighted            — full wearable source\n  (g) moderate + vigorous + aggregateActivity + aggregateActivityWeighted — full wearable\n      source reporting both aggregate flavors side by side",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -116,15 +121,22 @@ Links:
       {
         "key" : "pa-agg-01",
         "severity" : "warning",
-        "human" : "When moderateActivity or vigorousActivity are present, aggregateActivity SHOULD equal moderateActivity (or 0) + (vigorousActivity × 2, or 0)",
-        "expression" : "(component.where(code.coding.where(code = '77592-4').exists()).exists()\n or component.where(code.coding.where(code = '77593-2').exists()).exists())\nimplies\ncomponent.where(code.coding.where(code = '101691-4').exists()).value.ofType(Quantity).value =\n  iif(component.where(code.coding.where(code = '77592-4').exists()).exists(),\n      component.where(code.coding.where(code = '77592-4').exists()).value.ofType(Quantity).value,\n      0)\n  + (iif(component.where(code.coding.where(code = '77593-2').exists()).exists(),\n         component.where(code.coding.where(code = '77593-2').exists()).value.ofType(Quantity).value,\n         0) * 2)",
+        "human" : "When moderateActivity or vigorousActivity are present, aggregateActivityWeighted SHOULD equal moderateActivity (or 0) + (vigorousActivity × 2, or 0)",
+        "expression" : "(component.where(code.coding.where(code = '77592-4').exists()).exists()\n or component.where(code.coding.where(code = '77593-2').exists()).exists())\nimplies\ncomponent.where(code.coding.where(code = '68130003').exists()).value.ofType(Quantity).value =\n  iif(component.where(code.coding.where(code = '77592-4').exists()).exists(),\n      component.where(code.coding.where(code = '77592-4').exists()).value.ofType(Quantity).value,\n      0)\n  + (iif(component.where(code.coding.where(code = '77593-2').exists()).exists(),\n         component.where(code.coding.where(code = '77593-2').exists()).value.ofType(Quantity).value,\n         0) * 2)",
+        "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"
+      },
+      {
+        "key" : "pa-agg-02",
+        "severity" : "warning",
+        "human" : "When moderateActivity or vigorousActivity are present, aggregateActivity SHOULD equal moderateActivity (or 0) + vigorousActivity (or 0), with no intensity weighting",
+        "expression" : "(component.where(code.coding.where(code = '77592-4').exists()).exists()\n or component.where(code.coding.where(code = '77593-2').exists()).exists())\nimplies\ncomponent.where(code.coding.where(code = '101691-4').exists()).value.ofType(Quantity).value =\n  iif(component.where(code.coding.where(code = '77592-4').exists()).exists(),\n      component.where(code.coding.where(code = '77592-4').exists()).value.ofType(Quantity).value,\n      0)\n  + iif(component.where(code.coding.where(code = '77593-2').exists()).exists(),\n        component.where(code.coding.where(code = '77593-2').exists()).value.ofType(Quantity).value,\n        0)",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"
       },
       {
         "key" : "pa-wearable-01",
         "severity" : "error",
-        "human" : "When method is Automated, aggregateActivity must be present",
-        "expression" : "method.coding.exists(system = 'http://snomed.info/sct' and code = '8359006') implies component.where(code.coding.where(code = '101691-4').exists()).exists()",
+        "human" : "When method is Automated, aggregateActivityWeighted must be present",
+        "expression" : "method.coding.exists(system = 'http://snomed.info/sct' and code = '8359006') implies component.where(code.coding.where(code = '68130003').exists()).exists()",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-physical-activity-minutes-observation"
       },
       {
@@ -163,7 +175,7 @@ Links:
         "rules" : "open"
       },
       "short" : "Physical activity duration components",
-      "definition" : "Panel components: moderateActivity, vigorousActivity, aggregateActivity (min/wk) and classificationMethod (CodeableConcept)."
+      "definition" : "Panel components: moderateActivity, vigorousActivity, aggregateActivity (unweighted, min/wk), aggregateActivityWeighted (WHO/IPAQ weighted, min/wk) and classificationMethod (CodeableConcept)."
     },
     {
       "id" : "Observation.component:moderateActivity",
@@ -282,6 +294,46 @@ Links:
     },
     {
       "id" : "Observation.component:aggregateActivity.value[x].code",
+      "path" : "Observation.component.value[x].code",
+      "patternCode" : "min/wk"
+    },
+    {
+      "id" : "Observation.component:aggregateActivityWeighted",
+      "path" : "Observation.component",
+      "sliceName" : "aggregateActivityWeighted",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Observation.component:aggregateActivityWeighted.code",
+      "path" : "Observation.component.code",
+      "patternCodeableConcept" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "68130003",
+          "display" : "Physical activity"
+        }]
+      }
+    },
+    {
+      "id" : "Observation.component:aggregateActivityWeighted.value[x]",
+      "path" : "Observation.component.value[x]",
+      "type" : [{
+        "code" : "Quantity"
+      }]
+    },
+    {
+      "id" : "Observation.component:aggregateActivityWeighted.value[x].unit",
+      "path" : "Observation.component.value[x].unit",
+      "patternString" : "min/wk"
+    },
+    {
+      "id" : "Observation.component:aggregateActivityWeighted.value[x].system",
+      "path" : "Observation.component.value[x].system",
+      "patternUri" : "http://unitsofmeasure.org"
+    },
+    {
+      "id" : "Observation.component:aggregateActivityWeighted.value[x].code",
       "path" : "Observation.component.value[x].code",
       "patternCode" : "min/wk"
     },
