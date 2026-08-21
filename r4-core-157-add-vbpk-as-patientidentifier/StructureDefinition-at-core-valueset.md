@@ -8,17 +8,17 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-valueset | *Version*:2.1.0 | |
-| Active as of 2026-04-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreValueSet |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-valueset | *Version*:2.1.0 | |
+| Active as of 2026-08-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreValueSet |
 
  
 HL7® Austria FHIR® Core Profile for valuesets in Austria. The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension. 
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Implementation Guide
+* This Profile is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r4|current/StructureDefinition/at-core-valueset)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-valueset.json)
 
 ### Formal Views of Profile Content
 
@@ -36,12 +36,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-valueset.csv
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-valueset",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-valueset",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-valueset",
   "version" : "2.1.0",
   "name" : "HL7ATCoreValueSet",
   "title" : "HL7® AT Core ValueSet Profile",
   "status" : "active",
-  "date" : "2026-04-30T08:59:13+00:00",
+  "date" : "2026-08-21T10:22:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -111,7 +111,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-valueset.csv
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-valueset-systemoid"]
       }]
     },
     {
@@ -136,7 +136,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-valueset.csv
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-valueset-systemoid"]
       }]
     }]
   }

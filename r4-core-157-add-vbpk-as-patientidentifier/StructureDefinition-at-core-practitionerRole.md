@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole | *Version*:2.1.0 | |
-| Active as of 2026-04-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitionerRole |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole | *Version*:2.1.0 | |
+| Active as of 2026-08-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitionerRole |
 
  
 HL7® Austria FHIR® Core Profile for practitioner role data in Austria. 
@@ -18,7 +18,7 @@ HL7® Austria FHIR® Core Profile for practitioner role data in Austria.
 
 * Examples for this Profile: [PractitionerRole/HL7ATCorePractitionerRoleExample01](PractitionerRole-HL7ATCorePractitionerRoleExample01.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r4|current/StructureDefinition/at-core-practitionerRole)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-practitionerRole.json)
 
 ### Formal Views of Profile Content
 
@@ -36,12 +36,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-practitionerRole",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole",
   "version" : "2.1.0",
   "name" : "HL7ATCorePractitionerRole",
   "title" : "HL7® AT Core PractitionerRole Profile",
   "status" : "active",
-  "date" : "2026-04-30T08:59:13+00:00",
+  "date" : "2026-08-21T10:22:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -94,7 +94,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "path" : "PractitionerRole.practitioner",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"]
       }]
     },
     {
@@ -102,7 +102,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "path" : "PractitionerRole.organization",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"]
       }]
     },
     {

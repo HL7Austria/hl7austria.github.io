@@ -32,7 +32,7 @@ Muster Andreas Bauer Male, DoB: 1990-12-24 ( Patient internal identifier: 0815 
   "resourceType" : "Patient",
   "id" : "HL7ATCorePatientExample02-deceasedTime",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
   },
   "identifier" : [{
     "use" : "official",

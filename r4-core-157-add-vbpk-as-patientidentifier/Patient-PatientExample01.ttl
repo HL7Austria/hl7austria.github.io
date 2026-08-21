@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/Patient/PatientExample01> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "PatientExample01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient-enhanced" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient-enhanced>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PatientExample01</b></p><a name=\"PatientExample01\"> </a><a name=\"hcPatientExample01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-patient-enhanced.html\">HL7® AT Core Patient Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">James Pond  Male, DoB: 1968-07-07 ( Anonymous identifier)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">Anonymous identifier/12345qX4/Mf2bMeop0/8tjHqS+OWox03/TViPmP6DoB+Z/h2gDtMQE99xuBhfzyCy6jXgVEbuFGIqYSU1qxMeReQd4bbJzhekXvcrFAAn6mO1ZClokZnmRekidHI6bHnmR0cQjUywgHjnpbGJIzqBOOXmdFEi2mZ59yKKdMW7yfwQviAsWWx</td></tr></table></div>"
+  ] ;
+  fhir:Patient.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "ANON" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.34.4.22.1" ] ;
+     fhir:Identifier.value [ fhir:value "qX4/Mf2bMeop0/8tjHqS+OWox03/TViPmP6DoB+Z/h2gDtMQE99xuBhfzyCy6jXgVEbuFGIqYSU1qxMeReQd4bbJzhekXvcrFAAn6mO1ZClokZnmRekidHI6bHnmR0cQjUywgHjnpbGJIzqBOOXmdFEi2mZ59yKKdMW7yfwQviAsWWx" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "ANON" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.34.4.22.2" ] ;
+     fhir:Identifier.value [ fhir:value "12345qX4/Mf2bMeop0/8tjHqS+OWox03/TViPmP6DoB+Z/h2gDtMQE99xuBhfzyCy6jXgVEbuFGIqYSU1qxMeReQd4bbJzhekXvcrFAAn6mO1ZClokZnmRekidHI6bHnmR0cQjUywgHjnpbGJIzqBOOXmdFEi2mZ59yKKdMW7yfwQviAsWWx" ]
+  ] ;
+  fhir:Patient.name [
+     fhir:index 0 ;
+     fhir:HumanName.family [ fhir:value "Pond" ] ;
+     fhir:HumanName.given [
+       fhir:value "James" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:Patient.gender [ fhir:value "male"] ;
+  fhir:Patient.birthDate [ fhir:value "1968-07-07"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/Patient/PatientExample01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

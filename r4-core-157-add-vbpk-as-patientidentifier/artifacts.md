@@ -16,6 +16,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md) | HL7® Austria FHIR® Core Profile for location data in Austria. |
 | [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md) | HL7® Austria FHIR® Core Profile for organization data in Austria. |
 | [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md) | HL7® Austria FHIR® Core Profile for patient data in Austria. The HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems. |
+| [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient-enhanced.md) | HL7® Austria FHIR® Core Profile for patient data in Austria. The HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems. |
 | [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md) | HL7® Austria FHIR® Core Profile for practitioner data in Austria. |
 | [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md) | HL7® Austria FHIR® Core Profile for practitioner role data in Austria. |
 | [HL7® AT Core ValueSet Profile](StructureDefinition-at-core-valueset.md) | HL7® Austria FHIR® Core Profile for valuesets in Austria. The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension. |
@@ -47,6 +48,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | | |
 | :--- | :--- |
 | [HL7AT Core vbPK](ValueSet-at-core-vbpk.md) | This value set contains the OIDs for the vbPK (Verschlüsseltes bereichsspezifisches Personenkennzeichen) in Austria according to [E-Government-Bereichsabgrenzungsverordnung – E-Gov-BerAbgrV](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003476). |
+| [vbPK ValueSet](ValueSet-TestValueSet.md) | ValueSet für die vbPKs |
 
 ### Example: Example Instances 
 
@@ -67,4 +69,5 @@ These are example instances that show what data produced and consumed by systems
 | [HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md) | Example for the usage of the HL7 AT Core Patient Profile that includes a municipality code |
 | [HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md) | Example for the usage of the HL7 AT Core Practitioner Profile |
 | [HL7ATCorePractitionerRoleExample01](PractitionerRole-HL7ATCorePractitionerRoleExample01.md) | Example for the usage of the HL7 AT Core PractitionerRole Profile |
+| [PatientExample01](Patient-PatientExample01.md) | An example of a patient 01 with a license to krill. |
 

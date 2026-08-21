@@ -35,7 +35,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815 (use:�
 * Managing Organization: [Organization Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md)
 * Also see: [Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual, ))](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)
  | | |
-| [Patient Religion](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-religion.html) | Römisch-Katholisch | | |
+| [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Römisch-Katholisch | | |
 | Patient Citizenship: | * code: Österreich
 * period: 2016-07-30 08:30:00+0100 --> 2022-07-30 08:35:00+0100
  | | |
@@ -49,7 +49,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815 (use:�
   "resourceType" : "Patient",
   "id" : "HL7ATCorePatientExample04-Full",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/patient-religion",
@@ -173,7 +173,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815 (use:�
         "valueString" : "Stock 3 Tür 5"
       },
       {
-        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+        "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation",
         "valueString" : "Lift vorhanden"
       }]
     }],

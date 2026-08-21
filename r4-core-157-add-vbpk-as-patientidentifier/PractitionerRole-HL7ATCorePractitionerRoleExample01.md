@@ -35,7 +35,7 @@ Profile: [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-pr
   "resourceType" : "PractitionerRole",
   "id" : "HL7ATCorePractitionerRoleExample01",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"]
   },
   "active" : true,
   "practitioner" : {

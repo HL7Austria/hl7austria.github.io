@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.1.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.3.1.1061, `urn:oid:1.2.40.0.10.1.4.3.2`/438968, `urn:oid:1.2.40.0.10.1.4.3.2`/833477
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.3.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.3.1.1061, `urn:oid:1.2.40.0.10.1.4.3.2`/438968, `urn:oid:1.2.40.0.10.1.4.3.2`/833477
 
 **type**: Allgemeine Krankenanstalt
 
@@ -30,7 +30,7 @@ Profile: [HL7® AT Core Organization Profile](StructureDefinition-at-core-organi
   "resourceType" : "Organization",
   "id" : "HL7ATCoreOrganizationExample02-MultipleVPNR",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"]
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",

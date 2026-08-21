@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner | *Version*:2.1.0 | |
-| Active as of 2026-04-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitioner |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner | *Version*:2.1.0 | |
+| Active as of 2026-08-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitioner |
 
  
 HL7® Austria FHIR® Core Profile for practitioner data in Austria. 
@@ -25,7 +25,7 @@ In Austria, practitioners in healthcare are commonly called “Gesundheitsdienst
 * Refer to this Profile: [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
 * Examples for this Profile: [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r4|current/StructureDefinition/at-core-practitioner)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-practitioner.json)
 
 ### Formal Views of Profile Content
 
@@ -43,12 +43,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-practitioner",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner",
   "version" : "2.1.0",
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-04-30T08:59:13+00:00",
+  "date" : "2026-08-21T10:22:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -179,7 +179,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "min" : 1,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-core-vbpk"
+        "valueSet" : "https://fhir.hl7.at/core/r4/ValueSet/at-core-vbpk"
       }
     },
     {
@@ -192,7 +192,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "path" : "Practitioner.address",
       "type" : [{
         "code" : "Address",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address"]
       }]
     },
     {
@@ -215,7 +215,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition"]
       }]
     }]
   }

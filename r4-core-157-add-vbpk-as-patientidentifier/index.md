@@ -7,7 +7,7 @@
 
 ### Introduction
 
-> This is the implementation guide for the **Core Profiles (v2.1.0: [STU](https://www.hl7.org/fhir/versions.html) 3)** based on HL7® FHIR® R4. It is a **ballot** implementation guide that is hosted on the [HL7® Austria github project](https://github.com/HL7Austria). The most recent version of this implementation guide can be found at the [HL7® Austria FHIR® Website](http://fhir.at).
+> This is the implementation guide for the **Core Profiles (v2.1.0: [STU](https://www.hl7.org/fhir/versions.html) 3)** based on HL7® FHIR® R4. It is a **ballot** implementation guide that is hosted on the [HL7® Austria github project](https://github.com/HL7Austria). The most recent version of this implementation guide can be found at the [HL7® Austria FHIR® Website](https://fhir.hl7.at/).
 
 This implementation guide is provided to support the use of FHIR® in Austria.
 
@@ -53,12 +53,12 @@ This Implementation Guide contains and references intellectual property owned by
 {
   "resourceType" : "ImplementationGuide",
   "id" : "hl7.at.fhir.core.r4",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4",
+  "url" : "https://fhir.hl7.at/core/r4/ImplementationGuide/hl7.at.fhir.core.r4",
   "version" : "2.1.0",
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-04-30T08:59:13+00:00",
+  "date" : "2026-08-21T10:22:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -86,7 +86,7 @@ This Implementation Guide contains and references intellectual property owned by
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.1.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
@@ -96,7 +96,7 @@ This Implementation Guide contains and references intellectual property owned by
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   }],
   "definition" : {
     "extension" : [{
@@ -216,7 +216,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       {
         "url" : "value",
-        "valueString" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html"
+        "valueString" : "https://fhir.hl7.at/core/r4/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -506,7 +506,7 @@ This Implementation Guide contains and references intellectual property owned by
       },
       {
         "url" : "value",
-        "valueString" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html"
+        "valueString" : "https://fhir.hl7.at/core/r4/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -679,6 +679,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-address-additionalInformation.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-address-additionalInformation"
@@ -691,6 +695,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-address-municipalityCode.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-address-municipalityCode"
@@ -703,6 +711,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-gender-administrativeGenderAddition.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-gender-administrativeGenderAddition"
@@ -715,6 +727,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-core-vbpk.html"
       }],
       "reference" : {
         "reference" : "ValueSet/at-core-vbpk"
@@ -727,162 +743,218 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-HL7ATCoreLocationGraz.html"
       }],
       "reference" : {
         "reference" : "Location/HL7ATCoreLocationGraz"
       },
       "name" : "HL7ATCoreLocationGraz",
       "description" : "The Graz location of the Amadeus Spital with 6-character KA-Nr and geolocation",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Location"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Location-HL7ATCoreLocationLinz.html"
       }],
       "reference" : {
         "reference" : "Location/HL7ATCoreLocationLinz"
       },
       "name" : "HL7ATCoreLocationLinz",
       "description" : "The Linz location of the Amadeus Spital with 6-character KA-Nr and geolocation",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-HL7ATCoreOrganizationExample01.html"
       }],
       "reference" : {
         "reference" : "Organization/HL7ATCoreOrganizationExample01"
       },
       "name" : "HL7ATCoreOrganizationExample01",
       "description" : "Example for the usage of the HL7 AT Core Organization Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-HL7ATCoreOrganizationExample02-MultipleVPNR.html"
       }],
       "reference" : {
         "reference" : "Organization/HL7ATCoreOrganizationExample02-MultipleVPNR"
       },
       "name" : "HL7ATCoreOrganizationExample02-MultipleVPNR",
       "description" : "Example for the usage of the HL7 AT Core Organization Profile with multiple VPNR identifiers",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample01.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample01"
       },
       "name" : "HL7ATCorePatientExample01",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample02-deceasedTime.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample02-deceasedTime"
       },
       "name" : "HL7ATCorePatientExample02-deceasedTime",
       "description" : "Example with deceasedTime for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample03-deceasedBoolean.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample03-deceasedBoolean"
       },
       "name" : "HL7ATCorePatientExample03-deceasedBoolean",
       "description" : "Example with deceasedBoolean for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample04-Full.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample04-Full"
       },
       "name" : "HL7ATCorePatientExample04-Full",
       "description" : "Example with all elements for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample05-FullElga.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample05-FullElga"
       },
       "name" : "HL7ATCorePatientExample05-FullElga",
       "description" : "Example with all ELGA header elements in the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample06-GenderExtension.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample06-GenderExtension"
       },
       "name" : "HL7ATCorePatientExample06-GenderExtension",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientExample07-MunicipalityCode.html"
       }],
       "reference" : {
         "reference" : "Patient/HL7ATCorePatientExample07-MunicipalityCode"
       },
       "name" : "HL7ATCorePatientExample07-MunicipalityCode",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile that includes a municipality code",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-HL7ATCorePractitionerExample01.html"
       }],
       "reference" : {
         "reference" : "Practitioner/HL7ATCorePractitionerExample01"
       },
       "name" : "HL7ATCorePractitionerExample01",
       "description" : "Example for the usage of the HL7 AT Core Practitioner Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-HL7ATCorePractitionerRoleExample01.html"
       }],
       "reference" : {
         "reference" : "PractitionerRole/HL7ATCorePractitionerRoleExample01"
       },
       "name" : "HL7ATCorePractitionerRoleExample01",
       "description" : "Example for the usage of the HL7 AT Core PractitionerRole Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-address.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-address"
@@ -895,6 +967,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-location.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-location"
@@ -907,6 +983,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-organization.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-organization"
@@ -919,6 +999,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-patient.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-patient"
@@ -931,6 +1015,26 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-patient-enhanced.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-patient-enhanced"
+      },
+      "name" : "HL7® AT Core Patient Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for patient data in Austria.\nThe HL7® AT Core Patient is based upon the core FHIR® Patient Resource and designed to meet the applicable patient demographic data elements in Austria. It identifies which core elements, extensions, vocabularies and value sets SHALL be present in the resource when using this profile. Note, this extension represents the common structure of Patient information within Austrian information systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-practitioner.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-practitioner"
@@ -943,6 +1047,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-practitionerRole.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-practitionerRole"
@@ -955,6 +1063,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-valueset.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-valueset"
@@ -967,6 +1079,10 @@ This Implementation Guide contains and references intellectual property owned by
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-patient-religion.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-patient-religion"
@@ -978,13 +1094,49 @@ This Implementation Guide contains and references intellectual property owned by
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-PatientExample01.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/PatientExample01"
+      },
+      "name" : "PatientExample01",
+      "description" : "An example of a patient 01 with a license to krill.",
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient-enhanced"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-valueset-systemoid.html"
       }],
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-valueset-systemoid"
       },
       "name" : "System OID",
       "description" : "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\r\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-TestValueSet.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/TestValueSet"
+      },
+      "name" : "vbPK ValueSet",
+      "description" : "ValueSet für die vbPKs",
       "exampleBoolean" : false
     }],
     "page" : {

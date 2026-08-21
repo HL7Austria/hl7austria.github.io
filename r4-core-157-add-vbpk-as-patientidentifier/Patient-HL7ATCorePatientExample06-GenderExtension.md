@@ -21,7 +21,7 @@ Max Musterperson Other, DoB: 1960-01-01 ( Social Security number: 6789010160)
 * [+436500987654321](tel:+436500987654321)
 * Eine Strasse 15 Tür 42 Linz Oberösterreich 4020 AUT (home)
  |
-| [Patient Religion](http://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-religion.html) | Konfessionslos |
+| [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Konfessionslos |
 | Patient Citizenship: | * code: Österreich
  |
 
@@ -34,7 +34,7 @@ Max Musterperson Other, DoB: 1960-01-01 ( Social Security number: 6789010160)
   "resourceType" : "Patient",
   "id" : "HL7ATCorePatientExample06-GenderExtension",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/patient-religion",
@@ -119,7 +119,7 @@ Max Musterperson Other, DoB: 1960-01-01 ( Social Security number: 6789010160)
   "gender" : "other",
   "_gender" : {
     "extension" : [{
-      "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-gender-administrativeGenderAddition",
+      "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-gender-administrativeGenderAddition",
       "valueCoding" : {
         "system" : "https://termgit.elga.gv.at/CodeSystem/hl7-at-administrativegender-ergaenzung",
         "code" : "D",
@@ -146,7 +146,7 @@ Max Musterperson Other, DoB: 1960-01-01 ( Social Security number: 6789010160)
         "valueString" : "Stock 9 Tür 42"
       },
       {
-        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+        "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-additionalInformation",
         "valueString" : "Kein Lift vorhanden"
       }]
     }],

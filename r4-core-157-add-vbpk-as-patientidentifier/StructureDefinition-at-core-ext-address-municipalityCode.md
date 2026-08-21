@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode | *Version*:2.1.0 | |
-| Active as of 2026-04-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode | *Version*:2.1.0 | |
+| Active as of 2026-08-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
 
 HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address
 
@@ -22,7 +22,7 @@ HL7® Austria FHIR® Core Extension for the municipality code part of the Austri
 * Use this Extension: [HL7® AT Core Address Profile](StructureDefinition-at-core-address.md)
 * Examples for this Extension: [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r4|current/StructureDefinition/at-core-ext-address-municipalityCode)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-ext-address-municipalityCode.json)
 
 ### Formal Views of Extension Content
 
@@ -42,12 +42,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-core-ext-address-municipalityCode",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode",
   "version" : "2.1.0",
   "name" : "AddressMunicipalityCode",
   "title" : "Address Municipality Code",
   "status" : "active",
-  "date" : "2026-04-30T08:59:13+00:00",
+  "date" : "2026-08-21T10:22:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -78,7 +78,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-address#Address"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-address#Address"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -98,7 +98,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-municipalityCode"
+      "fixedUri" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode"
     },
     {
       "id" : "Extension.value[x]",

@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion | *Version*:2.1.0 | |
+| *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-patient-religion | *Version*:2.1.0 | |
 | * Standards status: *[Deprecated](http://hl7.org/fhir/R4/versions.html#std-process) | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:PatientReligion |
 
 **DEPRECATED** HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient. The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.
@@ -19,9 +19,9 @@
 
 **Usages:**
 
-* This Extension is not used by any profiles in this Implementation Guide
+* This Extension is not used by any profiles in this Specification
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.at.fhir.core.r4|current/StructureDefinition/at-core-ext-patient-religion)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-ext-patient-religion.json)
 
 ### Formal Views of Extension Content
 
@@ -53,12 +53,12 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-patient-
       }]
     }
   }],
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion",
+  "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-patient-religion",
   "version" : "2.1.0",
   "name" : "PatientReligion",
   "title" : "Patient Religion",
   "status" : "retired",
-  "date" : "2026-04-30T08:59:13+00:00",
+  "date" : "2026-08-21T10:22:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -89,7 +89,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-patient-
   },
   {
     "type" : "element",
-    "expression" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient#Patient"
+    "expression" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient#Patient"
   }],
   "type" : "Extension",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
@@ -159,7 +159,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-patient-
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion"
+      "fixedUri" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-patient-religion"
     },
     {
       "id" : "Extension.value[x]",

@@ -1,45 +1,48 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Location/HL7ATCoreLocationLinz> a fhir:Location ;
+<https://fhir.hl7.at/core/r4/Location/HL7ATCoreLocationLinz> a fhir:Location ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "HL7ATCoreLocationLinz"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location"^^xsd:anyURI ;
-       fhir:l <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-location>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location HL7ATCoreLocationLinz</b></p><a name=\"HL7ATCoreLocationLinz\"> </a><a name=\"hcHL7ATCoreLocationLinz\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-location.html\">HL7® AT Core Location Profile</a></p></div><p><b>identifier</b>: <code>urn:oid:1.2.40.0.34.4.10</code>/K101.2</p><p><b>name</b>: Campus Linz</p><p><b>address</b>: Linz 4020 AUT </p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>14.2861</td><td>48.3064</td></tr></table><p><b>managingOrganization</b>: <a href=\"Organization-HL7ATCoreOrganizationExample01.html\">Organization Amadeus Spital</a></p></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:identifier ( [
-     fhir:system [
-       fhir:v "urn:oid:1.2.40.0.34.4.10"^^xsd:anyURI ;
-       fhir:l <urn:oid:1.2.40.0.34.4.10>
-     ] ;
-     fhir:value [ fhir:v "K101.2" ]
-  ] ) ; # 
-  fhir:name [ fhir:v "Campus Linz"] ; # 
-  fhir:address [
-     fhir:city [ fhir:v "Linz" ] ;
-     fhir:postalCode [ fhir:v "4020" ] ;
-     fhir:country [ fhir:v "AUT" ]
-  ] ; # 
-  fhir:position [
-     fhir:longitude [ fhir:v 14.2861 ] ;
-     fhir:latitude [ fhir:v 48.3064 ]
-  ] ; # 
-  fhir:managingOrganization [
-     fhir:l <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/Organization/HL7ATCoreOrganizationExample01> ;
-     fhir:reference [ fhir:v "Organization/HL7ATCoreOrganizationExample01" ]
-  ] . # 
+  fhir:Resource.id [ fhir:value "HL7ATCoreLocationLinz"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Location HL7ATCoreLocationLinz</b></p><a name=\"HL7ATCoreLocationLinz\"> </a><a name=\"hcHL7ATCoreLocationLinz\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-location.html\">HL7® AT Core Location Profile</a></p></div><p><b>identifier</b>: <code>urn:oid:1.2.40.0.34.4.10</code>/K101.2</p><p><b>name</b>: Campus Linz</p><p><b>address</b>: Linz 4020 AUT </p><h3>Positions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Longitude</b></td><td><b>Latitude</b></td></tr><tr><td style=\"display: none\">*</td><td>14.2861</td><td>48.3064</td></tr></table><p><b>managingOrganization</b>: <a href=\"Organization-HL7ATCoreOrganizationExample01.html\">Organization Amadeus Spital</a></p></div>"
+  ] ;
+  fhir:Location.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.34.4.10" ] ;
+     fhir:Identifier.value [ fhir:value "K101.2" ]
+  ] ;
+  fhir:Location.name [ fhir:value "Campus Linz"] ;
+  fhir:Location.address [
+     fhir:Address.city [ fhir:value "Linz" ] ;
+     fhir:Address.postalCode [ fhir:value "4020" ] ;
+     fhir:Address.country [ fhir:value "AUT" ]
+  ] ;
+  fhir:Location.position [
+     fhir:Location.position.longitude [ fhir:value "14.2861"^^xsd:decimal ] ;
+     fhir:Location.position.latitude [ fhir:value "48.3064"^^xsd:decimal ]
+  ] ;
+  fhir:Location.managingOrganization [
+     fhir:link <https://fhir.hl7.at/core/r4/Organization/HL7ATCoreOrganizationExample01> ;
+     fhir:Reference.reference [ fhir:value "Organization/HL7ATCoreOrganizationExample01" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/Location/HL7ATCoreLocationLinz.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-core-vbpk | *Version*:2.1.0 | |
-| Active as of 2026-04-30 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreVBPK |
+| *Official URL*:https://fhir.hl7.at/core/r4/ValueSet/at-core-vbpk | *Version*:2.1.0 | |
+| Active as of 2026-08-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCoreVBPK |
 
  
 This value set contains the OIDs for the vbPK (Verschlüsseltes bereichsspezifisches Personenkennzeichen) in Austria according to [E-Government-Bereichsabgrenzungsverordnung – E-Gov-BerAbgrV](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003476). 
@@ -48,13 +48,13 @@ This value set was designed for the HL7AT Core IGs (R4 and R5) and will be moved
 {
   "resourceType" : "ValueSet",
   "id" : "at-core-vbpk",
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ValueSet/at-core-vbpk",
+  "url" : "https://fhir.hl7.at/core/r4/ValueSet/at-core-vbpk",
   "version" : "2.1.0",
   "name" : "HL7ATCoreVBPK",
   "title" : "HL7AT Core vbPK",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-04-30T08:59:13+00:00",
+  "date" : "2026-08-21T10:22:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
