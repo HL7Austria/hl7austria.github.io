@@ -6,7 +6,7 @@
 
 ## Example Device: PreNUDGE Wearable Device Example
 
-Profile: `https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-aps-device.html`
+Profile: [AT APS Device](https://fhir.hl7.at/elga/aps/r4/1.0.0/StructureDefinition-at-aps-device.html)
 
 **identifier**: `https://www.joanneum.at/devices`/dev-wearable-001
 
@@ -28,7 +28,7 @@ Profile: `https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/St
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-20
+2026-08-26
 
 Links:
 [Table of Contents](toc.md)|
@@ -41,7 +41,7 @@ Links:
   "resourceType" : "Device",
   "id" : "device-wearable-example",
   "meta" : {
-    "profile" : ["https://build.fhir.org/ig/HL7Austria/ELGA-AustrianPatientSummary-R4/StructureDefinition-at-aps-device.html"]
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-device"]
   },
   "identifier" : [{
     "system" : "https://www.joanneum.at/devices",
