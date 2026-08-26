@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationPss10Score",
   "title" : "AT PreNUDGE Observation PSS-10 Score",
   "status" : "draft",
-  "date" : "2026-08-26T07:06:07+00:00",
+  "date" : "2026-08-26T07:22:28+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",

@@ -34,7 +34,7 @@ Links:
   "name" : "WorkSocQuestionnaireResponseToObservation",
   "title" : "Work-SoC Q score to O score",
   "status" : "active",
-  "date" : "2026-08-26T07:06:07+00:00",
+  "date" : "2026-08-26T07:22:28+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
