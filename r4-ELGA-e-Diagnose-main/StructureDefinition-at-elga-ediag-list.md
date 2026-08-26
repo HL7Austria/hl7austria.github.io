@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list | *Version*:0.1.0 | |
-| Active as of 2026-08-20 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
+| Active as of 2026-08-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
 
  
 Das AT e-Diagnose List-Profil leitet sich vom HL7-AT-Core-R4-Profil ab und dient der strukturierten Listung von Einträgen. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-08-20T12:53:18+00:00",
+  "date" : "2026-08-26T13:50:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -73,7 +73,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "kind" : "resource",
   "abstract" : false,
   "type" : "List",
-  "baseDefinition" : "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-list",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/List",
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
@@ -82,23 +82,41 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
       "short" : "AT e-Diagnose List"
     },
     {
+      "id" : "List.identifier",
+      "path" : "List.identifier",
+      "short" : "Logischer Identfier der Liste zur Integritätsprüfung beim Schreibvorgang.",
+      "min" : 1,
+      "max" : "1"
+    },
+    {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Status des Liste."
+      "short" : "Status des Liste.",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListStatusVS"
+      }
     },
     {
       "id" : "List.mode",
       "path" : "List.mode",
-      "short" : "Die Liste ist ein laufend gepflegtes Dokument. Fixer Wert: working."
+      "short" : "Die Liste ist ein laufend gepflegtes Dokument. Fixer Wert: working.",
+      "fixedCode" : "working",
+      "mustSupport" : true
     },
     {
       "id" : "List.title",
       "path" : "List.title",
-      "short" : "Titel der Liste"
+      "short" : "Titel der Liste",
+      "max" : "0"
     },
     {
       "id" : "List.code",
       "path" : "List.code",
+      "short" : "Code, der den Typ der Liste beschreibt.",
+      "min" : 1,
+      "mustSupport" : true,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-code-vs"
@@ -107,63 +125,89 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.subject",
       "path" : "List.subject",
-      "short" : "Patient, für den die Liste erstellt werden soll, der über den Zentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Diagnose ist."
+      "short" : "Patient, für den die Liste erstellt werden soll, der über den Zentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Diagnose ist.",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "List.encounter",
       "path" : "List.encounter",
-      "short" : "Patientenkontakt"
+      "short" : "Patientenkontakt",
+      "max" : "0"
     },
     {
       "id" : "List.date",
       "path" : "List.date",
-      "short" : "Letzte Aktualisierung der Liste."
+      "short" : "Letzte Aktualisierung der Liste.",
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "List.source",
       "path" : "List.source",
       "short" : "Arzt oder Ärztin, die die Liste erstellt und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Diagnose des Patienten zuzugreifen. Device nur für initiale Erstellung durch die Fachanwendung. Patient nur nachdem er Einträge gelöscht hat.",
+      "min" : 1,
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
         "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
         "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "List.orderedBy",
       "path" : "List.orderedBy",
-      "short" : "Die Reihenfolge der Einträge in der Liste."
+      "short" : "Die Reihenfolge der Einträge in der Liste.",
+      "max" : "0"
     },
     {
       "id" : "List.note",
       "path" : "List.note",
-      "short" : "Freitextliche Anmerkungen zur Liste."
+      "short" : "Freitextliche Anmerkungen zur Liste.",
+      "max" : "0"
+    },
+    {
+      "id" : "List.entry",
+      "path" : "List.entry",
+      "mustSupport" : true
     },
     {
       "id" : "List.entry.flag",
       "path" : "List.entry.flag",
-      "short" : "Kennzeichnet die Art der Änderung des Eintrags"
+      "max" : "0"
     },
     {
       "id" : "List.entry.deleted",
       "path" : "List.entry.deleted",
-      "short" : "Gibt an, ob der referenzierte Eintrag zur Entfernung markiert wurde. Wird durch Flag 'removed' gelöst."
+      "short" : "Gibt an, ob der referenzierte Eintrag zur Entfernung markiert wurde. Wird durch Flag 'removed' gelöst.",
+      "max" : "0"
     },
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Datum der Aufnahme des Eintrags in die Liste."
+      "short" : "Datum der Aufnahme des Eintrags in die Liste.",
+      "max" : "0"
     },
     {
       "id" : "List.entry.item",
       "path" : "List.entry.item",
-      "short" : "Referenz auf einen Eintrag. Zu klären: reicht ein List-Profil oder braucht es jeweils eines für die integren Listen, die Gesamtliste, Liste für Allergien, Alerts?"
+      "short" : "Referenz auf einen Eintrag. Zu klären: reicht ein List-Profil oder braucht es jeweils eines für die integren Listen, die Gesamtliste, Liste für Allergien, Alerts?",
+      "mustSupport" : true
     },
     {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Für Patient gibt es zurzeit keine Einträge"
+      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Für Patient gibt es zurzeit keine Einträge",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListEmptyReasonVS"
+      }
     }]
   }
 }

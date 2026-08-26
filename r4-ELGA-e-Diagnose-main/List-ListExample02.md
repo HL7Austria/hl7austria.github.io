@@ -14,7 +14,6 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 | Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
 * **Items**: [Condition Hypothyroidism](Condition-DiagnoseCurrentlyRelevantExample.md)
-  * Flag: Neuer Planeintrag
 
 
 
@@ -47,12 +46,6 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
     "reference" : "Practitioner/PractitionerExample"
   },
   "entry" : [{
-    "flag" : {
-      "coding" : [{
-        "system" : "https://fhir.hl7.at/elga/core/r4/CodeSystem/ElgaListEntryFlagCS",
-        "code" : "new"
-      }]
-    },
     "item" : {
       "reference" : "Condition/DiagnoseCurrentlyRelevantExample"
     }
