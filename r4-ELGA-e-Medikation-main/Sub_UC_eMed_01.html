@@ -336,8 +336,8 @@ width: 100%;}
 
 <ol>
   <li><a name="l486">​</a>Der Client führt einen <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
-  <li>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Collection-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-collection-bundles">Prüfung des Planzustands und Erzeugung des Collection-Bundles</a>).</li>
-  <li>Die Fachanwendung liefert das Collection-Bundle zurück. Dieses enthält:
+  <li>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Collection-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-collection-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Collection-Bundles</a>).</li>
+  <li>Die Fachanwendung liefert das Medikationsplan-Collection-Bundle zurück. Dieses enthält:
     <ul>
       <li>die <em>List</em>-Ressource,</li>
       <li>sämtliche von der <em>List</em> referenzierten Ressourcen sowie</li>
@@ -351,10 +351,10 @@ width: 100%;}
 <h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
 
 <p><br/>
-<a href="plantuml/UC_eMed_01_01.svg"><img src="plantuml/UC_eMed_01_01.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<a href="plantuml/UC_eMed_01_01.svg"><img src="plantuml/UC_eMed_01_01.svg" alt="overview" style="width:40%;" class="mx-auto"/></a>
 <br/></p>
 
-<h5 id="prüfung-des-planzustands-und-erzeugung-des-collection-bundles">Prüfung des Planzustands und Erzeugung des Collection Bundles</h5>
+<h5 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-collection-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Collection-Bundles</h5>
 
 <p>Nach Eingang eines <strong>$plan-read</strong> prüft die Fachanwendung den Zustand des Medikationsplans.</p>
 
@@ -368,7 +368,7 @@ width: 100%;}
   </li>
   <li><strong>Es existiert ein Medikationsplan mit Planeinträgen.</strong>
     <ul>
-      <li>Neue oder geänderte Planeinträge (<em>List.entry.flag = new</em> oder <em>changed</em>) werden auf <em>unchanged</em> gesetzt.</li>
+      <li>Neue oder geänderte Planeinträge (<em>List.entry.flag = new</em> oder <em>changed</em>) werden auf <em>unchanged</em> gesetzt (siehe <a href="workflowmanagement.html#status-des-listentryflags-im-medikationsplan">Status des List.entry.flags im Medikationsplan</a>).</li>
       <li>Planeinträge mit <em>List.entry.flag = removed</em> werden aus dem Medikationsplan entfernt.</li>
       <li>Planeinträge mit abgelaufenem Behandlungszeitraum werden mit <em>List.entry.flag = removed</em> gekennzeichnet, bleiben jedoch im Medikationsplan enthalten.</li>
       <li>Sind nach der Transformation keine Planeinträge mehr vorhanden, wird <em>List.emptyReason = nilknown</em> gesetzt.</li>
@@ -381,7 +381,7 @@ width: 100%;}
   </li>
 </ol>
 
-<p>Abschließend erzeugt die Fachanwendung aus der aktuellen Version der <em>List</em>-Ressource und den referenzierten Ressourcenversionen ein Collection-Bundle zur Auslieferung.</p>
+<p>Abschließend erzeugt die Fachanwendung aus der aktuellen Version der <em>List</em>-Ressource und den referenzierten Ressourcenversionen das Medikationsplan-Collection-Bundle zur Auslieferung.</p>
 
 <p>Die persistierten Ressourcen werden dabei nicht verändert.</p>
 
@@ -395,7 +395,7 @@ width: 100%;}
 
 <p>Beim Plan-History-Search rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus versionierten List-Ressourcen sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus. Dadurch entspricht jedes ausgelieferte Collection Bundle exakt dem historischen Stand des Medikationsplans zum jeweiligen Zeitpunkt.</p>
 
-<p>Der Abruf erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:</p>
+<p>Der Abruf erfolgt mittels <strong>GET</strong> auf den <em>List</em>-Ressourcen-Endpunkt unter Angabe geeigneter Suchparameter:</p>
 <ul>
   <li><strong>Erstellungszeitraum</strong> von Medikationsplanversionen</li>
   <li><strong>Medikation</strong> im Medikationsplan (PZN, Arzneimittelname oder Wirkstoff)</li>
@@ -404,17 +404,17 @@ width: 100%;}
   <!-- TODO: weitere-parameter --></li>
 </ul>
 
-<p>Die erzeugten Collection Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.</p>
+<p>Die erzeugten Medikationsplan-Collection-Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.</p>
 
 <h5 id="ablauf-1">Ablauf</h5>
 
 <ol>
   <li>Der Client führt ein GET auf <em>[base]/Patient/[id]/List/_history</em> mit den gewünschten Suchparametern aus.</li>
   <li>Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource.</li>
-  <li>Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und erzeugt daraus ein Collection Bundle.</li>
-  <li>Die Fachanwendung liefert ein Bundle vom Typ <em>searchset</em> zurück, das alle erzeugten Collection Bundles enthält.</li>
+  <li>Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und erzeugt daraus ein Medikationsplan-Collection-Bundle.</li>
+  <li>Die Fachanwendung liefert ein Bundle vom Typ <em>searchset</em> zurück, das alle erzeugten Medikationsplan-Collection-Bundles enthält.</li>
   <li>Werden keine passenden historischen Medikationsplanversionen gefunden, enthält das zurückgelieferte <em>searchset</em> keine Einträge.</li>
-  <li>Im Fehlerfall wird einen entsprechenden <em>OperationOutcome</em> zurückgegeben.</li>
+  <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
 </ol>
 
 <p>Beim Plan-History-Search erfolgt <strong>keine Änderung</strong> der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert.</p>
@@ -424,7 +424,7 @@ width: 100%;}
 <h5 id="sequenzdiagramm-1">Sequenzdiagramm</h5>
 
 <p><br/>
-<a href="plantuml/UC_eMed_01_02.svg"><img src="plantuml/UC_eMed_01_02.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<a href="plantuml/UC_eMed_01_02.svg"><img src="plantuml/UC_eMed_01_02.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
 
 <h6 id="beispiele-für-suchanfragen">Beispiele für Suchanfragen</h6>
@@ -447,34 +447,34 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
 
 <h4 id="sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</h4>
 
-<p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> noch kein Medikationsplan für den ELGA-Teilnehmer existiert.</p>
+<p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> noch kein Medikationsplan für den:die ELGA-Teilnehmer:in existiert.</p>
 
 <p>Der dabei erzeugte initiale Medikationsplan besitzt den Wert <em>List.emptyReason = notstarted</em>. Dieser kennzeichnet ausschließlich den <strong>Initialzustand</strong> des Medikationsplans und bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden. Er trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.</p>
 
-<p>Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Portal ausgelöst werden, indem erstmals ein <strong>Plan-Read</strong> durchgeführt wird.</p>
+<p>Die Initialisierung kann sowohl durch ein GDA-System als auch durch den:die ELGA-Teilnehmer:in über das Portal ausgelöst werden, indem erstmals ein <strong>Plan-Read</strong> durchgeführt wird.</p>
 
 <h5 id="ablauf-2">Ablauf</h5>
 
 <ol>
-  <li><a name="l800">​</a>Ein Client führt für einen ELGA-Teilnehmer erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li><a name="l806">​</a>Ein Client führt für eine:n ELGA-Teilnehmer:in erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.</li>
   <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
   <li>Die List-Ressource wird als erste Version persistiert.</li>
-  <li>Für das Plan-Read erzeugt die Fachanwendung daraus ein temporäres Collection-Bundle zur Auslieferung.</li>
+  <li>Für das Plan-Read erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Collection-Bundle zur Auslieferung.</li>
   <li>Dieses wird mit <em>List.emptyReason = notstarted</em> sowie dem zugehörigen ETag an den Client zurückgeliefert.</li>
 </ol>
 
 <h5 id="sequenzdiagramm-2">Sequenzdiagramm</h5>
 
 <p><br/>
-<a href="plantuml/UC_eMed_01_03.svg"><img src="plantuml/UC_eMed_01_03.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<a href="plantuml/UC_eMed_01_03.svg"><img src="plantuml/UC_eMed_01_03.svg" alt="overview" style="width:45%;" class="mx-auto"/></a>
 <br/></p>
 
 <h4 id="sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge lesen (Planentry-Search)</h4>
 
-<p>Der <strong>Planentry-Search</strong> dient der gezielten Suche nach Medikationsplaneinträgen eines ELGA-Teilnehmers. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
+<p>Die <strong>Planentry-Search</strong> dient der gezielten Suche nach Medikationsplaneinträgen eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
 
-<p>Die Suche ermöglicht berechtigten GDA sowie ELGA-Teilnehmer:innen den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.</p>
+<p>Die Suche ermöglicht berechtigten GDA sowie ELGA-Teilnehmern den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.</p>
 
 <p>Der Abruf erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:</p>
 
@@ -510,7 +510,7 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
 <h5 id="sequenzdiagramm-3">Sequenzdiagramm</h5>
 
 <p><br/>
-<a href="plantuml/UC_eMed_01_04.svg"><img src="plantuml/UC_eMed_01_04.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<a href="plantuml/UC_eMed_01_04.svg"><img src="plantuml/UC_eMed_01_04.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
 
 <h5 id="beispiele-für-suchanfragen-1">Beispiele für Suchanfragen</h5>
@@ -527,6 +527,11 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
   <!-- * Historische und aktuelle Medikationsplaneinträge eines bestimmten Wirkstoffs:
   `GET /Patient/[id]/MedicationRequest?ingredient=<Wirkstoff>` -->
 
+<h4 id="sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)</h4>
+
+<p>In Arbeit. 
+  <!-- GET	/Patient/[id]/List	plan-history-directory-search	Verzeichnis historischer Medikationspläne abrufen
+(_history?_elements=date,source) --></p>
 
 
 
@@ -546,7 +551,7 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Jul 29, 2026 17:39+0000">2026-07-29</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Aug 26, 2026 12:53+0000">2026-08-26</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -32,8 +32,8 @@ POST [$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)
 ##### Ablauf
 
 1. Der Client führt einen**POST**[$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)aus.
-1. Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Collection-Bundle zur Auslieferung (siehe[Prüfung des Planzustands und Erzeugung des Collection-Bundles](Sub_UC_eMed_01.md#prüfung-des-planzustands-und-erzeugung-des-collection-bundles)).
-1. Die Fachanwendung liefert das Collection-Bundle zurück. Dieses enthält:
+1. Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Collection-Bundle zur Auslieferung (siehe[Prüfung des Planzustands und Erzeugung des Medikationsplan-Collection-Bundles](Sub_UC_eMed_01.md#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-collection-bundles)).
+1. Die Fachanwendung liefert das Medikationsplan-Collection-Bundle zurück. Dieses enthält:
 * die **List**-Ressource,
 * sämtliche von der **List** referenzierten Ressourcen sowie
 * im HTTP-Header den **ETag** der aktuellen Version der **List**-Ressource für das [Optimistic Locking](https://hl7.org/fhir/http.html#concurrency).
@@ -44,7 +44,7 @@ Nachfolgend kann der Medikationsplan vom GDA bearbeitet und mittels [Plan-Write]
 
  ![](plantuml/UC_eMed_01_01.svg) 
 
-##### Prüfung des Planzustands und Erzeugung des Collection Bundles
+##### Prüfung des Planzustands und Erzeugung des Medikationsplan-Collection-Bundles
 
 Nach Eingang eines **$plan-read** prüft die Fachanwendung den Zustand des Medikationsplans.
 
@@ -54,7 +54,7 @@ Dabei werden folgende Fälle unterschieden:
 * Es wird gemäß [Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#Sub_UC_eMed_01_03---initial-erstellter-medikationsplan) ein initialer Medikationsplan erstellt (**List.emptyReason = notstarted**).
 
 1. **Es existiert ein Medikationsplan mit Planeinträgen.**
-* Neue oder geänderte Planeinträge (**List.entry.flag = new** oder **changed**) werden auf **unchanged** gesetzt.
+* Neue oder geänderte Planeinträge (**List.entry.flag = new** oder **changed**) werden auf **unchanged** gesetzt (siehe [Status des List.entry.flags im Medikationsplan](workflowmanagement.md#status-des-listentryflags-im-medikationsplan)).
 * Planeinträge mit **List.entry.flag = removed** werden aus dem Medikationsplan entfernt.
 * Planeinträge mit abgelaufenem Behandlungszeitraum werden mit **List.entry.flag = removed** gekennzeichnet, bleiben jedoch im Medikationsplan enthalten.
 * Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt.
@@ -62,7 +62,7 @@ Dabei werden folgende Fälle unterschieden:
 1. **Es existiert ein leerer Medikationsplan**(**List.emptyReason = notstarted**oder**nilknown**).
 * Es erfolgt keine Transformation.
 
-Abschließend erzeugt die Fachanwendung aus der aktuellen Version der **List**-Ressource und den referenzierten Ressourcenversionen ein Collection-Bundle zur Auslieferung.
+Abschließend erzeugt die Fachanwendung aus der aktuellen Version der **List**-Ressource und den referenzierten Ressourcenversionen das Medikationsplan-Collection-Bundle zur Auslieferung.
 
 Die persistierten Ressourcen werden dabei nicht verändert.
 
@@ -74,22 +74,22 @@ Die persistierten Ressourcen werden dabei nicht verändert.
 
 Beim Plan-History-Search rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus versionierten List-Ressourcen sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus. Dadurch entspricht jedes ausgelieferte Collection Bundle exakt dem historischen Stand des Medikationsplans zum jeweiligen Zeitpunkt.
 
-Der Abruf erfolgt mittels **GET** unter Angabe geeigneter Suchparameter:
+Der Abruf erfolgt mittels **GET** auf den **List**-Ressourcen-Endpunkt unter Angabe geeigneter Suchparameter:
 
 * **Erstellungszeitraum** von Medikationsplanversionen
 * **Medikation** im Medikationsplan (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum** einer Medikation im Medikationsplan  
 
-Die erzeugten Collection Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.
+Die erzeugten Medikationsplan-Collection-Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.
 
 ##### Ablauf
 
 1. Der Client führt ein GET auf**[base]/Patient/[id]/List/_history**mit den gewünschten Suchparametern aus.
 1. Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource.
-1. Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und erzeugt daraus ein Collection Bundle.
-1. Die Fachanwendung liefert ein Bundle vom Typ**searchset**zurück, das alle erzeugten Collection Bundles enthält.
+1. Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und erzeugt daraus ein Medikationsplan-Collection-Bundle.
+1. Die Fachanwendung liefert ein Bundle vom Typ**searchset**zurück, das alle erzeugten Medikationsplan-Collection-Bundles enthält.
 1. Werden keine passenden historischen Medikationsplanversionen gefunden, enthält das zurückgelieferte**searchset**keine Einträge.
-1. Im Fehlerfall wird einen entsprechenden**OperationOutcome**zurückgegeben.
+1. Im Fehlerfall wird ein entsprechender**OperationOutcome**zurückgegeben.
 
 Beim Plan-History-Search erfolgt **keine Änderung** der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert.
 
@@ -105,19 +105,19 @@ In Arbeit.
 
 #### Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan
 
-Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von [$plan-read](OperationDefinition-AtElgaEmed.List.PlanRead.md) noch kein Medikationsplan für den ELGA-Teilnehmer existiert.
+Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von [$plan-read](OperationDefinition-AtElgaEmed.List.PlanRead.md) noch kein Medikationsplan für den:die ELGA-Teilnehmer:in existiert.
 
 Der dabei erzeugte initiale Medikationsplan besitzt den Wert **List.emptyReason = notstarted**. Dieser kennzeichnet ausschließlich den **Initialzustand** des Medikationsplans und bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden. Er trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.
 
-Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Portal ausgelöst werden, indem erstmals ein **Plan-Read** durchgeführt wird.
+Die Initialisierung kann sowohl durch ein GDA-System als auch durch den:die ELGA-Teilnehmer:in über das Portal ausgelöst werden, indem erstmals ein **Plan-Read** durchgeführt wird.
 
 ##### Ablauf
 
-1. Ein Client führt für einen ELGA-Teilnehmer erstmalig ein**POST**[$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)aus.
+1. Ein Client führt für eine:n ELGA-Teilnehmer:in erstmalig ein**POST**[$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)aus.
 1. Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.
 1. Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit**emptyReason = notstarted**.
 1. Die List-Ressource wird als erste Version persistiert.
-1. Für das Plan-Read erzeugt die Fachanwendung daraus ein temporäres Collection-Bundle zur Auslieferung.
+1. Für das Plan-Read erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Collection-Bundle zur Auslieferung.
 1. Dieses wird mit**List.emptyReason = notstarted**sowie dem zugehörigen ETag an den Client zurückgeliefert.
 
 ##### Sequenzdiagramm
@@ -126,9 +126,9 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 
 #### Sub_UC_eMed_01_04 - Medikationsplaneinträge lesen (Planentry-Search)
 
-Der **Planentry-Search** dient der gezielten Suche nach Medikationsplaneinträgen eines ELGA-Teilnehmers. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer **MedicationRequest**-Ressource mit **category = "Planeintrag"**.
+Die **Planentry-Search** dient der gezielten Suche nach Medikationsplaneinträgen eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer **MedicationRequest**-Ressource mit **category = "Planeintrag"**.
 
-Die Suche ermöglicht berechtigten GDA sowie ELGA-Teilnehmer:innen den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.
+Die Suche ermöglicht berechtigten GDA sowie ELGA-Teilnehmern den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.
 
 Der Abruf erfolgt mittels **GET** unter Angabe geeigneter Suchparameter:
 
@@ -159,6 +159,10 @@ Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt 
  ![](plantuml/UC_eMed_01_04.svg) 
 
 ##### Beispiele für Suchanfragen
+
+In Arbeit. 
+
+#### Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)
 
 In Arbeit. 
 

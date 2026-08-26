@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListStatusVS | *Version*:0.1.1 | |
-| Active as of 2026-07-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListStatusVS |
+| Active as of 2026-08-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListStatusVS |
 
  
 Zulässige Ausprägungen des Status einer List-Ressource in ELGA. 
@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA List Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-07-29T17:39:31+00:00",
+  "date" : "2026-08-26T12:53:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

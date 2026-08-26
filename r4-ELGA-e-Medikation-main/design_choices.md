@@ -13,7 +13,7 @@ Zentrale Ressource ist der Medikationsplan (**List**), der die einzelnen Medikat
 
 Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Collection Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.
 
- ![](Uebersicht_e_Medikation_Ressourcen.svg)
+ ![](Uebersicht_e_Medikation_Ressourcen.drawio.svg)
 
 ### Relevante Profile
 
@@ -27,7 +27,7 @@ Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen d
 
 #### Medikationsplaneintrag bzw. Planeintrag: AtElgaEmedMedicationRequestPlaneintrag (MedicationRequest)
 
-Ein Medikationsplaneintrag im Medikationsplan wird durch eine **MedicationRequest**-Ressource der Kategorie "Medikationsplaneintrag" abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained **Medication**-Ressource, also inline (innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer geplanten Abgabe dienen. Es werden R5-Backport-Extensions verwendet.
+Ein Medikationsplaneintrag im Medikationsplan wird durch eine **MedicationRequest**-Ressource der Kategorie "Medikationsplaneintrag" abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained **Medication**-Ressource, also inline (innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer **Geplanten Abgabe** dienen. Es werden R5-Backport-Extensions verwendet.
 
 Der aktuelle Status eines Medikationsplaneintrags wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-des-medicationrequests-im-medikationsplaneintrag)).
 
@@ -41,7 +41,7 @@ Das Medikationsplan-Collection-Bundle dient ausschließlich der Auslieferung ein
 
 Ein Bundle vom Typ Transaction, das beim Speichern von [Geplanten Abgaben](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) mittels [Prescription-Write](interactions.md#prescription-write) auf den Medikationsplan an die Fachanwendung übermittelt wird.
 
-Die im Bundle enthaltenen **Geplanten Abgaben** müssen mit dem gleichen **e-Med GroupIdentifier** gekennzeichnet sein. Fehlt dieser bei allen geplanten Abgaben im Transaction Bundle, wird er von der Fachanwendung ergänzt.
+Die im Bundle enthaltenen **Geplanten Abgaben** müssen mit dem gleichen **e-Med GroupIdentifier** gekennzeichnet sein. Fehlt dieser bei allen **Geplanten Abgaben** im Transaction Bundle, wird er von der Fachanwendung ergänzt.
 
 Profil in Arbeit.
 
