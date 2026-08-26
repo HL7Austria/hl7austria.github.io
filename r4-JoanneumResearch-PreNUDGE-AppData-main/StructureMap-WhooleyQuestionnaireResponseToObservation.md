@@ -34,7 +34,7 @@ Links:
   "name" : "WhooleyQuestionnaireResponseToObservation",
   "title" : "PHQ-2/Whooley Q to O",
   "status" : "active",
-  "date" : "2026-08-26T07:22:28+00:00",
+  "date" : "2026-08-26T07:28:06+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -271,7 +271,7 @@ Links:
         "context" : "groupItem",
         "element" : "item",
         "variable" : "q1",
-        "condition" : "q1.linkId = '/whooley-q1'"
+        "condition" : "q1.linkId = 'whooley-q1'"
       }],
       "rule" : [{
         "name" : "whenQ1Ja",
@@ -293,7 +293,7 @@ Links:
         "context" : "groupItem",
         "element" : "item",
         "variable" : "q1",
-        "condition" : "q1.linkId = '/whooley-q1'"
+        "condition" : "q1.linkId = 'whooley-q1'"
       }],
       "rule" : [{
         "name" : "q1Nein",
@@ -341,7 +341,7 @@ Links:
         "context" : "groupItem",
         "element" : "item",
         "variable" : "q2",
-        "condition" : "q2.linkId = '/whooley-q2'"
+        "condition" : "q2.linkId = 'whooley-q2'"
       }],
       "rule" : [{
         "name" : "bothJa",

@@ -40,7 +40,7 @@ Links:
   "title" : "PHQ-2; \"Whooley Questions\"",
   "status" : "active",
   "subjectType" : ["Patient"],
-  "date" : "2026-08-26T07:22:28+00:00",
+  "date" : "2026-08-26T07:28:06+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -64,7 +64,7 @@ Links:
     "text" : "PHQ-2; \"Whooley Questions\"",
     "type" : "group",
     "item" : [{
-      "linkId" : "/whooley-q1",
+      "linkId" : "whooley-q1",
       "text" : "Fühlten Sie sich im letzten Monat häufig niedergeschlagen, traurig, bedrückt oder hoffnungslos?",
       "type" : "choice",
       "required" : true,
@@ -84,7 +84,7 @@ Links:
       }]
     },
     {
-      "linkId" : "/whooley-q2",
+      "linkId" : "whooley-q2",
       "text" : "Hatten Sie im letzten Monat deutlich weniger Lust und Freude an Dingen, die Sie sonst gerne tun?",
       "type" : "choice",
       "required" : true,
