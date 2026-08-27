@@ -311,20 +311,20 @@ width: 100%;}
 
 <p>Zentrale Ressource ist der Medikationsplan (<em>List</em>), der die einzelnen Medikationsplaneinträge (<em>MedicationRequest</em>) referenziert. Basierend auf diesen Planeinträgen werden <em>Geplante Abgaben</em> (<em>MedicationRequest</em>) erstellt, auf deren Grundlage <em>Durchgeführte Abgaben</em> (<em>MedicationDispense</em>) dokumentiert werden können.</p>
 
-<p>Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Collection Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.</p>
+<p>Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Medikationsplan-Searchset-Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.</p>
 
 <p><br/>
 <a href="Uebersicht_e_Medikation_Ressourcen.drawio.svg"><img src="Uebersicht_e_Medikation_Ressourcen.drawio.svg" alt="diagram" style="width: 100%"/></a></p>
 
-  <!-- TODO Pfeile zu Patient und Practitioner? Umrandung Medikationsplan-Collection-Bundle strichliert -->
+  <!-- TODO Pfeile zu Patient und Practitioner? Umrandung Medikationsplan-Searchset-Bundle strichliert -->
 
 <h3 id="relevante-profile">Relevante Profile</h3>
 
 <h4 id="medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan: AtElgaEmedListMedikationsplan (<em>List</em>)</h4>
 
-<p>Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jeder Entry genau eine Referenz (<em>Reference</em>) auf einen Medikationsplaneintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
+<p>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jeder Entry genau eine Referenz (<em>Reference</em>) auf einen Planeintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
 
-<p><a name="l474">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Medikationsplaneintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+<p><a name="l474">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Planeintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
 
 <p>Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.</p>
 
@@ -332,24 +332,26 @@ width: 100%;}
 
 <h4 id="medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneintrag bzw. Planeintrag: AtElgaEmedMedicationRequestPlaneintrag (<em>MedicationRequest</em>)</h4>
 
-<p>Ein Medikationsplaneintrag im Medikationsplan wird durch eine <em>MedicationRequest</em>-Ressource der Kategorie "Medikationsplaneintrag" abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained <em>Medication</em>-Ressource, also inline (innerhalb der Ressource), dokumentiert wird.
-Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer <em>Geplanten Abgabe</em> dienen. Es werden R5-Backport-Extensions verwendet.</p>
+<p>Ein Planeintrag im Medikationsplan wird durch eine <em>MedicationRequest</em>-Ressource der Kategorie "Planeintrag" abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained <em>Medication</em>-Ressource innerhalb des MedicationRequests dokumentiert wird.
+Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer <em>Geplanten Abgabe</em> dienen.</p>
 
-<p>Der aktuelle Status eines Medikationsplaneintrags wird im <em>status</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a>).</p>
+<p>Der aktuelle Status eines Planeintrags wird im <em>status</em>-Element dokumentiert (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Planeintrag</a>).</p>
 
-<p>Abhängig vom List.entry.flag kann der Medikationsplaneintrag nur bestimmte Statuswerte annehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</p>
+<p>Abhängig vom List.entry.flag kann der Planeintrag nur bestimmte Statuswerte annehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</p>
 
-<h4 id="medikationsplan-collection-bundle-atelgaemedbundlemedikationsplan-collection-bundle">Medikationsplan-Collection-Bundle: AtElgaEmedBundleMedikationsplan (<em>Collection Bundle</em>)</h4>
+<h4 id="medikationsplan-searchset-bundle-atelgaemedbundlemedikationsplan-medikationsplan-searchset-bundle">Medikationsplan-Searchset-Bundle: AtElgaEmedBundleMedikationsplan (<em>Medikationsplan-Searchset-Bundle</em>)</h4>
 
-<p>Das Medikationsplan-Collection-Bundle dient ausschließlich der Auslieferung eines Medikationsplans an Clients. Es wird von der Fachanwendung bei Bedarf aus einer List-Ressource sowie den von dieser referenzierten Ressourcenversionen erzeugt und <strong>nicht persistiert</strong>.</p>
+<p>Das Medikationsplan-Searchset-Bundle dient ausschließlich der Auslieferung eines Medikationsplans. Es wird von der Fachanwendung bei Bedarf aus einer List-Ressource sowie den von dieser referenzierten Ressourcenversionen erzeugt und <strong>nicht persistiert</strong>.</p>
 
-<h4 id="geplante-abgabe-transaction-bundle-atelgaemedbundlegeplanteabgabetx-transaction-bundle">Geplante Abgabe Transaction-Bundle: AtElgaEmedBundleGeplanteAbgabeTX (<em>Transaction Bundle</em>)</h4>
+  <!-- TODO: Iste ein Medikationsplan-Searchset-Bundle nur das Ergebnis von Plan-Read oder auch Teil des Ergebnis von Plan-History-Read (in einem Searchset-Bundle)? -->
 
-<p><a name="l539">​</a>Ein Bundle vom Typ Transaction, das beim Speichern von <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplanten Abgaben</a> mittels <a href="interactions.html#prescription-write">Prescription-Write</a> auf den Medikationsplan an die Fachanwendung übermittelt wird.</p>
+  <!-- #### Geplante Abgabe Transaction-Bundle: AtElgaEmedBundleGeplanteAbgabeTX (*Transaction Bundle*)
 
-<p>Die im Bundle enthaltenen <em>Geplanten Abgaben</em> müssen mit dem gleichen <em>e-Med GroupIdentifier</em> gekennzeichnet sein. Fehlt dieser bei allen <em>Geplanten Abgaben</em> im Transaction Bundle, wird er von der Fachanwendung ergänzt.</p>
+Ein Bundle vom Typ Transaction, das beim Speichern von [Geplanten Abgaben](design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) mittels [Prescription-Write](interactions.html#prescription-write) auf den Medikationsplan an die Fachanwendung übermittelt wird. 
 
-<p>Profil in Arbeit.</p>
+Die im Bundle enthaltenen *Geplanten Abgaben* müssen mit dem gleichen *e-Med GroupIdentifier* gekennzeichnet sein. Fehlt dieser bei allen *Geplanten Abgaben* im Transaction Bundle, wird er von der Fachanwendung ergänzt. 
+
+Profil in Arbeit. -->
 
   <!-- TODO: Erklärung Planreferenz in Durchgeführte Abgabe, damit ersichtlich, wenn Abgabe (Arznei/Dosierung) abweichend (/Substituion) -->
 
@@ -362,7 +364,7 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 
   <!-- #### *Geplante Abgabe*: AtElgaEmedMedicationRequestGeplanteAbgabe (*MedicationRequest*)
 
-Eine *Geplante Abgabe* einer Medikation aus dem zugrundeliegenden Medikationsplaneintrag wird durch eine *MedicationRequest*-Ressource der Kategorie *Geplante Abgabe* abgebildet. Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. *Geplante Abgaben* dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
+Eine *Geplante Abgabe* einer Medikation aus dem zugrundeliegenden Planeintrag wird durch eine *MedicationRequest*-Ressource der Kategorie *Geplante Abgabe* abgebildet. Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. *Geplante Abgaben* dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
 Werden mehrere Medikamente gleichzeitig verordnet (und sollen demselben e-Rezept zugeordnet sein), wird für jedes Medikament eine Geplante Abgabe mit demselben e-Med GroupIdentifier erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet.
 
 Der aktuelle Status einer geplanten Abgabe wird im *status*-Element dokumentiert (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe)). -->
@@ -397,7 +399,7 @@ Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *t
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Aug 26, 2026 12:53+0000">2026-08-26</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Aug 27, 2026 15:34+0000">2026-08-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,15 +1,15 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\AT ELGA e-Medikation Collection Bundle Medikationsplan - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AT ELGA e-Medikation Collection Bundle Medikationsplan**
+* **AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan**
 
-## Resource Profile: AT ELGA e-Medikation Collection Bundle Medikationsplan 
+## Resource Profile: AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan 
 
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-08-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
+| Draft as of 2026-08-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
 
  
 Das Bundle vom Typ Collection bestehend aus: 
@@ -42,9 +42,9 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan",
   "version" : "0.1.1",
   "name" : "AtElgaEmedBundleMedikationsplan",
-  "title" : "AT ELGA e-Medikation Collection Bundle Medikationsplan",
+  "title" : "AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-08-26T12:53:55+00:00",
+  "date" : "2026-08-27T15:34:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

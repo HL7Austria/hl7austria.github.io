@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 01: Collection Bundle - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 01: Medikationsplan-Searchset-Bundle - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Journey 01: Collection Bundle**
+* **Beispiel Journey 01: Medikationsplan-Searchset-Bundle**
 
-## Example Bundle: Beispiel Journey 01: Collection Bundle
+## Example Bundle: Beispiel Journey 01: Medikationsplan-Searchset-Bundle
 
 
 

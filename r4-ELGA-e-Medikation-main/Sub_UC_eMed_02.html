@@ -235,7 +235,7 @@ unwiderruflich löschen.</li>
 
 <ol>
   <li><a name="l429">​</a>Der aktuelle Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> abgerufen werden (siehe <a href="Sub_UC_eMed_01.html#Sub_UC_eMed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
-  <li>Die durch $plan-read im Medikationsplan-Collection-Bundle bereitgestellten Ressourcen werden entsprechend des gewünschten Schreibszenarios bearbeitet.</li>
+  <li>Die durch $plan-read im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen werden entsprechend des gewünschten Schreibszenarios bearbeitet.</li>
   <li>Der aktualisierte Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als Transaction Bundle (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a>) an die Fachanwendung übermittelt werden.</li>
 </ol>
 
@@ -282,7 +282,7 @@ unwiderruflich löschen.</li>
 <p>Der GDA kann dem Medikationsplan ein oder mehrere Planeinträge hinzufügen. 
 Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedikation (durch einen anderen GDA) bzw. Eigenmedikation des Patienten dokumentiert.</p>
 
-<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Collection-Bundle bereitgestellten Ressourcen:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
 
 <ul>
   <li>Im Element <em>List.source</em> wird der aktuelle GDA als Quelle der Änderung dokumentiert.</li>
@@ -436,13 +436,13 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 
 <p>Der GDA kann ein oder mehrere Planeinträge im Medikationsplan beibehalten und unverändert zur Kennntis nehmen.</p>
 
-<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Collection-Bundle bereitgestellten Ressourcen:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
 <ul>
   <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, <em>List.date</em> aktualisiert.</li>
   <li>Die zu behaltenden Planeinträge (<em>MedicationRequests</em>) bleiben <strong>unverändert</strong> im Status <em>active</em> oder <em>on-hold</em> (Planeinträge mit anderem Status werden von der Fachanwendung nicht ausgeliefert).</li>
-  <li>Planeinträge mit abgelaufenem Einnahmezeitraum (überschrittenes Enddatum in <em>extension:effectiveDosePeriod</em>) sind im ausgelieferten Medikationsplan-Collection-Bundle enthalten, in der List aber mit <em>List.entry.flag = removed</em> markiert.
+  <li>Planeinträge mit abgelaufenem Einnahmezeitraum (überschrittenes Enddatum in <em>extension:effectiveDosePeriod</em>) sind im ausgelieferten Medikationsplan-Searchset-Bundle enthalten, in der List aber mit <em>List.entry.flag = removed</em> markiert.
     <ul>
-      <li>Nimmt der GDA keine Änderung an diesen Planeinträgen vor und führt ein Plan-Write durch, werden diese beim nächsten Plan-Read automatisch aus dem Medikationsplan entfernt.</li>
+      <li>Nimmt der GDA keine Änderung an diesen Planeinträgen vor und führt ein Plan-Write durch, werden diese beim nächsten Plan-Read automatisch aus dem Medikationsplan entfernt. Der Planeintrag selbst muss für das Remove mit GDA, Datum und Status aktualisiert werden.</li>
       <li>Möchte der GDA einen abgelaufenen Planeintrag beibehalten, muss er entsprechende Anpassungen vornehmen: <em>List.entry.flag</em> auf <em>changed</em> und zumindest den Einnahmezeitraum im Planeintrag anpassen (siehe <em>Sub_UC_eMed_02_05 - Planeintrag im Medikationsplan ändern</em>), da die Fachanwendung das Speichern sonst ablehenen würde.</li>
     </ul>
   </li>
@@ -484,7 +484,7 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 
 <p>Ein GDA kann die Therapie eines Patienten vorübergehend unterbrechen (die Wiederaufnahme ist vorgesehen). Eine Freitext-Begründung kann dokumentiert werden.</p>
 
-<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Collection-Bundle bereitgestellten Ressourcen.</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen.</p>
 <ul>
   <li>Die zu pausierenden Planeinträge (<em>MedicationRequests</em>) und das entsprechende Entry der <em>List</em>-Ressouce werden wie folgt angepasst:</li>
   <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, <em>List.date</em> aktualisiert.</li>
@@ -586,7 +586,7 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 
 <p><a name="l1284">​</a>Der GDA kann einen oder mehrere Planeinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
-<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Collection-Bundle bereitgestellten Ressourcen:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
 <ul>
   <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, <em>List.date</em> aktualisiert.</li>
   <li>Entsprechende Planeinträge (<em>MedicationRequests</em>) und das entsprechende Entry der <em>List</em>-Ressouce werden angepasst:
@@ -647,7 +647,7 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 <p><a name="l1391">​</a>Der GDA kann ein Medikament, welches in einen Planeintrag dokumentiert ist, absetzen.
 Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
-<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Collection-Bundle bereitgestellten Ressourcen:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
 <ul>
   <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, <em>List.date</em> aktualisiert.</li>
   <li>Entsprechende Planeinträge (<em>MedicationRequests</em>) und das entsprechende Entry der <em>List</em>-Ressouce werden angepasst:
@@ -709,7 +709,7 @@ Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-r
 Erhält ein GDA nach einem [Plan-Read](interactions.html#plan-read) Planeinträge, deren Einnahmezeitraum (effectiveDosePeriod.end) abgelaufen ist, muss der GDA diese Einträge beenden oder bearbeiten (zumindest den Einnahmezeitraum anpassen) bevor ein erneutes Speichern des Medikationsplans zulässig ist (siehe [Sub_UC_eMed_02_05 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.html#Sub_UC_eMed_02_06---Planeintrag-im-medikationsplan-ändern)). 
 Beendete Planeinträge sind beim nächsten [Plan-Read](interactions.html#plan-read) nicht mehr im Medikationsplan enthalten.
 
-Um Planeinträge zu beenden bearbeitet der GDA nach einem $plan-read das von der Fachanwendung übermittelte Collection Bundle wie folgt:
+Um Planeinträge zu beenden bearbeitet der GDA nach einem $plan-read das von der Fachanwendung übermittelte Medikationsplan-Searchset-Bundle wie folgt:
 - Das Element *List.source* wird mit dem aktuellen GDA, *List.date* aktualisiert.
 - Abgelaufene Planeinträge (*MedicationRequest*) und das entsprechende Entry der *List*-Ressouce werden angepasst:
     - Das List.entry.flag des referenzierten MedicationRequests erhält den Wert *removed*, 
@@ -768,7 +768,7 @@ Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.html#allgem
 
 <p>Der GDA kann die Reihenfolge der Planeinträge ändern. Die Einträge selbst bleiben dabei unverändert.</p>
 
-<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Collection-Bundle bereitgestellten Ressourcen:</p>
+<p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
 <ul>
   <li>Das Element <em>List.source</em> wird mit dem aktuellen GDA, <em>List.date</em> aktualisiert.</li>
   <li>Die Reihenfolge der Planeinträge wird in der <em>List</em>-Ressouce angepasst, indem die Entries entsprechend gereiht werden.</li>
@@ -940,7 +940,7 @@ Mögliche Lösung: Vor dem Löschen prüfen, ob die referenzierten Planeinträge
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Aug 26, 2026 12:53+0000">2026-08-26</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Aug 27, 2026 15:34+0000">2026-08-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

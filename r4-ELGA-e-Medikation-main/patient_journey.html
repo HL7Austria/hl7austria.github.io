@@ -221,14 +221,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <p>Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der Medikationsplan eines Patienten mit den zugehörigen <strong>Geplanten Abgaben</strong> und den <strong>Durchgeführten Abgaben</strong> verändern kann.</p>
 
+  <!-- TODO: nicht-sunshine-cases: patient ohne ecard in apotheke, 
+Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilabgabe storniert -->
+
 <p><strong>27.2.2026: Arztbesuch</strong></p>
 
 <p>Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausärztin. Außerdem hat er einen leichten Hautausschlag bemerkt.</p>
 
 <p>Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Medikation (aktueller Medikationsplan, Geplante und Durchgeführte Abgaben) ab, um einen Überblick über seine aktuelle Medikation zu erhalten <sup role="doc-noteref" id="fnref:1"><a rel="footnote" href="#fn:1" class="footnote">1</a></sup>.</p>
 
-<p><a href="Sub_UC_eMed_07_01.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_07_01 - Geplante Abgaben lesen (Prescription-Search)</a>
-<a href="Sub_UC_eMed_07_02.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a></p>
+<ul>
+  <li>
+    <p><a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a></p>
+  </li>
+  <li>
+    <p><a href="Sub_UC_eMed_07_01.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_07_01 - Geplante Abgaben lesen (Prescription-Search)</a></p>
+  </li>
+  <li>
+    <p><a href="Sub_UC_eMed_07_02.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a></p>
+  </li>
+</ul>
 
 <p>Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum <a href="Patient-At-Emed-Example-Patient-01.html">Patienten</a>, die erstellende e-Medikation-Fachanwendung (<a href="Device-At-Emed-Example-Device-01.html">Device</a>), das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (<em>EmptyReason = notstarted</em>).</p>
 
@@ -237,7 +249,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><strong>Leerer Medikationsplan:</strong></p>
 
     <ul>
-      <li><a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html">Collection Bundle</a></li>
+      <li><a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a></li>
     </ul>
   </li>
 </ul>
@@ -287,7 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><strong>Durchgeführte Abgaben erstellen (Vollständige Abgabe, Besorgerprozess):</strong></p>
 
     <ul>
-      <li><a name="l573">​</a>Beispiel <a href="MedicationDispense-At-Emed-Journey-05-MedicationDispense.html">MedicationDispense</a></li>
+      <li><a name="l592">​</a>Beispiel <a href="MedicationDispense-At-Emed-Journey-05-MedicationDispense.html">MedicationDispense</a></li>
     </ul>
   </li>
 </ul>
@@ -315,7 +327,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><strong>Aktuellen Medikationsplan anzeigen:</strong></p>
 
     <ul>
-      <li><a name="l630">​</a>Beispiel <a href="Bundle-At-Emed-Journey-07-Bundle-Medikationsplan.html">Collection Bundle</a></li>
+      <li><a name="l649">​</a>Beispiel <a href="Bundle-At-Emed-Journey-07-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a></li>
     </ul>
   </li>
 </ul>
@@ -400,7 +412,8 @@ Ramipril wird als Dauermedikation fortgeführt.</p>
 <div role="doc-endnotes" class="footnotes">
   <ol>
     <li role="doc-endnote" id="fn:1">
-      <p><a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>&nbsp;<a role="doc-backlink" href="#fnref:1" class="reversefootnote">↩</a></p>
+
+      <p><a role="doc-backlink" href="#fnref:1" class="reversefootnote">↩</a></p>
     </li>
   </ol>
 </div>
@@ -423,7 +436,7 @@ Ramipril wird als Dauermedikation fortgeführt.</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Aug 26, 2026 12:53+0000">2026-08-26</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Aug 27, 2026 15:34+0000">2026-08-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

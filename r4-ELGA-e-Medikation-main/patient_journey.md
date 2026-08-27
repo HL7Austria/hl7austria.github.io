@@ -14,7 +14,9 @@ Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausär
 
 Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Medikation (aktueller Medikationsplan, Geplante und Durchgeführte Abgaben) ab, um einen Überblick über seine aktuelle Medikation zu erhalten [1](#fn:1).
 
-[Sub_UC_eMed_07_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_07_01.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) [Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_07_02.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search)
+* [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read)
+* [Sub_UC_eMed_07_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_07_01.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search)
+* [Sub_UC_eMed_07_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_07_02.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search)
 
 Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum [Patienten](Patient-At-Emed-Example-Patient-01.md), die erstellende e-Medikation-Fachanwendung ([Device](Device-At-Emed-Example-Device-01.md)), das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (**EmptyReason = notstarted**).
 
@@ -116,5 +118,5 @@ Die postoperative Schmerztherapie ist nicht mehr erforderlich. Der Planeintrag f
 
  ![](plantuml/patient_journey.svg) 
 
-1. [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) [↩](#fnref:1)
+1. [↩](#fnref:1)
 

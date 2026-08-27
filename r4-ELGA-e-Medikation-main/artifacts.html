@@ -253,19 +253,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html"
-                  title="StructureDefinition/at-elga-emed-bundle-medikationsplan">AT ELGA e-Medikation Collection Bundle Medikationsplan</a>
-            </td>
-            <td>
-<p>Das Bundle vom Typ Collection bestehend aus:</p>
-<ul>
-  <li>1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus</li>
-  <li>0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung</li>
-</ul>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html"
                   title="StructureDefinition/at-elga-emed-list-medikationsplan">AT ELGA e-Medikation List Medikationsplan</a>
             </td>
@@ -284,6 +271,19 @@ Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listen
 <p>Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet.
 Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.
 Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html"
+                  title="StructureDefinition/at-elga-emed-bundle-medikationsplan">AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan</a>
+            </td>
+            <td>
+<p>Das Bundle vom Typ Collection bestehend aus:</p>
+<ul>
+  <li>1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus</li>
+  <li>0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung</li>
+</ul>
 </td>
          </tr>
          <tr>
@@ -589,20 +589,20 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html"
-                  title="Bundle/At-Emed-Journey-01-Bundle-Medikationsplan">Beispiel Journey 01: Collection Bundle</a>
-            </td>
-            <td>
-<p>Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="List-At-Emed-Journey-01-List-Medikationsplan.html"
                   title="List/At-Emed-Journey-01-List-Medikationsplan">Beispiel Journey 01: Leerer Medikationsplan</a>
             </td>
             <td>
 <p>Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html"
+                  title="Bundle/At-Emed-Journey-01-Bundle-Medikationsplan">Beispiel Journey 01: Medikationsplan-Searchset-Bundle</a>
+            </td>
+            <td>
+<p>Beispiel eines Medikationsplan-Searchset-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).</p>
 </td>
          </tr>
          <tr>
@@ -625,15 +625,6 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.html"
-                  title="Bundle/At-Emed-Journey-02-Bundle-Medikationsplan">Beispiel Journey 02: Collection Bundle</a>
-            </td>
-            <td>
-<p>Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="Medication-At-Emed-Example-Medication-Magistral-01.html"
                   title="Medication/At-Emed-Example-Medication-Magistral-01">Beispiel Journey 02: Magistrale Zubereitung</a>
             </td>
@@ -648,6 +639,15 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
             </td>
             <td>
 <p>Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.html"
+                  title="Bundle/At-Emed-Journey-02-Bundle-Medikationsplan">Beispiel Journey 02: Medikationsplan-Searchset-Bundle</a>
+            </td>
+            <td>
+<p>Beispiel eines Medikationsplan-Searchset-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.</p>
 </td>
          </tr>
          <tr>
@@ -689,10 +689,10 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          <tr>
             <td style="column-width:30%">
                <a href="Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.html"
-                  title="Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan">Beispiel Journey 05-a: Collection Bundle mit geänderter Reihenfolge der Planeinträge.</a>
+                  title="Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan">Beispiel Journey 05-a: Medikationsplan-Searchset-Bundle mit geänderter Reihenfolge der Planeinträge.</a>
             </td>
             <td>
-<p>Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge.</p>
+<p>Beispiel eines Medikationsplan-Searchset-Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge.</p>
 </td>
          </tr>
          <tr>
@@ -715,20 +715,20 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.html"
-                  title="Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan">Beispiel Journey 05-b: Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag</a>
-            </td>
-            <td>
-<p>Beispiel eines Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="List-At-Emed-Journey-05-b-List-Aenderung.html"
                   title="List/At-Emed-Journey-05-b-List-Aenderung">Beispiel Journey 05-b: Mediationsplan ändern (Einträge absetzen und ändern).</a>
             </td>
             <td>
 <p>Beispiel: Mediationsplan ändern (Einträge absetzen und ändern).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.html"
+                  title="Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan">Beispiel Journey 05-b: Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag</a>
+            </td>
+            <td>
+<p>Beispiel eines Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag.</p>
 </td>
          </tr>
          <tr>
@@ -814,7 +814,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Aug 26, 2026 12:53+0000">2026-08-26</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Aug 27, 2026 15:34+0000">2026-08-27</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

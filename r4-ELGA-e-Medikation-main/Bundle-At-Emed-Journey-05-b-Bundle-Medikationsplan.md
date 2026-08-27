@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 05-b: Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 05-b: Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Journey 05-b: Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag**
+* **Beispiel Journey 05-b: Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag**
 
-## Example Bundle: Beispiel Journey 05-b: Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag
+## Example Bundle: Beispiel Journey 05-b: Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag
 
 
 

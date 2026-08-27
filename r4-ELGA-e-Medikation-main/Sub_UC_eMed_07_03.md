@@ -1,12 +1,12 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_07) - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_07) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Overview Use Case**](overview_use_case.md)
-* **​Technische Use Cases für Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_07)**
+* **​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_07)**
 
-## ​Technische Use Cases für Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_07)
+## ​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_07)
 
-### Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (Groupidentifier-Search)
+### Sub_UC_eMed_07_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (Groupidentifier-Search)
 
 Erfolgt die Arzneimittelabgabe basierend auf einem **e-Med GroupIdentifier** (z.B. mit DataMatrix-Code eines e-Rezepts), erhält ein [berechtigter GDA](actors.md#rollen-und-berechtigungen) ausschließlich lesenden Zugriff auf die zugehörigen **Geplanten** und **Durchgeführten Abgaben**. Diese werden über den im DataMatrix-Code enthaltenen gemeinsamen **e‑Med GroupIdentifier** in der e‑Medikation Fachanwendung identifiziert und abgerufen.
 

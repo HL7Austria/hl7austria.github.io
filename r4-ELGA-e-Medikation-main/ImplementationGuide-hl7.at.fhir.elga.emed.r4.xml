@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-08-26T12:53:55+00:00"/>
+  <date value="2026-08-27T15:34:15+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -527,18 +527,6 @@
     </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
-      </reference>
-      <name value="AT ELGA e-Medikation Collection Bundle Medikationsplan"/>
-      <description value="Das Bundle vom Typ Collection bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Medikationsplan"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -605,6 +593,18 @@
       </reference>
       <name value="At ELGA e-Medikation MedicationRequest Planeintrag"/>
       <description value="Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine &quot;MedicationRequest&quot;-Ressource abgebildet.&#xA;Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.&#xA;Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer &quot;Geplanten Abgabe&quot; dienen. Es werden R5-Backport-Extensions verwendet."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan"/>
+      <description value="Das Bundle vom Typ Collection bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
     </resource>
@@ -689,17 +689,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/At-Emed-Journey-01-Bundle-Medikationsplan"/>
-      </reference>
-      <name value="Beispiel Journey 01: Collection Bundle"/>
-      <description value="Beispiel eines Collection Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Device"/>
       </extension>
       <reference>
@@ -725,22 +714,22 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan"/>
+        <reference value="Bundle/At-Emed-Journey-01-Bundle-Medikationsplan"/>
       </reference>
-      <name value="Beispiel Journey 01: Transaction Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+      <name value="Beispiel Journey 01: Medikationsplan-Searchset-Bundle"/>
+      <description value="Beispiel eines Medikationsplan-Searchset-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-02-Bundle-Medikationsplan"/>
+        <reference value="Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan"/>
       </reference>
-      <name value="Beispiel Journey 02: Collection Bundle"/>
-      <description value="Beispiel eines Collection Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+      <name value="Beispiel Journey 01: Transaction Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -763,6 +752,17 @@
       <name value="Beispiel Journey 02: Medikationsplan"/>
       <description value="Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-02-Bundle-Medikationsplan"/>
+      </reference>
+      <name value="Beispiel Journey 02: Medikationsplan-Searchset-Bundle"/>
+      <description value="Beispiel eines Medikationsplan-Searchset-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -815,8 +815,8 @@
       <reference>
         <reference value="Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan"/>
       </reference>
-      <name value="Beispiel Journey 05-a: Collection Bundle mit geänderter Reihenfolge der Planeinträge."/>
-      <description value="Beispiel eines Collection Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge."/>
+      <name value="Beispiel Journey 05-a: Medikationsplan-Searchset-Bundle mit geänderter Reihenfolge der Planeinträge."/>
+      <description value="Beispiel eines Medikationsplan-Searchset-Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
@@ -843,17 +843,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan"/>
-      </reference>
-      <name value="Beispiel Journey 05-b: Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag"/>
-      <description value="Beispiel eines Collection Bundles mit geändertem und abgesetztem Medikationsplaneintrag."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="List"/>
       </extension>
       <reference>
@@ -862,6 +851,17 @@
       <name value="Beispiel Journey 05-b: Mediationsplan ändern (Einträge absetzen und ändern)."/>
       <description value="Beispiel: Mediationsplan ändern (Einträge absetzen und ändern)."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan"/>
+      </reference>
+      <name value="Beispiel Journey 05-b: Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag"/>
+      <description value="Beispiel eines Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1225,7 +1225,7 @@
             <valueUrl value="Sub_UC_eMed_07_03.html"/>
           </extension>
           <nameUrl value="Sub_UC_eMed_07_03.html"/>
-          <title value="​Technische Use Cases für Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_07)"/>
+          <title value="​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_07)"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -1249,7 +1249,7 @@
             <valueUrl value="Sub_UC_eMed_09_01.html"/>
           </extension>
           <nameUrl value="Sub_UC_eMed_09_01.html"/>
-          <title value="​Technische Use Cases für Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben (UC_eMed_09)"/>
+          <title value="​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_09)"/>
           <generation value="markdown"/>
         </page>
       </page>
