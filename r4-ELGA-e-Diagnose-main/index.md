@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-08-28T08:10:45+00:00",
+  "date" : "2026-08-28T11:38:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -82,12 +82,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "uri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4",
     "packageId" : "hl7.at.fhir.core.r4",
     "version" : "2.0.0"
-  },
-  {
-    "id" : "hl7_at_fhir_elga_core_r4",
-    "uri" : "https://fhir.hl7.at/elga/core/r4/ImplementationGuide/hl7.at.fhir.elga.core.r4",
-    "packageId" : "hl7.at.fhir.elga.core.r4",
-    "version" : "current"
   }],
   "definition" : {
     "extension" : [{
@@ -1079,6 +1073,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "ELGA AT e-Diagnose List Entry Code Value Set",
       "description" : "ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-list-emptyreason-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-ediag-list-emptyreason-vs"
+      },
+      "name" : "ELGA List Empty Reason Value Set",
+      "description" : "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.",
       "exampleBoolean" : false
     },
     {

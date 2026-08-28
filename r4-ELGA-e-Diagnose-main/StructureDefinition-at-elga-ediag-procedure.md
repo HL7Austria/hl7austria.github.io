@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-08-28T08:10:45+00:00",
+  "date" : "2026-08-28T11:38:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -198,7 +198,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
       "short" : "Person, auf die sich die Prozedur bezieht",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
       }],
       "mustSupport" : true
     },
@@ -223,8 +223,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"]
       }],
       "mustSupport" : true
     },
@@ -234,9 +234,9 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
       "short" : "Quelle der Information zur Prozedur (z. B. behandelnde Person, Patient oder Dritter)",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient",
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
         "http://hl7.org/fhir/StructureDefinition/RelatedPerson"]
       }]
     },

@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-08-28T08:10:45+00:00",
+  "date" : "2026-08-28T11:38:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -139,7 +139,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
       }],
       "mustSupport" : true
     },
@@ -163,9 +163,9 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
       }],
       "mustSupport" : true
     },
@@ -229,7 +229,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/core/r4/ValueSet/ElgaListEmptyReasonVS"
+        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-emptyreason-vs"
       }
     }]
   }

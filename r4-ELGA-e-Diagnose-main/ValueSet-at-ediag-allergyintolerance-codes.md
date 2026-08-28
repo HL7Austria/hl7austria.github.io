@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "AT e-Diagnose AllergyIntolerance Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-08-28T08:10:45+00:00",
+  "date" : "2026-08-28T11:38:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

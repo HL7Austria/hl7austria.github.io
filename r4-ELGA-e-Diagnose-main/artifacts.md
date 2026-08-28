@@ -57,6 +57,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | [AT e-Diagnose Procedures Value Set](ValueSet-at-ediag-prozeduren-codes.md) | ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alternative zum eingeschränkten IPS ValueSet. |
 | [AT e-Diagnose Reaction Time Value Set](ValueSet-at-ediag-reaction-time-vs.md) | ValueSet mit zulässigen Ausprägungen der Reaktionszeit einer allergischen Reaktion. |
 | [ELGA AT e-Diagnose List Entry Code Value Set](ValueSet-at-ediag-list-code-vs.md) | ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA. |
+| [ELGA List Empty Reason Value Set](ValueSet-at-ediag-list-emptyreason-vs.md) | ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. |
 
 ### Terminology: Code Systems 
 
