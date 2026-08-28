@@ -17,7 +17,7 @@ Dieses Kapitel beschreibt die Schreiboperationen der e-Diagnose-Fachanwendung. I
 
 > Sub:UC_02_01 
 
-Der GDA erfasst einen neuen Eintrag über die e-Diagnose Fachanwendung, die nicht Teil der Summary-Liste ist. Dieser Eintrag kann in Folge durch eine Änderung, siehe Sub:UC_02_03 zur Liste hinzugefügte werden.
+Der GDA erfasst einen neuen Eintrag über die e-Diagnose-Fachanwendung. Ein neuer Eintrag ist standardmäßig nicht Teil der Summary-Liste, kann aber in Folge durch Sub:UC_02_03 zur Summary-Liste hinzugefügt werden.
 
 #### Ablauf
 
@@ -84,46 +84,52 @@ Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leere
 
 #### Sequenzdiagramm
 
-### Summary-Liste aktualisieren (List-Write)
+### Summary-Liste aktualisieren ($write)
 
-> Sub:UC_02_04 
+> Sub:UC_02_04
 
-ToDo: ELGA CORE - an die neue Herangehensweise anpassen!
-
-[List-Write](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/branches/main/interactions.html#list-write) ist eine eigenständige Operation, die ausschließlich im Kontext eines **zuvor ausgeführten** [List-Read](uc_ediag_01_lesen.md#list-read) erfolgen darf. Nach dem Erfassen einer neuen medizinischen Ressource, siehe [Einträge erfassen](uc_ediag_02_schreiben.md#einträge-erfassen), kann diese in einer Summary-Liste aufgenommen werden. Die Fachanwendung kennzeichnet die Ressource anschließend als relevant (meta.tag = relevant).
-
-ToDo: Patient Compartment für die Endpunkte `GET [base]/Patient/[id]/Condition/`, `GET [base]/Patient/[id]/Procedure/` oder `GET [base]/Patient/[id]/AllergyIntolerance/`
-
-### Eintrag zur Summary-Liste hinzufügen
-
-> Sub:UC_02_05 Der GDA verfasst einen neuen Eintrag, siehe [Eintrag erfassen](uc_ediag_02_schreiben.md#ressource-erfassen) oder möchte einen bestehenden Eintrag in die Summary-Liste aufnehmen. Die Fachanwendung kennzeichnet diesen Eintrag anschließend als relevant (meta.tag = relevant).
+Die `$write`-Operation ist eine eigentständige Operation, die allerdings einen **zuvor ausgeführten** [Abruf der aktuellen Summary-Liste](uc_ediag_01_lesen.md#aktuelle-summary-liste-abrufen-list-read) voraussetzt.
 
 #### Ablauf
 
-1. Der GDA führt ein**POST $list-read**aus und erhält das aktuelle Search-Bundle.
-1. Der GDA wählt die bestehende Ressource aus
-1. Der GDA fügt die Ressource als List.entry in die Liste ein.
-* **List.entry.flag = new**
-* **List.entry.item** referenziert die bestehende Ressource.
+1. Der GDA übermittelt via`POST /List/$write`die aktualisierte Summary-Liste.
+1. Die Fachanwendung[validiert](OperationDefinition-at-ediag-operation-listwrite.md#validierung--fehlerbehandlung)die empfangenen Daten entsprechend.
+1. Nach erfolgreicher Validierung wird die Summary-Liste persistiert.
 
-1. Der GDA führt ein**POST $list-write**aus und übermittelt die aktualisierte Liste an die Fachanwendung.
-1. Die Fachanwendung kennzeichnet die referenzierte Ressource mit**meta.tag = relevant**, wodurch ihre Zugehörigkeit zur Summary-Liste gekennzeichnet wird.
+#### Custom Operations
+
+[$write](OperationDefinition-at-ediag-operation-list-write.md)
+
+#### Sequenzdiagramm
+
+### Eintrag zur Summary-Liste hinzufügen
+
+> Sub:UC_02_05
+
+Der GDA möchte einen bestehenden Eintrag in die Summary-Liste aufnehmen.
+
+#### Ablauf
+
+1. Der GDA ruft die[aktuelle Summary-Liste](uc_ediag_01_lesen.md#aktuelle-summary-liste-abrufen-list-read)ab und erhält das entsprechende SearchSet-Bundle.
+1. Der GDA wählt den bestehenden Eintrag aus.
+1. Der GDA fügt den Eintrag als`List.entry`in die Liste ein.
+* **`List.entry.item`** referenziert den bestehenden Eintrag.
+
+1. Der GDA führt die[`$write`-Operation](uc_ediag_02_schreiben.md#summary-liste-aktualisieren-write)aus und übermittelt die aktualisierte Liste an die Fachanwendung.
 
 #### Sequenzdiagramm
 
 ### Eintrag aus Summary-Liste entfernen
 
-> Sub:UC_02_06 
+> Sub:UC_02_06
 
-Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass die Ressource selbst gelöscht oder geändert wird. Hierzu wird die Referenz auf die Ressource aus der Summary-Liste entfernt. Die Fachanwendung hebt anschließend die Kennzeichnung der Ressource als relevant (meta.tag = relevant) auf. Die Ressource bleibt weiterhin verfügbar und kann zu einem späteren Zeitpunkt erneut in die Summary-Liste aufgenommen werden.
+Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass die Ressource selbst gelöscht oder geändert wird. Hierzu wird die Referenz auf die Ressource aus der Summary-Liste entfernt. Die Ressource bleibt weiterhin verfügbar und kann zu einem späteren Zeitpunkt erneut in die Summary-Liste aufgenommen werden.
 
 #### Ablauf
 
-1. Der GDA führt ein**POST $list-read**aus und erhält das aktuelle Search-Bundle.
-1. Der GDA wählt den zu entferndenen Eintrag oder die Einträge aus der Summary-Liste aus.
-1. Der GDA kennzeichnet die entsprechenden List.entry mit**List.entry.flag = removed**.
-1. Der GDA führt ein**POST list-write**aus und übermittelt die aktuelle Summary-Liste.
-1. Die Fachanwendung entfernt die mit List.entry.flag = removed gekennzeichneten Einträge aus der Summary-Liste und entfernt bei den referenzierten Ressourcen die Kennzeichnung meta.tag = relevant.
+1. Der GDA ruft die[aktuelle Summary-Liste](uc_ediag_01_lesen.md#aktuelle-summary-liste-abrufen-list-read)ab und erhält das entsprechende SearchSet-Bundle.
+1. Der GDA entfernt den Eintrag oder die Einträge aus der Summary-Liste. Das bedeutet, dass der entsprechende`List.entry`entfernt wird.
+1. Der GDA führt die[`$write`-Operation](uc_ediag_02_schreiben.md#summary-liste-aktualisieren-write)aus und übermittelt die aktualisierte Liste an die Fachanwendung.
 
 #### Sequenzdiagramm
 

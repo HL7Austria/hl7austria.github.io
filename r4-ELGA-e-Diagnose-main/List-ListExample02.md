@@ -26,10 +26,6 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
-  "identifier" : [{
-    "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:uuid:list-02"
-  }],
   "status" : "current",
   "mode" : "working",
   "code" : {

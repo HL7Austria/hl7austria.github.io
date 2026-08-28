@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeDiagnoseR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4 (Draft)"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-08-28T05:58:13+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-08-28T07:25:52+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -868,7 +868,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-list" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Diagnose List" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose List-Profil leitet sich vom HL7-AT-Core-R4-Profil ab und dient der strukturierten Listung von Einträgen." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 10 ;
@@ -1075,28 +1075,14 @@
          fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-listread> ;
-         fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-listread" ]
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-write> ;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-list-write" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation für List-Read" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die $list-read Operation wird aufgerufen, wenn eine Liste mit der Intention zu schreiben gelesen wird." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $write" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 24 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-listwrite> ;
-         fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-listwrite" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation für List-Write" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die $list-write Operation wird aufgerufen, wenn eine Liste geschrieben wird." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 25 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1112,7 +1098,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 26 ;
+       fhir:index 25 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1126,7 +1112,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 27 ;
+       fhir:index 26 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;

@@ -25,9 +25,6 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
-  "identifier" : [{
-    "value" : "123"
-  }],
   "status" : "current",
   "mode" : "working",
   "code" : {

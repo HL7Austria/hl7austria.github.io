@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-08-28T05:58:13+00:00",
+  "date" : "2026-08-28T07:25:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -823,7 +823,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "StructureDefinition/at-elga-ediag-list"
       },
       "name" : "AT ELGA e-Diagnose List",
-      "description" : "Das AT e-Diagnose List-Profil leitet sich vom HL7-AT-Core-R4-Profil ab und dient der strukturierten Listung von Einträgen.",
+      "description" : "Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen.",
       "exampleBoolean" : false
     },
     {
@@ -1041,29 +1041,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-ediag-operation-listread.html"
+        "valueUri" : "OperationDefinition-at-ediag-operation-list-write.html"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/at-ediag-operation-listread"
+        "reference" : "OperationDefinition/at-ediag-operation-list-write"
       },
-      "name" : "e-Diagnose Operation für List-Read",
-      "description" : "Die $list-read Operation wird aufgerufen, wenn eine Liste mit der Intention zu schreiben gelesen wird.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-ediag-operation-listwrite.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-ediag-operation-listwrite"
-      },
-      "name" : "e-Diagnose Operation für List-Write",
-      "description" : "Die $list-write Operation wird aufgerufen, wenn eine Liste geschrieben wird.",
+      "name" : "e-Diagnose Operation $write",
+      "description" : "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
       "exampleBoolean" : false
     },
     {

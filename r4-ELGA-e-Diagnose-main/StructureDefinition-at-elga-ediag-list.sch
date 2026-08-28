@@ -12,8 +12,7 @@
   <sch:pattern>
     <sch:title>f:List</sch:title>
     <sch:rule context="f:List">
-      <sch:assert test="count(f:identifier) &gt;= 1">identifier: minimum cardinality of 'identifier' is 1</sch:assert>
-      <sch:assert test="count(f:identifier) &lt;= 1">identifier: maximum cardinality of 'identifier' is 1</sch:assert>
+      <sch:assert test="count(f:identifier) &lt;= 0">identifier: maximum cardinality of 'identifier' is 0</sch:assert>
       <sch:assert test="count(f:title) &lt;= 0">title: maximum cardinality of 'title' is 0</sch:assert>
       <sch:assert test="count(f:code) &gt;= 1">code: minimum cardinality of 'code' is 1</sch:assert>
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
@@ -30,6 +29,17 @@
       <sch:assert test="count(f:flag) &lt;= 0">flag: maximum cardinality of 'flag' is 0</sch:assert>
       <sch:assert test="count(f:deleted) &lt;= 0">deleted: maximum cardinality of 'deleted' is 0</sch:assert>
       <sch:assert test="count(f:date) &lt;= 0">date: maximum cardinality of 'date' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:List/f:entry/f:item</sch:title>
+    <sch:rule context="f:List/f:entry/f:item">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:reference) &gt;= 1">reference: minimum cardinality of 'reference' is 1</sch:assert>
+      <sch:assert test="count(f:reference) &lt;= 1">reference: maximum cardinality of 'reference' is 1</sch:assert>
+      <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
+      <sch:assert test="count(f:identifier) &lt;= 1">identifier: maximum cardinality of 'identifier' is 1</sch:assert>
+      <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

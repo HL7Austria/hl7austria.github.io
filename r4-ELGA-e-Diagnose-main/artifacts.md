@@ -13,8 +13,7 @@ These are custom operations that can be supported by and/or invoked by systems c
 
 | | |
 | :--- | :--- |
-| [e-Diagnose Operation für List-Read](OperationDefinition-at-ediag-operation-listread.md) | Die $list-read Operation wird aufgerufen, wenn eine Liste mit der Intention zu schreiben gelesen wird. |
-| [e-Diagnose Operation für List-Write](OperationDefinition-at-ediag-operation-listwrite.md) | Die $list-write Operation wird aufgerufen, wenn eine Liste geschrieben wird. |
+| [e-Diagnose Operation $write](OperationDefinition-at-ediag-operation-list-write.md) | Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. |
 
 ### Structures: Resource Profiles 
 
@@ -24,7 +23,7 @@ These define constraints on FHIR resources for systems conforming to this implem
 | :--- | :--- |
 | [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md) | Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
 | [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) | Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
-| [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md) | Das AT e-Diagnose List-Profil leitet sich vom HL7-AT-Core-R4-Profil ab und dient der strukturierten Listung von Einträgen. |
+| [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md) | Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. |
 | [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md) | Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
 
 ### Structures: Data Type Profiles 
