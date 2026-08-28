@@ -239,7 +239,7 @@ Die Interaktion liefert standardmäßig die 30 zuletzt erstellten Ressourcen, ab
 
 <ol>
   <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.</li>
-  <li><a name="l437">​</a>Der GDA oder ELGA-Teilnehmer führt ein <strong>GET</strong> auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
+  <li><a name="l437">​</a>Der GDA oder ELGA-Teilnehmer führt ein <code class="language-plaintext highlighter-rouge">GET</code> auf <code class="language-plaintext highlighter-rouge">/Condition</code>, <code class="language-plaintext highlighter-rouge">/Procedure</code> und/oder <code class="language-plaintext highlighter-rouge">/AllergyIntolerance</code> aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
   <li><strong>Optional</strong> kann der Abfrageparameter <strong>_count</strong> angegeben werden, um die Anzahl der zurückgelieferten Ressourcen festzulegen. Standardmäßig werden die 30 zuletzt erstellten Ressourcen, absteigend nach Erstellungsdatum sortiert, zurückgeliefert.</li>
   <li>Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Einträgen zurück.</li>
   <li>Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein Search-Bundle ohne Einträge zurückgeliefert.</li>
@@ -283,8 +283,8 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
   <!-- TODO: Es muss noch definiert werden, wie zwischen den Listen von Conditions, Procedures, AllergyIntolerances unterschieden wird. -->
 <p><strong>Beispiele für Zugriffe mittels Suchparameter:</strong></p>
 <ul>
-  <li><strong>Aktuelle Summary-Listenversion</strong> der Summary-Einträge (Conditions) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET [base]/Patient/[id]/List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_count=1&amp;_sort=-date&amp;code=http://loinc.org|11450-4</code></li>
-  <li><strong>Alle Summary-Listenversionen</strong> der Summary-Einträge (Procedures) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET [base]/Patient/[id]/List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_sort=-date&amp;code=http://loinc.org|47519-4</code></li>
+  <li><strong>Aktuelle Summary-Listenversion</strong> der Summary-Einträge (Conditions) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET /List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_count=1&amp;_sort=-date&amp;code=http://loinc.org|11450-4</code></li>
+  <li><strong>Alle Summary-Listenversionen</strong> der Summary-Einträge (Procedures) mit dem Suchparameter Patient abrufen: <code class="language-plaintext highlighter-rouge">GET /List?_include=List:patient&amp;_include=List:source&amp;_include:iterate=List:item&amp;_sort=-date&amp;code=http://loinc.org|47519-4</code></li>
 </ul>
 
 <h3 id="aktuelle-summary-liste-abrufen">Aktuelle Summary-Liste abrufen</h3>
@@ -333,7 +333,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Aug 28, 2026 11:38+0000">2026-08-28</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Aug 28, 2026 12:52+0000">2026-08-28</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

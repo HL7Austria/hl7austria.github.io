@@ -22,7 +22,7 @@ Dieser Use-Case ermöglicht den lesenden Zugriff auf alle Einträge von Diagnose
 #### Ablauf
 
 1. Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.
-1. Der GDA oder ELGA-Teilnehmer führt ein**GET**auf /Patient/[id]/Condition/, /Patient/[id]/Procedure/ und/oder /Patient/[id]/AllergyIntolerance/ aus, siehe[Transaktionen](transaction.md#Transaktionen).
+1. Der GDA oder ELGA-Teilnehmer führt ein`GET`auf`/Condition`,`/Procedure`und/oder`/AllergyIntolerance`aus, siehe[Transaktionen](transaction.md#Transaktionen).
 1. **Optional**kann der Abfrageparameter**_count**angegeben werden, um die Anzahl der zurückgelieferten Ressourcen festzulegen. Standardmäßig werden die 30 zuletzt erstellten Ressourcen, absteigend nach Erstellungsdatum sortiert, zurückgeliefert.
 1. Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Einträgen zurück.
 1. Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein Search-Bundle ohne Einträge zurückgeliefert.
@@ -53,8 +53,8 @@ Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inh
 
 **Beispiele für Zugriffe mittels Suchparameter:**
 
-* **Aktuelle Summary-Listenversion** der Summary-Einträge (Conditions) mit dem Suchparameter Patient abrufen: `GET [base]/Patient/[id]/List?_include=List:patient&_include=List:source&_include:iterate=List:item&_count=1&_sort=-date&code=http://loinc.org|11450-4`
-* **Alle Summary-Listenversionen** der Summary-Einträge (Procedures) mit dem Suchparameter Patient abrufen: `GET [base]/Patient/[id]/List?_include=List:patient&_include=List:source&_include:iterate=List:item&_sort=-date&code=http://loinc.org|47519-4`
+* **Aktuelle Summary-Listenversion** der Summary-Einträge (Conditions) mit dem Suchparameter Patient abrufen: `GET /List?_include=List:patient&_include=List:source&_include:iterate=List:item&_count=1&_sort=-date&code=http://loinc.org|11450-4`
+* **Alle Summary-Listenversionen** der Summary-Einträge (Procedures) mit dem Suchparameter Patient abrufen: `GET /List?_include=List:patient&_include=List:source&_include:iterate=List:item&_sort=-date&code=http://loinc.org|47519-4`
 
 ### Aktuelle Summary-Liste abrufen
 
