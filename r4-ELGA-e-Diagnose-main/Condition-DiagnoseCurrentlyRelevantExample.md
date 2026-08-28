@@ -8,8 +8,6 @@
 
 Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
-Tag: [currently relevant (Details: AT e-Diagnose Diagnose Typ code relevant = 'currently relevant')](CodeSystem-at-ediag-codesystem-diagnose-type.md)
-
 **AT ELGA Reported (Fremdangabe)**: false
 
 **clinicalStatus**: Active
@@ -44,12 +42,7 @@ Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut 
   "resourceType" : "Condition",
   "id" : "DiagnoseCurrentlyRelevantExample",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"],
-    "tag" : [{
-      "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-diagnose-type",
-      "code" : "relevant",
-      "display" : "currently relevant"
-    }]
+    "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"]
   },
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",

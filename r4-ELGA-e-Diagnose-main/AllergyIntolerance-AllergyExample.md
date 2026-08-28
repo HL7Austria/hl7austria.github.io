@@ -8,8 +8,6 @@
 
 Profile: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
 
-Tag: [currently relevant (Details: AT e-Diagnose Diagnose Typ code relevant = 'currently relevant')](CodeSystem-at-ediag-codesystem-diagnose-type.md)
-
 **AT ELGA Reported (Fremdangabe)**: false
 
 **clinicalStatus**: Active
@@ -42,12 +40,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
   "resourceType" : "AllergyIntolerance",
   "id" : "AllergyExample",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"],
-    "tag" : [{
-      "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-diagnose-type",
-      "code" : "relevant",
-      "display" : "currently relevant"
-    }]
+    "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"]
   },
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",

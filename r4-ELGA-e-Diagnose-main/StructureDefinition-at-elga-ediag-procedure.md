@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure | *Version*:0.1.0 | |
-| Active as of 2026-08-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
+| Active as of 2026-08-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
 
  
 Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-08-26T13:50:30+00:00",
+  "date" : "2026-08-28T05:58:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -90,29 +90,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
       "id" : "Procedure",
       "path" : "Procedure",
       "short" : "AT e-Diagnose Procedure"
-    },
-    {
-      "id" : "Procedure.meta.tag",
-      "path" : "Procedure.meta.tag",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "$this"
-        }],
-        "rules" : "open"
-      },
-      "min" : 1
-    },
-    {
-      "id" : "Procedure.meta.tag:diagnosisType",
-      "path" : "Procedure.meta.tag",
-      "sliceName" : "diagnosisType",
-      "min" : 1,
-      "max" : "1",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type"
-      }
     },
     {
       "id" : "Procedure.extension",

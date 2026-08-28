@@ -9,16 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type | *Version*:0.1.0 | |
-| Active as of 2026-08-26 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagDiagnosisTypeVS |
+| Active as of 2026-08-28 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagDiagnosisTypeVS |
 
  
 ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuell relevant ist. 
 
  **References** 
 
-* [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
-* [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
-* [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
+This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
 
 ### Logical Definition (CLD)
 
@@ -53,7 +51,7 @@ ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuel
   "title" : "AT e-Diagnose Diagnosis Type Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-08-26T13:50:30+00:00",
+  "date" : "2026-08-28T05:58:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

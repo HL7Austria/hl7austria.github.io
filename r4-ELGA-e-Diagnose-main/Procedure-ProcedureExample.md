@@ -8,8 +8,6 @@
 
 Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
 
-Tag: [currently relevant (Details: AT e-Diagnose Diagnose Typ code relevant = 'currently relevant')](CodeSystem-at-ediag-codesystem-diagnose-type.md)
-
 **AT ELGA Reported (Fremdangabe)**: false
 
 **status**: Completed
@@ -40,12 +38,7 @@ Diagnostische Coloskopie. Histologiebefund ausständig
   "resourceType" : "Procedure",
   "id" : "ProcedureExample",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"],
-    "tag" : [{
-      "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-diagnose-type",
-      "code" : "relevant",
-      "display" : "currently relevant"
-    }]
+    "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"]
   },
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",
