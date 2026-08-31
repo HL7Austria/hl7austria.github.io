@@ -142,22 +142,22 @@
         <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
+        <a href="Sub_UC_eMed_03_01.html">Geplante Abgaben lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
+        <a href="Sub_UC_eMed_03_02.html">Durchgeführte Abgaben lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+        <a href="Sub_UC_eMed_03_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_09_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
+        <a href="Sub_UC_eMed_05_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
       </li>
       <li>
         <a href="patient_journey.html">Patient Journey</a>
@@ -220,6 +220,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
 <style>
+.no-number {
+    --heading-prefix: none;
+}
 .notification-table {
   width: 100%;
   overflow-x: auto;
@@ -298,6 +301,90 @@ width: 100%;}
   color: #2d2d2d;
 }
 
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  align-items: end;
+  position: relative;
+
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 35px 0 25px;
+  background: #ffffff;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.95em;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 8px 12px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
 
 </style>
 
@@ -404,14 +491,6 @@ Fehlercodes sind noch zu definieren.
 
 <p>Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.</p>
 
-<div class="dragon">
-<p class="note-to-balloters">
-Offene Frage:<br/>
-- Ist Plan-History-Search ein GET mit _include=* oder eine Custom Operation?<br/>
-- Können bei einem GET _history beliebige Suchparameter definiert werden?<br/>
-</p>
-</div>
-
 <p>Der Abruf erfolgt mittels <strong>GET</strong> auf den <em>List</em>-Ressourcen-Endpunkt unter Angabe geeigneter Suchparameter:</p>
 <ul>
   <li><strong>Erstellungszeitraum</strong> von Medikationsplanversionen</li>
@@ -425,6 +504,14 @@ Offene Frage:<br/>
   <!-- TODO: weitere-parameter? -->
 
 <p>Die erzeugten Medikationsplan-Searchset-Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.</p>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Frage:<br/>
+- Ist Plan-History-Search ein GET mit _include=* oder eine Custom Operation?<br/>
+- Können bei einem GET _history beliebige Suchparameter definiert werden?<br/>
+</p>
+</div>
 
 <h5 id="ablauf-1">Ablauf</h5>
 
@@ -466,18 +553,18 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
 
 <h4 id="sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</h4>
 
-<div class="dragon">
-<p class="note-to-balloters">
-Offene Punkte:<br/>
-Erstellung getriggert durch Berechtigungssystem beim ersten Aufruf eines Patienten (nicht mehr Teil von $plan-read?).
-</p>
-</div>
-
 <p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> noch kein Medikationsplan für den ELGA-Teilnehmer existiert.</p>
 
 <p>Der dabei erzeugte initiale Medikationsplan besitzt den Wert <em>List.emptyReason = notstarted</em>. Dieser kennzeichnet ausschließlich den <strong>Initialzustand</strong> des Medikationsplans und bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden. Er trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.</p>
 
 <p>Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Portal ausgelöst werden, indem erstmals ein <strong>Plan-Read</strong> durchgeführt wird.</p>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte:<br/>
+Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patienten getriggert werden (nicht mehr Teil von $plan-read)?
+</p>
+</div>
 
 <h5 id="ablauf-2">Ablauf</h5>
 
@@ -502,7 +589,9 @@ Erstellung getriggert durch Berechtigungssystem beim ersten Aufruf eines Patient
 
 <p>Die Suche ermöglicht berechtigten GDA sowie ELGA-Teilnehmern den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.</p>
 
-<p>Der Abruf erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:
+<p>Die Historie ermöglicht die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.</p>
+
+<p>Der Abruf erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:<br/>
   <!-- TODO: search-parameter --></p>
 
 <ul>
@@ -521,9 +610,8 @@ Offene Frage:<br/>
 </p>
 </div>
 
-<p>Die Historie ermöglicht die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.</p>
-
-<p>Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:</p>
+<p><br/>
+Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:</p>
 
 <ul>
   <li>die zugehörigen Medikationsplanversionen mittels <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Plan-History-Search</a></li>
@@ -570,9 +658,14 @@ Offene Punkte:<br/>
 
 <h4 id="sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)</h4>
 
-<p>In Arbeit. 
   <!-- GET	/Patient/[id]/List	plan-history-directory-search	Verzeichnis historischer Medikationspläne abrufen
-(_history?_elements=date,source) --></p>
+(_history?_elements=date,source) -->
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$plan-history-directory-search: in Arbeit.
+</p>
+</div>
 
 
 
@@ -592,7 +685,7 @@ Offene Punkte:<br/>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Aug 27, 2026 15:34+0000">2026-08-27</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Aug 31, 2026 18:38+0000">2026-08-31</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

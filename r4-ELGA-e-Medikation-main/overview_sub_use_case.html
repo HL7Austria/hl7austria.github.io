@@ -142,22 +142,22 @@
         <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
+        <a href="Sub_UC_eMed_03_01.html">Geplante Abgaben lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
+        <a href="Sub_UC_eMed_03_02.html">Durchgeführte Abgaben lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+        <a href="Sub_UC_eMed_03_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_09_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
+        <a href="Sub_UC_eMed_05_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
       </li>
       <li>
         <a href="patient_journey.html">Patient Journey</a>
@@ -220,6 +220,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <style>
+.no-number {
+    --heading-prefix: none;
+}
 .notification-table {
   width: 100%;
   overflow-x: auto;
@@ -298,6 +301,90 @@ width: 100%;}
   color: #2d2d2d;
 }
 
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  align-items: end;
+  position: relative;
+
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 35px 0 25px;
+  background: #ffffff;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.95em;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 8px 12px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
 
 </style>
 
@@ -310,12 +397,12 @@ width: 100%;}
 <ul>
   <li><a href="Sub_UC_eMed_01.html">Technische Usecases zu Medikationsplan lesen (UC_eMed_01)</a></li>
   <li><a href="Sub_UC_eMed_02.html">Technische Usecases zu Medikationsplan schreiben (UC_eMed_02)</a></li>
-  <li><a href="Sub_UC_eMed_07_01.html">Technische Usecases zu Geplante Abgaben lesen (UC_eMed_07)</a></li>
-  <li><a href="Sub_UC_eMed_07_02.html">Technische Usecases zu Durchgeführte Abgaben lesen (UC_eMed_07)</a></li>
-  <li><a href="Sub_UC_eMed_07_03.html">Technische Usecases zu Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_07)</a></li>
-  <li><a href="Sub_UC_eMed_08.html">Technische Usecases zu Geplante Abgabe schreiben (UC_eMed_08)</a></li>
-  <li><a href="Sub_UC_eMed_09.html">Technische Usecases zu Durchgeführte Abgabe schreiben (UC_eMed_09)</a></li>
-  <li><a href="Sub_UC_eMed_09_01.html">Technische Usecases zu Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben (UC_eMed_09)</a></li>
+  <li><a href="Sub_UC_eMed_03_01.html">Technische Usecases zu Geplante Abgaben lesen (UC_eMed_03)</a></li>
+  <li><a href="Sub_UC_eMed_03_02.html">Technische Usecases zu Durchgeführte Abgaben lesen (UC_eMed_03)</a></li>
+  <li><a href="Sub_UC_eMed_03_03.html">Technische Usecases zu Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_03)</a></li>
+  <li><a href="Sub_UC_eMed_04.html">Technische Usecases zu Geplante Abgabe schreiben (UC_eMed_04)</a></li>
+  <li><a href="Sub_UC_eMed_05.html">Technische Usecases zu Durchgeführte Abgabe schreiben (UC_eMed_05)</a></li>
+  <li><a href="Sub_UC_eMed_05_01.html">Technische Usecases zu Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben (UC_eMed_05)</a></li>
 </ul>
 
 <h3 id="use-case-diagramm">Use Case Diagramm</h3>
@@ -345,7 +432,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Aug 27, 2026 15:34+0000">2026-08-27</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Aug 31, 2026 18:38+0000">2026-08-31</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

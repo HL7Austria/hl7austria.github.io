@@ -1,0 +1,100 @@
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration**
+
+## Example MedicationRequest: Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "MedicationRequest",
+  "id" : "At-Emed-Example-Mr-Dosierung-Timed",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
+  },
+  "contained" : [{
+    "resourceType" : "Medication",
+    "id" : "contained-medication-zeit-01",
+    "meta" : {
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
+    },
+    "code" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+        "code" : "2443061",
+        "display" : "EBETREXAT TBL 10MG"
+      }]
+    }
+  }],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+    "valuePeriod" : {
+      "start" : "2026-02-27",
+      "end" : "2026-03-06"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+    "valueMarkdown" : "täglich: 08:00 Uhr — je 1 Stück"
+  }],
+  "identifier" : [{
+    "value" : "4712_202602280800000"
+  }],
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+      "code" : "1",
+      "display" : "Medikationsplaneintrag"
+    }]
+  }],
+  "reportedBoolean" : false,
+  "medicationReference" : {
+    "reference" : "#contained-medication-zeit-01"
+  },
+  "subject" : {
+    "reference" : "Patient/At-Emed-Example-Patient-01"
+  },
+  "authoredOn" : "2026-02-27T10:20:00+00:00",
+  "requester" : {
+    "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
+  },
+  "courseOfTherapyType" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+      "code" : "acute"
+    }]
+  },
+  "dosageInstruction" : [{
+    "extension" : [{
+      "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
+          "code" : "timed"
+        }]
+      }
+    }],
+    "sequence" : 1,
+    "timing" : {
+      "repeat" : {
+        "timeOfDay" : ["08:00:00"]
+      }
+    },
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "unit" : "Stück",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "{Stueck}"
+      }
+    }]
+  }]
+}
+
+```

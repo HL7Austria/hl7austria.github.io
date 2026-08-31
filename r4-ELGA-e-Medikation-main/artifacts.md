@@ -47,6 +47,18 @@ Medikation
 | [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-medikation.md) | Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe. |
 | [At ELGA e-Medikation Substance Wirkstoff](StructureDefinition-at-elga-emed-substance-wirkstoff.md) | Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt. |
 
+### Dosierungen 
+
+Dosierungsvarianten
+
+| | |
+| :--- | :--- |
+| [AT ELGA e-Medikation Dosage Dosierung](StructureDefinition-at-elga-emed-dosage-dosierung.md) | AT ELGA e-Medikation Dosage Dosierung |
+| [AtElgaEmedDosageFreeTextAdministration](StructureDefinition-at-elga-emed-dosage-freetext-administration.md) |  |
+| [AtElgaEmedDosageFrequencyAdministration](StructureDefinition-at-elga-emed-dosage-frequency-administration.md) |  |
+| [AtElgaEmedDosageStandardAdministration](StructureDefinition-at-elga-emed-dosage-standard-administration.md) |  |
+| [AtElgaEmedDosageTimedAdministration](StructureDefinition-at-elga-emed-dosage-timed-administration.md) |  |
+
 ### Behavior: Operation Definitions 
 
 These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.
@@ -58,14 +70,30 @@ These are custom operations that can be supported by and/or invoked by systems c
 | [eMed Operation für GroupIdentifier Prescription Search](OperationDefinition-at-emed-operation-groupidentifier-prescription-search.md) | Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll. |
 | [eMed Operation für GroupIdentifier-Create](OperationDefinition-at-emed-operation-groupidentifier-create.md) | Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll. |
 
+### Structures: Resource Profiles 
+
+These define constraints on FHIR resources for systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [At ELGA e-Medikation MedicationRequest Base](StructureDefinition-at-elga-emed-medicationrequest-base.md) | Die Basis für alle in eMed verwendeten MedicationRequests |
+
 ### Structures: Data Type Profiles 
 
 These define constraints on FHIR data types for systems conforming to this implementation guide.
 
 | | |
 | :--- | :--- |
-| [AT ELGA e-Medikation Dosage Dosierung](StructureDefinition-at-elga-emed-dosage-dosierung.md) | AT ELGA e-Medikation Dosage Dosierung |
 | [AT ELGA e-Medikation Timing](StructureDefinition-at-elga-emed-timing.md) | AT ELGA e-Medikation Timing |
+| [AtElgaEmedDosageOtherAdministration](StructureDefinition-at-elga-emed-dosage-other-administration.md) |  |
+
+### Structures: Extension Definitions 
+
+These define constraints on FHIR data types for systems conforming to this implementation guide.
+
+| | |
+| :--- | :--- |
+| [AT ELGA e-Medikation Extension Dosierungskategorie](StructureDefinition-at-elga-emed-extension-dosage-category.md) | AT ELGA e-Medikation Extension Dosierungskategorie |
 
 ### Terminology: Value Sets 
 
@@ -73,6 +101,8 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
+| [ELGA Dosage Category Status ValueSet](ValueSet-AtElgaEmedValueSetDosageCategory.md) | Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA. |
+| [ELGA Dosierung Timing When ValueSet für Tageszeitenschema](ValueSet-ElgaTimingWhenStandardAdministrationVS.md) | ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema. |
 | [ELGA List Empty Reason Value Set](ValueSet-ElgaListEmptyReasonVS.md) | ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. |
 | [ELGA List Status ValueSet](ValueSet-ElgaListStatusVS.md) | Zulässige Ausprägungen des Status einer List-Ressource in ELGA. |
 | [ELGA List.entry.flag Value Set](ValueSet-ElgaListEntryFlagVS.md) | ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA. |
@@ -88,6 +118,7 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
+| [ELGA Dosage Category Status CodeSystem](CodeSystem-AtElgaEmedCodeSystemDosageCategory.md) | Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA. |
 | [ELGA List.entry.flag CodeSystem](CodeSystem-ElgaListEntryFlagCS.md) | CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA. |
 | [ELGA e-Med MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
 
@@ -119,6 +150,10 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Journey 05-b: Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag](Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Searchset-Bundles mit geändertem und abgesetztem Medikationsplaneintrag. |
 | [Beispiel Journey 05-b: Transaction Bundle zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern).](Bundle-At-Emed-Journey-05-b-Bundle-Tx-Medikationsplan.md) | Beispiel eines Transaction Bundles, zur Änderung von bestehenden Medikationsplaneinträgen (absetzen und ändern). |
 | [Beispiel Journey 05-b: Änderung Dosierung des Medikationsplaneintrags](MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.md) | Änderung der Dosierung eines Medikationsplaneintrags (EBETREXAT). |
+| [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
+| [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema |
+| [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema |
+| [Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration](MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.md) | Medikationsplaneintrag mit Dosierung mit Timed Administration |
 | [Beispiel Organisation Apotheke 01](Organization-At-Emed-Example-Organization-Apo-01.md) | Beispiel einer Apotheke als Organisation. |
 | [Beispiel Patient 01](Patient-At-Emed-Example-Patient-01.md) | Beispiel eines Patienten. |
 | [Beispiel Ärztin 01](Practitioner-At-Emed-Example-Practitioner-01.md) | Beispiel einer behandelnden Ärztin. |

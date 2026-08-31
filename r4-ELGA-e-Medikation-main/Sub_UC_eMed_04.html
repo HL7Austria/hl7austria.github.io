@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04) - FHIR&reg; v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.8"}
+    h3,h4,h5,h6{--heading-prefix:"9.8"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="assets/images/hl7atlogo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03_01.html">Geplante Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03_02.html">Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04)</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write" id="markdown-toc-sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)</a></li>
+  <li><a href="#sub_uc_emed_08_04---geplante-abgabe-verwerfen-prescription-discard" id="markdown-toc-sub_uc_emed_08_04---geplante-abgabe-verwerfen-prescription-discard">Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen ($prescription-discard)</a></li>
+  <li><a href="#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung" id="markdown-toc-sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a></li>
+  <li><a href="#sub_uc_emed_08_03---geplante-abgabe-abgelaufen-durch-fachanwendung" id="markdown-toc-sub_uc_emed_08_03---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe abgelaufen (durch Fachanwendung)</a></li>
+  <li><a href="#sub_uc_emed_08_03---geplante-abgabe-gecancelt-durch-fachanwendung" id="markdown-toc-sub_uc_emed_08_03---geplante-abgabe-gecancelt-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe gecancelt (durch Fachanwendung)</a></li>
+  <li><a href="#sub_uc_emed_08_05---geplante-abgabe-löschen-durch-elga-teilnehmer-prescription-delete" id="markdown-toc-sub_uc_emed_08_05---geplante-abgabe-löschen-durch-elga-teilnehmer-prescription-delete">Sub_UC_eMed_08_05 - Geplante Abgabe löschen (durch ELGA-Teilnehmer) (prescription-delete)</a></li>
+</ul>
+
+</div>
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  align-items: end;
+  position: relative;
+
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 35px 0 25px;
+  background: #ffffff;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.95em;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 8px 12px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+</style>
+
+  <!-- Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04) -->
+
+<h3 id="sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)</h3>
+
+<p>Ein berechtigter GDA (siehe <a href="actors.html#rollen-und-berechtigungen">Rollen und Berechtigungen</a>) kann basierend auf einem <strong>bestehenden</strong> <em>Medikationsplaneintrag</em> eine oder mehrere <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplanten Abgaben</a> erstellen. Für jedes verordnete Medikament muss eine eigene <em>Geplante Abgabe</em> erstellt werden.</p>
+
+<p>Falls für eine <em>Geplante Abgabe</em> noch kein entsprechender Medikationsplaneintrag existiert, muss dieser zuerst erstellt werden (siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</a>). 
+Bei Bedarf kann ein bestehender Medikationsplaneintrag angepasst werden (siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a>).</p>
+
+<p><a name="l464">​</a>Ist keine Anpassung des Medikationsplaneintrags erforderlich, führt der GDA ein <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und erhält von der Fachanwendung das <strong>Medikationsplan-Searchset-Bundle</strong>, das den Medikationsplan mit allen für die Erstellung der <em>Geplanten Abgaben</em> relevanten Ressourcen enthält.</p>
+
+<p>Basierend auf darin enthaltenen Planeinträgen erstellt der GDA neue <em>Geplante Abgaben</em> mit folgenden Angaben:</p>
+<ul>
+  <li>Der Status der neuen <em>Geplanten Abgabe</em> muss <em>offen</em> sein (<strong>active</strong>, siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>)</li>
+  <li>Die <strong>Rezeptart</strong> muss verpflichtend ausgewählt werden (<em>Kassenrezept, Privatrezept</em> oder <em>Substitutionsrezept</em>)</li>
+  <li>Die <strong>Medikation</strong> soll fachlich jener des Planeintrags entsprechen. Enthält der Planeintrag ausschließlich Wirkstoffe, ist verpflichtend ein entsprechendes Medikament aus der ASP-Liste (inkl. PZN) bzw. eine magistrale Zubereitung zu dokumentieren.</li>
+  <li>Werden mehrere Medikamente gleichzeitig verordnet und demselben e-Rezept zugeordnet, muss jede zugehörige <em>Geplante Abgabe</em> mit demselben <strong>e-Med GroupIdentifier</strong> versehen werden. Diese  eindeutige Kennung ('Rezept-Klammer') ermöglicht es berechtigten Akteure, die zusammengehörigen <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> abzurufen. Der hierfür verwendete <em>e-Med GroupIdentifier</em> kann über unterschiedliche Varianten bezogen werden (siehe <a href="Sub_UC_eMed_04.html#ablauf-und-bezug-e-med-groupidentifier">Ablauf und Bezug e-Med GroupIdentifier</a>) und bleibt solange gültig, bis die letztmögliche Einlösung der <em>Geplanten Abgaben</em> erfolgt ist. 
+  <!-- TODO: oder die *Geplante Abgabe* den Status *active* hat? -->
+In einem Bundle dürfen nur <em>Geplante Abgaben</em> mit demselben <em>e-Med GroupIdentifier</em> enthalten sein. Fehlt bei den übermittelten <em>Geplanten Abgaben</em> der e-Med GroupIdentifier, ergänzt die Fachanwendung diesen. Werden mehrere e-Rezepte gleichzeitig erstellt, muss für jedes e-Rezept ein eigenes Bundle mit den jeweils zugehörigen <em>Geplanten Abgaben</em> und dem entsprechenden <em>e-Med GroupIdentifier</em> erstellt werden.</li>
+  <li><strong>Dosierangaben</strong> können optional angepasst werden.</li>
+  <li>Abhängig von der ausgewählten <strong>Rezeptart</strong> (siehe <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</a>) können:
+    <ul>
+      <li>der <strong>Gültigkeitszeitraum</strong> (<em>dispenseRequest.validityPeriod</em>), innerhalb dessen die <em>Geplante Abgabe</em> eingelöst werden kann, sowie</li>
+      <li>die Anzahl möglicher weiterer <strong>Einlösungen</strong> (<em>dispenseRequest.numberOfRepeatsAllowed</em>) festgelegt werden
+    <!-- TODO erklären was genau mit "weiterer" gemeint ist --></li>
+    </ul>
+  </li>
+  <li>Die <strong>Menge</strong> (Anzahl Packungen), die bei jeder Abgabe bereitgestellt werden soll, ist verpflichtend zu dokumentieren (<em>dispenseRequest.quantity</em>).</li>
+</ul>
+
+<p><a name="l607">​</a>Die erstellten <em>Geplanten Abgaben</em> werden in einem <strong>Bundle</strong> vom Typ <strong>Transaction</strong> mittels <a href="interactions.html#prescription-write">Prescription-Write</a> an die Fachanwendung übermittelt wird.</p>
+
+<p class="note-to-balloters">
+Offene Punkte: <br/>
+- Wirkstoffe in Planeintrag?
+- Dürfen Geplante Abgaben hinsichtich Medikation und Dosierung vom Planeintrag abweichen?
+</p>
+
+<h4 id="relevante-elemente-medicationrequest">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: active 
+    category[mrcategory]: 2 "Geplante Abgabe"               //Kategorie zur Unterscheidung der MedicationRequests
+    category[recipetype]: KASSEN | PRIVAT | SUBST          // Verpflichtende Angabe der Rezeptart
+    intent: order                                           // Fester Wert
+    medicationReference.reference: Medikation gemäß zugehörigem Planeintrag // Contained Medication
+    authoredOn: Datum der Erstellung der Geplanten Abgabe
+    requester: veranwortlicher GDA für die Geplante Abgabe  // wird auf Übereinstimmung mit List.source geprüft
+    basedOn: id des zugehörigen Medikationsplaneintrags     // referenziert aktuelle Version 
+    groupIdentifier: e-Med GroupIdentifier                  // optionale Rezeptklammer 
+    dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft) 
+    dispenseRequest.validityPeriod: Gültigkeitszeitraum     // abhängig von Rezeptart bzw. verkürzt durch GDA
+    dispenseRequest.numberOfRepeatsAllowed: Anzahl weiterer Einlösungen // abhängig von Rezeptart bzw. verkürzt durch GDA
+    dispenseRequest.quantity: Abzugebende Menge (Packungen) je Abgabe
+</code></pre>
+
+<h5 id="custom-operations">Custom Operations</h5>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$prescription-write: in Arbeit.
+</p>
+</div>
+
+<h4 id="ablauf-und-bezug-e-med-groupidentifier">Ablauf und Bezug e-Med GroupIdentifier</h4>
+
+<p>Der Ablauf zur Erstellung von <em>Geplanten Abgaben</em> und der Bezug des <em>e-Med GroupIdentifiers</em> kann unterschiedlich erfolgen. Exemplarisch werden 3 Varianten angeführt.</p>
+
+<h5 id="variante-a-vorab-ermittlung-des-e-med-groupidentifiers">Variante A: Vorab-Ermittlung des e-Med GroupIdentifiers</h5>
+
+<p><a name="l660">​</a>Der <em>e-Med GroupIdentifier</em> ("Rezeptklammer") wird via POST $groupidentifier-create vorab von der Fachanwendung bezogen, in den <em>Geplanten Abgaben</em> ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den <em>Geplanten Abgaben</em> zu verknüpfen.
+Der Trigger zu Erstellung des e-Rezepts und <a href="interactions.html#prescription-write">Prescription-Write</a> können parallel erfolgen (siehe Normalfall).</p>
+
+<p>Liefert e-Rezept einen Fehler zurück, können mittels POST $prescription-discard bereits in der e-Medikation erstellte <em>Geplante Abgaben</em> verworfen werden (siehe Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen).
+Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkorrektur erneut ein <em>Prescription-Write</em> erfolgen oder ein bereits durch den <em>e-Med groupIdentifer</em> verknüpftes e-Rezept wieder von den <em>Geplanten Abgaben</em> "entkoppelt" werden (siehe Fehlerfall).
+  <!-- TODO Transaction Bundle erstellen --></p>
+
+<h6 id="variante-a-normalfall">Variante A: Normalfall</h6>
+
+<p><a href="plantuml/UC_eMed_04_01_a_normal.svg"><img src="plantuml/UC_eMed_04_01_a_normal.svg" alt="overview" style="width:60%;" class="mx-auto"/></a></p>
+
+<p><br/></p>
+
+<h6 id="variante-a-fehlerfall">Variante A: Fehlerfall</h6>
+
+<p><a href="plantuml/UC_eMed_04_01_a_fehler.svg"><img src="plantuml/UC_eMed_04_01_a_fehler.svg" alt="overview" style="width:60%;" class="mx-auto"/></a></p>
+
+<p><br/></p>
+
+<h5 id="variante-b-sequentielles-erstellen-von-geplanter-abgabe-und-e-rezept">Variante B: Sequentielles Erstellen von Geplanter Abgabe und e-Rezept</h5>
+
+<p>Alternativ kann der <em>e-Med GroupIdentifier</em> durch die Fachanwendung automatisch ergänzt werden, wenn dieser beim Prescription-Write nicht in den <em>Geplanten Abgaben</em> im Transaction Bundle enthalten ist. Dadurch bleibt das Verhalten konsistent zur bestehenden e-Medikations-Implementierung.
+Hierfür müssen die Geplanten Abgaben gemeinsam in einem Transaction Bundle an die e-Medikation Fachanwendung übermittelt werden.
+Der Server ergänzt den <em>e-Med GroupIdentifier</em> während der Transaktionsverarbeitung. Die persistierten Ressourcen einschließlich des erzeugten groupIdentifiers werden im Response an den Client zurückgegeben.
+Im Anschluss kann der Trigger zur Erstellung des e-Rezepts inkl. <em>e-Med GroupIdentifier</em> erfolgen.</p>
+
+<p><br/></p>
+
+<p><a href="plantuml/UC_eMed_04_01_b.svg"><img src="plantuml/UC_eMed_04_01_b.svg" alt="overview" style="width:60%;" class="mx-auto"/></a></p>
+
+<p><br/></p>
+
+<h5 id="variante-c-nachträgliche-verknüpfung-des-e-rezepts-mit-dem-e-med-groupidentifier">Variante C: Nachträgliche Verknüpfung des e-Rezepts mit dem e-Med GroupIdentifier</h5>
+
+<p><a name="l742">​</a>Der Trigger zu Erstellung des e-Rezepts und <a href="interactions.html#prescription-write">Prescription-Write</a> können parallel erfolgen (Variante A), allerdings noch ohne <em>e-Med GroupIdentifier</em>.
+Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zurück (wie in Variante B), der Client führt im Anschluss eine nachträgliche Verknüfung des bereits erstellten e-Rezepts mit den geplanten Abgaben mittels <em>e-Med GroupIdentifier</em> durch.</p>
+
+<p><br/></p>
+
+<p><a href="plantuml/UC_eMed_04_01_c.svg"><img src="plantuml/UC_eMed_04_01_c.svg" alt="overview" style="width:60%;" class="mx-auto"/></a></p>
+
+<p><br/></p>
+
+<h5 id="custom-operations-1">Custom Operations</h5>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$groupidentifier-create: in Arbeit.
+</p>
+</div>
+
+<h3 id="sub_uc_emed_08_04---geplante-abgabe-verwerfen-prescription-discard">Sub_UC_eMed_08_04 - Geplante Abgabe verwerfen ($prescription-discard)</h3>
+
+<p>Ein GDA kann von ihm erstellte <em>Geplante Abgaben</em> aufgrund eines Fehlers verwerfen, solange noch <strong>keine Abgaben durchgeführt</strong> wurden. Die verworfene <em>Geplante Abgabe</em> kann über die Historie der <em>Geplanten Abgaben</em> eingesehen werden.
+  <!-- TODO Klären STORNO vs VERWERFEN: https://www.chipkarte.at/cdscontent/load?contentid=10008.781687&version=1698069647: gemäß dieser Logik wäre ein fachliches Storno fremder Verordnungen mittel PADV möglich (Storno mit ITI-57 (eigene) ist immer möglich). Evtl brauchen wir den Status "verwerfen" gar nicht, weil ein GDA nun direkt den Planeintrag anpassen würde, anstatt die Verodnung zu verwerfen, für die das e-Rezept ja bereits ausgehändigt wurde und die sowieso nach Ablauf der Frist rausfällt? -->
+  <!-- TODO: Suchparameter nach stornierten *Geplante Abgaben*? --></p>
+
+<p><a name="l796">​</a>Um eine <em>Geplante Abgabe</em> zu verwerfen, führt der GDA die Operation <a href="interactions.html#prescription-discard">$prescription-discard​</a> aus:</p>
+<ul>
+  <li>Der Status der <em>Geplante Abgaben</em> wird auf <em>entered-in-error</em> gesetzt (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>),</li>
+  <li>das Datum in <em>authoredOn</em> wird aktualisiert.</li>
+</ul>
+
+  <!-- TODO: Wenn stornierte *Geplante Abgabe* Teil eines e-Rezepts mit weiteren geplanten Abgaben ist: Auswirkungen? keine -->
+
+<h4 id="relevante-elemente-medicationrequest-1">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: entered-in-error 
+    authoredOn: Datum des Verwerfens der Geplanten Abgabe
+    requester: veranwortlicher GDA für das Verwerfen der Geplanten Abgabe 
+</code></pre>
+<h5 id="custom-operations-2">Custom Operations</h5>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$prescription-discard: in Arbeit.
+</p>
+</div>
+
+<h3 id="sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</h3>
+
+<p><a name="l849">​</a>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt (siehe <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_05_01 - Durchgeführte Abgabe erfassen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <em>completed</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
+
+<p>Sonderfall: Wenn die letzte <em>Durchgeführte Abgabe</em> danach verworfen wird (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
+
+<h4 id="relevante-elemente-medicationrequest-2">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: completed
+    authoredOn: Datum der Erstellung der geplanten Abgabe  // bleibt unverändert
+    requester: Ursprünglicher Ersteller                    // bleibt unverändert
+</code></pre>
+
+<h3 id="sub_uc_emed_08_03---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe abgelaufen (durch Fachanwendung)</h3>
+
+<p>Ist der Einlösezeitraum der <em>Geplanten Abgabe</em> gemäß der ausgewählten Rezeptart (category:recipetype) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <em>stopped</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
+
+<h4 id="relevante-elemente-medicationrequest-3">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: stopped
+    authoredOn: Datum der Erstellung der geplanten Abgabe  // bleibt unverändert
+    requester: Ursprünglicher Ersteller                    // bleibt unverändert
+</code></pre>
+
+<h3 id="sub_uc_emed_08_03---geplante-abgabe-gecancelt-durch-fachanwendung">Sub_UC_eMed_08_03 - Geplante Abgabe gecancelt (durch Fachanwendung)</h3>
+
+<p>Eine <em>Geplante Abgabe</em> erhält <strong>automatisch</strong> den Status <em>cancelled</em> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>), wenn alle <em>Durchgeführten Abgaben</em> (jede Einlösung) den Status <em>cancelled</em> erhalten haben ("Leerabgabe", d.h. keine Abgabe durchgeführt). Die <em>Geplanten Abgabe</em> ist damit abgeschlossen.</p>
+
+<p>Sonderfall: Wenn die letzte <em>Durchgeführte Abgabe</em> danach verworfen wird (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
+
+<h4 id="relevante-elemente-medicationrequest-4">Relevante Elemente (MedicationRequest)</h4>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationRequestGeplanteAbgabe
+    status: cancelled
+    authoredOn: Datum der Erstellung der geplanten Abgabe  // bleibt unverändert
+    requester: Ursprünglicher Ersteller                    // bleibt unverändert
+</code></pre>
+
+<h3 id="sub_uc_emed_08_05---geplante-abgabe-löschen-durch-elga-teilnehmer-prescription-delete">Sub_UC_eMed_08_05 - Geplante Abgabe löschen (durch ELGA-Teilnehmer) (prescription-delete)</h3>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte:<br/>
+Umsetzung Teilnehmerrechte
+</p>
+</div>
+
+<p>Der ELGA-Teilnehmer kann eine <em>Geplante Abgabe</em> endgültig löschen. Bereits dokumentierte zugehörige <em>Durchgeführte Abgaben</em> sowie bestehende Planeinträge bleiben davon unberührt.</p>
+
+<p>Die Löschung der <em>Geplanten Abgabe</em> umfasst:</p>
+
+<ul>
+  <li>die fachliche Entfernung der betreffenden MedicationRequest-Ressource sowie</li>
+  <li>die Entfernung aller zugehörigen historischen Ressourcen-Versionen (_history).</li>
+</ul>
+
+<p>Zum Löschen einer <em>Geplanten Abgabe</em> ruft der ELGA-Teilnehmer diese im ELGA-Portal auf. Dieses führt zunächst eine Leseoperation auf die betreffende MedicationRequest-Ressource aus (GET MedicationRequest/[id]) und löscht anschließend die betreffende <em>Geplante Abgabe</em> mittels DELETE (DELETE [base]/MedicationRequest/[id]).</p>
+
+<p>Die Ressource einschließlich aller historischen Versionen darf nach erfolgreicher Löschung weder über reguläre FHIR-Interaktionen noch über administrative Schnittstellen abrufbar sein.</p>
+
+  <!-- #### Beispiel -->
+
+  <!-- #### Technische Hinweise -->
+
+  <!-- #### Relevante Profile -->
+
+  <!-- #### Relevante Invarianten -->
+
+  <!-- #### Mögliche Notifications -->
+
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Aug 31, 2026 18:38+0000">2026-08-31</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

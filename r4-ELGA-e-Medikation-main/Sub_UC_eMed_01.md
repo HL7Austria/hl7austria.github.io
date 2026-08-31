@@ -77,11 +77,6 @@ Beim Plan-History-Search rekonstruiert die Fachanwendung historische Versionen d
 
 Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.
 
- Offene Frage:
- - Ist Plan-History-Search ein GET mit _include=* oder eine Custom Operation?
- - Können bei einem GET _history beliebige Suchparameter definiert werden?
- 
-
 Der Abruf erfolgt mittels **GET** auf den **List**-Ressourcen-Endpunkt unter Angabe geeigneter Suchparameter:
 
 * **Erstellungszeitraum** von Medikationsplanversionen
@@ -92,6 +87,11 @@ Der Abruf erfolgt mittels **GET** auf den **List**-Ressourcen-Endpunkt unter Ang
 * **StatusReason eines im Plan einthaltenen Planeintrags**: Abrufen aller Planversionen, die einen Planeintrag mit statusReason = z.B. "Medikament nicht vertragen" enthalten.
 
 Die erzeugten Medikationsplan-Searchset-Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.
+
+ Offene Frage:
+ - Ist Plan-History-Search ein GET mit _include=* oder eine Custom Operation?
+ - Können bei einem GET _history beliebige Suchparameter definiert werden?
+ 
 
 ##### Ablauf
 
@@ -115,14 +115,14 @@ In Arbeit.
 
 #### Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan
 
- Offene Punkte:
- Erstellung getriggert durch Berechtigungssystem beim ersten Aufruf eines Patienten (nicht mehr Teil von $plan-read?). 
-
 Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von [$plan-read](OperationDefinition-AtElgaEmed.List.PlanRead.md) noch kein Medikationsplan für den ELGA-Teilnehmer existiert.
 
 Der dabei erzeugte initiale Medikationsplan besitzt den Wert **List.emptyReason = notstarted**. Dieser kennzeichnet ausschließlich den **Initialzustand** des Medikationsplans und bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden. Er trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.
 
 Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Portal ausgelöst werden, indem erstmals ein **Plan-Read** durchgeführt wird.
+
+ Offene Punkte:
+ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patienten getriggert werden (nicht mehr Teil von $plan-read)? 
 
 ##### Ablauf
 
@@ -143,7 +143,10 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 
 Die Suche ermöglicht berechtigten GDA sowie ELGA-Teilnehmern den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.
 
-Der Abruf erfolgt mittels **GET** unter Angabe geeigneter Suchparameter: 
+Die Historie ermöglicht die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.
+
+Der Abruf erfolgt mittels **GET** unter Angabe geeigneter Suchparameter:
+ 
 
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
@@ -156,9 +159,7 @@ Der Abruf erfolgt mittels **GET** unter Angabe geeigneter Suchparameter:
  - Können bei einem GET _history beliebige Suchparameter definiert werden?
  
 
-Die Historie ermöglicht die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.
-
-Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:
+ Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:
 
 * die zugehörigen Medikationsplanversionen mittels [Plan-History-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search)
 * **Geplante Abgaben** (**Prescription-Search**) 
@@ -186,5 +187,6 @@ In Arbeit.
 
 #### Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)
 
-In Arbeit. 
+ Offene Punkte: 
+$plan-history-directory-search: in Arbeit. 
 

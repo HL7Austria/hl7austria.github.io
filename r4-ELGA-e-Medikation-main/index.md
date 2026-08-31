@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-08-27T15:34:15+00:00",
+  "date" : "2026-08-31T18:38:38+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -724,6 +724,11 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "id" : "Medikation",
       "name" : "Medikation",
       "description" : "Medikation"
+    },
+    {
+      "id" : "Dosierungen",
+      "name" : "Dosierungen",
+      "description" : "Dosierungsvarianten"
     }],
     "resource" : [{
       "extension" : [{
@@ -739,6 +744,23 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT ELGA e-Medikation Dosage Dosierung",
       "description" : "AT ELGA e-Medikation Dosage Dosierung",
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-extension-dosage-category.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-extension-dosage-category"
+      },
+      "name" : "AT ELGA e-Medikation Extension Dosierungskategorie",
+      "description" : "AT ELGA e-Medikation Extension Dosierungskategorie",
       "exampleBoolean" : false
     },
     {
@@ -791,6 +813,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "description" : "Dokumentiert eine \"Durchgeführte Abgabe\" eines Arzneimittels (\"MedicationDispense\"-Ressource). \nDie \"Durchgeführte Abgabe\" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. \nEs können Abweichungen zur \"Geplanten Abgabe\" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.\nSofern eine zugehörige \"Geplanten Abgabe\" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige \"Geplante Abgabe\", ersichtlich.\nDer aktuelle Status einer \"Durchgeführten Abgabe\" wird mittels \"status\"- und \"type\"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet.",
       "exampleBoolean" : false,
       "groupingId" : "DurchgefuehrteAbgabe"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-medicationrequest-base.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-medicationrequest-base"
+      },
+      "name" : "At ELGA e-Medikation MedicationRequest Base",
+      "description" : "Die Basis für alle in eMed verwendeten MedicationRequests",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -892,6 +930,85 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n\nAlle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-freetext-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-dosage-freetext-administration"
+      },
+      "name" : "AtElgaEmedDosageFreeTextAdministration",
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-frequency-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-dosage-frequency-administration"
+      },
+      "name" : "AtElgaEmedDosageFrequencyAdministration",
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-other-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-dosage-other-administration"
+      },
+      "name" : "AtElgaEmedDosageOtherAdministration",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-standard-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-dosage-standard-administration"
+      },
+      "name" : "AtElgaEmedDosageStandardAdministration",
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-timed-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-dosage-timed-administration"
+      },
+      "name" : "AtElgaEmedDosageTimedAdministration",
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
     },
     {
       "extension" : [{
@@ -1248,6 +1365,70 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-AtEmedExampleDosageStandardAdministration1.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/AtEmedExampleDosageStandardAdministration1"
+      },
+      "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1",
+      "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-AtEmedExampleDosageStandardAdministration2.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/AtEmedExampleDosageStandardAdministration2"
+      },
+      "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 2",
+      "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-AtEmedExampleDosageStandardAdministration3.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/AtEmedExampleDosageStandardAdministration3"
+      },
+      "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3",
+      "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed"
+      },
+      "name" : "Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration",
+      "description" : "Medikationsplaneintrag mit Dosierung mit Timed Administration",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
       },
       {
@@ -1355,6 +1536,54 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "e-Med Operation für Plan-Write",
       "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-AtElgaEmedCodeSystemDosageCategory.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/AtElgaEmedCodeSystemDosageCategory"
+      },
+      "name" : "ELGA Dosage Category Status CodeSystem",
+      "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtElgaEmedValueSetDosageCategory.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtElgaEmedValueSetDosageCategory"
+      },
+      "name" : "ELGA Dosage Category Status ValueSet",
+      "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-ElgaTimingWhenStandardAdministrationVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ElgaTimingWhenStandardAdministrationVS"
+      },
+      "name" : "ELGA Dosierung Timing When ValueSet für Tageszeitenschema",
+      "description" : "ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema.",
       "exampleBoolean" : false
     },
     {
@@ -1676,55 +1905,55 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_07_01.html"
+            "valueUrl" : "Sub_UC_eMed_03_01.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_07_01.html",
-          "title" : "​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_07)",
+          "nameUrl" : "Sub_UC_eMed_03_01.html",
+          "title" : "​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_03)",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_07_02.html"
+            "valueUrl" : "Sub_UC_eMed_03_02.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_07_02.html",
-          "title" : "​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_07)",
+          "nameUrl" : "Sub_UC_eMed_03_02.html",
+          "title" : "​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_03)",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_07_03.html"
+            "valueUrl" : "Sub_UC_eMed_03_03.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_07_03.html",
-          "title" : "​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_07)",
+          "nameUrl" : "Sub_UC_eMed_03_03.html",
+          "title" : "​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_03)",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_08.html"
+            "valueUrl" : "Sub_UC_eMed_04.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_08.html",
-          "title" : "​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)",
+          "nameUrl" : "Sub_UC_eMed_04.html",
+          "title" : "​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04)",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_09.html"
+            "valueUrl" : "Sub_UC_eMed_05.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_09.html",
-          "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)",
+          "nameUrl" : "Sub_UC_eMed_05.html",
+          "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)",
           "generation" : "markdown"
         },
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_09_01.html"
+            "valueUrl" : "Sub_UC_eMed_05_01.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_09_01.html",
-          "title" : "​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_09)",
+          "nameUrl" : "Sub_UC_eMed_05_01.html",
+          "title" : "​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_05)",
           "generation" : "markdown"
         }]
       }]

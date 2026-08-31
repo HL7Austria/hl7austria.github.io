@@ -9,4 +9,10 @@
     you may need to use this schematron fragment to build a, 
     single schematron that validates contained resources (if you have any) 
   -->
+  <sch:pattern>
+    <sch:title>f:Timing/f:repeat</sch:title>
+    <sch:rule context="f:Timing/f:repeat">
+      <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/StructureDefinition/timing-dayOfMonth']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/StructureDefinition/timing-dayOfMonth': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>

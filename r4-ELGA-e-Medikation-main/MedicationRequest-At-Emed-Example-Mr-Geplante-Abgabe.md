@@ -72,6 +72,16 @@
     "text" : "Freitext zur geplanten Abgabe (Info von Arzt an Apotheke)."
   }],
   "dosageInstruction" : [{
+    "extension" : [{
+      "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+      "valueCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
+          "code" : "other"
+        }]
+      }
+    }],
+    "sequence" : 1,
     "patientInstruction" : "Nehmen Sie die Kapsel nach dem Essen mit ausreichend Flüssigkeit ein.",
     "timing" : {
       "repeat" : {

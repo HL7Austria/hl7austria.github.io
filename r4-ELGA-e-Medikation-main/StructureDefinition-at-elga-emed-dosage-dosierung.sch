@@ -12,6 +12,8 @@
   <sch:pattern>
     <sch:title>f:Dosage</sch:title>
     <sch:rule context="f:Dosage">
+      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category']) &gt;= 1">extension with URL = 'https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:sequence) &gt;= 1">sequence: minimum cardinality of 'sequence' is 1</sch:assert>
       <sch:assert test="count(f:doseAndRate) &lt;= 1">doseAndRate: maximum cardinality of 'doseAndRate' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

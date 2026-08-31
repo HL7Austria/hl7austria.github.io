@@ -2,7 +2,15 @@
   "package": "hl7.at.fhir.elga.emed.r4",
   "version": "0.1.1",
   "fhirVersion": "4.0.1",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+      "title": "AT ELGA e-Medikation Extension Dosierungskategorie",
+      "types": [
+        "CodeableConcept"
+      ]
+    }
+  ],
   "profiles": {
     "Bundle": [
       {
@@ -33,6 +41,10 @@
       }
     ],
     "MedicationRequest": [
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-base",
+        "title": "At ELGA e-Medikation MedicationRequest Base"
+      },
       {
         "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe",
         "title": "At ELGA e-Medikation MedicationRequest Geplante Abgabe"
@@ -106,6 +118,10 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],
+    "http://hl7.org/fhir/StructureDefinition/timing-dayOfMonth": [
+      "Dosage.timing.repeat",
+      "Timing.repeat"
+    ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
       "ImplementationGuide.definition"
     ],
@@ -125,6 +141,11 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
       "StructureDefinition.snapshot"
+    ],
+    "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category": [
+      "Bundle.entry.resource.dosageInstruction",
+      "Dosage",
+      "MedicationRequest.dosageInstruction"
     ]
   }
 }

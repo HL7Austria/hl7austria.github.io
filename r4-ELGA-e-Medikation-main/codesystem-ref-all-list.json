@@ -34,7 +34,8 @@
     "uses" : {
     },
     "ValueSet-MedikationsplaneintragStatusVS.html" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
-    "ValueSet-GeplanteAbgabeStatusVS.html" : "ELGA e-Med Geplante Abgabe Status ValueSet"
+    "ValueSet-GeplanteAbgabeStatusVS.html" : "ELGA e-Med Geplante Abgabe Status ValueSet",
+    "http://hl7.org/fhir/R4/valueset-medicationrequest-status.html" : "Medicationrequest  status"
   },
   {
     "url" : "http://hl7.org/fhir/bundle-type",
@@ -59,6 +60,19 @@
     "uses" : {
     },
     "http://hl7.org/fhir/R4/valueset-days-of-week.html" : "DaysOfWeek"
+  },
+  {
+    "url" : "http://hl7.org/fhir/event-timing",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "EventTiming",
+    "title" : "EventTiming",
+    "description" : "Real world event relating to the schedule.",
+    "oids" : ["2.16.840.1.113883.4.642.4.76"],
+    "uses" : {
+    },
+    "ValueSet-ElgaTimingWhenStandardAdministrationVS.html" : "ELGA Dosierung Timing When ValueSet für Tageszeitenschema",
+    "http://hl7.org/fhir/R4/valueset-event-timing.html" : "EventTiming"
   },
   {
     "url" : "http://hl7.org/fhir/http-verb",
@@ -94,8 +108,8 @@
     "oids" : ["2.16.840.1.113883.4.642.4.327"],
     "uses" : {
     },
-    "https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/ValueSet-ElgaListStatusVS.html" : "ELGA List Status ValueSet",
-    "ValueSet-ElgaListStatusVS.html" : "ELGA List Status ValueSet"
+    "ValueSet-ElgaListStatusVS.html" : "ELGA List Status ValueSet",
+    "https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/ValueSet-ElgaListStatusVS.html" : "ELGA List Status ValueSet"
   },
   {
     "url" : "http://hl7.org/fhir/quantity-comparator",
@@ -155,13 +169,14 @@
     "oids" : ["2.16.840.1.113883.6.96"],
     "uses" : {
     },
+    "http://hl7.org/fhir/R4/valueset-additional-instruction-codes.html" : "SNOMED CT Additional Dosage Instructions",
+    "http://hl7.org/fhir/R4/valueset-substance-code.html" : "Substance Code",
+    "http://hl7.org/fhir/R4/valueset-medication-as-needed-reason.html" : "SNOMED CT Medication As Needed Reason Codes",
     "http://hl7.org/fhir/R4/valueset-approach-site-codes.html" : "SNOMED CT Anatomical Structure for Administration Site Codes",
     "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
     "http://hl7.org/fhir/R4/valueset-administration-method-codes.html" : "SNOMED CT Administration Method Codes",
-    "http://hl7.org/fhir/R4/valueset-substance-code.html" : "Substance Code",
     "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes",
-    "http://hl7.org/fhir/R4/valueset-additional-instruction-codes.html" : "SNOMED CT Additional Dosage Instructions",
-    "http://hl7.org/fhir/R4/valueset-medication-as-needed-reason.html" : "SNOMED CT Medication As Needed Reason Codes"
+    "http://hl7.org/fhir/R4/valueset-medication-codes.html" : "SNOMED CT Medication Codes"
   },
   {
     "url" : "http://terminology.hl7.org/CodeSystem/dose-rate-type",
@@ -321,6 +336,18 @@
     "http://hl7.org/fhir/R4/valueset-timing-abbreviation.html" : "TimingAbbreviation"
   },
   {
+    "url" : "http://terminology.hl7.org/CodeSystem/v3-TimingEvent",
+    "version" : "5.0.0",
+    "status" : "active",
+    "name" : "TimingEvent",
+    "title" : "TimingEvent",
+    "description" : "**** MISSING DESCRIPTION ****",
+    "oids" : ["2.16.840.1.113883.5.139"],
+    "uses" : {
+    },
+    "http://hl7.org/fhir/R4/valueset-event-timing.html" : "EventTiming"
+  },
+  {
     "url" : "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
     "version" : "5.0.0",
     "status" : "active",
@@ -377,6 +404,17 @@
     "uses" : {
     },
     "https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/ValueSet-ElgaListEntryFlagVS.html" : "ELGA List.entry.flag Value Set"
+  },
+  {
+    "url" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
+    "version" : "0.1.1",
+    "status" : "active",
+    "name" : "AtElgaEmedCodeSystemDosageCategory",
+    "title" : "ELGA Dosage Category Status CodeSystem",
+    "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
+    "uses" : {
+    },
+    "ValueSet-AtElgaEmedValueSetDosageCategory.html" : "ELGA Dosage Category Status ValueSet"
   },
   {
     "url" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS",

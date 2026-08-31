@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeMedikationR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Medikation (R4) DRAFT"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-08-27T15:34:15+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-08-31T18:38:38+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -792,6 +792,11 @@
        fhir:Element.id [ fhir:value "Medikation" ] ;
        fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Medikation" ] ;
        fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Medikation" ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "Dosierungen" ] ;
+       fhir:ImplementationGuide.definition.grouping.name [ fhir:value "Dosierungen" ] ;
+       fhir:ImplementationGuide.definition.grouping.description [ fhir:value "Dosierungsvarianten" ]
      ] ;
      fhir:ImplementationGuide.definition.resource [
        fhir:index 0 ;
@@ -806,9 +811,24 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Medikation Dosage Dosierung" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "AT ELGA e-Medikation Dosage Dosierung" ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Dosierungen" ]
      ], [
        fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-extension-dosage-category" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Medikation Extension Dosierungskategorie" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "AT ELGA e-Medikation Extension Dosierungskategorie" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 2 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -823,7 +843,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [
-       fhir:index 2 ;
+       fhir:index 3 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -838,7 +858,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikation" ]
      ], [
-       fhir:index 3 ;
+       fhir:index 4 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -853,7 +873,21 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "DurchgefuehrteAbgabe" ]
      ], [
-       fhir:index 4 ;
+       fhir:index 5 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-base> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-medicationrequest-base" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "At ELGA e-Medikation MedicationRequest Base" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die Basis für alle in eMed verwendeten MedicationRequests" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 6 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -868,7 +902,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GeplanteAbgabe" ]
      ], [
-       fhir:index 5 ;
+       fhir:index 7 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -883,7 +917,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [
-       fhir:index 6 ;
+       fhir:index 8 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -898,7 +932,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [
-       fhir:index 7 ;
+       fhir:index 9 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -913,7 +947,7 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikation" ]
      ], [
-       fhir:index 8 ;
+       fhir:index 10 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -927,7 +961,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "AT ELGA e-Medikation Timing" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 9 ;
+       fhir:index 11 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -942,7 +976,76 @@
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [
-       fhir:index 10 ;
+       fhir:index 12 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-freetext-administration> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-dosage-freetext-administration" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AtElgaEmedDosageFreeTextAdministration" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Dosierungen" ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-frequency-administration> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-dosage-frequency-administration" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AtElgaEmedDosageFrequencyAdministration" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Dosierungen" ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-other-administration> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-dosage-other-administration" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AtElgaEmedDosageOtherAdministration" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 15 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-standard-administration> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-dosage-standard-administration" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AtElgaEmedDosageStandardAdministration" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Dosierungen" ]
+     ], [
+       fhir:index 16 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-timed-administration> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-dosage-timed-administration" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AtElgaEmedDosageTimedAdministration" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Dosierungen" ]
+     ], [
+       fhir:index 17 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -959,7 +1062,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
        ]
      ], [
-       fhir:index 11 ;
+       fhir:index 18 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -976,7 +1079,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
        ]
      ], [
-       fhir:index 12 ;
+       fhir:index 19 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -993,7 +1096,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff>
        ]
      ], [
-       fhir:index 13 ;
+       fhir:index 20 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1010,7 +1113,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff>
        ]
      ], [
-       fhir:index 14 ;
+       fhir:index 21 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1024,7 +1127,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 15 ;
+       fhir:index 22 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1041,7 +1144,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
        ]
      ], [
-       fhir:index 16 ;
+       fhir:index 23 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1058,7 +1161,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
        ]
      ], [
-       fhir:index 17 ;
+       fhir:index 24 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1075,7 +1178,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ], [
-       fhir:index 18 ;
+       fhir:index 25 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1092,7 +1195,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation>
        ]
      ], [
-       fhir:index 19 ;
+       fhir:index 26 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1109,7 +1212,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
        ]
      ], [
-       fhir:index 20 ;
+       fhir:index 27 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1126,7 +1229,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
        ]
      ], [
-       fhir:index 21 ;
+       fhir:index 28 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1143,7 +1246,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
        ]
      ], [
-       fhir:index 22 ;
+       fhir:index 29 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1160,7 +1263,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
        ]
      ], [
-       fhir:index 23 ;
+       fhir:index 30 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1177,7 +1280,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ], [
-       fhir:index 24 ;
+       fhir:index 31 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1194,7 +1297,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
        ]
      ], [
-       fhir:index 25 ;
+       fhir:index 32 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1211,7 +1314,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
        ]
      ], [
-       fhir:index 26 ;
+       fhir:index 33 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1228,7 +1331,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
        ]
      ], [
-       fhir:index 27 ;
+       fhir:index 34 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1245,7 +1348,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ], [
-       fhir:index 28 ;
+       fhir:index 35 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1262,7 +1365,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
        ]
      ], [
-       fhir:index 29 ;
+       fhir:index 36 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1279,7 +1382,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
        ]
      ], [
-       fhir:index 30 ;
+       fhir:index 37 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1296,7 +1399,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
        ]
      ], [
-       fhir:index 31 ;
+       fhir:index 38 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1313,7 +1416,75 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
        ]
      ], [
-       fhir:index 32 ;
+       fhir:index 39 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/AtEmedExampleDosageStandardAdministration1> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/AtEmedExampleDosageStandardAdministration1" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+       ]
+     ], [
+       fhir:index 40 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/AtEmedExampleDosageStandardAdministration2> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/AtEmedExampleDosageStandardAdministration2" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 2" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Medikationsplaneintrag mit Dosierung im Tageszeitenschema" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+       ]
+     ], [
+       fhir:index 41 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/AtEmedExampleDosageStandardAdministration3> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/AtEmedExampleDosageStandardAdministration3" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Medikationsplaneintrag mit Dosierung im Tageszeitenschema" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+       ]
+     ], [
+       fhir:index 42 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Medikationsplaneintrag mit Dosierung mit Timed Administration" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+       ]
+     ], [
+       fhir:index 43 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1327,7 +1498,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer Apotheke als Organisation." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 33 ;
+       fhir:index 44 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1341,7 +1512,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Patienten." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 34 ;
+       fhir:index 45 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1355,7 +1526,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer behandelnden Ärztin." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 35 ;
+       fhir:index 46 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1369,7 +1540,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 36 ;
+       fhir:index 47 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1386,7 +1557,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
        ]
      ], [
-       fhir:index 37 ;
+       fhir:index 48 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1400,7 +1571,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 38 ;
+       fhir:index 49 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1414,7 +1585,49 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 39 ;
+       fhir:index 50 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory> ;
+         fhir:Reference.reference [ fhir:value "CodeSystem/AtElgaEmedCodeSystemDosageCategory" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ELGA Dosage Category Status CodeSystem" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 51 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetDosageCategory> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/AtElgaEmedValueSetDosageCategory" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ELGA Dosage Category Status ValueSet" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 52 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaTimingWhenStandardAdministrationVS> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/ElgaTimingWhenStandardAdministrationVS" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ELGA Dosierung Timing When ValueSet für Tageszeitenschema" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 53 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1428,7 +1641,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen eines Status einer Durchgeführten Abgabe (MedicationDispense)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 40 ;
+       fhir:index 54 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1442,7 +1655,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen eines Typs einer Durchgeführten Abgabe (MedicationDispense)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 41 ;
+       fhir:index 55 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1456,7 +1669,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 42 ;
+       fhir:index 56 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1470,7 +1683,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 43 ;
+       fhir:index 57 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1484,7 +1697,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 44 ;
+       fhir:index 58 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1498,7 +1711,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 45 ;
+       fhir:index 59 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1512,7 +1725,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 46 ;
+       fhir:index 60 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1526,7 +1739,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Zulässige Ausprägungen des Status einer List-Ressource in ELGA." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 47 ;
+       fhir:index 61 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1540,7 +1753,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 48 ;
+       fhir:index 62 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1554,7 +1767,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 49 ;
+       fhir:index 63 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1568,7 +1781,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 50 ;
+       fhir:index 64 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1726,60 +1939,60 @@
            fhir:Element.extension [
              fhir:index 0 ;
              fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_07_01.html" ]
+             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_03_01.html" ]
            ] ;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_07_01.html" ] ;
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_07)" ] ;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_03_01.html" ] ;
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_03)" ] ;
            fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
          ], [
            fhir:index 5 ;
            fhir:Element.extension [
              fhir:index 0 ;
              fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_07_02.html" ]
+             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_03_02.html" ]
            ] ;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_07_02.html" ] ;
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_07)" ] ;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_03_02.html" ] ;
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_03)" ] ;
            fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
          ], [
            fhir:index 6 ;
            fhir:Element.extension [
              fhir:index 0 ;
              fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_07_03.html" ]
+             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_03_03.html" ]
            ] ;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_07_03.html" ] ;
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_07)" ] ;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_03_03.html" ] ;
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_03)" ] ;
            fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
          ], [
            fhir:index 7 ;
            fhir:Element.extension [
              fhir:index 0 ;
              fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_08.html" ]
+             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_04.html" ]
            ] ;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_08.html" ] ;
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)" ] ;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_04.html" ] ;
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04)" ] ;
            fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
          ], [
            fhir:index 8 ;
            fhir:Element.extension [
              fhir:index 0 ;
              fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_09.html" ]
+             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_05.html" ]
            ] ;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_09.html" ] ;
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)" ] ;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_05.html" ] ;
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)" ] ;
            fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
          ], [
            fhir:index 9 ;
            fhir:Element.extension [
              fhir:index 0 ;
              fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_09_01.html" ]
+             fhir:Extension.valueUrl [ fhir:value "Sub_UC_eMed_05_01.html" ]
            ] ;
-           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_09_01.html" ] ;
-           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_09)" ] ;
+           fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "Sub_UC_eMed_05_01.html" ] ;
+           fhir:ImplementationGuide.definition.page.title [ fhir:value "​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_05)" ] ;
            fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
          ]
        ]

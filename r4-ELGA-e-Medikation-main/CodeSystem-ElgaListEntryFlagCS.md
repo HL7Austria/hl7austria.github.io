@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS | *Version*:0.1.1 | |
-| Active as of 2026-08-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListEntryFlagCS |
+| Active as of 2026-08-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListEntryFlagCS |
 
  
 CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA. 
@@ -32,7 +32,7 @@ CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA.
   "title" : "ELGA List.entry.flag CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-08-27T15:34:15+00:00",
+  "date" : "2026-08-31T18:38:38+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

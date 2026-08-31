@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-08-27T15:34:15+00:00"/>
+  <date value="2026-08-31T18:38:38+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -525,6 +525,10 @@
       <name value="Medikation"/>
       <description value="Medikation"/>
     </grouping>
+    <grouping id="Dosierungen">
+      <name value="Dosierungen"/>
+      <description value="Dosierungsvarianten"/>
+    </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
@@ -534,6 +538,18 @@
       </reference>
       <name value="AT ELGA e-Medikation Dosage Dosierung"/>
       <description value="AT ELGA e-Medikation Dosage Dosierung"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-extension-dosage-category"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Extension Dosierungskategorie"/>
+      <description value="AT ELGA e-Medikation Extension Dosierungskategorie"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -571,6 +587,17 @@
       <description value="Dokumentiert eine &quot;Durchgeführte Abgabe&quot; eines Arzneimittels (&quot;MedicationDispense&quot;-Ressource). &#xA;Die &quot;Durchgeführte Abgabe&quot; enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. &#xA;Es können Abweichungen zur &quot;Geplanten Abgabe&quot; hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.&#xA;Sofern eine zugehörige &quot;Geplanten Abgabe&quot; vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige &quot;Geplante Abgabe&quot;, ersichtlich.&#xA;Der aktuelle Status einer &quot;Durchgeführten Abgabe&quot; wird mittels &quot;status&quot;- und &quot;type&quot;-Element dokumentiert. Es werden R5-Backport-Extensions verwendet."/>
       <exampleBoolean value="false"/>
       <groupingId value="DurchgefuehrteAbgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medicationrequest-base"/>
+      </reference>
+      <name value="At ELGA e-Medikation MedicationRequest Base"/>
+      <description value="Die Basis für alle in eMed verwendeten MedicationRequests"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -642,6 +669,60 @@
       <description value="Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung&#xA;&#xA;Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert."/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-freetext-administration"/>
+      </reference>
+      <name value="AtElgaEmedDosageFreeTextAdministration"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-frequency-administration"/>
+      </reference>
+      <name value="AtElgaEmedDosageFrequencyAdministration"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-other-administration"/>
+      </reference>
+      <name value="AtElgaEmedDosageOtherAdministration"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-standard-administration"/>
+      </reference>
+      <name value="AtElgaEmedDosageStandardAdministration"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-timed-administration"/>
+      </reference>
+      <name value="AtElgaEmedDosageTimedAdministration"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -887,6 +968,50 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedExampleDosageStandardAdministration1"/>
+      </reference>
+      <name value="Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1"/>
+      <description value="Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedExampleDosageStandardAdministration2"/>
+      </reference>
+      <name value="Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 2"/>
+      <description value="Medikationsplaneintrag mit Dosierung im Tageszeitenschema"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedExampleDosageStandardAdministration3"/>
+      </reference>
+      <name value="Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3"/>
+      <description value="Medikationsplaneintrag mit Dosierung im Tageszeitenschema"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed"/>
+      </reference>
+      <name value="Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration"/>
+      <description value="Medikationsplaneintrag mit Dosierung mit Timed Administration"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Organization"/>
       </extension>
       <reference>
@@ -960,6 +1085,39 @@
       </reference>
       <name value="e-Med Operation für Plan-Write"/>
       <description value="Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AtElgaEmedCodeSystemDosageCategory"/>
+      </reference>
+      <name value="ELGA Dosage Category Status CodeSystem"/>
+      <description value="Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AtElgaEmedValueSetDosageCategory"/>
+      </reference>
+      <name value="ELGA Dosage Category Status ValueSet"/>
+      <description value="Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ElgaTimingWhenStandardAdministrationVS"/>
+      </reference>
+      <name value="ELGA Dosierung Timing When ValueSet für Tageszeitenschema"/>
+      <description value="ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1206,50 +1364,50 @@
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="Sub_UC_eMed_07_01.html"/>
+            <valueUrl value="Sub_UC_eMed_03_01.html"/>
           </extension>
-          <nameUrl value="Sub_UC_eMed_07_01.html"/>
-          <title value="​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_07)"/>
+          <nameUrl value="Sub_UC_eMed_03_01.html"/>
+          <title value="​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_03)"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="Sub_UC_eMed_07_02.html"/>
+            <valueUrl value="Sub_UC_eMed_03_02.html"/>
           </extension>
-          <nameUrl value="Sub_UC_eMed_07_02.html"/>
-          <title value="​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_07)"/>
+          <nameUrl value="Sub_UC_eMed_03_02.html"/>
+          <title value="​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_03)"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="Sub_UC_eMed_07_03.html"/>
+            <valueUrl value="Sub_UC_eMed_03_03.html"/>
           </extension>
-          <nameUrl value="Sub_UC_eMed_07_03.html"/>
-          <title value="​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_07)"/>
+          <nameUrl value="Sub_UC_eMed_03_03.html"/>
+          <title value="​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_03)"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="Sub_UC_eMed_08.html"/>
+            <valueUrl value="Sub_UC_eMed_04.html"/>
           </extension>
-          <nameUrl value="Sub_UC_eMed_08.html"/>
-          <title value="​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_08)"/>
+          <nameUrl value="Sub_UC_eMed_04.html"/>
+          <title value="​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04)"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="Sub_UC_eMed_09.html"/>
+            <valueUrl value="Sub_UC_eMed_05.html"/>
           </extension>
-          <nameUrl value="Sub_UC_eMed_09.html"/>
-          <title value="​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_09)"/>
+          <nameUrl value="Sub_UC_eMed_05.html"/>
+          <title value="​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)"/>
           <generation value="markdown"/>
         </page>
         <page>
           <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-            <valueUrl value="Sub_UC_eMed_09_01.html"/>
+            <valueUrl value="Sub_UC_eMed_05_01.html"/>
           </extension>
-          <nameUrl value="Sub_UC_eMed_09_01.html"/>
-          <title value="​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_09)"/>
+          <nameUrl value="Sub_UC_eMed_05_01.html"/>
+          <title value="​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_05)"/>
           <generation value="markdown"/>
         </page>
       </page>

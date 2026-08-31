@@ -142,22 +142,22 @@
         <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_01.html">Geplante Abgaben lesen</a>
+        <a href="Sub_UC_eMed_03_01.html">Geplante Abgaben lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_02.html">Durchgeführte Abgaben lesen</a>
+        <a href="Sub_UC_eMed_03_02.html">Durchgeführte Abgaben lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_07_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+        <a href="Sub_UC_eMed_03_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_08.html">Geplante Abgabe schreiben</a>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_09.html">Durchgeführte Abgabe schreiben</a>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_09_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
+        <a href="Sub_UC_eMed_05_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
       </li>
       <li>
         <a href="patient_journey.html">Patient Journey</a>
@@ -231,10 +231,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 unwiderruflich löschen.</li>
 </ul>
 
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Frage:<br/>
+- Können nur ganze Planversionen oder auch einzelne Planeinträge (inkl. Historie) gelöscht werden?<br/>
+- Stichworte: referenzielle Integrität, links die nicht auflösen, Ressourcennetz, DataAbsentReason, Verlauf anderer Medikationen geht verloren, _history delete (R6)
+</p>
+</div>
+
 <p>Alle Schreibvorgänge auf dem <strong>aktuellen</strong> Medikationsplan folgen demselben technischen Grundablauf:</p>
 
 <ol>
-  <li><a name="l429">​</a>Der aktuelle Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> abgerufen werden (siehe <a href="Sub_UC_eMed_01.html#Sub_UC_eMed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
+  <li><a name="l439">​</a>Der aktuelle Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> abgerufen werden (siehe <a href="Sub_UC_eMed_01.html#Sub_UC_eMed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
   <li>Die durch $plan-read im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen werden entsprechend des gewünschten Schreibszenarios bearbeitet.</li>
   <li>Der aktualisierte Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als Transaction Bundle (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a>) an die Fachanwendung übermittelt werden.</li>
 </ol>
@@ -243,32 +251,47 @@ unwiderruflich löschen.</li>
 
 <h4 id="sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</h4>
 
-<p>Alle Schreiboperationen des GDAs erfolgen über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (<a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>), um konkurrierende Änderungen am Medikationsplan zu erkennen.
+<p>Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (<a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>), um konkurrierende Änderungen am Medikationsplan zu erkennen.
   <!-- TODO: Link zur ETag-Beschreibung im ELGA-Core ergänzen --></p>
 
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li><a name="l487">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
+  <li><a name="l497">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
     <ul>
-      <li>alle <strong>neuen</strong>, <strong>geänderten</strong> und <strong>zu entfernenden</strong> Ressourcen <strong>inline</strong> im Transaction Bundle</li>
+      <li>alle <strong>neuen</strong>, <strong>geänderten</strong> und <strong>zu entfernenden</strong> Ressourcen im Transaction Bundle</li>
       <li>den von der Fachanwendung nach dem <em>$plan-read</em> übermittelten <em>ETag</em> (zur Durchführung des <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>)</li>
       <li>unveränderte Ressourcen werden ausschließlich referenziert.</li>
     </ul>
   </li>
   <li>Die Fachanwendung prüft den übermittelten <em>ETag</em> gegen den <em>ETag</em> der aktuell persistierten Medikationsplan-Version.</li>
-  <li>Ist der <em>ETag</em> gültig, validiert die Fachanwendung das Medikationsplan-Transaction-Bundle einschließlich der zulässigen Zustandsübergänge.</li>
-  <li>Die Fachanwendung erstellt neue Versionen der geänderten Ressourcen und persistiert diese. Die neue Version der List-Ressource definiert dabei die neue Version des Medikationsplans.</li>
+  <li>Ist der <em>ETag</em> gültig, validiert die Fachanwendung das Medikationsplan-Transaction-Bundle einschließlich der zulässigen Zustandsübergänge. 
+  <!-- A_TODO: Link auf Zustandsübergänge  workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag --></li>
+  <li>Die Fachanwendung erstellt neue Versionen der geänderten Ressourcen und persistiert diese.</li>
   <li>Die Fachanwendung bestätigt die erfolgreiche Aktualisierung des Medikationsplans mit <strong>HTTP 200 OK</strong>.</li>
   <li>Schlägt die Validierung fehl, wird der Schreibvorgang mit   <!-- einer geeigneten **HTTP-4xx**-Antwort und --> einem <strong>OperationOutcome</strong> abgelehnt.</li>
   <li>Stimmt der übermittelte <em>ETag</em> nicht mit dem der Fachanwendung überein, wird der Schreibvorgang mit   <!-- **HTTP 412 Precondition Failes** und --> einem <strong>OperationOutcome</strong> abgelehnt. Vor einem erneuten Schreibversuch muss der Medikationsplan mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> erneut abgerufen und auf Basis der aktuellen Version bearbeitet werden.</li>
 </ol>
 
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Frage:<br/>
+- Liefert die Fachanwendung mit der HTTP 200 OK Response im Body auch die Ressourcen, so wie sie persistiert wurden, wieder zurück? Bei neu angelegten Ressourcen ist erst dadurch für den Client die id ersichtlich (wird vom Server vergeben).
+</p>
+</div>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offener Punkt:<br/>
+- OperationOutcome defnieren
+</p>
+</div>
+
 <h5 id="custom-operations">Custom Operations</h5>
 
 <ul>
-  <li><a name="l584">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l588">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l608">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l612">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
@@ -280,7 +303,7 @@ unwiderruflich löschen.</li>
 <h4 id="sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</h4>
 
 <p>Der GDA kann dem Medikationsplan ein oder mehrere Planeinträge hinzufügen. 
-Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedikation (durch einen anderen GDA) bzw. Eigenmedikation des Patienten dokumentiert.</p>
+Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder nicht (Fremdmedikation durch einen anderen GDA bzw. Eigenmedikation des Patienten).</p>
 
 <p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
 
@@ -294,8 +317,8 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
       <li>Das <em>List.entry.flag</em> des referenzierten MedicationRequests erhält den Wert <em>new</em>,</li>
       <li>der <em>MedicationRequest</em> kann den Status <em>active</em> oder <em>on-hold</em> erhalten (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</li>
       <li><em>intent = order</em> und <em>category = "Planeintrag"</em> sind für alle Planeinträge verpflichtend mit festen Wert zu dokumentieren</li>
-      <li><em>reported</em> erhält den Wert <em>true</em>, wenn Fremdmedikation oder Eigenmedikation des Patienten vorliegt, anderenfalls den Wert <em>false</em></li>
-      <li>für die Dokumentation des Arzneimittels ist <em>Medication</em>-Ressource zu verwenden, diese muss immer im MedicationRequest enthalten sein (contained)
+      <li><em>reported</em> erhält den Wert <em>false</em>, wenn die Medikation vom Autor des Planeintrags selbst stammt</li>
+      <li>für die Dokumentation des Arzneimittels ist die <em>Medication</em>-Ressource zu verwenden, diese muss immer im MedicationRequest enthalten sein (contained)
     <!-- TODO: Link zu Dokumentation von Arzneimittel (PZN und Magistral) ergänzen --></li>
       <li><em>courseOfTherapyType</em> dokumentiert verpflichtend die Art der Medikation. Mögliche Ausprägungen sind <em>continuous</em> für Dauermedikation und <em>acute</em> für Akutmedikation. Bei Aktumedikation ist in <em>extension:effectiveDosePeriod</em> verpflichtend ein Enddatum für den Einnahmezeitraum zu dokumentieren. Bei Dauermedikation darf an dieser Stelle kein Enddatum dokumentiert werden.</li>
       <li>dosageInstruction: in Arbeit.   <!-- TODO: Link zu Dosierungen-Page + Dokumentation von Arzneimittel (PZN und Magistral) ergänzen --></li>
@@ -303,10 +326,17 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
   </li>
 </ul>
 
+<div class="dragon">
+<p class="note-to-balloters">
+Offener Punkt:<br/>
+- dosageInstruction: Dosierungen in Arbeit.
+</p>
+</div>
+
 <p>Im Anschluss übermittelt der GDA mit <em>POST $plan-write</em> den aktualisierten Medikationsplan in einem <em>Transaction Bundle</em>:</p>
 <ul>
-  <li>alle neuen <em>MedicationRequests</em> sind inline im Bundle enthalten</li>
-  <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.</li>
+  <li>alle neuen <em>MedicationRequests</em> sind im Bundle enthalten</li>
+  <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der <em>List-Ressource</em> nur referenziert.</li>
 </ul>
 
   <!-- Anmerkung: Beim nächsten Plan-Read ändert die Fachanwendung im zur Auslieferung bereitgestellten Bundle den Status der Einträge mit *new* automatisch auf *unchanged*. -->
@@ -314,7 +344,6 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
 <h5 id="relevante-elemente-list">Relevante Elemente (List)</h5>
 
 <pre><code class="language-JSON">AtElgaEmedListMedikationsplan
-
     status: current
     mode: working
     date: Datum der aktuellen Bearbeitung des Medikationsplans
@@ -330,17 +359,23 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
 <h5 id="relevante-elemente-medicationrequest---planeintrag-1">Relevante Elemente (MedicationRequest - Planeintrag 1)</h5>
 
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
-    identifier: neue Planeintrag-ID
     status: active | on-hold
     intent: order                       // fester Wert
     category: "Planeintrag"  // fester Wert
-    reportedBoolean: true | false       // true, wenn Fremdmedikation
-    medicationReference.reference: Medikation mit PZN oder Magistrale Anwendung // Contained Medication 
+    reportedBoolean: false | true       // false, wenn vom Autor des Planeintrags
+    medicationReference.reference: Medikation mit PZN oder Magistrale Zubereitung // Contained Medication 
     authoredOn: Datum der Erstellung des Planeintrags    
     requester: veranwortlicher GDA      // wird auf Übereinstimmung mit List.source geprüft
     courseOfTherapyType: continuous | acute
     dosageInstruction: Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)
 </code></pre>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offener Punkt:<br/>
+- Magistrale Zubereitung: in Arbeit.
+</p>
+</div>
 
   <!-- TODO: List.identifier + MedicationRequest.identifier : entfernen ? -->
 
@@ -349,11 +384,11 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder er Fremdmedika
 <h5 id="custom-operations-1">Custom Operations</h5>
 
 <ul>
-  <li><a name="l759">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l763">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l800">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l804">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
-<h4 id="sequenzdiagramm---allgemeiner-ablauf-von-planeinträge-bearbeiten">Sequenzdiagramm - Allgemeiner Ablauf von Planeinträge bearbeiten</h4>
+<h4 id="sequenzdiagramm---allgemeiner-ablauf-von-medikationsplan-bearbeiten">Sequenzdiagramm - Allgemeiner Ablauf von Medikationsplan bearbeiten</h4>
 
 <p>Im Weiteren wird beschrieben, wie Planeinträge bearbeitet werden können. Das Sequenzdiagramm zeigt den allgemeinen Ablauf.</p>
 
@@ -424,13 +459,13 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 <h5 id="custom-operations-2">Custom Operations</h5>
 
 <ul>
-  <li><a name="l886">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l890">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l927">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l931">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-1">Sequenzdiagramm</h5>
 
-<p><a name="l898">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l939">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten">Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten</h4>
 
@@ -472,13 +507,13 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 <h5 id="custom-operations-3">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1004">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1008">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1045">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1049">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-2">Sequenzdiagramm</h5>
 
-<p><a name="l1016">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1057">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_05---planeintrag-pausieren-oder-reaktivieren">Sub_UC_eMed_02_05 - Planeintrag pausieren oder reaktivieren</h4>
 
@@ -532,13 +567,13 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 <h5 id="custom-operations-4">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1147">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1151">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1188">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1192">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-3">Sequenzdiagramm</h5>
 
-<p><a name="l1159">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1200">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_06---leeren-medikationsplan-dokumentieren">Sub_UC_eMed_02_06 - Leeren Medikationsplan dokumentieren</h4>
 
@@ -574,17 +609,17 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 <h5 id="custom-operations-5">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1263">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1267">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1304">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1308">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-4">Sequenzdiagramm</h5>
 
-<p><a name="l1275">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1316">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_07---planeintrag-im-medikationsplan-stornieren">Sub_UC_eMed_02_07 - Planeintrag im Medikationsplan stornieren</h4>
 
-<p><a name="l1284">​</a>Der GDA kann einen oder mehrere Planeinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
+<p><a name="l1325">​</a>Der GDA kann einen oder mehrere Planeinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
 <ul>
@@ -634,17 +669,17 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 <h5 id="custom-operations-6">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1370">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1374">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1411">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1415">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-5">Sequenzdiagramm</h5>
 
-<p><a name="l1382">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1423">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_08---planeintrag-im-medikationsplan-beenden">Sub_UC_eMed_02_08 - Planeintrag im Medikationsplan beenden</h4>
 
-<p><a name="l1391">​</a>Der GDA kann ein Medikament, welches in einen Planeintrag dokumentiert ist, absetzen.
+<p><a name="l1432">​</a>Der GDA kann ein Medikament, welches in einen Planeintrag dokumentiert ist, absetzen.
 Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Searchset-Bundle bereitgestellten Ressourcen:</p>
@@ -696,13 +731,13 @@ Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-r
 <h5 id="custom-operations-7">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1485">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1489">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1526">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1530">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-6">Sequenzdiagramm</h5>
 
-<p><a name="l1497">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1538">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
   <!-- #### Sub_UC_eMed_02_09 - Einnahmezeitraum eines Planeintrags ist abgelaufen 
 
@@ -807,32 +842,37 @@ Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.html#allgem
 <h5 id="custom-operations-8">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1579">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1583">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1620">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1624">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h5 id="sequenzdiagramm-7">Sequenzdiagramm</h5>
 
-<p><a name="l1591">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1632">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h4 id="sub_uc_emed_02_11---planeintrag-aus-aktuellem-medikationsplan-durch-elga-teilnehmer-löschen">Sub_UC_eMed_02_11 - Planeintrag aus aktuellem Medikationsplan durch ELGA-Teilnehmer löschen</h4>
 
-<p><a name="l1600">​</a>Der:die ELGA-Teilnehmer:in kann via Zugangsportal in der <strong>aktuellen Version</strong> seines:ihres Medikationsplans einzelne oder alle Planeinträge unwiderruflich löschen. Durch das Löschen wird durch die Fachanwendung eine neue Medikationsplanversion erzeugt. Wurden alle Planeinträge gelöscht, erhält die neue Medikationsplanversion das emptyReason <em>nilknown</em> (siehe <a href="Sub_UC_eMed_02.html#Sub_UC_eMed_02_02---leerer-medikationsplan-keine-medikation-einnehmen">Sub_UC_eMed_02_02 - Leerer Medikationsplan (keine Medikation einnehmen)</a>).</p>
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Fragen:
+Ausüben der Teilnehmerrechte in Arbeit.
+</p>
+</div>
 
-<p>Hierfür ruft der:die ELGA-Teilnehmer:in zunächst den aktuellen Medikationsplan mittels <em>$plan-read</em> ab und wählt die zu löschenden Planeinträge aus. 
-Das Zugangsportal erstellt anschließend ein Transaction-Bundle und:</p>
-<ul>
-  <li>aktualisiert <em>List.source</em> mit dem:der ELGA-Teilnehmer:in und <em>List.date</em>,</li>
-  <li>entfernt die zu löschenden Planeinträge aus List.entry,</li>
-  <li>referenziert unveränderte Ressourcen weiterhin über ihre Referenzen und</li>
-  <li>enthält für jeden zu löschenden MedicationRequest einen DELETE-Request.</li>
-</ul>
+  <!-- Der:die ELGA-Teilnehmer:in kann via Zugangsportal in der **aktuellen Version** seines:ihres Medikationsplans einzelne oder alle Planeinträge unwiderruflich löschen. Durch das Löschen wird durch die Fachanwendung eine neue Medikationsplanversion erzeugt. Wurden alle Planeinträge gelöscht, erhält die neue Medikationsplanversion das emptyReason *nilknown* (siehe [Sub_UC_eMed_02_02 - Leerer Medikationsplan (keine Medikation einnehmen)](Sub_UC_eMed_02.html#Sub_UC_eMed_02_02---leerer-medikationsplan-keine-medikation-einnehmen)).
 
-<p>Das Transaction Bundle wird mittels POST <em>$plan-write</em> an die Fachanwendung übermittelt. Bei erfolgreicher Prüfung erzeugt und persistiert die Fachanwendung daraus eine neue Medikationsplanversion und führt die DELETE-Requests aus. Die betreffenden <em>MedicationRequest</em>-Ressourcen einschließlich ihrer versionierten Ausprägungen werden dadurch vollständig gelöscht.</p>
+Hierfür ruft der:die ELGA-Teilnehmer:in zunächst den aktuellen Medikationsplan mittels *$plan-read* ab und wählt die zu löschenden Planeinträge aus. 
+Das Zugangsportal erstellt anschließend ein Transaction-Bundle und:
+- aktualisiert *List.source* mit dem:der ELGA-Teilnehmer:in und *List.date*,
+- entfernt die zu löschenden Planeinträge aus List.entry,
+- referenziert unveränderte Ressourcen weiterhin über ihre Referenzen und
+- enthält für jeden zu löschenden MedicationRequest einen DELETE-Request.
 
-<p>Im Unterschied zum <em>Stornieren</em> oder <em>Beenden</em> durch den GDA wird der Planeintrag somit vollständig aus <em>List.entry</em> entfernt und die zugehörige <em>MedicationRequest</em> nicht lediglich als <em>removed</em> gekennzeichnet.</p>
+Das Transaction Bundle wird mittels POST *$plan-write* an die Fachanwendung übermittelt. Bei erfolgreicher Prüfung erzeugt und persistiert die Fachanwendung daraus eine neue Medikationsplanversion und führt die DELETE-Requests aus. Die betreffenden *MedicationRequest*-Ressourcen einschließlich ihrer versionierten Ausprägungen werden dadurch vollständig gelöscht.
 
-<p>Historische Medikationsplanversionen oder bestehende <em>Geplante</em> bzw. <em>Durchgeführte Abgaben</em> können weiterhin Referenzen auf die gelöschten Planeinträge enthalten. Diese Referenzen sind nach dem vollständigen Löschen der MedicationRequest nicht mehr auflösbar.</p>
+Im Unterschied zum *Stornieren* oder *Beenden* durch den GDA wird der Planeintrag somit vollständig aus *List.entry* entfernt und die zugehörige *MedicationRequest* nicht lediglich als *removed* gekennzeichnet.
+
+Historische Medikationsplanversionen oder bestehende *Geplante* bzw. *Durchgeführte Abgaben* können weiterhin Referenzen auf die gelöschten Planeinträge enthalten. Diese Referenzen sind nach dem vollständigen Löschen der MedicationRequest nicht mehr auflösbar. -->
 
   <!-- TODO: 
 - kein Löschen von Planeinträgen in historischen Medikationsplaneinträgen! Planeinträge, die ausschließlich in historischen Medikationsplanversionen enthalten sind, können durch die Löschung der / aller historischen Medikationsplanversion/en gelöscht werden, die den Planeintrag referenzieren (siehe Sub_UC_eMed_02_12 - Medikationsplan durch ELGA-Teilnehmer löschen). Ist das möglich? Planeinträge referenzieren nicht den Medikationsplan ...
@@ -840,11 +880,12 @@ Das Zugangsportal erstellt anschließend ein Transaction-Bundle und:</p>
 - Planentry-Search kann zwar über alle Planeinträge ausgeführt werden, es können aber nur jene, die in der aktuellen Planversion enthalten sind, gelöscht werden. Wie sollte das festgestellt werden, ob sie im aktuellen Plan enthalten sind, ohne gleich den ganzen Plan zu lesen?
 - Planentry-Search liefert nur ein Search-Result Bundle mit MedicationRequests, also muss ohnehin auch ein Plan-Read erfolgen, weil ja auch ein patient-plan-write erfolgen muss. -->
 
-<h5 id="relevante-elemente-list-8">Relevante Elemente (List)</h5>
+  <!-- ##### Relevante Elemente (List)
 
-<p>Zustand <strong>vor dem Löschen</strong> des 2. Planeintrags (Ergebnis von $plan-read):</p>
+Zustand **vor dem Löschen** des 2. Planeintrags (Ergebnis von $plan-read):
 
-<pre><code class="language-JSON">AtElgaEmedListMedikationsplan
+```JSON
+AtElgaEmedListMedikationsplan
     status: current
     mode: working
     date: Datum der vorhergehenden Bearbeitung des Medikationsplans
@@ -855,11 +896,12 @@ Das Zugangsportal erstellt anschließend ein Transaction-Bundle und:</p>
     entry[1]:  
         flag: unchanged
         item: Referenz auf den Planeintrag 2  
-</code></pre>
+```
 
-<p>Zustand <strong>nach dem Löschen</strong> des 2. Planeintrags (<em>List</em>-Ressource im Transaction Bundle von $patient-plan-write):</p>
+Zustand **nach dem Löschen** des 2. Planeintrags (*List*-Ressource im Transaction Bundle von $patient-plan-write):
 
-<pre><code class="language-JSON">AtElgaEmedListMedikationsplan
+```JSON
+AtElgaEmedListMedikationsplan
     status: current
     mode: working
     date: Datum des Löschens des Medikationsplans durch den:die ELGA-Teilnehmer:in
@@ -867,60 +909,67 @@ Das Zugangsportal erstellt anschließend ein Transaction-Bundle und:</p>
     entry[0]:  // 1. Planeintrag bleibt unverändert
         flag: unchanged
         item: Referenz auf den Planeintrag 1  
-</code></pre>
+```
 
-<h5 id="custom-operations-9">Custom Operations</h5>
+##### Custom Operations
 
-<ul>
-  <li><a name="l1708">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1712">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
-</ul>
+* [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.html)
+* [$plan-read](OperationDefinition-AtEmed.List.PlanRead.html) 
 
-<h5 id="sequenzdiagramm-8">Sequenzdiagramm</h5>
 
-<p>In Arbeit.
+##### Sequenzdiagramm
+
+In Arbeit. -->
   <!-- Todo: oder reicht der allgemeine Ablauf?
-Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten). --></p>
+Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten). -->
 
-<div class="dragon">
+  <!-- <div class="dragon">
 <p class="note-to-balloters">
 Offene Fragen:
 Gelöschte Planeinträge können von historischen Planversionen oder bestehenden Geplanten bzw. durchgeführten Abgaben referenziert werden. Diese Referenzen sind nach dem Löschen nicht mehr auflösbar. 
  - Mögliche Lösung: Vor dem Löschen prüfen, ob der Planeintrag von anderen Medikationsplanversionen, geplanten oder durchgeführten Abgaben referenziert wird, und gegebenenfalls eine Bestätigung des:der ELGA-Teilnehmers:in einholen.
 </p>
-</div>
+</div> -->
 
 <h4 id="sub_uc_emed_02_12---medikationsplan-durch-elga-teilnehmer-löschen">Sub_UC_eMed_02_12 - Medikationsplan durch ELGA-Teilnehmer löschen</h4>
 
-<p>Der:die ELGA-Teilnehmer:in kann über das Zugangsportal die <em>aktuelle Medikationsplanversion</em> sowie <em>einzelne oder mehrere historische Medikationsplanversionen</em> unwiderruflich löschen.</p>
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Fragen:
+Ausüben der Teilnehmerrechte in Arbeit.
+</p>
+</div>
 
-<p>Hierfür muss der:die ELGA-Teilnehmer:in zunächst mittels <em>Plan-History-Search</em> oder <em>Plan-History-Directory-Search</em> über das Zugangsportal die betreffenden Medikationsplanversionen bzw. deren Identifikatoren ermitteln.
-Anschließend markiert der:die ELGA-Teilnehmer:in die zu löschenden Medikationsplanversionen und führt über das Zugangsportal ein $plan-delete aus.</p>
+  <!-- Der:die ELGA-Teilnehmer:in kann über das Zugangsportal die *aktuelle Medikationsplanversion* sowie *einzelne oder mehrere historische Medikationsplanversionen* unwiderruflich löschen.
 
-<p>Beim Löschen einer Medikationsplanversion wird die betreffende <em>List</em>-Ressource gelöscht, einschließlich auch die von der Medikationsplanversion referenzierten versionierten Planeinträge (<em>MedicationRequest</em>-Ressourcen).</p>
+Hierfür muss der:die ELGA-Teilnehmer:in zunächst mittels *Plan-History-Search* oder *Plan-History-Directory-Search* über das Zugangsportal die betreffenden Medikationsplanversionen bzw. deren Identifikatoren ermitteln.
+Anschließend markiert der:die ELGA-Teilnehmer:in die zu löschenden Medikationsplanversionen und führt über das Zugangsportal ein $plan-delete aus.
 
-<h5 id="custom-operations-10">Custom Operations</h5>
+Beim Löschen einer Medikationsplanversion wird die betreffende *List*-Ressource gelöscht, einschließlich auch die von der Medikationsplanversion referenzierten versionierten Planeinträge (*MedicationRequest*-Ressourcen). 
 
-<ul>
-  <li><a name="l1765">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1769">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
-</ul>
 
-<h5 id="sequenzdiagramm-9">Sequenzdiagramm</h5>
 
-<p>In Arbeit.</p>
+##### Custom Operations
+
+* [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.html)
+* [$plan-read](OperationDefinition-AtEmed.List.PlanRead.html) 
+
+
+##### Sequenzdiagramm
+
+In Arbeit. -->
 
   <!-- Todo: oder reicht der allgemeine Ablauf?
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten). -->
 
-<div class="dragon">
+  <!-- <div class="dragon">
 <p class="note-to-balloters">
 Offene Fragen zur Löschlogik:
 - Sollen beim Löschen einer Medikationsplanversion auch die darin referenzierten Planeinträge gelöscht werden, wenn sie von einer anderen, weiterhin bestehenden Medikationsplanversion oder von Geplanten bzw. Durchgeführten Abgaben referenziert werden? Die Referenz wäre dann nicht mehr auflösbar.
 Mögliche Lösung: Vor dem Löschen prüfen, ob die referenzierten Planeinträge von anderen Ressourcen referenziert werden, und gegebenenfalls eine Bestätigung des:der ELGA-Teilnehmers:in einholen.
 - Was geschieht beim Löschen der aktuellen Medikationsplanversion? Wird die zuvor zuletzt gespeicherte Medikationsplanversion wieder zur aktuellen Version oder beginnt der:die ELGA-Teilnehmer:in mit einem leeren Medikationsplan (emptyReason = notstarted)?
 </p>
-</div>
+</div> -->
 
 
 
@@ -940,7 +989,7 @@ Mögliche Lösung: Vor dem Löschen prüfen, ob die referenzierten Planeinträge
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Aug 27, 2026 15:34+0000">2026-08-27</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Aug 31, 2026 18:38+0000">2026-08-31</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

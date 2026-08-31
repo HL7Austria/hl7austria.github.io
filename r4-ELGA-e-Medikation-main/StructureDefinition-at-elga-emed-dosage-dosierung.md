@@ -9,14 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-dosierung | *Version*:0.1.1 | |
-| Draft as of 2026-08-27 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDosageDosierung |
+| Draft as of 2026-08-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDosageDosierung |
 
  
 AT ELGA e-Medikation Dosage Dosierung 
 
 **Usages:**
 
-* Use this DataType Profile: [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
+* Derived from this DataType Profile: [AtElgaEmedDosageFreeTextAdministration](StructureDefinition-at-elga-emed-dosage-freetext-administration.md), [AtElgaEmedDosageFrequencyAdministration](StructureDefinition-at-elga-emed-dosage-frequency-administration.md), [AtElgaEmedDosageOtherAdministration](StructureDefinition-at-elga-emed-dosage-other-administration.md), [AtElgaEmedDosageStandardAdministration](StructureDefinition-at-elga-emed-dosage-standard-administration.md) and [AtElgaEmedDosageTimedAdministration](StructureDefinition-at-elga-emed-dosage-timed-administration.md)
+* Use this DataType Profile: [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-dosage-dosierung.json)
 
@@ -41,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-dosage-
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-08-27T15:34:15+00:00",
+  "date" : "2026-08-31T18:38:38+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -77,9 +78,26 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-dosage-
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "Dosage.extension",
+      "path" : "Dosage.extension",
+      "min" : 1
+    },
+    {
+      "id" : "Dosage.extension:DosageCategory",
+      "path" : "Dosage.extension",
+      "sliceName" : "DosageCategory",
+      "min" : 1,
+      "max" : "*",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category"]
+      }]
+    },
+    {
       "id" : "Dosage.sequence",
       "path" : "Dosage.sequence",
       "short" : "Die Reihenfolge der Dosierungsanweisungen. Entfällt bei Einzeldosierung.",
+      "min" : 1,
       "mustSupport" : true
     },
     {
