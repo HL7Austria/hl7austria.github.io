@@ -1,0 +1,59 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "at-ediag-operation-list-write",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-list-write</b></p><a name=\"at-ediag-operation-list-write\"> </a><a name=\"hcat-ediag-operation-list-write\"> </a><p>URL: [base]/List/$write</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>code</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-at-ediag-list-code-vs.html\">ELGA AT e-Diagnose List Entry Code Value Set</a> (Required)</td><td><div><p>Der Parameter gibt an, welche Art von Einträgen in der Summary-Liste enthalten sind. Der Wert muss aus dem Value-Set <a href=\"ValueSet-at-ediag-list-code-vs.html\">AtEdiagListCodeVS</a> stammen.</p>\n</div></td></tr><tr><td>IN</td><td>list</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a> (<a href=\"StructureDefinition-at-elga-ediag-list.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list\">AT ELGA e-Diagnose List</a>)</td><td/><td><div><p>Der Parameter dient der Übermittlung der Summary-Liste.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-write",
+  "version" : "0.1.0",
+  "name" : "AtDiagListWrite",
+  "title" : "e-Diagnose Operation $write",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-08-31T06:56:37+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
+  "affectsState" : true,
+  "code" : "write",
+  "resource" : ["List"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "code",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der Parameter gibt an, welche Art von Einträgen in der Summary-Liste enthalten sind. Der Wert muss aus dem Value-Set [AtEdiagListCodeVS](ValueSet-at-ediag-list-code-vs.html) stammen.",
+    "type" : "code",
+    "binding" : {
+      "strength" : "required",
+      "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-code-vs"
+    }
+  },
+  {
+    "name" : "list",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der Parameter dient der Übermittlung der Summary-Liste.",
+    "type" : "List",
+    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
+  }]
+}
