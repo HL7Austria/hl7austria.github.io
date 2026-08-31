@@ -1,0 +1,58 @@
+@startuml
+actor User as user
+participant "Initial Scheduling Client" as client
+participant "Scheduling Platform" as platform
+participant "Scheduling Server 1" as schedServ1
+participant "Scheduling Server 2" as schedServ2
+participant "External Scheduling Client" as clientExternal
+
+activate user
+user -> client: Open client
+activate client
+client -> platform: Find available HealthcareServices
+activate platform
+platform -> schedServ1: Find available HealthcareServices
+activate schedServ1
+platform -> schedServ2: Find available HealthcareServices
+activate schedServ2
+schedServ1 ---> platform: Available HealthcareServices
+deactivate schedServ1
+schedServ2 ---> platform: Available HealthcareServices
+deactivate schedServ2
+platform ---> client: Available HealthcareServices
+deactivate platform
+
+user -> client: Select HealthcareService
+client -> platform: Find available Schedules
+activate platform
+platform -> schedServ1: Find available Schedules
+activate schedServ1
+platform -> schedServ2: Find available Schedules
+activate schedServ2
+schedServ1 ---> platform: Available Schedules
+deactivate schedServ1
+schedServ2 ---> platform: Available Schedules
+deactivate schedServ2
+
+platform -> schedServ1: Find available Slots
+activate schedServ1
+platform -> schedServ2: Find available Slots
+activate schedServ2
+schedServ1 ---> platform: Available Slots
+deactivate schedServ1
+schedServ2 ---> platform: Available Slots
+deactivate schedServ2
+platform ---> client: Available Slots
+deactivate platform
+
+user -> client: Select slot requiring external scheduling
+client -> user: Redirect to external scheduling client
+deactivate client
+
+user -> clientExternal: Book appointment
+activate clientExternal
+clientExternal ---> user: Confirm appointment booking
+
+deactivate client
+deactivate user
+@enduml
