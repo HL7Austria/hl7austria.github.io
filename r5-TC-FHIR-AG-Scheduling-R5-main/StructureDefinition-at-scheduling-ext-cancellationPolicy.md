@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy | *Version*:0.2.0 | |
-| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:CancellationPolicy |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy | *Version*:1.0.0 | |
+| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:CancellationPolicy |
 
 This Extension provides the information about the policy of a cancellation of an appointment. It can contain a time frame until when a cancellation is possible or what the fee for a cancellation will be.
 
@@ -46,11 +46,11 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-ext-ca
     "valueCode" : "can-bind"
   }],
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-ext-cancellationPolicy",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "CancellationPolicy",
   "title" : "The policy for a cancellation",
   "status" : "draft",
-  "date" : "2026-08-18T13:20:27+00:00",
+  "date" : "2026-08-31T14:45:12+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "This Extension provides the information about the policy of a cancellation of an appointment. It can contain a time frame until when a cancellation is possible or what the fee for a cancellation will be.",
   "fhirVersion" : "5.0.0",

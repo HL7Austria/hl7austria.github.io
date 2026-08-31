@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/appointment-postponementReason | *Version*:0.2.0 | |
-| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AppointmentPostponementReasonExt |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/appointment-postponementReason | *Version*:1.0.0 | |
+| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AppointmentPostponementReasonExt |
 
 The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.
 
@@ -48,11 +48,11 @@ Other representations of profile: [CSV](StructureDefinition-appointment-postpone
     "valueCode" : "can-bind"
   }],
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/appointment-postponementReason",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "AppointmentPostponementReasonExt",
   "title" : "Appointment Postponement Reason",
   "status" : "draft",
-  "date" : "2026-08-18T13:20:27+00:00",
+  "date" : "2026-08-31T14:45:12+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "The reason why an appointment was postoponed. This is often used in reporting/billing/further processing to determine if further actions are required, or specific fees apply.",
   "fhirVersion" : "5.0.0",

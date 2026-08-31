@@ -58,7 +58,7 @@
             <div id="ig-status">
               <p>
                 <span style="font-size:12pt;font-weight:bold">Austrian Appointment Scheduling (R5)</span><br/>
-                <span class="label label-info">0.2.0 - Informative</span>
+                <span class="label label-info">1.0.0 - Informative</span>
               </p>
             </div>
         <!-- at-fhir-ig-template begin -->
@@ -161,7 +161,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
   <!-- at-fhir-ig-template begin -->
   <div class="alert alert-warning" role="alert">
-    <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v0.2.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/tc/wg/scheduling/r5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!--ReleaseHeader--><p id="publish-box">Austrian Appointment Scheduling (R5) - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/tc/wg/scheduling/r5/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
   <h2>Transactions</h2>
@@ -348,6 +348,9 @@ flowchart LR
 
 <p>A Scheduling Client can fetch bookable HealthcareServices from a Scheduling Server. <a href="StructureDefinition-at-scheduling-healthcareservice.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-healthcareservice.html">HL7® AT Scheduling HealthcareService Profile</a> can be used to filter the results. If no search filter for the <code class="language-plaintext highlighter-rouge">active</code> attribute is provided, the Scheduling Server SHALL respond with resources where the value of the <code class="language-plaintext highlighter-rouge">active</code> attribute is <code class="language-plaintext highlighter-rouge">true</code> or not present.</p>
 
+<p>Example URL for filtering HealthcareServices by <code class="language-plaintext highlighter-rouge">service-type</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://example.com/R5/HealthcareService?service-type=http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType|65
+</code></pre></div></div>
 <h3 id="find-available-healthcareservice-providers-findhsp">Find available HealthcareService-Providers ($findHSP)</h3>
 <figure><img src="interactions/find-healthcareService-Providers.svg" /></figure>
 
@@ -370,10 +373,18 @@ flowchart LR
 
 <p>After (optional) selection of a HealthcareService a Scheduling Client can fetch available Schedules. The Schedule resource provides a container for (time)-Slots that can be booked using an Appointment. One Schedule applies to one service or resource that can be booked and contains multiple Slots indicating the availability of this service/resource. A real-world analogue of a Schedule is a calendar column (for a single resource or service). For a more detailed description, refer to <a href="https://www.hl7.org/fhir/schedule.html">Schedule</a>. <a href="StructureDefinition-at-scheduling-schedule.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-schedule.html">HL7® AT Scheduling Schedule Profile</a> can be used to filter the results. If no search filter for the <code class="language-plaintext highlighter-rouge">active</code> attribute is provided, the Scheduling Server SHALL respond with resources where the value of the <code class="language-plaintext highlighter-rouge">active</code> attribute is <code class="language-plaintext highlighter-rouge">true</code> or not present.</p>
 
+<p>Example URL for filtering Schedules by <code class="language-plaintext highlighter-rouge">service-type</code>, <code class="language-plaintext highlighter-rouge">actor</code> with identifier and <code class="language-plaintext highlighter-rouge">date</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://example.com/R5/Schedule?service-type-reference=http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType|65&amp;actor=urn:oid:1.2.40.0.10.1.4.3.2|987654321&amp;date=eq2026-04-07
+</code></pre></div></div>
 <h3 id="find-available-slots-for-potential-appointments">Find available Slots for potential Appointments</h3>
 <figure><img src="interactions/find-slots.svg" /></figure>
 
 <p>After selecting one or more Schedules, available Slots for this/those Schedules can be fetched. The Slot is one unit of time on a Schedule and represents the smallest unit of time that the service or resource can be booked for. A real-world analogue of a Slot would be the rows in a calendar column. For a more detailed description, refer to <a href="https://www.hl7.org/fhir/slot.html">Slot</a>. <a href="StructureDefinition-at-scheduling-slot.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-slot.html">HL7® AT Scheduling Slot Profile</a> can be used to filter the results.</p>
+
+<p>Example URL for filtering Slots by <code class="language-plaintext highlighter-rouge">service-type</code>, <code class="language-plaintext highlighter-rouge">actor</code> with identifier and <code class="language-plaintext highlighter-rouge">date</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://example.com/R5/Slot?schedule=Schedule/HL7ATSchedulingScheduleExample01&amp;service-type-reference=http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType|65&amp;date=ge2026-04-07&amp;date=le2026-04-14
+</code></pre></div></div>
+
 <h3 id="reserve-slot-hold">Reserve Slot ($hold)</h3>
 <figure><img src="interactions/hold-slot.svg" /></figure>
 <p>In this optional step, a <a href="StructureDefinition-at-scheduling-slot.html">Slot</a> can be requested to be put on hold (i.e. reserved) by a Scheduling Client until the Appointment is booked. <a href="OperationDefinition-slot-hold.html">$hold</a> is the corresponding operation definition. The Slot is identified either by a Reference or one or more Identifiers, which have to identify a single Slot instance. For creating a hold on a Slot, the parameter <code class="language-plaintext highlighter-rouge">slot-status</code> SHALL have the value <code class="language-plaintext highlighter-rouge">busy-tentative</code>. For releasing the hold on a previously reserved Slot, <code class="language-plaintext highlighter-rouge">slot-status</code> SHALL have the value <code class="language-plaintext highlighter-rouge">free</code>. The response contains the Slot resource and an OperationOutcome. In case of successful creation of the hold, the <code class="language-plaintext highlighter-rouge">status</code> of the Slot is set to <code class="language-plaintext highlighter-rouge">busy-tentative</code> and the response SHALL contain a parameter <code class="language-plaintext highlighter-rouge">held-until</code> with type dateTime, signaling, when the hold expires automatically. The Scheduling Server decides how long a Slot is held. If the Slot was successfully released, the <code class="language-plaintext highlighter-rouge">status</code> is set to <code class="language-plaintext highlighter-rouge">free</code>. If the hold operation is rejected, due to another Scheduling Client consuming the Slot by booking an Appointment or creating a hold on the Slot, the <code class="language-plaintext highlighter-rouge">status</code> of the Slot is set to <code class="language-plaintext highlighter-rouge">busy-unavailable</code>.</p>
@@ -425,7 +436,9 @@ flowchart LR
 
 <p>Scheduling Clients can fetch existing Appointments from Scheduling Servers. <a href="StructureDefinition-at-scheduling-appointment.html#search-parameters">Search parameters</a> of the <a href="StructureDefinition-at-scheduling-appointment.html">HL7® AT Scheduling Appointment Profile</a> can be used to filter the results.</p>
 
-<p>ToDo: Example Search URL</p>
+<p>Example URL for filtering Appointments by <code class="language-plaintext highlighter-rouge">date</code> and <code class="language-plaintext highlighter-rouge">actor</code> with Austrian Social Security Number:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://example.com/R5/Appointment?actor:identifier=urn:oid:1.2.40.0.10.1.4.3.1|1234010100&amp;date=ge2026-04-07&amp;date=le2026-04-14
+</code></pre></div></div>
 
 
 
@@ -446,7 +459,7 @@ flowchart LR
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Tue, Aug 18, 2026 13:20+0000">2026-08-18</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.tc.wg.scheduling.r5#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR® 5.0.0</a>. Generated <span title="Mon, Aug 31, 2026 14:45+0000">2026-08-31</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType | *Version*:0.2.0 | |
-| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AtSchedulingServiceType |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType | *Version*:1.0.0 | |
+| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:AtSchedulingServiceType |
 
  
 This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to 
@@ -49,12 +49,12 @@ This is a placeholder for a ValueSet of bookable service types. The contained va
   "resourceType" : "ValueSet",
   "id" : "AtSchedulingServiceType",
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/ValueSet/AtSchedulingServiceType",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "AtSchedulingServiceType",
   "title" : "AT Scheduling Service Type",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-08-18T13:20:27+00:00",
+  "date" : "2026-08-31T14:45:12+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "This is a placeholder for a ValueSet of bookable service types. The contained value just serves as an example and is not guaranteed to ",
   "compose" : {

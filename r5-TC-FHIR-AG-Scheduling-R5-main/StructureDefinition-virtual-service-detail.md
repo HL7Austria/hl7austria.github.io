@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/virtual-service-detail | *Version*:0.2.0 | |
-| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:VirtualServiceDetailExt |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/virtual-service-detail | *Version*:1.0.0 | |
+| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:VirtualServiceDetailExt |
 
 Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead. **Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future**
 
@@ -48,11 +48,11 @@ Other representations of profile: [CSV](StructureDefinition-virtual-service-deta
     "valueCode" : "can-bind"
   }],
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/virtual-service-detail",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "VirtualServiceDetailExt",
   "title" : "VirtualServiceDetail",
   "status" : "draft",
-  "date" : "2026-08-18T13:20:27+00:00",
+  "date" : "2026-08-31T14:45:12+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "Represents personalized details for a virtual service. This extension is meant to be used on appointment.participant if personalized Details (e.g. individual links or secrets) per participant exist. If the details are the same for all participants, Appointment.virtualService should be used instead. **Warning! Due to a bug, this extension contains a workaround. Instead of the custom complex data structure defined here, VirtualServiceDetail will be used as an extension on Appointment.participant in the future**",
   "fhirVersion" : "5.0.0",

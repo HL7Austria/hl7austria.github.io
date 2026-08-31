@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment | *Version*:0.2.0 | |
-| Draft as of 2026-08-18 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment | *Version*:1.0.0 | |
+| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingAppointment |
 
  
 HL7® Austria FHIR® Scheduling Profile for appointment data in Austria. 
@@ -59,11 +59,11 @@ The following search parameters SHOULD be supported by scheduling servers:
   "resourceType" : "StructureDefinition",
   "id" : "at-scheduling-appointment",
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-appointment",
-  "version" : "0.2.0",
+  "version" : "1.0.0",
   "name" : "HL7ATSchedulingAppointment",
   "title" : "HL7® AT Scheduling Appointment Profile",
   "status" : "draft",
-  "date" : "2026-08-18T13:20:27+00:00",
+  "date" : "2026-08-31T14:45:12+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for appointment data in Austria.",
   "fhirVersion" : "5.0.0",

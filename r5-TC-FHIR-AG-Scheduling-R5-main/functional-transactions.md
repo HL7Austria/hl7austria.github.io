@@ -128,6 +128,13 @@ A Scheduling Client can create a Patient on a Scheduling Server. This is a prere
 
 A Scheduling Client can fetch bookable HealthcareServices from a Scheduling Server. [Search parameters](StructureDefinition-at-scheduling-healthcareservice.md#search-parameters) of the [HL7® AT Scheduling HealthcareService Profile](StructureDefinition-at-scheduling-healthcareservice.md) can be used to filter the results. If no search filter for the `active` attribute is provided, the Scheduling Server SHALL respond with resources where the value of the `active` attribute is `true` or not present.
 
+Example URL for filtering HealthcareServices by `service-type`:
+
+```
+https://example.com/R5/HealthcareService?service-type=http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType|65
+
+```
+
 ### Find available HealthcareService-Providers ($findHSP)
 
 Depending on the scheduling scenario that is implementented ("peer-to-peer" appointment booking, availability of a central platform for scheduling, …), it might not only be necessary to find offered Healthcare Services, but also to find the medical institution offering the respective service. Additionally, finding Healthcare Service Providers that offer a service close to a location or within a certain zip-code area might be useful as well.
@@ -147,9 +154,23 @@ The response will be a Bundle consisting of the HealthcareService resource and a
 
 After (optional) selection of a HealthcareService a Scheduling Client can fetch available Schedules. The Schedule resource provides a container for (time)-Slots that can be booked using an Appointment. One Schedule applies to one service or resource that can be booked and contains multiple Slots indicating the availability of this service/resource. A real-world analogue of a Schedule is a calendar column (for a single resource or service). For a more detailed description, refer to [Schedule](https://www.hl7.org/fhir/schedule.html). [Search parameters](StructureDefinition-at-scheduling-schedule.md#search-parameters) of the [HL7® AT Scheduling Schedule Profile](StructureDefinition-at-scheduling-schedule.md) can be used to filter the results. If no search filter for the `active` attribute is provided, the Scheduling Server SHALL respond with resources where the value of the `active` attribute is `true` or not present.
 
+Example URL for filtering Schedules by `service-type`, `actor` with identifier and `date`:
+
+```
+https://example.com/R5/Schedule?service-type-reference=http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType|65&actor=urn:oid:1.2.40.0.10.1.4.3.2|987654321&date=eq2026-04-07
+
+```
+
 ### Find available Slots for potential Appointments
 
 After selecting one or more Schedules, available Slots for this/those Schedules can be fetched. The Slot is one unit of time on a Schedule and represents the smallest unit of time that the service or resource can be booked for. A real-world analogue of a Slot would be the rows in a calendar column. For a more detailed description, refer to [Slot](https://www.hl7.org/fhir/slot.html). [Search parameters](StructureDefinition-at-scheduling-slot.md#search-parameters) of the [HL7® AT Scheduling Slot Profile](StructureDefinition-at-scheduling-slot.md) can be used to filter the results.
+
+Example URL for filtering Slots by `service-type`, `actor` with identifier and `date`:
+
+```
+https://example.com/R5/Slot?schedule=Schedule/HL7ATSchedulingScheduleExample01&service-type-reference=http://hl7.at/fhir/TC-FHIR-AG-Scheduling-R5/R5/ValueSet/AtSchedulingServiceType|65&date=ge2026-04-07&date=le2026-04-14
+
+```
 
 ### Reserve Slot ($hold)
 
@@ -203,5 +224,10 @@ The Scheduling Server may update the same attributes, subject to the same restri
 
 Scheduling Clients can fetch existing Appointments from Scheduling Servers. [Search parameters](StructureDefinition-at-scheduling-appointment.md#search-parameters) of the [HL7® AT Scheduling Appointment Profile](StructureDefinition-at-scheduling-appointment.md) can be used to filter the results.
 
-ToDo: Example Search URL
+Example URL for filtering Appointments by `date` and `actor` with Austrian Social Security Number:
+
+```
+https://example.com/R5/Appointment?actor:identifier=urn:oid:1.2.40.0.10.1.4.3.1|1234010100&date=ge2026-04-07&date=le2026-04-14
+
+```
 
