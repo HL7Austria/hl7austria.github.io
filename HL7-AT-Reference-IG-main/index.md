@@ -71,7 +71,7 @@ Below are some representative IGs that belong to this category:
   "name" : "HL7AustriaReferenceIG",
   "title" : "HL7 Austria Reference IG",
   "status" : "draft",
-  "date" : "2026-08-24T08:51:29+00:00",
+  "date" : "2026-08-31T04:47:54+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -123,7 +123,13 @@ Below are some representative IGs that belong to this category:
         "sourceUrl" : "developers-handbook.html",
         "name" : "developers-handbook.html",
         "title" : "Developer's Handbook",
-        "generation" : "markdown"
+        "generation" : "markdown",
+        "page" : [{
+          "sourceUrl" : "slicing.html",
+          "name" : "slicing.html",
+          "title" : "Slicing",
+          "generation" : "markdown"
+        }]
       },
       {
         "sourceUrl" : "howToReadAnIG.html",
