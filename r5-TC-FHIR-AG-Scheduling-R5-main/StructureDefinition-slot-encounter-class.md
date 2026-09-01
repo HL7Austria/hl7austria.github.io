@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/slot-encounter-class | *Version*:1.0.0 | |
-| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:SlotEncounterClassExt |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/slot-encounter-class | *Version*:1.1.0 | |
+| Draft as of 2026-09-01 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:SlotEncounterClassExt |
 
 An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter
 
@@ -49,11 +49,11 @@ Other representations of profile: [CSV](StructureDefinition-slot-encounter-class
     "valueCode" : "can-bind"
   }],
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/slot-encounter-class",
-  "version" : "1.0.0",
+  "version" : "1.1.0",
   "name" : "SlotEncounterClassExt",
   "title" : "Slot Encounter Class",
   "status" : "draft",
-  "date" : "2026-08-31T14:45:12+00:00",
+  "date" : "2026-09-01T07:26:19+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "An encounter class similar to (Appointment.class)[https://www.hl7.org/fhir/appointment-definitions.html#Appointment.class] for classification of possible mode of encounter",
   "fhirVersion" : "5.0.0",

@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot | *Version*:1.0.0 | |
-| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot | *Version*:1.1.0 | |
+| Draft as of 2026-09-01 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*:HL7ATSchedulingSlot |
 
  
 HL7® Austria FHIR® Scheduling Profile for slot data in Austria. 
@@ -60,11 +60,11 @@ Other representations of profile: [CSV](StructureDefinition-at-scheduling-slot.c
   "resourceType" : "StructureDefinition",
   "id" : "at-scheduling-slot",
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/StructureDefinition/at-scheduling-slot",
-  "version" : "1.0.0",
+  "version" : "1.1.0",
   "name" : "HL7ATSchedulingSlot",
   "title" : "HL7® AT Scheduling Slot Profile",
   "status" : "draft",
-  "date" : "2026-08-31T14:45:12+00:00",
+  "date" : "2026-09-01T07:26:19+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "HL7® Austria FHIR® Scheduling Profile for slot data in Austria.",
   "fhirVersion" : "5.0.0",

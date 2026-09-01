@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/ActorDefinition/at-scheduling-actor-scheduling-client | *Version*:1.0.0 | |
-| Draft as of 2026-08-31 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*: |
+| *Official URL*:https://fhir.hl7.at/tc/wg/scheduling/r5/ActorDefinition/at-scheduling-actor-scheduling-client | *Version*:1.1.0 | |
+| Draft as of 2026-09-01 | *Responsible:*HL7® Austria, TC FHIR® | *Computable Name*: |
 
  
 A system consuming the FHIR API provided by a Scheduling Server 
@@ -23,10 +23,10 @@ A system consuming the FHIR API provided by a Scheduling Server
   "resourceType" : "ActorDefinition",
   "id" : "at-scheduling-actor-scheduling-client",
   "url" : "https://fhir.hl7.at/tc/wg/scheduling/r5/ActorDefinition/at-scheduling-actor-scheduling-client",
-  "version" : "1.0.0",
+  "version" : "1.1.0",
   "title" : "HL7® AT Scheduling Client ActorDefinition",
   "status" : "draft",
-  "date" : "2026-08-31T14:45:12+00:00",
+  "date" : "2026-09-01T07:26:19+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "description" : "A system consuming the FHIR API provided by a Scheduling Server",
   "type" : "system",
