@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-ext-en
   "name" : "AtElgaEdiagExtEnteredInError",
   "title" : "AT ELGA Entered In Error",
   "status" : "draft",
-  "date" : "2026-09-01T12:48:31+00:00",
+  "date" : "2026-09-01T13:57:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

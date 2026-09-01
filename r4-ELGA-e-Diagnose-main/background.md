@@ -7,9 +7,12 @@
 
 ### Begriffsdefinitionen
 
-Im Rahmen der Anwendung eDiagnose werden unter dem Begriff „Einträge“ die FHIR-Ressourcen Condition (Diagnosen), Procedure (Prozeduren) sowie AllergyIntolerance (Allergien und Intoleranzen) zusammengefasst.
+Im Rahmen der Anwendung eDiagnose werden folgenden Begriffe definiert:
 
-ToDo: Definition der Begriffe Einträge, Gesamtliste, Summary-Einträge, Summary-Liste
+* Einträge: Alle vom GDA erfassten medizinischen Informationen, insbesondere Diagnosen (Condition), Prozeduren (Procedure) sowie Allergien und Intoleranzen (AllergyIntolerance).
+* Summary-Einträge: Eine Teilmenge der Einträge, die vom GDA als besonders wichtig für die weitere Behandlung bzw. für den nächsten GDA eingestuft werden.
+* Gesamtansicht: Zeigt alle Einträge der jeweiligen Kategorie (Diagnosen, Prozeduren oder Allergien und Intoleranzen).
+* Summary-Liste: Enthält ausschließlich die als Summary-Einträge gekennzeichneten Einträge der jeweiligen Kategorie.
 
 ### Systemumfeld
 
