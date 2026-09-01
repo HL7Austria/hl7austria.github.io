@@ -203,7 +203,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#lesen" id="markdown-toc-lesen">Lesen</a>    <ul>
       <li><a href="#interaktionen-auf-einzelressourcen" id="markdown-toc-interaktionen-auf-einzelressourcen">Interaktionen auf Einzelressourcen</a>        <ul>
-          <li><a href="#einträge-als-einzelressource-abrufen" id="markdown-toc-einträge-als-einzelressource-abrufen">Einträge als Einzelressource abrufen</a></li>
+          <li><a href="#einzelne-einträge-abrufen" id="markdown-toc-einzelne-einträge-abrufen">Einzelne Einträge abrufen</a></li>
         </ul>
       </li>
       <li><a href="#interaktionen-auf-listenressourcen" id="markdown-toc-interaktionen-auf-listenressourcen">Interaktionen auf Listenressourcen</a>        <ul>
@@ -217,43 +217,47 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <h1 id="lesen">Lesen</h1>
+
 <blockquote>
-  <p>UC-01 
-<br/></p>
+  <p>UC-01</p>
 </blockquote>
 
-<p>Dieses Kapitel beschreibt die lesenden Zugriffe der e-Diagnose-Fachanwendung auf Listen, Gesamtansicht sowie auf die Einträge in den Einzelressourcen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.</p>
+<p>Dieses Kapitel beschreibt die lesenden Zugriffe der e-Diagnose-Fachanwendung auf einzelne Einträge sowie Summary-Listen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.</p>
 
 <h2 id="interaktionen-auf-einzelressourcen">Interaktionen auf Einzelressourcen</h2>
 
-<h3 id="einträge-als-einzelressource-abrufen">Einträge als Einzelressource abrufen</h3>
+<h3 id="einzelne-einträge-abrufen">Einzelne Einträge abrufen</h3>
+
 <blockquote>
-  <p>Sub:UC_01_01 
-<br/></p>
+  <p>Sub:UC_01_01</p>
 </blockquote>
 
-<p>Dieser Use-Case ermöglicht den lesenden Zugriff auf alle Einträge von Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten jeweils als Gesamtansicht. 
-Die Interaktion liefert standardmäßig die 30 zuletzt erstellten Ressourcen, absteigend nach Erstellungsdatum sortiert, zurück. Da eine fachliche Bearbeitung eines Eintrags die Erstellung einer neuen Ressource impliziert, entspricht das Erstellungsdatum dem Zeitpunkt der letzten fachlichen Bearbeitung. Die Fachanwendung stellt die vorhandenen Ressourcen des gewählten Ressourcentyps als Search-Bundle bereit. Der Zugriff erfolgt ausschließlich lesend; Änderungen an Status, Inhalten oder Listenzuordnungen werden durch diese Interaktion nicht durchgeführt.</p>
+<p>Dieser Use-Case ermöglicht den lesenden Zugriff auf jeweils alle Einträge von Diagnosen, Prozeduren sowie Allergien und Intoleranzen eines Patienten als Gesamtansicht.</p>
+
+<p>Die Interaktion liefert standardmäßig die 30 zuletzt erstellten Einträge, absteigend nach Erstellungsdatum sortiert, zurück. Da eine fachliche Bearbeitung eines Eintrags die Erstellung einer neuen Ressource impliziert, entspricht das Erstellungsdatum dem Zeitpunkt der letzten fachlichen Bearbeitung. Die Fachanwendung stellt die vorhandenen Einträge des gewählten Ressourcentyps als SearchSet-Bundle bereit.</p>
 
 <h4 id="ablauf">Ablauf</h4>
 
 <ol>
-  <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) aus.</li>
-  <li><a name="l437">​</a>Der GDA oder ELGA-Teilnehmer führt ein <code class="language-plaintext highlighter-rouge">GET</code> auf <code class="language-plaintext highlighter-rouge">/Condition</code>, <code class="language-plaintext highlighter-rouge">/Procedure</code> und/oder <code class="language-plaintext highlighter-rouge">/AllergyIntolerance</code> aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
-  <li><strong>Optional</strong> kann der Abfrageparameter <strong>_count</strong> angegeben werden, um die Anzahl der zurückgelieferten Ressourcen festzulegen. Standardmäßig werden die 30 zuletzt erstellten Ressourcen, absteigend nach Erstellungsdatum sortiert, zurückgeliefert.</li>
-  <li>Die Fachanwendung liefert ein Search-Bundle mit den gefundenen Einträgen zurück.</li>
-  <li>Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein Search-Bundle ohne Einträge zurückgeliefert.</li>
+  <li>Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) der abzurufenden Einträge aus.</li>
+  <li><a name="l438">​</a>Der GDA oder ELGA-Teilnehmer führt ein <code class="language-plaintext highlighter-rouge">GET</code> auf <code class="language-plaintext highlighter-rouge">/Condition</code>, <code class="language-plaintext highlighter-rouge">/Procedure</code> und/oder <code class="language-plaintext highlighter-rouge">/AllergyIntolerance</code> aus, siehe <a href="transaction.html#Transaktionen">Transaktionen</a>.</li>
+  <li><strong>Optional</strong> kann der Abfrageparameter <code class="language-plaintext highlighter-rouge">_count</code> angegeben werden, um die Anzahl der zurückgelieferten Ressourcen festzulegen. Standardmäßig werden die 30 zuletzt erstellten Ressourcen, absteigend nach Erstellungsdatum sortiert, zurückgeliefert.</li>
+  <li>Die Fachanwendung liefert ein SearchSet-Bundle mit den gefundenen Einträgen zurück.</li>
+  <li>Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein leeres SearchSet-Bundle zurückgeliefert.</li>
 </ol>
 
 <h2 id="interaktionen-auf-listenressourcen">Interaktionen auf Listenressourcen</h2>
 
 <h3 id="vergangene-versionen-einer-summary-liste-abrufen-list-history-read">Vergangene Versionen einer Summary-Liste abrufen (List-History-Read)</h3>
+
+<p><strong>TODO: Unklar, ob Historie von Listen geführt wird (siehe https://github.com/HL7Austria/ELGA-e-Diagnose-R4/issues/13)</strong>
+<strong>TODO: Falls Historie von Listen: Entscheiden, ob bei jeder $write-Operation eine neue Liste angelegt wird, oder ob _history verwendet wird. Davon ist abhängig, ob Search (<code class="language-plaintext highlighter-rouge">GET</code>) verwendet werden kann oder eine Custom Operation für die Sucher innerhalb der _history erforderlich ist.</strong></p>
+
 <blockquote>
-  <p>Sub:UC_01_02 
-<br/></p>
+  <p>Sub:UC_01_02</p>
 </blockquote>
 
-<p>History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Search-Bundles unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der Summary-Liste.
+<p>History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Summary-Listen unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der jeweiligen Summary-Liste.
 Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.</p>
 
 <h4 id="ablauf-1">Ablauf</h4>
@@ -293,20 +297,20 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
   <p>Sub:UC_01_03</p>
 </blockquote>
 
-<p>Diese Abfrage dient dem <strong>Abruf der aktuellen Summary-Liste für eine Art von Einträgen</strong>.</p>
+<p>Diese Abfrage dient dem Abruf der aktuellen Summary-Liste für eine Art von Einträgen.</p>
 
 <h4 id="ablauf-2">Ablauf</h4>
 
 <ol>
-  <li>Der GDA führt ein <strong><code class="language-plaintext highlighter-rouge">GET /List?code=[code]&amp;_sort=-date&amp;_count=1&amp;include=*</code></strong> aus.</li>
-  <li>Die Fachanwendung liefert als Ergebnis ein SearchSet-Bundle, das die Summary-Liste inklusive aller referenzierter Ressourcen enthält, sowie den <code class="language-plaintext highlighter-rouge">ETag</code> für <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a> an den GDA.</li>
+  <li>Der GDA führt ein <code class="language-plaintext highlighter-rouge">GET /List?code=[code]&amp;_sort=-date&amp;_count=1&amp;include=*</code> aus.</li>
+  <li>Die Fachanwendung liefert als Ergebnis ein SearchSet-Bundle, das die Summary-Liste inklusive aller referenzierter Ressourcen enthält, an den GDA. Die Information für <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a> ist in <code class="language-plaintext highlighter-rouge">List.meta.versionId</code>.</li>
   <li>Die zurückgelieferte Summary-Liste bildet die Grundlage für nachfolgende Änderungsoperationen.</li>
 </ol>
 
 <h5 id="alternativer-ablauf">Alternativer Ablauf</h5>
 
 <ol>
-  <li>Es kann auch <strong><code class="language-plaintext highlighter-rouge">GET /List?code=[code]&amp;_sort=-date&amp;_count=1</code></strong> ausgeführt werden, um die Summary-Liste OHNE referenzierte Ressourcen abzurufen.</li>
+  <li>Es kann auch <code class="language-plaintext highlighter-rouge">GET /List?code=[code]&amp;_sort=-date&amp;_count=1</code> ausgeführt werden, um die Summary-Liste OHNE referenzierte Ressourcen abzurufen.</li>
 </ol>
 
 <h4 id="sequenzdiagramm-1">Sequenzdiagramm</h4>
@@ -333,7 +337,7 @@ Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktue
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Aug 31, 2026 10:02+0000">2026-08-31</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 06:51+0000">2026-09-01</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
