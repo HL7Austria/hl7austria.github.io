@@ -1,4 +1,22 @@
-# AtApsProcedure-Beispiel - Austrian Patient Summary (R4) v1.0.0
+# AtApsProcedure-Beispiel - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **AtApsProcedure-Beispiel**
+
+## Example Procedure: AtApsProcedure-Beispiel
+
+Profile: [AT APS Procedure](StructureDefinition-at-aps-procedure.md)
+
+**status**: Completed
+
+**category**: Chirurgische Prozedur
+
+**code**: Vorherige Ballonangioplastie bei mittlerer LAD-Stenose mit STENT-Implantation
+
+**subject**: [Maria Musterfrau](Patient-at-aps-example-patient-01.md)
+
+**performed**: ?? --> (ongoing)
 
 
 
@@ -9,33 +27,27 @@
   "resourceType" : "Procedure",
   "id" : "at-aps-example-procedure-01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"]
   },
   "status" : "completed",
   "category" : {
-    "coding" : [
-      {
-        "system" : "http://snomed.info/sct",
-        "code" : "387713003",
-        "display" : "Chirurgische Prozedur"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "387713003",
+      "display" : "Chirurgische Prozedur"
+    }]
   },
   "code" : {
-    "coding" : [
-      {
-        "system" : "http://snomed.info/sct",
-        "code" : "36969009",
-        "display" : "Einsetzen eines Stents in Koronararterie"
-      },
-      {
-        "system" : "http://snomed.info/sct",
-        "code" : "233258006",
-        "display" : "Durchleuchtungsgeführte Angioplastie einer Arterie mit Kontrastmittel"
-      }
-    ],
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "36969009",
+      "display" : "Einsetzen eines Stents in Koronararterie"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "233258006",
+      "display" : "Durchleuchtungsgeführte Angioplastie einer Arterie mit Kontrastmittel"
+    }],
     "text" : "Vorherige Ballonangioplastie bei mittlerer LAD-Stenose mit STENT-Implantation"
   },
   "subject" : {
@@ -43,12 +55,10 @@
     "display" : "Maria Musterfrau"
   },
   "performedPeriod" : {
-    "extension" : [
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-        "valueCode" : "unknown"
-      }
-    ]
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode" : "unknown"
+    }]
   }
 }
 

@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -9,67 +8,61 @@
 
 <https://fhir.hl7.at/elga/aps/r4/Procedure/at-aps-example-procedure-01> a fhir:Procedure ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "at-aps-example-procedure-01"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure"^^xsd:anyURI ;
-       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure at-aps-example-procedure-01</b></p><a name=\"at-aps-example-procedure-01\"> </a><a name=\"hcat-aps-example-procedure-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-procedure.html\">AT APS Procedure</a></p></div><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">Chirurgische Prozedur</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 36969009}, {http://snomed.info/sct 233258006}\">Vorherige Ballonangioplastie bei mittlerer LAD-Stenose mit STENT-Implantation</span></p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>performed</b>: ?? --&gt; (ongoing)</p></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:status [ fhir:v "completed"] ; # 
-  fhir:category [
-     fhir:coding ( [
+  fhir:Resource.id [ fhir:value "at-aps-example-procedure-01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-procedure>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure at-aps-example-procedure-01</b></p><a name=\"at-aps-example-procedure-01\"> </a><a name=\"hcat-aps-example-procedure-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-procedure.html\">AT APS Procedure</a></p></div><p><b>status</b>: Completed</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 387713003}\">Chirurgische Prozedur</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 36969009}, {http://snomed.info/sct 233258006}\">Vorherige Ballonangioplastie bei mittlerer LAD-Stenose mit STENT-Implantation</span></p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>performed</b>: ?? --&gt; (ongoing)</p></div>"
+  ] ;
+  fhir:Procedure.status [ fhir:value "completed"] ;
+  fhir:Procedure.category [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a sct:387713003 ;
-       fhir:system [
-         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-         fhir:l <http://snomed.info/sct>
-       ] ;
-       fhir:code [ fhir:v "387713003" ] ;
-       fhir:display [ fhir:v "Chirurgische Prozedur" ]
-     ] )
-  ] ; # 
-  fhir:code [
-     fhir:coding ( [
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "387713003" ] ;
+       fhir:Coding.display [ fhir:value "Chirurgische Prozedur" ]
+     ]
+  ] ;
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a sct:36969009 ;
-       fhir:system [
-         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-         fhir:l <http://snomed.info/sct>
-       ] ;
-       fhir:code [ fhir:v "36969009" ] ;
-       fhir:display [ fhir:v "Einsetzen eines Stents in Koronararterie" ]
-     ] [
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "36969009" ] ;
+       fhir:Coding.display [ fhir:value "Einsetzen eines Stents in Koronararterie" ]
+     ], [
+       fhir:index 1 ;
        a sct:233258006 ;
-       fhir:system [
-         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-         fhir:l <http://snomed.info/sct>
-       ] ;
-       fhir:code [ fhir:v "233258006" ] ;
-       fhir:display [ fhir:v "Durchleuchtungsgeführte Angioplastie einer Arterie mit Kontrastmittel" ]
-     ] ) ;
-     fhir:text [ fhir:v "Vorherige Ballonangioplastie bei mittlerer LAD-Stenose mit STENT-Implantation" ]
-  ] ; # 
-  fhir:subject [
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
-     fhir:reference [ fhir:v "Patient/at-aps-example-patient-01" ] ;
-     fhir:display [ fhir:v "Maria Musterfrau" ]
-  ] ; # 
-  fhir:performed [
-     a fhir:Period ;
-     fhir:extension ( [
-       fhir:url [
-         fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ;
-         fhir:l <http://hl7.org/fhir/StructureDefinition/data-absent-reason>
-       ] ;
-       fhir:value [
-         a fhir:Code ;
-         fhir:v "unknown"
-       ]
-     ] )
-  ] . # 
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "233258006" ] ;
+       fhir:Coding.display [ fhir:value "Durchleuchtungsgeführte Angioplastie einer Arterie mit Kontrastmittel" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Vorherige Ballonangioplastie bei mittlerer LAD-Stenose mit STENT-Implantation" ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/at-aps-example-patient-01" ] ;
+     fhir:Reference.display [ fhir:value "Maria Musterfrau" ]
+  ] ;
+  fhir:Procedure.performedPeriod [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/data-absent-reason" ] ;
+       fhir:Extension.valueCode [ fhir:value "unknown" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/Procedure/at-aps-example-procedure-01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

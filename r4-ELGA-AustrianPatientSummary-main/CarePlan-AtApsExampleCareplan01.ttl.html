@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AtApsCarePlan-Beispiel - TTL Representation - Austrian Patient Summary (R4) v1.0.0</title>
+    <title>AtApsCarePlan-Beispiel - TTL Representation - Austrian Patient Summary (R4) v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
           <p>
             <!-- at-fhir-ig-template begin -->
             <span style="font-size:12pt;font-weight:bold">Austrian Patient Summary (R4)</span><br/>
-            <span class="label label-info">1.0.0 - STU1
+            <span class="label label-info">1.1.0 - STU2
               <!--
 
 
@@ -200,7 +200,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Austrian Patient Summary (R4) - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/aps/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Austrian Patient Summary (R4) - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/aps/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -254,80 +254,98 @@
   <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix sct: &lt;http://snomed.info/id/&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:CarePlan ;
+&lt;http://hl7.org/fhir/CarePlan/AtApsExampleCareplan01&gt; a fhir:CarePlan ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#CarePlan.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;AtApsExampleCareplan01&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/resource.html#CarePlan.meta">fhir:meta</a> [
-    ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan&gt;     ] )
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/domainresource.html#CarePlan.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;additional&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Ein einfacher Pflegeplan, der angibt, dass ein Patient aufgrund von Adipositas einmal täglich sein Gewicht messen soll.&lt;/p&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/domainresource.html#CarePlan.extension">fhir:extension</a> ( [
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:url</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith&gt;     ] ;
-<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:value</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">a</a> fhir:Uri ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://example.org/protocol-for-obesity&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://example.org/protocol-for-obesity&gt;     ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.identifier">fhir:identifier</a> ( [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;12345&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.basedOn">fhir:basedOn</a> ( [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Behandlung von Typ-2-Diabetes&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.replaces">fhir:replaces</a> ( [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Plan der Klinik&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.partOf">fhir:partOf</a> ( [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Allgemeiner Wellnessplan&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;active&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.intent">fhir:intent</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;plan&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.category">fhir:category</a> ( [
-<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Gewichtsmanagementplan&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Übergewicht und Gewichtsverlust managen&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.subject">fhir:subject</a> [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Patient/at-aps-example-patient-01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Patient/at-aps-example-patient-01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Maria Musterfrau&quot; ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.period">fhir:period</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">fhir:end</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2017-06-01&quot;^^xsd:date ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.created">fhir:created</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2016-01-01&quot;^^xsd:date] ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.author">fhir:author</a> [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Practitioner/at-aps-example-practitioner-01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Practitioner/at-aps-example-practitioner-01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hanna Hausärztin&quot; ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.addresses">fhir:addresses</a> ( [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Condition/AtApsExampleCondition01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Condition/AtApsExampleCondition01&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity">fhir:activity</a> ( [
-    ( <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.outcomeCodeableConcept">fhir:outcomeCodeableConcept</a> [
-      ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
-a sct:416528001 ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://snomed.info/sct&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://snomed.info/sct&gt;         ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;416528001&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Intentional weight loss&quot; ]       ] )     ] )
-  ] ) . # 
+  <a href="http://hl7.org/fhir/R4/resource.html#CarePlan.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;AtApsExampleCareplan01&quot;] ;
+  <a href="http://hl7.org/fhir/R4/resource.html#CarePlan.meta">fhir:Resource.meta</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-careplan&gt;
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#CarePlan.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;additional&quot; ] ;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Ein einfacher Pflegeplan, der angibt, dass ein Patient aufgrund von Adipositas einmal täglich sein Gewicht messen soll.&lt;/p&gt;&lt;/div&gt;&quot;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#CarePlan.extension">fhir:DomainResource.extension</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">fhir:Extension.url</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://hl7.org/fhir/StructureDefinition/workflow-shallComplyWith&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">fhir:Extension.valueUri</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://example.org/protocol-for-obesity&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.identifier">fhir:CarePlan.identifier</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:Identifier.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;12345&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.basedOn">fhir:CarePlan.basedOn</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Behandlung von Typ-2-Diabetes&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.replaces">fhir:CarePlan.replaces</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Plan der Klinik&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.partOf">fhir:CarePlan.partOf</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Allgemeiner Wellnessplan&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.status">fhir:CarePlan.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;active&quot;] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.intent">fhir:CarePlan.intent</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;plan&quot;] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.category">fhir:CarePlan.category</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Gewichtsmanagementplan&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.description">fhir:CarePlan.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Übergewicht und Gewichtsverlust managen&quot;] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.subject">fhir:CarePlan.subject</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Patient/at-aps-example-patient-01&gt; ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Patient/at-aps-example-patient-01&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Maria Musterfrau&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.period">fhir:CarePlan.period</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">fhir:Period.end</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2017-06-01&quot;^^xsd:date ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.created">fhir:CarePlan.created</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2016-01-01&quot;^^xsd:date] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.author">fhir:CarePlan.author</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Practitioner/at-aps-example-practitioner-01&gt; ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Practitioner/at-aps-example-practitioner-01&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Hanna Hausärztin&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.addresses">fhir:CarePlan.addresses</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Condition/AtApsExampleCondition01&gt; ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Condition/AtApsExampleCondition01&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity">fhir:CarePlan.activity</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/careplan.html#CarePlan.activity.outcomeCodeableConcept">fhir:CarePlan.activity.outcomeCodeableConcept</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+         a sct:416528001 ;
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;416528001&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Intentional weight loss&quot; ]
+       ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Patient/at-aps-example-patient-01&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Practitioner/at-aps-example-practitioner-01&gt; a fhir:Practitioner .
+
+&lt;http://hl7.org/fhir/Condition/AtApsExampleCondition01&gt; a fhir:Condition .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/CarePlan/AtApsExampleCareplan01.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/CarePlan/AtApsExampleCareplan01.ttl&gt; .
 
 </code></pre>
 
@@ -354,7 +372,7 @@ a sct:416528001 ;
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 17, 2026 09:00+0000">2026-02-17</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 07:40+0000">2026-09-01</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

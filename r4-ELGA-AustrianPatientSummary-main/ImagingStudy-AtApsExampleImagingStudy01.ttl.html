@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AtApsImagingStudy-Beispiel - TTL Representation - Austrian Patient Summary (R4) v1.0.0</title>
+    <title>AtApsImagingStudy-Beispiel - TTL Representation - Austrian Patient Summary (R4) v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
           <p>
             <!-- at-fhir-ig-template begin -->
             <span style="font-size:12pt;font-weight:bold">Austrian Patient Summary (R4)</span><br/>
-            <span class="label label-info">1.0.0 - STU1
+            <span class="label label-info">1.1.0 - STU2
               <!--
 
 
@@ -200,7 +200,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Austrian Patient Summary (R4) - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/aps/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Austrian Patient Summary (R4) - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/aps/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -254,66 +254,74 @@
   <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix sct: &lt;http://snomed.info/id/&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:ImagingStudy ;
+&lt;http://hl7.org/fhir/ImagingStudy/AtApsExampleImagingStudy01&gt; a fhir:ImagingStudy ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#ImagingStudy.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;AtApsExampleImagingStudy01&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/resource.html#ImagingStudy.meta">fhir:meta</a> [
-    ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy&gt;     ] )
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/domainresource.html#ImagingStudy.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ImagingStudy AtApsExampleImagingStudy01&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;AtApsExampleImagingStudy01\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcAtApsExampleImagingStudy01\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-at-aps-imagingstudy.html\&quot;&gt;AT APS ImagingStudy&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=\&quot;http://terminology.hl7.org/6.2.0/NamingSystem-dui.html\&quot; title=\&quot;An OID issued under DICOM OID rules. DICOM OIDs are represented as plain OIDs, with a prefix of &amp;quot;urn:oid:&amp;quot;. See https://www.dicomstandard.org/\&quot;&gt;DICOM Unique Id&lt;/a&gt;/urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Available&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-at-aps-example-patient-01.html\&quot;&gt;Maria Musterfrau&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;started&lt;/b&gt;: 2011-01-01 11:01:20+0300&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfSeries&lt;/b&gt;: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfInstances&lt;/b&gt;: 1&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;series&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;uid&lt;/b&gt;: 2.16.124.113543.6003.2588828330.45298.17418.2723805630&lt;/p&gt;&lt;p&gt;&lt;b&gt;number&lt;/b&gt;: 3&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: &lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-dicom-dcim.html#dicom-dcim-CT\&quot;&gt;DICOM: CT&lt;/a&gt; (Computed Tomography)&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: CT-Überblick 180&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfInstances&lt;/b&gt;: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: &lt;a href=\&quot;http://snomed.info/id/67734004\&quot;&gt;SNOMED CT: 67734004&lt;/a&gt; (Upper Trunk Structure)&lt;/p&gt;&lt;h3&gt;Instances&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uid&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SopClass&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Number&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;2.16.124.113543.6003.189642796.63084.16748.2599092903&lt;/td&gt;&lt;td&gt;unknown: urn:oid:1.2.840.10008.5.1.4.1.1.2 (urn:oid:1.2.840.10008.5.1.4.1.1.2)&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.identifier">fhir:identifier</a> ( [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:system</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:dicom:uid&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;urn:dicom:uid&gt;     ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;available&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.subject">fhir:subject</a> [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Patient/at-aps-example-patient-01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Patient/at-aps-example-patient-01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Maria Musterfrau&quot; ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.started">fhir:started</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2011-01-01T11:01:20+03:00&quot;^^xsd:dateTime] ; # 
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.numberOfSeries">fhir:numberOfSeries</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:v</a> &quot;1&quot;^^xsd:nonNegativeInteger] ; # 
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.numberOfInstances">fhir:numberOfInstances</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:v</a> &quot;1&quot;^^xsd:nonNegativeInteger] ; # 
-  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series">fhir:series</a> ( [
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.uid">fhir:uid</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;2.16.124.113543.6003.2588828330.45298.17418.2723805630&quot; ] ;
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.number">fhir:number</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:v</a> &quot;3&quot;^^xsd:nonNegativeInteger ] ;
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.modality">fhir:modality</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://dicom.nema.org/resources/ontology/DCM&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://dicom.nema.org/resources/ontology/DCM&gt;       ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;CT&quot; ]     ] ;
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;CT-Überblick 180&quot; ] ;
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.numberOfInstances">fhir:numberOfInstances</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:v</a> &quot;1&quot;^^xsd:nonNegativeInteger ] ;
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.bodySite">fhir:bodySite</a> [
-a sct:67734004 ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://snomed.info/sct&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;http://snomed.info/sct&gt;       ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;67734004&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Upper Trunk Structure&quot; ]     ] ;
-    ( <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance">fhir:instance</a> [
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance.uid">fhir:uid</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;2.16.124.113543.6003.189642796.63084.16748.2599092903&quot; ] ;
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance.sopClass">fhir:sopClass</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:ietf:rfc:3986&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:l</a> &lt;urn:ietf:rfc:3986&gt;         ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;urn:oid:1.2.840.10008.5.1.4.1.1.2&quot; ]       ] ;
-<a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance.number">fhir:number</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:v</a> &quot;1&quot;^^xsd:nonNegativeInteger ]     ] )
-  ] ) . # 
+  <a href="http://hl7.org/fhir/R4/resource.html#ImagingStudy.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;AtApsExampleImagingStudy01&quot;] ;
+  <a href="http://hl7.org/fhir/R4/resource.html#ImagingStudy.meta">fhir:Resource.meta</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-imagingstudy&gt;
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#ImagingStudy.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ] ;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ImagingStudy AtApsExampleImagingStudy01&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;AtApsExampleImagingStudy01\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcAtApsExampleImagingStudy01\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-at-aps-imagingstudy.html\&quot;&gt;AT APS ImagingStudy&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;a href=\&quot;http://terminology.hl7.org/7.3.0/NamingSystem-dui.html\&quot; title=\&quot;An OID issued under DICOM OID rules. DICOM OIDs are represented as plain OIDs, with a prefix of &amp;quot;urn:oid:&amp;quot;. See https://www.dicomstandard.org/\&quot;&gt;DICOM Unique Id&lt;/a&gt;/urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Available&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-at-aps-example-patient-01.html\&quot;&gt;Maria Musterfrau&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;started&lt;/b&gt;: 2011-01-01 11:01:20+0300&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfSeries&lt;/b&gt;: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfInstances&lt;/b&gt;: 1&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;series&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;uid&lt;/b&gt;: 2.16.124.113543.6003.2588828330.45298.17418.2723805630&lt;/p&gt;&lt;p&gt;&lt;b&gt;number&lt;/b&gt;: 3&lt;/p&gt;&lt;p&gt;&lt;b&gt;modality&lt;/b&gt;: &lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-dicom-dcim.html#dicom-dcim-CT\&quot;&gt;DICOM: CT&lt;/a&gt; (Computed Tomography)&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: CT-Überblick 180&lt;/p&gt;&lt;p&gt;&lt;b&gt;numberOfInstances&lt;/b&gt;: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;bodySite&lt;/b&gt;: &lt;a href=\&quot;http://snomed.info/id/67734004\&quot;&gt;SNOMED CT: 67734004&lt;/a&gt; (Upper Trunk Structure)&lt;/p&gt;&lt;h3&gt;Instances&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uid&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;SopClass&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Number&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;2.16.124.113543.6003.189642796.63084.16748.2599092903&lt;/td&gt;&lt;td&gt;unknown: urn:oid:1.2.840.10008.5.1.4.1.1.2 (urn:oid:1.2.840.10008.5.1.4.1.1.2)&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.identifier">fhir:ImagingStudy.identifier</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:Identifier.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:dicom:uid&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:Identifier.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;urn:oid:2.16.124.113543.6003.1154777499.30246.19789.3503430045&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.status">fhir:ImagingStudy.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;available&quot;] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.subject">fhir:ImagingStudy.subject</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Patient/at-aps-example-patient-01&gt; ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Patient/at-aps-example-patient-01&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Maria Musterfrau&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.started">fhir:ImagingStudy.started</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2011-01-01T11:01:20+03:00&quot;^^xsd:dateTime] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.numberOfSeries">fhir:ImagingStudy.numberOfSeries</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.numberOfInstances">fhir:ImagingStudy.numberOfInstances</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger] ;
+  <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series">fhir:ImagingStudy.series</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.uid">fhir:ImagingStudy.series.uid</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;2.16.124.113543.6003.2588828330.45298.17418.2723805630&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.number">fhir:ImagingStudy.series.number</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:value</a> &quot;3&quot;^^xsd:nonNegativeInteger ] ;
+     <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.modality">fhir:ImagingStudy.series.modality</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://dicom.nema.org/resources/ontology/DCM&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;CT&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.description">fhir:ImagingStudy.series.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;CT-Überblick 180&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.numberOfInstances">fhir:ImagingStudy.series.numberOfInstances</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger ] ;
+     <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.bodySite">fhir:ImagingStudy.series.bodySite</a> [
+       a sct:67734004 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;67734004&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Upper Trunk Structure&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance">fhir:ImagingStudy.series.instance</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance.uid">fhir:ImagingStudy.series.instance.uid</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;2.16.124.113543.6003.189642796.63084.16748.2599092903&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance.sopClass">fhir:ImagingStudy.series.instance.sopClass</a> [
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;urn:ietf:rfc:3986&quot; ] ;
+         <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;urn:oid:1.2.840.10008.5.1.4.1.1.2&quot; ]
+       ] ;
+       <a href="http://hl7.org/fhir/R4/imagingstudy.html#ImagingStudy.series.instance.number">fhir:ImagingStudy.series.instance.number</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">fhir:value</a> &quot;1&quot;^^xsd:nonNegativeInteger ]
+     ]
+  ] .
+
+&lt;http://hl7.org/fhir/Patient/at-aps-example-patient-01&gt; a fhir:Patient .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/ImagingStudy/AtApsExampleImagingStudy01.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/ImagingStudy/AtApsExampleImagingStudy01.ttl&gt; .
 
 </code></pre>
 
@@ -340,7 +348,7 @@ a sct:67734004 ;
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 17, 2026 09:00+0000">2026-02-17</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 07:40+0000">2026-09-01</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

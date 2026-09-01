@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -9,99 +8,90 @@
 
 <https://fhir.hl7.at/elga/aps/r4/Specimen/AtApsExampleSpecimen01> a fhir:Specimen ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "AtApsExampleSpecimen01"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen"^^xsd:anyURI ;
-       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Specimen AtApsExampleSpecimen01</b></p><a name=\"AtApsExampleSpecimen01\"> </a><a name=\"hcAtApsExampleSpecimen01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-specimen.html\">AT APS Specimen</a></p></div><p><b>identifier</b>: <code>https://elga.gv.at/specimen-id</code>/SPC-2025-0001</p><p><b>status</b>: Available</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 119376003}\">Gewebeprobe</span></p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>receivedTime</b>: 2025-06-20 10:00:00+0200</p><h3>Collections</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Collector</b></td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-at-aps-example-practitioner-01.html\">Hanna Hausärztin</a></td><td>2025-06-19 15:00:00+0200</td><td>2 pieces<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{pieces} = '{pieces}')</span></td><td><span title=\"Codes:{http://snomed.info/sct 104210008}\">Biopsie</span></td><td><span title=\"Codes:{http://snomed.info/sct 76752008}\">Brustgewebe</span></td></tr></table><p><b>condition</b>: <span title=\"Codes:{http://snomed.info/sct 281268007}\">Unzureichende Probe für Analyse</span></p></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:identifier ( [
-     fhir:system [
-       fhir:v "https://elga.gv.at/specimen-id"^^xsd:anyURI ;
-       fhir:l <https://elga.gv.at/specimen-id>
-     ] ;
-     fhir:value [ fhir:v "SPC-2025-0001" ]
-  ] ) ; # 
-  fhir:status [ fhir:v "available"] ; # 
-  fhir:type [
-     fhir:coding ( [
-       a sct:119376003 ;
-       fhir:system [
-         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-         fhir:l <http://snomed.info/sct>
-       ] ;
-       fhir:code [ fhir:v "119376003" ] ;
-       fhir:display [ fhir:v "Tissue specimen" ]
-     ] ) ;
-     fhir:text [ fhir:v "Gewebeprobe" ]
-  ] ; # 
-  fhir:subject [
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
-     fhir:reference [ fhir:v "Patient/at-aps-example-patient-01" ] ;
-     fhir:display [ fhir:v "Maria Musterfrau" ]
-  ] ; # 
-  fhir:receivedTime [ fhir:v "2025-06-20T10:00:00+02:00"^^xsd:dateTime] ; # 
-  fhir:collection [
-     fhir:collector [
-       fhir:l <https://fhir.hl7.at/elga/aps/r4/Practitioner/at-aps-example-practitioner-01> ;
-       fhir:reference [ fhir:v "Practitioner/at-aps-example-practitioner-01" ] ;
-       fhir:display [ fhir:v "Hanna Hausärztin" ]
-     ] ;
-     fhir:collected [
-       a fhir:DateTime ;
-       fhir:v "2025-06-19T15:00:00+02:00"^^xsd:dateTime
-     ] ;
-     fhir:quantity [
-       fhir:value [ fhir:v "2"^^xsd:decimal ] ;
-       fhir:unit [ fhir:v "pieces" ] ;
-       fhir:system [
-         fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
-         fhir:l <http://unitsofmeasure.org>
-       ] ;
-       fhir:code [ fhir:v "{pieces}" ]
-     ] ;
-     fhir:method [
-       fhir:coding ( [
-         a sct:104210008 ;
-         fhir:system [
-           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-           fhir:l <http://snomed.info/sct>
-         ] ;
-         fhir:code [ fhir:v "104210008" ] ;
-         fhir:display [ fhir:v "Biopsy - action" ]
-       ] ) ;
-       fhir:text [ fhir:v "Biopsie" ]
-     ] ;
-     fhir:bodySite [
-       fhir:coding ( [
-         a sct:76752008 ;
-         fhir:system [
-           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-           fhir:l <http://snomed.info/sct>
-         ] ;
-         fhir:code [ fhir:v "76752008" ] ;
-         fhir:display [ fhir:v "Breast structure (body structure)" ]
-       ] ) ;
-       fhir:text [ fhir:v "Brustgewebe" ]
+  fhir:Resource.id [ fhir:value "AtApsExampleSpecimen01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-specimen>
      ]
-  ] ; # 
-  fhir:condition ( [
-     fhir:coding ( [
-       a sct:281268007 ;
-       fhir:system [
-         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-         fhir:l <http://snomed.info/sct>
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Specimen AtApsExampleSpecimen01</b></p><a name=\"AtApsExampleSpecimen01\"> </a><a name=\"hcAtApsExampleSpecimen01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-specimen.html\">AT APS Specimen</a></p></div><p><b>identifier</b>: <code>https://elga.gv.at/specimen-id</code>/SPC-2025-0001</p><p><b>status</b>: Available</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 119376003}\">Gewebeprobe</span></p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>receivedTime</b>: 2025-06-20 10:00:00+0200</p><h3>Collections</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Collector</b></td><td><b>Collected[x]</b></td><td><b>Quantity</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-at-aps-example-practitioner-01.html\">Hanna Hausärztin</a></td><td>2025-06-19 15:00:00+0200</td><td>2 pieces<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{pieces} = '{pieces}')</span></td><td><span title=\"Codes:{http://snomed.info/sct 104210008}\">Biopsie</span></td><td><span title=\"Codes:{http://snomed.info/sct 76752008}\">Brustgewebe</span></td></tr></table><p><b>condition</b>: <span title=\"Codes:{http://snomed.info/sct 281268007}\">Unzureichende Probe für Analyse</span></p></div>"
+  ] ;
+  fhir:Specimen.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://elga.gv.at/specimen-id" ] ;
+     fhir:Identifier.value [ fhir:value "SPC-2025-0001" ]
+  ] ;
+  fhir:Specimen.status [ fhir:value "available"] ;
+  fhir:Specimen.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:119376003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "119376003" ] ;
+       fhir:Coding.display [ fhir:value "Tissue specimen" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Gewebeprobe" ]
+  ] ;
+  fhir:Specimen.subject [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/at-aps-example-patient-01" ] ;
+     fhir:Reference.display [ fhir:value "Maria Musterfrau" ]
+  ] ;
+  fhir:Specimen.receivedTime [ fhir:value "2025-06-20T10:00:00+02:00"^^xsd:dateTime] ;
+  fhir:Specimen.collection [
+     fhir:Specimen.collection.collector [
+       fhir:link <https://fhir.hl7.at/elga/aps/r4/Practitioner/at-aps-example-practitioner-01> ;
+       fhir:Reference.reference [ fhir:value "Practitioner/at-aps-example-practitioner-01" ] ;
+       fhir:Reference.display [ fhir:value "Hanna Hausärztin" ]
+     ] ;
+     fhir:Specimen.collection.collectedDateTime [ fhir:value "2025-06-19T15:00:00+02:00"^^xsd:dateTime ] ;
+     fhir:Specimen.collection.quantity [
+       fhir:Quantity.value [ fhir:value "2"^^xsd:decimal ] ;
+       fhir:Quantity.unit [ fhir:value "pieces" ] ;
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+       fhir:Quantity.code [ fhir:value "{pieces}" ]
+     ] ;
+     fhir:Specimen.collection.method [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:104210008 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "104210008" ] ;
+         fhir:Coding.display [ fhir:value "Biopsy - action" ]
        ] ;
-       fhir:code [ fhir:v "281268007" ] ;
-       fhir:display [ fhir:v "Insufficient sample (finding)" ]
-     ] ) ;
-     fhir:text [ fhir:v "Unzureichende Probe für Analyse" ]
-  ] ) . # 
+       fhir:CodeableConcept.text [ fhir:value "Biopsie" ]
+     ] ;
+     fhir:Specimen.collection.bodySite [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:76752008 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "76752008" ] ;
+         fhir:Coding.display [ fhir:value "Breast structure (body structure)" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Brustgewebe" ]
+     ]
+  ] ;
+  fhir:Specimen.condition [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:281268007 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "281268007" ] ;
+       fhir:Coding.display [ fhir:value "Insufficient sample (finding)" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Unzureichende Probe für Analyse" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/Specimen/AtApsExampleSpecimen01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

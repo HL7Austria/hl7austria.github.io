@@ -1,4 +1,35 @@
-# AT APS Condition - Austrian Patient Summary (R4) v1.0.0
+# AT APS Condition - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **AT APS Condition**
+
+## Resource Profile: AT APS Condition 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition | *Version*:1.1.0 |
+| Active as of 2026-09-01 | *Computable Name*:AtApsCondition |
+
+ 
+Das AT APS-Profil für die Condition-Ressource berücksichtigt zum einen die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets) und stellt andererseits die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird. 
+
+**Usages:**
+
+* Use this Profile: [AT APS Bundle](StructureDefinition-at-aps-bundle.md)
+* Refer to this Profile: [AT APS CarePlan](StructureDefinition-at-aps-careplan.md), [AT APS ClinicalImpression](StructureDefinition-at-aps-clinicalimpression.md), [AT APS Composition](StructureDefinition-at-aps-composition.md), [AT APS DeviceUseStatement](StructureDefinition-at-aps-deviceusestatement.md)... Show 6 more, [AT APS ImagingStudy](StructureDefinition-at-aps-imagingstudy.md), [AT APS Immunization](StructureDefinition-at-aps-immunization.md), [AT APS MedicationAdministration](StructureDefinition-at-aps-medicationadministration.md), [AT APS MedicationRequest](StructureDefinition-at-aps-medicationrequest.md), [AT APS MedicationStatement](StructureDefinition-at-aps-medicationstatement.md) and [AT APS Procedure](StructureDefinition-at-aps-procedure.md)
+* Examples for this Profile: [Condition/AtApsExampleCondition01](Condition-AtApsExampleCondition01.md)
+* CapabilityStatements using this Profile: [AT APS CapabilityStatement (Server)](CapabilityStatement-at-aps-capabilitystatement-server.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.aps.r4|current/StructureDefinition/StructureDefinition-at-aps-condition.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-at-aps-condition.csv), [Excel](StructureDefinition-at-aps-condition.xlsx), [Schematron](StructureDefinition-at-aps-condition.sch) 
 
 
 
@@ -8,211 +39,173 @@
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-aps-condition",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
-      "valueCanonical" : "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
-    }
-  ],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
+    "valueCanonical" : "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
+  }],
   "url" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-condition",
-  "version" : "1.0.0",
+  "version" : "1.1.0",
   "name" : "AtApsCondition",
   "title" : "AT APS Condition",
   "status" : "active",
-  "date" : "2026-02-17T09:00:43+00:00",
+  "date" : "2026-09-01T07:40:12+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    },
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "Das AT APS-Profil für die Condition-Ressource berücksichtigt zum einen die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets) und stellt andererseits die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "AT"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "workflow",
-      "uri" : "http://hl7.org/fhir/workflow",
-      "name" : "Workflow Pattern"
-    },
-    {
-      "identity" : "sct-concept",
-      "uri" : "http://snomed.info/conceptdomain",
-      "name" : "SNOMED CT Concept Domain Binding"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    },
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "sct-attr",
-      "uri" : "http://snomed.org/attributebinding",
-      "name" : "SNOMED CT Attribute Binding"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "sct-concept",
+    "uri" : "http://snomed.info/conceptdomain",
+    "name" : "SNOMED CT Concept Domain Binding"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "sct-attr",
+    "uri" : "http://snomed.org/attributebinding",
+    "name" : "SNOMED CT Attribute Binding"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "Condition",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Condition",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "Condition",
-        "path" : "Condition",
-        "short" : "AT APS Condition"
-      },
-      {
-        "id" : "Condition.category",
-        "path" : "Condition.category",
-        "binding" : {
-          "extension" : [
-            {
-              "extension" : [
-                {
-                  "url" : "key",
-                  "valueId" : "ElgaProblemType"
-                },
-                {
-                  "url" : "purpose",
-                  "valueCode" : "extensible"
-                },
-                {
-                  "url" : "valueSet",
-                  "valueCanonical" : "https://termgit.elga.gv.at/ValueSet/elga-problemarten"
-                }
-              ],
-              "url" : "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
-            }
-          ],
-          "strength" : "extensible",
-          "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/problem-type-uv-ips"
-        }
-      },
-      {
-        "id" : "Condition.severity",
-        "path" : "Condition.severity",
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-problemseverity"
-        }
-      },
-      {
-        "id" : "Condition.code",
-        "path" : "Condition.code",
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/problems-uv-ips"
-        }
-      },
-      {
-        "id" : "Condition.bodySite",
-        "path" : "Condition.bodySite",
-        "binding" : {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString" : "BodySite"
-            }
-          ],
-          "strength" : "extensible",
-          "description" : "Codes describing anatomical locations. May include laterality.",
-          "valueSet" : "http://hl7.org/fhir/ValueSet/body-site"
-        }
-      },
-      {
-        "id" : "Condition.subject",
-        "path" : "Condition.subject",
-        "type" : [
+    "element" : [{
+      "id" : "Condition",
+      "path" : "Condition",
+      "short" : "AT APS Condition"
+    },
+    {
+      "id" : "Condition.category",
+      "path" : "Condition.category",
+      "binding" : {
+        "extension" : [{
+          "extension" : [{
+            "url" : "key",
+            "valueId" : "ElgaProblemType"
+          },
           {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Condition.recorder",
-        "path" : "Condition.recorder",
-        "type" : [
+            "url" : "purpose",
+            "valueCode" : "extensible"
+          },
           {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Condition.asserter",
-        "path" : "Condition.asserter",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "Condition.stage.assessment",
-        "path" : "Condition.stage.assessment",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"
-            ]
-          }
-        ]
+            "url" : "valueSet",
+            "valueCanonical" : "https://termgit.elga.gv.at/ValueSet/elga-problemarten"
+          }],
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
+        }],
+        "strength" : "extensible",
+        "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/problem-type-uv-ips"
       }
-    ]
+    },
+    {
+      "id" : "Condition.severity",
+      "path" : "Condition.severity",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-problemseverity"
+      }
+    },
+    {
+      "id" : "Condition.code",
+      "path" : "Condition.code",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "http://hl7.org/fhir/uv/ips/ValueSet/problems-uv-ips"
+      }
+    },
+    {
+      "id" : "Condition.bodySite",
+      "path" : "Condition.bodySite",
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "BodySite"
+        }],
+        "strength" : "extensible",
+        "description" : "Codes describing anatomical locations. May include laterality.",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/body-site"
+      }
+    },
+    {
+      "id" : "Condition.subject",
+      "path" : "Condition.subject",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"]
+      }]
+    },
+    {
+      "id" : "Condition.recorder",
+      "path" : "Condition.recorder",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+        "http://hl7.org/fhir/StructureDefinition/RelatedPerson"]
+      }]
+    },
+    {
+      "id" : "Condition.asserter",
+      "path" : "Condition.asserter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+        "http://hl7.org/fhir/StructureDefinition/RelatedPerson"]
+      }]
+    },
+    {
+      "id" : "Condition.stage.assessment",
+      "path" : "Condition.stage.assessment",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observation"]
+      }]
+    }]
   }
 }
 

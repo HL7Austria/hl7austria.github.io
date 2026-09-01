@@ -1,4 +1,29 @@
-# AtApsDiagnosticReport-Beispiel - Austrian Patient Summary (R4) v1.0.0
+# AtApsDiagnosticReport-Beispiel - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **AtApsDiagnosticReport-Beispiel**
+
+## Example DiagnosticReport: AtApsDiagnosticReport-Beispiel
+
+Profile: [AT APS DiagnosticReport](StructureDefinition-at-aps-diagnosticreport.md)
+
+## Laborbefund (Labor) 
+
+| | |
+| :--- | :--- |
+| Subject | Maria Musterfrau Female, DoB: 1998-04-17 ( Social Security number: 0000121150) |
+| Relevant Time | 2024-09-15 10:30:00+0100 |
+| Reported | 2024-09-15 11:00:00+0100 |
+| Performer | [Hanna Hausärztin](Practitioner-at-aps-example-practitioner-01.md) |
+
+**Report Details**
+
+* **Code**: [Hämoglobin](Observation-AtApsExampleObservation01.md)
+  * **Value**: 13.6 g/dL (Details: UCUM codeg/dL = 'g/dL')
+  * **Reference Range**: 12 g/dL (Details: UCUM codeg/dL = 'g/dL')- 17.5 g/dL (Details: UCUM codeg/dL = 'g/dL')
+  * **Flags**: Final
+  * **Relevant Time**: 2024-10-10 09:30:00+0100
 
 
 
@@ -9,30 +34,22 @@
   "resourceType" : "DiagnosticReport",
   "id" : "AtApsExampleDiagnosticReport01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-diagnosticreport"]
   },
   "status" : "final",
-  "category" : [
-    {
-      "coding" : [
-        {
-          "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
-          "code" : "LAB",
-          "display" : "Labor"
-        }
-      ]
-    }
-  ],
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code" : "LAB",
+      "display" : "Labor"
+    }]
+  }],
   "code" : {
-    "coding" : [
-      {
-        "system" : "http://loinc.org",
-        "code" : "58410-2",
-        "display" : "Laboratory report"
-      }
-    ],
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "58410-2",
+      "display" : "Laboratory report"
+    }],
     "text" : "Laborbefund"
   },
   "subject" : {
@@ -41,24 +58,18 @@
   },
   "effectiveDateTime" : "2024-09-15T10:30:00+01:00",
   "issued" : "2024-09-15T11:00:00+01:00",
-  "performer" : [
-    {
-      "reference" : "Practitioner/at-aps-example-practitioner-01",
-      "display" : "Hanna Hausärztin"
-    }
-  ],
-  "specimen" : [
-    {
-      "reference" : "Specimen/AtApsExampleSpecimen01",
-      "display" : "Blutprobe"
-    }
-  ],
-  "result" : [
-    {
-      "reference" : "Observation/AtApsExampleObservation01",
-      "display" : "Hämoglobin"
-    }
-  ]
+  "performer" : [{
+    "reference" : "Practitioner/at-aps-example-practitioner-01",
+    "display" : "Hanna Hausärztin"
+  }],
+  "specimen" : [{
+    "reference" : "Specimen/AtApsExampleSpecimen01",
+    "display" : "Blutprobe"
+  }],
+  "result" : [{
+    "reference" : "Observation/AtApsExampleObservation01",
+    "display" : "Hämoglobin"
+  }]
 }
 
 ```

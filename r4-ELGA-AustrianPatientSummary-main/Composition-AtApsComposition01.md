@@ -1,4 +1,24 @@
-# Austrian Patient Summary - Austrian Patient Summary (R4) v1.0.0
+# Austrian Patient Summary - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Austrian Patient Summary**
+
+## Example Composition: Austrian Patient Summary
+
+Profile: [AT APS Composition](StructureDefinition-at-aps-composition.md)
+
+**status**: Preliminary
+
+**type**: Patient summary
+
+**date**: 2024-02-08 14:01:30+0000
+
+**author**: [APS Generator](Device-AtApsExampleDevice04.md)
+
+**title**: Austrian Patient Summary
+
+**custodian**: [Muster-Organization](Organization-AtApsExampleOrganization01.md)
 
 
 
@@ -9,158 +29,130 @@
   "resourceType" : "Composition",
   "id" : "AtApsComposition01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-composition"]
   },
   "status" : "preliminary",
   "type" : {
-    "coding" : [
-      {
-        "system" : "http://loinc.org",
-        "code" : "60591-5",
-        "display" : "Patient summary"
-      }
-    ]
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "60591-5",
+      "display" : "Patient summary"
+    }]
   },
   "subject" : {
     "reference" : "Patient/at-aps-example-patient-01",
     "display" : "Maria Musterfrau"
   },
   "date" : "2024-02-08T14:01:30+00:00",
-  "author" : [
-    {
-      "reference" : "Device/AtApsExampleDevice04",
-      "display" : "APS Generator"
-    }
-  ],
+  "author" : [{
+    "reference" : "Device/AtApsExampleDevice04",
+    "display" : "APS Generator"
+  }],
   "title" : "Austrian Patient Summary",
   "custodian" : {
     "reference" : "Organization/AtApsExampleOrganization01",
     "display" : "Muster-Organization"
   },
-  "section" : [
-    {
-      "title" : "Medikationsliste",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "http://loinc.org",
-            "code" : "10160-0",
-            "display" : "Medikationsanamnese"
-          }
-        ]
-      },
-      "text" : {
-        "status" : "empty",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
-      },
-      "emptyReason" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-            "code" : "nilknown"
-          }
-        ]
-      }
+  "section" : [{
+    "title" : "Medikationsliste",
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "10160-0",
+        "display" : "Medikationsanamnese"
+      }]
     },
-    {
-      "title" : "Allergien und Intoleranzen",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "http://loinc.org",
-            "code" : "48765-2",
-            "display" : "Allergien und unerwünschte Wirkungen"
-          }
-        ]
-      },
-      "text" : {
-        "status" : "empty",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
-      },
-      "emptyReason" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-            "code" : "nilknown"
-          }
-        ]
-      }
+    "text" : {
+      "status" : "empty",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
     },
-    {
-      "title" : "Gesundheitsprobleme und Risiken",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "http://loinc.org",
-            "code" : "11450-4",
-            "display" : "Problemliste"
-          }
-        ]
-      },
-      "text" : {
-        "status" : "empty",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
-      },
-      "emptyReason" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-            "code" : "nilknown"
-          }
-        ]
-      }
-    },
-    {
-      "title" : "Eingriffe und Therapien",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "http://loinc.org",
-            "code" : "47519-4",
-            "display" : "Anamnese der Prozeduren oder Maßnahmen"
-          }
-        ]
-      },
-      "text" : {
-        "status" : "empty",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
-      },
-      "emptyReason" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-            "code" : "nilknown"
-          }
-        ]
-      }
-    },
-    {
-      "title" : "Implantate, medizinische Geräte und Heilbehelfe",
-      "code" : {
-        "coding" : [
-          {
-            "system" : "http://loinc.org",
-            "code" : "46264-8",
-            "display" : "Anamnese zum Einsatz von Medizinprodukten"
-          }
-        ]
-      },
-      "text" : {
-        "status" : "empty",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
-      },
-      "emptyReason" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-            "code" : "nilknown"
-          }
-        ]
-      }
+    "emptyReason" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+        "code" : "nilknown"
+      }]
     }
-  ]
+  },
+  {
+    "title" : "Allergien und Intoleranzen",
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "48765-2",
+        "display" : "Allergien und unerwünschte Wirkungen"
+      }]
+    },
+    "text" : {
+      "status" : "empty",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+    },
+    "emptyReason" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+        "code" : "nilknown"
+      }]
+    }
+  },
+  {
+    "title" : "Gesundheitsprobleme und Risiken",
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "11450-4",
+        "display" : "Problemliste"
+      }]
+    },
+    "text" : {
+      "status" : "empty",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+    },
+    "emptyReason" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+        "code" : "nilknown"
+      }]
+    }
+  },
+  {
+    "title" : "Eingriffe und Therapien",
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "47519-4",
+        "display" : "Anamnese der Prozeduren oder Maßnahmen"
+      }]
+    },
+    "text" : {
+      "status" : "empty",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+    },
+    "emptyReason" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+        "code" : "nilknown"
+      }]
+    }
+  },
+  {
+    "title" : "Implantate, medizinische Geräte und Heilbehelfe",
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "46264-8",
+        "display" : "Anamnese zum Einsatz von Medizinprodukten"
+      }]
+    },
+    "text" : {
+      "status" : "empty",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrativer Text muss generiert werden.</p></div>"
+    },
+    "emptyReason" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+        "code" : "nilknown"
+      }]
+    }
+  }]
 }
 
 ```

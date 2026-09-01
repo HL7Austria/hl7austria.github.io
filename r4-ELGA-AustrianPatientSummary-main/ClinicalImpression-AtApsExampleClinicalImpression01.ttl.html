@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AtApsClinicalImpression-Beispiel - TTL Representation - Austrian Patient Summary (R4) v1.0.0</title>
+    <title>AtApsClinicalImpression-Beispiel - TTL Representation - Austrian Patient Summary (R4) v1.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
           <p>
             <!-- at-fhir-ig-template begin -->
             <span style="font-size:12pt;font-weight:bold">Austrian Patient Summary (R4)</span><br/>
-            <span class="label label-info">1.0.0 - STU1
+            <span class="label label-info">1.1.0 - STU2
               <!--
 
 
@@ -200,7 +200,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">Austrian Patient Summary (R4) - Local Development build (v1.0.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/aps/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">Austrian Patient Summary (R4) - Local Development build (v1.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/aps/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -254,58 +254,80 @@
   <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:ClinicalImpression ;
+&lt;http://hl7.org/fhir/ClinicalImpression/AtApsExampleClinicalImpression01&gt; a fhir:ClinicalImpression ;
   <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/resource.html#ClinicalImpression.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;AtApsExampleClinicalImpression01&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/resource.html#ClinicalImpression.meta">fhir:meta</a> [
-    ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression&quot;^^xsd:anyURI ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:l</a> &lt;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression&gt;     ] )
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/domainresource.html#ClinicalImpression.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">fhir:div</a> [ <a href="http://hl7.org/fhir/R4/narrative.html#xhtml">fhir:v</a> &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ClinicalImpression AtApsExampleClinicalImpression01&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;AtApsExampleClinicalImpression01\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcAtApsExampleClinicalImpression01\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-at-aps-clinicalimpression.html\&quot;&gt;AT APS ClinicalImpression&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: 12345&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Completed&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Dieser 26-jährige männliche Patient wird nach einem Verkehrsunfall mit dem Krankenwagen in die Notaufnahme gebracht.&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-at-aps-example-patient-01.html\&quot;&gt;Maria Musterfrau&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 2014-12-06 20:00:00+1100 --&amp;gt; 2014-12-06 22:33:00+1100&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2014-12-06 22:33:00+1100&lt;/p&gt;&lt;p&gt;&lt;b&gt;assessor&lt;/b&gt;: &lt;a href=\&quot;Practitioner-at-aps-example-practitioner-01.html\&quot;&gt;Hanna Hausärztin&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;problem&lt;/b&gt;: MVA&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;investigation&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=\&quot;Codes:\&quot;&gt;Erstuntersuchung&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;tiefe Platzwunde an der Kopfhaut&lt;/li&gt;&lt;li&gt;verminderte Bewusstseinslage&lt;/li&gt;&lt;li&gt;zeitlich und örtlich desorientiert&lt;/li&gt;&lt;li&gt;unruhig&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;summary&lt;/b&gt;: Vorläufige Diagnosen: Kopfverletzung und traumatische Hirnverletzung&lt;/p&gt;&lt;/div&gt;&quot;^^rdf:XMLLiteral ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.identifier">fhir:identifier</a> ( [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;12345&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;completed&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.description">fhir:description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Dieser 26-jährige männliche Patient wird nach einem Verkehrsunfall mit dem Krankenwagen in die Notaufnahme gebracht.&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.subject">fhir:subject</a> [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Patient/at-aps-example-patient-01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Patient/at-aps-example-patient-01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Maria Musterfrau&quot; ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.effective_x_">fhir:effective</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Period">a</a> fhir:Period ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">fhir:start</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2014-12-06T20:00:00+11:00&quot;^^xsd:dateTime ] ;
-<a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">fhir:end</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2014-12-06T22:33:00+11:00&quot;^^xsd:dateTime ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.date">fhir:date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2014-12-06T22:33:00+11:00&quot;^^xsd:dateTime] ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.assessor">fhir:assessor</a> [
-<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:l</a> fhir:Practitioner/at-aps-example-practitioner-01 ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Practitioner/at-aps-example-practitioner-01&quot; ] ;
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Hanna Hausärztin&quot; ]
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.problem">fhir:problem</a> ( [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;MVA&quot; ]
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.investigation">fhir:investigation</a> ( [
-<a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.investigation.code">fhir:code</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Erstuntersuchung&quot; ]     ] ;
-    ( <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.investigation.item">fhir:item</a> [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;tiefe Platzwunde an der Kopfhaut&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;verminderte Bewusstseinslage&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;zeitlich und örtlich desorientiert&quot; ]     ] [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;unruhig&quot; ]     ] )
-  ] ) ; # 
-  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.summary">fhir:summary</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Vorläufige Diagnosen: Kopfverletzung und traumatische Hirnverletzung&quot;] . # 
+  <a href="http://hl7.org/fhir/R4/resource.html#ClinicalImpression.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;AtApsExampleClinicalImpression01&quot;] ;
+  <a href="http://hl7.org/fhir/R4/resource.html#ClinicalImpression.meta">fhir:Resource.meta</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression&quot; ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-clinicalimpression&gt;
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#ClinicalImpression.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ] ;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ClinicalImpression AtApsExampleClinicalImpression01&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;AtApsExampleClinicalImpression01\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcAtApsExampleClinicalImpression01\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-at-aps-clinicalimpression.html\&quot;&gt;AT APS ClinicalImpression&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: 12345&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: Completed&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt;: Dieser 26-jährige männliche Patient wird nach einem Verkehrsunfall mit dem Krankenwagen in die Notaufnahme gebracht.&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-at-aps-example-patient-01.html\&quot;&gt;Maria Musterfrau&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 2014-12-06 20:00:00+1100 --&amp;gt; 2014-12-06 22:33:00+1100&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2014-12-06 22:33:00+1100&lt;/p&gt;&lt;p&gt;&lt;b&gt;assessor&lt;/b&gt;: &lt;a href=\&quot;Practitioner-at-aps-example-practitioner-01.html\&quot;&gt;Hanna Hausärztin&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;problem&lt;/b&gt;: MVA&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;investigation&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: &lt;span title=\&quot;Codes:\&quot;&gt;Erstuntersuchung&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;item&lt;/b&gt;: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;tiefe Platzwunde an der Kopfhaut&lt;/li&gt;&lt;li&gt;verminderte Bewusstseinslage&lt;/li&gt;&lt;li&gt;zeitlich und örtlich desorientiert&lt;/li&gt;&lt;li&gt;unruhig&lt;/li&gt;&lt;/ul&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;summary&lt;/b&gt;: Vorläufige Diagnosen: Kopfverletzung und traumatische Hirnverletzung&lt;/p&gt;&lt;/div&gt;&quot;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.identifier">fhir:ClinicalImpression.identifier</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:Identifier.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;12345&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.status">fhir:ClinicalImpression.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;completed&quot;] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.description">fhir:ClinicalImpression.description</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Dieser 26-jährige männliche Patient wird nach einem Verkehrsunfall mit dem Krankenwagen in die Notaufnahme gebracht.&quot;] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.subject">fhir:ClinicalImpression.subject</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Patient/at-aps-example-patient-01&gt; ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Patient/at-aps-example-patient-01&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Maria Musterfrau&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.effective_x_">fhir:ClinicalImpression.effectivePeriod</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.start">fhir:Period.start</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2014-12-06T20:00:00+11:00&quot;^^xsd:dateTime ] ;
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Period#Period.end">fhir:Period.end</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2014-12-06T22:33:00+11:00&quot;^^xsd:dateTime ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.date">fhir:ClinicalImpression.date</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;2014-12-06T22:33:00+11:00&quot;^^xsd:dateTime] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.assessor">fhir:ClinicalImpression.assessor</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;http://hl7.org/fhir/Practitioner/at-aps-example-practitioner-01&gt; ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Practitioner/at-aps-example-practitioner-01&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Hanna Hausärztin&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.problem">fhir:ClinicalImpression.problem</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;MVA&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.investigation">fhir:ClinicalImpression.investigation</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.investigation.code">fhir:ClinicalImpression.investigation.code</a> [
+       <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Erstuntersuchung&quot; ]
+     ] ;
+     <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.investigation.item">fhir:ClinicalImpression.investigation.item</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;tiefe Platzwunde an der Kopfhaut&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 1 ;
+       <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;verminderte Bewusstseinslage&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 2 ;
+       <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;zeitlich und örtlich desorientiert&quot; ]
+     ], [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 3 ;
+       <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">fhir:Reference.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;unruhig&quot; ]
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/clinicalimpression.html#ClinicalImpression.summary">fhir:ClinicalImpression.summary</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Vorläufige Diagnosen: Kopfverletzung und traumatische Hirnverletzung&quot;] .
+
+&lt;http://hl7.org/fhir/Patient/at-aps-example-patient-01&gt; a fhir:Patient .
+
+&lt;http://hl7.org/fhir/Practitioner/at-aps-example-practitioner-01&gt; a fhir:Practitioner .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/ClinicalImpression/AtApsExampleClinicalImpression01.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/ClinicalImpression/AtApsExampleClinicalImpression01.ttl&gt; .
 
 </code></pre>
 
@@ -332,7 +354,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Feb 17, 2026 09:00+0000">2026-02-17</span>
+    IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.aps.r4#1.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 07:40+0000">2026-09-01</span>
     <br/>
     <span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

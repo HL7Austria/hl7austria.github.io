@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -9,77 +8,76 @@
 
 <https://fhir.hl7.at/elga/aps/r4/MedicationStatement/AtApsExampleMedicationStatement01> a fhir:MedicationStatement ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "AtApsExampleMedicationStatement01"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement"^^xsd:anyURI ;
-       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement AtApsExampleMedicationStatement01</b></p><a name=\"AtApsExampleMedicationStatement01\"> </a><a name=\"hcAtApsExampleMedicationStatement01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-medicationstatement.html\">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <a href=\"Medication-AtApsExampleMedication01.html\">Ramipril 5mg Kapseln</a></p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>effective</b>: 2024-10-01 --&gt; 2025-03-31</p><p><b>informationSource</b>: <a href=\"Practitioner-at-aps-example-practitioner-01.html\">Hanna Hausärztin</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 59621000}\">Hypertonie</span></p><blockquote><p><b>dosage</b></p><p><b>text</b>: 1 Kapsel täglich morgens</p><p><b>route</b>: <span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral use</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>5 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span></td></tr></table></blockquote></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:medication [
-     a fhir:Reference ;
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Medication/AtApsExampleMedication01> ;
-     fhir:reference [ fhir:v "Medication/AtApsExampleMedication01" ] ;
-     fhir:display [ fhir:v "Ramipril 5mg Kapseln" ]
-  ] ; # 
-  fhir:subject [
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
-     fhir:reference [ fhir:v "Patient/at-aps-example-patient-01" ] ;
-     fhir:display [ fhir:v "Maria Musterfrau" ]
-  ] ; # 
-  fhir:effective [
-     a fhir:Period ;
-     fhir:start [ fhir:v "2024-10-01"^^xsd:date ] ;
-     fhir:end [ fhir:v "2025-03-31"^^xsd:date ]
-  ] ; # 
-  fhir:informationSource [
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Practitioner/at-aps-example-practitioner-01> ;
-     fhir:reference [ fhir:v "Practitioner/at-aps-example-practitioner-01" ] ;
-     fhir:display [ fhir:v "Hanna Hausärztin" ]
-  ] ; # 
-  fhir:reasonCode ( [
-     fhir:coding ( [
+  fhir:Resource.id [ fhir:value "AtApsExampleMedicationStatement01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-medicationstatement>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: MedicationStatement AtApsExampleMedicationStatement01</b></p><a name=\"AtApsExampleMedicationStatement01\"> </a><a name=\"hcAtApsExampleMedicationStatement01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-medicationstatement.html\">AT APS MedicationStatement</a></p></div><p><b>status</b>: Active</p><p><b>medication</b>: <a href=\"Medication-AtApsExampleMedication01.html\">Ramipril 5mg Kapseln</a></p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>effective</b>: 2024-10-01 --&gt; 2025-03-31</p><p><b>informationSource</b>: <a href=\"Practitioner-at-aps-example-practitioner-01.html\">Hanna Hausärztin</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 59621000}\">Hypertonie</span></p><blockquote><p><b>dosage</b></p><p><b>text</b>: 1 Kapsel täglich morgens</p><p><b>route</b>: <span title=\"Codes:{http://snomed.info/sct 26643006}\">Oral use</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>5 mg<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codemg = 'mg')</span></td></tr></table></blockquote></div>"
+  ] ;
+  fhir:MedicationStatement.status [ fhir:value "active"] ;
+  fhir:MedicationStatement.medicationReference [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Medication/AtApsExampleMedication01> ;
+     fhir:Reference.reference [ fhir:value "Medication/AtApsExampleMedication01" ] ;
+     fhir:Reference.display [ fhir:value "Ramipril 5mg Kapseln" ]
+  ] ;
+  fhir:MedicationStatement.subject [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/at-aps-example-patient-01" ] ;
+     fhir:Reference.display [ fhir:value "Maria Musterfrau" ]
+  ] ;
+  fhir:MedicationStatement.effectivePeriod [
+     fhir:Period.start [ fhir:value "2024-10-01"^^xsd:date ] ;
+     fhir:Period.end [ fhir:value "2025-03-31"^^xsd:date ]
+  ] ;
+  fhir:MedicationStatement.informationSource [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Practitioner/at-aps-example-practitioner-01> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/at-aps-example-practitioner-01" ] ;
+     fhir:Reference.display [ fhir:value "Hanna Hausärztin" ]
+  ] ;
+  fhir:MedicationStatement.reasonCode [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a sct:59621000 ;
-       fhir:system [
-         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-         fhir:l <http://snomed.info/sct>
-       ] ;
-       fhir:code [ fhir:v "59621000" ] ;
-       fhir:display [ fhir:v "Hypertonie" ]
-     ] ) ;
-     fhir:text [ fhir:v "Hypertonie" ]
-  ] ) ; # 
-  fhir:dosage ( [
-     fhir:text [ fhir:v "1 Kapsel täglich morgens" ] ;
-     fhir:route [
-       fhir:coding ( [
-         a sct:26643006 ;
-         fhir:system [
-           fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
-           fhir:l <http://snomed.info/sct>
-         ] ;
-         fhir:code [ fhir:v "26643006" ] ;
-         fhir:display [ fhir:v "Oral use" ]
-       ] )
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "59621000" ] ;
+       fhir:Coding.display [ fhir:value "Hypertonie" ]
      ] ;
-     fhir:doseAndRate ( [
-       fhir:dose [
-         a fhir:Quantity ;
-         fhir:value [ fhir:v "5"^^xsd:decimal ] ;
-         fhir:unit [ fhir:v "mg" ] ;
-         fhir:system [
-           fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ;
-           fhir:l <http://unitsofmeasure.org>
-         ] ;
-         fhir:code [ fhir:v "mg" ]
+     fhir:CodeableConcept.text [ fhir:value "Hypertonie" ]
+  ] ;
+  fhir:MedicationStatement.dosage [
+     fhir:index 0 ;
+     fhir:Dosage.text [ fhir:value "1 Kapsel täglich morgens" ] ;
+     fhir:Dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:26643006 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "26643006" ] ;
+         fhir:Coding.display [ fhir:value "Oral use" ]
        ]
-     ] )
-  ] ) . # 
+     ] ;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "mg" ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "mg" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/MedicationStatement/AtApsExampleMedicationStatement01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

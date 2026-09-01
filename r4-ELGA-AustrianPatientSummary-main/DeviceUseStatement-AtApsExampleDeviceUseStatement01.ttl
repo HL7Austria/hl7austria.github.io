@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,34 +7,38 @@
 
 <https://fhir.hl7.at/elga/aps/r4/DeviceUseStatement/AtApsExampleDeviceUseStatement01> a fhir:DeviceUseStatement ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "AtApsExampleDeviceUseStatement01"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement"^^xsd:anyURI ;
-       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DeviceUseStatement AtApsExampleDeviceUseStatement01</b></p><a name=\"AtApsExampleDeviceUseStatement01\"> </a><a name=\"hcAtApsExampleDeviceUseStatement01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-deviceusestatement.html\">AT APS DeviceUseStatement</a></p></div><p><b>identifier</b>: 51ebb7a9-4e3a-4360-9a05-0cc2d869086f</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>timing</b>: 2015-02-07</p><p><b>device</b>: <a href=\"Device-at-aps-example-device-01.html\">Device: type = Gerät</a></p></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:identifier ( [
-     fhir:value [ fhir:v "51ebb7a9-4e3a-4360-9a05-0cc2d869086f" ]
-  ] ) ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:subject [
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
-     fhir:reference [ fhir:v "Patient/at-aps-example-patient-01" ] ;
-     fhir:display [ fhir:v "Maria Musterfrau" ]
-  ] ; # 
-  fhir:timing [
-     a fhir:DateTime ;
-     fhir:v "2015-02-07"^^xsd:date
-  ] ; # 
-  fhir:device [
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Device/at-aps-example-device-01> ;
-     fhir:reference [ fhir:v "Device/at-aps-example-device-01" ]
-  ] . # 
+  fhir:Resource.id [ fhir:value "AtApsExampleDeviceUseStatement01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-deviceusestatement>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DeviceUseStatement AtApsExampleDeviceUseStatement01</b></p><a name=\"AtApsExampleDeviceUseStatement01\"> </a><a name=\"hcAtApsExampleDeviceUseStatement01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-deviceusestatement.html\">AT APS DeviceUseStatement</a></p></div><p><b>identifier</b>: 51ebb7a9-4e3a-4360-9a05-0cc2d869086f</p><p><b>status</b>: Active</p><p><b>subject</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>timing</b>: 2015-02-07</p><p><b>device</b>: <a href=\"Device-at-aps-example-device-01.html\">Device: type = Gerät</a></p></div>"
+  ] ;
+  fhir:DeviceUseStatement.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.value [ fhir:value "51ebb7a9-4e3a-4360-9a05-0cc2d869086f" ]
+  ] ;
+  fhir:DeviceUseStatement.status [ fhir:value "active"] ;
+  fhir:DeviceUseStatement.subject [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/at-aps-example-patient-01" ] ;
+     fhir:Reference.display [ fhir:value "Maria Musterfrau" ]
+  ] ;
+  fhir:DeviceUseStatement.timingDateTime [ fhir:value "2015-02-07"^^xsd:date] ;
+  fhir:DeviceUseStatement.device [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Device/at-aps-example-device-01> ;
+     fhir:Reference.reference [ fhir:value "Device/at-aps-example-device-01" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/DeviceUseStatement/AtApsExampleDeviceUseStatement01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

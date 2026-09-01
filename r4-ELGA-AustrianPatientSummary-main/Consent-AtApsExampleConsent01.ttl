@@ -1,7 +1,6 @@
 @prefix fhir: <http://hl7.org/fhir/> .
-@prefix loinc: <https://loinc.org/rdf/> .
+@prefix loinc: <http://loinc.org/rdf#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -9,54 +8,55 @@
 
 <https://fhir.hl7.at/elga/aps/r4/Consent/AtApsExampleConsent01> a fhir:Consent ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "AtApsExampleConsent01"] ; # 
-  fhir:meta [
-     fhir:profile ( [
-       fhir:v "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-consent"^^xsd:anyURI ;
-       fhir:l <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-consent>
-     ] )
-  ] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Consent AtApsExampleConsent01</b></p><a name=\"AtApsExampleConsent01\"> </a><a name=\"hcAtApsExampleConsent01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-consent.html\">AT APS Consent</a></p></div><p><b>status</b>: Active</p><p><b>scope</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentscope treatment}\">Treatment</span></p><p><b>category</b>: <span title=\"Codes:{http://loinc.org 59284-0}\">Einwilligung - Dokument</span></p><p><b>patient</b>: <a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></p><p><b>policyRule</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentpolicycodes cric}\">Common Rule Informed Consent</span></p></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:scope [
-     fhir:coding ( [
-       fhir:system [
-         fhir:v "http://terminology.hl7.org/CodeSystem/consentscope"^^xsd:anyURI ;
-         fhir:l <http://terminology.hl7.org/CodeSystem/consentscope>
-       ] ;
-       fhir:code [ fhir:v "treatment" ] ;
-       fhir:display [ fhir:v "Treatment" ]
-     ] )
-  ] ; # 
-  fhir:category ( [
-     fhir:coding ( [
+  fhir:Resource.id [ fhir:value "AtApsExampleConsent01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-consent" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-consent>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Consent AtApsExampleConsent01</b></p><a name=\"AtApsExampleConsent01\"> </a><a name=\"hcAtApsExampleConsent01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-aps-consent.html\">AT APS Consent</a></p></div><h2>Participants</h2><table class=\"grid\"><tr><td><b>Role</b></td><td><b>Details</b></td></tr><tr><td title=\"Who the consent applies to\">Patient</td><td><a href=\"Patient-at-aps-example-patient-01.html\">Maria Musterfrau</a></td></tr></table><p>This consent is made under the regulation <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/consentpolicycodes cric}\">Common Rule Informed Consent</span> .</p><p>The subject has given their consent.</p></div>"
+  ] ;
+  fhir:Consent.status [ fhir:value "active"] ;
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ] ;
+       fhir:Coding.code [ fhir:value "treatment" ] ;
+       fhir:Coding.display [ fhir:value "Treatment" ]
+     ]
+  ] ;
+  fhir:Consent.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
        a loinc:59284-0 ;
-       fhir:system [
-         fhir:v "http://loinc.org"^^xsd:anyURI ;
-         fhir:l <http://loinc.org>
-       ] ;
-       fhir:code [ fhir:v "59284-0" ] ;
-       fhir:display [ fhir:v "Einwilligung - Dokument" ]
-     ] )
-  ] ) ; # 
-  fhir:patient [
-     fhir:l <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
-     fhir:reference [ fhir:v "Patient/at-aps-example-patient-01" ] ;
-     fhir:display [ fhir:v "Maria Musterfrau" ]
-  ] ; # 
-  fhir:policyRule [
-     fhir:coding ( [
-       fhir:system [
-         fhir:v "http://terminology.hl7.org/CodeSystem/consentpolicycodes"^^xsd:anyURI ;
-         fhir:l <http://terminology.hl7.org/CodeSystem/consentpolicycodes>
-       ] ;
-       fhir:code [ fhir:v "cric" ] ;
-       fhir:display [ fhir:v "Common Rule Informed Consent" ]
-     ] )
-  ] . # 
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "59284-0" ] ;
+       fhir:Coding.display [ fhir:value "Einwilligung - Dokument" ]
+     ]
+  ] ;
+  fhir:Consent.patient [
+     fhir:link <https://fhir.hl7.at/elga/aps/r4/Patient/at-aps-example-patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/at-aps-example-patient-01" ] ;
+     fhir:Reference.display [ fhir:value "Maria Musterfrau" ]
+  ] ;
+  fhir:Consent.policyRule [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentpolicycodes" ] ;
+       fhir:Coding.code [ fhir:value "cric" ] ;
+       fhir:Coding.display [ fhir:value "Common Rule Informed Consent" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/aps/r4/Consent/AtApsExampleConsent01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

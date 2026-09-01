@@ -1,4 +1,26 @@
-# AtApsObservationPregnancyStatus-Beispiel - Austrian Patient Summary (R4) v1.0.0
+# AtApsObservationPregnancyStatus-Beispiel - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **AtApsObservationPregnancyStatus-Beispiel**
+
+## Example Observation: AtApsObservationPregnancyStatus-Beispiel
+
+Profile: [AT APS Observation Pregnancy Status](StructureDefinition-at-aps-observationpregnancystatus.md)
+
+**status**: Final
+
+**code**: Schwangerschaftsstatus
+
+**subject**: [Maria Musterfrau](Patient-at-aps-example-patient-01.md)
+
+**effective**: 2025-05-01 10:00:00+0100
+
+**performer**: [Hanna Hausärztin](Practitioner-at-aps-example-practitioner-01.md)
+
+**value**: Schwanger
+
+**hasMember**: [Expected Delivery Date](Observation-AtApsExampleObservationPregnancyEdd01.md)
 
 
 
@@ -9,19 +31,15 @@
   "resourceType" : "Observation",
   "id" : "AtApsExampleObservationPregnancyStatus01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancystatus"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-observationpregnancystatus"]
   },
   "status" : "final",
   "code" : {
-    "coding" : [
-      {
-        "system" : "http://loinc.org",
-        "code" : "82810-3",
-        "display" : "Pregnancy status"
-      }
-    ],
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "82810-3",
+      "display" : "Pregnancy status"
+    }],
     "text" : "Schwangerschaftsstatus"
   },
   "subject" : {
@@ -29,28 +47,22 @@
     "display" : "Maria Musterfrau"
   },
   "effectiveDateTime" : "2025-05-01T10:00:00+01:00",
-  "performer" : [
-    {
-      "reference" : "Practitioner/at-aps-example-practitioner-01",
-      "display" : "Hanna Hausärztin"
-    }
-  ],
+  "performer" : [{
+    "reference" : "Practitioner/at-aps-example-practitioner-01",
+    "display" : "Hanna Hausärztin"
+  }],
   "valueCodeableConcept" : {
-    "coding" : [
-      {
-        "system" : "http://loinc.org",
-        "code" : "LA15173-0",
-        "display" : "Pregnant"
-      }
-    ],
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LA15173-0",
+      "display" : "Pregnant"
+    }],
     "text" : "Schwanger"
   },
-  "hasMember" : [
-    {
-      "reference" : "Observation/AtApsExampleObservationPregnancyEdd01",
-      "display" : "Expected Delivery Date"
-    }
-  ]
+  "hasMember" : [{
+    "reference" : "Observation/AtApsExampleObservationPregnancyEdd01",
+    "display" : "Expected Delivery Date"
+  }]
 }
 
 ```

@@ -1,4 +1,21 @@
-# AtApsPatient-Beispiel - Austrian Patient Summary (R4) v1.0.0
+# AtApsPatient-Beispiel - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **AtApsPatient-Beispiel**
+
+## Example Patient: AtApsPatient-Beispiel
+
+Profile: [AT APS Patient](StructureDefinition-at-aps-patient.md)
+
+Maria Musterfrau Female, DoB: 1998-04-17 ( Social Security number: 0000121150)
+
+-------
+
+| | |
+| :--- | :--- |
+| Other Id: | Patient internal identifier/0001 |
+| Contact Detail | Am Schulweg 5 Hainfeld 3100 AUT (home) |
 
 
 
@@ -9,61 +26,49 @@
   "resourceType" : "Patient",
   "id" : "at-aps-example-patient-01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"]
   },
-  "identifier" : [
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "SS",
-            "display" : "Social Security number"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
-      "value" : "0000121150",
-      "assigner" : {
-        "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-      }
+  "identifier" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "SS",
+        "display" : "Social Security number"
+      }]
     },
-    {
-      "type" : {
-        "coding" : [
-          {
-            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code" : "PI",
-            "display" : "Patient internal identifier"
-          }
-        ]
-      },
-      "system" : "urn:oid:1.2.3.4.5",
-      "value" : "0001",
-      "assigner" : {
-        "display" : "Ein GDA in Österreich"
-      }
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+    "value" : "0000121150",
+    "assigner" : {
+      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
     }
-  ],
-  "name" : [
-    {
-      "family" : "Musterfrau",
-      "given" : ["Maria"]
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "PI",
+        "display" : "Patient internal identifier"
+      }]
+    },
+    "system" : "urn:oid:1.2.3.4.5",
+    "value" : "0001",
+    "assigner" : {
+      "display" : "Ein GDA in Österreich"
     }
-  ],
+  }],
+  "name" : [{
+    "family" : "Musterfrau",
+    "given" : ["Maria"]
+  }],
   "gender" : "female",
   "birthDate" : "1998-04-17",
-  "address" : [
-    {
-      "use" : "home",
-      "line" : ["Am Schulweg 5"],
-      "city" : "Hainfeld",
-      "postalCode" : "3100",
-      "country" : "AUT"
-    }
-  ]
+  "address" : [{
+    "use" : "home",
+    "line" : ["Am Schulweg 5"],
+    "city" : "Hainfeld",
+    "postalCode" : "3100",
+    "country" : "AUT"
+  }]
 }
 
 ```

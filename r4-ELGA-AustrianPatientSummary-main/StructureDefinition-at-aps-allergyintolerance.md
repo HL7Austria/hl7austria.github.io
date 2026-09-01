@@ -1,4 +1,35 @@
-# AT APS AllergyIntolerance - Austrian Patient Summary (R4) v1.0.0
+# AT APS AllergyIntolerance - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **AT APS AllergyIntolerance**
+
+## Resource Profile: AT APS AllergyIntolerance 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance | *Version*:1.1.0 |
+| Active as of 2026-09-01 | *Computable Name*:AtApsAllergyIntolerance |
+
+ 
+Das AT APS-Profil für die AllergyIntolerance-Ressource berücksichtigt zum einen die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets) und stellt andererseits die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird. 
+
+**Usages:**
+
+* Use this Profile: [AT APS Bundle](StructureDefinition-at-aps-bundle.md)
+* Refer to this Profile: [AT APS ClinicalImpression](StructureDefinition-at-aps-clinicalimpression.md) and [AT APS Composition](StructureDefinition-at-aps-composition.md)
+* Examples for this Profile: [AllergyIntolerance/at-aps-example-allergyintolerance-01](AllergyIntolerance-at-aps-example-allergyintolerance-01.md)
+* CapabilityStatements using this Profile: [AT APS CapabilityStatement (Server)](CapabilityStatement-at-aps-capabilitystatement-server.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.aps.r4|current/StructureDefinition/StructureDefinition-at-aps-allergyintolerance.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-at-aps-allergyintolerance.csv), [Excel](StructureDefinition-at-aps-allergyintolerance.xlsx), [Schematron](StructureDefinition-at-aps-allergyintolerance.sch) 
 
 
 
@@ -8,140 +39,112 @@
 {
   "resourceType" : "StructureDefinition",
   "id" : "at-aps-allergyintolerance",
-  "extension" : [
-    {
-      "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
-      "valueCanonical" : "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
-    }
-  ],
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile",
+    "valueCanonical" : "http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"
+  }],
   "url" : "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-allergyintolerance",
-  "version" : "1.0.0",
+  "version" : "1.1.0",
   "name" : "AtApsAllergyIntolerance",
   "title" : "AT APS AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-02-17T09:00:43+00:00",
+  "date" : "2026-09-01T07:40:12+00:00",
   "publisher" : "ELGA GmbH",
-  "contact" : [
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at"
-        }
-      ]
-    },
-    {
-      "name" : "ELGA GmbH",
-      "telecom" : [
-        {
-          "system" : "url",
-          "value" : "https://elga.gv.at",
-          "use" : "work"
-        }
-      ]
-    }
-  ],
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
   "description" : "Das AT APS-Profil für die AllergyIntolerance-Ressource berücksichtigt zum einen die österreichischen Vorgaben (z.B. Patient und zu verwendende Value-Sets) und stellt andererseits die Konformität gegenüber dem IPS-Profil sicher, indem die so genannte [`imposeProfile`](http://hl7.org/fhir/StructureDefinition/structuredefinition-imposeProfile)-Erweiterung verwendet wird.",
-  "jurisdiction" : [
-    {
-      "coding" : [
-        {
-          "system" : "urn:iso:std:iso:3166",
-          "code" : "AT"
-        }
-      ]
-    }
-  ],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "AT"
+    }]
+  }],
   "fhirVersion" : "4.0.1",
-  "mapping" : [
-    {
-      "identity" : "rim",
-      "uri" : "http://hl7.org/v3",
-      "name" : "RIM Mapping"
-    },
-    {
-      "identity" : "w5",
-      "uri" : "http://hl7.org/fhir/fivews",
-      "name" : "FiveWs Pattern Mapping"
-    },
-    {
-      "identity" : "v2",
-      "uri" : "http://hl7.org/v2",
-      "name" : "HL7 v2 Mapping"
-    }
-  ],
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  }],
   "kind" : "resource",
   "abstract" : false,
   "type" : "AllergyIntolerance",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance",
   "derivation" : "constraint",
   "differential" : {
-    "element" : [
-      {
-        "id" : "AllergyIntolerance",
-        "path" : "AllergyIntolerance",
-        "short" : "AT APS AllergyIntolerance"
-      },
-      {
-        "id" : "AllergyIntolerance.code",
-        "path" : "AllergyIntolerance.code",
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-allergyorintoleranceagent"
-        }
-      },
-      {
-        "id" : "AllergyIntolerance.patient",
-        "path" : "AllergyIntolerance.patient",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "AllergyIntolerance.recorder",
-        "path" : "AllergyIntolerance.recorder",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "AllergyIntolerance.asserter",
-        "path" : "AllergyIntolerance.asserter",
-        "type" : [
-          {
-            "code" : "Reference",
-            "targetProfile" : [
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
-              "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"
-            ]
-          }
-        ]
-      },
-      {
-        "id" : "AllergyIntolerance.reaction.manifestation",
-        "path" : "AllergyIntolerance.reaction.manifestation",
-        "binding" : {
-          "strength" : "extensible",
-          "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-allergyreaction"
-        }
+    "element" : [{
+      "id" : "AllergyIntolerance",
+      "path" : "AllergyIntolerance",
+      "short" : "AT APS AllergyIntolerance"
+    },
+    {
+      "id" : "AllergyIntolerance.code",
+      "path" : "AllergyIntolerance.code",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-allergyorintoleranceagent"
       }
-    ]
+    },
+    {
+      "id" : "AllergyIntolerance.patient",
+      "path" : "AllergyIntolerance.patient",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient"]
+      }]
+    },
+    {
+      "id" : "AllergyIntolerance.recorder",
+      "path" : "AllergyIntolerance.recorder",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+        "http://hl7.org/fhir/StructureDefinition/RelatedPerson"]
+      }]
+    },
+    {
+      "id" : "AllergyIntolerance.asserter",
+      "path" : "AllergyIntolerance.asserter",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-patient",
+        "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitioner",
+        "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-practitionerrole"]
+      }]
+    },
+    {
+      "id" : "AllergyIntolerance.reaction.manifestation",
+      "path" : "AllergyIntolerance.reaction.manifestation",
+      "binding" : {
+        "strength" : "extensible",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-allergyreaction"
+      }
+    }]
   }
 }
 

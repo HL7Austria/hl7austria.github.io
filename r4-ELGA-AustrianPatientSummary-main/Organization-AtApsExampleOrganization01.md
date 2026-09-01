@@ -1,4 +1,22 @@
-# AtApsExampleOrganization01-Beispiel - Austrian Patient Summary (R4) v1.0.0
+# AtApsExampleOrganization01-Beispiel - Austrian Patient Summary (R4) v1.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **AtApsExampleOrganization01-Beispiel**
+
+## Example Organization: AtApsExampleOrganization01-Beispiel
+
+Profile: [AT APS Organization](StructureDefinition-at-aps-organization.md)
+
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.2.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.3, `urn:oid:1.2.40.0.34.4.10`/K101+, `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
+
+**type**: Allgemeine Krankenanstalt
+
+**name**: Amadeus Spital
+
+**address**: Mozartgasse 1-7 Haupteingang St. Wolfgang Salzburg 5350 AUT (work)
+
+> **contact****telecom**: [info@amadeusspital.at](mailto:info@amadeusspital.at), [+43.6138.3453446.0](tel:+43.6138.3453446.0)
 
 
 
@@ -9,94 +27,76 @@
   "resourceType" : "Organization",
   "id" : "AtApsExampleOrganization01",
   "meta" : {
-    "profile" : [
-      "https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"
-    ]
+    "profile" : ["https://fhir.hl7.at/elga/aps/r4/StructureDefinition/at-aps-organization"]
   },
-  "identifier" : [
-    {
-      "system" : "urn:ietf:rfc:3986",
-      "value" : "urn:oid:1.2.40.0.34.99.4613.3",
-      "assigner" : {
-        "display" : "Bundesministerium für Gesundheit"
-      }
-    },
-    {
-      "system" : "urn:oid:1.2.40.0.34.4.10",
-      "value" : "K101+",
-      "assigner" : {
-        "display" : "Österreichisches Bundesministerium für Gesundheit"
-      }
-    },
-    {
-      "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
-      "value" : "123456789",
-      "assigner" : {
-        "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-      }
+  "identifier" : [{
+    "system" : "urn:ietf:rfc:3986",
+    "value" : "urn:oid:1.2.40.0.34.99.4613.3",
+    "assigner" : {
+      "display" : "Bundesministerium für Gesundheit"
     }
-  ],
-  "type" : [
-    {
-      "coding" : [
-        {
-          "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
-          "code" : "300",
-          "display" : "Allgemeine Krankenanstalt"
-        }
-      ]
+  },
+  {
+    "system" : "urn:oid:1.2.40.0.34.4.10",
+    "value" : "K101+",
+    "assigner" : {
+      "display" : "Österreichisches Bundesministerium für Gesundheit"
     }
-  ],
+  },
+  {
+    "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
+    "value" : "123456789",
+    "assigner" : {
+      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+    }
+  }],
+  "type" : [{
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
+      "code" : "300",
+      "display" : "Allgemeine Krankenanstalt"
+    }]
+  }],
   "name" : "Amadeus Spital",
-  "address" : [
+  "address" : [{
+    "use" : "work",
+    "type" : "both",
+    "line" : ["Mozartgasse 1-7 Haupteingang"],
+    "_line" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+        "valueString" : "Mozartgasse"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+        "valueString" : "1-7"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+        "valueString" : "Haupteingang"
+      },
+      {
+        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+        "valueString" : "Barrierefreier Zugang"
+      }]
+    }],
+    "city" : "St. Wolfgang",
+    "state" : "Salzburg",
+    "postalCode" : "5350",
+    "country" : "AUT"
+  }],
+  "contact" : [{
+    "telecom" : [{
+      "system" : "email",
+      "value" : "info@amadeusspital.at",
+      "use" : "work"
+    },
     {
-      "use" : "work",
-      "type" : "both",
-      "line" : ["Mozartgasse 1-7 Haupteingang"],
-      "_line" : [
-        {
-          "extension" : [
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-              "valueString" : "Mozartgasse"
-            },
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-              "valueString" : "1-7"
-            },
-            {
-              "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
-              "valueString" : "Haupteingang"
-            },
-            {
-              "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
-              "valueString" : "Barrierefreier Zugang"
-            }
-          ]
-        }
-      ],
-      "city" : "St. Wolfgang",
-      "state" : "Salzburg",
-      "postalCode" : "5350",
-      "country" : "AUT"
-    }
-  ],
-  "contact" : [
-    {
-      "telecom" : [
-        {
-          "system" : "email",
-          "value" : "info@amadeusspital.at",
-          "use" : "work"
-        },
-        {
-          "system" : "phone",
-          "value" : "+43.6138.3453446.0",
-          "use" : "home"
-        }
-      ]
-    }
-  ]
+      "system" : "phone",
+      "value" : "+43.6138.3453446.0",
+      "use" : "home"
+    }]
+  }]
 }
 
 ```
