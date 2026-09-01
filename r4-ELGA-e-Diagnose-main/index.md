@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-01T06:51:10+00:00",
+  "date" : "2026-09-01T11:42:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1130,7 +1130,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "scope_and_content.html"
         }],
         "nameUrl" : "scope_and_content.html",
-        "title" : "Scope and Content",
+        "title" : "Umfang und Inhalt",
         "generation" : "markdown"
       },
       {
@@ -1139,7 +1139,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "background.html"
         }],
         "nameUrl" : "background.html",
-        "title" : "Background",
+        "title" : "Hintergrund",
         "generation" : "markdown"
       },
       {
@@ -1148,7 +1148,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "challenges.html"
         }],
         "nameUrl" : "challenges.html",
-        "title" : "Challenges",
+        "title" : "Herausforderungen",
         "generation" : "markdown"
       },
       {
@@ -1157,7 +1157,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "transaction.html"
         }],
         "nameUrl" : "transaction.html",
-        "title" : "Transactions",
+        "title" : "Transaktionen",
         "generation" : "markdown"
       },
       {
@@ -1166,7 +1166,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "actors.html"
         }],
         "nameUrl" : "actors.html",
-        "title" : "System Actors",
+        "title" : "Akteure",
         "generation" : "markdown"
       },
       {
@@ -1175,7 +1175,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "design_choices.html"
         }],
         "nameUrl" : "design_choices.html",
-        "title" : "Design Choices",
+        "title" : "Designentscheidungen",
         "generation" : "markdown"
       },
       {

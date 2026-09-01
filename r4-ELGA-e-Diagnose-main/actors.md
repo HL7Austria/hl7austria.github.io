@@ -1,9 +1,9 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\System Actors - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Akteure - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* **System Actors**
+* **Akteure**
 
-## System Actors
+## Akteure
 
 Das Kapitel gibt einen Überblick über die zentralen Anwendungsfälle der e-Diagnose und zeigt, wie die verschiedenen Akteure mit den Funktionen interagieren.
 
