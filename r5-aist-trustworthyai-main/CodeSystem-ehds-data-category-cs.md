@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-data-category-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EHDSDataCategoryCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EHDSDataCategoryCodeSystem |
 
  
 Codes representing categories of electronic health data that may be made available for secondary use under the EHDS. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EHDSDataCategoryVS](ValueSet-ehds-data-category-vs.md)
+* [EHDS Data Category Value Set](ValueSet-ehds-data-category-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes representing categories of electronic health data that may be made availab
   "title" : "EHDS Data Category Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes representing categories of electronic health data that may be made available for secondary use under the EHDS.",
   "caseSensitive" : true,

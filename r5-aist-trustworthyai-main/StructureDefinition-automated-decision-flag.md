@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:AutomatedDecisionFlag |
+| Draft as of 2026-09-02 | *Computable Name*:AutomatedDecisionFlag |
 
 Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-automated-decision-f
   "name" : "AutomatedDecisionFlag",
   "title" : "Automated Decision-Making Flag",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.",
   "fhirVersion" : "5.0.0",

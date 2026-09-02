@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:AIPerformanceMetrics |
+| Draft as of 2026-09-02 | *Computable Name*:AIPerformanceMetrics |
 
 Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.
 
@@ -20,7 +20,7 @@ Documents quantitative performance measures and optional disclosures concerning 
 **Usages:**
 
 * Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-performance-metrics.json)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
   "name" : "AIPerformanceMetrics",
   "title" : "AI Performance Metrics",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.",
   "fhirVersion" : "5.0.0",

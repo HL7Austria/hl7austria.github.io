@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-human-oversight-action-vs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIHumanOversightActionVS |
+| Active as of 2026-09-02 | *Computable Name*:EUAIHumanOversightActionVS |
 
  
 Human oversight actions that may be documented in relation to an AI-generated output or recommendation. 
@@ -51,7 +51,7 @@ Human oversight actions that may be documented in relation to an AI-generated ou
   "title" : "EU AI Human Oversight Action Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Human oversight actions that may be documented in relation to an AI-generated output or recommendation.",
   "compose" : {

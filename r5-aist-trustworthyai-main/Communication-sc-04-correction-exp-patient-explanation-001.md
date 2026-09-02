@@ -23,7 +23,7 @@ Profile: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-pat
 | | |
 | :--- | :--- |
 | - | **Content[x]** |
-| * | text/plain: VGhlIEFJLXN1cHBvcnRlZCBhc3Nlc3NtZW50IHdhcyByZXZpZXdlZCBieSBhIHF1YWxpZmllZCBjbGluaWNpYW4uIFRoZSBpbml0aWFsIEFJIHJlY29tbWVuZGF0aW9uIHdhcyBjb3JyZWN0ZWQgYmVmb3JlIHRoZSBmaW5hbCBjbGluaWNhbCBkZWNpc2lvbiB3YXMgbWFkZS4= |
+| * | text/plain: VGhlIEFJLXN1cHBvcnRlZCBhc3Nlc3Nt... |
 
 
 

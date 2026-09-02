@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIInvolvementCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EUAIInvolvementCodeSystem |
 
  
 Codes indicating the manner in which an AI system contributed to the content represented by a FHIR resource. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EUAIInvolvementVS](ValueSet-eu-ai-involvement-vs.md)
+* [EU AI Involvement Value Set](ValueSet-eu-ai-involvement-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes indicating the manner in which an AI system contributed to the content rep
   "title" : "EU AI Involvement Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes indicating the manner in which an AI system contributed to the content represented by a FHIR resource.",
   "caseSensitive" : true,

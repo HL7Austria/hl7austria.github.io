@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-data-quality-vs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIDataQualityVS |
+| Active as of 2026-09-02 | *Computable Name*:EUAIDataQualityVS |
 
  
 Assessed data-quality characteristics relevant to AI-system development, validation, testing, or evaluation. 
@@ -51,7 +51,7 @@ Assessed data-quality characteristics relevant to AI-system development, validat
   "title" : "EU AI Data Quality Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Assessed data-quality characteristics relevant to AI-system development, validation, testing, or evaluation.",
   "compose" : {

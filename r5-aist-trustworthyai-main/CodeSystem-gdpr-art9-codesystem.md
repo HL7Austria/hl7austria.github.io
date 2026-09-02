@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:GDPRArt9CodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:GDPRArt9CodeSystem |
 
  
 Codes representing selected conditions in Article 9(2) GDPR under which special categories of personal data may be processed. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [GDPRArt9ConditionVS](ValueSet-gdpr-art9-condition-vs.md)
+* [GDPR Article 9 Condition Value Set](ValueSet-gdpr-art9-condition-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes representing selected conditions in Article 9(2) GDPR under which special 
   "title" : "GDPR Article 9 Condition Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes representing selected conditions in Article 9(2) GDPR under which special categories of personal data may be processed.",
   "caseSensitive" : true,

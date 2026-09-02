@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:EUAIAuditEntityRoleCodeSystem |
+| Draft as of 2026-09-02 | *Computable Name*:EUAIAuditEntityRoleCodeSystem |
 
  
 Roles used to distinguish entities involved in an AI execution audit event. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EUAIAuditEntityRoleValueSet](ValueSet-eu-ai-audit-entity-role-vs.md)
+* [EU AI Audit Entity Role Value Set](ValueSet-eu-ai-audit-entity-role-vs.md)
 
 
 
@@ -31,7 +31,7 @@ Roles used to distinguish entities involved in an AI execution audit event.
   "name" : "EUAIAuditEntityRoleCodeSystem",
   "title" : "EU AI Audit Entity Role Code System",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Roles used to distinguish entities involved in an AI execution audit event.",
   "caseSensitive" : true,

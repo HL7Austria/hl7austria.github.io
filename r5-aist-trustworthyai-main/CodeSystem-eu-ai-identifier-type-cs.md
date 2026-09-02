@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-identifier-type-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIIdentifierTypeCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EUAIIdentifierTypeCodeSystem |
 
  
 Codes identifying regulatory identifier types associated with an AI system. 
@@ -32,7 +32,7 @@ Codes identifying regulatory identifier types associated with an AI system.
   "title" : "EU AI Identifier Type Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying regulatory identifier types associated with an AI system.",
   "caseSensitive" : true,

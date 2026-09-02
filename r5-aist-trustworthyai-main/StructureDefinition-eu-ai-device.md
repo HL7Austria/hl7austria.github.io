@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:EU_AIDevice |
+| Draft as of 2026-09-02 | *Computable Name*:EU_AIDevice |
 
  
 A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
   "name" : "EU_AIDevice",
   "title" : "EU AI System Device",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata.",
   "fhirVersion" : "5.0.0",

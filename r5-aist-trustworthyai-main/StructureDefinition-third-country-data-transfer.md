@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/third-country-data-transfer | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:ThirdCountryDataTransfer |
+| Draft as of 2026-09-02 | *Computable Name*:ThirdCountryDataTransfer |
 
 Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.
 
@@ -20,7 +20,7 @@ Documents whether use of the AI system involves a transfer of personal data to a
 **Usages:**
 
 * Use this Extension: [EU AI System Device](StructureDefinition-eu-ai-device.md)
-* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md)
+* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md) and [Device/fd450f5e-749e-48b8-8ea8-23b8ed2b9592](Device-fd450f5e-749e-48b8-8ea8-23b8ed2b9592.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-third-country-data-transfer.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
   "name" : "ThirdCountryDataTransfer",
   "title" : "Third-Country Data Transfer",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.",
   "fhirVersion" : "5.0.0",

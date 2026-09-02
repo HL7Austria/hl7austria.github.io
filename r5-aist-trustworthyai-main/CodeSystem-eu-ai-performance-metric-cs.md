@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-performance-metric-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIPerformanceMetricCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EUAIPerformanceMetricCodeSystem |
 
  
 Codes identifying performance characteristics used to document the evaluation of an AI system. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EUAIPerformanceMetricVS](ValueSet-eu-ai-performance-metric-vs.md)
+* [EU AI Performance Metric Value Set](ValueSet-eu-ai-performance-metric-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes identifying performance characteristics used to document the evaluation of
   "title" : "EU AI Performance Metric Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying performance characteristics used to document the evaluation of an AI system.",
   "caseSensitive" : true,

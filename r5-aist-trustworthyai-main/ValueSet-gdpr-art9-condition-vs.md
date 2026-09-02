@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-condition-vs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:GDPRArt9ConditionVS |
+| Active as of 2026-09-02 | *Computable Name*:GDPRArt9ConditionVS |
 
  
 Selected Article 9(2) GDPR conditions relevant to processing health data and other special categories of personal data in this implementation guide. 
@@ -51,7 +51,7 @@ Selected Article 9(2) GDPR conditions relevant to processing health data and oth
   "title" : "GDPR Article 9 Condition Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Selected Article 9(2) GDPR conditions relevant to processing health data and other special categories of personal data in this implementation guide.",
   "compose" : {

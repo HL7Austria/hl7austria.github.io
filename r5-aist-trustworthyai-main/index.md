@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:EUAITransparencyIG |
+| Draft as of 2026-09-02 | *Computable Name*:EUAITransparencyIG |
 
 # EU AI Transparency Implementation Guide
 
@@ -85,7 +85,7 @@ This Implementation Guide contains:
   "version" : "0.1.0",
   "name" : "EUAITransparencyIG",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "packageId" : "fhir.ig.eu.aitransparency",
   "license" : "CC0-1.0",
@@ -116,6 +116,67 @@ This Implementation Guide contains:
       "valueCode" : "hl7.fhir.uv.tools.r5#1.1.2"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.html"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49"
+      },
+      "name" : "029e523f-6c49-4021-b909-674ebfc08c49",
+      "description" : "Syntetic model card for the model used in the MIRA project.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-2159aa84-4d4c-4146-9ef7-19362414e19c.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/2159aa84-4d4c-4146-9ef7-19362414e19c"
+      },
+      "name" : "2159aa84-4d4c-4146-9ef7-19362414e19c",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DocumentReference-42fa4d86-32b8-4452-abc9-b0ad93cab5fc.html"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/42fa4d86-32b8-4452-abc9-b0ad93cab5fc"
+      },
+      "name" : "42fa4d86-32b8-4452-abc9-b0ad93cab5fc",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-59f36b5b-48c8-44ad-9b63-539db5057277.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/59f36b5b-48c8-44ad-9b63-539db5057277"
+      },
+      "name" : "59f36b5b-48c8-44ad-9b63-539db5057277",
+      "isExample" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
@@ -396,6 +457,21 @@ This Implementation Guide contains:
       },
       "name" : "Automated Decision-Making Flag",
       "description" : "Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Observation-c8832b3e-4437-436b-8ed4-8a2e22ce9d2a.html"
+      }],
+      "reference" : {
+        "reference" : "Observation/c8832b3e-4437-436b-8ed4-8a2e22ce9d2a"
+      },
+      "name" : "c8832b3e-4437-436b-8ed4-8a2e22ce9d2a",
       "isExample" : false
     },
     {
@@ -1075,6 +1151,21 @@ This Implementation Guide contains:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Device-fd450f5e-749e-48b8-8ea8-23b8ed2b9592.html"
+      }],
+      "reference" : {
+        "reference" : "Device/fd450f5e-749e-48b8-8ea8-23b8ed2b9592"
+      },
+      "name" : "fd450f5e-749e-48b8-8ea8-23b8ed2b9592",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       },
       {
@@ -1536,6 +1627,21 @@ This Implementation Guide contains:
       "description" : "The fictional manufacturer/provider of the RiskAssist AI system.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-0263776a-d93e-41a5-aaed-8a8496a87a22.html"
+      }],
+      "reference" : {
+        "reference" : "Organization/0263776a-d93e-41a5-aaed-8a8496a87a22"
+      },
+      "name" : "MIRA",
+      "isExample" : false
     },
     {
       "extension" : [{

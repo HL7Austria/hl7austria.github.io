@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:EU_AIOrganization |
+| Draft as of 2026-09-02 | *Computable Name*:EU_AIOrganization |
 
  
 An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
   "name" : "EU_AIOrganization",
   "title" : "EU AI Responsible Organization",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information.",
   "fhirVersion" : "5.0.0",

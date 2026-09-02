@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:EU_AIModelCardLink |
+| Draft as of 2026-09-02 | *Computable Name*:EU_AIModelCardLink |
 
 References the model card that documents the AI system's intended purpose, limitations, performance, risks, and other relevant technical information.
 
@@ -20,7 +20,7 @@ References the model card that documents the AI system's intended purpose, limit
 **Usages:**
 
 * Use this Extension: [EU AI System Device](StructureDefinition-eu-ai-device.md)
-* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md)
+* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md) and [Device/fd450f5e-749e-48b8-8ea8-23b8ed2b9592](Device-fd450f5e-749e-48b8-8ea8-23b8ed2b9592.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ext-model-card.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ext-model-card.csv),
   "name" : "EU_AIModelCardLink",
   "title" : "Model Card Reference",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "References the model card that documents the AI system's intended purpose, limitations, performance, risks, and other relevant technical information.",
   "fhirVersion" : "5.0.0",

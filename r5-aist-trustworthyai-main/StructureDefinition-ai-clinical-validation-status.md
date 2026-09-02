@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:AIClinicalValidationStatus |
+| Draft as of 2026-09-02 | *Computable Name*:AIClinicalValidationStatus |
 
 Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.
 
@@ -20,7 +20,7 @@ Records the documented validation status of the AI system, such as clinically va
 **Usages:**
 
 * Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-clinical-validation-status.json)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
   "name" : "AIClinicalValidationStatus",
   "title" : "AI Clinical Validation Status",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.",
   "fhirVersion" : "5.0.0",

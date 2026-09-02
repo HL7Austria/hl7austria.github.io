@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-case-specific-indication-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAICaseSpecificIndicationCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EUAICaseSpecificIndicationCodeSystem |
 
  
 Codes describing the clinical purpose for which an AI system was applied in an individual case. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EUAICaseSpecificIndicationVS](ValueSet-eu-ai-case-specific-indication-vs.md)
+* [EU AI Case-Specific Indication Value Set](ValueSet-eu-ai-case-specific-indication-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes describing the clinical purpose for which an AI system was applied in an i
   "title" : "EU AI Case-Specific Indication Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes describing the clinical purpose for which an AI system was applied in an individual case.",
   "caseSensitive" : true,

@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-human-oversight-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIHumanOversightCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EUAIHumanOversightCodeSystem |
 
  
 Codes describing actions taken by a human reviewer in response to an AI-generated output or recommendation. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EUAIHumanOversightActionVS](ValueSet-eu-ai-human-oversight-action-vs.md)
+* [EU AI Human Oversight Action Value Set](ValueSet-eu-ai-human-oversight-action-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes describing actions taken by a human reviewer in response to an AI-generate
   "title" : "EU AI Human Oversight Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes describing actions taken by a human reviewer in response to an AI-generated output or recommendation.",
   "caseSensitive" : true,

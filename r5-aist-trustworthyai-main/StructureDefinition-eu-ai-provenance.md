@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:EU_AIProvenance |
+| Draft as of 2026-09-02 | *Computable Name*:EU_AIProvenance |
 
  
 A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
   "name" : "EU_AIProvenance",
   "title" : "EU AI Provenance",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context.",
   "fhirVersion" : "5.0.0",

@@ -1,0 +1,118 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Device/fd450f5e-749e-48b8-8ea8-23b8ed2b9592> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "fd450f5e-749e-48b8-8ea8-23b8ed2b9592"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device fd450f5e-749e-48b8-8ea8-23b8ed2b9592</b></p><a name=\"fd450f5e-749e-48b8-8ea8-23b8ed2b9592\"> </a><a name=\"hcfd450f5e-749e-48b8-8ea8-23b8ed2b9592\"> </a><blockquote><p><b>Third-Country Data Transfer</b></p><ul><li>transferFlag: false</li></ul></blockquote><p><b>Model Card Reference</b>: <a href=\"DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.html\">DocumentReference: extension = ,,,Not Clinically Validated; status = current; type = AI Model Card; date = 2026-09-02 08:13:35+0000; description = Syntetic model card for the model used in the MIRA project.</a></p><p><b>identifier</b>: EU AI Registration Number/EU-AI-123</p><p><b>manufacturer</b>: OpenAI</p><h3>Names</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Type</b></td><td><b>Display</b></td></tr><tr><td style=\"display: none\">*</td><td>gpt-oss:20b</td><td>User Friendly name</td><td>true</td></tr></table><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>gpt-oss:20b</td></tr></table><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs ce-mark}\">CE Marking Status</span></p><p><b>value</b>: true</p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs notified-body-id}\">Notified Body Identifier</span></p><p><b>value</b>: NB-0000</p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs expected-lifetime}\">Expected Lifetime</span></p><p><b>value</b>: 5 years<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codea = 'a')</span></p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs intended-purpose}\">Intended Purpose</span></p><p><b>value</b>: Supportive extraction of relevant information out of plain text.</p></blockquote><blockquote><p><b>property</b></p><p><b>type</b>: <span title=\"Codes:{http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs target-population}\">Target Population</span></p><p><b>value</b>: <span title=\"Codes:\">For healthcare staff who treat any patient with plain text documents.</span></p></blockquote><p><b>owner</b>: <a href=\"Organization-0263776a-d93e-41a5-aaed-8a8496a87a22.html\">MIRA</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "transferFlag"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:boolean ;
+         fhir:v false
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/third-country-data-transfer"^^xsd:anyURI ]
+  ] [
+     fhir:url [ fhir:v "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://example.org/fhir/eu-ai-transparency/DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49> ;
+       fhir:reference [ fhir:v "DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49" ]
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-identifier-type-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "eu-ai-registration-number" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "http://example.org/fhir/sid/eu-ai-database"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "EU-AI-123" ]
+  ] ) ; # 
+  fhir:manufacturer [ fhir:v "OpenAI"] ; # 
+  fhir:name ( [
+     fhir:value [ fhir:v "gpt-oss:20b" ] ;
+     fhir:type [ fhir:v "user-friendly-name" ] ;
+     fhir:display [ fhir:v true ]
+  ] ) ; # 
+  fhir:version ( [
+     fhir:value [ fhir:v "gpt-oss:20b" ]
+  ] ) ; # 
+  fhir:property ( [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ce-mark" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:boolean ;
+       fhir:v true
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "notified-body-id" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "NB-0000"
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "expected-lifetime" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "5"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "years" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "a" ]
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "intended-purpose" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "Supportive extraction of relevant information out of plain text."
+     ]
+  ] [
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "target-population" ]
+       ] )
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:text [ fhir:v "For healthcare staff who treat any patient with plain text documents." ]
+     ]
+  ] ) ; # 
+  fhir:owner [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Organization/0263776a-d93e-41a5-aaed-8a8496a87a22> ;
+     fhir:reference [ fhir:v "Organization/0263776a-d93e-41a5-aaed-8a8496a87a22" ] ;
+     fhir:display [ fhir:v "MIRA" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-data-category-vs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EHDSDataCategoryVS |
+| Active as of 2026-09-02 | *Computable Name*:EHDSDataCategoryVS |
 
  
 Categories of electronic health data that may be documented for secondary-use and AI-development contexts. 
@@ -51,7 +51,7 @@ Categories of electronic health data that may be documented for secondary-use an
   "title" : "EHDS Data Category Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Categories of electronic health data that may be documented for secondary-use and AI-development contexts.",
   "compose" : {

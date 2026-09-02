@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-data-permit | *Version*:0.1.0 |
-| Draft as of 2026-07-31 | *Computable Name*:EHDSDataPermit |
+| Draft as of 2026-09-02 | *Computable Name*:EHDSDataPermit |
 
 Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-data-permit.csv
   "name" : "EHDSDataPermit",
   "title" : "EHDS Data Permit",
   "status" : "draft",
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.",
   "fhirVersion" : "5.0.0",

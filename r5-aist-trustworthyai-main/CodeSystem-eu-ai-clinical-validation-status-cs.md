@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-clinical-validation-status-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIClinicalValidationStatusCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EUAIClinicalValidationStatusCodeSystem |
 
  
 Codes indicating the documented clinical validation status of an AI system for its intended clinical use. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EUAIClinicalValidationStatusVS](ValueSet-eu-ai-clinical-validation-status-vs.md)
+* [EU AI Clinical Validation Status Value Set](ValueSet-eu-ai-clinical-validation-status-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes indicating the documented clinical validation status of an AI system for i
   "title" : "EU AI Clinical Validation Status Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes indicating the documented clinical validation status of an AI system for its intended clinical use.",
   "caseSensitive" : true,

@@ -142,3 +142,17 @@ These are example instances that show what data produced and consumed by systems
 | [Provenance: AI Output Generation (4)](Provenance-sc-04-correction-exp-provenance-ai-output-001.md) | Synthetic provenance resource linking the AI output to the AI system, input data, and legal processing context. |
 | [Provenance: Secondary Use Example](Provenance-example-secondary-use-provenance.md) | Example showing EHDS secondary use purpose and data permit. |
 
+### Other 
+
+These are resources that are used within this implementation guide that do not fit into one of the other categories.
+
+| | |
+| :--- | :--- |
+| [029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md) | Syntetic model card for the model used in the MIRA project. |
+| [2159aa84-4d4c-4146-9ef7-19362414e19c](Observation-2159aa84-4d4c-4146-9ef7-19362414e19c.md) |  |
+| [42fa4d86-32b8-4452-abc9-b0ad93cab5fc](DocumentReference-42fa4d86-32b8-4452-abc9-b0ad93cab5fc.md) |  |
+| [59f36b5b-48c8-44ad-9b63-539db5057277](Observation-59f36b5b-48c8-44ad-9b63-539db5057277.md) |  |
+| [MIRA](Organization-0263776a-d93e-41a5-aaed-8a8496a87a22.md) |  |
+| [c8832b3e-4437-436b-8ed4-8a2e22ce9d2a](Observation-c8832b3e-4437-436b-8ed4-8a2e22ce9d2a.md) |  |
+| [fd450f5e-749e-48b8-8ea8-23b8ed2b9592](Device-fd450f5e-749e-48b8-8ea8-23b8ed2b9592.md) |  |
+

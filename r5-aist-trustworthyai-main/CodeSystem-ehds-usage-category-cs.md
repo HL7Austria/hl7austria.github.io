@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-usage-category-cs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EHDSUsageCategoryCodeSystem |
+| Active as of 2026-09-02 | *Computable Name*:EHDSUsageCategoryCodeSystem |
 
  
 Codes distinguishing primary use from secondary use of electronic health data in the context of the European Health Data Space. 
 
  This Code system is referenced in the content logical definition of the following value sets: 
 
-* [EHDSUsageCategoryVS](ValueSet-ehds-usage-category-vs.md)
+* [EHDS Usage Category Value Set](ValueSet-ehds-usage-category-vs.md)
 
 
 
@@ -32,7 +32,7 @@ Codes distinguishing primary use from secondary use of electronic health data in
   "title" : "EHDS Usage Category Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes distinguishing primary use from secondary use of electronic health data in the context of the European Health Data Space.",
   "caseSensitive" : true,

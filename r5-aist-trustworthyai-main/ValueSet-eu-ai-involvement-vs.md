@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-involvement-vs | *Version*:0.1.0 |
-| Active as of 2026-07-31 | *Computable Name*:EUAIInvolvementVS |
+| Active as of 2026-09-02 | *Computable Name*:EUAIInvolvementVS |
 
  
 Codes used to classify how an AI system contributed to the content of a FHIR resource. 
@@ -51,7 +51,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "EU AI Involvement Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-07-31T11:07:29+00:00",
+  "date" : "2026-09-02T10:48:14+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes used to classify how an AI system contributed to the content of a FHIR resource.",
   "compose" : {
