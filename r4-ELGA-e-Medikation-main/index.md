@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-08-31T18:38:38+00:00",
+  "date" : "2026-09-03T18:40:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1945,15 +1945,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }],
           "nameUrl" : "Sub_UC_eMed_05.html",
           "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_05_01.html"
-          }],
-          "nameUrl" : "Sub_UC_eMed_05_01.html",
-          "title" : "​Technische Use Cases für Durchgeführte Abgaben mittels e-Med GroupIdentifier schreiben (UC_eMed_05)",
           "generation" : "markdown"
         }]
       }]

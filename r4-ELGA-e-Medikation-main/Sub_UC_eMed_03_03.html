@@ -157,9 +157,6 @@
         <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_05_01.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben</a>
-      </li>
-      <li>
         <a href="patient_journey.html">Patient Journey</a>
       </li>
     </ul>
@@ -403,16 +400,10 @@ width: 100%;}
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li><a name="l461">​</a>Der GDA führt die Custom Operation <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.GroupIdentifier.Search.html">$groupidentifier-search</a> aus und übermittelt einen <em>e-Med GroupIdentifier</em>.</li>
+  <li><a name="l455">​</a>Der GDA führt die Custom Operation <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.GroupIdentifier.Search.html">$groupidentifier-search</a> aus und übermittelt einen <em>e-Med GroupIdentifier</em>.</li>
   <li>Die Fachanwendung führt eine <strong>Prüfung</strong> des übermittelten <em>e-Med GroupIdentifier</em> durch.</li>
   <li>Ist der <em>e-Med GroupIdentifier</em> gültig, ermittelt die Fachanwendung alle <em>MedicationRequest</em>-Ressourcen der Kategorie <em>Geplante Abgabe</em>, die dem übermittelten <em>e-Med GroupIdentifier</em> entsprechen.
-  <!-- * *status = active*: nur offene  ? -->
-&lt;!– 4. Ergibt die Suche mindestens eine offene <em>Geplante Abgabe</em>, ermittelt die Fachanwendung zusätzlich alle zugehörigen <em>MedicationDispense</em>-Ressourcen mit:
-    <ul>
-      <li>dem übermittelten e-Med GroupIdentifier</li>
-      <li>status = completed oder cancelled –&gt;</li>
-    </ul>
-  </li>
+  <!-- 4 Ergibt die Suche mindestens eine offene Geplante Abgabe, ermittelt die Fachanwendung zusätzlich alle zugehörigen MedicationDispense*-Ressourcen mit: dem übermittelten e-Med GroupIdentifier und status = completed oder cancelled --></li>
   <li>Die Fachanwendung ermittelt zusätzlich alle <em>MedicationDispense</em>-Ressourcen, die dem übermittelten <em>e-Med GroupIdentifier</em> entsprechen.</li>
   <li>Die Fachanwendung liefert die ermittelten <em>MedicationRequest</em>- und <em>MedicationDispense</em>-Ressourcen als <strong>Bundle</strong> vom Typ <em>searchset</em> zurück.</li>
   <li>Ergibt die Suche keine passenden <em>Geplanten Abgaben</em> oder <em>Durchgeführten Abgaben</em>, liefert die Fachanwendung ein <strong>leeres Bundle</strong> vom Typ <em>searchset</em> zurück.</li>
@@ -452,7 +443,7 @@ Offene Punkte: <br/>$groupidentifier-search: in Arbeit.
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Aug 31, 2026 18:38+0000">2026-08-31</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 3, 2026 18:40+0000">2026-09-03</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

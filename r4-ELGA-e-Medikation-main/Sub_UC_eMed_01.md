@@ -23,7 +23,7 @@ Sowohl berechtigte GDA als auch ELGA-Teilnehmer können auf einzelne Planeinträ
 
 Plan-Read dient dem **Abruf des Medikationsplans** in einem für die Bearbeitung durch den GDA **aufbereiteten Zustand**.
 
-Hierfür erzeugt die Fachanwendung aus der aktuellen Version der **List**-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres **Medikationsplan-Searchset-Bundle** zur Auslieferung. Der Abruf erfolgt über die Custom Operation [$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md).
+Hierfür erzeugt die Fachanwendung aus der aktuellen Version der [List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres [Medikationsplan-Searchset-Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) zur Auslieferung. Der Abruf erfolgt über die Custom Operation [$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md).
 
 ##### Custom Operation
 
@@ -34,7 +34,7 @@ POST [$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)
 1. Der Client führt ein**POST**[$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)aus.
 1. Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Searchset-Bundle zur Auslieferung (siehe[Prüfung des Planzustands und Erzeugung des Medikationsplan-Searchset-Bundles](Sub_UC_eMed_01.md#prüfung-des-planzustands-und-erzeugung-des-Medikationsplan-Searchset-Bundles)).
 1. Die Fachanwendung liefert das Medikationsplan-Searchset-Bundle zurück. Dieses enthält:
-* die **List**-Ressource,
+* die [List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource,
 * sämtliche von der **List** referenzierten Ressourcen sowie
 * im HTTP-Header den **ETag** der aktuellen Version der **List**-Ressource für das [Optimistic Locking](https://hl7.org/fhir/http.html#concurrency).
 

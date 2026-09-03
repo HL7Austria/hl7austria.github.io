@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory | *Version*:0.1.1 | |
-| Active as of 2026-08-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedCodeSystemDosageCategory |
+| Active as of 2026-09-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedCodeSystemDosageCategory |
 
  
 Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA. 
@@ -32,7 +32,7 @@ Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.
   "title" : "ELGA Dosage Category Status CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-08-31T18:38:38+00:00",
+  "date" : "2026-09-03T18:40:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
