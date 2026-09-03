@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs | *Version*:0.1.0 |
-| Active as of 2026-09-02 | *Computable Name*:EUAISystemPropertyCodeSystem |
+| Active as of 2026-09-03 | *Computable Name*:EUAISystemPropertyCodeSystem |
 
  
 Codes identifying structured properties used to describe regulatory and operational characteristics of an AI system in Device.property. 
@@ -32,7 +32,7 @@ Codes identifying structured properties used to describe regulatory and operatio
   "title" : "EU AI System Property Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying structured properties used to describe regulatory and operational characteristics of an AI system in Device.property.",
   "caseSensitive" : true,

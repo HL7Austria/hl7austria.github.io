@@ -39,8 +39,11 @@ These define constraints on FHIR data types for systems conforming to this imple
 | [EHDS Data Permit](StructureDefinition-ehds-data-permit.md) | Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable. |
 | [EHDS Secondary Use Purpose](StructureDefinition-ehds-secondary-use-purpose.md) | Records the documented purpose for secondary use of electronic health data in the EHDS context. |
 | [EHDS Usage Category](StructureDefinition-ehds-usage-category.md) | Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context. |
+| [EU AI DPIA Reference](StructureDefinition-eu-ai-dpia-reference.md) | Privacy risk management, GDPR accountability |
 | [EU AI Log Integrity Signature](StructureDefinition-eu-ai-log-integrity.md) | Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record. |
+| [EU Conformity Declaration Reference](StructureDefinition-eu-ai-conformity-reference.md) | The EU declaration of conformity shall identify the high-risk AI system. |
 | [Model Card Reference](StructureDefinition-ext-model-card.md) | References the model card that documents the AI system's intended purpose, limitations, performance, risks, and other relevant technical information. |
+| [Patient AI Info Provided Flag](StructureDefinition-patient-ai-info-provided-flag.md) | This flag represents whether the patient has been informed about the AI-related processing activity |
 | [Third-Country Data Transfer](StructureDefinition-third-country-data-transfer.md) | Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable. |
 
 ### Terminology: Value Sets 
@@ -105,6 +108,7 @@ These are example instances that show what data produced and consumed by systems
 | [Communication: Patient-Facing AI Explanation (4)](Communication-sc-04-correction-exp-patient-explanation-001.md) | Synthetic patient-facing explanation about AI-supported processing and human review. |
 | [Corrected Clinical Observation: Early Warning Risk Assessment (4)](Observation-sc-04-correction-exp-corrected-clinical-observation-001.md) | Human-corrected clinical result preserving traceability to the original AI-generated output. |
 | [Device: RiskAssist AI](Device-device-riskassist-ai.md) | Synthetic AI system for NEWS2-inspired early-warning risk assessment. |
+| [EU Conformity Declaration](DocumentReference-eu-conformity-declaration.md) |  |
 | [Encounter: Acute Care Assessment](Encounter-encounter-001.md) | Synthetic encounter for suspected infection and early-warning risk assessment. |
 | [Input Observation: Blood Pressure (1)](Observation-sc-01-ai-only-observation-blood-pressure-001.md) | Synthetic NEWS2-inspired input parameter. |
 | [Input Observation: Blood Pressure (2)](Observation-sc-02-validation-observation-blood-pressure-001.md) | Synthetic NEWS2-inspired input parameter. |

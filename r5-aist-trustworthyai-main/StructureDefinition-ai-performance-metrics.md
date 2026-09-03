@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:AIPerformanceMetrics |
+| Draft as of 2026-09-03 | *Computable Name*:AIPerformanceMetrics |
 
 Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
   "name" : "AIPerformanceMetrics",
   "title" : "AI Performance Metrics",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.",
   "fhirVersion" : "5.0.0",

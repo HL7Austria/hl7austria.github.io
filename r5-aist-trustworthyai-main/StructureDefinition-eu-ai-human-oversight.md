@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:EU_AIHumanOversightAssessment |
+| Draft as of 2026-09-03 | *Computable Name*:EU_AIHumanOversightAssessment |
 
  
 An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
   "name" : "EU_AIHumanOversightAssessment",
   "title" : "EU AI Human Oversight Assessment",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden.",
   "fhirVersion" : "5.0.0",

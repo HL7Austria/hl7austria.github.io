@@ -8,7 +8,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:EUAITransparencyIG |
+| Draft as of 2026-09-03 | *Computable Name*:EUAITransparencyIG |
 
 # EU AI Transparency Implementation Guide
 
@@ -85,7 +85,7 @@ This Implementation Guide contains:
   "version" : "0.1.0",
   "name" : "EUAITransparencyIG",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "packageId" : "fhir.ig.eu.aitransparency",
   "license" : "CC0-1.0",
@@ -879,6 +879,22 @@ This Implementation Guide contains:
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-dpia-reference.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eu-ai-dpia-reference"
+      },
+      "name" : "EU AI DPIA Reference",
+      "description" : "Privacy risk management, GDPR accountability",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -1146,6 +1162,37 @@ This Implementation Guide contains:
       },
       "name" : "EU AI System Property Code System",
       "description" : "Codes identifying structured properties used to describe regulatory and operational characteristics of an AI system in Device.property.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "DocumentReference-eu-conformity-declaration.html"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/eu-conformity-declaration"
+      },
+      "name" : "EU Conformity Declaration",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-eu-ai-conformity-reference.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eu-ai-conformity-reference"
+      },
+      "name" : "EU Conformity Declaration Reference",
+      "description" : "The EU declaration of conformity shall identify the high-risk AI system.",
       "isExample" : false
     },
     {
@@ -1692,6 +1739,22 @@ This Implementation Guide contains:
       "description" : "The fictional healthcare organization operating the AI system.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-patient-ai-info-provided-flag.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/patient-ai-info-provided-flag"
+      },
+      "name" : "Patient AI Info Provided Flag",
+      "description" : "This flag represents whether the patient has been informed about the AI-related processing activity",
+      "isExample" : false
     },
     {
       "extension" : [{

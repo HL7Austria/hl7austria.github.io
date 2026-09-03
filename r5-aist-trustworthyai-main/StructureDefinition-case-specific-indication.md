@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:CaseSpecificIndication |
+| Draft as of 2026-09-03 | *Computable Name*:CaseSpecificIndication |
 
 Records the clinical indication or case-specific reason for applying the AI system in the documented patient context.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-case-specific-indica
   "name" : "CaseSpecificIndication",
   "title" : "Case-Specific Indication",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the clinical indication or case-specific reason for applying the AI system in the documented patient context.",
   "fhirVersion" : "5.0.0",

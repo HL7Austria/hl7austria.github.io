@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:EHDSUsageCategory |
+| Draft as of 2026-09-03 | *Computable Name*:EHDSUsageCategory |
 
 Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-usage-category.
   "name" : "EHDSUsageCategory",
   "title" : "EHDS Usage Category",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.",
   "fhirVersion" : "5.0.0",

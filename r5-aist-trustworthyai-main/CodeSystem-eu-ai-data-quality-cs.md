@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-data-quality-cs | *Version*:0.1.0 |
-| Active as of 2026-09-02 | *Computable Name*:EUAIDataQualityCodeSystem |
+| Active as of 2026-09-03 | *Computable Name*:EUAIDataQualityCodeSystem |
 
  
 Codes describing assessed data-quality characteristics relevant to the development, validation, testing, or evaluation of an AI system. 
@@ -32,7 +32,7 @@ Codes describing assessed data-quality characteristics relevant to the developme
   "title" : "EU AI Data Quality Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes describing assessed data-quality characteristics relevant to the development, validation, testing, or evaluation of an AI system.",
   "caseSensitive" : true,

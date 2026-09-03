@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:EU_AIAuditEvent |
+| Draft as of 2026-09-03 | *Computable Name*:EU_AIAuditEvent |
 
  
 An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
   "name" : "EU_AIAuditEvent",
   "title" : "EU AI Execution Audit Event",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability.",
   "fhirVersion" : "5.0.0",

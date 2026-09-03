@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/third-country-data-transfer | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:ThirdCountryDataTransfer |
+| Draft as of 2026-09-03 | *Computable Name*:ThirdCountryDataTransfer |
 
 Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
   "name" : "ThirdCountryDataTransfer",
   "title" : "Third-Country Data Transfer",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.",
   "fhirVersion" : "5.0.0",

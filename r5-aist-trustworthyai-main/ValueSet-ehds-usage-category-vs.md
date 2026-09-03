@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-usage-category-vs | *Version*:0.1.0 |
-| Active as of 2026-09-02 | *Computable Name*:EHDSUsageCategoryVS |
+| Active as of 2026-09-03 | *Computable Name*:EHDSUsageCategoryVS |
 
  
 Categories distinguishing primary and secondary use of electronic health data in the EHDS context. 
@@ -51,7 +51,7 @@ Categories distinguishing primary and secondary use of electronic health data in
   "title" : "EHDS Usage Category Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Categories distinguishing primary and secondary use of electronic health data in the EHDS context.",
   "compose" : {

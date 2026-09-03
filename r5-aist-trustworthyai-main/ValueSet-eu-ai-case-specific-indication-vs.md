@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-case-specific-indication-vs | *Version*:0.1.0 |
-| Active as of 2026-09-02 | *Computable Name*:EUAICaseSpecificIndicationVS |
+| Active as of 2026-09-03 | *Computable Name*:EUAICaseSpecificIndicationVS |
 
  
 Clinical purposes for applying an AI system in an individual care context. 
@@ -51,7 +51,7 @@ Clinical purposes for applying an AI system in an individual care context.
   "title" : "EU AI Case-Specific Indication Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Clinical purposes for applying an AI system in an individual care context.",
   "compose" : {

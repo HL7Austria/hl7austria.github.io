@@ -13,6 +13,8 @@ Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md)
 
 **Model Card Reference**: [DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.](DocumentReference-modelcard-riskassist-ai.md)
 
+**EU Conformity Declaration Reference**: [DocumentReference: status = current](DocumentReference-eu-conformity-declaration.md)
+
 **identifier**: EU AI Registration Number/EU-AI-000123
 
 **status**: Active
@@ -86,6 +88,12 @@ AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vita
     "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card",
     "valueReference" : {
       "reference" : "DocumentReference/modelcard-riskassist-ai"
+    }
+  },
+  {
+    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-conformity-reference",
+    "valueReference" : {
+      "reference" : "DocumentReference/eu-conformity-declaration"
     }
   }],
   "identifier" : [{

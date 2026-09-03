@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-performance-metric-vs | *Version*:0.1.0 |
-| Active as of 2026-09-02 | *Computable Name*:EUAIPerformanceMetricVS |
+| Active as of 2026-09-03 | *Computable Name*:EUAIPerformanceMetricVS |
 
  
 Performance characteristics that may be documented for an AI system. 
@@ -51,7 +51,7 @@ Performance characteristics that may be documented for an AI system.
   "title" : "EU AI Performance Metric Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Performance characteristics that may be documented for an AI system.",
   "compose" : {

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status | *Version*:0.1.0 |
-| Draft as of 2026-09-02 | *Computable Name*:AIClinicalValidationStatus |
+| Draft as of 2026-09-03 | *Computable Name*:AIClinicalValidationStatus |
 
 Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
   "name" : "AIClinicalValidationStatus",
   "title" : "AI Clinical Validation Status",
   "status" : "draft",
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.",
   "fhirVersion" : "5.0.0",

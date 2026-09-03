@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-secondary-use-purpose-cs | *Version*:0.1.0 |
-| Active as of 2026-09-02 | *Computable Name*:EHDSSecondaryUsePurposeCodeSystem |
+| Active as of 2026-09-03 | *Computable Name*:EHDSSecondaryUsePurposeCodeSystem |
 
  
 Codes representing permitted categories of purpose for the secondary use of electronic health data under the EHDS. 
@@ -32,7 +32,7 @@ Codes representing permitted categories of purpose for the secondary use of elec
   "title" : "EHDS Secondary-Use Purpose Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-02T10:48:14+00:00",
+  "date" : "2026-09-03T11:53:05+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes representing permitted categories of purpose for the secondary use of electronic health data under the EHDS.",
   "caseSensitive" : true,
