@@ -107,12 +107,12 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionalles
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="design_choices.html">Designnentscheidungen</a>
+        <a href="design_choices.html">Designentscheidungen</a>
       </li>
       <li>
         <a href="actors.html">Akteure</a>
@@ -149,6 +149,19 @@
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="autoren.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="impressum.html">Impressum</a>
+      </li>
+    </ul>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -199,12 +212,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#begriffsdefinitionen" id="markdown-toc-begriffsdefinitionen">Begriffsdefinitionen</a></li>
-  <li><a href="#systemumfeld" id="markdown-toc-systemumfeld">Systemumfeld</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <style>
 .notification-table {
@@ -288,52 +297,44 @@ width: 100%;}
 
 </style>
 
-<h3 id="begriffsdefinitionen">Begriffsdefinitionen</h3>
-<p>Im Rahmen der Anwendung eDiagnose werden folgenden Begriffe definiert:</p>
+<p>Die strukturierte Dokumentation und der Austausch von Conditions, Procedures und AllergiesIntolerances sind eine wesentliche Grundlage für die medizinische Versorgung. Die e-Diagnose soll diese Informationen übergreifend in ELGA verfügbar machen und damit eine gesamthafte Übersicht über den Gesundheitszustand sowie die weitere Behandlung unterstützen. Zudem soll sie die Grundlage für die Austrian Patient Summary (APS) schaffen.</p>
 
-<ul>
-  <li>
-    <p>Einträge: Alle vom GDA erfassten medizinischen Informationen, insbesondere Diagnosen (Condition), Prozeduren (Procedure) sowie Allergien und Intoleranzen (AllergyIntolerance).</p>
-  </li>
-  <li>
-    <p>Summary-Einträge: Eine Teilmenge der Einträge, die vom GDA als besonders wichtig für die weitere Behandlung bzw. für den nächsten GDA eingestuft werden.</p>
-  </li>
-  <li>
-    <p>Gesamtansicht: Zeigt alle Einträge der jeweiligen Kategorie (Diagnosen, Prozeduren oder Allergien und Intoleranzen).</p>
-  </li>
-  <li>
-    <p>Summary-Liste: Enthält ausschließlich die als Summary-Einträge gekennzeichneten Einträge der jeweiligen Kategorie.</p>
-  </li>
-</ul>
+<h3 id="fachliches-umfeld--datenkategorien">Fachliches Umfeld &amp; Datenkategorien</h3>
+<p>Die IPS unterscheidet mehrere Datenkategorien. Diese werden im Rahmen der Konzeption der e-Diagnose berücksichtigt, insbesondere im Hinblick auf die spätere Verwendung der Daten für die APS.</p>
 
-<h3 id="systemumfeld">Systemumfeld</h3>
-<p>Das Systemumfeld der e-Diagnose umfasst alle Akteur:innen, Systeme und organisatorischen Einheiten, die im Rahmen der Dokumentation, Einsichtnahme oder Nutzung der gespeicherten Conditions, Procedures und AllergiesIntolerances eingebunden sind.</p>
+<table>
+  <thead>
+    <tr>
+      <th>IPS-Datenkategorie</th>
+      <th>FHIR-Ressource</th>
+      <th>Verwendung in der eDiagnose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Problem List</strong></td>
+      <td>Conditions</td>
+      <td>Condition-Summary-Liste</td>
+    </tr>
+    <tr>
+      <td><strong>History of Past Problems</strong></td>
+      <td>Conditions</td>
+      <td>Condition-Summary-Einträge</td>
+    </tr>
+    <tr>
+      <td><strong>History of Procedures</strong></td>
+      <td>Procedures</td>
+      <td>Procedure-Summary-Einträge</td>
+    </tr>
+    <tr>
+      <td><strong>Allergies and Intolerances</strong></td>
+      <td>AllergiesIntolerances</td>
+      <td>AllergyIntolerance-Summary-Einträge</td>
+    </tr>
+  </tbody>
+</table>
 
-<p><a href="ediag_systemumfeld.png"><img src="ediag_systemumfeld.png" alt="diagram" style="width: 80%" /></a></p>
-
-<p>Im Fokus der e-Diagnose steht der:die ELGA-Teilnehmer:in und dessen:deren Gesamtheit der dokumentierten Conditions, Procedures und AllergiesIntolerances, welche von GDA festgestellt werden und die interdisziplinäre Zusammenarbeit des Behandlungsteams unterstützen soll, um so einen bestmöglichen Outcome für den:die ELGA-Teilnehmer:in zu ermöglichen.</p>
-
-<p>Der Zugriff von ELGA-Teilnehmer:innen und deren Vertretungen auf die e-Diagnose erfolgt über das Gesundheitsportal unter Nutzung der bestehenden Identifikationsmechanismen. ELGA-Teilnehmer:innen können Einsicht in ihre gespeicherten Daten nehmen sowie Teilnehmer:innenrechte wahrnehmen. Eine direkte medizinische Dokumentation durch ELGA-Teilnehmer:innen und deren Vertretungen ist nicht vorgesehen.</p>
-
-<p>Die Einsichtnahme in die e-Diagnose sowie die Wahrnehmung von Teilnehmer:innenrechten kann auch durch gesetzlich oder rechtswirksam bevollmächtigte Vertretungsbefugte (Vertretung) im Rahmen der jeweils geltenden rechtlichen Bestimmungen erfolgen. Der Zugriff erfolgt dabei – analog zu ELGA-Teilnehmer:innen – über das Gesundheitsportal unter Nutzung der bestehenden Identifikationsmechanismen.</p>
-
-<p>GDA dokumentieren und nutzen die Inhalte der e-Diagnose im Rahmen eines aktiven Behandlungsverhältnisses. Die Conditions, Procedures, Alerts/Flags und AllergiesIntolerances werden von GDA dokumentiert und stehen auch allen weiteren behandelnden/berechtigten GDA zur Verfügung.</p>
-
-<p>Der Zugriff erfolgt primär über angebundene Primärsysteme (z.B.: AIS/KIS, etc.) oder alternativ über das GDA-Portal. Die Authentifizierung und Autorisierung erfolgen gemäß GTelG 2012 unter Nutzung des bestehenden ELGA-Berechtigungssystems. Der Zugriff ist ausschließlich im Rahmen eines aktiven Behandlungsverhältnisses zulässig. Perspektivisch ist sicherzustellen, dass die e-Diagnose allen Berufsgruppen zugänglich gemacht wird, für welche dies nach berufsrechtlichen und datenschutzrechtlichen Vorgaben zulässig und geboten ist.</p>
-
-<p>Zur organisatorischen Unterstützung bestehen als Teile der ELGA und e-Health Supporteinrichtung die ELGA-Ombudsstelle (OBST), die Widerspruchstelle (WIST) sowie die Serviceline (SEL).:</p>
-
-<ul>
-  <li>
-    <p>OBST: Zur Wahrung der Teilnehmerrechte für ELGA-Teilnehmer:innen und deren Vertretungen.</p>
-  </li>
-  <li>
-    <p>WIST: Zum Einbringen von Opt-Out bzw. GDA-Sperren für ELGA-Teilnehmer:innen und deren Vertretungen (ohne Verwendung des ELGA-Portals).</p>
-  </li>
-  <li>
-    <p>SEL: Für Fragen und Auskünfte von ELGA-Teilnehmer:innen und deren Vertretungen (Nutzung) und GDA (Nutzung und Anbindung an ELGA). Die SEL hat keinen Zugriff auf Gesundheitsdaten der ELGA-Teilnehmer:innen, unterstützt allerdings in Verwendung der Systeme – beispielsweise indem die Verfügbarkeit von Systemen überprüft wird.</p>
-  </li>
-</ul>
+<p><a href="ediag_ips.png"><img src="ediag_ips.png" alt="diagram" style="width: 60%" /></a></p>
 
 
 
@@ -354,7 +355,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Sep 1, 2026 13:57+0000">2026-09-01</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 3, 2026 13:31+0000">2026-09-03</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

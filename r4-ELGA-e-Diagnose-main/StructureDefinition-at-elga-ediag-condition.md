@@ -9,10 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition | *Version*:0.1.0 | |
-| Active as of 2026-09-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
+| Active as of 2026-09-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
 
  
 Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
+
+### Defintion
+
+Dokumentiert Diagnosen und klinisch relevante Gesundheitszustände einer Person, einschließlich Erkrankungen, Symptome, allgemeiner Zustandsbeschreibungen (Findings), familiärer Vorbelastungen sowie sonstiger gesundheitlich relevanter Probleme oder Risiken. Sie bildet eine fachliche Feststellung zu einem Gesundheitsaspekt ab und kann sowohl aktuelle als auch vergangene Zustände umfassen.
 
 **Usages:**
 
@@ -42,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-09-01T13:57:21+00:00",
+  "date" : "2026-09-03T13:31:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

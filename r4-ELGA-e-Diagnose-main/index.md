@@ -13,9 +13,9 @@ Ziel der Anwendung ist es, einen schnellen Zugriff auf die bestehenden Informati
 
 Die Anwendung bietet eine **vollständige, gemeinsame Dokumentation in ELGA** und bildet gleichzeitig die **Grundlage für die Patient Summary**.
 
-Die technische Umsetzung der eDiagnose erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS). In Anbetracht der ab 2029 vorgesehenen Sekundärnutzung medizinischer Daten im EHDS werden durch diesen Implementation Guide die technischen Grundlagen geschaffen, um eine datenschutzkonforme Nutzung strukturierter klinischer Informationen – insbesondere Diagnosen, Prozeduren, Allergien und Intoerlanzen – für gemeinwohlorientierte Forschung, Qualitätssicherung und gesundheitspolitische Steuerung zu ermöglichen.
+Die technische Umsetzung der e-Diagnose erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS). In Anbetracht der ab 2029 vorgesehenen Sekundärnutzung medizinischer Daten im EHDS werden durch diesen Implementation Guide die technischen Grundlagen geschaffen, um eine datenschutzkonforme Nutzung strukturierter klinischer Informationen – insbesondere Diagnosen, Prozeduren, Allergien und Intoleranzen – für gemeinwohlorientierte Forschung, Qualitätssicherung und gesundheitspolitische Steuerung zu ermöglichen.
 
-Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Integration der eDiagnose in die ELGA-Infrastruktur sowie den standardisierten Austausch, die Speicherung und die Verarbeitung von Diagnosen, Prozeduren, Allergien und Intoleranzen zwischen den beteiligten Gesundheitssystemen. Dadurch wird eine semantisch interoperable und sektorenübergreifende Verfügbarkeit dieser Informationen unterstützt.
+Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Integration der e-Diagnose in die ELGA-Infrastruktur sowie den standardisierten Austausch, die Speicherung und die Verarbeitung von Diagnosen, Prozeduren, Allergien und Intoleranzen zwischen den beteiligten Gesundheitssystemen. Dadurch wird eine semantisch interoperable und sektorenübergreifende Verfügbarkeit dieser Informationen unterstützt.
 
 
 
@@ -30,7 +30,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-01T13:57:21+00:00",
+  "date" : "2026-09-03T13:31:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1230,6 +1230,24 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         }],
         "nameUrl" : "uc_ediag_03_teilnehmer.html",
         "title" : "Teilnehmerrechte ausüben",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "autoren.html"
+        }],
+        "nameUrl" : "autoren.html",
+        "title" : "Autoren und Mitwirkende",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "impressum.html"
+        }],
+        "nameUrl" : "impressum.html",
+        "title" : "Impressum",
         "generation" : "markdown"
       }]
     },

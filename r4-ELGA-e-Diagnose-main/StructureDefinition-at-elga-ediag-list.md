@@ -9,10 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list | *Version*:0.1.0 | |
-| Active as of 2026-09-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
+| Active as of 2026-09-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
 
  
 Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. 
+
+### Defintion
+
+Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Conditions, Procedures oder AllergiesIntolerances-Einträge die durch eine:n GDA als relevant gekennzeichnet wurden. Sie dient der priorisierten Darstellung aktuell versorgungsrelevanter Summary-Einträge und bildet die fachliche Grundlage für die strukturierte Verwendung in der e-Diagnose und Weiterverwendung in nachgelagerten Anwendungen (z.B.: APS). Eine manuelle Sortierung der Einträge in den jeweiligen Listen ist möglich. Die vorgenommene Sortierung wird in der e-Diagnose gespeichert und ist somit für alle anderen Zugriffsberechtigte sichtbar.
 
 **Usages:**
 
@@ -41,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-09-01T13:57:21+00:00",
+  "date" : "2026-09-03T13:31:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
