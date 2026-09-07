@@ -16,7 +16,7 @@ Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen.
 
 ### Defintion
 
-Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Conditions, Procedures oder AllergiesIntolerances-Einträge die durch eine:n GDA als relevant gekennzeichnet wurden. Sie dient der priorisierten Darstellung aktuell versorgungsrelevanter Summary-Einträge und bildet die fachliche Grundlage für die strukturierte Verwendung in der e-Diagnose und Weiterverwendung in nachgelagerten Anwendungen (z.B.: APS). Eine manuelle Sortierung der Einträge in den jeweiligen Listen ist möglich. Die vorgenommene Sortierung wird in der e-Diagnose gespeichert und ist somit für alle anderen Zugriffsberechtigte sichtbar.
+Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Conditions, Procedures oder AllergiesIntolerances-Einträge die durch eine:n GDA als relevant gekennzeichnet wurden. Sie dient der priorisierten Darstellung aktuell versorgungsrelevanter Summary-Einträge und bildet die fachliche Grundlage für die strukturierte Verwendung in der e-Diagnose und Weiterverwendung in nachgelagerten Anwendungen (z.B..: APS). Eine manuelle Sortierung der Einträge in den jeweiligen Listen ist möglich. Die vorgenommene Sortierung wird in der e-Diagnose gespeichert und ist somit für alle anderen Zugriffsberechtigte sichtbar.
 
 **Usages:**
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-09-07T10:17:45+00:00",
+  "date" : "2026-09-07T10:50:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -108,7 +108,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Status des Liste.",
+      "short" : "Status der Liste.",
       "fixedCode" : "current",
       "mustSupport" : true
     },

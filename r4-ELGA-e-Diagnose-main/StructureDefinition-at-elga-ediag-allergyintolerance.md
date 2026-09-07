@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-09-07T10:17:45+00:00",
+  "date" : "2026-09-07T10:50:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -128,7 +128,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.identifier",
       "path" : "AllergyIntolerance.identifier",
-      "short" : "Zuordnung der Allergie in einem internem Dokumentationssystem"
+      "short" : "Zuordnung der Allergie in einem internen Dokumentationssystem"
     },
     {
       "id" : "AllergyIntolerance.clinicalStatus",
@@ -140,7 +140,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.verificationStatus",
       "path" : "AllergyIntolerance.verificationStatus",
-      "short" : "ToDo; Presumed, gibt es hierzu aktuelle Infos? kardinalität von clinicalStatus & verificationStatus muss noch erarbeitet werden. Möglicher Status; unconfirmed | confirmed | refuted | entered-in-error",
+      "short" : "Verifizierungsstatus der Allergie. Möglicher Status; unconfirmed | confirmed | refuted | entered-in-error",
       "min" : 1,
       "mustSupport" : true
     },

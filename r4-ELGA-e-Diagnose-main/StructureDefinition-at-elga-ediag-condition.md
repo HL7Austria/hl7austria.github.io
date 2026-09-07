@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-09-07T10:17:45+00:00",
+  "date" : "2026-09-07T10:50:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -143,19 +143,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.identifier",
       "path" : "Condition.identifier",
-      "short" : "Zuordnung der Diagnose in einem internem Dokumentationssystem"
+      "short" : "Zuordnung der Diagnose in einem internen Dokumentationssystem"
     },
     {
       "id" : "Condition.clinicalStatus",
       "path" : "Condition.clinicalStatus",
-      "short" : "Klinischer Status der Diagnose (wie:Status post), \nmögliche Codes: active | recurrence | relapse | inactive | remission | resolved",
+      "short" : "Klinischer Status der Diagnose (wie:Status post), mögliche Codes: active | recurrence | relapse | inactive | remission | resolved",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "Condition.verificationStatus",
       "path" : "Condition.verificationStatus",
-      "short" : "Status der Diagnose, mögliche Codes: unconfirmed | provisional | differential | confirmed | refuted | entered-in-error",
+      "short" : "Verifizierungsstatus der Diagnose, mögliche Codes: unconfirmed | provisional | differential | confirmed | refuted | entered-in-error",
       "min" : 1,
       "mustSupport" : true
     },

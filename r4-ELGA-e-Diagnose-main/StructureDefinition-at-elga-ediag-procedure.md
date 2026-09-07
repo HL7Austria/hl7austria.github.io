@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-09-07T10:17:45+00:00",
+  "date" : "2026-09-07T10:50:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -133,7 +133,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.identifier",
       "path" : "Procedure.identifier",
-      "short" : "Zuordnung der Diagnose in einem internem Dokumentationssystem"
+      "short" : "Zuordnung der Diagnose in einem internen Dokumentationssystem"
     },
     {
       "id" : "Procedure.instantiatesCanonical",
@@ -156,7 +156,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.partOf",
       "path" : "Procedure.partOf",
-      "short" : "Verweis der Ressource auf eine andere, übergreordnete Ressource",
+      "short" : "Verweis der Ressource auf eine andere, übergeordnete Ressource",
       "max" : "0"
     },
     {
@@ -223,7 +223,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.recorder",
       "path" : "Procedure.recorder",
-      "short" : "Gesundheitsdiensteanbieter, der die Prozedur eingetragen/dokumentiert hat",
+      "short" : "Gesundheitsdiensteanbieter, der die Prozedur eingetragen bzw. dokumentiert hat",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -247,7 +247,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.performer",
       "path" : "Procedure.performer",
-      "short" : "Diese Person hat die Prozedur durchgeführt",
+      "short" : "Person, die die Prozedur durchgeführt hat",
       "max" : "0"
     },
     {
@@ -259,13 +259,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.reasonCode",
       "path" : "Procedure.reasonCode",
-      "short" : "Code, des med. Grundes für die Durchführung der Prozedur",
+      "short" : "Code des medizinischen Grundes für die Durchführung der Prozedur",
       "max" : "0"
     },
     {
       "id" : "Procedure.reasonReference",
       "path" : "Procedure.reasonReference",
-      "short" : "Begründung dass die Prozedur durchgeführt worden ist - Verweis auf eine andere R. wie Condition, Observation,...",
+      "short" : "Begründung für die Durchführung der Prozedur; Verweis auf eine andere Ressource wie Condition, Observation,...",
       "max" : "0"
     },
     {
@@ -288,13 +288,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.complication",
       "path" : "Procedure.complication",
-      "short" : "Komplikation/en während dem Eingriff",
+      "short" : "Komplikation während dem Eingriff",
       "max" : "0"
     },
     {
       "id" : "Procedure.complicationDetail",
       "path" : "Procedure.complicationDetail",
-      "short" : "Eine Diagnose die durch die durchgeführte Prozedur entstanden ist",
+      "short" : "Diagnose, die durch die durchgeführte Prozedur entstanden ist",
       "max" : "0"
     },
     {
@@ -306,7 +306,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.note",
       "path" : "Procedure.note",
-      "short" : "Freitext zur Prozedur für Zusatzinformation",
+      "short" : "Freitext zur Prozedur als Zusatzinformation",
       "max" : "1"
     },
     {
@@ -322,19 +322,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.focalDevice",
       "path" : "Procedure.focalDevice",
-      "short" : "Prozedurendurchführendes Gerät",
+      "short" : "Gerät, das zur Durchführung der Prozedur verwendet wurde",
       "max" : "0"
     },
     {
       "id" : "Procedure.usedReference",
       "path" : "Procedure.usedReference",
-      "short" : "Verweis auf verwendete Materialien während der Prozedur (z.b. Medikamente)",
+      "short" : "Verweis auf während der Prozedur verwendete Materialien, z. B. Medikamente",
       "max" : "0"
     },
     {
       "id" : "Procedure.usedCode",
       "path" : "Procedure.usedCode",
-      "short" : "Code der Materialien, die während der Prozedur verwendetet wurden",
+      "short" : "Code der während der Prozedur verwendeten Materialien",
       "max" : "0"
     }]
   }

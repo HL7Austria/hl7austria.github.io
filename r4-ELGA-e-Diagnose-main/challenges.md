@@ -11,5 +11,5 @@ Aktuell liegen die IPS und APS nur auf Basis von FHIR® R4 vor. Ob und wann die 
 
 ### Deutsche Übersetzung
 
-Wo es einfach möglich ist (narrative Texte, Erklärungen in Profilen), wird die deutsche Sprache verwendet. Dort, wo auf die FHIR-Spezifikation aufgebaut wird (z.B. Elemente in Profilen) oder wo die Texte vom IG Publisher vorgegeben werden, sind die Texte in Englisch.
+Wo es einfach möglich ist (narrative Texte, Erklärungen in Profilen), wird die deutsche Sprache verwendet. Dort, wo auf die FHIR-Spezifikation aufgebaut wird (z.B.. Elemente in Profilen) oder wo die Texte vom IG Publisher vorgegeben werden, sind die Texte in Englisch.
 
