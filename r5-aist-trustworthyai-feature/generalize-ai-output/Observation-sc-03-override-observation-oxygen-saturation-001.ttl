@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Observation/sc-03-override-observation-oxygen-saturation-001> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "sc-03-override-observation-oxygen-saturation-001"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation sc-03-override-observation-oxygen-saturation-001</b></p><a name=\"sc-03-override-observation-oxygen-saturation-001\"> </a><a name=\"hcsc-03-override-observation-oxygen-saturation-001\"> </a><p><b>status</b>: Final</p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/observation-category vital-signs}\">Vital Signs</span></p><p><b>code</b>: <span title=\"Codes:{http://loinc.org 2708-6}, {http://loinc.org 59408-5}\">Oxygen saturation in Arterial blood by Pulse oximetry</span></p><p><b>subject</b>: <a href=\"Patient-patient-001.html\">Anonymous Patient Female, DoB: 1959-04-12</a></p><p><b>encounter</b>: <a href=\"Encounter-encounter-001.html\">Encounter: status = completed; class = ambulatory; actualPeriod = 2026-03-01 10:00:00+0000 --&gt; 2026-03-01 10:30:00+0000</a></p><p><b>effective</b>: 2026-03-01 10:10:00+0000</p><p><b>performer</b>: <a href=\"Practitioner-practitioner-001.html\">Practitioner Clinical Reviewer </a></p><p><b>value</b>: 92 %<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code% = '%')</span></p><p><b>note</b>: </p><blockquote><div><p>NEWS2 SpO2 scale: scale-1; supplemental oxygen: false</p>\n</div></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ] ;
+       fhir:display [ fhir:v "Vital Signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:2708-6 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "2708-6" ] ;
+       fhir:display [ fhir:v "Oxygen saturation in Arterial blood" ]
+     ] [
+       a loinc:59408-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "59408-5" ] ;
+       fhir:display [ fhir:v "Oxygen saturation in Arterial blood by Pulse oximetry" ]
+     ] ) ;
+     fhir:text [ fhir:v "Oxygen saturation in Arterial blood by Pulse oximetry" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Patient/patient-001> ;
+     fhir:reference [ fhir:v "Patient/patient-001" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Encounter/encounter-001> ;
+     fhir:reference [ fhir:v "Encounter/encounter-001" ]
+  ] ; # 
+  fhir:effective [
+     a fhir:dateTime ;
+     fhir:v "2026-03-01T10:10:00Z"^^xsd:dateTime
+  ] ; # 
+  fhir:performer ( [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/Practitioner/practitioner-001> ;
+     fhir:reference [ fhir:v "Practitioner/practitioner-001" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "92"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "%" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "%" ]
+  ] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "NEWS2 SpO2 scale: scale-1; supplemental oxygen: false" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

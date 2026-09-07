@@ -1,0 +1,39 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/eu-ai-transparency/Observation/2159aa84-4d4c-4146-9ef7-19362414e19c> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "2159aa84-4d4c-4146-9ef7-19362414e19c"] ; # 
+  fhir:meta [
+     fhir:security ( [
+       fhir:system [ fhir:v "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ai-generated" ] ;
+       fhir:display [ fhir:v "AI Generated" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Observation 2159aa84-4d4c-4146-9ef7-19362414e19c</b></p><a name=\"2159aa84-4d4c-4146-9ef7-19362414e19c\"> </a><a name=\"hc2159aa84-4d4c-4146-9ef7-19362414e19c\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Security Label: <a href=\"CodeSystem-eu-ai-involvement-cs.html\">AI Generated (Details: EU AI Involvement Code System code ai-generated = 'AI Generated')</a></p></div><p><b>status</b>: Preliminary</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 38341003}\">hypertension</span></p><p><b>derivedFrom</b>: <a href=\"DocumentReference-42fa4d86-32b8-4452-abc9-b0ad93cab5fc.html\">DocumentReference: status = current</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "preliminary"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:38341003 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "38341003" ] ;
+       fhir:display [ fhir:v "hypertension" ]
+     ] )
+  ] ; # 
+  fhir:derivedFrom ( [
+     fhir:link <http://example.org/fhir/eu-ai-transparency/DocumentReference/42fa4d86-32b8-4452-abc9-b0ad93cab5fc> ;
+     fhir:reference [ fhir:v "DocumentReference/42fa4d86-32b8-4452-abc9-b0ad93cab5fc" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
