@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-reacti
   "name" : "AtEdiagReactionTime",
   "title" : "AT ELGA Reaktionszeit",
   "status" : "active",
-  "date" : "2026-09-07T04:47:29+00:00",
+  "date" : "2026-09-07T06:52:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
