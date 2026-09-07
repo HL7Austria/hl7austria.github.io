@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-retention-information | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:AIRetentionInformation |
+| Draft as of 2026-09-07 | *Computable Name*:AIRetentionInformation |
 
 Documents the stated retention duration for AI-related data, outputs, logs, or documentation.
 
@@ -20,7 +20,7 @@ Documents the stated retention duration for AI-related data, outputs, logs, or d
 **Usages:**
 
 * Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md), [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-retention-information.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-retention-informa
   "name" : "AIRetentionInformation",
   "title" : "AI Retention Information",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents the stated retention duration for AI-related data, outputs, logs, or documentation.",
   "fhirVersion" : "5.0.0",

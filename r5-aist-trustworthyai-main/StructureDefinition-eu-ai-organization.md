@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EU_AIOrganization |
+| Draft as of 2026-09-07 | *Computable Name*:EU_AIOrganization |
 
  
 An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information. 
@@ -17,7 +17,7 @@ An Organization profile representing an organization involved in manufacturing, 
 **Usages:**
 
 * Refer to this Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md) and [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md)
-* Examples for this Profile: [Example Hospital](Organization-organization-examplehospital.md) and [ExampleMed AI GmbH](Organization-organization-examplemed.md)
+* Examples for this Profile: [Example Diagnostic Center](Organization-dr-organization.md), [Example Hospital](Organization-organization-examplehospital.md) and [ExampleMed AI GmbH](Organization-organization-examplemed.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-organization.json)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-organization.c
   "name" : "EU_AIOrganization",
   "title" : "EU AI Responsible Organization",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information.",
   "fhirVersion" : "5.0.0",

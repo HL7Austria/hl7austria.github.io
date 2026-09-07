@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-dpia-reference | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:DPIAReference |
+| Draft as of 2026-09-07 | *Computable Name*:DPIAReference |
 
 Privacy risk management, GDPR accountability
 
@@ -50,7 +50,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-dpia-reference
   "name" : "DPIAReference",
   "title" : "EU AI DPIA Reference",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Privacy risk management, GDPR accountability",
   "fhirVersion" : "5.0.0",

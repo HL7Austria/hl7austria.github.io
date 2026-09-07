@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EU_AIDevice |
+| Draft as of 2026-09-07 | *Computable Name*:EU_AIDevice |
 
  
 A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata. 
@@ -17,7 +17,7 @@ A Device profile representing an AI system or software component, including syst
 **Usages:**
 
 * Refer to this Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md), [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md), [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md) and [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
-* Examples for this Profile: [Device/device-riskassist-ai](Device-device-riskassist-ai.md)
+* Examples for this Profile: [Device/device-riskassist-ai](Device-device-riskassist-ai.md) and [Device/dr-ai-device](Device-dr-ai-device.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-device.json)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-device.csv), [
   "name" : "EU_AIDevice",
   "title" : "EU AI System Device",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata.",
   "fhirVersion" : "5.0.0",

@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EU_AIPatientExplanation |
+| Draft as of 2026-09-07 | *Computable Name*:EU_AIPatientExplanation |
 
  
 A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act. 
 
 **Usages:**
 
-* Examples for this Profile: [Communication/sc-04-correction-exp-patient-explanation-001](Communication-sc-04-correction-exp-patient-explanation-001.md)
+* Examples for this Profile: [Communication/dr-patient-communication](Communication-dr-patient-communication.md) and [Communication/sc-04-correction-exp-patient-explanation-001](Communication-sc-04-correction-exp-patient-explanation-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-patient-explanation.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-patient-explan
   "name" : "EU_AIPatientExplanation",
   "title" : "EU AI Patient Explanation Communication",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act.",
   "fhirVersion" : "5.0.0",

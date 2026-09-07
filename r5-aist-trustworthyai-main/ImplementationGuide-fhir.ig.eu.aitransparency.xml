@@ -10,7 +10,7 @@
   <version value="0.1.0"/>
   <name value="EUAITransparencyIG"/>
   <status value="draft"/>
-  <date value="2026-09-03T11:53:05+00:00"/>
+  <date value="2026-09-07T08:39:53+00:00"/>
   <publisher value="Selina Adlberger"/>
   <packageId value="fhir.ig.eu.aitransparency"/>
   <license value="CC0-1.0"/>
@@ -89,6 +89,16 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/dr-ai-diagnostic-report"/>
+      </reference>
+      <name value="AI Output: Diagnostic Report"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -97,7 +107,6 @@
       <name value="AI Output: Early Warning Risk Assessment (1)"/>
       <description value="Synthetic AI-generated high-risk output derived from NEWS2-inspired input parameters."/>
       <isExample value="true"/>
-      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -109,7 +118,6 @@
       <name value="AI Output: Early Warning Risk Assessment (2)"/>
       <description value="Synthetic AI-generated high-risk output derived from NEWS2-inspired input parameters."/>
       <isExample value="true"/>
-      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -121,7 +129,6 @@
       <name value="AI Output: Early Warning Risk Assessment (3)"/>
       <description value="Synthetic AI-generated low-risk output derived from NEWS2-inspired input parameters."/>
       <isExample value="true"/>
-      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -133,7 +140,6 @@
       <name value="AI Output: Early Warning Risk Assessment (4)"/>
       <description value="Synthetic AI-generated low-risk output derived from NEWS2-inspired input parameters."/>
       <isExample value="true"/>
-      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -178,6 +184,17 @@
       <name value="AI Training Data Metadata"/>
       <description value="Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system."/>
       <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ArtifactAssessment"/>
+      </extension>
+      <reference>
+        <reference value="ArtifactAssessment/dr-human-assessment"/>
+      </reference>
+      <name value="ArtifactAssessment: Human Validation"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -265,6 +282,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AuditEvent"/>
+      </extension>
+      <reference>
+        <reference value="AuditEvent/dr-ai-audit-event"/>
+      </reference>
+      <name value="AuditEvent: AI Diagnostic Report Generation"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -300,6 +328,17 @@
         <valueString value="Communication"/>
       </extension>
       <reference>
+        <reference value="Communication/dr-patient-communication"/>
+      </reference>
+      <name value="Communication: Patient Explanation"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Communication"/>
+      </extension>
+      <reference>
         <reference value="Communication/sc-04-correction-exp-patient-explanation-001"/>
       </reference>
       <name value="Communication: Patient-Facing AI Explanation (4)"/>
@@ -317,6 +356,17 @@
       <name value="Corrected Clinical Observation: Early Warning Risk Assessment (4)"/>
       <description value="Human-corrected clinical result preserving traceability to the original AI-generated output."/>
       <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/dr-ai-device"/>
+      </reference>
+      <name value="Device: DiagnosticAssist AI"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -537,6 +587,17 @@
       </reference>
       <name value="EU AI Contact Purpose Code System"/>
       <description value="Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/eu-ai-data"/>
+      </reference>
+      <name value="EU AI Data"/>
+      <description value="A resource-independent profile indicating that an AI system was&#xA;involved in generating, reporting, assisting with, or asserting&#xA;the content of a FHIR resource.&#xA;&#xA;This profile is intended as a common validation and documentation&#xA;pattern across different FHIR resource types."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -764,6 +825,16 @@
         <valueString value="DocumentReference"/>
       </extension>
       <reference>
+        <reference value="DocumentReference/eu-conformity-declaration-2"/>
+      </reference>
+      <name value="EU Conformity Declaration"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
         <reference value="DocumentReference/eu-conformity-declaration"/>
       </reference>
       <name value="EU Conformity Declaration"/>
@@ -920,6 +991,16 @@
       </reference>
       <name value="Input Observation: Body Temperature (4)"/>
       <description value="Synthetic NEWS2-inspired input parameter."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/dr-input-observation"/>
+      </reference>
+      <name value="Input Observation: C-Reactive Protein"/>
       <isExample value="true"/>
     </resource>
     <resource>
@@ -1136,6 +1217,18 @@
         <valueString value="DocumentReference"/>
       </extension>
       <reference>
+        <reference value="DocumentReference/dr-model-card"/>
+      </reference>
+      <name value="Model Card: DiagnosticAssist AI"/>
+      <description value="Synthetic model card for an AI system generating diagnostic reports from structured clinical input."/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
         <reference value="DocumentReference/modelcard-riskassist-ai"/>
       </reference>
       <name value="Model Card: RiskAssist AI v1.0.0"/>
@@ -1157,6 +1250,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/dr-organization"/>
+      </reference>
+      <name value="Organization: Example Diagnostic Center"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -1171,10 +1275,30 @@
         <valueString value="Patient"/>
       </extension>
       <reference>
+        <reference value="Patient/dr-patient"/>
+      </reference>
+      <name value="Patient: Diagnostic Report Scenario"/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
         <reference value="Patient/patient-001"/>
       </reference>
       <name value="Patient: Synthetic Patient 001"/>
       <description value="A fictional female patient used in the NEWS2-inspired PoC scenarios."/>
+      <isExample value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/dr-practitioner"/>
+      </reference>
+      <name value="Practitioner: Diagnostic Reviewer"/>
       <isExample value="true"/>
     </resource>
     <resource>
@@ -1193,12 +1317,34 @@
         <valueString value="PractitionerRole"/>
       </extension>
       <reference>
+        <reference value="PractitionerRole/dr-practitioner-role"/>
+      </reference>
+      <name value="PractitionerRole: Diagnostic Reviewer"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
         <reference value="PractitionerRole/practitionerrole-reviewer-001"/>
       </reference>
       <name value="PractitionerRole: Human Reviewer"/>
       <description value="Synthetic practitioner role representing a trained internal medicine reviewer."/>
       <isExample value="true"/>
       <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Provenance"/>
+      </extension>
+      <reference>
+        <reference value="Provenance/dr-ai-provenance"/>
+      </reference>
+      <name value="Provenance: AI Diagnostic Report"/>
+      <isExample value="true"/>
+      <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

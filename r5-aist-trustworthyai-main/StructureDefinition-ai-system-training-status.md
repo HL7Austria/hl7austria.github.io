@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:AISystemTrainingStatus |
+| Draft as of 2026-09-07 | *Computable Name*:AISystemTrainingStatus |
 
 Records whether the practitioner acting in the documented role has completed training specific to the relevant AI system.
 
@@ -20,7 +20,7 @@ Records whether the practitioner acting in the documented role has completed tra
 **Usages:**
 
 * Use this Extension: [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md)
-* Examples for this Extension: [PractitionerRole/practitionerrole-reviewer-001](PractitionerRole-practitionerrole-reviewer-001.md)
+* Examples for this Extension: [PractitionerRole/dr-practitioner-role](PractitionerRole-dr-practitioner-role.md) and [PractitionerRole/practitionerrole-reviewer-001](PractitionerRole-practitionerrole-reviewer-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-system-training-status.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-system-training-s
   "name" : "AISystemTrainingStatus",
   "title" : "AI System-Specific Training Status",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records whether the practitioner acting in the documented role has completed training specific to the relevant AI system.",
   "fhirVersion" : "5.0.0",

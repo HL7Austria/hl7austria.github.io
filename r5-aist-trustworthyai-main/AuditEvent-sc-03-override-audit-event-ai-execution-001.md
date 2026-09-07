@@ -43,7 +43,7 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
 | | | |
 | :--- | :--- | :--- |
 | - | **What** | **Role** |
-| * | [Observation ](Observation-sc-03-override-ai-observation-risk-001.md) | AI Output |
+| * | [Observation ](Observation-sc-03-override-ai-observation-risk-001.md) | Report |
 
 
 
@@ -115,7 +115,7 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
         "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role",
         "code" : "ai-output"
       }],
-      "text" : "AI Output"
+      "text" : "Report"
     }
   }]
 }

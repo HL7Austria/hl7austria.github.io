@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EU_AIAuditEvent |
+| Draft as of 2026-09-07 | *Computable Name*:EU_AIAuditEvent |
 
  
 An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability. 
 
 **Usages:**
 
-* Examples for this Profile: [AuditEvent/sc-01-ai-only-audit-event-ai-execution-001](AuditEvent-sc-01-ai-only-audit-event-ai-execution-001.md), [AuditEvent/sc-02-validation-audit-event-ai-execution-001](AuditEvent-sc-02-validation-audit-event-ai-execution-001.md), [AuditEvent/sc-03-override-audit-event-ai-execution-001](AuditEvent-sc-03-override-audit-event-ai-execution-001.md) and [AuditEvent/sc-04-correction-exp-audit-event-ai-execution-001](AuditEvent-sc-04-correction-exp-audit-event-ai-execution-001.md)
+* Examples for this Profile: [AuditEvent/dr-ai-audit-event](AuditEvent-dr-ai-audit-event.md), [AuditEvent/sc-01-ai-only-audit-event-ai-execution-001](AuditEvent-sc-01-ai-only-audit-event-ai-execution-001.md), [AuditEvent/sc-02-validation-audit-event-ai-execution-001](AuditEvent-sc-02-validation-audit-event-ai-execution-001.md), [AuditEvent/sc-03-override-audit-event-ai-execution-001](AuditEvent-sc-03-override-audit-event-ai-execution-001.md) and [AuditEvent/sc-04-correction-exp-audit-event-ai-execution-001](AuditEvent-sc-04-correction-exp-audit-event-ai-execution-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-machine-execution-audit-event.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-machine-execut
   "name" : "EU_AIAuditEvent",
   "title" : "EU AI Execution Audit Event",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability.",
   "fhirVersion" : "5.0.0",

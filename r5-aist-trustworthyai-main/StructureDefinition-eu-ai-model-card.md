@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EU_AIModelCard |
+| Draft as of 2026-09-07 | *Computable Name*:EU_AIModelCard |
 
  
 A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation. 
@@ -17,7 +17,7 @@ A DocumentReference profile representing technical documentation about an AI sys
 **Usages:**
 
 * Refer to this Profile: [Model Card Reference](StructureDefinition-ext-model-card.md)
-* Examples for this Profile: [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Examples for this Profile: [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-model-card.json)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-model-card.csv
   "name" : "EU_AIModelCard",
   "title" : "EU AI Act Model Card",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation.",
   "fhirVersion" : "5.0.0",

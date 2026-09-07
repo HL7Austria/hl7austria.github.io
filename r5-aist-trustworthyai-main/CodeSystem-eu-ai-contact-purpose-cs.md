@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs | *Version*:0.1.0 |
-| Active as of 2026-09-03 | *Computable Name*:EUAIContactPurposeCodeSystem |
+| Active as of 2026-09-07 | *Computable Name*:EUAIContactPurposeCodeSystem |
 
  
 Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance. 
@@ -32,7 +32,7 @@ Codes identifying organizational contact responsibilities relevant to data prote
   "title" : "EU AI Contact Purpose Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance.",
   "caseSensitive" : true,

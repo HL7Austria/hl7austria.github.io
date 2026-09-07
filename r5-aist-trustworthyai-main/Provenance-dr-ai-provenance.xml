@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="dr-ai-provenance"/>
+  <meta>
+    <profile value="http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Provenance dr-ai-provenance</b></p><a name="dr-ai-provenance"> </a><a name="hcdr-ai-provenance"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-eu-ai-provenance.html">EU AI Provenance</a></p></div><p>Provenance for <a href="DiagnosticReport-dr-ai-diagnostic-report.html">Diagnostic Report for '' for '-&gt;Anonymous Patient Female, DoB: 1965-06-15'</a></p><p>Summary</p><table class="grid"><tr><td>Occurrence</td><td>2026-03-10 09:05:00+0000 --&gt; 2026-03-10 09:05:03+0000</td></tr><tr><td>Recorded</td><td>2026-03-10 09:05:04+0000</td></tr></table><p><b>Agents</b></p><table class="grid"><tr><td><b>who</b></td></tr><tr><td><a href="Device-dr-ai-device.html">Device: extension = ,-&gt;DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,-&gt;DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.</a></td></tr></table></div>
+  </text>
+  <extension url="http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-usage-category-cs"/>
+        <code value="primary-use"/>
+        <display value="Primary Use"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-case-specific-indication-cs"/>
+        <code value="diagnostic-support"/>
+        <display value="Diagnostic Support"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag">
+    <valueBoolean value="false"/>
+  </extension>
+  <target>
+    <reference value="DiagnosticReport/dr-ai-diagnostic-report"/>
+  </target>
+  <occurredPeriod>
+    <start value="2026-03-10T09:05:00Z"/>
+    <end value="2026-03-10T09:05:03Z"/>
+  </occurredPeriod>
+  <recorded value="2026-03-10T09:05:04Z"/>
+  <authorization>
+    <concept>
+      <coding>
+        <system value="http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem"/>
+        <code value="gdpr-art-6-1-d"/>
+      </coding>
+    </concept>
+  </authorization>
+  <authorization>
+    <concept>
+      <coding>
+        <system value="http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem"/>
+        <code value="gdpr-art-9-2-h"/>
+      </coding>
+    </concept>
+  </authorization>
+  <agent>
+    <who>
+      <reference value="Device/dr-ai-device"/>
+    </who>
+  </agent>
+  <entity>
+    <role value="source"/>
+    <what>
+      <reference value="Observation/dr-input-observation"/>
+    </what>
+  </entity>
+</Provenance>

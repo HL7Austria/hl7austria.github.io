@@ -6,11 +6,7 @@
 
 ## Example Observation: AI Output: Early Warning Risk Assessment (2)
 
-Profile: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
-
-**Case-Specific Indication**: Prognostic Prediction
-
-**Automated Decision-Making Flag**: false
+Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-generated = 'AI Generated')](CodeSystem-eu-ai-involvement-cs.md)
 
 **status**: Final
 
@@ -25,8 +21,6 @@ Profile: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md)
 **performer**: [Organization Example Hospital](Organization-organization-examplehospital.md)
 
 **value**: high-risk
-
-**interpretation**: AI Generated Result
 
 **note**: 
 
@@ -50,22 +44,12 @@ Urgent clinical review recommended
   "resourceType" : "Observation",
   "id" : "sc-02-validation-ai-observation-risk-001",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+    "security" : [{
+      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs",
+      "code" : "ai-generated",
+      "display" : "AI Generated"
+    }]
   },
-  "extension" : [{
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication",
-    "valueCodeableConcept" : {
-      "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-case-specific-indication-cs",
-        "code" : "prognosis",
-        "display" : "Prognostic Prediction"
-      }]
-    }
-  },
-  {
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag",
-    "valueBoolean" : false
-  }],
   "status" : "final",
   "code" : {
     "text" : "AI-assisted early warning risk assessment"
@@ -83,13 +67,6 @@ Urgent clinical review recommended
   "valueCodeableConcept" : {
     "text" : "high-risk"
   },
-  "interpretation" : [{
-    "coding" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs",
-      "code" : "ai-generated"
-    }],
-    "text" : "AI Generated Result"
-  }],
   "note" : [{
     "text" : "Urgent clinical review recommended"
   }],

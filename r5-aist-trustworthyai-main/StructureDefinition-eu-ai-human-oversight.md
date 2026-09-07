@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EU_AIHumanOversightAssessment |
+| Draft as of 2026-09-07 | *Computable Name*:EU_AIHumanOversightAssessment |
 
  
 An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden. 
 
 **Usages:**
 
-* Examples for this Profile: [ArtifactAssessment/sc-02-validation-human-oversight-001](ArtifactAssessment-sc-02-validation-human-oversight-001.md), [ArtifactAssessment/sc-03-override-human-oversight-001](ArtifactAssessment-sc-03-override-human-oversight-001.md) and [ArtifactAssessment/sc-04-correction-exp-human-oversight-001](ArtifactAssessment-sc-04-correction-exp-human-oversight-001.md)
+* Examples for this Profile: [ArtifactAssessment/dr-human-assessment](ArtifactAssessment-dr-human-assessment.md), [ArtifactAssessment/sc-02-validation-human-oversight-001](ArtifactAssessment-sc-02-validation-human-oversight-001.md), [ArtifactAssessment/sc-03-override-human-oversight-001](ArtifactAssessment-sc-03-override-human-oversight-001.md) and [ArtifactAssessment/sc-04-correction-exp-human-oversight-001](ArtifactAssessment-sc-04-correction-exp-human-oversight-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-human-oversight.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
   "name" : "EU_AIHumanOversightAssessment",
   "title" : "EU AI Human Oversight Assessment",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden.",
   "fhirVersion" : "5.0.0",
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
         "ordered" : false,
         "rules" : "open"
       },
-      "short" : "Reference to the AI-generated Observation"
+      "short" : "Reference to the AI-generated"
     },
     {
       "id" : "ArtifactAssessment.artifact[x]:artifactReference",
@@ -98,7 +98,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-human-oversigh
       "max" : "1",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Resource"]
       }],
       "mustSupport" : true
     },

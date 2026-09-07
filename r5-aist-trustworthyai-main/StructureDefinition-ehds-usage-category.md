@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EHDSUsageCategory |
+| Draft as of 2026-09-07 | *Computable Name*:EHDSUsageCategory |
 
 Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.
 
@@ -20,7 +20,7 @@ Classifies the documented use of electronic health data as primary use or second
 **Usages:**
 
 * Use this Extension: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
-* Examples for this Extension: [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md), [Provenance/sc-01-ai-only-provenance-ai-output-001](Provenance-sc-01-ai-only-provenance-ai-output-001.md), [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md), [Provenance/sc-03-override-provenance-ai-output-001](Provenance-sc-03-override-provenance-ai-output-001.md) and [Provenance/sc-04-correction-exp-provenance-ai-output-001](Provenance-sc-04-correction-exp-provenance-ai-output-001.md)
+* Examples for this Extension: [Provenance/dr-ai-provenance](Provenance-dr-ai-provenance.md), [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md), [Provenance/sc-01-ai-only-provenance-ai-output-001](Provenance-sc-01-ai-only-provenance-ai-output-001.md), [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md)... Show 2 more, [Provenance/sc-03-override-provenance-ai-output-001](Provenance-sc-03-override-provenance-ai-output-001.md) and [Provenance/sc-04-correction-exp-provenance-ai-output-001](Provenance-sc-04-correction-exp-provenance-ai-output-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ehds-usage-category.json)
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ehds-usage-category.
   "name" : "EHDSUsageCategory",
   "title" : "EHDS Usage Category",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.",
   "fhirVersion" : "5.0.0",

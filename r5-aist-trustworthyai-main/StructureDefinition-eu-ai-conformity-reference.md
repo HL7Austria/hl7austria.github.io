@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-conformity-reference | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EUConformityDeclarationReference |
+| Draft as of 2026-09-07 | *Computable Name*:EUConformityDeclarationReference |
 
 The EU declaration of conformity shall identify the high-risk AI system.
 
@@ -20,7 +20,7 @@ The EU declaration of conformity shall identify the high-risk AI system.
 **Usages:**
 
 * Use this Extension: [EU AI System Device](StructureDefinition-eu-ai-device.md)
-* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md)
+* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md) and [Device/dr-ai-device](Device-dr-ai-device.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-conformity-reference.json)
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-conformity-ref
   "name" : "EUConformityDeclarationReference",
   "title" : "EU Conformity Declaration Reference",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "The EU declaration of conformity shall identify the high-risk AI system.",
   "fhirVersion" : "5.0.0",

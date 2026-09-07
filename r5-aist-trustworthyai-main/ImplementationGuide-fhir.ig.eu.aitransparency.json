@@ -4,13 +4,13 @@
   "language" : "en",
   "text" : {
     "status" : "generated",
-    "div" : "<div xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide fhir.ig.eu.aitransparency</b></p><a name=\"fhir.ig.eu.aitransparency\"> </a><a name=\"hcfhir.ig.eu.aitransparency\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>EUAITransparencyIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency</pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide fhir.ig.eu.aitransparency</b></p><a name=\"fhir.ig.eu.aitransparency\"> </a><a name=\"hcfhir.ig.eu.aitransparency\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>EUAITransparencyIG</h2><p>The official URL for this implementation guide is: </p><pre>http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency</pre></div>"
   },
   "url" : "http://example.org/fhir/eu-ai-transparency/ImplementationGuide/fhir.ig.eu.aitransparency",
   "version" : "0.1.0",
   "name" : "EUAITransparencyIG",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "packageId" : "fhir.ig.eu.aitransparency",
   "license" : "CC0-1.0",
@@ -100,6 +100,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/dr-ai-diagnostic-report"
+      },
+      "name" : "AI Output: Diagnostic Report",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Observation"
       }],
       "reference" : {
@@ -107,8 +118,7 @@
       },
       "name" : "AI Output: Early Warning Risk Assessment (1)",
       "description" : "Synthetic AI-generated high-risk output derived from NEWS2-inspired input parameters.",
-      "isExample" : true,
-      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+      "isExample" : true
     },
     {
       "extension" : [{
@@ -120,8 +130,7 @@
       },
       "name" : "AI Output: Early Warning Risk Assessment (2)",
       "description" : "Synthetic AI-generated high-risk output derived from NEWS2-inspired input parameters.",
-      "isExample" : true,
-      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+      "isExample" : true
     },
     {
       "extension" : [{
@@ -133,8 +142,7 @@
       },
       "name" : "AI Output: Early Warning Risk Assessment (3)",
       "description" : "Synthetic AI-generated low-risk output derived from NEWS2-inspired input parameters.",
-      "isExample" : true,
-      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+      "isExample" : true
     },
     {
       "extension" : [{
@@ -146,8 +154,7 @@
       },
       "name" : "AI Output: Early Warning Risk Assessment (4)",
       "description" : "Synthetic AI-generated low-risk output derived from NEWS2-inspired input parameters.",
-      "isExample" : true,
-      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
+      "isExample" : true
     },
     {
       "extension" : [{
@@ -196,6 +203,18 @@
       "name" : "AI Training Data Metadata",
       "description" : "Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.",
       "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ArtifactAssessment"
+      }],
+      "reference" : {
+        "reference" : "ArtifactAssessment/dr-human-assessment"
+      },
+      "name" : "ArtifactAssessment: Human Validation",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
     },
     {
       "extension" : [{
@@ -291,6 +310,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AuditEvent"
+      }],
+      "reference" : {
+        "reference" : "AuditEvent/dr-ai-audit-event"
+      },
+      "name" : "AuditEvent: AI Diagnostic Report Generation",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -329,6 +360,18 @@
         "valueString" : "Communication"
       }],
       "reference" : {
+        "reference" : "Communication/dr-patient-communication"
+      },
+      "name" : "Communication: Patient Explanation",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Communication"
+      }],
+      "reference" : {
         "reference" : "Communication/sc-04-correction-exp-patient-explanation-001"
       },
       "name" : "Communication: Patient-Facing AI Explanation (4)",
@@ -347,6 +390,18 @@
       "name" : "Corrected Clinical Observation: Early Warning Risk Assessment (4)",
       "description" : "Human-corrected clinical result preserving traceability to the original AI-generated output.",
       "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Device"
+      }],
+      "reference" : {
+        "reference" : "Device/dr-ai-device"
+      },
+      "name" : "Device: DiagnosticAssist AI",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"]
     },
     {
       "extension" : [{
@@ -587,6 +642,18 @@
       },
       "name" : "EU AI Contact Purpose Code System",
       "description" : "Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/eu-ai-data"
+      },
+      "name" : "EU AI Data",
+      "description" : "A resource-independent profile indicating that an AI system was\ninvolved in generating, reporting, assisting with, or asserting\nthe content of a FHIR resource.\n\nThis profile is intended as a common validation and documentation\npattern across different FHIR resource types.",
       "isExample" : false
     },
     {
@@ -835,6 +902,17 @@
         "valueString" : "DocumentReference"
       }],
       "reference" : {
+        "reference" : "DocumentReference/eu-conformity-declaration-2"
+      },
+      "name" : "EU Conformity Declaration",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
         "reference" : "DocumentReference/eu-conformity-declaration"
       },
       "name" : "EU Conformity Declaration",
@@ -1005,6 +1083,17 @@
       },
       "name" : "Input Observation: Body Temperature (4)",
       "description" : "Synthetic NEWS2-inspired input parameter.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/dr-input-observation"
+      },
+      "name" : "Input Observation: C-Reactive Protein",
       "isExample" : true
     },
     {
@@ -1241,6 +1330,19 @@
         "valueString" : "DocumentReference"
       }],
       "reference" : {
+        "reference" : "DocumentReference/dr-model-card"
+      },
+      "name" : "Model Card: DiagnosticAssist AI",
+      "description" : "Synthetic model card for an AI system generating diagnostic reports from structured clinical input.",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
         "reference" : "DocumentReference/modelcard-riskassist-ai"
       },
       "name" : "Model Card: RiskAssist AI v1.0.0",
@@ -1264,6 +1366,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/dr-organization"
+      },
+      "name" : "Organization: Example Diagnostic Center",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1279,10 +1393,32 @@
         "valueString" : "Patient"
       }],
       "reference" : {
+        "reference" : "Patient/dr-patient"
+      },
+      "name" : "Patient: Diagnostic Report Scenario",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
         "reference" : "Patient/patient-001"
       },
       "name" : "Patient: Synthetic Patient 001",
       "description" : "A fictional female patient used in the NEWS2-inspired PoC scenarios.",
+      "isExample" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/dr-practitioner"
+      },
+      "name" : "Practitioner: Diagnostic Reviewer",
       "isExample" : true
     },
     {
@@ -1303,12 +1439,36 @@
         "valueString" : "PractitionerRole"
       }],
       "reference" : {
+        "reference" : "PractitionerRole/dr-practitioner-role"
+      },
+      "name" : "PractitionerRole: Diagnostic Reviewer",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      }],
+      "reference" : {
         "reference" : "PractitionerRole/practitionerrole-reviewer-001"
       },
       "name" : "PractitionerRole: Human Reviewer",
       "description" : "Synthetic practitioner role representing a trained internal medicine reviewer.",
       "isExample" : true,
       "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"]
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Provenance"
+      }],
+      "reference" : {
+        "reference" : "Provenance/dr-ai-provenance"
+      },
+      "name" : "Provenance: AI Diagnostic Report",
+      "isExample" : true,
+      "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"]
     },
     {
       "extension" : [{

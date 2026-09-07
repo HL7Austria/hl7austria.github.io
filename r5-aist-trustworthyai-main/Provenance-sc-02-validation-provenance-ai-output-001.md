@@ -42,6 +42,20 @@ Summary
         "display" : "Primary Use"
       }]
     }
+  },
+  {
+    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-case-specific-indication-cs",
+        "code" : "prognosis",
+        "display" : "Prognostic Prediction"
+      }]
+    }
+  },
+  {
+    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag",
+    "valueBoolean" : false
   }],
   "target" : [{
     "reference" : "Observation/sc-02-validation-ai-observation-risk-001"

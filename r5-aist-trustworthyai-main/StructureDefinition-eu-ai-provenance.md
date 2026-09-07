@@ -9,14 +9,14 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance | *Version*:0.1.0 |
-| Draft as of 2026-09-03 | *Computable Name*:EU_AIProvenance |
+| Draft as of 2026-09-07 | *Computable Name*:EU_AIProvenance |
 
  
 A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context. 
 
 **Usages:**
 
-* Examples for this Profile: [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md), [Provenance/sc-01-ai-only-provenance-ai-output-001](Provenance-sc-01-ai-only-provenance-ai-output-001.md), [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md), [Provenance/sc-03-override-provenance-ai-output-001](Provenance-sc-03-override-provenance-ai-output-001.md) and [Provenance/sc-04-correction-exp-provenance-ai-output-001](Provenance-sc-04-correction-exp-provenance-ai-output-001.md)
+* Examples for this Profile: [Provenance/dr-ai-provenance](Provenance-dr-ai-provenance.md), [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md), [Provenance/sc-01-ai-only-provenance-ai-output-001](Provenance-sc-01-ai-only-provenance-ai-output-001.md), [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md)... Show 2 more, [Provenance/sc-03-override-provenance-ai-output-001](Provenance-sc-03-override-provenance-ai-output-001.md) and [Provenance/sc-04-correction-exp-provenance-ai-output-001](Provenance-sc-04-correction-exp-provenance-ai-output-001.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-eu-ai-provenance.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
   "name" : "EU_AIProvenance",
   "title" : "EU AI Provenance",
   "status" : "draft",
-  "date" : "2026-09-03T11:53:05+00:00",
+  "date" : "2026-09-07T08:39:53+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context.",
   "fhirVersion" : "5.0.0",
@@ -91,7 +91,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 1
+      "min" : 3
     },
     {
       "id" : "Provenance.extension:usageCategory",
@@ -133,19 +133,41 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
       "mustSupport" : true
     },
     {
+      "id" : "Provenance.extension:caseIndication",
+      "path" : "Provenance.extension",
+      "sliceName" : "caseIndication",
+      "short" : "Clinical reason for AI use",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Provenance.extension:automatedDecision",
+      "path" : "Provenance.extension",
+      "sliceName" : "automatedDecision",
+      "short" : "Automated decision flag",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag"]
+      }],
+      "mustSupport" : true
+    },
+    {
       "id" : "Provenance.target",
       "path" : "Provenance.target",
       "short" : "Link to the generated AI clinical result",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-observation"]
-      }],
       "mustSupport" : true
     },
     {
       "id" : "Provenance.occurred[x]",
       "path" : "Provenance.occurred[x]",
-      "short" : "Execution period of the AI processing activity",
+      "short" : "Period of the activity that generated or influenced the target resource",
       "min" : 1,
       "type" : [{
         "code" : "Period"
@@ -271,6 +293,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
     {
       "id" : "Provenance.entity",
       "path" : "Provenance.entity",
+      "short" : "Input data used to generate the AI output",
       "min" : 1,
       "mustSupport" : true
     },
@@ -282,13 +305,7 @@ Other representations of profile: [CSV](StructureDefinition-eu-ai-provenance.csv
     {
       "id" : "Provenance.entity.what",
       "path" : "Provenance.entity.what",
-      "short" : "Source data processed by the AI",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Observation",
-        "http://hl7.org/fhir/StructureDefinition/ImagingStudy",
-        "http://hl7.org/fhir/StructureDefinition/DocumentReference"]
-      }]
+      "short" : "Source data processed by the AI system"
     }]
   }
 }
