@@ -281,7 +281,7 @@ aus und übermittelt die neue Ressource an die e-Diagnose Fachanwendung.</li>
 
 <p>Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob ein zu stornierender Eintrag in der Summary-List referenziert wird oder nicht.
 Im Zuge der Stornierung kann der GDA einen Vermerk festhalten. 
-Die OID des GDA´s und der Stornierungszeitpunkt wird durch die Fachanwendung gesetzt.</p>
+Die OID des GDA und der Stornierungszeitpunkt werden durch die Fachanwendung gesetzt.</p>
 
 <h4 id="ablauf-1">Ablauf</h4>
 
@@ -298,7 +298,7 @@ und markiert die zu stornierenden Einträge.</li>
       <li><code class="language-plaintext highlighter-rouge">Procedure.status = entered-in-error</code></li>
     </ul>
   </li>
-  <li>Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt ursprünglichen Wert des verification.Status bzw. status</li>
+  <li>Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt den ursprünglichen Wert des verification.Status bzw. status</li>
 </ol>
 
 <h3 id="eintrag-bearbeiten-in-der-gesamtansicht">Eintrag bearbeiten in der Gesamtansicht</h3>
@@ -350,7 +350,7 @@ und markiert die zu stornierenden Einträge.</li>
   <p>Sub:UC_02_04</p>
 </blockquote>
 
-<p><a name="l905">​</a>Die <code class="language-plaintext highlighter-rouge">$write</code>-Operation ist eine eigentständige Operation, die allerdings einen <strong>zuvor ausgeführten</strong> <a href="uc_ediag_01_lesen.html#aktuelle-summary-liste-abrufen-list-read">Abruf der aktuellen Summary-Liste</a> voraussetzt.</p>
+<p><a name="l905">​</a>Die <code class="language-plaintext highlighter-rouge">$write</code>-Operation ist eine eigenständige Operation, die allerdings einen <strong>zuvor ausgeführten</strong> <a href="uc_ediag_01_lesen.html#aktuelle-summary-liste-abrufen-list-read">Abruf der aktuellen Summary-Liste</a> voraussetzt.</p>
 
 <h4 id="ablauf-4">Ablauf</h4>
 
@@ -370,7 +370,7 @@ und markiert die zu stornierenden Einträge.</li>
   <li>Die Fachanwendung liefert das SearchSet-Bundle zurück. Auch in diesem Fall hat <code class="language-plaintext highlighter-rouge">List.meta.versionId</code> den Wert <code class="language-plaintext highlighter-rouge">123</code>.</li>
   <li><strong>GDA 2</strong> macht <strong>fachliche Änderungen</strong> an der Summary-Liste.</li>
   <li><strong>GDA 2</strong> aktualisiert zuerst mittels <a href="uc_ediag_02_schreiben.html#summary-liste-aktualisieren-write">$write-Operation</a> die Summary-Liste.</li>
-  <li>Im Rahmen der Validierung der übermittelten Summary-Liste, prüft die Fachanwendung, ob der mitgeschickte <code class="language-plaintext highlighter-rouge">If-Match</code>-Header mit der aktuellen <code class="language-plaintext highlighter-rouge">versionId</code> der Summary-Liste übereinstimmt.</li>
+  <li>Im Rahmen der Validierung der übermittelten Summary-Liste prüft die Fachanwendung, ob der mitgeschickte <code class="language-plaintext highlighter-rouge">If-Match</code>-Header mit der aktuellen <code class="language-plaintext highlighter-rouge">versionId</code> der Summary-Liste übereinstimmt.</li>
   <li>Die Prüfung verläuft erfolgreich, weil beide den Wert <code class="language-plaintext highlighter-rouge">123</code> haben. Die Änderungen werden übernommen und die neue Version der Summary-Liste wird persistiert. Dabei erhält die Summary-Liste die neue <code class="language-plaintext highlighter-rouge">List.meta.version</code> mit dem Wert <code class="language-plaintext highlighter-rouge">124</code>.</li>
   <li><strong>GDA 2</strong> erhält die Meldung, dass die Aktualisierung erfolgreich durchgeführt wurde.</li>
   <li>Anschließend will <strong>GDA 1</strong> mittels <a href="uc_ediag_02_schreiben.html#summary-liste-aktualisieren-write">$write-Operation</a> ebenfalls seine Version der Summary-Liste speichern.</li>
@@ -427,7 +427,7 @@ und markiert die zu stornierenden Einträge.</li>
   <!-- Nur entfernen, das weitere Vorgehen wird hier nicht beschrieben. Stornieren kann als Folge durchgeführt werden. 
 Die Referenz auf die Ressource wird aus der Summary-Liste entfernt (removed). Die referenzierte Ressource bleibt unverändert bestehen. Die Fachanwendung entfernt die Kennzeichnung als relevant (meta.tag = relevant).
 
-ToDo: Aus Liste entfernen, Ressource bleibt bestehen, verliert nur Listzugehörigkeit oder Löschen - Ressource wird vollständig entfernt Ausblenden und Löschen? Löscht der Teilnehmer einen Eintrag, muss die Historienversion mitgelöscht werden? Betsehende Referenzen auf gelöschte Ressourcen. Lösche ich C, sage ich such mir alle List-Versionen mit C, und lösch mir alle C. Wie weit greifen, muss ich mich als Bürger durch alle Vorversionen durchklicken. -->
+ToDo: Aus Liste entfernen, Ressource bleibt bestehen, verliert nur Listzugehörigkeit oder Löschen - Ressource wird vollständig entfernt Ausblenden und Löschen? Löscht der Teilnehmer einen Eintrag, muss die Historienversion mitgelöscht werden? Bestehende Referenzen auf gelöschte Ressourcen. Lösche ich C, sage ich such mir alle List-Versionen mit C, und lösch mir alle C. Wie weit greifen, muss ich mich als Bürger durch alle Vorversionen durchklicken. -->
 <p>Ein bestehender Eintrag kann aus der Summary-Liste entfernt werden, ohne dass die Ressource selbst gelöscht oder geändert wird. Hierzu wird die Referenz auf die Ressource aus der Summary-Liste entfernt. Die Ressource bleibt weiterhin verfügbar und kann zu einem späteren Zeitpunkt erneut in die Summary-Liste aufgenommen werden.</p>
 
 <h4 id="ablauf-6">Ablauf</h4>
@@ -468,8 +468,8 @@ Durch die Verwendung eines bereits bestehenden Business-Identifier wird bei der 
 </blockquote>
 
   <!-- Bestehende Einträge fachlich bearbeiten 
-TODo: Dieser UC setzt sich zusammen aus mehreren anderen und wird zur besseren verständnis hier nochmals beschrieben. 
-Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2 Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar. -->
+TODo: Dieser UC setzt sich zusammen aus mehreren anderen und wird zum besseren Verständnis hier nochmals beschrieben. 
+Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1. Schritt, ich erstelle eine neue 2. Schritt: Will ich sie verknüpfen, muss ich auf die bestehenden Ressourcen zugreifen mit dem Identifier 123, der muss vom Client zwischengespeichert werden, damit dieser an die FA mitgesendet werden kann. Änderungen eines Eintrags werden referenziert und sind somit nachverfolgbar. -->
 
 <h4 id="ablauf-8">Ablauf</h4>
 
@@ -507,7 +507,7 @@ Der GDA kann Einträge in einer Liste fachlich bearbeiten - stimmt nicht mehr? 1
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Sep 7, 2026 09:23+0000">2026-09-07</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Sep 7, 2026 10:17+0000">2026-09-07</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

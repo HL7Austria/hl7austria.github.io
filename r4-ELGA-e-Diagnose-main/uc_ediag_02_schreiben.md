@@ -34,7 +34,7 @@ Der GDA erfasst einen neuen Eintrag über die e-Diagnose-Fachanwendung. Ein neue
 > Sub:UC_02_02 
  
 
-Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob ein zu stornierender Eintrag in der Summary-List referenziert wird oder nicht. Im Zuge der Stornierung kann der GDA einen Vermerk festhalten. Die OID des GDA´s und der Stornierungszeitpunkt wird durch die Fachanwendung gesetzt.
+Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob ein zu stornierender Eintrag in der Summary-List referenziert wird oder nicht. Im Zuge der Stornierung kann der GDA einen Vermerk festhalten. Die OID des GDA und der Stornierungszeitpunkt werden durch die Fachanwendung gesetzt.
 
 #### Ablauf
 
@@ -46,7 +46,7 @@ Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornie
 * `Condition.verificationStatus = entered-in-error`
 * `Procedure.status = entered-in-error`
 
-1. Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt ursprünglichen Wert des verification.Status bzw. status
+1. Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt den ursprünglichen Wert des verification.Status bzw. status
 
 ### Eintrag bearbeiten in der Gesamtansicht
 
@@ -88,7 +88,7 @@ Dieser Ablauf beschreibt die fachliche Bestätigung einer initialisierten, leere
 
 > Sub:UC_02_04
 
-Die `$write`-Operation ist eine eigentständige Operation, die allerdings einen **zuvor ausgeführten** [Abruf der aktuellen Summary-Liste](uc_ediag_01_lesen.md#aktuelle-summary-liste-abrufen-list-read) voraussetzt.
+Die `$write`-Operation ist eine eigenständige Operation, die allerdings einen **zuvor ausgeführten** [Abruf der aktuellen Summary-Liste](uc_ediag_01_lesen.md#aktuelle-summary-liste-abrufen-list-read) voraussetzt.
 
 #### Ablauf
 
@@ -105,7 +105,7 @@ Die `$write`-Operation ist eine eigentständige Operation, die allerdings einen 
 1. Die Fachanwendung liefert das SearchSet-Bundle zurück. Auch in diesem Fall hat`List.meta.versionId`den Wert`123`.
 1. **GDA 2**macht**fachliche Änderungen**an der Summary-Liste.
 1. **GDA 2**aktualisiert zuerst mittels[$write-Operation](uc_ediag_02_schreiben.md#summary-liste-aktualisieren-write)die Summary-Liste.
-1. Im Rahmen der Validierung der übermittelten Summary-Liste, prüft die Fachanwendung, ob der mitgeschickte`If-Match`-Header mit der aktuellen`versionId`der Summary-Liste übereinstimmt.
+1. Im Rahmen der Validierung der übermittelten Summary-Liste prüft die Fachanwendung, ob der mitgeschickte`If-Match`-Header mit der aktuellen`versionId`der Summary-Liste übereinstimmt.
 1. Die Prüfung verläuft erfolgreich, weil beide den Wert`123`haben. Die Änderungen werden übernommen und die neue Version der Summary-Liste wird persistiert. Dabei erhält die Summary-Liste die neue`List.meta.version`mit dem Wert`124`.
 1. **GDA 2**erhält die Meldung, dass die Aktualisierung erfolgreich durchgeführt wurde.
 1. Anschließend will**GDA 1**mittels[$write-Operation](uc_ediag_02_schreiben.md#summary-liste-aktualisieren-write)ebenfalls seine Version der Summary-Liste speichern.
