@@ -13,10 +13,10 @@ Die IPS unterscheidet mehrere Datenkategorien. Diese werden im Rahmen der Konzep
 
 | | | |
 | :--- | :--- | :--- |
-| **Problem List** | Conditions | Condition-Summary-Liste |
-| **History of Past Problems** | Conditions | Condition-Summary-Einträge |
-| **History of Procedures** | Procedures | Procedure-Summary-Einträge |
-| **Allergies and Intolerances** | AllergiesIntolerances | AllergyIntolerance-Summary-Einträge |
+| **Problem List** | Conditions | Diagnosen-Summary-Liste |
+| **History of Past Problems** | Conditions | Diagnosen-Summary-Einträge |
+| **History of Procedures** | Procedures | Prozeduren-Summary-Einträge |
+| **Allergies and Intolerances** | AllergiesIntolerances | Allergie und Intoleranzen-Summary-Einträge |
 
-![](ediag_ips.png)
+![](summary_listen_dokumentstruktur.png)
 
