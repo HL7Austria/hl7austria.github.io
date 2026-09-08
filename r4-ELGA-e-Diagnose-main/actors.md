@@ -5,11 +5,11 @@
 
 ## Akteure
 
-Dieses Kapitel beschreibt die an der eDiagnose beteiligten Akteure, deren Berechtigungen sowie die vorgesehenen Zugriffswege.
+Dieses Kapitel beschreibt die an der e-Diagnose beteiligten Akteure, deren Berechtigungen sowie die vorgesehenen Zugriffswege.
 
 ### Rollen und Berechtigungen
 
-An der eDiagnose sind insbesondere ELGA-Teilnehmer sowie Gesundheitsdiensteanbieter (GDA) beteiligt. Die detaillierten Berechtigungen der einzelnen ELGA-Rollen sind in der Architektur beschrieben.
+An der e-Diagnose sind insbesondere ELGA-Teilnehmer sowie Gesundheitsdiensteanbieter (GDA) beteiligt. Die detaillierten Berechtigungen der einzelnen ELGA-Rollen sind in der Architektur beschrieben.
 
 | | |
 | :--- | :--- |

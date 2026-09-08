@@ -5,7 +5,7 @@
 
 ## Autoren und Mitwirkende
 
-Dieser Implementierungsleitfaden entstand durch die Arbeitsgruppe eDiagnose. Die Arbeiten für den vorliegenden Leitfaden wurden von den Autoren gemäß dem Stand der Technik und mit größtmöglicher Sorgfalt erbracht.
+Dieser Implementierungsleitfaden entstand durch die Arbeitsgruppe e-Diagnose. Die Arbeiten für den vorliegenden Leitfaden wurden von den Autoren gemäß dem Stand der Technik und mit größtmöglicher Sorgfalt erbracht.
 
 ### Autoren
 
