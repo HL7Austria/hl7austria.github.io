@@ -13,6 +13,7 @@ These are custom operations that can be supported by and/or invoked by systems c
 
 | | |
 | :--- | :--- |
+| [e-Diagnose Operation $delete](OperationDefinition-at-ediag-operation-diagnose-delete.md) | Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung. |
 | [e-Diagnose Operation $write](OperationDefinition-at-ediag-operation-list-write.md) | Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. |
 
 ### Structures: Resource Profiles 

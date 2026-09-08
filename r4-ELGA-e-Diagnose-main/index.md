@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-08T11:50:41+00:00",
+  "date" : "2026-09-08T12:56:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -991,6 +991,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispielinstanz einer Diagnose für die Summary-Liste",
       "description" : "Beispiel einer dauerhaften Diagnose",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-ediag-operation-diagnose-delete.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-ediag-operation-diagnose-delete"
+      },
+      "name" : "e-Diagnose Operation $delete",
+      "description" : "Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
