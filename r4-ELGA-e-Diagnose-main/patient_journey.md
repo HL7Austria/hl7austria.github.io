@@ -17,7 +17,7 @@ Die Patient Journey zeigt den Lebenszyklus der e-Diagnose von der erstmaligen In
 
 [Dr Musterärztin Melanie](Practitioner-PractitionerExample.md) sieht Max Mustermann am **3. März 2026** erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.
 
-Für Herrn Mustermann existiert bisher noch keine strukturierte e-Diagnose Summary-Liste. Die e-Diagnose wird daher erstmals initialisiert. Für den Patienten wird eine leere Summary-Liste angelegt. Diese enthält den Patienten [DI Max Mustermann](Patient-PatientExample.md), die für die Erstellung der Liste verantwortliche Quelle sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über List.emptyReason mit dem Code [Notstarted](List-ListExample01.md) angegeben.
+Für Herrn Mustermann existiert bisher noch keine strukturierte e-Diagnose Summary-Liste. Die e-Diagnose wird daher erstmals initialisiert. Für den Patienten wird eine leere Summary-Liste angelegt. Diese enthält den Patienten [DI Max Mustermann](Patient-PatientExample.md), die erstellende e-Diagnose [Fachanwendung](Device-At-Emed-Example-Device-01.md) sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über List.emptyReason mit dem Code [Notstarted](List-ListExample01.md) angegeben.
 
 Im Rahmen der Anamnese erhebt Dr. Musterärztin die aktuellen gesundheitlichen Probleme des Patienten. Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden Bluthochdruck. Außerdem gibt er an, seit seiner Kindheit an einer Penicillinallergie zu leiden.
 

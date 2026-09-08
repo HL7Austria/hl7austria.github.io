@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-08T10:19:13+00:00",
+  "date" : "2026-09-08T10:46:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -675,22 +675,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "CodeSystem-at-ediag-codesystem-diagnose-type.html"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/at-ediag-codesystem-diagnose-type"
-      },
-      "name" : "AT e-Diagnose Diagnose Typ",
-      "description" : "Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant ist",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       },
       {
@@ -702,22 +686,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT e-Diagnose Diagnosen Value Set",
       "description" : "Value-Set für die Codierung von Diagnosen.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-at-ediag-diagnosen-type.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/at-ediag-diagnosen-type"
-      },
-      "name" : "AT e-Diagnose Diagnosis Type Value Set",
-      "description" : "ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuell relevant ist.",
       "exampleBoolean" : false
     },
     {
