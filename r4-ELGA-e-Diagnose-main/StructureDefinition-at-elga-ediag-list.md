@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list | *Version*:0.1.0 | |
-| Active as of 2026-09-07 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
+| Active as of 2026-09-08 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
 
  
 Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-09-07T10:50:55+00:00",
+  "date" : "2026-09-08T06:03:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -115,7 +115,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.mode",
       "path" : "List.mode",
-      "short" : "Die Liste wird laufend gepflegt, hat daher den fixen Wert: working.",
+      "short" : "Die Liste wird laufend gepflegt und hat daher den festen Wert: working.",
       "fixedCode" : "working",
       "mustSupport" : true
     },
@@ -163,7 +163,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.source",
       "path" : "List.source",
-      "short" : "Person, die die Liste erstellt hat und für den Inhalt verantwortlich ist. Im Falle eines GDA: eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA-Anwendung \ndes Patienten zuzugreifen. Im Falle eines Patienten: eindeutig identifiziert durch den Z-PI.",
+      "short" : "Person, die die Liste erstellt hat und für den Inhalt verantwortlich ist. Im Falle eines GDA ist sie eindeutig über den GDA-Index identifiziert und zum Zugriff auf die ELGA-Anwendung des Patienten berechtigt. \n Im Falle eines Patienten erfolgt die eindeutige Identifizierung über den Z-PI.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -200,13 +200,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.entry.deleted",
       "path" : "List.entry.deleted",
-      "short" : "Kennzeichnung, dass der Eintrag gelöscht wurde, ist nicht erlaubt (siehe Invariant lst-2).",
+      "short" : "Eine Kennzeichnung des Eintrags als gelöscht ist nicht zulässig (siehe Invariant list-emptyreason-required).",
       "max" : "0"
     },
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Datum der Aufnahme des Eintrags in die Liste wird nicht dokumentiert, da die Liste laufend gepflegt wird und das Datum der letzten Aktualisierung der Liste (List.date) dokumentiert wird.",
+      "short" : "Das Datum der Aufnahme des Eintrags in die Liste wird nicht dokumentiert, da die Liste laufend gepflegt wird. Dokumentiert wird das Datum der letzten Aktualisierung der Liste (List.date).",
       "max" : "0"
     },
     {

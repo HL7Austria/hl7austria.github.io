@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-write | *Version*:0.1.0 | |
-| Draft as of 2026-09-07 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListWrite |
+| Draft as of 2026-09-08 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListWrite |
 
  
 Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. 
@@ -49,7 +49,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
   "title" : "e-Diagnose Operation $write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-07T10:50:55+00:00",
+  "date" : "2026-09-08T06:03:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

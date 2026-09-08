@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure | *Version*:0.1.0 | |
-| Active as of 2026-09-07 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
+| Active as of 2026-09-08 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
 
  
 Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-09-07T10:50:55+00:00",
+  "date" : "2026-09-08T06:03:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -133,36 +133,36 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.identifier",
       "path" : "Procedure.identifier",
-      "short" : "Zuordnung der Diagnose in einem internen Dokumentationssystem"
+      "short" : "Zuordnung der Diagnose in einem internen Dokumentationssystem."
     },
     {
       "id" : "Procedure.instantiatesCanonical",
       "path" : "Procedure.instantiatesCanonical",
-      "short" : "Verweis auf eine standardisierte FHIR-Ressource, ein Template oder einen Leitfaden, der beschreibt, wie die Prozedur durchgeführt werden soll",
+      "short" : "Verweis auf eine standardisierte FHIR-Ressource, ein Template oder einen Leitfaden, der beschreibt, wie die Prozedur durchgeführt werden soll.",
       "max" : "0"
     },
     {
       "id" : "Procedure.instantiatesUri",
       "path" : "Procedure.instantiatesUri",
-      "short" : "Verweis auf ein externes Dokument",
+      "short" : "Verweis auf ein externes Dokument.",
       "max" : "0"
     },
     {
       "id" : "Procedure.basedOn",
       "path" : "Procedure.basedOn",
-      "short" : "Verweis auf eine Anforderung",
+      "short" : "Verweis auf eine Anforderung.",
       "max" : "0"
     },
     {
       "id" : "Procedure.partOf",
       "path" : "Procedure.partOf",
-      "short" : "Verweis der Ressource auf eine andere, übergeordnete Ressource",
+      "short" : "Verweis der Ressource auf eine andere, übergeordnete Ressource.",
       "max" : "0"
     },
     {
       "id" : "Procedure.status",
       "path" : "Procedure.status",
-      "short" : "Nur tatsächlich durchgeführte (completed) oder irrtümlich dokumentierte (entered-in-error) Prozeduren",
+      "short" : "Nur tatsächlich durchgeführte (completed) oder irrtümlich dokumentierte (entered-in-error) Prozeduren.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -172,18 +172,18 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.statusReason",
       "path" : "Procedure.statusReason",
-      "short" : "ToDo: Korrekturvermerk wird von digimed übernommen, ist noch in Abstimmung"
+      "short" : "ToDo: Korrekturvermerk wird von digimed übernommen, ist noch in Abstimmung."
     },
     {
       "id" : "Procedure.category",
       "path" : "Procedure.category",
-      "short" : "Kategorisierung nach Verfahren",
+      "short" : "Kategorisierung nach Verfahren.",
       "max" : "0"
     },
     {
       "id" : "Procedure.code",
       "path" : "Procedure.code",
-      "short" : "Prozedurencode der durchgeführten Prozedur",
+      "short" : "Prozedurencode der durchgeführten Prozedur.",
       "min" : 1,
       "mustSupport" : true,
       "binding" : {
@@ -199,7 +199,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.subject",
       "path" : "Procedure.subject",
-      "short" : "Person, auf die sich die Prozedur bezieht",
+      "short" : "Person, auf die sich die Prozedur bezieht.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
@@ -209,13 +209,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.encounter",
       "path" : "Procedure.encounter",
-      "short" : "Behandlungskontakt",
+      "short" : "Behandlungskontakt.",
       "max" : "0"
     },
     {
       "id" : "Procedure.performed[x]",
       "path" : "Procedure.performed[x]",
-      "short" : "Zeitpunkt der Durchführung",
+      "short" : "Zeitpunkt der Durchführung.",
       "type" : [{
         "code" : "dateTime"
       }]
@@ -223,7 +223,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.recorder",
       "path" : "Procedure.recorder",
-      "short" : "Gesundheitsdiensteanbieter, der die Prozedur eingetragen bzw. dokumentiert hat",
+      "short" : "Gesundheitsdiensteanbieter, der die Prozedur eingetragen bzw. dokumentiert hat.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -235,7 +235,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.asserter",
       "path" : "Procedure.asserter",
-      "short" : "Quelle der Information zur Prozedur (z. B. behandelnde Person, Patient oder Dritter)",
+      "short" : "Quelle der Information zur Prozedur (z. B. behandelnde Person, Patient oder Dritter).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
@@ -247,66 +247,66 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.performer",
       "path" : "Procedure.performer",
-      "short" : "Person, die die Prozedur durchgeführt hat",
+      "short" : "Person, die die Prozedur durchgeführt hat.",
       "max" : "0"
     },
     {
       "id" : "Procedure.location",
       "path" : "Procedure.location",
-      "short" : "Durchführungsort",
+      "short" : "Durchführungsort.",
       "max" : "0"
     },
     {
       "id" : "Procedure.reasonCode",
       "path" : "Procedure.reasonCode",
-      "short" : "Code des medizinischen Grundes für die Durchführung der Prozedur",
+      "short" : "Code des medizinischen Grundes für die Durchführung der Prozedur.",
       "max" : "0"
     },
     {
       "id" : "Procedure.reasonReference",
       "path" : "Procedure.reasonReference",
-      "short" : "Begründung für die Durchführung der Prozedur; Verweis auf eine andere Ressource wie Condition, Observation,...",
+      "short" : "Begründung für die Durchführung der Prozedur; Verweis auf eine andere Ressource wie z.B. Condition oder Observation.",
       "max" : "0"
     },
     {
       "id" : "Procedure.bodySite",
       "path" : "Procedure.bodySite",
-      "short" : "Betroffene Körperstelle",
+      "short" : "Betroffene Körperstelle.",
       "max" : "0"
     },
     {
       "id" : "Procedure.outcome",
       "path" : "Procedure.outcome",
-      "short" : "Ergebnis der Prozedur",
+      "short" : "Ergebnis der Prozedur.",
       "max" : "0"
     },
     {
       "id" : "Procedure.report",
       "path" : "Procedure.report",
-      "short" : "Verweis auf ELGA-Befunde als medizinische Evidenz"
+      "short" : "Verweis auf ELGA-Befunde als medizinische Evidenz."
     },
     {
       "id" : "Procedure.complication",
       "path" : "Procedure.complication",
-      "short" : "Komplikation während dem Eingriff",
+      "short" : "Komplikation während dem Eingriff.",
       "max" : "0"
     },
     {
       "id" : "Procedure.complicationDetail",
       "path" : "Procedure.complicationDetail",
-      "short" : "Diagnose, die durch die durchgeführte Prozedur entstanden ist",
+      "short" : "Diagnose, die durch die durchgeführte Prozedur entstanden ist.",
       "max" : "0"
     },
     {
       "id" : "Procedure.followUp",
       "path" : "Procedure.followUp",
-      "short" : "Nachkontrolle (Code)",
+      "short" : "Nachkontrolle (Code).",
       "max" : "0"
     },
     {
       "id" : "Procedure.note",
       "path" : "Procedure.note",
-      "short" : "Freitext zur Prozedur als Zusatzinformation",
+      "short" : "Freitext zur Prozedur als Zusatzinformation.",
       "max" : "1"
     },
     {
@@ -322,19 +322,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.focalDevice",
       "path" : "Procedure.focalDevice",
-      "short" : "Gerät, das zur Durchführung der Prozedur verwendet wurde",
+      "short" : "Gerät, das zur Durchführung der Prozedur verwendet wurde.",
       "max" : "0"
     },
     {
       "id" : "Procedure.usedReference",
       "path" : "Procedure.usedReference",
-      "short" : "Verweis auf während der Prozedur verwendete Materialien, z. B. Medikamente",
+      "short" : "Verweis auf während der Prozedur verwendete Materialien, z. B. Medikamente.",
       "max" : "0"
     },
     {
       "id" : "Procedure.usedCode",
       "path" : "Procedure.usedCode",
-      "short" : "Code der während der Prozedur verwendeten Materialien",
+      "short" : "Code der während der Prozedur verwendeten Materialien.",
       "max" : "0"
     }]
   }
