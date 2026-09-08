@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispiel Diagnose currently relevant - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispielinstanz einer Diagnose für die Summary-Liste - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Diagnose currently relevant**
+* **Beispielinstanz einer Diagnose für die Summary-Liste**
 
-## Example Condition: Beispiel Diagnose currently relevant
+## Example Condition: Beispielinstanz einer Diagnose für die Summary-Liste
 
 Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
@@ -14,7 +14,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **verificationStatus**: Confirmed
 
-**code**: Hypothyroidism
+**code**: Hypertensive disorder, systemic arterial
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
@@ -30,7 +30,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > 
 
-Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut eingestellt.
+Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
 
 
 
@@ -40,7 +40,7 @@ Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut 
 ```json
 {
   "resourceType" : "Condition",
-  "id" : "DiagnoseCurrentlyRelevantExample",
+  "id" : "ConditionSummaryExample",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"]
   },
@@ -63,8 +63,8 @@ Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut 
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "40930008",
-      "display" : "Hypothyroidism"
+      "code" : "38341003",
+      "display" : "Hypertensive disorder, systemic arterial"
     }]
   },
   "subject" : {
@@ -79,7 +79,7 @@ Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut 
     "reference" : "Practitioner/PractitionerExample"
   },
   "note" : [{
-    "text" : "Patient berichtet über bekannte Schilddrüsenerkrankung seit 2024, aktuell gut eingestellt."
+    "text" : "Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0."
   }]
 }
 

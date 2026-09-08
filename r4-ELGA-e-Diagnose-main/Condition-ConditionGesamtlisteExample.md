@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispiel Diagnose not currently relevant - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispielinstanz einer Diagnose für die Gesamtliste - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Diagnose not currently relevant**
+* **Beispielinstanz einer Diagnose für die Gesamtliste**
 
-## Example Condition: Beispiel Diagnose not currently relevant
+## Example Condition: Beispielinstanz einer Diagnose für die Gesamtliste
 
 Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
@@ -14,7 +14,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **verificationStatus**: Confirmed
 
-**code**: Saisonale Grippe
+**code**: Suppurative tonsillitis
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
@@ -40,7 +40,7 @@ Temperatur >38.5, Gliederschmerzen
 ```json
 {
   "resourceType" : "Condition",
-  "id" : "DiagnoseNotCurrentlyRelevantExample",
+  "id" : "ConditionGesamtlisteExample",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"]
   },
@@ -63,8 +63,8 @@ Temperatur >38.5, Gliederschmerzen
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "719590007",
-      "display" : "Saisonale Grippe"
+      "code" : "10351008",
+      "display" : "Suppurative tonsillitis"
     }]
   },
   "subject" : {

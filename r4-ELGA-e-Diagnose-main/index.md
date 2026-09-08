@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-08T10:46:31+00:00",
+  "date" : "2026-09-08T11:50:41+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -883,38 +883,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Condition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-DiagnoseCurrentlyRelevantExample.html"
-      }],
-      "reference" : {
-        "reference" : "Condition/DiagnoseCurrentlyRelevantExample"
-      },
-      "name" : "Beispiel Diagnose currently relevant",
-      "description" : "Beispielinstanz einer Diagnose - currently relevant",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Condition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-DiagnoseNotCurrentlyRelevantExample.html"
-      }],
-      "reference" : {
-        "reference" : "Condition/DiagnoseNotCurrentlyRelevantExample"
-      },
-      "name" : "Beispiel Diagnose not currently relevant",
-      "description" : "Beispielinstanz einer Diagnose - not currently relevant",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
       },
       {
@@ -990,6 +958,38 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Beispiel stornierte Diagnose",
       "description" : "Beispielinstanz einer stornierten Diagnose",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionGesamtlisteExample.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionGesamtlisteExample"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionSummaryExample.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionSummaryExample"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Summary-Liste",
+      "description" : "Beispiel einer dauerhaften Diagnose",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
     },
     {

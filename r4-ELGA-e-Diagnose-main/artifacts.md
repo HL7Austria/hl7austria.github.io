@@ -66,12 +66,12 @@ These are example instances that show what data produced and consumed by systems
 | :--- | :--- |
 | [Beispiel Allergie](AllergyIntolerance-AllergyExample.md) | Beispielinstanz einer bestätigten Allergie |
 | [Beispiel Device](Device-DeviceExample.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
-| [Beispiel Diagnose currently relevant](Condition-DiagnoseCurrentlyRelevantExample.md) | Beispielinstanz einer Diagnose - currently relevant |
-| [Beispiel Diagnose not currently relevant](Condition-DiagnoseNotCurrentlyRelevantExample.md) | Beispielinstanz einer Diagnose - not currently relevant |
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
 | [Beispiel Prozedur](Procedure-ProcedureExample.md) | Beispielinstanz einer Prozedur |
 | [Beispiel einer leeren Summary-Liste](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge. |
 | [Beispiel stornierte Diagnose](Condition-DiagnoseEnteredInErrorExample.md) | Beispielinstanz einer stornierten Diagnose |
+| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Summary-Liste](Condition-ConditionSummaryExample.md) | Beispiel einer dauerhaften Diagnose |
 | [Summary-Liste mit einem Summary-Eintrag](List-ListExample02.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
 
