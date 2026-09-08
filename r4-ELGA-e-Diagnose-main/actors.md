@@ -13,6 +13,6 @@ An der e-Diagnose sind insbesondere ELGA-Teilnehmer sowie Gesundheitsdiensteanbi
 
 | | |
 | :--- | :--- |
-| **ELGA-Teilnehmer** | 🟢**Lesen**· 🟠**Schreiben**↳ Schreiben umfasst auch das Löschen einzelner Einträge bzw. Summary-Listenversionen. |
+| **ELGA-Teilnehmer** | 🟢**Lesen**· 🟠**Schreiben**↳ Schreiben umfasst in diesem Zusammenhang das Löschen einzelner Einträge bzw. Summary-Listenversionen. |
 | **GDA** | 🟢**Lesen**· 🟢**Schreiben**· 🟠**Stornieren** |
 

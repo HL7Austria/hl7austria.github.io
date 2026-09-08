@@ -14,7 +14,7 @@ Profile: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-edi
 
 **verificationStatus**: Refuted
 
-**code**:  Amoxicillin-Allergie
+**code**: Amoxicillin-Allergie
 
 **patient**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
@@ -62,7 +62,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
     "coding" : [{
       "system" : "http://snomed.info/sct",
       "code" : "294505008",
-      "display" : " Amoxicillin-Allergie"
+      "display" : "Amoxicillin-Allergie"
     }]
   },
   "patient" : {
@@ -80,7 +80,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
       "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time-cs",
+          "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-reaction-time-cs",
           "code" : "lt6h",
           "display" : "<6 Stunden"
         }]

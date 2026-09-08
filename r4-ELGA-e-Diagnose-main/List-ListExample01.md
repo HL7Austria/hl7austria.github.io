@@ -1,16 +1,16 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispiel einer leeren e-Diagnose-Liste - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispiel einer leeren Summary-Liste - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel einer leeren e-Diagnose-Liste**
+* **Beispiel einer leeren Summary-Liste**
 
-## Example List: Beispiel einer leeren e-Diagnose-Liste
+## Example List: Beispiel einer leeren Summary-Liste
 
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-03-01 08:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
+| Date: 2026-03-03 08:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
 | Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
 
@@ -36,14 +36,15 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "date" : "2026-03-01T08:00:00+00:00",
+  "date" : "2026-03-03T08:00:00+00:00",
   "source" : {
     "reference" : "Practitioner/PractitionerExample"
   },
   "emptyReason" : {
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
-      "code" : "notstarted"
+      "code" : "notstarted",
+      "display" : "notstarted"
     }]
   }
 }

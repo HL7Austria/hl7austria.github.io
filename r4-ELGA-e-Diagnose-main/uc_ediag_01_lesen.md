@@ -24,7 +24,7 @@ Die Interaktion liefert standardmäßig die 30 zuletzt erstellten Einträge, abs
 #### Ablauf
 
 1. Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) der abzurufenden Einträge aus.
-1. Der GDA oder ELGA-Teilnehmer führt ein`GET`auf`/Condition`,`/Procedure`und/oder`/AllergyIntolerance`aus, siehe[Transaktionen](transaction.md#Transaktionen).
+1. Der GDA oder ELGA-Teilnehmer führt ein`GET`auf`/Condition`,`/Procedure`und/oder`/AllergyIntolerance`aus, siehe[Transaktionen](transaction.md#transaktionen).
 1. **Optional**kann der Abfrageparameter`_count`angegeben werden, um die Anzahl der zurückgelieferten Ressourcen festzulegen. Standardmäßig werden die 30 zuletzt erstellten Ressourcen, absteigend nach Erstellungsdatum sortiert, zurückgeliefert.
 1. Die Fachanwendung liefert ein SearchSet-Bundle mit den gefundenen Einträgen zurück.
 1. Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein leeres SearchSet-Bundle zurückgeliefert.

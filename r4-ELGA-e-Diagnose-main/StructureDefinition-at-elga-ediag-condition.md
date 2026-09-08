@@ -21,7 +21,7 @@ Dokumentiert Diagnosen und klinisch relevante Gesundheitszustände einer Person,
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
-* Examples for this Profile: [Condition/DiagnoseCurrentlyRelevantExample](Condition-DiagnoseCurrentlyRelevantExample.md) and [Condition/DiagnoseNotCurrentlyRelevantExample](Condition-DiagnoseNotCurrentlyRelevantExample.md)
+* Examples for this Profile: [Condition/DiagnoseCurrentlyRelevantExample](Condition-DiagnoseCurrentlyRelevantExample.md), [Condition/DiagnoseEnteredInErrorExample](Condition-DiagnoseEnteredInErrorExample.md) and [Condition/DiagnoseNotCurrentlyRelevantExample](Condition-DiagnoseNotCurrentlyRelevantExample.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-condition.json)
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-09-08T06:46:13+00:00",
+  "date" : "2026-09-08T10:19:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

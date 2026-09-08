@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-08T06:46:13+00:00",
+  "date" : "2026-09-08T10:19:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -72,12 +72,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
     "version" : "5.3.0"
-  },
-  {
-    "id" : "hl7_fhir_uv_ips",
-    "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
-    "packageId" : "hl7.fhir.uv.ips",
-    "version" : "2.0.0"
   },
   {
     "id" : "hl7_at_fhir_core_r4",
@@ -841,22 +835,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-ediag-reference.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-ediag-reference"
-      },
-      "name" : "AT ELGA e-Diagnose Reference",
-      "description" : "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       },
       {
@@ -978,8 +956,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "List/ListExample01"
       },
-      "name" : "Beispiel einer leeren e-Diagnose-Liste",
-      "description" : "Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien.",
+      "name" : "Beispiel einer leeren Summary-Liste",
+      "description" : "Initiale Summary-Liste ohne Summary-Einträge.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
@@ -1033,6 +1011,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-DiagnoseEnteredInErrorExample.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/DiagnoseEnteredInErrorExample"
+      },
+      "name" : "Beispiel stornierte Diagnose",
+      "description" : "Beispielinstanz einer stornierten Diagnose",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       },
       {
@@ -1045,21 +1039,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "e-Diagnose Operation $write",
       "description" : "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListExample02.html"
-      }],
-      "reference" : {
-        "reference" : "List/ListExample02"
-      },
-      "name" : "e-Diagnose-Liste mit einer relevanten Diagnose",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
       "extension" : [{
@@ -1108,6 +1087,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Reaktionszeit Codes",
       "description" : "Zeitlicher Verlauf der Manifestation",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListExample02.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListExample02"
+      },
+      "name" : "Summary-Liste mit einem Summary-Eintrag",
+      "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     }],
     "page" : {
       "extension" : [{
@@ -1246,10 +1241,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "impressum.html"
+          "valueUrl" : "download.html"
         }],
-        "nameUrl" : "impressum.html",
-        "title" : "Impressum",
+        "nameUrl" : "download.html",
+        "title" : "Download",
         "generation" : "markdown"
       },
       {
@@ -1259,6 +1254,33 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         }],
         "nameUrl" : "publication_info.html",
         "title" : "Publikationsinformationen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "dependencies.html"
+        }],
+        "nameUrl" : "dependencies.html",
+        "title" : "Dependencies",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "copyright.html"
+        }],
+        "nameUrl" : "copyright.html",
+        "title" : "Copyright",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "imprint.html"
+        }],
+        "nameUrl" : "imprint.html",
+        "title" : "Impressum",
         "generation" : "markdown"
       }]
     },

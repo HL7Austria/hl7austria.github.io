@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\e-Diagnose-Liste mit einer relevanten Diagnose - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Summary-Liste mit einem Summary-Eintrag - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **e-Diagnose-Liste mit einer relevanten Diagnose**
+* **Summary-Liste mit einem Summary-Eintrag**
 
-## Example List: e-Diagnose-Liste mit einer relevanten Diagnose
+## Example List: Summary-Liste mit einem Summary-Eintrag
 
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 

@@ -39,8 +39,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"17"}
-    h3,h4,h5,h6{--heading-prefix:"17.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"20"}
+    h3,h4,h5,h6{--heading-prefix:"20.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- at-fhir-ig-template begin -->
@@ -159,10 +159,22 @@
         <a href="contributors.html">Autoren und Mitwirkende</a>
       </li>
       <li>
+        <a href="download.html">Download</a>
+      </li>
+      <li>
         <a href="publication_info.html">Publikationsinformationen</a>
       </li>
       <li>
-        <a href="impressum.html">Impressum</a>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="https://github.com/HL7Austria/ELGA-e-Diagnose-R4/issues">Known Issues</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
       </li>
     </ul>
   </li>
@@ -218,19 +230,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#2">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#3">Structures: Data Type Profiles</a>
+         <a href="#3">Structures: Extension Definitions</a>
       </li>
       <li>
-         <a href="#4">Structures: Extension Definitions</a>
+         <a href="#4">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#5">Terminology: Value Sets</a>
+         <a href="#5">Terminology: Code Systems</a>
       </li>
       <li>
-         <a href="#6">Terminology: Code Systems</a>
-      </li>
-      <li>
-         <a href="#7">Example: Example Instances</a>
+         <a href="#6">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -300,23 +309,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </tbody>
    </table>
    <a name="3"> </a>
-   <h3>Structures: Data Type Profiles </h3>
-    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
-<table class="grid">
-      <col style="width:20%"/>
-      <tbody>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-ediag-reference.html"
-                  title="StructureDefinition/at-elga-ediag-reference">AT ELGA e-Diagnose Reference</a>
-            </td>
-            <td>
-<p>Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an.</p>
-</td>
-         </tr>
-      </tbody>
-   </table>
-   <a name="4"> </a>
    <h3>Structures: Extension Definitions </h3>
     <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -351,7 +343,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
       </tbody>
    </table>
-   <a name="5"> </a>
+   <a name="4"> </a>
    <h3>Terminology: Value Sets </h3>
     <p>These define sets of codes used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -431,7 +423,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
       </tbody>
    </table>
-   <a name="6"> </a>
+   <a name="5"> </a>
    <h3>Terminology: Code Systems </h3>
     <p>These define new code systems used by systems conforming to this implementation guide.</p>
 <table class="grid">
@@ -457,7 +449,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
       </tbody>
    </table>
-   <a name="7"> </a>
+   <a name="6"> </a>
    <h3>Example: Example Instances </h3>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
 <table class="grid">
@@ -526,18 +518,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="List-ListExample01.html" title="List/ListExample01">Beispiel einer leeren e-Diagnose-Liste</a>
+               <a href="List-ListExample01.html" title="List/ListExample01">Beispiel einer leeren Summary-Liste</a>
             </td>
             <td>
-<p>Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien.</p>
+<p>Initiale Summary-Liste ohne Summary-Einträge.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="List-ListExample02.html" title="List/ListExample02">e-Diagnose-Liste mit einer relevanten Diagnose</a>
+               <a href="Condition-DiagnoseEnteredInErrorExample.html"
+                  title="Condition/DiagnoseEnteredInErrorExample">Beispiel stornierte Diagnose</a>
             </td>
             <td>
-
+<p>Beispielinstanz einer stornierten Diagnose</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="List-ListExample02.html" title="List/ListExample02">Summary-Liste mit einem Summary-Eintrag</a>
+            </td>
+            <td>
+<p>Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.</p>
 </td>
          </tr>
       </tbody>
@@ -560,7 +561,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Sep 8, 2026 06:46+0000">2026-09-08</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Sep 8, 2026 10:19+0000">2026-09-08</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

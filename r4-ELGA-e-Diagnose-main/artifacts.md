@@ -26,14 +26,6 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md) | Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. |
 | [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md) | Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
 
-### Structures: Data Type Profiles 
-
-These define constraints on FHIR data types for systems conforming to this implementation guide.
-
-| | |
-| :--- | :--- |
-| [AT ELGA e-Diagnose Reference](StructureDefinition-at-elga-ediag-reference.md) | Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
-
 ### Structures: Extension Definitions 
 
 These define constraints on FHIR data types for systems conforming to this implementation guide.
@@ -81,6 +73,7 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
 | [Beispiel Prozedur](Procedure-ProcedureExample.md) | Beispielinstanz einer Prozedur |
-| [Beispiel einer leeren e-Diagnose-Liste](List-ListExample01.md) | Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien. |
-| [e-Diagnose-Liste mit einer relevanten Diagnose](List-ListExample02.md) |  |
+| [Beispiel einer leeren Summary-Liste](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge. |
+| [Beispiel stornierte Diagnose](Condition-DiagnoseEnteredInErrorExample.md) | Beispielinstanz einer stornierten Diagnose |
+| [Summary-Liste mit einem Summary-Eintrag](List-ListExample02.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
 

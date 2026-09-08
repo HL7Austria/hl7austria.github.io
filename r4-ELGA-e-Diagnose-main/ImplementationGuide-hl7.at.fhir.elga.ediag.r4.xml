@@ -11,7 +11,7 @@
   <name value="ELGAeDiagnoseR4"/>
   <title value="ELGA e-Diagnose R4 (Draft)"/>
   <status value="draft"/>
-  <date value="2026-09-08T06:46:13+00:00"/>
+  <date value="2026-09-08T10:19:13+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -47,11 +47,6 @@
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
     <version value="5.3.0"/>
-  </dependsOn>
-  <dependsOn id="hl7_fhir_uv_ips">
-    <uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
-    <packageId value="hl7.fhir.uv.ips"/>
-    <version value="2.0.0"/>
   </dependsOn>
   <dependsOn id="hl7_at_fhir_core_r4">
     <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4"/>
@@ -601,17 +596,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-ediag-reference"/>
-      </reference>
-      <name value="AT ELGA e-Diagnose Reference"/>
-      <description value="Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -694,8 +678,8 @@
       <reference>
         <reference value="List/ListExample01"/>
       </reference>
-      <name value="Beispiel einer leeren e-Diagnose-Liste"/>
-      <description value="Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien."/>
+      <name value="Beispiel einer leeren Summary-Liste"/>
+      <description value="Initiale Summary-Liste ohne Summary-Einträge."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
     </resource>
     <resource>
@@ -733,6 +717,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/DiagnoseEnteredInErrorExample"/>
+      </reference>
+      <name value="Beispiel stornierte Diagnose"/>
+      <description value="Beispielinstanz einer stornierten Diagnose"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -741,16 +736,6 @@
       <name value="e-Diagnose Operation $write"/>
       <description value="Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird."/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="List"/>
-      </extension>
-      <reference>
-        <reference value="List/ListExample02"/>
-      </reference>
-      <name value="e-Diagnose-Liste mit einer relevanten Diagnose"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -784,6 +769,17 @@
       <name value="Reaktionszeit Codes"/>
       <description value="Zeitlicher Verlauf der Manifestation"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/ListExample02"/>
+      </reference>
+      <name value="Summary-Liste mit einem Summary-Eintrag"/>
+      <description value="Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -906,10 +902,10 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="impressum.html"/>
+          <valueUrl value="download.html"/>
         </extension>
-        <nameUrl value="impressum.html"/>
-        <title value="Impressum"/>
+        <nameUrl value="download.html"/>
+        <title value="Download"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -918,6 +914,30 @@
         </extension>
         <nameUrl value="publication_info.html"/>
         <title value="Publikationsinformationen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="dependencies.html"/>
+        </extension>
+        <nameUrl value="dependencies.html"/>
+        <title value="Dependencies"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="copyright.html"/>
+        </extension>
+        <nameUrl value="copyright.html"/>
+        <title value="Copyright"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="imprint.html"/>
+        </extension>
+        <nameUrl value="imprint.html"/>
+        <title value="Impressum"/>
         <generation value="markdown"/>
       </page>
     </page>

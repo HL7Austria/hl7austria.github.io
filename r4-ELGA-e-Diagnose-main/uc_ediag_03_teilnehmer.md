@@ -16,7 +16,7 @@
 
 #### Ablauf
 
-* Um einen Eintrag zu löschen, führt die ELGA:Teilnehmerin oder der ELGA-Teilnehmer über das Portal ein `$list-read` oder ein `GET` auf die Gesamtmenge der Diagnosen aus (siehe [Einträge als Einzelressource abrufen](uc_ediag_01_lesen.md#einträge-als-einzelressource-abrufen)) und markiert die zu löschenden Einträge.
+* Um einen Eintrag zu löschen, führt die ELGA:Teilnehmerin oder der ELGA-Teilnehmer über das Portal ein `$list-read` oder ein `GET` auf die Gesamtmenge der Diagnosen aus (siehe [Einträge als Einzelressource abrufen](uc_ediag_01_lesen.md#einzelne-einträge-abrufen)) und markiert die zu löschenden Einträge.
 * Durch Bestätigung wird die `$delete`-Operation ausgeführt.
 * Die Fachanwendung bearbeitet den zu löschenden Eintrag folgendermaßen: 
 * Alle optionalen Felder `0..` werden geleert.
@@ -45,7 +45,7 @@ Ein ELGA-Teilnehmer kann einzelne historische Versionen einer Summary-Liste unwi
 
 #### Ablauf
 
-1. Ein ELGA-Teilnehmer führt ein**GET**auf den List-Typ gemäß[List-History-Read](uc_ediag_01_lesen.md#vergangene-versionen-einer-summary-liste-abrufen)aus.
+1. Ein ELGA-Teilnehmer führt ein**GET**auf den List-Typ gemäß[List-History-Read](uc_ediag_01_lesen.md#vergangene-versionen-einer-summary-liste-abrufen-list-history-read)aus.
 1. Die Fachanwendung liefert die vorhandenen Summary-Listenversionen als Search-Bundle zurück.
 1. ELGA-Teilnehmer wählt die zu löschende Summary-Listversion aus.
 1. Durch Bestätigung wird das**DELETE**für die ausgewählte Summary-Listversion ausgeführt.
