@@ -66,17 +66,18 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [Allergie Summary-Liste mit einem Summary-Eintrag](List-ListAllergyExample.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist. |
+| [Allergie Summary-Liste mit einem Summary-Eintrag](List-ListAllergyExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist. |
 | [Beispiel Device](Device-DeviceExample.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
-| [Beispiel Prozedur](Procedure-ProcedureExample.md) | Beispielinstanz einer Prozedur |
 | [Beispiel einer leeren Summary-Liste](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge. |
 | [Beispiel stornierte Diagnose](Condition-DiagnoseEnteredInErrorExample.md) | Beispielinstanz einer stornierten Diagnose |
-| [Beispielinstanz einer Allergie für die Summary-Liste](AllergyIntolerance-AllergySummaryExample.md) | Beispiel einer bestätigten Allergie |
+| [Beispielinstanz einer Allergie für die Summary-Liste](AllergyIntolerance-AllergySummaryExample1.md) | Beispiel einer bestätigten Allergie |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample1.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample2.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample3.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
-| [Beispielinstanz einer Diagnose für die Summary-Liste](Condition-ConditionSummaryExample.md) | Beispiel einer dauerhaften Diagnose |
-| [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
+| [Beispielinstanz einer Diagnose für die Summary](Condition-ConditionGesamtlisteExample4.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Summary-Liste](Condition-ConditionSummaryExample1.md) | Beispiel einer dauerhaften Diagnose |
+| [Beispielinstanz einer Prozedur für die Summary-Liste](Procedure-ProcedureExample1.md) | Beispiel einer Prozedur |
+| [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
 

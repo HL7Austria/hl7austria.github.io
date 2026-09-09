@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-09T09:18:29+00:00",
+  "date" : "2026-09-09T14:48:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -663,10 +663,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListAllergyExample.html"
+        "valueUri" : "List-ListAllergyExample1.html"
       }],
       "reference" : {
-        "reference" : "List/ListAllergyExample"
+        "reference" : "List/ListAllergyExample1"
       },
       "name" : "Allergie Summary-Liste mit einem Summary-Eintrag",
       "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist.",
@@ -931,22 +931,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Procedure"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Procedure-ProcedureExample.html"
-      }],
-      "reference" : {
-        "reference" : "Procedure/ProcedureExample"
-      },
-      "name" : "Beispiel Prozedur",
-      "description" : "Beispielinstanz einer Prozedur",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Condition"
       },
       {
@@ -967,10 +951,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "AllergyIntolerance-AllergySummaryExample.html"
+        "valueUri" : "AllergyIntolerance-AllergySummaryExample1.html"
       }],
       "reference" : {
-        "reference" : "AllergyIntolerance/AllergySummaryExample"
+        "reference" : "AllergyIntolerance/AllergySummaryExample1"
       },
       "name" : "Beispielinstanz einer Allergie für die Summary-Liste",
       "description" : "Beispiel einer bestätigten Allergie",
@@ -1031,10 +1015,26 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionSummaryExample.html"
+        "valueUri" : "Condition-ConditionGesamtlisteExample4.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionSummaryExample"
+        "reference" : "Condition/ConditionGesamtlisteExample4"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Summary",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionSummaryExample1.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionSummaryExample1"
       },
       "name" : "Beispielinstanz einer Diagnose für die Summary-Liste",
       "description" : "Beispiel einer dauerhaften Diagnose",
@@ -1043,14 +1043,30 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Procedure-ProcedureExample1.html"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ProcedureExample1"
+      },
+      "name" : "Beispielinstanz einer Prozedur für die Summary-Liste",
+      "description" : "Beispiel einer Prozedur",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListConditionExample.html"
+        "valueUri" : "List-ListConditionExample1.html"
       }],
       "reference" : {
-        "reference" : "List/ListConditionExample"
+        "reference" : "List/ListConditionExample1"
       },
       "name" : "Condition Summary-Liste mit einem Summary-Eintrag",
       "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.",

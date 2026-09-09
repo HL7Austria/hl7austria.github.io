@@ -19,13 +19,29 @@ Für Herrn Mustermann existiert bisher noch keine strukturierte e-Diagnose-Summa
 
 **Erfassung bestehender Diagnosen und Allergien**
 
-Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die aktuellen gesundheitlichen Probleme sowie bereits länger bestehende Grunderkrankungen und Allergien des Patienten. Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden, mit Lisimopril 10 mg medikamentös behandelten Bluthochdruck. Momentan bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5 Grad. Die körperliche Untersuchung ergibt eine eitrige Angina. Herr Mustermann gibt an, seit seiner Kindheit an einer Penicillinallergie zu leiden. Da Herr Mustermann aufgrund seiner bekannten Penicillinallergie kein Amoxicillin erhalten darf, entscheidet sich die Ärztin für eine Behandlung mit Clarithromycin und Mexalen 500 mg bei Bedarf zur Schmerzbehandlung.
+Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die aktuellen gesundheitlichen Probleme sowie bereits länger bestehende Grunderkrankungen und Allergien des Patienten. Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden, mit Lisinopril 10 mg medikamentös behandelten Bluthochdruck. Weiters gibt Herr Mustermann an, seit seiner Kindheit an einer Penicillinallergie zu leiden.
 
-Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionSummaryExample.md) und [Suppurative tonsillitis](Condition-ConditionGesamtlisteExample1.md) werden jeweils eine Condition und für die [Amoxicillin](AllergyIntolerance-AllergyExample.md)-Allergie eine AllergyIntolerance angelegt. Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben [Condtion-Summary-Liste](List-ListConditionExample.md) und [Allergy-Summary-Liste](List-ListAllergyExample.md). Um eine Gesamtansicht aller Diagnoseneinträge zu erhalten führt Dr. Musterärztin ein [Einträge abrufen](uc_ediag_01_lesen.md#einträge-abrufen) aus.
+Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5 Grad. Bei der körperliche Untersuchung zeigt sich eine eitrige Angina. Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.
 
-### 2.Arztbesuch - Auftreten von Nebenwirkungen
+Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionSummaryExample1.md) und [Suppurative tonsillitis](Condition-ConditionGesamtlisteExample1.md) werden jeweils eine Condition und für die [Amoxicillin](AllergyIntolerance-AllergyExample1.md)-Allergie eine AllergyIntolerance angelegt.
 
-Die Symptome der eitrige Angina haben sich duch die Einnahme der antibiotischen Therapie deutlich gebessert. Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am **6. März 2026** über Durchfall, sowie einem Juckreiz im Genitalbeeich. Bei der Untersuchung stellt Dr. Musterärztin eine Pilzinfektion fest, die vermutlich im Zusammenhang mit der vorausgegangen Antibiothikatherapie steht.
+Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben [Condtion-Summary-Liste](List-ListConditionExample1.md) und [Allergy-Summary-Liste](List-ListAllergyExample1.md).
 
-Für die [Medikamenteninduzierte Diarrhö](Condition-ConditionGesamtlisteExample3.md) und die diagnostizierte [Candida-Balanitis](Condition-ConditionGesamtlisteExample2.md) werden entsprechende Einträge in der Gesamtansicht aller Diagnoseneinträge angelegt.
+Um eine Gesamtansicht aller Diagnoseneinträge zu erhalten, führt Dr. Musterärztin ein [Einträge abrufen](uc_ediag_01_lesen.md#einträge-abrufen) aus.
+
+### 2.Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung der Gesamtansicht
+
+Die Symptome der eitrige Angina haben sich duch die antibiotische Therapie deutlich gebessert. Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am **9. März 2026** über Durchfall sowie einem Juckreiz im Genitalbereich.
+
+Bei der Untersuchung stellt Dr. Musterärztin eine Pilzinfektion fest, die vermutlich im Zusammenhang mit der vorausgegangen Antibiothikatherapie steht.
+
+Herr Mustermann berichtet weiters, dass seit Beginn der Antibiotikatherapie Beschwerden seines seit 2010 bestehenden Morbus Crohn aufgetreten sind und er vermutet, dass die Behandlung einen Schub ausgelöst hat.
+
+Dr. Musterärztin berücksichtigt diese Angabe bei der weiteren Beurteilung. Da Durchfall sowohl als Nebenwirkung der Antibiotikatherapie als auch im Rahmen eines Morbus-Crohn-Schubs auftreten kann, wird die Ursache entsprechend abgeklärt. Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte Koloskopie am 23. September 2025 stattgefunden hat.
+
+Dr. Musterärztin haltet die Erkrankungen [Morbus Crohn](Condition-ConditionGesamtlisteExample4.md), [Medikamenteninduzierte Diarrhö](Condition-ConditionGesamtlisteExample3.md), [Candida Balanitis](Condition-ConditionGesamtlisteExample2.md) und die [Coloskopie](Procedure-ProcedureSummaryExample1.md) als Prozedur fest. Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.
+
+### ELGA-Teilnehmer - Eintrag löschen
+
+**20. April 2026** nimmt Herr Mustermann Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht. Er entscheidet sich daher, diesen Eintrag als ELGA-Teilnehmer zu löschen. Der Eintrag wird aus der Gesamtansicht entfernt, siehe [Eintrag löschen](uc_ediag_03_teilnehmer.md#eintrag-löschen).
 

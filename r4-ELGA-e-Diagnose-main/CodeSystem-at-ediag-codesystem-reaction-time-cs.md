@@ -32,7 +32,7 @@ Zeitlicher Verlauf der Manifestation
   "title" : "Reaktionszeit Codes",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-09T09:18:29+00:00",
+  "date" : "2026-09-09T14:48:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

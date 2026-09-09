@@ -21,7 +21,7 @@ AllergyIntolerance dient der Dokumentation einer klinischen Einschätzung einer 
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
-* Examples for this Profile: [AllergyIntolerance/AllergySummaryExample](AllergyIntolerance-AllergySummaryExample.md)
+* Examples for this Profile: [AllergyIntolerance/AllergySummaryExample1](AllergyIntolerance-AllergySummaryExample1.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-allergyintolerance.json)
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-09-09T09:18:29+00:00",
+  "date" : "2026-09-09T14:48:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

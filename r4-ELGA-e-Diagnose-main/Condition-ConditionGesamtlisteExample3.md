@@ -18,9 +18,9 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
-**onset**: 2026-03-06
+**onset**: 2026-03-09
 
-**recordedDate**: 2026-03-06 00:00:00+0000
+**recordedDate**: 2026-03-09 00:00:00+0000
 
 **recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
@@ -70,8 +70,8 @@ Wässrige Durchfälle bei bestehender AB-Therapie
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "onsetDateTime" : "2026-03-06",
-  "recordedDate" : "2026-03-06T00:00:00+00:00",
+  "onsetDateTime" : "2026-03-09",
+  "recordedDate" : "2026-03-09T00:00:00+00:00",
   "recorder" : {
     "reference" : "Practitioner/PractitionerExample"
   },

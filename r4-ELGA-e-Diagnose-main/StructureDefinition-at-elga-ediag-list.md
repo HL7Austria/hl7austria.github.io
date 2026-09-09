@@ -20,7 +20,7 @@ Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Condition
 
 **Usages:**
 
-* Examples for this Profile: [List/ListAllergyExample](List-ListAllergyExample.md), [List/ListConditionExample](List-ListConditionExample.md) and [List/ListExample01](List-ListExample01.md)
+* Examples for this Profile: [List/ListAllergyExample1](List-ListAllergyExample1.md), [List/ListConditionExample1](List-ListConditionExample1.md) and [List/ListExample01](List-ListExample01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-list.json)
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-09-09T09:18:29+00:00",
+  "date" : "2026-09-09T14:48:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

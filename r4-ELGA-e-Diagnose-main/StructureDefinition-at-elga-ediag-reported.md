@@ -20,7 +20,7 @@ Kennzeichnet, ob eine Information fremdberichtet ist (z. B. vom Patienten oder D
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md), [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) and [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
-* Examples for this Extension: [AllergyIntolerance/AllergySummaryExample](AllergyIntolerance-AllergySummaryExample.md), [Condition/ConditionGesamtlisteExample1](Condition-ConditionGesamtlisteExample1.md), [Condition/ConditionGesamtlisteExample2](Condition-ConditionGesamtlisteExample2.md), [Condition/ConditionGesamtlisteExample3](Condition-ConditionGesamtlisteExample3.md)... Show 3 more, [Condition/ConditionSummaryExample](Condition-ConditionSummaryExample.md), [Condition/DiagnoseEnteredInErrorExample](Condition-DiagnoseEnteredInErrorExample.md) and [Procedure/ProcedureExample](Procedure-ProcedureExample.md)
+* Examples for this Extension: [AllergyIntolerance/AllergySummaryExample1](AllergyIntolerance-AllergySummaryExample1.md), [Condition/ConditionGesamtlisteExample1](Condition-ConditionGesamtlisteExample1.md), [Condition/ConditionGesamtlisteExample2](Condition-ConditionGesamtlisteExample2.md), [Condition/ConditionGesamtlisteExample3](Condition-ConditionGesamtlisteExample3.md)... Show 4 more, [Condition/ConditionGesamtlisteExample4](Condition-ConditionGesamtlisteExample4.md), [Condition/ConditionSummaryExample1](Condition-ConditionSummaryExample1.md), [Condition/DiagnoseEnteredInErrorExample](Condition-DiagnoseEnteredInErrorExample.md) and [Procedure/ProcedureExample1](Procedure-ProcedureExample1.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-reported.json)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-report
   "name" : "AtReported",
   "title" : "AT ELGA Reported (Fremdangabe)",
   "status" : "draft",
-  "date" : "2026-09-09T09:18:29+00:00",
+  "date" : "2026-09-09T14:48:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
