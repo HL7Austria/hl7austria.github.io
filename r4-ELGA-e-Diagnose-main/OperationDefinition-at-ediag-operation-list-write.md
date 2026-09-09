@@ -49,7 +49,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
   "title" : "e-Diagnose Operation $write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-09T04:29:28+00:00",
+  "date" : "2026-09-09T07:41:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

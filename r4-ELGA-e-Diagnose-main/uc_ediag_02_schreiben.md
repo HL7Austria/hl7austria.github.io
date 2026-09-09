@@ -31,22 +31,16 @@ Der GDA erfasst einen neuen Eintrag über die e-Diagnose-Fachanwendung. Ein neue
 
 ### Eintrag stornieren
 
-> Sub:UC_02_02 
- 
+> Sub:UC_02_02
 
-Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob ein zu stornierender Eintrag in der Summary-List referenziert wird oder nicht. Im Zuge der Stornierung kann der GDA einen Vermerk festhalten. Die OID des GDA und der Stornierungszeitpunkt werden durch die Fachanwendung gesetzt.
+Der GDA kann eine oder mehrere Einträge aufgrund einer falschen Eingabe stornieren. Dabei ist es irrelevant, ob ein zu stornierender Eintrag in der Summary-List referenziert wird oder nicht. Im Zuge der Stornierung kann der GDA einen Vermerk festhalten.
 
 #### Ablauf
 
-1. Um einen Eintrag zu stornieren, führt der GDA ein`$list-read`oder ein`GET`auf die Gesamtmenge der Diagnosen aus (siehe[Read/Search von Diagnosen, Prozeduren sowie Allergien und Intoleranzen](uc_ediag_01_lesen.md#einzelne-einträge-abrufen)) und markiert die zu stornierenden Einträge.
-1. Optional kann der GDA einen Grund für die Stornierung angeben.
-1. Durch Bestätigung wird die`$storno`-Operation ausgeführt.
-1. Die Fachanwendung bearbeitet den zu stornierenden Eintrag folgendermaßen:
-* `AllergyIntolerance.verificationStatus = entered-in-error`
-* `Condition.verificationStatus = entered-in-error`
-* `Procedure.status = entered-in-error`
-
-1. Die Fachanwendung speichert den Zeitpunkt der Stornierung ab und übernimmt den ursprünglichen Wert des verification.Status bzw. status
+1. Um einen Eintrag zu stornieren, führt der GDA die[`$entered-in-error`-Operation](OperationDefinition-at-ediag-operation-diagnose-entered-in-error.md)auf den zu stornierenden Eintrag aus.
+1. Optional kann der GDA einen Grund für die Stornierung angeben, der durch die Fachanwendung in den zu stornierenden Eintrag übernommen wird.
+1. Für den zu stornierenden Eintrag speichert die Fachanwendung, welcher GDA den Eintrag storniert hat sowie den Zeitpunkt der Stornierung.
+1. Sollte der zu stornierende Eintrag Teil der aktuellen Summary-Liste gewesen sein, erstellt die Fachanwendung eine neue Version der Summary-Liste ohne den stornierten Eintrag.
 
 ### Eintrag bearbeiten in der Gesamtansicht
 

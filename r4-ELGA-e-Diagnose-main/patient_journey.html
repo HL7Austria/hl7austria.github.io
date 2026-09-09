@@ -227,14 +227,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#anwendungsbeispiel" id="markdown-toc-anwendungsbeispiel">Anwendungsbeispiel</a></li>
-  <li><a href="#patient-journey" id="markdown-toc-patient-journey">Patient Journey</a></li>
-  <li><a href="#1-arztbesuch---initalisierung-der-summary-liste" id="markdown-toc-1-arztbesuch---initalisierung-der-summary-liste">1. Arztbesuch - Initalisierung der Summary-Liste</a></li>
-  <li><a href="#abruf-der-gesamtliste" id="markdown-toc-abruf-der-gesamtliste">Abruf der Gesamtliste</a></li>
-</ul>
-
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
 </div>
 <style>
 .notification-table {
@@ -318,28 +312,26 @@ width: 100%;}
 
 </style>
 
-<h3 id="anwendungsbeispiel">Anwendungsbeispiel</h3>
+<p>Das folgende Anwendungsbeispiel beschreibt anhand einer fiktiven <strong>Patient Journey</strong>, wie die klinisch relevanten Informationen eines Patienten im Rahmen der e-Diagnose aufgebaut, ergänzt und aktualisiert werden. Dabei werden Diagnosen, Prozeduren sowie Allergien und Intoleranzen strukturiert erfasst und einzelne Summary-Einträge über die jeweilige Summary-Listen zusammengeführt.</p>
 
-<p>Das folgende Anwendungsbeispiel beschreibt anhand einer fiktiven <strong>Patient Journey</strong>, wie die klinisch relevanten Informationen eines Patienten im Rahmen der e-Diagnose aufgebaut, ergänzt und aktualisiert werden. Dabei werden Diagnosen, Prozeduren sowie Allergien und Intoleranzen strukturiert erfasst und einzelne Summary-Einträge über die jeweilige Summary-Liste zusammengeführt.</p>
-
-<h3 id="patient-journey">Patient Journey</h3>
 <p>Die Patient Journey zeigt den Lebenszyklus der e-Diagnose von der erstmaligen Initialisierung der Summary-Liste über das Hinzufügen und Aktualisieren einzelner Einträge bis hin zur Korrektur bzw. Löschung eines Eintrags.</p>
 
-<h3 id="1-arztbesuch---initalisierung-der-summary-liste">1. Arztbesuch - Initalisierung der Summary-Liste</h3>
-<p><a href="Practitioner-PractitionerExample.html">Dr Musterärztin Melanie</a> sieht Max Mustermann am <strong>3. März 2026</strong> erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.</p>
+<h3 id="1-arztbesuch--erstvorstellung-und-initialisierung-der-e-diagnose">1. Arztbesuch – Erstvorstellung und Initialisierung der e-Diagnose</h3>
+<p><a href="Practitioner-PractitionerExample.html">Dr Musterärztin Melanie</a> sieht <a href="Patient-PatientExample.html">Max Mustermann</a> am <strong>3. März 2026</strong> erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.</p>
 
-<p>Für Herrn Mustermann existiert bisher noch keine strukturierte e-Diagnose Summary-Liste. Die e-Diagnose wird daher erstmals initialisiert. Für den Patienten wird eine leere Summary-Liste angelegt. Diese enthält den Patienten <a href="Patient-PatientExample.html">DI Max Mustermann</a>, die erstellende e-Diagnose <a href="Device-DeviceExample.html">Fachanwendung</a> sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über List.emptyReason mit dem Code <a href="List-ListExample01.html">Notstarted</a> angegeben.</p>
+<p><strong>Abruf und Initialisierung der Summary-Liste</strong></p>
 
-<p>Im Rahmen der Anamnese erhebt die Ärztin die aktuellen gesundheitlichen Probleme und bereits länger bestehende Grunderkrankungen des Patienten. 
-Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden medikamentös behandelten Bluthochdruck. Außerdem gibt er an, seit seiner Kindheit an einer Penicillinallergie zu leiden.</p>
+<p>Für Herrn Mustermann existiert bisher noch keine strukturierte e-Diagnose-Summary-Liste. Die e-Diagnose wird daher erstmals initialisiert. Für den Patienten wird eine leere Summary-Liste angelegt. Diese enthält den Patienten <a href="Patient-PatientExample.html">Max Mustermann</a>, die erstellende e-Diagnose <a href="Device-DeviceExample.html">Fachanwendung</a> sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über List.emptyReason mit dem Code <a href="List-ListExample01.html">Notstarted</a> angegeben.</p>
 
-<p><a name="l477">​</a>Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die <a href="Condition-ConditionSummaryExample.html">Hypertonie</a> wird eine Condition und für die <a href="AllergyIntolerance-AllergyExample.html">Amoxicillin</a>-Allergie eine AllergyIntolerance geführt.
-  Bei einem neuerlichen Abruf der e-Diagnose Summary-Liste werden die eingetragenen Summary-Einträge in den jeweiligen Kategorien der Summary-Listen zurückgegeben z.B. <a href="List-ListConditionExample.html">Condtion-Summary-Liste</a> und <a href="List-ListAllergyExample.html">Allergy-Summary-Liste</a>.</p>
+<p><strong>Erfassung bestehender Diagnosen und Allergien</strong></p>
 
-<p>Momentan klagt Herr Mustermann über Schmerzen beim Schlucken und erhöhter Temperatur. Die körperliche Untersuchung ergibt eine eitrige Angina. Auch hierfür wird eine <a href="Condition-ConditionGesamtlisteExample.html">Suppurative tonsillitis</a> Condtion-Ressource angelegt.</p>
+<p>Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die aktuellen gesundheitlichen Probleme sowie bereits länger bestehende Grunderkrankungen und Allergien des Patienten. 
+Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden, medikamentös behandelten Bluthochdruck. Momentan bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5 Grad. Die körperliche Untersuchung ergibt eine eitrige Angina.
+Herr Mustermann gibt an, seit seiner Kindheit an einer Penicillinallergie zu leiden.</p>
 
-<h3 id="abruf-der-gesamtliste">Abruf der Gesamtliste</h3>
-<p>…</p>
+<p><a name="l465">​</a>Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die <a href="Condition-ConditionSummaryExample.html">Hypertonie</a> und <a href="Condition-ConditionGesamtlisteExample.html">Suppurative tonsillitis</a> werden jeweils eine Condition und für die <a href="AllergyIntolerance-AllergyExample.html">Amoxicillin</a>-Allergie eine AllergyIntolerance angelegt.
+Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben <a href="List-ListConditionExample.html">Condtion-Summary-Liste</a> und <a href="List-ListAllergyExample.html">Allergy-Summary-Liste</a>. Um eine Gesamtansicht aller Diagnoseneinträge zu erhalten führt Dr. Musterärztin ein <a href="uc_ediag_01_lesen.html#einträge-abrufen">Einträge abrufen</a> aus.</p>
+
 
 
 
@@ -359,7 +351,7 @@ Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden medikamen
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Sep 9, 2026 04:29+0000">2026-09-09</span>
+    IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Sep 9, 2026 07:41+0000">2026-09-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -56,7 +56,7 @@ Möchte der ELGA-Teilnehmer eine Diagnose aus der e-Diagnose Fachanwendung lösc
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-09T04:29:28+00:00",
+  "date" : "2026-09-09T07:41:46+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
