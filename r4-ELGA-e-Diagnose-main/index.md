@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-09T08:03:40+00:00",
+  "date" : "2026-09-09T09:18:29+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -983,10 +983,42 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionGesamtlisteExample.html"
+        "valueUri" : "Condition-ConditionGesamtlisteExample1.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionGesamtlisteExample"
+        "reference" : "Condition/ConditionGesamtlisteExample1"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionGesamtlisteExample2.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionGesamtlisteExample2"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionGesamtlisteExample3.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionGesamtlisteExample3"
       },
       "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
       "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",

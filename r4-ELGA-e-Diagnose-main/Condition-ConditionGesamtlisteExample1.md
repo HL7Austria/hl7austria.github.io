@@ -40,7 +40,7 @@ Temperatur >38.5, Gliederschmerzen
 ```json
 {
   "resourceType" : "Condition",
-  "id" : "ConditionGesamtlisteExample",
+  "id" : "ConditionGesamtlisteExample1",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"]
   },

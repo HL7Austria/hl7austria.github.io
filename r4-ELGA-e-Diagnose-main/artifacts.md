@@ -74,7 +74,9 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel einer leeren Summary-Liste](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge. |
 | [Beispiel stornierte Diagnose](Condition-DiagnoseEnteredInErrorExample.md) | Beispielinstanz einer stornierten Diagnose |
 | [Beispielinstanz einer Allergie für die Summary-Liste](AllergyIntolerance-AllergySummaryExample.md) | Beispiel einer bestätigten Allergie |
-| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample1.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample2.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample3.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Summary-Liste](Condition-ConditionSummaryExample.md) | Beispiel einer dauerhaften Diagnose |
 | [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
 
