@@ -8,7 +8,7 @@
 
 Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
-**AT ELGA Reported (Fremdangabe)**: false
+**AT ELGA Reported (Fremdangabe)**: true
 
 **clinicalStatus**: Active
 
@@ -46,7 +46,7 @@ Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
   },
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",
-    "valueBoolean" : false
+    "valueBoolean" : true
   }],
   "clinicalStatus" : {
     "coding" : [{

@@ -1,19 +1,19 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Summary-Liste mit einem Summary-Eintrag - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Allergie Summary-Liste mit einem Summary-Eintrag - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Summary-Liste mit einem Summary-Eintrag**
+* **Allergie Summary-Liste mit einem Summary-Eintrag**
 
-## Example List: Summary-Liste mit einem Summary-Eintrag
+## Example List: Allergie Summary-Liste mit einem Summary-Eintrag
 
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-03-01 00:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
+| Date: 2026-03-01 00:00:00+0000 | Mode: Working List | Status: Current | Code: Allergies and adverse reactions Document |
 | Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
-* **Items**: `DiagnoseCurrentlyRelevantExample`
+* **Items**: [AllergyIntolerance Amoxicillin](AllergyIntolerance-AllergySummaryExample.md)
 
 
 
@@ -22,7 +22,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 ```json
 {
   "resourceType" : "List",
-  "id" : "ListExample02",
+  "id" : "ListAllergyExample",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
@@ -31,7 +31,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "code" : {
     "coding" : [{
       "system" : "http://loinc.org",
-      "code" : "11450-4"
+      "code" : "48765-2"
     }]
   },
   "subject" : {
@@ -43,7 +43,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   },
   "entry" : [{
     "item" : {
-      "reference" : "DiagnoseCurrentlyRelevantExample"
+      "reference" : "AllergyIntolerance/AllergySummaryExample"
     }
   }]
 }

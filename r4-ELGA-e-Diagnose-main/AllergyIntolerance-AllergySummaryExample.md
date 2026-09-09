@@ -1,30 +1,30 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispiel Allergie - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispielinstanz einer Allergie für die Summary-Liste - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Allergie**
+* **Beispielinstanz einer Allergie für die Summary-Liste**
 
-## Example AllergyIntolerance: Beispiel Allergie
+## Example AllergyIntolerance: Beispielinstanz einer Allergie für die Summary-Liste
 
 Profile: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
 
-**AT ELGA Reported (Fremdangabe)**: false
+**AT ELGA Reported (Fremdangabe)**: true
 
 **clinicalStatus**: Active
 
 **verificationStatus**: Refuted
 
-**code**: Amoxicillin-Allergie
+**code**: Amoxicillin
 
 **patient**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
-**recordedDate**: 2026-04-20 10:00:00+0200
+**recordedDate**: 2026-03-01 00:00:00+0000
 
 **recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
 **asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
-> **reaction****AT ELGA Reaktionszeit**: <6 Stunden**manifestation**: Exanthem, Emesis**onset**: 2025-03-15**note**: 
+> **reaction****AT ELGA Reaktionszeit**: <6 Stunden**manifestation**: Exanthem, Emesis**onset**: 1908-03-01**note**: 
 > 
 
 Hautausschlag und Erbrechen nach Penicillin-Einnahme
@@ -38,13 +38,13 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
 ```json
 {
   "resourceType" : "AllergyIntolerance",
-  "id" : "AllergyExample",
+  "id" : "AllergySummaryExample",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"]
   },
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",
-    "valueBoolean" : false
+    "valueBoolean" : true
   }],
   "clinicalStatus" : {
     "coding" : [{
@@ -61,14 +61,14 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "294505008",
-      "display" : "Amoxicillin-Allergie"
+      "code" : "372687004",
+      "display" : "Amoxicillin"
     }]
   },
   "patient" : {
     "reference" : "Patient/PatientExample"
   },
-  "recordedDate" : "2026-04-20T10:00:00+02:00",
+  "recordedDate" : "2026-03-01T00:00:00+00:00",
   "recorder" : {
     "reference" : "Practitioner/PractitionerExample"
   },
@@ -100,7 +100,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
         "display" : "Emesis"
       }]
     }],
-    "onset" : "2025-03-15",
+    "onset" : "1908-03-01",
     "note" : [{
       "text" : "Hautausschlag und Erbrechen nach Penicillin-Einnahme"
     }]

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-delete | *Version*:0.1.0 | |
-| Active as of 2026-09-08 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagDiagnoseDelete |
+| Active as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagDiagnoseDelete |
 
  
 Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung. 
@@ -56,7 +56,7 @@ Möchte der ELGA-Teilnehmer eine Diagnose aus der e-Diagnose Fachanwendung lösc
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-08T12:56:54+00:00",
+  "date" : "2026-09-09T04:29:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list | *Version*:0.1.0 | |
-| Active as of 2026-09-08 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
+| Active as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
 
  
 Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. 
@@ -20,7 +20,7 @@ Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Condition
 
 **Usages:**
 
-* Examples for this Profile: [List/ListExample01](List-ListExample01.md) and [List/ListExample02](List-ListExample02.md)
+* Examples for this Profile: [List/ListAllergyExample](List-ListAllergyExample.md), [List/ListConditionExample](List-ListConditionExample.md) and [List/ListExample01](List-ListExample01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-list.json)
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-09-08T12:56:54+00:00",
+  "date" : "2026-09-09T04:29:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
