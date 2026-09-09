@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeDiagnoseR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4 (Draft)"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-08-31T06:56:37+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-09-09T15:08:39+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -74,15 +74,6 @@
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "5.3.0" ]
   ], [
      fhir:index 2 ;
-     fhir:Element.id [ fhir:value "hl7_fhir_uv_ips" ] ;
-     fhir:ImplementationGuide.dependsOn.uri [
-       fhir:value "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips" ;
-       fhir:link <http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips>
-     ] ;
-     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.uv.ips" ] ;
-     fhir:ImplementationGuide.dependsOn.version [ fhir:value "2.0.0" ]
-  ], [
-     fhir:index 3 ;
      fhir:Element.id [ fhir:value "hl7_at_fhir_core_r4" ] ;
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4" ;
@@ -726,6 +717,23 @@
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "List" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/List/ListAllergyExample1> ;
+         fhir:Reference.reference [ fhir:value "List/ListAllergyExample1" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Allergie Summary-Liste mit einem Summary-Eintrag" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -734,20 +742,6 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT e-Diagnose AllergyIntolerance Value Set" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien oder Intoleranzen erfasst werden." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 1 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-diagnose-type> ;
-         fhir:Reference.reference [ fhir:value "CodeSystem/at-ediag-codesystem-diagnose-type" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT e-Diagnose Diagnose Typ" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant ist" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 2 ;
@@ -771,20 +765,6 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-diagnosen-type> ;
-         fhir:Reference.reference [ fhir:value "ValueSet/at-ediag-diagnosen-type" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT e-Diagnose Diagnosis Type Value Set" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuell relevant ist." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 4 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "ValueSet" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-status> ;
          fhir:Reference.reference [ fhir:value "ValueSet/at-ediag-procedure-status" ]
        ] ;
@@ -792,7 +772,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet zur Kennzeichnung, ob eine Prozedur durchgeführt oder irrtümlich dokumentiert wurde." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 5 ;
+       fhir:index 4 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -806,7 +786,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alternative zum eingeschränkten IPS ValueSet." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 6 ;
+       fhir:index 5 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -820,7 +800,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit zulässigen Ausprägungen der Reaktionszeit einer allergischen Reaktion." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 7 ;
+       fhir:index 6 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -834,7 +814,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 8 ;
+       fhir:index 7 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -848,7 +828,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 9 ;
+       fhir:index 8 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -862,7 +842,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 10 ;
+       fhir:index 9 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -876,21 +856,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 11 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:complex-type" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reference> ;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-reference" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Diagnose Reference" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 12 ;
+       fhir:index 10 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -904,7 +870,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 13 ;
+       fhir:index 11 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -918,7 +884,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Zeitlicher Verlauf der Manifestation (<6h, 6-24h, >24h, unknown)" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 14 ;
+       fhir:index 12 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -932,24 +898,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Kennzeichnet, ob eine Information fremdberichtet ist (z. B. vom Patienten oder Dritten)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 15 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "AllergyIntolerance" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/AllergyIntolerance/AllergyExample> ;
-         fhir:Reference.reference [ fhir:value "AllergyIntolerance/AllergyExample" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Allergie" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz einer bestätigten Allergie" ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance" ;
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance>
-       ]
-     ], [
-       fhir:index 16 ;
+       fhir:index 13 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -963,41 +912,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz eines Devices dass die Fachanwendung initial erstellt" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 17 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "Condition" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/DiagnoseCurrentlyRelevantExample> ;
-         fhir:Reference.reference [ fhir:value "Condition/DiagnoseCurrentlyRelevantExample" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Diagnose currently relevant" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz einer Diagnose - currently relevant" ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
-       ]
-     ], [
-       fhir:index 18 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "Condition" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/DiagnoseNotCurrentlyRelevantExample> ;
-         fhir:Reference.reference [ fhir:value "Condition/DiagnoseNotCurrentlyRelevantExample" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Diagnose not currently relevant" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz einer Diagnose - not currently relevant" ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
-       ]
-     ], [
-       fhir:index 19 ;
+       fhir:index 14 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1007,14 +922,14 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/List/ListExample01> ;
          fhir:Reference.reference [ fhir:value "List/ListExample01" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel einer leeren e-Diagnose-Liste" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel einer leeren Summary-Liste" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Initiale Summary-Liste ohne Summary-Einträge." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 20 ;
+       fhir:index 15 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1028,7 +943,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz eines Patienten" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 21 ;
+       fhir:index 16 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1042,24 +957,202 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz eines Arztes" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
+       fhir:index 17 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Condition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/DiagnoseEnteredInErrorExample> ;
+         fhir:Reference.reference [ fhir:value "Condition/DiagnoseEnteredInErrorExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel stornierte Diagnose" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz einer stornierten Diagnose" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+       ]
+     ], [
+       fhir:index 18 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "AllergyIntolerance" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/AllergyIntolerance/AllergySummaryExample1> ;
+         fhir:Reference.reference [ fhir:value "AllergyIntolerance/AllergySummaryExample1" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispielinstanz einer Allergie für die Summary-Liste" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer bestätigten Allergie" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance>
+       ]
+     ], [
+       fhir:index 19 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Condition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/ConditionGesamtlisteExample1> ;
+         fhir:Reference.reference [ fhir:value "Condition/ConditionGesamtlisteExample1" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispielinstanz einer Diagnose für die Gesamtliste" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel Diagnose, aktuelle Beschwerden des Patienten" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+       ]
+     ], [
+       fhir:index 20 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Condition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/ConditionGesamtlisteExample2> ;
+         fhir:Reference.reference [ fhir:value "Condition/ConditionGesamtlisteExample2" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispielinstanz einer Diagnose für die Gesamtliste" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel Diagnose, aktuelle Beschwerden des Patienten" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+       ]
+     ], [
+       fhir:index 21 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Condition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/ConditionGesamtlisteExample3> ;
+         fhir:Reference.reference [ fhir:value "Condition/ConditionGesamtlisteExample3" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispielinstanz einer Diagnose für die Gesamtliste" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel Diagnose, aktuelle Beschwerden des Patienten" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+       ]
+     ], [
        fhir:index 22 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Condition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/ConditionGesamtlisteExample4> ;
+         fhir:Reference.reference [ fhir:value "Condition/ConditionGesamtlisteExample4" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispielinstanz einer Diagnose für die Summary" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel Diagnose, aktuelle Beschwerden des Patienten" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+       ]
+     ], [
+       fhir:index 23 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Condition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Condition/ConditionSummaryExample1> ;
+         fhir:Reference.reference [ fhir:value "Condition/ConditionSummaryExample1" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispielinstanz einer Diagnose für die Summary-Liste" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer dauerhaften Diagnose" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+       ]
+     ], [
+       fhir:index 24 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "Procedure" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Procedure/ProcedureExample> ;
-         fhir:Reference.reference [ fhir:value "Procedure/ProcedureExample" ]
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Procedure/ProcedureExample1> ;
+         fhir:Reference.reference [ fhir:value "Procedure/ProcedureExample1" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Prozedur" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz einer Prozedur" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispielinstanz einer Prozedur für die Summary-Liste" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer Prozedur" ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure" ;
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure>
        ]
      ], [
-       fhir:index 23 ;
+       fhir:index 25 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "List" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/List/ListConditionExample1> ;
+         fhir:Reference.reference [ fhir:value "List/ListConditionExample1" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Condition Summary-Liste mit einem Summary-Eintrag" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+       ]
+     ], [
+       fhir:index 26 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-delete> ;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-diagnose-delete" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $delete" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 27 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-delete-history-version> ;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-list-delete-history-version" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $delete-history-version" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 28 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-entered-in-error> ;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-diagnose-entered-in-error" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $entered-in-error" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 29 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1070,26 +1163,10 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-list-write" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $write" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 24 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "List" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/List/ListExample02> ;
-         fhir:Reference.reference [ fhir:value "List/ListExample02" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose-Liste mit einer relevanten Diagnose" ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
-         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
-       ]
-     ], [
-       fhir:index 25 ;
+       fhir:index 30 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1103,7 +1180,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 26 ;
+       fhir:index 31 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1117,7 +1194,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 27 ;
+       fhir:index 32 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1158,7 +1235,7 @@
            fhir:Extension.valueUrl [ fhir:value "scope_and_content.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "scope_and_content.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Scope and Content" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Umfang und Inhalt" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 2 ;
@@ -1168,7 +1245,7 @@
            fhir:Extension.valueUrl [ fhir:value "background.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "background.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Background" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Hintergrund" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 3 ;
@@ -1178,7 +1255,7 @@
            fhir:Extension.valueUrl [ fhir:value "challenges.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "challenges.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Challenges" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Herausforderungen" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 4 ;
@@ -1188,7 +1265,7 @@
            fhir:Extension.valueUrl [ fhir:value "transaction.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "transaction.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Transactions" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Transaktionen" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 5 ;
@@ -1198,7 +1275,7 @@
            fhir:Extension.valueUrl [ fhir:value "actors.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "actors.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "System Actors" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Akteure" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 6 ;
@@ -1208,7 +1285,7 @@
            fhir:Extension.valueUrl [ fhir:value "design_choices.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "design_choices.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Design Choices" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Designentscheidungen" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 7 ;
@@ -1269,6 +1346,66 @@
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "uc_ediag_03_teilnehmer.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Teilnehmerrechte ausüben" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 13 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "contributors.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "contributors.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Autoren und Mitwirkende" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 14 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "download.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "download.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Download" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 15 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "publication_info.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "publication_info.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Publikationsinformationen" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 16 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "dependencies.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "dependencies.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Dependencies" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 17 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "copyright.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "copyright.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Copyright" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index 18 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "imprint.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "imprint.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Impressum" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ]
      ] ;

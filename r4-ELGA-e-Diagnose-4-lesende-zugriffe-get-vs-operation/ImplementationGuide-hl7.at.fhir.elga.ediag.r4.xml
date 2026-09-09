@@ -11,7 +11,7 @@
   <name value="ELGAeDiagnoseR4"/>
   <title value="ELGA e-Diagnose R4 (Draft)"/>
   <status value="draft"/>
-  <date value="2026-08-31T06:56:37+00:00"/>
+  <date value="2026-09-09T15:08:39+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -47,11 +47,6 @@
     <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
     <packageId value="hl7.fhir.uv.extensions.r4"/>
     <version value="5.3.0"/>
-  </dependsOn>
-  <dependsOn id="hl7_fhir_uv_ips">
-    <uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
-    <packageId value="hl7.fhir.uv.ips"/>
-    <version value="2.0.0"/>
   </dependsOn>
   <dependsOn id="hl7_at_fhir_core_r4">
     <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4"/>
@@ -480,6 +475,17 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/ListAllergyExample1"/>
+      </reference>
+      <name value="Allergie Summary-Liste mit einem Summary-Eintrag"/>
+      <description value="Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -491,17 +497,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/at-ediag-codesystem-diagnose-type"/>
-      </reference>
-      <name value="AT e-Diagnose Diagnose Typ"/>
-      <description value="Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant ist"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -509,17 +504,6 @@
       </reference>
       <name value="AT e-Diagnose Diagnosen Value Set"/>
       <description value="Value-Set für die Codierung von Diagnosen."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/at-ediag-diagnosen-type"/>
-      </reference>
-      <name value="AT e-Diagnose Diagnosis Type Value Set"/>
-      <description value="ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuell relevant ist."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -601,17 +585,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-ediag-reference"/>
-      </reference>
-      <name value="AT ELGA e-Diagnose Reference"/>
-      <description value="Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -645,17 +618,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="AllergyIntolerance"/>
-      </extension>
-      <reference>
-        <reference value="AllergyIntolerance/AllergyExample"/>
-      </reference>
-      <name value="Beispiel Allergie"/>
-      <description value="Beispielinstanz einer bestätigten Allergie"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Device"/>
       </extension>
       <reference>
@@ -667,35 +629,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Condition"/>
-      </extension>
-      <reference>
-        <reference value="Condition/DiagnoseCurrentlyRelevantExample"/>
-      </reference>
-      <name value="Beispiel Diagnose currently relevant"/>
-      <description value="Beispielinstanz einer Diagnose - currently relevant"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Condition"/>
-      </extension>
-      <reference>
-        <reference value="Condition/DiagnoseNotCurrentlyRelevantExample"/>
-      </reference>
-      <name value="Beispiel Diagnose not currently relevant"/>
-      <description value="Beispielinstanz einer Diagnose - not currently relevant"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="List"/>
       </extension>
       <reference>
         <reference value="List/ListExample01"/>
       </reference>
-      <name value="Beispiel einer leeren e-Diagnose-Liste"/>
-      <description value="Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien."/>
+      <name value="Beispiel einer leeren Summary-Liste"/>
+      <description value="Initiale Summary-Liste ohne Summary-Einträge."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
     </resource>
     <resource>
@@ -722,14 +662,135 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/DiagnoseEnteredInErrorExample"/>
+      </reference>
+      <name value="Beispiel stornierte Diagnose"/>
+      <description value="Beispielinstanz einer stornierten Diagnose"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/AllergySummaryExample1"/>
+      </reference>
+      <name value="Beispielinstanz einer Allergie für die Summary-Liste"/>
+      <description value="Beispiel einer bestätigten Allergie"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ConditionGesamtlisteExample1"/>
+      </reference>
+      <name value="Beispielinstanz einer Diagnose für die Gesamtliste"/>
+      <description value="Beispiel Diagnose, aktuelle Beschwerden des Patienten"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ConditionGesamtlisteExample2"/>
+      </reference>
+      <name value="Beispielinstanz einer Diagnose für die Gesamtliste"/>
+      <description value="Beispiel Diagnose, aktuelle Beschwerden des Patienten"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ConditionGesamtlisteExample3"/>
+      </reference>
+      <name value="Beispielinstanz einer Diagnose für die Gesamtliste"/>
+      <description value="Beispiel Diagnose, aktuelle Beschwerden des Patienten"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ConditionGesamtlisteExample4"/>
+      </reference>
+      <name value="Beispielinstanz einer Diagnose für die Summary"/>
+      <description value="Beispiel Diagnose, aktuelle Beschwerden des Patienten"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ConditionSummaryExample1"/>
+      </reference>
+      <name value="Beispielinstanz einer Diagnose für die Summary-Liste"/>
+      <description value="Beispiel einer dauerhaften Diagnose"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Procedure"/>
       </extension>
       <reference>
-        <reference value="Procedure/ProcedureExample"/>
+        <reference value="Procedure/ProcedureExample1"/>
       </reference>
-      <name value="Beispiel Prozedur"/>
-      <description value="Beispielinstanz einer Prozedur"/>
+      <name value="Beispielinstanz einer Prozedur für die Summary-Liste"/>
+      <description value="Beispiel einer Prozedur"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/ListConditionExample1"/>
+      </reference>
+      <name value="Condition Summary-Liste mit einem Summary-Eintrag"/>
+      <description value="Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-ediag-operation-diagnose-delete"/>
+      </reference>
+      <name value="e-Diagnose Operation $delete"/>
+      <description value="Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-ediag-operation-list-delete-history-version"/>
+      </reference>
+      <name value="e-Diagnose Operation $delete-history-version"/>
+      <description value="Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-ediag-operation-diagnose-entered-in-error"/>
+      </reference>
+      <name value="e-Diagnose Operation $entered-in-error"/>
+      <description value="Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung."/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -739,18 +800,8 @@
         <reference value="OperationDefinition/at-ediag-operation-list-write"/>
       </reference>
       <name value="e-Diagnose Operation $write"/>
-      <description value="Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird."/>
+      <description value="Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird."/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="List"/>
-      </extension>
-      <reference>
-        <reference value="List/ListExample02"/>
-      </reference>
-      <name value="e-Diagnose-Liste mit einer relevanten Diagnose"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -805,7 +856,7 @@
           <valueUrl value="scope_and_content.html"/>
         </extension>
         <nameUrl value="scope_and_content.html"/>
-        <title value="Scope and Content"/>
+        <title value="Umfang und Inhalt"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -813,7 +864,7 @@
           <valueUrl value="background.html"/>
         </extension>
         <nameUrl value="background.html"/>
-        <title value="Background"/>
+        <title value="Hintergrund"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -821,7 +872,7 @@
           <valueUrl value="challenges.html"/>
         </extension>
         <nameUrl value="challenges.html"/>
-        <title value="Challenges"/>
+        <title value="Herausforderungen"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -829,7 +880,7 @@
           <valueUrl value="transaction.html"/>
         </extension>
         <nameUrl value="transaction.html"/>
-        <title value="Transactions"/>
+        <title value="Transaktionen"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -837,7 +888,7 @@
           <valueUrl value="actors.html"/>
         </extension>
         <nameUrl value="actors.html"/>
-        <title value="System Actors"/>
+        <title value="Akteure"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -845,7 +896,7 @@
           <valueUrl value="design_choices.html"/>
         </extension>
         <nameUrl value="design_choices.html"/>
-        <title value="Design Choices"/>
+        <title value="Designentscheidungen"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -894,6 +945,54 @@
         </extension>
         <nameUrl value="uc_ediag_03_teilnehmer.html"/>
         <title value="Teilnehmerrechte ausüben"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="contributors.html"/>
+        </extension>
+        <nameUrl value="contributors.html"/>
+        <title value="Autoren und Mitwirkende"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="download.html"/>
+        </extension>
+        <nameUrl value="download.html"/>
+        <title value="Download"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="publication_info.html"/>
+        </extension>
+        <nameUrl value="publication_info.html"/>
+        <title value="Publikationsinformationen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="dependencies.html"/>
+        </extension>
+        <nameUrl value="dependencies.html"/>
+        <title value="Dependencies"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="copyright.html"/>
+        </extension>
+        <nameUrl value="copyright.html"/>
+        <title value="Copyright"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="imprint.html"/>
+        </extension>
+        <nameUrl value="imprint.html"/>
+        <title value="Impressum"/>
         <generation value="markdown"/>
       </page>
     </page>

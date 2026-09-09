@@ -9,15 +9,19 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition | *Version*:0.1.0 | |
-| Active as of 2026-08-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
+| Active as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
 
  
 Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
 
+### Defintion
+
+Dokumentiert Diagnosen und klinisch relevante Gesundheitszustände einer Person, einschließlich Erkrankungen, Symptome, allgemeiner Zustandsbeschreibungen (Findings), familiärer Vorbelastungen sowie sonstiger gesundheitlich relevanter Probleme oder Risiken. Sie bildet eine fachliche Feststellung zu einem Gesundheitsaspekt ab und kann sowohl aktuelle als auch vergangene Zustände umfassen.
+
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
-* Examples for this Profile: [Condition/DiagnoseCurrentlyRelevantExample](Condition-DiagnoseCurrentlyRelevantExample.md) and [Condition/DiagnoseNotCurrentlyRelevantExample](Condition-DiagnoseNotCurrentlyRelevantExample.md)
+* Examples for this Profile: [Condition/ConditionGesamtlisteExample1](Condition-ConditionGesamtlisteExample1.md), [Condition/ConditionGesamtlisteExample2](Condition-ConditionGesamtlisteExample2.md), [Condition/ConditionGesamtlisteExample3](Condition-ConditionGesamtlisteExample3.md), [Condition/ConditionGesamtlisteExample4](Condition-ConditionGesamtlisteExample4.md)... Show 2 more, [Condition/ConditionSummaryExample1](Condition-ConditionSummaryExample1.md) and [Condition/DiagnoseEnteredInErrorExample](Condition-DiagnoseEnteredInErrorExample.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-condition.json)
 
@@ -42,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-08-31T06:56:37+00:00",
+  "date" : "2026-09-09T15:08:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -139,19 +143,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.identifier",
       "path" : "Condition.identifier",
-      "short" : "Zuordnung der Diagnose in einem internem Dokumentationssystem"
+      "short" : "Zuordnung der Diagnose in einem internen Dokumentationssystem."
     },
     {
       "id" : "Condition.clinicalStatus",
       "path" : "Condition.clinicalStatus",
-      "short" : "Klinischer Status der Diagnose (wie:Status post), \nmögliche Codes: active | recurrence | relapse | inactive | remission | resolved",
+      "short" : "Klinischer Status der Diagnose (z. B. Status post); mögliche Codes: active | recurrence | relapse | inactive | remission | resolved.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "Condition.verificationStatus",
       "path" : "Condition.verificationStatus",
-      "short" : "Status der Diagnose, mögliche Codes: unconfirmed | provisional | differential | confirmed | refuted | entered-in-error",
+      "short" : "Verifizierungsstatus der Diagnose, mögliche Codes: unconfirmed | provisional | differential | confirmed | refuted | entered-in-error.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -164,13 +168,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.severity",
       "path" : "Condition.severity",
-      "short" : "Schweregrad der Erkrankung",
+      "short" : "Schweregrad der Erkrankung.",
       "max" : "0"
     },
     {
       "id" : "Condition.code",
       "path" : "Condition.code",
-      "short" : "Diagnosecode (Codierservice), Text verboten, Codesystem 1.SNOMED 2.Orphanet",
+      "short" : "Diagnosecode (Codierservice); Freitext ist nicht zulässig. Codesysteme: 1. SNOMED CT, 2. Orphanet.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -232,13 +236,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.bodySite",
       "path" : "Condition.bodySite",
-      "short" : "Zuordnung der Diagnose der Körper-Lokalisation",
+      "short" : "Zuordnung der Diagnose zu einer Körperstelle.",
       "max" : "0"
     },
     {
       "id" : "Condition.subject",
       "path" : "Condition.subject",
-      "short" : "Person, auf die sich die Diagnose bezieht",
+      "short" : "Person, auf die sich die Diagnose bezieht.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
@@ -248,13 +252,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.encounter",
       "path" : "Condition.encounter",
-      "short" : "Behandlungskontakt",
+      "short" : "Behandlungskontakt.",
       "max" : "0"
     },
     {
       "id" : "Condition.onset[x]",
       "path" : "Condition.onset[x]",
-      "short" : "Beginn der Erkrankung/Diagnosezeitpunkt",
+      "short" : "Beginn der Erkrankung bzw. Diagnosezeitpunkt.",
       "type" : [{
         "code" : "dateTime"
       }]
@@ -262,7 +266,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.abatement[x]",
       "path" : "Condition.abatement[x]",
-      "short" : "Ende der Erkrankung",
+      "short" : "Ende der Erkrankung.",
       "type" : [{
         "code" : "dateTime"
       }]
@@ -270,14 +274,14 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.recordedDate",
       "path" : "Condition.recordedDate",
-      "short" : "Zeitpunkt der Diagnosendokumentation",
+      "short" : "Zeitpunkt der Dokumentation der Diagnose.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "Condition.recorder",
       "path" : "Condition.recorder",
-      "short" : "Ansonsten Gesundheitsdiensteanbieter, der die Diagnose eingetragen hat",
+      "short" : "GDA, der die Diagnose eingetragen hat.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -289,7 +293,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.asserter",
       "path" : "Condition.asserter",
-      "short" : "Quelle der Information zur Diagnose (z. B. behandelnde Person, Patient oder Dritter)",
+      "short" : "Quelle der Information zur Diagnose (z. B. behandelnde GDA, Patient oder Dritter).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
@@ -301,18 +305,18 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.stage",
       "path" : "Condition.stage",
-      "short" : "Stadium der Erkrankung",
+      "short" : "Stadium der Erkrankung.",
       "max" : "0"
     },
     {
       "id" : "Condition.evidence",
       "path" : "Condition.evidence",
-      "short" : "Verweis auf ELGA-Befunde als medizinische Evidenz"
+      "short" : "Verweis auf ELGA-Befunde als medizinische Evidenz."
     },
     {
       "id" : "Condition.note",
       "path" : "Condition.note",
-      "short" : "Freitext zur Diagnose für Zusatzinformation",
+      "short" : "Freitext zur Diagnose als Zusatzinformation.",
       "max" : "1"
     },
     {

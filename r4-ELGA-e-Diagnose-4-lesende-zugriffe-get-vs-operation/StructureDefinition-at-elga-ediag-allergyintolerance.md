@@ -9,15 +9,19 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance | *Version*:0.1.0 | |
-| Active as of 2026-08-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
+| Active as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
 
  
 Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
 
+### Defintion
+
+AllergyIntolerance dient der Dokumentation einer klinischen Einschätzung einer Allergie oder Intoleranz sowie einer bestehenden oder potenziellen Überempfindlichkeit gegenüber einer bestimmten Substanz oder Substanzklasse und des damit verbundenen Risikos einer unerwünschten Reaktion bei Exposition.
+
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
-* Examples for this Profile: [AllergyIntolerance/AllergyExample](AllergyIntolerance-AllergyExample.md)
+* Examples for this Profile: [AllergyIntolerance/AllergySummaryExample1](AllergyIntolerance-AllergySummaryExample1.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-allergyintolerance.json)
 
@@ -42,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-08-31T06:56:37+00:00",
+  "date" : "2026-09-09T15:08:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -124,44 +128,44 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.identifier",
       "path" : "AllergyIntolerance.identifier",
-      "short" : "Zuordnung der Allergie in einem internem Dokumentationssystem"
+      "short" : "Zuordnung der Allergie in einem internen Dokumentationssystem."
     },
     {
       "id" : "AllergyIntolerance.clinicalStatus",
       "path" : "AllergyIntolerance.clinicalStatus",
-      "short" : "Status der Allergie; active | inactive | resolved",
+      "short" : "Status der Allergie; mögliche Codes: active | inactive | resolved.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "AllergyIntolerance.verificationStatus",
       "path" : "AllergyIntolerance.verificationStatus",
-      "short" : "ToDo; Presumed, gibt es hierzu aktuelle Infos? kardinalität von clinicalStatus & verificationStatus muss noch erarbeitet werden. Möglicher Status; unconfirmed | confirmed | refuted | entered-in-error",
+      "short" : "Verifizierungsstatus der Allergie; mögliche Codes: unconfirmed | confirmed | refuted | entered-in-error.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "AllergyIntolerance.type",
       "path" : "AllergyIntolerance.type",
-      "short" : "Identifikation ob es eine Allergie oder Intoleranz ist",
+      "short" : "Kennzeichnung, ob es sich um eine Allergie oder Intoleranz handelt.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.category",
       "path" : "AllergyIntolerance.category",
-      "short" : "Differenzierung nach Kontext - Medikamente, Lebensmittel, Umwelt,.. - falls nur med. rele. dann ist es nicht notwendig, fachlich klären",
+      "short" : "ToDo - falls nur med. rele. dann ist es nicht notwendig, fachlich klären: Differenzierung nach Kontext z. B. Medikamente, Lebensmittel oder Umwelt.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.criticality",
       "path" : "AllergyIntolerance.criticality",
-      "short" : "Einschätzung der Schwere (Anaphylaxie)",
+      "short" : "Einschätzung des Schweregrads, z. B. im Hinblick auf eine Anaphylaxie.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.code",
       "path" : "AllergyIntolerance.code",
-      "short" : "Allergiecode, Text verboten",
+      "short" : "Allergiecode; Freitext ist nicht zulässig.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -179,7 +183,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.patient",
       "path" : "AllergyIntolerance.patient",
-      "short" : "Betroffene Person, auf die sich die Allergie bezieht",
+      "short" : "Betroffene Person, auf die sich die Allergie bezieht.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
@@ -189,26 +193,26 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.encounter",
       "path" : "AllergyIntolerance.encounter",
-      "short" : "Behandlungskontakt",
+      "short" : "Behandlungskontakt.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.onset[x]",
       "path" : "AllergyIntolerance.onset[x]",
-      "short" : "Erstes Aufzeichnungsdatum der Allergie(symptomatik)",
+      "short" : "Erstes Aufzeichnungsdatum der Allergie bzw. Allergiesymptomatik.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.recordedDate",
       "path" : "AllergyIntolerance.recordedDate",
-      "short" : "Dokumentationsdatum",
+      "short" : "Dokumentationsdatum.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "AllergyIntolerance.recorder",
       "path" : "AllergyIntolerance.recorder",
-      "short" : "Gesundheitsdiensteanbieter, die die Allergie ins System erfasst/dokumentiert",
+      "short" : "GDA, der die Allergie im System erfasst bzw. dokumentiert hat.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -220,7 +224,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.asserter",
       "path" : "AllergyIntolerance.asserter",
-      "short" : "Person (fachliche Quelle + related Person oder Patient selbst), die/der die Allergie bestätigt",
+      "short" : "Quelle der Information zur Allergie, z. B. Patient, behandelnde Person oder Dritter.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
@@ -232,19 +236,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.lastOccurrence",
       "path" : "AllergyIntolerance.lastOccurrence",
-      "short" : "Letztes Auftreten der Symptomatik - siehe manifestation",
+      "short" : "Letztes Auftreten der Symptomatik; siehe Manifestation.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.note",
       "path" : "AllergyIntolerance.note",
-      "short" : "Zusätzliche Informationen oder Freitext zur Allergie wird in reaction beschrieben",
+      "short" : "Zusätzliche Informationen; Freitext wird in reaction beschrieben.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.reaction",
       "path" : "AllergyIntolerance.reaction",
-      "short" : "Details über die Allergiereaktion",
+      "short" : "Details zur allergischen Reaktion.",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
@@ -266,7 +270,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
       "id" : "AllergyIntolerance.reaction.extension:reactionTime",
       "path" : "AllergyIntolerance.reaction.extension",
       "sliceName" : "reactionTime",
-      "short" : "Zeitlicher Verlauf der Manifestation",
+      "short" : "Zeitlicher Verlauf der Manifestation.",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -278,42 +282,42 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
     {
       "id" : "AllergyIntolerance.reaction.substance",
       "path" : "AllergyIntolerance.reaction.substance",
-      "short" : "Spezifische Substanz die zur Allergie führt, wird in allergyintoleranz.code gelöst",
+      "short" : "Spezifische Substanz, die zur Allergie führt; wird über AllergyIntolerance.code abgebildet.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.reaction.manifestation",
       "path" : "AllergyIntolerance.reaction.manifestation",
-      "short" : "Aufgezeichnete klinische allergische Symptome",
+      "short" : "Aufgezeichnete klinische Symptome der allergischen Reaktion.",
       "mustSupport" : true
     },
     {
       "id" : "AllergyIntolerance.reaction.description",
       "path" : "AllergyIntolerance.reaction.description",
-      "short" : "Textbasierte Zusammenfassung der allergischen Reaktion",
+      "short" : "Textbasierte Zusammenfassung der allergischen Reaktion.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.reaction.onset",
       "path" : "AllergyIntolerance.reaction.onset",
-      "short" : "Beginn der Reaktion"
+      "short" : "Beginn der Reaktion."
     },
     {
       "id" : "AllergyIntolerance.reaction.severity",
       "path" : "AllergyIntolerance.reaction.severity",
-      "short" : "Beschreibt ob die Reaktion mild, moderat,... war",
+      "short" : "Schweregrad der Reaktion, z. B. mild oder moderat.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.reaction.exposureRoute",
       "path" : "AllergyIntolerance.reaction.exposureRoute",
-      "short" : "Art der Exposition der betroffenen Person gegenüber der Substanz",
+      "short" : "Art der Exposition der betroffenen Person gegenüber der Substanz.",
       "max" : "0"
     },
     {
       "id" : "AllergyIntolerance.reaction.note",
       "path" : "AllergyIntolerance.reaction.note",
-      "short" : "Freitext zu Allergie und Intoleranzen als Zusatzinformation",
+      "short" : "Freitext zu Allergie und Intoleranzen als Zusatzinformation.",
       "max" : "1"
     },
     {

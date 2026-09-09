@@ -13,7 +13,10 @@ These are custom operations that can be supported by and/or invoked by systems c
 
 | | |
 | :--- | :--- |
-| [e-Diagnose Operation $write](OperationDefinition-at-ediag-operation-list-write.md) | Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. |
+| [e-Diagnose Operation $delete](OperationDefinition-at-ediag-operation-diagnose-delete.md) | Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung. |
+| [e-Diagnose Operation $delete-history-version](OperationDefinition-at-ediag-operation-list-delete-history-version.md) | Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung. |
+| [e-Diagnose Operation $entered-in-error](OperationDefinition-at-ediag-operation-diagnose-entered-in-error.md) | Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung. |
+| [e-Diagnose Operation $write](OperationDefinition-at-ediag-operation-list-write.md) | Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. |
 
 ### Structures: Resource Profiles 
 
@@ -25,14 +28,6 @@ These define constraints on FHIR resources for systems conforming to this implem
 | [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) | Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
 | [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md) | Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. |
 | [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md) | Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
-
-### Structures: Data Type Profiles 
-
-These define constraints on FHIR data types for systems conforming to this implementation guide.
-
-| | |
-| :--- | :--- |
-| [AT ELGA e-Diagnose Reference](StructureDefinition-at-elga-ediag-reference.md) | Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. |
 
 ### Structures: Extension Definitions 
 
@@ -52,7 +47,6 @@ These define sets of codes used by systems conforming to this implementation gui
 | :--- | :--- |
 | [AT e-Diagnose AllergyIntolerance Value Set](ValueSet-at-ediag-allergyintolerance-codes.md) | ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien oder Intoleranzen erfasst werden. |
 | [AT e-Diagnose Diagnosen Value Set](ValueSet-at-ediag-diagnosen-codes.md) | Value-Set für die Codierung von Diagnosen. |
-| [AT e-Diagnose Diagnosis Type Value Set](ValueSet-at-ediag-diagnosen-type.md) | ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuell relevant ist. |
 | [AT e-Diagnose Procedure Status Value Set](ValueSet-at-ediag-procedure-status.md) | ValueSet zur Kennzeichnung, ob eine Prozedur durchgeführt oder irrtümlich dokumentiert wurde. |
 | [AT e-Diagnose Procedures Value Set](ValueSet-at-ediag-prozeduren-codes.md) | ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alternative zum eingeschränkten IPS ValueSet. |
 | [AT e-Diagnose Reaction Time Value Set](ValueSet-at-ediag-reaction-time-vs.md) | ValueSet mit zulässigen Ausprägungen der Reaktionszeit einer allergischen Reaktion. |
@@ -65,7 +59,6 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
-| [AT e-Diagnose Diagnose Typ](CodeSystem-at-ediag-codesystem-diagnose-type.md) | Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant ist |
 | [Reaktionszeit Codes](CodeSystem-at-ediag-codesystem-reaction-time-cs.md) | Zeitlicher Verlauf der Manifestation |
 
 ### Example: Example Instances 
@@ -74,13 +67,18 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [Beispiel Allergie](AllergyIntolerance-AllergyExample.md) | Beispielinstanz einer bestätigten Allergie |
+| [Allergie Summary-Liste mit einem Summary-Eintrag](List-ListAllergyExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist. |
 | [Beispiel Device](Device-DeviceExample.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
-| [Beispiel Diagnose currently relevant](Condition-DiagnoseCurrentlyRelevantExample.md) | Beispielinstanz einer Diagnose - currently relevant |
-| [Beispiel Diagnose not currently relevant](Condition-DiagnoseNotCurrentlyRelevantExample.md) | Beispielinstanz einer Diagnose - not currently relevant |
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
-| [Beispiel Prozedur](Procedure-ProcedureExample.md) | Beispielinstanz einer Prozedur |
-| [Beispiel einer leeren e-Diagnose-Liste](List-ListExample01.md) | Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien. |
-| [e-Diagnose-Liste mit einer relevanten Diagnose](List-ListExample02.md) |  |
+| [Beispiel einer leeren Summary-Liste](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge. |
+| [Beispiel stornierte Diagnose](Condition-DiagnoseEnteredInErrorExample.md) | Beispielinstanz einer stornierten Diagnose |
+| [Beispielinstanz einer Allergie für die Summary-Liste](AllergyIntolerance-AllergySummaryExample1.md) | Beispiel einer bestätigten Allergie |
+| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample1.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample2.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample3.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Summary](Condition-ConditionGesamtlisteExample4.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Summary-Liste](Condition-ConditionSummaryExample1.md) | Beispiel einer dauerhaften Diagnose |
+| [Beispielinstanz einer Prozedur für die Summary-Liste](Procedure-ProcedureExample1.md) | Beispiel einer Prozedur |
+| [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
 

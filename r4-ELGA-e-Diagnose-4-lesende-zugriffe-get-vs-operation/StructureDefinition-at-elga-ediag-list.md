@@ -9,14 +9,18 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list | *Version*:0.1.0 | |
-| Active as of 2026-08-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
+| Active as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
 
  
 Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. 
 
+### Defintion
+
+Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Conditions, Procedures oder AllergiesIntolerances-Einträge die durch eine:n GDA als relevant gekennzeichnet wurden. Sie dient der priorisierten Darstellung aktuell versorgungsrelevanter Summary-Einträge und bildet die fachliche Grundlage für die strukturierte Verwendung in der e-Diagnose und Weiterverwendung in nachgelagerten Anwendungen (z.B..: APS). Eine manuelle Sortierung der Einträge in den jeweiligen Listen ist möglich. Die vorgenommene Sortierung wird in der e-Diagnose gespeichert und ist somit für alle anderen Zugriffsberechtigte sichtbar.
+
 **Usages:**
 
-* Examples for this Profile: [List/ListExample01](List-ListExample01.md) and [List/ListExample02](List-ListExample02.md)
+* Examples for this Profile: [List/ListAllergyExample1](List-ListAllergyExample1.md), [List/ListConditionExample1](List-ListConditionExample1.md) and [List/ListExample01](List-ListExample01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-list.json)
 
@@ -41,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-08-31T06:56:37+00:00",
+  "date" : "2026-09-09T15:08:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -104,14 +108,14 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Status des Liste.",
+      "short" : "Status der Liste.",
       "fixedCode" : "current",
       "mustSupport" : true
     },
     {
       "id" : "List.mode",
       "path" : "List.mode",
-      "short" : "Die Liste wird laufend gepflegt, hat daher den fixen Wert: working.",
+      "short" : "Die Liste wird laufend gepflegt und hat daher den festen Wert: working.",
       "fixedCode" : "working",
       "mustSupport" : true
     },
@@ -159,7 +163,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.source",
       "path" : "List.source",
-      "short" : "Person, die die Liste erstellt hat und für den Inhalt verantwortlich ist. Im Falle eines GDA: eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA-Anwendung \ndes Patienten zuzugreifen. Im Falle eines Patienten: eindeutig identifiziert durch den Z-PI.",
+      "short" : "Person, die die Liste erstellt hat und für den Inhalt verantwortlich ist. Im Falle eines GDA ist sie eindeutig über den GDA-Index identifiziert und zum Zugriff auf die ELGA-Anwendung des Patienten berechtigt. \n Im Falle eines Patienten erfolgt die eindeutige Identifizierung über den Z-PI.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -196,13 +200,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
     {
       "id" : "List.entry.deleted",
       "path" : "List.entry.deleted",
-      "short" : "Kennzeichnung, dass der Eintrag gelöscht wurde, ist nicht erlaubt (siehe Invariant lst-2).",
+      "short" : "Eine Kennzeichnung des Eintrags als gelöscht ist nicht zulässig (siehe Invariant list-emptyreason-required).",
       "max" : "0"
     },
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Datum der Aufnahme des Eintrags in die Liste wird nicht dokumentiert, da die Liste laufend gepflegt wird und das Datum der letzten Aktualisierung der Liste (List.date) dokumentiert wird.",
+      "short" : "Das Datum der Aufnahme des Eintrags in die Liste wird nicht dokumentiert, da die Liste laufend gepflegt wird. Dokumentiert wird das Datum der letzten Aktualisierung der Liste (List.date).",
       "max" : "0"
     },
     {

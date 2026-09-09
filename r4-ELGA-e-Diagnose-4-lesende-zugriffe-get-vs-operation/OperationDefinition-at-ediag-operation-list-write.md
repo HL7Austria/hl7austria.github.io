@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-write | *Version*:0.1.0 | |
-| Draft as of 2026-08-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListWrite |
+| Draft as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListWrite |
 
  
-Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. 
+Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. 
 
 ### Wer ruft diese Operation in welchem Zusammenhang auf?
 
-Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B. Allergien, Diagnosen, Prozeduren) aktualisieren (Einträge werden hinzugefügt/entfernt) oder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.
+Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. Allergien, Diagnosen, Prozeduren) aktualisieren (Einträge werden hinzugefügt/entfernt) oder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.
 
 ### Voraussetzung für den Aufruf
 
@@ -49,7 +49,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B. A
   "title" : "e-Diagnose Operation $write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-08-31T06:56:37+00:00",
+  "date" : "2026-09-09T15:08:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -66,7 +66,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B. A
       "use" : "work"
     }]
   }],
-  "description" : "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
+  "description" : "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
   "affectsState" : true,
   "code" : "write",
   "resource" : ["List"],

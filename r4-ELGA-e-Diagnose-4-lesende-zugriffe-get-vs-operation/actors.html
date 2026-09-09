@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.ELGA.EDIAG.R4\System Actors - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.EDIAG.R4\Akteure - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -88,37 +88,37 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="toc.html">Table of Contents</a>
+    <a href="toc.html">Inhaltsverzeichnis</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="scope_and_content.html">Scope and Content</a>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
       </li>
       <li>
-        <a href="background.html">Background</a>
+        <a href="background.html">Hintergrund</a>
       </li>
       <li>
-        <a href="challenges.html">Challenges</a>
+        <a href="challenges.html">Herausforderungen</a>
       </li>
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="design_choices.html">Design Choices</a>
+        <a href="design_choices.html">Designentscheidungen</a>
       </li>
       <li>
-        <a href="actors.html">System Actors</a>
+        <a href="actors.html">Akteure</a>
       </li>
       <li>
-        <a href="transaction.html">Transactions</a>
+        <a href="transaction.html">Transaktionen</a>
       </li>
       <li>
         <a href="workflowmanagement.html">Workflowmanagement</a>
@@ -126,7 +126,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Use Cases
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -150,6 +150,34 @@
   <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="download.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="https://github.com/HL7Austria/ELGA-e-Diagnose-R4/issues">Known Issues</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
@@ -162,7 +190,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>System Actors</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Akteure</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -187,7 +215,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 (Draft) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
-  <h2>System Actors</h2>
+  <h2>Akteure</h2>
   
 
 
@@ -199,12 +227,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#use-case-diagramm" id="markdown-toc-use-case-diagramm">Use Case Diagramm</a></li>
-  <li><a href="#rollen-und-berechtigungen" id="markdown-toc-rollen-und-berechtigungen">Rollen und Berechtigungen</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 <style>
 .notification-table {
@@ -288,21 +312,30 @@ width: 100%;}
 
 </style>
 
-<p>Das Kapitel gibt einen Überblick über die zentralen Anwendungsfälle der e-Diagnose und zeigt, wie die verschiedenen Akteure mit den Funktionen interagieren.</p>
-
-<p>Weiters werden in einer Tabelle alle ELGA Rollen angeführt, die Zugriff auf die Summary-Liste(n) und die Einträge erhalten sollen.</p>
-
-<h3 id="use-case-diagramm">Use Case Diagramm</h3>
-
-<p><br /></p>
-
-<p><a href="ediag_uc_diagramm.drawio.png"><img src="ediag_uc_diagramm.drawio.png" alt="diagram" style="width: 60%" /></a></p>
-
-<p><br clear="all" /></p>
+<p>Dieses Kapitel beschreibt die an der e-Diagnose beteiligten Akteure, deren Berechtigungen sowie die vorgesehenen Zugriffswege.</p>
 
 <h3 id="rollen-und-berechtigungen">Rollen und Berechtigungen</h3>
 
-<p><a href="ediag_zugriffsmatrix.png"><img src="ediag_zugriffsmatrix.png" alt="tabelle" style="width: 60%" /></a></p>
+<p>An der e-Diagnose sind insbesondere ELGA-Teilnehmer sowie Gesundheitsdiensteanbieter (GDA) beteiligt. Die detaillierten Berechtigungen der einzelnen ELGA-Rollen sind in der Architektur beschrieben.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ELGA-Rolle</th>
+      <th>Berechtigungen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ELGA-Teilnehmer</strong></td>
+      <td>🟢 <strong>Lesen</strong> · 🟠 <strong>Schreiben</strong><br />↳ Schreiben umfasst in diesem Zusammenhang das Löschen einzelner Einträge bzw. Summary-Listenversionen.</td>
+    </tr>
+    <tr>
+      <td><strong>GDA</strong></td>
+      <td>🟢 <strong>Lesen</strong> · 🟢 <strong>Schreiben</strong> · 🟠 <strong>Stornieren</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 
 
@@ -323,7 +356,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Aug 31, 2026 06:56+0000">2026-08-31</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Sep 9, 2026 15:08+0000">2026-09-09</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,13 +1,22 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Background - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Hintergrund - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
-* **Background**
+* **Hintergrund**
 
-## Background
+## Hintergrund
 
-In Arbeit.
+Die strukturierte Dokumentation und der Austausch von Conditions, Procedures und AllergiesIntolerances sind eine wesentliche Grundlage für die medizinische Versorgung. Die e-Diagnose soll diese Informationen übergreifend in ELGA verfügbar machen und damit eine gesamthafte Übersicht über den Gesundheitszustand sowie die weitere Behandlung unterstützen. Zudem soll sie die Grundlage für die Austrian Patient Summary (APS) schaffen.
 
-Im Rahmen der Anwendung eDiagnose werden unter dem Begriff „Einträge“ die FHIR-Ressourcen Condition (Diagnosen), Procedure (Prozeduren) sowie AllergyIntolerance (Allergien und Intoleranzen) zusammengefasst.
+### Fachliches Umfeld & Datenkategorien
 
-ToDo: Definition der Begriffe Einträge, Gesamtliste, Summary-Einträge, Summary-Liste
+Die IPS unterscheidet mehrere Datenkategorien. Diese werden im Rahmen der Konzeption der e-Diagnose berücksichtigt, insbesondere im Hinblick auf die spätere Verwendung der Daten für die APS.
+
+| | | |
+| :--- | :--- | :--- |
+| **Problem List** | Conditions | Diagnosen-Summary-Liste |
+| **History of Past Problems** | Conditions | Diagnosen-Summary-Einträge |
+| **History of Procedures** | Procedures | Prozeduren-Summary-Einträge |
+| **Allergies and Intolerances** | AllergiesIntolerances | Allergie- und Intoleranzen-Summary-Einträge |
+
+![](summary_listen_dokumentstruktur.png)
 

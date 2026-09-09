@@ -9,13 +9,15 @@
 
 Dieser Leitfaden beschreibt die Einführung der ELGA-Anwendung **e-Diagnose**, die eine standardisierte Erfassung, Dokumentation und Verwaltung von Diagnosen, Prozeduren, Allergien und Intoleranzen in Österreich ermöglicht.
 
-Ziel der Anwendung ist es, einen schnellen Zugriff auf die bestehenden Informationen zu ermöglichen, Doppeluntersuchungen zu vermeiden und die Behandlungsqualität nachhaltig zu verbessern. Mit der **e-Diagnose** wird der Informationsaustausch zu Diagnosen, Prozeduren, Allergien und Intoleranzen im intra- und extramuralen Bereich deutlich vereinfacht.
+Ziel der Anwendung ist es, einen schnellen Zugriff auf die bestehenden Informationen zu ermöglichen, Doppeluntersuchungen zu vermeiden und die Behandlungsqualität nachhaltig zu verbessern.
+
+Mit der **e-Diagnose** wird der Informationsaustausch zu Diagnosen, Prozeduren, Allergien und Intoleranzen im intra- und extramuralen Bereich deutlich vereinfacht.
 
 Die Anwendung bietet eine **vollständige, gemeinsame Dokumentation in ELGA** und bildet gleichzeitig die **Grundlage für die Patient Summary**.
 
-Die technische Umsetzung der eDiagnose erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS). In Anbetracht der ab 2029 vorgesehenen Sekundärnutzung medizinischer Daten im EHDS werden durch diesen Implementation Guide die technischen Grundlagen geschaffen, um eine datenschutzkonforme Nutzung strukturierter klinischer Informationen – insbesondere Diagnosen, Prozeduren, Allergien und Intoerlanzen – für gemeinwohlorientierte Forschung, Qualitätssicherung und gesundheitspolitische Steuerung zu ermöglichen.
+Die technische Umsetzung der e-Diagnose erfolgt auf Basis des HL7® FHIR®-Standards, um eine nachhaltige, interoperable und kosteneffiziente Lösung zu gewährleisten. Die vorliegende Implementierung leistet einen Beitrag zur Weiterentwicklung sowohl der österreichischen eHealth-Strategie als auch der Anforderungen des European Health Data Space (EHDS). In Anbetracht der ab 2029 vorgesehenen Sekundärnutzung medizinischer Daten im EHDS werden durch diesen Implementation Guide die technischen Grundlagen geschaffen, um eine datenschutzkonforme Nutzung strukturierter klinischer Informationen – insbesondere Diagnosen, Prozeduren, Allergien und Intoleranzen – für gemeinwohlorientierte Forschung, Qualitätssicherung und gesundheitspolitische Steuerung zu ermöglichen.
 
-Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Integration der eDiagnose in die ELGA-Infrastruktur sowie den standardisierten Austausch, die Speicherung und die Verarbeitung von Diagnosen, Prozeduren, Allergien und Intoleranzen zwischen den beteiligten Gesundheitssystemen. Dadurch wird eine semantisch interoperable und sektorenübergreifende Verfügbarkeit dieser Informationen unterstützt.
+Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Integration der e-Diagnose in die ELGA-Infrastruktur sowie den standardisierten Austausch, die Speicherung und die Verarbeitung von Diagnosen, Prozeduren, Allergien und Intoleranzen zwischen den beteiligten Gesundheitssystemen. Dadurch wird eine semantisch interoperable und sektorenübergreifende Verfügbarkeit dieser Informationen unterstützt.
 
 
 
@@ -30,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-08-31T06:56:37+00:00",
+  "date" : "2026-09-09T15:08:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -70,12 +72,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
     "version" : "5.3.0"
-  },
-  {
-    "id" : "hl7_fhir_uv_ips",
-    "uri" : "http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips",
-    "packageId" : "hl7.fhir.uv.ips",
-    "version" : "2.0.0"
   },
   {
     "id" : "hl7_at_fhir_core_r4",
@@ -663,6 +659,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListAllergyExample1.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListAllergyExample1"
+      },
+      "name" : "Allergie Summary-Liste mit einem Summary-Eintrag",
+      "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       },
       {
@@ -679,22 +691,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "CodeSystem-at-ediag-codesystem-diagnose-type.html"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/at-ediag-codesystem-diagnose-type"
-      },
-      "name" : "AT e-Diagnose Diagnose Typ",
-      "description" : "Kennzeichnet, ob eine Diagnose, Prozedur oder Allergie aktuell klinisch relevant ist",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       },
       {
@@ -706,22 +702,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT e-Diagnose Diagnosen Value Set",
       "description" : "Value-Set für die Codierung von Diagnosen.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-at-ediag-diagnosen-type.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/at-ediag-diagnosen-type"
-      },
-      "name" : "AT e-Diagnose Diagnosis Type Value Set",
-      "description" : "ValueSet zur Unterscheidung, ob eine Diagnose aktuell relevant oder nicht aktuell relevant ist.",
       "exampleBoolean" : false
     },
     {
@@ -839,22 +819,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-ediag-reference.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-ediag-reference"
-      },
-      "name" : "AT ELGA e-Diagnose Reference",
-      "description" : "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       },
       {
@@ -903,22 +867,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "AllergyIntolerance"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "AllergyIntolerance-AllergyExample.html"
-      }],
-      "reference" : {
-        "reference" : "AllergyIntolerance/AllergyExample"
-      },
-      "name" : "Beispiel Allergie",
-      "description" : "Beispielinstanz einer bestätigten Allergie",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Device"
       },
       {
@@ -935,38 +883,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Condition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-DiagnoseCurrentlyRelevantExample.html"
-      }],
-      "reference" : {
-        "reference" : "Condition/DiagnoseCurrentlyRelevantExample"
-      },
-      "name" : "Beispiel Diagnose currently relevant",
-      "description" : "Beispielinstanz einer Diagnose - currently relevant",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Condition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-DiagnoseNotCurrentlyRelevantExample.html"
-      }],
-      "reference" : {
-        "reference" : "Condition/DiagnoseNotCurrentlyRelevantExample"
-      },
-      "name" : "Beispiel Diagnose not currently relevant",
-      "description" : "Beispielinstanz einer Diagnose - not currently relevant",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
       },
       {
@@ -976,8 +892,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "List/ListExample01"
       },
-      "name" : "Beispiel einer leeren e-Diagnose-Liste",
-      "description" : "Initiale e-Diagnose-Liste ohne Diagnosen, Prozeduren oder Allergien.",
+      "name" : "Beispiel einer leeren Summary-Liste",
+      "description" : "Initiale Summary-Liste ohne Summary-Einträge.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
@@ -1015,18 +931,194 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-DiagnoseEnteredInErrorExample.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/DiagnoseEnteredInErrorExample"
+      },
+      "name" : "Beispiel stornierte Diagnose",
+      "description" : "Beispielinstanz einer stornierten Diagnose",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "AllergyIntolerance-AllergySummaryExample1.html"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/AllergySummaryExample1"
+      },
+      "name" : "Beispielinstanz einer Allergie für die Summary-Liste",
+      "description" : "Beispiel einer bestätigten Allergie",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionGesamtlisteExample1.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionGesamtlisteExample1"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionGesamtlisteExample2.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionGesamtlisteExample2"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionGesamtlisteExample3.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionGesamtlisteExample3"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionGesamtlisteExample4.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionGesamtlisteExample4"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Summary",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionSummaryExample1.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionSummaryExample1"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Summary-Liste",
+      "description" : "Beispiel einer dauerhaften Diagnose",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Procedure"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Procedure-ProcedureExample.html"
+        "valueUri" : "Procedure-ProcedureExample1.html"
       }],
       "reference" : {
-        "reference" : "Procedure/ProcedureExample"
+        "reference" : "Procedure/ProcedureExample1"
       },
-      "name" : "Beispiel Prozedur",
-      "description" : "Beispielinstanz einer Prozedur",
+      "name" : "Beispielinstanz einer Prozedur für die Summary-Liste",
+      "description" : "Beispiel einer Prozedur",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListConditionExample1.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListConditionExample1"
+      },
+      "name" : "Condition Summary-Liste mit einem Summary-Eintrag",
+      "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-ediag-operation-diagnose-delete.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-ediag-operation-diagnose-delete"
+      },
+      "name" : "e-Diagnose Operation $delete",
+      "description" : "Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-ediag-operation-list-delete-history-version.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-ediag-operation-list-delete-history-version"
+      },
+      "name" : "e-Diagnose Operation $delete-history-version",
+      "description" : "Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-ediag-operation-diagnose-entered-in-error.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-ediag-operation-diagnose-entered-in-error"
+      },
+      "name" : "e-Diagnose Operation $entered-in-error",
+      "description" : "Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -1041,23 +1133,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "OperationDefinition/at-ediag-operation-list-write"
       },
       "name" : "e-Diagnose Operation $write",
-      "description" : "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
+      "description" : "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListExample02.html"
-      }],
-      "reference" : {
-        "reference" : "List/ListExample02"
-      },
-      "name" : "e-Diagnose-Liste mit einer relevanten Diagnose",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
       "extension" : [{
@@ -1130,7 +1207,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "scope_and_content.html"
         }],
         "nameUrl" : "scope_and_content.html",
-        "title" : "Scope and Content",
+        "title" : "Umfang und Inhalt",
         "generation" : "markdown"
       },
       {
@@ -1139,7 +1216,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "background.html"
         }],
         "nameUrl" : "background.html",
-        "title" : "Background",
+        "title" : "Hintergrund",
         "generation" : "markdown"
       },
       {
@@ -1148,7 +1225,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "challenges.html"
         }],
         "nameUrl" : "challenges.html",
-        "title" : "Challenges",
+        "title" : "Herausforderungen",
         "generation" : "markdown"
       },
       {
@@ -1157,7 +1234,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "transaction.html"
         }],
         "nameUrl" : "transaction.html",
-        "title" : "Transactions",
+        "title" : "Transaktionen",
         "generation" : "markdown"
       },
       {
@@ -1166,7 +1243,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "actors.html"
         }],
         "nameUrl" : "actors.html",
-        "title" : "System Actors",
+        "title" : "Akteure",
         "generation" : "markdown"
       },
       {
@@ -1175,7 +1252,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           "valueUrl" : "design_choices.html"
         }],
         "nameUrl" : "design_choices.html",
-        "title" : "Design Choices",
+        "title" : "Designentscheidungen",
         "generation" : "markdown"
       },
       {
@@ -1230,6 +1307,60 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         }],
         "nameUrl" : "uc_ediag_03_teilnehmer.html",
         "title" : "Teilnehmerrechte ausüben",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "contributors.html"
+        }],
+        "nameUrl" : "contributors.html",
+        "title" : "Autoren und Mitwirkende",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "download.html"
+        }],
+        "nameUrl" : "download.html",
+        "title" : "Download",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "publication_info.html"
+        }],
+        "nameUrl" : "publication_info.html",
+        "title" : "Publikationsinformationen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "dependencies.html"
+        }],
+        "nameUrl" : "dependencies.html",
+        "title" : "Dependencies",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "copyright.html"
+        }],
+        "nameUrl" : "copyright.html",
+        "title" : "Copyright",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "imprint.html"
+        }],
+        "nameUrl" : "imprint.html",
+        "title" : "Impressum",
         "generation" : "markdown"
       }]
     },

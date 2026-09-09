@@ -5,15 +5,29 @@
 
 ## Lesen
 
-# Lesen
-
 > UC-01
 
 Dieses Kapitel beschreibt die lesenden Zugriffe der e-Diagnose-Fachanwendung auf einzelne Einträge sowie Summary-Listen. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.
 
-## Interaktionen auf Einzelressourcen
+### Interaktionen auf Einzelressourcen
 
-### Einzelne Einträge abrufen
+#### Einzelnen Eintrag abrufen
+
+> Sub:UC_01_XX
+
+Dieser Use-Case ermöglicht den lesenden Zugriff auf einen einzelnen Eintrag.
+
+##### Ablauf
+
+1. Der GDA oder ELGA-Teilnehmer hat einen der folgenden Requests durchgeführt:
+1. [Abruf der aktuelle Summary-Liste](#aktuelle-summary-liste-abrufen)
+1. [Abruf der Summary-Listenversion](#versionen-einer-summary-liste-abrufen)
+1. [Abruf aller Einträge](#alle-einträge-abrufen)
+
+1. Auf Basis des zuvor ausgeführten Requests wählt der GDA oder ELGA-Teilnehmer einen Eintrag aus der durch seine`id`eindeutig identifiziert wird.
+1. Der GDA führt ein`GET /[Condition|Procedure|AllergyIntolerance]/[id]`aus, um den ausgewählten Eintrag von der e-Diagnose Fachanwendung abzurufen.
+
+#### Alle Einträge abrufen
 
 > Sub:UC_01_01
 
@@ -21,60 +35,51 @@ Dieser Use-Case ermöglicht den lesenden Zugriff auf jeweils alle Einträge von 
 
 Die Interaktion liefert standardmäßig die 30 zuletzt erstellten Einträge, absteigend nach Erstellungsdatum sortiert, zurück. Da eine fachliche Bearbeitung eines Eintrags die Erstellung einer neuen Ressource impliziert, entspricht das Erstellungsdatum dem Zeitpunkt der letzten fachlichen Bearbeitung. Die Fachanwendung stellt die vorhandenen Einträge des gewählten Ressourcentyps als SearchSet-Bundle bereit.
 
-#### Ablauf
+##### Ablauf
 
 1. Der GDA oder ELGA-Teilnehmer wählt den gewünschten Ressourcentyp (Condition, Procedure oder AllergyIntolerance) der abzurufenden Einträge aus.
-1. Der GDA oder ELGA-Teilnehmer führt ein`GET`auf`/Condition`,`/Procedure`und/oder`/AllergyIntolerance`aus, siehe[Transaktionen](transaction.md#Transaktionen).
+1. Der GDA oder ELGA-Teilnehmer führt ein`GET`auf`/Condition`,`/Procedure`und/oder`/AllergyIntolerance`aus, siehe[Transaktionen](transaction.md#transaktionen).
 1. **Optional**kann der Abfrageparameter`_count`angegeben werden, um die Anzahl der zurückgelieferten Ressourcen festzulegen. Standardmäßig werden die 30 zuletzt erstellten Ressourcen, absteigend nach Erstellungsdatum sortiert, zurückgeliefert.
 1. Die Fachanwendung liefert ein SearchSet-Bundle mit den gefundenen Einträgen zurück.
 1. Sind keine Ressourcen vorhanden bzw. entsprechen keine Ressourcen den Suchkriterien, wird ein leeres SearchSet-Bundle zurückgeliefert.
 
-## Interaktionen auf Listenressourcen
+### Interaktionen auf Listenressourcen
 
-### Vergangene Versionen einer Summary-Liste abrufen (List-History-Read)
-
-**TODO: Unklar, ob Historie von Listen geführt wird (siehe https://github.com/HL7Austria/ELGA-e-Diagnose-R4/issues/13)** **TODO: Falls Historie von Listen: Entscheiden, ob bei jeder $write-Operation eine neue Liste angelegt wird, oder ob _history verwendet wird. Davon ist abhängig, ob Search (`GET`) verwendet werden kann oder eine Custom Operation für die Sucher innerhalb der _history erforderlich ist.**
+#### Versionen einer Summary-Liste abrufen
 
 > Sub:UC_01_02
 
-History Read dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Die Fachanwendung stellt bereits persistierte historische Summary-Listen unverändert bereit. Der Zugriff erfolgt lesend und ermöglicht keine nachfolgende Bearbeitung der jeweiligen Summary-Liste. Vorversionen der Summary-Listen können in chronologischer Reihenfolge dargestellt werden – absteigend nach Erstellungsdatum, d.h. die jüngste Version zuerst.
+Dieser Use-Case dient ausschließlich der Anzeige historischer Versionen der Summary-Liste. Der Zugriff erfolgt lesend und ermöglicht keine Bearbeitung der jeweiligen Summary-Listenversion.
 
-#### Ablauf
+##### Ablauf
 
-1. Der GDA fürht ein**GET**(Suche) auf den List-Typ aus.
-1. Die Fachanwendung führt die Suche anhand der angegebenen Suchparameter durch.
-1. Werden keine Summary-Listen gefunden, wird ein leeres Ergebnis zurückgeliefert.
-1. Wird zumindest eine Summary-Liste gefunden, liefert die Fachanwendung ein**Search-Bundle**zurück.
-Dieses**Search-Bundle**enthält:
-* die List-Ressource 
+1. Der GDA ruft die[aktuelle Summary-Liste](uc_ediag_01_lesen.md#aktuelle-summary-liste-abrufen)ab, wodurch er das entsprechende SearchSet-Bundle und damit die`id`der Summary-Liste erhält.
+1. In einem zweiten Request kann der GDA jetzt auf die gesamte History von der Summary-Liste zugreifen.
+1. Die e-Diagnose Fachanwendung liefert ein History-Bundle zurück, das alle Summary-Listenversionen enthält.`GET /List/[id]/_history`
+1. Zu einer Summary-Listenversion können die[referenzierten Diagnosen von der e-Diagnose Fachanwendung](#einzelnen-eintrag-abrufen)abgefragt werden.
 
-* alle referenzierten Ressourcen (Patient, Practitioner, Condition, Procedure, AllergyIntolerance)
+###### Alternativer Ablauf
 
-Beim List History Read erfolgt **keine Veränderung** von Flags, Status oder Inhalten durch die Fachanwendung.
- Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage von aktueller oder historischer Summary-Listversionen.
+1. Alternativ kann auch direkt auf eine bestimmte Version zugegriffen werden:`GET /List/[id]/_history/[vid]`
+1. Die e-Diagnose Fachanwendung liefert die entsprechende Summary-Listenversion zurück.
 
-#### Sequenzdiagramm
+##### Sequenzdiagramm
 
-**Beispiele für Zugriffe mittels Suchparameter:**
-
-* **Aktuelle Summary-Listenversion** der Summary-Einträge (Conditions) mit dem Suchparameter Patient abrufen: `GET /List?_include=List:patient&_include=List:source&_include:iterate=List:item&_count=1&_sort=-date&code=http://loinc.org|11450-4`
-* **Alle Summary-Listenversionen** der Summary-Einträge (Procedures) mit dem Suchparameter Patient abrufen: `GET /List?_include=List:patient&_include=List:source&_include:iterate=List:item&_sort=-date&code=http://loinc.org|47519-4`
-
-### Aktuelle Summary-Liste abrufen
+#### Aktuelle Summary-Liste abrufen
 
 > Sub:UC_01_03
 
 Diese Abfrage dient dem Abruf der aktuellen Summary-Liste für eine Art von Einträgen.
 
-#### Ablauf
+##### Ablauf
 
 1. Der GDA führt ein`GET /List?code=[code]&_sort=-date&_count=1&include=*`aus.
 1. Die Fachanwendung liefert als Ergebnis ein SearchSet-Bundle, das die Summary-Liste inklusive aller referenzierter Ressourcen enthält, an den GDA. Die Information für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)ist in`List.meta.versionId`.
 1. Die zurückgelieferte Summary-Liste bildet die Grundlage für nachfolgende Änderungsoperationen.
 
-##### Alternativer Ablauf
+###### Alternativer Ablauf
 
 1. Es kann auch`GET /List?code=[code]&_sort=-date&_count=1`ausgeführt werden, um die Summary-Liste OHNE referenzierte Ressourcen abzurufen.
 
-#### Sequenzdiagramm
+##### Sequenzdiagramm
 
