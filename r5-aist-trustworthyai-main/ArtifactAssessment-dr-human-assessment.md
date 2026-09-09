@@ -6,7 +6,7 @@
 
 ## Example ArtifactAssessment: ArtifactAssessment: Human Validation
 
-Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-oversight.md)
+Profile: [Trust AI Human Oversight Assessment](StructureDefinition-trust-ai-human-oversight.md)
 
 **date**: 2026-03-10 09:10:00+0000
 
@@ -30,7 +30,7 @@ Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-over
   "resourceType" : "ArtifactAssessment",
   "id" : "dr-human-assessment",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-human-oversight"]
   },
   "date" : "2026-03-10T09:10:00Z",
   "artifactReference" : {
@@ -40,7 +40,7 @@ Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-over
     "summary" : "The clinician reviewed the AI-generated diagnostic report and accepted its conclusion.",
     "classifier" : [{
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-human-oversight-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-human-oversight-cs",
         "code" : "human-validation",
         "display" : "Human Validation"
       }]

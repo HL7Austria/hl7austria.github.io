@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-retention-information | *Version*:0.1.0 |
-| Draft as of 2026-09-07 | *Computable Name*:AIRetentionInformation |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-retention-information | *Version*:0.1.0 |
+| Draft as of 2026-09-09 | *Computable Name*:AIRetentionInformation |
 
 Documents the stated retention duration for AI-related data, outputs, logs, or documentation.
 
@@ -19,10 +19,10 @@ Documents the stated retention duration for AI-related data, outputs, logs, or d
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md), [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Use this Extension: [Trust AI Act Model Card](StructureDefinition-trust-ai-model-card.md)
+* Examples for this Extension: [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-retention-information.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-ai-retention-information.json)
 
 ### Formal Views of Extension Content
 
@@ -46,12 +46,12 @@ Other representations of profile: [CSV](StructureDefinition-ai-retention-informa
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-retention-information",
+  "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-retention-information",
   "version" : "0.1.0",
   "name" : "AIRetentionInformation",
   "title" : "AI Retention Information",
   "status" : "draft",
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents the stated retention duration for AI-related data, outputs, logs, or documentation.",
   "fhirVersion" : "5.0.0",
@@ -110,7 +110,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-retention-informa
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-retention-information"
+      "fixedUri" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-retention-information"
     },
     {
       "id" : "Extension.value[x]",

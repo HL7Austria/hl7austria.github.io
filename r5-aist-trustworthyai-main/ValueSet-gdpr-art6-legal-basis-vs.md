@@ -8,15 +8,15 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs | *Version*:0.1.0 |
-| Active as of 2026-09-07 | *Computable Name*:GDPRArt6LegalBasisVS |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs | *Version*:0.1.0 |
+| Active as of 2026-09-09 | *Computable Name*:GDPRArt6LegalBasisVS |
 
  
 Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data. 
 
  **References** 
 
-* [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
+* [Trust AI Provenance](StructureDefinition-trust-ai-provenance.md)
 
 ### Logical Definition (CLD)
 
@@ -45,18 +45,18 @@ Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basi
 {
   "resourceType" : "ValueSet",
   "id" : "gdpr-art6-legal-basis-vs",
-  "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs",
+  "url" : "http://example.org/fhir/trust-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs",
   "version" : "0.1.0",
   "name" : "GDPRArt6LegalBasisVS",
   "title" : "GDPR Article 6 Legal Basis Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem"
+      "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art6-codesystem"
     }]
   }
 }

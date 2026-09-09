@@ -6,7 +6,7 @@
 
 ## Example DocumentReference: Model Card: RiskAssist AI v1.0.0
 
-Profile: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
+Profile: [Trust AI Act Model Card](StructureDefinition-trust-ai-model-card.md)
 
 **AI Clinical Validation Status**: Not Clinically Validated
 
@@ -18,7 +18,7 @@ Profile: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
 
 > **AI Training Data Metadata**
 * provenance: No real training data are used. The component is used only to simulate AI-like outputs for the PoC.
-* ehdsCategory: Electronic Health Records
+* Category: Electronic Health Records
 * dataQuality: Complete
 
 > **AI Retention Information**
@@ -28,7 +28,7 @@ Profile: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
 
 **type**: AI Model Card
 
-**subject**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**subject**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 **date**: 2026-03-01 10:00:00+0000
 
@@ -43,7 +43,7 @@ Synthetic model card for a deterministic AI-output simulation component used in 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **ContentType** | **Url** | **Title** |
-| * | text/html | [https://fh-ooe.at/fhir/eu-ai-transparency/riskassist/model-card](https://fh-ooe.at/fhir/eu-ai-transparency/riskassist/model-card) | RiskAssist AI Model Card |
+| * | text/html | [https://fh-ooe.at/fhir/trust-ai-transparency/riskassist/model-card](https://fh-ooe.at/fhir/trust-ai-transparency/riskassist/model-card) | RiskAssist AI Model Card |
 
 
 > **content**
@@ -53,7 +53,7 @@ Synthetic model card for a deterministic AI-output simulation component used in 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **ContentType** | **Url** | **Title** |
-| * | text/html | [https://fh-ooe.at/fhir/eu-ai-transparency/riskassist/technical-documentation](https://fh-ooe.at/fhir/eu-ai-transparency/riskassist/technical-documentation) | Technical Documentation |
+| * | text/html | [https://fh-ooe.at/fhir/trust-ai-transparency/riskassist/technical-documentation](https://fh-ooe.at/fhir/trust-ai-transparency/riskassist/technical-documentation) | Technical Documentation |
 
 
 
@@ -65,13 +65,13 @@ Synthetic model card for a deterministic AI-output simulation component used in 
   "resourceType" : "DocumentReference",
   "id" : "modelcard-riskassist-ai",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-model-card"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-model-card"]
   },
   "extension" : [{
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-clinical-validation-status",
     "valueCodeableConcept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-clinical-validation-status-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-clinical-validation-status-cs",
         "code" : "not-clinically-validated",
         "display" : "Not Clinically Validated"
       }]
@@ -83,7 +83,7 @@ Synthetic model card for a deterministic AI-output simulation component used in 
         "url" : "type",
         "valueCodeableConcept" : {
           "coding" : [{
-            "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-performance-metric-cs",
+            "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-performance-metric-cs",
             "code" : "accuracy",
             "display" : "Accuracy"
           }]
@@ -104,7 +104,7 @@ Synthetic model card for a deterministic AI-output simulation component used in 
       "url" : "biasDisclosure",
       "valueString" : "No bias evaluation is claimed for this synthetic PoC model."
     }],
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics"
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-performance-metrics"
   },
   {
     "extension" : [{
@@ -112,10 +112,10 @@ Synthetic model card for a deterministic AI-output simulation component used in 
       "valueString" : "No real training data are used. The component is used only to simulate AI-like outputs for the PoC."
     },
     {
-      "url" : "ehdsCategory",
+      "url" : "Category",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-data-category-cs",
+          "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/data-category-cs",
           "code" : "ehr"
         }]
       }
@@ -124,13 +124,13 @@ Synthetic model card for a deterministic AI-output simulation component used in 
       "url" : "dataQuality",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-data-quality-cs",
+          "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-data-quality-cs",
           "code" : "complete",
           "display" : "Complete"
         }]
       }
     }],
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data"
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-training-data"
   },
   {
     "extension" : [{
@@ -142,12 +142,12 @@ Synthetic model card for a deterministic AI-output simulation component used in 
         "code" : "a"
       }
     }],
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-retention-information"
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-retention-information"
   }],
   "status" : "current",
   "type" : {
     "coding" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-artifact-type-cs",
+      "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-artifact-type-cs",
       "code" : "model-card",
       "display" : "AI Model Card"
     }]
@@ -160,14 +160,14 @@ Synthetic model card for a deterministic AI-output simulation component used in 
   "content" : [{
     "attachment" : {
       "contentType" : "text/html",
-      "url" : "https://fh-ooe.at/fhir/eu-ai-transparency/riskassist/model-card",
+      "url" : "https://fh-ooe.at/fhir/trust-ai-transparency/riskassist/model-card",
       "title" : "RiskAssist AI Model Card"
     }
   },
   {
     "attachment" : {
       "contentType" : "text/html",
-      "url" : "https://fh-ooe.at/fhir/eu-ai-transparency/riskassist/technical-documentation",
+      "url" : "https://fh-ooe.at/fhir/trust-ai-transparency/riskassist/technical-documentation",
       "title" : "Technical Documentation"
     }
   }]

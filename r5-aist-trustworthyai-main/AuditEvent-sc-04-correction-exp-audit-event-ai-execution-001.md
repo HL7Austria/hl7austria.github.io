@@ -6,9 +6,9 @@
 
 ## Example AuditEvent: Audit Log: AI Execution Trace (4)
 
-Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
+Profile: [Trust AI Execution Audit Event](StructureDefinition-trust-ai-machine-execution-audit-event.md)
 
-**EU AI Log Integrity Signature**: No display for Signature (type: Verification Signature (ASTM Signature Type Codes#1.2.840.10065.1.12.1.5); when: 2026-03-01 10:15:04+0000; who: ->Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.; sigFormat: text/plain; data: c2hhMjU2LWUwNTFjNDEzNmNhZWEwMmIy...)
+**Trust AI Log Integrity Signature**: No display for Signature (type: Verification Signature (ASTM Signature Type Codes#1.2.840.10065.1.12.1.5); when: 2026-03-01 10:15:04+0000; who: ->Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.; sigFormat: text/plain; data: c2hhMjU2LWUwNTFjNDEzNmNhZWEwMmIy...)
 
 **code**: RESTful Operation
 
@@ -29,14 +29,14 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
 | | | |
 | :--- | :--- | :--- |
 | - | **Who** | **Requestor** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) | false |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) | false |
 
 ### Sources
 
 | | |
 | :--- | :--- |
 | - | **Observer** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md) |
 
 ### Entities
 
@@ -54,10 +54,10 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
   "resourceType" : "AuditEvent",
   "id" : "sc-04-correction-exp-audit-event-ai-execution-001",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-machine-execution-audit-event"]
   },
   "extension" : [{
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-log-integrity",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-log-integrity",
     "valueSignature" : {
       "type" : [{
         "system" : "urn:iso-astm:E1762-95:2013",
@@ -112,7 +112,7 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
     },
     "role" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-audit-entity-role",
         "code" : "ai-output"
       }],
       "text" : "Report"

@@ -6,7 +6,7 @@
 
 ## Example AuditEvent: AuditEvent: AI Diagnostic Report Generation
 
-Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-execution-audit-event.md)
+Profile: [Trust AI Execution Audit Event](StructureDefinition-trust-ai-machine-execution-audit-event.md)
 
 **code**: AI diagnostic report generation
 
@@ -21,14 +21,14 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
 | | | |
 | :--- | :--- | :--- |
 | - | **Who** | **Requestor** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) | false |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) | false |
 
 ### Sources
 
 | | |
 | :--- | :--- |
 | - | **Observer** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) |
 
 ### Entities
 
@@ -46,7 +46,7 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
   "resourceType" : "AuditEvent",
   "id" : "dr-ai-audit-event",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-machine-execution-audit-event"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-machine-execution-audit-event"]
   },
   "code" : {
     "text" : "AI diagnostic report generation"
@@ -74,7 +74,7 @@ Profile: [EU AI Execution Audit Event](StructureDefinition-eu-ai-machine-executi
     },
     "role" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-audit-entity-role",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-audit-entity-role",
         "code" : "ai-output"
       }]
     }

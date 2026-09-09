@@ -6,7 +6,7 @@
 
 ## Example Device: Device: DiagnosticAssist AI
 
-Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md)
+Profile: [Trust AI System Device](StructureDefinition-trust-ai-device.md)
 
 > **Third-Country Data Transfer**
 * transferFlag: false
@@ -15,7 +15,7 @@ Profile: [EU AI System Device](StructureDefinition-eu-ai-device.md)
 
 **EU Conformity Declaration Reference**: [DocumentReference: status = current](DocumentReference-eu-conformity-declaration-2.md)
 
-**identifier**: EU AI Registration Number/EU-AI-DIAG-001
+**identifier**: Trust AI Registration Number/trust-ai-DIAG-001
 
 **status**: Active
 
@@ -70,23 +70,23 @@ Annual maintenance and validation required.
   "resourceType" : "Device",
   "id" : "dr-ai-device",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-device"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-device"]
   },
   "extension" : [{
     "extension" : [{
       "url" : "transferFlag",
       "valueBoolean" : false
     }],
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/third-country-data-transfer"
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/third-country-data-transfer"
   },
   {
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ext-model-card",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ext-model-card",
     "valueReference" : {
       "reference" : "DocumentReference/dr-model-card"
     }
   },
   {
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-conformity-reference",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-conformity-reference",
     "valueReference" : {
       "reference" : "DocumentReference/eu-conformity-declaration-2"
     }
@@ -94,12 +94,12 @@ Annual maintenance and validation required.
   "identifier" : [{
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-identifier-type-cs",
-        "code" : "eu-ai-registration-number"
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-identifier-type-cs",
+        "code" : "trust-ai-registration-number"
       }]
     },
-    "system" : "http://example.org/fhir/sid/eu-ai-database",
-    "value" : "EU-AI-DIAG-001"
+    "system" : "http://example.org/fhir/sid/trust-ai-database",
+    "value" : "trust-ai-DIAG-001"
   }],
   "status" : "active",
   "manufacturer" : "Example AI Medical GmbH",
@@ -118,7 +118,7 @@ Annual maintenance and validation required.
   "property" : [{
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-system-property-cs",
         "code" : "ce-mark"
       }]
     },
@@ -127,7 +127,7 @@ Annual maintenance and validation required.
   {
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-system-property-cs",
         "code" : "expected-lifetime"
       }]
     },
@@ -141,7 +141,7 @@ Annual maintenance and validation required.
   {
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-system-property-cs",
         "code" : "intended-purpose"
       }]
     },
@@ -150,7 +150,7 @@ Annual maintenance and validation required.
   {
     "type" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-system-property-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-system-property-cs",
         "code" : "target-population"
       }]
     },

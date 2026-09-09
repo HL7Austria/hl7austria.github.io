@@ -6,7 +6,7 @@
 
 ## Example Organization: Manufacturer Organization: ExampleMed AI GmbH
 
-Profile: [EU AI Responsible Organization](StructureDefinition-eu-ai-organization.md)
+Profile: [Trust AI Responsible Organization](StructureDefinition-trust-ai-organization.md)
 
 **active**: true
 
@@ -32,7 +32,7 @@ Profile: [EU AI Responsible Organization](StructureDefinition-eu-ai-organization
   "resourceType" : "Organization",
   "id" : "organization-examplemed",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-organization"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-organization"]
   },
   "active" : true,
   "type" : [{
@@ -55,7 +55,7 @@ Profile: [EU AI Responsible Organization](StructureDefinition-eu-ai-organization
   {
     "purpose" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-contact-purpose-cs",
         "code" : "dpo",
         "display" : "Data Protection Officer"
       }]
@@ -72,7 +72,7 @@ Profile: [EU AI Responsible Organization](StructureDefinition-eu-ai-organization
   {
     "purpose" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-contact-purpose-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-contact-purpose-cs",
         "code" : "ai-incident-reporting",
         "display" : "AI Incident Reporting Contact"
       }]

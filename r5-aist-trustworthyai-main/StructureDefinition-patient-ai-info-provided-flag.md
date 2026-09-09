@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/patient-ai-info-provided-flag | *Version*:0.1.0 |
-| Draft as of 2026-09-07 | *Computable Name*:PatientAIInfoProvidedFlag |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/patient-ai-info-provided-flag | *Version*:0.1.0 |
+| Draft as of 2026-09-09 | *Computable Name*:PatientAIInfoProvidedFlag |
 
 This flag represents whether the patient has been informed about the AI-related processing activity
 
@@ -19,10 +19,10 @@ This flag represents whether the patient has been informed about the AI-related 
 
 **Usages:**
 
-* Use this Extension: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-patient-explanation.md)
+* Use this Extension: [Trust AI Patient Explanation Communication](StructureDefinition-trust-ai-patient-explanation.md)
 * Examples for this Extension: [Communication/dr-patient-communication](Communication-dr-patient-communication.md) and [Communication/sc-04-correction-exp-patient-explanation-001](Communication-sc-04-correction-exp-patient-explanation-001.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-patient-ai-info-provided-flag.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-patient-ai-info-provided-flag.json)
 
 ### Formal Views of Extension Content
 
@@ -46,12 +46,12 @@ Other representations of profile: [CSV](StructureDefinition-patient-ai-info-prov
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/patient-ai-info-provided-flag",
+  "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/patient-ai-info-provided-flag",
   "version" : "0.1.0",
   "name" : "PatientAIInfoProvidedFlag",
   "title" : "Patient AI Info Provided Flag",
   "status" : "draft",
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "This flag represents whether the patient has been informed about the AI-related processing activity",
   "fhirVersion" : "5.0.0",
@@ -84,7 +84,7 @@ Other representations of profile: [CSV](StructureDefinition-patient-ai-info-prov
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/patient-ai-info-provided-flag"
+      "fixedUri" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/patient-ai-info-provided-flag"
     },
     {
       "id" : "Extension.value[x]",

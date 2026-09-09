@@ -6,7 +6,7 @@
 
 ## Example ArtifactAssessment: Assessment: Human Override of AI Output (3)
 
-Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-oversight.md)
+Profile: [Trust AI Human Oversight Assessment](StructureDefinition-trust-ai-human-oversight.md)
 
 **date**: 2026-03-01 10:20:00+0000
 
@@ -30,7 +30,7 @@ Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-over
   "resourceType" : "ArtifactAssessment",
   "id" : "sc-03-override-human-oversight-001",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-human-oversight"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-human-oversight"]
   },
   "date" : "2026-03-01T10:20:00Z",
   "artifactReference" : {
@@ -40,7 +40,7 @@ Profile: [EU AI Human Oversight Assessment](StructureDefinition-eu-ai-human-over
     "summary" : "The clinician overrode the simulated low-risk AI output due to additional synthetic clinical concerns.",
     "classifier" : [{
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-human-oversight-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-human-oversight-cs",
         "code" : "human-override",
         "display" : "Human Override"
       }]

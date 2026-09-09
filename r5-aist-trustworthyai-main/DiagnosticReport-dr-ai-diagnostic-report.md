@@ -6,7 +6,7 @@
 
 ## Example DiagnosticReport: AI Output: Diagnostic Report
 
-Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-generated = 'AI Generated')](CodeSystem-eu-ai-involvement-cs.md)
+Security Label: [AI Generated (Details: Trust AI Involvement Code System code ai-generated = 'AI Generated')](CodeSystem-trust-ai-involvement-cs.md)
 
 ## AI-generated diagnostic assessment 
 
@@ -35,7 +35,7 @@ The findings indicate an increased probability of an acute infectious process.
   "id" : "dr-ai-diagnostic-report",
   "meta" : {
     "security" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs",
+      "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-involvement-cs",
       "code" : "ai-generated",
       "display" : "AI Generated"
     }]

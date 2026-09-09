@@ -6,7 +6,7 @@
 
 ## Example Observation: AI Output: Early Warning Risk Assessment (3)
 
-Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-generated = 'AI Generated')](CodeSystem-eu-ai-involvement-cs.md)
+Profile: [Trust AI Generated Observation](StructureDefinition-trust-ai-observation.md)
 
 **status**: Final
 
@@ -22,6 +22,8 @@ Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-ge
 
 **value**: low-risk
 
+**interpretation**: AI Generated
+
 **note**: 
 
 > 
@@ -29,7 +31,7 @@ Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-ge
 No immediate escalation suggested
 
 
-**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 > **component****code**: Confidence**value**: 0.68 1 (Details: UCUM code1 = '1')
 
@@ -44,11 +46,7 @@ No immediate escalation suggested
   "resourceType" : "Observation",
   "id" : "sc-03-override-ai-observation-risk-001",
   "meta" : {
-    "security" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs",
-      "code" : "ai-generated",
-      "display" : "AI Generated"
-    }]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-observation"]
   },
   "status" : "final",
   "code" : {
@@ -67,6 +65,12 @@ No immediate escalation suggested
   "valueCodeableConcept" : {
     "text" : "low-risk"
   },
+  "interpretation" : [{
+    "coding" : [{
+      "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-involvement-cs",
+      "code" : "ai-generated"
+    }]
+  }],
   "note" : [{
     "text" : "No immediate escalation suggested"
   }],

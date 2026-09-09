@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics | *Version*:0.1.0 |
-| Draft as of 2026-09-07 | *Computable Name*:AIPerformanceMetrics |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-performance-metrics | *Version*:0.1.0 |
+| Draft as of 2026-09-09 | *Computable Name*:AIPerformanceMetrics |
 
 Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.
 
@@ -19,10 +19,10 @@ Documents quantitative performance measures and optional disclosures concerning 
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md), [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Use this Extension: [Trust AI Act Model Card](StructureDefinition-trust-ai-model-card.md)
+* Examples for this Extension: [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-performance-metrics.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-ai-performance-metrics.json)
 
 ### Formal Views of Extension Content
 
@@ -48,12 +48,12 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics",
+  "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-performance-metrics",
   "version" : "0.1.0",
   "name" : "AIPerformanceMetrics",
   "title" : "AI Performance Metrics",
   "status" : "draft",
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents quantitative performance measures and optional disclosures concerning bias, subgroup performance, or limitations of the evaluation.",
   "fhirVersion" : "5.0.0",
@@ -122,7 +122,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-performance-metric-vs"
+        "valueSet" : "http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-performance-metric-vs"
       }
     },
     {
@@ -189,7 +189,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-performance-metri
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-performance-metrics"
+      "fixedUri" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-performance-metrics"
     },
     {
       "id" : "Extension.value[x]",

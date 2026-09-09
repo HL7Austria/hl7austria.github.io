@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem | *Version*:0.1.0 |
-| Active as of 2026-09-07 | *Computable Name*:GDPRArt6CodeSystem |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art6-codesystem | *Version*:0.1.0 |
+| Active as of 2026-09-09 | *Computable Name*:GDPRArt6CodeSystem |
 
  
 Codes representing the legal bases listed in Article 6(1) GDPR for processing personal data. 
@@ -26,13 +26,13 @@ Codes representing the legal bases listed in Article 6(1) GDPR for processing pe
 {
   "resourceType" : "CodeSystem",
   "id" : "gdpr-art6-codesystem",
-  "url" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem",
+  "url" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art6-codesystem",
   "version" : "0.1.0",
   "name" : "GDPRArt6CodeSystem",
   "title" : "GDPR Article 6 Legal Basis Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes representing the legal bases listed in Article 6(1) GDPR for processing personal data.",
   "caseSensitive" : true,

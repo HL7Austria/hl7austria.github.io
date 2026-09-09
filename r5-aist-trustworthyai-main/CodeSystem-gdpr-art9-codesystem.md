@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem | *Version*:0.1.0 |
-| Active as of 2026-09-07 | *Computable Name*:GDPRArt9CodeSystem |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art9-codesystem | *Version*:0.1.0 |
+| Active as of 2026-09-09 | *Computable Name*:GDPRArt9CodeSystem |
 
  
 Codes representing selected conditions in Article 9(2) GDPR under which special categories of personal data may be processed. 
@@ -26,13 +26,13 @@ Codes representing selected conditions in Article 9(2) GDPR under which special 
 {
   "resourceType" : "CodeSystem",
   "id" : "gdpr-art9-codesystem",
-  "url" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem",
+  "url" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art9-codesystem",
   "version" : "0.1.0",
   "name" : "GDPRArt9CodeSystem",
   "title" : "GDPR Article 9 Condition Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes representing selected conditions in Article 9(2) GDPR under which special categories of personal data may be processed.",
   "caseSensitive" : true,

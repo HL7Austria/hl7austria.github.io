@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status | *Version*:0.1.0 |
-| Draft as of 2026-09-07 | *Computable Name*:AIClinicalValidationStatus |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-clinical-validation-status | *Version*:0.1.0 |
+| Draft as of 2026-09-09 | *Computable Name*:AIClinicalValidationStatus |
 
 Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.
 
@@ -19,10 +19,10 @@ Records the documented validation status of the AI system, such as clinically va
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md), [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Use this Extension: [Trust AI Act Model Card](StructureDefinition-trust-ai-model-card.md)
+* Examples for this Extension: [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-clinical-validation-status.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-ai-clinical-validation-status.json)
 
 ### Formal Views of Extension Content
 
@@ -48,12 +48,12 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status",
+  "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-clinical-validation-status",
   "version" : "0.1.0",
   "name" : "AIClinicalValidationStatus",
   "title" : "AI Clinical Validation Status",
   "status" : "draft",
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the documented validation status of the AI system, such as clinically validated, under clinical validation, technically validated only, or not clinically validated.",
   "fhirVersion" : "5.0.0",
@@ -86,7 +86,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-clinical-validation-status"
+      "fixedUri" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-clinical-validation-status"
     },
     {
       "id" : "Extension.value[x]",
@@ -97,7 +97,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-clinical-validati
       }],
       "binding" : {
         "strength" : "required",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-clinical-validation-status-vs"
+        "valueSet" : "http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-clinical-validation-status-vs"
       }
     }]
   }

@@ -6,7 +6,7 @@
 
 ## Example PractitionerRole: PractitionerRole: Diagnostic Reviewer
 
-Profile: [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md)
+Profile: [Trust AI Practitioner Role](StructureDefinition-trust-ai-practitionerrole.md)
 
 **AI System-Specific Training Status**: true
 
@@ -27,10 +27,10 @@ Profile: [EU AI Practitioner Role](StructureDefinition-eu-ai-practitionerrole.md
   "resourceType" : "PractitionerRole",
   "id" : "dr-practitioner-role",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-practitionerrole"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-practitionerrole"]
   },
   "extension" : [{
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-system-training-status",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-system-training-status",
     "valueBoolean" : true
   }],
   "practitioner" : {

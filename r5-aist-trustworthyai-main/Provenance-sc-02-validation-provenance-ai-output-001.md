@@ -6,7 +6,7 @@
 
 ## Example Provenance: Provenance: AI Output Generation (2)
 
-Profile: [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
+Profile: [Trust AI Provenance](StructureDefinition-trust-ai-provenance.md)
 
 Provenance for [Observation ](Observation-sc-02-validation-ai-observation-risk-001.md)
 
@@ -20,7 +20,7 @@ Summary
 
 **Agents**
 
-* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 
 
@@ -31,30 +31,30 @@ Summary
   "resourceType" : "Provenance",
   "id" : "sc-02-validation-provenance-ai-output-001",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-provenance"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-provenance"]
   },
   "extension" : [{
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ehds-usage-category",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/usage-category",
     "valueCodeableConcept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/ehds-usage-category-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/usage-category-cs",
         "code" : "primary-use",
         "display" : "Primary Use"
       }]
     }
   },
   {
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/case-specific-indication",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/case-specific-indication",
     "valueCodeableConcept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-case-specific-indication-cs",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-case-specific-indication-cs",
         "code" : "prognosis",
         "display" : "Prognostic Prediction"
       }]
     }
   },
   {
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/automated-decision-flag",
     "valueBoolean" : false
   }],
   "target" : [{
@@ -68,7 +68,7 @@ Summary
   "authorization" : [{
     "concept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art6-codesystem",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art6-codesystem",
         "code" : "gdpr-art-6-1-d"
       }]
     }
@@ -76,7 +76,7 @@ Summary
   {
     "concept" : {
       "coding" : [{
-        "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem",
+        "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art9-codesystem",
         "code" : "gdpr-art-9-2-h"
       }]
     }

@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag | *Version*:0.1.0 |
-| Draft as of 2026-09-07 | *Computable Name*:AutomatedDecisionFlag |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/automated-decision-flag | *Version*:0.1.0 |
+| Draft as of 2026-09-09 | *Computable Name*:AutomatedDecisionFlag |
 
 Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.
 
@@ -19,10 +19,10 @@ Indicates whether the documented AI-supported processing resulted in a decision 
 
 **Usages:**
 
-* Use this Extension: [EU AI Generated Observation](StructureDefinition-eu-ai-observation.md) and [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
+* Use this Extension: [Trust AI Provenance](StructureDefinition-trust-ai-provenance.md)
 * Examples for this Extension: [Provenance/dr-ai-provenance](Provenance-dr-ai-provenance.md), [Provenance/example-secondary-use-provenance](Provenance-example-secondary-use-provenance.md), [Provenance/sc-01-ai-only-provenance-ai-output-001](Provenance-sc-01-ai-only-provenance-ai-output-001.md), [Provenance/sc-02-validation-provenance-ai-output-001](Provenance-sc-02-validation-provenance-ai-output-001.md)... Show 2 more, [Provenance/sc-03-override-provenance-ai-output-001](Provenance-sc-03-override-provenance-ai-output-001.md) and [Provenance/sc-04-correction-exp-provenance-ai-output-001](Provenance-sc-04-correction-exp-provenance-ai-output-001.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-automated-decision-flag.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-automated-decision-flag.json)
 
 ### Formal Views of Extension Content
 
@@ -46,12 +46,12 @@ Other representations of profile: [CSV](StructureDefinition-automated-decision-f
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag",
+  "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/automated-decision-flag",
   "version" : "0.1.0",
   "name" : "AutomatedDecisionFlag",
   "title" : "Automated Decision-Making Flag",
   "status" : "draft",
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Indicates whether the documented AI-supported processing resulted in a decision made solely by automated means.",
   "fhirVersion" : "5.0.0",
@@ -84,7 +84,7 @@ Other representations of profile: [CSV](StructureDefinition-automated-decision-f
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/automated-decision-flag"
+      "fixedUri" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/automated-decision-flag"
     },
     {
       "id" : "Extension.value[x]",

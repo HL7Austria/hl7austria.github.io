@@ -6,7 +6,7 @@
 
 ## Example Observation: AI Output: Early Warning Risk Assessment (2)
 
-Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-generated = 'AI Generated')](CodeSystem-eu-ai-involvement-cs.md)
+Profile: [Trust AI Generated Observation](StructureDefinition-trust-ai-observation.md)
 
 **status**: Final
 
@@ -22,6 +22,8 @@ Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-ge
 
 **value**: high-risk
 
+**interpretation**: AI Generated
+
 **note**: 
 
 > 
@@ -29,7 +31,7 @@ Security Label: [AI Generated (Details: EU AI Involvement Code System code ai-ge
 Urgent clinical review recommended
 
 
-**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = EU AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 > **component****code**: Confidence**value**: 0.86 1 (Details: UCUM code1 = '1')
 
@@ -44,11 +46,7 @@ Urgent clinical review recommended
   "resourceType" : "Observation",
   "id" : "sc-02-validation-ai-observation-risk-001",
   "meta" : {
-    "security" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/eu-ai-involvement-cs",
-      "code" : "ai-generated",
-      "display" : "AI Generated"
-    }]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-observation"]
   },
   "status" : "final",
   "code" : {
@@ -67,6 +65,12 @@ Urgent clinical review recommended
   "valueCodeableConcept" : {
     "text" : "high-risk"
   },
+  "interpretation" : [{
+    "coding" : [{
+      "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-involvement-cs",
+      "code" : "ai-generated"
+    }]
+  }],
   "note" : [{
     "text" : "Urgent clinical review recommended"
   }],

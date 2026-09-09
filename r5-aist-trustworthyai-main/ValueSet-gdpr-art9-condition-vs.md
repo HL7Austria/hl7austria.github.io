@@ -8,15 +8,15 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-condition-vs | *Version*:0.1.0 |
-| Active as of 2026-09-07 | *Computable Name*:GDPRArt9ConditionVS |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/gdpr-art9-condition-vs | *Version*:0.1.0 |
+| Active as of 2026-09-09 | *Computable Name*:GDPRArt9ConditionVS |
 
  
 Selected Article 9(2) GDPR conditions relevant to processing health data and other special categories of personal data in this implementation guide. 
 
  **References** 
 
-* [EU AI Provenance](StructureDefinition-eu-ai-provenance.md)
+* [Trust AI Provenance](StructureDefinition-trust-ai-provenance.md)
 
 ### Logical Definition (CLD)
 
@@ -45,18 +45,18 @@ Selected Article 9(2) GDPR conditions relevant to processing health data and oth
 {
   "resourceType" : "ValueSet",
   "id" : "gdpr-art9-condition-vs",
-  "url" : "http://example.org/fhir/eu-ai-transparency/ValueSet/gdpr-art9-condition-vs",
+  "url" : "http://example.org/fhir/trust-ai-transparency/ValueSet/gdpr-art9-condition-vs",
   "version" : "0.1.0",
   "name" : "GDPRArt9ConditionVS",
   "title" : "GDPR Article 9 Condition Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Selected Article 9(2) GDPR conditions relevant to processing health data and other special categories of personal data in this implementation guide.",
   "compose" : {
     "include" : [{
-      "system" : "http://example.org/fhir/eu-ai-transparency/CodeSystem/gdpr-art9-codesystem"
+      "system" : "http://example.org/fhir/trust-ai-transparency/CodeSystem/gdpr-art9-codesystem"
     }]
   }
 }

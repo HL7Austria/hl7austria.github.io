@@ -6,7 +6,7 @@
 
 ## Example Communication: Communication: Patient Explanation
 
-Profile: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-patient-explanation.md)
+Profile: [Trust AI Patient Explanation Communication](StructureDefinition-trust-ai-patient-explanation.md)
 
 **Patient AI Info Provided Flag**: true
 
@@ -36,10 +36,10 @@ Profile: [EU AI Patient Explanation Communication](StructureDefinition-eu-ai-pat
   "resourceType" : "Communication",
   "id" : "dr-patient-communication",
   "meta" : {
-    "profile" : ["http://example.org/fhir/eu-ai-transparency/StructureDefinition/eu-ai-patient-explanation"]
+    "profile" : ["http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-patient-explanation"]
   },
   "extension" : [{
-    "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/patient-ai-info-provided-flag",
+    "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/patient-ai-info-provided-flag",
     "valueBoolean" : true
   }],
   "status" : "completed",

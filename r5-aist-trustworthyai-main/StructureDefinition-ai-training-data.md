@@ -8,8 +8,8 @@
 
 | | |
 | :--- | :--- |
-| *Official URL*:http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data | *Version*:0.1.0 |
-| Draft as of 2026-09-07 | *Computable Name*:AITrainingData |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-training-data | *Version*:0.1.0 |
+| Draft as of 2026-09-09 | *Computable Name*:AITrainingData |
 
 Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.
 
@@ -19,10 +19,10 @@ Documents the origin, relevant EHDS-related classifications, applicable permit i
 
 **Usages:**
 
-* Use this Extension: [EU AI Act Model Card](StructureDefinition-eu-ai-model-card.md)
-* Examples for this Extension: [DocumentReference/029e523f-6c49-4021-b909-674ebfc08c49](DocumentReference-029e523f-6c49-4021-b909-674ebfc08c49.md), [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
+* Use this Extension: [Trust AI Act Model Card](StructureDefinition-trust-ai-model-card.md)
+* Examples for this Extension: [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
-You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.eu.aitransparency|current/StructureDefinition/StructureDefinition-ai-training-data.json)
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-ai-training-data.json)
 
 ### Formal Views of Extension Content
 
@@ -48,12 +48,12 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
     "valueCode" : "can-bind"
   }],
-  "url" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data",
+  "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-training-data",
   "version" : "0.1.0",
   "name" : "AITrainingData",
   "title" : "AI Training Data Metadata",
   "status" : "draft",
-  "date" : "2026-09-07T08:39:53+00:00",
+  "date" : "2026-09-09T11:13:25+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.",
   "fhirVersion" : "5.0.0",
@@ -110,25 +110,25 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       }]
     },
     {
-      "id" : "Extension.extension:ehdsCategory",
+      "id" : "Extension.extension:Category",
       "path" : "Extension.extension",
-      "sliceName" : "ehdsCategory",
+      "sliceName" : "Category",
       "min" : 0,
       "max" : "*",
       "mustSupport" : true
     },
     {
-      "id" : "Extension.extension:ehdsCategory.extension",
+      "id" : "Extension.extension:Category.extension",
       "path" : "Extension.extension.extension",
       "max" : "0"
     },
     {
-      "id" : "Extension.extension:ehdsCategory.url",
+      "id" : "Extension.extension:Category.url",
       "path" : "Extension.extension.url",
-      "fixedUri" : "ehdsCategory"
+      "fixedUri" : "Category"
     },
     {
-      "id" : "Extension.extension:ehdsCategory.value[x]",
+      "id" : "Extension.extension:Category.value[x]",
       "path" : "Extension.extension.value[x]",
       "min" : 1,
       "type" : [{
@@ -136,29 +136,29 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-data-category-vs"
+        "valueSet" : "http://example.org/fhir/trust-ai-transparency/ValueSet/data-category-vs"
       }
     },
     {
-      "id" : "Extension.extension:ehdsSecondaryUsePurpose",
+      "id" : "Extension.extension:SecondaryUsePurpose",
       "path" : "Extension.extension",
-      "sliceName" : "ehdsSecondaryUsePurpose",
+      "sliceName" : "SecondaryUsePurpose",
       "min" : 0,
       "max" : "*",
       "mustSupport" : true
     },
     {
-      "id" : "Extension.extension:ehdsSecondaryUsePurpose.extension",
+      "id" : "Extension.extension:SecondaryUsePurpose.extension",
       "path" : "Extension.extension.extension",
       "max" : "0"
     },
     {
-      "id" : "Extension.extension:ehdsSecondaryUsePurpose.url",
+      "id" : "Extension.extension:SecondaryUsePurpose.url",
       "path" : "Extension.extension.url",
-      "fixedUri" : "ehdsSecondaryUsePurpose"
+      "fixedUri" : "SecondaryUsePurpose"
     },
     {
-      "id" : "Extension.extension:ehdsSecondaryUsePurpose.value[x]",
+      "id" : "Extension.extension:SecondaryUsePurpose.value[x]",
       "path" : "Extension.extension.value[x]",
       "min" : 1,
       "type" : [{
@@ -166,29 +166,29 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/ehds-secondary-use-purpose-vs"
+        "valueSet" : "http://example.org/fhir/trust-ai-transparency/ValueSet/secondary-use-purpose-vs"
       }
     },
     {
-      "id" : "Extension.extension:ehdsPermit",
+      "id" : "Extension.extension:Permit",
       "path" : "Extension.extension",
-      "sliceName" : "ehdsPermit",
+      "sliceName" : "Permit",
       "min" : 0,
       "max" : "*",
       "mustSupport" : true
     },
     {
-      "id" : "Extension.extension:ehdsPermit.extension",
+      "id" : "Extension.extension:Permit.extension",
       "path" : "Extension.extension.extension",
       "max" : "0"
     },
     {
-      "id" : "Extension.extension:ehdsPermit.url",
+      "id" : "Extension.extension:Permit.url",
       "path" : "Extension.extension.url",
-      "fixedUri" : "ehdsPermit"
+      "fixedUri" : "Permit"
     },
     {
-      "id" : "Extension.extension:ehdsPermit.value[x]",
+      "id" : "Extension.extension:Permit.value[x]",
       "path" : "Extension.extension.value[x]",
       "min" : 1,
       "type" : [{
@@ -222,13 +222,13 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
       }],
       "binding" : {
         "strength" : "extensible",
-        "valueSet" : "http://example.org/fhir/eu-ai-transparency/ValueSet/eu-ai-data-quality-vs"
+        "valueSet" : "http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-data-quality-vs"
       }
     },
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "http://example.org/fhir/eu-ai-transparency/StructureDefinition/ai-training-data"
+      "fixedUri" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-training-data"
     },
     {
       "id" : "Extension.value[x]",
