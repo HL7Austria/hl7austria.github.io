@@ -12,7 +12,7 @@
 | Draft as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListWrite |
 
  
-Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. 
+Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. 
 
 ### Wer ruft diese Operation in welchem Zusammenhang auf?
 
@@ -49,7 +49,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
   "title" : "e-Diagnose Operation $write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-09T07:41:46+00:00",
+  "date" : "2026-09-09T08:03:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -66,7 +66,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
       "use" : "work"
     }]
   }],
-  "description" : "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
+  "description" : "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
   "affectsState" : true,
   "code" : "write",
   "resource" : ["List"],

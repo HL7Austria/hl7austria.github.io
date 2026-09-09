@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-09T07:41:46+00:00",
+  "date" : "2026-09-09T08:03:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1069,7 +1069,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "OperationDefinition/at-ediag-operation-list-write"
       },
       "name" : "e-Diagnose Operation $write",
-      "description" : "Die $write Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
+      "description" : "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
       "exampleBoolean" : false
     },
     {

@@ -58,7 +58,7 @@ Möchte der ELGA-Teilnehmer eine Diagnose in der e-Diagnose Fachanwendung storni
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-09T07:41:46+00:00",
+  "date" : "2026-09-09T08:03:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
