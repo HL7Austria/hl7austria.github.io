@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-10T11:47:23+00:00",
+  "date" : "2026-09-10T14:22:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -663,10 +663,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListAllergyExample1.html"
+        "valueUri" : "List-AllergyList01.html"
       }],
       "reference" : {
-        "reference" : "List/ListAllergyExample1"
+        "reference" : "List/AllergyList01"
       },
       "name" : "Allergie Summary-Liste mit einem Summary-Eintrag",
       "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist.",
@@ -679,10 +679,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListAllergyEmptyExample.html"
+        "valueUri" : "List-AllergyListEmpty.html"
       }],
       "reference" : {
-        "reference" : "List/ListAllergyEmptyExample"
+        "reference" : "List/AllergyListEmpty"
       },
       "name" : "Allergy-Summary-Liste (notstarted)",
       "description" : "Initiale Summary-Liste ohne Summary-Einträge (Allergy).",
@@ -887,10 +887,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Device-DeviceExample.html"
+        "valueUri" : "Device-DeviceFA.html"
       }],
       "reference" : {
-        "reference" : "Device/DeviceExample"
+        "reference" : "Device/DeviceFA"
       },
       "name" : "Beispiel Device",
       "description" : "Beispielinstanz eines Devices dass die Fachanwendung initial erstellt",
@@ -903,10 +903,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Patient-PatientExample.html"
+        "valueUri" : "Patient-Patient.html"
       }],
       "reference" : {
-        "reference" : "Patient/PatientExample"
+        "reference" : "Patient/Patient"
       },
       "name" : "Beispiel Patient",
       "description" : "Beispielinstanz eines Patienten",
@@ -919,10 +919,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Practitioner-PractitionerExample.html"
+        "valueUri" : "Practitioner-Practitioner.html"
       }],
       "reference" : {
-        "reference" : "Practitioner/PractitionerExample"
+        "reference" : "Practitioner/Practitioner"
       },
       "name" : "Beispiel Practitioner",
       "description" : "Beispielinstanz eines Arztes",
@@ -935,10 +935,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "AllergyIntolerance-AllergySummaryExample1.html"
+        "valueUri" : "AllergyIntolerance-AllergyEntry01.html"
       }],
       "reference" : {
-        "reference" : "AllergyIntolerance/AllergySummaryExample1"
+        "reference" : "AllergyIntolerance/AllergyEntry01"
       },
       "name" : "Beispielinstanz einer Allergie für die Summary-Liste",
       "description" : "Beispiel einer bestätigten Allergie",
@@ -951,10 +951,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionGesamtlisteExample1.html"
+        "valueUri" : "Condition-ConditionEntry02.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionGesamtlisteExample1"
+        "reference" : "Condition/ConditionEntry02"
       },
       "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
       "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
@@ -967,10 +967,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionGesamtlisteExample2.html"
+        "valueUri" : "Condition-ConditionEntry03.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionGesamtlisteExample2"
+        "reference" : "Condition/ConditionEntry03"
       },
       "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
       "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
@@ -983,10 +983,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionGesamtlisteExample3.html"
+        "valueUri" : "Condition-ConditionEntry04.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionGesamtlisteExample3"
+        "reference" : "Condition/ConditionEntry04"
       },
       "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
       "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
@@ -999,10 +999,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionSummaryExample2.html"
+        "valueUri" : "Condition-ConditionEntry05.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionSummaryExample2"
+        "reference" : "Condition/ConditionEntry05"
       },
       "name" : "Beispielinstanz einer Diagnose für die Summary",
       "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
@@ -1015,10 +1015,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionSummaryExample1.html"
+        "valueUri" : "Condition-ConditionEntry01.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionSummaryExample1"
+        "reference" : "Condition/ConditionEntry01"
       },
       "name" : "Beispielinstanz einer Diagnose für die Summary-Liste",
       "description" : "Beispiel einer dauerhaften Diagnose",
@@ -1031,10 +1031,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Procedure-ProcedureSummaryExample1.html"
+        "valueUri" : "Procedure-ProcedureEntry01.html"
       }],
       "reference" : {
-        "reference" : "Procedure/ProcedureSummaryExample1"
+        "reference" : "Procedure/ProcedureEntry01"
       },
       "name" : "Beispielinstanz einer Prozedur für die Summary-Liste",
       "description" : "Beispiel einer Prozedur",
@@ -1047,10 +1047,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionSummaryExample3.html"
+        "valueUri" : "Condition-ConditionEnteredInError.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionSummaryExample3"
+        "reference" : "Condition/ConditionEnteredInError"
       },
       "name" : "Beispielinstanz einer stornierten Diagnose",
       "description" : "Beispiel einer Diagnose nach Durchführung der $entered-in-error-Operation durch einen GDA",
@@ -1063,10 +1063,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListConditionExample1.html"
+        "valueUri" : "List-ConditionList01.html"
       }],
       "reference" : {
-        "reference" : "List/ListConditionExample1"
+        "reference" : "List/ConditionList01"
       },
       "name" : "Condition Summary-Liste (Erster Arztbesuch)",
       "description" : "Beispiel der Condition-Summary-Liste nach dem ersten Arztbesuch.",
@@ -1079,10 +1079,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListConditionExample2.html"
+        "valueUri" : "List-ConditionList02.html"
       }],
       "reference" : {
-        "reference" : "List/ListConditionExample2"
+        "reference" : "List/ConditionList02"
       },
       "name" : "Condition Summary-Liste (Zweiter Arztbesuch - fehlerhafter Eintrag)",
       "description" : "Beispiel einer Summary-Liste während des zweiten Arztbesuchs. Eine neue Diagnose wurde erfasst.Zusätzlich ist ein Eintrag enthalten, der irrtümlich erfasst wurde.",
@@ -1095,10 +1095,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListConditionExample3.html"
+        "valueUri" : "List-ConditionList03.html"
       }],
       "reference" : {
-        "reference" : "List/ListConditionExample3"
+        "reference" : "List/ConditionList03"
       },
       "name" : "Condition Summary-Liste (Zweiter Arztbesuch - korrigiert)",
       "description" : "Beispiel einer Summary-Liste nachdem ein Eintrag storniert wurde.",
@@ -1111,10 +1111,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListConditionEmptyExample.html"
+        "valueUri" : "List-ConditionListEmpty.html"
       }],
       "reference" : {
-        "reference" : "List/ListConditionEmptyExample"
+        "reference" : "List/ConditionListEmpty"
       },
       "name" : "Condition-Summary-Liste (notstarted)",
       "description" : "Initiale Summary-Liste ohne Summary-Einträge (Condition).",
@@ -1223,10 +1223,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListProcedureExample1.html"
+        "valueUri" : "List-ProcedureList01.html"
       }],
       "reference" : {
-        "reference" : "List/ListProcedureExample1"
+        "reference" : "List/ProcedureList01"
       },
       "name" : "Procedure Summary-Liste mit einem Summary-Eintrag",
       "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Prozedur verweist.",
@@ -1239,10 +1239,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListProcedureEmptyExample.html"
+        "valueUri" : "List-ProcedureListEmpty.html"
       }],
       "reference" : {
-        "reference" : "List/ListProcedureEmptyExample"
+        "reference" : "List/ProcedureListEmpty"
       },
       "name" : "Procedure-Summary-Liste (notstarted)",
       "description" : "Initiale Summary-Liste ohne Summary-Einträge (Procedure).",

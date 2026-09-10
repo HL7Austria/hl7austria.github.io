@@ -20,7 +20,7 @@ Kennzeichnet, ob eine Information fremdberichtet ist (z. B. vom Patienten oder D
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md), [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) and [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
-* Examples for this Extension: [AllergyIntolerance/AllergySummaryExample1](AllergyIntolerance-AllergySummaryExample1.md), [Condition/ConditionGesamtlisteExample1](Condition-ConditionGesamtlisteExample1.md), [Condition/ConditionGesamtlisteExample2](Condition-ConditionGesamtlisteExample2.md), [Condition/ConditionGesamtlisteExample3](Condition-ConditionGesamtlisteExample3.md)... Show 4 more, [Condition/ConditionSummaryExample1](Condition-ConditionSummaryExample1.md), [Condition/ConditionSummaryExample2](Condition-ConditionSummaryExample2.md), [Condition/ConditionSummaryExample3](Condition-ConditionSummaryExample3.md) and [Procedure/ProcedureSummaryExample1](Procedure-ProcedureSummaryExample1.md)
+* Examples for this Extension: [AllergyIntolerance/AllergyEntry01](AllergyIntolerance-AllergyEntry01.md), [Condition/ConditionEnteredInError](Condition-ConditionEnteredInError.md), [Condition/ConditionEntry01](Condition-ConditionEntry01.md), [Condition/ConditionEntry02](Condition-ConditionEntry02.md)... Show 4 more, [Condition/ConditionEntry03](Condition-ConditionEntry03.md), [Condition/ConditionEntry04](Condition-ConditionEntry04.md), [Condition/ConditionEntry05](Condition-ConditionEntry05.md) and [Procedure/ProcedureEntry01](Procedure-ProcedureEntry01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-reported.json)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-report
   "name" : "AtReported",
   "title" : "AT ELGA Reported (Fremdangabe)",
   "status" : "draft",
-  "date" : "2026-09-10T11:47:23+00:00",
+  "date" : "2026-09-10T14:22:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -20,7 +20,7 @@ Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Condition
 
 **Usages:**
 
-* Examples for this Profile: [List/ListAllergyEmptyExample](List-ListAllergyEmptyExample.md), [List/ListAllergyExample1](List-ListAllergyExample1.md), [List/ListConditionEmptyExample](List-ListConditionEmptyExample.md), [List/ListConditionExample1](List-ListConditionExample1.md)... Show 4 more, [List/ListConditionExample2](List-ListConditionExample2.md), [List/ListConditionExample3](List-ListConditionExample3.md), [List/ListProcedureEmptyExample](List-ListProcedureEmptyExample.md) and [List/ListProcedureExample1](List-ListProcedureExample1.md)
+* Examples for this Profile: [List/AllergyList01](List-AllergyList01.md), [List/AllergyListEmpty](List-AllergyListEmpty.md), [List/ConditionList01](List-ConditionList01.md), [List/ConditionList02](List-ConditionList02.md)... Show 4 more, [List/ConditionList03](List-ConditionList03.md), [List/ConditionListEmpty](List-ConditionListEmpty.md), [List/ProcedureList01](List-ProcedureList01.md) and [List/ProcedureListEmpty](List-ProcedureListEmpty.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-list.json)
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-09-10T11:47:23+00:00",
+  "date" : "2026-09-10T14:22:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -20,7 +20,7 @@ Zeitlicher Verlauf der Manifestation (<6h, 6-24h, >24h, unknown)
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
-* Examples for this Extension: [AllergyIntolerance/AllergySummaryExample1](AllergyIntolerance-AllergySummaryExample1.md)
+* Examples for this Extension: [AllergyIntolerance/AllergyEntry01](AllergyIntolerance-AllergyEntry01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-reaction-time.json)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-reacti
   "name" : "AtEdiagReactionTime",
   "title" : "AT ELGA Reaktionszeit",
   "status" : "active",
-  "date" : "2026-09-10T11:47:23+00:00",
+  "date" : "2026-09-10T14:22:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

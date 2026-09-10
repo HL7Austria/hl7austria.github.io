@@ -21,7 +21,7 @@ Dokumentiert Diagnosen und klinisch relevante Gesundheitszustände einer Person,
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
-* Examples for this Profile: [Condition/ConditionGesamtlisteExample1](Condition-ConditionGesamtlisteExample1.md), [Condition/ConditionGesamtlisteExample2](Condition-ConditionGesamtlisteExample2.md), [Condition/ConditionGesamtlisteExample3](Condition-ConditionGesamtlisteExample3.md), [Condition/ConditionSummaryExample1](Condition-ConditionSummaryExample1.md)... Show 2 more, [Condition/ConditionSummaryExample2](Condition-ConditionSummaryExample2.md) and [Condition/ConditionSummaryExample3](Condition-ConditionSummaryExample3.md)
+* Examples for this Profile: [Condition/ConditionEnteredInError](Condition-ConditionEnteredInError.md), [Condition/ConditionEntry01](Condition-ConditionEntry01.md), [Condition/ConditionEntry02](Condition-ConditionEntry02.md), [Condition/ConditionEntry03](Condition-ConditionEntry03.md)... Show 2 more, [Condition/ConditionEntry04](Condition-ConditionEntry04.md) and [Condition/ConditionEntry05](Condition-ConditionEntry05.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-condition.json)
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-09-10T11:47:23+00:00",
+  "date" : "2026-09-10T14:22:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

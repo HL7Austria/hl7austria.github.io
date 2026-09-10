@@ -323,17 +323,17 @@ width: 100%;}
 
 <h3 id="1-arztbesuch---erstvorstellung-und-initialisierung-der-e-diagnose">1. Arztbesuch - Erstvorstellung und Initialisierung der e-Diagnose</h3>
 
-<p><a href="Practitioner-PractitionerExample.html">Dr Musterärztin Melanie</a> sieht <a href="Patient-PatientExample.html">Max Mustermann</a> am <strong>3. März 2026</strong> erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.</p>
+<p><a href="Practitioner-Practitioner.html">Dr Musterärztin Melanie</a> sieht <a href="Patient-Patient.html">Max Mustermann</a> am <strong>3. März 2026</strong> erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.</p>
 
 <p><strong>Abruf und Initialisierung der Summary-Listen</strong></p>
 
 <!-- TODO mit Architekten abklären, wann und wie die Summary-Listen für einen Patienten initialisiert werden -->
-<p>Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese enthält den Patienten <a href="Patient-PatientExample.html">Max Mustermann</a>, die erstellende e-Diagnose <a href="Device-DeviceExample.html">Fachanwendung</a> sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über <code class="language-plaintext highlighter-rouge">List.emptyReason</code> mit dem Code <code class="language-plaintext highlighter-rouge">notstarted</code> 
+<p>Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese enthält den Patienten <a href="Patient-Patient.html">Max Mustermann</a>, die erstellende e-Diagnose <a href="Device-DeviceFA.html">Fachanwendung</a> sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über <code class="language-plaintext highlighter-rouge">List.emptyReason</code> mit dem Code <code class="language-plaintext highlighter-rouge">notstarted</code> 
 siehe</p>
 <ul>
-  <li><a href="List-ListAllergyEmptyExample.html">Beispiel für eine leere Allergy-Summary-Liste</a></li>
-  <li><a href="List-ListConditionEmptyExample.html">Beispiel für eine leere Condition-Summary-Liste</a></li>
-  <li><a href="List-ListProcedureEmptyExample.html">Beispiel für eine leere Proceduren-Summary-Liste</a></li>
+  <li><a href="List-AllergyListEmpty.html">Beispiel für eine leere Allergy-Summary-Liste</a></li>
+  <li><a href="List-ConditionListEmpty.html">Beispiel für eine leere Condition-Summary-Liste</a></li>
+  <li><a href="List-ProcedureListEmpty.html">Beispiel für eine leere Proceduren-Summary-Liste</a></li>
 </ul>
 
 <p><strong>Erfassung bestehender Diagnosen und Allergien</strong></p>
@@ -345,9 +345,9 @@ Weiters gibt Herr Mustermann an, seit seiner Kindheit an einer Penicillinallergi
 <p>Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5°C. Bei der körperlichen Untersuchung zeigt sich eine eitrige Angina.
 Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.</p>
 
-<p>Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die <a href="Condition-ConditionSummaryExample1.html">Hypertonie</a> und <a href="Condition-ConditionGesamtlisteExample1.html">Suppurative tonsillitis</a> werden jeweils eine Condition und für die <a href="AllergyIntolerance-AllergySummaryExample1.html">Amoxicillin</a>-Allergie eine AllergyIntolerance angelegt.</p>
+<p>Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die <a href="Condition-ConditionEntry01.html">Hypertonie</a> und <a href="Condition-ConditionEntry02.html">Suppurative tonsillitis</a> werden jeweils eine Condition und für die <a href="AllergyIntolerance-AllergyEntry01.html">Amoxicillin</a>-Allergie eine AllergyIntolerance angelegt.</p>
 
-<p>Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben <a href="List-ListConditionExample1.html">Condition-Summary-Liste</a> und <a href="List-ListAllergyExample1.html">Allergy-Summary-Liste</a>.</p>
+<p>Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben <a href="List-ConditionList01.html">Condition-Summary-Liste</a> und <a href="List-AllergyList01.html">Allergy-Summary-Liste</a>.</p>
 
 <p>Um eine Gesamtansicht aller Diagnoseeinträge zu erhalten, ruft Dr. Musterärztin <a href="uc_ediag_01_lesen.html#alle-einträge-abrufen">alle Einträge</a> ab.</p>
 
@@ -365,9 +365,9 @@ Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte
 
 <p>Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.</p>
 
-<p>Dr. Musterärztin hält die Erkrankungen <a href="Condition-ConditionSummaryExample2.html">Morbus Crohn</a>, <a href="Condition-ConditionGesamtlisteExample3.html">Medikamenteninduzierte Diarrhö</a>, <a href="Condition-ConditionGesamtlisteExample2.html">Candida Balanitis</a> fest und die <a href="Procedure-ProcedureSummaryExample1.html">Koloskopie</a> als Prozedur, wobei sie Morbus Crohn sowie die Koloskopie in die jeweilige Summary-Liste aufnimmt.</p>
+<p>Dr. Musterärztin hält die Erkrankungen <a href="Condition-ConditionEntry03.html">Morbus Crohn</a>, <a href="Condition-ConditionEntry04.html">Medikamenteninduzierte Diarrhö</a>, <a href="Condition-ConditionEntry05.html">Candida Balanitis</a> fest und die <a href="Procedure-ProcedureEntry01.html">Koloskopie</a> als Prozedur, wobei sie Morbus Crohn sowie die Koloskopie in die jeweilige Summary-Liste aufnimmt.</p>
 
-<p>Dr. Musterärztin ruft die <a href="List-ListConditionExample2.html">Condition-Summary-Liste</a> und <a href="List-ListProcedureExample1.html">Procedure-Summary-Liste</a> ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den <a href="Condition-ConditionSummaryExample3.html">irrtümlich erfassten Eintrag</a>, welcher in der Folge durch die e-Diagnose Fachanwendung aus der <a href="List-ListConditionExample3.html">Condition-Summary-Liste</a> entfernt wird.</p>
+<p>Dr. Musterärztin ruft die <a href="List-ConditionList02.html">Condition-Summary-Liste</a> und <a href="List-ProcedureList01.html">Procedure-Summary-Liste</a> ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den <a href="Condition-ConditionEnteredInError.html">irrtümlich erfassten Eintrag</a>, welcher in der Folge durch die e-Diagnose Fachanwendung aus der <a href="List-ConditionList03.html">Condition-Summary-Liste</a> entfernt wird.</p>
 
 <h3 id="elga-teilnehmer---eintrag-löschen">ELGA-Teilnehmer - Eintrag löschen</h3>
 
@@ -394,7 +394,7 @@ Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 11:47+0000">2026-09-10</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 14:22+0000">2026-09-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

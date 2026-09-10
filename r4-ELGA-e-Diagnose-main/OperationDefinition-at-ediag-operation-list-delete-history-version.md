@@ -55,7 +55,7 @@ Möchte der ELGA-Teilnehmer eine Version einer Summary-Liste aus der e-Diagnose 
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-10T11:47:23+00:00",
+  "date" : "2026-09-10T14:22:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

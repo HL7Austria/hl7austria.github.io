@@ -11,15 +11,15 @@ Die Patient Journey zeigt den Lebenszyklus der e-Diagnose von der erstmaligen In
 
 ### 1. Arztbesuch - Erstvorstellung und Initialisierung der e-Diagnose
 
-[Dr Musterärztin Melanie](Practitioner-PractitionerExample.md) sieht [Max Mustermann](Patient-PatientExample.md) am **3. März 2026** erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.
+[Dr Musterärztin Melanie](Practitioner-Practitioner.md) sieht [Max Mustermann](Patient-Patient.md) am **3. März 2026** erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.
 
 **Abruf und Initialisierung der Summary-Listen**
 
-Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese enthält den Patienten [Max Mustermann](Patient-PatientExample.md), die erstellende e-Diagnose [Fachanwendung](Device-DeviceExample.md) sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über `List.emptyReason` mit dem Code `notstarted` siehe
+Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese enthält den Patienten [Max Mustermann](Patient-Patient.md), die erstellende e-Diagnose [Fachanwendung](Device-DeviceFA.md) sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über `List.emptyReason` mit dem Code `notstarted` siehe
 
-* [Beispiel für eine leere Allergy-Summary-Liste](List-ListAllergyEmptyExample.md)
-* [Beispiel für eine leere Condition-Summary-Liste](List-ListConditionEmptyExample.md)
-* [Beispiel für eine leere Proceduren-Summary-Liste](List-ListProcedureEmptyExample.md)
+* [Beispiel für eine leere Allergy-Summary-Liste](List-AllergyListEmpty.md)
+* [Beispiel für eine leere Condition-Summary-Liste](List-ConditionListEmpty.md)
+* [Beispiel für eine leere Proceduren-Summary-Liste](List-ProcedureListEmpty.md)
 
 **Erfassung bestehender Diagnosen und Allergien**
 
@@ -27,9 +27,9 @@ Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die akt
 
 Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5°C. Bei der körperlichen Untersuchung zeigt sich eine eitrige Angina. Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.
 
-Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionSummaryExample1.md) und [Suppurative tonsillitis](Condition-ConditionGesamtlisteExample1.md) werden jeweils eine Condition und für die [Amoxicillin](AllergyIntolerance-AllergySummaryExample1.md)-Allergie eine AllergyIntolerance angelegt.
+Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionEntry01.md) und [Suppurative tonsillitis](Condition-ConditionEntry02.md) werden jeweils eine Condition und für die [Amoxicillin](AllergyIntolerance-AllergyEntry01.md)-Allergie eine AllergyIntolerance angelegt.
 
-Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben [Condition-Summary-Liste](List-ListConditionExample1.md) und [Allergy-Summary-Liste](List-ListAllergyExample1.md).
+Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben [Condition-Summary-Liste](List-ConditionList01.md) und [Allergy-Summary-Liste](List-AllergyList01.md).
 
 Um eine Gesamtansicht aller Diagnoseeinträge zu erhalten, ruft Dr. Musterärztin [alle Einträge](uc_ediag_01_lesen.md#alle-einträge-abrufen) ab.
 
@@ -45,9 +45,9 @@ Dr. Musterärztin berücksichtigt diese Angabe bei der weiteren Beurteilung. Da 
 
 Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.
 
-Dr. Musterärztin hält die Erkrankungen [Morbus Crohn](Condition-ConditionSummaryExample2.md), [Medikamenteninduzierte Diarrhö](Condition-ConditionGesamtlisteExample3.md), [Candida Balanitis](Condition-ConditionGesamtlisteExample2.md) fest und die [Koloskopie](Procedure-ProcedureSummaryExample1.md) als Prozedur, wobei sie Morbus Crohn sowie die Koloskopie in die jeweilige Summary-Liste aufnimmt.
+Dr. Musterärztin hält die Erkrankungen [Morbus Crohn](Condition-ConditionEntry03.md), [Medikamenteninduzierte Diarrhö](Condition-ConditionEntry04.md), [Candida Balanitis](Condition-ConditionEntry05.md) fest und die [Koloskopie](Procedure-ProcedureEntry01.md) als Prozedur, wobei sie Morbus Crohn sowie die Koloskopie in die jeweilige Summary-Liste aufnimmt.
 
-Dr. Musterärztin ruft die [Condition-Summary-Liste](List-ListConditionExample2.md) und [Procedure-Summary-Liste](List-ListProcedureExample1.md) ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den [irrtümlich erfassten Eintrag](Condition-ConditionSummaryExample3.md), welcher in der Folge durch die e-Diagnose Fachanwendung aus der [Condition-Summary-Liste](List-ListConditionExample3.md) entfernt wird.
+Dr. Musterärztin ruft die [Condition-Summary-Liste](List-ConditionList02.md) und [Procedure-Summary-Liste](List-ProcedureList01.md) ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den [irrtümlich erfassten Eintrag](Condition-ConditionEnteredInError.md), welcher in der Folge durch die e-Diagnose Fachanwendung aus der [Condition-Summary-Liste](List-ConditionList03.md) entfernt wird.
 
 ### ELGA-Teilnehmer - Eintrag löschen
 
