@@ -23,11 +23,11 @@ Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die akt
 
 Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5 Grad. Bei der körperliche Untersuchung zeigt sich eine eitrige Angina. Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.
 
-Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionSummaryExample1.md) und [Suppurative tonsillitis](Condition-ConditionGesamtlisteExample1.md) werden jeweils eine Condition und für die [Amoxicillin](AllergyIntolerance-AllergyExample1.md)-Allergie eine AllergyIntolerance angelegt.
+Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionSummaryExample1.md) und [Suppurative tonsillitis](Condition-ConditionGesamtlisteExample1.md) werden jeweils eine Condition und für die [Amoxicillin](AllergyIntolerance-AllergySummaryExample1.md)-Allergie eine AllergyIntolerance angelegt.
 
 Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben [Condtion-Summary-Liste](List-ListConditionExample1.md) und [Allergy-Summary-Liste](List-ListAllergyExample1.md).
 
-Um eine Gesamtansicht aller Diagnoseneinträge zu erhalten, führt Dr. Musterärztin ein [Einträge abrufen](uc_ediag_01_lesen.md#einträge-abrufen) aus.
+Um eine Gesamtansicht aller Diagnoseneinträge zu erhalten, führt Dr. Musterärztin ein [Einträge abrufen](uc_ediag_01_lesen.md#alle-einträge-abrufen) aus.
 
 ### 2.Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung
 

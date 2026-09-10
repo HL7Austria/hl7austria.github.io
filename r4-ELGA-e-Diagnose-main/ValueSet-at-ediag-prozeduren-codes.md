@@ -51,7 +51,7 @@ ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alte
   "title" : "AT e-Diagnose Procedures Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-10T08:40:11+00:00",
+  "date" : "2026-09-10T09:01:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

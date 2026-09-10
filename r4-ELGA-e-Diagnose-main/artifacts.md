@@ -72,7 +72,6 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
 | [Beispiel einer leeren Summary-Liste](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge. |
-| [Beispiel stornierte Diagnose](Condition-DiagnoseEnteredInErrorExample.md) | Beispielinstanz einer stornierten Diagnose |
 | [Beispielinstanz einer Allergie für die Summary-Liste](AllergyIntolerance-AllergySummaryExample1.md) | Beispiel einer bestätigten Allergie |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample1.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample2.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |

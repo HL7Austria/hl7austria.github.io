@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-10T08:40:11+00:00",
+  "date" : "2026-09-10T09:01:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -927,22 +927,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel Practitioner",
       "description" : "Beispielinstanz eines Arztes",
       "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Condition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-DiagnoseEnteredInErrorExample.html"
-      }],
-      "reference" : {
-        "reference" : "Condition/DiagnoseEnteredInErrorExample"
-      },
-      "name" : "Beispiel stornierte Diagnose",
-      "description" : "Beispielinstanz einer stornierten Diagnose",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
     },
     {
       "extension" : [{
