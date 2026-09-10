@@ -45,5 +45,5 @@ Dr. Musterärztin ruft die aktuelle [Condition-Summary-Liste](List-ListCondition
 
 ### ELGA-Teilnehmer - Eintrag löschen
 
-Am **20. April 2026** nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht. Er wählt den Eintrag aus und führt ein [Eintrag löschen](uc_ediag_03_teilnehmer.md#eintrag-löschen) aus.
+Am **20. April 2026** nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht. Er wählt den Eintrag aus und [löscht](uc_ediag_03_teilnehmer.md#eintrag-löschen) ihn.
 

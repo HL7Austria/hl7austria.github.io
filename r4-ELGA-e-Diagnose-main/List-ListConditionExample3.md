@@ -1,16 +1,16 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Condition Summary-Liste mit einem Summary-Eintrag - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Condition Summary-Liste (Zweiter Arztbesuch - korrigiert) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Condition Summary-Liste mit einem Summary-Eintrag**
+* **Condition Summary-Liste (Zweiter Arztbesuch - korrigiert)**
 
-## Example List: Condition Summary-Liste mit einem Summary-Eintrag
+## Example List: Condition Summary-Liste (Zweiter Arztbesuch - korrigiert)
 
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-03-09 00:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
+| Date: 2026-03-09 10:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
 | Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
 * **Items**: [Condition Hypertensive disorder, systemic arterial](Condition-ConditionSummaryExample1.md)
@@ -38,7 +38,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "date" : "2026-03-09T00:00:00+00:00",
+  "date" : "2026-03-09T10:00:00+00:00",
   "source" : {
     "reference" : "Practitioner/PractitionerExample"
   },
