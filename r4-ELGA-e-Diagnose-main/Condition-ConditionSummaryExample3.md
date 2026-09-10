@@ -12,7 +12,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > **AT ELGA Entered In Error**
 * practitioner: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
-* datetime: 2026-03-09 10:30:00+0100
+* datetime: 2026-09-09 10:30:00+0100
 * reason: Diagnose irrtümlich erfasst
 
 **clinicalStatus**: Active
@@ -55,7 +55,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
     },
     {
       "url" : "datetime",
-      "valueDateTime" : "2026-03-09T10:30:00+01:00"
+      "valueDateTime" : "2026-09-09T10:30:00+01:00"
     },
     {
       "url" : "reason",

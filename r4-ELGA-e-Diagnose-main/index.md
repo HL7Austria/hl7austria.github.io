@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-10T10:02:23+00:00",
+  "date" : "2026-09-10T11:15:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1199,6 +1199,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "ELGA List Empty Reason Value Set",
       "description" : "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListProcedureExample1.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListProcedureExample1"
+      },
+      "name" : "Procedure Summary-Liste mit einem Summary-Eintrag",
+      "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Prozedur verweist.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
       "extension" : [{

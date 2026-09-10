@@ -21,7 +21,7 @@ Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese
 
 Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die aktuellen gesundheitlichen Probleme sowie bereits länger bestehende Grunderkrankungen und Allergien des Patienten. Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden, mit Lisinopril 10 mg medikamentös behandelten Bluthochdruck. Weiters gibt Herr Mustermann an, seit seiner Kindheit an einer Penicillinallergie zu leiden.
 
-Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5 Grad. Bei der körperlichen Untersuchung zeigt sich eine eitrige Angina. Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.
+Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5°C. Bei der körperlichen Untersuchung zeigt sich eine eitrige Angina. Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.
 
 Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionSummaryExample1.md) und [Suppurative tonsillitis](Condition-ConditionGesamtlisteExample1.md) werden jeweils eine Condition und für die [Amoxicillin](AllergyIntolerance-AllergySummaryExample1.md)-Allergie eine AllergyIntolerance angelegt.
 
@@ -31,7 +31,7 @@ Um eine Gesamtansicht aller Diagnoseeinträge zu erhalten, ruft Dr. Musterärzti
 
 ### 2. Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung
 
-Die Symptome der eitrigen Angina haben sich durch die antibiotische Therapie deutlich gebessert. Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am **9. März 2026** über Durchfall sowie einen Juckreiz im Genitalbereich.
+Die Symptome der eitrigen Angina haben sich durch die antibiotische Therapie deutlich gebessert. Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am **9. März 2026** über Durchfall und Juckreiz im Genitalbereich.
 
 Bei der Untersuchung stellt Dr. Musterärztin eine Pilzinfektion fest, die vermutlich im Zusammenhang mit der vorausgegangenen Antibiotikatherapie steht.
 
@@ -39,11 +39,15 @@ Herr Mustermann berichtet weiters, dass seit Beginn der Antibiotikatherapie Besc
 
 Dr. Musterärztin berücksichtigt diese Angabe bei der weiteren Beurteilung. Da Durchfall sowohl als Nebenwirkung der Antibiotikatherapie als auch im Rahmen eines Morbus-Crohn-Schubs auftreten kann, wird die Ursache entsprechend abgeklärt. Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte Koloskopie am 23. September 2025 stattgefunden hat.
 
-Dr. Musterärztin hält die Erkrankungen [Morbus Crohn](Condition-ConditionSummaryExample2.md), [Medikamenteninduzierte Diarrhö](Condition-ConditionGesamtlisteExample3.md), [Candida Balanitis](Condition-ConditionGesamtlisteExample2.md) fest und die [Koloskopie](Procedure-ProcedureSummaryExample1.md) als Prozedur, wobei sie Morbus Crohn sowie die Koloskopie in die jeweilige Summary-Liste aufnimmt (TODO). Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.
+Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.
 
-Dr. Musterärztin ruft die aktuelle [Condition-Summary-Liste](List-ListConditionExample2.md) ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den [irrtümlich erfassten Eintrag](Condition-ConditionSummaryExample3.md), welcher in der Folge durch die e-Diagnose Fachanwendung aus der [Condition-Summary-Liste](List-ListConditionExample3.md) entfernt wird.
+Dr. Musterärztin hält die Erkrankungen [Morbus Crohn](Condition-ConditionSummaryExample2.md), [Medikamenteninduzierte Diarrhö](Condition-ConditionGesamtlisteExample3.md), [Candida Balanitis](Condition-ConditionGesamtlisteExample2.md) fest und die [Koloskopie](Procedure-ProcedureSummaryExample1.md) als Prozedur, wobei sie Morbus Crohn sowie die Koloskopie in die jeweilige Summary-Liste aufnimmt.
+
+Dr. Musterärztin ruft die [Condition-Summary-Liste](List-ListConditionExample2.md) und [Procedure-Summary-Liste](List-ListProcedureExample1.md) ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den [irrtümlich erfassten Eintrag](Condition-ConditionSummaryExample3.md), welcher in der Folge durch die e-Diagnose Fachanwendung aus der [Condition-Summary-Liste](List-ListConditionExample3.md) entfernt wird.
 
 ### ELGA-Teilnehmer - Eintrag löschen
 
 Am **20. April 2026** nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht und [löscht](uc_ediag_03_teilnehmer.md#eintrag-löschen) den Eintrag.
+
+Dieser Eintrag wird daraufhin aus der Gesamtansicht aller Diagnosen gelöscht. Ist die Diagnose auch Bestandteil der Summary-Liste der Diagnosen, wird sie ebenfalls aus dieser entfernt. In diesem Fall wird List.source auf den Patienten gesetzt.
 

@@ -1,7 +1,7 @@
 ELGAeDiagnoseR4 : Validation Results
 =========================================
 
-err = 3, warn = 30, info = 17
+err = 4, warn = 30, info = 17
 $--
 Generated $--. FHIR version $-- for hl7.at.fhir.elga.ediag.r4#$-- (canonical = https://fhir.hl7.at/elga/ediag/r4)
  Build Errors : 7 / 0 / 0
@@ -20,6 +20,7 @@ Generated $--. FHIR version $-- for hl7.at.fhir.elga.ediag.r4#$-- (canonical = h
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/List-ListConditionExample2 : 0 / 0 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/List-ListConditionExample3 : 0 / 0 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/List-ListExample01 : 0 / 0 / 1
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/List-ListProcedureExample1 : 1 / 0 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/OperationDefinition-at-ediag-operation-diagnose-delete : 0 / 0 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/OperationDefinition-at-ediag-operation-diagnose-entered-in-error : 0 / 0 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/OperationDefinition-at-ediag-operation-list-delete-history-version : 0 / 0 / 2
@@ -70,6 +71,8 @@ INFORMATION: Resource: The resource ImplementationGuide/hl7.at.fhir.elga.ediag.r
 == fsh-generated/resources/List-ListConditionExample2.json ==
 == fsh-generated/resources/List-ListConditionExample3.json ==
 == fsh-generated/resources/List-ListExample01.json ==
+== fsh-generated/resources/List-ListProcedureExample1.json ==
+ERROR: List/ListProcedureExample1: List: Constraint failed: list-integrity: 'Die Liste darf nur Referenzen (List.entry.item) enthalten, die dem Code der Liste (List.code) entsprechen. ((code.coding.exists(system='http://loinc.org' and code='11450-4') implies entry.item.all(reference.matches('(^|/)Condition/'))) and (code.coding.exists(system='http://loinc.org' and code='47519-4') implies entry.item.all(reference.matches('(^|/)Procedure/'))) and (code.coding.exists(system='http://loinc.org' and code='48765-2') implies entry.item.all(reference.matches('(^|/)AllergyIntolerance/'))))' (defined in https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list)
 == fsh-generated/resources/OperationDefinition-at-ediag-operation-diagnose-delete.json ==
 INFORMATION: Resource: The resource OperationDefinition/at-ediag-operation-diagnose-delete could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/OperationDefinition-at-ediag-operation-diagnose-entered-in-error.json ==
