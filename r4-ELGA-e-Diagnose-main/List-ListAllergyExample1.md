@@ -13,7 +13,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 | Date: 2026-03-01 00:00:00+0000 | Mode: Working List | Status: Current | Code: Allergies and adverse reactions Document |
 | Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
-* **Items**: `AllergySummaryExample`
+* **Items**: [AllergyIntolerance Amoxicillin](AllergyIntolerance-AllergySummaryExample1.md)
 
 
 
@@ -43,7 +43,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   },
   "entry" : [{
     "item" : {
-      "reference" : "AllergySummaryExample"
+      "reference" : "AllergyIntolerance/AllergySummaryExample1"
     }
   }]
 }

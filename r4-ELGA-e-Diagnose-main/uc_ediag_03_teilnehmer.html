@@ -257,26 +257,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="interaktionen-auf-listenressourcen">Interaktionen auf Listenressourcen</h3>
 
 <h4 id="eine-summary-listenversion-löschen">Eine Summary-Listenversion löschen</h4>
+
 <blockquote>
-  <p>Sub:UC_03_02 
-<br /></p>
+  <p>Sub:UC_03_02</p>
 </blockquote>
 
-<!--ToDo: Es wird nur diese eine Ansicht der Liste gelöscht und nicht die Diagnosen. 
-Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:in gelöscht wurde, wird diese nicht mehr in der Historie angezeigt. Sobald alle Summary-Listenversionen gelöscht sind, ist die Summary-Liste beim nächsten Abruf leer und emptyReason:nilknown gesetzt.-->
-<p>Ein ELGA-Teilnehmer kann einzelne historische Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit List.emptyReason = nilknown zurück.</p>
+<p>Ein ELGA-Teilnehmer kann einzelne Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason=nilknown</code> zurück.</p>
 
 <h5 id="ablauf-1">Ablauf</h5>
-<ol>
-  <li>Ein ELGA-Teilnehmer führt ein <strong>GET</strong> auf den List-Typ gemäß <a href="uc_ediag_01_lesen.html#vergangene-versionen-einer-summary-liste-abrufen-list-history-read">List-History-Read</a> aus.</li>
-  <li>Die Fachanwendung liefert die vorhandenen Summary-Listenversionen als Search-Bundle zurück.</li>
-  <li>ELGA-Teilnehmer wählt die zu löschende Summary-Listversion aus.</li>
-  <li>Durch Bestätigung wird das <strong>DELETE</strong> für die ausgewählte Summary-Listversion ausgeführt.</li>
-  <li>Die Fachanwendung entfernt die ausgewählte Summary-Listversion aus der Historie.</li>
-  <li>Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit <strong>List.emptyReason = nilknown</strong>.</li>
-</ol>
 
-<p><a href="summary_delete.drawio.svg"><img src="summary_delete.drawio.svg" alt="overview" style="width: 60%" /></a></p>
+<ol>
+  <li>Der ELGA-Teilnehmer ruft <a href="uc_ediag_01_lesen.html#versionen-einer-summary-liste-abrufen">alle Versionen einer Summary-Liste</a> ab.</li>
+  <li>Um eine Version der Summary-Liste zu löschen, führt der ELGA-Teilnehmer über das Portal die <a href=""><code class="language-plaintext highlighter-rouge">$delete-history-version</code>-Operation</a> auf die zu löschende Summary-Listenversion aus.</li>
+  <li>Die Fachanwendung löscht die entsprechende Summary-Listenversion.</li>
+  <li>Wird die letzte Summary-Listenversion gelöscht, legt die e-Diagnose Fachanwendung eine neue Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason=nilknown</code> an.</li>
+</ol>
 
 
 
@@ -297,7 +292,7 @@ Sofern eine gesamte Version einer Summary-Liste von einem:einer ELGA-Teilnehmer:
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Sep 9, 2026 14:48+0000">2026-09-09</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 08:40+0000">2026-09-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -14,6 +14,7 @@ These are custom operations that can be supported by and/or invoked by systems c
 | | |
 | :--- | :--- |
 | [e-Diagnose Operation $delete](OperationDefinition-at-ediag-operation-diagnose-delete.md) | Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung. |
+| [e-Diagnose Operation $delete-history-version](OperationDefinition-at-ediag-operation-list-delete-history-version.md) | Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung. |
 | [e-Diagnose Operation $entered-in-error](OperationDefinition-at-ediag-operation-diagnose-entered-in-error.md) | Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung. |
 | [e-Diagnose Operation $write](OperationDefinition-at-ediag-operation-list-write.md) | Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. |
 
@@ -76,8 +77,11 @@ These are example instances that show what data produced and consumed by systems
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample1.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample2.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample3.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
-| [Beispielinstanz einer Diagnose für die Summary](Condition-ConditionGesamtlisteExample4.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
+| [Beispielinstanz einer Diagnose für die Summary](Condition-ConditionSummaryExample2.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Summary-Liste](Condition-ConditionSummaryExample1.md) | Beispiel einer dauerhaften Diagnose |
-| [Beispielinstanz einer Prozedur für die Summary-Liste](Procedure-ProcedureExample1.md) | Beispiel einer Prozedur |
+| [Beispielinstanz einer Prozedur für die Summary-Liste](Procedure-ProcedureSummaryExample1.md) | Beispiel einer Prozedur |
+| [Beispielinstanz einer stornierten Diagnose](Condition-ConditionSummaryExample3.md) | Beispiel einer Diagnose nach Durchführung der $entered-in-error-Operation durch einen GDA |
 | [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
+| [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample2.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
+| [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample3.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
 

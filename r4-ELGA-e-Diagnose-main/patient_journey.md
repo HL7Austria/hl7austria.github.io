@@ -29,7 +29,7 @@ Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Eint
 
 Um eine Gesamtansicht aller Diagnoseneinträge zu erhalten, führt Dr. Musterärztin ein [Einträge abrufen](uc_ediag_01_lesen.md#einträge-abrufen) aus.
 
-### 2.Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung der Gesamtansicht
+### 2.Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung
 
 Die Symptome der eitrige Angina haben sich duch die antibiotische Therapie deutlich gebessert. Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am **9. März 2026** über Durchfall sowie einem Juckreiz im Genitalbereich.
 
@@ -39,9 +39,11 @@ Herr Mustermann berichtet weiters, dass seit Beginn der Antibiotikatherapie Besc
 
 Dr. Musterärztin berücksichtigt diese Angabe bei der weiteren Beurteilung. Da Durchfall sowohl als Nebenwirkung der Antibiotikatherapie als auch im Rahmen eines Morbus-Crohn-Schubs auftreten kann, wird die Ursache entsprechend abgeklärt. Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte Koloskopie am 23. September 2025 stattgefunden hat.
 
-Dr. Musterärztin haltet die Erkrankungen [Morbus Crohn](Condition-ConditionGesamtlisteExample4.md), [Medikamenteninduzierte Diarrhö](Condition-ConditionGesamtlisteExample3.md), [Candida Balanitis](Condition-ConditionGesamtlisteExample2.md) und die [Coloskopie](Procedure-ProcedureSummaryExample1.md) als Prozedur fest. Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.
+Dr. Musterärztin haltet die Erkrankungen [Morbus Crohn](Condition-ConditionSummaryExample2.md) in der Summary-Liste fest ToDo - die muss ich noch erstellen, [Medikamenteninduzierte Diarrhö](Condition-ConditionGesamtlisteExample3.md), [Candida Balanitis](Condition-ConditionGesamtlisteExample2.md) in der Gesamtansicht aller Diagnosen fest und die [Coloskopie](Procedure-ProcedureSummaryExample1.md) als Prozedur in der Summary-Liste der Prozedure - die muss ich noch erstellen fest. Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.
+
+Dr. Musterärztin führt ein [Condtion-Summary-Liste](List-ListConditionExample2.md) aus, dabei fällt ihr ein Fehler auf. Es steht eine Diagnose in der Summary-Liste die nicht zu dem Patienten gehört. Sie führt ein [Eintrag in der Summary-Liste bearbeiten](uc_ediag_02_schreiben.md#eintrag-in-der-summary_liste-bearbeiten) aus und der Eintrag wird [Entered-in-Error](Condition-ConditionSummaryExample3.md) gesetzt und fällt aus der [Condtion-Summary-Liste](List-ListConditionExample3.md) raus.
 
 ### ELGA-Teilnehmer - Eintrag löschen
 
-**20. April 2026** nimmt Herr Mustermann Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht. Er entscheidet sich daher, diesen Eintrag als ELGA-Teilnehmer zu löschen. Der Eintrag wird aus der Gesamtansicht entfernt, siehe [Eintrag löschen](uc_ediag_03_teilnehmer.md#eintrag-löschen).
+Am **20. April 2026** nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht. Er wählt den Eintrag aus und führt ein [Eintrag löschen](uc_ediag_03_teilnehmer.md#eintrag-löschen) aus.
 

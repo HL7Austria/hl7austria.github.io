@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-09T14:48:33+00:00",
+  "date" : "2026-09-10T08:40:11+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1015,10 +1015,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionGesamtlisteExample4.html"
+        "valueUri" : "Condition-ConditionSummaryExample2.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionGesamtlisteExample4"
+        "reference" : "Condition/ConditionSummaryExample2"
       },
       "name" : "Beispielinstanz einer Diagnose für die Summary",
       "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
@@ -1047,14 +1047,30 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Procedure-ProcedureExample1.html"
+        "valueUri" : "Procedure-ProcedureSummaryExample1.html"
       }],
       "reference" : {
-        "reference" : "Procedure/ProcedureExample1"
+        "reference" : "Procedure/ProcedureSummaryExample1"
       },
       "name" : "Beispielinstanz einer Prozedur für die Summary-Liste",
       "description" : "Beispiel einer Prozedur",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionSummaryExample3.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionSummaryExample3"
+      },
+      "name" : "Beispielinstanz einer stornierten Diagnose",
+      "description" : "Beispiel einer Diagnose nach Durchführung der $entered-in-error-Operation durch einen GDA",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
     },
     {
       "extension" : [{
@@ -1075,6 +1091,38 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListConditionExample2.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListConditionExample2"
+      },
+      "name" : "Condition Summary-Liste mit einem Summary-Eintrag",
+      "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListConditionExample3.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListConditionExample3"
+      },
+      "name" : "Condition Summary-Liste mit einem Summary-Eintrag",
+      "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       },
       {
@@ -1086,6 +1134,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "e-Diagnose Operation $delete",
       "description" : "Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-ediag-operation-list-delete-history-version.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-ediag-operation-list-delete-history-version"
+      },
+      "name" : "e-Diagnose Operation $delete-history-version",
+      "description" : "Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung.",
       "exampleBoolean" : false
     },
     {

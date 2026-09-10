@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="at-ediag-operation-list-delete-history-version"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition at-ediag-operation-list-delete-history-version</b></p><a name="at-ediag-operation-list-delete-history-version"> </a><a name="hcat-ediag-operation-list-delete-history-version"> </a><p>URL: [base]/List/[id]/$delete-history-version</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>versionId</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#id">id</a></td><td/><td><div><p>Die versionId der zu löschenden Version der Summary-Liste.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-delete-history-version"/>
+  <version value="0.1.0"/>
+  <name value="AtDiagListDeleteHistoryVersion"/>
+  <title value="e-Diagnose Operation $delete-history-version"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <experimental value="false"/>
+  <date value="2026-09-10T08:40:11+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung."/>
+  <purpose value="### Wer ruft diese Operation in welchem Zusammenhang auf?&#xA;&#xA;Möchte der ELGA-Teilnehmer eine Version einer Summary-Liste aus der e-Diagnose Fachanwendung löschen, muss diese Operation ausgeführt werden.&#xA;&#xA;### Voraussetzung für den Aufruf&#xA;&#xA;- Es sind Versionen der Summary-Liste vorhanden, die gelöscht werden können.&#xA;&#xA;### Detaillierte Business-Logik&#xA;&#xA;1. Die Version einer Summary-Liste wird anhand der übergebenen `versionId` aus der e-Diagnose Fachanwendung gelöscht.&#xA;2. Wurde die letzte Version einer Summary-Liste gelöscht, erstellt die e-Diagnose Fachanwendung automatisch eine neue Summary-Liste mit `List.emptyReason=nilknown`.&#xA;&#xA;### Validierung / Fehlerbehandlung&#xA;&#xA;- Die zu löschende Version der Summary-Liste muss in der e-Diagnose Fachanwendung vorhanden sein."/>
+  <affectsState value="true"/>
+  <code value="delete-history-version"/>
+  <resource value="List"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="versionId"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Die versionId der zu löschenden Version der Summary-Liste."/>
+    <type value="id"/>
+  </parameter>
+</OperationDefinition>

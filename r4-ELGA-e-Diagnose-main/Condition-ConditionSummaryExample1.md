@@ -30,7 +30,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > 
 
-Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
+Patient berichtet über bekannte Hypotonie seit 2024, Lisinopril 10mg 1-0-0.
 
 
 
@@ -79,7 +79,7 @@ Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
     "reference" : "Practitioner/PractitionerExample"
   },
   "note" : [{
-    "text" : "Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0."
+    "text" : "Patient berichtet über bekannte Hypotonie seit 2024, Lisinopril 10mg 1-0-0."
   }]
 }
 

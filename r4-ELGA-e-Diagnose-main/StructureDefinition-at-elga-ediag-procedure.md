@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure | *Version*:0.1.0 | |
-| Active as of 2026-09-09 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
+| Active as of 2026-09-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
 
  
 Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -21,7 +21,7 @@ Eine Procedure beschreibt eine durchgeführte medizinische Maßnahme, Interventi
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
-* Examples for this Profile: [Procedure/ProcedureExample1](Procedure-ProcedureExample1.md)
+* Examples for this Profile: [Procedure/ProcedureSummaryExample1](Procedure-ProcedureSummaryExample1.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-procedure.json)
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-09-09T14:48:33+00:00",
+  "date" : "2026-09-10T08:40:11+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

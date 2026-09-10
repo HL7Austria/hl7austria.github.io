@@ -11,7 +11,7 @@
   <name value="ELGAeDiagnoseR4"/>
   <title value="ELGA e-Diagnose R4 (Draft)"/>
   <status value="draft"/>
-  <date value="2026-09-09T14:48:33+00:00"/>
+  <date value="2026-09-10T08:40:11+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -720,7 +720,7 @@
         <valueString value="Condition"/>
       </extension>
       <reference>
-        <reference value="Condition/ConditionGesamtlisteExample4"/>
+        <reference value="Condition/ConditionSummaryExample2"/>
       </reference>
       <name value="Beispielinstanz einer Diagnose für die Summary"/>
       <description value="Beispiel Diagnose, aktuelle Beschwerden des Patienten"/>
@@ -742,11 +742,22 @@
         <valueString value="Procedure"/>
       </extension>
       <reference>
-        <reference value="Procedure/ProcedureExample1"/>
+        <reference value="Procedure/ProcedureSummaryExample1"/>
       </reference>
       <name value="Beispielinstanz einer Prozedur für die Summary-Liste"/>
       <description value="Beispiel einer Prozedur"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ConditionSummaryExample3"/>
+      </reference>
+      <name value="Beispielinstanz einer stornierten Diagnose"/>
+      <description value="Beispiel einer Diagnose nach Durchführung der $entered-in-error-Operation durch einen GDA"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -761,6 +772,28 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/ListConditionExample2"/>
+      </reference>
+      <name value="Condition Summary-Liste mit einem Summary-Eintrag"/>
+      <description value="Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/ListConditionExample3"/>
+      </reference>
+      <name value="Condition Summary-Liste mit einem Summary-Eintrag"/>
+      <description value="Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -768,6 +801,17 @@
       </reference>
       <name value="e-Diagnose Operation $delete"/>
       <description value="Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-ediag-operation-list-delete-history-version"/>
+      </reference>
+      <name value="e-Diagnose Operation $delete-history-version"/>
+      <description value="Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

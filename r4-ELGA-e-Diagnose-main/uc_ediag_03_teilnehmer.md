@@ -23,18 +23,14 @@ Ein ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Einträge unwiderruf
 
 #### Eine Summary-Listenversion löschen
 
-> Sub:UC_03_02 
+> Sub:UC_03_02
 
-Ein ELGA-Teilnehmer kann einzelne historische Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit List.emptyReason = nilknown zurück.
+Ein ELGA-Teilnehmer kann einzelne Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit `List.emptyReason=nilknown` zurück.
 
 ##### Ablauf
 
-1. Ein ELGA-Teilnehmer führt ein**GET**auf den List-Typ gemäß[List-History-Read](uc_ediag_01_lesen.md#vergangene-versionen-einer-summary-liste-abrufen-list-history-read)aus.
-1. Die Fachanwendung liefert die vorhandenen Summary-Listenversionen als Search-Bundle zurück.
-1. ELGA-Teilnehmer wählt die zu löschende Summary-Listversion aus.
-1. Durch Bestätigung wird das**DELETE**für die ausgewählte Summary-Listversion ausgeführt.
-1. Die Fachanwendung entfernt die ausgewählte Summary-Listversion aus der Historie.
-1. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit**List.emptyReason = nilknown**.
-
-![](summary_delete.drawio.svg)
+1. Der ELGA-Teilnehmer ruft[alle Versionen einer Summary-Liste](uc_ediag_01_lesen.md#versionen-einer-summary-liste-abrufen)ab.
+1. Um eine Version der Summary-Liste zu löschen, führt der ELGA-Teilnehmer über das Portal die[`$delete-history-version`-Operation]()auf die zu löschende Summary-Listenversion aus.
+1. Die Fachanwendung löscht die entsprechende Summary-Listenversion.
+1. Wird die letzte Summary-Listenversion gelöscht, legt die e-Diagnose Fachanwendung eine neue Summary-Liste mit`List.emptyReason=nilknown`an.
 
