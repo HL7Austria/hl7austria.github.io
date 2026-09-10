@@ -8,8 +8,8 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS | *Version*:0.1.1 | |
-| Draft as of 2026-09-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:MedikationsplaneintragStatusVS |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/PlaneintragStatusVS | *Version*:0.1.1 | |
+| Draft as of 2026-09-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:PlaneintragStatusVS |
 
  
 ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). 
@@ -44,14 +44,14 @@ ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrag
 ```json
 {
   "resourceType" : "ValueSet",
-  "id" : "MedikationsplaneintragStatusVS",
-  "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS",
+  "id" : "PlaneintragStatusVS",
+  "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/PlaneintragStatusVS",
   "version" : "0.1.1",
-  "name" : "MedikationsplaneintragStatusVS",
+  "name" : "PlaneintragStatusVS",
   "title" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-09-03T18:40:45+00:00",
+  "date" : "2026-09-10T13:22:01+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

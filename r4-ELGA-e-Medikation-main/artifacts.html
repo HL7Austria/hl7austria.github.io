@@ -263,9 +263,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/at-elga-emed-list-medikationsplan">AT ELGA e-Medikation List Medikationsplan</a>
             </td>
             <td>
-<p>Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. 
-Diese enthält 0..* Einträge (List.entry), wobei jeder Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.
-Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.</p>
+<p>Der Medikationsplan wird durch eine List-Ressource abgebildet. 
+Diese enthält 0..* Einträge (List.entry), wobei jedes List.entry.item genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) beinhaltet.
+Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. 
+Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.</p>
 </td>
          </tr>
          <tr>
@@ -274,9 +275,9 @@ Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listen
                   title="StructureDefinition/at-elga-emed-medicationrequest-planeintrag">At ELGA e-Medikation MedicationRequest Planeintrag</a>
             </td>
             <td>
-<p>Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet.
-Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.
-Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet.</p>
+<p>Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet.
+Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird.
+Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet.</p>
 </td>
          </tr>
          <tr>
@@ -285,7 +286,7 @@ Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstell
                   title="StructureDefinition/at-elga-emed-bundle-medikationsplan">AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan</a>
             </td>
             <td>
-<p>Das Bundle vom Typ Collection bestehend aus:</p>
+<p>Das Bundle vom Typ Searchset bestehend aus:</p>
 <ul>
   <li>1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus</li>
   <li>0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung</li>
@@ -621,8 +622,8 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="ValueSet-MedikationsplaneintragStatusVS.html"
-                  title="ValueSet/MedikationsplaneintragStatusVS">ELGA e-Med Medikationsplaneintrag Status Value Set</a>
+               <a href="ValueSet-PlaneintragStatusVS.html"
+                  title="ValueSet/PlaneintragStatusVS">ELGA e-Med Medikationsplaneintrag Status Value Set</a>
             </td>
             <td>
 <p>ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest).</p>
@@ -671,6 +672,15 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Practitioner-At-Emed-Example-Practitioner-01.html"
+                  title="Practitioner/At-Emed-Example-Practitioner-01">Beispiel Allgemeinmedizinerin 01</a>
+            </td>
+            <td>
+<p>Beispiel einer behandelnden Allgemeinmedizinerin.</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="MedicationDispense-At-Emed-Example-Durchgefuehrte-Abgabe-01.html"
@@ -745,6 +755,15 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-01.html"
+                  title="MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-01">Beispiel Journey 02: Geplante Abgabe</a>
+            </td>
+            <td>
+<p>Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Medication-At-Emed-Example-Medication-Magistral-01.html"
                   title="Medication/At-Emed-Example-Medication-Magistral-01">Beispiel Journey 02: Magistrale Zubereitung</a>
             </td>
@@ -776,7 +795,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
                   title="MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01">Beispiel Journey 02: Medikationsplaneintrag 1</a>
             </td>
             <td>
-<p>Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).</p>
+<p>Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab.</p>
 </td>
          </tr>
          <tr>
@@ -785,7 +804,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
                   title="MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02">Beispiel Journey 02: Medikationsplaneintrag 2</a>
             </td>
             <td>
-<p>Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest).</p>
+<p>Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung und zugehörigen Dosierungsanweisungen ab.</p>
 </td>
          </tr>
          <tr>
@@ -925,15 +944,6 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Practitioner-At-Emed-Example-Practitioner-01.html"
-                  title="Practitioner/At-Emed-Example-Practitioner-01">Beispiel Ärztin 01</a>
-            </td>
-            <td>
-<p>Beispiel einer behandelnden Ärztin.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="Practitioner-At-Emed-Example-Practitioner-02.html"
                   title="Practitioner/At-Emed-Example-Practitioner-02">Beispiel Ärztin 02</a>
             </td>
@@ -970,7 +980,7 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 3, 2026 18:40+0000">2026-09-03</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 13:22+0000">2026-09-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

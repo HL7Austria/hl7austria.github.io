@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-09-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
+| Draft as of 2026-09-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
 
  
-Das Bundle vom Typ Collection bestehend aus: 
+Das Bundle vom Typ Searchset bestehend aus: 
 * 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
 * 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
  
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-03T18:40:45+00:00",
+  "date" : "2026-09-10T13:22:01+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -61,7 +61,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "use" : "work"
     }]
   }],
-  "description" : "Das Bundle vom Typ Collection bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
+  "description" : "Das Bundle vom Typ Searchset bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus\n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",
@@ -102,8 +102,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
     {
       "id" : "Bundle.type",
       "path" : "Bundle.type",
-      "short" : "Art des Bundles. Für Medikationspläne immer \"collection\".",
-      "patternCode" : "collection",
+      "short" : "Art des Bundles. Für Medikationspläne immer \"searchset\".",
+      "patternCode" : "searchset",
       "mustSupport" : true
     },
     {
@@ -135,7 +135,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
     {
       "id" : "Bundle.entry.link",
       "path" : "Bundle.entry.link",
-      "short" : "Verweise auf weiterführende Informationen zu diesem Entry.",
       "max" : "0"
     },
     {

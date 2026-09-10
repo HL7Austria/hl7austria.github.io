@@ -66,15 +66,7 @@ Hierfür führt der GDA ein **$plan-read** aus und bearbeitet die von der Fachan
 
 * Im Element **List.source** wird der aktuelle GDA als Quelle der Änderung dokumentiert.
 * Das Element **List.date** wird auf den Zeitpunkt der Änderung aktualisiert.
-* Entsprechende Planeinträge (**MedicationRequests**) werden neu erstellt und in der **List**-Ressouce referenziert: 
-* Das **List.entry.flag** des referenzierten MedicationRequests erhält den Wert **new**,
-* der **MedicationRequest** kann den Status **active** oder **on-hold** erhalten (siehe [Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status)).
-* **intent = order** und **category = "Planeintrag"** sind für alle Planeinträge verpflichtend mit festen Wert zu dokumentieren
-* **reported** erhält den Wert **false**, wenn die Medikation vom Autor des Planeintrags selbst stammt
-* für die Dokumentation des Arzneimittels ist die **Medication**-Ressource zu verwenden, diese muss immer im MedicationRequest enthalten sein (contained) 
-* **courseOfTherapyType** dokumentiert verpflichtend die Art der Medikation. Mögliche Ausprägungen sind **continuous** für Dauermedikation und **acute** für Akutmedikation. Bei Aktumedikation ist in **extension:effectiveDosePeriod** verpflichtend ein Enddatum für den Einnahmezeitraum zu dokumentieren. Bei Dauermedikation darf an dieser Stelle kein Enddatum dokumentiert werden.
-* dosageInstruction: in Arbeit. 
- 
+* 
 
  Offener Punkt:
  - dosageInstruction: Dosierungen in Arbeit. 
@@ -514,4 +506,13 @@ Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemei
 #### Sub_UC_eMed_02_12 - Medikationsplan durch ELGA-Teilnehmer löschen
 
  Offene Fragen: Ausüben der Teilnehmerrechte in Arbeit. 
+
+##### Custom Operations
+
+* [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
+* [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
+
+##### Sequenzdiagramm
+
+In Arbeit. –>
 

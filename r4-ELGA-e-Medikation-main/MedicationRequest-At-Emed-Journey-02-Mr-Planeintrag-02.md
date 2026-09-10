@@ -34,39 +34,16 @@
       "itemCodeableConcept" : {
         "coding" : [{
           "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
-          "code" : "A01AC03",
-          "display" : "Hydrocortison"
+          "code" : "A11HA30",
+          "display" : "Dexpanthenol"
         }]
       },
       "strength" : {
         "numerator" : {
-          "value" : 1,
-          "unit" : "%",
-          "system" : "http://unitsofmeasure.org",
-          "code" : "%"
-        },
-        "denominator" : {
-          "value" : 100,
+          "value" : 5,
           "unit" : "g",
           "system" : "http://unitsofmeasure.org",
           "code" : "g"
-        }
-      }
-    },
-    {
-      "itemCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
-          "code" : "A01AB18",
-          "display" : "Clotrimazol"
-        }]
-      },
-      "strength" : {
-        "numerator" : {
-          "value" : 1,
-          "unit" : "%",
-          "system" : "http://unitsofmeasure.org",
-          "code" : "%"
         },
         "denominator" : {
           "value" : 100,
@@ -83,7 +60,7 @@
       "isActive" : false,
       "strength" : {
         "numerator" : {
-          "value" : 98,
+          "value" : 95,
           "unit" : "g"
         },
         "denominator" : {
@@ -97,15 +74,12 @@
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
     "valuePeriod" : {
       "start" : "2026-02-27",
-      "end" : "2026-03-16"
+      "end" : "2026-03-20"
     }
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-    "valueMarkdown" : "1 täglich auftragen"
-  }],
-  "identifier" : [{
-    "value" : "4713_202602280800000"
+    "valueMarkdown" : "1-0-1-0 täglich | 2 × täglich für 3 Wochen"
   }],
   "status" : "active",
   "intent" : "order",
@@ -113,7 +87,7 @@
     "coding" : [{
       "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
       "code" : "1",
-      "display" : "Medikationsplaneintrag"
+      "display" : "Planeintrag"
     }]
   }],
   "reportedBoolean" : false,
@@ -123,7 +97,7 @@
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01"
   },
-  "authoredOn" : "2026-02-27T10:20:00+00:00",
+  "authoredOn" : "2026-02-27T08:10:00+00:00",
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
@@ -139,17 +113,21 @@
       "valueCodeableConcept" : {
         "coding" : [{
           "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
-          "code" : "other"
+          "code" : "standard"
         }]
       }
     }],
     "sequence" : 1,
-    "patientInstruction" : "Abends sehr dünn auf die betroffene Stelle auftragen.",
     "timing" : {
       "repeat" : {
-        "frequency" : 1,
+        "boundsDuration" : {
+          "value" : 3,
+          "unit" : "wk"
+        },
+        "frequency" : 2,
         "period" : 1,
-        "periodUnit" : "d"
+        "periodUnit" : "d",
+        "when" : ["MORN", "EVE"]
       }
     },
     "route" : {

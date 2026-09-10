@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag | *Version*:0.1.1 | |
-| Draft as of 2026-09-03 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
+| Draft as of 2026-09-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
 
  
-Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine "MedicationRequest"-Ressource abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird. Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. 
+Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet. Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. 
 
 **Usages:**
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-09-03T18:40:45+00:00",
+  "date" : "2026-09-10T13:22:01+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "use" : "work"
     }]
   }],
-  "description" : "Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nDie Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.\nDer Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet.",
+  "description" : "Ein Planeintrag im Medikationsplan wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nSie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird.\nDer Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -96,7 +96,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     "element" : [{
       "id" : "MedicationRequest",
       "path" : "MedicationRequest",
-      "short" : "Medikationsplaneintrag",
+      "short" : "Planeintrag",
       "constraint" : [{
         "key" : "e-med-continuous-medication-effectiveDosePeriod",
         "severity" : "error",
@@ -129,8 +129,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.extension:effectiveDosePeriod",
       "path" : "MedicationRequest.extension",
       "sliceName" : "effectiveDosePeriod",
-      "short" : "Zeitraum, in dem die Medikation eingenommen werden soll.",
-      "definition" : "Zeitraum, über den die Medikation eingenommen werden soll. Wenn mehrere dosageInstruction-Zeilen vorhanden sind (z. B. bei einer ausschleichenden Dosierung), entspricht dieser Zeitraum dem frühesten Startdatum und dem spätesten Enddatum der dosageInstructions.",
+      "short" : "Zeitraum, in dem das Arzneimittel eingenommen werden soll.",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -153,19 +152,17 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "short" : "Medikationsplaneintrag-ID.",
-      "min" : 1,
-      "max" : "1",
-      "mustSupport" : true
+      "short" : "Planeintrag-ID.",
+      "max" : "1"
     },
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status des Medikationsplaneintrags. Mögliche Ausprägungen: [active | on-hold | completed | stopped | entered-in-error]. Bedeutung: active: Planeintrag einer aktiven Medikation, die eingenommen werden soll | on-hold: Planeintrag ist pausiert, die Therapie ist unterbrochen (Wiederaufnahme vorgesehen) | completed: Therapie gemäß Planeintrag wie geplant durchgeführt und abgeschlossen | stopped: Therapie gemäß Planeintrag vorzeitig gestoppt und abgeschlossen | entered-in-error: Fehlerhafter Planeintrag storniert und abgeschlossen.",
+      "short" : "Status des Planeintrags. Mögliche Ausprägungen: [active | on-hold | completed | stopped | entered-in-error]. Bedeutung: active: Planeintrag einer aktiven Medikation, die eingenommen werden soll | on-hold: Planeintrag ist pausiert, die Therapie ist unterbrochen (Wiederaufnahme vorgesehen) | completed: Therapie gemäß Planeintrag wie geplant durchgeführt und abgeschlossen | stopped: Therapie gemäß Planeintrag vorzeitig gestoppt und abgeschlossen | entered-in-error: Fehlerhafter Planeintrag storniert und abgeschlossen.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedikationsplaneintragStatusVS"
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/PlaneintragStatusVS"
       }
     },
     {
@@ -176,33 +173,33 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.statusReason.coding",
       "path" : "MedicationRequest.statusReason.coding",
-      "short" : "Codierter Grund für den aktuellen Status des Medikationsplaneintrags, z.B. warum ein Medikament abgesetzt wurde. Keine codierte Angabe im Medikationsplaneintrag.",
+      "short" : "Keine codierte Begründung für den Status des Planeintrags.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.statusReason.text",
       "path" : "MedicationRequest.statusReason.text",
-      "short" : "Grund für den aktuellen Status des Medikationsplaneintrags (Freitext), z.B. warum ein Medikament abgesetzt wurde.",
+      "short" : "Begründung für den Status des Planeintrags (Freitext), z.B. warum ein Medikament abgesetzt wurde.",
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.intent",
       "path" : "MedicationRequest.intent",
-      "short" : "Ein Medikationsplaneintrag ist eine autorisierte ärztliche Anordnung und stellt eine verbindliche Einnahmeanweisung für den Patienten dar, auf dessen Basis eine Geplante Abgabe erstellt werden kann. Fixer Wert: \"order\". (req) proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option. https://hl7.org/fhir/R4/valueset-medicationrequest-intent.html",
+      "short" : "Ein Planeintrag ist eine autorisierte ärztliche Anordnung und stellt eine verbindliche Einnahmeanweisung für den Patienten dar, auf dessen Basis eine Geplante Abgabe erstellt werden kann. Fixer Wert: \"order\". (req) proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option. https://hl7.org/fhir/R4/valueset-medicationrequest-intent.html",
       "patternCode" : "order",
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category",
       "path" : "MedicationRequest.category",
-      "short" : "Kategorie zur Unterscheidung eines Medikationsplaneintrags von einer geplanten Abgabe (beide haben intent order)",
+      "short" : "Kategorie zur Unterscheidung eines Planeintrags von einer geplanten Abgabe (beide haben intent order)",
       "min" : 1,
       "max" : "1",
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
           "code" : "1",
-          "display" : "Medikationsplaneintrag"
+          "display" : "Planeintrag"
         }]
       },
       "mustSupport" : true
@@ -210,13 +207,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.priority",
       "path" : "MedicationRequest.priority",
-      "short" : "Priorität des Medikationsplaneintrag: (req) routine | urgent | asap | stat. Keine Verwendung in Medikationsplaneintrag.",
+      "short" : " Medikationsplaneinträge können nicht mit einer Priorität versehen werden: (req) routine | urgent | asap | stat.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.doNotPerform",
       "path" : "MedicationRequest.doNotPerform",
-      "short" : "Gibt an, ob der Medikationsplaneintrag die Verordnung einer Medikation (und somit die Erstellung einer geplanten Abgabe) untersagt (z.B. bei Allergie).",
+      "short" : "Arzneimittel, die (z.B. aufgrund einer Allergie) nicht eingenommen bzw. verordnet werden dürfen, werden nicht dokumentiert.",
       "max" : "0"
     },
     {
@@ -236,7 +233,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.reported[x]:reportedReference",
       "path" : "MedicationRequest.reported[x]",
       "sliceName" : "reportedReference",
-      "short" : "Im Falle einer Fremdmedikation Angabe einer Referenz auf: (Patient | Practitioner | PractitionerRole | RelatedPerson | Organization). Keine Verwendung im Medikationsplan.",
+      "short" : "Keine Verwendung im Medikationsplan.",
       "min" : 0,
       "max" : "0",
       "type" : [{
@@ -274,7 +271,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
-      "short" : "Patient, für den der Medikationsplaneintrag ausgestellt werden soll, der über den Zentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
+      "short" : "Patient, für den der Planeintrag ausgestellt werden soll, der über den Zentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
@@ -284,26 +281,26 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.encounter",
       "path" : "MedicationRequest.encounter",
-      "short" : "Aufenthalt/Begegnung, während dessen der Medikationsplaneintrag erstellt wurde. Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Es wird kein Behandlungskontext dokumentiert.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.supportingInformation",
       "path" : "MedicationRequest.supportingInformation",
-      "short" : "Referenz auf zusätzliche Informationen (Ressource Any) (z. B. Größe und Gewicht des Patienten), die die Verschreibung des Medikaments unterstützen. Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Keine Referenzen auf zusätzliche Patienteninformationen (Ressource Any) im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.authoredOn",
       "path" : "MedicationRequest.authoredOn",
-      "short" : "Datum der Erstellung des Medikationsplaneintrags.",
+      "short" : "Datum der Erstellung des Planeintrags.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "Arzt oder Ärztin, die den Medikationsplaneintrag erstellt hat und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
+      "short" : "Arzt oder Ärztin, die den Planeintrag erstellt hat und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -328,7 +325,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.recorder",
       "path" : "MedicationRequest.recorder",
-      "short" : "Die Person, die den Medikationsplaneintrag im Auftrag eines GDA eingegeben hat.",
+      "short" : "Die Person, die den Planeintrag im Auftrag eines GDA eingegeben hat.",
       "max" : "0"
     },
     {
@@ -345,19 +342,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.instantiatesCanonical",
       "path" : "MedicationRequest.instantiatesCanonical",
-      "short" : "URL, die auf eine Richtlinie/Guideline verweist, die von diesem Medikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
+      "short" : "URL, die auf eine Richtlinie/Guideline verweist, die von diesem Planeintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.instantiatesUri",
       "path" : "MedicationRequest.instantiatesUri",
-      "short" : "URL, die auf eine extern gepflegte Richtlinie/Guideline verweist, die von diesem Medikationsplaneintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Medikationsplaneintrag.",
+      "short" : "URL, die auf eine extern gepflegte Richtlinie/Guideline verweist, die von diesem Planeintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.basedOn",
       "path" : "MedicationRequest.basedOn",
-      "short" : "Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
@@ -376,13 +373,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.insurance",
       "path" : "MedicationRequest.insurance",
-      "short" : "Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
-      "short" : "Zusätzliche Informationen zum Medikationsplaneintrag.",
+      "short" : "Zusätzliche Informationen zum Planeintrag.",
       "mustSupport" : true
     },
     {
@@ -463,31 +460,31 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.dispenseRequest",
       "path" : "MedicationRequest.dispenseRequest",
-      "short" : "Details zur geplanten Abgabe des Arzneimittels im Medikationsplan. Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Details zur geplanten Abgabe des Arzneimittels im Medikationsplan. Keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.substitution",
       "path" : "MedicationRequest.substitution",
-      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf (Absicht des Arztes, der den Medikationsplaneintrag erstellt). Derzeit keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf (Absicht des Arztes, der den Planeintrag erstellt). Derzeit keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.priorPrescription",
       "path" : "MedicationRequest.priorPrescription",
-      "short" : "Im Falle einer Änderung wird auf den ersetzten Medikationsplaneintrag verwiesen.",
+      "short" : "Im Falle einer Änderung wird auf den ersetzten Planeintrag verwiesen.",
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.detectedIssue",
       "path" : "MedicationRequest.detectedIssue",
-      "short" : "Klinisches Problem mit Maßnahme (Referenz auf Ressouce DetectedIssue). Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Klinisches Problem mit Maßnahme (Referenz auf Ressouce DetectedIssue). Keine Verwendung im Planeintrag.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.eventHistory",
       "path" : "MedicationRequest.eventHistory",
-      "short" : "Referenz auf Provenance-Ressourcen, die verschiedene relevante Versionen dieser Ressource dokumentieren. Keine Verwendung im Medikationsplaneintrag.",
+      "short" : "Referenz auf Provenance-Ressourcen, die verschiedene relevante Versionen dieser Ressource dokumentieren. Keine Verwendung im Planeintrag.",
       "max" : "0"
     }]
   }

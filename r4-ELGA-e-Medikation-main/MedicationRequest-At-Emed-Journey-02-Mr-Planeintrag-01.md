@@ -26,8 +26,8 @@
     "code" : {
       "coding" : [{
         "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
-        "code" : "2443061",
-        "display" : "EBETREXAT TBL 10MG"
+        "code" : "2450836",
+        "display" : "RAMIPRIL HEX TBL 5MG"
       }]
     }
   }],
@@ -39,10 +39,7 @@
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-    "valueMarkdown" : "1-0-1-0 Stück"
-  }],
-  "identifier" : [{
-    "value" : "4712_202602280800000"
+    "valueMarkdown" : "1-0-0-0 täglich | Täglich 1 Stück morgens"
   }],
   "status" : "active",
   "intent" : "order",
@@ -50,7 +47,7 @@
     "coding" : [{
       "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
       "code" : "1",
-      "display" : "Medikationsplaneintrag"
+      "display" : "Planeintrag"
     }]
   }],
   "reportedBoolean" : false,
@@ -60,7 +57,7 @@
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01"
   },
-  "authoredOn" : "2026-02-27T10:20:00+00:00",
+  "authoredOn" : "2026-02-27T08:10:00+00:00",
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
@@ -70,27 +67,24 @@
       "code" : "continuous"
     }]
   },
-  "note" : [{
-    "text" : "Freitext Informationen zum Medikationsplaneintrag."
-  }],
   "dosageInstruction" : [{
     "extension" : [{
       "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
       "valueCodeableConcept" : {
         "coding" : [{
           "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
-          "code" : "other"
+          "code" : "standard"
         }]
       }
     }],
     "sequence" : 1,
-    "patientInstruction" : "Nehmen Sie die Kapsel nach dem Essen mit ausreichend Flüssigkeit ein.",
+    "patientInstruction" : "Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein.",
     "timing" : {
       "repeat" : {
-        "frequency" : 2,
+        "frequency" : 1,
         "period" : 1,
         "periodUnit" : "d",
-        "when" : ["ACM", "ACV"]
+        "when" : ["MORN"]
       }
     },
     "route" : {
@@ -104,7 +98,7 @@
       "doseQuantity" : {
         "unit" : "Stück",
         "system" : "http://unitsofmeasure.org",
-        "code" : "{Stueck}"
+        "code" : "Stueck"
       }
     }]
   }]

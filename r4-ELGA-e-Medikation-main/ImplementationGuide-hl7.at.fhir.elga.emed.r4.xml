@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-09-03T18:40:45+00:00"/>
+  <date value="2026-09-10T13:22:01+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -560,7 +560,7 @@
         <reference value="StructureDefinition/at-elga-emed-list-medikationsplan"/>
       </reference>
       <name value="AT ELGA e-Medikation List Medikationsplan"/>
-      <description value="Der Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine List-Ressource abgebildet. &#xA;Diese enthält 0..* Einträge (List.entry), wobei jeder Entry genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) in List.entry.item beinhaltet.&#xA;Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags."/>
+      <description value="Der Medikationsplan wird durch eine List-Ressource abgebildet. &#xA;Diese enthält 0..* Einträge (List.entry), wobei jedes List.entry.item genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) beinhaltet.&#xA;Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. &#xA;Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags."/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
     </resource>
@@ -619,7 +619,7 @@
         <reference value="StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
       </reference>
       <name value="At ELGA e-Medikation MedicationRequest Planeintrag"/>
-      <description value="Ein Medikationsplaneintrag im Medikationsplan eines ELGA-Teilnehmers bzw. einer ELGA-Teilnehmerin wird durch eine &quot;MedicationRequest&quot;-Ressource abgebildet.&#xA;Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained Medication-Ressource (inline, d.h. innerhalb der Ressource), dokumentiert wird.&#xA;Der Medikationsplaneintrag kann in weiterer Folge als Grundlage für die Erstellung einer &quot;Geplanten Abgabe&quot; dienen. Es werden R5-Backport-Extensions verwendet."/>
+      <description value="Ein Planeintrag im Medikationsplan wird durch eine &quot;MedicationRequest&quot;-Ressource abgebildet.&#xA;Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird.&#xA;Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer &quot;Geplanten Abgabe&quot; dienen. Es werden R5-Backport-Extensions verwendet."/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
     </resource>
@@ -631,7 +631,7 @@
         <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
       </reference>
       <name value="AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan"/>
-      <description value="Das Bundle vom Typ Collection bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
+      <description value="Das Bundle vom Typ Searchset bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus&#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
     </resource>
@@ -726,6 +726,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
+      </reference>
+      <name value="Beispiel Allgemeinmedizinerin 01"/>
+      <description value="Beispiel einer behandelnden Allgemeinmedizinerin."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="MedicationDispense"/>
       </extension>
       <reference>
@@ -814,6 +825,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-01"/>
+      </reference>
+      <name value="Beispiel Journey 02: Geplante Abgabe"/>
+      <description value="Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Medication"/>
       </extension>
       <reference>
@@ -853,7 +875,7 @@
         <reference value="MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01"/>
       </reference>
       <name value="Beispiel Journey 02: Medikationsplaneintrag 1"/>
-      <description value="Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
+      <description value="Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
@@ -864,7 +886,7 @@
         <reference value="MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"/>
       </reference>
       <name value="Beispiel Journey 02: Medikationsplaneintrag 2"/>
-      <description value="Bildet einen Medikationsplaneintrag mit einer Referenz auf eine magistrale Zubereitung und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
+      <description value="Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung und zugehörigen Dosierungsanweisungen ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
@@ -1037,17 +1059,6 @@
         <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
-      </reference>
-      <name value="Beispiel Ärztin 01"/>
-      <description value="Beispiel einer behandelnden Ärztin."/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Practitioner"/>
-      </extension>
-      <reference>
         <reference value="Practitioner/At-Emed-Example-Practitioner-02"/>
       </reference>
       <name value="Beispiel Ärztin 02"/>
@@ -1180,7 +1191,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/MedikationsplaneintragStatusVS"/>
+        <reference value="ValueSet/PlaneintragStatusVS"/>
       </reference>
       <name value="ELGA e-Med Medikationsplaneintrag Status Value Set"/>
       <description value="ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest)."/>

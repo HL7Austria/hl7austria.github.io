@@ -1,18 +1,18 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Ärztin 01 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Allgemeinmedizinerin 01 - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Ärztin 01**
+* **Beispiel Allgemeinmedizinerin 01**
 
-## Example Practitioner: Beispiel Ärztin 01
+## Example Practitioner: Beispiel Allgemeinmedizinerin 01
 
 Profile: [AT ELGA Core Practitioner Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitioner.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.1.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.3.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321
 
 **active**: true
 
-**name**: Melanie Musterärztin 
+**name**: Melanie Hausärztin 
 
 **telecom**: [office@musterpraxis.at](mailto:office@musterpraxis.at), [+436500987654321](tel:+436500987654321)
 
@@ -47,7 +47,7 @@ Profile: [AT ELGA Core Practitioner Profil](https://build.fhir.org/ig/HL7Austria
   }],
   "active" : true,
   "name" : [{
-    "family" : "Musterärztin",
+    "family" : "Hausärztin",
     "given" : ["Melanie"],
     "prefix" : ["Prof. Dr."]
   }],
