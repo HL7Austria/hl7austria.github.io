@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-10T09:01:10+00:00",
+  "date" : "2026-09-10T09:35:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -892,8 +892,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "List/ListExample01"
       },
-      "name" : "Beispiel einer leeren Summary-Liste",
-      "description" : "Initiale Summary-Liste ohne Summary-Einträge.",
+      "name" : "Beispiel einer leeren Summary-Liste für Conditions",
+      "description" : "Initiale Summary-Liste ohne Summary-Einträge (Condition).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
@@ -1079,10 +1079,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListConditionExample2.html"
+        "valueUri" : "List-ListConditionExample3.html"
       }],
       "reference" : {
-        "reference" : "List/ListConditionExample2"
+        "reference" : "List/ListConditionExample3"
       },
       "name" : "Condition Summary-Liste mit einem Summary-Eintrag",
       "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.",
@@ -1095,13 +1095,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListConditionExample3.html"
+        "valueUri" : "List-ListConditionExample2.html"
       }],
       "reference" : {
-        "reference" : "List/ListConditionExample3"
+        "reference" : "List/ListConditionExample2"
       },
-      "name" : "Condition Summary-Liste mit einem Summary-Eintrag",
-      "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist.",
+      "name" : "Condition Summary-Liste nach erstem Arztbesuch",
+      "description" : "Beispiel einer Summary-Liste nach dem ersten Arztbesuch. Zusätzlich ist ein Eintrag enthalten, der irrtümlich erfasst wurde.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {

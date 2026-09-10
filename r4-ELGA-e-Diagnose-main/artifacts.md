@@ -71,7 +71,7 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Device](Device-DeviceExample.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
-| [Beispiel einer leeren Summary-Liste](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge. |
+| [Beispiel einer leeren Summary-Liste für Conditions](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge (Condition). |
 | [Beispielinstanz einer Allergie für die Summary-Liste](AllergyIntolerance-AllergySummaryExample1.md) | Beispiel einer bestätigten Allergie |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample1.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionGesamtlisteExample2.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
@@ -81,6 +81,6 @@ These are example instances that show what data produced and consumed by systems
 | [Beispielinstanz einer Prozedur für die Summary-Liste](Procedure-ProcedureSummaryExample1.md) | Beispiel einer Prozedur |
 | [Beispielinstanz einer stornierten Diagnose](Condition-ConditionSummaryExample3.md) | Beispiel einer Diagnose nach Durchführung der $entered-in-error-Operation durch einen GDA |
 | [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
-| [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample2.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
 | [Condition Summary-Liste mit einem Summary-Eintrag](List-ListConditionExample3.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Diagnose verweist. |
+| [Condition Summary-Liste nach erstem Arztbesuch](List-ListConditionExample2.md) | Beispiel einer Summary-Liste nach dem ersten Arztbesuch. Zusätzlich ist ein Eintrag enthalten, der irrtümlich erfasst wurde. |
 

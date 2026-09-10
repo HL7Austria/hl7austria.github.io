@@ -12,19 +12,19 @@ Profile: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-edi
 
 **clinicalStatus**: Active
 
-**verificationStatus**: Refuted
+**verificationStatus**: Confirmed
 
 **code**: Amoxicillin
 
-**patient**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
+**patient**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
-**recordedDate**: 2026-03-01 00:00:00+0000
+**recordedDate**: 2026-03-03 00:00:00+0000
 
 **recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
 **asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
-> **reaction****AT ELGA Reaktionszeit**: <6 Stunden**manifestation**: Exanthem, Emesis**onset**: 1908-03-01**note**: 
+> **reaction****AT ELGA Reaktionszeit**: <6 Stunden**manifestation**: Exanthem, Emesis**onset**: 1983-03-01**note**: 
 > 
 
 Hautausschlag und Erbrechen nach Penicillin-Einnahme
@@ -55,7 +55,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
   "verificationStatus" : {
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
-      "code" : "refuted"
+      "code" : "confirmed"
     }]
   },
   "code" : {
@@ -68,7 +68,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
   "patient" : {
     "reference" : "Patient/PatientExample"
   },
-  "recordedDate" : "2026-03-01T00:00:00+00:00",
+  "recordedDate" : "2026-03-03T00:00:00+00:00",
   "recorder" : {
     "reference" : "Practitioner/PractitionerExample"
   },
@@ -100,7 +100,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
         "display" : "Emesis"
       }]
     }],
-    "onset" : "1908-03-01",
+    "onset" : "1983-03-01",
     "note" : [{
       "text" : "Hautausschlag und Erbrechen nach Penicillin-Einnahme"
     }]

@@ -16,11 +16,11 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **code**: Hypertensive disorder, systemic arterial
 
-**subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
+**subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **onset**: 2024-06-01
 
-**recordedDate**: 2026-03-01 00:00:00+0000
+**recordedDate**: 2026-03-03 00:00:00+0000
 
 **recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
@@ -30,7 +30,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > 
 
-Patient berichtet über bekannte Hypotonie seit 2024, Lisinopril 10mg 1-0-0.
+Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
 
 
 
@@ -71,7 +71,7 @@ Patient berichtet über bekannte Hypotonie seit 2024, Lisinopril 10mg 1-0-0.
     "reference" : "Patient/PatientExample"
   },
   "onsetDateTime" : "2024-06-01",
-  "recordedDate" : "2026-03-01T00:00:00+00:00",
+  "recordedDate" : "2026-03-03T00:00:00+00:00",
   "recorder" : {
     "reference" : "Practitioner/PractitionerExample"
   },
@@ -79,7 +79,7 @@ Patient berichtet über bekannte Hypotonie seit 2024, Lisinopril 10mg 1-0-0.
     "reference" : "Practitioner/PractitionerExample"
   },
   "note" : [{
-    "text" : "Patient berichtet über bekannte Hypotonie seit 2024, Lisinopril 10mg 1-0-0."
+    "text" : "Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0."
   }]
 }
 

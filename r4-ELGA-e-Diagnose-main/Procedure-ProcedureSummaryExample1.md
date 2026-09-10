@@ -12,9 +12,9 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
 
 **status**: Completed
 
-**code**: Coloskopie
+**code**: Colonoscopy
 
-**subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
+**subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **performed**: 2025-09-23 09:30:00+0200
 
@@ -42,7 +42,7 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
     "coding" : [{
       "system" : "http://snomed.info/sct",
       "code" : "73761001",
-      "display" : "Coloskopie"
+      "display" : "Colonoscopy"
     }]
   },
   "subject" : {

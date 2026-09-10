@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html)
 
-Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
+Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)
 
 -------
 
@@ -121,7 +121,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
     "use" : "home"
   }],
   "gender" : "male",
-  "birthDate" : "1900-01-01",
+  "birthDate" : "1970-01-01",
   "address" : [{
     "use" : "home",
     "type" : "both",

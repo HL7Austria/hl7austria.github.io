@@ -16,11 +16,11 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **code**: Suppurative tonsillitis
 
-**subject**: [Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
+**subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **onset**: 2026-02-28
 
-**recordedDate**: 2026-03-01 00:00:00+0000
+**recordedDate**: 2026-03-03 00:00:00+0000
 
 **recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
@@ -30,7 +30,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > 
 
-Temperatur >38.5, Gliederschmerzen
+Temperatur >38.5, Schmerzen beim Schlucken
 
 
 
@@ -71,7 +71,7 @@ Temperatur >38.5, Gliederschmerzen
     "reference" : "Patient/PatientExample"
   },
   "onsetDateTime" : "2026-02-28",
-  "recordedDate" : "2026-03-01T00:00:00+00:00",
+  "recordedDate" : "2026-03-03T00:00:00+00:00",
   "recorder" : {
     "reference" : "Practitioner/PractitionerExample"
   },
@@ -79,7 +79,7 @@ Temperatur >38.5, Gliederschmerzen
     "reference" : "Practitioner/PractitionerExample"
   },
   "note" : [{
-    "text" : "Temperatur >38.5, Gliederschmerzen"
+    "text" : "Temperatur >38.5, Schmerzen beim Schlucken"
   }]
 }
 
