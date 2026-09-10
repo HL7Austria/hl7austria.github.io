@@ -327,6 +327,7 @@ width: 100%;}
 
 <p><strong>Abruf und Initialisierung der Summary-Listen</strong></p>
 
+<!-- TODO mit Architekten abklären, wann und wie die Summary-Listen für einen Patienten initialisiert werden -->
 <p>Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese enthält den Patienten <a href="Patient-PatientExample.html">Max Mustermann</a>, die erstellende e-Diagnose <a href="Device-DeviceExample.html">Fachanwendung</a> sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über <code class="language-plaintext highlighter-rouge">List.emptyReason</code> mit dem Code <code class="language-plaintext highlighter-rouge">notstarted</code> (siehe <a href="List-ListExample01.html">Beispiel für eine leere Liste</a>) angegeben.</p>
 
 <p><strong>Erfassung bestehender Diagnosen und Allergien</strong></p>
@@ -356,13 +357,13 @@ Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am <strong>9. 
 <p>Dr. Musterärztin berücksichtigt diese Angabe bei der weiteren Beurteilung. Da Durchfall sowohl als Nebenwirkung der Antibiotikatherapie als auch im Rahmen eines Morbus-Crohn-Schubs auftreten kann, wird die Ursache entsprechend abgeklärt.
 Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte Koloskopie am 23. September 2025 stattgefunden hat.</p>
 
-<p>Dr. Musterärztin hält die Erkrankungen <a href="Condition-ConditionSummaryExample2.html">Morbus Crohn</a> in der Summary-Liste fest ToDo - die muss ich noch erstellen, <a href="Condition-ConditionGesamtlisteExample3.html">Medikamenteninduzierte Diarrhö</a>, <a href="Condition-ConditionGesamtlisteExample2.html">Candida Balanitis</a> in der Gesamtansicht aller Diagnosen fest und die <a href="Procedure-ProcedureSummaryExample1.html">Coloskopie</a> als Prozedur in der Summary-Liste der Prozedur - die muss ich noch erstellen fest. Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.</p>
+<p>Dr. Musterärztin hält die Erkrankungen <a href="Condition-ConditionSummaryExample2.html">Morbus Crohn</a>, <a href="Condition-ConditionGesamtlisteExample3.html">Medikamenteninduzierte Diarrhö</a>, <a href="Condition-ConditionGesamtlisteExample2.html">Candida Balanitis</a> fest und die <a href="Procedure-ProcedureSummaryExample1.html">Koloskopie</a> als Prozedur, wobei sie Morbus Crohn sowie die Koloskopie in die jeweilige Summary-Liste aufnimmt (TODO). Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.</p>
 
-<p>Dr. Musterärztin ruft die aktuelle <a href="List-ListConditionExample2.html">Condition-Summary-Liste</a> ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den Eintrag <a href="Condition-ConditionSummaryExample3.html">Entered-in-Error</a>, welcher in der Folge durch die e-Diagnose Fachanwendung aus der <a href="List-ListConditionExample3.html">Condition-Summary-Liste</a> entfernt wird.</p>
+<p>Dr. Musterärztin ruft die aktuelle <a href="List-ListConditionExample2.html">Condition-Summary-Liste</a> ab, wobei ihr ein Fehler auffällt. Es steht eine Diagnose in der Summary-Liste, die irrtümlich erfasst wurde. Sie storniert den <a href="Condition-ConditionSummaryExample3.html">irrtümlich erfassten Eintrag</a>, welcher in der Folge durch die e-Diagnose Fachanwendung aus der <a href="List-ListConditionExample3.html">Condition-Summary-Liste</a> entfernt wird.</p>
 
 <h3 id="elga-teilnehmer---eintrag-löschen">ELGA-Teilnehmer - Eintrag löschen</h3>
 
-<p>Am <strong>20. April 2026</strong> nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht. Er wählt den Eintrag aus und <a href="uc_ediag_03_teilnehmer.html#eintrag-löschen">löscht</a> ihn.</p>
+<p>Am <strong>20. April 2026</strong> nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion weiterhin in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht und <a href="uc_ediag_03_teilnehmer.html#eintrag-löschen">löscht</a> den Eintrag.</p>
 
 
 
@@ -383,7 +384,7 @@ Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 09:50+0000">2026-09-10</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 10:02+0000">2026-09-10</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

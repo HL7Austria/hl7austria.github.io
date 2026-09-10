@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.
   "title" : "ELGA List Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-09-10T09:50:09+00:00",
+  "date" : "2026-09-10T10:02:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
