@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-10T11:24:50+00:00",
+  "date" : "2026-09-10T11:47:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -675,6 +675,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListAllergyEmptyExample.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListAllergyEmptyExample"
+      },
+      "name" : "Allergy-Summary-Liste (notstarted)",
+      "description" : "Initiale Summary-Liste ohne Summary-Einträge (Allergy).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       },
       {
@@ -1095,10 +1111,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-ListExample01.html"
+        "valueUri" : "List-ListConditionEmptyExample.html"
       }],
       "reference" : {
-        "reference" : "List/ListExample01"
+        "reference" : "List/ListConditionEmptyExample"
       },
       "name" : "Condition-Summary-Liste (notstarted)",
       "description" : "Initiale Summary-Liste ohne Summary-Einträge (Condition).",
@@ -1214,6 +1230,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Procedure Summary-Liste mit einem Summary-Eintrag",
       "description" : "Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Prozedur verweist.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ListProcedureEmptyExample.html"
+      }],
+      "reference" : {
+        "reference" : "List/ListProcedureEmptyExample"
+      },
+      "name" : "Procedure-Summary-Liste (notstarted)",
+      "description" : "Initiale Summary-Liste ohne Summary-Einträge (Procedure).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {

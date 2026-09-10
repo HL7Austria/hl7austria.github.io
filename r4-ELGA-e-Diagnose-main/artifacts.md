@@ -68,6 +68,7 @@ These are example instances that show what data produced and consumed by systems
 | | |
 | :--- | :--- |
 | [Allergie Summary-Liste mit einem Summary-Eintrag](List-ListAllergyExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist. |
+| [Allergy-Summary-Liste (notstarted)](List-ListAllergyEmptyExample.md) | Initiale Summary-Liste ohne Summary-Einträge (Allergy). |
 | [Beispiel Device](Device-DeviceExample.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
 | [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
 | [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
@@ -82,6 +83,7 @@ These are example instances that show what data produced and consumed by systems
 | [Condition Summary-Liste (Erster Arztbesuch)](List-ListConditionExample1.md) | Beispiel der Condition-Summary-Liste nach dem ersten Arztbesuch. |
 | [Condition Summary-Liste (Zweiter Arztbesuch - fehlerhafter Eintrag)](List-ListConditionExample2.md) | Beispiel einer Summary-Liste während des zweiten Arztbesuchs. Eine neue Diagnose wurde erfasst.Zusätzlich ist ein Eintrag enthalten, der irrtümlich erfasst wurde. |
 | [Condition Summary-Liste (Zweiter Arztbesuch - korrigiert)](List-ListConditionExample3.md) | Beispiel einer Summary-Liste nachdem ein Eintrag storniert wurde. |
-| [Condition-Summary-Liste (notstarted)](List-ListExample01.md) | Initiale Summary-Liste ohne Summary-Einträge (Condition). |
+| [Condition-Summary-Liste (notstarted)](List-ListConditionEmptyExample.md) | Initiale Summary-Liste ohne Summary-Einträge (Condition). |
 | [Procedure Summary-Liste mit einem Summary-Eintrag](List-ListProcedureExample1.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Prozedur verweist. |
+| [Procedure-Summary-Liste (notstarted)](List-ListProcedureEmptyExample.md) | Initiale Summary-Liste ohne Summary-Einträge (Procedure). |
 

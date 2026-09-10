@@ -1,16 +1,16 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Condition-Summary-Liste (notstarted) - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Procedure-Summary-Liste (notstarted) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Condition-Summary-Liste (notstarted)**
+* **Procedure-Summary-Liste (notstarted)**
 
-## Example List: Condition-Summary-Liste (notstarted)
+## Example List: Procedure-Summary-Liste (notstarted)
 
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-03-03 08:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
+| Date: 2026-03-03 08:00:00+0000 | Mode: Working List | Status: Current | Code: History of Procedures Document |
 | Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
 
@@ -21,7 +21,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 ```json
 {
   "resourceType" : "List",
-  "id" : "ListExample01",
+  "id" : "ListProcedureEmptyExample",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
@@ -30,7 +30,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "code" : {
     "coding" : [{
       "system" : "http://loinc.org",
-      "code" : "11450-4"
+      "code" : "47519-4"
     }]
   },
   "subject" : {
