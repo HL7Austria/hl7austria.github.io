@@ -11,7 +11,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Date: 2026-03-03 08:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
-| Subject:`PatientExample`Source: | | | |
+| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
 
 
@@ -34,11 +34,11 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
     }]
   },
   "subject" : {
-    "reference" : "PatientExample"
+    "reference" : "Patient/PatientExample"
   },
   "date" : "2026-03-03T08:00:00+00:00",
   "source" : {
-    "reference" : "DeviceExample"
+    "reference" : "Device/DeviceExample"
   },
   "emptyReason" : {
     "coding" : [{

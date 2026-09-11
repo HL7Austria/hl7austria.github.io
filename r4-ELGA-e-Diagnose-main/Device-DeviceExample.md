@@ -15,7 +15,7 @@ e-Diagnose Fachanwendung
 ```json
 {
   "resourceType" : "Device",
-  "id" : "DeviceFA",
+  "id" : "DeviceExample",
   "deviceName" : [{
     "name" : "e-Diagnose Fachanwendung",
     "type" : "user-friendly-name"

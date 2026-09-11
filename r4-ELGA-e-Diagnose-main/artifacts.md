@@ -69,9 +69,9 @@ These are example instances that show what data produced and consumed by systems
 | :--- | :--- |
 | [Allergie Summary-Liste mit einem Summary-Eintrag](List-AllergyList01.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Allergie verweist. |
 | [Allergy-Summary-Liste (notstarted)](List-AllergyListEmpty.md) | Initiale Summary-Liste ohne Summary-Einträge (Allergy). |
-| [Beispiel Device](Device-DeviceFA.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
-| [Beispiel Patient](Patient-Patient.md) | Beispielinstanz eines Patienten |
-| [Beispiel Practitioner](Practitioner-Practitioner.md) | Beispielinstanz eines Arztes |
+| [Beispiel Device](Device-DeviceExample.md) | Beispielinstanz eines Devices dass die Fachanwendung initial erstellt |
+| [Beispiel Patient](Patient-PatientExample.md) | Beispielinstanz eines Patienten |
+| [Beispiel Practitioner](Practitioner-PractitionerExample.md) | Beispielinstanz eines Arztes |
 | [Beispielinstanz einer Allergie für die Summary-Liste](AllergyIntolerance-AllergyEntry01.md) | Beispiel einer bestätigten Allergie |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionEntry02.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |
 | [Beispielinstanz einer Diagnose für die Gesamtliste](Condition-ConditionEntry03.md) | Beispiel Diagnose, aktuelle Beschwerden des Patienten |

@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-10T14:22:40+00:00",
+  "date" : "2026-09-11T07:57:50+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -887,10 +887,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Device-DeviceFA.html"
+        "valueUri" : "Device-DeviceExample.html"
       }],
       "reference" : {
-        "reference" : "Device/DeviceFA"
+        "reference" : "Device/DeviceExample"
       },
       "name" : "Beispiel Device",
       "description" : "Beispielinstanz eines Devices dass die Fachanwendung initial erstellt",
@@ -903,10 +903,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Patient-Patient.html"
+        "valueUri" : "Patient-PatientExample.html"
       }],
       "reference" : {
-        "reference" : "Patient/Patient"
+        "reference" : "Patient/PatientExample"
       },
       "name" : "Beispiel Patient",
       "description" : "Beispielinstanz eines Patienten",
@@ -919,10 +919,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Practitioner-Practitioner.html"
+        "valueUri" : "Practitioner-PractitionerExample.html"
       }],
       "reference" : {
-        "reference" : "Practitioner/Practitioner"
+        "reference" : "Practitioner/PractitionerExample"
       },
       "name" : "Beispiel Practitioner",
       "description" : "Beispielinstanz eines Arztes",

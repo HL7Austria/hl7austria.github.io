@@ -27,7 +27,7 @@ Profile: [HL7® AT Core Practitioner Profile](http://hl7.at/fhir/HL7ATCoreProfil
 ```json
 {
   "resourceType" : "Practitioner",
-  "id" : "Practitioner",
+  "id" : "PractitionerExample",
   "meta" : {
     "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"]
   },

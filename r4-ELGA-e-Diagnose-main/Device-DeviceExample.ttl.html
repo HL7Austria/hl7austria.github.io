@@ -1,9 +1,11 @@
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.ELGA.EDIAG.R4\Beispiel Device - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.EDIAG.R4\Beispiel Device - TTL Representation - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -202,10 +204,9 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 (Draft) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+<div style="counter-reset: section 9" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 (Draft) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
-  
 
 
 
@@ -216,29 +217,29 @@
 
 <ul class="nav nav-tabs">
 
-  <li class="active">
-    <a href="#">Narrative Content</a>
+  <li>
+    <a href="Device-DeviceExample.html">Narrative Content</a>
   </li>
 
 
 
   
     <li>
-      <a href="Device-DeviceFA.xml.html">XML</a>
+      <a href="Device-DeviceExample.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="Device-DeviceFA.json.html">JSON</a>
+      <a href="Device-DeviceExample.json.html">JSON</a>
     </li>
   
 
 
   
-    <li>
-      <a href="Device-DeviceFA.ttl.html">TTL</a>
+    <li class="active">
+      <a href="#">TTL</a>
     </li>
   
 
@@ -247,22 +248,59 @@
 </ul>
 
 
-  <a name="root"> </a>
+<a name="root"> </a>
 
 
-  <h2 id="root">Example Device: Beispiel Device</h2>
+<h2 id="root">: Beispiel Device - TTL Representation</h2>
 
 
-
+<p><a href="Device-DeviceExample.ttl" no-download="true">Raw ttl</a> | <a href="Device-DeviceExample.ttl" download>Download</a></p>
 
   <!-- insert intro if present -->
   
 
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p>e-Diagnose Fachanwendung</p></div>
+  <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
+@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sct: &lt;http://snomed.info/id/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
-  
+# - resource -------------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/Device/DeviceExample&gt; a fhir:Device ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/resource.html#Device.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;DeviceExample&quot;] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#Device.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;additional&quot; ] ;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;e-Diagnose Fachanwendung&lt;/p&gt;&lt;/div&gt;&quot;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/device.html#Device.deviceName">fhir:Device.deviceName</a> [
+     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+     <a href="http://hl7.org/fhir/R4/device.html#Device.deviceName.name">fhir:Device.deviceName.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;e-Diagnose Fachanwendung&quot; ] ;
+     <a href="http://hl7.org/fhir/R4/device.html#Device.deviceName.type">fhir:Device.deviceName.type</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;user-friendly-name&quot; ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/device.html#Device.type">fhir:Device.type</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       a sct:49062001 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://snomed.info/sct&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;49062001&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">fhir:Coding.display</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Gerät&quot; ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+&lt;http://hl7.org/fhir/Device/DeviceExample.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/Device/DeviceExample.ttl&gt; .
+
+</code></pre>
+
+
 
   <!-- insert notes if present -->
   
@@ -285,7 +323,7 @@
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 14:22+0000">2026-09-10</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 07:57+0000">2026-09-11</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-delete-history-version | *Version*:0.1.0 | |
-| Active as of 2026-09-10 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListDeleteHistoryVersion |
+| Active as of 2026-09-11 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagListDeleteHistoryVersion |
 
  
 Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung. 
@@ -55,7 +55,7 @@ Möchte der ELGA-Teilnehmer eine Version einer Summary-Liste aus der e-Diagnose 
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-10T14:22:40+00:00",
+  "date" : "2026-09-11T07:57:50+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

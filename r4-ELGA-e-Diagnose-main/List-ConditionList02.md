@@ -11,11 +11,11 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Date: 2026-03-09 08:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
-| Subject:`PatientExample`Source: | | | |
+| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
-* **Items**: `ConditionSummaryExample1`
-* **Items**: `ConditionSummaryExample2`
-* **Items**: `ConditionSummaryExample3`
+* **Items**: [Condition Hypertensive disorder, systemic arterial](Condition-ConditionEntry01.md)
+* **Items**: [Condition Crohn's disease](Condition-ConditionEntry05.md)
+* **Items**: [Condition Hyperthyroidism](Condition-ConditionEnteredInError.md)
 
 
 
@@ -37,25 +37,25 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
     }]
   },
   "subject" : {
-    "reference" : "PatientExample"
+    "reference" : "Patient/PatientExample"
   },
   "date" : "2026-03-09T08:00:00+00:00",
   "source" : {
-    "reference" : "PractitionerExample"
+    "reference" : "Practitioner/PractitionerExample"
   },
   "entry" : [{
     "item" : {
-      "reference" : "ConditionSummaryExample1"
+      "reference" : "Condition/ConditionEntry01"
     }
   },
   {
     "item" : {
-      "reference" : "ConditionSummaryExample2"
+      "reference" : "Condition/ConditionEntry05"
     }
   },
   {
     "item" : {
-      "reference" : "ConditionSummaryExample3"
+      "reference" : "Condition/ConditionEnteredInError"
     }
   }]
 }

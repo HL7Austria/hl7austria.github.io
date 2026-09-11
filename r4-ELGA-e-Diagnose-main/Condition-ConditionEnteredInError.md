@@ -11,7 +11,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 **AT ELGA Reported (Fremdangabe)**: true
 
 > **AT ELGA Entered In Error**
-* practitioner: `PractitionerExample`
+* practitioner: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 * datetime: 2026-09-09 10:30:00+0100
 * reason: Diagnose irrtümlich erfasst
 
@@ -21,15 +21,15 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **code**: Hyperthyroidism
 
-**subject**: `PatientExample`
+**subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **onset**: 2026-02-28
 
 **recordedDate**: 2026-03-09 00:00:00+0000
 
-**recorder**: `PractitionerExample`
+**recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
-**asserter**: `PractitionerExample`
+**asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
 
 
@@ -50,7 +50,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
     "extension" : [{
       "url" : "practitioner",
       "valueReference" : {
-        "reference" : "PractitionerExample"
+        "reference" : "Practitioner/PractitionerExample"
       }
     },
     {
@@ -83,15 +83,15 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
     }]
   },
   "subject" : {
-    "reference" : "PatientExample"
+    "reference" : "Patient/PatientExample"
   },
   "onsetDateTime" : "2026-02-28",
   "recordedDate" : "2026-03-09T00:00:00+00:00",
   "recorder" : {
-    "reference" : "PractitionerExample"
+    "reference" : "Practitioner/PractitionerExample"
   },
   "asserter" : {
-    "reference" : "PractitionerExample"
+    "reference" : "Practitioner/PractitionerExample"
   }
 }
 

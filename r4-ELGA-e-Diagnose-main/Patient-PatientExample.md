@@ -33,7 +33,7 @@ Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)
 ```json
 {
   "resourceType" : "Patient",
-  "id" : "Patient",
+  "id" : "PatientExample",
   "meta" : {
     "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
   },

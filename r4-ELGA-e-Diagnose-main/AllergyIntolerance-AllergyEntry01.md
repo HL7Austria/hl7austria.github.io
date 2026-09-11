@@ -16,13 +16,13 @@ Profile: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-edi
 
 **code**: Amoxicillin
 
-**patient**: `PatientExample`
+**patient**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **recordedDate**: 2026-03-03 00:00:00+0000
 
-**recorder**: `PractitionerExample`
+**recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
-**asserter**: `PractitionerExample`
+**asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
 > **reaction****AT ELGA Reaktionszeit**: <6 Stunden**manifestation**: Exanthem, Emesis**onset**: 1983-03-01**note**: 
 > 
@@ -66,14 +66,14 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
     }]
   },
   "patient" : {
-    "reference" : "PatientExample"
+    "reference" : "Patient/PatientExample"
   },
   "recordedDate" : "2026-03-03T00:00:00+00:00",
   "recorder" : {
-    "reference" : "PractitionerExample"
+    "reference" : "Practitioner/PractitionerExample"
   },
   "asserter" : {
-    "reference" : "PractitionerExample"
+    "reference" : "Practitioner/PractitionerExample"
   },
   "reaction" : [{
     "extension" : [{

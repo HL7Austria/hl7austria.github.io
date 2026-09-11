@@ -18,7 +18,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry05</b></p><a name=\"ConditionEntry05\"> </a><a name=\"hcConditionEntry05\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 34000006}\">Crohn's disease</span></p><p><b>subject</b>: <code>PatientExample</code></p><p><b>onset</b>: 2010-01-01</p><p><b>recordedDate</b>: 2026-03-09 00:00:00+0000</p><p><b>recorder</b>: <code>PractitionerExample</code></p><p><b>asserter</b>: <code>PractitionerExample</code></p><p><b>note</b>: </p><blockquote><div><p>Seit 2010</p>\n</div></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry05</b></p><a name=\"ConditionEntry05\"> </a><a name=\"hcConditionEntry05\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 34000006}\">Crohn's disease</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2010-01-01</p><p><b>recordedDate</b>: 2026-03-09 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Seit 2010</p>\n</div></blockquote></div>"
   ] ;
   fhir:DomainResource.extension [
      fhir:index 0 ;
@@ -49,15 +49,18 @@
      ]
   ] ;
   fhir:Condition.subject [
-     fhir:Reference.reference [ fhir:value "PatientExample" ]
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
   ] ;
   fhir:Condition.onsetDateTime [ fhir:value "2010-01-01"^^xsd:date] ;
   fhir:Condition.recordedDate [ fhir:value "2026-03-09T00:00:00+00:00"^^xsd:dateTime] ;
   fhir:Condition.recorder [
-     fhir:Reference.reference [ fhir:value "PractitionerExample" ]
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ]
   ] ;
   fhir:Condition.asserter [
-     fhir:Reference.reference [ fhir:value "PractitionerExample" ]
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ]
   ] ;
   fhir:Condition.note [
      fhir:index 0 ;

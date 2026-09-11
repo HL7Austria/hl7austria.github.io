@@ -14,13 +14,13 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
 
 **code**: Colonoscopy
 
-**subject**: `PatientExample`
+**subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **performed**: 2025-09-23 09:30:00+0200
 
-**recorder**: `PractitionerExample`
+**recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
-**asserter**: `PractitionerExample`
+**asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
 
 
 
@@ -46,14 +46,14 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
     }]
   },
   "subject" : {
-    "reference" : "PatientExample"
+    "reference" : "Patient/PatientExample"
   },
   "performedDateTime" : "2025-09-23T09:30:00+02:00",
   "recorder" : {
-    "reference" : "PractitionerExample"
+    "reference" : "Practitioner/PractitionerExample"
   },
   "asserter" : {
-    "reference" : "PractitionerExample"
+    "reference" : "Practitioner/PractitionerExample"
   }
 }
 
