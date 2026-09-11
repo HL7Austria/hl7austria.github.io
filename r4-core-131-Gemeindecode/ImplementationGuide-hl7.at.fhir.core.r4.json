@@ -3,14 +3,14 @@
   "id" : "hl7.at.fhir.core.r4",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.core.r4</b></p><a name=\"hl7.at.fhir.core.r4\"> </a><a name=\"hchl7.at.fhir.core.r4\"> </a><h2>HL7AustriaImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4</pre><div><p>An Implementation Guide for the HL7® Austria FHIR® Core Profiles.</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.core.r4</b></p><a name=\"hl7.at.fhir.core.r4\"> </a><a name=\"hchl7.at.fhir.core.r4\"> </a><h2>HL7AustriaImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/core/r4/ImplementationGuide/hl7.at.fhir.core.r4</pre><div><p>An Implementation Guide for the HL7® Austria FHIR® Core Profiles.</p>\n</div></div>"
   },
-  "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4",
+  "url" : "https://fhir.hl7.at/core/r4/ImplementationGuide/hl7.at.fhir.core.r4",
   "version" : "2.1.0",
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2025-09-07T12:03:29+00:00",
+  "date" : "2026-09-11T12:27:00+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -38,7 +38,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "6.5.0"
+    "version" : "7.3.0"
   },
   {
     "id" : "hl7ext",
@@ -48,7 +48,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.2.0"
+    "version" : "5.3.0"
   }],
   "definition" : {
     "extension" : [{
@@ -168,7 +168,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html"
+        "valueString" : "https://fhir.hl7.at/core/r4/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -339,7 +339,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#0.7.1"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
     },
     {
       "extension" : [{
@@ -458,7 +458,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html"
+        "valueString" : "https://fhir.hl7.at/core/r4/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -647,8 +647,8 @@
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-address-municipalityCode"
       },
-      "name" : "Address Municipality Code",
-      "description" : "HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address",
+      "name" : "Address Municipality Code (Gemeindecode)",
+      "description" : "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality key is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf).",
       "exampleBoolean" : false
     },
     {
@@ -659,8 +659,8 @@
       "reference" : {
         "reference" : "StructureDefinition/at-core-ext-address-municipalityKey"
       },
-      "name" : "Address Municipality Key",
-      "description" : "HL7® Austria FHIR® Core Extension for the municipality key part of the Austrian address",
+      "name" : "Address Municipality Key (Gemeindekennziffer)",
+      "description" : "HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf).",
       "exampleBoolean" : false
     },
     {
@@ -678,6 +678,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      }],
+      "reference" : {
+        "reference" : "Location/HL7ATCoreLocationGraz"
+      },
+      "name" : "HL7ATCoreLocationGraz",
+      "description" : "The Graz location of the Amadeus Spital with 6-character KA-Nr and geolocation",
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      }],
+      "reference" : {
+        "reference" : "Location/HL7ATCoreLocationLinz"
+      },
+      "name" : "HL7ATCoreLocationLinz",
+      "description" : "The Linz location of the Amadeus Spital with 6-character KA-Nr and geolocation",
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Organization"
       }],
       "reference" : {
@@ -685,7 +709,7 @@
       },
       "name" : "HL7ATCoreOrganizationExample01",
       "description" : "Example for the usage of the HL7 AT Core Organization Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"
     },
     {
       "extension" : [{
@@ -697,7 +721,7 @@
       },
       "name" : "HL7ATCoreOrganizationExample02-MultipleVPNR",
       "description" : "Example for the usage of the HL7 AT Core Organization Profile with multiple VPNR identifiers",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"
     },
     {
       "extension" : [{
@@ -709,7 +733,7 @@
       },
       "name" : "HL7ATCorePatientExample01",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -721,7 +745,7 @@
       },
       "name" : "HL7ATCorePatientExample02-deceasedTime",
       "description" : "Example with deceasedTime for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -733,7 +757,7 @@
       },
       "name" : "HL7ATCorePatientExample03-deceasedBoolean",
       "description" : "Example with deceasedBoolean for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -745,7 +769,7 @@
       },
       "name" : "HL7ATCorePatientExample04-Full",
       "description" : "Example with all elements for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -757,7 +781,7 @@
       },
       "name" : "HL7ATCorePatientExample05-FullElga",
       "description" : "Example with all ELGA header elements in the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -769,7 +793,7 @@
       },
       "name" : "HL7ATCorePatientExample06-GenderExtension",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -781,7 +805,7 @@
       },
       "name" : "HL7ATCorePatientExample07-MunicipalityCode",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile that includes a municipality code",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
       "extension" : [{
@@ -793,7 +817,7 @@
       },
       "name" : "HL7ATCorePractitionerExample01",
       "description" : "Example for the usage of the HL7 AT Core Practitioner Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"
     },
     {
       "extension" : [{
@@ -805,7 +829,7 @@
       },
       "name" : "HL7ATCorePractitionerRoleExample01",
       "description" : "Example for the usage of the HL7 AT Core PractitionerRole Profile",
-      "exampleCanonical" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"
     },
     {
       "extension" : [{
@@ -817,6 +841,18 @@
       },
       "name" : "HL7® AT Core Address Profile",
       "description" : "HL7® Austria FHIR® Core Profile for address data in Austria. Note, this extension represents the common structure of address information within Austrian information systems. This extension does not restrict the documented information to Austrian adresses. Address information that does not fit into the given structure may be captured by [Address Additional Information](StructureDefinition-at-core-ext-address-additionalInformation.html).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-location"
+      },
+      "name" : "HL7® AT Core Location Profile",
+      "description" : "HL7® Austria FHIR® Core Profile for location data in Austria.",
       "exampleBoolean" : false
     },
     {
@@ -888,7 +924,7 @@
         "reference" : "StructureDefinition/at-core-ext-patient-religion"
       },
       "name" : "Patient Religion",
-      "description" : "HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.",
+      "description" : "**DEPRECATED** HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.",
       "exampleBoolean" : false
     },
     {

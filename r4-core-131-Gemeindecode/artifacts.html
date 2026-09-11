@@ -38,6 +38,8 @@
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
 
     <style type="text/css">h2{--heading-prefix:"2"}
     h3,h4,h5,h6{--heading-prefix:"2.0"}</style>
@@ -126,7 +128,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
   <!-- at-fhir-ig-template begin -->
   <div class="alert alert-warning" role="alert">
-    <!--ReleaseHeader--><p id="publish-box">HL7® Austria FHIR® Core Implementation Guide - Local Development build (v2.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+    <!--ReleaseHeader--><p id="publish-box">HL7® Austria FHIR® Core Implementation Guide - Local Development build (v2.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/core/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
   <h2>Artifacts Summary</h2>
@@ -161,6 +163,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-core-location.html"
+                  title="StructureDefinition/at-core-location">HL7® AT Core Location Profile</a>
+            </td>
+            <td>
+<p>HL7® Austria FHIR® Core Profile for location data in Austria.</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-at-core-organization.html"
@@ -245,19 +256,19 @@ The HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and d
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-at-core-ext-address-municipalityCode.html"
-                  title="StructureDefinition/at-core-ext-address-municipalityCode">Address Municipality Code</a>
+                  title="StructureDefinition/at-core-ext-address-municipalityCode">Address Municipality Code (Gemeindecode)</a>
             </td>
             <td>
-<p>HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address</p>
+<p>HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality key is related to the <a href="StructureDefinition-at-core-ext-address-municipalityKey.html">municipality key (Gemeindekennziffer)</a>. While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by <a href="https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf">Statistik Austria</a>.</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="StructureDefinition-at-core-ext-address-municipalityKey.html"
-                  title="StructureDefinition/at-core-ext-address-municipalityKey">Address Municipality Key</a>
+                  title="StructureDefinition/at-core-ext-address-municipalityKey">Address Municipality Key (Gemeindekennziffer)</a>
             </td>
             <td>
-<p>HL7® Austria FHIR® Core Extension for the municipality key part of the Austrian address</p>
+<p>HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the <a href="StructureDefinition-at-core-ext-address-municipalityCode.html">municipality code (Gemeindecode)</a>. While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by <a href="https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf">Statistik Austria</a>.</p>
 </td>
          </tr>
          <tr>
@@ -276,7 +287,7 @@ The extension is used to add the missing codes and is applied in case the code f
                   title="StructureDefinition/at-core-ext-patient-religion">Patient Religion</a>
             </td>
             <td>
-<p>HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.
+<p><strong>DEPRECATED</strong> HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.
 The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official <a href="https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria">HL7 AT CodeSystem</a> for religion and is therefore aligned with the ELGA ValueSet, respectively.</p>
 </td>
          </tr>
@@ -298,6 +309,24 @@ The extension is used to document the OID of the system of a code referenced in 
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Location-HL7ATCoreLocationGraz.html"
+                  title="Location/HL7ATCoreLocationGraz">HL7ATCoreLocationGraz</a>
+            </td>
+            <td>
+<p>The Graz location of the Amadeus Spital with 6-character KA-Nr and geolocation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Location-HL7ATCoreLocationLinz.html"
+                  title="Location/HL7ATCoreLocationLinz">HL7ATCoreLocationLinz</a>
+            </td>
+            <td>
+<p>The Linz location of the Amadeus Spital with 6-character KA-Nr and geolocation</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="Organization-HL7ATCoreOrganizationExample01.html"
@@ -417,7 +446,7 @@ The extension is used to document the OID of the system of a code referenced in 
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.core.r4#2.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Sun, Sep 7, 2025 12:04+0000">2025-09-07</span>
+    IG &#169; 2020+ <a style="color:var(--footer-hyperlink-text-color)" href="https://hl7.at/technische-komitees/tc-fhir/">HL7® Austria, TC FHIR®</a>.  Package hl7.at.fhir.core.r4#2.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 12:27+0000">2026-09-11</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
