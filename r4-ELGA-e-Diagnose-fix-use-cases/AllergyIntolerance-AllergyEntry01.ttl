@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/AllergyIntolerance/AllergyEntry01> a fhir:AllergyIntolerance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "AllergyEntry01"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance AllergyEntry01</b></p><a name=\"AllergyEntry01\"> </a><a name=\"hcAllergyEntry01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-allergyintolerance.html\">AT ELGA e-Diagnose AllergyIntolerance</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 372687004}\">Amoxicillin</span></p><p><b>patient</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>recordedDate</b>: 2026-03-03 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><blockquote><p><b>reaction</b></p><p><b>AT ELGA Reaktionszeit</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-reaction-time-cs lt6h}\">&lt;6 Stunden</span></p><p><b>manifestation</b>: <span title=\"Codes:{http://snomed.info/sct 271807003}\">Exanthem</span>, <span title=\"Codes:{http://snomed.info/sct 422400008}\">Emesis</span></p><p><b>onset</b>: 1983-03-01</p><p><b>note</b>: </p><blockquote><div><p>Hautausschlag und Erbrechen nach Penicillin-Einnahme</p>\n</div></blockquote></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ] ;
+  fhir:AllergyIntolerance.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical" ] ;
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ] ;
+  fhir:AllergyIntolerance.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification" ] ;
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ] ;
+  fhir:AllergyIntolerance.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:372687004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "372687004" ] ;
+       fhir:Coding.display [ fhir:value "Amoxicillin" ]
+     ]
+  ] ;
+  fhir:AllergyIntolerance.patient [
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:AllergyIntolerance.recordedDate [ fhir:value "2026-03-03T00:00:00+00:00"^^xsd:dateTime] ;
+  fhir:AllergyIntolerance.recorder [
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ]
+  ] ;
+  fhir:AllergyIntolerance.asserter [
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ]
+  ] ;
+  fhir:AllergyIntolerance.reaction [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time" ] ;
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-reaction-time-cs" ] ;
+           fhir:Coding.code [ fhir:value "lt6h" ] ;
+           fhir:Coding.display [ fhir:value "<6 Stunden" ]
+         ]
+       ]
+     ] ;
+     fhir:AllergyIntolerance.reaction.manifestation [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:271807003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "271807003" ] ;
+         fhir:Coding.display [ fhir:value "Exanthem" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:422400008 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "422400008" ] ;
+         fhir:Coding.display [ fhir:value "Emesis" ]
+       ]
+     ] ;
+     fhir:AllergyIntolerance.reaction.onset [ fhir:value "1983-03-01"^^xsd:date ] ;
+     fhir:AllergyIntolerance.reaction.note [
+       fhir:index 0 ;
+       fhir:Annotation.text [ fhir:value "Hautausschlag und Erbrechen nach Penicillin-Einnahme" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/AllergyIntolerance/AllergyEntry01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
