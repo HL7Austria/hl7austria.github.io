@@ -10,7 +10,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-03-01 00:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
+| Date: 2026-03-01 00:00:00+0000 | Mode: Working List | Status: Current | Code: History of Procedures Document |
 | Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
 * **Items**: [Procedure Colonoscopy](Procedure-ProcedureEntry01.md)
@@ -31,7 +31,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "code" : {
     "coding" : [{
       "system" : "http://loinc.org",
-      "code" : "11450-4"
+      "code" : "47519-4"
     }]
   },
   "subject" : {

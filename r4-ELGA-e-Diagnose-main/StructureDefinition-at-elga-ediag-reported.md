@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-report
   "name" : "AtReported",
   "title" : "AT ELGA Reported (Fremdangabe)",
   "status" : "draft",
-  "date" : "2026-09-11T07:57:50+00:00",
+  "date" : "2026-09-11T08:25:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

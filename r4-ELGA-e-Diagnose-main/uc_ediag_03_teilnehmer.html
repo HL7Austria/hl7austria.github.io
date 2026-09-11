@@ -254,6 +254,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Die Fachanwendung erstellt eine neue Version der Summary-Liste ohne den gelöschten Eintrag, sollte der zu löschende Eintrag Teil der aktuellen Summary-Liste gewesen sein.</li>
 </ul>
 
+<h5 id="custom-operation">Custom Operation</h5>
+
+<p><a href="OperationDefinition-at-ediag-operation-diagnose-delete.html"><code class="language-plaintext highlighter-rouge">$delete</code></a></p>
+
 <h3 id="interaktionen-auf-listenressourcen">Interaktionen auf Listenressourcen</h3>
 
 <h4 id="eine-summary-listenversion-löschen">Eine Summary-Listenversion löschen</h4>
@@ -262,16 +266,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <p>Sub:UC_03_02</p>
 </blockquote>
 
-<p>Ein ELGA-Teilnehmer kann einzelne Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason=nilknown</code> zurück.</p>
+<p>Ein ELGA-Teilnehmer kann einzelne Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason = nilknown</code> zurück.</p>
 
 <h5 id="ablauf-1">Ablauf</h5>
 
 <ol>
   <li>Der ELGA-Teilnehmer ruft <a href="uc_ediag_01_lesen.html#versionen-einer-summary-liste-abrufen">alle Versionen einer Summary-Liste</a> ab.</li>
-  <li>Um eine Version der Summary-Liste zu löschen, führt der ELGA-Teilnehmer über das Portal die <a href=""><code class="language-plaintext highlighter-rouge">$delete-history-version</code>-Operation</a> auf die zu löschende Summary-Listenversion aus.</li>
+  <li>Um eine Version der Summary-Liste zu löschen, führt der ELGA-Teilnehmer über das Portal die <a href="OperationDefinition-at-ediag-operation-list-delete-history-version.html"><code class="language-plaintext highlighter-rouge">$delete-history-version</code>-Operation</a> auf die zu löschende Summary-Listenversion aus.</li>
   <li>Die Fachanwendung löscht die entsprechende Summary-Listenversion.</li>
-  <li>Wird die letzte Summary-Listenversion gelöscht, legt die e-Diagnose Fachanwendung eine neue Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason=nilknown</code> an.</li>
+  <li>Wird die letzte Summary-Listenversion gelöscht, legt die e-Diagnose Fachanwendung eine neue Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason = nilknown</code> an.</li>
 </ol>
+
+<h5 id="custom-operation-1">Custom Operation</h5>
+
+<p><a href="OperationDefinition-at-ediag-operation-list-delete-history-version.html"><code class="language-plaintext highlighter-rouge">$delete-history-version</code></a></p>
 
 
 
@@ -292,7 +300,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 07:57+0000">2026-09-11</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Fri, Sep 11, 2026 08:25+0000">2026-09-11</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -11,11 +11,11 @@ Die Patient Journey zeigt den Lebenszyklus der e-Diagnose von der erstmaligen In
 
 ### 1. Arztbesuch - Erstvorstellung und Initialisierung der e-Diagnose
 
-[Dr Musterärztin Melanie](Practitioner-Practitioner.md) sieht [Max Mustermann](Patient-Patient.md) am **3. März 2026** erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.
+[Dr Musterärztin Melanie](Practitioner-PractitionerExample.md) sieht [Max Mustermann](Patient-PatientExample.md) am **3. März 2026** erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.
 
 **Abruf und Initialisierung der Summary-Listen**
 
-Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese enthält den Patienten [Max Mustermann](Patient-Patient.md), die erstellende e-Diagnose [Fachanwendung](Device-DeviceFA.md) sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über `List.emptyReason` mit dem Code `notstarted` siehe
+Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese enthält den Patienten [Max Mustermann](Patient-PatientExample.md), die erstellende e-Diagnose [Fachanwendung](Device-DeviceExample.md) sowie das Datum der letzten Aktualisierung. Da noch keine Einträge vorhanden sind, wird zusätzlich der Grund für die leere Liste über `List.emptyReason` mit dem Code `notstarted` siehe
 
 * [Beispiel für eine leere Allergy-Summary-Liste](List-AllergyListEmpty.md)
 * [Beispiel für eine leere Condition-Summary-Liste](List-ConditionListEmpty.md)
