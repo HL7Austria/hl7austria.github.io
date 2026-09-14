@@ -31,7 +31,7 @@ Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. F
 
 Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben [Condition-Summary-Liste](List-ConditionList01.md) und [Allergy-Summary-Liste](List-AllergyList01.md).
 
-Um eine Gesamtansicht aller Diagnoseeinträge zu erhalten, ruft Dr. Musterärztin [alle Einträge](uc_ediag_01_lesen.md#alle-einträge-abrufen) ab.
+Um eine Gesamtansicht aller Diagnoseeinträge zu erhalten, ruft Dr. Musterärztin [alle Einträge](uc_ediag_01_lesen.md#alle-einträge-abrufen) ab. und erhält ein [alle Diagnosen](Bundle-ConditionSearchSet01.md)
 
 ### 2. Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung
 

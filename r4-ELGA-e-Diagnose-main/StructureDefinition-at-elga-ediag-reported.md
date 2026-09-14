@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported | *Version*:0.1.0 | |
-| Draft as of 2026-09-11 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtReported |
+| Draft as of 2026-09-14 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtReported |
 
 Kennzeichnet, ob eine Information fremdberichtet ist (z. B. vom Patienten oder Dritten).
 
@@ -20,7 +20,7 @@ Kennzeichnet, ob eine Information fremdberichtet ist (z. B. vom Patienten oder D
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md), [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) and [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
-* Examples for this Extension: [AllergyIntolerance/AllergyEntry01](AllergyIntolerance-AllergyEntry01.md), [Condition/ConditionEnteredInError](Condition-ConditionEnteredInError.md), [Condition/ConditionEntry01](Condition-ConditionEntry01.md), [Condition/ConditionEntry02](Condition-ConditionEntry02.md)... Show 4 more, [Condition/ConditionEntry03](Condition-ConditionEntry03.md), [Condition/ConditionEntry04](Condition-ConditionEntry04.md), [Condition/ConditionEntry05](Condition-ConditionEntry05.md) and [Procedure/ProcedureEntry01](Procedure-ProcedureEntry01.md)
+* Examples for this Extension: [AllergyIntolerance/AllergyEntry01](AllergyIntolerance-AllergyEntry01.md), [Bundle/ConditionSearchSet01](Bundle-ConditionSearchSet01.md), [Condition/ConditionEnteredInError](Condition-ConditionEnteredInError.md), [Condition/ConditionEntry01](Condition-ConditionEntry01.md)... Show 5 more, [Condition/ConditionEntry02](Condition-ConditionEntry02.md), [Condition/ConditionEntry03](Condition-ConditionEntry03.md), [Condition/ConditionEntry04](Condition-ConditionEntry04.md), [Condition/ConditionEntry05](Condition-ConditionEntry05.md) and [Procedure/ProcedureEntry01](Procedure-ProcedureEntry01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-reported.json)
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-report
   "name" : "AtReported",
   "title" : "AT ELGA Reported (Fremdangabe)",
   "status" : "draft",
-  "date" : "2026-09-11T08:25:56+00:00",
+  "date" : "2026-09-14T07:00:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

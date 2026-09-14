@@ -14,7 +14,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **verificationStatus**: Confirmed
 
-**code**: Candidal balanitis
+**code**: Diarrhea caused by drug
 
 **subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
@@ -30,7 +30,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > 
 
-Juckreiz im Genitalbereich bei bestehender AB-Therapie
+Wässrige Durchfälle bei bestehender AB-Therapie
 
 
 
@@ -63,8 +63,8 @@ Juckreiz im Genitalbereich bei bestehender AB-Therapie
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "52643007",
-      "display" : "Candidal balanitis"
+      "code" : "428867008",
+      "display" : "Diarrhea caused by drug"
     }]
   },
   "subject" : {
@@ -79,7 +79,7 @@ Juckreiz im Genitalbereich bei bestehender AB-Therapie
     "reference" : "Practitioner/PractitionerExample"
   },
   "note" : [{
-    "text" : "Juckreiz im Genitalbereich bei bestehender AB-Therapie"
+    "text" : "Wässrige Durchfälle bei bestehender AB-Therapie"
   }]
 }
 

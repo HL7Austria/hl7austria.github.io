@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-11T08:25:56+00:00",
+  "date" : "2026-09-14T07:00:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -967,22 +967,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionEntry03.html"
-      }],
-      "reference" : {
-        "reference" : "Condition/ConditionEntry03"
-      },
-      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
-      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Condition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "Condition-ConditionEntry04.html"
       }],
       "reference" : {
@@ -1003,6 +987,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       }],
       "reference" : {
         "reference" : "Condition/ConditionEntry05"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Gesamtliste",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionEntry03.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionEntry03"
       },
       "name" : "Beispielinstanz einer Diagnose für die Summary",
       "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
@@ -1263,6 +1263,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Reaktionszeit Codes",
       "description" : "Zeitlicher Verlauf der Manifestation",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ConditionSearchSet01.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ConditionSearchSet01"
+      },
+      "name" : "SearchSet-Bundle der Diagnosen eines Patienten",
+      "description" : "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten",
+      "exampleBoolean" : true
     }],
     "page" : {
       "extension" : [{

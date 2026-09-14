@@ -14,7 +14,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 | Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
 
 * **Items**: [Condition Hypertensive disorder, systemic arterial](Condition-ConditionEntry01.md)
-* **Items**: [Condition Crohn's disease](Condition-ConditionEntry05.md)
+* **Items**: [Condition Crohn's disease](Condition-ConditionEntry03.md)
 
 
 
@@ -49,7 +49,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   },
   {
     "item" : {
-      "reference" : "Condition/ConditionEntry05"
+      "reference" : "Condition/ConditionEntry03"
     }
   }]
 }

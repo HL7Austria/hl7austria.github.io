@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispielinstanz einer Diagnose für die Summary - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\Beispielinstanz einer Diagnose für die Gesamtliste - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispielinstanz einer Diagnose für die Summary**
+* **Beispielinstanz einer Diagnose für die Gesamtliste**
 
-## Example Condition: Beispielinstanz einer Diagnose für die Summary
+## Example Condition: Beispielinstanz einer Diagnose für die Gesamtliste
 
 Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
@@ -14,11 +14,11 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **verificationStatus**: Confirmed
 
-**code**: Crohn's disease
+**code**: Candidal balanitis
 
 **subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
-**onset**: 2010-01-01
+**onset**: 2026-03-09
 
 **recordedDate**: 2026-03-09 00:00:00+0000
 
@@ -30,7 +30,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > 
 
-Seit 2010
+Juckreiz im Genitalbereich bei bestehender AB-Therapie
 
 
 
@@ -63,14 +63,14 @@ Seit 2010
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "34000006",
-      "display" : "Crohn's disease"
+      "code" : "52643007",
+      "display" : "Candidal balanitis"
     }]
   },
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "onsetDateTime" : "2010-01-01",
+  "onsetDateTime" : "2026-03-09",
   "recordedDate" : "2026-03-09T00:00:00+00:00",
   "recorder" : {
     "reference" : "Practitioner/PractitionerExample"
@@ -79,7 +79,7 @@ Seit 2010
     "reference" : "Practitioner/PractitionerExample"
   },
   "note" : [{
-    "text" : "Seit 2010"
+    "text" : "Juckreiz im Genitalbereich bei bestehender AB-Therapie"
   }]
 }
 
