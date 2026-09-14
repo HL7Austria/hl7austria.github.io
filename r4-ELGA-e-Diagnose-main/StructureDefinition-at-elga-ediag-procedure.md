@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-09-14T09:05:35+00:00",
+  "date" : "2026-09-14T11:50:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -162,17 +162,15 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.status",
       "path" : "Procedure.status",
-      "short" : "Nur tatsächlich durchgeführte (completed) oder irrtümlich dokumentierte (entered-in-error) Prozeduren.",
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-status"
-      }
+      "short" : "Nur tatsächlich durchgeführte (completed) Prozeduren werden in der e-Diagnose dokumentiert.",
+      "fixedCode" : "completed",
+      "mustSupport" : true
     },
     {
       "id" : "Procedure.statusReason",
       "path" : "Procedure.statusReason",
-      "short" : "ToDo: Korrekturvermerk wird von digimed übernommen, ist noch in Abstimmung."
+      "short" : "Begründung für den Status der Prozedur nicht relevant.",
+      "max" : "0"
     },
     {
       "id" : "Procedure.category",
@@ -188,7 +186,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-prozeduren-codes"
+        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-code"
       }
     },
     {

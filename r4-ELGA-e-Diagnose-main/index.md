@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-14T09:05:35+00:00",
+  "date" : "2026-09-14T11:50:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -727,29 +727,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-at-ediag-procedure-status.html"
+        "valueUri" : "ValueSet-at-ediag-procedure-code.html"
       }],
       "reference" : {
-        "reference" : "ValueSet/at-ediag-procedure-status"
+        "reference" : "ValueSet/at-ediag-procedure-code"
       },
-      "name" : "AT e-Diagnose Procedure Status Value Set",
-      "description" : "ValueSet zur Kennzeichnung, ob eine Prozedur durchgeführt oder irrtümlich dokumentiert wurde.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-at-ediag-prozeduren-codes.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/at-ediag-prozeduren-codes"
-      },
-      "name" : "AT e-Diagnose Procedures Value Set",
-      "description" : "ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alternative zum eingeschränkten IPS ValueSet.",
+      "name" : "AT e-Diagnose Procedure Code",
+      "description" : "Dieses Value-Set bildet die Prozeduren ab, die in der e-Diagnose dokumentiert werden können.",
       "exampleBoolean" : false
     },
     {

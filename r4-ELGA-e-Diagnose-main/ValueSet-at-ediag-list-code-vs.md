@@ -51,7 +51,7 @@ ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA.
   "title" : "ELGA AT e-Diagnose List Entry Code Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-09-14T09:05:35+00:00",
+  "date" : "2026-09-14T11:50:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

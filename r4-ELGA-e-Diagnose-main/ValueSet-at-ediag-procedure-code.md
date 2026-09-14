@@ -1,22 +1,27 @@
-# HL7.AT.FHIR.ELGA.EDIAG.R4\AT e-Diagnose Procedures Value Set - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EDIAG.R4\AT e-Diagnose Procedure Code - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AT e-Diagnose Procedures Value Set**
+* **AT e-Diagnose Procedure Code**
 
-## ValueSet: AT e-Diagnose Procedures Value Set (Experimental) 
+## ValueSet: AT e-Diagnose Procedure Code (Experimental) 
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-prozeduren-codes | *Version*:0.1.0 | |
-| Active as of 2026-09-14 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagProzedurenCodes |
+| *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-code | *Version*:0.1.0 | |
+| Active as of 2026-09-14 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagProcedureCode |
 
  
-ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alternative zum eingeschränkten IPS ValueSet. 
+Dieses Value-Set bildet die Prozeduren ab, die in der e-Diagnose dokumentiert werden können. 
 
  **References** 
 
 * [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
+
+Zu diesem Value-Set sind folgende Punkte zu berücksichtigen:
+
+* Dieses Value-Set kopiert die Definition vom [ValueSet: Procedures - IPS](http://hl7.org/fhir/uv/ips/ValueSet/procedures-uv-ips). Wenn man die ECL, auf der dieses Value-Set basiert, über SNOMED CT auswertet, erhält man ca. 60000 Konzepte. Im Gegensatz zu den hier angegebenen 983 Konzepten. Dazu wurde auch auf chat.fhir.org nachgefragt: [https://chat.fhir.org/#narrow/channel/207835-IPS/topic/Number.20of.20concepts.20in.20ProceduresUvIps](https://chat.fhir.org/#narrow/channel/207835-IPS/topic/Number.20of.20concepts.20in.20ProceduresUvIps)
+* Zudem kann sich ganz generell die Menge der Konzepte im Rahmen der e-Diagnose noch ändern.
 
 ### Logical Definition (CLD)
 
@@ -44,14 +49,14 @@ ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alte
 ```json
 {
   "resourceType" : "ValueSet",
-  "id" : "at-ediag-prozeduren-codes",
-  "url" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-prozeduren-codes",
+  "id" : "at-ediag-procedure-code",
+  "url" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-code",
   "version" : "0.1.0",
-  "name" : "AtEDiagProzedurenCodes",
-  "title" : "AT e-Diagnose Procedures Value Set",
+  "name" : "AtEDiagProcedureCode",
+  "title" : "AT e-Diagnose Procedure Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-14T09:05:35+00:00",
+  "date" : "2026-09-14T11:50:31+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -68,7 +73,7 @@ ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alte
       "use" : "work"
     }]
   }],
-  "description" : "ValueSet mit SNOMED CT Prozeduren (is-a Procedure). Dient als vollständige Alternative zum eingeschränkten IPS ValueSet.",
+  "description" : "Dieses Value-Set bildet die Prozeduren ab, die in der e-Diagnose dokumentiert werden können.",
   "compose" : {
     "include" : [{
       "system" : "http://snomed.info/sct",
