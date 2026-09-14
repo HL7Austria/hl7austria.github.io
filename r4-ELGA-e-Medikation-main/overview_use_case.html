@@ -133,7 +133,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
       </li>
       <li>
         <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
@@ -142,13 +142,7 @@
         <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_03_01.html">Geplante Abgaben lesen</a>
-      </li>
-      <li>
-        <a href="Sub_UC_eMed_03_02.html">Durchgeführte Abgaben lesen</a>
-      </li>
-      <li>
-        <a href="Sub_UC_eMed_03_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+        <a href="Sub_UC_eMed_03.html">Geplante Abgaben und Durchgeführte Abgaben lesen</a>
       </li>
       <li>
         <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
@@ -332,6 +326,11 @@ width: 100%;}
   grid-row: 1;
 }
 
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
 /* Hidden tabs must not take up space */
 .content-in-tab {
   display: none;
@@ -340,7 +339,7 @@ width: 100%;}
   width: 100%;
   box-sizing: border-box;
   background: #ffffff;
-  padding: 20px;
+  padding: 8px 8px;  /*10px;*/
   border: 1px solid #cccccc;
   /* Maximum visible panel height */
   max-height: 700px;
@@ -364,8 +363,8 @@ width: 100%;}
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 0.8rem;
-  font-size: 0.95em;
-  line-height: 1.5;
+  font-size: 0.8em;
+  line-height: 1;
   overflow-x: auto;
 }
 
@@ -374,7 +373,7 @@ width: 100%;}
 }
 
 .content-in-tab:has(.request-panel) {
-  padding: 8px 12px;
+  padding: 10px;
 }
 
 .content-in-tab:has(pre) {
@@ -382,6 +381,21 @@ width: 100%;}
   overflow: auto;  
   max-height: calc(100vh - 120px); 
 }
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+
 
 </style>
 
@@ -396,11 +410,11 @@ width: 100%;}
 <p>Die folgenden Anwendungsfälle werden beschrieben:</p>
 
 <ul>
-  <li><a name="l410">​</a><a href="UC_eMed_01.html">UC_eMed_01 - Medikationsplan lesen</a></li>
-  <li><a name="l414">​</a><a href="UC_eMed_02.html">UC_eMed_02 - Medikationsplan schreiben</a></li>
-  <li><a name="l418">​</a><a href="UC_eMed_03.html">UC_eMed_03 - Geplante und durchgeführte Abgaben lesen</a></li>
-  <li><a name="l422">​</a><a href="UC_eMed_04.html">UC_eMed_04 - Geplante Abgabe schreiben</a></li>
-  <li><a name="l426">​</a><a href="UC_eMed_05.html">UC_eMed_05 - Durchgeführte Abgabe schreiben</a></li>
+  <li><a name="l398">​</a><a href="UC_eMed_01.html">UC_eMed_01 - Medikationsplan lesen</a></li>
+  <li><a name="l402">​</a><a href="UC_eMed_02.html">UC_eMed_02 - Medikationsplan schreiben</a></li>
+  <li><a name="l406">​</a><a href="UC_eMed_03.html">UC_eMed_03 - Geplante und durchgeführte Abgaben lesen</a></li>
+  <li><a name="l410">​</a><a href="UC_eMed_04.html">UC_eMed_04 - Geplante Abgabe schreiben</a></li>
+  <li><a name="l414">​</a><a href="UC_eMed_05.html">UC_eMed_05 - Durchgeführte Abgabe schreiben</a></li>
 </ul>
 
 
@@ -422,7 +436,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 13:22+0000">2026-09-10</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Sep 14, 2026 18:30+0000">2026-09-14</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

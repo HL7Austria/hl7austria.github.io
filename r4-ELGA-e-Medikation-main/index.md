@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-10T13:22:01+00:00",
+  "date" : "2026-09-14T18:30:11+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1166,7 +1166,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-01"
       },
-      "name" : "Beispiel Journey 02: Geplante Abgabe",
+      "name" : "Beispiel Journey 02: Geplante Abgabe 1",
       "description" : "Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
@@ -1265,22 +1265,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel Journey 02: Transaction Bundle",
       "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe"
-      },
-      "name" : "Beispiel Journey 03: Geplante Abgabe",
-      "description" : "Bildet eine Geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
       "extension" : [{
@@ -1505,22 +1489,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel Ärztin 02",
       "description" : "Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation).",
       "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Example-Mr-Geplante-Abgabe.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Geplante-Abgabe"
-      },
-      "name" : "Beispiel: Geplante Abgabe",
-      "description" : "Bildet eine Geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
       "extension" : [{
@@ -1897,7 +1865,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
             "valueUrl" : "overview_sub_use_case.html"
           }],
           "nameUrl" : "overview_sub_use_case.html",
-          "title" : "Technische Use Cases",
+          "title" : "Use Cases",
           "generation" : "markdown"
         },
         {
@@ -1921,28 +1889,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_03_01.html"
+            "valueUrl" : "Sub_UC_eMed_03.html"
           }],
-          "nameUrl" : "Sub_UC_eMed_03_01.html",
-          "title" : "​Technische Use Cases für Geplante Abgaben lesen (UC_eMed_03)",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_03_02.html"
-          }],
-          "nameUrl" : "Sub_UC_eMed_03_02.html",
-          "title" : "​Technische Use Cases für Durchgeführte Abgaben lesen (UC_eMed_03)",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "Sub_UC_eMed_03_03.html"
-          }],
-          "nameUrl" : "Sub_UC_eMed_03_03.html",
-          "title" : "​Technische Use Cases für Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (UC_eMed_03)",
+          "nameUrl" : "Sub_UC_eMed_03.html",
+          "title" : "​Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03)",
           "generation" : "markdown"
         },
         {

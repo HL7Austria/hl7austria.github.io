@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.AT.FHIR.ELGA.EMED.R4\Technische Use Cases - FHIR® v4.0.1</title>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\Use Cases - FHIR® v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -133,7 +133,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="overview_sub_use_case.html">Überblick Technische Use Cases</a>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
       </li>
       <li>
         <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
@@ -142,13 +142,7 @@
         <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
       </li>
       <li>
-        <a href="Sub_UC_eMed_03_01.html">Geplante Abgaben lesen</a>
-      </li>
-      <li>
-        <a href="Sub_UC_eMed_03_02.html">Durchgeführte Abgaben lesen</a>
-      </li>
-      <li>
-        <a href="Sub_UC_eMed_03_03.html">Geplante Abgaben und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a>
+        <a href="Sub_UC_eMed_03.html">Geplante Abgaben und Durchgeführte Abgaben lesen</a>
       </li>
       <li>
         <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
@@ -176,7 +170,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='overview_use_case.html'><b>Overview Use Case</b></a></li><li><b>Technische Use Cases</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='overview_use_case.html'><b>Overview Use Case</b></a></li><li><b>Use Cases</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -201,7 +195,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   </div>
   <!-- at-fhir-ig-template end -->
-  <h2>Technische Use Cases</h2>
+  <h2>Use Cases</h2>
   
 
 
@@ -213,8 +207,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#fachliche-use-cases" id="markdown-toc-fachliche-use-cases">Fachliche Use Cases</a></li>
+  <li><a href="#technische-use-cases" id="markdown-toc-technische-use-cases">Technische Use Cases</a></li>
+</ul>
+
 </div>
 <style>
 .no-number {
@@ -332,6 +330,11 @@ width: 100%;}
   grid-row: 1;
 }
 
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
 /* Hidden tabs must not take up space */
 .content-in-tab {
   display: none;
@@ -340,7 +343,7 @@ width: 100%;}
   width: 100%;
   box-sizing: border-box;
   background: #ffffff;
-  padding: 20px;
+  padding: 8px 8px;  /*10px;*/
   border: 1px solid #cccccc;
   /* Maximum visible panel height */
   max-height: 700px;
@@ -364,8 +367,8 @@ width: 100%;}
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 0.8rem;
-  font-size: 0.95em;
-  line-height: 1.5;
+  font-size: 0.8em;
+  line-height: 1;
   overflow-x: auto;
 }
 
@@ -374,7 +377,7 @@ width: 100%;}
 }
 
 .content-in-tab:has(.request-panel) {
-  padding: 8px 12px;
+  padding: 10px;
 }
 
 .content-in-tab:has(pre) {
@@ -383,33 +386,51 @@ width: 100%;}
   max-height: calc(100vh - 120px); 
 }
 
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+
+
 </style>
 
-<p>In den folgenden Kapiteln werden die fachlichen Anwendungsfälle der e-Medikation in Form technischer Use Cases beschrieben. Die zugehörigen Sequenzdiagramme veranschaulichen die beteiligten Akteure sowie die jeweiligen Abläufe.</p>
+<h3 id="fachliche-use-cases">Fachliche Use Cases</h3>
 
-<p>Für jeden Use Case werden im Kapitel <em>Relevante Elemente</em> die wichtigsten Elemente der verwendeten Profile beschrieben. Dies ermöglicht eine kompakte Übersicht über die erforderlichen Anpassungen der Ressourcen im Kontext des jeweiligen Anwendungsfalls.</p>
+<p>Die fachlichen Use Cases sind hier nachzulesen: Link zu ergänzen.  <!-- TODO --></p>
 
-<h1 id="liste-der-technischen-use-cases">Liste der technischen Use Cases</h1>
+<h4 id="use-case-diagramm">Use Case Diagramm</h4>
+
+<p>Das foglende Use Case Diagramm zeigt die zentralen Anwendungsfälle der e-Medikation und die Interaktion der verschiedenen Akteure. 
+<br /></p>
+
+<p><a href="usecases_e_med4.drawio.svg"><img src="usecases_e_med4.drawio.svg" alt="overview" class="mx-auto" style="width:60%;" /></a></p>
+
+<p><br clear="all" /></p>
+
+<h3 id="technische-use-cases">Technische Use Cases</h3>
+
+<p>In den folgenden Kapiteln werden die fachlichen Anwendungsfälle der e-Medikation als technische Use Cases beschrieben. Die zugehörigen Sequenzdiagramme veranschaulichen die Interaktionen und Abläufe zwischen den beteiligten Akteuren.</p>
+
+<p>Die Kapitel <em>Relevante Elemente</em> geben einen Überblick über die für den betreffenden Use Case wesentlichen Elemente der verwendeten FHIR-Profile. Sie dienen als kompakte Orientierung und beschreiben die erforderlichen Anpassungen und Befüllungen der Ressourcen im jeweiligen Anwendungskontext.</p>
+
+<h4 id="übersicht">Übersicht</h4>
 
 <ul>
   <li><a href="Sub_UC_eMed_01.html">Technische Usecases zu Medikationsplan lesen (UC_eMed_01)</a></li>
   <li><a href="Sub_UC_eMed_02.html">Technische Usecases zu Medikationsplan schreiben (UC_eMed_02)</a></li>
-  <li><a href="Sub_UC_eMed_03_01.html">Technische Usecases zu Geplante Abgaben lesen (UC_eMed_03)</a></li>
-  <li><a href="Sub_UC_eMed_03_02.html">Technische Usecases zu Durchgeführte Abgaben lesen (UC_eMed_03)</a></li>
-  <li><a href="Sub_UC_eMed_03_03.html">Technische Usecases zu Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen (UC_eMed_03)</a></li>
+  <li><a href="Sub_UC_eMed_03.html">Technische Usecases zu Geplante und Durchgeführte Abgaben lesen (UC_eMed_03)</a></li>
   <li><a href="Sub_UC_eMed_04.html">Technische Usecases zu Geplante Abgabe schreiben (UC_eMed_04)</a></li>
-  <li><a href="Sub_UC_eMed_05.html">Technische Usecases zu Durchgeführte Abgabe schreiben (UC_eMed_05)</a>
-<!-- - [Technische Usecases zu Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier schreiben (UC_eMed_05)](Sub_UC_eMed_05_01.html) --></li>
+  <li><a href="Sub_UC_eMed_05.html">Technische Usecases zu Durchgeführte Abgabe schreiben (UC_eMed_05)</a></li>
 </ul>
-
-<h3 id="use-case-diagramm">Use Case Diagramm</h3>
-
-<p>Das Kapitel gibt einen Überblick über die zentralen Anwendungsfälle der e-Medikation und zeigt, wie die verschiedenen Akteure mit den Funktionen interagieren. 
-<br /></p>
-
-<p><a href="usecases_e_med4.drawio.png"><img src="usecases_e_med4.drawio.png" alt="overview" class="mx-auto" style="width:60%;" /></a></p>
-
-<p><br clear="all" /></p>
 
 
 
@@ -429,7 +450,7 @@ width: 100%;}
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Sep 10, 2026 13:22+0000">2026-09-10</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Sep 14, 2026 18:30+0000">2026-09-14</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

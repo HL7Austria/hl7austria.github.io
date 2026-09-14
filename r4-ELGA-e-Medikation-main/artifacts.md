@@ -137,14 +137,13 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Journey 01: Medikationsplan-Searchset-Bundle](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Searchset-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Journey 01: Transaction Bundle](Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.md) | Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Journey 01: e-Med Fachanwendung](Device-At-Emed-Example-Device-01.md) | Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt. |
-| [Beispiel Journey 02: Geplante Abgabe](MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-01.md) | Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab. |
+| [Beispiel Journey 02: Geplante Abgabe 1](MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-01.md) | Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab. |
 | [Beispiel Journey 02: Magistrale Zubereitung](Medication-At-Emed-Example-Medication-Magistral-01.md) | Beispiel einer magistralen Zubereitung (Medication) - Salbe. |
 | [Beispiel Journey 02: Medikationsplan](List-At-Emed-Journey-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert. |
 | [Beispiel Journey 02: Medikationsplan-Searchset-Bundle](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Searchset-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert. |
 | [Beispiel Journey 02: Medikationsplaneintrag 1](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md) | Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab. |
 | [Beispiel Journey 02: Medikationsplaneintrag 2](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md) | Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung und zugehörigen Dosierungsanweisungen ab. |
 | [Beispiel Journey 02: Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md) | Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet. |
-| [Beispiel Journey 03: Geplante Abgabe](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe.md) | Bildet eine Geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
 | [Beispiel Journey 05-a: Medikationsplan-Searchset-Bundle mit geänderter Reihenfolge der Planeinträge.](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Searchset-Bundles, mit geänderter Reihenfolge der Medikationsplaneinträge. |
 | [Beispiel Journey 05-a: Reihenfolge der Planeinträge ändern](List-At-Emed-Journey-05-a-List-Reihenfolge.md) | Beispiel Änderung der Reihenfolge der Medikationsplaneinträge (MedicationRequests) durch den Patienten. |
 | [Beispiel Journey 05-a: Transaction Bundle zur Änderung der Reihenfolge der Medikationsplaneinträge.](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, zur Änderung der Reihenfolge der Medikationsplaneinträge. |
@@ -159,5 +158,4 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Organisation Apotheke 01](Organization-At-Emed-Example-Organization-Apo-01.md) | Beispiel einer Apotheke als Organisation. |
 | [Beispiel Patient 01](Patient-At-Emed-Example-Patient-01.md) | Beispiel eines Patienten. |
 | [Beispiel Ärztin 02](Practitioner-At-Emed-Example-Practitioner-02.md) | Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation). |
-| [Beispiel: Geplante Abgabe](MedicationRequest-At-Emed-Example-Mr-Geplante-Abgabe.md) | Bildet eine Geplante Abgabe des Medikaments EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
 
