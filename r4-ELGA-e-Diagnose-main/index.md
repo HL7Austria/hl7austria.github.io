@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-14T07:00:54+00:00",
+  "date" : "2026-09-14T09:05:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1275,6 +1275,38 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       }],
       "reference" : {
         "reference" : "Bundle/ConditionSearchSet01"
+      },
+      "name" : "SearchSet-Bundle der Diagnosen eines Patienten",
+      "description" : "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ConditionSearchSet02.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ConditionSearchSet02"
+      },
+      "name" : "SearchSet-Bundle der Diagnosen eines Patienten",
+      "description" : "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ConditionSearchSet03.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ConditionSearchSet03"
       },
       "name" : "SearchSet-Bundle der Diagnosen eines Patienten",
       "description" : "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten",

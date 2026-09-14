@@ -87,4 +87,6 @@ These are example instances that show what data produced and consumed by systems
 | [Procedure Summary-Liste mit einem Summary-Eintrag](List-ProcedureList01.md) | Beispiel einer Summary-Liste mit einem Eintrag, der auf eine Prozedur verweist. |
 | [Procedure-Summary-Liste (notstarted)](List-ProcedureListEmpty.md) | Initiale Summary-Liste ohne Summary-Einträge (Procedure). |
 | [SearchSet-Bundle der Diagnosen eines Patienten](Bundle-ConditionSearchSet01.md) | Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten |
+| [SearchSet-Bundle der Diagnosen eines Patienten](Bundle-ConditionSearchSet02.md) | Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten |
+| [SearchSet-Bundle der Diagnosen eines Patienten](Bundle-ConditionSearchSet03.md) | Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten |
 
