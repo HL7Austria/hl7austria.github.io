@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-15T08:39:16+00:00",
+  "date" : "2026-09-15T14:26:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -182,6 +182,60 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "type" : [{
         "code" : "MedicationRequest",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry:Patient",
+      "path" : "Bundle.entry",
+      "sliceName" : "Patient",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Bundle.entry:Patient.link",
+      "path" : "Bundle.entry.link",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Patient.resource",
+      "path" : "Bundle.entry.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "Patient",
+        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry:Source",
+      "path" : "Bundle.entry",
+      "sliceName" : "Source",
+      "min" : 0,
+      "max" : "*"
+    },
+    {
+      "id" : "Bundle.entry:Source.link",
+      "path" : "Bundle.entry.link",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Source.resource",
+      "path" : "Bundle.entry.resource",
+      "min" : 1,
+      "type" : [{
+        "code" : "Practitioner",
+        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner"]
+      },
+      {
+        "code" : "Device",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"]
+      },
+      {
+        "code" : "PractitionerRole",
+        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
+      },
+      {
+        "code" : "Patient",
+        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
       }]
     }]
   }

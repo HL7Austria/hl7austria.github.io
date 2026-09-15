@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-15T08:39:16+00:00",
+  "date" : "2026-09-15T14:26:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -78,11 +78,27 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "List.identifier",
-      "path" : "List.identifier",
-      "short" : "Logischer Identfier der Liste (des Medikationsplans).",
+      "id" : "List.extension",
+      "path" : "List.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "List.extension:PatientModified",
+      "path" : "List.extension",
+      "sliceName" : "PatientModified",
+      "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-patient-modified"]
+      }]
     },
     {
       "id" : "List.status",

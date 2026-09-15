@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-09-15T08:39:16+00:00",
+  "date" : "2026-09-15T14:26:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -131,6 +131,18 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.recorded"]
+      }]
+    },
+    {
+      "id" : "MedicationDispense.extension:groupIdentifier",
+      "path" : "MedicationDispense.extension",
+      "sliceName" : "groupIdentifier",
+      "short" : "Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier"]
       }]
     },
     {

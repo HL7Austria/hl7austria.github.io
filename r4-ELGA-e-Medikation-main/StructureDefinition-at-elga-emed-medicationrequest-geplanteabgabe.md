@@ -16,6 +16,7 @@ Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medi
 
 **Usages:**
 
+* Use this Profile: [AT ELGA e-Medikation Transaction Bundle geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgabentx.md)
 * Refer to this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
 * Examples for this Profile: [MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-01](MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-01.md) and [MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-02](MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-02.md)
 
@@ -42,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-09-15T08:39:16+00:00",
+  "date" : "2026-09-15T14:26:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -352,77 +353,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "extension.value"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
-      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext.",
-      "min" : 1,
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:otherDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "otherDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-other-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:timedDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "timedDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-timed-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:frequencyDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "frequencyDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-frequency-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:freitextDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "freitextDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-freetext-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:standardDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "standardDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-standard-administration"]
-      }],
-      "mustSupport" : true
+      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext."
     },
     {
       "id" : "MedicationRequest.dispenseRequest",

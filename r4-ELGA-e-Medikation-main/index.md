@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-15T08:39:16+00:00",
+  "date" : "2026-09-15T14:26:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -733,6 +733,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-device-fachanwendung.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-device-fachanwendung"
+      },
+      "name" : "At ELGA e-Medikation Device Fachanwendung",
+      "description" : "Das Device welches die eMed Fachanwendung abbildet",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       },
       {
@@ -761,6 +777,38 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT ELGA e-Medikation Extension Dosierungskategorie",
       "description" : "AT ELGA e-Medikation Extension Dosierungskategorie",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-extension-group-identifier.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-extension-group-identifier"
+      },
+      "name" : "AT ELGA e-Medikation Extension Group Identifier",
+      "description" : "AT ELGA e-Medikation Extension, die den e-Med GroupIdentifier beinhaltet.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-extension-patient-modified.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-extension-patient-modified"
+      },
+      "name" : "AT ELGA e-Medikation Extension Patient Modified",
+      "description" : "AT ELGA e-Medikation Extension, die Angibt, ob in einer Ressource eine Änderung vom Patienten veranlasst wurde.",
       "exampleBoolean" : false
     },
     {
@@ -912,6 +960,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT ELGA e-Medikation Timing",
       "description" : "AT ELGA e-Medikation Timing",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-bundle-geplanteabgabentx.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-bundle-geplanteabgabentx"
+      },
+      "name" : "AT ELGA e-Medikation Transaction Bundle geplante Abgaben",
+      "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, \ndie gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. \nIst kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.",
       "exampleBoolean" : false
     },
     {
@@ -1669,6 +1733,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-AtElgaEmedCodeSystemPlaneintragStatusReasonCS.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/AtElgaEmedCodeSystemPlaneintragStatusReasonCS"
+      },
+      "name" : "ELGA e-Med MedicationRequest Planeintrag StatusReason CodeSystem",
+      "description" : "Codesystem für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       },
       {
@@ -1680,6 +1760,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
       "description" : "ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtElgaEmedValueSetPlaneintragStatusReasonVS"
+      },
+      "name" : "ELGA e-Med Medikationsplaneintrag StatusReason Value Set",
+      "description" : "ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest).",
       "exampleBoolean" : false
     },
     {

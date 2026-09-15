@@ -76,6 +76,8 @@ These define constraints on FHIR resources for systems conforming to this implem
 
 | | |
 | :--- | :--- |
+| [AT ELGA e-Medikation Transaction Bundle geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgabentx.md) | Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, die gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier. |
+| [At ELGA e-Medikation Device Fachanwendung](StructureDefinition-at-elga-emed-device-fachanwendung.md) | Das Device welches die eMed Fachanwendung abbildet |
 | [At ELGA e-Medikation MedicationRequest Base](StructureDefinition-at-elga-emed-medicationrequest-base.md) | Die Basis für alle in eMed verwendeten MedicationRequests |
 
 ### Structures: Data Type Profiles 
@@ -94,6 +96,8 @@ These define constraints on FHIR data types for systems conforming to this imple
 | | |
 | :--- | :--- |
 | [AT ELGA e-Medikation Extension Dosierungskategorie](StructureDefinition-at-elga-emed-extension-dosage-category.md) | AT ELGA e-Medikation Extension Dosierungskategorie |
+| [AT ELGA e-Medikation Extension Group Identifier](StructureDefinition-at-elga-emed-extension-group-identifier.md) | AT ELGA e-Medikation Extension, die den e-Med GroupIdentifier beinhaltet. |
+| [AT ELGA e-Medikation Extension Patient Modified](StructureDefinition-at-elga-emed-extension-patient-modified.md) | AT ELGA e-Medikation Extension, die Angibt, ob in einer Ressource eine Änderung vom Patienten veranlasst wurde. |
 
 ### Terminology: Value Sets 
 
@@ -111,6 +115,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | [ELGA e-Med Geplante Abgabe Status ValueSet](ValueSet-GeplanteAbgabeStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest). |
 | [ELGA e-Med MedicationRequest Kategorie ValueSet](ValueSet-MedicationRequestCategoryVS.md) | ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen |
 | [ELGA e-Med Medikationsplaneintrag Status Value Set](ValueSet-PlaneintragStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). |
+| [ELGA e-Med Medikationsplaneintrag StatusReason Value Set](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) | ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest). |
 
 ### Terminology: Code Systems 
 
@@ -121,6 +126,7 @@ These define new code systems used by systems conforming to this implementation 
 | [ELGA Dosage Category Status CodeSystem](CodeSystem-AtElgaEmedCodeSystemDosageCategory.md) | Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA. |
 | [ELGA List.entry.flag CodeSystem](CodeSystem-ElgaListEntryFlagCS.md) | CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA. |
 | [ELGA e-Med MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
+| [ELGA e-Med MedicationRequest Planeintrag StatusReason CodeSystem](CodeSystem-AtElgaEmedCodeSystemPlaneintragStatusReasonCS.md) | Codesystem für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest). |
 
 ### Example: Example Instances 
 

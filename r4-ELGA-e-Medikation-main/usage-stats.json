@@ -9,10 +9,36 @@
       "types": [
         "CodeableConcept"
       ]
+    },
+    {
+      "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier",
+      "title": "AT ELGA e-Medikation Extension Group Identifier",
+      "types": [
+        "Identifier",
+        "string",
+        "Extension",
+        "code",
+        "CodeableConcept",
+        "uri",
+        "string",
+        "Period",
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-patient-modified",
+      "title": "AT ELGA e-Medikation Extension Patient Modified",
+      "types": [
+        "boolean"
+      ]
     }
   ],
   "profiles": {
     "Bundle": [
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgabentx",
+        "title": "AT ELGA e-Medikation Transaction Bundle geplante Abgaben"
+      },
       {
         "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan",
         "title": "AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan"
@@ -20,6 +46,12 @@
       {
         "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx",
         "title": "AT ELGA e-Medikation Transaction Bundle Medikationsplan"
+      }
+    ],
+    "Device": [
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung",
+        "title": "At ELGA e-Medikation Device Fachanwendung"
       }
     ],
     "List": [
@@ -146,6 +178,12 @@
       "Bundle.entry.resource.dosageInstruction",
       "Dosage",
       "MedicationRequest.dosageInstruction"
+    ],
+    "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier": [
+      "MedicationDispense"
+    ],
+    "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-patient-modified": [
+      "List"
     ]
   }
 }
