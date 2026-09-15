@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-14T18:30:11+00:00",
+  "date" : "2026-09-15T08:39:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1173,6 +1173,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-02.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-02"
+      },
+      "name" : "Beispiel Journey 02: Geplante Abgabe 2",
+      "description" : "Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) mit den Dosierungsanweisungen des zugehörigen Planeintrags ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
       },
       {
@@ -1247,7 +1263,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02"
       },
       "name" : "Beispiel Journey 02: Medikationsplaneintrag 2",
-      "description" : "Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung und zugehörigen Dosierungsanweisungen ab.",
+      "description" : "Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe)und zugehörigen Dosierungsanweisungen ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {

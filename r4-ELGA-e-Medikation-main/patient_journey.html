@@ -413,125 +413,169 @@ Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilab
 <p>Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum Patienten, die erstellende e-Medikation-Fachanwendung, das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (<em>EmptyReason = notstarted</em>).</p>
 
 <div class="tabs">
-  <!-- Beispiel-Ressourcen-Tab -->
-<div class="tab">
-<input name="tab-group-patient-journey-1" checked="true" id="tab-beispiele-1" type="radio"/>
-<label for="tab-beispiele-1">Beispiele</label>
-<div class="content-in-tab">
-<ul>
-<li><strong>Leerer Medikationsplan:</strong> (EmptyReason = notstarted)<ul>
-<li><a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a></li>
-<li><a href="Patient-At-Emed-Example-Patient-01.html">Patient</a></li>
-<li><a href="Device-At-Emed-Example-Device-01.html">Device</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-  <!-- Usecases-Tab -->
-<div class="tab">
-<input name="tab-group-patient-journey-1" id="tab-usecases-1" type="radio"/>
-<label for="tab-usecases-1">Use Cases</label>
-<div class="content-in-tab">
-<ul>
-<li><a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a></li>
-<li><a name="l480">​</a><a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03 - Geplante Abgaben lesen (Prescription-Search)</a></li>
-<li><a name="l484">​</a><a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03 - Durchgeführte Abgaben lesen (Dispense-Search)</a></li>
-<li><a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a></li>
-</ul>
-</div>
-</div>
-</div>
-
-  <!-- Request-Response-Box Plan-Read
-<div class="tabs">
   <div class="tab">
-    <input type="radio" id="tab-request-1-plan-read" name="tab-group-request-1-plan-read" checked="true" />
-    <label for="tab-request-1-plan-read">Request</label>
-    <div class="request-panel"> 
-      <div class="request-code">
-          <span class="request-method-post">POST</span>
-          <code class="request-url">[base]/$plan-read</code>
-      </div>
-      <div class="request-meta">
-        <strong>Headers:</strong>
-        <code class="request-header">Content-Type: application/fhir+json</code>
-      </div>
-    </div> 
-  </div>
-    <div class="tab">
-    <input type="radio" id="tab-response-1-plan-read" name="tab-group-request-1-plan-read" />
-    <label for="tab-response-1-plan-read">Response</label>
+    <input name="tab-group-patient-journey-1" checked="true" id="tab-beispiele-1" type="radio"/>
+    <label for="tab-beispiele-1">Beispiele</label>
     <div class="content-in-tab">
-    TODO Beispielressource einfügen
+      <ul>
+        <li>
+          <strong>Leerer Medikationsplan:</strong>(EmptyReason = notstarted) 
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a>
+            </li>
+            <li>
+              <a href="Patient-At-Emed-Example-Patient-01.html">Patient</a>
+            </li>
+            <li>
+              <a href="Device-At-Emed-Example-Device-01.html">Device</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
-</div> -->
+  <div class="tab">
+    <input name="tab-group-patient-journey-1" id="tab-usecases-1" type="radio"/>
+    <label for="tab-usecases-1">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l485">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
+        </li>
+        <li><a name="l491">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- Request-Response-Box 
+Plan-Read
+prescription-search
+dispense-search -->
 
 <p>Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie <strong>Ramipril 5 mg Tabletten</strong>, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag <strong>Dexpanthenol-5-%-Salbe</strong>, 2 × täglich für 3 Wochen, dünn aufzutragen.<br/>
 Sie speichert den neuen Medikationsplan.</p>
 
 <div class="tabs">
-  <!-- Beispiel-Ressourcen-Tab -->
-<div class="tab">
-<input name="tab-group-patient-journey-2" checked="true" id="tab-beispiele-2" type="radio"/>
-<label for="tab-beispiele-2">Beispiele</label>
-<div class="content-in-tab">
-<ul>
-<li><strong>Planeinträge erstellen:</strong> <ul>
-<li><a href="MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.html">Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)</a></li>
-<li><a href="MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html">Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen</a></li>
-</ul>
-</li>
-<li><strong>Medikationsplan aktualisieren:</strong><ul>
-<li><a href="List-At-Emed-Journey-02-List-Medikationsplan.html">Medikationsplan ergänzt mit 2 Planeinträgen</a></li>
-</ul>
-</li>
-<li><strong>Transaction Bundle:</strong><ul>
-<li><a href="Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.html">Transaction Bundle</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-  <!-- Usecases-Tab -->
-<div class="tab">
-<input name="tab-group-patient-journey-2" id="tab-usecases-2" type="radio"/>
-<label for="tab-usecases-2">Use Cases</label>
-<div class="content-in-tab">
-<ul>
-<li><a href="Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</a></li>
-<li><a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</a>
-</li>
-</ul>
-</div>
-</div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-2" checked="true" id="tab-beispiele-2" type="radio"/>
+    <label for="tab-beispiele-2">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Planeinträge erstellen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.html">Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)</a>
+            </li>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html">Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Medikationsplan aktualisieren:</strong>
+          <ul>
+            <li>
+              <a href="List-At-Emed-Journey-02-List-Medikationsplan.html">Medikationsplan ergänzt mit 2 Planeinträgen</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.html">Transaction Bundle</a>
+            </li>
+            <li>
+              <a href="Practitioner-At-Emed-Example-Practitioner-01.html">Dr. Hausärztin</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-2" id="tab-usecases-2" type="radio"/>
+    <label for="tab-usecases-2">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-  <!-- * **Planeinträge erstellen:** 
-  * [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.html)
-  * [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html)
-* **Medikationsplan aktualisieren:**
-  * [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-02-List-Medikationsplan.html)
-* **Transaction Bundle:**
-  * [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.html) -->
+  <!-- Request-Response-Box 
+Plan-Read
+prescription-search
+dispense-search -->
 
 <p><br/>
-Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin (<a href="Practitioner-At-Emed-Example-Practitioner-01.html">Dr. Hausärztin</a>) ersichtlich.</p>
+Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.</p>
 
-<p>Dr. Hausärztin erstellt für beide Medikamente eine <em>Geplante Abgabe</em> (Rezeptierung), sodass Herr Mustermann die Medikamente in der Apotheke abholen kann.</p>
+<p>Dr. Hausärztin erstellt für beide Medikamente eine <em>Geplante Abgabe</em> (Rezeptierung), sodass Herr Mustermann die Medikamente in der Apotheke abholen kann. Die Ärztin übergibt dem Patienten ein Rezept mit beiden Arzeimitteln.</p>
 
-<ul>
-  <li><strong>Geplante Abgaben erstellen:</strong>
-    <ul>
-      <li><a name="l614">​</a>Beispiel <a href="MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-01.html">Geplante Abgabe zu Planeintrag 1 (Ramipril)</a>
-  <!-- * Beispiel [Geplante Abgabe zu Planeintrag 2 (...)](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-02.html) --></li>
-    </ul>
-  </li>
-</ul>
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-3" checked="true" id="tab-beispiele-3" type="radio"/>
+    <label for="tab-beispiele-3">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Geplante Abgaben erstellen:</strong>
+          <ul>
+            <li><a name="l652">​</a>
+              <a href="MedicationRequest-At-Emed-Journey-02-Mr-Geplante-Abgabe-01.html">Geplante Abgabe zu Planeintrag 1 (Ramipril)</a>
+            </li>
+            <li><a name="l658">​</a>
+              <a href="MedicationRequest-At-Emed-Journey-02-Mr-Geplante-Abgabe-02.html">Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.html">Transaction Bundle TODO</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-3" id="tab-usecases-3" type="radio"/>
+    <label for="tab-usecases-3">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_04.html#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create">Sub_UC_eMed_04_02 - e-Med Groupidentifier beziehen (Variante A)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <p><br/>
-<a href="plantuml/patient_journey.svg"><img src="plantuml/patient_journey_01.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
+<a href="plantuml/patient_journey_01.svg"><img src="plantuml/patient_journey_01.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
 
 <p><strong>28.2.2026: Abgabe in der Apotheke (Besorgerprozess)</strong></p>
@@ -551,7 +595,7 @@ Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum d
     <p><strong>Durchgeführte Abgaben erstellen (Vollständige Abgabe, Besorgerprozess):</strong></p>
 
     <ul>
-      <li><a name="l685">​</a>Beispiel <a href="MedicationDispense-At-Emed-Journey-05-MedicationDispense.html">MedicationDispense</a></li>
+      <li><a name="l772">​</a>Beispiel <a href="MedicationDispense-At-Emed-Journey-05-MedicationDispense.html">MedicationDispense</a></li>
     </ul>
   </li>
 </ul>
@@ -579,7 +623,7 @@ Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum d
     <p><strong>Aktuellen Medikationsplan anzeigen:</strong></p>
 
     <ul>
-      <li><a name="l742">​</a>Beispiel <a href="Bundle-At-Emed-Journey-07-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a></li>
+      <li><a name="l829">​</a>Beispiel <a href="Bundle-At-Emed-Journey-07-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a></li>
     </ul>
   </li>
 </ul>
@@ -680,7 +724,7 @@ Ramipril wird als Dauermedikation fortgeführt.</p>
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Sep 14, 2026 18:30+0000">2026-09-14</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Sep 15, 2026 08:39+0000">2026-09-15</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

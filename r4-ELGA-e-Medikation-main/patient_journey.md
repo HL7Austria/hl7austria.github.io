@@ -18,47 +18,59 @@ Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt 
 
 Beispiele
 
-* **Leerer Medikationsplan:** (EmptyReason = notstarted)
-* [Medikationsplan-Searchset-Bundle](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md)
-* [Patient](Patient-At-Emed-Example-Patient-01.md)
-* [Device](Device-At-Emed-Example-Device-01.md)
+*  **Leerer Medikationsplan:**(EmptyReason = notstarted) 
+*  [Medikationsplan-Searchset-Bundle](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md) 
+*  [Patient](Patient-At-Emed-Example-Patient-01.md) 
+*  [Device](Device-At-Emed-Example-Device-01.md) 
  
 
 Use Cases
 
-* [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read)
-* [Sub_UC_eMed_03 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search)
-* [Sub_UC_eMed_03 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search)
-* [Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_03---initial-erstellter-medikationsplan)
+*  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_03---initial-erstellter-medikationsplan) 
 
 Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie **Ramipril 5 mg Tabletten**, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag **Dexpanthenol-5-%-Salbe**, 2 × täglich für 3 Wochen, dünn aufzutragen.
  Sie speichert den neuen Medikationsplan.
 
 Beispiele
 
-* **Planeinträge erstellen:** 
-* [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md)
-* [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md)
+*  **Planeinträge erstellen:** 
+*  [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md) 
+*  [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md) 
  
-* **Medikationsplan aktualisieren:**
-* [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-02-List-Medikationsplan.md)
+*  **Medikationsplan aktualisieren:** 
+*  [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-02-List-Medikationsplan.md) 
  
-* **Transaction Bundle:**
-* [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md)
+*  **Transaction Bundle:** 
+*  [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md) 
+*  [Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md) 
  
 
 Use Cases
 
-* [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen)
-* [Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write) 
+*  [Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write) 
+*  [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen) 
 
- Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin ([Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md)) ersichtlich.
+ Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.
 
-Dr. Hausärztin erstellt für beide Medikamente eine **Geplante Abgabe** (Rezeptierung), sodass Herr Mustermann die Medikamente in der Apotheke abholen kann.
+Dr. Hausärztin erstellt für beide Medikamente eine **Geplante Abgabe** (Rezeptierung), sodass Herr Mustermann die Medikamente in der Apotheke abholen kann. Die Ärztin übergibt dem Patienten ein Rezept mit beiden Arzeimitteln.
 
-* **Geplante Abgaben erstellen:** 
-* Beispiel [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-01.md) 
+Beispiele
+
+*  **Geplante Abgaben erstellen:** 
+*  [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-At-Emed-Journey-02-Mr-Geplante-Abgabe-01.md) 
+*  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-At-Emed-Journey-02-Mr-Geplante-Abgabe-02.md) 
  
+*  **Transaction Bundle:** 
+*  [Transaction Bundle TODO](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md) 
+ 
+
+Use Cases
+
+*  [Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) 
+*  [Sub_UC_eMed_04_02 - e-Med Groupidentifier beziehen (Variante A)](Sub_UC_eMed_04.md#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create) 
 
  ![](plantuml/patient_journey_01.svg) 
 
