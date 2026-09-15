@@ -25,7 +25,8 @@ project_dict = {
     'HL7-AT-Reference-IG': 'HL7-AT-Reference-IG',
     'r4-JoanneumResearch-PreNUDGE-AppData': 'JoanneumResearch-PreNUDGE-AppData-R4',
     'r5-aist-trustworthyai': 'AIST-TrustworthyAI-R5',
-    'r4-ELGA-e-Diagnose': 'ELGA-e-Diagnose-R4'
+    'r4-ELGA-e-Diagnose': 'ELGA-e-Diagnose-R4',
+    'r4-BRZ-ProviderDirectory': 'BRZ-ProviderDirectory-R4'
 }
 
 # list of everything in this directory
