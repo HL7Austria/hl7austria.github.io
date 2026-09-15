@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-15T06:30:22+00:00",
+  "date" : "2026-09-15T08:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -711,12 +711,12 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-at-ediag-diagnosen-codes.html"
+        "valueUri" : "ValueSet-at-ediag-condition-code.html"
       }],
       "reference" : {
-        "reference" : "ValueSet/at-ediag-diagnosen-codes"
+        "reference" : "ValueSet/at-ediag-condition-code"
       },
-      "name" : "AT e-Diagnose Diagnosen Value Set",
+      "name" : "AT e-Diagnose Condition Code",
       "description" : "Value-Set für die Codierung von Diagnosen.",
       "exampleBoolean" : false
     },

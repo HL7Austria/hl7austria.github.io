@@ -56,7 +56,7 @@ Zu diesem Value-Set sind folgende Punkte zu berücksichtigen:
   "title" : "AT e-Diagnose Procedure Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-15T06:30:22+00:00",
+  "date" : "2026-09-15T08:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
