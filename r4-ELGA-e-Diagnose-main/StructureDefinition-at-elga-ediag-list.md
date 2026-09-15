@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list | *Version*:0.1.0 | |
-| Active as of 2026-09-14 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
+| Active as of 2026-09-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagList |
 
  
 Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-list.c
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-09-14T11:50:31+00:00",
+  "date" : "2026-09-15T06:30:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
