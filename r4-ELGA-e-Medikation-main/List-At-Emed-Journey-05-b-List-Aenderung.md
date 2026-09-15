@@ -11,9 +11,9 @@ Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Date: 2026-03-10 13:20:00+0000 | Mode: Working List | Status: Current | Code: Medikationsplan |
-| Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)Source: | | | |
+| Subject:[Anton Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)Source: | | | |
 
-* **Items**: [MedicationRequest: extension = 2026-02-27 --> 2026-03-20,1-0-1-0 täglich | 2 × täglich für 3 Wochen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication: form = Salbe; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Short course (acute) therapy](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md)
+* **Items**: [MedicationRequest: extension = 2026-02-27 --> 2026-03-20,1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication: form = Salbe; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Short course (acute) therapy](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md)
   * Flag: Planeintrag entfernt
 * **Items**: [MedicationRequest: extension = 2026-02-27 --> (ongoing),1-0-0-0 Stück; identifier = 4712_202602280800000; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication EBETREXAT TBL 10MG; authoredOn = 2026-03-10 13:20:00+0000; courseOfTherapyType = Continuous long term therapy](MedicationRequest-At-Emed-Journey-05-b-Mr-Planeintrag-01.md)
   * Flag: Neuer Planeintrag

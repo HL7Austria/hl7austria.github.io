@@ -39,7 +39,7 @@
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-    "valueMarkdown" : "1-0-0-0 täglich | Täglich 1 Stück morgens"
+    "valueMarkdown" : "1-0-0-1 | Täglich: 1-0-0-0"
   }],
   "status" : "active",
   "intent" : "order",
@@ -105,7 +105,7 @@
       "doseQuantity" : {
         "unit" : "Stück",
         "system" : "http://unitsofmeasure.org",
-        "code" : "Stueck"
+        "code" : "{Stueck}"
       }
     }]
   }],

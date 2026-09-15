@@ -16,7 +16,7 @@ Dokumentiert eine "Durchgeführte Abgabe" eines Arzneimittels ("MedicationDispen
 
 **Usages:**
 
-* Examples for this Profile: [MedicationDispense/At-Emed-Example-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Example-Durchgefuehrte-Abgabe-01.md)
+* Examples for this Profile: [MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01.md) and [MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-09-15T14:26:14+00:00",
+  "date" : "2026-09-15T15:55:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -340,7 +340,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationDispense.whenHandedOver",
       "path" : "MedicationDispense.whenHandedOver",
       "short" : "Der Zeitpunkt, zu dem das abgegebene Produkt dem Patienten oder seinem Vertreter zur Verfügung gestellt wurde.",
-      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -364,7 +363,76 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationDispense.dosageInstruction",
       "path" : "MedicationDispense.dosageInstruction",
-      "short" : "Gibt an, wie das Medikament vom Patienten einzunehmen ist. \nDer Apotheker überprüft die Medikamentenverordnung vor der Abgabe und passt die Dosierungsanweisung gegebenenfalls auf Grundlage des tatsächlich abgegebenen Produkts an.",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "extension.value"
+        }],
+        "ordered" : false,
+        "rules" : "closed"
+      },
+      "short" : "Gibt an, wie das abgegebene Arzneimittel vom Patienten einzunehmen ist. \nDer Apotheker überprüft die Medikamentenverordnung vor der Abgabe und passt die Dosierungsanweisung gegebenenfalls auf Grundlage des tatsächlich abgegebenen Produkts an.",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.dosageInstruction:otherDosage",
+      "path" : "MedicationDispense.dosageInstruction",
+      "sliceName" : "otherDosage",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Dosage",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-other-administration"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.dosageInstruction:timedDosage",
+      "path" : "MedicationDispense.dosageInstruction",
+      "sliceName" : "timedDosage",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Dosage",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-timed-administration"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.dosageInstruction:frequencyDosage",
+      "path" : "MedicationDispense.dosageInstruction",
+      "sliceName" : "frequencyDosage",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Dosage",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-frequency-administration"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.dosageInstruction:freitextDosage",
+      "path" : "MedicationDispense.dosageInstruction",
+      "sliceName" : "freitextDosage",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Dosage",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-freetext-administration"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.dosageInstruction:standardDosage",
+      "path" : "MedicationDispense.dosageInstruction",
+      "sliceName" : "standardDosage",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "Dosage",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-standard-administration"]
+      }],
       "mustSupport" : true
     },
     {

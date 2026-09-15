@@ -12,7 +12,7 @@
 | Draft as of 2026-09-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedGroupIdentifierPrescriptionSearch |
 
  
-Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll. 
+Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med GroupIdentifier erfolgen soll. 
 
 
 
@@ -28,7 +28,7 @@ Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zug
   "title" : "eMed Operation für GroupIdentifier Prescription Search",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-15T14:26:14+00:00",
+  "date" : "2026-09-15T15:55:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -45,7 +45,7 @@ Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zug
       "use" : "work"
     }]
   }],
-  "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll.",
+  "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
   "affectsState" : false,
   "code" : "groupidentifier-prescription-search",
   "system" : true,

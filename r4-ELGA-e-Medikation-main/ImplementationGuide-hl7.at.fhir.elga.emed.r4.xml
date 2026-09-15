@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-09-15T14:26:14+00:00"/>
+  <date value="2026-09-15T15:55:26+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -781,17 +781,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationDispense"/>
-      </extension>
-      <reference>
-        <reference value="MedicationDispense/At-Emed-Example-Durchgefuehrte-Abgabe-01"/>
-      </reference>
-      <name value="Beispiel Durchgeführte Abgabe 1"/>
-      <description value="Beispiel Durchgeführte Abgabe 1"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="MedicationRequest"/>
       </extension>
       <reference>
@@ -858,17 +847,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan"/>
-      </reference>
-      <name value="Beispiel Journey 01: Transaction Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="MedicationRequest"/>
       </extension>
       <reference>
@@ -897,7 +875,7 @@
         <reference value="Medication/At-Emed-Example-Medication-Magistral-01"/>
       </reference>
       <name value="Beispiel Journey 02: Magistrale Zubereitung"/>
-      <description value="Beispiel einer magistralen Zubereitung (Medication) - Salbe."/>
+      <description value="Beispiel einer magistralen Zubereitung (Dexpanthenol-Salbe)."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"/>
     </resource>
     <resource>
@@ -954,6 +932,28 @@
       <name value="Beispiel Journey 02: Transaction Bundle"/>
       <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01"/>
+      </reference>
+      <name value="Beispiel Journey 03: Durchgeführte Abgabe 1"/>
+      <description value="Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02"/>
+      </reference>
+      <name value="Beispiel Journey 03: Durchgeführte Abgabe 1"/>
+      <description value="Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1304,7 +1304,7 @@
         <reference value="OperationDefinition/at-emed-operation-groupidentifier-prescription-search"/>
       </reference>
       <name value="eMed Operation für GroupIdentifier Prescription Search"/>
-      <description value="Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll."/>
+      <description value="Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med GroupIdentifier erfolgen soll."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

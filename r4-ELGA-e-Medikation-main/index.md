@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-15T14:26:14+00:00",
+  "date" : "2026-09-15T15:55:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1093,22 +1093,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationDispense"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationDispense-At-Emed-Example-Durchgefuehrte-Abgabe-01.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationDispense/At-Emed-Example-Durchgefuehrte-Abgabe-01"
-      },
-      "name" : "Beispiel Durchgeführte Abgabe 1",
-      "description" : "Beispiel Durchgeführte Abgabe 1",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
       },
       {
@@ -1205,22 +1189,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-01-Bundle-Tx-Medikationsplan.html"
-      }],
-      "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-01-Bundle-Tx-Medikationsplan"
-      },
-      "name" : "Beispiel Journey 01: Transaction Bundle",
-      "description" : "Beispiel eines Transaction Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
       },
       {
@@ -1263,7 +1231,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Medication/At-Emed-Example-Medication-Magistral-01"
       },
       "name" : "Beispiel Journey 02: Magistrale Zubereitung",
-      "description" : "Beispiel einer magistralen Zubereitung (Medication) - Salbe.",
+      "description" : "Beispiel einer magistralen Zubereitung (Dexpanthenol-Salbe).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"
     },
     {
@@ -1345,6 +1313,38 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel Journey 02: Transaction Bundle",
       "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01"
+      },
+      "name" : "Beispiel Journey 03: Durchgeführte Abgabe 1",
+      "description" : "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationDispense"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02"
+      },
+      "name" : "Beispiel Journey 03: Durchgeführte Abgabe 1",
+      "description" : "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
     },
     {
       "extension" : [{
@@ -1855,7 +1855,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "OperationDefinition/at-emed-operation-groupidentifier-prescription-search"
       },
       "name" : "eMed Operation für GroupIdentifier Prescription Search",
-      "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med Groupidentifier erfolgen soll.",
+      "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
       "exampleBoolean" : false
     },
     {

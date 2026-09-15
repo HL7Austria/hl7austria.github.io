@@ -79,7 +79,7 @@
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-    "valueMarkdown" : "1-0-1-0 täglich | 2 × täglich für 3 Wochen"
+    "valueMarkdown" : "1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen"
   }],
   "status" : "active",
   "intent" : "order",

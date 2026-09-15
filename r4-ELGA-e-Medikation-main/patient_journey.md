@@ -8,7 +8,7 @@
 
 Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der **Medikationsplan** eines Patienten mit den zugehörigen **Geplanten Abgaben** und den **Durchgeführten Abgaben** verändern kann.
 
-**27.2.2026: Arztbesuch**
+### 27.2.2026: Erstbesuch: Neue Medikation
 
 Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausärztin. Außerdem hat er einen leichten Hautausschlag bemerkt.
 
@@ -53,9 +53,9 @@ Use Cases
 *  [Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write) 
 *  [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen) 
 
- Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.
+Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.
 
-Dr. Hausärztin erstellt für beide Medikamente eine **Geplante Abgabe** (Rezeptierung), sodass Herr Mustermann die Medikamente in der Apotheke abholen kann. Die Ärztin übergibt dem Patienten ein Rezept mit beiden Arzeimitteln.
+Dr. Hausärztin erstellt für beide Medikamente ein Rezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer **Geplante Abgabe** in der e-Medikation. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.
 
 Beispiele
 
@@ -64,29 +64,54 @@ Beispiele
 *  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-At-Emed-Journey-02-Mr-Geplante-Abgabe-02.md) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle TODO](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md) 
+*  Transaction Bundle in Arbeit.  
  
 
 Use Cases
 
+*  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
 *  [Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) 
-*  [Sub_UC_eMed_04_02 - e-Med Groupidentifier beziehen (Variante A)](Sub_UC_eMed_04.md#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create) 
+*  [Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen (Variante A)](Sub_UC_eMed_04.md#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create) 
 
- ![](plantuml/patient_journey_01.svg) 
+ ![](plantuml/patient_journey_01_02.svg) 
 
-**28.2.2026: Abgabe in der Apotheke (Besorgerprozess)**
+### 28.2.2026: Abgabe in der Apotheke
 
-Herr Mustermann sucht eine [Apotheke](Organization-At-Emed-Example-Organization-Apo-01.md) auf, um die verordneten Medikamente abzuholen und authentifiziert sich mit seiner e-card.
+Herr Mustermann sucht eine Apotheke auf, um die verordneten Medikamente abzuholen und legt dazu seine e-card vor, wodurch die Apotheke Zugriff auf seine ELGA e-Medikation erhält.
 
-Die Apothekerin ruft **Geplante, Durchgeführte Abgaben** und den **Medikationsplan** ab, und prüft die Medikation hinsichtlich Wechselwirkungen.
+Die Apothekerin prüft das Rezept (Papierrezept oder ruft e-Rezept ab), ruft bestehende **Geplante Abgaben**, **Durchgeführte Abgaben** und den **Medikationsplan** ab und prüft die Medikation hinsichtlich Wechselwirkungen.
 
-Sie händigt das Medikament Ramipril aus, erklärt die Einnahme und erstellt eine **Durchgeführte Abgabe**.
+Sie händigt das Medikament Ramipril aus, erklärt die Einnahme und erstellt eine **Durchgeführte Abgabe** (**Vollständige Abgabe**).
 
-Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine **Durchgeführte Abgabe** und kennzeichnet sie entsprechend dem Besorgerprozess mit **MedicationDispense.type = FFP (First Fill – Part Fill)** und **MedicationDispense.quantity = 0**.
+Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine Durchgeführte Abgabe mit dem **Type = "First Fill – Part Fill"** und der abgegebenen Menge (**quantity**) Null.
+
+Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine **Durchgeführte Abgabe** und dokumentiert darin entsprechend dem **Besorgerprozess** **type = First Fill – Part Fill** und **MedicationDispense.quantity = 0**.
 
 Anschließend speichert sie die neuen **Durchgeführte Abgaben** in der e-Medikation.
 
-* **Durchgeführte Abgaben erstellen (Vollständige Abgabe, Besorgerprozess):**
+Beispiele
+
+*  **Durchgeführte Abgaben erstellen:** (Vollständige Abgabe, Besorgerprozess) 
+*  [Durchgeführte Abgabe (vollständig) (Ramipril)](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01.md) 
+*  [Durchgeführte Abgabe (Besorgerprozess) (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02.md) 
+*  [Apotheke (Organization)](Organization-At-Emed-Example-Organization-Apo-01.md) 
+ 
+*  **Transaction Bundle:** 
+*  Transaction Bundle in Arbeit.  
+ 
+
+Use Cases
+
+*  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)](Sub_UC_eMed_05.md#zugriffsvariante-a-durchgeführte-abgabe-mit-kontakt-schreiben) 
+*  [Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_01---vollständige-einzelabgabe-erfassen) 
+*  [Sub_UC_eMed_05_01_03 - Besorgerprozess](Sub_UC_eMed_05.md#sub_uc_emed_05_01_03---besorgerprozess) 
+
+ ![](plantuml/patient_journey_03.svg) 
 
 **1.3.2026: Abgabe in der Apotheke (Besorgerprozess abschließen)**
 

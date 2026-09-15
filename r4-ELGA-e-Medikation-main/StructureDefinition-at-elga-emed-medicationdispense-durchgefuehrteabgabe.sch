@@ -29,7 +29,6 @@
       <sch:assert test="count(f:quantity) &gt;= 1">quantity: minimum cardinality of 'quantity' is 1</sch:assert>
       <sch:assert test="count(f:daysSupply) &lt;= 0">daysSupply: maximum cardinality of 'daysSupply' is 0</sch:assert>
       <sch:assert test="count(f:whenPrepared) &lt;= 0">whenPrepared: maximum cardinality of 'whenPrepared' is 0</sch:assert>
-      <sch:assert test="count(f:whenHandedOver) &gt;= 1">whenHandedOver: minimum cardinality of 'whenHandedOver' is 1</sch:assert>
       <sch:assert test="count(f:destination) &lt;= 0">destination: maximum cardinality of 'destination' is 0</sch:assert>
       <sch:assert test="count(f:receiver) &lt;= 0">receiver: maximum cardinality of 'receiver' is 0</sch:assert>
       <sch:assert test="count(f:substitution) &lt;= 0">substitution: maximum cardinality of 'substitution' is 0</sch:assert>

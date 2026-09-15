@@ -46,7 +46,7 @@ Da kein weiterer ELGA-Zugriff auf die Medikationsdaten des ELGA-Teilnehmers mög
 
 ##### Ablauf
 
-1. Der GDA ruft über Groupidentifier-Search die dem vorliegenden**e-Med GroupIdentifier**zugehörigen**Geplanten Abgaben**und bereits dokumentierten**Durchgeführten Abgaben**ab.
+1. Der GDA ruft über GroupIdentifier-Search die dem vorliegenden**e-Med GroupIdentifier**zugehörigen**Geplanten Abgaben**und bereits dokumentierten**Durchgeführten Abgaben**ab.
 1. Der GDA ermittelt auf Basis dieser und der Informationen des Patienten die zu dokumentierenden Arzneimittelabgaben und erstellt die entsprechenden[Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)gemäß der jeweils zutreffenden Abgabeart.
 1. Der GDA übermittelt die neu erstellten**Durchgeführten Abgaben**mittels POST**$dispense-write**als Transaction Bundle an die e-Med Fachanwendung.
 1. Die e-Med Fachanwendung prüft das Transaction Bundle und die darin enthaltenen**Durchgeführten Abgaben**, insbesondere deren Zuordnung zum vorliegenden**e-Med GroupIdentifier**. 5.Bei erfolgreicher Prüfung werden die**Durchgeführten Abgaben**gespeichert. Abhängig von Abgabeart und Anzahl der Einlösungen kann die Fachanwendung automatisch eine Statusänderung der zugehörigen**Geplanten Abgabe**durchführen.
@@ -98,7 +98,7 @@ Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationReques
 ```
 AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
     recorded: Datum der Erstellung der Durchgeführten Abgabe
-    identifier: e-Med Groupidentifier  // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
+    identifier: e-Med GroupIdentifier  // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
     status: completed    
     medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
     subject: Patient
@@ -146,7 +146,7 @@ Um die durch **MedicationDispense.type** definierte Sequenz **FFP → RFP → RF
 ```
 AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
     recorded: Datum der Erstellung der Durchgeführten Abgabe
-    identifier: e-Med Groupidentifier  
+    identifier: e-Med GroupIdentifier  
     status: completed    
     medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
     subject: Patient

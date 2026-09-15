@@ -11,7 +11,7 @@ Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Date: 2026-02-27 08:00:00+0000 | Mode: Working List | Status: Current | Code: Medikationsplan |
-| Subject:[Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)Source: | | | |
+| Subject:[Anton Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)Source: | | | |
 
 
 

@@ -6,7 +6,13 @@
 
 ## Example Medication: Beispiel Journey 02: Magistrale Zubereitung
 
-Freitext-Informationen zur magistralen Anwendung.
+Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-medikation.md)
+
+**form**: Salbe
+
+> **ingredient****item**: Dexpanthenol**strength**: 5 g (Details: UCUM codeg = 'g')/100 g (Details: UCUM codeg = 'g')
+
+> **ingredient****item**: Salbengrundlage**isActive**: false**strength**: 95 g/100 g
 
 
 
@@ -30,39 +36,16 @@ Freitext-Informationen zur magistralen Anwendung.
     "itemCodeableConcept" : {
       "coding" : [{
         "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
-        "code" : "A01AC03",
-        "display" : "Hydrocortison"
+        "code" : "A11HA30",
+        "display" : "Dexpanthenol"
       }]
     },
     "strength" : {
       "numerator" : {
-        "value" : 1,
-        "unit" : "%",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "%"
-      },
-      "denominator" : {
-        "value" : 100,
+        "value" : 5,
         "unit" : "g",
         "system" : "http://unitsofmeasure.org",
         "code" : "g"
-      }
-    }
-  },
-  {
-    "itemCodeableConcept" : {
-      "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
-        "code" : "A01AB18",
-        "display" : "Clotrimazol"
-      }]
-    },
-    "strength" : {
-      "numerator" : {
-        "value" : 1,
-        "unit" : "%",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "%"
       },
       "denominator" : {
         "value" : 100,
@@ -79,7 +62,7 @@ Freitext-Informationen zur magistralen Anwendung.
     "isActive" : false,
     "strength" : {
       "numerator" : {
-        "value" : 98,
+        "value" : 95,
         "unit" : "g"
       },
       "denominator" : {
