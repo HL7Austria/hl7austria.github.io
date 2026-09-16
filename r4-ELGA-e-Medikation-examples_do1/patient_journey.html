@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\Patient Journey - FHIR&reg; v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.1"}
+    h3,h4,h5,h6{--heading-prefix:"9.1"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="assets/images/hl7atlogo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>Patient Journey</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>Patient Journey</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#2722026-erstbesuch-neue-medikation" id="markdown-toc-2722026-erstbesuch-neue-medikation">27.2.2026: Erstbesuch: Neue Medikation</a></li>
+  <li><a href="#2822026-abgabe-in-der-apotheke" id="markdown-toc-2822026-abgabe-in-der-apotheke">28.2.2026: Abgabe in der Apotheke</a></li>
+</ul>
+
+</div>
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  align-items: end;
+  position: relative;
+
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 35px 0 25px;
+  background: #ffffff;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+
+
+</style>
+
+<p>Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der <strong>Medikationsplan</strong> eines Patienten mit den zugehörigen <strong>Geplanten Abgaben</strong> und den <strong>Durchgeführten Abgaben</strong> verändern kann.</p>
+
+  <!-- TODO: nicht-sunshine-cases: patient ohne ecard in apotheke, 
+Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilabgabe storniert -->
+
+<h3 id="2722026-erstbesuch-neue-medikation">27.2.2026: Erstbesuch: Neue Medikation</h3>
+
+<p>Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausärztin. Außerdem hat er einen leichten Hautausschlag bemerkt.</p>
+
+<p>Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Medikation (den aktuellen <em>Medikationsplan</em>,  <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em>) des Patienten  ab, um einen Überblick über seine aktuelle Medikation zu erhalten.</p>
+
+<p>Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum Patienten, die erstellende e-Medikation-Fachanwendung, das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (<em>EmptyReason = notstarted</em>).</p>
+
+<h4 id="journey-01">Journey-01:</h4>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-1-1" checked="true" id="tab-beispiele-1-1" type="radio"/>
+    <label for="tab-beispiele-1-1">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Leerer Medikationsplan:</strong>(EmptyReason = notstarted) 
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a>
+            </li>
+            <li>
+              <a href="Patient-At-Emed-Example-Patient-01.html">Patient</a>
+            </li>
+            <li>
+              <a href="Device-At-Emed-Example-Device-01.html">Device</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-1-1" id="tab-usecases-1-1" type="radio"/>
+    <label for="tab-usecases-1-1">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l496">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
+        </li>
+        <li><a name="l502">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- Request-Response-Box 
+Plan-Read
+prescription-search
+dispense-search -->
+
+<p>Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie <strong>Ramipril 5 mg Tabletten</strong>, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag <strong>Dexpanthenol-5-%-Salbe</strong>, 2 × täglich für 3 Wochen, dünn aufzutragen.<br/>
+Sie speichert den neuen Medikationsplan.</p>
+
+<h4 id="journey-02">Journey-02:</h4>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-2-1" checked="true" id="tab-beispiele-2-1" type="radio"/>
+    <label for="tab-beispiele-2-1">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Planeinträge erstellen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.html">Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)</a>
+            </li>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.html">Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Medikationsplan aktualisieren:</strong>
+          <ul>
+            <li>
+              <a href="List-At-Emed-Journey-02-List-Medikationsplan.html">Medikationsplan ergänzt mit 2 Planeinträgen</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a>
+            </li>
+            <li>
+              <a href="Practitioner-At-Emed-Example-Practitioner-01.html">Dr. Hausärztin</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-2-1" id="tab-usecases-2-1" type="radio"/>
+    <label for="tab-usecases-2-1">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- Request-Response-Box 
+Plan-Read
+prescription-search
+dispense-search -->
+
+<p>Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.</p>
+
+<p>Dr. Hausärztin erstellt für beide Medikamente ein Rezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer <em>Geplante Abgabe</em> in der e-Medikation. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.</p>
+
+<h4 id="journey-03">Journey-03:</h4>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-2-2" checked="true" id="tab-beispiele-2-2" type="radio"/>
+    <label for="tab-beispiele-2-2">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Geplante Abgaben erstellen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-01.html">Geplante Abgabe zu Planeintrag 1 (Ramipril)</a>
+            </li>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-02.html">Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+            <a href="Bundle-At-Emed-Journey-03-Bundle-Geplante-Abgaben-Tx.html">Transaction Bundle mit Geplante Abgaben</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-2-2" id="tab-usecases-2-2" type="radio"/>
+    <label for="tab-usecases-2-2">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_04.html#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create">Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen (Variante A)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p><br/>
+<a href="plantuml/patient_journey_01_02.svg"><img src="plantuml/patient_journey_01_02.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
+<br/></p>
+
+<h3 id="2822026-abgabe-in-der-apotheke">28.2.2026: Abgabe in der Apotheke</h3>
+
+<p>Herr Mustermann sucht eine Apotheke auf, um die verordneten Medikamente abzuholen und legt dazu seine e-card vor, wodurch die Apotheke Zugriff auf seine ELGA e-Medikation erhält.</p>
+
+<p>Die Apothekerin prüft das Rezept (Papierrezept oder ruft e-Rezept ab), ruft bestehende <em>Geplante Abgaben</em>, <em>Durchgeführte Abgaben</em> und den <em>Medikationsplan</em> ab und prüft die Medikation hinsichtlich Wechselwirkungen.</p>
+
+<p>Sie händigt das Medikament Ramipril aus, erklärt die Einnahme und erstellt eine <em>Durchgeführte Abgabe</em> (<strong>Vollständige Abgabe</strong>).</p>
+
+<p>Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine Durchgeführte Abgabe mit dem <em>Type = "First Fill – Part Fill"</em> und der abgegebenen Menge (<em>quantity</em>) Null.</p>
+
+<p>Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine <em>Durchgeführte Abgabe</em> und dokumentiert darin entsprechend dem <strong>Besorgerprozess</strong> <em>type = First Fill – Part Fill</em> und <em>MedicationDispense.quantity = 0</em>.</p>
+
+<p>Anschließend speichert sie die neuen <em>Durchgeführte Abgaben</em> in der e-Medikation.</p>
+
+<h4 id="journey-04">Journey-04:</h4>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-3-1" checked="true" id="tab-beispiele-3-1" type="radio"/>
+    <label for="tab-beispiele-3-1">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Durchgeführte Abgaben erstellen:</strong> (Vollständige Abgabe, Besorgerprozess)
+          <ul>
+            <li>
+              <a href="MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01.html">Durchgeführte Abgabe (vollständig) (Ramipril)</a>
+            </li>
+            <li>
+              <a href="MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02.html">Durchgeführte Abgabe (Besorgerprozess) (Dexpanthenol-Salbe)</a>
+            </li>
+            <li>
+              <a href="Organization-At-Emed-Example-Organization-Apo-01.html">Apotheke (Organization)</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+                <!-- <a href="Bundle-At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx.html">Transaction Bundle mit Durchgeführten Abgaben</a> -->
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-3-1" id="tab-usecases-3-1" type="radio"/>
+    <label for="tab-usecases-3-1">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+      <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l869">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
+        </li>
+        <li><a name="l875">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#zugriffsvariante-a-durchgeführte-abgabe-mit-kontakt-schreiben">Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_01---vollständige-einzelabgabe-erfassen">Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_03---besorgerprozess">Sub_UC_eMed_05_01_03 - Besorgerprozess</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p><br/>
+<a href="plantuml/patient_journey_03.svg"><img src="plantuml/patient_journey_03.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
+<br/></p>
+
+<p><strong>1.3.2026: Abgabe in der Apotheke (Besorgerprozess abschließen)</strong></p>
+
+<p>Herr Mustermann möchte in der Apotheke die Dexpanthenol-Salbe abholen und steckt seine e-card.</p>
+
+<p>Die Apothekerin ruft die e-Medikation erneut. Sie übergibt dem Patienten die hergestellte Dexpanthenol-Salbe und schließt den Besorgerprozess ab, indem sie eine weitere <em>Durchgeführte Abgabe</em> erstellt. Sie dokumentiert darin die tatsächlich abgegebene Menge und kennzeichnet diese mit <em>MedicationDispense.type = RFC (Refill – Complete)</em>.</p>
+
+<p>Anschließend speichert sie die neue <em>Durchgeführte Abgabe</em> in der e-Medikation.</p>
+
+<ul>
+  <li><strong>Durchgeführte Abgaben erstellen (Besorgerprozess abschließen):</strong> in Arbeit.</li>
+</ul>
+
+<p><strong>2.3.2026: Patient ruft Medikationsplan ab</strong></p>
+
+<p>Herr Mustermann erinnert sich nicht, welches Medikament er wie einnehmen soll und ruft im Zugangsportal seinen Medikationsplan auf.</p>
+
+  <!-- Der aktuelle Medikationsplan enthält nun nur noch das **Dauermedikament Ramipril 5 mg**, während die zeitlich begrenzten Medikamente für die postoperative Behandlung bereits beendet wurden. -->
+
+<ul>
+  <li>
+    <p><strong>Aktuellen Medikationsplan anzeigen:</strong></p>
+
+    <ul>
+      <li><a name="l960">​</a>Beispiel <a href="Bundle-At-Emed-Journey-07-Bundle-Medikationsplan.html">Medikationsplan-Searchset-Bundle</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>3.3.2026: Präoperativer Hausarzttermin</strong></p>
+
+<p>Bei Herrn Mustermann steht eine geplante Leistenbruchoperation an. Vor der Operation bespricht er
+die bestehende Medikation mit seiner Hausärztin.</p>
+
+<p>Die geplante Leistenbruchoperation ist für den 5.3.2026 vorgesehen.</p>
+
+<p>Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen.</p>
+
+<ul>
+  <li><strong>Medikationsplan mit pausiertem Planeintrag aktualisieren:</strong> in Arbeit.
+  <!-- TODO --></li>
+</ul>
+
+<p><strong>5.3.2026: Geplante Leistenbruchoperation</strong></p>
+
+<p>Herr Mustermann erscheint zur geplanten Leistenbruchoperation. Ramipril wurde entsprechend der ärztlichen Anweisung vorübergehend pausiert.</p>
+
+<p>Die Leistenbruchoperation verläuft komplikationslos. Nach der Operation erhält Herr Mustermann von Dr. Krankenhaus Metamizol-Tropfen gegen die postoperativen Schmerzen.
+Metamizol-Tropfen, 2 Fläschchen:
+3 × täglich 30 Tropfen
+für wenige Tage (nach Bedarf)</p>
+
+<ul>
+  <li><strong>Medikationsplan mit neuem Planeintrag aktualisieren:</strong> in Arbeit.</li>
+</ul>
+
+<p><strong>7.3.2026: Teilabgabe in der Apotheke</strong></p>
+
+<p>Herr Mustermann möchte in der Apotheke die Metamizol-Tropfen abholen und steckt seine e-card.</p>
+
+<p>Es ist nur noch ein Fläschchen Metamizol verfügbar. Die Apothekerin händigt das Fläschchen aus und erstellt eine Durchgeführte Abgabe als Teilabgabe.
+Die Patienten wird angewiesen, das zweite Fläschchen in der Apotheke abzuholen, sobald es verfügbar ist.</p>
+
+<ul>
+  <li><strong>Durchgeführte Abgaben erstellen (Teilabgabe):</strong> in Arbeit.</li>
+</ul>
+
+<p><strong>9.3.2026: Teilabgabe in der Apotheke abschließen</strong></p>
+
+<p>Herr Mustermann wurde von der Apotheke informiert, dass die Metamizol-Tropfen nun verfügbar sind. Er steckt in der Apotheke seine e-card.
+Die Apothekerin ruft die e-Medikation erneut ab, schließt dann die Teilabgabe ab, indem sie eine weitere Durchgeführte Abgabe erstellt und übergibt dem Patienten die Metamizol-Tropfen.</p>
+
+<ul>
+  <li><strong>Durchgeführte Abgaben erstellen (Teilabgabe abschließen):</strong> in Arbeit.</li>
+</ul>
+
+<p><strong>12.3.2026: Nachkontrolle bei der Urlaubsvertretung von Dr. Hausärztin</strong></p>
+
+<p>Herr Mustermann hat die Medikamente in der Apotheke abgeholt und die Schmerzen sind deutlich zurückgegangen.</p>
+
+<p>Eine Woche nach der Operation kommt er zur Nachkontrolle zur Urlaubsvertretung von Dr. Hausärztin.</p>
+
+<p>Für die verbleibenden Schmerzen wird von Dr. Urlaubsvertretung die Metamizoldosis für einen begrenzten Zeitraum weiterverodnet, die Dosis aber reduziert. Metamizol-Tropfen: 2 × täglich 10 Tropfen, für 5 Tage.</p>
+
+<p>Ramipril soll wieder eingenommen werden.</p>
+
+<p>Im neu erstellten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und die verantwortliche Ärztin (Dr. Urlaubsvertretung) ersichtlich.</p>
+
+<p><strong>20.3.2026: Kontrolltermin bei Dr. Hausärztin</strong></p>
+
+<p>Herr Mustermann erscheint zur Wundkontrolle bei Dr. Hausärztin.</p>
+
+<p>Die postoperative Schmerztherapie ist nicht mehr erforderlich. Der Planeintrag für Metamizol wird daher beendet.
+Die Behandlung mit der Dexpanthenol-Salbe ist ebenfalls abgeschlossen.
+Ramipril wird als Dauermedikation fortgeführt.</p>
+
+<ul>
+  <li><strong>Planeinträge beenden und Medikationsplan aktualisieren:</strong> in Arbeit.</li>
+</ul>
+
+  <!-- <div>{ include_relative plantuml/patient_journey.svg }</div> -->
+
+<p><br/>
+<a href="plantuml/patient_journey.svg"><img src="plantuml/patient_journey.svg" alt="overview" style="width:100%;" class="mx-auto"/></a>
+<br/></p>
+
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Wed, Sep 16, 2026 12:36+0000">2026-09-16</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
