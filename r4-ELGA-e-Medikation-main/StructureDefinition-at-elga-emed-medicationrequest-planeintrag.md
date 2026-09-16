@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-09-16T12:46:48+00:00",
+  "date" : "2026-09-16T14:44:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -98,6 +98,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "path" : "MedicationRequest",
       "short" : "Planeintrag",
       "constraint" : [{
+        "key" : "at-emed-planeintrag-status-reason-beim-absetzen",
+        "severity" : "error",
+        "human" : "Bei Status 'stopped' oder 'entered-in-error' muss ein statusReason angegeben werden.",
+        "expression" : "(status = 'stopped' or status = 'entered-in-error') implies statusReason.coding.code.exists()",
+        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+      },
+      {
         "key" : "e-med-continuous-medication-effectiveDosePeriod",
         "severity" : "error",
         "human" : "Eine Dauermedikation (courseOfTherapyType = #continuous) darf kein Enddatum besitzen.",
@@ -206,8 +213,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "patternCodeableConcept" : {
         "coding" : [{
           "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-          "code" : "1",
-          "display" : "Planeintrag"
+          "code" : "1"
         }]
       },
       "mustSupport" : true

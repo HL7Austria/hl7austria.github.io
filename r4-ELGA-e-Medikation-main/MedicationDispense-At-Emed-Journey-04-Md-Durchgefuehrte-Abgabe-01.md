@@ -32,7 +32,7 @@
     }
   }],
   "extension" : [{
-    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction",
     "valueMarkdown" : "1-0-0-1 | Täglich: 1-0-0-0"
   },
   {
@@ -58,7 +58,7 @@
     }
   }],
   "authorizingPrescription" : [{
-    "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Geplante-Abgabe-01",
+    "reference" : "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-01",
     "display" : "GeplanteAbgabe 1"
   },
   {

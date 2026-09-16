@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS | *Version*:0.1.1 | |
-| Draft as of 2026-09-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:GeplanteAbgabeStatusVS |
+| Active as of 2026-09-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:GeplanteAbgabeStatusVS |
 
  
 ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest). 
@@ -49,9 +49,9 @@ ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (Medi
   "version" : "0.1.1",
   "name" : "GeplanteAbgabeStatusVS",
   "title" : "ELGA e-Med Geplante Abgabe Status ValueSet",
-  "status" : "draft",
+  "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-16T12:46:48+00:00",
+  "date" : "2026-09-16T14:44:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -24,9 +24,10 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationDispense.extension:renderedDosageInstruction","MedicationDispense.extension","renderedDosageInstruction","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction]]} {[]}
-","Vollständige Darstellung der Dosierungsanweisungen","R5: `MedicationRequest.renderedDosageInstruction` (new:markdown)","Element `MedicationRequest.renderedDosageInstruction` has a context of MedicationRequest based on following the parent source element upwards and mapping to `MedicationRequest`.
-Element `MedicationRequest.renderedDosageInstruction` has no mapping targets in FHIR R4. Typically, this is because the element has been added (is a new element).","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"MedicationDispense.extension:renderedDosageInstruction","MedicationDispense.extension","renderedDosageInstruction","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction]]} {[]}
+","Vollständige Darstellung der Dosierungsanweisungen","R5: `MedicationDispense.renderedDosageInstruction` (new:markdown)","Element `MedicationDispense.renderedDosageInstruction` has a context of MedicationDispense based on following the parent source element upwards and mapping to `MedicationDispense`.
+Element `MedicationDispense.renderedDosageInstruction` has no mapping targets in FHIR R4. Typically, this is because the element has been added (is a new element).
+The content of the renderedDosageInstructions must not be different than the dose represented in the dosageInstruction content.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MedicationDispense.extension:recorded","MedicationDispense.extension","recorded","","",1,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.recorded]]} {[]}
@@ -109,7 +110,7 @@ auf die ELGA e-Medikation des Patienten zuzugreifen).","The device, practitioner
 "MedicationDispense.authorizingPrescription","MedicationDispense.authorizingPrescription","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/MedicationRequest|4.0.1]]}
 ","Referenz auf zugehörige Geplante Abgabe (MedicationRequest), sofern diese existiert bzw. 
 Planeintrag (MedicationRequest). Es muss nicht zwingend eine Geplante Abgabe referenziert werden, da es auch durchgeführte 
-Abgaben ohne Geplante Abgabe geben kann (z.B. Notfall oder OTC-Medikation).","Indicates the medication order that is being dispensed against.","Maps to basedOn in Event logical model.","","","","","","","","",,,,,"","value:reference.ofType(MedicationRequest).category}
+Abgaben ohne Geplante Abgabe geben kann (z.B. Notfall oder OTC-Medikation).","Indicates the medication order that is being dispensed against.","Maps to basedOn in Event logical model.","","","","","","","","",,,,,"","value:resolve().category}
 ","",,"closed","MedicationDispense.authorizingPrescription",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.basedOn",".outboundRelationship[typeCode=FLFS].target[moodCode=RQO]","CombinedMedicationDispense.inFulfillmentOf","ORC-2 Placer Order Number"
 "MedicationDispense.authorizingPrescription:geplanteAbgabe","MedicationDispense.authorizingPrescription","geplanteAbgabe","","",0,1,"Y","","","Reference {[]} {[CanonicalType[https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe]]}

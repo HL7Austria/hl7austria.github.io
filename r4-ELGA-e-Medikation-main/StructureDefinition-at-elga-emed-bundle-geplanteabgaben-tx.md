@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleGeplanteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle geplante Abgaben",
   "status" : "draft",
-  "date" : "2026-09-16T12:46:48+00:00",
+  "date" : "2026-09-16T14:44:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -114,12 +114,19 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "path" : "Bundle.entry",
       "slicing" : {
         "discriminator" : [{
-          "type" : "type",
-          "path" : "resource"
+          "type" : "value",
+          "path" : "resource.category"
         }],
         "rules" : "closed"
       },
-      "min" : 1
+      "min" : 1,
+      "constraint" : [{
+        "key" : "at-emed-geplante-abgaben-group-identifier-einheitlich",
+        "severity" : "error",
+        "human" : "Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.",
+        "expression" : "resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()",
+        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
+      }]
     },
     {
       "id" : "Bundle.entry:geplanteAbgaben",

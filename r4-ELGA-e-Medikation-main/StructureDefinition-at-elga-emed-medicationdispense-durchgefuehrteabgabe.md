@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-09-16T12:46:48+00:00",
+  "date" : "2026-09-16T14:44:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -119,7 +119,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "max" : "1",
       "type" : [{
         "code" : "Extension",
-        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"]
+        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction"]
       }]
     },
     {
@@ -280,7 +280,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "slicing" : {
         "discriminator" : [{
           "type" : "value",
-          "path" : "reference.ofType(MedicationRequest).category"
+          "path" : "resolve().category"
         }],
         "ordered" : false,
         "rules" : "closed"

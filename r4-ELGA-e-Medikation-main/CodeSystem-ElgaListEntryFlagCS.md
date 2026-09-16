@@ -32,7 +32,7 @@ CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA.
   "title" : "ELGA List.entry.flag CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-16T12:46:48+00:00",
+  "date" : "2026-09-16T14:44:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -50,6 +50,7 @@ CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA.
     }]
   }],
   "description" : "CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA.",
+  "caseSensitive" : false,
   "content" : "complete",
   "count" : 4,
   "concept" : [{
