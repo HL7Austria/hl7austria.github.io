@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-code | *Version*:0.1.0 | |
-| Active as of 2026-09-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagProcedureCode |
+| Active as of 2026-09-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagProcedureCode |
 
  
 Dieses Value-Set bildet die Prozeduren ab, die in der e-Diagnose dokumentiert werden können. 
@@ -56,7 +56,7 @@ Zu diesem Value-Set sind folgende Punkte zu berücksichtigen:
   "title" : "AT e-Diagnose Procedure Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-15T08:16:05+00:00",
+  "date" : "2026-09-16T05:34:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

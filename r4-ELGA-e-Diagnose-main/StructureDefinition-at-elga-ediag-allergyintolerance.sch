@@ -34,8 +34,6 @@
     <sch:title>f:AllergyIntolerance/f:code</sch:title>
     <sch:rule context="f:AllergyIntolerance/f:code">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:coding) &gt;= 1">coding: minimum cardinality of 'coding' is 1</sch:assert>
-      <sch:assert test="count(f:coding) &lt;= 1">coding: maximum cardinality of 'coding' is 1</sch:assert>
       <sch:assert test="count(f:text) &lt;= 0">text: maximum cardinality of 'text' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance | *Version*:0.1.0 | |
-| Active as of 2026-09-15 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
+| Active as of 2026-09-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagAllergyIntolerance |
 
  
 Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-09-15T08:16:05+00:00",
+  "date" : "2026-09-16T05:34:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -167,13 +167,11 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-allerg
       "path" : "AllergyIntolerance.code",
       "short" : "Allergiecode; Freitext ist nicht zulässig.",
       "min" : 1,
-      "mustSupport" : true
-    },
-    {
-      "id" : "AllergyIntolerance.code.coding",
-      "path" : "AllergyIntolerance.code.coding",
-      "min" : 1,
-      "max" : "1"
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code"
+      }
     },
     {
       "id" : "AllergyIntolerance.code.text",
