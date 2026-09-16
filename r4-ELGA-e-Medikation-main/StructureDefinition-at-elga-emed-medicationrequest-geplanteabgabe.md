@@ -16,9 +16,9 @@ Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medi
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation Transaction Bundle geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgabentx.md)
+* Use this Profile: [AT ELGA e-Medikation Transaction Bundle geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md)
 * Refer to this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
-* Examples for this Profile: [MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-01](MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-01.md) and [MedicationRequest/at-emed-journey-02-mr-geplante-abgabe-02](MedicationRequest-at-emed-journey-02-mr-geplante-abgabe-02.md)
+* Examples for this Profile: [MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-01](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-01.md) and [MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-02](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-02.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.json)
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-09-16T08:21:32+00:00",
+  "date" : "2026-09-16T12:46:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

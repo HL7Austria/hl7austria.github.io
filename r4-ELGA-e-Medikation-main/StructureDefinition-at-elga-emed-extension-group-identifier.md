@@ -20,7 +20,7 @@ AT ELGA e-Medikation Extension, die den e-Med GroupIdentifier beinhaltet.
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
-* Examples for this Extension: [MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01.md) and [MedicationDispense/At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02.md)
+* Examples for this Extension: [Bundle/At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx.md), [MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01.md), [MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02.md) and [MedicationDispense/At-Emed-Journey-05-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-05-Md-Durchgefuehrte-Abgabe-02.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-extension-group-identifier.json)
 
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-extensi
   "name" : "AtElgaEmedExtensionGroupIdentifier",
   "title" : "AT ELGA e-Medikation Extension Group Identifier",
   "status" : "draft",
-  "date" : "2026-09-16T08:21:32+00:00",
+  "date" : "2026-09-16T12:46:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

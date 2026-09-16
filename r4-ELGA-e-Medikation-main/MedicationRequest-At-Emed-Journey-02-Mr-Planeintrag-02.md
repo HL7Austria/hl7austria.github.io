@@ -19,7 +19,7 @@
   },
   "contained" : [{
     "resourceType" : "Medication",
-    "id" : "contained-medication-journey-02-magistral",
+    "id" : "contained-medication-journey-02-02-magistral",
     "meta" : {
       "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
     },
@@ -92,7 +92,7 @@
   }],
   "reportedBoolean" : false,
   "medicationReference" : {
-    "reference" : "#contained-medication-journey-02-magistral"
+    "reference" : "#contained-medication-journey-02-02-magistral"
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01"

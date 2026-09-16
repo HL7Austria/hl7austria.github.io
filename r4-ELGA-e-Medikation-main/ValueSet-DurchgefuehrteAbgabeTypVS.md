@@ -53,7 +53,7 @@ No Expansion for this valueset (Unsupported Code System Version)
   "title" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-09-16T08:21:32+00:00",
+  "date" : "2026-09-16T12:46:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

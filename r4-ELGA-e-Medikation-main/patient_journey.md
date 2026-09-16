@@ -16,6 +16,8 @@ Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Me
 
 Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum Patienten, die erstellende e-Medikation-Fachanwendung, das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (**EmptyReason = notstarted**).
 
+#### Journey-01:
+
 Beispiele
 
 *  **Leerer Medikationsplan:**(EmptyReason = notstarted) 
@@ -34,6 +36,8 @@ Use Cases
 Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie **Ramipril 5 mg Tabletten**, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag **Dexpanthenol-5-%-Salbe**, 2 × täglich für 3 Wochen, dünn aufzutragen.
  Sie speichert den neuen Medikationsplan.
 
+#### Journey-02:
+
 Beispiele
 
 *  **Planeinträge erstellen:** 
@@ -44,7 +48,7 @@ Beispiele
 *  [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-02-List-Medikationsplan.md) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Tx-Medikationsplan.md) 
+*  [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan-Tx.md) 
 *  [Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md) 
  
 
@@ -57,14 +61,16 @@ Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum d
 
 Dr. Hausärztin erstellt für beide Medikamente ein Rezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer **Geplante Abgabe** in der e-Medikation. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.
 
+#### Journey-03:
+
 Beispiele
 
 *  **Geplante Abgaben erstellen:** 
-*  [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-At-Emed-Journey-02-Mr-Geplante-Abgabe-01.md) 
-*  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-At-Emed-Journey-02-Mr-Geplante-Abgabe-02.md) 
+*  [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-01.md) 
+*  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-02.md) 
  
 *  **Transaction Bundle:** 
-*  Transaction Bundle in Arbeit.  
+*  [Transaction Bundle mit Geplante Abgaben](Bundle-At-Emed-Journey-03-Bundle-Geplante-Abgaben-Tx.md) 
  
 
 Use Cases
@@ -88,15 +94,17 @@ Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt ei
 
 Anschließend speichert sie die neuen **Durchgeführte Abgaben** in der e-Medikation.
 
+#### Journey-04:
+
 Beispiele
 
 *  **Durchgeführte Abgaben erstellen:** (Vollständige Abgabe, Besorgerprozess) 
-*  [Durchgeführte Abgabe (vollständig) (Ramipril)](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-01.md) 
-*  [Durchgeführte Abgabe (Besorgerprozess) (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-03-Md-Durchgefuehrte-Abgabe-02.md) 
+*  [Durchgeführte Abgabe (vollständig) (Ramipril)](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01.md) 
+*  [Durchgeführte Abgabe (Besorgerprozess) (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02.md) 
 *  [Apotheke (Organization)](Organization-At-Emed-Example-Organization-Apo-01.md) 
  
 *  **Transaction Bundle:** 
-*  Transaction Bundle in Arbeit.  
+*   
  
 
 Use Cases

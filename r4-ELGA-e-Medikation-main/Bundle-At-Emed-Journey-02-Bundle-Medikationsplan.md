@@ -20,7 +20,7 @@
   "type" : "searchset",
   "timestamp" : "2026-02-27T08:10:00+00:00",
   "entry" : [{
-    "fullUrl" : "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a56",
+    "fullUrl" : "https://example.elga.com/List/At-Emed-Journey-02-List-Medikationsplan",
     "resource" : {
       "resourceType" : "List",
       "id" : "At-Emed-Journey-02-List-Medikationsplan",
@@ -74,7 +74,7 @@
     }
   },
   {
-    "fullUrl" : "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a57",
+    "fullUrl" : "https://example.elga.com/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01",
     "resource" : {
       "resourceType" : "MedicationRequest",
       "id" : "At-Emed-Journey-02-Mr-Planeintrag-01",
@@ -173,7 +173,7 @@
     }
   },
   {
-    "fullUrl" : "urn:uuid:62e2daa5-c34b-4b97-8044-fd893bc99a58",
+    "fullUrl" : "https://example.elga.com/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02",
     "resource" : {
       "resourceType" : "MedicationRequest",
       "id" : "At-Emed-Journey-02-Mr-Planeintrag-02",
@@ -182,11 +182,11 @@
       },
       "text" : {
         "status" : "extensions",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-02-Mr-Planeintrag-02</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-02-27 --&gt; 2026-03-20</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>authoredOn</b>: 2026-02-27 08:10:00+0000</p><p><b>requester</b>: <a href=\"Practitioner-At-Emed-Example-Practitioner-01.html\">Practitioner Melanie Hausärztin </a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Sequence</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>1</td><td>Morning, Evening, 2 per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-journey-02-magistral</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-magistral\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-medikation.html\">AT ELGA e-Medikation Medication Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A11HA30}\">Dexpanthenol</span></p><p><b>strength</b>: 5 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 95 g/100 g</p></blockquote></blockquote></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-02-Mr-Planeintrag-02</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-02-27 --&gt; 2026-03-20</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-02-magistral\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><p><b>authoredOn</b>: 2026-02-27 08:10:00+0000</p><p><b>requester</b>: <a href=\"Practitioner-At-Emed-Example-Practitioner-01.html\">Practitioner Melanie Hausärztin </a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Sequence</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>1</td><td>Morning, Evening, 2 per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-journey-02-02-magistral</b></p><a name=\"At-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-02-magistral\"> </a><a name=\"hcAt-Emed-Journey-02-Mr-Planeintrag-02/contained-medication-journey-02-02-magistral\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-medikation.html\">AT ELGA e-Medikation Medication Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A11HA30}\">Dexpanthenol</span></p><p><b>strength</b>: 5 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 95 g/100 g</p></blockquote></blockquote></div>"
       },
       "contained" : [{
         "resourceType" : "Medication",
-        "id" : "contained-medication-journey-02-magistral",
+        "id" : "contained-medication-journey-02-02-magistral",
         "meta" : {
           "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
         },
@@ -259,7 +259,7 @@
       }],
       "reportedBoolean" : false,
       "medicationReference" : {
-        "reference" : "#contained-medication-journey-02-magistral"
+        "reference" : "#contained-medication-journey-02-02-magistral"
       },
       "subject" : {
         "reference" : "Patient/At-Emed-Example-Patient-01"
@@ -305,6 +305,205 @@
           }]
         }
       }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.elga.com/Patient/At-Emed-Example-Patient-01",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "At-Emed-Example-Patient-01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient",
+        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_At-Emed-Example-Patient-01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient At-Emed-Example-Patient-01</b></p><a name=\"At-Emed-Example-Patient-01\"> </a><a name=\"hcAt-Emed-Example-Patient-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profiles: <a href=\"https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-patient.html\">AT ELGA Core Patient Profil</a>, <a href=\"http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html\">HL7® AT Core Patient Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</li><li>Patient internal identifier/0815</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"mailto:office@hl7.at\">office@hl7.at</a></li><li><a href=\"tel:+436501234567890\">+436501234567890</a></li><li>Landstrasse 1 Stock 9 Tür 42 Linz Oberösterreich 4020 AUT (home)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.\">Patient Religion:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria 162}\">Pastafarianismus</span></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\">Patient Citizenship:</td><td colspan=\"3\"><ul><li>code: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}\">Österreich</span></li></ul></td></tr></table></div>"
+      },
+      "extension" : [{
+        "extension" : [{
+          "url" : "code",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria",
+              "code" : "162",
+              "display" : "Pastafarianismus"
+            }]
+          }
+        }],
+        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion"
+      },
+      {
+        "extension" : [{
+          "url" : "code",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
+              "code" : "AUT",
+              "display" : "Österreich"
+            }]
+          }
+        }],
+        "url" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
+      }],
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "SS",
+            "display" : "Social Security number"
+          }]
+        },
+        "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+        "value" : "1234010100",
+        "assigner" : {
+          "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+        }
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NI",
+            "display" : "National unique individual identifier"
+          }]
+        },
+        "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+        "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=",
+        "assigner" : {
+          "display" : "Bundesministerium für Inneres"
+        }
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "PI",
+            "display" : "Patient internal identifier"
+          }]
+        },
+        "system" : "urn:oid:1.2.3.4.5",
+        "value" : "0815",
+        "assigner" : {
+          "display" : "Ein GDA in Österreich"
+        }
+      }],
+      "name" : [{
+        "family" : "Mustermann",
+        "given" : ["Anton"],
+        "prefix" : ["DI"]
+      }],
+      "telecom" : [{
+        "system" : "email",
+        "value" : "office@hl7.at",
+        "use" : "work"
+      },
+      {
+        "system" : "phone",
+        "value" : "+436501234567890",
+        "use" : "home"
+      }],
+      "gender" : "male",
+      "birthDate" : "1900-01-01",
+      "address" : [{
+        "use" : "home",
+        "type" : "both",
+        "line" : ["Landstrasse 1 Stock 9 Tür 42"],
+        "_line" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+            "valueString" : "Landstrasse"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+            "valueString" : "1"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+            "valueString" : "Stock 9 Tür 42"
+          },
+          {
+            "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+            "valueString" : "Lift vorhanden"
+          }]
+        }],
+        "city" : "Linz",
+        "state" : "Oberösterreich",
+        "postalCode" : "4020",
+        "country" : "AUT"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "https://example.elga.com/Practitioner/At-Emed-Example-Practitioner-01",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "id" : "At-Emed-Example-Practitioner-01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_At-Emed-Example-Practitioner-01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner At-Emed-Example-Practitioner-01</b></p><a name=\"At-Emed-Example-Practitioner-01\"> </a><a name=\"hcAt-Emed-Example-Practitioner-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitioner.html\">AT ELGA Core Practitioner Profil</a></p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/6.3.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:oid:1.2.40.0.34.99.4613.4, <code>urn:oid:1.2.40.0.10.1.4.3.2</code>/987654321</p><p><b>active</b>: true</p><p><b>name</b>: Melanie Hausärztin </p><p><b>telecom</b>: <a href=\"mailto:office@musterpraxis.at\">office@musterpraxis.at</a>, <a href=\"tel:+436500987654321\">+436500987654321</a></p><p><b>address</b>: Mozartgasse 8 Stiege 2 St. Wolfgang Salzburg 5350 AUT (work)</p><p><b>gender</b>: Female</p></div>"
+      },
+      "identifier" : [{
+        "system" : "urn:ietf:rfc:3986",
+        "value" : "urn:oid:1.2.40.0.34.99.4613.4",
+        "assigner" : {
+          "display" : "Bundesministerium für Gesundheit"
+        }
+      },
+      {
+        "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
+        "value" : "987654321",
+        "assigner" : {
+          "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+        }
+      }],
+      "active" : true,
+      "name" : [{
+        "family" : "Hausärztin",
+        "given" : ["Melanie"],
+        "prefix" : ["Prof. Dr."]
+      }],
+      "telecom" : [{
+        "system" : "email",
+        "value" : "office@musterpraxis.at",
+        "use" : "work"
+      },
+      {
+        "system" : "phone",
+        "value" : "+436500987654321",
+        "use" : "work"
+      }],
+      "address" : [{
+        "use" : "work",
+        "type" : "both",
+        "line" : ["Mozartgasse 8 Stiege 2"],
+        "_line" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+            "valueString" : "Mozartgasse"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+            "valueString" : "8"
+          },
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+            "valueString" : "Stiege 2"
+          },
+          {
+            "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+            "valueString" : "Barrierefreier Zugang"
+          }]
+        }],
+        "city" : "St. Wolfgang",
+        "state" : "Salzburg",
+        "postalCode" : "5350",
+        "country" : "AUT"
+      }],
+      "gender" : "female"
     }
   }]
 }

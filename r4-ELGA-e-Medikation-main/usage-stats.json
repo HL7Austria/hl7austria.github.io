@@ -36,7 +36,11 @@
   "profiles": {
     "Bundle": [
       {
-        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgabentx",
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx",
+        "title": "AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben"
+      },
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx",
         "title": "AT ELGA e-Medikation Transaction Bundle geplante Abgaben"
       },
       {
@@ -95,14 +99,17 @@
   },
   "usage": {
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation": [
+      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Patient.address.line",
       "Practitioner.address.line"
     ],
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion": [
+      "Bundle.entry.resource",
       "Patient"
     ],
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.recorded": [
+      "Bundle.entry.resource",
       "MedicationDispense"
     ],
     "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod": [
@@ -130,21 +137,25 @@
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
+      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Patient.address.line",
       "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
+      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Patient.address.line",
       "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
+      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Patient.address.line",
       "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
+      "Bundle.entry.resource",
       "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
@@ -181,6 +192,7 @@
       "MedicationRequest.dosageInstruction"
     ],
     "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier": [
+      "Bundle.entry.resource",
       "MedicationDispense"
     ],
     "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-patient-modified": [

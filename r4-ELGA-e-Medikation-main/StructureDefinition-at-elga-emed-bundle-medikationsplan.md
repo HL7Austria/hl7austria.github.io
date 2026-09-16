@@ -19,7 +19,7 @@ Das Bundle vom Typ Searchset bestehend aus:
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md), [Bundle/At-Emed-Journey-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.md), [Bundle/At-Emed-Journey-05-a-Bundle-Medikationsplan](Bundle-At-Emed-Journey-05-a-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-05-b-Bundle-Medikationsplan](Bundle-At-Emed-Journey-05-b-Bundle-Medikationsplan.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplan.json)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-16T08:21:32+00:00",
+  "date" : "2026-09-16T12:46:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -130,7 +130,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
         "ordered" : true,
         "rules" : "closed"
       },
-      "min" : 1
+      "min" : 3
     },
     {
       "id" : "Bundle.entry.link",
@@ -140,7 +140,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
     {
       "id" : "Bundle.entry.fullUrl",
       "path" : "Bundle.entry.fullUrl",
-      "short" : "Eindeutige URL für den Eintrag im Bundle."
+      "short" : "Eindeutige URL für den Eintrag im Bundle.",
+      "min" : 1
     },
     {
       "id" : "Bundle.entry:Medikationsplan",
@@ -153,6 +154,11 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "id" : "Bundle.entry:Medikationsplan.link",
       "path" : "Bundle.entry.link",
       "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.fullUrl",
+      "path" : "Bundle.entry.fullUrl",
+      "min" : 1
     },
     {
       "id" : "Bundle.entry:Medikationsplan.resource",
@@ -176,6 +182,11 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "max" : "0"
     },
     {
+      "id" : "Bundle.entry:Medikationsplaneintrag.fullUrl",
+      "path" : "Bundle.entry.fullUrl",
+      "min" : 1
+    },
+    {
       "id" : "Bundle.entry:Medikationsplaneintrag.resource",
       "path" : "Bundle.entry.resource",
       "min" : 1,
@@ -188,13 +199,18 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "id" : "Bundle.entry:Patient",
       "path" : "Bundle.entry",
       "sliceName" : "Patient",
-      "min" : 0,
+      "min" : 1,
       "max" : "1"
     },
     {
       "id" : "Bundle.entry:Patient.link",
       "path" : "Bundle.entry.link",
       "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Patient.fullUrl",
+      "path" : "Bundle.entry.fullUrl",
+      "min" : 1
     },
     {
       "id" : "Bundle.entry:Patient.resource",
@@ -206,19 +222,24 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       }]
     },
     {
-      "id" : "Bundle.entry:Source",
+      "id" : "Bundle.entry:Authors",
       "path" : "Bundle.entry",
-      "sliceName" : "Source",
-      "min" : 0,
+      "sliceName" : "Authors",
+      "min" : 1,
       "max" : "*"
     },
     {
-      "id" : "Bundle.entry:Source.link",
+      "id" : "Bundle.entry:Authors.link",
       "path" : "Bundle.entry.link",
       "max" : "0"
     },
     {
-      "id" : "Bundle.entry:Source.resource",
+      "id" : "Bundle.entry:Authors.fullUrl",
+      "path" : "Bundle.entry.fullUrl",
+      "min" : 1
+    },
+    {
+      "id" : "Bundle.entry:Authors.resource",
       "path" : "Bundle.entry.resource",
       "min" : 1,
       "type" : [{
