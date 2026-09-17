@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-patient-modified | *Version*:0.1.1 | |
-| Draft as of 2026-09-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedExtensionPatientModified |
+| Draft as of 2026-09-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedExtensionPatientModified |
 
 AT ELGA e-Medikation Extension, die Angibt, ob in einer Ressource eine Änderung vom Patienten veranlasst wurde.
 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-extensi
   "name" : "AtElgaEmedExtensionPatientModified",
   "title" : "AT ELGA e-Medikation Extension Patient Modified",
   "status" : "draft",
-  "date" : "2026-09-16T14:44:43+00:00",
+  "date" : "2026-09-17T07:59:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

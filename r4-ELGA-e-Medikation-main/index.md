@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-16T14:44:43+00:00",
+  "date" : "2026-09-17T07:59:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1343,7 +1343,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Bundle/At-Emed-Journey-03-Bundle-Geplante-Abgaben-Tx"
       },
       "name" : "Beispiel Journey 03: Transaction Bundle",
-      "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.",
+      "description" : "Beispiel eines Transaction Bundles mit Geplanten Abgaben.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
     },
     {
@@ -1391,7 +1391,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Bundle/At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx"
       },
       "name" : "Beispiel Journey 04: Transaction Bundle",
-      "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.",
+      "description" : "Beispiel eines Transaction Bundles mit Durchgeführten Abgaben.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"
     },
     {
@@ -1409,6 +1409,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispiel Journey 05: Durchgeführte Abgabe 1",
       "description" : "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-05-Bundle-Durchgefuehrte-Abgaben-Tx.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Journey-05-Bundle-Durchgefuehrte-Abgaben-Tx"
+      },
+      "name" : "Beispiel Journey 05: Transaction Bundle",
+      "description" : "Beispiel eines Transaction Bundles mit Durchgeführten Abgaben.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"
     },
     {
       "extension" : [{

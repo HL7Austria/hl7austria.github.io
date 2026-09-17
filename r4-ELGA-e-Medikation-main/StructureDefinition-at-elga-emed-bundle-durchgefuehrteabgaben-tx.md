@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx | *Version*:0.1.1 | |
-| Draft as of 2026-09-16 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleDurchgefuehrteAbgabenTx |
+| Draft as of 2026-09-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleDurchgefuehrteAbgabenTx |
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, die gemeinsam geschrieben werden sollen. 
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx.md) and [Bundle/At-Emed-Journey-05-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-05-Bundle-Durchgefuehrte-Abgaben-Tx.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-tx.json)
 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleDurchgefuehrteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben",
   "status" : "draft",
-  "date" : "2026-09-16T14:44:43+00:00",
+  "date" : "2026-09-17T07:59:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -97,7 +97,7 @@
     }
   }],
   "authorizingPrescription" : [{
-    "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Geplante-Abgabe-02",
+    "reference" : "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-02",
     "display" : "GeplanteAbgabe 1"
   },
   {
