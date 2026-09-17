@@ -428,9 +428,9 @@ h4 + .tabs {
 
 <p>Plan-Read dient dem <strong>Abruf des Medikationsplans</strong> in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
 
-<p><a name="l443">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Searchset-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
+<p><a name="l443">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
 
-  <!-- TODO: Wird ein Medikationsplan-Searchset-Bundle oder ein Searchset erzeugt? -->
+  <!-- TODO: Wird ein Medikationsplan-Bundle oder ein Searchset erzeugt? -->
 
 <h5 id="custom-operation">Custom Operation</h5>
 
@@ -440,8 +440,8 @@ h4 + .tabs {
 
 <ol>
   <li><a name="l470">​</a>Der Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
-  <li><a name="l479">​</a>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Searchset-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-Medikationsplan-Searchset-Bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Searchset-Bundles</a>).</li>
-  <li>Die Fachanwendung liefert das Medikationsplan-Searchset-Bundle zurück. Dieses enthält:
+  <li><a name="l479">​</a>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-Medikationsplan-Bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</a>).</li>
+  <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält:
     <ul>
       <li>die <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource,</li>
       <li>sämtliche von der <em>List</em> referenzierten Ressourcen sowie</li>
@@ -465,11 +465,11 @@ Fehlercodes sind noch zu definieren.
 </p>
 </div>
 
-<h5 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-searchset-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Searchset-Bundles</h5>
+<h5 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h5>
 
 <p>Nach Eingang eines <strong>$plan-read</strong> prüft die Fachanwendung den Zustand des Medikationsplans.</p>
 
-<p>Abschließend erzeugt die Fachanwendung aus der aktuellen Version der <em>List</em>-Ressource und den referenzierten Ressourcenversionen das Medikationsplan-Searchset-Bundle zur Auslieferung. Die persistierten Ressourcen am Server werden durch die Anpassungen im Auslieferungs-Bundle nicht verändert.</p>
+<p>Abschließend erzeugt die Fachanwendung aus der aktuellen Version der <em>List</em>-Ressource und den referenzierten Ressourcenversionen das Medikationsplan-Bundle zur Auslieferung. Die persistierten Ressourcen am Server werden durch die Anpassungen im Auslieferungs-Bundle nicht verändert.</p>
 
 <p>Dabei werden folgende Fälle unterschieden:</p>
 
@@ -518,7 +518,7 @@ Fehlercodes sind noch zu definieren.
 
   <!-- TODO: weitere-parameter? -->
 
-<p>Die erzeugten Medikationsplan-Searchset-Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.</p>
+<p>Die erzeugten Medikationsplan-Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.</p>
 
 <div class="dragon">
 <p class="note-to-balloters">
@@ -532,8 +532,8 @@ Offene Frage:<br/>
 
 <ol>
   <li>Der Client führt ein GET auf <em>[base]/Patient/[id]/List/_history</em> mit den gewünschten Suchparametern aus.</li>
-  <li>Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource. Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und ergänzt sie im Medikationsplan-Searchset-Bundle.</li>
-  <li>Die Fachanwendung liefert das Medikationsplan-Searchset-Bundle zurück.</li>
+  <li>Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource. Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und ergänzt sie im Medikationsplan-Bundle.</li>
+  <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück.</li>
   <li>Werden keine passenden historischen Medikationsplanversionen gefunden, enthält das zurückgelieferte <em>searchset</em> keine Einträge.</li>
   <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
 </ol>
@@ -588,7 +588,7 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
   <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.</li>
   <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
   <li>Die List-Ressource wird als erste Version persistiert.</li>
-  <li>Für das Plan-Read erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Searchset-Bundle zur Auslieferung.</li>
+  <li>Für das Plan-Read erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Bundle zur Auslieferung.</li>
   <li>Dieses wird mit <em>List.emptyReason = notstarted</em> sowie dem zugehörigen ETag zurückgeliefert.</li>
 </ol>
 
@@ -700,7 +700,7 @@ Offene Punkte: <br/>$plan-history-directory-search: in Arbeit.
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 17, 2026 07:59+0000">2026-09-17</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 17, 2026 12:33+0000">2026-09-17</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -8,7 +8,7 @@
 
 Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der **Medikationsplan** eines Patienten mit den zugehörigen **Geplanten Abgaben** und den **Durchgeführten Abgaben** verändern kann.
 
-### 27.2.2026: Erstbesuch: Neue Medikation
+### Journey-01: 27.2.2026 - Erster Arztbesuch
 
 Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausärztin. Außerdem hat er einen leichten Hautausschlag bemerkt.
 
@@ -16,12 +16,12 @@ Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Me
 
 Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum Patienten, die erstellende e-Medikation-Fachanwendung, das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (**EmptyReason = notstarted**).
 
-#### Journey-01
+#### Journey-01-01
 
 Beispiele
 
 *  **Leerer Medikationsplan:**(EmptyReason = notstarted) 
-*  [Medikationsplan-Searchset-Bundle](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md) 
+*  [Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.md) 
 *  [Patient](Patient-At-Emed-Example-Patient-01.md) 
 *  [Device](Device-At-Emed-Example-Device-01.md) 
  
@@ -36,19 +36,19 @@ Use Cases
 Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie **Ramipril 5 mg Tabletten**, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag **Dexpanthenol-5-%-Salbe**, 2 × täglich für 3 Wochen, dünn aufzutragen.
  Sie speichert den neuen Medikationsplan.
 
-#### Journey-02
+#### Journey-01-02
 
 Beispiele
 
 *  **Planeinträge erstellen:** 
-*  [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-01.md) 
-*  [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-02-Mr-Planeintrag-02.md) 
+*  [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-01.md) 
+*  [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.md) 
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-02-List-Medikationsplan.md) 
+*  [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-01-02-List-Medikationsplan.md) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan-Tx.md) 
+*  [Transaction Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) 
 *  [Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md) 
  
 
@@ -61,16 +61,16 @@ Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum d
 
 Dr. Hausärztin erstellt für beide Medikamente ein Kassenrezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer **Geplante Abgabe** in der e-Medikation. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.
 
-#### Journey-03
+#### Journey-01-03
 
 Beispiele
 
 *  **Geplante Abgaben erstellen:** 
-*  [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-01.md) 
-*  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-At-Emed-Journey-03-Mr-Geplante-Abgabe-02.md) 
+*  [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.md) 
+*  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle mit Geplante Abgaben](Bundle-At-Emed-Journey-03-Bundle-Geplante-Abgaben-Tx.md) 
+*  [Transaction Bundle mit Geplante Abgaben](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx.md) 
  
 
 Use Cases
@@ -80,13 +80,13 @@ Use Cases
 
 #### Ablauf Erstbesuch
 
- ![](plantuml/patient_journey_01_02_03.svg) 
+ ![](plantuml/patient_journey_01.svg) 
 
-### 28.2.2026: Abgabe in der Apotheke (Teil 1)
+### Journey-02: 28.2.2026 - Abgabe in der Apotheke (Teil 1)
 
 Herr Mustermann sucht eine Apotheke auf, um die verordneten Medikamente abzuholen und legt dazu seine e-card vor, wodurch die Apotheke Zugriff auf seine ELGA e-Medikation erhält.
 
-Die Apothekerin prüft das Rezept (Papierrezept oder ruft e-Rezept ab), ruft bestehende **Geplante Abgaben**, **Durchgeführte Abgaben** und den **Medikationsplan** ab und prüft die Medikation hinsichtlich Wechselwirkungen.
+Die Apothekerin prüft das Rezept (Papierrezept oder ruft e-Rezept ab), ruft offenen **Geplante Abgaben**, sowie **Durchgeführte Abgaben** und den **Medikationsplan** ab und prüft die Medikation hinsichtlich Wechselwirkungen.
 
 Sie händigt das Medikament Ramipril aus, erklärt die Einnahme und erstellt eine **Durchgeführte Abgabe** (**Vollständige Abgabe**).
 
@@ -94,18 +94,18 @@ Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt ei
 
 Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine **Durchgeführte Abgabe** und dokumentiert darin entsprechend dem **Besorgerprozess** **type = First Fill – Part Fill** und **MedicationDispense.quantity = 0**.
 
-Anschließend speichert sie die neuen **Durchgeführte Abgaben** in der e-Medikation. Die Fachanwendung erkennt, dass für Ramipril keine weiteren Einlösugen möglich sein (Kassenrezept) und markiert **Geplante Abgabe** automatisch als abgeschlossen (**completed**).
+Anschließend speichert sie die neuen **Durchgeführte Abgaben** in der e-Medikation. Da für Ramipril keine weitere Einlösung möglich ist (Kassenrezept), wird die zugehörige **Geplante Abgabe** automatisch abgeschlossen (**completed**).
 
-#### Journey-04
+#### Journey-02
 
 Beispiele
 
 *  **Durchgeführte Abgaben erstellen:** 
-*  [Durchgeführte Abgabe (Ramipril)](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01.md) (Vollständige Einzelabgabe) 
-*  [Durchgeführte Abgabe (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02.md) (Besorgerprozess) 
+*  [Durchgeführte Abgabe (Ramipril)](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01.md) (Vollständige Einzelabgabe) 
+*  [Durchgeführte Abgabe (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02.md) (Besorgerprozess) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle mit Durchgeführten Abgaben](Bundle-At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx.md) 
+*  [Durchgeführte-Abgaben-Transaction-Bundle](Bundle-At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx.md) 
 *  [Apotheke (Organization)](Organization-At-Emed-Example-Organization-Apo-01.md) 
  
 
@@ -120,25 +120,25 @@ Use Cases
 
 #### Ablauf Abgabe in der Apotheke (Teil 1)
 
- ![](plantuml/patient_journey_04.svg) 
+ ![](plantuml/patient_journey_02.svg) 
 
-### 1.3.2026: Abgabe in der Apotheke (Teil 2)
+### Journey-03: 1.3.2026 - Abgabe in der Apotheke (Teil 2)
 
 Herr Mustermann möchte in der Apotheke die Dexpanthenol-Salbe abholen und steckt dort seine e-card.
 
-Die Apothekerin ruft die e-Medikation erneut ab. Sie erhält die Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt den Besorgerprozess ab, indem sie eine weitere **Durchgeführte Abgabe** erstellt. Sie dokumentiert darin die tatsächlich abgegebene Menge und kennzeichnet diese mit **MedicationDispense.type = RFC (Refill – Complete)**.
+Die Apothekerin ruft die e-Medikation erneut ab. Sie erhält den **Medikationsplan**, die offene **Geplante Abgabe** für die Dexpanthenol-Salbe und die zugehörige **Durchgeführte Abgabe**, mit der der Besorgerprozess dokumentiert wurde. Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt den Besorgerprozess ab, indem sie eine weitere **Durchgeführte Abgabe** erstellt. Sie dokumentiert darin die tatsächlich abgegebene Menge und kennzeichnet diese mit **MedicationDispense.type = RFC (Refill – Complete)**.
 
-Anschließend speichert sie die neue **Durchgeführte Abgabe** in der e-Medikation.
+Anschließend speichert sie die neue **Durchgeführte Abgabe** in der e-Medikation. Da für die Dexpanthenol-Salbe keine weitere Einlösung möglich ist (Kassenrezept), wird die zugehörige **Geplante Abgabe** automatisch abgeschlossen (**completed**).
 
-#### Journey-05
+#### Journey-03
 
 Beispiele
 
 *  **Durchgeführte Abgaben erstellen:** 
-*  [Durchgeführte Abgabe (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-05-Md-Durchgefuehrte-Abgabe-02.md) (Besorgerprozess beenden) 
+*  [Durchgeführte Abgabe (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02.md) (Besorgerprozess beenden) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle mit Durchgeführter Abgabe](Bundle-At-Emed-Journey-05-Bundle-Durchgefuehrte-Abgaben-Tx.md) 
+*  [Transaction Bundle mit Durchgeführter Abgabe](Bundle-At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx.md) 
  
 
 Use Cases
@@ -151,13 +151,34 @@ Use Cases
 
 #### Ablauf Abgabe in der Apotheke (Teil 2)
 
- ![](plantuml/patient_journey_05.svg) 
+ ![](plantuml/patient_journey_03.svg) 
 
-**2.3.2026: Patient ruft Medikationsplan ab**
+### Journey-04: 2.3.2026 - Patient ruft Medikationsplan ab
 
-Herr Mustermann erinnert sich nicht, welches Medikament er wie einnehmen soll und ruft im Zugangsportal seinen Medikationsplan auf.
+Herr Mustermann erinnert sich nicht, welches Medikament er wie einnehmen soll und ruft im Zugangsportal seine e-Medikation auf.
 
 * **Aktuellen Medikationsplan anzeigen:**
+
+#### Journey-04
+
+Beispiele
+
+*  **aktueller Medikationsplan:** 
+* In Arbeit.  
+ 
+*  **Gepante Abgaben:** 
+* Bundle in Arbeit.  
+ 
+
+Use Cases
+
+*  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
+
+#### Ablauf Patient ruft Medikationsplan ab
+
+ ![](plantuml/patient_journey_04.svg) 
 
 **3.3.2026: Präoperativer Hausarzttermin**
 

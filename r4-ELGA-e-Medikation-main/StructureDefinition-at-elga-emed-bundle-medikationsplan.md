@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan**
+* **AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan**
 
-## Resource Profile: AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan 
+## Resource Profile: AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan 
 
 | | | |
 | :--- | :--- | :--- |
@@ -19,7 +19,7 @@ Das Bundle vom Typ Searchset bestehend aus:
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Journey-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-02-Bundle-Medikationsplan.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplan.json)
 
@@ -42,9 +42,9 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan",
   "version" : "0.1.1",
   "name" : "AtElgaEmedBundleMedikationsplan",
-  "title" : "AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan",
+  "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-17T07:59:06+00:00",
+  "date" : "2026-09-17T12:33:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

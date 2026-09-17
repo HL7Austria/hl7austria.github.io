@@ -32,7 +32,7 @@ Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.
   "title" : "ELGA Dosage Category Status CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-17T07:59:06+00:00",
+  "date" : "2026-09-17T12:33:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

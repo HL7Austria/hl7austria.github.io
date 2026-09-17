@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeMedikationR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Medikation (R4) DRAFT"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-09-17T07:59:06+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-09-17T12:33:54+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -969,7 +969,7 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-bundle-medikationsplan" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Medikation Medikationsplan-Searchset-Bundle Medikationsplan" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das Bundle vom Typ Searchset bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus\n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
@@ -1184,6 +1184,176 @@
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "List" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/List/At-Emed-Journey-01-01-List-Medikationsplan> ;
+         fhir:Reference.reference [ fhir:value "List/At-Emed-Journey-01-01-List-Medikationsplan" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-01: Leerer Medikationsplan" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
+       ]
+     ], [
+       fhir:index 27 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-01-Bundle-Medikationsplan> ;
+         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-01-01-Bundle-Medikationsplan" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-01: Medikationsplan-Bundle" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
+       ]
+     ], [
+       fhir:index 28 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx> ;
+         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
+       ]
+     ], [
+       fhir:index 29 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "List" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/List/At-Emed-Journey-01-02-List-Medikationsplan> ;
+         fhir:Reference.reference [ fhir:value "List/At-Emed-Journey-01-02-List-Medikationsplan" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-02: Medikationsplan" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
+       ]
+     ], [
+       fhir:index 30 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan> ;
+         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-02: Medikationsplan-Bundle" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
+       ]
+     ], [
+       fhir:index 31 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-02: Medikationsplaneintrag 1" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+       ]
+     ], [
+       fhir:index 32 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-02: Medikationsplaneintrag 2" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe)und zugehörigen Dosierungsanweisungen ab." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+       ]
+     ], [
+       fhir:index 33 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-03: Geplante Abgabe 1" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
+       ]
+     ], [
+       fhir:index 34 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-03: Geplante Abgabe 2" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) mit den Dosierungsanweisungen des zugehörigen Planeintrags ab." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
+       ]
+     ], [
+       fhir:index 35 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx> ;
+         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01-03: Geplante-Abgaben-Transaction-Bundle" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles mit Geplanten Abgaben." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx>
+       ]
+     ], [
+       fhir:index 36 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "Device" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -1194,41 +1364,58 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 27 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "List" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/List/At-Emed-Journey-01-List-Medikationsplan> ;
-         fhir:Reference.reference [ fhir:value "List/At-Emed-Journey-01-List-Medikationsplan" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01: Leerer Medikationsplan" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)" ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
-       ]
-     ], [
-       fhir:index 28 ;
+       fhir:index 37 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "Bundle" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-01-Bundle-Medikationsplan> ;
-         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-01-Bundle-Medikationsplan" ]
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx> ;
+         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 01: Medikationsplan-Searchset-Bundle" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Medikationsplan-Searchset-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02-01: Durchgefuehrte-Abgaben-Transaction-Bundle" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles mit Durchgeführten Abgaben." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx>
        ]
      ], [
-       fhir:index 29 ;
+       fhir:index 38 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationDispense" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01> ;
+         fhir:Reference.reference [ fhir:value "MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02-01: Durchgeführte Abgabe 1" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
+       ]
+     ], [
+       fhir:index 39 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "MedicationDispense" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02> ;
+         fhir:Reference.reference [ fhir:value "MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02-01: Durchgeführte Abgabe 1" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
+       ]
+     ], [
+       fhir:index 40 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1245,225 +1432,38 @@
          fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation>
        ]
      ], [
-       fhir:index 30 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "List" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/List/At-Emed-Journey-02-List-Medikationsplan> ;
-         fhir:Reference.reference [ fhir:value "List/At-Emed-Journey-02-List-Medikationsplan" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02: Medikationsplan" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
-       ]
-     ], [
-       fhir:index 31 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "Bundle" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-02-Bundle-Medikationsplan> ;
-         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-02-Bundle-Medikationsplan" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02: Medikationsplan-Searchset-Bundle" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Medikationsplan-Searchset-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan>
-       ]
-     ], [
-       fhir:index 32 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01> ;
-         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02: Medikationsplaneintrag 1" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
-       ]
-     ], [
-       fhir:index 33 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02> ;
-         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02: Medikationsplaneintrag 2" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe)und zugehörigen Dosierungsanweisungen ab." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
-       ]
-     ], [
-       fhir:index 34 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "Bundle" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-02-Bundle-Medikationsplan-Tx> ;
-         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-02-Bundle-Medikationsplan-Tx" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 02: Transaction Bundle" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
-       ]
-     ], [
-       fhir:index 35 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-01> ;
-         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-01" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 03: Geplante Abgabe 1" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
-       ]
-     ], [
-       fhir:index 36 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "MedicationRequest" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-02> ;
-         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-02" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 03: Geplante Abgabe 2" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) mit den Dosierungsanweisungen des zugehörigen Planeintrags ab." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe>
-       ]
-     ], [
-       fhir:index 37 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "Bundle" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-03-Bundle-Geplante-Abgaben-Tx> ;
-         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-03-Bundle-Geplante-Abgaben-Tx" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 03: Transaction Bundle" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles mit Geplanten Abgaben." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx>
-       ]
-     ], [
-       fhir:index 38 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "MedicationDispense" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01> ;
-         fhir:Reference.reference [ fhir:value "MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 04: Durchgeführte Abgabe 1" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
-       ]
-     ], [
-       fhir:index 39 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "MedicationDispense" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02> ;
-         fhir:Reference.reference [ fhir:value "MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 04: Durchgeführte Abgabe 1" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
-       ]
-     ], [
-       fhir:index 40 ;
-       fhir:Element.extension [
-         fhir:index 0 ;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "Bundle" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx> ;
-         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-04-Bundle-Durchgefuehrte-Abgaben-Tx" ]
-       ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 04: Transaction Bundle" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles mit Durchgeführten Abgaben." ] ;
-       fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx>
-       ]
-     ], [
        fhir:index 41 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "MedicationDispense" ]
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationDispense/At-Emed-Journey-05-Md-Durchgefuehrte-Abgabe-02> ;
-         fhir:Reference.reference [ fhir:value "MedicationDispense/At-Emed-Journey-05-Md-Durchgefuehrte-Abgabe-02" ]
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx> ;
+         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 05: Durchgeführte Abgabe 1" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 03-01: Transaction Bundle" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles mit Durchgeführten Abgaben." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx>
        ]
      ], [
        fhir:index 42 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
-         fhir:Extension.valueString [ fhir:value "Bundle" ]
+         fhir:Extension.valueString [ fhir:value "MedicationDispense" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-05-Bundle-Durchgefuehrte-Abgaben-Tx> ;
-         fhir:Reference.reference [ fhir:value "Bundle/At-Emed-Journey-05-Bundle-Durchgefuehrte-Abgaben-Tx" ]
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02> ;
+         fhir:Reference.reference [ fhir:value "MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 05: Transaction Bundle" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines Transaction Bundles mit Durchgeführten Abgaben." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Beispiel Journey 05: Durchgeführte Abgabe 1" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx" ;
-         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx>
+         fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
        ]
      ], [
        fhir:index 43 ;

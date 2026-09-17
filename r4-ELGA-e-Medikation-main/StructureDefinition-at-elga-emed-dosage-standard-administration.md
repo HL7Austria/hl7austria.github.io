@@ -458,7 +458,7 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
   "version" : "0.1.1",
   "name" : "AtElgaEmedDosageStandardAdministration",
   "status" : "draft",
-  "date" : "2026-09-17T07:59:06+00:00",
+  "date" : "2026-09-17T12:33:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -17,7 +17,7 @@ Dokumentiert eine "Durchgeführte Abgabe" eines Arzneimittels ("MedicationDispen
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben](StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-tx.md)
-* Examples for this Profile: [MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-01.md), [MedicationDispense/At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-04-Md-Durchgefuehrte-Abgabe-02.md) and [MedicationDispense/At-Emed-Journey-05-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-05-Md-Durchgefuehrte-Abgabe-02.md)
+* Examples for this Profile: [MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01.md), [MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02.md) and [MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.json)
 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-09-17T07:59:06+00:00",
+  "date" : "2026-09-17T12:33:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

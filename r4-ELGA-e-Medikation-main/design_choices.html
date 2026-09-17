@@ -413,12 +413,12 @@ h4 + .tabs {
 
 <p>Zentrale Ressource ist der Medikationsplan (<em>List</em>), der die einzelnen Medikationsplaneinträge (<em>MedicationRequest</em>) referenziert. Basierend auf diesen Planeinträgen werden <em>Geplante Abgaben</em> (<em>MedicationRequest</em>) erstellt, auf deren Grundlage <em>Durchgeführte Abgaben</em> (<em>MedicationDispense</em>) dokumentiert werden können.</p>
 
-<p>Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Medikationsplan-Searchset-Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.</p>
+<p>Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Medikationsplan-Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.</p>
 
 <p><br/>
 <a href="Uebersicht_e_Medikation_Ressourcen.drawio.svg"><img src="Uebersicht_e_Medikation_Ressourcen.drawio.svg" alt="diagram" style="width: 100%"/></a></p>
 
-  <!-- TODO Pfeile zu Patient und Practitioner? Umrandung Medikationsplan-Searchset-Bundle strichliert -->
+  <!-- TODO Pfeile zu Patient und Practitioner? Umrandung Medikationsplan-Bundle strichliert -->
 
 <h3 id="relevante-profile">Relevante Profile</h3>
 
@@ -441,11 +441,11 @@ Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer <
 
 <p>Abhängig vom List.entry.flag kann der Planeintrag nur bestimmte Statuswerte annehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</p>
 
-<h4 id="medikationsplan-searchset-bundle-atelgaemedbundlemedikationsplan-medikationsplan-searchset-bundle">Medikationsplan-Searchset-Bundle: AtElgaEmedBundleMedikationsplan (<em>Medikationsplan-Searchset-Bundle</em>)</h4>
+<h4 id="medikationsplan-bundle-atelgaemedbundlemedikationsplan-medikationsplan-bundle">Medikationsplan-Bundle: AtElgaEmedBundleMedikationsplan (<em>Medikationsplan-Bundle</em>)</h4>
 
-<p>Das Medikationsplan-Searchset-Bundle dient ausschließlich der Auslieferung eines Medikationsplans. Es wird von der Fachanwendung bei Bedarf aus einer List-Ressource sowie den von dieser referenzierten Ressourcenversionen erzeugt und <strong>nicht persistiert</strong>.</p>
+<p>Das Medikationsplan-Bundle dient ausschließlich der Auslieferung eines Medikationsplans. Es wird von der Fachanwendung bei Bedarf aus einer List-Ressource sowie den von dieser referenzierten Ressourcenversionen erzeugt und <strong>nicht persistiert</strong>.</p>
 
-  <!-- TODO: Iste ein Medikationsplan-Searchset-Bundle nur das Ergebnis von Plan-Read oder auch Teil des Ergebnis von Plan-History-Read (in einem Searchset-Bundle)? -->
+  <!-- TODO: Iste ein Medikationsplan-Bundle nur das Ergebnis von Plan-Read oder auch Teil des Ergebnis von Plan-History-Read (in einem Searchset-Bundle)? -->
 
   <!-- #### Geplante Abgabe Transaction-Bundle: AtElgaEmedBundleGeplanteAbgabeTX (*Transaction Bundle*)
 
@@ -501,7 +501,7 @@ Der aktuelle Status einer *Durchgeführten Abgabe* wird mittels *status*- und *t
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 17, 2026 07:59+0000">2026-09-17</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 17, 2026 12:33+0000">2026-09-17</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
