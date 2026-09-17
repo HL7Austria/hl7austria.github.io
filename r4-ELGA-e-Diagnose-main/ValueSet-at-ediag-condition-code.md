@@ -55,7 +55,7 @@ Aktuell werden **alle** Klinisch relevante Erscheinungen zugelassen. Auf Basis d
   "title" : "AT e-Diagnose Condition Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-17T07:46:21+00:00",
+  "date" : "2026-09-17T12:50:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
