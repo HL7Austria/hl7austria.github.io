@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/CodeSystem/medikationrezeptart> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "medikationrezeptart"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem medikationrezeptart</b></p><a name=\"medikationrezeptart\"> </a><a name=\"hcmedikationrezeptart\"> </a><p>This  code system <code>https://termgit.elga.gv.at/CodeSystem/medikationrezeptart</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">KASSEN<a name=\"medikationrezeptart-KASSEN\"> </a></td><td>Kassenrezept</td></tr><tr><td style=\"white-space:nowrap\">PRIVAT<a name=\"medikationrezeptart-PRIVAT\"> </a></td><td>Privatrezept</td></tr><tr><td style=\"white-space:nowrap\">SUBST<a name=\"medikationrezeptart-SUBST\"> </a></td><td>Substitutionsrezept</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"] ;
+  fhir:CodeSystem.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+     fhir:Identifier.value [ fhir:value "urn:oid:1.2.40.0.10.1.4.3.4.3.3" ]
+  ] ;
+  fhir:CodeSystem.version [ fhir:value "0.1.1"] ;
+  fhir:CodeSystem.name [ fhir:value "medikationrezeptart"] ;
+  fhir:CodeSystem.title [ fhir:value "MedikationRezeptart"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.date [ fhir:value "2015-03-31"^^xsd:date] ;
+  fhir:CodeSystem.publisher [ fhir:value "ELGA GmbH"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "ELGA GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://elga.gv.at" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "ELGA GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://elga.gv.at" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "**Description:** ELGA Codelist for Prescription type\n\n**Beschreibung:** ELGA Codeliste für RezeptArt"] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "3"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "KASSEN" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Kassenrezept" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "PRIVAT" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Privatrezept" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "SUBST" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Substitutionsrezept" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/CodeSystem/medikationrezeptart.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,1348 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\Patient Journey - FHIR&reg; v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.1"}
+    h3,h4,h5,h6{--heading-prefix:"9.1"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="assets/images/hl7atlogo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>Patient Journey</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>Patient Journey</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#journey-01-2722026---erster-arztbesuch" id="markdown-toc-journey-01-2722026---erster-arztbesuch">Journey-01: 27.2.2026 - Erster Arztbesuch</a></li>
+  <li><a href="#journey-02-2822026---abgabe-in-der-apotheke-teil-1" id="markdown-toc-journey-02-2822026---abgabe-in-der-apotheke-teil-1">Journey-02: 28.2.2026 - Abgabe in der Apotheke (Teil 1)</a></li>
+  <li><a href="#journey-03-132026---abgabe-in-der-apotheke-teil-2" id="markdown-toc-journey-03-132026---abgabe-in-der-apotheke-teil-2">Journey-03: 1.3.2026 - Abgabe in der Apotheke (Teil 2)</a></li>
+  <li><a href="#journey-04-232026---patient-ruft-medikationsplan-ab" id="markdown-toc-journey-04-232026---patient-ruft-medikationsplan-ab">Journey-04: 2.3.2026 - Patient ruft Medikationsplan ab</a></li>
+</ul>
+
+</div>
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+<p>Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der <strong>Medikationsplan</strong> eines Patienten mit den zugehörigen <strong>Geplanten Abgaben</strong> und den <strong>Durchgeführten Abgaben</strong> verändern kann.</p>
+
+  <!-- TODO: nicht-sunshine-cases: patient ohne ecard in apotheke, 
+Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilabgabe storniert -->
+
+<h3 id="journey-01-2722026---erster-arztbesuch">Journey-01: 27.2.2026 - Erster Arztbesuch</h3>
+
+<p>Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausärztin. Außerdem hat er einen leichten Hautausschlag bemerkt.</p>
+
+<p>Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Medikation (den aktuellen <em>Medikationsplan</em>,  <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em>) des Patienten  ab, um einen Überblick über seine aktuelle Medikation zu erhalten.</p>
+
+<p>Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum Patienten, die erstellende e-Medikation-Fachanwendung, das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (<em>EmptyReason = notstarted</em>).</p>
+
+<h4 id="journey-01-01">Journey-01-01</h4>
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-01-01" checked="true" id="tab-beispiele-01-01" type="radio"/>
+    <label for="tab-beispiele-01-01">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Leerer Medikationsplan:</strong>(EmptyReason = notstarted) 
+          <ul>
+            <li><a name="l464">​</a>
+              <a href="Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.html">Medikationsplan-Bundle</a>
+            </li>
+            <li>
+              <a href="Patient-At-Emed-Example-Patient-01.html">Patient</a>
+            </li>
+            <li>
+              <a href="Device-At-Emed-Example-Device-01.html">Device</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-01-01" id="tab-usecases-01-01" type="radio"/>
+    <label for="tab-usecases-01-01">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l504">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
+        </li>
+        <li><a name="l510">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- Request-Response-Box 
+Plan-Read
+prescription-search
+dispense-search -->
+
+<h5 id="request-01---medikationsplan-abrufen">Request 01 - Medikationsplan abrufen</h5>
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-journey-01-01-01" checked="true" id="tab-request-journey-01-01-01" type="radio"/>
+    <label for="tab-request-journey-01-01-01" class="request-tab">Request</label>
+    <div class="content-in-tab">
+      <div class="request-panel">
+        <div class="request-code">
+          <span class="request-method-post">POST</span>
+          <code class="request-url">[base]/List/$plan-read</code>
+        </div>
+        <div class="request-meta">
+          <strong>Headers:</strong>
+          <code class="request-header">Content-Type: application/fhir+json</code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-journey-01-01-01" id="tab-request-body-journey-01-01-01" type="radio"/>
+    <label for="tab-request-body-journey-01-01-01">Request Body</label>
+    <div class="content-in-tab"><pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
+  "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">resourceType</a>" : "Parameters",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Parameters.id">id</a>" : "Journey-01-01-Request-Body-01",
+  "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "tbd",
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">valueString</a>" : "tbd"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "tbd2",
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value_x_">valueString</a>" : "tbd2"
+    }
+  ]
+}</code></pre>
+</div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-journey-01-01-01" id="tab-response-journey-01-01-01" type="radio"/>
+    <label for="tab-response-journey-01-01-01">Response Body</label>
+    <div class="content-in-tab"><pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resourceType</a>" : "Bundle",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a>" : "At-Emed-Journey-01-01-01-Bundle-Medikationsplan",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      <a style="color: Maroon" href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">&#x1F517;</a> "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "searchset",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.timestamp">timestamp</a>" : "2026-02-27T08:00:00+00:00",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry">entry</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://example.elga.com/List/4cb4dceb-173f-461a-a267-683ec33e4be1",
+      "<a href="http://hl7.org/fhir/R4/list.html#List">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/list.html">resourceType</a>" : "List",
+        "<a href="http://hl7.org/fhir/R4/resource.html#List.id">id</a>" : "4cb4dceb-173f-461a-a267-683ec33e4be1",
+        "<a href="http://hl7.org/fhir/R4/resource.html#List.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.versionId">versionId</a>" : "f43395bd-d5e7-4d61-872e-46c214d090ab",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+            <a style="color: Maroon" href="StructureDefinition-at-elga-emed-list-medikationsplan.html">&#x1F517;</a> "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
+          ]
+        },
+        "<a href="http://hl7.org/fhir/R4/domainresource.html#List.text">text</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"List_4cb4dceb-173f-461a-a267-683ec33e4be1\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: List 4cb4dceb-173f-461a-a267-683ec33e4be1&lt;/b&gt;&lt;/p&gt;&lt;a name=\"4cb4dceb-173f-461a-a267-683ec33e4be1\"&gt; &lt;/a&gt;&lt;a name=\"hc4cb4dceb-173f-461a-a267-683ec33e4be1\"&gt; &lt;/a&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"&gt;version: f43395bd-d5e7-4d61-872e-46c214d090ab&lt;/p&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profile: &lt;a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\"&gt;AT ELGA e-Medikation List Medikationsplan&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;table class=\"clstu\"&gt;&lt;tr&gt;&lt;td&gt;Date: 2026-02-27 08:00:00+0000 &lt;/td&gt;&lt;td&gt;Mode: Working List &lt;/td&gt;&lt;td&gt;Status: Current &lt;/td&gt;&lt;td&gt;Code: Medikationsplan &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Subject: &lt;a href=\"Patient-At-Emed-Example-Patient-01.html\"&gt;Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)&lt;/a&gt;Source: &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;table class=\"grid\"&gt;&lt;tr style=\"backgound-color: #eeeeee\"&gt;&lt;td&gt;&lt;b&gt;Items&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+        },
+        "<a href="http://hl7.org/fhir/R4/list.html#List.status">status</a>" : "current",
+        "<a href="http://hl7.org/fhir/R4/list.html#List.mode">mode</a>" : "working",
+        "<a href="http://hl7.org/fhir/R4/list.html#List.code">code</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "736378000",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Medikationsplan"
+            }
+          ]
+        },
+        "<a href="http://hl7.org/fhir/R4/list.html#List.subject">subject</a>" : {
+          <a style="color: Maroon" href="Patient-At-Emed-Example-Patient-01.html">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/At-Emed-Example-Patient-01"
+        },
+        "<a href="http://hl7.org/fhir/R4/list.html#List.date">date</a>" : "2026-02-27T08:00:00+00:00",
+        "<a href="http://hl7.org/fhir/R4/list.html#List.source">source</a>" : {
+          <a style="color: Maroon" href="Device-At-Emed-Example-Device-01.html">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Device/At-Emed-Example-Device-01"
+        },
+        "<a href="http://hl7.org/fhir/R4/list.html#List.emptyReason">emptyReason</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "notstarted"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://example.elga.com/Patient/At-Emed-Example-Patient-01",
+      "<a href="http://hl7.org/fhir/R4/patient.html#Patient">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/patient.html">resourceType</a>" : "Patient",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Patient.id">id</a>" : "At-Emed-Example-Patient-01",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Patient.meta">meta</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+            <a style="color: Maroon" href="https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-patient.html">&#x1F517;</a> "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"<a style="color: Maroon" href="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html">&#x1F517;</a> ,
+            "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+          ]
+        },
+        "<a href="http://hl7.org/fhir/R4/domainresource.html#Patient.text">text</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Patient_At-Emed-Example-Patient-01\"&gt; &lt;/a&gt;&lt;p class=\"res-header-id\"&gt;&lt;b&gt;Generated Narrative: Patient At-Emed-Example-Patient-01&lt;/b&gt;&lt;/p&gt;&lt;a name=\"At-Emed-Example-Patient-01\"&gt; &lt;/a&gt;&lt;a name=\"hcAt-Emed-Example-Patient-01\"&gt; &lt;/a&gt;&lt;div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"&gt;&lt;p style=\"margin-bottom: 0px\"/&gt;&lt;p style=\"margin-bottom: 0px\"&gt;Profiles: &lt;a href=\"https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-patient.html\"&gt;AT ELGA Core Patient Profil&lt;/a&gt;, &lt;a href=\"http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html\"&gt;HL7&reg; AT Core Patient Profile&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"&gt;Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)&lt;/p&gt;&lt;hr/&gt;&lt;table class=\"grid\"&gt;&lt;tr&gt;&lt;td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\"&gt;Other Ids:&lt;/td&gt;&lt;td colspan=\"3\"&gt;&lt;ul&gt;&lt;li&gt;National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=&lt;/li&gt;&lt;li&gt;Patient internal identifier/0815&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\"&gt;Contact Detail&lt;/td&gt;&lt;td colspan=\"3\"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=\"mailto:office@hl7.at\"&gt;office@hl7.at&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=\"tel:+436501234567890\"&gt;+436501234567890&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Landstrasse 1 Stock 9 Tür 42 Linz Oberösterreich 4020 AUT (home)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"background-color: #f3f5da\" title=\"HL7&reg; Austria FHIR&reg; Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively.\"&gt;Patient Religion:&lt;/td&gt;&lt;td colspan=\"3\"&gt;&lt;ul&gt;&lt;li&gt;code: &lt;span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria 162}\"&gt;Pastafarianismus&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\"background-color: #f3f5da\" title=\"The patient's legal status as citizen of a country.\"&gt;Patient Citizenship:&lt;/td&gt;&lt;td colspan=\"3\"&gt;&lt;ul&gt;&lt;li&gt;code: &lt;span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3 AUT}\"&gt;Österreich&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+        },
+        "<a href="http://hl7.org/fhir/R4/domainresource.html#Patient.extension">extension</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "code",
+                "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria",
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "162",
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Pastafarianismus"
+                    }
+                  ]
+                }
+              }
+            ],
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#Extension.extension">extension</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "code",
+                "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueCodeableConcept</a>" : {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                    {
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "AUT",
+                      "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Österreich"
+                    }
+                  ]
+                }
+              }
+            ],
+            "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/patient-citizenship"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/patient.html#Patient.identifier">identifier</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "SS",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Social Security number"
+                }
+              ]
+            },
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.40.0.10.1.4.3.1",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "1234010100",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
+              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Dachverband der österreichischen Sozialversicherungsträger"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "NI",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "National unique individual identifier"
+                }
+              ]
+            },
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.40.0.10.2.1.1.149",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
+              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Bundesministerium für Inneres"
+            }
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+                {
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "PI",
+                  "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Patient internal identifier"
+                }
+              ]
+            },
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.3.4.5",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "0815",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.assigner">assigner</a>" : {
+              "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "Ein GDA in Österreich"
+            }
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/patient.html#Patient.name">name</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a>" : "Mustermann",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">given</a>" : [
+              "Anton"
+            ],
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.prefix">prefix</a>" : [
+              "DI"
+            ]
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/patient.html#Patient.telecom">telecom</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "email",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "office@hl7.at",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a>" : "work"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "phone",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "+436501234567890",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.use">use</a>" : "home"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">gender</a>" : "male",
+        "<a href="http://hl7.org/fhir/R4/patient.html#Patient.birthDate">birthDate</a>" : "1900-01-01",
+        "<a href="http://hl7.org/fhir/R4/patient.html#Patient.address">address</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.use">use</a>" : "home",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.type">type</a>" : "both",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">line</a>" : [
+              "Landstrasse 1 Stock 9 Tür 42"
+            ],
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">_line</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Element#string.extension">extension</a>" : [
+                  {
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Landstrasse"
+                  },
+                  {
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "1"
+                  },
+                  {
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Stock 9 Tür 42"
+                  },
+                  {
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+                    "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueString</a>" : "Lift vorhanden"
+                  }
+                ]
+              }
+            ],
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">city</a>" : "Linz",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.state">state</a>" : "Oberösterreich",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">postalCode</a>" : "4020",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">country</a>" : "AUT"
+          }
+        ]
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.entry.fullUrl">fullUrl</a>" : "https://example.elga.com/Device/At-Emed-Example-Device-01",
+      "<a href="http://hl7.org/fhir/R4/device.html#Device">resource</a>" : {
+        "<a href="http://hl7.org/fhir/R4/device.html">resourceType</a>" : "Device",
+        "<a href="http://hl7.org/fhir/R4/resource.html#Device.id">id</a>" : "At-Emed-Example-Device-01",
+        "<a href="http://hl7.org/fhir/R4/domainresource.html#Device.text">text</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "additional",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\"http://www.w3.org/1999/xhtml\"&gt;&lt;a name=\"Device_At-Emed-Example-Device-01\"&gt; &lt;/a&gt;&lt;p&gt;e-Medikation Fachanwendung.&lt;/p&gt;&lt;/div&gt;"
+        },
+        "<a href="http://hl7.org/fhir/R4/device.html#Device.deviceName">deviceName</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/device.html#Device.deviceName.name">name</a>" : "e-Med Fachanwendung",
+            "<a href="http://hl7.org/fhir/R4/device.html#Device.deviceName.type">type</a>" : "user-friendly-name"
+          }
+        ],
+        "<a href="http://hl7.org/fhir/R4/device.html#Device.type">type</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+            {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://snomed.info/sct",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "49062001",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Gerät"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}</code></pre>
+</div>
+  </div>
+</div>
+
+<h5 id="request-02---geplante-abgaben-abrufen">Request 02 - geplante Abgaben Abrufen</h5>
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-journey-01-01-02" checked="true" id="tab-request-journey-01-01-02" type="radio"/>
+    <label for="tab-request-journey-01-01-02" class="request-tab">Request</label>
+    <div class="content-in-tab">
+      <div class="request-panel">
+        <div class="request-code">
+          <span class="request-method-get">GET</span>
+          <code class="request-url">[base]/MedicationRequest?category=https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS|2&amp;status=active</code>
+        </div>
+        <div class="request-meta">
+          <strong>Headers:</strong>
+          <code class="request-header">Content-Type: application/fhir+json</code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-journey-01-01-02" id="tab-response-journey-01-01-02" type="radio"/>
+    <label for="tab-response-journey-01-01-02">Response Body</label>
+    <div class="content-in-tab"><pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resourceType</a>" : "Bundle",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a>" : "at-emed-journey-01-01-02-bundle-geplanteAbgaben",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.lastUpdated">lastUpdated</a>" : "2026-09-17T09:30:35.855-04:00"
+  },
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "searchset",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a>" : 0,
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a>" : "self",
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a>" : "[base]/MedicationRequest?category=https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS|2&amp;status=active"
+    }
+  ]
+}</code></pre>
+</div>
+  </div>
+</div>
+
+<h5 id="request-03---durchgeführte-abgaben-abrufen">Request 03 - durchgeführte Abgaben Abrufen</h5>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-journey-01-01-03" checked="true" id="tab-request-journey-01-01-03" type="radio"/>
+    <label for="tab-request-journey-01-01-03" class="request-tab">Request</label>
+    <div class="content-in-tab">
+      <div class="request-panel">
+        <div class="request-code">
+          <span class="request-method-get">GET</span>
+          <code class="request-url">[base]/MedicationDispense?recorded=lt2025-01-01</code>
+        </div>
+        <div class="request-meta">
+          <strong>Headers:</strong>
+          <code class="request-header">Content-Type: application/fhir+json</code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-journey-01-01-03" id="tab-response-journey-01-01-03" type="radio"/>
+    <label for="tab-response-journey-01-01-03">Response Body</label>
+    <div class="content-in-tab"><pre style="white-space: pre; text-wrap: nowrap; width: auto;" class="json" data-fhir="generated"><code style="white-space: pre; text-wrap: nowrap;" class="language-json">{
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle">resourceType</a>" : "Bundle",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.id">id</a>" : "at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben",
+  "<a href="http://hl7.org/fhir/R4/resource.html#Bundle.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.lastUpdated">lastUpdated</a>" : "2026-09-17T09:30:35.855-04:00"
+  },
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.type">type</a>" : "searchset",
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.total">total</a>" : 0,
+  "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link">link</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.relation">relation</a>" : "self",
+      "<a href="http://hl7.org/fhir/R4/bundle.html#Bundle.link.url">url</a>" : "[base]/MedicationDispense?recorded=lt2025-01-01"
+    }
+  ]
+}</code></pre>
+</div>
+  </div>
+</div>
+
+<h4 id="journey-01-02">Journey-01-02</h4>
+<p>Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie <strong>Ramipril 5 mg Tabletten</strong>, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag <strong>Dexpanthenol-5-%-Salbe</strong>, 2 × täglich für 3 Wochen, dünn aufzutragen.<br/>
+Sie speichert den neuen Medikationsplan.</p>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-01-02" checked="true" id="tab-beispiele-01-02" type="radio"/>
+    <label for="tab-beispiele-01-02">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Planeinträge erstellen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-01.html">Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)</a>
+            </li>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.html">Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Medikationsplan aktualisieren:</strong>
+          <ul>
+            <li>
+              <a href="List-At-Emed-Journey-01-02-List-Medikationsplan.html">Medikationsplan ergänzt mit 2 Planeinträgen</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a>
+            </li>
+            <li>
+              <a href="Practitioner-At-Emed-Example-Practitioner-01.html">Dr. Hausärztin</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-01-02" id="tab-usecases-01-02" type="radio"/>
+    <label for="tab-usecases-01-02">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- Request-Response-Box 
+Plan-Read
+prescription-search
+dispense-search -->
+
+<p>Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.</p>
+
+<p>Dr. Hausärztin erstellt für beide Medikamente ein Kassenrezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer <em>Geplante Abgabe</em> in der e-Medikation. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.</p>
+
+<h4 id="journey-01-03">Journey-01-03</h4>
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-01-03" checked="true" id="tab-beispiele-01-03" type="radio"/>
+    <label for="tab-beispiele-01-03">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Geplante Abgaben erstellen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.html">Geplante Abgabe zu Planeintrag 1 (Ramipril)</a>
+            </li>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.html">Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+            <a href="Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx.html">Transaction Bundle mit Geplante Abgaben</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-01-03" id="tab-usecases-01-03" type="radio"/>
+    <label for="tab-usecases-01-03">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_04.html#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create">Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen (Variante A)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h4 id="ablauf-erstbesuch">Ablauf Erstbesuch</h4>
+<p><br/>
+<a href="plantuml/patient_journey_01.svg"><img src="plantuml/patient_journey_01.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<br/></p>
+
+<h3 id="journey-02-2822026---abgabe-in-der-apotheke-teil-1">Journey-02: 28.2.2026 - Abgabe in der Apotheke (Teil 1)</h3>
+
+<p>Herr Mustermann sucht eine Apotheke auf, um die verordneten Medikamente abzuholen und legt dazu seine e-card vor, wodurch die Apotheke Zugriff auf seine ELGA e-Medikation erhält.</p>
+
+<p>Die Apothekerin prüft das Rezept (Papierrezept oder ruft e-Rezept ab), ruft offenen <em>Geplante Abgaben</em>, sowie <em>Durchgeführte Abgaben</em> und den <em>Medikationsplan</em> ab und prüft die Medikation hinsichtlich Wechselwirkungen.</p>
+
+<p>Sie händigt das Medikament Ramipril aus, erklärt die Einnahme und erstellt eine <em>Durchgeführte Abgabe</em> (<strong>Vollständige Abgabe</strong>).</p>
+
+<p>Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine Durchgeführte Abgabe mit dem <em>Type = "First Fill – Part Fill"</em> und der abgegebenen Menge (<em>quantity</em>) Null.</p>
+
+<p>Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine <em>Durchgeführte Abgabe</em> und dokumentiert darin entsprechend dem <strong>Besorgerprozess</strong> <em>type = First Fill – Part Fill</em> und <em>MedicationDispense.quantity = 0</em>.</p>
+
+<p>Anschließend speichert sie die neuen <em>Durchgeführte Abgaben</em> in der e-Medikation. Da für Ramipril keine weitere Einlösung möglich ist (Kassenrezept), wird die zugehörige <em>Geplante Abgabe</em> automatisch abgeschlossen (<em>completed</em>).</p>
+
+<h4 id="journey-02">Journey-02</h4>
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-02-01" checked="true" id="tab-beispiele-02-01" type="radio"/>
+    <label for="tab-beispiele-02-01">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Durchgeführte Abgaben erstellen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01.html">Durchgeführte Abgabe (Ramipril)</a> (Vollständige Einzelabgabe)
+            </li>
+            <li>
+              <a href="MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02.html">Durchgeführte Abgabe (Dexpanthenol-Salbe)</a> (Besorgerprozess)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx.html">Durchgeführte-Abgaben-Transaction-Bundle</a>
+            </li>
+            <li>
+              <a href="Organization-At-Emed-Example-Organization-Apo-01.html">Apotheke (Organization)</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-02-01" id="tab-usecases-02-01" type="radio"/>
+    <label for="tab-usecases-02-01">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+      <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l1549">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
+        </li>
+        <li><a name="l1555">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#zugriffsvariante-a-durchgeführte-abgabe-mit-kontakt-schreiben">Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_01---vollständige-einzelabgabe-erfassen">Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_03---besorgerprozess">Sub_UC_eMed_05_01_03 - Besorgerprozess</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h4 id="ablauf-abgabe-in-der-apotheke-teil-1">Ablauf Abgabe in der Apotheke (Teil 1)</h4>
+
+<p><br/>
+<a href="plantuml/patient_journey_02.svg"><img src="plantuml/patient_journey_02.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<br/></p>
+
+<h3 id="journey-03-132026---abgabe-in-der-apotheke-teil-2">Journey-03: 1.3.2026 - Abgabe in der Apotheke (Teil 2)</h3>
+
+<p>Herr Mustermann möchte in der Apotheke die Dexpanthenol-Salbe abholen und steckt dort seine e-card.</p>
+
+<p>Die Apothekerin ruft die e-Medikation erneut ab. 
+Sie erhält den <em>Medikationsplan</em>, die offene <em>Geplante Abgabe</em> für die Dexpanthenol-Salbe und die zugehörige <em>Durchgeführte Abgabe</em>, mit der der Besorgerprozess dokumentiert wurde.
+Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt den Besorgerprozess ab, indem sie eine weitere <em>Durchgeführte Abgabe</em> erstellt. Sie dokumentiert darin die tatsächlich abgegebene Menge und kennzeichnet diese mit <em>MedicationDispense.type = RFC (Refill – Complete)</em>.</p>
+
+<p>Anschließend speichert sie die neue <em>Durchgeführte Abgabe</em> in der e-Medikation. Da für die Dexpanthenol-Salbe keine weitere Einlösung möglich ist (Kassenrezept), wird die zugehörige <em>Geplante Abgabe</em> automatisch abgeschlossen (<em>completed</em>).</p>
+
+<h4 id="journey-03">Journey-03</h4>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-03-01" checked="true" id="tab-beispiele-03-01" type="radio"/>
+    <label for="tab-beispiele-03-01">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Durchgeführte Abgaben erstellen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationDispense-At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02.html">Durchgeführte Abgabe (Dexpanthenol-Salbe)</a> (Besorgerprozess beenden) 
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx.html">Transaction Bundle mit Durchgeführter Abgabe</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-03-01" id="tab-usecases-03-01" type="radio"/>
+    <label for="tab-usecases-03-01">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+      <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l1696">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
+        </li>
+        <li><a name="l1702">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#zugriffsvariante-a-durchgeführte-abgabe-mit-kontakt-schreiben">Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_03---besorgerprozess">Sub_UC_eMed_05_01_03 - Besorgerprozess</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h4 id="ablauf-abgabe-in-der-apotheke-teil-2">Ablauf Abgabe in der Apotheke (Teil 2)</h4>
+
+<p><br/>
+<a href="plantuml/patient_journey_03.svg"><img src="plantuml/patient_journey_03.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<br/></p>
+
+<h3 id="journey-04-232026---patient-ruft-medikationsplan-ab">Journey-04: 2.3.2026 - Patient ruft Medikationsplan ab</h3>
+
+<p>Herr Mustermann erinnert sich nicht, welches Medikament er wie einnehmen soll und ruft im Zugangsportal seine e-Medikation auf.</p>
+
+  <!-- Der aktuelle Medikationsplan enthält nun nur noch das **Dauermedikament Ramipril 5 mg**, während die zeitlich begrenzten Medikamente für die postoperative Behandlung bereits beendet wurden. -->
+
+<ul>
+  <li>
+    <p><strong>Aktuellen Medikationsplan anzeigen:</strong></p>
+
+    <ul>
+      <li><a name="l1753">​</a>Beispiel <a href="Bundle-At-Emed-Journey-07-Bundle-Medikationsplan.html">Medikationsplan-Bundle</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="journey-04">Journey-04</h4>
+
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-04-01" checked="true" id="tab-beispiele-04-01" type="radio"/>
+    <label for="tab-beispiele-04-01">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>aktueller Medikationsplan:</strong>
+          <ul>
+            <li>In Arbeit.
+                <!-- <a href="MedicationDispense-At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02.html">Durchgeführte Abgabe (Dexpanthenol-Salbe)</a> (Besorgerprozess beenden) -->
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Gepante Abgaben:</strong>
+          <ul>
+            <li>Bundle in Arbeit.
+                <!-- <a href="Bundle-At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx.html">Bundle in Arbeit</a> -->
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-04-01" id="tab-usecases-04-01" type="radio"/>
+    <label for="tab-usecases-04-01">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+      <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l1825">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
+        </li>
+        <li><a name="l1831">​</a>
+          <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h4 id="ablauf-patient-ruft-medikationsplan-ab">Ablauf Patient ruft Medikationsplan ab</h4>
+
+<p><br/>
+<a href="plantuml/patient_journey_04.svg"><img src="plantuml/patient_journey_04.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
+<br/></p>
+
+<p><strong>3.3.2026: Präoperativer Hausarzttermin</strong></p>
+
+<p>Bei Herrn Mustermann steht eine geplante Leistenbruchoperation an. Vor der Operation bespricht er
+die bestehende Medikation mit seiner Hausärztin.</p>
+
+<p>Die geplante Leistenbruchoperation ist für den 5.3.2026 vorgesehen.</p>
+
+<p>Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen.</p>
+
+<ul>
+  <li><strong>Medikationsplan mit pausiertem Planeintrag aktualisieren:</strong> in Arbeit.
+  <!-- TODO --></li>
+</ul>
+
+<p><strong>5.3.2026: Geplante Leistenbruchoperation</strong></p>
+
+<p>Herr Mustermann erscheint zur geplanten Leistenbruchoperation. Ramipril wurde entsprechend der ärztlichen Anweisung vorübergehend pausiert.</p>
+
+<p>Die Leistenbruchoperation verläuft komplikationslos. Nach der Operation erhält Herr Mustermann von Dr. Krankenhaus Metamizol-Tropfen gegen die postoperativen Schmerzen.
+Metamizol-Tropfen, 2 Fläschchen:
+3 × täglich 30 Tropfen
+für wenige Tage (nach Bedarf)</p>
+
+<ul>
+  <li><strong>Medikationsplan mit neuem Planeintrag aktualisieren:</strong> in Arbeit.</li>
+</ul>
+
+<p><strong>7.3.2026: Teilabgabe in der Apotheke</strong></p>
+
+<p>Herr Mustermann möchte in der Apotheke die Metamizol-Tropfen abholen und steckt seine e-card.</p>
+
+<p>Es ist nur noch ein Fläschchen Metamizol verfügbar. Die Apothekerin händigt das Fläschchen aus und erstellt eine Durchgeführte Abgabe als Teilabgabe.
+Die Patienten wird angewiesen, das zweite Fläschchen in der Apotheke abzuholen, sobald es verfügbar ist.</p>
+
+<ul>
+  <li><strong>Durchgeführte Abgaben erstellen (Teilabgabe):</strong> in Arbeit.</li>
+</ul>
+
+<p><strong>9.3.2026: Teilabgabe in der Apotheke abschließen</strong></p>
+
+<p>Herr Mustermann wurde von der Apotheke informiert, dass die Metamizol-Tropfen nun verfügbar sind. Er steckt in der Apotheke seine e-card.
+Die Apothekerin ruft die e-Medikation erneut ab, schließt dann die Teilabgabe ab, indem sie eine weitere Durchgeführte Abgabe erstellt und übergibt dem Patienten die Metamizol-Tropfen.</p>
+
+<ul>
+  <li><strong>Durchgeführte Abgaben erstellen (Teilabgabe abschließen):</strong> in Arbeit.</li>
+</ul>
+
+<p><strong>12.3.2026: Nachkontrolle bei der Urlaubsvertretung von Dr. Hausärztin</strong></p>
+
+<p>Herr Mustermann hat die Medikamente in der Apotheke abgeholt und die Schmerzen sind deutlich zurückgegangen.</p>
+
+<p>Eine Woche nach der Operation kommt er zur Nachkontrolle zur Urlaubsvertretung von Dr. Hausärztin.</p>
+
+<p>Für die verbleibenden Schmerzen wird von Dr. Urlaubsvertretung die Metamizoldosis für einen begrenzten Zeitraum weiterverodnet, die Dosis aber reduziert. Metamizol-Tropfen: 2 × täglich 10 Tropfen, für 5 Tage.</p>
+
+<p>Ramipril soll wieder eingenommen werden.</p>
+
+<p>Im neu erstellten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und die verantwortliche Ärztin (Dr. Urlaubsvertretung) ersichtlich.</p>
+
+<p><strong>20.3.2026: Kontrolltermin bei Dr. Hausärztin</strong></p>
+
+<p>Herr Mustermann erscheint zur Wundkontrolle bei Dr. Hausärztin.</p>
+
+<p>Die postoperative Schmerztherapie ist nicht mehr erforderlich. Der Planeintrag für Metamizol wird daher beendet.
+Die Behandlung mit der Dexpanthenol-Salbe ist ebenfalls abgeschlossen.
+Ramipril wird als Dauermedikation fortgeführt.</p>
+
+<ul>
+  <li><strong>Planeinträge beenden und Medikationsplan aktualisieren:</strong> in Arbeit.</li>
+</ul>
+
+  <!-- <div>{ include_relative plantuml/patient_journey.svg }</div> -->
+
+<p><br/>
+<a href="plantuml/patient_journey.svg"><img src="plantuml/patient_journey.svg" alt="overview" style="width:100%;" class="mx-auto"/></a>
+<br/></p>
+
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 17, 2026 14:47+0000">2026-09-17</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>

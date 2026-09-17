@@ -1,0 +1,206 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx>
+     ]
+  ] ;
+  fhir:Bundle.type [ fhir:value "transaction"] ;
+  fhir:Bundle.timestamp [ fhir:value "2026-03-01T15:15:00+00:00"^^xsd:dateTime] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.resource [
+       a fhir:MedicationDispense ;
+       fhir:Resource.id [ fhir:value "At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02" ] ;
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe" ;
+           fhir:index 0 ;
+           fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe>
+         ]
+       ] ;
+       fhir:DomainResource.text [
+         fhir:Narrative.status [ fhir:value "extensions" ] ;
+         fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationDispense_At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationDispense At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02</b></p><a name=\"At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02\"> </a><a name=\"hcAt-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html\">AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe</a></p></div><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-1-0 | Täglich 1-0-1-0</p>\n</div><p><b>R5: When the recording of the dispense started (new)</b>: 2026-03-01 15:15:00+0000</p><p><b>AT ELGA e-Medikation Extension Group Identifier</b>: WYE82A2G8EEW</p><p><b>status</b>: Completed</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02/contained-medication-journey-03-01-02-magistral\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Organization-At-Emed-Example-Organization-Apo-01.html\">Organization Amadeus Apotheke</a></td></tr></table><p><b>authorizingPrescription</b>: </p><ul><li><a href=\"MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-02\">GeplanteAbgabe 1</a></li><li><a href=\"MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02\">Planeintrag 1</a></li></ul><p><b>type</b>: <span title=\"Codes:\">FFC</span></p><p><b>quantity</b>: 1 1<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code1 = '1')</span></p><p><b>whenHandedOver</b>: 2026-03-01 15:15:00+0000</p><blockquote><p><b>dosageInstruction</b></p><p><b>AT ELGA e-Medikation Extension Dosierungskategorie</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory standard}\">Standard Administration</span></p><p><b>sequence</b>: 1</p><p><b>patientInstruction</b>: Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein.</p><p><b>timing</b>: Morning, Once per 1 day</p><p><b>route</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationartanwendung 100000073619}\">zum Einnehmen</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td> Stück<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{Stueck} = '{Stueck}')</span></td></tr></table></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-journey-03-01-02-magistral</b></p><a name=\"At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02/contained-medication-journey-03-01-02-magistral\"> </a><a name=\"hcAt-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02/contained-medication-journey-03-01-02-magistral\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-medikation.html\">AT ELGA e-Medikation Medication Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A11HA30}\">Dexpanthenol</span></p><p><b>strength</b>: 5 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 95 g/100 g</p></blockquote></blockquote></div>"
+       ] ;
+       fhir:DomainResource.contained [
+         a fhir:Medication ;
+         fhir:index 0 ;
+         fhir:Resource.id [ fhir:value "contained-medication-journey-03-01-02-magistral" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation" ;
+             fhir:index 0 ;
+             fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation>
+           ]
+         ] ;
+         fhir:Medication.form [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform" ] ;
+             fhir:Coding.code [ fhir:value "100000073713" ] ;
+             fhir:Coding.display [ fhir:value "Salbe" ]
+           ]
+         ] ;
+         fhir:Medication.ingredient [
+           fhir:index 0 ;
+           fhir:Medication.ingredient.itemCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido" ] ;
+               fhir:Coding.code [ fhir:value "A11HA30" ] ;
+               fhir:Coding.display [ fhir:value "Dexpanthenol" ]
+             ]
+           ] ;
+           fhir:Medication.ingredient.strength [
+             fhir:Ratio.numerator [
+               fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ] ;
+               fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+               fhir:Quantity.code [ fhir:value "g" ]
+             ] ;
+             fhir:Ratio.denominator [
+               fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ] ;
+               fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+               fhir:Quantity.code [ fhir:value "g" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:Medication.ingredient.itemCodeableConcept [
+             fhir:CodeableConcept.text [ fhir:value "Salbengrundlage" ]
+           ] ;
+           fhir:Medication.ingredient.isActive [ fhir:value "false"^^xsd:boolean ] ;
+           fhir:Medication.ingredient.strength [
+             fhir:Ratio.numerator [
+               fhir:Quantity.value [ fhir:value "95"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ]
+             ] ;
+             fhir:Ratio.denominator [
+               fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:DomainResource.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction" ] ;
+         fhir:Extension.valueMarkdown [ fhir:value "1-0-1-0 | Täglich 1-0-1-0" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.recorded" ] ;
+         fhir:Extension.valueDateTime [ fhir:value "2026-03-01T15:15:00+00:00"^^xsd:dateTime ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier" ] ;
+         fhir:Extension.valueIdentifier [
+           fhir:Identifier.value [ fhir:value "WYE82A2G8EEW" ]
+         ]
+       ] ;
+       fhir:MedicationDispense.status [ fhir:value "completed" ] ;
+       fhir:MedicationDispense.medicationReference [
+         fhir:Reference.reference [ fhir:value "#contained-medication-journey-03-01-02-magistral" ]
+       ] ;
+       fhir:MedicationDispense.subject [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+         fhir:Reference.reference [ fhir:value "Patient/At-Emed-Example-Patient-01" ]
+       ] ;
+       fhir:MedicationDispense.performer [
+         fhir:index 0 ;
+         fhir:MedicationDispense.performer.actor [
+           fhir:link <https://fhir.hl7.at/elga/emed/r4/Organization/At-Emed-Example-Organization-Apo-01> ;
+           fhir:Reference.reference [ fhir:value "Organization/At-Emed-Example-Organization-Apo-01" ]
+         ]
+       ] ;
+       fhir:MedicationDispense.authorizingPrescription [
+         fhir:index 0 ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-02> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-02" ] ;
+         fhir:Reference.display [ fhir:value "GeplanteAbgabe 1" ]
+       ], [
+         fhir:index 1 ;
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02> ;
+         fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-02" ] ;
+         fhir:Reference.display [ fhir:value "Planeintrag 1" ]
+       ] ;
+       fhir:MedicationDispense.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.code [ fhir:value "FFC" ]
+         ]
+       ] ;
+       fhir:MedicationDispense.quantity [
+         fhir:Quantity.value [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+         fhir:Quantity.code [ fhir:value "1" ]
+       ] ;
+       fhir:MedicationDispense.whenHandedOver [ fhir:value "2026-03-01T15:15:00+00:00"^^xsd:dateTime ] ;
+       fhir:MedicationDispense.dosageInstruction [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category" ] ;
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory" ] ;
+               fhir:Coding.code [ fhir:value "standard" ]
+             ]
+           ]
+         ] ;
+         fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ] ;
+         fhir:Dosage.patientInstruction [ fhir:value "Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein." ] ;
+         fhir:Dosage.timing [
+           fhir:Timing.repeat [
+             fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+             fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+             fhir:Timing.repeat.periodUnit [ fhir:value "d" ] ;
+             fhir:Timing.repeat.when [
+               fhir:value "MORN" ;
+               fhir:index 0
+             ]
+           ]
+         ] ;
+         fhir:Dosage.route [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung" ] ;
+             fhir:Coding.code [ fhir:value "100000073619" ] ;
+             fhir:Coding.display [ fhir:value "zum Einnehmen" ]
+           ]
+         ] ;
+         fhir:Dosage.doseAndRate [
+           fhir:index 0 ;
+           fhir:Dosage.doseAndRate.doseQuantity [
+             fhir:Quantity.unit [ fhir:value "Stück" ] ;
+             fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+             fhir:Quantity.code [ fhir:value "{Stueck}" ]
+           ]
+         ]
+       ]
+     ] ;
+     fhir:Bundle.entry.request [
+       fhir:Bundle.entry.request.method [ fhir:value "POST" ] ;
+       fhir:Bundle.entry.request.url [ fhir:value "MedicationDispense" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

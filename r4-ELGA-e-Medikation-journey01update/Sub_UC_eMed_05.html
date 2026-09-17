@@ -1,0 +1,844 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.AT.FHIR.ELGA.EMED.R4\​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05) - FHIR&reg; v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.7"}
+    h3,h4,h5,h6{--heading-prefix:"9.7"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- at-fhir-ig-template begin -->
+        <div class="row">
+          <div class="col-1">
+            <img src="assets/images/hl7atlogo.png" id="header-logo"/>
+          </div>
+          <div class="col-11">
+          <!-- at-fhir-ig-template end -->
+              <!-- Placeholder for child template header declarations -->
+
+            
+            <div id="ig-status">
+              <p>
+                <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
+                <span class="label label-info">0.1.1 - ci-build</span>
+              </p>
+            </div>
+          <!-- at-fhir-ig-template begin -->
+          </div>
+        </div>
+          <!-- at-fhir-ig-template end -->
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR&reg;</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- at-fhir-ig-template begin -->
+  <div role="alert" class="alert alert-warning">
+      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  </div>
+    <!-- at-fhir-ig-template end -->
+  <h2>​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sub_uc_emed_05_01---durchgeführte-abgabe-schreiben-dispense-write" id="markdown-toc-sub_uc_emed_05_01---durchgeführte-abgabe-schreiben-dispense-write">Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)</a></li>
+  <li><a href="#sub_uc_emed_05_02---durchgeführte-abgabe-verwerfen" id="markdown-toc-sub_uc_emed_05_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_05_02 - Durchgeführte Abgabe verwerfen</a></li>
+  <li><a href="#sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellen" id="markdown-toc-sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellen">Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen</a></li>
+  <li><a href="#sub_uc_emed_05_04---durchgeführte-abgabe-löschen-durch-elga-teilnehmer" id="markdown-toc-sub_uc_emed_05_04---durchgeführte-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_05_04 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)</a></li>
+</ul>
+
+</div>
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+  <!-- Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05) -->
+
+<h3 id="sub_uc_emed_05_01---durchgeführte-abgabe-schreiben-dispense-write">Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)</h3>
+
+<p>Ein berechtigter GDA (siehe <a href="actors.html#rollen-und-berechtigungen">Rollen und Berechtigungen</a>) dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgabe</a>.</p>
+
+<p>Je nachdem, ob ein ELGA-Kontakt vorliegt, werden zwei Zugriffsvarianten unterschieden:</p>
+
+<ul>
+  <li>Zugriffsvariante A: Durchgeführte Abgabe mit Kontakt</li>
+  <li>Zugriffsvariante B: Durchgeführte Abgabe ohne Kontakt</li>
+</ul>
+
+  <!-- TODO Links ergänzen -->
+
+<h4 id="zugriffsvariante-a-durchgeführte-abgabe-mit-kontakt-schreiben">Zugriffsvariante A: Durchgeführte Abgabe mit Kontakt schreiben</h4>
+
+<p>Erfolgt die Autorisierung des ELGA-Teilnehmers mit einer <strong>Kontaktbestätigung</strong> (z.B. über die e-card), kann der GDA auf die e-Medikation des ELGA-Teilnehmers zugreifen und sämtliche Arzneimittelabgaben dokumentieren.</p>
+
+<p>Dabei können sowohl Arzneimittelabgaben zu bestehenden <em>Geplanten Abgaben</em> als auch Arzneimittelabgaben ohne Bezug zu einer <em>Geplanten Abgabe</em>, beispielsweise OTC-Abgaben, erfasst werden.</p>
+
+<h5 id="ablauf">Ablauf</h5>
+
+<ol>
+  <li>Der GDA ruft zur Ermittlung und Prüfung der zu dokumentierenden Abgaben den <em>aktuellen Medikationsplan</em>, die zugehörigen <em>Geplanten Abgaben</em> sowie bereits dokumentierte <em>Durchgeführte Abgaben</em> ab.
+  <!-- Todo: Links zu Operation bzw. UC? ergänzen --></li>
+  <li>Der GDA ermittelt auf Basis dieser und der Informationen des Patienten die zu dokumentierenden Arzneimittelabgaben und erstellt die entsprechenden <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a> gemäß der jeweils zutreffenden Abgabeart.</li>
+  <li>Der GDA übermittelt die erstellten <em>Durchgeführten Abgaben</em> mittels POST <strong>$dispense-write</strong> als Transaction Bundle an die Fachanwendung.
+    <ul>
+      <li><em>Durchgeführte Abgaben</em> mit unterschiedlichen <em>e-Med GroupIdentifier</em> <strong>MÜSSEN</strong> in separaten Transaction Bundles übermittelt werden.</li>
+      <li>Die für die jeweilige Abgabeart erforderlichen Angaben und Referenzen sind in den entsprechenden Use Cases zu den Abgabearten beschrieben.</li>
+    </ul>
+  </li>
+  <li>Die Fachanwendung prüft die im Transaction Bundle enthaltenen <em>Durchgeführten Abgaben</em>.</li>
+  <li>Bei erfolgreicher Prüfung werden die <em>Durchgeführten Abgaben</em> gespeichert. Abhängig von der Abgabeart und der Anzahl der Einlösungen kann die Fachanwendung dabei den Status einer zugehörigen <em>Geplanten Abgabe</em> automatisch ändern. Die entsprechenden fachlichen Regeln sind in den Use Cases der jeweiligen Abgabearten beschrieben.</li>
+  <li>Bei erfolgreicher Verarbeitung bestätigt die Fachanwendung den Schreibvorgang mit <strong>HTTP 200 OK</strong>.</li>
+  <li>Schlägt die Prüfung des Transaction Bundles fehl, wird der Schreibvorgang mit einem <strong>OperationOutcome</strong> abgelehnt.</li>
+</ol>
+
+<p><br/>
+<a href="plantuml/UC_eMed_05_01_a.svg"><img src="plantuml/UC_eMed_05_01_a.svg" alt="overview" style="width:50%;" class="mx-auto"/></a></p>
+
+<h4 id="zugriffsvariante-b-durchgeführte-abgabe-ohne-kontakt-schreiben">Zugriffsvariante B: Durchgeführte Abgabe ohne Kontakt schreiben</h4>
+
+<p>Erfolgt der Zugriff <strong>ohne Kontaktbestätigung</strong> über den <strong><em>e-Med GroupIdentifier</em></strong> (z.B. codiert im Datamatrixcode eines e-Rezepts), kann der GDA ausschließlich <em>Durchgeführte Abgaben</em> in der e-Medikation dokumentieren, die sich auf die dem <em>e-Med GroupIdentifier</em> zugeordneten <em>Geplanten Abgaben</em> beziehen.</p>
+
+<p>Da kein weiterer ELGA-Zugriff auf die Medikationsdaten des ELGA-Teilnehmers möglich ist, können weder der aktuelle Medikationsplan noch weitere <em>Geplante Abgaben</em> oder <em>Durchgeführte Abgaben</em> abgerufen werden.</p>
+
+<p><br/>
+<a href="plantuml/UC_eMed_05_01_b.svg"><img src="plantuml/UC_eMed_05_01_b.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
+<br/></p>
+
+<h5 id="ablauf-1">Ablauf</h5>
+
+<ol>
+  <li>Der GDA ruft über GroupIdentifier-Search die dem vorliegenden <em>e-Med GroupIdentifier</em> zugehörigen <em>Geplanten Abgaben</em> und bereits dokumentierten <em>Durchgeführten Abgaben</em> ab.</li>
+  <li>Der GDA ermittelt auf Basis dieser und der Informationen des Patienten die zu dokumentierenden Arzneimittelabgaben und erstellt die entsprechenden <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a> gemäß der jeweils zutreffenden Abgabeart.</li>
+  <li>Der GDA übermittelt die neu erstellten <em>Durchgeführten Abgaben</em> mittels POST <strong>$dispense-write</strong> als Transaction Bundle an die e-Med Fachanwendung.</li>
+  <li>Die e-Med Fachanwendung prüft das Transaction Bundle und die darin enthaltenen <em>Durchgeführten Abgaben</em>, insbesondere deren Zuordnung zum vorliegenden <em>e-Med GroupIdentifier</em>.
+5.Bei erfolgreicher Prüfung werden die <em>Durchgeführten Abgaben</em> gespeichert. Abhängig von Abgabeart und Anzahl der Einlösungen kann die Fachanwendung automatisch eine Statusänderung der zugehörigen <em>Geplanten Abgabe</em> durchführen.</li>
+  <li>Bei erfolgreicher Verarbeitung bestätigt die Fachanwendung den Schreibvorgang mit <strong>HTTP 200 OK</strong>.</li>
+  <li>Schlägt die Prüfung des Transaction Bundles fehl, wird der Schreibvorgang mit einem <strong>OperationOutcome</strong> abgelehnt.</li>
+</ol>
+
+<h4 id="custom-operations">Custom Operations</h4>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$dispense-write: in Arbeit.
+</p>
+</div>
+
+  <!-- TODO
+- Benötigt $dispense-write ohne Kontakt eigene Operation? 
+- Welche Prüfungen müssen durch die Fachanwendung erfolgen?
+    - e-Med GroupIdentifer zeitlich noch nicht abgelaufen
+    - es existiert noch mindestens eine Geplante Abgabe im Status active
+    - enthaltene SVNr entspricht dem Patienten ? -->
+
+<h4 id="abgabearten">Abgabearten</h4>
+
+<p>Die fachlichen Varianten der <em>Durchgeführten Abgabe</em> (Abgabearten) werden in den folgenden Use Cases beschrieben:</p>
+
+<ul>
+  <li>Sub_UC_eMed_05_01_01 – Vollständige Einzelabgabe erfassen</li>
+  <li>Sub_UC_eMed_05_01_02 – Teilabgaben erfassen</li>
+  <li>Sub_UC_eMed_05_01_03 – Besorgerprozess</li>
+  <li>Sub_UC_eMed_05_01_04 – Leerabgabe erfassen</li>
+  <li>Sub_UC_eMed_05_01_05 – Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</li>
+  <li>Sub_UC_eMed_05_01_06 – Durchgeführte Abgabe nacherfassen</li>
+  <li>Sub_UC_eMed_05_01_07 – Substitution eines Arzneimittels erfassen</li>
+</ul>
+
+  <!-- TODO Links ergänzen -->
+
+<p>Für alle Abgabenvarianten gilt:</p>
+
+<ul>
+  <li>Der Status einer <em>Durchgeführten Abgabe</em> wird durch <strong><em>MedicationDispense.status</em></strong> (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der Durchgeführten Abgabe</a>) und <strong><em>MedicationDispense.type</em></strong> bestimmt und kann Auswirkungen auf den Status der zugehörigen <em>Geplanten Abgabe</em> haben (siehe <a href="workflowmanagement.html#abhängigkeiten-der-geplanten-abgabe-und-der-durchgeführten-abgaben">Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben</a>):
+    <ul>
+      <li>Über <em>MedicationDispense.type</em> werden Einzelabgabe, Teilabgaben/Besorgerprozess und Leerabgabe unterschieden (siehe <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>). Für Teilabgaben, Besorgerprozesse und Leerabgaben <strong>MUSS</strong> die jeweils vorgegebene <strong>Sequenz</strong> der zulässigen <em>MedicationDispense.type</em>-Werte eingehalten werden.</li>
+    </ul>
+  </li>
+  <li>Die tatsächlich abgegebene <strong>Packungsmenge</strong> <strong>MUSS</strong> in <em>MedicationDispense.quantity</em> angegeben werden. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden <em>Geplanten Abgabe</em>. 
+Eine <strong>Einlösung</strong> gilt als vollständig, wenn <em>MedicationDispense.type</em> den Wert <em>First Fill – Complete</em> oder <em>Part Fill - Complete</em> enthält. Die Anzahl der abgegebenen Packungen ist hierfür nicht maßgeblich.</li>
+  <li>
+    <p>Die Maximalanzahl der zulässigen Einlösungen wird durch die zugehörige <em>Geplanten Abgabe</em> bestimmt (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
+  </li>
+  <li>Wenn eine zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgabe</a> vorliegt, <strong>MUSS</strong> diese im Element <em>MedicationDispense.authorizingPrescription[geplanteAbgabe]</em> referenziert werden. Der zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">Planeintrag</a> <strong>MUSS</strong> über <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert werden. 
+  <!-- TODO: ist kommt die Referenz auf den Planeintrag zustande? Automatisch durch die Fachanwendung oder durch den GDA? -> ergänzen in Relevante Elmente --></li>
+</ul>
+
+<p>Die unterschiedlichen Arten der Abgabe und deren Abfolge sind dargestellt unter <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>.</p>
+
+<h5 id="sub_uc_emed_05_01_01---vollständige-einzelabgabe-erfassen">Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen</h5>
+
+<p><a name="l800">​</a>Eine vollständige Einzelabgabe liegt vor, wenn die in der <em>Geplanten Abgabe</em> verordnete Arzneimenge für eine Einlösung vollständig abgegeben wird. Existiert keine zugehörige <em>Geplante Abgabe</em>, ist <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">Sub_UC_eMed_05_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</a> anzuwenden.</p>
+
+<p>Bei einer vollständigen Einzelabgabe <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> wie folgt erstellt werden:</p>
+<ul>
+  <li><em>MedicationDispense.type = FFC (First Fill – Complete)</em> und <em>MedicationDispense.status = completed</em></li>
+</ul>
+
+<p>Existiert eine zugehörige <em>Geplante Abgabe</em>, prüft die Fachanwendung anhand <em>MedicationRequest.numberOfRepeatsAllowed</em>, ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Ist nur eine <strong>einmalige Einlösung</strong> möglich (z.B. Kassenrezept), setzt die Fachanwendung die <em>Geplanten Abgabe</em> auf den Status <em>completed</em>.</p>
+
+<p>Ermöglicht die <em>Geplante Abgabe</em> <strong>mehrere Einlösungen</strong> (<em>MedicationRequest.numberOfRepeatsAllowed</em> &gt; 0),
+wird je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt. Der Status der <em>Geplanten Abgabe</em> bleibt solange <em>active</em>, bis die letztmögliche Einlösung erfolgt ist (siehe<a href="Sub_UC_eMed_04.html#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
+
+<h5 id="relevante-elemente-medicationdispense">Relevante Elemente (MedicationDispense)</h5>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
+    recorded: Datum der Erstellung der Durchgeführten Abgabe
+    identifier: e-Med GroupIdentifier  // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
+    status: completed    
+    medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
+    subject: Patient
+    performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
+    authorizingPrescription[geplanteabgabe]: Verpflichtende Referenz auf zugehörige Geplante Abgabe
+    authorizingPrescription[planeintrag]: Verpflichtende Referenz auf Planeintrag
+    type: FFC (First Fill - Complete)  // Art der Abgabe
+    quantity: Abgegebene Packungen      // Packungen je Einlösung
+    whenHandedOver: Zeitpunkt der Arzneimittelaushändigung
+    dosageInstruction: optional Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation
+</code></pre>
+
+<h5 id="sub_uc_emed_05_01_02---teilabgaben-erfassen">Sub_UC_eMed_05_01_02 - Teilabgaben erfassen</h5>
+
+<p>Eine Teilabgabe liegt vor, wenn die in der <em>Geplanten Abgabe</em> verordneten Arzneimenge nicht vollständig abgegeben wird, weil nur ein Teil der verordneten Arzneimenge eingelöst werden soll oder kann.</p>
+
+<p><a name="l889">​</a>Sonderfälle von Teilabgaben sind Besorgerprozess (siehe <a href="Sub_UC_eMed_05_01_03---besorgerprozess">Sub_UC_eMed_05_01_03 - Besorgerprozess</a>) und Leerabgabe (siehe <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01_05-leerabgabe-erfassen">Sub_UC_eMed_05_01_05 Leerabgabe erfassen</a>).</p>
+
+<p>Für jede Teilabgabe <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> erstellt werden. Dabei gelten folgende Regeln:</p>
+<ul>
+  <li><em>MedicationDispense.type</em> <strong>MUSS</strong>
+    <ul>
+      <li>bei der ersten Teilabgabe den Wert <em>FFP (First Fill – Part Fill)</em>,</li>
+      <li>bei jeder weiteren Teilabgabe den Wert <em>RFP (Refill – Part Fill)</em> und</li>
+      <li>bei der letzten Teilabgabe, d.h. sobald die in der <em>Geplanten Abgabe</em> verordnete Arzneimenge (für eine Einlösung) vollständig abgegeben wurde, den Wert <em>RFC (Refill – Complete)</em>
+enthalten.</li>
+    </ul>
+  </li>
+  <li><em>MedicationDispense.status</em> <strong>MUSS</strong> den Wert <em>completed</em> enthalten.</li>
+  <li><em>MedicationDispense.quantity</em> <strong>MUSS</strong> die <strong>Anzahl der tatsächlich abgegebenen Packungen</strong> enthalten.</li>
+</ul>
+
+<p>Die Gültigkeit einer <em>Geplanten Abgabe</em> verlängert sich im Zuge von Teilabgaben (siehe <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</a>).</p>
+
+<p>Sobald eine Teilabgabe durchgeführt wurde (<em>Part Fill</em>), ist die Einlösung einer weiteren Teilabgabe in einer anderen Apotheke nicht mehr möglich, d.h. die Apotheke <strong>MUSS</strong> die Teilabgaben mit einem <em>complete</em> abschließen.</p>
+
+<p>Vor dem Speichern einer neuen <em>Durchgeführten Abgabe</em> <strong>MUSS</strong> die Fachanwendung prüfen,</p>
+<ul>
+  <li>ob ein zulässiger Wert für <em>MedicationDispense.typ</em> verwendet wird, und</li>
+  <li>ob die Anzahl der <em>Durchgeführten Abgaben</em> mit <em>MedicationDispense.type = FFC (First Fill – Complete)</em> bzw. <em>MedicationDispense.type = RFC (Refill – Complete)</em> die gemäß <em>MedicationRequest.numberOfRepeatsAllowed</em> zulässige Anzahl zusätzlicher Einlösungen nicht überschreitet.</li>
+</ul>
+
+<p>Der Status der <em>Geplanten Abgabe</em> bleibt <em>active</em>, solange weitere Einlösungen zulässig sind. Sind keine weiteren Einlösungen mehr möglich, setzt die Fachanwendung den Status der <em>Geplanten Abgabe</em> auf <em>completed</em>.</p>
+
+<p>Um die durch <em>MedicationDispense.type</em> definierte Sequenz <em>FFP → RFP → RFC</em> konsistent zu halten, darf immer nur die zuletzt gespeicherte <em>Durchgeführte Abgabe</em> verworfen werden. Mehrere <em>Durchgeführte Abgaben</em> können nur sequenziell in umgekehrter Reihenfolge ihrer Erstellung verworfen werden.</p>
+
+  <!-- TODO: Prüfen ob hier nicht Storno gemeint ist: nur eigene stornierbar -->
+
+<h6 id="relevante-elemente-medicationdispense-1">Relevante Elemente (MedicationDispense)</h6>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
+    recorded: Datum der Erstellung der Durchgeführten Abgabe
+    identifier: e-Med GroupIdentifier  
+    status: completed    
+    medicationReference.reference: Tatsächlich abgegebenes Medikament // Contained Medication
+    subject: Patient
+    performer: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
+    authorizingPrescription[geplanteabgabe]: Verpflichtende Referenz auf zugehörige Geplante Abgabe
+    authorizingPrescription[planeintrag]: Verpflichtende Referenz auf Planeintrag
+    type: FFC (First Fill - Complete) | (Refill - Part Fill) // 1. Teilabgabe, weitere Teilabgabe bestellen
+    quantity: Abgegebene Packungen  // je Teilabgabe       
+    whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
+    dosageInstruction: optional Dosierung + Einnahmezeitraum (ab sofort | in der Zukunft)  // angepasst an abgegebene Medikation
+</code></pre>
+
+<h5 id="sub_uc_emed_05_01_03---besorgerprozess">Sub_UC_eMed_05_01_03 - Besorgerprozess</h5>
+
+<p>Ein Besorgerprozess liegt vor, wenn das in der <em>Geplanten Abgabe</em> verordnete Arzneimittel <strong>bestellt oder zubereitet</strong> werden muss (es findet noch <strong>keine Abgabe</strong> statt). Die <em>Geplanten Abgabe</em> kann daraufhin nicht mehr in einer anderen Apotheke eingelöst werden.</p>
+
+<p>Entsprechend den Regeln für Teilabgaben <strong>MUSS</strong> eine <em>Durchgeführte Abgabe</em> wie folgt erstellt werden:</p>
+<ul>
+  <li><em>MedicationDispense.type</em> <strong>MUSS</strong> enthalten:
+    <ul>
+      <li>zu Beginn des Besorgerprozesses: <em>MedicationDispense.type = FFP (First Fill – Part Fill)</em>,</li>
+      <li>nach bereits erfolgten Teilabgaben: <em>MedicationDispense.type = FFP (Refill – Part Fill)</em></li>
+    </ul>
+  </li>
+  <li><em>MedicationDispense.status</em> <strong>MUSS</strong> den Wert <em>completed</em> enthalten.</li>
+  <li>Die abgegebenen Packungen <strong>MÜSSEN</strong> mit <em>MedicationDispense.quantity</em> = <strong>0</strong> dokumentiert werden.</li>
+</ul>
+
+<p>Wird das bestellte/zubereitete Arzneimittel ausgehändigt, wird dies in Form einer Teilabgabe mit der abgegebenen Menge dokumentiert, siehe <a href="null">Sub_UC_eMed_05_01_02 - Teilabgaben erfassen</a>. 
+Die <em>MedicationDispense.type</em>-Sequenz <em>FFP → RFP → RFC</em> muss dabei konsistent gehalten werden.</p>
+
+<p>Im Fall einer Bestellung mit gleichzeitiger Teilabgabe wird nur die Teilabgabe dokumentert.</p>
+
+<p>Der Status der <em>Geplanten Abgabe</em> bleibt während des Besorgerprozesses <em>active</em>.</p>
+
+<h5 id="sub_uc_emed_05_01_04-leerabgabe-erfassen">Sub_UC_eMed_05_01_04 Leerabgabe erfassen</h5>
+
+<p>Mit einer <em>Leerabgabe</em> dokumentiert der GDA (Apotheker bzw. Arzt mit Hausapotheke), dass der Patient ein Arzneimittel einer <em>Geplanten Abgabe</em> nicht benötigt. Hierfür erstellt er eine <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführte Abgabe</a> wie folgt:</p>
+
+<ul>
+  <li><em>MedicationDispense.type</em> <strong>MUSS</strong>
+    <ul>
+      <li>im Fall einer Beendigung einer Einzelabgabe: <em>MedicationDispense.type = FFC (First Fill Complete)</em>,</li>
+      <li>im Fall einer Beendigung einer Teilabgabe: <em>MedicationDispense.type = RFC (Refill - Complete)</em></li>
+    </ul>
+  </li>
+  <li><em>MedicationDispense.status</em> <strong>MUSS</strong> den Wert <em>cancelled</em> enthalten.</li>
+  <li>Die abgegebenen Packungen <strong>MÜSSEN</strong> mit <em>MedicationDispense.quantity</em> = <strong>0</strong> dokumentiert werden. 
+Dieser Einlösevorgang ist damit beendet.</li>
+</ul>
+
+  <!-- TODO zu prüfen: -->
+<p>Die Anzahl der möglichen Einlösungen einer <em>Geplanten Abgabe</em> reduziert sich nach einer Leerabgabe, d.h. sie bleibt weiterhin <em>active</em> bis die restlichen möglichen Einlösungen erfolgt sind oder sie zeitlich abläuft. Nur wenn alle möglichen Einlösungen mit <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</p>
+
+  <!-- Kann wieder rückgängig gemacht werden (durch Storno). (S31. v2 Absetzdatum + GDA relevant (statusChanged R6) -->
+
+<h5 id="sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">Sub_UC_eMed_05_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</h5>
+
+<p>In folgenden Fällen liegt bei der Erfassung einer <em>Durchgeführten Abgabe</em> keine zugehörige <em>Geplante Abgabe</em> vor:</p>
+<ul>
+  <li>Abgabe von nicht verordneten Arzneimitteln (Abgabe von wechselwirkungsrelevanten OTC)</li>
+  <li>wenn ein e-Rezept-Eintrag oder ein Papierrezept vorhanden ist, aber keine zugehörige <em>Geplante Abgabe</em> in e-Medikation existiert.</li>
+</ul>
+
+<p>Die Felder authorizingPrescription[geplanteabgabe] für die Referenz auf die zugehörige Geplante Abgabe und authorizingPrescription[planeintrag] für die Verpflichtende Referenz auf den Planeintrag bleiben leer. Ein berechtigter GDA kann im Nachhinein einen Bezug zwischen der <em>Durchgeführten Abgabe</em> und einem <em>Planeintrag</em> herstellen, (siehe Sub_UC_eMed_05_03 - Bezug zu einer Geplanten Abgabe herstellen).</p>
+
+<p><a name="l1277">​</a>Analog zu <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01_01---vollständige-einzelabgabe-erfassen">Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen</a> gilt bei der Erstellung der <em>Durchgeführten Abgabe</em>:</p>
+<ul>
+  <li><em>MedicationDispense.type = FFC (First Fill – Complete)</em> und <em>MedicationDispense.status = completed</em></li>
+</ul>
+
+<h5 id="sub_uc_emed_05_01_06---durchgeführte-abgabe-nacherfassen">Sub_UC_eMed_05_01_06 - Durchgeführte Abgabe nacherfassen</h5>
+
+<p>Bei der Nacherfassung bereits abgegebener Arzneimittel (z.B. wenn eine Speicherung zum Zeitpunkt der Abgabe aus technischen Gründen nicht möglich war oder bei Arzneimittelbezug aus dem Ausland), wird als Erfassungsdatum der Zeitpunkt der Nacherfassung gesetzt, während als Abgabedatum das tatsächliche Datum der Abgabe in der Vergangenheit eingetragen wird.</p>
+
+<p>Alle weiteren Elemente sind entsprechend der Abgabeart zu befüllen.</p>
+
+<h6 id="relevante-elemente-medicationdispense-2">Relevante Elemente (MedicationDispense)</h6>
+
+<pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
+    recorded: Datum der Nacherfassung
+    whenHandedOver: Der Zeitpunkt, zu dem das abgegebene Produkt ausgehändigt wurde
+</code></pre>
+
+<h5 id="sub_uc_emed_05_01_07-substitution-eines-arzneimittels-erfassen">Sub_UC_eMed_05_01_07 Substitution eines Arzneimittels erfassen</h5>
+
+<p>Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Referenz auf die zugehörige <em>Geplante Abgabe</em> bzw. den <em>Planeintrag</em>.</p>
+
+  <!-- Begrüdung verpflichtend? -->
+
+<h3 id="sub_uc_emed_05_02---durchgeführte-abgabe-verwerfen">Sub_UC_eMed_05_02 - Durchgeführte Abgabe verwerfen</h3>
+
+<p><a name="l1329">​</a>Ein GDA (Apotheke) kann von ihm erstellte <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgaben</a>, die sich im Status <em>completed</em> oder <em>cancelled</em> befinden, aufgrund eines Fehlers verwerfen.</p>
+
+<p>Um eine <em>Durchgeführte Abgabe</em> zu verwerfen, führt der GDA POST $dispense-discard aus:</p>
+<ul>
+  <li>Der Status wird auf <em>entered-in-error</em> gesetzt,</li>
+  <li>der verantwortliche GDA (<em>requester</em>) und das Datum in <em>recorded</em> werden entsprechend aktualisiert.</li>
+</ul>
+
+<p>Eine verworfene <em>Durchgeführte Abgabe</em> kann nicht mehr bearbeitet werden und ist nur noch aber über die Historie einsehbar.
+Wenn eine verworfene <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit weiteren <em>Geplanten Abgaben</em> ist (gleicher <em>e-Med GroupIdentifier</em>), wirkt sich dies nicht auf den Status der anderen Geplanten Abgaben aus.
+  <!-- TODO prüfen --></p>
+
+  <!-- TODO: Suchparameter nach stornierten Durchgeführten Abgaben? -->
+  <!-- TODO: Wenn stornierte *Durchgeführte Abgabe* Teil eines e-Rezepts mit weiteren geplanten Abgaben ist: Auswirkungen? keene -->
+
+<h4 id="custom-operations-1">Custom Operations</h4>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$dispense-discard: in Arbeit.
+</p>
+</div>
+
+<h3 id="sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellen">Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen</h3>
+
+<p>Sofern für die <em>Durchgeführten Abgabe</em> im nachhinein ein <em>Planeintrag</em> erstellt wird, <strong>KANN</strong> mit $reference-plan der <em>Planeintrag</em> (in <em>MedicationDispense.authorizingPrescription[planeintrag]</em>) referenziert werden.</p>
+
+  <!-- TODO: Wird Datum/Author aktualisert? -->
+
+<h4 id="custom-operations-2">Custom Operations</h4>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$reference-plan: in Arbeit.
+</p>
+</div>
+
+<h3 id="sub_uc_emed_05_04---durchgeführte-abgabe-löschen-durch-elga-teilnehmer">Sub_UC_eMed_05_04 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)</h3>
+  <!-- «DELETE» (delete) [PAT] -->
+<p>Der ELGA-Teilnehmer kann eine <em>Durchgeführte Abgabe</em> endgültig löschen.</p>
+
+<p>Die Löschung der <em>Durchgeführten Abgabe</em> umfasst:</p>
+
+<ul>
+  <li>die fachliche Entfernung der betreffenden <em>MedicationDispense-Ressource</em> sowie</li>
+  <li>die Entfernung aller zugehörigen historischen Ressourcenversionen (<em>_history</em>).</li>
+</ul>
+
+<p>Zum Löschen einer <em>Durchgeführte Abgabe</em> ruft der ELGA-Teilnehmer die betreffende <em>Durchgeführte Abgabe</em> im ELGA-Portal auf. Dieses führt zunächst eine Leseoperation auf die betreffende MedicationDispense-Ressource aus (GET MedicationDispense/[id]) und löscht anschließend die betreffende Geplante Abgabe mittels DELETE (DELETE [base]/MedicationDispense/[id]).</p>
+
+<p>Die Ressource einschließlich aller historischen Versionen darf nach erfolgreicher Löschung weder über reguläre FHIR-Interaktionen noch über administrative Schnittstellen abrufbar sein.
+  <!-- Todo: Auswirkunung auf bestehende Geplante Abgaben? Darf nicht wieder active werden --></p>
+
+  <!-- #### Beispiel
+
+#### Technische Hinweise
+
+#### Relevante Profile
+
+#### Relevante Invarianten
+
+#### Mögliche Notifications -->
+
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 17, 2026 14:47+0000">2026-09-17</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)"></span>
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+    
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+
+  <!-- Analytics Below
+================================================== -->
+</body>
+</html>
