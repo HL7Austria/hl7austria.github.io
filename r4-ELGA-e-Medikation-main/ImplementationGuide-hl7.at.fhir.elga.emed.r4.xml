@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-09-17T12:33:54+00:00"/>
+  <date value="2026-09-18T07:05:38+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -93,14 +93,6 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueString value="excludettl"/>
-      </extension>
-      <extension url="value">
-        <valueString value="true"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueString value="no-ig-database"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -312,14 +304,6 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueCode value="excludettl"/>
-      </extension>
-      <extension url="value">
-        <valueString value="true"/>
-      </extension>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
-      <extension url="code">
-        <valueCode value="no-ig-database"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -727,6 +711,26 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/at-emed-journey-01-01-02-bundle-geplanteAbgaben"/>
+      </reference>
+      <name value="at-emed-journey-01-01-02-bundle-geplanteAbgaben"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben"/>
+      </reference>
+      <name value="at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -825,21 +829,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="List"/>
-      </extension>
-      <reference>
-        <reference value="List/At-Emed-Journey-01-01-List-Medikationsplan"/>
-      </reference>
-      <name value="Beispiel Journey 01-01: Leerer Medikationsplan"/>
-      <description value="Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-01-01-Bundle-Medikationsplan"/>
+        <reference value="Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 01-01: Medikationsplan-Bundle"/>
       <description value="Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
@@ -1276,6 +1269,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/elga-medikationrezeptart"/>
+      </reference>
+      <name value="ELGA_MedikationRezeptart"/>
+      <description value="**Description:** ELGA ValueSet for Prescription type&#xA;&#xA;**Beschreibung:** ELGA ValueSet für RezeptArt"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
@@ -1295,6 +1299,28 @@
       <name value="eMed Operation für GroupIdentifier-Create"/>
       <description value="Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/medikationrezeptart"/>
+      </reference>
+      <name value="MedikationRezeptart"/>
+      <description value="**Description:** ELGA Codelist for Prescription type&#xA;&#xA;**Beschreibung:** ELGA Codeliste für RezeptArt"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/Journey-01-01-Request-Body-01"/>
+      </reference>
+      <name value="TBD"/>
+      <description value="TBD"/>
+      <exampleBoolean value="true"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

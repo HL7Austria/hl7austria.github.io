@@ -53,7 +53,7 @@
   {
     "coding" : [{
       "system" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
-      "code" : "1",
+      "code" : "KASSEN",
       "display" : "Kassenrezept"
     }]
   }],

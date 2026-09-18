@@ -117,6 +117,7 @@ These define sets of codes used by systems conforming to this implementation gui
 | [ELGA e-Med MedicationRequest Kategorie ValueSet](ValueSet-MedicationRequestCategoryVS.md) | ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen |
 | [ELGA e-Med Medikationsplaneintrag Status Value Set](ValueSet-PlaneintragStatusVS.md) | ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest). |
 | [ELGA e-Med Medikationsplaneintrag StatusReason Value Set](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) | ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest). |
+| [ELGA_MedikationRezeptart](ValueSet-elga-medikationrezeptart.md) | **Description:** ELGA ValueSet for Prescription type**Beschreibung:** ELGA ValueSet für RezeptArt |
 
 ### Terminology: Code Systems 
 
@@ -128,6 +129,7 @@ These define new code systems used by systems conforming to this implementation 
 | [ELGA List.entry.flag CodeSystem](CodeSystem-ElgaListEntryFlagCS.md) | CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA. |
 | [ELGA e-Med MedicationRequest Kategorie CodeSystem](CodeSystem-MedicationRequestCategoryCS.md) | Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen. |
 | [ELGA e-Med MedicationRequest Planeintrag StatusReason CodeSystem](CodeSystem-AtElgaEmedCodeSystemPlaneintragStatusReasonCS.md) | Codesystem für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest). |
+| [MedikationRezeptart](CodeSystem-medikationrezeptart.md) | **Description:** ELGA Codelist for Prescription type**Beschreibung:** ELGA Codeliste für RezeptArt |
 
 ### Example: Example Instances 
 
@@ -139,8 +141,7 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Example Medikationsplaneintrag](MedicationRequest-At-Emed-Example-Mr-Planeintrag.md) | Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
 | [Beispiel Example: Substance Clotrimazol](Substance-At-Emed-Example-Substance-Clotrimazol.md) | Beispiel einer Substance Clotrimazol. |
 | [Beispiel Example: Substance Hydrocortison](Substance-At-Emed-Example-Substance-Hydrocortison.md) | Beispiel einer Substance Hydrocortison. |
-| [Beispiel Journey 01-01: Leerer Medikationsplan](List-At-Emed-Journey-01-01-List-Medikationsplan.md) | Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge) |
-| [Beispiel Journey 01-01: Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
+| [Beispiel Journey 01-01: Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet. |
 | [Beispiel Journey 01-02: Medikationsplan](List-At-Emed-Journey-01-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert. |
 | [Beispiel Journey 01-02: Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert. |
@@ -163,4 +164,7 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Organisation Apotheke 01](Organization-At-Emed-Example-Organization-Apo-01.md) | Beispiel einer Apotheke als Organisation. |
 | [Beispiel Patient 01](Patient-At-Emed-Example-Patient-01.md) | Beispiel eines Patienten. |
 | [Beispiel Ärztin 02](Practitioner-At-Emed-Example-Practitioner-02.md) | Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation). |
+| [TBD](Parameters-Journey-01-01-Request-Body-01.md) | TBD |
+| [at-emed-journey-01-01-02-bundle-geplanteAbgaben](Bundle-at-emed-journey-01-01-02-bundle-geplanteAbgaben.md) |  |
+| [at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben](Bundle-at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben.md) |  |
 

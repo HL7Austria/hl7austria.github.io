@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan | *Version*:0.1.1 | |
-| Draft as of 2026-09-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
+| Draft as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
 
  
 Das Bundle vom Typ Searchset bestehend aus: 
@@ -19,7 +19,7 @@ Das Bundle vom Typ Searchset bestehend aus:
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Journey-01-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplan.json)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-17T12:33:54+00:00",
+  "date" : "2026-09-18T07:05:38+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

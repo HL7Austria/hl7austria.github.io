@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx | *Version*:0.1.1 | |
-| Draft as of 2026-09-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleGeplanteAbgabenTx |
+| Draft as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleGeplanteAbgabenTx |
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, die gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleGeplanteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle geplante Abgaben",
   "status" : "draft",
-  "date" : "2026-09-17T12:33:54+00:00",
+  "date" : "2026-09-18T07:05:38+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -114,8 +114,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "path" : "Bundle.entry",
       "slicing" : {
         "discriminator" : [{
-          "type" : "value",
-          "path" : "resource.category"
+          "type" : "type",
+          "path" : "resource"
         }],
         "rules" : "closed"
       },

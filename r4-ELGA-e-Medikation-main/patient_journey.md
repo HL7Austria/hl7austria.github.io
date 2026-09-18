@@ -8,6 +8,8 @@
 
 Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der **Medikationsplan** eines Patienten mit den zugehörigen **Geplanten Abgaben** und den **Durchgeführten Abgaben** verändern kann.
 
+Eine fachliche Übersicht mit reduziertem Detailgrad findet sich am Ende dieses Kapitels [Übersicht Patient Journey](patient_journey.md#übersicht-patient-journey).
+
 ### Journey-01: 27.2.2026 - Erster Arztbesuch
 
 Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausärztin. Außerdem hat er einen leichten Hautausschlag bemerkt.
@@ -33,10 +35,48 @@ Use Cases
 *  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
 *  [Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_03---initial-erstellter-medikationsplan) 
 
-Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie **Ramipril 5 mg Tabletten**, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag **Dexpanthenol-5-%-Salbe**, 2 × täglich für 3 Wochen, dünn aufzutragen.
- Sie speichert den neuen Medikationsplan.
+##### Request 01 - Medikationsplan abrufen
+
+Request
+
+POST
+`[base]/List/$plan-read`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+
+Response Body
+
+##### Request 02 - geplante Abgaben Abrufen
+
+Request
+
+GET
+`[base]/MedicationRequest?category=https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS|2&status=active`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Response Body
+
+##### Request 03 - durchgeführte Abgaben Abrufen
+
+Request
+
+GET
+`[base]/MedicationDispense?recorded=lt2025-01-01`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Response Body
 
 #### Journey-01-02
+
+Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten über die Anwendung auf: gegen die arterielle Hypertonie **Ramipril 5 mg Tabletten**, 1 x täglich morgens (Dauermedikation) und gegen den Hautausschlag **Dexpanthenol-5-%-Salbe**, 2 × täglich für 3 Wochen, dünn aufzutragen.
+ Sie speichert den neuen Medikationsplan.
 
 Beispiele
 
@@ -153,21 +193,22 @@ Use Cases
 
  ![](plantuml/patient_journey_03.svg) 
 
-### Journey-04: 2.3.2026 - Patient ruft Medikationsplan ab
+### Journey-04: 7.3.2026 - Patient ruft Medikationsplan ab
 
-Herr Mustermann erinnert sich nicht, welches Medikament er wie einnehmen soll und ruft im Zugangsportal seine e-Medikation auf.
-
-* **Aktuellen Medikationsplan anzeigen:**
+Herr Mustermann erinnert sich nicht, wie lange er die Dexpanthenol-Salbe anwenden soll. Er ruft im Zugangsportal seine e-Medikation auf und erhält Einsicht auf seinen aktuellen **Medikationsplan** mit den Planeinträgen zur Dauermedikation Ramipril und der Dexpanthenol-Salbe. Dem Planeintrag der Dexpanthenol-Salbe kann er entnehmen, dass die Salbe für 3 Wochen anzuwenden ist. Er kann auch sehen, dass er keine offenen **Geplanten Abgaben** hat und sieht in den **Durchgeführten Abgaben**, wann er die Arzneimittel abgeholt hat
 
 #### Journey-04
 
 Beispiele
 
 *  **aktueller Medikationsplan:** 
-* In Arbeit.  
+* Bundle in Arbeit. 
  
 *  **Gepante Abgaben:** 
-* Bundle in Arbeit.  
+* Bundle in Arbeit. 
+ 
+*  **Durchgeführte Abgaben:** 
+* Bundle in Arbeit. 
  
 
 Use Cases
@@ -180,15 +221,20 @@ Use Cases
 
  ![](plantuml/patient_journey_04.svg) 
 
-**3.3.2026: Präoperativer Hausarzttermin**
+### Journey-05: 14.3.2026 - Präoperativer Hausarzttermin
 
-Bei Herrn Mustermann steht eine geplante Leistenbruchoperation an. Vor der Operation bespricht er die bestehende Medikation mit seiner Hausärztin.
+Bei Herrn Mustermann steht eine geplante Leistenbruchoperation an, welche für den 24.3.2026 vorgesehen ist.
 
-Die geplante Leistenbruchoperation ist für den 5.3.2026 vorgesehen.
+Vor der Operation bespricht er die bestehende Medikation mit seiner Hausärztin, welche seine aktuelle e-Medikation abruft.
 
-Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen.
+Die geplante Leistenbruchoperation ist für den 24.3.2026 vorgesehen.
 
-* **Medikationsplan mit pausiertem Planeintrag aktualisieren:** in Arbeit. 
+Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen und pausiert den Planeintrag.
+
+ Offene Punkte:
+ Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche pausiert werden", umgesetzt werden kann. Ein zukünftiger, zeitgesteuerter Statuswechsel auf on-hold ist nicht möglich. 
+
+* **Medikationsplan mit pausiertem Planeintrag aktualisieren:** in Arbeit.  
 
 **5.3.2026: Geplante Leistenbruchoperation**
 
@@ -232,5 +278,7 @@ Die postoperative Schmerztherapie ist nicht mehr erforderlich. Der Planeintrag f
 
 * **Planeinträge beenden und Medikationsplan aktualisieren:** in Arbeit.
 
- ![](plantuml/patient_journey.svg) 
+### Übersicht Patient Journey
+
+ ![](plantuml/patient_journey_overview.svg) 
 

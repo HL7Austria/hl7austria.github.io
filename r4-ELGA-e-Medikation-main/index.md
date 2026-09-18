@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-17T12:33:54+00:00",
+  "date" : "2026-09-18T07:05:38+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -133,17 +133,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "code",
         "valueString" : "excludettl"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "no-ig-database"
       },
       {
         "url" : "value",
@@ -434,17 +423,6 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "extension" : [{
         "url" : "code",
         "valueCode" : "excludettl"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueCode" : "no-ig-database"
       },
       {
         "url" : "value",
@@ -1014,6 +992,36 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-at-emed-journey-01-01-02-bundle-geplanteAbgaben.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/at-emed-journey-01-01-02-bundle-geplanteAbgaben"
+      },
+      "name" : "at-emed-journey-01-01-02-bundle-geplanteAbgaben",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben"
+      },
+      "name" : "at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       },
       {
@@ -1157,30 +1165,14 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-At-Emed-Journey-01-01-List-Medikationsplan.html"
-      }],
-      "reference" : {
-        "reference" : "List/At-Emed-Journey-01-01-List-Medikationsplan"
-      },
-      "name" : "Beispiel Journey 01-01: Leerer Medikationsplan",
-      "description" : "Beispiel eines leeren Mediaktionsplans (List-Ressource ohne Einträge)",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.html"
+        "valueUri" : "Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.html"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-01-01-Bundle-Medikationsplan"
+        "reference" : "Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"
       },
       "name" : "Beispiel Journey 01-01: Medikationsplan-Bundle",
       "description" : "Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
@@ -1813,6 +1805,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-elga-medikationrezeptart.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/elga-medikationrezeptart"
+      },
+      "name" : "ELGA_MedikationRezeptart",
+      "description" : "**Description:** ELGA ValueSet for Prescription type\n\n**Beschreibung:** ELGA ValueSet für RezeptArt",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       },
       {
@@ -1841,6 +1849,38 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "eMed Operation für GroupIdentifier-Create",
       "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-medikationrezeptart.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/medikationrezeptart"
+      },
+      "name" : "MedikationRezeptart",
+      "description" : "**Description:** ELGA Codelist for Prescription type\n\n**Beschreibung:** ELGA Codeliste für RezeptArt",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-Journey-01-01-Request-Body-01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Journey-01-01-Request-Body-01"
+      },
+      "name" : "TBD",
+      "description" : "TBD",
+      "exampleBoolean" : true
     }],
     "page" : {
       "extension" : [{
