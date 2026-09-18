@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtElgaEmed.List.PlanRead | *Version*:0.1.1 | |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtElgaEmed.List.PlanRead | *Version*:0.1.0 | |
 | Draft as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmed_List_PlanRead |
 
  
@@ -23,12 +23,12 @@ Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Inten
   "resourceType" : "OperationDefinition",
   "id" : "AtElgaEmed.List.PlanRead",
   "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtElgaEmed.List.PlanRead",
-  "version" : "0.1.1",
+  "version" : "0.1.0",
   "name" : "AtElgaEmed_List_PlanRead",
   "title" : "e-Med Operation für Plan-Read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-18T11:05:21+00:00",
+  "date" : "2026-09-18T13:55:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

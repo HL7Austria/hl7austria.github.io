@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeTypVS | *Version*:0.1.1 | |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeTypVS | *Version*:0.1.0 | |
 | Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:DurchgefuehrteAbgabeTypVS |
 
  
@@ -48,12 +48,12 @@ No Expansion for this valueset (Unsupported Code System Version)
   "resourceType" : "ValueSet",
   "id" : "DurchgefuehrteAbgabeTypVS",
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeTypVS",
-  "version" : "0.1.1",
+  "version" : "0.1.0",
   "name" : "DurchgefuehrteAbgabeTypVS",
   "title" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-18T11:05:21+00:00",
+  "date" : "2026-09-18T13:55:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

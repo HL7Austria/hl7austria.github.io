@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://termgit.elga.gv.at/CodeSystem/medikationrezeptart | *Version*:0.1.1 | |
+| *Official URL*:https://termgit.elga.gv.at/CodeSystem/medikationrezeptart | *Version*:0.1.0 | |
 | Active as of 2015-03-31 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:medikationrezeptart |
 | *Other Identifiers:*OID:1.2.40.0.10.1.4.3.4.3.3 (use: official, ) | | |
 
@@ -34,7 +34,7 @@
     "system" : "urn:ietf:rfc:3986",
     "value" : "urn:oid:1.2.40.0.10.1.4.3.4.3.3"
   }],
-  "version" : "0.1.1",
+  "version" : "0.1.0",
   "name" : "medikationrezeptart",
   "title" : "MedikationRezeptart",
   "status" : "active",

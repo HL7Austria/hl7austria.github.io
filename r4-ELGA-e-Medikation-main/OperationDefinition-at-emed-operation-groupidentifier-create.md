@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-emed-operation-groupidentifier-create | *Version*:0.1.1 | |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-emed-operation-groupidentifier-create | *Version*:0.1.0 | |
 | Draft as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedGroupIdentifierCreate |
 
  
@@ -23,12 +23,12 @@ Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdent
   "resourceType" : "OperationDefinition",
   "id" : "at-emed-operation-groupidentifier-create",
   "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-emed-operation-groupidentifier-create",
-  "version" : "0.1.1",
+  "version" : "0.1.0",
   "name" : "AtElgaEmedGroupIdentifierCreate",
   "title" : "eMed Operation für GroupIdentifier-Create",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-18T11:05:21+00:00",
+  "date" : "2026-09-18T13:55:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

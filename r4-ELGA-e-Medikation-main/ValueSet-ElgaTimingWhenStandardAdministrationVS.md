@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaTimingWhenStandardAdministrationVS | *Version*:0.1.1 | |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaTimingWhenStandardAdministrationVS | *Version*:0.1.0 | |
 | Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaTimingWhenStandardAdministrationVS |
 
  
@@ -46,12 +46,12 @@ ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine
   "resourceType" : "ValueSet",
   "id" : "ElgaTimingWhenStandardAdministrationVS",
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaTimingWhenStandardAdministrationVS",
-  "version" : "0.1.1",
+  "version" : "0.1.0",
   "name" : "ElgaTimingWhenStandardAdministrationVS",
   "title" : "ELGA Dosierung Timing When ValueSet für Tageszeitenschema",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-18T11:05:21+00:00",
+  "date" : "2026-09-18T13:55:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

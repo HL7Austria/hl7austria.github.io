@@ -58,7 +58,7 @@
             <div id="ig-status">
               <p>
                 <span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span><br/>
-                <span class="label label-info">0.1.1 - ci-build</span>
+                <span class="label label-info">0.1.0 - ci-build</span>
               </p>
             </div>
           <!-- at-fhir-ig-template begin -->
@@ -192,7 +192,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="col-12">
     <!-- at-fhir-ig-template begin -->
   <div role="alert" class="alert alert-warning">
-      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.1) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+      <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   </div>
     <!-- at-fhir-ig-template end -->
   <h2>Patient Journey</h2>
@@ -214,6 +214,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#journey-03-132026---abgabe-in-der-apotheke-teil-2" id="markdown-toc-journey-03-132026---abgabe-in-der-apotheke-teil-2">Journey-03: 1.3.2026 - Abgabe in der Apotheke (Teil 2)</a></li>
   <li><a href="#journey-04-732026---patient-ruft-medikationsplan-ab" id="markdown-toc-journey-04-732026---patient-ruft-medikationsplan-ab">Journey-04: 7.3.2026 - Patient ruft Medikationsplan ab</a></li>
   <li><a href="#journey-05-1432026---präoperativer-hausarzttermin" id="markdown-toc-journey-05-1432026---präoperativer-hausarzttermin">Journey-05: 14.3.2026 - Präoperativer Hausarzttermin</a></li>
+  <li><a href="#journey-05-ablauf---präoperativer-hausarzttermin" id="markdown-toc-journey-05-ablauf---präoperativer-hausarzttermin">Journey-05: Ablauf - Präoperativer Hausarzttermin</a></li>
   <li><a href="#übersicht-patient-journey" id="markdown-toc-übersicht-patient-journey">Übersicht Patient Journey</a></li>
 </ul>
 
@@ -477,7 +478,7 @@ Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilab
         <li>
           <strong>Leerer Medikationsplan:</strong>(EmptyReason = notstarted) 
           <ul>
-            <li><a name="l478">​</a>
+            <li><a name="l482">​</a>
               <a href="Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.html">Medikationsplan-Bundle</a>
             </li>
             <li>
@@ -499,10 +500,10 @@ Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilab
         <li>
           <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
         </li>
-        <li><a name="l518">​</a>
+        <li><a name="l522">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
         </li>
-        <li><a name="l524">​</a>
+        <li><a name="l528">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
         </li>
         <li>
@@ -950,9 +951,10 @@ dispense-search -->
 
 <p>Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.</p>
 
+<h4 id="journey-01-03">Journey-01-03</h4>
+
 <p>Dr. Hausärztin erstellt für beide Medikamente ein Kassenrezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer <em>Geplante Abgabe</em> in der e-Medikation. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.</p>
 
-<h4 id="journey-01-03">Journey-01-03</h4>
 <div class="tabs">
   <div class="tab">
     <input name="tab-group-patient-journey-01-03" checked="true" id="tab-beispiele-01-03" type="radio"/>
@@ -997,7 +999,7 @@ dispense-search -->
   </div>
 </div>
 
-<h4 id="ablauf-erstbesuch">Ablauf Erstbesuch</h4>
+<h4 id="journey-01-ablauf---erster-arztbesuch">Journey-01: Ablauf - Erster Arztbesuch</h4>
 <p><br/>
 <a href="plantuml/patient_journey_01.svg"><img src="plantuml/patient_journey_01.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
@@ -1010,13 +1012,12 @@ dispense-search -->
 
 <p>Sie händigt das Medikament Ramipril aus, erklärt die Einnahme und erstellt eine <em>Durchgeführte Abgabe</em> (<strong>Vollständige Abgabe</strong>).</p>
 
-<p>Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine Durchgeführte Abgabe mit dem <em>Type = "First Fill – Part Fill"</em> und der abgegebenen Menge (<em>quantity</em>) Null.</p>
-
-<p>Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine <em>Durchgeführte Abgabe</em> und dokumentiert darin entsprechend dem <strong>Besorgerprozess</strong> <em>type = First Fill – Part Fill</em> und <em>MedicationDispense.quantity = 0</em>.</p>
+<p>Die Dexpanthenol-Salbe muss noch hergestellt werden. Die Apothekerin erstellt eine <em>Durchgeführte Abgabe</em> und dokumentiert darin den <strong>Besorgerprozess</strong> <em>type = First Fill – Part Fill</em> und abgegebene Menge <em>quantity = 0</em>.</p>
 
 <p>Anschließend speichert sie die neuen <em>Durchgeführte Abgaben</em> in der e-Medikation. Da für Ramipril keine weitere Einlösung möglich ist (Kassenrezept), wird die zugehörige <em>Geplante Abgabe</em> automatisch abgeschlossen (<em>completed</em>).</p>
 
-<h4 id="journey-02">Journey-02</h4>
+  <!-- #### Journey-02 -->
+
 <div class="tabs">
   <div class="tab">
     <input name="tab-group-patient-journey-02-01" checked="true" id="tab-beispiele-02-01" type="radio"/>
@@ -1056,10 +1057,10 @@ dispense-search -->
       <li>
           <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
         </li>
-        <li><a name="l1561">​</a>
+        <li><a name="l1555">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
         </li>
-        <li><a name="l1567">​</a>
+        <li><a name="l1561">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
         </li>
         <li>
@@ -1076,7 +1077,7 @@ dispense-search -->
   </div>
 </div>
 
-<h4 id="ablauf-abgabe-in-der-apotheke-teil-1">Ablauf Abgabe in der Apotheke (Teil 1)</h4>
+<h4 id="journey-02-ablauf---abgabe-in-der-apotheke-teil-1">Journey-02: Ablauf - Abgabe in der Apotheke (Teil 1)</h4>
 
 <p><br/>
 <a href="plantuml/patient_journey_02.svg"><img src="plantuml/patient_journey_02.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
@@ -1092,7 +1093,7 @@ Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt
 
 <p>Anschließend speichert sie die neue <em>Durchgeführte Abgabe</em> in der e-Medikation. Da für die Dexpanthenol-Salbe keine weitere Einlösung möglich ist (Kassenrezept), wird die zugehörige <em>Geplante Abgabe</em> automatisch abgeschlossen (<em>completed</em>).</p>
 
-<h4 id="journey-03">Journey-03</h4>
+  <!-- #### Journey-03 -->
 
 <div class="tabs">
   <div class="tab">
@@ -1127,10 +1128,10 @@ Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt
       <li>
           <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
         </li>
-        <li><a name="l1708">​</a>
+        <li><a name="l1701">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
         </li>
-        <li><a name="l1714">​</a>
+        <li><a name="l1707">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
         </li>
         <li>
@@ -1144,7 +1145,7 @@ Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt
   </div>
 </div>
 
-<h4 id="ablauf-abgabe-in-der-apotheke-teil-2">Ablauf Abgabe in der Apotheke (Teil 2)</h4>
+<h4 id="journey-03-ablauf---abgabe-in-der-apotheke-teil-2">Journey-03: Ablauf - Abgabe in der Apotheke (Teil 2)</h4>
 
 <p><br/>
 <a href="plantuml/patient_journey_03.svg"><img src="plantuml/patient_journey_03.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
@@ -1155,7 +1156,7 @@ Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt
 <p>Herr Mustermann erinnert sich nicht, wie lange er die Dexpanthenol-Salbe anwenden soll. Er ruft im Zugangsportal seine e-Medikation auf und erhält Einsicht auf seinen aktuellen <em>Medikationsplan</em> mit den Planeinträgen zur Dauermedikation Ramipril und der Dexpanthenol-Salbe. Dem Planeintrag der Dexpanthenol-Salbe kann er entnehmen, dass die Salbe für 3 Wochen anzuwenden ist.
 Er kann auch sehen, dass er keine offenen <em>Geplanten Abgaben</em> hat und sieht in den <em>Durchgeführten Abgaben</em>, wann er die Arzneimittel abgeholt hat</p>
 
-<h4 id="journey-04">Journey-04</h4>
+  <!-- #### Journey-04 -->
 
 <div class="tabs">
   <div class="tab">
@@ -1171,7 +1172,7 @@ Er kann auch sehen, dass er keine offenen <em>Geplanten Abgaben</em> hat und sie
           </ul>
         </li>
         <li>
-          <strong>Gepante Abgaben:</strong>
+          <strong>Geplante Abgaben:</strong>
           <ul>
             <li>Bundle in Arbeit.
             </li>
@@ -1195,10 +1196,10 @@ Er kann auch sehen, dass er keine offenen <em>Geplanten Abgaben</em> hat und sie
       <li>
           <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
         </li>
-        <li><a name="l1834">​</a>
+        <li><a name="l1826">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
         </li>
-        <li><a name="l1840">​</a>
+        <li><a name="l1832">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
         </li>
       </ul>
@@ -1206,7 +1207,7 @@ Er kann auch sehen, dass er keine offenen <em>Geplanten Abgaben</em> hat und sie
   </div>
 </div>
 
-<h4 id="ablauf-patient-ruft-medikationsplan-ab">Ablauf Patient ruft Medikationsplan ab</h4>
+<h4 id="journey-04-ablauf---patient-ruft-medikationsplan-ab">Journey-04: Ablauf - Patient ruft Medikationsplan ab</h4>
 
 <p><br/>
 <a href="plantuml/patient_journey_04.svg"><img src="plantuml/patient_journey_04.svg" alt="overview" style="width:45%;" class="mx-auto"/></a>
@@ -1214,7 +1215,7 @@ Er kann auch sehen, dass er keine offenen <em>Geplanten Abgaben</em> hat und sie
 
 <h3 id="journey-05-1432026---präoperativer-hausarzttermin">Journey-05: 14.3.2026 - Präoperativer Hausarzttermin</h3>
 
-<p>Bei Herrn Mustermann steht am 24.3.2026 eine geplante Leistenbruchoperation an. Für die Operationsfreigabe geht er zu seiner Hausärztin. Diese überprüft dahingehend auch die bestehende Medikation und ruft seine aktuelle e-Medikation ab.</p>
+<p>Bei Herrn Mustermann steht am 24.3.2026 eine geplante Leistenbruchoperation an. Für die Operationsfreigabe geht er zu seiner Hausärztin. Diese überprüft dahingehend auch die bestehende Medikation und ruft seine aktuelle e-Medikation ab (für Abruf Geplante und Durchgeführte Abgaben, siehe Journey-01-01).</p>
 
 <p>Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen und pausiert den Planeintrag.</p>
 
@@ -1226,10 +1227,11 @@ Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche
 </div>
 
 <ul>
-  <li><strong>Medikationsplan mit pausiertem Planeintrag aktualisieren:</strong> in Arbeit.
-  <!-- TODO -->
-  <!-- 20.3.: Salbe stopped setzen und dragon box: welches datum ist ausschlaggebend? planeintrag oder durchgeführte abgabe (medikament kann auch später abgeholt worden sein, einnahme wurde daher später begonnen, als im planeintrag vorgesehen) --></li>
+  <li><strong>Medikationsplan mit pausiertem Planeintrag aktualisieren:</strong> in Arbeit.</li>
 </ul>
+
+  <!-- TODO -->
+  <!-- 20.3.: Salbe stopped setzen und dragon box: welches datum ist ausschlaggebend? planeintrag oder durchgeführte abgabe (medikament kann auch später abgeholt worden sein, einnahme wurde daher später begonnen, als im planeintrag vorgesehen) -->
 
 <h4 id="journey-05-01">Journey-05-01</h4>
 <div class="tabs">
@@ -1263,10 +1265,10 @@ Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche
         <li>
           <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
         </li>
-        <li><a name="l1930">​</a>
+        <li><a name="l1923">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
         </li>
-        <li><a name="l1936">​</a>
+        <li><a name="l1929">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
         </li>
           <!-- <li>
@@ -1276,6 +1278,12 @@ Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche
     </div>
   </div>
 </div>
+
+<p><br/>
+<a href="plantuml/patient_journey_05.svg"><img src="plantuml/patient_journey_05.svg" alt="overview" style="width:45%;" class="mx-auto"/></a>
+<br/></p>
+
+<h3 id="journey-05-ablauf---präoperativer-hausarzttermin">Journey-05: Ablauf - Präoperativer Hausarzttermin</h3>
 
 <p><strong>5.3.2026: Geplante Leistenbruchoperation</strong></p>
 
@@ -1364,7 +1372,7 @@ Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilab
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Sep 18, 2026 11:05+0000">2026-09-18</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Sep 18, 2026 13:55+0000">2026-09-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

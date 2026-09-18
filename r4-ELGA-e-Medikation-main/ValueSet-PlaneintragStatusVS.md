@@ -8,7 +8,7 @@
 
 | | | |
 | :--- | :--- | :--- |
-| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/PlaneintragStatusVS | *Version*:0.1.1 | |
+| *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/PlaneintragStatusVS | *Version*:0.1.0 | |
 | Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:PlaneintragStatusVS |
 
  
@@ -46,12 +46,12 @@ ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrag
   "resourceType" : "ValueSet",
   "id" : "PlaneintragStatusVS",
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/PlaneintragStatusVS",
-  "version" : "0.1.1",
+  "version" : "0.1.0",
   "name" : "PlaneintragStatusVS",
   "title" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-18T11:05:21+00:00",
+  "date" : "2026-09-18T13:55:49+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
