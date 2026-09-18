@@ -45,9 +45,9 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
-| [AT e-Diagnose AllergyIntolerance Code](ValueSet-at-ediag-allergyintolerance-code.md) | ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien oder Intoleranzen erfasst werden. |
+| [AT e-Diagnose AllergyIntolerance Code](ValueSet-at-ediag-allergyintolerance-code.md) | Value-Set für die Codierung von Allergien und Intoleranzen. |
 | [AT e-Diagnose Condition Code](ValueSet-at-ediag-condition-code.md) | Value-Set für die Codierung von Diagnosen. |
-| [AT e-Diagnose Procedure Code](ValueSet-at-ediag-procedure-code.md) | Dieses Value-Set bildet die Prozeduren ab, die in der e-Diagnose dokumentiert werden können. |
+| [AT e-Diagnose Procedure Code](ValueSet-at-ediag-procedure-code.md) | Value-Set für die Codierung von Prozeduren. |
 | [AT e-Diagnose Reaction Time Value Set](ValueSet-at-ediag-reaction-time-vs.md) | ValueSet mit zulässigen Ausprägungen der Reaktionszeit einer allergischen Reaktion. |
 | [ELGA AT e-Diagnose List Entry Code Value Set](ValueSet-at-ediag-list-code-vs.md) | ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA. |
 | [ELGA List Empty Reason Value Set](ValueSet-at-ediag-list-emptyreason-vs.md) | ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. |

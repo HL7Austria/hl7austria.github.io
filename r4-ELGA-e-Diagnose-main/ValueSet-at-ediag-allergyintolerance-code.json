@@ -3,7 +3,7 @@
   "id" : "at-ediag-allergyintolerance-code",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet at-ediag-allergyintolerance-code</b></p><a name=\"at-ediag-allergyintolerance-code\"> </a><a name=\"hcat-ediag-allergyintolerance-code\"> </a><ul><li>Include codes from<a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span> where concept  is-a 105590001 (Substance)</li></ul></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet at-ediag-allergyintolerance-code</b></p><a name=\"at-ediag-allergyintolerance-code\"> </a><a name=\"hcat-ediag-allergyintolerance-code\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages</li><li>Include codes from<a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span> where concept  is-a 105590001 (Substance)</li></ul></div>"
   },
   "url" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code",
   "version" : "0.1.0",
@@ -11,7 +11,7 @@
   "title" : "AT e-Diagnose AllergyIntolerance Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-17T12:50:52+00:00",
+  "date" : "2026-09-18T07:26:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -28,9 +28,12 @@
       "use" : "work"
     }]
   }],
-  "description" : "ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien oder Intoleranzen erfasst werden.",
+  "description" : "Value-Set für die Codierung von Allergien und Intoleranzen.",
   "compose" : {
     "include" : [{
+      "valueSet" : ["https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages"]
+    },
+    {
       "system" : "http://snomed.info/sct",
       "filter" : [{
         "property" : "concept",

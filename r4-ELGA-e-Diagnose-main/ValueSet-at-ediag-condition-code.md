@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-condition-code | *Version*:0.1.0 | |
-| Active as of 2026-09-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagConditionCode |
+| Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagConditionCode |
 
  
 Value-Set für die Codierung von Diagnosen. 
@@ -55,7 +55,7 @@ Aktuell werden **alle** Klinisch relevante Erscheinungen zugelassen. Auf Basis d
   "title" : "AT e-Diagnose Condition Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-17T12:50:52+00:00",
+  "date" : "2026-09-18T07:26:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

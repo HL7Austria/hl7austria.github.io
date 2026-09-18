@@ -1,11 +1,11 @@
 ELGAeDiagnoseR4 : Validation Results
 =========================================
 
-err = 5, warn = 37, info = 14
+err = 6, warn = 40, info = 14
 IG Publisher Version: 2.3.4
-Generated Thu Sep 17 12:52:35 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.ediag.r4#0.1.0 (canonical = https://fhir.hl7.at/elga/ediag/r4)
+Generated Fri Sep 18 07:28:29 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.ediag.r4#0.1.0 (canonical = https://fhir.hl7.at/elga/ediag/r4)
  Build Errors : 11 / 0 / 0
- /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/AllergyIntolerance-AllergyEntry01 : 2 / 6 / 2
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/AllergyIntolerance-AllergyEntry01 : 2 / 7 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-ConditionSearchSet01 : 0 / 0 / 5
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-ConditionSearchSet02 : 0 / 0 / 11
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-ConditionSearchSet03 : 0 / 0 / 9
@@ -40,7 +40,7 @@ Generated Thu Sep 17 12:52:35 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-procedure : 0 / 2 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-reaction-time : 0 / 0 / 2
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/StructureDefinition-at-elga-ediag-reported : 0 / 1 / 2
- /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/ValueSet-at-ediag-allergyintolerance-code : 0 / 1 / 1
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/ValueSet-at-ediag-allergyintolerance-code : 1 / 3 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/ValueSet-at-ediag-condition-code : 0 / 1 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/ValueSet-at-ediag-list-code-vs : 0 / 1 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/ValueSet-at-ediag-list-emptyreason-vs : 0 / 1 / 1
@@ -60,6 +60,7 @@ ERROR: plantuml/02_8.svg#/svg/g/a at Line 1, column 9541: The link 'uc_ediag_02_
 ERROR: plantuml/historyread.svg#/svg/g/a at Line 1, column 3261: The link 'uc_ediag_01_lesen.html#aktuelle-summary-liste-abrufen' for "Aktuelle Summary-Liste abrufen" cannot be resolved
 ERROR: plantuml/write.svg#/svg/g/a at Line 1, column 6523: The link 'OperationDefinition-at-ediag-operation-list-write.html#validierung--fehlerbehandlung' for "validieren" cannot be resolved
 == fsh-generated/resources/AllergyIntolerance-AllergyEntry01.json ==
+WARNING: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.code: A definition for the value Set 'https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages' could not be found
 WARNING: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.code.coding[0].system: A definition for CodeSystem '$cs-sct' could not be found, so the code cannot be validated
 ERROR: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.code.coding[0].system: Coding.system must be an absolute reference, not a local reference
 ERROR: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.code: None of the codings provided are in the value set 'AT e-Diagnose AllergyIntolerance Code' (https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code|0.1.0), and a coding from this value set is required) (codes = $cs-sct#372687004)
@@ -145,7 +146,10 @@ INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-reaction-t
 WARNING: StructureDefinition/at-elga-ediag-reported: StructureDefinition.context[0]: Review the extension type for at-elga-ediag-reported: extensions should not have a context of Element unless it's really intended that they can be used anywhere
 INFORMATION: Resource: The resource StructureDefinition/at-elga-ediag-reported could usefully have an OID assigned (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-at-ediag-allergyintolerance-code.json ==
+WARNING: ValueSet/at-ediag-allergyintolerance-code: ValueSet.compose.include[0].valueSet[0]: A definition could not be found for Canonical URL 'https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages'
+WARNING: ValueSet/at-ediag-allergyintolerance-code: ValueSet.compose.include[0].valueSet[0]: The value set import https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages could not be found so cannot be checked
 WARNING: Resource: The resource ValueSet/at-ediag-allergyintolerance-code should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
+ERROR: ValueSet.where(id = 'at-ediag-allergyintolerance-code'): Unable to find included value set 'https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages'
 == fsh-generated/resources/ValueSet-at-ediag-condition-code.json ==
 WARNING: Resource: The resource ValueSet/at-ediag-condition-code should have an OID assigned to cater for possible use with OID based terminology systems e.g. CDA usage (OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/fhir-tools-ig/CodeSystem-ig-parameters.html#ig-parameters-auto-oid-root)
 == fsh-generated/resources/ValueSet-at-ediag-list-code-vs.json ==

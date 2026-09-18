@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code | *Version*:0.1.0 | |
-| Active as of 2026-09-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagAllergyIntoleranceCode |
+| Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagAllergyIntoleranceCode |
 
  
-ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien oder Intoleranzen erfasst werden. 
+Value-Set für die Codierung von Allergien und Intoleranzen. 
 
  **References** 
 
@@ -23,6 +23,8 @@ ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien o
  
 
 ### Expansion
+
+No Expansion for this valueset (not supported by Publication Tooling)
 
 -------
 
@@ -51,7 +53,7 @@ ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien o
   "title" : "AT e-Diagnose AllergyIntolerance Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-17T12:50:52+00:00",
+  "date" : "2026-09-18T07:26:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -68,9 +70,12 @@ ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien o
       "use" : "work"
     }]
   }],
-  "description" : "ValueSet mit Codes für Substanzen und Stoffe, die als Auslöser von Allergien oder Intoleranzen erfasst werden.",
+  "description" : "Value-Set für die Codierung von Allergien und Intoleranzen.",
   "compose" : {
     "include" : [{
+      "valueSet" : ["https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages"]
+    },
+    {
       "system" : "http://snomed.info/sct",
       "filter" : [{
         "property" : "concept",

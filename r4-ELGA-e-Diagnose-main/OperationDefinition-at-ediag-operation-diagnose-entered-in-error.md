@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-entered-in-error | *Version*:0.1.0 | |
-| Active as of 2026-09-17 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagDiagnoseEnteredInError |
+| Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtDiagDiagnoseEnteredInError |
 
  
 Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung. 
@@ -58,7 +58,7 @@ Möchte der ELGA-Teilnehmer eine Diagnose in der e-Diagnose Fachanwendung storni
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-17T12:50:52+00:00",
+  "date" : "2026-09-18T07:26:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
