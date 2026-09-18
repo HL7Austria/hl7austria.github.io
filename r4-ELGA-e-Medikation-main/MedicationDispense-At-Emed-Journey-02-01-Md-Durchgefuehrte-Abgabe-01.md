@@ -58,11 +58,11 @@
     }
   }],
   "authorizingPrescription" : [{
-    "reference" : "MedicationRequest/At-Emed-Journey-03-Mr-Geplante-Abgabe-01",
+    "reference" : "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01",
     "display" : "GeplanteAbgabe 1"
   },
   {
-    "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01",
+    "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01",
     "display" : "Planeintrag 1"
   }],
   "type" : {

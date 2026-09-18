@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine
   "title" : "ELGA Dosierung Timing When ValueSet für Tageszeitenschema",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-18T08:38:11+00:00",
+  "date" : "2026-09-18T11:05:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

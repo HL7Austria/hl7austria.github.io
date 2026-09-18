@@ -32,7 +32,7 @@ POST [$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)
 ##### Ablauf
 
 1. Der Client führt ein**POST**[$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)aus.
-1. Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Bundle zur Auslieferung (siehe[Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles](Sub_UC_eMed_01.md#prüfung-des-planzustands-und-erzeugung-des-Medikationsplan-Bundles)).
+1. Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Bundle zur Auslieferung (siehe[Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles](Sub_UC_eMed_01.md#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles)).
 1. Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält:
 * die [List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource,
 * sämtliche von der **List** referenzierten Ressourcen sowie
@@ -56,7 +56,7 @@ Abschließend erzeugt die Fachanwendung aus der aktuellen Version der **List**-R
 Dabei werden folgende Fälle unterschieden:
 
 1. **Es existiert kein Medikationsplan.**
-* Es wird gemäß [Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#Sub_UC_eMed_01_03---initial-erstellter-medikationsplan) ein initialer Medikationsplan erstellt (**List.emptyReason = notstarted**).
+* Es wird gemäß [Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_03---initial-erstellter-medikationsplan) ein initialer Medikationsplan erstellt (**List.emptyReason = notstarted**).
 
 1. **Es existiert ein Medikationsplan mit Planeinträgen.**
 * Neue oder geänderte Planeinträge (**List.entry.flag = new** oder **changed**) werden auf **unchanged** gesetzt (siehe [Status des List.entry.flags im Medikationsplan](workflowmanagement.md#status-des-listentryflags-im-medikationsplan)).

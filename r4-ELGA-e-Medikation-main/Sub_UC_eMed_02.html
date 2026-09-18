@@ -233,7 +233,7 @@ Offene Frage:<br/>
 <p>Alle Schreibvorgänge auf dem <strong>aktuellen</strong> Medikationsplan folgen demselben technischen Grundablauf:</p>
 
 <ol>
-  <li><a name="l421">​</a>Der aktuelle Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> abgerufen werden (siehe <a href="Sub_UC_eMed_01.html#Sub_UC_eMed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
+  <li>Der aktuelle Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> abgerufen werden (siehe <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
   <li>Die durch $plan-read im Medikationsplan-Bundle bereitgestellten Ressourcen werden entsprechend des gewünschten Schreibszenarios bearbeitet.</li>
   <li>Der aktualisierte Medikationsplan <strong>MUSS</strong> mittels <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als Transaction Bundle (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a>) an die Fachanwendung übermittelt werden.</li>
 </ol>
@@ -248,7 +248,7 @@ Offene Frage:<br/>
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li><a name="l479">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="design_choices.html#medikationsplan-transaction-bundle-atemedbundlemedikationsplantx-transaction-bundle">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
+  <li><a name="l479">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
     <ul>
       <li>alle <strong>neuen</strong>, <strong>geänderten</strong> und <strong>zu entfernenden</strong> Ressourcen im Transaction Bundle</li>
       <li>den von der Fachanwendung nach dem <em>$plan-read</em> übermittelten <em>ETag</em> (zur Durchführung des <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>)</li>
@@ -991,7 +991,7 @@ Mögliche Lösung: Vor dem Löschen prüfen, ob die referenzierten Planeinträge
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Sep 18, 2026 08:38+0000">2026-09-18</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Sep 18, 2026 11:05+0000">2026-09-18</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

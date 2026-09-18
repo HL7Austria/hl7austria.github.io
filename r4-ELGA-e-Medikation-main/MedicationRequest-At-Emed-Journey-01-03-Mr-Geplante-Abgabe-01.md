@@ -68,7 +68,7 @@
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
   },
   "basedOn" : [{
-    "reference" : "MedicationRequest/At-Emed-Journey-02-Mr-Planeintrag-01",
+    "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01",
     "display" : "Planeintrag 1"
   }],
   "groupIdentifier" : {
