@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-18T07:05:38+00:00",
+  "date" : "2026-09-18T08:38:11+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1973,19 +1973,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "page" : [{
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "patient_journey.html"
-          }],
-          "nameUrl" : "patient_journey.html",
-          "title" : "Patient Journey",
-          "generation" : "markdown"
-        },
-        {
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "overview_sub_use_case.html"
           }],
           "nameUrl" : "overview_sub_use_case.html",
-          "title" : "Use Cases",
+          "title" : "Use Cases Übersicht (fachlich und technisch)",
           "generation" : "markdown"
         },
         {
@@ -2031,6 +2022,15 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
           }],
           "nameUrl" : "Sub_UC_eMed_05.html",
           "title" : "​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "patient_journey.html"
+          }],
+          "nameUrl" : "patient_journey.html",
+          "title" : "Patient Journey",
           "generation" : "markdown"
         }]
       }]

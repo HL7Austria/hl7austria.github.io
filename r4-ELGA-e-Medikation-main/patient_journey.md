@@ -14,11 +14,11 @@ Eine fachliche Übersicht mit reduziertem Detailgrad findet sich am Ende dieses 
 
 Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausärztin. Außerdem hat er einen leichten Hautausschlag bemerkt.
 
+#### Journey-01-01:
+
 Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Medikation (den aktuellen **Medikationsplan**, **Geplante Abgaben** und **Durchgeführte Abgaben**) des Patienten ab, um einen Überblick über seine aktuelle Medikation zu erhalten.
 
 Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum Patienten, die erstellende e-Medikation-Fachanwendung, das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (**EmptyReason = notstarted**).
-
-#### Journey-01-01
 
 Beispiele
 
@@ -35,7 +35,7 @@ Use Cases
 *  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
 *  [Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_03---initial-erstellter-medikationsplan) 
 
-##### Request 01 - Medikationsplan abrufen
+##### Journey-01-01: Request 01 - Medikationsplan abrufen
 
 Request
 
@@ -49,7 +49,7 @@ Request Body
 
 Response Body
 
-##### Request 02 - geplante Abgaben Abrufen
+##### Journey-01-01: Request 02 - geplante Abgaben Abrufen
 
 Request
 
@@ -61,7 +61,7 @@ GET
 
 Response Body
 
-##### Request 03 - durchgeführte Abgaben Abrufen
+##### Journey-01-01: Request 03 - durchgeführte Abgaben Abrufen
 
 Request
 
@@ -223,11 +223,7 @@ Use Cases
 
 ### Journey-05: 14.3.2026 - Präoperativer Hausarzttermin
 
-Bei Herrn Mustermann steht eine geplante Leistenbruchoperation an, welche für den 24.3.2026 vorgesehen ist.
-
-Vor der Operation bespricht er die bestehende Medikation mit seiner Hausärztin, welche seine aktuelle e-Medikation abruft.
-
-Die geplante Leistenbruchoperation ist für den 24.3.2026 vorgesehen.
+Bei Herrn Mustermann steht am 24.3.2026 eine geplante Leistenbruchoperation an. Für die Operationsfreigabe geht er zu seiner Hausärztin. Diese überprüft dahingehend auch die bestehende Medikation und ruft seine aktuelle e-Medikation ab.
 
 Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen und pausiert den Planeintrag.
 
@@ -235,6 +231,18 @@ Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorüberge
  Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche pausiert werden", umgesetzt werden kann. Ein zukünftiger, zeitgesteuerter Statuswechsel auf on-hold ist nicht möglich. 
 
 * **Medikationsplan mit pausiertem Planeintrag aktualisieren:** in Arbeit.  
+
+#### Journey-05-01
+
+Beispiele
+
+*  in Arbeit.  
+
+Use Cases
+
+*  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
 
 **5.3.2026: Geplante Leistenbruchoperation**
 

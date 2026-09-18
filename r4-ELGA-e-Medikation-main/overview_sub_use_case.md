@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Use Cases - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Use Cases Übersicht (fachlich und technisch) - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Overview Use Case**](overview_use_case.md)
-* **Use Cases**
+* **Use Cases Übersicht (fachlich und technisch)**
 
-## Use Cases
+## Use Cases Übersicht (fachlich und technisch)
 
 ### Fachliche Use Cases
 
