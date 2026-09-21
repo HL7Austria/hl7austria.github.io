@@ -21,7 +21,7 @@
     "resourceType" : "Medication",
     "id" : "AtEmedExampleMedicationIbuprofen200",
     "meta" : {
-      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
     },
     "code" : {
       "coding" : [{

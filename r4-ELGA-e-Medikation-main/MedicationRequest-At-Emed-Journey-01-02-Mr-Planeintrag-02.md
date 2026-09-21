@@ -21,7 +21,7 @@
     "resourceType" : "Medication",
     "id" : "contained-medication-journey-01-02-02-magistral",
     "meta" : {
-      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
     },
     "form" : {
       "coding" : [{

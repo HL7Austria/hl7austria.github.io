@@ -6,7 +6,7 @@
 
 ## Example Medication: Beispiel Journey 02: Magistrale Zubereitung
 
-Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-medikation.md)
+Profile: [AT ELGA e-Medikation Medication Magistrale Medikation](StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.md)
 
 **form**: Salbe
 
@@ -23,7 +23,7 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
   "resourceType" : "Medication",
   "id" : "At-Emed-Example-Medication-Magistral-01",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
   },
   "form" : {
     "coding" : [{

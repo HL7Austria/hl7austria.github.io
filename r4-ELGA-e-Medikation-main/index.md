@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-18T13:55:49+00:00",
+  "date" : "2026-09-21T11:37:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -813,10 +813,27 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-medication-medikation.html"
+        "valueUri" : "StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-medication-medikation"
+        "reference" : "StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"
+      },
+      "name" : "AT ELGA e-Medikation Medication Magistrale Medikation",
+      "description" : "Bildet eine Magistrale Zubereitung in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
+      "exampleBoolean" : false,
+      "groupingId" : "Medikation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-medication-standard-medikation.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-medication-standard-medikation"
       },
       "name" : "AT ELGA e-Medikation Medication Medikation",
       "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
@@ -1400,7 +1417,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Beispiel Journey 02: Magistrale Zubereitung",
       "description" : "Beispiel einer magistralen Zubereitung (Dexpanthenol-Salbe).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"
     },
     {
       "extension" : [{
@@ -1992,6 +2009,15 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         }],
         "nameUrl" : "interactions.html",
         "title" : "Transaktionen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "dosages.html"
+        }],
+        "nameUrl" : "dosages.html",
+        "title" : "Dosierungen",
         "generation" : "markdown"
       },
       {

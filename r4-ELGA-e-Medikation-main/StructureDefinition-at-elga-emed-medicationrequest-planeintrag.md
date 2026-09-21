@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag | *Version*:0.1.0 | |
-| Draft as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
+| Draft as of 2026-09-21 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
 
  
 Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet. Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-09-18T13:55:49+00:00",
+  "date" : "2026-09-21T11:37:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -210,13 +210,28 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "short" : "Kategorie zur Unterscheidung eines Planeintrags von einer geplanten Abgabe (beide haben intent order)",
       "min" : 1,
       "max" : "1",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-          "code" : "1"
-        }]
-      },
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedicationRequestCategoryVS"
+      }
+    },
+    {
+      "id" : "MedicationRequest.category.coding",
+      "path" : "MedicationRequest.category.coding",
+      "min" : 1
+    },
+    {
+      "id" : "MedicationRequest.category.coding.system",
+      "path" : "MedicationRequest.category.coding.system",
+      "min" : 1,
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"
+    },
+    {
+      "id" : "MedicationRequest.category.coding.code",
+      "path" : "MedicationRequest.category.coding.code",
+      "min" : 1,
+      "patternCode" : "1"
     },
     {
       "id" : "MedicationRequest.priority",
@@ -277,7 +292,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "short" : "Das Arzneimittel wird immer in einer contained Medication Ressource dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"],
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"],
         "aggregation" : ["contained"]
       }],
       "mustSupport" : true

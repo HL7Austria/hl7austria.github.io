@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe | *Version*:0.1.0 | |
-| Draft as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestGeplanteAbgabe |
+| Draft as of 2026-09-21 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestGeplanteAbgabe |
 
  
 Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"): Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-09-18T13:55:49+00:00",
+  "date" : "2026-09-21T11:37:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -170,7 +170,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "slicing" : {
         "discriminator" : [{
           "type" : "value",
-          "path" : "coding.code"
+          "path" : "coding.system"
         }],
         "ordered" : false,
         "rules" : "open"
@@ -184,14 +184,22 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "short" : "Kategorie zur Unterscheidung eines Medikationsplaneintrags von einer geplanten Abgabe (beide haben intent order)",
       "min" : 1,
       "max" : "1",
-      "patternCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-          "code" : "2",
-          "display" : "Geplante Abgabe"
-        }]
-      },
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/MedicationRequestCategoryVS"
+      }
+    },
+    {
+      "id" : "MedicationRequest.category:mrcategory.coding.system",
+      "path" : "MedicationRequest.category.coding.system",
+      "min" : 1,
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"
+    },
+    {
+      "id" : "MedicationRequest.category:mrcategory.coding.code",
+      "path" : "MedicationRequest.category.coding.code",
+      "patternCode" : "2"
     },
     {
       "id" : "MedicationRequest.category:recipetype",
@@ -220,11 +228,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.category:recipetype.coding.code",
       "path" : "MedicationRequest.category.coding.code",
-      "min" : 1,
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart"
-      }
+      "min" : 1
     },
     {
       "id" : "MedicationRequest.priority",
@@ -250,7 +254,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "short" : "Das Arzneimittel wird immer in einer contained Medication Ressource dokumentiert, damit \nArzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-medikation"],
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"],
         "aggregation" : ["contained"]
       }],
       "mustSupport" : true
