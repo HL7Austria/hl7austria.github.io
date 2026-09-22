@@ -62,7 +62,7 @@
   },
   "authoredOn" : "2026-02-27T10:20:00+00:00",
   "requester" : {
-    "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
   },
   "courseOfTherapyType" : {
     "coding" : [{

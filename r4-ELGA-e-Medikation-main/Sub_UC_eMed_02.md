@@ -25,11 +25,11 @@ Alle Schreibvorgänge auf dem **aktuellen** Medikationsplan folgen demselben tec
 
 Die nachfolgenden technischen Use Cases beschreiben die jeweils erforderlichen Änderungen an den Ressourcen sowie die Inhalte des Medikationsplan-Transaction-Bundles. Der technische Ablauf von **$plan-write** einschließlich der Integritätsprüfung mittels **ETag** ist für alle Schreiboperationen identisch und wird im folgenden Abschnitt beschrieben.
 
-#### Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)
+### Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)
 
 Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation [$plan-write](OperationDefinition-AtElgaEmed.List.PlanWrite.md). Die Fachanwendung verwendet den im Request übermittelten **ETag** zur Integritätsprüfung ([Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)), um konkurrierende Änderungen am Medikationsplan zu erkennen. 
 
-##### Ablauf
+#### Ablauf
 
 1. Das GDA-System übermittelt den aktualisierten Medikationsplan mittels**POST**[$plan-write](OperationDefinition-AtElgaEmed.List.PlanWrite.md)als[Medikationsplan-Transaction-Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplantx). Der Request enthält:
 * alle **neuen**, **geänderten** und **zu entfernenden** Ressourcen im Transaction Bundle
@@ -49,16 +49,16 @@ Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolg
  Offener Punkt:
  - OperationOutcome defnieren 
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
  ![](plantuml/UC_eMed_02_01.svg) 
 
-#### Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen
+### Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen
 
 Der GDA kann dem Medikationsplan ein oder mehrere Planeinträge hinzufügen. Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder nicht (Fremdmedikation durch einen anderen GDA bzw. Eigenmedikation des Patienten).
 
@@ -76,7 +76,7 @@ Im Anschluss übermittelt der GDA mit **POST $plan-write** den aktualisierten Me
 * alle neuen **MedicationRequests** sind im Bundle enthalten
 * die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der **List-Ressource** nur referenziert.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 ```
 AtElgaEmedListMedikationsplan
@@ -93,7 +93,7 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Relevante Elemente (MedicationRequest - Planeintrag 1)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
@@ -112,18 +112,18 @@ AtElgaEmedMedicationRequestPlaneintrag
  Offener Punkt:
  - Magistrale Zubereitung: in Arbeit. 
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-#### Sequenzdiagramm - Allgemeiner Ablauf von Medikationsplan bearbeiten
+### Sequenzdiagramm - Allgemeiner Ablauf von Medikationsplan bearbeiten
 
 Im Weiteren wird beschrieben, wie Planeinträge bearbeitet werden können. Das Sequenzdiagramm zeigt den allgemeinen Ablauf.
 
  ![](plantuml/UC_eMed_02_02.svg) 
 
-#### Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern
+### Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern
 
 Der GDA kann im Medikationsplan ein oder mehrere Planeinträge ändern.
 
@@ -143,7 +143,7 @@ Der GDA übermittelt (via POST $plan-write) den aktualisierten Medikationsplan i
 * alle geänderten Ressourcen sind inline im Bundle enthalten
 * die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 ```
 AtElgaEmedListMedikationsplan
@@ -163,7 +163,7 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Relevante Elemente (MedicationRequest - Planeintrag 1)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
@@ -179,16 +179,16 @@ AtElgaEmedMedicationRequestPlaneintrag
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemeiner-ablauf---planeinträge-bearbeiten).
 
-#### Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten
+### Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten
 
 Der GDA kann ein oder mehrere Planeinträge im Medikationsplan beibehalten und unverändert zur Kennntis nehmen.
 
@@ -205,7 +205,7 @@ Der GDA übermittelt mit **POST $plan-write** den aktualisierten Medikationsplan
 
 * die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 ```
 AtElgaEmedListMedikationsplan
@@ -217,7 +217,7 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Relevante Elemente (MedicationRequest - Planeintrag 1)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
@@ -225,16 +225,16 @@ AtElgaEmedMedicationRequestPlaneintrag
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemeiner-ablauf---planeinträge-bearbeiten).
 
-#### Sub_UC_eMed_02_05 - Planeintrag pausieren oder reaktivieren
+### Sub_UC_eMed_02_05 - Planeintrag pausieren oder reaktivieren
 
 Ein GDA kann die Therapie eines Patienten vorübergehend unterbrechen (die Wiederaufnahme ist vorgesehen). Eine Freitext-Begründung kann dokumentiert werden.
 
@@ -255,7 +255,7 @@ Im Anschluss übermittelt der GDA mit **POST $plan-write** den aktualisierten Me
 
 Anmerkung: Beim nächsten **Plan-Read** ändert die Fachanwendung im zur Auslieferung bereitgestellten Bundle den Status der Einträge mit **changed** automatisch auf **unchanged**.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 ```
 AtElgaEmedListMedikationsplan
@@ -270,7 +270,7 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Relevante Elemente (MedicationRequest - Planeintrag 1)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
@@ -284,16 +284,16 @@ AtElgaEmedMedicationRequestPlaneintrag
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemeiner-ablauf---planeinträge-bearbeiten).
 
-#### Sub_UC_eMed_02_06 - Leeren Medikationsplan dokumentieren
+### Sub_UC_eMed_02_06 - Leeren Medikationsplan dokumentieren
 
 Ein Medikationsplan mit **List.emptyReason = nilknown** dokumentiert, dass für den Patienten derzeit **keine Medikation vorgesehen** ist.
 
@@ -305,7 +305,7 @@ Der Medikationsplan erhält den Status **List.emptyReason = nilknown** in folgen
 
 * Ein GDA möchte explizit dokumentieren, dass derzeit keine Medikation vorgesehen ist, der Medikationsplan befindet sich aber noch im Initialzustand (**List.emptyReason = notstarted**). In diesem Fall führt der GDA ein **$plan-read** aus, ändert das **List.emptyReason** zu **nilknown** und führt im Anschluss ein **$plan-write** aus.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 Der GDA übermittelt ein Medikationsplan-Transaction-Bundle mit:
 
@@ -320,16 +320,16 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemeiner-ablauf---planeinträge-bearbeiten).
 
-#### Sub_UC_eMed_02_07 - Planeintrag im Medikationsplan stornieren
+### Sub_UC_eMed_02_07 - Planeintrag im Medikationsplan stornieren
 
 Der GDA kann einen oder mehrere Planeinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten [Plan-Read](interactions.md#plan-read) nicht mehr im Medikationsplan enthalten.
 
@@ -346,7 +346,7 @@ Der GDA übermittelt (via POST $plan-write) den aktualisierten Medikationsplan i
 * alle geänderten Ressourcen (inkl. der stornierten) sind inline im Bundle enthalten
 * die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 Relevante Elemente (List)
 
@@ -366,7 +366,7 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Relevante Elemente (MedicationRequest - Planeintrag 1)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
@@ -379,16 +379,16 @@ AtElgaEmedMedicationRequestPlaneintrag
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemeiner-ablauf---planeinträge-bearbeiten).
 
-#### Sub_UC_eMed_02_08 - Planeintrag im Medikationsplan beenden
+### Sub_UC_eMed_02_08 - Planeintrag im Medikationsplan beenden
 
 Der GDA kann ein Medikament, welches in einen Planeintrag dokumentiert ist, absetzen. Der betreffende Planeintrag ist beim nächsten [Plan-Read](interactions.md#plan-read) nicht mehr im Medikationsplan enthalten.
 
@@ -407,7 +407,7 @@ Der GDA übermittelt (via POST $plan-write) den aktualisierten Medikationsplan i
 * alle geänderten Ressourcen (inkl. der abgesetzten) sind inline im Bundle enthalten
 * die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 ```
 AtElgaEmedListMedikationsplan
@@ -425,7 +425,7 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Relevante Elemente (MedicationRequest - Planeintrag 1)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
@@ -439,16 +439,16 @@ AtElgaEmedMedicationRequestPlaneintrag
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemeiner-ablauf---planeinträge-bearbeiten).
 
-#### Sub_UC_eMed_02_10 - Reihenfolge der Planeinträge ändern
+### Sub_UC_eMed_02_10 - Reihenfolge der Planeinträge ändern
 
 Der GDA kann die Reihenfolge der Planeinträge ändern. Die Einträge selbst bleiben dabei unverändert.
 
@@ -462,7 +462,7 @@ Der GDA übermittelt mittels POST **$plan-write** den aktualisierten Medikations
 
 * die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert.
 
-##### Relevante Elemente (List)
+#### Relevante Elemente (List)
 
 In folgendem Beispiel wird der ursprünglich 2. Eintrag als 1. gereiht.
 
@@ -482,7 +482,7 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-##### Relevante Elemente (MedicationRequest - Planeintrag 1 und 2)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1 und 2)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
@@ -490,29 +490,29 @@ AtElgaEmedMedicationRequestPlaneintrag
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.md#allgemeiner-ablauf---planeinträge-bearbeiten).
 
-#### Sub_UC_eMed_02_11 - Planeintrag aus aktuellem Medikationsplan durch ELGA-Teilnehmer löschen
+### Sub_UC_eMed_02_11 - Planeintrag aus aktuellem Medikationsplan durch ELGA-Teilnehmer löschen
 
  Offene Fragen: Ausüben der Teilnehmerrechte in Arbeit. 
 
-#### Sub_UC_eMed_02_12 - Medikationsplan durch ELGA-Teilnehmer löschen
+### Sub_UC_eMed_02_12 - Medikationsplan durch ELGA-Teilnehmer löschen
 
  Offene Fragen: Ausüben der Teilnehmerrechte in Arbeit. 
 
-##### Custom Operations
+#### Custom Operations
 
 * [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md)
 * [$plan-read](OperationDefinition-AtEmed.List.PlanRead.md)
 
-##### Sequenzdiagramm
+#### Sequenzdiagramm
 
 In Arbeit. –>
 

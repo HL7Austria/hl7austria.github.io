@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx | *Version*:0.1.0 | |
-| Draft as of 2026-09-21 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplanTx |
+| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplanTx |
 
  
 Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: 
@@ -20,7 +20,7 @@ Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplantx.json)
 
@@ -45,7 +45,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-21T11:37:47+00:00",
+  "date" : "2026-09-22T11:13:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 01-02: Medikationsplaneintrag 1 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 01-02: Planeintrag 1 - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Journey 01-02: Medikationsplaneintrag 1**
+* **Beispiel Journey 01-02: Planeintrag 1**
 
-## Example MedicationRequest: Beispiel Journey 01-02: Medikationsplaneintrag 1
+## Example MedicationRequest: Beispiel Journey 01-02: Planeintrag 1
 
 
 
@@ -59,7 +59,7 @@
   },
   "authoredOn" : "2026-02-27T08:10:00+00:00",
   "requester" : {
-    "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
   },
   "courseOfTherapyType" : {
     "coding" : [{

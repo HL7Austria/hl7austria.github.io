@@ -210,8 +210,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p>  <!-- white space is critical inside of capture --></p>
-<div>
-  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read" id="markdown-toc-sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a></li>
+  <li><a href="#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search" id="markdown-toc-sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion lesen (Plan-History-Search)</a></li>
+  <li><a href="#sub_uc_emed_01_03---initial-erstellter-medikationsplan" id="markdown-toc-sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a></li>
+  <li><a href="#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search" id="markdown-toc-sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge lesen (Planentry-Search)</a></li>
+  <li><a href="#sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search" id="markdown-toc-sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)</a></li>
+</ul>
+
 </div>
 <style>
 .no-number {
@@ -459,7 +466,7 @@ h4 + .tabs {
 
 <p>Ein ELGA-Teilnehmer kann seinen Medikationsplan über das Zugangsportal einsehen.</p>
 
-<p><a name="l403">​</a>Die fachlichen Anforderungen werden im <a href="Sub_UC_eMed_01.hml">UC_eMed_01 Medikationsplan lesen</a> beschrieben.</p>
+<p><a name="l424">​</a>Die fachlichen Anforderungen werden im <a href="Sub_UC_eMed_01.hml">UC_eMed_01 Medikationsplan lesen</a> beschrieben.</p>
 
 <p>Für den lesenden Zugriff auf Medikationspläne werden zwei Zugriffsarten unterschieden:</p>
 
@@ -474,22 +481,22 @@ h4 + .tabs {
 
 <p>Sowohl berechtigte GDA als auch ELGA-Teilnehmer können auf einzelne Planeinträge lesend zugreifen und diese durchsuchen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Planentry-Search</a>).</p>
 
-<h4 id="sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</h4>
+<h3 id="sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</h3>
 
 <p>Plan-Read dient dem <strong>Abruf des Medikationsplans</strong> in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
 
-<p><a name="l449">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
+<p><a name="l470">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
 
   <!-- TODO: Wird ein Medikationsplan-Bundle oder ein Searchset erzeugt? -->
 
-<h5 id="custom-operation">Custom Operation</h5>
+<h4 id="custom-operation">Custom Operation</h4>
 
-<p><a name="l466">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+<p><a name="l487">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
 
-<h5 id="ablauf">Ablauf</h5>
+<h4 id="ablauf">Ablauf</h4>
 
 <ol>
-  <li><a name="l476">​</a>Der Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li><a name="l497">​</a>Der Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</a>).</li>
   <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält:
     <ul>
@@ -502,7 +509,7 @@ h4 + .tabs {
 
 <p>Nachfolgend kann der Medikationsplan vom GDA bearbeitet und mittels <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Plan-Write</a> gespeichert werden.</p>
 
-<h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
+<h4 id="sequenzdiagramm">Sequenzdiagramm</h4>
 
 <p><br/>
 <a href="plantuml/UC_eMed_01_01.svg"><img src="plantuml/UC_eMed_01_01.svg" alt="overview" style="width:40%;" class="mx-auto"/></a>
@@ -515,7 +522,7 @@ Fehlercodes sind noch zu definieren.
 </p>
 </div>
 
-<h5 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h5>
+<h4 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h4>
 
 <p>Nach Eingang eines <strong>$plan-read</strong> prüft die Fachanwendung den Zustand des Medikationsplans.</p>
 
@@ -544,13 +551,13 @@ Fehlercodes sind noch zu definieren.
   </li>
 </ol>
 
-<h5 id="aktivitätsdiagramm">Aktivitätsdiagramm</h5>
+<h4 id="aktivitätsdiagramm">Aktivitätsdiagramm</h4>
 
 <p><br/>
 <a href="plantuml/UC_eMed_01_01_plancheck.svg"><img src="plantuml/UC_eMed_01_01_plancheck.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
 <br/></p>
 
-<h4 id="sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion lesen (Plan-History-Search)</h4>
+<h3 id="sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion lesen (Plan-History-Search)</h3>
 
 <p>Beim Plan-History-Search rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus.</p>
 
@@ -578,7 +585,7 @@ Offene Frage:<br/>
 </p>
 </div>
 
-<h5 id="ablauf-1">Ablauf</h5>
+<h4 id="ablauf-1">Ablauf</h4>
 
 <ol>
   <li>Der Client führt ein GET auf <em>[base]/Patient/[id]/List/_history</em> mit den gewünschten Suchparametern aus.</li>
@@ -592,13 +599,13 @@ Offene Frage:<br/>
 
 <p>Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.</p>
 
-<h5 id="sequenzdiagramm-1">Sequenzdiagramm</h5>
+<h4 id="sequenzdiagramm-1">Sequenzdiagramm</h4>
 
 <p><br/>
 <a href="plantuml/UC_eMed_01_02.svg"><img src="plantuml/UC_eMed_01_02.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
 
-<h6 id="beispiele-für-suchanfragen">Beispiele für Suchanfragen</h6>
+<h5 id="beispiele-für-suchanfragen">Beispiele für Suchanfragen</h5>
 <p>In Arbeit.
   <!-- * **Aktuelle Planversion** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_count=1&_sort=-timestamp&list.subject={bPK-GH} -->
   <!-- * **Alle Planversionen** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_sort=-timestamp&list.subject={bPK-GH} -->
@@ -616,7 +623,7 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id] -->
   <!-- * Historische Medikationsplanversionen lesen, die nach einem bestimmten Datum erstellt wurden und einen bestimmten Planeintrag enthalten:
 GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&date=ge2025-01-01 -->
 
-<h4 id="sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</h4>
+<h3 id="sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</h3>
 
 <p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> noch kein Medikationsplan für den ELGA-Teilnehmer existiert.</p>
 
@@ -631,10 +638,10 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
 </p>
 </div>
 
-<h5 id="ablauf-2">Ablauf</h5>
+<h4 id="ablauf-2">Ablauf</h4>
 
 <ol>
-  <li><a name="l832">​</a>Ein Client führt für einen ELGA-Teilnehmer erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li><a name="l853">​</a>Ein Client führt für einen ELGA-Teilnehmer erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.</li>
   <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
   <li>Die List-Ressource wird als erste Version persistiert.</li>
@@ -642,13 +649,13 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
   <li>Dieses wird mit <em>List.emptyReason = notstarted</em> sowie dem zugehörigen ETag zurückgeliefert.</li>
 </ol>
 
-<h5 id="sequenzdiagramm-2">Sequenzdiagramm</h5>
+<h4 id="sequenzdiagramm-2">Sequenzdiagramm</h4>
 
 <p><br/>
 <a href="plantuml/UC_eMed_01_03.svg"><img src="plantuml/UC_eMed_01_03.svg" alt="overview" style="width:45%;" class="mx-auto"/></a>
 <br/></p>
 
-<h4 id="sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge lesen (Planentry-Search)</h4>
+<h3 id="sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge lesen (Planentry-Search)</h3>
 
 <p><strong>Planentry-Search</strong> dient der gezielten Suche nach Medikationsplaneintragsversionen eines ELGA-Teilnehmer. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
 
@@ -691,7 +698,7 @@ Offene Punkte:<br/>
 </p>
 </div>
 
-<h5 id="ablauf-3">Ablauf</h5>
+<h4 id="ablauf-3">Ablauf</h4>
 
 <ol>
   <li>Der Client führt ein <strong>GET</strong> auf den Planentry-Search-Endpunkt mit den gewünschten Suchparametern aus (<em>MedicationRequest</em> mit <em>category = "Planeintrag"</em>).</li>
@@ -701,13 +708,13 @@ Offene Punkte:<br/>
   <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
 </ol>
 
-<h5 id="sequenzdiagramm-3">Sequenzdiagramm</h5>
+<h4 id="sequenzdiagramm-3">Sequenzdiagramm</h4>
 
 <p><br/>
 <a href="plantuml/UC_eMed_01_04.svg"><img src="plantuml/UC_eMed_01_04.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
 
-<h5 id="beispiele-für-suchanfragen-1">Beispiele für Suchanfragen</h5>
+<h4 id="beispiele-für-suchanfragen-1">Beispiele für Suchanfragen</h4>
 
 <p>In Arbeit. 
   <!-- * Alle aktiven Medikationsplaneinträge eines Patienten:
@@ -721,7 +728,7 @@ Offene Punkte:<br/>
   <!-- * Historische und aktuelle Medikationsplaneinträge eines bestimmten Wirkstoffs:
   `GET /Patient/[id]/MedicationRequest?ingredient=<Wirkstoff>` -->
 
-<h4 id="sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)</h4>
+<h3 id="sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)</h3>
 
   <!-- GET	/Patient/[id]/List	plan-history-directory-search	Verzeichnis historischer Medikationspläne abrufen
 (_history?_elements=date,source) -->
@@ -750,7 +757,7 @@ Offene Punkte: <br/>$plan-history-directory-search: in Arbeit.
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Sep 21, 2026 11:37+0000">2026-09-21</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Sep 22, 2026 11:13+0000">2026-09-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

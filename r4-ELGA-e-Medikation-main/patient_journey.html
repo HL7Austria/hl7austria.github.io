@@ -216,8 +216,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#journey-02-2822026---abgabe-in-der-apotheke-teil-1" id="markdown-toc-journey-02-2822026---abgabe-in-der-apotheke-teil-1">Journey-02: 28.2.2026 - Abgabe in der Apotheke (Teil 1)</a></li>
   <li><a href="#journey-03-132026---abgabe-in-der-apotheke-teil-2" id="markdown-toc-journey-03-132026---abgabe-in-der-apotheke-teil-2">Journey-03: 1.3.2026 - Abgabe in der Apotheke (Teil 2)</a></li>
   <li><a href="#journey-04-732026---patient-ruft-medikationsplan-ab" id="markdown-toc-journey-04-732026---patient-ruft-medikationsplan-ab">Journey-04: 7.3.2026 - Patient ruft Medikationsplan ab</a></li>
-  <li><a href="#journey-05-1432026---präoperativer-hausarzttermin" id="markdown-toc-journey-05-1432026---präoperativer-hausarzttermin">Journey-05: 14.3.2026 - Präoperativer Hausarzttermin</a></li>
-  <li><a href="#journey-05-ablauf---präoperativer-hausarzttermin" id="markdown-toc-journey-05-ablauf---präoperativer-hausarzttermin">Journey-05: Ablauf - Präoperativer Hausarzttermin</a></li>
+  <li><a href="#journey-05-1432026---präoperativer-arzttermin" id="markdown-toc-journey-05-1432026---präoperativer-arzttermin">Journey-05: 14.3.2026 - Präoperativer Arzttermin</a></li>
+  <li><a href="#journey-06-1732026-bis-2132026---stationärer-krankenhausaufenthalt" id="markdown-toc-journey-06-1732026-bis-2132026---stationärer-krankenhausaufenthalt">Journey-06: 17.3.2026 bis 21.3.2026 - Stationärer Krankenhausaufenthalt</a></li>
   <li><a href="#übersicht-patient-journey" id="markdown-toc-übersicht-patient-journey">Übersicht Patient Journey</a></li>
 </ul>
 
@@ -930,8 +930,8 @@ Sie speichert den neuen Medikationsplan.</p>
             <li>
               <a href="Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a>
             </li>
-            <li>
-              <a href="Practitioner-At-Emed-Example-Practitioner-01.html">Dr. Hausärztin</a>
+            <li><a name="l1288">​</a>
+              <a href="Practitioner-At-Emed-Example-PractitionerRole-01.html">Dr. Hausärztin</a>
             </li>
           </ul>
         </li>
@@ -1163,7 +1163,7 @@ Sie übergibt dem Patienten die fertiggestellte Dexpanthenol-Salbe und schließt
 
 <h3 id="journey-04-732026---patient-ruft-medikationsplan-ab">Journey-04: 7.3.2026 - Patient ruft Medikationsplan ab</h3>
 
-<p>Herr Mustermann erinnert sich nicht, wie lange er die Dexpanthenol-Salbe anwenden soll. Er ruft im Zugangsportal seine e-Medikation auf und erhält Einsicht auf seinen aktuellen <em>Medikationsplan</em> mit den Planeinträgen zur Dauermedikation Ramipril und der Dexpanthenol-Salbe. Dem Planeintrag der Dexpanthenol-Salbe kann er entnehmen, dass die Salbe für 3 Wochen anzuwenden ist.
+<p>Herr Mustermann erinnert sich nicht, wie lange er die Dexpanthenol-Salbe anwenden soll. Er ruft im Zugangsportal seine e-Medikation auf und erhält Einsicht auf seinen aktuellen <em>Medikationsplan</em> mit den Planeinträgen zur Dauermedikation Ramipril und der Dexpanthenol-Salbe. Dem Planeintrag mit der Dexpanthenol-Salbe kann er entnehmen, dass die Salbe für 3 Wochen anzuwenden ist.
 Er kann auch sehen, dass er keine offenen <em>Geplanten Abgaben</em> hat und sieht in den <em>Durchgeführten Abgaben</em>, wann er die Arzneimittel abgeholt hat</p>
 
   <!-- #### Journey-04 -->
@@ -1223,11 +1223,11 @@ Er kann auch sehen, dass er keine offenen <em>Geplanten Abgaben</em> hat und sie
 <a href="plantuml/patient_journey_04.svg"><img src="plantuml/patient_journey_04.svg" alt="overview" style="width:45%;" class="mx-auto"/></a>
 <br/></p>
 
-<h3 id="journey-05-1432026---präoperativer-hausarzttermin">Journey-05: 14.3.2026 - Präoperativer Hausarzttermin</h3>
+<h3 id="journey-05-1432026---präoperativer-arzttermin">Journey-05: 14.3.2026 - Präoperativer Arzttermin</h3>
 
-<p>Bei Herrn Mustermann steht am 24.3.2026 eine geplante Leistenbruchoperation an. Für die Operationsfreigabe geht er zu seiner Hausärztin. Diese überprüft dahingehend auch die bestehende Medikation und ruft seine aktuelle e-Medikation ab (für Abruf Geplante und Durchgeführte Abgaben, siehe Journey-01-01).</p>
+<p>Bei Herrn Mustermann steht am 24.3.2026 eine geplante Leistenbruchoperation an. Für die Operationsfreigabe geht er zu seiner Hausärztin. Diese überprüft dahingehend auch die bestehende Medikation und ruft seine aktuelle e-Medikation ab (für Abruf <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em>, siehe <a href="patient_journey.html#journey-04-ablauf---patient-ruft-medikationsplan-ab">Journey-04</a>).</p>
 
-<p>Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen und pausiert den Planeintrag.</p>
+<p>Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen, um das Risiko einer intraoperativen Hypotonie zu reduzieren. Er pausiert den Planeintrag und dokumentiert als Begründung die geplante Operation (<em>statusReason = "surg"</em>).</p>
 
 <div class="dragon">
 <p class="note-to-balloters">
@@ -1236,11 +1236,8 @@ Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche
 </p>
 </div>
 
-<ul>
-  <li><strong>Medikationsplan mit pausiertem Planeintrag aktualisieren:</strong> in Arbeit.</li>
-</ul>
+  <!-- TODO Plan Read Bundle akl 21.9.2026 -->
 
-  <!-- TODO -->
   <!-- 20.3.: Salbe stopped setzen und dragon box: welches datum ist ausschlaggebend? planeintrag oder durchgeführte abgabe (medikament kann auch später abgeholt worden sein, einnahme wurde daher später begonnen, als im planeintrag vorgesehen) -->
 
 <h4 id="journey-05-01">Journey-05-01</h4>
@@ -1250,19 +1247,29 @@ Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche
     <label for="tab-beispiele-05-01">Beispiele</label>
     <div class="content-in-tab">
       <ul>
-        <li> in Arbeit.
-            <!-- <strong>Leerer Medikationsplan:</strong>(EmptyReason = notstarted) 
+        <li>
+          <strong>Planeintrag pausieren:</strong>
           <ul>
             <li>
-              <a href="Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.html">Medikationsplan-Bundle</a>
+              <a href="MedicationRequest-At-Emed-Journey-05-01-Mr-Planeintrag-01.html">Planeintrag 1: Ramipril (Dauermedikation) pausieren</a>
             </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Medikationsplan aktualisieren:</strong>
+          <ul>
             <li>
-              <a href="Patient-At-Emed-Example-Patient-01.html">Patient</a>
+              <a href="List-At-Emed-Journey-05-01-List-Medikationsplan.html">Medikationsplan: 1 Planeintrag aktualisiert, 1 Planeintrag unverändert</a>
             </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
             <li>
-              <a href="Device-At-Emed-Example-Device-01.html">Device</a>
+              <a href="Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a>
             </li>
-          </ul> -->
+          </ul>
         </li>
       </ul>
     </div>
@@ -1275,38 +1282,119 @@ Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche
         <li>
           <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
         </li>
-        <li><a name="l1929">​</a>
+        <li><a name="l1973">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>
         </li>
-        <li><a name="l1935">​</a>
+        <li><a name="l1979">​</a>
           <a href="Sub_UC_eMed_03.html#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>
         </li>
-          <!-- <li>
-          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a>
-        </li> -->
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_05---planeintrag-pausieren-oder-reaktivieren">Sub_UC_eMed_02_05 - Planeintrag pausieren oder reaktivieren</a>
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten">Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten</a>
+        </li>
       </ul>
     </div>
   </div>
 </div>
 
+<h4 id="journey-05-ablauf---präoperativer-arzttermin">Journey-05: Ablauf - Präoperativer Arzttermin</h4>
+
 <p><br/>
 <a href="plantuml/patient_journey_05.svg"><img src="plantuml/patient_journey_05.svg" alt="overview" style="width:45%;" class="mx-auto"/></a>
 <br/></p>
 
-<h3 id="journey-05-ablauf---präoperativer-hausarzttermin">Journey-05: Ablauf - Präoperativer Hausarzttermin</h3>
+<h3 id="journey-06-1732026-bis-2132026---stationärer-krankenhausaufenthalt">Journey-06: 17.3.2026 bis 21.3.2026 - Stationärer Krankenhausaufenthalt</h3>
 
-<p><strong>5.3.2026: Geplante Leistenbruchoperation</strong></p>
+<h4 id="journey-06-01-1732026---geplante-operation">Journey-06-01: 17.3.2026 - Geplante Operation</h4>
 
-<p>Herr Mustermann erscheint zur geplanten Leistenbruchoperation. Ramipril wurde entsprechend der ärztlichen Anweisung vorübergehend pausiert.</p>
+<p>Herr Mustermann erscheint zur geplanten Leistenbruchoperation. Im Krankenhaus wird bei der OP-Besprechung sein Medikationsplan abgerufen und nachgefragt, ob der Patient gemäß Medikationsplan die Einnahme von Ramipril vorübergehend pausiert hat. Dieser bejaht das.</p>
 
-<p>Die Leistenbruchoperation verläuft komplikationslos. Nach der Operation erhält Herr Mustermann von Dr. Krankenhaus Metamizol-Tropfen gegen die postoperativen Schmerzen.
-Metamizol-Tropfen, 2 Fläschchen:
-3 × täglich 30 Tropfen
-für wenige Tage (nach Bedarf)</p>
+<p>Die Operation verläuft komplikationslos.</p>
 
-<ul>
-  <li><strong>Medikationsplan mit neuem Planeintrag aktualisieren:</strong> in Arbeit.</li>
-</ul>
+  <!-- TODO Plan-Read Bundle  akl 21.9.2026 -->
+
+<h4 id="journey-06-02-1932026---entlassung">Journey-06-02: 19.3.2026 - Entlassung</h4>
+
+<p>Zwei Tage nach der Operation kann Herr Mustermann entlassen werden. Gegen die postoperativen Schmerzen soll er weiterhin den <strong>Wirkstoff</strong> Metamizol einnehmen. Dr. Krankenhaus dokumentiert dies in einem neuen Planeintrag: Metamizol 1.000 mg, 4x täglich oral, Abstand 6–8 Stunden.</p>
+
+<p>Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in der Dosis erhöht (auf 1-0-1-0).</p>
+
+  <!-- TODO Plan-Read Bundle  akl 21.9.2026 -->
+
+<h4 id="journey-06-02">Journey-06-02</h4>
+<div class="tabs">
+  <div class="tab">
+    <input name="tab-group-patient-journey-06-02" checked="true" id="tab-beispiele-06-02" type="radio"/>
+    <label for="tab-beispiele-06-02">Beispiele</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <strong>Planeintrag hinzufügen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.html">Neuer Planeintrag 3: Wirstoff Metamizol</a>
+            </li>
+          </ul>
+        </li>
+                <li>
+          <strong>Planeintrag anpassen:</strong>
+          <ul>
+            <li>
+              <a href="MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.html">Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Medikationsplan aktualisieren:</strong>
+          <ul>
+            <li>
+              <a href="List-At-Emed-Journey-06-02-List-Medikationsplan.html">Medikationsplan: 1 Planeintrag neu hinzugefügt, 2 Planeinträge unverändert</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Transaction Bundle:</strong>
+          <ul>
+            <li>
+              <a href="Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tab">
+    <input name="tab-group-patient-journey-06-02" id="tab-usecases-06-02" type="radio"/>
+    <label for="tab-usecases-06-02">Use Cases</label>
+    <div class="content-in-tab">
+      <ul>
+        <li>
+          <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>
+        </li>
+        <li><a name="l2136">​</a>
+          <a href="Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen">Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen</a>
+        </li>
+        <li><a name="l2142">​</a>
+          <a href="Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern">Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern</a>
+        </li>
+        <li>
+        Referenz auf Wirkstoffangabe im Medikationsplan: in Arbeit.    <!-- TODO Kapitel akl 21.9.2026 -->
+        </li>
+        <li>
+          <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten">Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h4 id="journey-06-ablauf---stationärer-krankenhausaufenthalt">Journey-06: Ablauf - Stationärer Krankenhausaufenthalt</h4>
+
+<p><br/>
+<a href="plantuml/patient_journey_06.svg"><img src="plantuml/patient_journey_06.svg" alt="overview" style="width:55%;" class="mx-auto"/></a>
+<br/></p>
 
 <p><strong>7.3.2026: Teilabgabe in der Apotheke</strong></p>
 
@@ -1382,7 +1470,7 @@ Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilab
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Mon, Sep 21, 2026 11:37+0000">2026-09-21</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Sep 22, 2026 11:13+0000">2026-09-22</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

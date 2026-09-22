@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-09-21T11:37:47+00:00"/>
+  <date value="2026-09-22T11:13:44+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -38,7 +38,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="7.3.0"/>
+    <version value="7.4.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -803,7 +803,18 @@
         <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
       </reference>
       <name value="Beispiel Allgemeinmedizinerin 01"/>
-      <description value="Beispiel einer behandelnden Allgemeinmedizinerin."/>
+      <description value="Beispiel einer behandelnden Allgemeinmedizinerin (Dr. Hausärztin)."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-01"/>
+      </reference>
+      <name value="Beispiel Allgemeinmedizinerin 01 (Dr. Hausärztin + Organisation)"/>
+      <description value="Beispiel einer behandelnden Ärztin und ihrer Organisation"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -858,7 +869,7 @@
         <reference value="Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"/>
       </reference>
       <name value="Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet."/>
+      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
@@ -869,7 +880,7 @@
         <reference value="List/At-Emed-Journey-01-02-List-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 01-02: Medikationsplan"/>
-      <description value="Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert."/>
+      <description value="Beispiel eines Medikationsplans, der 2 Planeinträge referenziert und Informationen über Reihenfolge und Änderungsstatus speichert."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -890,8 +901,8 @@
       <reference>
         <reference value="MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01"/>
       </reference>
-      <name value="Beispiel Journey 01-02: Medikationsplaneintrag 1"/>
-      <description value="Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab."/>
+      <name value="Beispiel Journey 01-02: Planeintrag 1"/>
+      <description value="Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
@@ -899,10 +910,10 @@
         <valueString value="MedicationRequest"/>
       </extension>
       <reference>
-        <reference value="MedicationRequest/At-Emed-Journey-05-01-Mr-Planeintrag-01"/>
+        <reference value="MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-01"/>
       </reference>
-      <name value="Beispiel Journey 01-02: Medikationsplaneintrag 1"/>
-      <description value="Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab."/>
+      <name value="Beispiel Journey 01-02: Planeintrag 1"/>
+      <description value="Bildet einen Planeintrag mit dem Arzneimittel Ramipril und geänderten Dosierungsanweisungen ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
@@ -912,8 +923,8 @@
       <reference>
         <reference value="MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02"/>
       </reference>
-      <name value="Beispiel Journey 01-02: Medikationsplaneintrag 2"/>
-      <description value="Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe)und zugehörigen Dosierungsanweisungen ab."/>
+      <name value="Beispiel Journey 01-02: Planeintrag 2"/>
+      <description value="Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
@@ -924,7 +935,7 @@
         <reference value="MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01"/>
       </reference>
       <name value="Beispiel Journey 01-03: Geplante Abgabe 1"/>
-      <description value="Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab."/>
+      <description value="Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
     </resource>
     <resource>
@@ -935,7 +946,7 @@
         <reference value="MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02"/>
       </reference>
       <name value="Beispiel Journey 01-03: Geplante Abgabe 2"/>
-      <description value="Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) mit den Dosierungsanweisungen des zugehörigen Planeintrags ab."/>
+      <description value="Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und den Dosierungsanweisungen gemäß zugehörigem Planeintrag ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
     </resource>
     <resource>
@@ -979,7 +990,7 @@
         <reference value="MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01"/>
       </reference>
       <name value="Beispiel Journey 02-01: Durchgeführte Abgabe 1"/>
-      <description value="Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe."/>
+      <description value="Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
     </resource>
     <resource>
@@ -990,7 +1001,7 @@
         <reference value="MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02"/>
       </reference>
       <name value="Beispiel Journey 02-01: Durchgeführte Abgabe 1"/>
-      <description value="Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe."/>
+      <description value="Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
     </resource>
     <resource>
@@ -1017,14 +1028,36 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 05-01: Mediaktionsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan mit einem geänderten und einem unveränderten Planeintrag beinhaltet."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="List"/>
       </extension>
       <reference>
         <reference value="List/At-Emed-Journey-05-01-List-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 05-01: Medikationsplan"/>
-      <description value="Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert."/>
+      <description value="Beispiel eines Medikationsplans mit einem geänderten und einem unveränderten Planeintrag."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Journey-05-01-Mr-Planeintrag-01"/>
+      </reference>
+      <name value="Beispiel Journey 05-02: Planeintrag 1"/>
+      <description value="Bildet einen Planeintrag mit dem pausierten Arzneimittel Ramipril ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1034,8 +1067,41 @@
         <reference value="MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02"/>
       </reference>
       <name value="Beispiel Journey 05: Durchgeführte Abgabe 1"/>
-      <description value="Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe."/>
+      <description value="Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/At-Emed-Journey-06-02-List-Medikationsplan"/>
+      </reference>
+      <name value="Beispiel Journey 06-02: Medikationsplan"/>
+      <description value="Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-03"/>
+      </reference>
+      <name value="Beispiel Journey 06-02: Planeintrag 3"/>
+      <description value="Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1090,6 +1156,28 @@
       </reference>
       <name value="Beispiel Organisation Apotheke 01"/>
       <description value="Beispiel einer Apotheke als Organisation."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/At-Emed-Example-Organization-Hausarzt-01"/>
+      </reference>
+      <name value="Beispiel Organisation Krankenhaus 01"/>
+      <description value="Beispiel eines Krankenhauses."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/At-Emed-Example-Organization-Kh-01"/>
+      </reference>
+      <name value="Beispiel Organisation Krankenhaus 01"/>
+      <description value="Beispiel eines Krankenhauses."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

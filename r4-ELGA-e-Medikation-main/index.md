@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-21T11:37:47+00:00",
+  "date" : "2026-09-22T11:13:44+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -64,7 +64,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.3.0"
+    "version" : "7.4.0"
   },
   {
     "id" : "hl7ext",
@@ -1128,7 +1128,23 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
       },
       "name" : "Beispiel Allgemeinmedizinerin 01",
-      "description" : "Beispiel einer behandelnden Allgemeinmedizinerin.",
+      "description" : "Beispiel einer behandelnden Allgemeinmedizinerin (Dr. Hausärztin).",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-01.html"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
+      },
+      "name" : "Beispiel Allgemeinmedizinerin 01 (Dr. Hausärztin + Organisation)",
+      "description" : "Beispiel einer behandelnden Ärztin und ihrer Organisation",
       "exampleBoolean" : true
     },
     {
@@ -1208,7 +1224,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"
       },
       "name" : "Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle",
-      "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) beinhaltet.",
+      "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) beinhaltet.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {
@@ -1224,7 +1240,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "List/At-Emed-Journey-01-02-List-Medikationsplan"
       },
       "name" : "Beispiel Journey 01-02: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
+      "description" : "Beispiel eines Medikationsplans, der 2 Planeinträge referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
     },
     {
@@ -1255,8 +1271,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01"
       },
-      "name" : "Beispiel Journey 01-02: Medikationsplaneintrag 1",
-      "description" : "Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab.",
+      "name" : "Beispiel Journey 01-02: Planeintrag 1",
+      "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
@@ -1266,13 +1282,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-05-01-Mr-Planeintrag-01.html"
+        "valueUri" : "MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-01.html"
       }],
       "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-05-01-Mr-Planeintrag-01"
+        "reference" : "MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-01"
       },
-      "name" : "Beispiel Journey 01-02: Medikationsplaneintrag 1",
-      "description" : "Bildet einen Medikationsplaneintrag mit dem Arzneimittel Ramipril und zugehörigen Dosierungsanweisungen ab.",
+      "name" : "Beispiel Journey 01-02: Planeintrag 1",
+      "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und geänderten Dosierungsanweisungen ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
@@ -1287,8 +1303,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02"
       },
-      "name" : "Beispiel Journey 01-02: Medikationsplaneintrag 2",
-      "description" : "Bildet einen Medikationsplaneintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe)und zugehörigen Dosierungsanweisungen ab.",
+      "name" : "Beispiel Journey 01-02: Planeintrag 2",
+      "description" : "Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
@@ -1304,7 +1320,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01"
       },
       "name" : "Beispiel Journey 01-03: Geplante Abgabe 1",
-      "description" : "Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit den Dosierungsanweisungen des zugehörigen Planeintrags ab.",
+      "description" : "Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
@@ -1320,7 +1336,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02"
       },
       "name" : "Beispiel Journey 01-03: Geplante Abgabe 2",
-      "description" : "Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) mit den Dosierungsanweisungen des zugehörigen Planeintrags ab.",
+      "description" : "Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und den Dosierungsanweisungen gemäß zugehörigem Planeintrag ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
@@ -1384,7 +1400,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01"
       },
       "name" : "Beispiel Journey 02-01: Durchgeführte Abgabe 1",
-      "description" : "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe.",
+      "description" : "Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
     },
     {
@@ -1400,7 +1416,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02"
       },
       "name" : "Beispiel Journey 02-01: Durchgeführte Abgabe 1",
-      "description" : "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe.",
+      "description" : "Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
     },
     {
@@ -1438,6 +1454,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"
+      },
+      "name" : "Beispiel Journey 05-01: Mediaktionsplan-Transaction-Bundle",
+      "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan mit einem geänderten und einem unveränderten Planeintrag beinhaltet.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
       },
       {
@@ -1448,8 +1480,24 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "List/At-Emed-Journey-05-01-List-Medikationsplan"
       },
       "name" : "Beispiel Journey 05-01: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans (List), der 2 Planeinträge (MedicationRequests) referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
+      "description" : "Beispiel eines Medikationsplans mit einem geänderten und einem unveränderten Planeintrag.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-05-01-Mr-Planeintrag-01.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Journey-05-01-Mr-Planeintrag-01"
+      },
+      "name" : "Beispiel Journey 05-02: Planeintrag 1",
+      "description" : "Bildet einen Planeintrag mit dem pausierten Arzneimittel Ramipril ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
       "extension" : [{
@@ -1464,8 +1512,56 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02"
       },
       "name" : "Beispiel Journey 05: Durchgeführte Abgabe 1",
-      "description" : "Bildet eine durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe.",
+      "description" : "Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx"
+      },
+      "name" : "Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle",
+      "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-At-Emed-Journey-06-02-List-Medikationsplan.html"
+      }],
+      "reference" : {
+        "reference" : "List/At-Emed-Journey-06-02-List-Medikationsplan"
+      },
+      "name" : "Beispiel Journey 06-02: Medikationsplan",
+      "description" : "Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-03"
+      },
+      "name" : "Beispiel Journey 06-02: Planeintrag 3",
+      "description" : "Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
       "extension" : [{
@@ -1545,6 +1641,38 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "Beispiel Organisation Apotheke 01",
       "description" : "Beispiel einer Apotheke als Organisation.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-At-Emed-Example-Organization-Hausarzt-01.html"
+      }],
+      "reference" : {
+        "reference" : "Organization/At-Emed-Example-Organization-Hausarzt-01"
+      },
+      "name" : "Beispiel Organisation Krankenhaus 01",
+      "description" : "Beispiel eines Krankenhauses.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-At-Emed-Example-Organization-Kh-01.html"
+      }],
+      "reference" : {
+        "reference" : "Organization/At-Emed-Example-Organization-Kh-01"
+      },
+      "name" : "Beispiel Organisation Krankenhaus 01",
+      "description" : "Beispiel eines Krankenhauses.",
       "exampleBoolean" : true
     },
     {

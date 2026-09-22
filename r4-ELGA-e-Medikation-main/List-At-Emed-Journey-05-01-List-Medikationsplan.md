@@ -14,7 +14,7 @@ Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga
 | Subject:[Anton Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)](Patient-At-Emed-Example-Patient-01.md)Source: | | | |
 
 * **Items**: [MedicationRequest: extension = 2026-02-27 --> (ongoing),1-0-0-0 | Täglich: 1-0-0-0; status = on-hold; statusReason = Patient scheduled for surgery; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication RAMIPRIL HEX TBL 5MG; authoredOn = 2026-03-14 13:10:00+0000; courseOfTherapyType = Continuous long term therapy](MedicationRequest-At-Emed-Journey-05-01-Mr-Planeintrag-01.md)
-  * Flag: Neuer Planeintrag
+  * Flag: Planeintrag geändert
 * **Items**: [MedicationRequest: extension = 2026-02-27 --> 2026-03-20,1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication: form = Salbe; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Short course (acute) therapy](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.md)
   * Flag: Planeintrag beibehalten
 
@@ -43,14 +43,14 @@ Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga
   },
   "date" : "2026-03-14T13:10:00+00:00",
   "source" : {
-    "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
   },
   "entry" : [{
     "flag" : {
       "coding" : [{
         "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS",
-        "code" : "new",
-        "display" : "Neuer Planeintrag"
+        "code" : "changed",
+        "display" : "Planeintrag geändert"
       }]
     },
     "item" : {

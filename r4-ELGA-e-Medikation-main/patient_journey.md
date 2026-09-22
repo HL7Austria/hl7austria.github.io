@@ -89,7 +89,7 @@ Beispiele
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) 
-*  [Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md) 
+*  [Dr. Hausärztin](Practitioner-At-Emed-Example-PractitionerRole-01.md) 
  
 
 Use Cases
@@ -189,7 +189,7 @@ Use Cases
 
 ### Journey-04: 7.3.2026 - Patient ruft Medikationsplan ab
 
-Herr Mustermann erinnert sich nicht, wie lange er die Dexpanthenol-Salbe anwenden soll. Er ruft im Zugangsportal seine e-Medikation auf und erhält Einsicht auf seinen aktuellen **Medikationsplan** mit den Planeinträgen zur Dauermedikation Ramipril und der Dexpanthenol-Salbe. Dem Planeintrag der Dexpanthenol-Salbe kann er entnehmen, dass die Salbe für 3 Wochen anzuwenden ist. Er kann auch sehen, dass er keine offenen **Geplanten Abgaben** hat und sieht in den **Durchgeführten Abgaben**, wann er die Arzneimittel abgeholt hat
+Herr Mustermann erinnert sich nicht, wie lange er die Dexpanthenol-Salbe anwenden soll. Er ruft im Zugangsportal seine e-Medikation auf und erhält Einsicht auf seinen aktuellen **Medikationsplan** mit den Planeinträgen zur Dauermedikation Ramipril und der Dexpanthenol-Salbe. Dem Planeintrag mit der Dexpanthenol-Salbe kann er entnehmen, dass die Salbe für 3 Wochen anzuwenden ist. Er kann auch sehen, dass er keine offenen **Geplanten Abgaben** hat und sieht in den **Durchgeführten Abgaben**, wann er die Arzneimittel abgeholt hat
 
 Beispiele
 
@@ -213,40 +213,83 @@ Use Cases
 
  ![](plantuml/patient_journey_04.svg) 
 
-### Journey-05: 14.3.2026 - Präoperativer Hausarzttermin
+### Journey-05: 14.3.2026 - Präoperativer Arzttermin
 
-Bei Herrn Mustermann steht am 24.3.2026 eine geplante Leistenbruchoperation an. Für die Operationsfreigabe geht er zu seiner Hausärztin. Diese überprüft dahingehend auch die bestehende Medikation und ruft seine aktuelle e-Medikation ab (für Abruf Geplante und Durchgeführte Abgaben, siehe Journey-01-01).
+Bei Herrn Mustermann steht am 24.3.2026 eine geplante Leistenbruchoperation an. Für die Operationsfreigabe geht er zu seiner Hausärztin. Diese überprüft dahingehend auch die bestehende Medikation und ruft seine aktuelle e-Medikation ab (für Abruf **Geplante Abgaben** und **Durchgeführte Abgaben**, siehe [Journey-04](patient_journey.md#journey-04-ablauf---patient-ruft-medikationsplan-ab)).
 
-Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen und pausiert den Planeintrag.
+Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorübergehend abzusetzen, um das Risiko einer intraoperativen Hypotonie zu reduzieren. Er pausiert den Planeintrag und dokumentiert als Begründung die geplante Operation (**statusReason = "surg"**).
 
  Offene Punkte:
  Möglichkeit prüfen, wie der Usecase: "Medikament soll in 2 Wochen für 1 Woche pausiert werden", umgesetzt werden kann. Ein zukünftiger, zeitgesteuerter Statuswechsel auf on-hold ist nicht möglich. 
-
-* **Medikationsplan mit pausiertem Planeintrag aktualisieren:** in Arbeit.
 
 #### Journey-05-01
 
 Beispiele
 
-*  in Arbeit.  
+*  **Planeintrag pausieren:** 
+*  [Planeintrag 1: Ramipril (Dauermedikation) pausieren](MedicationRequest-At-Emed-Journey-05-01-Mr-Planeintrag-01.md) 
+ 
+*  **Medikationsplan aktualisieren:** 
+*  [Medikationsplan: 1 Planeintrag aktualisiert, 1 Planeintrag unverändert](List-At-Emed-Journey-05-01-List-Medikationsplan.md) 
+ 
+*  **Transaction Bundle:** 
+*  [Transaction Bundle](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md) 
+ 
 
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
 *  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
 *  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_02_05 - Planeintrag pausieren oder reaktivieren](Sub_UC_eMed_02.md#sub_uc_emed_02_05---planeintrag-pausieren-oder-reaktivieren) 
+*  [Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten) 
+
+#### Journey-05: Ablauf - Präoperativer Arzttermin
 
  ![](plantuml/patient_journey_05.svg) 
 
-### Journey-05: Ablauf - Präoperativer Hausarzttermin
+### Journey-06: 17.3.2026 bis 21.3.2026 - Stationärer Krankenhausaufenthalt
 
-**5.3.2026: Geplante Leistenbruchoperation**
+#### Journey-06-01: 17.3.2026 - Geplante Operation
 
-Herr Mustermann erscheint zur geplanten Leistenbruchoperation. Ramipril wurde entsprechend der ärztlichen Anweisung vorübergehend pausiert.
+Herr Mustermann erscheint zur geplanten Leistenbruchoperation. Im Krankenhaus wird bei der OP-Besprechung sein Medikationsplan abgerufen und nachgefragt, ob der Patient gemäß Medikationsplan die Einnahme von Ramipril vorübergehend pausiert hat. Dieser bejaht das.
 
-Die Leistenbruchoperation verläuft komplikationslos. Nach der Operation erhält Herr Mustermann von Dr. Krankenhaus Metamizol-Tropfen gegen die postoperativen Schmerzen. Metamizol-Tropfen, 2 Fläschchen: 3 × täglich 30 Tropfen für wenige Tage (nach Bedarf)
+Die Operation verläuft komplikationslos.
 
-* **Medikationsplan mit neuem Planeintrag aktualisieren:** in Arbeit.
+#### Journey-06-02: 19.3.2026 - Entlassung
+
+Zwei Tage nach der Operation kann Herr Mustermann entlassen werden. Gegen die postoperativen Schmerzen soll er weiterhin den **Wirkstoff** Metamizol einnehmen. Dr. Krankenhaus dokumentiert dies in einem neuen Planeintrag: Metamizol 1.000 mg, 4x täglich oral, Abstand 6–8 Stunden.
+
+Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in der Dosis erhöht (auf 1-0-1-0).
+
+#### Journey-06-02
+
+Beispiele
+
+*  **Planeintrag hinzufügen:** 
+*  [Neuer Planeintrag 3: Wirstoff Metamizol](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) 
+ 
+*  **Planeintrag anpassen:** 
+*  [Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) 
+ 
+*  **Medikationsplan aktualisieren:** 
+*  [Medikationsplan: 1 Planeintrag neu hinzugefügt, 2 Planeinträge unverändert](List-At-Emed-Journey-06-02-List-Medikationsplan.md) 
+ 
+*  **Transaction Bundle:** 
+*  [Transaction Bundle](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) 
+ 
+
+Use Cases
+
+*  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
+*  [Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen](Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen) 
+*  [Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern](Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern) 
+*  Referenz auf Wirkstoffangabe im Medikationsplan: in Arbeit.  
+*  [Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten) 
+
+#### Journey-06: Ablauf - Stationärer Krankenhausaufenthalt
+
+ ![](plantuml/patient_journey_06.svg) 
 
 **7.3.2026: Teilabgabe in der Apotheke**
 

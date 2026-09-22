@@ -65,7 +65,7 @@
   },
   "authoredOn" : "2026-02-27T08:10:00+00:00",
   "requester" : {
-    "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
   },
   "basedOn" : [{
     "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01",
