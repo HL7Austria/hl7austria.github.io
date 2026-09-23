@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationMagistraleZubereitung",
   "title" : "AT ELGA e-Medikation Medication Magistrale Medikation",
   "status" : "draft",
-  "date" : "2026-09-23T05:33:05+00:00",
+  "date" : "2026-09-23T16:50:58+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -224,13 +224,16 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "sliceName" : "ATCWidO",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetATC"
+      }
     },
     {
       "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:ATCWidO.system",
       "path" : "Medication.ingredient.item[x].coding.system",
-      "min" : 1,
-      "patternUri" : "TODO"
+      "min" : 1
     },
     {
       "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:WirkstoffeAges",

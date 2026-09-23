@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-23T05:33:05+00:00",
+  "date" : "2026-09-23T16:50:58+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1246,18 +1246,34 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-4cb4dceb-173f-461a-a267-683ec33e4be1.html"
+      }],
+      "reference" : {
+        "reference" : "List/4cb4dceb-173f-461a-a267-683ec33e4be1"
+      },
+      "name" : "Beispiel Journey 01-02: Medikationsplan",
+      "description" : "Beispiel eines Medikationsplans, der 2 Planeinträge referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan.html"
+        "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.html"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan"
+        "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-plan-write-response"
       },
-      "name" : "Beispiel Journey 01-02: Medikationsplan-Bundle",
-      "description" : "Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
+      "name" : "Beispiel Journey 01-02: Plan-Write-Response ",
+      "description" : "Beispiel einer Response eines plan write mit 2 neuen Planeinträgen",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -1270,6 +1286,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01"
+      },
+      "name" : "Beispiel Journey 01-02: Planeintrag 1",
+      "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-6bacfe23-d469-4945-bf3c-90c7e647aa52.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"
       },
       "name" : "Beispiel Journey 01-02: Planeintrag 1",
       "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab.",
@@ -1302,6 +1334,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       }],
       "reference" : {
         "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02"
+      },
+      "name" : "Beispiel Journey 01-02: Planeintrag 2",
+      "description" : "Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
       },
       "name" : "Beispiel Journey 01-02: Planeintrag 2",
       "description" : "Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab.",
@@ -1566,6 +1614,21 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Medication"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Medication-at-emed-journey-medicaiton-ramipril.html"
+      }],
+      "reference" : {
+        "reference" : "Medication/at-emed-journey-medicaiton-ramipril"
+      },
+      "name" : "Beispiel Medikation Ramipril",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
       },
       {
@@ -1752,6 +1815,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "CodeSystem/AtElgaEmedCodeSystemDosageCategory"
       },
       "name" : "ELGA Dosage Category Status CodeSystem",
+      "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtElgaEmedValueSetATC.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtElgaEmedValueSetATC"
+      },
+      "name" : "ELGA Dosage Category Status ValueSet",
       "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
       "exampleBoolean" : false
     },

@@ -19,7 +19,7 @@ Das Bundle vom Typ Searchset bestehend aus:
 
 **Usages:**
 
-* Examples for this Profile: [Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md) and [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplan.json)
 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-23T05:33:05+00:00",
+  "date" : "2026-09-23T16:50:58+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -117,7 +117,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "id" : "Bundle.link",
       "path" : "Bundle.link",
       "short" : "Verweise auf weiterführende Informationen zum Bundle.",
-      "max" : "0"
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry",
@@ -253,10 +253,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       {
         "code" : "PractitionerRole",
         "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
-      },
-      {
-        "code" : "Patient",
-        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
       }]
     }]
   }

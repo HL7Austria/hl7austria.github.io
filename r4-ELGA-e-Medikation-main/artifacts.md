@@ -107,6 +107,7 @@ These define sets of codes used by systems conforming to this implementation gui
 
 | | |
 | :--- | :--- |
+| [ELGA Dosage Category Status ValueSet](ValueSet-AtElgaEmedValueSetATC.md) | Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA. |
 | [ELGA Dosage Category Status ValueSet](ValueSet-AtElgaEmedValueSetDosageCategory.md) | Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA. |
 | [ELGA Dosierung Timing When ValueSet für Tageszeitenschema](ValueSet-ElgaTimingWhenStandardAdministrationVS.md) | ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema. |
 | [ELGA List Empty Reason Value Set](ValueSet-ElgaListEmptyReasonVS.md) | ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. |
@@ -145,10 +146,13 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Example: Substance Hydrocortison](Substance-At-Emed-Example-Substance-Hydrocortison.md) | Beispiel einer Substance Hydrocortison. |
 | [Beispiel Journey 01-01: Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
 | [Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) beinhaltet. |
+| [Beispiel Journey 01-02: Medikationsplan](List-4cb4dceb-173f-461a-a267-683ec33e4be1.md) | Beispiel eines Medikationsplans, der 2 Planeinträge referenziert und Informationen über Reihenfolge und Änderungsstatus speichert. |
 | [Beispiel Journey 01-02: Medikationsplan](List-At-Emed-Journey-01-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans, der 2 Planeinträge referenziert und Informationen über Reihenfolge und Änderungsstatus speichert. |
-| [Beispiel Journey 01-02: Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert. |
+| [Beispiel Journey 01-02: Plan-Write-Response ](Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.md) | Beispiel einer Response eines plan write mit 2 neuen Planeinträgen |
+| [Beispiel Journey 01-02: Planeintrag 1](MedicationRequest-6bacfe23-d469-4945-bf3c-90c7e647aa52.md) | Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab. |
 | [Beispiel Journey 01-02: Planeintrag 1](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-01.md) | Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab. |
 | [Beispiel Journey 01-02: Planeintrag 1](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-01.md) | Bildet einen Planeintrag mit dem Arzneimittel Ramipril und geänderten Dosierungsanweisungen ab. |
+| [Beispiel Journey 01-02: Planeintrag 2](MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.md) | Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab. |
 | [Beispiel Journey 01-02: Planeintrag 2](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.md) | Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab. |
 | [Beispiel Journey 01-03: Geplante Abgabe 1](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.md) | Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab. |
 | [Beispiel Journey 01-03: Geplante Abgabe 2](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md) | Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und den Dosierungsanweisungen gemäß zugehörigem Planeintrag ab. |
@@ -166,6 +170,7 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet. |
 | [Beispiel Journey 06-02: Medikationsplan](List-At-Emed-Journey-06-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag. |
 | [Beispiel Journey 06-02: Planeintrag 3](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) | Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab. |
+| [Beispiel Medikation Ramipril](Medication-at-emed-journey-medicaiton-ramipril.md) |  |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema |

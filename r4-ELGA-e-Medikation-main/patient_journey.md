@@ -97,6 +97,21 @@ Use Cases
 *  [Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write) 
 *  [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen) 
 
+#### Journey-01-02: Request 01 - Medikationsplan schreiben
+
+Request
+
+POST
+`[base]/List/$plan-write`
+
+**Headers:**
+`Content-Type: application/fhir+json`
+
+Request Body
+Todo Replace with Parameter wrapper:
+
+Response Body
+
 Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und als verantwortliche Ärztin Dr. Hausärztin ersichtlich.
 
 #### Journey-01-03

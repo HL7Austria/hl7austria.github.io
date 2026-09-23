@@ -19,18 +19,23 @@
   },
   "type" : "searchset",
   "timestamp" : "2026-02-27T08:00:00+00:00",
+  "total" : 3,
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://example.elga.com/base/List/$plan-read"
+  }],
   "entry" : [{
     "fullUrl" : "https://example.elga.com/List/4cb4dceb-173f-461a-a267-683ec33e4be1",
     "resource" : {
       "resourceType" : "List",
-      "id" : "At-Emed-Journey-01-01-List-Medikationsplan",
+      "id" : "4cb4dceb-173f-461a-a267-683ec33e4be1",
       "meta" : {
         "versionId" : "f43395bd-d5e7-4d61-872e-46c214d090ab",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"]
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-01-01-List-Medikationsplan\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-01-01-List-Medikationsplan</b></p><a name=\"At-Emed-Journey-01-01-List-Medikationsplan\"> </a><a name=\"hcAt-Emed-Journey-01-01-List-Medikationsplan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: f43395bd-d5e7-4d61-872e-46c214d090ab</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-02-27 08:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List 4cb4dceb-173f-461a-a267-683ec33e4be1</b></p><a name=\"4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a><a name=\"hc4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: f43395bd-d5e7-4d61-872e-46c214d090ab</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-02-27 08:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</a>Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr></table></div>"
       },
       "status" : "current",
       "mode" : "working",
@@ -54,6 +59,9 @@
           "code" : "notstarted"
         }]
       }
+    },
+    "search" : {
+      "mode" : "match"
     }
   },
   {
@@ -181,6 +189,9 @@
         "postalCode" : "4020",
         "country" : "AUT"
       }]
+    },
+    "search" : {
+      "mode" : "include"
     }
   },
   {
@@ -203,6 +214,9 @@
           "display" : "Gerät"
         }]
       }
+    },
+    "search" : {
+      "mode" : "include"
     }
   }]
 }
