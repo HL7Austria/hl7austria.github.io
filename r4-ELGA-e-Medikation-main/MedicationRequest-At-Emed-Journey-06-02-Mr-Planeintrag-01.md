@@ -41,14 +41,7 @@
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
     "valueMarkdown" : "1-0-1-0 | Täglich: 1-0-1-0"
   }],
-  "status" : "on-hold",
-  "statusReason" : {
-    "coding" : [{
-      "system" : "http://terminology.hl7.org/7.4.0/CodeSystem-medicationrequest-status-reason.html",
-      "code" : "surg",
-      "display" : "Patient scheduled for surgery."
-    }]
-  },
+  "status" : "active",
   "intent" : "order",
   "category" : [{
     "coding" : [{
@@ -62,11 +55,13 @@
     "reference" : "#contained-medication-journey-06-02-01"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Example-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01",
+    "display" : "Anton Mustermann"
   },
   "authoredOn" : "2026-03-19T12:10:00+00:00",
   "requester" : {
-    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-03",
+    "display" : "Dr. Krankenhaus"
   },
   "courseOfTherapyType" : {
     "coding" : [{

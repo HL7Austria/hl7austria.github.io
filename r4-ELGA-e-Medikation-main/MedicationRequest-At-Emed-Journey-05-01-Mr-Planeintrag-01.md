@@ -46,7 +46,7 @@
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason",
       "code" : "surg",
-      "display" : "Patient scheduled for surgery"
+      "display" : "Patient scheduled for surgery."
     }]
   },
   "intent" : "order",
@@ -62,11 +62,13 @@
     "reference" : "#contained-medication-journey-05-01-01"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Example-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01",
+    "display" : "Anton Mustermann"
   },
   "authoredOn" : "2026-03-14T13:10:00+00:00",
   "requester" : {
-    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01",
+    "display" : "Dr. Hausärztin"
   },
   "courseOfTherapyType" : {
     "coding" : [{

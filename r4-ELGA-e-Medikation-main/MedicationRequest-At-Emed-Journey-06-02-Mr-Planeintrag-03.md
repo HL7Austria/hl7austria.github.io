@@ -19,67 +19,29 @@
   },
   "contained" : [{
     "resourceType" : "Medication",
-    "id" : "contained-medication-journey-06-02-02-magistral",
+    "id" : "contained-medication-journey-06-02-02-wirkstoff",
     "meta" : {
       "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
-    },
-    "form" : {
-      "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
-        "code" : "100000073713",
-        "display" : "Salbe"
-      }]
     },
     "ingredient" : [{
       "itemCodeableConcept" : {
         "coding" : [{
-          "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
-          "code" : "A11HA30",
-          "display" : "Dexpanthenol"
+          "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
+          "code" : "4467812",
+          "display" : "METAMIZOL NATRIUM MONOHYDRAT"
         }]
-      },
-      "strength" : {
-        "numerator" : {
-          "value" : 5,
-          "unit" : "g",
-          "system" : "http://unitsofmeasure.org",
-          "code" : "g"
-        },
-        "denominator" : {
-          "value" : 100,
-          "unit" : "g",
-          "system" : "http://unitsofmeasure.org",
-          "code" : "g"
-        }
-      }
-    },
-    {
-      "itemCodeableConcept" : {
-        "text" : "Salbengrundlage"
-      },
-      "isActive" : false,
-      "strength" : {
-        "numerator" : {
-          "value" : 95,
-          "unit" : "g"
-        },
-        "denominator" : {
-          "value" : 100,
-          "unit" : "g"
-        }
       }
     }]
   }],
   "extension" : [{
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
     "valuePeriod" : {
-      "start" : "2026-02-27",
-      "end" : "2026-03-20"
+      "start" : "2026-03-19"
     }
   },
   {
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-    "valueMarkdown" : "1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen"
+    "valueMarkdown" : "1-1-1-1 | 4x täglich 1000 mg"
   }],
   "status" : "active",
   "intent" : "order",
@@ -92,14 +54,16 @@
   }],
   "reportedBoolean" : false,
   "medicationReference" : {
-    "reference" : "#contained-medication-journey-06-02-02-magistral"
+    "reference" : "#contained-medication-journey-06-02-02-wirkstoff"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Example-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01",
+    "display" : "Anton Mustermann"
   },
   "authoredOn" : "2026-03-19T12:10:00+00:00",
   "requester" : {
-    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-03",
+    "display" : "Dr. Krankenhaus"
   },
   "courseOfTherapyType" : {
     "coding" : [{
@@ -120,23 +84,20 @@
     "sequence" : 1,
     "timing" : {
       "repeat" : {
-        "boundsDuration" : {
-          "value" : 3,
-          "unit" : "wk"
-        },
-        "frequency" : 2,
+        "frequency" : 4,
         "period" : 1,
         "periodUnit" : "d",
-        "when" : ["MORN", "EVE"]
+        "when" : ["MORN", "NOON", "EVE", "NIGHT"]
       }
     },
-    "route" : {
-      "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
-        "code" : "100000073566",
-        "display" : "Anwendung auf der Haut"
-      }]
-    }
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "value" : 1000,
+        "unit" : "MilliGram",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mg"
+      }
+    }]
   }]
 }
 

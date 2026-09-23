@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplanein
   "title" : "ELGA e-Med Medikationsplaneintrag StatusReason Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-23T16:50:58+00:00",
+  "date" : "2026-09-23T17:09:41+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -87,7 +87,7 @@ ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplanein
       },
       {
         "code" : "surg",
-        "display" : "Patient scheduled for surgery"
+        "display" : "Patient scheduled for surgery."
       },
       {
         "code" : "sintol",

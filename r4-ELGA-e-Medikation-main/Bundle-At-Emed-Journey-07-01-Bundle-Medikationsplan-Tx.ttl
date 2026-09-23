@@ -1,0 +1,425 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx> a fhir:Bundle ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx>
+     ]
+  ] ;
+  fhir:Bundle.type [ fhir:value "transaction"] ;
+  fhir:Bundle.timestamp [ fhir:value "2026-03-22T16:10:00+00:00"^^xsd:dateTime] ;
+  fhir:Bundle.entry [
+     fhir:index 0 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.elga.com/List/4cb4dceb-173f-461a-a267-683ec33e4be1" ] ;
+     fhir:Bundle.entry.resource <https://example.elga.com/List/4cb4dceb-173f-461a-a267-683ec33e4be1> ;
+     fhir:Bundle.entry.request [
+       fhir:Bundle.entry.request.method [ fhir:value "PUT" ] ;
+       fhir:Bundle.entry.request.url [ fhir:value "List/4cb4dceb-173f-461a-a267-683ec33e4be1" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Bundle.entry.resource [
+       a fhir:MedicationRequest ;
+       fhir:Resource.id [ fhir:value "At-Emed-Journey-01-02-Mr-Planeintrag-02" ] ;
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+           fhir:index 0 ;
+           fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+         ]
+       ] ;
+       fhir:DomainResource.text [
+         fhir:Narrative.status [ fhir:value "extensions" ] ;
+         fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-01-02-Mr-Planeintrag-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-01-02-Mr-Planeintrag-02</b></p><a name=\"At-Emed-Journey-01-02-Mr-Planeintrag-02\"> </a><a name=\"hcAt-Emed-Journey-01-02-Mr-Planeintrag-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-02-27 --&gt; 2026-03-20</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-01-02-Mr-Planeintrag-02/contained-medication-journey-01-02-02-magistral\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann</a></p><p><b>authoredOn</b>: 2026-02-27 08:10:00+0000</p><p><b>requester</b>: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-01.html\">Dr. Hausärztin</a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Sequence</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>1</td><td>Morning, Evening, 2 per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-journey-01-02-02-magistral</b></p><a name=\"At-Emed-Journey-01-02-Mr-Planeintrag-02/contained-medication-journey-01-02-02-magistral\"> </a><a name=\"hcAt-Emed-Journey-01-02-Mr-Planeintrag-02/contained-medication-journey-01-02-02-magistral\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html\">AT ELGA e-Medikation Medication Magistrale Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A11HA30}\">Dexpanthenol</span></p><p><b>strength</b>: 5 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 95 g/100 g</p></blockquote></blockquote></div>"
+       ] ;
+       fhir:DomainResource.contained [
+         a fhir:Medication ;
+         fhir:index 0 ;
+         fhir:Resource.id [ fhir:value "contained-medication-journey-01-02-02-magistral" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung" ;
+             fhir:index 0 ;
+             fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung>
+           ]
+         ] ;
+         fhir:Medication.form [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform" ] ;
+             fhir:Coding.code [ fhir:value "100000073713" ] ;
+             fhir:Coding.display [ fhir:value "Salbe" ]
+           ]
+         ] ;
+         fhir:Medication.ingredient [
+           fhir:index 0 ;
+           fhir:Medication.ingredient.itemCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido" ] ;
+               fhir:Coding.code [ fhir:value "A11HA30" ] ;
+               fhir:Coding.display [ fhir:value "Dexpanthenol" ]
+             ]
+           ] ;
+           fhir:Medication.ingredient.strength [
+             fhir:Ratio.numerator [
+               fhir:Quantity.value [ fhir:value "5"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ] ;
+               fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+               fhir:Quantity.code [ fhir:value "g" ]
+             ] ;
+             fhir:Ratio.denominator [
+               fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ] ;
+               fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+               fhir:Quantity.code [ fhir:value "g" ]
+             ]
+           ]
+         ], [
+           fhir:index 1 ;
+           fhir:Medication.ingredient.itemCodeableConcept [
+             fhir:CodeableConcept.text [ fhir:value "Salbengrundlage" ]
+           ] ;
+           fhir:Medication.ingredient.isActive [ fhir:value "false"^^xsd:boolean ] ;
+           fhir:Medication.ingredient.strength [
+             fhir:Ratio.numerator [
+               fhir:Quantity.value [ fhir:value "95"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ]
+             ] ;
+             fhir:Ratio.denominator [
+               fhir:Quantity.value [ fhir:value "100"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "g" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:DomainResource.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod" ] ;
+         fhir:Extension.valuePeriod [
+           fhir:Period.start [ fhir:value "2026-02-27"^^xsd:date ] ;
+           fhir:Period.end [ fhir:value "2026-03-20"^^xsd:date ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction" ] ;
+         fhir:Extension.valueMarkdown [ fhir:value "1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen" ]
+       ] ;
+       fhir:MedicationRequest.status [ fhir:value "active" ] ;
+       fhir:MedicationRequest.intent [ fhir:value "order" ] ;
+       fhir:MedicationRequest.category [
+         fhir:index 0 ;
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS" ] ;
+           fhir:Coding.code [ fhir:value "1" ] ;
+           fhir:Coding.display [ fhir:value "Planeintrag" ]
+         ]
+       ] ;
+       fhir:MedicationRequest.reportedBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:MedicationRequest.medicationReference [
+         fhir:Reference.reference [ fhir:value "#contained-medication-journey-01-02-02-magistral" ]
+       ] ;
+       fhir:MedicationRequest.subject [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+         fhir:Reference.reference [ fhir:value "Patient/At-Emed-Example-Patient-01" ] ;
+         fhir:Reference.display [ fhir:value "Anton Mustermann" ]
+       ] ;
+       fhir:MedicationRequest.authoredOn [ fhir:value "2026-02-27T08:10:00+00:00"^^xsd:dateTime ] ;
+       fhir:MedicationRequest.requester [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/PractitionerRole/At-Emed-Example-PractitionerRole-01> ;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/At-Emed-Example-PractitionerRole-01" ] ;
+         fhir:Reference.display [ fhir:value "Dr. Hausärztin" ]
+       ] ;
+       fhir:MedicationRequest.courseOfTherapyType [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy" ] ;
+           fhir:Coding.code [ fhir:value "acute" ]
+         ]
+       ] ;
+       fhir:MedicationRequest.dosageInstruction [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category" ] ;
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory" ] ;
+               fhir:Coding.code [ fhir:value "standard" ]
+             ]
+           ]
+         ] ;
+         fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ] ;
+         fhir:Dosage.timing [
+           fhir:Timing.repeat [
+             fhir:Timing.repeat.boundsDuration [
+               fhir:Quantity.value [ fhir:value "3"^^xsd:decimal ] ;
+               fhir:Quantity.unit [ fhir:value "wk" ]
+             ] ;
+             fhir:Timing.repeat.frequency [ fhir:value "2"^^xsd:positiveInteger ] ;
+             fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+             fhir:Timing.repeat.periodUnit [ fhir:value "d" ] ;
+             fhir:Timing.repeat.when [
+               fhir:value "MORN" ;
+               fhir:index 0
+             ], [
+               fhir:value "EVE" ;
+               fhir:index 1
+             ]
+           ]
+         ] ;
+         fhir:Dosage.route [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html" ] ;
+             fhir:Coding.code [ fhir:value "100000073566" ] ;
+             fhir:Coding.display [ fhir:value "Anwendung auf der Haut" ]
+           ]
+         ]
+       ]
+     ] ;
+     fhir:Bundle.entry.request [
+       fhir:Bundle.entry.request.method [ fhir:value "PUT" ] ;
+       fhir:Bundle.entry.request.url [ fhir:value "MedicationRequest" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Bundle.entry.resource [
+       a fhir:MedicationRequest ;
+       fhir:Resource.id [ fhir:value "At-Emed-Journey-07-01-Mr-Planeintrag-03" ] ;
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ;
+           fhir:index 0 ;
+           fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag>
+         ]
+       ] ;
+       fhir:DomainResource.text [
+         fhir:Narrative.status [ fhir:value "extensions" ] ;
+         fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-07-01-Mr-Planeintrag-03\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-07-01-Mr-Planeintrag-03</b></p><a name=\"At-Emed-Journey-07-01-Mr-Planeintrag-03\"> </a><a name=\"hcAt-Emed-Journey-07-01-Mr-Planeintrag-03\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-03-19 --&gt; (ongoing)</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-1-1-1 | 4 x täglich 40 Tropfen</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-07-01-Mr-Planeintrag-03/contained-medication-journey-07-01-02\">Medication METAGELAN TR 500MG/ML</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann</a></p><p><b>authoredOn</b>: 2026-03-19 12:10:00+0000</p><p><b>requester</b>: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-03.html\">Dr. Krankenhaus</a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><blockquote><p><b>dosageInstruction</b></p><p><b>AT ELGA e-Medikation Extension Dosierungskategorie</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory standard}\">Standard Administration</span></p><p><b>sequence</b>: 1</p><p><b>patientInstruction</b>: Nehmen Sie die Tropfen nach dem Essen ein.</p><p><b>timing</b>: Morning, Noon, Evening, Night, 4 per 1 day</p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>40 Tropfen<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{Tropfen} = '{Tropfen}')</span></td></tr></table></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-journey-07-01-02</b></p><a name=\"At-Emed-Journey-07-01-Mr-Planeintrag-03/contained-medication-journey-07-01-02\"> </a><a name=\"hcAt-Emed-Journey-07-01-Mr-Planeintrag-03/contained-medication-journey-07-01-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html\">AT ELGA e-Medikation Medication Magistrale Medikation</a></p></div><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 4467812}\">METAGELAN TR 500MG/ML</span></p><h3>Ingredients</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Item[x]</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe 4467812}\">METAMIZOL NATRIUM MONOHYDRAT</span></td></tr></table></blockquote></div>"
+       ] ;
+       fhir:DomainResource.contained [
+         a fhir:Medication ;
+         fhir:index 0 ;
+         fhir:Resource.id [ fhir:value "contained-medication-journey-07-01-02" ] ;
+         fhir:Resource.meta [
+           fhir:Meta.profile [
+             fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung" ;
+             fhir:index 0 ;
+             fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung>
+           ]
+         ] ;
+         fhir:Medication.code [
+           fhir:CodeableConcept.coding [
+             fhir:index 0 ;
+             fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/asp-liste" ] ;
+             fhir:Coding.code [ fhir:value "4467812" ] ;
+             fhir:Coding.display [ fhir:value "METAGELAN TR 500MG/ML" ]
+           ]
+         ] ;
+         fhir:Medication.ingredient [
+           fhir:index 0 ;
+           fhir:Medication.ingredient.itemCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe" ] ;
+               fhir:Coding.code [ fhir:value "4467812" ] ;
+               fhir:Coding.display [ fhir:value "METAMIZOL NATRIUM MONOHYDRAT" ]
+             ]
+           ]
+         ]
+       ] ;
+       fhir:DomainResource.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod" ] ;
+         fhir:Extension.valuePeriod [
+           fhir:Period.start [ fhir:value "2026-03-19"^^xsd:date ]
+         ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction" ] ;
+         fhir:Extension.valueMarkdown [ fhir:value "1-1-1-1 | 4 x täglich 40 Tropfen" ]
+       ] ;
+       fhir:MedicationRequest.status [ fhir:value "active" ] ;
+       fhir:MedicationRequest.intent [ fhir:value "order" ] ;
+       fhir:MedicationRequest.category [
+         fhir:index 0 ;
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS" ] ;
+           fhir:Coding.code [ fhir:value "1" ] ;
+           fhir:Coding.display [ fhir:value "Planeintrag" ]
+         ]
+       ] ;
+       fhir:MedicationRequest.reportedBoolean [ fhir:value "false"^^xsd:boolean ] ;
+       fhir:MedicationRequest.medicationReference [
+         fhir:Reference.reference [ fhir:value "#contained-medication-journey-07-01-02" ]
+       ] ;
+       fhir:MedicationRequest.subject [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+         fhir:Reference.reference [ fhir:value "Patient/At-Emed-Example-Patient-01" ] ;
+         fhir:Reference.display [ fhir:value "Anton Mustermann" ]
+       ] ;
+       fhir:MedicationRequest.authoredOn [ fhir:value "2026-03-19T12:10:00+00:00"^^xsd:dateTime ] ;
+       fhir:MedicationRequest.requester [
+         fhir:link <https://fhir.hl7.at/elga/emed/r4/PractitionerRole/At-Emed-Example-PractitionerRole-03> ;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/At-Emed-Example-PractitionerRole-03" ] ;
+         fhir:Reference.display [ fhir:value "Dr. Krankenhaus" ]
+       ] ;
+       fhir:MedicationRequest.courseOfTherapyType [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy" ] ;
+           fhir:Coding.code [ fhir:value "acute" ]
+         ]
+       ] ;
+       fhir:MedicationRequest.dosageInstruction [
+         fhir:index 0 ;
+         fhir:Element.extension [
+           fhir:index 0 ;
+           fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category" ] ;
+           fhir:Extension.valueCodeableConcept [
+             fhir:CodeableConcept.coding [
+               fhir:index 0 ;
+               fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory" ] ;
+               fhir:Coding.code [ fhir:value "standard" ]
+             ]
+           ]
+         ] ;
+         fhir:Dosage.sequence [ fhir:value "1"^^xsd:integer ] ;
+         fhir:Dosage.patientInstruction [ fhir:value "Nehmen Sie die Tropfen nach dem Essen ein." ] ;
+         fhir:Dosage.timing [
+           fhir:Timing.repeat [
+             fhir:Timing.repeat.frequency [ fhir:value "4"^^xsd:positiveInteger ] ;
+             fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+             fhir:Timing.repeat.periodUnit [ fhir:value "d" ] ;
+             fhir:Timing.repeat.when [
+               fhir:value "MORN" ;
+               fhir:index 0
+             ], [
+               fhir:value "NOON" ;
+               fhir:index 1
+             ], [
+               fhir:value "EVE" ;
+               fhir:index 2
+             ], [
+               fhir:value "NIGHT" ;
+               fhir:index 3
+             ]
+           ]
+         ] ;
+         fhir:Dosage.doseAndRate [
+           fhir:index 0 ;
+           fhir:Dosage.doseAndRate.doseQuantity [
+             fhir:Quantity.value [ fhir:value "40"^^xsd:decimal ] ;
+             fhir:Quantity.unit [ fhir:value "Tropfen" ] ;
+             fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ] ;
+             fhir:Quantity.code [ fhir:value "{Tropfen}" ]
+           ]
+         ]
+       ]
+     ] ;
+     fhir:Bundle.entry.request [
+       fhir:Bundle.entry.request.method [ fhir:value "PUT" ] ;
+       fhir:Bundle.entry.request.url [ fhir:value "MedicationRequest" ]
+     ]
+  ] .
+
+<https://example.elga.com/List/4cb4dceb-173f-461a-a267-683ec33e4be1> a fhir:List ;
+  fhir:Resource.id [ fhir:value "At-Emed-Journey-07-01-List-Medikationsplan"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-07-01-List-Medikationsplan\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-07-01-List-Medikationsplan</b></p><a name=\"At-Emed-Journey-07-01-List-Medikationsplan\"> </a><a name=\"hcAt-Emed-Journey-07-01-List-Medikationsplan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-22 16:10:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann</a>Source: </td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-01.html\">MedicationRequest: extension = 2026-02-27 --&gt; (ongoing),1-0-1-0 | Täglich: 1-0-1-0; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication RAMIPRIL HEX TBL 5MG; authoredOn = 2026-03-19 12:10:00+0000; courseOfTherapyType = Continuous long term therapy</a></td><td>Planeintrag beibehalten</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-02.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-20,1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen; status = stopped; statusReason = Planeintrag Abgelaufen; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-03-22 16:10:00+0000; courseOfTherapyType = Short course (acute) therapy</a></td><td>Planeintrag entfernt</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-03.html\">MedicationRequest: extension = 2026-03-19 --&gt; (ongoing),1-1-1-1 | 4 x täglich 40 Tropfen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication METAGELAN TR 500MG/ML; authoredOn = 2026-03-19 12:10:00+0000; courseOfTherapyType = Short course (acute) therapy</a></td><td>Planeintrag geändert</td></tr></table></div>"
+  ] ;
+  fhir:List.status [ fhir:value "current"] ;
+  fhir:List.mode [ fhir:value "working"] ;
+  fhir:List.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:736378000 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "736378000" ] ;
+       fhir:Coding.display [ fhir:value "Medikationsplan" ]
+     ]
+  ] ;
+  fhir:List.subject [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Patient/At-Emed-Example-Patient-01> ;
+     fhir:Reference.reference [ fhir:value "Patient/At-Emed-Example-Patient-01" ] ;
+     fhir:Reference.display [ fhir:value "Anton Mustermann" ]
+  ] ;
+  fhir:List.date [ fhir:value "2026-03-22T16:10:00+00:00"^^xsd:dateTime] ;
+  fhir:List.source [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/PractitionerRole/At-Emed-Example-PractitionerRole-01> ;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/At-Emed-Example-PractitionerRole-01" ] ;
+     fhir:Reference.display [ fhir:value "Dr. Hausärztin" ]
+  ] ;
+  fhir:List.entry [
+     fhir:index 0 ;
+     fhir:List.entry.flag [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS" ] ;
+         fhir:Coding.code [ fhir:value "unchanged" ] ;
+         fhir:Coding.display [ fhir:value "Planeintrag beibehalten" ]
+       ]
+     ] ;
+     fhir:List.entry.item [
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-01> ;
+       fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-01" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:List.entry.flag [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS" ] ;
+         fhir:Coding.code [ fhir:value "removed" ] ;
+         fhir:Coding.display [ fhir:value "Planeintrag entfernt" ]
+       ]
+     ] ;
+     fhir:List.entry.item [
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-02> ;
+       fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-02" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:List.entry.flag [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://fhir.hl7.at/elga/emed/r4/CodeSystem/ElgaListEntryFlagCS" ] ;
+         fhir:Coding.code [ fhir:value "changed" ] ;
+         fhir:Coding.display [ fhir:value "Planeintrag geändert" ]
+       ]
+     ] ;
+     fhir:List.entry.item [
+       fhir:link <https://fhir.hl7.at/elga/emed/r4/MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-03> ;
+       fhir:Reference.reference [ fhir:value "MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-03" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/Bundle/At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

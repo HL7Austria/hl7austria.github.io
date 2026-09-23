@@ -157,7 +157,7 @@ Beispiele
  
 *  **Transaction Bundle:** 
 *  [Durchgeführte-Abgaben-Transaction-Bundle](Bundle-At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx.md) 
-*  [Apotheke (Organization)](Organization-At-Emed-Example-Organization-Apo-01.md) 
+*  [Apotheke (Organization)](Organization-At-Emed-Example-Organization-02.md) 
  
 
 Use Cases
@@ -273,7 +273,7 @@ Die Operation verläuft komplikationslos.
 
 #### Journey-06-02: 19.3.2026 - Entlassung
 
-Zwei Tage nach der Operation kann Herr Mustermann entlassen werden. Gegen die postoperativen Schmerzen soll er weiterhin den **Wirkstoff** Metamizol einnehmen. Dr. Krankenhaus dokumentiert dies in einem neuen Planeintrag: Metamizol 1.000 mg, 4x täglich oral, Abstand 6–8 Stunden.
+Zwei Tage nach der Operation kann Herr Mustermann entlassen werden. Gegen die postoperativen Schmerzen soll er weiterhin den **Wirkstoff** Metamizol einnehmen. Dr. Krankenhaus dokumentiert dies in einem neuen Planeintrag: Metamizol 1.000 mg, 4x täglich. 
 
 Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in der Dosis erhöht (auf 1-0-1-0).
 
@@ -282,7 +282,7 @@ Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in d
 Beispiele
 
 *  **Planeintrag hinzufügen:** 
-*  [Neuer Planeintrag 3: Wirstoff Metamizol](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) 
+*  [Neuer Planeintrag 3: Wirstoff Metamizol (in Arbeit)](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md)  
  
 *  **Planeintrag anpassen:** 
 *  [Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) 
@@ -305,6 +305,48 @@ Use Cases
 #### Journey-06: Ablauf - Stationärer Krankenhausaufenthalt
 
  ![](plantuml/patient_journey_06.svg) 
+
+### Journey-07: 22.3.2026 - Termin bei Dr. Urlaubsvertretung
+
+Nach der Entlassung sucht Herr Mustermann die Praxis seiner Hausärztin auf, um sich für das Schermzmittel ein Rezept ausstellen zu lassen. Diese wird aktuell von Frau **Dr. Urlaubsvertretung** vertreten. Dr. Urlaubsvertretung ruft die e-Medikation von Herrn Mustermann ab und ändert den Planeintrag mit der Wirkstoffangabe und Dosierung auf das entsprechende Arzneimttelprodukt mit passender Dosierung: Metagelan 500 mg/ml-Tropfen, 40 Tropfen 4-mal täglich.
+
+Der Behandlungszeitraum für die Dexpanthenol-Salbe ist zwischenzeitlich **abgelaufen**. Dr. Urlaubsvertretung stellt fest, dass keine weitere Behandung nötig ist, der im Medikationsplan von der Fachanwendung zur Entfernung markierte Planeintrag wird durch die Aktualisierung des Medikationsplans bestätigt und wird beim nächsten Abruf nicht mehr aufscheinen.
+
+Zuletzt erstellt Dr. Urlaubsvertretung eine **Geplante Abgabe** von die Metagelan-Tropfen.
+
+ Offene Punkte:
+ Wie wird von der Fachanwendung festgestellt, ob ein Behandlungszeitraum abgelaufen ist? 
+ - extension[effectiveDosePeriod].valuePeriod.start + Dosierinformationen (für 3 Wochen) 
+ - überschrittenes Datum in extension[effectiveDosePeriod].valuePeriod.end 
+ -> bei beiden Varianten unklar, wann das Medikament abgeholt bzw. die Behandlung wirklich begonnen wurde (Abholdatum geht nur aus MediacationDispense hervor) 
+
+#### Journey-07-01
+
+Beispiele
+
+*  **Planeintrag anpassen:** 
+*  [Neuer Planeintrag 3: passendes Arzneimittel zur Wirkstoffeangabe verodnen](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-03.md) 
+ 
+*  **abgelaufenen Planeintrag bestätigen:** (keine Änderung erforderlich) 
+*  [Neuer Planeintrag 2: Statusänderung wurde bereits durch Fachanwendung vorgenommen](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-02.md) 
+ 
+*  **Medikationsplan aktualisieren:** 
+*  [Medikationsplan: Planeintrag 1 unverändert, Planeintrag 2 abgelaufen, Planeintrag 3: Wirkstoffangabe mit Arzneimittel ersetzt](List-At-Emed-Journey-07-01-List-Medikationsplan.md) 
+ 
+*  **Transaction Bundle:** 
+*  [Transaction Bundle](Bundle-At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx.md) 
+ 
+
+Use Cases
+
+*  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
+*  [Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern](Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern) 
+*  Abgelaufener Planeintrag: zu verlinken.  
+*  [Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten) 
+
+#### Journey-07: Ablauf - Termin bei Dr. Urlaubsvertretung
+
+ ![](plantuml/patient_journey_07.svg) 
 
 **7.3.2026: Teilabgabe in der Apotheke**
 

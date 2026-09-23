@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-09-23T16:50:58+00:00"/>
+  <date value="2026-09-23T17:09:41+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -803,30 +803,19 @@
         <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
       </reference>
       <name value="Beispiel Allgemeinmedizinerin 01"/>
-      <description value="Beispiel einer behandelnden Allgemeinmedizinerin (Dr. Hausärztin)."/>
+      <description value="Beispiel einer Allgemeinmedizinerin (Dr. Hausärztin)."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="PractitionerRole"/>
+        <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-01"/>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-02"/>
       </reference>
-      <name value="Beispiel Allgemeinmedizinerin 01 (Dr. Hausärztin + Organisation)"/>
-      <description value="Beispiel einer behandelnden Ärztin und ihrer Organisation"/>
+      <name value="Beispiel Apothekerin 02"/>
+      <description value="Beispiel einer Apothekerin (Dr. Apothekerin)."/>
       <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/At-Emed-Example-Mr-Planeintrag"/>
-      </reference>
-      <name value="Beispiel Example Medikationsplaneintrag"/>
-      <description value="Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest)."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1138,6 +1127,61 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 07-01: Mediaktionsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="List"/>
+      </extension>
+      <reference>
+        <reference value="List/At-Emed-Journey-07-01-List-Medikationsplan"/>
+      </reference>
+      <name value="Beispiel Journey 07-01: Medikationsplan"/>
+      <description value="Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-02"/>
+      </reference>
+      <name value="Beispiel Journey 07-01: Planeintrag 2"/>
+      <description value="Bildet einen abgelaufenen Planeintrag ab (Dexpanthenol-Salbe)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-03"/>
+      </reference>
+      <name value="Beispiel Journey 07-01: Planeintrag 3"/>
+      <description value="Bildet einen geänderten Planeintrag ab (Arzneimittel ersetzt reine Wirkstoffangabe, angepasste Dosierung."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-03"/>
+      </reference>
+      <name value="Beispiel Krankenhausärztin"/>
+      <description value="Beispiel Ärztin im Krankenhaus (Dr. Krankenhaus)."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Medication"/>
       </extension>
       <reference>
@@ -1195,10 +1239,10 @@
         <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="Organization/At-Emed-Example-Organization-Apo-01"/>
+        <reference value="Organization/At-Emed-Example-Organization-02"/>
       </reference>
-      <name value="Beispiel Organisation Apotheke 01"/>
-      <description value="Beispiel einer Apotheke als Organisation."/>
+      <name value="Beispiel Organisation Apotheke"/>
+      <description value="Beispiel Organisation: Apotheke."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1206,10 +1250,10 @@
         <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="Organization/At-Emed-Example-Organization-Hausarzt-01"/>
+        <reference value="Organization/At-Emed-Example-Organization-01"/>
       </reference>
-      <name value="Beispiel Organisation Krankenhaus 01"/>
-      <description value="Beispiel eines Krankenhauses."/>
+      <name value="Beispiel Organisation Hausärztin"/>
+      <description value="Beispiel Organisation: Ordination einer Hausärztin."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1217,10 +1261,21 @@
         <valueString value="Organization"/>
       </extension>
       <reference>
-        <reference value="Organization/At-Emed-Example-Organization-Kh-01"/>
+        <reference value="Organization/At-Emed-Example-Organization-03"/>
       </reference>
-      <name value="Beispiel Organisation Krankenhaus 01"/>
-      <description value="Beispiel eines Krankenhauses."/>
+      <name value="Beispiel Organisation Krankenhaus"/>
+      <description value="Beispiel Organisation: Krankenhaus."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/At-Emed-Example-Organization-04"/>
+      </reference>
+      <name value="Beispiel Organisation Urlaubsvertretung"/>
+      <description value="Beispiel Organisation: Ordination der Urlaubsvertretung."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1231,7 +1286,51 @@
         <reference value="Patient/At-Emed-Example-Patient-01"/>
       </reference>
       <name value="Beispiel Patient 01"/>
-      <description value="Beispiel eines Patienten."/>
+      <description value="Beispiel eines Patienten (Anton Mustermann)."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-01"/>
+      </reference>
+      <name value="Beispiel PractitionerRole Allgemeinmedizinerin 01"/>
+      <description value="Beispiel einer Allgemeinmedizinerin und ihrer Organisation (Dr. Hausärztin + Ordination)"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-02"/>
+      </reference>
+      <name value="Beispiel PractitionerRole Apothekerin"/>
+      <description value="Beispiel einer Apothekerin (Dr. Apothekerin + Apotheke)"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-03"/>
+      </reference>
+      <name value="Beispiel PractitionerRole Arzt im Krankenhaus"/>
+      <description value="Beispiel einer Arzt im Krankenhaus (Dr. Krankenhaus + Organisation)"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-04"/>
+      </reference>
+      <name value="Beispiel PractitionerRole Urlaubsvertretung"/>
+      <description value="Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination)"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -1239,10 +1338,10 @@
         <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="Practitioner/At-Emed-Example-Practitioner-02"/>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-04"/>
       </reference>
-      <name value="Beispiel Ärztin 02"/>
-      <description value="Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation)."/>
+      <name value="Beispiel Urlaubsvertreung"/>
+      <description value="Beispiel einer Allgemeinmedizinerin (Dr. Urlaubsvertreung)."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

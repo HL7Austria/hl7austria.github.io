@@ -14,6 +14,8 @@ Profile: [AT ELGA Core Practitioner Profil](https://build.fhir.org/ig/HL7Austria
 
 **name**: Melanie Hausärztin 
 
+**gender**: Female
+
 
 
 ## Resource Content
@@ -44,7 +46,8 @@ Profile: [AT ELGA Core Practitioner Profil](https://build.fhir.org/ig/HL7Austria
     "family" : "Hausärztin",
     "given" : ["Melanie"],
     "prefix" : ["Prof. Dr."]
-  }]
+  }],
+  "gender" : "female"
 }
 
 ```

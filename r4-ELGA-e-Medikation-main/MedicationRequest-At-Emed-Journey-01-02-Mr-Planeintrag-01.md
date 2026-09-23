@@ -55,11 +55,13 @@
     "reference" : "#at-emed-journey-medicaiton-ramipril"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Example-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01",
+    "display" : "Anton Mustermann"
   },
   "authoredOn" : "2026-02-27T08:10:00+00:00",
   "requester" : {
-    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
+    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01",
+    "display" : "Dr. Hausärztin"
   },
   "courseOfTherapyType" : {
     "coding" : [{

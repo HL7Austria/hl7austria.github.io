@@ -139,9 +139,8 @@ These are example instances that show what data produced and consumed by systems
 
 | | |
 | :--- | :--- |
-| [Beispiel Allgemeinmedizinerin 01](Practitioner-At-Emed-Example-Practitioner-01.md) | Beispiel einer behandelnden Allgemeinmedizinerin (Dr. Hausärztin). |
-| [Beispiel Allgemeinmedizinerin 01 (Dr. Hausärztin + Organisation)](PractitionerRole-At-Emed-Example-PractitionerRole-01.md) | Beispiel einer behandelnden Ärztin und ihrer Organisation |
-| [Beispiel Example Medikationsplaneintrag](MedicationRequest-At-Emed-Example-Mr-Planeintrag.md) | Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest). |
+| [Beispiel Allgemeinmedizinerin 01](Practitioner-At-Emed-Example-Practitioner-01.md) | Beispiel einer Allgemeinmedizinerin (Dr. Hausärztin). |
+| [Beispiel Apothekerin 02](Practitioner-At-Emed-Example-Practitioner-02.md) | Beispiel einer Apothekerin (Dr. Apothekerin). |
 | [Beispiel Example: Substance Clotrimazol](Substance-At-Emed-Example-Substance-Clotrimazol.md) | Beispiel einer Substance Clotrimazol. |
 | [Beispiel Example: Substance Hydrocortison](Substance-At-Emed-Example-Substance-Hydrocortison.md) | Beispiel einer Substance Hydrocortison. |
 | [Beispiel Journey 01-01: Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md) | Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge). |
@@ -170,16 +169,26 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet. |
 | [Beispiel Journey 06-02: Medikationsplan](List-At-Emed-Journey-06-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag. |
 | [Beispiel Journey 06-02: Planeintrag 3](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) | Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab. |
+| [Beispiel Journey 07-01: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet. |
+| [Beispiel Journey 07-01: Medikationsplan](List-At-Emed-Journey-07-01-List-Medikationsplan.md) | Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag. |
+| [Beispiel Journey 07-01: Planeintrag 2](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-02.md) | Bildet einen abgelaufenen Planeintrag ab (Dexpanthenol-Salbe). |
+| [Beispiel Journey 07-01: Planeintrag 3](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-03.md) | Bildet einen geänderten Planeintrag ab (Arzneimittel ersetzt reine Wirkstoffangabe, angepasste Dosierung. |
+| [Beispiel Krankenhausärztin](Practitioner-At-Emed-Example-Practitioner-03.md) | Beispiel Ärztin im Krankenhaus (Dr. Krankenhaus). |
 | [Beispiel Medikation Ramipril](Medication-at-emed-journey-medicaiton-ramipril.md) |  |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema |
 | [Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration](MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.md) | Medikationsplaneintrag mit Dosierung mit Timed Administration |
-| [Beispiel Organisation Apotheke 01](Organization-At-Emed-Example-Organization-Apo-01.md) | Beispiel einer Apotheke als Organisation. |
-| [Beispiel Organisation Krankenhaus 01](Organization-At-Emed-Example-Organization-Hausarzt-01.md) | Beispiel eines Krankenhauses. |
-| [Beispiel Organisation Krankenhaus 01](Organization-At-Emed-Example-Organization-Kh-01.md) | Beispiel eines Krankenhauses. |
-| [Beispiel Patient 01](Patient-At-Emed-Example-Patient-01.md) | Beispiel eines Patienten. |
-| [Beispiel Ärztin 02](Practitioner-At-Emed-Example-Practitioner-02.md) | Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation). |
+| [Beispiel Organisation Apotheke](Organization-At-Emed-Example-Organization-02.md) | Beispiel Organisation: Apotheke. |
+| [Beispiel Organisation Hausärztin](Organization-At-Emed-Example-Organization-01.md) | Beispiel Organisation: Ordination einer Hausärztin. |
+| [Beispiel Organisation Krankenhaus](Organization-At-Emed-Example-Organization-03.md) | Beispiel Organisation: Krankenhaus. |
+| [Beispiel Organisation Urlaubsvertretung](Organization-At-Emed-Example-Organization-04.md) | Beispiel Organisation: Ordination der Urlaubsvertretung. |
+| [Beispiel Patient 01](Patient-At-Emed-Example-Patient-01.md) | Beispiel eines Patienten (Anton Mustermann). |
+| [Beispiel PractitionerRole Allgemeinmedizinerin 01](PractitionerRole-At-Emed-Example-PractitionerRole-01.md) | Beispiel einer Allgemeinmedizinerin und ihrer Organisation (Dr. Hausärztin + Ordination) |
+| [Beispiel PractitionerRole Apothekerin](PractitionerRole-At-Emed-Example-PractitionerRole-02.md) | Beispiel einer Apothekerin (Dr. Apothekerin + Apotheke) |
+| [Beispiel PractitionerRole Arzt im Krankenhaus](PractitionerRole-At-Emed-Example-PractitionerRole-03.md) | Beispiel einer Arzt im Krankenhaus (Dr. Krankenhaus + Organisation) |
+| [Beispiel PractitionerRole Urlaubsvertretung](PractitionerRole-At-Emed-Example-PractitionerRole-04.md) | Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination) |
+| [Beispiel Urlaubsvertreung](Practitioner-At-Emed-Example-Practitioner-04.md) | Beispiel einer Allgemeinmedizinerin (Dr. Urlaubsvertreung). |
 | [TBD](Parameters-Journey-01-01-Request-Body-01.md) | TBD |
 | [at-emed-journey-01-01-02-bundle-geplanteAbgaben](Bundle-at-emed-journey-01-01-02-bundle-geplanteAbgaben.md) |  |
 | [at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben](Bundle-at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben.md) |  |

@@ -89,11 +89,13 @@
     "reference" : "#contained-medication-journey-02-01-02-magistral"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Example-Patient-01"
+    "reference" : "Patient/At-Emed-Example-Patient-01",
+    "display" : "Anton Mustermann"
   },
   "performer" : [{
     "actor" : {
-      "reference" : "Organization/At-Emed-Example-Organization-Apo-01"
+      "reference" : "Organization/At-Emed-Example-Organization-02",
+      "display" : "Apotheke"
     }
   }],
   "authorizingPrescription" : [{

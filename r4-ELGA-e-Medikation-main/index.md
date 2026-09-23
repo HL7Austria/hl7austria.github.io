@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-23T16:50:58+00:00",
+  "date" : "2026-09-23T17:09:41+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1128,40 +1128,24 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Practitioner/At-Emed-Example-Practitioner-01"
       },
       "name" : "Beispiel Allgemeinmedizinerin 01",
-      "description" : "Beispiel einer behandelnden Allgemeinmedizinerin (Dr. Hausärztin).",
+      "description" : "Beispiel einer Allgemeinmedizinerin (Dr. Hausärztin).",
       "exampleBoolean" : true
     },
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "PractitionerRole"
+        "valueString" : "Practitioner"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-01.html"
+        "valueUri" : "Practitioner-At-Emed-Example-Practitioner-02.html"
       }],
       "reference" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-02"
       },
-      "name" : "Beispiel Allgemeinmedizinerin 01 (Dr. Hausärztin + Organisation)",
-      "description" : "Beispiel einer behandelnden Ärztin und ihrer Organisation",
+      "name" : "Beispiel Apothekerin 02",
+      "description" : "Beispiel einer Apothekerin (Dr. Apothekerin).",
       "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Example-Mr-Planeintrag.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Planeintrag"
-      },
-      "name" : "Beispiel Example Medikationsplaneintrag",
-      "description" : "Bildet einen Medikationsplaneintrag mit dem Medikament EBETREXAT und zugehörigen Dosierungsanweisungen ab (MedicationRequest).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
       "extension" : [{
@@ -1614,6 +1598,86 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx"
+      },
+      "name" : "Beispiel Journey 07-01: Mediaktionsplan-Transaction-Bundle",
+      "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-At-Emed-Journey-07-01-List-Medikationsplan.html"
+      }],
+      "reference" : {
+        "reference" : "List/At-Emed-Journey-07-01-List-Medikationsplan"
+      },
+      "name" : "Beispiel Journey 07-01: Medikationsplan",
+      "description" : "Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-02.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-02"
+      },
+      "name" : "Beispiel Journey 07-01: Planeintrag 2",
+      "description" : "Bildet einen abgelaufenen Planeintrag ab (Dexpanthenol-Salbe).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-03.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/At-Emed-Journey-07-01-Mr-Planeintrag-03"
+      },
+      "name" : "Beispiel Journey 07-01: Planeintrag 3",
+      "description" : "Bildet einen geänderten Planeintrag ab (Arzneimittel ersetzt reine Wirkstoffangabe, angepasste Dosierung.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Practitioner-At-Emed-Example-Practitioner-03.html"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-03"
+      },
+      "name" : "Beispiel Krankenhausärztin",
+      "description" : "Beispiel Ärztin im Krankenhaus (Dr. Krankenhaus).",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Medication"
       },
       {
@@ -1697,13 +1761,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Organization-At-Emed-Example-Organization-Apo-01.html"
+        "valueUri" : "Organization-At-Emed-Example-Organization-02.html"
       }],
       "reference" : {
-        "reference" : "Organization/At-Emed-Example-Organization-Apo-01"
+        "reference" : "Organization/At-Emed-Example-Organization-02"
       },
-      "name" : "Beispiel Organisation Apotheke 01",
-      "description" : "Beispiel einer Apotheke als Organisation.",
+      "name" : "Beispiel Organisation Apotheke",
+      "description" : "Beispiel Organisation: Apotheke.",
       "exampleBoolean" : true
     },
     {
@@ -1713,13 +1777,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Organization-At-Emed-Example-Organization-Hausarzt-01.html"
+        "valueUri" : "Organization-At-Emed-Example-Organization-01.html"
       }],
       "reference" : {
-        "reference" : "Organization/At-Emed-Example-Organization-Hausarzt-01"
+        "reference" : "Organization/At-Emed-Example-Organization-01"
       },
-      "name" : "Beispiel Organisation Krankenhaus 01",
-      "description" : "Beispiel eines Krankenhauses.",
+      "name" : "Beispiel Organisation Hausärztin",
+      "description" : "Beispiel Organisation: Ordination einer Hausärztin.",
       "exampleBoolean" : true
     },
     {
@@ -1729,13 +1793,29 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Organization-At-Emed-Example-Organization-Kh-01.html"
+        "valueUri" : "Organization-At-Emed-Example-Organization-03.html"
       }],
       "reference" : {
-        "reference" : "Organization/At-Emed-Example-Organization-Kh-01"
+        "reference" : "Organization/At-Emed-Example-Organization-03"
       },
-      "name" : "Beispiel Organisation Krankenhaus 01",
-      "description" : "Beispiel eines Krankenhauses.",
+      "name" : "Beispiel Organisation Krankenhaus",
+      "description" : "Beispiel Organisation: Krankenhaus.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Organization-At-Emed-Example-Organization-04.html"
+      }],
+      "reference" : {
+        "reference" : "Organization/At-Emed-Example-Organization-04"
+      },
+      "name" : "Beispiel Organisation Urlaubsvertretung",
+      "description" : "Beispiel Organisation: Ordination der Urlaubsvertretung.",
       "exampleBoolean" : true
     },
     {
@@ -1751,7 +1831,71 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
         "reference" : "Patient/At-Emed-Example-Patient-01"
       },
       "name" : "Beispiel Patient 01",
-      "description" : "Beispiel eines Patienten.",
+      "description" : "Beispiel eines Patienten (Anton Mustermann).",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-01.html"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
+      },
+      "name" : "Beispiel PractitionerRole Allgemeinmedizinerin 01",
+      "description" : "Beispiel einer Allgemeinmedizinerin und ihrer Organisation (Dr. Hausärztin + Ordination)",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-02.html"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-02"
+      },
+      "name" : "Beispiel PractitionerRole Apothekerin",
+      "description" : "Beispiel einer Apothekerin (Dr. Apothekerin + Apotheke)",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-03.html"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-03"
+      },
+      "name" : "Beispiel PractitionerRole Arzt im Krankenhaus",
+      "description" : "Beispiel einer Arzt im Krankenhaus (Dr. Krankenhaus + Organisation)",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-04.html"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-04"
+      },
+      "name" : "Beispiel PractitionerRole Urlaubsvertretung",
+      "description" : "Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination)",
       "exampleBoolean" : true
     },
     {
@@ -1761,13 +1905,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Practitioner-At-Emed-Example-Practitioner-02.html"
+        "valueUri" : "Practitioner-At-Emed-Example-Practitioner-04.html"
       }],
       "reference" : {
-        "reference" : "Practitioner/At-Emed-Example-Practitioner-02"
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-04"
       },
-      "name" : "Beispiel Ärztin 02",
-      "description" : "Beispiel einer ursprünglich eine Medikation verordnenden Ärztin (Fremdmedikation).",
+      "name" : "Beispiel Urlaubsvertreung",
+      "description" : "Beispiel einer Allgemeinmedizinerin (Dr. Urlaubsvertreung).",
       "exampleBoolean" : true
     },
     {
