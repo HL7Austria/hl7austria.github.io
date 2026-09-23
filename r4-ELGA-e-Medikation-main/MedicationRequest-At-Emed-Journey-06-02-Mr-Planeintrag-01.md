@@ -44,9 +44,9 @@
   "status" : "on-hold",
   "statusReason" : {
     "coding" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason",
+      "system" : "http://terminology.hl7.org/7.4.0/CodeSystem-medicationrequest-status-reason.html",
       "code" : "surg",
-      "display" : "Patient scheduled for surgery"
+      "display" : "Patient scheduled for surgery."
     }]
   },
   "intent" : "order",

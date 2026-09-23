@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier | *Version*:0.1.0 | |
-| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedExtensionGroupIdentifier |
+| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedExtensionGroupIdentifier |
 
 AT ELGA e-Medikation Extension, die den e-Med GroupIdentifier beinhaltet.
 
@@ -49,7 +49,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-extensi
   "name" : "AtElgaEmedExtensionGroupIdentifier",
   "title" : "AT ELGA e-Medikation Extension Group Identifier",
   "status" : "draft",
-  "date" : "2026-09-22T11:13:44+00:00",
+  "date" : "2026-09-23T05:33:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

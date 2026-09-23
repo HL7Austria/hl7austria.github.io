@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeMedikationR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Medikation (R4) DRAFT"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-09-22T11:13:44+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-09-23T05:33:05+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -931,7 +931,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "At ELGA e-Medikation MedicationRequest Geplante Abgabe" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine \"Geplante Abgabe\" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource mit Kategorie \"Geplante Abgabe\"):\nSie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. \nWerden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine \"Geplante Abgabe\" mit demselben \"e-Med GroupIdentifier\" erstellt (bildet 'Rezept-Klammer'). \nEs werden R5-Backport-Extensions verwendet." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Bildet eine \"Geplante Abgabe\" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag ab (\"MedicationRequest\"-Ressource mit Kategorie \"Geplante Abgabe\"):\nSie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. \nWerden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine \"Geplante Abgabe\" mit demselben \"e-Med GroupIdentifier\" erstellt (bildet 'Rezept-Klammer'). \nEs werden R5-Backport-Extensions verwendet." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "GeplanteAbgabe" ]
      ], [
@@ -946,7 +946,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-medicationrequest-planeintrag" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "At ELGA e-Medikation MedicationRequest Planeintrag" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Ein Planeintrag im Medikationsplan wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nSie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird.\nDer Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Ein Planeintrag im Medikationsplan wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nSie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird.\nDer Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [

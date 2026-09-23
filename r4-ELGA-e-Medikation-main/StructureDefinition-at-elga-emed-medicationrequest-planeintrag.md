@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag | *Version*:0.1.0 | |
-| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
+| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestPlaneintrag |
 
  
-Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet. Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. 
+Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet. Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. 
 
 **Usages:**
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-09-22T11:13:44+00:00",
+  "date" : "2026-09-23T05:33:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "use" : "work"
     }]
   }],
-  "description" : "Ein Planeintrag im Medikationsplan wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nSie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird.\nDer Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet.",
+  "description" : "Ein Planeintrag im Medikationsplan wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nSie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird.\nDer Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -148,7 +148,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.extension:renderedDosageInstruction",
       "path" : "MedicationRequest.extension",
       "sliceName" : "renderedDosageInstruction",
-      "short" : "Vollständige Darstellung der Dosierungsanweisungen",
+      "short" : "Vollständige textuelle Zusammenfassung der Dosierungsanweisungen - wird von der Fachanwendung anhand der definiert Regeln befüllt.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -194,7 +194,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.statusReason.text",
       "path" : "MedicationRequest.statusReason.text",
-      "short" : "Begründung für den Status des Planeintrags (Freitext), z.B. warum ein Medikament abgesetzt wurde.",
+      "short" : "Begründung falls der Code 'other' angegeben wurde (Freitext).",
       "mustSupport" : true
     },
     {
@@ -289,7 +289,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.medication[x]",
       "path" : "MedicationRequest.medication[x]",
-      "short" : "Das Arzneimittel wird immer in einer contained Medication Ressource dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als logische Referenz dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -301,7 +301,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
-      "short" : "Patient, für den der Planeintrag ausgestellt werden soll, der über den Zentralen Patientenindex identifizierbar und Teilnehmer von ELGA e-Medikation ist.",
+      "short" : "ELGA-Teilnehmer, für den der Medikationsplan dokumentiert wird.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
@@ -361,12 +361,12 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.reasonCode",
       "path" : "MedicationRequest.reasonCode",
-      "short" : "Grund für die Verordnung des Arzneimittels. Entweder Code oder Referenz. Verwendung erst, wenn codierte Angabe möglich.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.reasonReference",
       "path" : "MedicationRequest.reasonReference",
+      "short" : "Grund für die Verordnung des Arzneimittels. Wird zu einem späteren Zeitpunkt im Kontext von EDiagnose ergänzt.",
       "max" : "0"
     },
     {
@@ -410,6 +410,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
       "short" : "Zusätzliche Informationen zum Planeintrag.",
+      "max" : "1",
       "mustSupport" : true
     },
     {

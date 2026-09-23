@@ -6,6 +6,8 @@
 
 ## Example MedicationRequest: Beispiel Journey 01-03: Geplante Abgabe 1
 
+TODO: Some Narrative
+
 
 
 ## Resource Content

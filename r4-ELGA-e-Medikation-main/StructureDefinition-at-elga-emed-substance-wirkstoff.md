@@ -9,14 +9,14 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff | *Version*:0.1.0 | |
-| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedSubstanceWirkstoff |
+| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedSubstanceWirkstoff |
 
  
 Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt. 
 
 **Usages:**
 
-* Refer to this Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-standard-medikation.md)
+* Refer to this Profile: [AT ELGA e-Medikation Medication Magistrale Medikation](StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.md) and [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-standard-medikation.md)
 * Examples for this Profile: [Substance/At-Emed-Example-Substance-Clotrimazol](Substance-At-Emed-Example-Substance-Clotrimazol.md) and [Substance/At-Emed-Example-Substance-Hydrocortison](Substance-At-Emed-Example-Substance-Hydrocortison.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-substance-wirkstoff.json)
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-substan
   "name" : "AtElgaEmedSubstanceWirkstoff",
   "title" : "At ELGA e-Medikation Substance Wirkstoff",
   "status" : "draft",
-  "date" : "2026-09-22T11:13:44+00:00",
+  "date" : "2026-09-23T05:33:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

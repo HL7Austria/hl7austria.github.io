@@ -9,14 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation | *Version*:0.1.0 | |
-| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationStandardMedikation |
+| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationStandardMedikation |
 
  
 Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe. 
 
 **Usages:**
 
-* Refer to this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
+* Use this Profile: [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
+* Refer to this Profile: [AT ELGA e-Medikation Medication Magistrale Medikation](StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.md), [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-standard-medikation.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medication-standard-medikation.json)
 
@@ -41,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-09-22T11:13:44+00:00",
+  "date" : "2026-09-23T05:33:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -87,86 +88,75 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Medication",
-      "path" : "Medication"
+      "id" : "Medication.id",
+      "path" : "Medication.id",
+      "min" : 1,
+      "mustSupport" : true
     },
     {
-      "id" : "Medication.identifier",
-      "path" : "Medication.identifier",
-      "short" : "Eindeutiger Identifikator für das Arzneimittel. Wird nicht benötigt, da PZN, sofern vorhanden, im Code angegeben wird.",
+      "id" : "Medication.meta",
+      "path" : "Medication.meta",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.implicitRules",
+      "path" : "Medication.implicitRules",
       "max" : "0"
+    },
+    {
+      "id" : "Medication.text",
+      "path" : "Medication.text",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.code",
       "path" : "Medication.code",
-      "short" : "Code des Arzneimittels. Hier muss die Pharmazentralnummer (PZN) aus der ASP-Liste angegeben werden, sofern vorhanden."
-    },
-    {
-      "id" : "Medication.code.coding",
-      "path" : "Medication.code.coding",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "value",
-          "path" : "system"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      }
-    },
-    {
-      "id" : "Medication.code.coding:PZN",
-      "path" : "Medication.code.coding",
-      "sliceName" : "PZN",
-      "min" : 0,
-      "max" : "1",
+      "short" : "Code des Arzneimittels. Hier muss die Pharmazentralnummer (PZN) aus der ASP-Liste angegeben werden.",
+      "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Medication.code.coding:PZN.system",
+      "id" : "Medication.code.coding.system",
       "path" : "Medication.code.coding.system",
-      "min" : 1,
       "patternUri" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
     },
     {
-      "id" : "Medication.code.coding:PZN.code",
-      "path" : "Medication.code.coding.code",
-      "min" : 1
-    },
-    {
-      "id" : "Medication.code.coding:PCID",
-      "path" : "Medication.code.coding",
-      "sliceName" : "PCID",
-      "min" : 0,
-      "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.code.coding:PCID.system",
-      "path" : "Medication.code.coding.system",
-      "min" : 1,
-      "patternUri" : "1.2.40.0.34.4.27"
-    },
-    {
-      "id" : "Medication.code.coding:PCID.code",
+      "id" : "Medication.code.coding.code",
       "path" : "Medication.code.coding.code",
       "min" : 1
     },
     {
       "id" : "Medication.status",
       "path" : "Medication.status",
-      "short" : "Verfügbarkeitsstatus des Arzneimittels:(req) active | inactive | entered-in-error. https://hl7.org/fhir/R4/valueset-medication-status.html.\n Keine Verwendung im Kontext Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "Medication.manufacturer",
-      "path" : "Medication.manufacturer",
-      "short" : "Der Hersteller des Arzneimittels. Keine Verwendung im Kontext Planeintrag.",
+      "short" : "Verfügbarkeitsstatus des Arzneimittels:(req) active | inactive | entered-in-error. https://hl7.org/fhir/R4/valueset-medication-status.html.\n Keine Verwendung.",
       "max" : "0"
     },
     {
       "id" : "Medication.form",
       "path" : "Medication.form",
-      "short" : "Die Darreichungsform des Arzneimittels. Wenn PZN vorhanden 0..0, da Anreicherung aus ASP-Liste durch Fachanwendung.",
+      "short" : "Die Darreichungsform des Arzneimittels.",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationdarreichungsform"
+      }
+    },
+    {
+      "id" : "Medication.amount",
+      "path" : "Medication.amount",
+      "short" : "Die Gesamtmenge des Arzneimittels in der Verpackung.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.numerator",
+      "path" : "Medication.amount.numerator",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.numerator.code",
+      "path" : "Medication.amount.numerator.code",
+      "min" : 1,
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -174,15 +164,14 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       }
     },
     {
-      "id" : "Medication.amount",
-      "path" : "Medication.amount",
-      "short" : "Die Gesamtmenge des Arzneimittels in der Verpackung. \nWenn PZN vorhanden 0..0, da Anreicherung aus ASP-Liste durch Fachanwendung.",
-      "mustSupport" : true
+      "id" : "Medication.amount.denominator",
+      "path" : "Medication.amount.denominator",
+      "max" : "0"
     },
     {
       "id" : "Medication.ingredient",
       "path" : "Medication.ingredient",
-      "short" : "Wirkstoffe. Keine Angabe, wenn PZN vorhanden (Anreicherung aus ASP-Liste durch Fachanwendung).",
+      "short" : "Wirkstoffe.",
       "mustSupport" : true
     },
     {
@@ -201,7 +190,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       },
       {
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff"],
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"],
         "aggregation" : ["contained"]
       }]
     },
@@ -225,7 +215,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "max" : "1",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff"],
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-substance-wirkstoff",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"],
         "aggregation" : ["contained"]
       }],
       "mustSupport" : true

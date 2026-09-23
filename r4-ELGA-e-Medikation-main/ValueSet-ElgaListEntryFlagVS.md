@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEntryFlagVS | *Version*:0.1.0 | |
-| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListEntryFlagVS |
+| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:ElgaListEntryFlagVS |
 
  
 ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA. 
@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entrie
   "title" : "ELGA List.entry.flag Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-09-22T11:13:44+00:00",
+  "date" : "2026-09-23T05:33:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -35,6 +35,7 @@
       <sch:assert test="count(f:groupIdentifier) &lt;= 0">groupIdentifier: maximum cardinality of 'groupIdentifier' is 0</sch:assert>
       <sch:assert test="count(f:courseOfTherapyType) &gt;= 1">courseOfTherapyType: minimum cardinality of 'courseOfTherapyType' is 1</sch:assert>
       <sch:assert test="count(f:insurance) &lt;= 0">insurance: maximum cardinality of 'insurance' is 0</sch:assert>
+      <sch:assert test="count(f:note) &lt;= 1">note: maximum cardinality of 'note' is 1</sch:assert>
       <sch:assert test="count(f:dispenseRequest) &lt;= 0">dispenseRequest: maximum cardinality of 'dispenseRequest' is 0</sch:assert>
       <sch:assert test="count(f:substitution) &lt;= 0">substitution: maximum cardinality of 'substitution' is 0</sch:assert>
       <sch:assert test="count(f:detectedIssue) &lt;= 0">detectedIssue: maximum cardinality of 'detectedIssue' is 0</sch:assert>

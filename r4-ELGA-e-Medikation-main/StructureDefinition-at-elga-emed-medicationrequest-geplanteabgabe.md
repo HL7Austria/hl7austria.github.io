@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe | *Version*:0.1.0 | |
-| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestGeplanteAbgabe |
+| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestGeplanteAbgabe |
 
  
-Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"): Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet. 
+Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"): Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet. 
 
 **Usages:**
 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-09-22T11:13:44+00:00",
+  "date" : "2026-09-23T05:33:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "use" : "work"
     }]
   }],
-  "description" : "Bildet eine \"Geplante Abgabe\" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab (\"MedicationRequest\"-Ressource mit Kategorie \"Geplante Abgabe\"):\nSie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. \nWerden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine \"Geplante Abgabe\" mit demselben \"e-Med GroupIdentifier\" erstellt (bildet 'Rezept-Klammer'). \nEs werden R5-Backport-Extensions verwendet.",
+  "description" : "Bildet eine \"Geplante Abgabe\" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag ab (\"MedicationRequest\"-Ressource mit Kategorie \"Geplante Abgabe\"):\nSie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. \nWerden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine \"Geplante Abgabe\" mit demselben \"e-Med GroupIdentifier\" erstellt (bildet 'Rezept-Klammer'). \nEs werden R5-Backport-Extensions verwendet.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -97,6 +97,39 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest",
       "path" : "MedicationRequest",
       "short" : "Geplante Abgabe eines Arzneimittels aus dem Medikationsplan. Verwendet R5 Backport Extensions."
+    },
+    {
+      "id" : "MedicationRequest.id",
+      "path" : "MedicationRequest.id",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.meta",
+      "path" : "MedicationRequest.meta",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.implicitRules",
+      "path" : "MedicationRequest.implicitRules",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.text",
+      "path" : "MedicationRequest.text",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.contained",
+      "path" : "MedicationRequest.contained",
+      "short" : "TODO",
+      "type" : [{
+        "code" : "Medication",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.extension",

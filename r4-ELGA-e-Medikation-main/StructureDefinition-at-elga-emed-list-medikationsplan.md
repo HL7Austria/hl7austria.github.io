@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan | *Version*:0.1.0 | |
-| Draft as of 2026-09-22 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedListMedikationsplan |
+| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedListMedikationsplan |
 
  
 Der Medikationsplan wird durch eine List-Ressource abgebildet. Diese enthält 0..* Einträge (List.entry), wobei jedes List.entry.item genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) beinhaltet. Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-22T11:13:44+00:00",
+  "date" : "2026-09-23T05:33:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -78,6 +78,27 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "List.id",
+      "path" : "List.id",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.meta",
+      "path" : "List.meta",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.implicitRules",
+      "path" : "List.implicitRules",
+      "max" : "0"
+    },
+    {
+      "id" : "List.text",
+      "path" : "List.text",
+      "mustSupport" : true
+    },
+    {
       "id" : "List.extension",
       "path" : "List.extension",
       "slicing" : {
@@ -126,7 +147,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.code",
       "path" : "List.code",
-      "short" : "Code, der den Typ der Liste beschreibt.",
+      "short" : "Code der den Medikationsplan identifiziert",
       "min" : 1,
       "fixedCodeableConcept" : {
         "coding" : [{
@@ -164,14 +185,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.source",
       "path" : "List.source",
-      "short" : "Ersteller des Medikationsplans und für den Inhalt verantwortlich. \nIm Falle eines GDA: Eindeutig identifiziert über den GDA-Index und berechtigt auf die e-Medikation \ndes Patienten zuzugreifen. Device nur für initiale Erstellung durch die Fachanwendung. ELGA-Teilnehmer nur Ausübung seiner Teilnehmerrechte (Löschen von Einträgen).",
+      "short" : "Ersteller des Medikationsplans und für den Inhalt verantwortlich. \nIm Falle eines GDA: Eindeutig identifiziert über den GDA-Index und berechtigt auf die e-Medikation \ndes Patienten zuzugreifen. Device nur für initiale Erstellung durch die Fachanwendung.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
         "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
-        "http://hl7.org/fhir/StructureDefinition/Device",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "http://hl7.org/fhir/StructureDefinition/Device"]
       }],
       "mustSupport" : true
     },
@@ -213,7 +233,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Kein Datum der Aufnahme bzw. Änderung des Eintrags im Medikationsplan. Das Datum ist nur im referenzierten Medikationsplaneintrag ersichtlich.",
+      "short" : "Kein Datum der Aufnahme des Eintrags im Medikationsplan. Das Datum ist nur im referenzierten Medikationsplaneintrag ersichtlich.",
       "max" : "0"
     },
     {

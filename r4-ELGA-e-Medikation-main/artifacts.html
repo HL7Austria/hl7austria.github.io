@@ -273,7 +273,7 @@ Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des
             </td>
             <td>
 <p>Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet.
-Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel verpflichtend mit einer contained Medication-Ressource dokumentiert wird.
+Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird.
 Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet.</p>
 </td>
          </tr>
@@ -319,9 +319,9 @@ Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "
                   title="StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe">At ELGA e-Medikation MedicationRequest Geplante Abgabe</a>
             </td>
             <td>
-<p>Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag des ELGA-Teilnehmers ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"):
+<p>Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"):
 Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. 
-Werden mehrere Medikamente gleichzeitig verordnet und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). 
+Werden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). 
 Es werden R5-Backport-Extensions verwendet.</p>
 </td>
          </tr>
@@ -1146,7 +1146,7 @@ Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transac
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Tue, Sep 22, 2026 11:13+0000">2026-09-22</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Sep 23, 2026 05:33+0000">2026-09-23</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
