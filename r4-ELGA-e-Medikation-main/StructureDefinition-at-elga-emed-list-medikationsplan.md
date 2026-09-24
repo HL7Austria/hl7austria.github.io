@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan | *Version*:0.1.0 | |
-| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedListMedikationsplan |
+| Draft as of 2026-09-24 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedListMedikationsplan |
 
  
 Der Medikationsplan wird durch eine List-Ressource abgebildet. Diese enthält 0..* Einträge (List.entry), wobei jedes List.entry.item genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) beinhaltet. Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-23T17:09:41+00:00",
+  "date" : "2026-09-24T11:03:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -78,6 +78,17 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "List",
+      "path" : "List",
+      "constraint" : [{
+        "key" : "at-emed-list-same-patient",
+        "severity" : "error",
+        "human" : "Alle in der Liste referenzierten Patienten müssen gleich sein",
+        "expression" : "subject.resolve() = entry.item.resolve().ofType(MedicationRequest).subject.resolve()",
+        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
+      }]
+    },
+    {
       "id" : "List.id",
       "path" : "List.id",
       "min" : 1,
@@ -114,12 +125,14 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
       "id" : "List.extension:PatientModified",
       "path" : "List.extension",
       "sliceName" : "PatientModified",
+      "short" : "Boolean der angibt, ob diese Version des Plans durch Aktionen des Patienten verändert wurde (z.B. Einträge entfernt).",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-patient-modified"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "List.status",
@@ -137,12 +150,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
       "short" : "Der Medikationsplan ist ein laufend gepflegtes Dokument. Fixer Wert: working.",
       "fixedCode" : "working",
       "mustSupport" : true
-    },
-    {
-      "id" : "List.title",
-      "path" : "List.title",
-      "short" : "Der Medikationsplan hat keinen Titel.",
-      "max" : "0"
     },
     {
       "id" : "List.code",
@@ -172,7 +179,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.encounter",
       "path" : "List.encounter",
-      "short" : "Es wird kein Behandlungskontext dokumentiert.",
+      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -185,26 +192,25 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.source",
       "path" : "List.source",
-      "short" : "Ersteller des Medikationsplans und für den Inhalt verantwortlich. \nIm Falle eines GDA: Eindeutig identifiziert über den GDA-Index und berechtigt auf die e-Medikation \ndes Patienten zuzugreifen. Device nur für initiale Erstellung durch die Fachanwendung.",
+      "short" : "Ersteller des Medikationsplans und für den Inhalt verantwortlich. Device nur für initiale Erstellung durch die Fachanwendung.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
         "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
-        "http://hl7.org/fhir/StructureDefinition/Device"]
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"]
       }],
       "mustSupport" : true
     },
     {
       "id" : "List.orderedBy",
       "path" : "List.orderedBy",
-      "short" : "Die Reihenfolge der Einträge wird über die List.entries durch den Ersteller vorgegeben.",
       "max" : "0"
     },
     {
       "id" : "List.note",
       "path" : "List.note",
-      "short" : "Keine Freitext-Anmerkungen im Medikationsplan.",
+      "short" : "Fachliche Begrüundung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)",
       "max" : "0"
     },
     {
@@ -227,13 +233,13 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.entry.deleted",
       "path" : "List.entry.deleted",
-      "short" : "Keine Verwendung im Medikationsplan (da list.mode immer working).",
+      "short" : "Fachliche Begründung: Keine Verwendung im Medikationsplan (da list.mode immer working).",
       "max" : "0"
     },
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Kein Datum der Aufnahme des Eintrags im Medikationsplan. Das Datum ist nur im referenzierten Medikationsplaneintrag ersichtlich.",
+      "short" : "Fachliche Begründung: Kein Datum der initialen Aufnahme des Eintrags im Medikationsplan.\nDas Datum ist nur im referenzierten Medikationsplaneintrag ersichtlich.",
       "max" : "0"
     },
     {
@@ -249,7 +255,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Patient nimmt derzeit keine Medikamente ein",
+      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown | unavailable] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Patient nimmt derzeit keine Medikamente ein | unavailable: Plan ist leer weil alle Einträge vom Patienten entfernt wurden",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",

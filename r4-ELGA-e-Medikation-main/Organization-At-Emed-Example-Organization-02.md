@@ -52,7 +52,7 @@ Profile: [HL7® AT Core Organization Profile](http://hl7.at/fhir/HL7ATCoreProfil
   }],
   "type" : [{
     "coding" : [{
-      "system" : "https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype",
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
       "code" : "311",
       "display" : "Öffentliche Apotheke"
     }]

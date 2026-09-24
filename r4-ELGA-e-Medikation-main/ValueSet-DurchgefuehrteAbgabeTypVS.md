@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeTypVS | *Version*:0.1.0 | |
-| Active as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:DurchgefuehrteAbgabeTypVS |
+| Active as of 2026-09-24 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:DurchgefuehrteAbgabeTypVS |
 
  
 ValueSet für zulässige Ausprägungen eines Typs einer Durchgeführten Abgabe (MedicationDispense). 
@@ -23,8 +23,6 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
  
 
 ### Expansion
-
-No Expansion for this valueset (Unsupported Code System Version)
 
 -------
 
@@ -53,7 +51,7 @@ No Expansion for this valueset (Unsupported Code System Version)
   "title" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-23T17:09:41+00:00",
+  "date" : "2026-09-24T11:03:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -73,8 +71,8 @@ No Expansion for this valueset (Unsupported Code System Version)
   "description" : "ValueSet für zulässige Ausprägungen eines Typs einer Durchgeführten Abgabe (MedicationDispense).",
   "compose" : {
     "include" : [{
-      "system" : "http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType",
-      "version" : "3.0.0",
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "version" : "11.0.0",
       "concept" : [{
         "code" : "FFC",
         "display" : "First Fill - Complete"

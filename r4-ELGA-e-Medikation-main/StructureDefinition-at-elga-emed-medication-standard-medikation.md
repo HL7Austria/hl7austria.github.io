@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation | *Version*:0.1.0 | |
-| Draft as of 2026-09-23 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationStandardMedikation |
+| Draft as of 2026-09-24 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationStandardMedikation |
 
  
 Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-09-23T17:09:41+00:00",
+  "date" : "2026-09-24T11:03:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -117,9 +117,14 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "mustSupport" : true
     },
     {
+      "id" : "Medication.code.coding",
+      "path" : "Medication.code.coding",
+      "min" : 1
+    },
+    {
       "id" : "Medication.code.coding.system",
       "path" : "Medication.code.coding.system",
-      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
+      "fixedUri" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
     },
     {
       "id" : "Medication.code.coding.code",
