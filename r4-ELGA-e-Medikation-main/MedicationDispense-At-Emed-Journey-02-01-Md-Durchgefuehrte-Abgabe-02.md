@@ -95,7 +95,7 @@
   "performer" : [{
     "actor" : {
       "reference" : "Organization/At-Emed-Example-Organization-02",
-      "display" : "Apotheke"
+      "display" : "Amadeus Apotheke"
     }
   }],
   "authorizingPrescription" : [{

@@ -8,7 +8,7 @@
 
 Am Beispiel einer fiktiven Patient Journey wird veranschaulicht, wie sich der **Medikationsplan** eines Patienten mit den zugehörigen **Geplanten Abgaben** und den **Durchgeführten Abgaben** verändern kann.
 
-Eine fachliche Übersicht mit reduziertem Detailgrad findet sich am Ende dieses Kapitels [Übersicht Patient Journey](patient_journey.md#übersicht-patient-journey).
+Eine fachliche Übersicht mit reduziertem Detailgrad findet sich am Ende dieses Kapitels ([Übersicht Patient Journey](patient_journey.md#übersicht-patient-journey)).
 
 ### Journey-01: 27.2.2026 - Erster Arztbesuch
 
@@ -16,7 +16,7 @@ Herr Mustermann kommt wegen Kopfschmerzen und Schwindelgefühl zu seiner Hausär
 
 #### Journey-01-01:
 
-Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Medikation (den aktuellen **Medikationsplan**, **Geplante Abgaben** und **Durchgeführte Abgaben**) des Patienten ab, um einen Überblick über seine aktuelle Medikation zu erhalten.
+Dr. Hausärztin stellt eine leichte arterielle Hypertonie fest und ruft die e-Medikation - den aktuellen **Medikationsplan**, **Geplante Abgaben** und **Durchgeführte Abgaben** - des Patienten ab, um einen Überblick über seine aktuelle Medikation zu erhalten.
 
 Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt die Fachanwendung automatisch einen leeren Medikationsplan. Darin enthalten sind die Informationen zum Patienten, die erstellende e-Medikation-Fachanwendung, das Datum der Erstellung und die Information, dass der Medikationsplan noch nicht gestartet wurde (**EmptyReason = notstarted**).
 
@@ -273,7 +273,7 @@ Die Operation verläuft komplikationslos.
 
 #### Journey-06-02: 19.3.2026 - Entlassung
 
-Zwei Tage nach der Operation kann Herr Mustermann entlassen werden. Gegen die postoperativen Schmerzen soll er weiterhin den **Wirkstoff** Metamizol einnehmen. Dr. Krankenhaus dokumentiert dies in einem neuen Planeintrag: Metamizol 1.000 mg, 4x täglich. 
+Zwei Tage nach der Operation kann Herr Mustermann entlassen werden. Gegen die postoperativen Schmerzen soll er weiterhin den **Wirkstoff** Metamizol einnehmen. Dr. Krankenhaus dokumentiert dies in einem neuen Planeintrag: **Metamizol 1.000 mg, 4x täglich**. 
 
 Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in der Dosis erhöht (auf 1-0-1-0).
 
@@ -281,14 +281,14 @@ Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in d
 
 Beispiele
 
-*  **Planeintrag hinzufügen:** 
-*  [Neuer Planeintrag 3: Wirstoff Metamizol (in Arbeit)](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md)  
- 
 *  **Planeintrag anpassen:** 
 *  [Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) 
  
+*  **Planeintrag hinzufügen:** 
+*  [Neuer Planeintrag 3: Wirstoff Metamizol (in Arbeit)](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md)  
+ 
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan: 1 Planeintrag neu hinzugefügt, 2 Planeinträge unverändert](List-At-Emed-Journey-06-02-List-Medikationsplan.md) 
+*  [Medikationsplan: Planeintrag 1 geändert, Planeintrag 2 unverändert, Planeintrag 3 neu hinzugefügt](List-At-Emed-Journey-06-02-List-Medikationsplan.md) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) 
@@ -308,19 +308,19 @@ Use Cases
 
 ### Journey-07: 22.3.2026 - Termin bei Dr. Urlaubsvertretung
 
-Nach der Entlassung sucht Herr Mustermann die Praxis seiner Hausärztin auf, um sich für das Schermzmittel ein Rezept ausstellen zu lassen. Diese wird aktuell von Frau **Dr. Urlaubsvertretung** vertreten. Dr. Urlaubsvertretung ruft die e-Medikation von Herrn Mustermann ab und ändert den Planeintrag mit der Wirkstoffangabe und Dosierung auf das entsprechende Arzneimttelprodukt mit passender Dosierung: Metagelan 500 mg/ml-Tropfen, 40 Tropfen 4-mal täglich.
+Nach der Entlassung möchte Herr Mustermann seine Hausärztin aufsuchen, um sich für das Schermzmittel ein Rezept ausstellen zu lassen. Diese wird aktuell von Frau **Dr. Urlaubsvertretung** vertreten.
 
-Der Behandlungszeitraum für die Dexpanthenol-Salbe ist zwischenzeitlich **abgelaufen**. Dr. Urlaubsvertretung stellt fest, dass keine weitere Behandung nötig ist, der im Medikationsplan von der Fachanwendung zur Entfernung markierte Planeintrag wird durch die Aktualisierung des Medikationsplans bestätigt und wird beim nächsten Abruf nicht mehr aufscheinen.
+#### Journey-07-01
 
-Zuletzt erstellt Dr. Urlaubsvertretung eine **Geplante Abgabe** von die Metagelan-Tropfen.
+Dr. Urlaubsvertretung ruft die e-Medikation von Herrn Mustermann ab und ändert den Planeintrag mit der Wirkstoffangabe und Dosierung (Metamizol) auf das entsprechende Arzneimttelprodukt Metagelan mit passender Dosierung: **Metagelan 500 mg/ml-Tropfen, 40 Tropfen 4-mal täglich**.
+
+Der Behandlungszeitraum für die **Dexpanthenol-Salbe** ist zwischenzeitlich **abgelaufen**. Dr. Urlaubsvertretung stellt fest, dass keine weitere Behandung nötig ist. Der von der Fachanwendung zur Entfernung markierte Planeintrag wird durch die Aktualisierung des Medikationsplans bestätigt und beim nächsten Abruf nicht mehr in Plan enthalten sein.
 
  Offene Punkte:
  Wie wird von der Fachanwendung festgestellt, ob ein Behandlungszeitraum abgelaufen ist? 
  - extension[effectiveDosePeriod].valuePeriod.start + Dosierinformationen (für 3 Wochen) 
  - überschrittenes Datum in extension[effectiveDosePeriod].valuePeriod.end 
  -> bei beiden Varianten unklar, wann das Medikament abgeholt bzw. die Behandlung wirklich begonnen wurde (Abholdatum geht nur aus MediacationDispense hervor) 
-
-#### Journey-07-01
 
 Beispiele
 
@@ -344,43 +344,68 @@ Use Cases
 *  Abgelaufener Planeintrag: zu verlinken.  
 *  [Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten) 
 
+#### Journey-07-02
+
+Zuletzt erstellt Dr. Urlaubsvertretung eine **Geplante Abgabe** für zwei Packungen Magelan-Tropfen. 
+
+Beispiele
+
+*  **Geplante Abgaben erstellen:** 
+*  [Geplante Abgabe zu Planeintrag 3 (Metagelan )](MedicationRequest-At-Emed-Journey-07-02-Mr-Geplante-Abgabe-03.md) 
+ 
+*  **Transaction Bundle:** 
+*  [Transaction Bundle mit Geplanter Abgabe](Bundle-At-Emed-Journey-07-02-Bundle-Geplante-Abgaben-Tx.md) 
+ 
+
+Use Cases
+
+*  [Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) 
+*  [Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen (Variante A)](Sub_UC_eMed_04.md#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create) 
+
 #### Journey-07: Ablauf - Termin bei Dr. Urlaubsvertretung
 
  ![](plantuml/patient_journey_07.svg) 
 
 **7.3.2026: Teilabgabe in der Apotheke**
 
-Herr Mustermann möchte in der Apotheke die Metamizol-Tropfen abholen und steckt seine e-card.
+Herr Mustermann möchte in der Apotheke die Magelan-Tropfen abholen und übergibt legt e-Rezept der Apothekerin vor.
 
-Es ist nur noch ein Fläschchen Metamizol verfügbar. Die Apothekerin händigt das Fläschchen aus und erstellt eine Durchgeführte Abgabe als Teilabgabe. Die Patienten wird angewiesen, das zweite Fläschchen in der Apotheke abzuholen, sobald es verfügbar ist.
+Es ist nur noch eine Packung Magelan-Tropfen verfügbar. Die Apothekerin händigt diese aus und erstellt eine **Durchgeführte Abgabe** als Teilabgabe. Der Patient wird angewiesen, die zweite Packung in der Apotheke abzuholen, sobald diese verfügbar ist.
 
 * **Durchgeführte Abgaben erstellen (Teilabgabe):** in Arbeit.
 
 **9.3.2026: Teilabgabe in der Apotheke abschließen**
 
-Herr Mustermann wurde von der Apotheke informiert, dass die Metamizol-Tropfen nun verfügbar sind. Er steckt in der Apotheke seine e-card. Die Apothekerin ruft die e-Medikation erneut ab, schließt dann die Teilabgabe ab, indem sie eine weitere Durchgeführte Abgabe erstellt und übergibt dem Patienten die Metamizol-Tropfen.
+Herr Mustermann wurde von der Apotheke informiert, dass die Magelan-Tropfen nun verfügbar sind. Er steckt in der Apotheke seine e-card. Die Apothekerin ruft die e-Medikation erneut ab, schließt dann die Teilabgabe ab, indem sie eine weitere Durchgeführte Abgabe erstellt und übergibt dem Patienten die Magelan-Tropfen.
 
 * **Durchgeführte Abgaben erstellen (Teilabgabe abschließen):** in Arbeit.
 
-**12.3.2026: Nachkontrolle bei der Urlaubsvertretung von Dr. Hausärztin**
+**12.3.2026: Nachkontrolle bei Dr. Hausärztin**
 
 Herr Mustermann hat die Medikamente in der Apotheke abgeholt und die Schmerzen sind deutlich zurückgegangen.
 
-Eine Woche nach der Operation kommt er zur Nachkontrolle zur Urlaubsvertretung von Dr. Hausärztin.
+Eine Woche nach der Operation kommt er zur Nachkontrolle zur Dr. Hausärztin.
 
-Für die verbleibenden Schmerzen wird von Dr. Urlaubsvertretung die Metamizoldosis für einen begrenzten Zeitraum weiterverodnet, die Dosis aber reduziert. Metamizol-Tropfen: 2 × täglich 10 Tropfen, für 5 Tage.
+Für die verbleibenden Schmerzen wird von Dr. Hausärztin die Magelandosis für einen begrenzten Zeitraum weiterverodnet, die Dosis aber reduziert. Magelan-Tropfen: 4 × täglich 20 Tropfen, für 5 Tage. Herr Mustermann benötigt ein neues Rezept, daher erstellt Dr. Hausärztin eine **Geplante Abgabe**.
 
-Ramipril soll wieder eingenommen werden.
+Beim rausgehen sagt der Patient, dass ihn das Tropfen zählen nervt, also ändert Dr. Hausärztin die Medikation auf Tabletten: Metagelan 500 mg-Tabletten: 4 x täglich 1 Tablette, für 5 Tage.
 
-Im neu erstellten Medikationsplan sind die neuen Planeinträge sowie das Datum der Bearbeitung und die verantwortliche Ärztin (Dr. Urlaubsvertretung) ersichtlich.
+Sie ändert den Planeintrag, **storniert** die **Geplante Abgabe** für die Tropfen und erstellt eine neue für die Tabletten.
+
+* **Planeintrag beenden und Medikationsplan aktualisieren:** in Arbeit.
+* **Geplante Abgabe stornieren:** in Arbeit.
 
 **20.3.2026: Kontrolltermin bei Dr. Hausärztin**
 
-Herr Mustermann erscheint zur Wundkontrolle bei Dr. Hausärztin.
+Herr Mustermann erscheint zur Kontrolle bei Dr. Hausärztin.
 
-Die postoperative Schmerztherapie ist nicht mehr erforderlich. Der Planeintrag für Metamizol wird daher beendet. Die Behandlung mit der Dexpanthenol-Salbe ist ebenfalls abgeschlossen. Ramipril wird als Dauermedikation fortgeführt.
+Die postoperative Schmerztherapie ist nicht mehr erforderlich. Der Planeintrag für Magelan wird daher beendet. Ramipril wird als Dauermedikation fortgeführt.
 
 * **Planeinträge beenden und Medikationsplan aktualisieren:** in Arbeit.
+
+**20.6.2026: Herr Mustermann setzt seine Teilnehmerrechte durch**
+
+Herr Mustermann testet die Umsetzung seiner Teilnehmerrechte. Er löscht die historische Planversion vom 14.3.2026 und einen historischen Planeintrag vom 22.3.2026 (Magelan-Tropfen). Weiters entfernt er alle Planeinträge vom aktuellen Medikationsplan. 
 
 ### Übersicht Patient Journey
 

@@ -51,7 +51,7 @@ Zulässige Ausprägungen des Status einer List-Ressource in ELGA.
   "title" : "ELGA List Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-24T11:03:30+00:00",
+  "date" : "2026-09-24T15:40:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

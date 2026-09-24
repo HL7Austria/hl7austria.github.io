@@ -10,7 +10,7 @@ Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Aus
 
 **practitioner**: [Dr. Apothekerin](Practitioner-At-Emed-Example-Practitioner-03.md)
 
-**organization**: [Apotheke](Organization-At-Emed-Example-Organization-03.md)
+**organization**: [Amadeus Apotheke](Organization-At-Emed-Example-Organization-03.md)
 
 **code**: Apothekerin/Apotheker
 
@@ -31,7 +31,7 @@ Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Aus
   },
   "organization" : {
     "reference" : "Organization/At-Emed-Example-Organization-03",
-    "display" : "Apotheke"
+    "display" : "Amadeus Apotheke"
   },
   "code" : [{
     "coding" : [{

@@ -169,10 +169,12 @@ These are example instances that show what data produced and consumed by systems
 | [Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet. |
 | [Beispiel Journey 06-02: Medikationsplan](List-At-Emed-Journey-06-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag. |
 | [Beispiel Journey 06-02: Planeintrag 3](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) | Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab. |
-| [Beispiel Journey 07-01: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet. |
-| [Beispiel Journey 07-01: Medikationsplan](List-At-Emed-Journey-07-01-List-Medikationsplan.md) | Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag. |
-| [Beispiel Journey 07-01: Planeintrag 2](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-02.md) | Bildet einen abgelaufenen Planeintrag ab (Dexpanthenol-Salbe). |
-| [Beispiel Journey 07-01: Planeintrag 3](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-03.md) | Bildet einen geänderten Planeintrag ab (Arzneimittel ersetzt reine Wirkstoffangabe, angepasste Dosierung. |
+| [Beispiel Journey 07-02: Mediaktionsplan-Transaction-Bundle](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md) | Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet. |
+| [Beispiel Journey 07-02: Medikationsplan](List-At-Emed-Journey-07-02-List-Medikationsplan.md) | Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag. |
+| [Beispiel Journey 07-02: Planeintrag 2](MedicationRequest-At-Emed-Journey-07-02-Mr-Planeintrag-02.md) | Bildet einen abgelaufenen Planeintrag ab (Dexpanthenol-Salbe). |
+| [Beispiel Journey 07-02: Planeintrag 3](MedicationRequest-At-Emed-Journey-07-02-Mr-Planeintrag-03.md) | Bildet einen geänderten Planeintrag ab: Arzneimittel (Magelan) ersetzt reine Wirkstoffangabe, angepasste Dosierung. |
+| [Beispiel Journey 07-03: Geplante Abgabe 1](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md) | Bildet eine Geplante Abgabe des Arzneimittels Magelan mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab. |
+| [Beispiel Journey 07-03: Geplante-Abgaben-Transaction-Bundle](Bundle-At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx.md) | Beispiel eines Transaction Bundles mit Geplanten Abgaben. |
 | [Beispiel Krankenhausärztin](Practitioner-At-Emed-Example-Practitioner-03.md) | Beispiel Ärztin im Krankenhaus (Dr. Krankenhaus). |
 | [Beispiel Medikation Ramipril](Medication-at-emed-journey-medicaiton-ramipril.md) |  |
 | [Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md) | Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0. |

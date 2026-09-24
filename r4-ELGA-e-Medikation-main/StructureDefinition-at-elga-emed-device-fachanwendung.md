@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-device-
   "name" : "AtElgaEmedDeviceFachanwendung",
   "title" : "At ELGA e-Medikation Device Fachanwendung",
   "status" : "draft",
-  "date" : "2026-09-24T11:03:30+00:00",
+  "date" : "2026-09-24T15:40:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
