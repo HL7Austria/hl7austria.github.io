@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel PractitionerRole Arzt im Krankenhaus - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel PractitionerRole Ärztin im Krankenhaus - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel PractitionerRole Arzt im Krankenhaus**
+* **Beispiel PractitionerRole Ärztin im Krankenhaus**
 
-## Example PractitionerRole: Beispiel PractitionerRole Arzt im Krankenhaus
+## Example PractitionerRole: Beispiel PractitionerRole Ärztin im Krankenhaus
 
 Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
 

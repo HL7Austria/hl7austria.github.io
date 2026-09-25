@@ -213,9 +213,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read" id="markdown-toc-sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a></li>
-  <li><a href="#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search" id="markdown-toc-sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion lesen (Plan-History-Search)</a></li>
+  <li><a href="#sub_uc_emed_01_02---historische-medikationsplanversion-suchen-plan-history-search" id="markdown-toc-sub_uc_emed_01_02---historische-medikationsplanversion-suchen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion suchen (Plan-History-Search)</a></li>
   <li><a href="#sub_uc_emed_01_03---initial-erstellter-medikationsplan" id="markdown-toc-sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a></li>
-  <li><a href="#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search" id="markdown-toc-sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge lesen (Planentry-Search)</a></li>
+  <li><a href="#sub_uc_emed_01_04---medikationsplaneinträge-suchen-planentry-search" id="markdown-toc-sub_uc_emed_01_04---medikationsplaneinträge-suchen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge suchen (Planentry-Search)</a></li>
   <li><a href="#sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search" id="markdown-toc-sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Sub_UC_eMed_01_05 - Verzeichnis historischer Medikationspläne lesen (Plan-History-Directory-Search)</a></li>
 </ul>
 
@@ -285,6 +285,8 @@ width: 100%;}
 }
 
 .hinweisbox {
+  font-size: 12px;
+  /* font-family: "Courier New", Courier; */
   border: 1px solid #156082;
   background: #dae8f8;
   padding: 8px 12px;
@@ -462,57 +464,45 @@ h4 + .tabs {
 
   <!-- Technische Use Cases für Medikationsplan lesen (UC_eMed_01) -->
 
-<p>Ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> kann den Medikationsplan von ELGA-Teilnehmer:innen lesen.</p>
+<p>Dieser technische Use Case beschreibt den lesenden Zugriff <a href="actors.html#rollen-und-berechtigungen">berechtigter Akteure</a> auf den Medikationsplan eines ELGA-Teilnehmers.</p>
 
-<p>Ein ELGA-Teilnehmer kann seinen Medikationsplan über das Zugangsportal einsehen.</p>
+<p>Für ELGA-Teilnehmer und deren Vertretungen erfolgt der Zugriff über das ELGA-Zugangsportal. Für die übrigen Akteure erfolgt der Zugriff über die e-Medikations-Schnittstelle des jeweiligen GDA-Systems.</p>
 
-<p><a name="l424">​</a>Die fachlichen Anforderungen werden im <a href="Sub_UC_eMed_01.hml">UC_eMed_01 Medikationsplan lesen</a> beschrieben.</p>
-
-<p>Für den lesenden Zugriff auf Medikationspläne werden zwei Zugriffsarten unterschieden:</p>
+<p>Der lesende Zugriff umfasst:</p>
 
 <ul>
-  <li>
-    <p><a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Plan-Read</a> zum Abruf des aktuellen Medikationsplans, der für eine mögliche Bearbeitung aufbereitet ist.</p>
-  </li>
-  <li>
-    <p><a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Plan-History-Search</a> zum Abruf historischer Versionen des Medikationsplans.</p>
-  </li>
+  <li>den Abruf des <strong>aktuellen Medikationsplans</strong>, der für eine mögliche Bearbeitung aufbereitet ist (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Plan-Read</a>),</li>
+  <li><a name="l438">​</a>die Suche und den Abruf <strong>historischer Versionen des Medikationsplans</strong> (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Plan-History-Search</a>),</li>
+  <li><a name="l447">​</a>die Suche und den Abruf <strong>einzelner Medikationsplaneinträge</strong> bzw. historischer Versionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Planentry-Search</a>)sowie</li>
+  <li>Abruf eines <strong>Verzeichnisses historischer Medikationspläne</strong> (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Plan-History-Directory-Search</a>)   <!-- Todo: -> keine fachliche Anforderung für Plan-History-Directory-Search? akl 25.09.2026 --></li>
 </ul>
 
-<p>Sowohl berechtigte GDA als auch ELGA-Teilnehmer können auf einzelne Planeinträge lesend zugreifen und diese durchsuchen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Planentry-Search</a>).</p>
+<div class="hinweisbox">
+Die fachlichen Anforderungen dieses Use Cases werden im <a href="Sub_UC_eMed_01.html">UC_eMed_01 Medikationsplan lesen</a> beschrieben.<br/> 
+Für sämtliche im Folgenden beschriebenen Zugriffsarten gelten zusätzlich die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert. 
+</div>
+  <!-- Todo: Link korrigieren, Link zu allgemeinen BES-UCs ergänzen akl 25.09.2026 -->
 
 <h3 id="sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</h3>
 
-<p>Plan-Read dient dem <strong>Abruf des Medikationsplans</strong> in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
+  <!-- Todo:  Wording im UC "anzeigen" statt lesen. ändern? akl 25.09.2026 -->
 
-<p><a name="l470">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein temporäres <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
+<p>Plan-Read dient dem Abruf des aktuellen Medikationsplans in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
 
-  <!-- TODO: Wird ein Medikationsplan-Bundle oder ein Searchset erzeugt? -->
-
-<h4 id="custom-operation">Custom Operation</h4>
-
-<p><a name="l487">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+<p><a name="l488">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein <strong>temporäres</strong> <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
 
 <h4 id="ablauf">Ablauf</h4>
 
 <ol>
-  <li><a name="l497">​</a>Der Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
-  <li>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt daraus ein Medikationsplan-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</a>).</li>
-  <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält:
-    <ul>
-      <li>die <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource,</li>
-      <li>sämtliche von der <em>List</em> referenzierten Ressourcen sowie</li>
-      <li>im HTTP-Header den <em>ETag</em> der aktuellen Version der <em>List</em>-Ressource für das <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>.</li>
-    </ul>
-  </li>
+  <li><a name="l508">​</a>Der Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt ein Medikationsplan-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</a>).</li>
+  <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält im HTTP-Header den <strong><em>ETag</em></strong> der aktuellen Version der <em>List</em>-Ressource für das <a href="https://hl7.org/fhir/http.html#concurrency"><strong>Optimistic Locking</strong></a>.</li>
 </ol>
 
 <p>Nachfolgend kann der Medikationsplan vom GDA bearbeitet und mittels <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Plan-Write</a> gespeichert werden.</p>
 
-<h4 id="sequenzdiagramm">Sequenzdiagramm</h4>
-
 <p><br/>
-<a href="plantuml/UC_eMed_01_01.svg"><img src="plantuml/UC_eMed_01_01.svg" alt="overview" style="width:40%;" class="mx-auto"/></a>
+<a href="plantuml/UC_eMed_01_01.svg"><img src="plantuml/UC_eMed_01_01.svg" alt="overview" style="width:35%;" class="mx-auto"/></a>
 <br/></p>
 
 <div class="dragon">
@@ -522,95 +512,102 @@ Fehlercodes sind noch zu definieren.
 </p>
 </div>
 
+<h4 id="custom-operations">Custom Operations</h4>
+
+<p><a name="l563">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+
 <h4 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h4>
 
-<p>Nach Eingang eines <strong>$plan-read</strong> prüft die Fachanwendung den Zustand des Medikationsplans.</p>
+<p>Nach Eingang eines <strong>$plan-read</strong> prüft die Fachanwendung den Zustand des Medikationsplans und führt entsprechende Schritte durch, bevor ein <strong>Medikationsplan-Bundles zur Auslieferung</strong> erstellt wird (siehe <a href="Sub_UC_eMed_01.html#ablauf">Ablauf</a>).</p>
 
-<p>Abschließend erzeugt die Fachanwendung aus der aktuellen Version der <em>List</em>-Ressource und den referenzierten Ressourcenversionen das Medikationsplan-Bundle zur Auslieferung. Die persistierten Ressourcen am Server werden durch die Anpassungen im Auslieferungs-Bundle nicht verändert.</p>
+<p>Die <strong>persistierten Ressourcen am Server</strong> werden durch die Transformationen für das Auslieferungs-Bundle <strong>nicht verändert</strong>.</p>
 
-<p>Dabei werden folgende Fälle unterschieden:</p>
+<h4 id="ablauf-1">Ablauf</h4>
 
 <ol>
   <li><strong>Es existiert kein Medikationsplan.</strong>
     <ul>
-      <li>Es wird gemäß <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a> ein initialer Medikationsplan erstellt (<em>List.emptyReason = notstarted</em>).</li>
+      <li>Es wird gemäß <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03---initial-erstellter-medikationsplan">Sub_UC_eMed_01_03 - Initial erstellter Medikationsplan</a> ein initialer Medikationsplan erstellt (<a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource mit <em>List.emptyReason = notstarted</em>).</li>
+      <li>Es erfolgt keine Transformation.</li>
     </ul>
   </li>
   <li><strong>Es existiert ein Medikationsplan mit Planeinträgen.</strong>
     <ul>
-      <li>Neue oder geänderte Planeinträge (<em>List.entry.flag = new</em> oder <em>changed</em>) werden auf <em>unchanged</em> gesetzt (siehe <a href="workflowmanagement.html#status-des-listentryflags-im-medikationsplan">Status des List.entry.flags im Medikationsplan</a>).</li>
-      <li>Planeinträge mit <em>List.entry.flag = removed</em> werden aus dem Medikationsplan entfernt.</li>
-      <li>Planeinträge mit abgelaufenem Behandlungszeitraum werden mit <em>List.entry.flag = removed</em> gekennzeichnet und werden mit ausgeliefert, um dem GDA die Möglichkeit zu geben, das Medikament weiterzuverodnen. Anderenfalls nimmt der GDA zur Kenntnis, dass der Planeintrag mit seinem nächsten Schreibvorgang entfernt wird.</li>
-      <li>Sind nach der Transformation keine Planeinträge mehr vorhanden, wird <em>List.emptyReason = nilknown</em> gesetzt.</li>
+      <li>Transformationen durchführen (siehe auch <a href="workflowmanagement.html#status-des-listentryflags-im-medikationsplan">Status des List.entry.flags im Medikationsplan</a>):
+        <ul>
+          <li>Neue oder geänderte Planeinträge (<em>List.entry.flag = new</em> oder <em>changed</em>) werden auf <strong><em>unchanged</em></strong> gesetzt (siehe <a href="workflowmanagement.html#status-des-listentryflags-im-medikationsplan">Status des List.entry.flags im Medikationsplan</a>).</li>
+          <li>Stornierte und beendete Planeinträge mit <em>List.entry.flag = <strong>removed</strong></em> werden aus dem Medikationsplan <strong>entfernt</strong>.</li>
+          <li>Planeinträge mit <strong>abgelaufenem Behandlungszeitraum</strong> werden mit <em>List.entry.flag = removed</em> gekennzeichnet und werden mit <strong>ausgeliefert</strong>, um dem GDA die Möglichkeit zu geben, das Medikament weiterzuverodnen. Anderenfalls nimmt der GDA zur Kenntnis, dass der Planeintrag mit seinem nächsten Schreibvorgang entfernt wird.</li>
+        </ul>
+      </li>
+      <li>Sind nach der Transformation keine Planeinträge mehr vorhanden, wird <em>List.emptyReason = nilknown</em> gesetzt.
+  <!-- Todo: wie ermittelt die Fachanwendung, ob Behandlungszeitraum abgelaufen akl 25.09.2026 --></li>
     </ul>
   </li>
-  <li><strong>Es existiert ein leerer Medikationsplan</strong> (<em>List.emptyReason = notstarted</em> oder <em>nilknown</em>).
+  <li><strong>Es existiert ein leerer Medikationsplan</strong> (mit einem <a href="https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html">List.emptyReason</a>).
     <ul>
       <li>Es erfolgt keine Transformation.</li>
     </ul>
   </li>
+  <li>Das <strong>Medikationsplan-Bundle</strong> ist zur Auslieferung bereit. Es enthält:
+    <ul>
+      <li>die (ggf. transformierte) <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource,</li>
+      <li>sämtliche von der <em>List</em> referenzierten Ressourcen</li>
+    </ul>
+  </li>
 </ol>
-
-<h4 id="aktivitätsdiagramm">Aktivitätsdiagramm</h4>
 
 <p><br/>
 <a href="plantuml/UC_eMed_01_01_plancheck.svg"><img src="plantuml/UC_eMed_01_01_plancheck.svg" alt="overview" style="width:60%;" class="mx-auto"/></a>
 <br/></p>
 
-<h3 id="sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion lesen (Plan-History-Search)</h3>
+<h3 id="sub_uc_emed_01_02---historische-medikationsplanversion-suchen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion suchen (Plan-History-Search)</h3>
 
-<p>Beim Plan-History-Search rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus.</p>
+<p>Bei der Plan-History-Search rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus. Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.</p>
 
-<p>Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.</p>
+<p>Beim Plan-History-Search erfolgt <strong>keine Änderung</strong> der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.</p>
 
-<p>Der Abruf erfolgt mittels <strong>GET</strong> auf den <em>List</em>-Ressourcen-Endpunkt unter Angabe geeigneter Suchparameter:</p>
+<h4 id="suchparameter">Suchparameter</h4>
+
+<p>Der Abruf erfolgt mittels <strong>GET</strong> auf den <em>List</em>-Ressourcen-Endpunkt unter Angabe geeigneter <strong>Suchparameter</strong>:</p>
 <ul>
-  <li><strong>Erstellungszeitraum</strong> von Medikationsplanversionen</li>
-  <li><strong>Medikation</strong> im Medikationsplan (PZN, Arzneimittelname oder Wirkstoff)</li>
-  <li><strong>Einnahmezeitraum</strong> einer Medikation im Medikationsplan</li>
-  <li><strong>Planeintragsid ohne Version</strong>: Abrufen aller Planversionen, die diesen Planeintrag enthalten</li>
-  <li><strong>Planeintragsid mit Version</strong>: Abrufen der Planversionen, die genau diese Planeintragsversion enthalten.</li>
-  <li><strong>StatusReason eines im Plan einthaltenen Planeintrags</strong>: Abrufen aller Planversionen, die einen Planeintrag mit statusReason = z.B. "Medikament nicht vertragen" enthalten.</li>
+  <li><strong>Zeitraum der Erfassung</strong> von Medikationsplanversionen</li>
+  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
+  <li><strong>Einnahmezeitraum</strong> einer Medikation</li>
+  <li><strong>Planeintragsid ohne Version</strong>: Abrufen aller Medikationsplanversionen, die diesen Planeintrag enthalten</li>
+  <li><strong>Planeintragsid mit Version</strong>: Abrufen der Medikationsplanversionen, die genau diese Planeintragsversion enthalten.</li>
+  <li><strong>StatusReason eines im Plan einthaltenen Planeintrags</strong>: Abrufen aller Planversionen, mit Planeinträgen mit bestimmtem <a href="ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html">statusReason</a>.</li>
 </ul>
 
-  <!-- TODO: weitere-parameter? -->
-
-<p>Die erzeugten Medikationsplan-Bundles dienen ausschließlich der Auslieferung und werden nicht persistiert.</p>
-
-<div class="dragon">
-<p class="note-to-balloters">
-Offene Frage:<br/>
-- Ist Plan-History-Search ein GET mit _include=* oder eine Custom Operation?<br/>
-- Können bei einem GET _history beliebige Suchparameter definiert werden?<br/>
-</p>
-</div>
-
-<h4 id="ablauf-1">Ablauf</h4>
+<h4 id="ablauf-2">Ablauf</h4>
 
 <ol>
-  <li>Der Client führt ein GET auf <em>[base]/Patient/[id]/List/_history</em> mit den gewünschten Suchparametern aus.</li>
-  <li>Die Fachanwendung ermittelt anhand der Suchparameter die passenden historischen Versionen der List-Ressource. Für jede gefundene List-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt, und ergänzt sie im Medikationsplan-Bundle.</li>
-  <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück.</li>
+  <li>Der Client führt ein GET auf <em>[base]/List/_history</em>   <!-- Todo: prüfen  akl 25.09.26 --> mit den passenden Suchparametern aus.</li>
+  <li>Die Fachanwendung ermittelt anhand dieser die historischen Versionen der <em>List</em>-Ressource. Für jede gefundene <em>List</em>-Version rekonstruiert die Fachanwendung den historischen Medikationsplan, indem sie die zugehörigen historischen Versionen der referenzierten Ressourcen ermittelt und diese im Medikationsplan-Bundle ergänzt.</li>
+  <li>Die Fachanwendung liefert die den Suchparametern entsprechenden historischen Medikationspläne als Medikationsplan-Bundles in einem Bundle vom Typ searchset zurück.</li>
   <li>Werden keine passenden historischen Medikationsplanversionen gefunden, enthält das zurückgelieferte <em>searchset</em> keine Einträge.</li>
   <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
 </ol>
-
-<p>Beim Plan-History-Search erfolgt <strong>keine Änderung</strong> der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert.</p>
-
-<p>Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.</p>
-
-<h4 id="sequenzdiagramm-1">Sequenzdiagramm</h4>
 
 <p><br/>
 <a href="plantuml/UC_eMed_01_02.svg"><img src="plantuml/UC_eMed_01_02.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
 
-<h5 id="beispiele-für-suchanfragen">Beispiele für Suchanfragen</h5>
-<p>In Arbeit.
-  <!-- * **Aktuelle Planversion** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_count=1&_sort=-timestamp&list.subject={bPK-GH} -->
-  <!-- * **Alle Planversionen** mit dem Suchparameter Patient abrufen: GET [base]/Bundle?type=collection&_sort=-timestamp&list.subject={bPK-GH} -->
-  <!-- * Abfrage aller **historischen Medikationsplan-Versionen** eines Patienten, die nach dem angegebenen Datum persistiert wurden und Plan-Einträge enthalten, die als **storniert, beendet oder abgesetzt** gekennzeichnet sind: GET [base]/Bundle?type=collection&_sort=-timestamp&timestamp=ge2025-01-01&list.subject={bPK-GH}&list.entry.flag=removed -->
-  <!-- list.code= 736378000 in Abfragen ergänzen --></p>
+<h4 id="beispiele-für-suchanfragen">Beispiele für Suchanfragen</h4>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>in Arbeit.
+</p>
+</div>
+
+  <!-- <div class="dragon">
+<p class="note-to-balloters">
+Offene Frage:<br>
+- Ist Plan-History-Search ein GET mit _include=* oder eine Custom Operation?<br>
+- Können bei einem GET _history beliebige Suchparameter definiert werden?<br>
+</p>
+</div> TODO: Annahme treffen akl 25.09.26 -->
 
   <!-- * Aktuelle Medikationsplanversion lesen:
 GET [base]/Patient/[id]/List -->
@@ -629,7 +626,7 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
 
 <p>Der dabei erzeugte initiale Medikationsplan besitzt den Wert <em>List.emptyReason = notstarted</em>. Dieser kennzeichnet ausschließlich den <strong>Initialzustand</strong> des Medikationsplans und bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden. Er trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.</p>
 
-<p>Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Portal ausgelöst werden, indem erstmals ein <strong>Plan-Read</strong> durchgeführt wird.</p>
+<p>Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Zugangsportal ausgelöst werden.</p>
 
 <div class="dragon">
 <p class="note-to-balloters">
@@ -638,67 +635,58 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
 </p>
 </div>
 
-<h4 id="ablauf-2">Ablauf</h4>
+<h4 id="ablauf-3">Ablauf</h4>
 
 <ol>
-  <li><a name="l853">​</a>Ein Client führt für einen ELGA-Teilnehmer erstmalig ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
-  <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan für den Patienten existiert.</li>
+  <li><a name="l893">​</a>Ein Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan xistiert.</li>
   <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
   <li>Die List-Ressource wird als erste Version persistiert.</li>
-  <li>Für das Plan-Read erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Bundle zur Auslieferung.</li>
+  <li>Für das <em>Plan-Read</em> erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Bundle zur Auslieferung.</li>
   <li>Dieses wird mit <em>List.emptyReason = notstarted</em> sowie dem zugehörigen ETag zurückgeliefert.</li>
 </ol>
 
-<h4 id="sequenzdiagramm-2">Sequenzdiagramm</h4>
-
 <p><br/>
-<a href="plantuml/UC_eMed_01_03.svg"><img src="plantuml/UC_eMed_01_03.svg" alt="overview" style="width:45%;" class="mx-auto"/></a>
+<a href="plantuml/UC_eMed_01_03.svg"><img src="plantuml/UC_eMed_01_03.svg" alt="overview" style="width:40%;" class="mx-auto"/></a>
 <br/></p>
 
-<h3 id="sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge lesen (Planentry-Search)</h3>
+<h3 id="sub_uc_emed_01_04---medikationsplaneinträge-suchen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge suchen (Planentry-Search)</h3>
 
-<p><strong>Planentry-Search</strong> dient der gezielten Suche nach Medikationsplaneintragsversionen eines ELGA-Teilnehmer. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
+<p><strong>Planentry-Search</strong> dient der gezielten Suche nach Medikationsplaneintragsversionen. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
 
-<p>Die Suche ermöglicht berechtigten GDA sowie ELGA-Teilnehmern den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.</p>
+<p>Die Suche ermöglicht berechtigten Akteuren den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.</p>
 
 <p>Die Historie ermöglicht die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.</p>
-
-<p>Der Abruf erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:<br/>
-  <!-- TODO: search-parameter --></p>
-
-<ul>
-  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
-  <li><strong>Einnahmezeitraum</strong></li>
-  <li><strong>Erstellungszeitpunkt</strong></li>
-  <li><strong>Status</strong> des Medikationsplaneintrags (z.B. <em>active</em> oder <em>on-hold</em>)</li>
-  <li><strong>StatusReason</strong>: statusReason = z.B. "Medikament nicht vertragen"</li>
-  <li><strong>Historisch oder aktuell</strong> (_history)</li>
-</ul>
-
-<div class="dragon">
-<p class="note-to-balloters">
-Offene Frage:<br/>
-- Können bei einem GET _history beliebige Suchparameter definiert werden?<br/>
-</p>
-</div>
 
 <p><br/>
 Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:</p>
 
 <ul>
-  <li>die zugehörigen Medikationsplanversionen mittels <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Plan-History-Search</a></li>
-  <li><em>Geplante Abgaben</em> (<em>Prescription-Search</em>)   <!-- TODO Link --></li>
-  <li><em>Durchgeführte Abgaben</em> (<em>Dispense-Search</em>)   <!-- TODO Link --></li>
+  <li>die zugehörigen Medikationsplanversionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---historische-medikationsplanversion-suchen-plan-history-search">Plan-History-Search</a>)</li>
+  <li><em>Geplante Abgaben</em> (<a href="Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Prescription-Search</a>)</li>
+  <li><em>Durchgeführte Abgaben</em> (<a href="Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Dispense-Search</a>)</li>
 </ul>
 
 <div class="dragon">
 <p class="note-to-balloters">
 Offene Punkte:<br/>
-- Sind die Referenzen in Geplanten und Durchgeführten Abgaben versioniert?<br/>
+- Sind die Referenzen in Geplanten Abgaben und Durchgeführten Abgaben versioniert?<br/>
 </p>
 </div>
 
-<h4 id="ablauf-3">Ablauf</h4>
+<h4 id="suchparameter-1">Suchparameter</h4>
+
+<p>Die Suche nach Medikationsplaneinträgen erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:<br/></p>
+<ul>
+  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
+  <li><strong>Einnahmezeitraum</strong></li>
+  <li><strong>Erstellungszeitpunkt</strong></li>
+  <li><strong>Status</strong>: <a href="ValueSet-PlaneintragStatusVS.html">Value Set</a></li>
+  <li><strong>StatusReason</strong>: <a href="ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html">Value Set</a></li>
+  <li><strong>Historisch oder aktuell</strong> (_history)</li>
+</ul>
+
+<h4 id="ablauf-4">Ablauf</h4>
 
 <ol>
   <li>Der Client führt ein <strong>GET</strong> auf den Planentry-Search-Endpunkt mit den gewünschten Suchparametern aus (<em>MedicationRequest</em> mit <em>category = "Planeintrag"</em>).</li>
@@ -708,17 +696,27 @@ Offene Punkte:<br/>
   <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
 </ol>
 
-<h4 id="sequenzdiagramm-3">Sequenzdiagramm</h4>
-
 <p><br/>
 <a href="plantuml/UC_eMed_01_04.svg"><img src="plantuml/UC_eMed_01_04.svg" alt="overview" style="width:50%;" class="mx-auto"/></a>
 <br/></p>
 
 <h4 id="beispiele-für-suchanfragen-1">Beispiele für Suchanfragen</h4>
 
-<p>In Arbeit. 
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>in Arbeit.
+</p>
+</div>
+
+  <!-- <div class="dragon">
+<p class="note-to-balloters">
+Offene Frage:<br>
+- Können bei einem GET _history beliebige Suchparameter definiert werden?<br>
+</p>
+</div> TODO: Annahmen Treffen akl 25.09.2026 -->
+
   <!-- * Alle aktiven Medikationsplaneinträge eines Patienten:
-  `GET /Patient/[id]/MedicationRequest?status=active` --></p>
+  `GET /Patient/[id]/MedicationRequest?status=active` -->
 
   <!-- * Medikationsplaneinträge zu einem bestimmten Arzneimittel:
   `GET /Patient/[id]/MedicationRequest?medication=<PZN>` -->
@@ -757,7 +755,7 @@ Offene Punkte: <br/>$plan-history-directory-search: in Arbeit.
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Sep 24, 2026 15:40+0000">2026-09-24</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Sep 25, 2026 14:56+0000">2026-09-25</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-24T15:40:45+00:00",
+  "date" : "2026-09-25T14:56:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1905,13 +1905,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-03.html"
+        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-04.html"
       }],
       "reference" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-03"
+        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-04"
       },
-      "name" : "Beispiel PractitionerRole Arzt im Krankenhaus",
-      "description" : "Beispiel einer Arzt im Krankenhaus (Dr. Krankenhaus + Organisation)",
+      "name" : "Beispiel PractitionerRole Urlaubsvertretung",
+      "description" : "Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination)",
       "exampleBoolean" : true
     },
     {
@@ -1921,13 +1921,13 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-04.html"
+        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-03.html"
       }],
       "reference" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-04"
+        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-03"
       },
-      "name" : "Beispiel PractitionerRole Urlaubsvertretung",
-      "description" : "Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination)",
+      "name" : "Beispiel PractitionerRole Ärztin im Krankenhaus",
+      "description" : "Beispiel einer Ärztin im Krankenhaus (Dr. Krankenhaus + Organisation)",
       "exampleBoolean" : true
     },
     {

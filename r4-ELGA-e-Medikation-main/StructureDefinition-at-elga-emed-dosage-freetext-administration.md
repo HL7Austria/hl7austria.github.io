@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-freetext-administration | *Version*:0.1.0 | |
-| Draft as of 2026-09-24 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDosageFreeTextAdministration |
+| Draft as of 2026-09-25 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDosageFreeTextAdministration |
 
 **Usages:**
 
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-dosage-
   "version" : "0.1.0",
   "name" : "AtElgaEmedDosageFreeTextAdministration",
   "status" : "draft",
-  "date" : "2026-09-24T15:40:45+00:00",
+  "date" : "2026-09-25T14:56:10+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
