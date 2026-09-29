@@ -11,9 +11,9 @@
 
 #### Magistrale Zubereitung
 
-#### PZN Medication Ressource Contained vs. Conditional Reference
+#### PZN Medication Ressource Contained vs. Logical Reference
 
-Für die Referenzierung von Arzneimitteln mit PZN wird abhängig von der Art des Zugriffs zwischen einer Conditional Reference bei schreibenden Zugriffen und einer enthaltenen (contained) Medication-Ressource bei lesenden Zugriffen unterschieden.
+Für die Referenzierung von Arzneimitteln mit PZN wird abhängig von der Art des Zugriffs zwischen einer Logical Reference bei schreibenden Zugriffen und einer enthaltenen (contained) Medication-Ressource bei lesenden Zugriffen unterschieden.
 
 Die Pharmazentralnummer (PZN) dient dabei als eindeutiger fachlicher Identifikator für das Arzneimittel. Zusätzlich kann die Bezeichnung des Arzneimittels als display-Wert angegeben werden. Dieser unterstützt insbesondere die fachliche Plausibilisierung und erleichtert es Nutzenden, das ausgewählte Arzneimittel nachzuvollziehen. Die Fachanwendung verwaltet die aktuelle ASP-Liste und kann anhand der PZN jederzeit die aktuellen Informationen zur Medication-Ressource ableiten.
 
@@ -24,7 +24,7 @@ Bezeichnung des Arzneimittels als kann oder als muss?
 
 ##### Medication Referenz für schreibende Zugriffe
 
-Beim Erstellen oder Aktualisieren von Ressourcen, die auf ein Arzneimittel verweisen, insbesondere MedicationRequest und MedicationDispense, wird die Medication über eine Conditional Reference referenziert.
+Beim Erstellen oder Aktualisieren von Ressourcen, die auf ein Arzneimittel verweisen, insbesondere MedicationRequest und MedicationDispense, wird die Medication über eine Logical Reference referenziert.
 
 Die Referenz erfolgt anhand der PZN, beispielsweise:
 
