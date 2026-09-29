@@ -41,8 +41,8 @@
     <script src="assets/js/mermaid.js" type="text/javascript"></script>
     <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.3"}
-    h3,h4,h5,h6{--heading-prefix:"10.3"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.3"}
+    h3,h4,h5,h6{--heading-prefix:"11.3"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- at-fhir-ig-template begin -->
@@ -127,6 +127,9 @@
       </li>
       <li>
         <a href="dosages.html">Dosierungen</a>
+      </li>
+      <li>
+        <a href="medication.html">Medikation</a>
       </li>
     </ul>
   </li>
@@ -265,7 +268,7 @@ Offene Frage:<br/>
 <h4 id="ablauf">Ablauf</h4>
 
 <ol>
-  <li><a name="l534">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
+  <li><a name="l540">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx">Medikationsplan-Transaction-Bundle</a>. Der Request enthält:
     <ul>
       <li>alle <strong>neuen</strong>, <strong>geänderten</strong> und <strong>zu entfernenden</strong> Ressourcen im Transaction Bundle</li>
       <li>den von der Fachanwendung nach dem <em>$plan-read</em> übermittelten <em>ETag</em> (zur Durchführung des <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>)</li>
@@ -298,8 +301,8 @@ Offener Punkt:<br/>
 <h4 id="custom-operations">Custom Operations</h4>
 
 <ul>
-  <li><a name="l645">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l649">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l651">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l655">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm">Sequenzdiagramm</h4>
@@ -396,8 +399,8 @@ Offener Punkt:<br/>
 <h4 id="custom-operations-1">Custom Operations</h4>
 
 <ul>
-  <li><a name="l840">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l844">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l846">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l850">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h3 id="sequenzdiagramm---allgemeiner-ablauf-von-medikationsplan-bearbeiten">Sequenzdiagramm - Allgemeiner Ablauf von Medikationsplan bearbeiten</h3>
@@ -471,13 +474,13 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 <h4 id="custom-operations-2">Custom Operations</h4>
 
 <ul>
-  <li><a name="l967">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l971">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l973">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l977">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-1">Sequenzdiagramm</h4>
 
-<p><a name="l979">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l985">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h3 id="sub_uc_emed_02_04---planeintrag-im-medikationsplan-beibehalten">Sub_UC_eMed_02_04 - Planeintrag im Medikationsplan beibehalten</h3>
 
@@ -519,13 +522,13 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 <h4 id="custom-operations-3">Custom Operations</h4>
 
 <ul>
-  <li><a name="l1085">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1089">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1091">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1095">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-2">Sequenzdiagramm</h4>
 
-<p><a name="l1097">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1103">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h3 id="sub_uc_emed_02_05---planeintrag-pausieren-oder-reaktivieren">Sub_UC_eMed_02_05 - Planeintrag pausieren oder reaktivieren</h3>
 
@@ -579,13 +582,13 @@ Bei fehlender fachlicher Kontinuität der Bearbeitung eines Planeintrages (z.B. 
 <h4 id="custom-operations-4">Custom Operations</h4>
 
 <ul>
-  <li><a name="l1228">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1232">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1234">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1238">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-3">Sequenzdiagramm</h4>
 
-<p><a name="l1240">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1246">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h3 id="sub_uc_emed_02_06---leeren-medikationsplan-dokumentieren">Sub_UC_eMed_02_06 - Leeren Medikationsplan dokumentieren</h3>
 
@@ -621,17 +624,17 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 <h4 id="custom-operations-5">Custom Operations</h4>
 
 <ul>
-  <li><a name="l1344">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1348">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1350">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1354">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-4">Sequenzdiagramm</h4>
 
-<p><a name="l1356">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1362">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h3 id="sub_uc_emed_02_07---planeintrag-im-medikationsplan-stornieren">Sub_UC_eMed_02_07 - Planeintrag im Medikationsplan stornieren</h3>
 
-<p><a name="l1365">​</a>Der GDA kann einen oder mehrere Planeinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
+<p><a name="l1371">​</a>Der GDA kann einen oder mehrere Planeinträge aufgrund einer falschen Eingabe stornieren. Diese sind beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Bundle bereitgestellten Ressourcen:</p>
 <ul>
@@ -681,17 +684,17 @@ Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan
 <h4 id="custom-operations-6">Custom Operations</h4>
 
 <ul>
-  <li><a name="l1451">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1455">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1457">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1461">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-5">Sequenzdiagramm</h4>
 
-<p><a name="l1463">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1469">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h3 id="sub_uc_emed_02_08---planeintrag-im-medikationsplan-beenden">Sub_UC_eMed_02_08 - Planeintrag im Medikationsplan beenden</h3>
 
-<p><a name="l1472">​</a>Der GDA kann ein Medikament, welches in einen Planeintrag dokumentiert ist, absetzen.
+<p><a name="l1478">​</a>Der GDA kann ein Medikament, welches in einen Planeintrag dokumentiert ist, absetzen.
 Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-read">Plan-Read</a> nicht mehr im Medikationsplan enthalten.</p>
 
 <p>Hierfür führt der GDA ein <em>$plan-read</em> aus und bearbeitet die von der Fachanwendung im Medikationsplan-Bundle bereitgestellten Ressourcen:</p>
@@ -743,13 +746,13 @@ Der betreffende Planeintrag ist beim nächsten <a href="interactions.html#plan-r
 <h4 id="custom-operations-7">Custom Operations</h4>
 
 <ul>
-  <li><a name="l1566">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1570">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1572">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1576">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-6">Sequenzdiagramm</h4>
 
-<p><a name="l1578">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1584">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
   <!-- ### Sub_UC_eMed_02_09 - Einnahmezeitraum eines Planeintrags ist abgelaufen 
 
@@ -854,13 +857,13 @@ Siehe [Allgemeiner Ablauf - Planeinträge bearbeiten](Sub_UC_eMed_02.html#allgem
 <h4 id="custom-operations-8">Custom Operations</h4>
 
 <ul>
-  <li><a name="l1660">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1664">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1666">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1670">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-7">Sequenzdiagramm</h4>
 
-<p><a name="l1672">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
+<p><a name="l1678">​</a>Siehe <a href="Sub_UC_eMed_02.html#allgemeiner-ablauf---planeinträge-bearbeiten">Allgemeiner Ablauf - Planeinträge bearbeiten</a>.</p>
 
 <h3 id="sub_uc_emed_02_11---planeintrag-aus-aktuellem-medikationsplan-durch-elga-teilnehmer-löschen">Sub_UC_eMed_02_11 - Planeintrag aus aktuellem Medikationsplan durch ELGA-Teilnehmer löschen</h3>
 
@@ -974,8 +977,8 @@ Beim Löschen einer Medikationsplanversion wird die betreffende *List*-Ressource
 <h4 id="custom-operations-9">Custom Operations</h4>
 
 <ul>
-  <li><a name="l1715">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
-  <li><a name="l1719">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
+  <li><a name="l1721">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><a name="l1725">​</a><a href="OperationDefinition-AtEmed.List.PlanRead.html">$plan-read</a></li>
 </ul>
 
 <h4 id="sequenzdiagramm-8">Sequenzdiagramm</h4>
@@ -1012,7 +1015,7 @@ Mögliche Lösung: Vor dem Löschen prüfen, ob die referenzierten Planeinträge
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Sep 25, 2026 14:56+0000">2026-09-25</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Tue, Sep 29, 2026 10:09+0000">2026-09-29</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
