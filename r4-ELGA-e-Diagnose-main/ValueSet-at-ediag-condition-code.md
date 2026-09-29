@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-condition-code | *Version*:0.1.0 | |
-| Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagConditionCode |
+| Active as of 2026-09-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagConditionCode |
 
  
 Value-Set für die Codierung von Diagnosen. 
@@ -21,6 +21,10 @@ Value-Set für die Codierung von Diagnosen.
 Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Health Codierservice](https://codierservice.ehealth.gv.at/) als Ergebnis einer Eingabe haben könnte.
 
 Aktuell werden **alle** Klinisch relevante Erscheinungen zugelassen. Auf Basis des Codierservice wird diese Menge vermutlich noch reduziert.
+
+* Dieses Value-Set wurde für die e-Diagnose entworfen und wird auf den [österreichische e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
+* Der IG Publisher baut aktuell auf SNOMED Intl. Version 2025-XX auf, weshalb weniger Konzepte in diesem Value-Set angezeigt werden als in der aktuellen Version von SNOMED CT verfügbar sind. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
+* Aktuell werden österreichische Übersetzungen auf Basis der Austrian Extension in dem Value-Set noch nicht aufgelöst. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
 
 ### Logical Definition (CLD)
 
@@ -55,7 +59,7 @@ Aktuell werden **alle** Klinisch relevante Erscheinungen zugelassen. Auf Basis d
   "title" : "AT e-Diagnose Condition Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-18T07:26:42+00:00",
+  "date" : "2026-09-29T15:00:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code | *Version*:0.1.0 | |
-| Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagAllergyIntoleranceCode |
+| Active as of 2026-09-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagAllergyIntoleranceCode |
 
  
 Value-Set für die Codierung von Allergien und Intoleranzen. 
@@ -53,7 +53,7 @@ No Expansion for this valueset (not supported by Publication Tooling)
   "title" : "AT e-Diagnose AllergyIntolerance Code",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-18T07:26:42+00:00",
+  "date" : "2026-09-29T15:00:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

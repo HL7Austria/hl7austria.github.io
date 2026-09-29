@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-procedure-code | *Version*:0.1.0 | |
-| Active as of 2026-09-18 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagProcedureCode |
+| Draft as of 2026-09-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEDiagProcedureCode |
 
  
 Value-Set für die Codierung von Prozeduren. 
@@ -22,6 +22,10 @@ Zu diesem Value-Set sind folgende Punkte zu berücksichtigen:
 
 * Dieses Value-Set kopiert die Definition vom [ValueSet: Procedures - IPS](http://hl7.org/fhir/uv/ips/ValueSet/procedures-uv-ips). Wenn man die ECL, auf der dieses Value-Set basiert, über SNOMED CT auswertet, erhält man ca. 60000 Konzepte. Im Gegensatz zu den hier angegebenen 983 Konzepten. Dazu wurde auch auf chat.fhir.org nachgefragt: [https://chat.fhir.org/#narrow/channel/207835-IPS/topic/Number.20of.20concepts.20in.20ProceduresUvIps](https://chat.fhir.org/#narrow/channel/207835-IPS/topic/Number.20of.20concepts.20in.20ProceduresUvIps)
 * Zudem kann sich ganz generell die Menge der Konzepte im Rahmen der e-Diagnose noch ändern.
+
+* Dieses Value-Set wurde für die e-Diagnose entworfen und wird auf den [österreichische e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
+* Der IG Publisher baut aktuell auf SNOMED Intl. Version 2025-XX auf, weshalb weniger Konzepte in diesem Value-Set angezeigt werden als in der aktuellen Version von SNOMED CT verfügbar sind. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
+* Aktuell werden österreichische Übersetzungen auf Basis der Austrian Extension in dem Value-Set noch nicht aufgelöst. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
 
 ### Logical Definition (CLD)
 
@@ -54,9 +58,9 @@ Zu diesem Value-Set sind folgende Punkte zu berücksichtigen:
   "version" : "0.1.0",
   "name" : "AtEDiagProcedureCode",
   "title" : "AT e-Diagnose Procedure Code",
-  "status" : "active",
+  "status" : "draft",
   "experimental" : true,
-  "date" : "2026-09-18T07:26:42+00:00",
+  "date" : "2026-09-29T15:00:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -78,81 +82,9 @@ Zu diesem Value-Set sind folgende Punkte zu berücksichtigen:
     "include" : [{
       "system" : "http://snomed.info/sct",
       "filter" : [{
-        "property" : "concept",
-        "op" : "descendent-of",
-        "value" : "71388002"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "787480003"
-      }]
-    }],
-    "exclude" : [{
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "14734007"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "59524001"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "389067005"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "442006003"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "225288009"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "308335008"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "710135002"
-      }]
-    },
-    {
-      "system" : "http://snomed.info/sct",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "389084004"
+        "property" : "constraint",
+        "op" : "=",
+        "value" : "< 416940007 |History of procedure (situation)| . 363589002 |Associated procedure (attribute)|"
       }]
     }]
   }
