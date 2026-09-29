@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-extensi
   "name" : "AtElgaEmedExtensionPatientModified",
   "title" : "AT ELGA e-Medikation Extension Patient Modified",
   "status" : "draft",
-  "date" : "2026-09-29T11:13:32+00:00",
+  "date" : "2026-09-29T15:22:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
