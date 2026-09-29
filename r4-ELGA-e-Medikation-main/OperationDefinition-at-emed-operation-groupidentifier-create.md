@@ -28,7 +28,7 @@ Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdent
   "title" : "eMed Operation für GroupIdentifier-Create",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-29T10:09:39+00:00",
+  "date" : "2026-09-29T10:46:32+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-29T10:09:39+00:00",
+  "date" : "2026-09-29T10:46:32+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -91,6 +91,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.id",
       "path" : "List.id",
+      "short" : "Technische id der Ressource",
       "min" : 1,
       "mustSupport" : true
     },

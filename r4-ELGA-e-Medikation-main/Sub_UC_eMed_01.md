@@ -8,7 +8,7 @@
 
 Dieser technische Use Case beschreibt den lesenden Zugriff [berechtigter Akteure](actors.md#rollen-und-berechtigungen) auf den Medikationsplan eines ELGA-Teilnehmers.
 
-Für ELGA-Teilnehmer und deren Vertretungen erfolgt der Zugriff über das ELGA-Zugangsportal. Für die übrigen Akteure erfolgt der Zugriff über die e-Medikations-Schnittstelle des jeweiligen GDA-Systems.
+Für ELGA-Teilnehmer und deren Vertretungen erfolgt der lesende Zugriff über das ELGA-Zugangsportal. Für die übrigen Akteure erfolgt der lesende Zugriff über die e-Medikations-Schnittstelle des jeweiligen GDA-Systems.
 
 Der lesende Zugriff umfasst:
 
@@ -17,10 +17,10 @@ Der lesende Zugriff umfasst:
 * die Suche und den Abruf **einzelner Medikationsplaneinträge** bzw. historischer Versionen ([Planentry-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search))sowie
 * Abruf eines **Verzeichnisses historischer Medikationspläne** ([Plan-History-Directory-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search)) 
 
-Die fachlichen Anforderungen dieses Use Cases werden im
+ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im
 [UC_eMed_01 Medikationsplan lesen](Sub_UC_eMed_01.md)beschrieben.
 
-Für sämtliche im Folgenden beschriebenen Zugriffsarten gelten zusätzlich die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
+Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
 ### Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)
 
