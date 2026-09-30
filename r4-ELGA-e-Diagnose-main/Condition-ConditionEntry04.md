@@ -10,6 +10,8 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **AT ELGA Reported (Fremdangabe)**: true
 
+**identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/123456789
+
 **clinicalStatus**: Active
 
 **verificationStatus**: Confirmed
@@ -47,6 +49,10 @@ Wässrige Durchfälle bei bestehender AB-Therapie
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",
     "valueBoolean" : true
+  }],
+  "identifier" : [{
+    "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier",
+    "value" : "123456789"
   }],
   "clinicalStatus" : {
     "coding" : [{

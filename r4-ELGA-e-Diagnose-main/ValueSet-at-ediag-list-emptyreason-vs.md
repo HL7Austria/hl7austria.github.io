@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-emptyreason-vs | *Version*:0.1.0 | |
-| Draft as of 2026-09-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagListEmptyReasonVS |
+| Draft as of 2026-09-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagListEmptyReasonVS |
 
  
 ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. 
@@ -51,7 +51,7 @@ ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.
   "title" : "ELGA List Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-09-29T15:00:21+00:00",
+  "date" : "2026-09-30T11:14:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

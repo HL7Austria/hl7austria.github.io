@@ -32,7 +32,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-29T15:00:21+00:00",
+  "date" : "2026-09-30T11:14:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1039,6 +1039,22 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       "name" : "Beispielinstanz einer stornierten Diagnose",
       "description" : "Beispiel einer Diagnose nach Durchführung der $entered-in-error-Operation durch einen GDA",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-at-ediag-codesystem-business-identifier.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-ediag-codesystem-business-identifier"
+      },
+      "name" : "Business Identifier Codes",
+      "description" : "Dieses CodeSystem enthält kein Konzepte sondern dient als System für den Identifier einzelner Einträge in der e-Diagnose.",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

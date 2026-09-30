@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition | *Version*:0.1.0 | |
-| Active as of 2026-09-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
+| Active as of 2026-09-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagCondition |
 
  
 Das AT e-Diagnose Condition-Profil leitet sich vom Condition-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-09-29T15:00:21+00:00",
+  "date" : "2026-09-30T11:14:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -143,7 +143,34 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-condit
     {
       "id" : "Condition.identifier",
       "path" : "Condition.identifier",
-      "short" : "Zuordnung der Diagnose in einem internen Dokumentationssystem."
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "system"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Condition.identifier:businessIdentifier",
+      "path" : "Condition.identifier",
+      "sliceName" : "businessIdentifier",
+      "short" : "Identifier innerhalb der e-Diagnose für einen Eintrag.",
+      "definition" : "Dieser Identifier wird von der Fachanwendung e-Diagnose vergeben, sollte dieser durch den Client nicht gesetzt werden. Ein Client kann diesen Identifier nutzen, um einzelne Einträge im Zuge einer Bearbeitung miteinander zu verknüpfen.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Condition.identifier:businessIdentifier.system",
+      "path" : "Condition.identifier.system",
+      "min" : 1,
+      "patternUri" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier"
+    },
+    {
+      "id" : "Condition.identifier:businessIdentifier.value",
+      "path" : "Condition.identifier.value",
+      "min" : 1
     },
     {
       "id" : "Condition.clinicalStatus",

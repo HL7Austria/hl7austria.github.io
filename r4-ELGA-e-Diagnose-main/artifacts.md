@@ -58,6 +58,7 @@ These define new code systems used by systems conforming to this implementation 
 
 | | |
 | :--- | :--- |
+| [Business Identifier Codes](CodeSystem-at-ediag-codesystem-business-identifier.md) | Dieses CodeSystem enthält kein Konzepte sondern dient als System für den Identifier einzelner Einträge in der e-Diagnose. |
 | [Reaktionszeit Codes](CodeSystem-at-ediag-codesystem-reaction-time-cs.md) | Zeitlicher Verlauf der Manifestation |
 
 ### Example: Example Instances 

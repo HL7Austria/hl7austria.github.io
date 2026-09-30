@@ -60,7 +60,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
   },
   "code" : {
     "coding" : [{
-      "system" : "$cs-sct",
+      "system" : "http://snomed.info/sct",
       "code" : "372687004",
       "display" : "Amoxicillin"
     }]
@@ -88,14 +88,14 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
     }],
     "manifestation" : [{
       "coding" : [{
-        "system" : "$cs-sct",
+        "system" : "http://snomed.info/sct",
         "code" : "271807003",
         "display" : "Exanthem"
       }]
     },
     {
       "coding" : [{
-        "system" : "$cs-sct",
+        "system" : "http://snomed.info/sct",
         "code" : "422400008",
         "display" : "Emesis"
       }]

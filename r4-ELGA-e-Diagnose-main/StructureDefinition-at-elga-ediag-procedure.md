@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure | *Version*:0.1.0 | |
-| Active as of 2026-09-29 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
+| Active as of 2026-09-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtEdiagProcedure |
 
  
 Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-09-29T15:00:21+00:00",
+  "date" : "2026-09-30T11:14:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -133,7 +133,34 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-ediag-proced
     {
       "id" : "Procedure.identifier",
       "path" : "Procedure.identifier",
-      "short" : "Zuordnung der Diagnose in einem internen Dokumentationssystem."
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "system"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Procedure.identifier:businessIdentifier",
+      "path" : "Procedure.identifier",
+      "sliceName" : "businessIdentifier",
+      "short" : "Identifier innerhalb der e-Diagnose für einen Eintrag.",
+      "definition" : "Dieser Identifier wird von der Fachanwendung e-Diagnose vergeben, sollte dieser durch den Client nicht gesetzt werden. Ein Client kann diesen Identifier nutzen, um einzelne Einträge im Zuge einer Bearbeitung miteinander zu verknüpfen.",
+      "min" : 0,
+      "max" : "1"
+    },
+    {
+      "id" : "Procedure.identifier:businessIdentifier.system",
+      "path" : "Procedure.identifier.system",
+      "min" : 1,
+      "patternUri" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier"
+    },
+    {
+      "id" : "Procedure.identifier:businessIdentifier.value",
+      "path" : "Procedure.identifier.value",
+      "min" : 1
     },
     {
       "id" : "Procedure.instantiatesCanonical",

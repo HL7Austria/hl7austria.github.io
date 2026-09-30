@@ -15,6 +15,8 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 * datetime: 2026-09-09 10:30:00+0100
 * reason: Diagnose irrtümlich erfasst
 
+**identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/123456789
+
 **clinicalStatus**: Active
 
 **verificationStatus**: Confirmed
@@ -62,6 +64,10 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
       "valueString" : "Diagnose irrtümlich erfasst"
     }],
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error"
+  }],
+  "identifier" : [{
+    "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier",
+    "value" : "123456789"
   }],
   "clinicalStatus" : {
     "coding" : [{
