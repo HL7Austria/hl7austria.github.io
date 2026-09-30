@@ -20,7 +20,7 @@ Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Facha
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-30T12:38:12+00:00",
+  "date" : "2026-09-30T12:52:09+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
