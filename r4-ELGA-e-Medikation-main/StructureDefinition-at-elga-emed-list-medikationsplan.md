@@ -29,6 +29,89 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-medikationsplan.csv), [Excel](StructureDefinition-at-elga-emed-list-medikationsplan.xlsx), [Schematron](StructureDefinition-at-elga-emed-list-medikationsplan.sch) 
 
+### Notes:
+
+#### Search Parameters
+
+**Historische Planversionen (`_history`)**
+
+ `_history` ist kein Suchparameter, sondern eine eigene FHIR-Interaktion, die als Teil des URL-Pfads angegeben wird. Sie liefert frühere Versionen des Medikationsplans (List-Ressource). Pro Patient existiert genau eine List-Ressource. Deren Versionen bilden die gesamte Historie der Medikationsplanversionen dieses Patienten ab. 
+
+* **Alle Versionen des Plans, mit Suchparametern:** `[base]/List/_history?[searchparameters]`
+* **Alle Versionen eines Plans:** `[base]/List/[id]/_history`
+* **Eine bestimmte, bereits bekannte Version:** `[base]/List/[id]/_history/[vid]`
+
+ Als Erweiterung des FHIR-Basisstandards können alle unten aufgeführten Suchparameter auch auf die History-Interaktion angewendet werden. Die Suche wirkt dann auf alle gespeicherten Versionen und nicht nur auf die aktuelle. Beispiel: `[base]/List/_history?date=ge2026-01-01`. Die Standard-History-Parameter (`_since`, `_at`, `_count`) bleiben zusätzlich nutzbar. 
+
+* **Name**: _id
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: Technische id der Ressource
+  * **Expression**: `List.id`
+* **Name**: _lastUpdated
+  * **Type**: [date](https://hl7.org/fhir/R4/search.html#date)
+  * **Description**: Timestamp der letzten Änderung der Liste
+  * **Expression**: `List.meta.lastUpdated`
+* **Name**: _profile
+  * **Type**: [reference](https://hl7.org/fhir/R4/search.html#reference)
+  * **Description**: Von der Liste deklarierte Profile zu denen sie angibt konform zu sein
+  * **Expression**: `List.meta.profile`
+* **Name**: code
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: [List](list.md): Art der Liste (in diesem Fall: Medikationsplan)
+  * **Expression**: `List.code`
+* **Name**: date
+  * **Type**: [date](https://hl7.org/fhir/R4/search.html#date)
+  * **Description**: Erstellungszeitpunkt bzw. Zeitraum der Erfassung von Medikationsplanversionen
+  * **Expression**: `List.date`
+* **Name**: empty-reason
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: Medikationsplan mit einem bestimmten Grund warum der Plan leer ist
+  * **Expression**: `List.emptyReason`
+* **Name**: item
+  * **Type**: [reference](https://hl7.org/fhir/R4/search.html#reference)
+  * **Description**: Medikationsplan, der einen bestimmten Planeintrag beinhaltet
+  * **Expression**: `List.entry.item`
+* **Name**: source
+  * **Type**: [reference](https://hl7.org/fhir/R4/search.html#reference)
+  * **Description**: Autor der letzten Änderung des Medikationsplans
+  * **Expression**: `List.source`
+* **Name**: medicationrequest-author
+  * **Type**: [reference](https://hl7.org/fhir/R4/search.html#reference)
+  * **Description**: Autor eines MedicationRequest, der Teil der Liste ist
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).requester`
+* **Name**: medicationrequest-status
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: Status des MedicationRequest, der Teil der Liste ist
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).status`
+* **Name**: medicationrequest-status-reason
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: Absetzgrund (StatusReason)
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).statusReason.ofType(CodeableConcept)`
+* **Name**: medicationrequest-effectivePeriod
+  * **Type**: [date](https://hl7.org/fhir/R4/search.html#date)
+  * **Description**: Einnahmezeitraum
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).extension('http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod').value.ofType(Period)`
+* **Name**: medicationrequest-authoredOn
+  * **Type**: [date](https://hl7.org/fhir/R4/search.html#date)
+  * **Description**: Erstellungs-/Änderungszeitpunkt
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).authoredOn`
+* **Name**: medicationrequest-courseOfTherapyType
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: Art der Medikation (Akutmedikation oder Dauermedikation): acute|continuous
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).courseOfTherapyType.ofType(CodeableConcept)`
+* **Name**: [medicationrequest-medication-code](SearchParameter-at-elga-emed-searchparameter-list-mr-medication-code.md)
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: Code (PZN) der enthaltenen Medication
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).medication.resolve().ofType(Medication).code.ofType(CodeableConcept)`
+* **Name**: medicationrequest-medication-name
+  * **Type**: [string](https://hl7.org/fhir/R4/search.html#string)
+  * **Description**: Arzneimittelname der enthaltenen Medication
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).medication.resolve().ofType(Medication).code.coding.display`
+* **Name**: medicationrequest-medication-ingredient
+  * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
+  * **Description**: Wirkstoff der enthaltenen Medication
+  * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).medication.resolve().ofType(Medication).ingredient.item.ofType(CodeableConcept)`
+
 
 
 ## Resource Content
@@ -42,7 +125,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-30T17:01:19+00:00",
+  "date" : "2026-09-30T18:21:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -256,7 +339,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-list-me
     {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown | unavailable] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Patient nimmt derzeit keine Medikamente ein | unavailable: Plan ist leer weil alle Einträge vom Patienten entfernt wurden",
+      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown | unavailable] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Patient nimmt derzeit keine Medikamente ein | unavailable: Plan ist leer weil alle Einträge entfernt wurden",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",

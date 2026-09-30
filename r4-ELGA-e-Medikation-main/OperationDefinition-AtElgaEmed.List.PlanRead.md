@@ -12,7 +12,7 @@
 | Draft as of 2026-09-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmed_List_PlanRead |
 
  
-Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird. 
+Die $plan-read Operation ruft den aktuellen Medikationsplan eines ELGA-Teilnehmers in einem für die Bearbeitung aufbereiteten Zustand ab. Existiert noch kein Medikationsplan, wird ein initialer Medikationsplan erzeugt. 
 
 
 
@@ -28,7 +28,7 @@ Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Inten
   "title" : "e-Med Operation für Plan-Read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-09-30T17:01:19+00:00",
+  "date" : "2026-09-30T18:21:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -45,26 +45,18 @@ Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Inten
       "use" : "work"
     }]
   }],
-  "description" : "Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird.",
+  "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines ELGA-Teilnehmers in einem für die Bearbeitung aufbereiteten Zustand ab. Existiert noch kein Medikationsplan, wird ein initialer Medikationsplan erzeugt.",
   "affectsState" : true,
-  "code" : "planread",
-  "system" : true,
+  "code" : "plan-read",
+  "system" : false,
   "type" : true,
   "instance" : false,
   "parameter" : [{
-    "name" : "id",
-    "use" : "in",
-    "min" : 1,
-    "max" : "1",
-    "documentation" : "Der *id* Parameter dient der Zuordnung des Patienten.",
-    "type" : "string"
-  },
-  {
     "name" : "return",
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Der *return* Parameter gibt gibt den Medikationsplan zurück.",
+    "documentation" : "Der *return* Parameter im Falle eines Fehlers.",
     "type" : "Resource",
     "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
   },
@@ -73,7 +65,7 @@ Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Inten
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "documentation" : "Das für die Bearbeitung aufbereitete Medikationsplan-Bundle. Es enthält die aktuelle oder gegebenenfalls initial erzeugte List-Ressource sowie alle von ihr referenzierten Ressourcen.",
     "type" : "Bundle",
     "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"]
   }]

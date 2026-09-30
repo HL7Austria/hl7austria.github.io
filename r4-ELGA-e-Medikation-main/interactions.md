@@ -5,9 +5,9 @@
 
 ## Transaktionen
 
-Die Umsetzung des Patientenkontakts in den Transaktionen ist nicht Teil des Ballots. Der konkrete Zugriff wird in der Lösungsarchitektur beschrieben. 
+Die Umsetzung des Patientenkontakts in den Transaktionen ist nicht Teil des Ballots. Der konkrete Zugriff wird in der Lösungsarchitektur beschrieben.
 
-In diesem IG werden daher alle Requests ab dem /[type] dargestellt.
+In diesem IG werden daher alle Requests ab dem `/[type]` dargestellt.
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
@@ -30,4 +30,8 @@ In diesem IG werden daher alle Requests ab dem /[type] dargestellt.
 | **POST** | `/MedicationDispense` | `$reference-plan` | Referenz auf Medikationsplan erstellen | GDA |
 | **GET** | `/MedicationDispense` | `dispense-search` | Durchgeführte Abgaben suchen | GDA, PAT |
 | **DELETE** | `/MedicationDispense` | `dispense-delete` | Durchgeführte Abgabe löschen | PAT |
+
+#### Suchparameter Überblick
+
+![](searchparameter_overview.png)
 

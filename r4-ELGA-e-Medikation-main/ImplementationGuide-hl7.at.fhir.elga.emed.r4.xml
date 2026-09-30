@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-09-30T17:01:19+00:00"/>
+  <date value="2026-09-30T18:21:17+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -513,6 +513,10 @@
       <name value="Dosierungen"/>
       <description value="Dosierungsvarianten"/>
     </grouping>
+    <grouping id="Suchparameter">
+      <name value="Suchparameter"/>
+      <description value="Suchparameter"/>
+    </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
@@ -720,6 +724,18 @@
       <description value="Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung&#xA;&#xA;Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert."/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/at-elga-emed-searchparameter-list-mr-medication-code"/>
+      </reference>
+      <name value="at-elga-emed-searchparameter-list-mr-medication-code"/>
+      <description value="The code of the medication that is part of this MedicationRequest"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Suchparameter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1374,7 +1390,7 @@
         <reference value="OperationDefinition/AtElgaEmed.List.PlanRead"/>
       </reference>
       <name value="e-Med Operation für Plan-Read"/>
-      <description value="Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird."/>
+      <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines ELGA-Teilnehmers in einem für die Bearbeitung aufbereiteten Zustand ab. Existiert noch kein Medikationsplan, wird ein initialer Medikationsplan erzeugt."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

@@ -37,7 +37,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-dosage-
   "version" : "0.1.0",
   "name" : "AtElgaEmedDosageFrequencyAdministration",
   "status" : "draft",
-  "date" : "2026-09-30T17:01:19+00:00",
+  "date" : "2026-09-30T18:21:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -60,13 +60,21 @@ Dosierungsvarianten
 | [AtElgaEmedDosageStandardAdministration](StructureDefinition-at-elga-emed-dosage-standard-administration.md) |  |
 | [AtElgaEmedDosageTimedAdministration](StructureDefinition-at-elga-emed-dosage-timed-administration.md) |  |
 
+### Suchparameter 
+
+Suchparameter
+
+| | |
+| :--- | :--- |
+| [at-elga-emed-searchparameter-list-mr-medication-code](SearchParameter-at-elga-emed-searchparameter-list-mr-medication-code.md) | The code of the medication that is part of this MedicationRequest |
+
 ### Behavior: Operation Definitions 
 
 These are custom operations that can be supported by and/or invoked by systems conforming to this implementation guide.
 
 | | |
 | :--- | :--- |
-| [e-Med Operation für Plan-Read](OperationDefinition-AtElgaEmed.List.PlanRead.md) | Die $plan-read Operation wird aufgerufen, wenn ein Medikationsplan mit der Intention zu schreiben gelesen wird. |
+| [e-Med Operation für Plan-Read](OperationDefinition-AtElgaEmed.List.PlanRead.md) | Die $plan-read Operation ruft den aktuellen Medikationsplan eines ELGA-Teilnehmers in einem für die Bearbeitung aufbereiteten Zustand ab. Existiert noch kein Medikationsplan, wird ein initialer Medikationsplan erzeugt. |
 | [e-Med Operation für Plan-Write](OperationDefinition-AtElgaEmed.List.PlanWrite.md) | Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird. |
 | [eMed Operation für GroupIdentifier Prescription Search](OperationDefinition-at-emed-operation-groupidentifier-prescription-search.md) | Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med GroupIdentifier erfolgen soll. |
 | [eMed Operation für GroupIdentifier-Create](OperationDefinition-at-emed-operation-groupidentifier-create.md) | Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll. |

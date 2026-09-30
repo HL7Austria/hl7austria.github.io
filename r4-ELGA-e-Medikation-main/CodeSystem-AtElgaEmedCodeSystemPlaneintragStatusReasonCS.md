@@ -32,7 +32,7 @@ Codesystem für zulässige Ausprägungen des StatusReason eines Medikationsplane
   "title" : "ELGA e-Med MedicationRequest Planeintrag StatusReason CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-30T17:01:19+00:00",
+  "date" : "2026-09-30T18:21:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
