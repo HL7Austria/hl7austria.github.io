@@ -14,7 +14,7 @@
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-09-30T12:52:09+00:00",
+  "date" : "2026-09-30T14:46:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1399,19 +1399,10 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "technische_use_cases.html"
+          "valueUrl" : "use_cases.html"
         }],
-        "nameUrl" : "technische_use_cases.html",
-        "title" : "Technische Use Cases",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "patient_journey.html"
-        }],
-        "nameUrl" : "patient_journey.html",
-        "title" : "Patient Journey",
+        "nameUrl" : "use_cases.html",
+        "title" : "Überblick Anwendungsfälle",
         "generation" : "markdown"
       },
       {
@@ -1439,6 +1430,15 @@
         }],
         "nameUrl" : "uc_ediag_03_teilnehmer.html",
         "title" : "Teilnehmerrechte ausüben",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "patient_journey.html"
+        }],
+        "nameUrl" : "patient_journey.html",
+        "title" : "Patient Journey",
         "generation" : "markdown"
       },
       {

@@ -20,7 +20,7 @@ Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Dia
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-30T12:52:09+00:00",
+  "date" : "2026-09-30T14:46:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

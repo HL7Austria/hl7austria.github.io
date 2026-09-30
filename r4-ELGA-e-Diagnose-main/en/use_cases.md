@@ -1,6 +1,18 @@
-# Technische Use Cases - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Überblick Anwendungsfälle - ELGA e-Diagnose R4 (Draft) v0.1.0
 
-## Technische Use Cases
+## Überblick Anwendungsfälle
+
+### Fachliche Anwendungsfälle
+
+Die fachlichen Anwendungsfälle sind hier nachzulesen: TODO Link ergänzen
+
+#### Anwendungsfalldiagramm
+
+Das folgende Anwendungsfalldiagramm zeigt die zentralen Anwendungsfälle der e-Diagnose und die Interaktion der verschiedenen Akteure.
+
+![](ediag_uc_diagramm.drawio.png)
+
+### Technischen Anwendungsfälle
 
 Die nachfolgenden Kapitel beschreiben die fachlichen Anwendungsfälle der e-Diagnose in Form technischer Use Cases. Die zugehörigen Sequenzdiagramme stellen die beteiligten Akteure, Schnittstellen und Prozessabläufe dar.
 
@@ -15,6 +27,4 @@ Die nachfolgend beschriebenen Sub-Use-Cases definieren die erforderlichen Intera
 * [Lesen](uc_ediag_01_lesen.md)
 * [Schreiben](uc_ediag_02_schreiben.md)
 * [Teilnehmerrechte ausüben](uc_ediag_03_teilnehmer.md)
-
-![](ediag_uc_diagramm.drawio.png)
 
