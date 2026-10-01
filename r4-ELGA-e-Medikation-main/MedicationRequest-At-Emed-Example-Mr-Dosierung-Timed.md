@@ -42,9 +42,6 @@
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
     "valueMarkdown" : "täglich: 08:00 Uhr — je 1 Stück"
   }],
-  "identifier" : [{
-    "value" : "4712_202602280800000"
-  }],
   "status" : "active",
   "intent" : "order",
   "category" : [{

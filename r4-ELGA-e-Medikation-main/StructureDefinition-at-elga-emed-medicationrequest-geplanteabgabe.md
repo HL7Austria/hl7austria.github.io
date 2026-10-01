@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe | *Version*:0.1.0 | |
-| Draft as of 2026-09-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestGeplanteAbgabe |
+| Draft as of 2026-10-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationRequestGeplanteAbgabe |
 
  
 Bildet eine "Geplante Abgabe" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag ab ("MedicationRequest"-Ressource mit Kategorie "Geplante Abgabe"): Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine "Geplante Abgabe" mit demselben "e-Med GroupIdentifier" erstellt (bildet 'Rezept-Klammer'). Es werden R5-Backport-Extensions verwendet. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-09-30T18:21:17+00:00",
+  "date" : "2026-10-01T11:37:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -171,7 +171,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.identifier",
       "path" : "MedicationRequest.identifier",
-      "short" : "Logischer Identifier. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
@@ -187,7 +186,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.statusReason",
       "path" : "MedicationRequest.statusReason",
-      "short" : "Grund des aktuellen Status: https://hl7.org/fhir/R4/valueset-medicationrequest-status-reason.html. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
@@ -266,19 +264,16 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.priority",
       "path" : "MedicationRequest.priority",
-      "short" : "Priorität der geplanten Abgabe. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.doNotPerform",
       "path" : "MedicationRequest.doNotPerform",
-      "short" : "Gibt an, ob die Geplante Abgabe untersagt ist. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.reported[x]",
       "path" : "MedicationRequest.reported[x]",
-      "short" : "Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
@@ -387,7 +382,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
       "short" : "Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. \nWerden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine \nGeplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
-      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -426,14 +420,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "max" : "0"
     },
     {
-      "id" : "MedicationRequest.dispenseRequest.initialFill.quantity",
-      "path" : "MedicationRequest.dispenseRequest.initialFill.quantity",
-      "short" : "Anzahl der Einheiten für die erste Abgabe, z.B. 30 Kapseln oder 100 mg. Keine Verwendung in der geplanten Abgabe."
-    },
-    {
       "id" : "MedicationRequest.dispenseRequest.dispenseInterval",
       "path" : "MedicationRequest.dispenseRequest.dispenseInterval",
-      "short" : "Mindestzeitraum zwischen den Abgaben. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
@@ -447,8 +435,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
     {
       "id" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
       "path" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
-      "short" : "Die Anzahl der weiteren möglichen Einlösungen (abhängig von Rezeptart): Kassenrezept: keine weitere Einlösung möglich (fixer Wert 0). Privatrezept: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden. Sustitutionsrezept: keine weitere Einlösung möglich (fixer Wert 0)",
-      "definition" : "Anzahl der weiteren möglichen Einlösungen:\n* **Kassenrezept**: keine weitere Einlösung möglich (fixer Wert 0)\n* **Privatrezept**: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden\n* **Sustitutionsrezept**: keine weitere Einlösung möglich (fixer Wert 0) ",
+      "short" : "Die Anzahl der weiteren möglichen Einlösungen (abhängig von Rezeptart): Kassenrezept: keine weitere Einlösung möglich (fixer Wert 0). Privatrezept: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden. Substitutionsrezept: keine weitere Einlösung möglich (fixer Wert 0)",
+      "definition" : "Anzahl der weiteren möglichen Einlösungen:\n* **Kassenrezept**: keine weitere Einlösung möglich (fixer Wert 0)\n* **Privatrezept**: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden\n* **Substitutionsrezept**: keine weitere Einlösung möglich (fixer Wert 0) ",
       "min" : 1,
       "mustSupport" : true
     },
@@ -465,38 +453,28 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
       "max" : "0"
     },
     {
-      "id" : "MedicationRequest.dispenseRequest.expectedSupplyDuration.value",
-      "path" : "MedicationRequest.dispenseRequest.expectedSupplyDuration.value",
-      "short" : "Dauer, für die die bereitgestellte Menge des Medikaments voraussichtlich ausreicht. Keine Verwendung in der geplanten Abgabe."
-    },
-    {
       "id" : "MedicationRequest.dispenseRequest.performer",
       "path" : "MedicationRequest.dispenseRequest.performer",
-      "short" : "Apotheke oder andere Einrichtung, die die Geplante Abgabe einlösen soll. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.substitution",
       "path" : "MedicationRequest.substitution",
-      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf (Absicht des Arztes, der die Geplante Abgabe erstellt). Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.priorPrescription",
       "path" : "MedicationRequest.priorPrescription",
-      "short" : "Im Falle einer Änderung wird auf die ersetzte Geplante Abgabe verwiesen. Keine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.detectedIssue",
       "path" : "MedicationRequest.detectedIssue",
-      "short" : "Klinisches Problem mit Maßnahme, mittels Referenz auf Ressouce DetectedIssue. Keine Verwendung in der geplanten \nAbgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.eventHistory",
       "path" : "MedicationRequest.eventHistory",
-      "short" : "Referenz auf Provenance-Ressourcen, die \nverschiedene relevante Versionen dieser Ressource dokumentieren. \nKeine Verwendung in der geplanten Abgabe.",
       "max" : "0"
     }]
   }

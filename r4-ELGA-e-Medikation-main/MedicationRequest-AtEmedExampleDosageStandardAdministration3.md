@@ -41,9 +41,6 @@
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
     "valueMarkdown" : "2-0-2-0 Mon wöchentlich; 0-0-0-1 Mi wöchentlich | Wöchentlich montags 2 Stück morgens und 2 Stück abends und mittwochs 1 Stück nachts"
   }],
-  "identifier" : [{
-    "value" : "4712_202602280800000"
-  }],
   "status" : "active",
   "intent" : "order",
   "category" : [{

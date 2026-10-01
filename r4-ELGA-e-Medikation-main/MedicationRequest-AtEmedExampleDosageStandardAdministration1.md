@@ -41,9 +41,6 @@
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
     "valueMarkdown" : "1-0-1-0 täglich | Täglich 1 Stück morgens und 1 Stück abends"
   }],
-  "identifier" : [{
-    "value" : "4712_202602280800000"
-  }],
   "status" : "active",
   "intent" : "order",
   "category" : [{

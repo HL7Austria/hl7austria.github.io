@@ -331,6 +331,17 @@ Werden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Reze
 Es werden R5-Backport-Extensions verwendet.</p>
 </td>
          </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html"
+                  title="StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx">AT ELGA e-Medikation Transaction Bundle geplante Abgaben</a>
+            </td>
+            <td>
+<p>Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, 
+die gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. 
+Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.</p>
+</td>
+         </tr>
       </tbody>
    </table>
    <a name="3"> </a>
@@ -350,6 +361,16 @@ Die "Durchgeführte Abgabe" enthält die abgegebene Medikation und deren Dosieru
 Es können Abweichungen zur "Geplanten Abgabe" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.
 Sofern eine zugehörige "Geplanten Abgabe" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige "Geplante Abgabe", ersichtlich.
 Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "type"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-tx.html"
+                  title="StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx">AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben</a>
+            </td>
+            <td>
+<p>Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, 
+die gemeinsam geschrieben werden sollen.</p>
 </td>
          </tr>
       </tbody>
@@ -376,15 +397,6 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
             </td>
             <td>
 <p>Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-substance-wirkstoff.html"
-                  title="StructureDefinition/at-elga-emed-substance-wirkstoff">At ELGA e-Medikation Substance Wirkstoff</a>
-            </td>
-            <td>
-<p>Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.</p>
 </td>
          </tr>
       </tbody>
@@ -511,27 +523,6 @@ Der aktuelle Status einer "Durchgeführten Abgabe" wird mittels "status"- und "t
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-tx.html"
-                  title="StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx">AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben</a>
-            </td>
-            <td>
-<p>Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, 
-die gemeinsam geschrieben werden sollen.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html"
-                  title="StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx">AT ELGA e-Medikation Transaction Bundle geplante Abgaben</a>
-            </td>
-            <td>
-<p>Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, 
-die gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. 
-Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="StructureDefinition-at-elga-emed-device-fachanwendung.html"
                   title="StructureDefinition/at-elga-emed-device-fachanwendung">At ELGA e-Medikation Device Fachanwendung</a>
             </td>
@@ -546,6 +537,15 @@ Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transac
             </td>
             <td>
 <p>Die Basis für alle in eMed verwendeten MedicationRequests</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-at-elga-emed-substance-wirkstoff.html"
+                  title="StructureDefinition/at-elga-emed-substance-wirkstoff">At ELGA e-Medikation Substance Wirkstoff</a>
+            </td>
+            <td>
+<p>Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.</p>
 </td>
          </tr>
       </tbody>
@@ -1133,8 +1133,8 @@ Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transac
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Medication-at-emed-journey-medicaiton-ramipril.html"
-                  title="Medication/at-emed-journey-medicaiton-ramipril">Beispiel Medikation Ramipril</a>
+               <a href="Medication-at-emed-journey-medication-ramipril.html"
+                  title="Medication/at-emed-journey-medication-ramipril">Beispiel Medikation Ramipril</a>
             </td>
             <td>
 
@@ -1313,7 +1313,7 @@ Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transac
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Sep 30, 2026 18:21+0000">2026-09-30</span>
+    IG &#169; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Thu, Oct 1, 2026 11:37+0000">2026-10-01</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

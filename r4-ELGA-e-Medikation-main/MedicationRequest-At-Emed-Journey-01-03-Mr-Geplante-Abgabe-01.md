@@ -21,7 +21,7 @@ TODO: Some Narrative
   },
   "contained" : [{
     "resourceType" : "Medication",
-    "id" : "at-emed-journey-medicaiton-ramipril",
+    "id" : "at-emed-journey-medication-ramipril",
     "meta" : {
       "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
     },
@@ -60,7 +60,7 @@ TODO: Some Narrative
     }]
   }],
   "medicationReference" : {
-    "reference" : "#at-emed-journey-medicaiton-ramipril"
+    "reference" : "#at-emed-journey-medication-ramipril"
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01",

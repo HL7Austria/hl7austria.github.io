@@ -23,7 +23,7 @@ Da für Herrn Mustermann noch nie ein Medikationsplan abgerufen wurde, erstellt 
 Beispiele
 
 *  **Leerer Medikationsplan:**(EmptyReason = notstarted) 
-*  [Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-01-Bundle-Medikationsplan.md) 
+*  [Medikationsplan-Bundle](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md) 
 *  [Patient](Patient-At-Emed-Example-Patient-01.md) 
 *  [Device](Device-At-Emed-Example-Device-01.md) 
  

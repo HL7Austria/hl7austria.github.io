@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan | *Version*:0.1.0 | |
-| Draft as of 2026-09-30 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
+| Draft as of 2026-10-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
 
  
 Das Bundle vom Typ Searchset bestehend aus: 
@@ -44,7 +44,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-09-30T18:21:17+00:00",
+  "date" : "2026-10-01T11:37:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -96,8 +96,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
     {
       "id" : "Bundle.identifier",
       "path" : "Bundle.identifier",
-      "short" : "Persistenter Identifikator für das Bundle.",
-      "mustSupport" : true
+      "max" : "0"
     },
     {
       "id" : "Bundle.type",
@@ -114,12 +113,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.link",
-      "path" : "Bundle.link",
-      "short" : "Verweise auf weiterführende Informationen zum Bundle.",
-      "mustSupport" : true
-    },
-    {
       "id" : "Bundle.entry",
       "path" : "Bundle.entry",
       "slicing" : {
@@ -130,7 +123,8 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
         "ordered" : true,
         "rules" : "closed"
       },
-      "min" : 3
+      "min" : 3,
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry.link",
@@ -140,7 +134,6 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
     {
       "id" : "Bundle.entry.fullUrl",
       "path" : "Bundle.entry.fullUrl",
-      "short" : "Eindeutige URL für den Eintrag im Bundle.",
       "min" : 1
     },
     {

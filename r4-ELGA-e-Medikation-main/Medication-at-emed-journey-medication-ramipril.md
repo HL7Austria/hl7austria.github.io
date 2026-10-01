@@ -17,7 +17,7 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
 ```json
 {
   "resourceType" : "Medication",
-  "id" : "at-emed-journey-medicaiton-ramipril",
+  "id" : "at-emed-journey-medication-ramipril",
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
   },

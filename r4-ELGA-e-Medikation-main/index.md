@@ -35,7 +35,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-09-30T18:21:17+00:00",
+  "date" : "2026-10-01T11:37:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -943,8 +943,7 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "At ELGA e-Medikation Substance Wirkstoff",
       "description" : "Dokumentation des Wirkstoffs eines Arzneimittels in der ELGA e-Medikation, sofern es nicht kodiert vorliegt.",
-      "exampleBoolean" : false,
-      "groupingId" : "Medikation"
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -976,7 +975,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben",
       "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, \ndie gemeinsam geschrieben werden sollen.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "DurchgefuehrteAbgabe"
     },
     {
       "extension" : [{
@@ -992,7 +992,8 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle geplante Abgaben",
       "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, \ndie gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. \nIst kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "GeplanteAbgabe"
     },
     {
       "extension" : [{
@@ -1736,10 +1737,10 @@ Der Implementation Guide umfasst zudem die Definition der FHIR-APIs für die Int
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Medication-at-emed-journey-medicaiton-ramipril.html"
+        "valueUri" : "Medication-at-emed-journey-medication-ramipril.html"
       }],
       "reference" : {
-        "reference" : "Medication/at-emed-journey-medicaiton-ramipril"
+        "reference" : "Medication/at-emed-journey-medication-ramipril"
       },
       "name" : "Beispiel Medikation Ramipril",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"

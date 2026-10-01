@@ -17,7 +17,7 @@ Für die Referenzierung von Arzneimitteln mit PZN wird abhängig von der Art des
 
 Die Pharmazentralnummer (PZN) dient dabei als eindeutiger fachlicher Identifikator für das Arzneimittel. Zusätzlich kann die Bezeichnung des Arzneimittels als display-Wert angegeben werden. Dieser unterstützt insbesondere die fachliche Plausibilisierung und erleichtert es Nutzenden, das ausgewählte Arzneimittel nachzuvollziehen. Die Fachanwendung verwaltet die aktuelle ASP-Liste und kann anhand der PZN jederzeit die aktuellen Informationen zur Medication-Ressource ableiten.
 
-Magistrale Zubereitungen hingegen werden immer als contained Medicaiton-Ressource mitgegeben.
+Magistrale Zubereitungen hingegen werden immer als contained Medication-Ressource mitgegeben.
 
  Offene Punkte: 
 Bezeichnung des Arzneimittels als kann oder als muss? 
@@ -30,12 +30,12 @@ Die Referenz erfolgt anhand der PZN, beispielsweise:
 
 ```
 "medicationReference" : {
-    "reference" : "Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836"
+    "reference" : "Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&code:text=RAMIPRIL"
   },
 
 ```
 
-Dadurch muss das einbringende System keine vollständige Medication-Ressource erzeugen, pflegen oder separat übertragen. Alle für die Medication-Ressource erforderlichen fachlichen Informationen können anhand der übermittelten PZN aus den lokalen Arzneimittelstammdaten abgeleitet werden.
+Dadurch muss das einbringende System keine vollständige Medication-Ressource erzeugen, pflegen oder separat übertragen. Alle für die Medication-Ressource erforderlichen fachlichen Informationen können anhand der übermittelten PZN aus den zentral verfügbaren Arzneimittelstammdaten abgeleitet werden.
 
 Der optionale display-Wert ersetzt dabei nicht die PZN als maßgeblichen Identifikator. Er dient ausschließlich der besseren Lesbarkeit sowie als zusätzliche Absicherung, dass fachlich die erwartete Arzneimittelpackung ausgewählt wurde.
 
@@ -52,7 +52,7 @@ Die Medication-Referenz verweist in diesem Fall auf die enthaltene Ressource, be
   "contained" : [
     {
       "resourceType" : "Medication",
-      "id" : "at-emed-journey-medicaiton-ramipril",
+      "id" : "at-emed-journey-medication-ramipril",
       "meta" : {
         "profile" : [
           🔗 "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"
