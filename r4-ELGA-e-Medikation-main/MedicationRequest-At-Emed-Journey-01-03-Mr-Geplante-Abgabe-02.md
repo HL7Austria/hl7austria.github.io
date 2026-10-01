@@ -129,6 +129,7 @@ TODO: Some Narrative
       }
     }],
     "sequence" : 1,
+    "patientInstruction" : "Dünn auftragen.",
     "timing" : {
       "repeat" : {
         "boundsDuration" : {

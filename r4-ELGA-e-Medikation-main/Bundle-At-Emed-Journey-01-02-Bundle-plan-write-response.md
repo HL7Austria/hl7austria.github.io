@@ -2,9 +2,9 @@
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Journey 01-02: Plan-Write-Response **
+* **Beispiel Journey 01-02: Plan-Write-Response**
 
-## Example Bundle: Beispiel Journey 01-02: Plan-Write-Response 
+## Example Bundle: Beispiel Journey 01-02: Plan-Write-Response
 
 
 

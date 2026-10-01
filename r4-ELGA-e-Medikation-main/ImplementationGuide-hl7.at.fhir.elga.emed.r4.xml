@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-01T11:47:48+00:00"/>
+  <date value="2026-10-01T21:19:24+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -740,26 +740,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/at-emed-journey-01-01-02-bundle-geplanteAbgaben"/>
-      </reference>
-      <name value="at-emed-journey-01-01-02-bundle-geplanteAbgaben"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben"/>
-      </reference>
-      <name value="at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben"/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -861,6 +841,28 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
+        <reference value="Bundle/at-emed-journey-01-01-02-bundle-geplanteAbgaben"/>
+      </reference>
+      <name value="Beispiel Journey 01-01-02: Geplante-Abgaben-Bundle"/>
+      <description value="Beispiel eines leeren Geplante-Abgaben-Bundles."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben"/>
+      </reference>
+      <name value="Beispiel Journey 01-01-03: Durchgeführte Abgaben-Bundle"/>
+      <description value="Beispiel eines leeren Durchgeführte Abgaben-Bundles."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
         <reference value="Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 01-01: Medikationsplan-Bundle"/>
@@ -875,7 +877,7 @@
         <reference value="Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"/>
       </reference>
       <name value="Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) beinhaltet."/>
+      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) enthält."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
@@ -886,7 +888,7 @@
         <reference value="List/At-Emed-Journey-01-02-List-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 01-02: Medikationsplan"/>
-      <description value="Beispiel eines Medikationsplans, der 2 Planeinträge referenziert und Informationen über Reihenfolge und Änderungsstatus speichert."/>
+      <description value="Beispiel eines Medikationsplans, der 2 neue Planeinträge referenziert."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -907,8 +909,8 @@
       <reference>
         <reference value="Bundle/At-Emed-Journey-01-02-Bundle-plan-write-response"/>
       </reference>
-      <name value="Beispiel Journey 01-02: Plan-Write-Response "/>
-      <description value="Beispiel einer Response eines plan write mit 2 neuen Planeinträgen"/>
+      <name value="Beispiel Journey 01-02: Plan-Write-Response"/>
+      <description value="Beispiel einer Response eines plan-write mit 2 neuen Planeinträgen"/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>
@@ -996,7 +998,7 @@
         <reference value="Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx"/>
       </reference>
       <name value="Beispiel Journey 01-03: Geplante-Abgaben-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles mit Geplanten Abgaben."/>
+      <description value="Beispiel eines Transaction Bundles mit 2 Geplanten Abgaben."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"/>
     </resource>
     <resource>
@@ -1018,7 +1020,7 @@
         <reference value="Bundle/At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx"/>
       </reference>
       <name value="Beispiel Journey 02-01: Durchgefuehrte-Abgaben-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles mit Durchgeführten Abgaben."/>
+      <description value="Beispiel eines Transaction Bundles mit 2 Durchgeführten Abgaben."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"/>
     </resource>
     <resource>
@@ -1039,8 +1041,8 @@
       <reference>
         <reference value="MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02"/>
       </reference>
-      <name value="Beispiel Journey 02-01: Durchgeführte Abgabe 1"/>
-      <description value="Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab."/>
+      <name value="Beispiel Journey 02-01: Durchgeführte Abgabe 2"/>
+      <description value="Bildet eine Durchgeführte Abgabe mit Besorgerprozess (magistrale Zubereitung Dexpanthenol-Salbe) gemäß Geplanter Abgabe ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
     </resource>
     <resource>
@@ -1061,9 +1063,20 @@
       <reference>
         <reference value="Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx"/>
       </reference>
-      <name value="Beispiel Journey 03-01: Transaction Bundle"/>
-      <description value="Beispiel eines Transaction Bundles mit Durchgeführten Abgaben."/>
+      <name value="Beispiel Journey 03-01: Durchgefuehrte-Abgaben-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles mit 1 Durchgeführten Abgaben."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02"/>
+      </reference>
+      <name value="Beispiel Journey 03-01: Durchgeführte Abgabe 1"/>
+      <description value="Bildet eine Durchgeführte Abgabe mit Beendigung eines Besorgerprozesses (magistrale Zubereitung Dexpanthenol-Salbe) gemäß Geplanter Abgabe ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1073,7 +1086,7 @@
         <reference value="Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"/>
       </reference>
       <name value="Beispiel Journey 05-01: Mediaktionsplan-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan mit einem geänderten und einem unveränderten Planeintrag beinhaltet."/>
+      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan mit 1 geänderten und 1 unveränderten Planeintrag beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
@@ -1084,7 +1097,7 @@
         <reference value="List/At-Emed-Journey-05-01-List-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 05-01: Medikationsplan"/>
-      <description value="Beispiel eines Medikationsplans mit einem geänderten und einem unveränderten Planeintrag."/>
+      <description value="Beispiel eines Medikationsplans mit 1 geänderten und 1 unveränderten Planeintrag."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -1100,24 +1113,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationDispense"/>
-      </extension>
-      <reference>
-        <reference value="MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02"/>
-      </reference>
-      <name value="Beispiel Journey 05: Durchgeführte Abgabe 1"/>
-      <description value="Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
         <reference value="Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx"/>
       </reference>
       <name value="Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet."/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
@@ -1128,7 +1130,7 @@
         <reference value="List/At-Emed-Journey-06-02-List-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 06-02: Medikationsplan"/>
-      <description value="Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag."/>
+      <description value="Beispiel eines Medikationsplans mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -1150,7 +1152,7 @@
         <reference value="Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx"/>
       </reference>
       <name value="Beispiel Journey 07-02: Mediaktionsplan-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit einem geänderten, einem unveränderten und einem neuen Planeintrag beinhaltet."/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
@@ -1161,7 +1163,7 @@
         <reference value="List/At-Emed-Journey-07-02-List-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 07-02: Medikationsplan"/>
-      <description value="Beispiel eines Medikationsplans mit einem geänderten, einem unveränderten und einem neuen Planeintrag."/>
+      <description value="Beispiel eines Medikationsplans mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
     </resource>
     <resource>
@@ -1183,7 +1185,7 @@
         <reference value="MedicationRequest/At-Emed-Journey-07-02-Mr-Planeintrag-03"/>
       </reference>
       <name value="Beispiel Journey 07-02: Planeintrag 3"/>
-      <description value="Bildet einen geänderten Planeintrag ab: Arzneimittel (Magelan) ersetzt reine Wirkstoffangabe, angepasste Dosierung."/>
+      <description value="Bildet einen geänderten Planeintrag ab: Arzneimittel (Magelan-Tropfen) ersetzt reine Wirkstoffangabe, angepasste Dosierung."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
@@ -1194,7 +1196,7 @@
         <reference value="MedicationRequest/At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03"/>
       </reference>
       <name value="Beispiel Journey 07-03: Geplante Abgabe 1"/>
-      <description value="Bildet eine Geplante Abgabe des Arzneimittels Magelan mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab."/>
+      <description value="Bildet eine Geplante Abgabe von Magelan-Tropfen mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
     </resource>
     <resource>
@@ -1205,7 +1207,7 @@
         <reference value="Bundle/At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx"/>
       </reference>
       <name value="Beispiel Journey 07-03: Geplante-Abgaben-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles mit Geplanten Abgaben."/>
+      <description value="Beispiel eines Transaction Bundles mit 1 Geplanten Abgabe."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"/>
     </resource>
     <resource>

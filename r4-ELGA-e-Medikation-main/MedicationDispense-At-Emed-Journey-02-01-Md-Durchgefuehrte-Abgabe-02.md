@@ -1,10 +1,10 @@
-# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 02-01: Durchgeführte Abgabe 1 - FHIR® v4.0.1
+# HL7.AT.FHIR.ELGA.EMED.R4\Beispiel Journey 02-01: Durchgeführte Abgabe 2 - FHIR® v4.0.1
 
 * [**Table of Contents**](toc.md)
 * [**Artifacts Summary**](artifacts.md)
-* **Beispiel Journey 02-01: Durchgeführte Abgabe 1**
+* **Beispiel Journey 02-01: Durchgeführte Abgabe 2**
 
-## Example MedicationDispense: Beispiel Journey 02-01: Durchgeführte Abgabe 1
+## Example MedicationDispense: Beispiel Journey 02-01: Durchgeführte Abgabe 2
 
 
 
@@ -127,29 +127,26 @@
       }
     }],
     "sequence" : 1,
-    "patientInstruction" : "Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein.",
+    "patientInstruction" : "Dünn auftragen.",
     "timing" : {
       "repeat" : {
-        "frequency" : 1,
+        "boundsDuration" : {
+          "value" : 3,
+          "unit" : "wk"
+        },
+        "frequency" : 2,
         "period" : 1,
         "periodUnit" : "d",
-        "when" : ["MORN"]
+        "when" : ["MORN", "EVE"]
       }
     },
     "route" : {
       "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
-        "code" : "100000073619",
-        "display" : "zum Einnehmen"
+        "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+        "code" : "100000073566",
+        "display" : "Anwendung auf der Haut"
       }]
-    },
-    "doseAndRate" : [{
-      "doseQuantity" : {
-        "unit" : "Stück",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "{Stueck}"
-      }
-    }]
+    }
   }]
 }
 

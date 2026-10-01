@@ -52,7 +52,7 @@ ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient de
   "title" : "ELGA e-Med MedicationRequest Kategorie ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-01T11:47:48+00:00",
+  "date" : "2026-10-01T21:19:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

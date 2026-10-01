@@ -26,7 +26,7 @@ The code of the medication that is part of this MedicationRequest
   "version" : "0.1.0",
   "name" : "Medication Code",
   "status" : "active",
-  "date" : "2026-10-01T11:47:48+00:00",
+  "date" : "2026-10-01T21:19:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

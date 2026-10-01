@@ -28,7 +28,7 @@ Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zug
   "title" : "eMed Operation für GroupIdentifier Prescription Search",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-01T11:47:48+00:00",
+  "date" : "2026-10-01T21:19:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
