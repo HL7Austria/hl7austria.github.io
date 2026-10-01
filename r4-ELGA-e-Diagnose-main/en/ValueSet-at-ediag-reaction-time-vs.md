@@ -33,7 +33,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "AT e-Diagnose Reaction Time Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-09-30T14:46:14+00:00",
+  "date" : "2026-10-01T13:01:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

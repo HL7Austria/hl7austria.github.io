@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeDiagnoseR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4 (Draft)"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-09-30T14:46:14+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-01T13:01:54+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -77,11 +77,11 @@
      fhir:index -1 ;
      fhir:Element.id [ fhir:value "hl7_at_fhir_core_r4" ] ;
      fhir:ImplementationGuide.dependsOn.uri [
-       fhir:value "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4" ;
-       fhir:link <http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4>
+       fhir:value "https://fhir.hl7.at/core/r4/ImplementationGuide/hl7.at.fhir.core.r4" ;
+       fhir:link <https://fhir.hl7.at/core/r4/ImplementationGuide/hl7.at.fhir.core.r4>
      ] ;
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.at.fhir.core.r4" ] ;
-     fhir:ImplementationGuide.dependsOn.version [ fhir:value "2.0.0" ]
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "current" ]
   ] ;
   fhir:ImplementationGuide.definition [
      fhir:Element.extension [
@@ -888,6 +888,20 @@
        fhir:Element.extension [
          fhir:index -1 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-relatedperson> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-relatedperson" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Diagnose RelatedPerson" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose RelatedPerson-Profil leitet sich vom RelatedPerson-Profil ab und passt dieses für die Anforderungen der e-Diagnose an." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -1464,30 +1478,30 @@
          fhir:Element.extension [
            fhir:index -1 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "uc_ediag_01_lesen.html" ]
+           fhir:Extension.valueUrl [ fhir:value "use_case_01_read.html" ]
          ] ;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "uc_ediag_01_lesen.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Lesen" ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "use_case_01_read.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Lesender Zugriff" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;
          fhir:Element.extension [
            fhir:index -1 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "uc_ediag_02_schreiben.html" ]
+           fhir:Extension.valueUrl [ fhir:value "use_case_02_write.html" ]
          ] ;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "uc_ediag_02_schreiben.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Schreiben" ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "use_case_02_write.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Schreibender Zugriff" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;
          fhir:Element.extension [
            fhir:index -1 ;
            fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
-           fhir:Extension.valueUrl [ fhir:value "uc_ediag_03_teilnehmer.html" ]
+           fhir:Extension.valueUrl [ fhir:value "use_case_03_participant.html" ]
          ] ;
-         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "uc_ediag_03_teilnehmer.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Teilnehmerrechte ausüben" ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "use_case_03_participant.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Ausüben von Teilnehmerrechten" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;

@@ -1,6 +1,6 @@
-# Teilnehmerrechte ausüben - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Ausüben von Teilnehmerrechten - ELGA e-Diagnose R4 (Draft) v0.1.0
 
-## Teilnehmerrechte ausüben
+## Ausüben von Teilnehmerrechten
 
 ### Interaktionen auf Einzelressourcen
 
@@ -30,7 +30,7 @@ Ein ELGA-Teilnehmer kann einzelne Versionen einer Summary-Liste unwiderruflich l
 
 ##### Ablauf
 
-1. Der ELGA-Teilnehmer ruft[alle Versionen einer Summary-Liste](uc_ediag_01_lesen.md#versionen-einer-summary-liste-abrufen)ab.
+1. Der ELGA-Teilnehmer ruft[alle Versionen einer Summary-Liste](use_case_01_read.md#versionen-einer-summary-liste-abrufen)ab.
 1. Um eine Version der Summary-Liste zu löschen, führt der ELGA-Teilnehmer über das Portal die[`$delete-history-version`-Operation](OperationDefinition-at-ediag-operation-list-delete-history-version.md)auf die zu löschende Summary-Listenversion aus.
 1. Die Fachanwendung löscht die entsprechende Summary-Listenversion.
 1. Wird die letzte Summary-Listenversion gelöscht, legt die e-Diagnose Fachanwendung eine neue Summary-Liste mit`List.emptyReason = nilknown`an.

@@ -20,7 +20,7 @@ Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Sum
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-09-30T14:46:14+00:00",
+  "date" : "2026-10-01T13:01:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

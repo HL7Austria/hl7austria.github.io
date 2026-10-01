@@ -37,7 +37,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-09-30T14:46:14+00:00",
+  "date" : "2026-10-01T13:01:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -217,7 +217,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
       "short" : "Person, auf die sich die Diagnose bezieht.",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
       }],
       "mustSupport" : true
     },
@@ -257,8 +257,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner",
+        "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"]
       }],
       "mustSupport" : true
     },
@@ -268,10 +268,10 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
       "short" : "Quelle der Information zur Diagnose (z. B. behandelnde GDA, Patient oder Dritter).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
-        "http://hl7.org/fhir/StructureDefinition/RelatedPerson"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner",
+        "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole",
+        "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient",
+        "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-relatedperson"]
       }]
     },
     {

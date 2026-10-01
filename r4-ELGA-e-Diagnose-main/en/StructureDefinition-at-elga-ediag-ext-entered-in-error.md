@@ -36,7 +36,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-ext
   "name" : "AtElgaEdiagExtEnteredInError",
   "title" : "AT ELGA Entered In Error",
   "status" : "draft",
-  "date" : "2026-09-30T14:46:14+00:00",
+  "date" : "2026-10-01T13:01:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -112,7 +112,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-ext
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"]
       }]
     },
     {

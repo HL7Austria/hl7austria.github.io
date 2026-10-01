@@ -2,7 +2,7 @@
 
 ## Example Patient: Beispiel Patient
 
-Profile: [HL7® AT Core Patient Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-patient.html)
+Profiles: [HL7® AT Core Patient Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R4/StructureDefinition-at-core-patient.html), `http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient`
 
 Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)
 
@@ -17,8 +17,6 @@ Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)
 * [+436501234567890](tel:+436501234567890)
 * Landstrasse 1 Stock 9 Tür 42 Linz Oberösterreich 4020 AUT (home)
  |
-| Patient Religion: | * code: Pastafarianismus
- |
 | Patient Citizenship: | * code: Österreich
  |
 
@@ -31,7 +29,8 @@ Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)
   "resourceType" : "Patient",
   "id" : "PatientExample",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient",
+    "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
     "extension" : [{

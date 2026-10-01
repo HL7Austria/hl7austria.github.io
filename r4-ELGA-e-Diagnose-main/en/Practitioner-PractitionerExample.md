@@ -2,9 +2,9 @@
 
 ## Example Practitioner: Beispiel Practitioner
 
-Profile: [HL7® AT Core Practitioner Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-practitioner.html)
+Profile: [HL7® AT Core Practitioner Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R4/StructureDefinition-at-core-practitioner.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.2.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321
+**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.3.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321
 
 **active**: true
 
@@ -25,7 +25,7 @@ Profile: [HL7® AT Core Practitioner Profile](http://hl7.at/fhir/HL7ATCoreProfil
   "resourceType" : "Practitioner",
   "id" : "PractitionerExample",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner"]
+    "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"]
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",

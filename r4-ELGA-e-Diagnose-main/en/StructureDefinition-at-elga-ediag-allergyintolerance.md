@@ -37,7 +37,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-09-30T14:46:14+00:00",
+  "date" : "2026-10-01T13:01:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -202,7 +202,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
       "short" : "Betroffene Person, auf die sich die Allergie bezieht.",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
       }],
       "mustSupport" : true
     },
@@ -232,8 +232,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole"]
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner",
+        "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"]
       }],
       "mustSupport" : true
     },
@@ -243,9 +243,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
       "short" : "Quelle der Information zur Allergie, z. B. Patient, behandelnde Person oder Dritter.",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitioner",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-practitionerRole",
-        "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient",
+        "targetProfile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner",
+        "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole",
+        "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient",
         "http://hl7.org/fhir/StructureDefinition/RelatedPerson"]
       }]
     },

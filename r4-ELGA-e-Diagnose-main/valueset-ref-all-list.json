@@ -1,5 +1,19 @@
 {
   "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/administrative-gender",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "AdministrativeGender",
+    "title" : "AdministrativeGender",
+    "description" : "The gender of a person used for administrative purposes.",
+    "systems" : ["http://hl7.org/fhir/administrative-gender"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1"],
+    "uses" : {
+    },
+    "StructureDefinition-at-elga-ediag-relatedperson.html" : "AT ELGA e-Diagnose RelatedPerson"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-category",
     "version" : "4.0.1",
     "status" : "draft",
@@ -282,9 +296,10 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-at-elga-ediag-condition.html" : "AT ELGA e-Diagnose Condition",
-    "StructureDefinition-at-elga-ediag-procedure.html" : "AT ELGA e-Diagnose Procedure",
     "StructureDefinition-at-elga-ediag-list.html" : "AT ELGA e-Diagnose List",
+    "StructureDefinition-at-elga-ediag-condition.html" : "AT ELGA e-Diagnose Condition",
+    "StructureDefinition-at-elga-ediag-relatedperson.html" : "AT ELGA e-Diagnose RelatedPerson",
+    "StructureDefinition-at-elga-ediag-procedure.html" : "AT ELGA e-Diagnose Procedure",
     "StructureDefinition-at-elga-ediag-allergyintolerance.html" : "AT ELGA e-Diagnose AllergyIntolerance"
   },
   {
@@ -456,6 +471,21 @@
     "StructureDefinition-at-elga-ediag-allergyintolerance.html" : "AT ELGA e-Diagnose AllergyIntolerance"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "PatientRelationshipType",
+    "title" : "Patient relationship type",
+    "description" : "A set of codes that can be used to indicate the relationship between a Patient and a Related Person.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+    "http://terminology.hl7.org/CodeSystem/v2-0131"],
+    "oids" : ["2.16.840.1.113883.4.642.3.449"],
+    "sources" : ["2.16.840.1.113883.4.642.3.449"],
+    "uses" : {
+    },
+    "StructureDefinition-at-elga-ediag-relatedperson.html" : "AT ELGA e-Diagnose RelatedPerson"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/resource-types",
     "version" : "4.0.1",
     "status" : "active",
@@ -531,8 +561,8 @@
     "systems" : ["http://loinc.org"],
     "uses" : {
     },
-    "OperationDefinition-at-ediag-operation-list-write.html" : "e-Diagnose Operation $write",
-    "StructureDefinition-at-elga-ediag-list.html" : "AT ELGA e-Diagnose List"
+    "StructureDefinition-at-elga-ediag-list.html" : "AT ELGA e-Diagnose List",
+    "OperationDefinition-at-ediag-operation-list-write.html" : "e-Diagnose Operation $write"
   },
   {
     "url" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-emptyreason-vs",
