@@ -2,7 +2,7 @@
 
 ## Lesender Zugriff
 
-Dieses Kapitel beschreibt die lesenden Zugriffe auf einzelne Einträge sowie die jeweiligen Summary-Listen der e-Diagnose-Fachanwendung. Je nach Anwendungsfall stehen unterschiedliche Interaktionen zur Verfügung.
+Dieses Kapitel beschreibt die lesenden Zugriffe auf einzelne Einträge sowie die jeweiligen Summary-Listen der e-Diagnose-Fachanwendung.
 
 Die hier dargestellten technischen Anwendungsfälle ergänzen die fachlichen Anwendungsfälle ["Diagnosen lesen" TODO Link]().
 
@@ -44,13 +44,13 @@ Dieser Anwendungsfall dient dem Abruf der aktuellen Summary-Liste für eine Art 
 
 ##### Ablauf
 
-1. Der GDA führt ein`GET /List?code=[code]&_sort=-date&include=*`aus.
+1. Der GDA führt ein`GET /List?code=[code]&include=*`aus.
 1. Die Fachanwendung liefert als Ergebnis ein SearchSet-Bundle, das die Summary-Liste inklusive aller referenzierter Ressourcen enthält, an den GDA. Die Information für[Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)ist in`List.meta.versionId`enthalten.
 1. Die zurückgelieferte Summary-Liste bildet die Grundlage für nachfolgende Änderungsoperationen.
 
 ###### Alternativer Ablauf
 
-1. Es kann auch`GET /List?code=[code]&_sort=-date`ausgeführt werden, um die Summary-Liste OHNE referenzierte Ressourcen abzurufen.
+1. Es kann auch`GET /List?code=[code]`ausgeführt werden, um die Summary-Liste OHNE referenzierte Ressourcen abzurufen.
 
 ##### Sequenzdiagramm
 
@@ -60,7 +60,7 @@ Dieser Anwendungsfall dient der Anzeige aktuellen und historischer Versionen der
 
 ##### Ablauf
 
-1. Der GDA ruft die[aktuelle Summary-Liste](use_case_01_read.md#aktuelle-summary-liste-abrufen)ab, wodurch er das entsprechende SearchSet-Bundle und damit die`id`der Summary-Liste erhält.
+1. Der GDA ruft die[aktuelle Summary-Liste](use_case_read.md#aktuelle-summary-liste-abrufen)ab, wodurch er das entsprechende SearchSet-Bundle und damit die`id`der Summary-Liste erhält.
 1. In einem zweiten Request kann der GDA jetzt auf alle Versionen (auch die aktuelle) der Summary-Liste zugreifen.
 1. Die e-Diagnose Fachanwendung liefert ein History-Bundle zurück, das alle Summary-Listenversionen enthält.`GET /List/[id]/_history`
 1. Zu einer Summary-Listenversion können die[referenzierten Diagnosen von der e-Diagnose Fachanwendung](#einzelnen-eintrag-abrufen)abgefragt werden.

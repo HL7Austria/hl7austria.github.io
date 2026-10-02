@@ -138,13 +138,13 @@
         <a href="use_cases.html">Überblick Anwendungsfälle</a>
       </li>
       <li>
-        <a href="use_case_01_read.html">Lesender Zugriff</a>
+        <a href="use_case_read.html">Lesender Zugriff</a>
       </li>
       <li>
-        <a href="use_case_02_write.html">Schreibender Zugriff</a>
+        <a href="use_case_write.html">Schreibender Zugriff</a>
       </li>
       <li>
-        <a href="use_case_03_participant.html">Ausüben von Teilnehmerrechten</a>
+        <a href="use_case_participant.html">Ausüben von Teilnehmerrechten</a>
       </li>
       <li>
         <a href="patient_journey.html">Patient Journey</a>
@@ -241,24 +241,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
-<!--Löschen von Einträgen bzw. Versionen der Summary-Liste-->
-
 <h3 id="interaktionen-auf-einzelressourcen">Interaktionen auf Einzelressourcen</h3>
 
 <h4 id="eintrag-löschen">Eintrag löschen</h4>
 
-<blockquote>
-  <p>Sub:UC_03_01</p>
-</blockquote>
-
-<p>Ein ELGA-Teilnehmer kann via ELGA-Portal einzelne oder alle Einträge unwiderruflich löschen. Dabei ist es irrelevant, ob ein zu löschender Eintrag Teil der jeweiligen Summary-Liste ist oder nicht. Sollte der Eintrag in der aktuellen Summary-Liste referenziert sein, erstellt die Fachanwendung eine neue Version der Summary-Liste ohne den gelöschten Eintrag.</p>
+<p>Dieser Anwendungsfall erlaubt es einem ELGA-Teilnehmer, einzelne oder alle Einträge via ELGA-Portal unwiderruflich zu löschen. Dabei ist es irrelevant, ob ein zu löschender Eintrag Teil der jeweiligen Summary-Liste ist oder nicht. Sollte der Eintrag in der aktuellen Summary-Liste referenziert sein, erstellt die e-Diagnose-Fachanwendung eine neue Version der Summary-Liste ohne den gelöschten Eintrag.</p>
 
 <h5 id="ablauf">Ablauf</h5>
 
 <ul>
   <li>Um einen Eintrag zu löschen, führt der ELGA-Teilnehmer über das Portal die <a href="OperationDefinition-at-ediag-operation-diagnose-delete.html"><code class="language-plaintext highlighter-rouge">$delete</code>-Operation</a> auf den zu löschenden Eintrag aus.</li>
-  <li>Die Fachanwendung löscht den entsprechenden Eintrag.</li>
-  <li>Die Fachanwendung erstellt eine neue Version der Summary-Liste ohne den gelöschten Eintrag, sollte der zu löschende Eintrag Teil der aktuellen Summary-Liste gewesen sein.</li>
+  <li>Die e-Diagnose-Fachanwendung löscht den entsprechenden Eintrag.</li>
+  <li>Sollte der zu löschende Eintrag Teil der aktuellen Summary-Liste gewesen sein, erstellt die e-Diagnose-Fachanwendung eine neue Version der Summary-Liste ohne den gelöschten Eintrag.</li>
 </ul>
 
 <h5 id="custom-operation">Custom Operation</h5>
@@ -269,18 +263,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="eine-summary-listenversion-löschen">Eine Summary-Listenversion löschen</h4>
 
-<blockquote>
-  <p>Sub:UC_03_02</p>
-</blockquote>
-
-<p>Ein ELGA-Teilnehmer kann einzelne Versionen einer Summary-Liste unwiderruflich löschen. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason = nilknown</code> zurück.</p>
+<p>Dieser Anwendungsfall beschreibt, wie ein ELGA-Teilnehmer einzelne Versionen einer Summary-Liste unwiderruflich löschen kann. Gelöschte Summary-Listenversionen werden nicht mehr in der Historie angezeigt. Sind keine Summary-Listenversionen mehr vorhanden, liefert ein nachfolgender Abruf eine leere Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason = nilknown</code> zurück.</p>
 
 <h5 id="ablauf-1">Ablauf</h5>
 
 <ol>
-  <li>Der ELGA-Teilnehmer ruft <a href="use_case_01_read.html#versionen-einer-summary-liste-abrufen">alle Versionen einer Summary-Liste</a> ab.</li>
+  <li>Der ELGA-Teilnehmer ruft <a href="use_case_read.html#versionen-einer-summary-liste-abrufen">alle Versionen einer Summary-Liste</a> ab.</li>
   <li>Um eine Version der Summary-Liste zu löschen, führt der ELGA-Teilnehmer über das Portal die <a href="OperationDefinition-at-ediag-operation-list-delete-history-version.html"><code class="language-plaintext highlighter-rouge">$delete-history-version</code>-Operation</a> auf die zu löschende Summary-Listenversion aus.</li>
-  <li>Die Fachanwendung löscht die entsprechende Summary-Listenversion.</li>
+  <li>Die e-Diagnose-Fachanwendung löscht die entsprechende Summary-Listenversion.</li>
   <li>Wird die letzte Summary-Listenversion gelöscht, legt die e-Diagnose Fachanwendung eine neue Summary-Liste mit <code class="language-plaintext highlighter-rouge">List.emptyReason = nilknown</code> an.</li>
 </ol>
 
@@ -316,8 +306,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-01 13:01:00 +0000">
-    2026-10-01
+  <span title="2026-10-02 12:58:00 +0000">
+    2026-10-02
   </span>
 
           <br/>

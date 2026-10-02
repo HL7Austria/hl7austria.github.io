@@ -14,7 +14,7 @@
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-10-01T13:01:54+00:00",
+  "date" : "2026-10-02T12:58:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1424,27 +1424,27 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "use_case_01_read.html"
+          "valueUrl" : "use_case_read.html"
         }],
-        "nameUrl" : "use_case_01_read.html",
+        "nameUrl" : "use_case_read.html",
         "title" : "Lesender Zugriff",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "use_case_02_write.html"
+          "valueUrl" : "use_case_write.html"
         }],
-        "nameUrl" : "use_case_02_write.html",
+        "nameUrl" : "use_case_write.html",
         "title" : "Schreibender Zugriff",
         "generation" : "markdown"
       },
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "use_case_03_participant.html"
+          "valueUrl" : "use_case_participant.html"
         }],
-        "nameUrl" : "use_case_03_participant.html",
+        "nameUrl" : "use_case_participant.html",
         "title" : "Ausüben von Teilnehmerrechten",
         "generation" : "markdown"
       },
