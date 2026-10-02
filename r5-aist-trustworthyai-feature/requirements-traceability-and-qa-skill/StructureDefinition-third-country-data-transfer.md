@@ -1,0 +1,155 @@
+# Third-Country Data Transfer - v0.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Third-Country Data Transfer**
+
+## Extension: Third-Country Data Transfer 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/third-country-data-transfer | *Version*:0.1.0 |
+| Draft as of 2026-10-02 | *Computable Name*:ThirdCountryDataTransfer |
+
+Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.
+
+**Context of Use**
+
+**Usage info**
+
+**Usages:**
+
+* Use this Extension: [Trust AI System Device](StructureDefinition-trust-ai-device.md)
+* Examples for this Extension: [Device/device-riskassist-ai](Device-device-riskassist-ai.md) and [Device/dr-ai-device](Device-dr-ai-device.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-third-country-data-transfer.json)
+
+### Formal Views of Extension Content
+
+ [Description of Profiles, Differentials, Snapshots, and how the XML and JSON presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-third-country-data-transfer.csv), [Excel](StructureDefinition-third-country-data-transfer.xlsx), [Schematron](StructureDefinition-third-country-data-transfer.sch) 
+
+#### Terminology Bindings
+
+#### Constraints
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "third-country-data-transfer",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+    "valueCode" : "can-bind"
+  }],
+  "url" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/third-country-data-transfer",
+  "version" : "0.1.0",
+  "name" : "ThirdCountryDataTransfer",
+  "title" : "Third-Country Data Transfer",
+  "status" : "draft",
+  "date" : "2026-10-02T06:03:15+00:00",
+  "publisher" : "Selina Adlberger",
+  "description" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.",
+  "fhirVersion" : "5.0.0",
+  "mapping" : [{
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  }],
+  "kind" : "complex-type",
+  "abstract" : false,
+  "context" : [{
+    "type" : "element",
+    "expression" : "Device"
+  }],
+  "type" : "Extension",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Extension",
+      "path" : "Extension",
+      "short" : "Third-Country Data Transfer",
+      "definition" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable."
+    },
+    {
+      "id" : "Extension.extension",
+      "path" : "Extension.extension",
+      "min" : 1
+    },
+    {
+      "id" : "Extension.extension:transferFlag",
+      "path" : "Extension.extension",
+      "sliceName" : "transferFlag",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.extension:transferFlag.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:transferFlag.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "transferFlag"
+    },
+    {
+      "id" : "Extension.extension:transferFlag.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "boolean"
+      }]
+    },
+    {
+      "id" : "Extension.extension:destinationCountry",
+      "path" : "Extension.extension",
+      "sliceName" : "destinationCountry",
+      "min" : 0,
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.extension:destinationCountry.extension",
+      "path" : "Extension.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "Extension.extension:destinationCountry.url",
+      "path" : "Extension.extension.url",
+      "fixedUri" : "destinationCountry"
+    },
+    {
+      "id" : "Extension.extension:destinationCountry.value[x]",
+      "path" : "Extension.extension.value[x]",
+      "min" : 1,
+      "type" : [{
+        "code" : "code"
+      }],
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/iso3166-1-2"
+      }
+    },
+    {
+      "id" : "Extension.url",
+      "path" : "Extension.url",
+      "fixedUri" : "http://example.org/fhir/trust-ai-transparency/StructureDefinition/third-country-data-transfer"
+    },
+    {
+      "id" : "Extension.value[x]",
+      "path" : "Extension.value[x]",
+      "max" : "0"
+    }]
+  }
+}
+
+```
