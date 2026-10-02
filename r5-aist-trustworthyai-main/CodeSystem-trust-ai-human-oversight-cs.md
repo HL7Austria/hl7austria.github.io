@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-human-oversight-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIHumanOversightCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIHumanOversightCodeSystem |
 
  
 Codes describing actions taken by a human reviewer in response to an AI-generated output or recommendation. 
@@ -32,7 +32,7 @@ Codes describing actions taken by a human reviewer in response to an AI-generate
   "title" : "Trust AI Human Oversight Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes describing actions taken by a human reviewer in response to an AI-generated output or recommendation.",
   "caseSensitive" : true,

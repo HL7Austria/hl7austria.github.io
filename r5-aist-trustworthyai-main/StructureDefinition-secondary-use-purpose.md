@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/secondary-use-purpose | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:SecondaryUsePurpose |
+| Draft as of 2026-10-02 | *Computable Name*:SecondaryUsePurpose |
 
 Records the documented purpose for secondary use of electronic health data in the EHDS context.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-secondary-use-purpos
   "name" : "SecondaryUsePurpose",
   "title" : "Secondary Use Purpose",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the documented purpose for secondary use of electronic health data in the EHDS context.",
   "fhirVersion" : "5.0.0",

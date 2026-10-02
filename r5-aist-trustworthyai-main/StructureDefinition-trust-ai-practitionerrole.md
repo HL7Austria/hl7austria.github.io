@@ -9,10 +9,27 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-practitionerrole | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:Trust_AIPractitionerRole |
+| Draft as of 2026-10-02 | *Computable Name*:Trust_AIPractitionerRole |
 
  
 A PractitionerRole profile representing the role, qualification context, specialty, and AI-related training information of the human reviewer involved in oversight of an AI-supported workflow. 
+
+### Regulatory Requirements
+
+This profile is part of the **Clinical Decision Context (Human-in-the-Loop)** layer. It implements the following documentation requirements from the [Requirements Traceability](requirements.md) analysis.
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| [HL-01](requirements.md#req-hl-01) | AI Act Art. 14(1) | Responsible Actor (User) | Dynamic |
+| [HL-02](requirements.md#req-hl-02) | AI Act Art. 14(5) | Qualification of Actor | Dynamic |
+
+#### Element Mapping
+
+| | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [HL-01](requirements.md#hl-01) | Actor Reference | 1..* | [`PractitionerRole.practitioner`](StructureDefinition-trust-ai-practitionerrole-definitions.md#PractitionerRole.practitioner) | ✅ Covered | Also:[Trust_AIHumanOversightAssessment](StructureDefinition-trust-ai-human-oversight.md). |
+| [HL-02.1](requirements.md#hl-021) | Actor Specialty Code | 1..* | [`PractitionerRole.specialty`](StructureDefinition-trust-ai-practitionerrole-definitions.md#PractitionerRole.specialty) | ✅ Covered |   |
+| [HL-02.2](requirements.md#hl-022) | System-Specific Training Flag | 1..1 | [`PractitionerRole.extension:trainingStatus`](StructureDefinition-trust-ai-practitionerrole-definitions.md#PractitionerRole.extension:trainingStatus) | ⚠️ Partial | Extension`ai-system-training-status`is 0..1, while the matrix requires 1..1. |
 
 **Usages:**
 
@@ -42,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-practitione
   "name" : "Trust_AIPractitionerRole",
   "title" : "Trust AI Practitioner Role",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A PractitionerRole profile representing the role, qualification context, specialty, and AI-related training information of the human reviewer involved in oversight of an AI-supported workflow.",
   "fhirVersion" : "5.0.0",

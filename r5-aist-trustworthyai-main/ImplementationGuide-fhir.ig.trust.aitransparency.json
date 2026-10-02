@@ -10,7 +10,7 @@
   "version" : "0.1.0",
   "name" : "TrustAITransparencyIG",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "packageId" : "fhir.ig.trust.aitransparency",
   "license" : "CC0-1.0",
@@ -23,7 +23,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.3.0"
+    "version" : "7.4.0"
   },
   {
     "id" : "hl7ext",
@@ -43,12 +43,12 @@
     "grouping" : [{
       "id" : "generalized",
       "name" : "Generalized AI Output Scenario",
-      "description" : "Example how the IG can be used only using the generalized Output for elements without specified Resources."
+      "description" : "Example of how the IG can be used for AI outputs without a dedicated profile, using the generalized AI output pattern."
     },
     {
       "id" : "spezialized",
-      "name" : "Spezialied AI Output Scenario",
-      "description" : "Example how the spezialized AI Output such as AI Observation can be used."
+      "name" : "Specialized AI Output Scenario",
+      "description" : "Example of how a specialized AI output profile such as Trust_AIObservation can be used."
     }],
     "resource" : [{
       "extension" : [{
@@ -1166,18 +1166,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/trust-ai-model-card"
-      },
-      "name" : "Trust AI Act Model Card",
-      "description" : "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation.",
-      "isExample" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       }],
       "reference" : {
@@ -1433,10 +1421,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/trust-ai-model-card"
+      },
+      "name" : "Trust AI Model Card",
+      "description" : "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation.",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/trust-ai-patient-explanation"
       },
       "name" : "Trust AI Patient Explanation Communication",
-      "description" : "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the Trust AI Act.",
+      "description" : "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act.",
       "isExample" : false
     },
     {
@@ -1571,6 +1571,36 @@
         "generation" : "markdown"
       },
       {
+        "sourceUrl" : "introduction.html",
+        "name" : "introduction.html",
+        "title" : "Introduction",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "use_case_overview.html",
+        "name" : "use_case_overview.html",
+        "title" : "Use Cases & Examples",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "use_case1.html",
+        "name" : "use_case1.html",
+        "title" : "Use Case 1 - AI-supported Risk evaluation",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "use_case2.html",
+        "name" : "use_case2.html",
+        "title" : "Use Case 2 - AI-generated Diagnostic Report",
+        "generation" : "markdown"
+      },
+      {
+        "sourceUrl" : "requirements.html",
+        "name" : "requirements.html",
+        "title" : "Requirements Traceability",
+        "generation" : "markdown"
+      },
+      {
         "sourceUrl" : "profiles.html",
         "name" : "profiles.html",
         "title" : "Profiles",
@@ -1589,9 +1619,9 @@
         "generation" : "markdown"
       },
       {
-        "sourceUrl" : "examples.html",
-        "name" : "examples.html",
-        "title" : "Examples",
+        "sourceUrl" : "authors.html",
+        "name" : "authors.html",
+        "title" : "Authors and Contributors",
         "generation" : "markdown"
       },
       {

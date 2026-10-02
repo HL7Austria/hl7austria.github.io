@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-audit-entity-role | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:TrustAIAuditEntityRoleCodeSystem |
+| Draft as of 2026-10-02 | *Computable Name*:TrustAIAuditEntityRoleCodeSystem |
 
  
 Roles used to distinguish entities involved in an AI execution audit event. 
@@ -31,7 +31,7 @@ Roles used to distinguish entities involved in an AI execution audit event.
   "name" : "TrustAIAuditEntityRoleCodeSystem",
   "title" : "Trust AI Audit Entity Role Code System",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Roles used to distinguish entities involved in an AI execution audit event.",
   "caseSensitive" : true,

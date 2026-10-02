@@ -10,7 +10,7 @@
   <version value="0.1.0"/>
   <name value="TrustAITransparencyIG"/>
   <status value="draft"/>
-  <date value="2026-09-09T11:13:25+00:00"/>
+  <date value="2026-10-02T06:10:43+00:00"/>
   <publisher value="Selina Adlberger"/>
   <packageId value="fhir.ig.trust.aitransparency"/>
   <license value="CC0-1.0"/>
@@ -21,7 +21,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r5"/>
-    <version value="7.3.0"/>
+    <version value="7.4.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -37,11 +37,11 @@
     </extension>
     <grouping id="generalized">
       <name value="Generalized AI Output Scenario"/>
-      <description value="Example how the IG can be used only using the generalized Output for elements without specified Resources."/>
+      <description value="Example of how the IG can be used for AI outputs without a dedicated profile, using the generalized AI output pattern."/>
     </grouping>
     <grouping id="spezialized">
-      <name value="Spezialied AI Output Scenario"/>
-      <description value="Example how the spezialized AI Output such as AI Observation can be used."/>
+      <name value="Specialized AI Output Scenario"/>
+      <description value="Example of how a specialized AI output profile such as Trust_AIObservation can be used."/>
     </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1073,17 +1073,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/trust-ai-model-card"/>
-      </reference>
-      <name value="Trust AI Act Model Card"/>
-      <description value="A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation."/>
-      <isExample value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -1318,10 +1307,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/trust-ai-model-card"/>
+      </reference>
+      <name value="Trust AI Model Card"/>
+      <description value="A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation."/>
+      <isExample value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/trust-ai-patient-explanation"/>
       </reference>
       <name value="Trust AI Patient Explanation Communication"/>
-      <description value="A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the Trust AI Act."/>
+      <description value="A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act."/>
       <isExample value="false"/>
     </resource>
     <resource>
@@ -1446,6 +1446,36 @@
         <generation value="markdown"/>
       </page>
       <page>
+        <sourceUrl value="introduction.html"/>
+        <name value="introduction.html"/>
+        <title value="Introduction"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="use_case_overview.html"/>
+        <name value="use_case_overview.html"/>
+        <title value="Use Cases &amp; Examples"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="use_case1.html"/>
+        <name value="use_case1.html"/>
+        <title value="Use Case 1 - AI-supported Risk evaluation"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="use_case2.html"/>
+        <name value="use_case2.html"/>
+        <title value="Use Case 2 - AI-generated Diagnostic Report"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <sourceUrl value="requirements.html"/>
+        <name value="requirements.html"/>
+        <title value="Requirements Traceability"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
         <sourceUrl value="profiles.html"/>
         <name value="profiles.html"/>
         <title value="Profiles"/>
@@ -1464,9 +1494,9 @@
         <generation value="markdown"/>
       </page>
       <page>
-        <sourceUrl value="examples.html"/>
-        <name value="examples.html"/>
-        <title value="Examples"/>
+        <sourceUrl value="authors.html"/>
+        <name value="authors.html"/>
+        <title value="Authors and Contributors"/>
         <generation value="markdown"/>
       </page>
       <page>

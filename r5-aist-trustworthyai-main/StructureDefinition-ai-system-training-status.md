@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-system-training-status | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:AISystemTrainingStatus |
+| Draft as of 2026-10-02 | *Computable Name*:AISystemTrainingStatus |
 
 Records whether the practitioner acting in the documented role has completed training specific to the relevant AI system.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-system-training-s
   "name" : "AISystemTrainingStatus",
   "title" : "AI System-Specific Training Status",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records whether the practitioner acting in the documented role has completed training specific to the relevant AI system.",
   "fhirVersion" : "5.0.0",

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-data | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:TrustAIData |
+| Draft as of 2026-10-02 | *Computable Name*:TrustAIData |
 
  
 A resource-independent profile indicating that an AI system was involved in generating, reporting, assisting with, or asserting the content of a FHIR resource. 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-data.csv), 
   "name" : "TrustAIData",
   "title" : "Trust AI Data",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A resource-independent profile indicating that an AI system was\ninvolved in generating, reporting, assisting with, or asserting\nthe content of a FHIR resource.\n\nThis profile is intended as a common validation and documentation\npattern across different FHIR resource types.",
   "fhirVersion" : "5.0.0",

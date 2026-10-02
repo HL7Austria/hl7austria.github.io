@@ -9,10 +9,29 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-human-oversight | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:Trust_AIHumanOversightAssessment |
+| Draft as of 2026-10-02 | *Computable Name*:Trust_AIHumanOversightAssessment |
 
  
 An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden. 
+
+### Regulatory Requirements
+
+This profile is part of the **Clinical Decision Context (Human-in-the-Loop)** layer. It implements the following documentation requirements from the [Requirements Traceability](requirements.md) analysis.
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| [HL-01](requirements.md#req-hl-01) | AI Act Art. 14(1) | Responsible Actor (User) | Dynamic |
+| [HL-03](requirements.md#req-hl-03) | AI Act Art. 14(4) | Type of Intervention | Dynamic |
+| [HL-05](requirements.md#req-hl-05) | AI Act Art. 14(4)(c) | Specific Evidence Shown | Dynamic |
+
+#### Element Mapping
+
+| | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [HL-01](requirements.md#hl-01) | Actor Reference | 1..* | [`ArtifactAssessment.content.author`](StructureDefinition-trust-ai-human-oversight-definitions.md#ArtifactAssessment.content.author) | ✅ Covered | Also:[Trust_AIPractitionerRole](StructureDefinition-trust-ai-practitionerrole.md). |
+| [HL-03.1](requirements.md#hl-031) | Intervention Action Code | 1..1 | [`ArtifactAssessment.content.classifier`](StructureDefinition-trust-ai-human-oversight-definitions.md#ArtifactAssessment.content.classifier) | ✅ Covered | TrustAIHumanOversightActionVS. |
+| [HL-03.2](requirements.md#hl-032) | Intervention Rationale | 0..1* | [`ArtifactAssessment.content.summary`](StructureDefinition-trust-ai-human-oversight-definitions.md#ArtifactAssessment.content.summary) | ⚠️ Partial | The conditional 1..1 (for override) is not yet enforced by an invariant. |
+| [HL-05](requirements.md#hl-05) | Specific Evidence Shown | 0..* | [`ArtifactAssessment.content.relatedArtifact`](StructureDefinition-trust-ai-human-oversight-definitions.md#ArtifactAssessment.content.relatedArtifact) | ✅ Covered |   |
 
 **Usages:**
 
@@ -41,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-human-overs
   "name" : "Trust_AIHumanOversightAssessment",
   "title" : "Trust AI Human Oversight Assessment",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden.",
   "fhirVersion" : "5.0.0",

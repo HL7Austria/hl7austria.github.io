@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-performance-metric-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIPerformanceMetricCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIPerformanceMetricCodeSystem |
 
  
 Codes identifying performance characteristics used to document the evaluation of an AI system. 
@@ -32,7 +32,7 @@ Codes identifying performance characteristics used to document the evaluation of
   "title" : "Trust AI Performance Metric Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying performance characteristics used to document the evaluation of an AI system.",
   "caseSensitive" : true,

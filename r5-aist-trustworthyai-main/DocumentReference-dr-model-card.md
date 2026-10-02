@@ -6,7 +6,7 @@
 
 ## Example DocumentReference: Model Card: DiagnosticAssist AI
 
-Profile: [Trust AI Act Model Card](StructureDefinition-trust-ai-model-card.md)
+Profile: [Trust AI Model Card](StructureDefinition-trust-ai-model-card.md)
 
 **AI Clinical Validation Status**: Not Clinically Validated
 

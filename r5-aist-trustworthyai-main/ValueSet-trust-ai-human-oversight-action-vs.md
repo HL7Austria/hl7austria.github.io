@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-human-oversight-action-vs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIHumanOversightActionVS |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIHumanOversightActionVS |
 
  
 Human oversight actions that may be documented in relation to an AI-generated output or recommendation. 
@@ -51,7 +51,7 @@ Human oversight actions that may be documented in relation to an AI-generated ou
   "title" : "Trust AI Human Oversight Action Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Human oversight actions that may be documented in relation to an AI-generated output or recommendation.",
   "compose" : {

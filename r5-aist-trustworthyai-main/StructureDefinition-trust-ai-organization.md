@@ -9,10 +9,30 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-organization | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:Trust_AIOrganization |
+| Draft as of 2026-10-02 | *Computable Name*:Trust_AIOrganization |
 
  
 An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information. 
+
+### Regulatory Requirements
+
+This profile is part of the **Static System Context** layer. It implements the following documentation requirements from the [Requirements Traceability](requirements.md) analysis.
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| [SYS-02](requirements.md#req-sys-02) | GDPR Art. 13 / AI Act Annex IV 1 | Manufacturer / Provider | Static |
+| [SYS-08](requirements.md#req-sys-08) | GDPR Art. 13(1) | DPO Contact Details | Static |
+| [SYS-09](requirements.md#req-sys-09) | GDPR Art. 35 | DPIA (Data Protection Impact Assessment) | Static |
+| [SYS-12](requirements.md#req-sys-12) | AI Act Art. 17 | QMS Certification | Static |
+
+#### Element Mapping
+
+| | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [SYS-02.2](requirements.md#sys-022) | Manufacturer Contact Details | 1..* | [`Organization.contact:officialContact`](StructureDefinition-trust-ai-organization-definitions.md#Organization.contact:officialContact) | ✅ Covered | Reached from the Device via`Device.owner`. |
+| [SYS-08](requirements.md#sys-08) | DPO Contact Details | 1..1 | [`Organization.contact:dpo`](StructureDefinition-trust-ai-organization-definitions.md#Organization.contact:dpo) | ✅ Covered |   |
+| [SYS-09](requirements.md#sys-09) | DPIA Reference | 0..1 | [`Organization.extension:DPIAReference`](StructureDefinition-trust-ai-organization-definitions.md#Organization.extension:DPIAReference) | ✅ Covered | Extension`trust-ai-dpia-reference`. |
+| [SYS-12](requirements.md#sys-12) | QMS Certification | 1..1 | [`Organization.contact:incident`](StructureDefinition-trust-ai-organization-definitions.md#Organization.contact:incident) | ✅ Covered | QMS certification in`conformsTo`; the AI incident reporting contact supports the QMS. Also:[Trust_AIDevice](StructureDefinition-trust-ai-device.md). |
 
 **Usages:**
 
@@ -42,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-organizatio
   "name" : "Trust_AIOrganization",
   "title" : "Trust AI Responsible Organization",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information.",
   "fhirVersion" : "5.0.0",

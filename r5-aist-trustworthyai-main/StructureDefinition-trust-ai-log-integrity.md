@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-log-integrity | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:LogIntegritySignature |
+| Draft as of 2026-10-02 | *Computable Name*:LogIntegritySignature |
 
 Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-log-integri
   "name" : "LogIntegritySignature",
   "title" : "Trust AI Log Integrity Signature",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Provides a digital signature and associated metadata to support verification of the integrity and origin of the AI execution audit record.",
   "fhirVersion" : "5.0.0",

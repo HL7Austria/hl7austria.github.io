@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"3"}
-    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -83,7 +83,36 @@
     <a href="index.html">Home</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guide
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="use_case_overview.html">Use Cases &amp; Examples</a>
+      </li>
+      <li>
+        <a href="use_case1.html">Use Case 1</a>
+      </li>
+      <li>
+        <a href="use_case2.html">Use Case 2</a>
+      </li>
+      <li>
+        <a href="requirements.html">Requirements Traceability</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -96,8 +125,21 @@
       <li>
         <a href="terminology.html">Terminology</a>
       </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
-        <a href="examples.html">Examples</a>
+        <a href="authors.html">Authors and Contributors</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="ip-statements.html">Intellectual Property</a>
       </li>
     </ul>
   </li>
@@ -110,35 +152,22 @@
         <a href="artifacts.html">All Artifacts</a>
       </li>
       <li>
-        <a href="artifacts.html#structures-resource-profiles">Resource Profiles</a>
+        <a href="artifacts.html#3">Resource Profiles</a>
       </li>
       <li>
-        <a href="artifacts.html#structures-extension-definitions">Extension Definitions</a>
+        <a href="artifacts.html#4">Extension Definitions</a>
       </li>
       <li>
-        <a href="artifacts.html#terminology-value-sets">Value Sets</a>
+        <a href="artifacts.html#5">Value Sets</a>
       </li>
       <li>
-        <a href="artifacts.html#terminology-code-systems">Code Systems</a>
+        <a href="artifacts.html#6">Code Systems</a>
       </li>
       <li>
-        <a href="artifacts.html#generalized-ai-output-scenario">Example Generalized Scenario</a>
+        <a href="artifacts.html#1">Example Generalized Scenario</a>
       </li>
       <li>
-        <a href="artifacts.html#spezialied-ai-output-scenario">Example Specialized Scenario</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technical
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="dependencies.html">Dependencies</a>
-      </li>
-      <li>
-        <a href="ip-statements.html">Intellectual Property</a>
+        <a href="artifacts.html#2">Example Specialized Scenario</a>
       </li>
     </ul>
   </li>
@@ -195,62 +224,149 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h1 id="extensions">Extensions</h1>
 
-<p>The IG defines custom extensions where the FHIR core specification does not sufficiently represent AI transparency, legal context, or regulatory metadata.</p>
+<p>The IG defines custom extensions where the FHIR core specification does not sufficiently represent AI transparency, legal context, or regulatory metadata. The <em>Requirement</em> column links to the logical attribute on the <a href="requirements.html">Requirements Traceability</a> page that the extension implements.</p>
 
-<h2 id="device-extensions">Device Extensions</h2>
+<h2 id="static-system-context">Static System Context</h2>
 
-<ul>
-  <li>Model Card Reference</li>
-  <li>Third-Country Data Transfer</li>
-</ul>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Used in</th>
+      <th>Value</th>
+      <th>Requirement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-ext-model-card.html">Model Card Reference</a></td>
+      <td><a href="StructureDefinition-trust-ai-device.html">Trust_AIDevice</a></td>
+      <td>Reference to the <a href="StructureDefinition-trust-ai-model-card.html">Trust_AIModelCard</a></td>
+      <td>–</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-trust-ai-conformity-reference.html">EU Conformity Declaration Reference</a></td>
+      <td><a href="StructureDefinition-trust-ai-device.html">Trust_AIDevice</a></td>
+      <td>Reference to the EU Declaration of Conformity (DocumentReference)</td>
+      <td><a href="requirements.html#sys-03a">SYS-03a</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-third-country-data-transfer.html">Third-Country Data Transfer</a></td>
+      <td><a href="StructureDefinition-trust-ai-device.html">Trust_AIDevice</a></td>
+      <td><code class="language-plaintext highlighter-rouge">transferFlag</code> (boolean), <code class="language-plaintext highlighter-rouge">destinationCountry</code> (ISO 3166 code)</td>
+      <td><a href="requirements.html#law-041">LAW-04.1</a>, <a href="requirements.html#law-042">LAW-04.2</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-trust-ai-dpia-reference.html">Trust AI DPIA Reference</a></td>
+      <td><a href="StructureDefinition-trust-ai-organization.html">Trust_AIOrganization</a></td>
+      <td>Reference to the DPIA document (DocumentReference)</td>
+      <td><a href="requirements.html#sys-09">SYS-09</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ai-performance-metrics.html">AI Performance Metrics</a></td>
+      <td><a href="StructureDefinition-trust-ai-model-card.html">Trust_AIModelCard</a></td>
+      <td><code class="language-plaintext highlighter-rouge">metric</code> (<code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">value</code>), <code class="language-plaintext highlighter-rouge">biasDisclosure</code></td>
+      <td><a href="requirements.html#qual-011">QUAL-01.1</a>, <a href="requirements.html#qual-012">QUAL-01.2</a>, <a href="requirements.html#qual-04">QUAL-04</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ai-training-data.html">AI Training Data Metadata</a></td>
+      <td><a href="StructureDefinition-trust-ai-model-card.html">Trust_AIModelCard</a></td>
+      <td><code class="language-plaintext highlighter-rouge">provenance</code>, <code class="language-plaintext highlighter-rouge">Category</code>, <code class="language-plaintext highlighter-rouge">SecondaryUsePurpose</code>, <code class="language-plaintext highlighter-rouge">Permit</code>, <code class="language-plaintext highlighter-rouge">dataQuality</code></td>
+      <td><a href="requirements.html#qual-02a">QUAL-02a</a>, <a href="requirements.html#qual-02b">QUAL-02b</a>, <a href="requirements.html#qual-02c">QUAL-02c</a>, <a href="requirements.html#qual-03">QUAL-03</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ai-retention-information.html">AI Retention Information</a></td>
+      <td><a href="StructureDefinition-trust-ai-model-card.html">Trust_AIModelCard</a></td>
+      <td><code class="language-plaintext highlighter-rouge">retention</code> (Duration)</td>
+      <td><a href="requirements.html#law-06">LAW-06</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-ai-clinical-validation-status.html">AI Clinical Validation Status</a></td>
+      <td><a href="StructureDefinition-trust-ai-model-card.html">Trust_AIModelCard</a></td>
+      <td>CodeableConcept</td>
+      <td>–</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="model-card-extensions">Model Card Extensions</h2>
+<h2 id="ai-output-context">AI Output Context</h2>
 
-<ul>
-  <li>AI Performance Metrics</li>
-  <li>Clinical Validation Status</li>
-  <li>Training Data Metadata</li>
-  <li>Privacy Metadata</li>
-</ul>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Used in</th>
+      <th>Value</th>
+      <th>Requirement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-usage-category.html">Usage Category</a></td>
+      <td><a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a></td>
+      <td>CodeableConcept (primary or secondary use)</td>
+      <td><a href="requirements.html#law-031">LAW-03.1</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-secondary-use-purpose.html">Secondary Use Purpose</a></td>
+      <td><a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a></td>
+      <td>CodeableConcept</td>
+      <td><a href="requirements.html#law-032">LAW-03.2</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-data-permit.html">Data Permit</a></td>
+      <td><a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a></td>
+      <td>Identifier</td>
+      <td><a href="requirements.html#law-032">LAW-03.2</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-case-specific-indication.html">Case-Specific Indication</a></td>
+      <td><a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a></td>
+      <td>CodeableConcept</td>
+      <td><a href="requirements.html#use-04">USE-04</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-automated-decision-flag.html">Automated Decision-Making Flag</a></td>
+      <td><a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a></td>
+      <td>boolean</td>
+      <td><a href="requirements.html#law-02">LAW-02</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-trust-ai-log-integrity.html">Trust AI Log Integrity Signature</a></td>
+      <td><a href="StructureDefinition-trust-ai-machine-execution-audit-event.html">Trust_AIAuditEvent</a></td>
+      <td>Signature</td>
+      <td><a href="requirements.html#law-08">LAW-08</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="provenance-extensions">Provenance Extensions</h2>
+<h2 id="clinical-decision-context">Clinical Decision Context</h2>
 
-<ul>
-  <li>Usage Category</li>
-  <li>Data Permit</li>
-  <li>Secondary Use Purpose</li>
-</ul>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Extension</th>
+      <th>Used in</th>
+      <th>Value</th>
+      <th>Requirement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-ai-system-training-status.html">AI System-Specific Training Status</a></td>
+      <td><a href="StructureDefinition-trust-ai-practitionerrole.html">Trust_AIPractitionerRole</a></td>
+      <td>boolean</td>
+      <td><a href="requirements.html#hl-022">HL-02.2</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-patient-ai-info-provided-flag.html">Patient AI Info Provided Flag</a></td>
+      <td><a href="StructureDefinition-trust-ai-patient-explanation.html">Trust_AIPatientExplanation</a></td>
+      <td>boolean</td>
+      <td><a href="requirements.html#law-01c">LAW-01c</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="observation-extensions">Observation Extensions</h2>
-
-<ul>
-  <li>Case-Specific Indication</li>
-  <li>Automated Decision Flag</li>
-</ul>
-
-<h2 id="consent-extensions">Consent Extensions</h2>
-
-<ul>
-  <li>Patient AI Information Provided Flag</li>
-</ul>
-
-<h2 id="human-oversight-extensions">Human Oversight Extensions</h2>
-
-<ul>
-  <li>AI System Training Status</li>
-</ul>
-
-<h2 id="communication-extensions">Communication Extensions</h2>
-
-<ul>
-  <li>Explanation Requested Flag</li>
-</ul>
-
-<h2 id="audit-extensions">Audit Extensions</h2>
-
-<ul>
-  <li>Log Integrity Signature</li>
-</ul>
 
 
 
@@ -270,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.trust.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Wed, Sep 9, 2026 11:13+0000">2026-09-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.trust.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Fri, Oct 2, 2026 06:10+0000">2026-10-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

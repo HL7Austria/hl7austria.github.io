@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/usage-category-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:UsageCategoryCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:UsageCategoryCodeSystem |
 
  
 Codes distinguishing primary use from secondary use of electronic health data in the context of the European Health Data Space. 
@@ -32,7 +32,7 @@ Codes distinguishing primary use from secondary use of electronic health data in
   "title" : "Usage Category Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes distinguishing primary use from secondary use of electronic health data in the context of the European Health Data Space.",
   "caseSensitive" : true,

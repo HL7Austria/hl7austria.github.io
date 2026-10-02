@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/secondary-use-purpose-vs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:SecondaryUsePurposeVS |
+| Active as of 2026-10-02 | *Computable Name*:SecondaryUsePurposeVS |
 
  
 Purpose categories used to document the secondary use of electronic health data under the EHDS. 
@@ -52,7 +52,7 @@ Purpose categories used to document the secondary use of electronic health data 
   "title" : "Secondary-Use Purpose Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Purpose categories used to document the secondary use of electronic health data under the EHDS.",
   "compose" : {

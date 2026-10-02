@@ -45,8 +45,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"8.68"}
-    h3,h4,h5,h6{--heading-prefix:"8.68"}</style>
+    <style type="text/css">h2{--heading-prefix:"13.67"}
+    h3,h4,h5,h6{--heading-prefix:"13.67"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -87,7 +87,36 @@
     <a href="index.html">Home</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guide
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="use_case_overview.html">Use Cases &amp; Examples</a>
+      </li>
+      <li>
+        <a href="use_case1.html">Use Case 1</a>
+      </li>
+      <li>
+        <a href="use_case2.html">Use Case 2</a>
+      </li>
+      <li>
+        <a href="requirements.html">Requirements Traceability</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -100,8 +129,21 @@
       <li>
         <a href="terminology.html">Terminology</a>
       </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
-        <a href="examples.html">Examples</a>
+        <a href="authors.html">Authors and Contributors</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="ip-statements.html">Intellectual Property</a>
       </li>
     </ul>
   </li>
@@ -114,35 +156,22 @@
         <a href="artifacts.html">All Artifacts</a>
       </li>
       <li>
-        <a href="artifacts.html#structures-resource-profiles">Resource Profiles</a>
+        <a href="artifacts.html#3">Resource Profiles</a>
       </li>
       <li>
-        <a href="artifacts.html#structures-extension-definitions">Extension Definitions</a>
+        <a href="artifacts.html#4">Extension Definitions</a>
       </li>
       <li>
-        <a href="artifacts.html#terminology-value-sets">Value Sets</a>
+        <a href="artifacts.html#5">Value Sets</a>
       </li>
       <li>
-        <a href="artifacts.html#terminology-code-systems">Code Systems</a>
+        <a href="artifacts.html#6">Code Systems</a>
       </li>
       <li>
-        <a href="artifacts.html#generalized-ai-output-scenario">Example Generalized Scenario</a>
+        <a href="artifacts.html#1">Example Generalized Scenario</a>
       </li>
       <li>
-        <a href="artifacts.html#spezialied-ai-output-scenario">Example Specialized Scenario</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technical
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="dependencies.html">Dependencies</a>
-      </li>
-      <li>
-        <a href="ip-statements.html">Intellectual Property</a>
+        <a href="artifacts.html#2">Example Specialized Scenario</a>
       </li>
     </ul>
   </li>
@@ -277,7 +306,7 @@
         
           Draft
           
-            as of 2026-09-09
+            as of 2026-10-02
           
         
       </td>
@@ -300,6 +329,62 @@
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<h3 id="regulatory-requirements">Regulatory Requirements</h3>
+
+<p>This profile is part of the <strong>AI Output Context</strong> layer. It implements the following documentation requirements from the <a href="requirements.html">Requirements Traceability</a> analysis.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Requirement</th>
+      <th>Law / Source</th>
+      <th>Metadata Field</th>
+      <th>Static / Dynamic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="requirements.html#req-sys-10">SYS-10</a></td>
+      <td>AI Act Art. 12 / EHDS ANNEX II (3)</td>
+      <td>Audit Trail &amp; Access Logging</td>
+      <td>Dynamic</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="element-mapping">Element Mapping</h4>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Logical Attribute</th>
+      <th>Card. (matrix)</th>
+      <th>Element(s) in this profile</th>
+      <th>Status</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="requirements.html#sys-101">SYS-10.1</a></td>
+      <td>Execution Period (Start/End)</td>
+      <td>1..1</td>
+      <td><a href="StructureDefinition-trust-ai-observation-definitions.html#Observation.effective[x]"><code class="language-plaintext highlighter-rouge">Observation.effective[x]</code></a></td>
+      <td>✅ Covered</td>
+      <td>Also: <a href="StructureDefinition-trust-ai-machine-execution-audit-event.html">Trust_AIAuditEvent</a>, <a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</div>
 
 
 
@@ -521,7 +606,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R5/references.html">Reference</a>(<a href="StructureDefinition-trust-ai-device.html">Trust AI System Device</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Link to the AI Device that generated this result</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // edce416e-f53e-426a-b28a-e8fd7ef78658
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b951824e-0355-438e-ad2f-854f920f4789
 document.getElementById('cbtrust-ai-observationK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('trust-ai-observationK'), 'binding', document.getElementById('cbtrust-ai-observationK-binding').checked, document.getElementById('pptrust-ai-observationK'));
 document.getElementById('cbtrust-ai-observationK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -791,7 +876,7 @@ filterDesc(document.getElementById('trust-ai-observationK'), 'obligation', docum
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..<span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R5/references.html">Reference</a>(<a href="StructureDefinition-trust-ai-device.html">Trust AI System Device</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Link to the AI Device that generated this result</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // edce416e-f53e-426a-b28a-e8fd7ef78658
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b951824e-0355-438e-ad2f-854f920f4789
 document.getElementById('cbtrust-ai-observationD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('trust-ai-observationD'), 'binding', document.getElementById('cbtrust-ai-observationD-binding').checked, document.getElementById('pptrust-ai-observationD'));
 document.getElementById('cbtrust-ai-observationD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1316,7 +1401,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R5/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // edce416e-f53e-426a-b28a-e8fd7ef78658
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b951824e-0355-438e-ad2f-854f920f4789
 document.getElementById('cbtrust-ai-observationS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('trust-ai-observationS'), 'binding', document.getElementById('cbtrust-ai-observationS-binding').checked, document.getElementById('pptrust-ai-observationS'));
 document.getElementById('cbtrust-ai-observationS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2067,7 +2152,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R5/references.html">Reference</a>(<a href="StructureDefinition-trust-ai-device.html">Trust AI System Device</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Link to the AI Device that generated this result</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // edce416e-f53e-426a-b28a-e8fd7ef78658
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b951824e-0355-438e-ad2f-854f920f4789
 document.getElementById('cbtrust-ai-observationKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('trust-ai-observationKA'), 'binding', document.getElementById('cbtrust-ai-observationKA-binding').checked, document.getElementById('pptrust-ai-observationKA'));
 document.getElementById('cbtrust-ai-observationKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2337,7 +2422,7 @@ filterDesc(document.getElementById('trust-ai-observationKA'), 'obligation', docu
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">1..<span style="opacity: 0.5">1</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R5/references.html">Reference</a>(<a href="StructureDefinition-trust-ai-device.html">Trust AI System Device</a>)</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Link to the AI Device that generated this result</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // edce416e-f53e-426a-b28a-e8fd7ef78658
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b951824e-0355-438e-ad2f-854f920f4789
 document.getElementById('cbtrust-ai-observationDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('trust-ai-observationDA'), 'binding', document.getElementById('cbtrust-ai-observationDA-binding').checked, document.getElementById('pptrust-ai-observationDA'));
 document.getElementById('cbtrust-ai-observationDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2861,7 +2946,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..*</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">See <a href="http://hl7.org/fhir/R5/observation.html#Observation.referenceRange" title="Observation.referenceRange">referenceRange (Observation)</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Provides guide for interpretation of component result<br/></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // edce416e-f53e-426a-b28a-e8fd7ef78658
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R5/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // b951824e-0355-438e-ad2f-854f920f4789
 document.getElementById('cbtrust-ai-observationSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('trust-ai-observationSA'), 'binding', document.getElementById('cbtrust-ai-observationSA-binding').checked, document.getElementById('pptrust-ai-observationSA'));
 document.getElementById('cbtrust-ai-observationSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3465,7 +3550,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.trust.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Wed, Sep 9, 2026 11:13+0000">2026-09-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.trust.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Fri, Oct 2, 2026 06:10+0000">2026-10-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

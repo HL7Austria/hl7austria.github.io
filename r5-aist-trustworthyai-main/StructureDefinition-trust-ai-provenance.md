@@ -9,10 +9,36 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-provenance | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:Trust_AIProvenance |
+| Draft as of 2026-10-02 | *Computable Name*:Trust_AIProvenance |
 
  
 A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context. 
+
+### Regulatory Requirements
+
+This profile is part of the **AI Output Context** layer. It implements the following documentation requirements from the [Requirements Traceability](requirements.md) analysis.
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| [SYS-10](requirements.md#req-sys-10) | AI Act Art. 12 / EHDS ANNEX II (3) | Audit Trail & Access Logging | Dynamic |
+| [USE-04](requirements.md#req-use-04) | GDPR Art. 5(1) | Case-Specific Indication | Dynamic |
+| [LAW-01a](requirements.md#req-law-01a) | GDPR Art. 6(1) | Legal Basis (General) | Dynamic |
+| [LAW-01b](requirements.md#req-law-01b) | GDPR Art. 9(2) | Health Data Exception | Dynamic |
+| [LAW-02](requirements.md#req-law-02) | GDPR Art. 22 | Automated Decision Flag | Dynamic |
+| [LAW-03](requirements.md#req-law-03) | EHDS Art. 51 / 52 | Data Provenance (Primary/Secondary) | Dynamic |
+
+#### Element Mapping
+
+| | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [SYS-10.1](requirements.md#sys-101) | Execution Period (Start/End) | 1..1 | [`Provenance.occurredPeriod`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.occurredPeriod) | ✅ Covered | Also:[Trust_AIAuditEvent](StructureDefinition-trust-ai-machine-execution-audit-event.md),[Trust_AIObservation](StructureDefinition-trust-ai-observation.md). |
+| [SYS-10.2](requirements.md#sys-102) | Input Data Reference | 1..* | [`Provenance.entity`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.entity) | ✅ Covered | `entity.role`= source. |
+| [USE-04](requirements.md#use-04) | Case-Specific Indication | 1..* | [`Provenance.extension:caseIndication`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.extension:caseIndication) | ✅ Covered | Extension`case-specific-indication`. |
+| [LAW-01a](requirements.md#law-01a) | Legal Basis Code | 1..1 | [`Provenance.authorization:gdprArt6Basis`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.authorization:gdprArt6Basis) | ✅ Covered | GDPRArt6LegalBasisVS. |
+| [LAW-01b](requirements.md#law-01b) | Special Category Exception Code | 1..1 | [`Provenance.authorization:gdprArt9Condition`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.authorization:gdprArt9Condition) | ✅ Covered | GDPRArt9ConditionVS. |
+| [LAW-02](requirements.md#law-02) | Automated Decision Flag | 1..1 | [`Provenance.extension:automatedDecision`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.extension:automatedDecision) | ✅ Covered | Extension`automated-decision-flag`. |
+| [LAW-03.1](requirements.md#law-031) | Provenance Category | 1..1 | [`Provenance.extension:usageCategory`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.extension:usageCategory) | ✅ Covered | UsageCategoryVS. |
+| [LAW-03.2](requirements.md#law-032) | Data Permit Reference | 0..1 | [`Provenance.extension:dataPermit`](StructureDefinition-trust-ai-provenance-definitions.md#Provenance.extension:dataPermit) | ✅ Covered | Complemented by`secondaryUsePurpose`. |
 
 **Usages:**
 
@@ -41,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-provenance.
   "name" : "Trust_AIProvenance",
   "title" : "Trust AI Provenance",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context.",
   "fhirVersion" : "5.0.0",

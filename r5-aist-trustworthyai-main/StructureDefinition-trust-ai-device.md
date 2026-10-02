@@ -9,10 +9,47 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-device | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:Trust_AIDevice |
+| Draft as of 2026-10-02 | *Computable Name*:Trust_AIDevice |
 
  
 A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata. 
+
+### Regulatory Requirements
+
+This profile is part of the **Static System Context** layer. It implements the following documentation requirements from the [Requirements Traceability](requirements.md) analysis.
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| [SYS-01](requirements.md#req-sys-01) | AI Act Annex IV 1 | System Name & Version | Static |
+| [SYS-02](requirements.md#req-sys-02) | GDPR Art. 13 / AI Act Annex IV 1 | Manufacturer / Provider | Static |
+| [SYS-03a](requirements.md#req-sys-03a) | AI Act Art. 47 | EU Declaration of Conformity | Static |
+| [SYS-03b](requirements.md#req-sys-03b) | AI Act Art. 48 | Digital CE Marking & Notified Body ID | Static |
+| [SYS-03c](requirements.md#req-sys-03c) | AI Act Art. 15 | Cybersecurity Status | Static |
+| [SYS-07](requirements.md#req-sys-07) | AI Act Art. 13(3) | Expected Lifetime & Maintenance | Static |
+| [SYS-11](requirements.md#req-sys-11) | AI Act Art. 49 | EU Database Registration ID | Static |
+| [SYS-12](requirements.md#req-sys-12) | AI Act Art. 17 | QMS Certification | Static |
+| [USE-01](requirements.md#req-use-01) | AI Act Art. 13 (3) / GDPR Art. 5 | Intended Purpose | Static |
+| [LAW-04](requirements.md#req-law-04) | GDPR Art. 13(1)(f) / Art. 44 | Third-Country Data Transfer | Static |
+
+#### Element Mapping
+
+| | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [SYS-01.1](requirements.md#sys-011) | System Name | 1..1 | [`Device.name`](StructureDefinition-trust-ai-device-definitions.md#Device.name) | ✅ Covered |   |
+| [SYS-01.2](requirements.md#sys-012) | System Version | 1..1 | [`Device.version`](StructureDefinition-trust-ai-device-definitions.md#Device.version) | ✅ Covered |   |
+| [SYS-02.1](requirements.md#sys-021) | Manufacturer Name | 1..1 | [`Device.manufacturer`](StructureDefinition-trust-ai-device-definitions.md#Device.manufacturer),[`Device.owner`](StructureDefinition-trust-ai-device-definitions.md#Device.owner) | ✅ Covered | `owner`references the responsible Trust_AIOrganization. |
+| [SYS-03a](requirements.md#sys-03a) | EU Declaration of Conformity | 1..1 | [`Device.extension:conformityDeclaration`](StructureDefinition-trust-ai-device-definitions.md#Device.extension:conformityDeclaration) | ✅ Covered | Extension`trust-ai-conformity-reference`→ DocumentReference of the declaration. |
+| [SYS-03b.1](requirements.md#sys-03b1) | CE Marking Flag | 1..1 | [`Device.property:ceMark`](StructureDefinition-trust-ai-device-definitions.md#Device.property:ceMark) | ✅ Covered |   |
+| [SYS-03b.2](requirements.md#sys-03b2) | Notified Body ID | 0..1 | [`Device.property:notifiedBody`](StructureDefinition-trust-ai-device-definitions.md#Device.property:notifiedBody) | ✅ Covered |   |
+| [SYS-03c](requirements.md#sys-03c) | Cybersecurity Status | 1..1 | [`Device.conformsTo`](StructureDefinition-trust-ai-device-definitions.md#Device.conformsTo) | ⚠️ Partial | No dedicated element; applied security standards can be listed in`conformsTo`, but a reference to the cybersecurity test report is not modelled. |
+| [SYS-07.1](requirements.md#sys-071) | Expected Lifetime | 1..1 | [`Device.property:expectedLifetime`](StructureDefinition-trust-ai-device-definitions.md#Device.property:expectedLifetime) | ✅ Covered |   |
+| [SYS-07.2](requirements.md#sys-072) | Maintenance Requirements | 1..1 | [`Device.conformsTo`](StructureDefinition-trust-ai-device-definitions.md#Device.conformsTo) | ✅ Covered | Maintenance and update requirements are part of the technical documentation. Also:[Trust_AIModelCard](StructureDefinition-trust-ai-model-card.md). |
+| [SYS-11](requirements.md#sys-11) | EU Database Registration ID | 1..1 | [`Device.identifier:euDatabaseId`](StructureDefinition-trust-ai-device-definitions.md#Device.identifier:euDatabaseId) | ✅ Covered |   |
+| [SYS-12](requirements.md#sys-12) | QMS Certification | 1..1 | [`Device.conformsTo`](StructureDefinition-trust-ai-device-definitions.md#Device.conformsTo) | ✅ Covered | QMS certification in`conformsTo`; the AI incident reporting contact supports the QMS. Also:[Trust_AIOrganization](StructureDefinition-trust-ai-organization.md). |
+| [USE-01.1](requirements.md#use-011) | Medical Purpose Description | 1..1 | [`Device.property:intendedPurpose`](StructureDefinition-trust-ai-device-definitions.md#Device.property:intendedPurpose) | ✅ Covered |   |
+| [USE-01.2](requirements.md#use-012) | Intended Target Population | 1..* | [`Device.property:targetPopulation`](StructureDefinition-trust-ai-device-definitions.md#Device.property:targetPopulation) | ✅ Covered |   |
+| [LAW-04.1](requirements.md#law-041) | Third-Country Transfer Flag | 1..1 | [`Device.extension:dataTransfer`](StructureDefinition-trust-ai-device-definitions.md#Device.extension:dataTransfer) | ✅ Covered | Sub-extension`transferFlag`. |
+| [LAW-04.2](requirements.md#law-042) | Destination Country | 0..* | [`Device.extension:dataTransfer`](StructureDefinition-trust-ai-device-definitions.md#Device.extension:dataTransfer) | ✅ Covered | Sub-extension`destinationCountry`(ISO 3166). |
 
 **Usages:**
 
@@ -42,7 +79,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-device.csv)
   "name" : "Trust_AIDevice",
   "title" : "Trust AI System Device",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata.",
   "fhirVersion" : "5.0.0",
@@ -147,8 +184,8 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-device.csv)
       "id" : "Device.identifier:euDatabaseId",
       "path" : "Device.identifier",
       "sliceName" : "euDatabaseId",
-      "short" : "Trust AI database registration number",
-      "definition" : "The unique registration number assigned to the high-risk AI system in the official Trust AI database.",
+      "short" : "EU database registration number",
+      "definition" : "The unique registration number assigned to the high-risk AI system in the official EU database (AI Act Art. 49).",
       "requirements" : "AI Act Art. 49 | EU Database Registration",
       "min" : 1,
       "max" : "1",

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-data-quality-vs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIDataQualityVS |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIDataQualityVS |
 
  
 Assessed data-quality characteristics relevant to AI-system development, validation, testing, or evaluation. 
@@ -51,7 +51,7 @@ Assessed data-quality characteristics relevant to AI-system development, validat
   "title" : "Trust AI Data Quality Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Assessed data-quality characteristics relevant to AI-system development, validation, testing, or evaluation.",
   "compose" : {

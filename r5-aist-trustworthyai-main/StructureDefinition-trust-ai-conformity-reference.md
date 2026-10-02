@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-conformity-reference | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:EUConformityDeclarationReference |
+| Draft as of 2026-10-02 | *Computable Name*:EUConformityDeclarationReference |
 
 The EU declaration of conformity shall identify the high-risk AI system.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-conformity-
   "name" : "EUConformityDeclarationReference",
   "title" : "EU Conformity Declaration Reference",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "The EU declaration of conformity shall identify the high-risk AI system.",
   "fhirVersion" : "5.0.0",

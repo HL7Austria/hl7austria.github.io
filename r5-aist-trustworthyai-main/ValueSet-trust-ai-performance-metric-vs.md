@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-performance-metric-vs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIPerformanceMetricVS |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIPerformanceMetricVS |
 
  
 Performance characteristics that may be documented for an AI system. 
@@ -51,7 +51,7 @@ Performance characteristics that may be documented for an AI system.
   "title" : "Trust AI Performance Metric Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Performance characteristics that may be documented for an AI system.",
   "compose" : {

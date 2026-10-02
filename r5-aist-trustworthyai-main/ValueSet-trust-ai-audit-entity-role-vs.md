@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-audit-entity-role-vs | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:TrustAIAuditEntityRoleValueSet |
+| Draft as of 2026-10-02 | *Computable Name*:TrustAIAuditEntityRoleValueSet |
 
  
 Roles of entities involved in an AI execution audit event. 
@@ -50,7 +50,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "name" : "TrustAIAuditEntityRoleValueSet",
   "title" : "Trust AI Audit Entity Role Value Set",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Roles of entities involved in an AI execution audit event.",
   "compose" : {

@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-contact-purpose-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIContactPurposeCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIContactPurposeCodeSystem |
 
  
 Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance. 
@@ -32,7 +32,7 @@ Codes identifying organizational contact responsibilities relevant to data prote
   "title" : "Trust AI Contact Purpose Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance.",
   "caseSensitive" : true,

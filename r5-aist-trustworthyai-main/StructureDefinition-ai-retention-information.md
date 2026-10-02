@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-retention-information | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:AIRetentionInformation |
+| Draft as of 2026-10-02 | *Computable Name*:AIRetentionInformation |
 
 Documents the stated retention duration for AI-related data, outputs, logs, or documentation.
 
@@ -19,7 +19,7 @@ Documents the stated retention duration for AI-related data, outputs, logs, or d
 
 **Usages:**
 
-* Use this Extension: [Trust AI Act Model Card](StructureDefinition-trust-ai-model-card.md)
+* Use this Extension: [Trust AI Model Card](StructureDefinition-trust-ai-model-card.md)
 * Examples for this Extension: [DocumentReference/dr-model-card](DocumentReference-dr-model-card.md) and [DocumentReference/modelcard-riskassist-ai](DocumentReference-modelcard-riskassist-ai.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/fhir.ig.trust.aitransparency|current/StructureDefinition/StructureDefinition-ai-retention-information.json)
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-retention-informa
   "name" : "AIRetentionInformation",
   "title" : "AI Retention Information",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents the stated retention duration for AI-related data, outputs, logs, or documentation.",
   "fhirVersion" : "5.0.0",

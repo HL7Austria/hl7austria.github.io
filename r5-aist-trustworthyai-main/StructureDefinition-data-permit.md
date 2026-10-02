@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/data-permit | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:DataPermit |
+| Draft as of 2026-10-02 | *Computable Name*:DataPermit |
 
 Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-data-permit.csv), [E
   "name" : "DataPermit",
   "title" : "Data Permit",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.",
   "fhirVersion" : "5.0.0",

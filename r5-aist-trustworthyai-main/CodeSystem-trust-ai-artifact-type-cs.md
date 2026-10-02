@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-artifact-type-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIArtifactTypeCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIArtifactTypeCodeSystem |
 
  
 Codes identifying AI-related documentation artifacts represented by this implementation guide. 
@@ -32,7 +32,7 @@ Codes identifying AI-related documentation artifacts represented by this impleme
   "title" : "Trust AI Artifact Type Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying AI-related documentation artifacts represented by this implementation guide.",
   "caseSensitive" : true,

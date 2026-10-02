@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/patient-ai-info-provided-flag | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:PatientAIInfoProvidedFlag |
+| Draft as of 2026-10-02 | *Computable Name*:PatientAIInfoProvidedFlag |
 
 This flag represents whether the patient has been informed about the AI-related processing activity
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-patient-ai-info-prov
   "name" : "PatientAIInfoProvidedFlag",
   "title" : "Patient AI Info Provided Flag",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "This flag represents whether the patient has been informed about the AI-related processing activity",
   "fhirVersion" : "5.0.0",

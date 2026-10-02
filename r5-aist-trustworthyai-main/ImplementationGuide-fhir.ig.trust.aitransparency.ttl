@@ -18,7 +18,7 @@
   fhir:version [ fhir:v "0.1.0"] ; # 
   fhir:name [ fhir:v "TrustAITransparencyIG"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2026-09-09T11:13:25+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2026-10-02T06:10:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "Selina Adlberger"] ; # 
   fhir:packageId [ fhir:v "fhir.ig.trust.aitransparency"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
@@ -37,7 +37,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r5" ] ;
-     fhir:version [ fhir:v "7.3.0" ]
+     fhir:version [ fhir:v "7.4.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -65,11 +65,11 @@
      fhir:grouping ( [
        fhir:id [ fhir:v "generalized" ] ;
        fhir:name [ fhir:v "Generalized AI Output Scenario" ] ;
-       fhir:description [ fhir:v "Example how the IG can be used only using the generalized Output for elements without specified Resources." ]
+       fhir:description [ fhir:v "Example of how the IG can be used for AI outputs without a dedicated profile, using the generalized AI output pattern." ]
      ] [
        fhir:id [ fhir:v "spezialized" ] ;
-       fhir:name [ fhir:v "Spezialied AI Output Scenario" ] ;
-       fhir:description [ fhir:v "Example how the spezialized AI Output such as AI Observation can be used." ]
+       fhir:name [ fhir:v "Specialized AI Output Scenario" ] ;
+       fhir:description [ fhir:v "Example of how a specialized AI output profile such as Trust_AIObservation can be used." ]
      ] ) ;
      fhir:resource ( [
        fhir:extension ( [
@@ -1534,21 +1534,6 @@
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [
            a fhir:string ;
-           fhir:v "StructureDefinition:resource"
-         ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-model-card> ;
-         fhir:reference [ fhir:v "StructureDefinition/trust-ai-model-card" ]
-       ] ;
-       fhir:name [ fhir:v "Trust AI Act Model Card" ] ;
-       fhir:description [ fhir:v "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation." ] ;
-       fhir:isExample [ fhir:v false ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [
-           a fhir:string ;
            fhir:v "CodeSystem"
          ]
        ] ) ;
@@ -1868,11 +1853,26 @@
          ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-model-card> ;
+         fhir:reference [ fhir:v "StructureDefinition/trust-ai-model-card" ]
+       ] ;
+       fhir:name [ fhir:v "Trust AI Model Card" ] ;
+       fhir:description [ fhir:v "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation." ] ;
+       fhir:isExample [ fhir:v false ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:string ;
+           fhir:v "StructureDefinition:resource"
+         ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-patient-explanation> ;
          fhir:reference [ fhir:v "StructureDefinition/trust-ai-patient-explanation" ]
        ] ;
        fhir:name [ fhir:v "Trust AI Patient Explanation Communication" ] ;
-       fhir:description [ fhir:v "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the Trust AI Act." ] ;
+       fhir:description [ fhir:v "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act." ] ;
        fhir:isExample [ fhir:v false ]
      ] [
        fhir:extension ( [
@@ -2044,6 +2044,46 @@
        ] [
          fhir:source [
            a fhir:url ;
+           fhir:v "introduction.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "introduction.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Introduction" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "use_case_overview.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "use_case_overview.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Use Cases & Examples" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "use_case1.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "use_case1.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Use Case 1 - AI-supported Risk evaluation" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "use_case2.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "use_case2.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Use Case 2 - AI-generated Diagnostic Report" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
+           fhir:v "requirements.html"^^xsd:anyURI
+         ] ;
+         fhir:name [ fhir:v "requirements.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Requirements Traceability" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:source [
+           a fhir:url ;
            fhir:v "profiles.html"^^xsd:anyURI
          ] ;
          fhir:name [ fhir:v "profiles.html"^^xsd:anyURI ] ;
@@ -2068,10 +2108,10 @@
        ] [
          fhir:source [
            a fhir:url ;
-           fhir:v "examples.html"^^xsd:anyURI
+           fhir:v "authors.html"^^xsd:anyURI
          ] ;
-         fhir:name [ fhir:v "examples.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Examples" ] ;
+         fhir:name [ fhir:v "authors.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Authors and Contributors" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:source [

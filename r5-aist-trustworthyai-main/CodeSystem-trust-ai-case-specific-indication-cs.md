@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-case-specific-indication-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAICaseSpecificIndicationCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:TrustAICaseSpecificIndicationCodeSystem |
 
  
 Codes describing the clinical purpose for which an AI system was applied in an individual case. 
@@ -32,7 +32,7 @@ Codes describing the clinical purpose for which an AI system was applied in an i
   "title" : "Trust AI Case-Specific Indication Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes describing the clinical purpose for which an AI system was applied in an individual case.",
   "caseSensitive" : true,

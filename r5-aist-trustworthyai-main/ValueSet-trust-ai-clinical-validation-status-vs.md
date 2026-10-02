@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/trust-ai-clinical-validation-status-vs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIClinicalValidationStatusVS |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIClinicalValidationStatusVS |
 
  
 Clinical validation statuses applicable to an AI system and its documented intended use. 
@@ -51,7 +51,7 @@ Clinical validation statuses applicable to an AI system and its documented inten
   "title" : "Trust AI Clinical Validation Status Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Clinical validation statuses applicable to an AI system and its documented intended use.",
   "compose" : {

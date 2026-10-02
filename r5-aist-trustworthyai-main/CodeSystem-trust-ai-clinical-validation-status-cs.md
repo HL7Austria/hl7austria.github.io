@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-clinical-validation-status-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIClinicalValidationStatusCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIClinicalValidationStatusCodeSystem |
 
  
 Codes indicating the documented clinical validation status of an AI system for its intended clinical use. 
@@ -32,7 +32,7 @@ Codes indicating the documented clinical validation status of an AI system for i
   "title" : "Trust AI Clinical Validation Status Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes indicating the documented clinical validation status of an AI system for its intended clinical use.",
   "caseSensitive" : true,

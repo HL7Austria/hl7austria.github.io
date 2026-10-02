@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ValueSet/gdpr-art6-legal-basis-vs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:GDPRArt6LegalBasisVS |
+| Active as of 2026-10-02 | *Computable Name*:GDPRArt6LegalBasisVS |
 
  
 Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data. 
@@ -51,7 +51,7 @@ Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basi
   "title" : "GDPR Article 6 Legal Basis Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data.",
   "compose" : {

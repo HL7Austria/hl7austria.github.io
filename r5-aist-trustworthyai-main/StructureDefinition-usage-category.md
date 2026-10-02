@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/usage-category | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:UsageCategory |
+| Draft as of 2026-10-02 | *Computable Name*:UsageCategory |
 
 Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-usage-category.csv),
   "name" : "UsageCategory",
   "title" : "Usage Category",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Classifies the documented use of electronic health data as primary use or secondary use in the EHDS context.",
   "fhirVersion" : "5.0.0",

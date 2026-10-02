@@ -41,8 +41,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"4"}
-    h3,h4,h5,h6{--heading-prefix:"4"}</style>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -83,7 +83,36 @@
     <a href="index.html">Home</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Guide
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Introduction</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="use_case_overview.html">Use Cases &amp; Examples</a>
+      </li>
+      <li>
+        <a href="use_case1.html">Use Case 1</a>
+      </li>
+      <li>
+        <a href="use_case2.html">Use Case 2</a>
+      </li>
+      <li>
+        <a href="requirements.html">Requirements Traceability</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -96,8 +125,21 @@
       <li>
         <a href="terminology.html">Terminology</a>
       </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
-        <a href="examples.html">Examples</a>
+        <a href="authors.html">Authors and Contributors</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="ip-statements.html">Intellectual Property</a>
       </li>
     </ul>
   </li>
@@ -110,35 +152,22 @@
         <a href="artifacts.html">All Artifacts</a>
       </li>
       <li>
-        <a href="artifacts.html#structures-resource-profiles">Resource Profiles</a>
+        <a href="artifacts.html#3">Resource Profiles</a>
       </li>
       <li>
-        <a href="artifacts.html#structures-extension-definitions">Extension Definitions</a>
+        <a href="artifacts.html#4">Extension Definitions</a>
       </li>
       <li>
-        <a href="artifacts.html#terminology-value-sets">Value Sets</a>
+        <a href="artifacts.html#5">Value Sets</a>
       </li>
       <li>
-        <a href="artifacts.html#terminology-code-systems">Code Systems</a>
+        <a href="artifacts.html#6">Code Systems</a>
       </li>
       <li>
-        <a href="artifacts.html#generalized-ai-output-scenario">Example Generalized Scenario</a>
+        <a href="artifacts.html#1">Example Generalized Scenario</a>
       </li>
       <li>
-        <a href="artifacts.html#spezialied-ai-output-scenario">Example Specialized Scenario</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Technical
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="dependencies.html">Dependencies</a>
-      </li>
-      <li>
-        <a href="ip-statements.html">Intellectual Property</a>
+        <a href="artifacts.html#2">Example Specialized Scenario</a>
       </li>
     </ul>
   </li>
@@ -195,33 +224,181 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h1 id="terminology">Terminology</h1>
 
-<p>The Implementation Guide defines custom terminology where existing FHIR terminologies do not sufficiently represent AI transparency concepts.</p>
+<p>The Implementation Guide defines custom terminology where existing FHIR terminologies do not sufficiently represent AI transparency concepts. It contains 16 CodeSystems and 12 ValueSets.</p>
 
-<h2 id="code-systems">Code Systems</h2>
+<h2 id="ai-transparency-and-documentation">AI Transparency and Documentation</h2>
 
-<p>The IG defines custom CodeSystems for:</p>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Code System</th>
+      <th>Codes</th>
+      <th>Value Set (Binding)</th>
+      <th>Used in</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-involvement-cs.html">Trust AI Involvement</a></td>
+      <td><code class="language-plaintext highlighter-rouge">ai-generated</code>, <code class="language-plaintext highlighter-rouge">ai-assisted</code>, <code class="language-plaintext highlighter-rouge">ai-reported</code>, <code class="language-plaintext highlighter-rouge">ai-asserted</code></td>
+      <td><a href="ValueSet-trust-ai-involvement-vs.html">Trust AI Involvement</a> (required)</td>
+      <td><a href="StructureDefinition-trust-ai-data.html">TrustAIData</a> <code class="language-plaintext highlighter-rouge">meta.security</code>, <a href="StructureDefinition-trust-ai-observation.html">Trust_AIObservation</a> <code class="language-plaintext highlighter-rouge">interpretation</code></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-performance-metric-cs.html">Trust AI Performance Metric</a></td>
+      <td><code class="language-plaintext highlighter-rouge">accuracy</code>, <code class="language-plaintext highlighter-rouge">sensitivity</code>, <code class="language-plaintext highlighter-rouge">specificity</code>, <code class="language-plaintext highlighter-rouge">robustness</code></td>
+      <td><a href="ValueSet-trust-ai-performance-metric-vs.html">Trust AI Performance Metric</a> (extensible)</td>
+      <td><a href="StructureDefinition-ai-performance-metrics.html">AI Performance Metrics</a></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-clinical-validation-status-cs.html">Trust AI Clinical Validation Status</a></td>
+      <td><code class="language-plaintext highlighter-rouge">clinically-validated</code>, <code class="language-plaintext highlighter-rouge">not-clinically-validated</code>, <code class="language-plaintext highlighter-rouge">validation-in-progress</code>, <code class="language-plaintext highlighter-rouge">technical-validation-only</code></td>
+      <td><a href="ValueSet-trust-ai-clinical-validation-status-vs.html">Trust AI Clinical Validation Status</a> (required)</td>
+      <td><a href="StructureDefinition-ai-clinical-validation-status.html">AI Clinical Validation Status</a></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-data-quality-cs.html">Trust AI Data Quality</a></td>
+      <td><code class="language-plaintext highlighter-rouge">representative</code>, <code class="language-plaintext highlighter-rouge">error-free</code>, <code class="language-plaintext highlighter-rouge">complete</code>, <code class="language-plaintext highlighter-rouge">relevant</code></td>
+      <td><a href="ValueSet-trust-ai-data-quality-vs.html">Trust AI Data Quality</a> (extensible)</td>
+      <td><a href="StructureDefinition-ai-training-data.html">AI Training Data Metadata</a></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-case-specific-indication-cs.html">Trust AI Case-Specific Indication</a></td>
+      <td><code class="language-plaintext highlighter-rouge">triage</code>, <code class="language-plaintext highlighter-rouge">screening</code>, <code class="language-plaintext highlighter-rouge">second-opinion</code>, <code class="language-plaintext highlighter-rouge">diagnostic-support</code>, <code class="language-plaintext highlighter-rouge">treatment-planning</code>, <code class="language-plaintext highlighter-rouge">prognosis</code></td>
+      <td><a href="ValueSet-trust-ai-case-specific-indication-vs.html">Trust AI Case-Specific Indication</a> (extensible)</td>
+      <td><a href="StructureDefinition-case-specific-indication.html">Case-Specific Indication</a></td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li>Trust AI transparency concepts</li>
-  <li>Human oversight actions</li>
-  <li>GDPR legal bases</li>
-  <li>GDPR Article 9 exceptions</li>
-  <li>EHDS concepts</li>
-</ul>
+<h2 id="human-oversight">Human Oversight</h2>
 
-<h2 id="value-sets">Value Sets</h2>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Code System</th>
+      <th>Codes</th>
+      <th>Value Set (Binding)</th>
+      <th>Used in</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-human-oversight-cs.html">Trust AI Human Oversight</a></td>
+      <td><code class="language-plaintext highlighter-rouge">human-validation</code>, <code class="language-plaintext highlighter-rouge">human-override</code>, <code class="language-plaintext highlighter-rouge">human-correction</code></td>
+      <td><a href="ValueSet-trust-ai-human-oversight-action-vs.html">Trust AI Human Oversight Action</a> (extensible)</td>
+      <td><a href="StructureDefinition-trust-ai-human-oversight.html">Trust_AIHumanOversightAssessment</a> <code class="language-plaintext highlighter-rouge">content.classifier</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>The following ValueSets are provided:</p>
+<h2 id="gdpr">GDPR</h2>
 
-<ul>
-  <li>AI Performance Metrics</li>
-  <li>Clinical Validation Status</li>
-  <li>Data Quality</li>
-  <li>EHDS Usage Category</li>
-  <li>EHDS Data Category</li>
-  <li>EHDS Secondary Use Purpose</li>
-  <li>Case-Specific Indications</li>
-</ul>
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Code System</th>
+      <th>Codes</th>
+      <th>Value Set (Binding)</th>
+      <th>Used in</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="CodeSystem-gdpr-art6-codesystem.html">GDPR Article 6 Legal Basis</a></td>
+      <td>Art. 6(1)(a) to (f)</td>
+      <td><a href="ValueSet-gdpr-art6-legal-basis-vs.html">GDPR Article 6 Legal Basis</a> (required)</td>
+      <td><a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a> <code class="language-plaintext highlighter-rouge">authorization</code></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-gdpr-art9-codesystem.html">GDPR Article 9 Condition</a></td>
+      <td>Art. 9(2)(a), (c), (g), (h), (i), (j)</td>
+      <td><a href="ValueSet-gdpr-art9-condition-vs.html">GDPR Article 9 Condition</a> (required)</td>
+      <td><a href="StructureDefinition-trust-ai-provenance.html">Trust_AIProvenance</a> <code class="language-plaintext highlighter-rouge">authorization</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="european-health-data-space-ehds">European Health Data Space (EHDS)</h2>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Code System</th>
+      <th>Codes</th>
+      <th>Value Set (Binding)</th>
+      <th>Used in</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="CodeSystem-usage-category-cs.html">Usage Category</a></td>
+      <td><code class="language-plaintext highlighter-rouge">primary-use</code>, <code class="language-plaintext highlighter-rouge">secondary-use</code></td>
+      <td><a href="ValueSet-usage-category-vs.html">Usage Category</a> (required)</td>
+      <td><a href="StructureDefinition-usage-category.html">Usage Category</a></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-data-category-cs.html">Data Category</a></td>
+      <td>17 categories of electronic health data for secondary use</td>
+      <td><a href="ValueSet-data-category-vs.html">Data Category</a> (extensible)</td>
+      <td><a href="StructureDefinition-ai-training-data.html">AI Training Data Metadata</a></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-secondary-use-purpose-cs.html">Secondary-Use Purpose</a></td>
+      <td>8 permitted purposes of secondary use</td>
+      <td><a href="ValueSet-secondary-use-purpose-vs.html">Secondary-Use Purpose</a> (required in <a href="StructureDefinition-secondary-use-purpose.html">Secondary Use Purpose</a>, extensible in <a href="StructureDefinition-ai-training-data.html">AI Training Data Metadata</a>)</td>
+      <td><a href="StructureDefinition-secondary-use-purpose.html">Secondary Use Purpose</a>, <a href="StructureDefinition-ai-training-data.html">AI Training Data Metadata</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="structural-codes">Structural Codes</h2>
+
+<p>These code systems provide fixed codes that identify slices and document types within the profiles.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Code System</th>
+      <th>Codes</th>
+      <th>Value Set (Binding)</th>
+      <th>Used in</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-contact-purpose-cs.html">Trust AI Contact Purpose</a></td>
+      <td><code class="language-plaintext highlighter-rouge">dpo</code>, <code class="language-plaintext highlighter-rouge">ai-incident-reporting</code></td>
+      <td>–</td>
+      <td><a href="StructureDefinition-trust-ai-organization.html">Trust_AIOrganization</a> <code class="language-plaintext highlighter-rouge">contact.purpose</code></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-artifact-type-cs.html">Trust AI Artifact Type</a></td>
+      <td><code class="language-plaintext highlighter-rouge">model-card</code></td>
+      <td>–</td>
+      <td><a href="StructureDefinition-trust-ai-model-card.html">Trust_AIModelCard</a> <code class="language-plaintext highlighter-rouge">type</code></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-identifier-type-cs.html">Trust AI Identifier Type</a></td>
+      <td><code class="language-plaintext highlighter-rouge">trust-ai-registration-number</code></td>
+      <td>–</td>
+      <td><a href="StructureDefinition-trust-ai-device.html">Trust_AIDevice</a> <code class="language-plaintext highlighter-rouge">identifier.type</code></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-system-property-cs.html">Trust AI System Property</a></td>
+      <td><code class="language-plaintext highlighter-rouge">ce-mark</code>, <code class="language-plaintext highlighter-rouge">notified-body-id</code>, <code class="language-plaintext highlighter-rouge">expected-lifetime</code>, <code class="language-plaintext highlighter-rouge">intended-purpose</code>, <code class="language-plaintext highlighter-rouge">target-population</code></td>
+      <td>–</td>
+      <td><a href="StructureDefinition-trust-ai-device.html">Trust_AIDevice</a> <code class="language-plaintext highlighter-rouge">property.type</code></td>
+    </tr>
+    <tr>
+      <td><a href="CodeSystem-trust-ai-audit-entity-role.html">Trust AI Audit Entity Role</a></td>
+      <td><code class="language-plaintext highlighter-rouge">reference-database</code>, <code class="language-plaintext highlighter-rouge">ai-output</code></td>
+      <td><a href="ValueSet-trust-ai-audit-entity-role-vs.html">Trust AI Audit Entity Role</a></td>
+      <td><a href="StructureDefinition-trust-ai-machine-execution-audit-event.html">Trust_AIAuditEvent</a> <code class="language-plaintext highlighter-rouge">entity.role</code></td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 
@@ -241,7 +418,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.trust.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Wed, Sep 9, 2026 11:13+0000">2026-09-09</span>
+          IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="">Selina Adlberger</a>.  Package fhir.ig.trust.aitransparency#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R5/">FHIR 5.0.0</a>. Generated <span title="Fri, Oct 2, 2026 06:10+0000">2026-10-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

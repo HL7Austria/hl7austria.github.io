@@ -9,10 +9,27 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-machine-execution-audit-event | *Version*:0.1.0 |
-| Draft as of 2026-09-09 | *Computable Name*:Trust_AIAuditEvent |
+| Draft as of 2026-10-02 | *Computable Name*:Trust_AIAuditEvent |
 
  
 An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability. 
+
+### Regulatory Requirements
+
+This profile is part of the **AI Output Context** layer. It implements the following documentation requirements from the [Requirements Traceability](requirements.md) analysis.
+
+| | | | |
+| :--- | :--- | :--- | :--- |
+| [SYS-10](requirements.md#req-sys-10) | AI Act Art. 12 / EHDS ANNEX II (3) | Audit Trail & Access Logging | Dynamic |
+| [LAW-08](requirements.md#req-law-08) | AI Act Art. 12(3) | Log Integrity | Dynamic |
+
+#### Element Mapping
+
+| | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [SYS-10.1](requirements.md#sys-101) | Execution Period (Start/End) | 1..1 | [`AuditEvent.occurredPeriod`](StructureDefinition-trust-ai-machine-execution-audit-event-definitions.md#AuditEvent.occurredPeriod) | ✅ Covered | Also:[Trust_AIProvenance](StructureDefinition-trust-ai-provenance.md),[Trust_AIObservation](StructureDefinition-trust-ai-observation.md). |
+| [SYS-10.3](requirements.md#sys-103) | Reference Database | 0..* | [`AuditEvent.entity:referenceDb`](StructureDefinition-trust-ai-machine-execution-audit-event-definitions.md#AuditEvent.entity:referenceDb) | ✅ Covered |   |
+| [LAW-08](requirements.md#law-08) | Log Integrity | 1..1 | [`AuditEvent.extension:logIntegrity`](StructureDefinition-trust-ai-machine-execution-audit-event-definitions.md#AuditEvent.extension:logIntegrity) | ⚠️ Partial | Extension`trust-ai-log-integrity`is 0..1, while the matrix requires 1..1. |
 
 **Usages:**
 
@@ -41,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-machine-exe
   "name" : "Trust_AIAuditEvent",
   "title" : "Trust AI Execution Audit Event",
   "status" : "draft",
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability.",
   "fhirVersion" : "5.0.0",

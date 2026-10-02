@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-identifier-type-cs | *Version*:0.1.0 |
-| Active as of 2026-09-09 | *Computable Name*:TrustAIIdentifierTypeCodeSystem |
+| Active as of 2026-10-02 | *Computable Name*:TrustAIIdentifierTypeCodeSystem |
 
  
 Codes identifying regulatory identifier types associated with an AI system. 
@@ -32,7 +32,7 @@ Codes identifying regulatory identifier types associated with an AI system.
   "title" : "Trust AI Identifier Type Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-09-09T11:13:25+00:00",
+  "date" : "2026-10-02T06:10:43+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying regulatory identifier types associated with an AI system.",
   "caseSensitive" : true,
@@ -41,7 +41,7 @@ Codes identifying regulatory identifier types associated with an AI system.
   "concept" : [{
     "code" : "trust-ai-registration-number",
     "display" : "Trust AI Registration Number",
-    "definition" : "Registration number assigned to an AI system in the EU database established under the Trust AI Act, where such registration is applicable."
+    "definition" : "Registration number assigned to an AI system in the EU database established under the EU AI Act, where such registration is applicable."
   }]
 }
 
