@@ -13,12 +13,15 @@ Medikationsplan
 
 | | |
 | :--- | :--- |
-| [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md) | Der Medikationsplan wird durch eine List-Ressource abgebildet. Diese enthält 0..* Einträge (List.entry), wobei jedes List.entry.item genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) beinhaltet. Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags. |
-| [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) | Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet. Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. |
-| [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) | Das Bundle vom Typ Searchset bestehend aus:* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
-* 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
+| [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md) | Der Medikationsplan wird durch eine List-Ressource abgebildet und enthält:* 0..* Einträge (List.entry). Jedes List.entry.item enhält genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest). Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.
  |
-| [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md) | Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus:* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
+| [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) | Ein Planeintrag im Medikationsplan wird durch eine "MedicationRequest"-Ressource abgebildet. Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen. Es werden R5-Backport-Extensions verwendet. |
+| [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) | Das Medikationsplan-Bundle vom Typ Searchset enthält:* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
+* 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
+* 1..1 Patient
+* 1..* Authors
+ |
+| [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md) | Das Medikationsplan-Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und enthält:* 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
 * 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung
 Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert. |
 

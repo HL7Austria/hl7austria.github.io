@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-emed-operation-groupidentifier-create | *Version*:0.1.0 | |
-| Draft as of 2026-10-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedGroupIdentifierCreate |
+| Draft as of 2026-10-02 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedGroupIdentifierCreate |
 
  
 Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll. 
@@ -28,7 +28,7 @@ Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdent
   "title" : "eMed Operation für GroupIdentifier-Create",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-01T21:19:24+00:00",
+  "date" : "2026-10-02T13:24:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

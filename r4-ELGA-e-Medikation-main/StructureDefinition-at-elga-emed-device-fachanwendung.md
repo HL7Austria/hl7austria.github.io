@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung | *Version*:0.1.0 | |
-| Draft as of 2026-10-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDeviceFachanwendung |
+| Draft as of 2026-10-02 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedDeviceFachanwendung |
 
  
 Das Device welches die eMed Fachanwendung abbildet 
@@ -42,7 +42,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-device-
   "name" : "AtElgaEmedDeviceFachanwendung",
   "title" : "At ELGA e-Medikation Device Fachanwendung",
   "status" : "draft",
-  "date" : "2026-10-01T21:19:24+00:00",
+  "date" : "2026-10-02T13:24:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

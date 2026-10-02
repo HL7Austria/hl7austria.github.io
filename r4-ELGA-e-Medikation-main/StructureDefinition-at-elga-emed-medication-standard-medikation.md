@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation | *Version*:0.1.0 | |
-| Draft as of 2026-10-01 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationStandardMedikation |
+| Draft as of 2026-10-02 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedMedicationStandardMedikation |
 
  
 Bildet ein Arzneimittel in der "Medication"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe. 
@@ -43,7 +43,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-medicat
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-10-01T21:19:24+00:00",
+  "date" : "2026-10-02T13:24:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeMedikationR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Medikation (R4) DRAFT"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-01T21:19:24+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-02T13:24:17+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -862,7 +862,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-list-medikationsplan" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Medikation List Medikationsplan" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Der Medikationsplan wird durch eine List-Ressource abgebildet. \nDiese enthält 0..* Einträge (List.entry), wobei jedes List.entry.item genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) beinhaltet.\nDie Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. \nJeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Der Medikationsplan wird durch eine List-Ressource abgebildet und enthält:\n- 0..* Einträge (List.entry). \nJedes List.entry.item enhält genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest).\nDie Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. \nJeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [
@@ -966,7 +966,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-bundle-medikationsplan" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das Bundle vom Typ Searchset bestehend aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus\n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das Medikationsplan-Bundle vom Typ Searchset enthält: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus\n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n- 1..1 Patient\n- 1..* Authors" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [
@@ -1039,7 +1039,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-emed-bundle-medikationsplantx" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Medikation Transaction Bundle Medikationsplan" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n\nAlle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das Medikationsplan-Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und enthält: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n\nAlle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ] ;
        fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "Medikationsplan" ]
      ], [

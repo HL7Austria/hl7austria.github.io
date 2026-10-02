@@ -488,9 +488,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <h3 id="sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</h3>
 
-  <!-- Todo:  Wording im UC "anzeigen" statt lesen. ändern? akl 25.09.2026 -->
-
-<p>Plan-Read dient dem Abruf des aktuellen Medikationsplans in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
+<p><em>Plan-Read</em> dient dem Abruf des aktuellen Medikationsplans in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
 
 <p><a name="l494">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein <strong>temporäres</strong> <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
 
@@ -508,16 +506,16 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 <a href="plantuml/UC_eMed_01_01.svg"><img src="plantuml/UC_eMed_01_01.svg" alt="overview" style="width:35%;" class="mx-auto"/></a>
 <br/></p>
 
-<div class="dragon">
+  <!-- <div class="dragon">
 <p class="note-to-balloters">
-Offene Punkte:<br/>
+Offene Punkte:<br>
 Fehlercodes sind noch zu definieren.
 </p>
-</div>
+</div>  Todo: werden von uns gar nicht definiert, Stand 2.10. akl -->
 
 <h4 id="custom-operations">Custom Operations</h4>
 
-<p><a name="l569">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+<p><a name="l563">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
 
 <h4 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h4>
 
@@ -566,9 +564,9 @@ Fehlercodes sind noch zu definieren.
 
 <h3 id="sub_uc_emed_01_02---historische-medikationsplanversion-suchen-plan-history-search">Sub_UC_eMed_01_02 - Historische Medikationsplanversion suchen (Plan-History-Search)</h3>
 
-<p>Bei der Plan-History-Search rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus. Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.</p>
+<p>Bei der <em>Plan-History-Search</em> rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus. Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.</p>
 
-<p>Beim Plan-History-Search erfolgt <strong>keine Änderung</strong> der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.</p>
+<p>Beim <em>Plan-History-Search</em> erfolgt <strong>keine Änderung</strong> der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.</p>
 
 <h4 id="suchparameter">Suchparameter</h4>
 
@@ -607,7 +605,7 @@ Offene Punkte: <br/>in Arbeit.
   <!-- <div class="dragon">
 <p class="note-to-balloters">
 Offene Frage:<br>
-- Ist Plan-History-Search ein GET mit _include=* oder eine Custom Operation?<br>
+- Ist *Plan-History-Search* ein GET mit _include=* oder eine Custom Operation?<br>
 - Können bei einem GET _history beliebige Suchparameter definiert werden?<br>
 </p>
 </div> TODO: Annahme treffen akl 25.09.26 -->
@@ -655,14 +653,24 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
 
 <h3 id="sub_uc_emed_01_04---medikationsplaneinträge-suchen-planentry-search">Sub_UC_eMed_01_04 - Medikationsplaneinträge suchen (Planentry-Search)</h3>
 
-<p><strong>Planentry-Search</strong> dient der gezielten Suche nach Medikationsplaneintragsversionen. Als Medikationsplaneintrag gilt eine im Medikationsplan referenzierte Version einer <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
+<p><strong>Planentry-Search</strong> dient der gezielten Suche nach Medikationsplaneinträgen, unabhängig von dereren referenzierenden Medikationsplanversion. Als Medikationsplaneintrag gilt eine in einer Medikationsplanversion referenzierte <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
 
-<p>Die Suche ermöglicht berechtigten Akteuren den Zugriff auf aktuelle und historische Medikationsplaneinträge unabhängig von einer bestimmten Medikationsplanversion.</p>
+<p><em>Planentry-Search</em> ermöglicht den Zugriff auf aktuelle und historische Versionen von Medikationsplaneinträge und somit die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.</p>
 
-<p>Die Historie ermöglicht die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.</p>
+<h4 id="suchparameter-1">Suchparameter</h4>
 
-<p><br/>
-Die gefundenen Medikationsplaneinträge können anschließend als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:</p>
+<p>Die Suche nach Medikationsplaneinträgen erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:<br/></p>
+<ul>
+  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
+  <li><strong>Einnahmezeitraum</strong></li>
+  <li><strong>Erstellungszeitpunkt</strong></li>
+  <li><strong>Status</strong>: <a href="ValueSet-PlaneintragStatusVS.html">Value Set</a></li>
+  <li><strong>StatusReason</strong>: <a href="ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html">Value Set</a></li>
+  <li><strong>Historisch oder aktuell</strong> (_history)
+  <!-- * Erstellender GDA? Todo akl 2.10. --></li>
+</ul>
+
+<p>Die gefundenen Medikationsplaneinträge können als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:</p>
 
 <ul>
   <li>die zugehörigen Medikationsplanversionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---historische-medikationsplanversion-suchen-plan-history-search">Plan-History-Search</a>)</li>
@@ -676,18 +684,7 @@ Offene Punkte:<br/>
 - Sind die Referenzen in Geplanten Abgaben und Durchgeführten Abgaben versioniert?<br/>
 </p>
 </div>
-
-<h4 id="suchparameter-1">Suchparameter</h4>
-
-<p>Die Suche nach Medikationsplaneinträgen erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:<br/></p>
-<ul>
-  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
-  <li><strong>Einnahmezeitraum</strong></li>
-  <li><strong>Erstellungszeitpunkt</strong></li>
-  <li><strong>Status</strong>: <a href="ValueSet-PlaneintragStatusVS.html">Value Set</a></li>
-  <li><strong>StatusReason</strong>: <a href="ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html">Value Set</a></li>
-  <li><strong>Historisch oder aktuell</strong> (_history)</li>
-</ul>
+<p>  <!-- Todo: akl 2.10. dzt. Annahme: nein --></p>
 
 <h4 id="ablauf-4">Ablauf</h4>
 
@@ -758,7 +755,7 @@ Offene Punkte: <br/>$plan-history-directory-search: in Arbeit.
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Oct 1, 2026 21:19+0000">2026-10-01</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Oct 2, 2026 13:24+0000">2026-10-02</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -11,7 +11,7 @@
   <name value="ELGAeMedikationR4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-01T21:19:24+00:00"/>
+  <date value="2026-10-02T13:24:17+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -581,7 +581,7 @@
         <reference value="StructureDefinition/at-elga-emed-list-medikationsplan"/>
       </reference>
       <name value="AT ELGA e-Medikation List Medikationsplan"/>
-      <description value="Der Medikationsplan wird durch eine List-Ressource abgebildet. &#xA;Diese enthält 0..* Einträge (List.entry), wobei jedes List.entry.item genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest) beinhaltet.&#xA;Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. &#xA;Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags."/>
+      <description value="Der Medikationsplan wird durch eine List-Ressource abgebildet und enthält:&#xA;- 0..* Einträge (List.entry). &#xA;Jedes List.entry.item enhält genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest).&#xA;Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. &#xA;Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags."/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
     </resource>
@@ -664,7 +664,7 @@
         <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
       </reference>
       <name value="AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan"/>
-      <description value="Das Bundle vom Typ Searchset bestehend aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus&#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung"/>
+      <description value="Das Medikationsplan-Bundle vom Typ Searchset enthält: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus&#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung&#xA;- 1..1 Patient&#xA;- 1..* Authors"/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
     </resource>
@@ -722,7 +722,7 @@
         <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
       </reference>
       <name value="AT ELGA e-Medikation Transaction Bundle Medikationsplan"/>
-      <description value="Das Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den ELGA Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und besteht aus: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung&#xA;&#xA;Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert."/>
+      <description value="Das Medikationsplan-Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und enthält: &#xA;- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus &#xA;- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung&#xA;&#xA;Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert."/>
       <exampleBoolean value="false"/>
       <groupingId value="Medikationsplan"/>
     </resource>

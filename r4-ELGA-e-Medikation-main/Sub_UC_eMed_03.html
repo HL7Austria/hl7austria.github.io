@@ -465,68 +465,93 @@ h4 + .tabs {
 
   <!-- Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03) -->
 
+<p>Dieser technische Use Case beschreibt den lesenden Zugriff <a href="actors.html#rollen-und-berechtigungen">berechtigter Akteure</a> auf:</p>
+
+<ul>
+  <li><a href="Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Geplante Abgaben</a>, um vorgesehene Arzneimittelabgaben einzusehen,</li>
+  <li><a href="Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Durchgeführte Abgaben</a>, um bereits erfolgte Arzneimittelabgaben einzusehen</li>
+  <li><a href="Sub_UC_eMed_03.html#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search">Geplante und Durchgeführte Abgaben mit e-Med Groupidentifier</a>, um die zu einem e-Rezept zugehörigen <em>Gepanten Abgaben</em> und <em>Durchgeführten Abgaben</em> abzurufen zu können.</li>
+</ul>
+
+<p>Für ELGA-Teilnehmer und deren Vertretungen erfolgt der lesende Zugriff auf <em>Gepanten Abgaben</em> und <em>Durchgeführten Abgaben</em> über das ELGA-Zugangsportal.</p>
+
+<p>Für die übrigen Akteure erfolgt der lesende Zugriff über die e-Medikations-Schnittstelle des jeweiligen GDA-Systems.</p>
+
+<p>Dabei werden folgende <strong>Zugriffsarten</strong> unterschieden:</p>
+
+<ul>
+  <li>
+    <p><a name="l465">​</a><strong>Zugriff mit Kontaktbestätigung</strong>:
+Der Standardzugriff erfolgt nach nach <strong>Kontaktbestätigung</strong> des ELGA-Teilnehmers (z.B. mittels e-card). Dadurch erhält der GDA einen, seiner Rolle entsprechenden ELGA-Zugriff, inkl. lesenden Zugriff auf alle <em>Geplanten Abgaben</em> (<a href="Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Prescription-Search</a>) und auf alle <em>Durchgeführten Abgaben</em> (<a href="Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Dispense-Search</a>) und kann entsprechende Arzneimittelabgaben durchführen und dokumentieren (siehe <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01---durchgeführte-abgabe-schreiben">Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben</a>). Weiters kann der Medikationsplan des ELGA-Teilnehmers abgerufen werden, um die die gesamte Medikation beurteilen zu können, oder OTC-Abgaben dokumentiert werden.</p>
+  </li>
+  <li>
+    <p><strong>Zugriff mittels <em>e-Med GroupIdentifier</em></strong>:
+Alternativ steht ohne Patientenkontakt der <strong>Zugriff mittels <em>e-Med GroupIdentifier</em></strong> (z.B. über den DataMatrix-Code eines e-Rezepts) zur Verfügung (<a href="Sub_UC_eMed_03.html#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search">GroupIdentifier-Search</a>). Dieser ermöglicht ausschließlich einen eingeschränkten ELGA-Zugriff auf die dem <em>e-Med GroupIdentifier</em> zugeordneten <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> und wird in <a href="Sub_UC_eMed_03.html">Sub_UC_eMed_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a> beschrieben.</p>
+  </li>
+</ul>
+
+<div class="hinweisbox">
+ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im <a href="Sub_UC_eMed_03.html">UC_eMed_03 Geplante und durchgeführte Abgaben lesen</a> beschrieben.<br/> 
+Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert. 
+</div>
+  <!-- Todo: Link korrigieren, Link zu allgemeinen BES-UCs ergänzen akl 2.10.2026 -->
+
 <h3 id="sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</h3>
 
-<p>Ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> kann <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a> eines ELGA-Teilnehmers abrufen, um verordnete (rezeptierte) Arzneimittel einzusehen.</p>
+<p><em>Prescription-Search</em> dient dem Suche nach <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a> eines ELGA-Teilnehmers, um vorgesehene Arzneimittelabgaben einzusehen. Als <em>Geplante Abgabe</em> gilt eine <em>MedicationRequest</em>-Ressource mit <em>category = "Geplante Abgabe"</em>.</p>
 
-<p>ELGA-Teilnehmer können <em>Geplante Abgaben</em> über das Zugangsportal einsehen.</p>
+<p><em>Geplante Abgaben</em> bilden einige Inhalte des e-Rezepts ab. Wurden mehrere Arzneimittel verordnet und sind demselben e-Rezept zugeordnet, sind die zugehörigen <em>Geplanten Abgaben</em> mit demselben <em>e-Med GroupIdentifier</em> versehen, den auch das e-Rezept mitführt (bildet damit die Rezept-Klammer).</p>
 
-<p><em>Geplante Abgaben</em> bilden die Inhalte des e-Rezepts ab. Wurden mehrere Arzneimittel verordnet und sind demselben e-Rezept zugeordnet, sind die zugehörigen <em>Geplanten Abgaben</em> mit demselben <em>e-Med GroupIdentifier</em> versehen, den auch das e-Rezept mitführt (bildet damit die Rezept-Klammer).</p>
+<h4 id="suchparameter">Suchparameter</h4>
 
-<p><a name="l442">​</a>Der <strong>Standardzugriff</strong> (<em>Prescription-Search</em>) erfolgt nach <strong>Kontaktbestätigung</strong> des ELGA-Teilnehmers (z.B. mittels e-card). Der GDA erhält dadurch lesenden Zugriff auf die e-Medikation inkl. aller <em>Geplanten Abgaben</em> und kann entsprechende Arzneimittelabgaben durchführen und dokumentieren (siehe <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01---durchgeführte-abgabe-schreiben">Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben</a>). Zusätzlich kann der GDA auf <em>Durchgeführte Abgaben</em> und den <em>Medikationsplan</em> zugreifen, um die <em>Geplanten Abgaben</em> im Kontext der gesamten Medikation zu beurteilen. 
-  <!-- TODO: Link auf Medikationsplan lesen einfügen --></p>
+<p>Die Suche nach <em>Geplanten Abgaben</em> erfolgt mittels <strong>GET</strong> unter Angabe geeigneter Suchparameter:</p>
+<ul>
+  <li>alle (ohne Einschränkung)   <!-- TODO sinnvoll? akl 2.10. --></li>
+  <li>in einem bestimmten Zeitraum erfasste</li>
+  <li>mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (bei Wirkstoff werden auch Magistrale Zubereitungen durchsucht)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>mit einem bestimmten <a href="ValueSet-GeplanteAbgabeStatusVS.html">status</a>: [active</td>
+          <td>completed</td>
+          <td>entered-in-error</td>
+          <td>stopped</td>
+          <td>cancelled ] (z.B. alle offenen)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>mit einem bestimmten <em>e-Med GroupIdentifier</em> 
+  <!-- * Erstellender GDA? Todo akl 2.10. --></li>
+</ul>
 
-<p>Als <strong>alternative Zugriffsart</strong> zur Kontaktbestätigung steht der <strong>Zugriff mittels <em>e-Med GroupIdentifier</em></strong> (z.B. über den DataMatrix-Code eines e-Rezepts) zur Verfügung (<em>GroupIdentifier-Search</em>). Dieser ermöglicht ausschließlich einen eingeschränkten ELGA-Zugriff auf die dem e-Med GroupIdentifier zugeordneten <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> und wird in <a href="Sub_UC_eMed_03.html">Sub_UC_eMed_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a> beschrieben.</p>
+<p>Die gefundenen <em>Geplanten Abgaben</em> können als Ausgangspunkt für weitere Abfragen verwendet werden:</p>
+<ul>
+  <li>zugehöriger Medikationsplaneintrag   <!-- nur aktuelle Todo akl 2.10. --> / zugehörige Medikationsplanversion</li>
+  <li>zugehörige <em>Durchgeführte Abgaben</em> (inkl. Status, auch Leerabgaben oder Substitutionen)</li>
+</ul>
 
-<p>Bei <strong>Prescription-Search</strong> stellt die Fachanwendung alle <em>MedicationRequest</em>-Ressourcen mit der Kategorie <em>Geplante Abgabe</em> des ELGA-Teilnehmers bereit, die den angegebenen Suchkriterien entsprechen.</p>
+<p>Von ELGA-Teilnehmer:innen gelöschte <em>Geplanten Abgaben</em> stehen nicht mehr zur Verfügung.</p>
 
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li>Der GDA führt ein <strong>GET</strong> auf <strong>MedicationRequest</strong> mit der Kategorie <strong>Geplante Abgabe</strong> aus.<br/> Folgende Suchparameter werden unterstützt:
-    <ul>
-      <li>Zeitraum der Erfassung der <em>Geplanten Abgabe</em></li>
-      <li>Medikation: PZN/Name bzw. Wirkstoff
-    <!-- - Bei Angabe eines Wirkstoffs werden Wirkstoff-Angaben und Magistrale Zubereitungen durchsucht. --></li>
-      <li>Einnahmezeitraum der Medikation der <em>Geplanten Abgabe</em> (extension:effectiveDosePeriod)</li>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td><a href="ValueSet-GeplanteAbgabeStatusVS.html">status</a> der <em>Geplanten Abgabe</em> [active</td>
-              <td>completed</td>
-              <td>entered-in-error</td>
-              <td>stopped</td>
-              <td>cancelled ]</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
-      <li><em>Geplante Abgabe</em> zu einer <em>Durchgeführten Abgabe</em></li>
-      <li><em>id</em> des Planeintrags, auf welchem die <em>Geplante Abgabe</em> basiert</li>
-      <li>alle <em>Geplanten Abgaben</em> zu einem <em>e-Med groupIdentifier</em></li>
-    </ul>
-  </li>
-  <li>Die Fachanwendung ermittelt alle den Suchkriterien entsprechenden <em>Geplanten Abgaben</em>.</li>
-  <li>Die Fachanwendung liefert das Suchergebnis als <strong>Bundle (type = searchset)</strong> mit sämtlichen den Suchkriterien entsprechenden <em>MedicationRequest</em>-Ressourcen.</li>
-  <li>Werden keine passenden Ressourcen gefunden, wird ein <strong>leeres Searchset-Bundle</strong> zurückgegeben.</li>
-  <li>Kann die Anfrage nicht verarbeitet werden, antwortet die Fachanwendung mit einer geeigneten <strong>HTTP-4xx</strong>-Antwort und einem <strong>OperationOutcome</strong>.</li>
-  <li>Optional kann der GDA zusätzlich den <em>Medikationsplan</em> oder <em>Durchgeführte Abgaben</em> abrufen.</li>
+  <li>Der GDA führt ein <strong>GET</strong> auf den Prescription-Search-Endpunkt mit den gewünschten Suchparametern aus (<em>MedicationRequest</em> mit <em>category = "Geplante Abgabe"</em>)</li>
+  <li>Die Fachanwendung ermittelt die den Suchkriterien entsprechenden <em>Geplanten Abgaben</em>.</li>
+  <li>Die Fachanwendung liefert das Suchergebnis als als Bundle vom Typ <em>searchset</em> zurück.</li>
+  <li>Werden keine passenden Ressourcen gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.</li>
+  <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
+  <li>Optional kann der GDA den <em>Medikationsplan</em> oder <em>Durchgeführte Abgaben</em> zur fachlichen Beurteilung abrufen.</li>
 </ol>
 
 <div class="dragon">
 <p class="note-to-balloters">
 Offene Frage:<br/>
-ad: *Geplante Abgabe* zu einer Durchgeführten Abgabe:<br/>
-- Reverse-Include erlaubt oder eigene Operation?
-</p>
-</div>
-
-<div class="dragon">
-<p class="note-to-balloters">
-Offene Frage:<br/>
-ad: Suchparameter:<br/>
-- Gültigkeitszeitraum des Rezepts (validityPeriod)? 
+ad: Suchkritierien: <br/>
+- Geplante Abgabe zu einer Durchgeführten Abgabe: Reverse-Include erlaubt oder eigene Operation? <br/>
+- Gültigkeitszeitraum des Rezepts (validityPeriod)? <br/>
+- Erstellender GDA?<br/>
 </p>
 </div>
 
@@ -534,27 +559,11 @@ ad: Suchparameter:<br/>
 
 <p><a href="plantuml/UC_eMed_03_01.svg"><img src="plantuml/UC_eMed_03_01.svg" alt="overview" style="width:50%;" class="mx-auto"/></a></p>
 
-  <!-- ###### Suchparameter
-
-Mögliche Suchparamter: (in Arbeit)
-- category
-- status
-- validityPeriod
-- groupIdentifier -->
-
 <h3 id="sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</h3>
 
-<p>Ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> kann <em>Durchgeführte Abgaben</em> eines ELGA-Teilnehmers abrufen, um bereits dokumentierte Arzneimittelabgaben einzusehen.</p>
+<p><em>Dispense-Search</em> dient dem Suche nach <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a> eines ELGA-Teilnehmers, um bereits dokumentierte Arzneimittelabgaben einzusehen.</p>
 
-<p>ELGA-Teilnehmer können <em>Durchgeführte Abgaben</em> über das Zugangsportal einsehen.</p>
-
-<p><em>Durchgeführten Abgaben</em> spiegeln den Status der Abgaben des e-Rezepts wider. Eine <em>Durchgeführte Abgabe</em>, die auf einer <em>Geplanten Abgabe</em> basiert, enthält den <em>e-Med GroupIdentifier</em> der zugehörigen <em>Geplanten Abgabe</em> enthalten. Dadurch können zusammengehörige <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> über denselben <em>e-Med GroupIdentifier</em> identifiziert und gemeinsam abgerufen werden.</p>
-
-<p>Der <strong>Standardzugriff</strong> (<em>Dispense-Search</em>) auf <em>Durchgeführte Abgaben</em> erfolgt nach <strong>Kontaktbestätigung</strong> des ELGA-Teilnehmers (z.B. mittels e-card). Dadurch erhält der GDA lesenden Zugriff auf alle <em>Durchgeführten Abgaben</em> des ELGA-Teilnehmers. 
-Zusätzlich kann der GDA lesend auf <em>Geplante Abgaben</em> und den <em>Medikationsplan</em> zugreifen, um die <em>Durchgeführten Abgaben</em> im Kontext der gesamten Medikation zu beurteilen.
-  <!-- TODO: Link auf Medikationsplan lesen + Geplante Abgaben lesen einfügen --></p>
-
-<p>Als <strong>alternative Zugriffsart</strong> zur Kontaktbestätigung steht der <strong>Zugriff mittels <em>e-Med GroupIdentifier</em></strong> (z.B. über den DataMatrix-Code eines e-Rezepts) zur Verfügung (<em>GroupIdentifier-Search</em>). Dieser ermöglicht ausschließlich einen eingeschränkten ELGA-Zugriff auf die dem e-Med GroupIdentifier zugeordneten <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> und wird in <a href="Sub_UC_eMed_03.html">Sub_UC_eMed_03 - Geplante und Durchgeführte Abgaben mit e-Med GroupIdentifier lesen</a> beschrieben.</p>
+<p><em>Durchgeführten Abgaben</em> spiegeln den Status der Abgaben des e-Rezepts wider. Eine <em>Durchgeführte Abgabe</em>, die auf einer <em>Geplanten Abgabe</em> basiert, enthält den <em>e-Med GroupIdentifier</em> der zugehörigen <em>Geplanten Abgabe</em>. Dadurch können zusammengehörige <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> über denselben <em>e-Med GroupIdentifier</em> identifiziert und gemeinsam abgerufen werden.</p>
 
 <p>Bei <strong>Dispense-Search</strong> stellt die Fachanwendung alle <em>MedicationDispense</em>-Ressourcen des ELGA-Teilnehmers bereit, die den angegebenen Suchkriterien entsprechen.</p>
 
@@ -586,7 +595,7 @@ Zusätzlich kann der GDA lesend auf <em>Geplante Abgaben</em> und den <em>Medika
   <li>Die Fachanwendung liefert das Suchergebnis als <strong>Bundle (type = searchset)</strong> mit den entsprechenden <em>MedicationDispense</em>-Ressourcen.</li>
   <li>Werden keine passenden Ressourcen gefunden, wird ein <strong>leeres Searchset-Bundle</strong> zurückgegeben.</li>
   <li>Kann die Anfrage nicht verarbeitet werden, antwortet die Fachanwendung mit einer geeigneten <strong>HTTP-4xx</strong>-Antwort und einem <strong>OperationOutcome</strong>.</li>
-  <li>Optional kann der GDA zusätzlich den <em>Medikationsplan</em> oder <em>Geplante Abgaben</em> abrufen.</li>
+  <li>Optional kann der GDA den <em>Medikationsplan</em> oder <em>Geplante Abgaben</em> zur fachlichen Beurteilung abrufen.</li>
 </ol>
 
 <div class="dragon">
@@ -637,7 +646,7 @@ Mögliche Suchparamter: (in Arbeit)
 <h5 id="ablauf-2">Ablauf</h5>
 
 <ol>
-  <li><a name="l967">​</a>Der GDA führt die Custom Operation <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.GroupIdentifier.Search.html">$groupidentifier-search</a> aus und übermittelt einen <em>e-Med GroupIdentifier</em>.</li>
+  <li><a name="l963">​</a>Der GDA führt die Custom Operation <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.GroupIdentifier.Search.html">$groupidentifier-search</a> aus und übermittelt einen <em>e-Med GroupIdentifier</em>.</li>
   <li>Die Fachanwendung führt eine <strong>Prüfung</strong> des übermittelten <em>e-Med GroupIdentifier</em> durch.</li>
   <li>Ist der <em>e-Med GroupIdentifier</em> gültig, ermittelt die Fachanwendung alle <em>MedicationRequest</em>-Ressourcen der Kategorie <em>Geplante Abgabe</em>, die dem übermittelten <em>e-Med GroupIdentifier</em> entsprechen.
   <!-- 4 Ergibt die Suche mindestens eine offene Geplante Abgabe, ermittelt die Fachanwendung zusätzlich alle zugehörigen MedicationDispense*-Ressourcen mit: dem übermittelten e-Med GroupIdentifier und status = completed oder cancelled --></li>
@@ -680,7 +689,7 @@ Offene Punkte: <br/>$groupidentifier-search: in Arbeit.
 
 <div class="inner-wrapper">
   <p>
-    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Thu, Oct 1, 2026 21:19+0000">2026-10-01</span>
+    IG &copy; 2025+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR&reg; 4.0.1</a>. Generated <span title="Fri, Oct 2, 2026 13:24+0000">2026-10-02</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
