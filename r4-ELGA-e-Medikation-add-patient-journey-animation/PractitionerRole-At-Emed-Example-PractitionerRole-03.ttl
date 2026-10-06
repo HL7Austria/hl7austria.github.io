@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/PractitionerRole/At-Emed-Example-PractitionerRole-03> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "At-Emed-Example-PractitionerRole-03"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole At-Emed-Example-PractitionerRole-03</b></p><a name=\"At-Emed-Example-PractitionerRole-03\"> </a><a name=\"hcAt-Emed-Example-PractitionerRole-03\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html\">AT ELGA Core PractitionerRole Profil</a></p></div><p><b>practitioner</b>: <a href=\"Practitioner-At-Emed-Example-Practitioner-03.html\">Dr. Krankenhaus</a></p><p><b>organization</b>: <a href=\"Organization-At-Emed-Example-Organization-03.html\">Krankenhaus</a></p><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen 107}\">Fachärztin/Facharzt für Chirurgie</span></p><p><b>specialty</b>: <span title=\"Codes:{http://snomed.info/sct 419192003}\">Internal medicine</span></p></div>"
+  ] ;
+  fhir:PractitionerRole.practitioner [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Practitioner/At-Emed-Example-Practitioner-03> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/At-Emed-Example-Practitioner-03" ] ;
+     fhir:Reference.display [ fhir:value "Dr. Krankenhaus" ]
+  ] ;
+  fhir:PractitionerRole.organization [
+     fhir:link <https://fhir.hl7.at/elga/emed/r4/Organization/At-Emed-Example-Organization-03> ;
+     fhir:Reference.reference [ fhir:value "Organization/At-Emed-Example-Organization-03" ] ;
+     fhir:Reference.display [ fhir:value "Krankenhaus" ]
+  ] ;
+  fhir:PractitionerRole.code [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen" ] ;
+       fhir:Coding.code [ fhir:value "107" ] ;
+       fhir:Coding.display [ fhir:value "Fachärztin/Facharzt für Chirurgie" ]
+     ]
+  ] ;
+  fhir:PractitionerRole.specialty [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:419192003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "419192003" ] ;
+       fhir:Coding.display [ fhir:value "Internal medicine" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/emed/r4/PractitionerRole/At-Emed-Example-PractitionerRole-03.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

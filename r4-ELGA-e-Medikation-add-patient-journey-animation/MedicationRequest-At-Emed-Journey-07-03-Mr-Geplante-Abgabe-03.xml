@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+  </meta>
+  <text>
+    <status value="generated"/><div>TODO: Some Narrative</div>
+  </text>
+  <contained>
+    <Medication>
+      <id value="contained-medication-journey-07-03-03"/>
+      <meta>
+        <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"/>
+      </meta>
+      <code>
+        <coding>
+          <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+          <code value="4467812"/>
+          <display value="METAGELAN TR 500MG/ML"/>
+        </coding>
+      </code>
+    </Medication>
+  </contained>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod">
+    <valuePeriod>
+      <start value="2026-03-19"/>
+    </valuePeriod>
+  </extension>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+    <valueMarkdown value="1-1-1-1 | 4 x täglich 40 Tropfen"/>
+  </extension>
+  <status value="active"/>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"/>
+      <code value="2"/>
+      <display value="Geplante Abgabe"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"/>
+      <code value="KASSEN"/>
+      <display value="Kassenrezept"/>
+    </coding>
+  </category>
+  <medicationReference>
+    <reference value="#contained-medication-journey-07-03-03"/>
+  </medicationReference>
+  <subject>
+    <reference value="Patient/At-Emed-Example-Patient-01"/>
+    <display value="Anton Mustermann"/>
+  </subject>
+  <authoredOn value="2026-03-22T16:10:00+00:00"/>
+  <requester>
+    <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-01"/>
+    <display value="Dr. Hausärztin"/>
+  </requester>
+  <basedOn>
+    <reference value="MedicationRequest/At-Emed-Journey-07-02-Mr-Planeintrag-03"/>
+    <display value="Planeintrag 3"/>
+  </basedOn>
+  <groupIdentifier>
+    <value value="WYE82A2G8EEW"/>
+  </groupIdentifier>
+  <dosageInstruction>
+    <extension url="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory"/>
+          <code value="standard"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <sequence value="1"/>
+    <patientInstruction value="Nehmen Sie die Tropfen nach dem Essen ein."/>
+    <timing>
+      <repeat>
+        <frequency value="4"/>
+        <period value="1"/>
+        <periodUnit value="d"/>
+        <when value="MORN"/>
+        <when value="NOON"/>
+        <when value="EVE"/>
+        <when value="NIGHT"/>
+      </repeat>
+    </timing>
+    <doseAndRate>
+      <doseQuantity>
+        <value value="40"/>
+        <unit value="Tropfen"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="{Tropfen}"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosageInstruction>
+  <dispenseRequest>
+    <validityPeriod>
+      <end value="2026-04-20"/>
+    </validityPeriod>
+    <numberOfRepeatsAllowed value="0"/>
+    <quantity>
+      <value value="2"/>
+      <unit value="Packung"/>
+    </quantity>
+  </dispenseRequest>
+</MedicationRequest>
