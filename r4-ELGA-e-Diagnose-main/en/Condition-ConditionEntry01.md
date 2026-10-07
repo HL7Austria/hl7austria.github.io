@@ -6,7 +6,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **AT ELGA Reported (Fremdangabe)**: true
 
-**identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/123456789
+**identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/1234
 
 **clinicalStatus**: Active
 
@@ -16,19 +16,19 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
-**onset**: 2024-06-01
+**onset**: 2022-06-01
 
 **recordedDate**: 2026-03-03 00:00:00+0000
 
-**recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**recorder**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
-**asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**asserter**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
 **note**: 
 
 > 
 
-Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
+Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0.
 
 
 
@@ -48,7 +48,7 @@ Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
   }],
   "identifier" : [{
     "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier",
-    "value" : "123456789"
+    "value" : "1234"
   }],
   "clinicalStatus" : {
     "coding" : [{
@@ -72,7 +72,7 @@ Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "onsetDateTime" : "2024-06-01",
+  "onsetDateTime" : "2022-06-01",
   "recordedDate" : "2026-03-03T00:00:00+00:00",
   "recorder" : {
     "reference" : "Practitioner/PractitionerExample"
@@ -81,7 +81,7 @@ Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.
     "reference" : "Practitioner/PractitionerExample"
   },
   "note" : [{
-    "text" : "Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0."
+    "text" : "Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0."
   }]
 }
 

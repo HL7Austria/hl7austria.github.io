@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="ProcedureListSearchSet01"/>
+  <language value="en"/>
+  <type value="searchset"/>
+  <total value="1"/>
+  <link>
+    <relation value="self"/>
+    <url value="https://example.org/fhir/List?patient=Patient/PatientExample&amp;code=http://loinc.org|47519-4&amp;_include=*"/>
+  </link>
+  <entry>
+    <fullUrl value="https://example.org/fhir/List/ProcedureList01"/>
+    <resource>
+      <List>
+        <id value="ProcedureList01"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+        </meta>
+        <language value="en"/>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="List_ProcedureList01"> </a><p class="res-header-id"><b>Generated Narrative: List ProcedureList01</b></p><a name="ProcedureList01"> </a><a name="hcProcedureList01"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-elga-ediag-list.html">AT ELGA e-Diagnose List</a></p></div><table class="clstu"><tr><td>Date: 2026-03-09 10:00:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: History of Procedures Document </td></tr><tr><td>Subject: <a href="Patient-PatientExample.html">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></td><td>Source: <a href="Practitioner-PractitionerExample.html">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></td></tr></table><table class="grid"><tr style="backgound-color: #eeeeee"><td><b>Items</b></td></tr><tr><td><a href="Procedure-ProcedureEntry01.html">Procedure Colonoscopy</a></td></tr></table></div>
+        </text>
+        <status value="current"/>
+        <mode value="working"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="47519-4"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/PatientExample"/>
+        </subject>
+        <date value="2026-03-09T10:00:00+00:00"/>
+        <source>
+          <reference value="Practitioner/PractitionerExample"/>
+        </source>
+        <entry>
+          <item>
+            <reference value="Procedure/ProcedureEntry01"/>
+          </item>
+        </entry>
+      </List>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="https://example.org/fhir/Procedure/ProcedureEntry01"/>
+    <resource>
+      <Procedure>
+        <id value="ProcedureEntry01"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"/>
+        </meta>
+        <language value="en"/>
+        <text>
+          <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><a name="Procedure_ProcedureEntry01"> </a><p class="res-header-id"><b>Generated Narrative: Procedure ProcedureEntry01</b></p><a name="ProcedureEntry01"> </a><a name="hcProcedureEntry01"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-at-elga-ediag-procedure.html">AT ELGA e-Diagnose Procedure</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>status</b>: Completed</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 73761001}">Colonoscopy</span></p><p><b>subject</b>: <a href="Patient-PatientExample.html">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>performed</b>: 2025-09-23 09:30:00+0200</p><p><b>recorder</b>: <a href="Practitioner-PractitionerExample.html">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href="Practitioner-PractitionerExample.html">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p></div>
+        </text>
+        <extension url="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported">
+          <valueBoolean value="true"/>
+        </extension>
+        <status value="completed"/>
+        <code>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="73761001"/>
+            <display value="Colonoscopy"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/PatientExample"/>
+        </subject>
+        <performedDateTime value="2025-09-23T09:30:00+02:00"/>
+        <recorder>
+          <reference value="Practitioner/PractitionerExample"/>
+        </recorder>
+        <asserter>
+          <reference value="Practitioner/PractitionerExample"/>
+        </asserter>
+      </Procedure>
+    </resource>
+    <search>
+      <mode value="include"/>
+    </search>
+  </entry>
+</Bundle>

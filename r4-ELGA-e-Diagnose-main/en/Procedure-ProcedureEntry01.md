@@ -4,7 +4,7 @@
 
 Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
 
-**AT ELGA Reported (Fremdangabe)**: false
+**AT ELGA Reported (Fremdangabe)**: true
 
 **status**: Completed
 
@@ -14,9 +14,9 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
 
 **performed**: 2025-09-23 09:30:00+0200
 
-**recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**recorder**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
-**asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**asserter**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
 
 
@@ -31,7 +31,7 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
   },
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",
-    "valueBoolean" : false
+    "valueBoolean" : true
   }],
   "status" : "completed",
   "code" : {

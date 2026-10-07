@@ -2,9 +2,6 @@
 
 ## Resource Profile: AT ELGA e-Diagnose AllergyIntolerance 
 
- 
-Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
-
 ### Defintion
 
 AllergyIntolerance dient der Dokumentation einer klinischen Einschätzung einer Allergie oder Intoleranz sowie einer bestehenden oder potenziellen Überempfindlichkeit gegenüber einer bestimmten Substanz oder Substanzklasse und des damit verbundenen Risikos einer unerwünschten Reaktion bei Exposition.
@@ -37,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -2,9 +2,6 @@
 
 ## ValueSet: AT e-Diagnose Condition Code (Experimental) 
 
- 
-Value-Set für die Codierung von Diagnosen. 
-
  **References** 
 
 * [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
@@ -40,7 +37,7 @@ Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Healt
   "title" : "AT e-Diagnose Condition Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

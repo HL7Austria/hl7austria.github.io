@@ -2,9 +2,6 @@
 
 ## CodeSystem: Business Identifier Codes 
 
- 
-Dieses CodeSystem enthält kein Konzepte sondern dient als System für den Identifier einzelner Einträge in der e-Diagnose. 
-
 This Code system is referenced in the definition of the following value sets:
 
 * This CodeSystem is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
@@ -27,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "Business Identifier Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

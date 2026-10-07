@@ -16,9 +16,9 @@ Profile: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-edi
 
 **recordedDate**: 2026-03-03 00:00:00+0000
 
-**recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**recorder**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
-**asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**asserter**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
 > **reaction****AT ELGA Reaktionszeit**: <6 Stunden**manifestation**: Exanthem, Emesis**onset**: 1983-03-01**note**: 
 > 

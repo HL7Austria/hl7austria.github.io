@@ -4,17 +4,18 @@
 
 Profile: [HL7® AT Core Practitioner Profile](https://build.fhir.org/ig/HL7Austria/HL7-AT-FHIR-Core-R4/StructureDefinition-at-core-practitioner.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.3.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321
+Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)
 
-**active**: true
+-------
 
-**name**: Melanie Musterärztin 
-
-**telecom**: [office@musterpraxis.at](mailto:office@musterpraxis.at), [+436500987654321](tel:+436500987654321)
-
-**address**: Mozartgasse 8 Stiege 2 St. Wolfgang Salzburg 5350 AUT (work)
-
-**gender**: Female
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Active: | true | Gender: | Female |
+| Other Id: | `urn:oid:1.2.40.0.10.1.4.3.2`/987654321 | | |
+| Contact Detail | * [office@musterpraxis.at](mailto:office@musterpraxis.at)
+* [+436500987654321](tel:+436500987654321)
+* Mozartgasse 8 Stiege 2 St. Wolfgang Salzburg 5350 AUT (work)
+ | | |
 
 
 

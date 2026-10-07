@@ -2,9 +2,6 @@
 
 ## Resource Profile: AT ELGA e-Diagnose RelatedPerson 
 
- 
-Das AT e-Diagnose RelatedPerson-Profil leitet sich vom RelatedPerson-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
-
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) and [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
@@ -32,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-rel
   "name" : "AtEdiagRelatedPerson",
   "title" : "AT ELGA e-Diagnose RelatedPerson",
   "status" : "active",
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -2,9 +2,6 @@
 
 ## ValueSet: AT e-Diagnose Procedure Code (Experimental) 
 
- 
-Value-Set für die Codierung von Prozeduren. 
-
  **References** 
 
 * [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
@@ -37,7 +34,7 @@ Value-Set für die Codierung von Prozeduren.
   "title" : "AT e-Diagnose Procedure Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

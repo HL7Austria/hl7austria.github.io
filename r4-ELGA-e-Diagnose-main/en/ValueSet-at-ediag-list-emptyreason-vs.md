@@ -2,9 +2,6 @@
 
 ## ValueSet: ELGA List Empty Reason Value Set (Experimental) 
 
- 
-ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste. 
-
  **References** 
 
 * [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
@@ -33,7 +30,7 @@ ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.
   "title" : "ELGA List Empty Reason Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

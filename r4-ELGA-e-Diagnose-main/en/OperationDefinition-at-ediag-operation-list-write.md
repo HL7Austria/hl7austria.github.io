@@ -2,9 +2,6 @@
 
 ## OperationDefinition: e-Diagnose Operation $write 
 
- 
-Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird. 
-
 ### Wer ruft diese Operation in welchem Zusammenhang auf?
 
 Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. Allergien, Diagnosen, Prozeduren) aktualisieren (Einträge werden hinzugefügt/entfernt) oder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.
@@ -40,7 +37,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
   "title" : "e-Diagnose Operation $write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -2,12 +2,14 @@
 
 ## Example List: Procedure-Summary-Liste (notstarted)
 
+version: 1
+
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Date: 2026-03-03 08:00:00+0000 | Mode: Working List | Status: Current | Code: History of Procedures Document |
-| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
+| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md) | Source:[Device: type = Gerät](Device-DeviceExample.md) | | |
 
 
 
@@ -19,6 +21,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "resourceType" : "List",
   "id" : "ProcedureListEmpty",
   "meta" : {
+    "versionId" : "1",
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
   "status" : "current",

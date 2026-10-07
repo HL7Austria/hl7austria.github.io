@@ -2,12 +2,14 @@
 
 ## Example List: Allergie Summary-Liste mit einem Summary-Eintrag
 
+version: 2
+
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-03-03 00:00:00+0000 | Mode: Working List | Status: Current | Code: Allergies and adverse reactions Document |
-| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
+| Date: 2026-03-03 08:10:00+0000 | Mode: Working List | Status: Current | Code: Allergies and adverse reactions Document |
+| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md) | Source:[Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md) | | |
 
 * **Items**: [AllergyIntolerance Amoxicillin](AllergyIntolerance-AllergyEntry01.md)
 
@@ -20,6 +22,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "resourceType" : "List",
   "id" : "AllergyList01",
   "meta" : {
+    "versionId" : "2",
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
   "status" : "current",
@@ -33,7 +36,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "date" : "2026-03-03T00:00:00+00:00",
+  "date" : "2026-03-03T08:10:00+00:00",
   "source" : {
     "reference" : "Practitioner/PractitionerExample"
   },

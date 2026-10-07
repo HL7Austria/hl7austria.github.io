@@ -14,7 +14,7 @@
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -63,305 +63,8 @@
   }],
   "definition" : {
     "extension" : [{
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "copyrightyear"
-      },
-      {
-        "url" : "value",
-        "valueString" : "2026+"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "releaselabel"
-      },
-      {
-        "url" : "value",
-        "valueString" : "ci-build"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "display-warnings"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "autoload-resources"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-liquid-template"
-      },
-      {
-        "url" : "value",
-        "valueString" : "template/liquid"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-liquid-template"
-      },
-      {
-        "url" : "value",
-        "valueString" : "input/liquid"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-qa"
-      },
-      {
-        "url" : "value",
-        "valueString" : "temp/qa"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-temp"
-      },
-      {
-        "url" : "value",
-        "valueString" : "temp/pages"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-output"
-      },
-      {
-        "url" : "value",
-        "valueString" : "output"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-suppressed-warnings"
-      },
-      {
-        "url" : "value",
-        "valueString" : "input/ignoreWarnings.txt"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "path-history"
-      },
-      {
-        "url" : "value",
-        "valueString" : "https://fhir.hl7.at/elga/ediag/r4/history.html"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "template-html"
-      },
-      {
-        "url" : "value",
-        "valueString" : "template-page.html"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "template-md"
-      },
-      {
-        "url" : "value",
-        "valueString" : "template-page-md.html"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-contact"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-context"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-copyright"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-jurisdiction"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-license"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-publisher"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-version"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "apply-wg"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "active-tables"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "fmm-definition"
-      },
-      {
-        "url" : "value",
-        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "propagate-status"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "excludelogbinaryformat"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "tabbed-snapshots"
-      },
-      {
-        "url" : "value",
-        "valueString" : "true"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
-        "valueString" : "i18n-default-lang"
-      },
-      {
-        "url" : "value",
-        "valueString" : "en"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.3.0"
     },
     {
       "extension" : [{
@@ -1019,6 +722,22 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Condition-ConditionEntry06.html"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionEntry06"
+      },
+      "name" : "Beispielinstanz einer Diagnose für die Summary",
+      "description" : "Beispiel Diagnose, aktuelle Beschwerden des Patienten",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "Condition-ConditionEntry01.html"
       }],
       "reference" : {
@@ -1051,10 +770,10 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Condition-ConditionEnteredInError.html"
+        "valueUri" : "Condition-ConditionEntry03EnteredInError.html"
       }],
       "reference" : {
-        "reference" : "Condition/ConditionEnteredInError"
+        "reference" : "Condition/ConditionEntry03EnteredInError"
       },
       "name" : "Beispielinstanz einer stornierten Diagnose",
       "description" : "Beispiel einer Diagnose nach Durchführung der $entered-in-error-Operation durch einen GDA",
@@ -1105,7 +824,23 @@
         "reference" : "List/ConditionList02"
       },
       "name" : "Condition Summary-Liste (Zweiter Arztbesuch - fehlerhafter Eintrag)",
-      "description" : "Beispiel einer Summary-Liste während des zweiten Arztbesuchs. Eine neue Diagnose wurde erfasst.Zusätzlich ist ein Eintrag enthalten, der irrtümlich erfasst wurde.",
+      "description" : "Beispiel einer Summary-Liste während des zweiten Arztbesuchs. Eine neue Diagnose wurde erfasst, die allerdings fehlerhaft ist und daher storniert werden muss.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "List"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "List-ConditionList04.html"
+      }],
+      "reference" : {
+        "reference" : "List/ConditionList04"
+      },
+      "name" : "Condition Summary-Liste (Zweiter Arztbesuch - korrigiert)",
+      "description" : "Beispiel einer Summary-Liste, nachdem der stornierte Eintrag durch die korrekt erfasste Diagnose ersetzt wurde.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
@@ -1120,8 +855,8 @@
       "reference" : {
         "reference" : "List/ConditionList03"
       },
-      "name" : "Condition Summary-Liste (Zweiter Arztbesuch - korrigiert)",
-      "description" : "Beispiel einer Summary-Liste nachdem ein Eintrag storniert wurde.",
+      "name" : "Condition Summary-Liste (Zweiter Arztbesuch - nach Stornierung)",
+      "description" : "Beispiel einer Summary-Liste, nachdem die e-Diagnose-Fachanwendung den stornierten Eintrag entfernt hat.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"
     },
     {
@@ -1239,6 +974,102 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ConditionEnteredInErrorParameters01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ConditionEnteredInErrorParameters01"
+      },
+      "name" : "Parameters für $entered-in-error einer Diagnose",
+      "description" : "Beispiel der Eingabeparameter der $entered-in-error-Operation, mit der Dr. Musterärztin die fehlerhaft codierte Diagnose Morbus Crohn (ConditionEntry03) storniert.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-AllergyListWrite01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/AllergyListWrite01"
+      },
+      "name" : "Parameters für $write der Allergy-Summary-Liste (Version 2)",
+      "description" : "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Amoxicillin-Allergie in die Allergy-Summary-Liste aufnimmt.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ConditionListWrite01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ConditionListWrite01"
+      },
+      "name" : "Parameters für $write der Condition-Summary-Liste (Version 2)",
+      "description" : "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Hypertonie in die Condition-Summary-Liste aufnimmt.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ConditionListWrite02.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ConditionListWrite02"
+      },
+      "name" : "Parameters für $write der Condition-Summary-Liste (Version 3)",
+      "description" : "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die (fehlerhaft codierte) Diagnose Morbus Crohn in die Condition-Summary-Liste aufnimmt.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ConditionListWrite03.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ConditionListWrite03"
+      },
+      "name" : "Parameters für $write der Condition-Summary-Liste (Version 5)",
+      "description" : "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die korrekt codierte Diagnose Morbus Crohn in die Condition-Summary-Liste aufnimmt.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ProcedureListWrite01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ProcedureListWrite01"
+      },
+      "name" : "Parameters für $write der Procedure-Summary-Liste (Version 2)",
+      "description" : "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Koloskopie in die Procedure-Summary-Liste aufnimmt.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "List"
       },
       {
@@ -1296,8 +1127,88 @@
       "reference" : {
         "reference" : "Bundle/ConditionSearchSet01"
       },
-      "name" : "SearchSet-Bundle der Diagnosen eines Patienten",
+      "name" : "SearchSet-Bundle aller Diagnosen (Gesamtansicht) eines Patienten",
       "description" : "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-AllergyListSearchSet01.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/AllergyListSearchSet01"
+      },
+      "name" : "SearchSet-Bundle der Allergy-Summary-Liste (Version 2)",
+      "description" : "Beispiel eines SearchSet-Bundles mit der Allergy-Summary-Liste nach dem ersten Arztbesuch inklusive der referenzierten Allergie.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ConditionListSearchSet01.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ConditionListSearchSet01"
+      },
+      "name" : "SearchSet-Bundle der Condition-Summary-Liste (Version 2)",
+      "description" : "Beispiel eines SearchSet-Bundles mit der Condition-Summary-Liste nach dem ersten Arztbesuch inklusive der referenzierten Diagnose.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ConditionListSearchSet02.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ConditionListSearchSet02"
+      },
+      "name" : "SearchSet-Bundle der Condition-Summary-Liste (Version 3)",
+      "description" : "Beispiel eines SearchSet-Bundles mit der Condition-Summary-Liste während des zweiten Arztbesuchs inklusive der referenzierten Diagnosen, darunter der fehlerhaft codierte Eintrag.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ConditionListSearchSet03.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ConditionListSearchSet03"
+      },
+      "name" : "SearchSet-Bundle der Condition-Summary-Liste (Version 4)",
+      "description" : "Beispiel eines SearchSet-Bundles mit der Condition-Summary-Liste, nachdem die e-Diagnose-Fachanwendung den stornierten Eintrag entfernt hat, inklusive der referenzierten Diagnose.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ConditionListSearchSet04.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ConditionListSearchSet04"
+      },
+      "name" : "SearchSet-Bundle der Condition-Summary-Liste (Version 5)",
+      "description" : "Beispiel eines SearchSet-Bundles mit der korrigierten Condition-Summary-Liste inklusive der referenzierten Diagnosen.",
       "exampleBoolean" : true
     },
     {
@@ -1330,6 +1241,22 @@
       },
       "name" : "SearchSet-Bundle der Diagnosen eines Patienten",
       "description" : "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-ProcedureListSearchSet01.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ProcedureListSearchSet01"
+      },
+      "name" : "SearchSet-Bundle der Procedure-Summary-Liste (Version 2)",
+      "description" : "Beispiel eines SearchSet-Bundles mit der Procedure-Summary-Liste nach dem zweiten Arztbesuch inklusive der referenzierten Prozedur.",
       "exampleBoolean" : true
     }],
     "page" : {

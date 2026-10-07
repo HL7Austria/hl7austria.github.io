@@ -2,16 +2,13 @@
 
 ## Resource Profile: AT ELGA e-Diagnose List 
 
- 
-Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen. 
-
 ### Defintion
 
 Die Liste ist ein zentraler Teil der e-Diagnose und umfasst sämtliche Conditions, Procedures oder AllergiesIntolerances-Einträge die durch eine:n GDA als relevant gekennzeichnet wurden. Sie dient der priorisierten Darstellung aktuell versorgungsrelevanter Summary-Einträge und bildet die fachliche Grundlage für die strukturierte Verwendung in der e-Diagnose und Weiterverwendung in nachgelagerten Anwendungen (z.B..: APS). Eine manuelle Sortierung der Einträge in den jeweiligen Listen ist möglich. Die vorgenommene Sortierung wird in der e-Diagnose gespeichert und ist somit für alle anderen Zugriffsberechtigte sichtbar.
 
 **Usages:**
 
-* Examples for this Profile: [List/AllergyList01](List-AllergyList01.md), [List/AllergyListEmpty](List-AllergyListEmpty.md), [List/ConditionList01](List-ConditionList01.md), [List/ConditionList02](List-ConditionList02.md)... Show 4 more, [List/ConditionList03](List-ConditionList03.md), [List/ConditionListEmpty](List-ConditionListEmpty.md), [List/ProcedureList01](List-ProcedureList01.md) and [List/ProcedureListEmpty](List-ProcedureListEmpty.md)
+* Examples for this Profile: [List/AllergyList01](List-AllergyList01.md), [List/AllergyListEmpty](List-AllergyListEmpty.md), [List/ConditionList01](List-ConditionList01.md), [List/ConditionList02](List-ConditionList02.md)... Show 5 more, [List/ConditionList03](List-ConditionList03.md), [List/ConditionList04](List-ConditionList04.md), [List/ConditionListEmpty](List-ConditionListEmpty.md), [List/ProcedureList01](List-ProcedureList01.md) and [List/ProcedureListEmpty](List-ProcedureListEmpty.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-list.json)
 
@@ -36,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-lis
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

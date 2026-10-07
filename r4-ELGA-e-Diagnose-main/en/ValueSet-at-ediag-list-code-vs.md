@@ -2,9 +2,6 @@
 
 ## ValueSet: ELGA AT e-Diagnose List Entry Code Value Set (Experimental) 
 
- 
-ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA. 
-
  **References** 
 
 * [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
@@ -33,7 +30,7 @@ ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA.
   "title" : "ELGA AT e-Diagnose List Entry Code Value Set",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

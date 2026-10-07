@@ -10,11 +10,11 @@
   fhir:nodeRole fhir:treeRoot ;
   fhir:Resource.id [ fhir:value "ConditionSearchSet03"] ;
   fhir:Bundle.type [ fhir:value "searchset"] ;
-  fhir:Bundle.total [ fhir:value "4"^^xsd:nonNegativeInteger] ;
+  fhir:Bundle.total [ fhir:value "5"^^xsd:nonNegativeInteger] ;
   fhir:Bundle.link [
      fhir:index 0 ;
      fhir:Bundle.link.relation [ fhir:value "self" ] ;
-     fhir:Bundle.link.url [ fhir:value "https://example.org/fhir/Condition?patient=Patient/example" ]
+     fhir:Bundle.link.url [ fhir:value "https://example.org/fhir/Condition?patient=Patient/PatientExample" ]
   ] ;
   fhir:Bundle.entry [
      fhir:index 0 ;
@@ -32,6 +32,10 @@
      fhir:index 3 ;
      fhir:Bundle.entry.fullUrl [ fhir:value "https://example.org/fhir/Condition/ConditionEntry04" ] ;
      fhir:Bundle.entry.resource <https://example.org/fhir/Condition/ConditionEntry04>
+  ], [
+     fhir:index 4 ;
+     fhir:Bundle.entry.fullUrl [ fhir:value "https://example.org/fhir/Condition/ConditionEntry06" ] ;
+     fhir:Bundle.entry.resource <https://example.org/fhir/Condition/ConditionEntry06>
   ] .
 
 <https://example.org/fhir/Condition/ConditionEntry01> a fhir:Condition ;
@@ -45,7 +49,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry01</b></p><a name=\"ConditionEntry01\"> </a><a name=\"hcConditionEntry01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/123456789</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 38341003}\">Hypertensive disorder, systemic arterial</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2024-06-01</p><p><b>recordedDate</b>: 2026-03-03 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0.</p>\n</div></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry01</b></p><a name=\"ConditionEntry01\"> </a><a name=\"hcConditionEntry01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/1234</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 38341003}\">Hypertensive disorder, systemic arterial</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2022-06-01</p><p><b>recordedDate</b>: 2026-03-03 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>note</b>: </p><blockquote><div><p>Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0.</p>\n</div></blockquote></div>"
   ] ;
   fhir:DomainResource.extension [
      fhir:index 0 ;
@@ -55,7 +59,7 @@
   fhir:Condition.identifier [
      fhir:index 0 ;
      fhir:Identifier.system [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier" ] ;
-     fhir:Identifier.value [ fhir:value "123456789" ]
+     fhir:Identifier.value [ fhir:value "1234" ]
   ] ;
   fhir:Condition.clinicalStatus [
      fhir:CodeableConcept.coding [
@@ -84,7 +88,7 @@
      fhir:link <https://fhir.hl7.at/elga/ediag/r4/Patient/PatientExample> ;
      fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
   ] ;
-  fhir:Condition.onsetDateTime [ fhir:value "2024-06-01"^^xsd:date] ;
+  fhir:Condition.onsetDateTime [ fhir:value "2022-06-01"^^xsd:date] ;
   fhir:Condition.recordedDate [ fhir:value "2026-03-03T00:00:00+00:00"^^xsd:dateTime] ;
   fhir:Condition.recorder [
      fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
@@ -96,7 +100,7 @@
   ] ;
   fhir:Condition.note [
      fhir:index 0 ;
-     fhir:Annotation.text [ fhir:value "Patient berichtet über bekannte Hypertonie seit 2024, Lisinopril 10mg 1-0-0." ]
+     fhir:Annotation.text [ fhir:value "Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0." ]
   ] .
 
 <https://example.org/fhir/Condition/ConditionEntry02> a fhir:Condition ;
@@ -110,7 +114,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry02</b></p><a name=\"ConditionEntry02\"> </a><a name=\"hcConditionEntry02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/123456789</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 10351008}\">Suppurative tonsillitis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2026-02-28</p><p><b>recordedDate</b>: 2026-03-03 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Temperatur &gt;38.5, Schmerzen beim Schlucken</p>\n</div></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry02</b></p><a name=\"ConditionEntry02\"> </a><a name=\"hcConditionEntry02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/1235</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 10351008}\">Suppurative tonsillitis</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2026-02-28</p><p><b>recordedDate</b>: 2026-03-03 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>note</b>: </p><blockquote><div><p>Temperatur &gt;38.5, Schmerzen beim Schlucken</p>\n</div></blockquote></div>"
   ] ;
   fhir:DomainResource.extension [
      fhir:index 0 ;
@@ -120,7 +124,7 @@
   fhir:Condition.identifier [
      fhir:index 0 ;
      fhir:Identifier.system [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier" ] ;
-     fhir:Identifier.value [ fhir:value "123456789" ]
+     fhir:Identifier.value [ fhir:value "1235" ]
   ] ;
   fhir:Condition.clinicalStatus [
      fhir:CodeableConcept.coding [
@@ -165,7 +169,7 @@
   ] .
 
 <https://example.org/fhir/Condition/ConditionEntry03> a fhir:Condition ;
-  fhir:Resource.id [ fhir:value "ConditionEntry03"] ;
+  fhir:Resource.id [ fhir:value "ConditionEntry03EnteredInError"] ;
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
@@ -175,17 +179,36 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry03\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry03</b></p><a name=\"ConditionEntry03\"> </a><a name=\"hcConditionEntry03\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/123456789</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 34000006}\">Crohn's disease</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2010-01-01</p><p><b>recordedDate</b>: 2026-03-09 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Seit 2010</p>\n</div></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry03EnteredInError\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry03EnteredInError</b></p><a name=\"ConditionEntry03EnteredInError\"> </a><a name=\"hcConditionEntry03EnteredInError\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><blockquote><p><b>AT ELGA Entered In Error</b></p><ul><li>practitioner: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></li><li>datetime: 2026-03-09 10:30:00+0100</li><li>reason: Falscher Code ausgewählt</li></ul></blockquote><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/1236</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 34486009}\">Hyperthyroidism</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2010-01-01</p><p><b>recordedDate</b>: 2026-03-09 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>note</b>: </p><blockquote><div><p>Seit 2010</p>\n</div></blockquote></div>"
   ] ;
   fhir:DomainResource.extension [
      fhir:index 0 ;
      fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported" ] ;
      fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "practitioner" ] ;
+       fhir:Extension.valueReference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "datetime" ] ;
+       fhir:Extension.valueDateTime [ fhir:value "2026-03-09T10:30:00+01:00"^^xsd:dateTime ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "reason" ] ;
+       fhir:Extension.valueString [ fhir:value "Falscher Code ausgewählt" ]
+     ] ;
+     fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error" ]
   ] ;
   fhir:Condition.identifier [
      fhir:index 0 ;
      fhir:Identifier.system [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier" ] ;
-     fhir:Identifier.value [ fhir:value "123456789" ]
+     fhir:Identifier.value [ fhir:value "1236" ]
   ] ;
   fhir:Condition.clinicalStatus [
      fhir:CodeableConcept.coding [
@@ -204,10 +227,10 @@
   fhir:Condition.code [
      fhir:CodeableConcept.coding [
        fhir:index 0 ;
-       a sct:34000006 ;
+       a sct:34486009 ;
        fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
-       fhir:Coding.code [ fhir:value "34000006" ] ;
-       fhir:Coding.display [ fhir:value "Crohn's disease" ]
+       fhir:Coding.code [ fhir:value "34486009" ] ;
+       fhir:Coding.display [ fhir:value "Hyperthyroidism" ]
      ]
   ] ;
   fhir:Condition.subject [
@@ -240,7 +263,7 @@
   ] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry04\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry04</b></p><a name=\"ConditionEntry04\"> </a><a name=\"hcConditionEntry04\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/123456789</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 428867008}\">Diarrhea caused by drug</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2026-03-09</p><p><b>recordedDate</b>: 2026-03-09 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Practitioner Melanie Musterärztin </a></p><p><b>note</b>: </p><blockquote><div><p>Wässrige Durchfälle bei bestehender AB-Therapie</p>\n</div></blockquote></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry04\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry04</b></p><a name=\"ConditionEntry04\"> </a><a name=\"hcConditionEntry04\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/1237</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 428867008}\">Diarrhea caused by drug</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2026-03-09</p><p><b>recordedDate</b>: 2026-03-09 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>note</b>: </p><blockquote><div><p>Wässrige Durchfälle bei bestehender AB-Therapie</p>\n</div></blockquote></div>"
   ] ;
   fhir:DomainResource.extension [
      fhir:index 0 ;
@@ -250,7 +273,7 @@
   fhir:Condition.identifier [
      fhir:index 0 ;
      fhir:Identifier.system [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier" ] ;
-     fhir:Identifier.value [ fhir:value "123456789" ]
+     fhir:Identifier.value [ fhir:value "1237" ]
   ] ;
   fhir:Condition.clinicalStatus [
      fhir:CodeableConcept.coding [
@@ -292,6 +315,71 @@
   fhir:Condition.note [
      fhir:index 0 ;
      fhir:Annotation.text [ fhir:value "Wässrige Durchfälle bei bestehender AB-Therapie" ]
+  ] .
+
+<https://example.org/fhir/Condition/ConditionEntry06> a fhir:Condition ;
+  fhir:Resource.id [ fhir:value "ConditionEntry06"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry06\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry06</b></p><a name=\"ConditionEntry06\"> </a><a name=\"hcConditionEntry06\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT ELGA e-Diagnose Condition</a></p></div><p><b>AT ELGA Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier</code>/1239</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 34000006}\">Crohn's disease</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2010-01-01</p><p><b>recordedDate</b>: 2026-03-09 00:00:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>note</b>: </p><blockquote><div><p>Seit 2010</p>\n</div></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ] ;
+  fhir:Condition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.system [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier" ] ;
+     fhir:Identifier.value [ fhir:value "1239" ]
+  ] ;
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ;
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ] ;
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ;
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ] ;
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:34000006 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "34000006" ] ;
+       fhir:Coding.display [ fhir:value "Crohn's disease" ]
+     ]
+  ] ;
+  fhir:Condition.subject [
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Patient/PatientExample> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientExample" ]
+  ] ;
+  fhir:Condition.onsetDateTime [ fhir:value "2010-01-01"^^xsd:date] ;
+  fhir:Condition.recordedDate [ fhir:value "2026-03-09T00:00:00+00:00"^^xsd:dateTime] ;
+  fhir:Condition.recorder [
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ]
+  ] ;
+  fhir:Condition.asserter [
+     fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ]
+  ] ;
+  fhir:Condition.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Seit 2010" ]
   ] .
 
 # - ontology header ------------------------------------------------------------

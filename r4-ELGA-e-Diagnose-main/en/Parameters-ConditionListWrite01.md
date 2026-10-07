@@ -1,0 +1,49 @@
+# Parameters für $write der Condition-Summary-Liste (Version 2) - ELGA e-Diagnose R4 (Draft) v0.1.0
+
+## Example Parameters: Parameters für $write der Condition-Summary-Liste (Version 2)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Parameters",
+  "id" : "ConditionListWrite01",
+  "parameter" : [{
+    "name" : "code",
+    "valueCode" : "11450-4"
+  },
+  {
+    "name" : "list",
+    "resource" : {
+      "resourceType" : "List",
+      "id" : "ConditionList01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
+      },
+      "status" : "current",
+      "mode" : "working",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11450-4"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/PatientExample"
+      },
+      "date" : "2026-03-03T08:10:00+00:00",
+      "source" : {
+        "reference" : "Practitioner/PractitionerExample"
+      },
+      "entry" : [{
+        "item" : {
+          "reference" : "Condition/ConditionEntry01"
+        }
+      }]
+    }
+  }]
+}
+
+```

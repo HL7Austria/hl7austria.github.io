@@ -2,9 +2,6 @@
 
 ## Resource Profile: AT ELGA e-Diagnose Procedure 
 
- 
-Das AT e-Diagnose Procedure-Profil leitet sich vom Procedure-Profil ab und passt dieses für die Anforderungen der e-Diagnose an. 
-
 ### Defintion
 
 Eine Prozedur beschreibt eine durchgeführte medizinische Maßnahme, Intervention oder einen operativen Eingriff. Sie dokumentiert zusammenfassend das Stattfinden einer Maßnahme.
@@ -37,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-pro
   "name" : "AtEdiagProcedure",
   "title" : "AT ELGA e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

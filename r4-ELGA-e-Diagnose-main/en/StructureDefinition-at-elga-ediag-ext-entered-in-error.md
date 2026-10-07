@@ -2,8 +2,6 @@
 
 ## Extension: AT ELGA Entered In Error 
 
-Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde.
-
 **Context of Use**
 
 **Usage info**
@@ -11,7 +9,7 @@ Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde.
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md), [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md) and [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-procedure.md)
-* Examples for this Extension: [Condition/ConditionEnteredInError](Condition-ConditionEnteredInError.md)
+* Examples for this Extension: [Bundle/ConditionSearchSet02](Bundle-ConditionSearchSet02.md), [Bundle/ConditionSearchSet03](Bundle-ConditionSearchSet03.md) and [Condition/ConditionEntry03EnteredInError](Condition-ConditionEntry03EnteredInError.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-ext-entered-in-error.json)
 
@@ -36,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-ext
   "name" : "AtElgaEdiagExtEnteredInError",
   "title" : "AT ELGA Entered In Error",
   "status" : "draft",
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

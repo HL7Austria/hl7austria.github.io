@@ -6,7 +6,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **AT ELGA Reported (Fremdangabe)**: true
 
-**identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/123456789
+**identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/1238
 
 **clinicalStatus**: Active
 
@@ -20,9 +20,9 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **recordedDate**: 2026-03-09 00:00:00+0000
 
-**recorder**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**recorder**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
-**asserter**: [Practitioner Melanie Musterärztin ](Practitioner-PractitionerExample.md)
+**asserter**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
 **note**: 
 
@@ -48,7 +48,7 @@ Juckreiz im Genitalbereich bei bestehender AB-Therapie
   }],
   "identifier" : [{
     "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier",
-    "value" : "123456789"
+    "value" : "1238"
   }],
   "clinicalStatus" : {
     "coding" : [{

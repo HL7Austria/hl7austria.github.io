@@ -2,9 +2,6 @@
 
 ## ValueSet: AT e-Diagnose Reaction Time Value Set (Experimental) 
 
- 
-ValueSet mit zulässigen Ausprägungen der Reaktionszeit einer allergischen Reaktion. 
-
  **References** 
 
 This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
@@ -33,7 +30,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "AT e-Diagnose Reaction Time Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

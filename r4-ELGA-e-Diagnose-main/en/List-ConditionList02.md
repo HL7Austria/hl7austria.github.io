@@ -2,16 +2,17 @@
 
 ## Example List: Condition Summary-Liste (Zweiter Arztbesuch - fehlerhafter Eintrag)
 
+version: 3
+
 Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Date: 2026-03-09 08:00:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
-| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)Source: | | | |
+| Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md) | Source:[Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md) | | |
 
 * **Items**: [Condition Hypertensive disorder, systemic arterial](Condition-ConditionEntry01.md)
-* **Items**: [Condition Crohn's disease](Condition-ConditionEntry03.md)
-* **Items**: [Condition Hyperthyroidism](Condition-ConditionEnteredInError.md)
+* **Items**: [Condition Hyperthyroidism](Condition-ConditionEntry03.md)
 
 
 
@@ -22,6 +23,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "resourceType" : "List",
   "id" : "ConditionList02",
   "meta" : {
+    "versionId" : "3",
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
   "status" : "current",
@@ -47,11 +49,6 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   {
     "item" : {
       "reference" : "Condition/ConditionEntry03"
-    }
-  },
-  {
-    "item" : {
-      "reference" : "Condition/ConditionEnteredInError"
     }
   }]
 }

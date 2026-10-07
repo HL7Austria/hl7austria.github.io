@@ -2,9 +2,6 @@
 
 ## ValueSet: AT e-Diagnose AllergyIntolerance Code (Experimental) 
 
- 
-Value-Set für die Codierung von Allergien und Intoleranzen. 
-
  **References** 
 
 * [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
@@ -35,7 +32,7 @@ No Expansion for this valueset (not supported by Publication Tooling)
   "title" : "AT e-Diagnose AllergyIntolerance Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-02T12:58:24+00:00",
+  "date" : "2026-10-07T14:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
