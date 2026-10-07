@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md)
 
-Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815 (use: official, ))
+Andreas Bucher Male, DoB: 1961-12-24 ( Social Security number: 1111241261 (use: official))
 
 -------
 
@@ -16,8 +16,8 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815 (use:�
 | :--- | :--- | :--- | :--- |
 | Active: | true | Deceased: | false |
 | Marital Status: | Married | Multiple Birth: | false |
-| Other Ids: | * Social Security number/1111241261 (use: official, )
-* National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0 (use: official, )
+| Other Ids: | * National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0 (use: official)
+* Patient internal identifier/0815 (use: official)
  | | |
 | Contact Detail | * [+43.2682.40400](tel:+43.2682.40400)
 * [+43.664.1234567](tel:+43.664.1234567)
@@ -28,12 +28,12 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Patient internal identifier: 0815 (use:�
 | Emergency Contact: | * Julia Tochter (Female)
 * Heimstrasse 1 Wien 1220 AUT 
 * [+43.664.12345678](tel:+43.664.12345678)
-* Organization:[Organization Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md)
+* Organization:[Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md)
 * Valid Period:2016-07-30 08:30:00+0100 --> 2019-07-30 08:35:00+0100
  | | |
-| Links: | * General Practitioner: [Practitioner Melanie Musterärztin ](Practitioner-HL7ATCorePractitionerExample01.md)
-* Managing Organization: [Organization Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md)
-* Also see: [Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual, ))](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)
+| Links: | * General Practitioner: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-HL7ATCorePractitionerExample01.md)
+* Managing Organization: [Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md)
+* Also see: [Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual))](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)
  | | |
 | [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Römisch-Katholisch | | |
 | Patient Citizenship: | * code: Österreich

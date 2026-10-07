@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md)
 
-Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual, ))
+Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual))
 
 -------
 

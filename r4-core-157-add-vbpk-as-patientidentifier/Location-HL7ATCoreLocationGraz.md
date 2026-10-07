@@ -8,20 +8,15 @@
 
 Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md)
 
-**identifier**: `urn:oid:1.2.40.0.34.4.10`/K101.1
+Campus Graz (urn:oid:1.2.40.0.34.4.10#K101.1)
 
-**name**: Campus Graz
+-------
 
-**address**: Graz 8010 AUT 
-
-### Positions
-
-| | | |
-| :--- | :--- | :--- |
-| - | **Longitude** | **Latitude** |
-| * | 15.4395 | 47.0707 |
-
-**managingOrganization**: [Organization Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md)
+| | |
+| :--- | :--- |
+| Address: | Graz 8010 AUT |
+| Position: | 47.0707, 15.4395 |
+| Managed By: | [Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md) |
 
 
 

@@ -8,20 +8,15 @@
 
 Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md)
 
-**identifier**: `urn:oid:1.2.40.0.34.4.10`/K101.2
+Campus Linz (urn:oid:1.2.40.0.34.4.10#K101.2)
 
-**name**: Campus Linz
+-------
 
-**address**: Linz 4020 AUT 
-
-### Positions
-
-| | | |
-| :--- | :--- | :--- |
-| - | **Longitude** | **Latitude** |
-| * | 14.2861 | 48.3064 |
-
-**managingOrganization**: [Organization Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md)
+| | |
+| :--- | :--- |
+| Address: | Linz 4020 AUT |
+| Position: | 48.3064, 14.2861 |
+| Managed By: | [Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md) |
 
 
 

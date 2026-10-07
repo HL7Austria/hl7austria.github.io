@@ -8,18 +8,19 @@
 
 Profile: [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.3.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.3.1.1061, `urn:oid:1.2.40.0.10.1.4.3.2`/438968, `urn:oid:1.2.40.0.10.1.4.3.2`/833477
+Landeskrankenhaus Hall in Tirol (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.3.1.1061)
 
-**type**: Allgemeine Krankenanstalt
+-------
 
-**name**: Landeskrankenhaus Hall in Tirol
-
-### Contacts
-
-| | | |
-| :--- | :--- | :--- |
-| - | **Telecom** | **Address** |
-| * | [info.pkh@tirol-kliniken.at](mailto:info.pkh@tirol-kliniken.at) | Milser Straße 10 Hall in Tirol Tirol 6060 AUT (work) |
+| | |
+| :--- | :--- |
+| Type: | Allgemeine Krankenanstalt |
+| Other Ids: | * `urn:oid:1.2.40.0.10.1.4.3.2`/438968
+* `urn:oid:1.2.40.0.10.1.4.3.2`/833477
+ |
+| Contact Detail | * [info.pkh@tirol-kliniken.at](mailto:info.pkh@tirol-kliniken.at)
+* Milser Straße 10 Hall in Tirol Tirol 6060 AUT (work)
+ |
 
 
 

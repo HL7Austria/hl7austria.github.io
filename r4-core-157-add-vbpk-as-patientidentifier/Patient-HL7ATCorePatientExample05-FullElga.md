@@ -8,7 +8,7 @@
 
 Profile: [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md)
 
-Alexander Robert Wolfesberger Male, DoB: 1961-12-24 ( Social Security number: 1111241261 (use: official, ))
+Alexander Robert Wolfesberger Male, DoB: 1961-12-24 ( Social Security number: 1111241261 (use: official))
 
 -------
 

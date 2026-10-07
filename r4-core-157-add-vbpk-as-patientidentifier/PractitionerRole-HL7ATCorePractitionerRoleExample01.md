@@ -8,23 +8,24 @@
 
 Profile: [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
 
-**active**: true
+Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4): Ärztin/Arzt für Allgemeinmedizin
 
-**practitioner**: [Practitioner Melanie Musterärztin ](Practitioner-HL7ATCorePractitionerExample01.md)
+-------
 
-**code**: Ärztin/Arzt für Allgemeinmedizin
-
-**specialty**: Family practice, Dive medicine
-
-> **availableTime****daysOfWeek**: Monday**availableStartTime**: 07:00:00**availableEndTime**: 12:00:00
-
-> **availableTime****daysOfWeek**: Tuesday**availableStartTime**: 07:30:00**availableEndTime**: 12:30:00
-
-> **availableTime****daysOfWeek**: Thursday**allDay**: true
-
-> **notAvailable****description**: Urlaub**during**: 2024-08-01 --> 2024-08-31
-
-> **notAvailable****description**: Zwischen den Feiertagen geschlossen.**during**: 2024-12-24 --> 2025-01-06
+| | |
+| :--- | :--- |
+| Active: | true |
+| Practitioner: | [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-HL7ATCorePractitionerExample01.md) |
+| Role: | Ärztin/Arzt für Allgemeinmedizin |
+| Specialty: | * Family practice
+* Dive medicine
+ |
+| Availability: | * Monday: 07:00:00 - 12:00:00
+* Tuesday: 07:30:00 - 12:30:00
+* Thursday: all day
+* Not available: Urlaub (2024-08-01 --> 2024-08-31)
+* Not available: Zwischen den Feiertagen geschlossen. (2024-12-24 --> 2025-01-06)
+ |
 
 
 

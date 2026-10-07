@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole | *Version*:2.1.0 | |
-| Active as of 2026-08-21 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitionerRole |
+| Active as of 2026-10-07 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:HL7ATCorePractitionerRole |
 
  
 HL7® Austria FHIR® Core Profile for practitioner role data in Austria. 
@@ -41,7 +41,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-practitioner
   "name" : "HL7ATCorePractitionerRole",
   "title" : "HL7® AT Core PractitionerRole Profile",
   "status" : "active",
-  "date" : "2026-08-21T10:22:16+00:00",
+  "date" : "2026-10-07T08:52:05+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
