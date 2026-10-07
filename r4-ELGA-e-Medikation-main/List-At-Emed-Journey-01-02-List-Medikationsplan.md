@@ -11,7 +11,7 @@ Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Date: 2026-02-27 08:10:00+0000 | Mode: Working List | Status: Current | Code: Medikationsplan |
-| Subject:[Anton Mustermann](Patient-At-Emed-Example-Patient-01.md)Source: | | | |
+| Subject:[Anton Mustermann](Patient-At-Emed-Example-Patient-01.md) | Source:[Dr. Hausärztin](PractitionerRole-At-Emed-Example-PractitionerRole-01.md) | | |
 
 * **Items**: [MedicationRequest: extension = 2026-02-27 --> (ongoing),1-0-0-0 | Täglich: 1-0-0-0; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication RAMIPRIL HEX TBL 5MG; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Continuous long term therapy](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-01.md)
   * Flag: Neuer Planeintrag

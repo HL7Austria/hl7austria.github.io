@@ -8,13 +8,14 @@
 
 Profile: [AT ELGA Core Practitioner Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitioner.html)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.4.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4, `urn:oid:1.2.40.0.10.1.4.3.2`/987654321
+Paula Krankenhaus (OID:1.2.40.0.34.99.4613.4)
 
-**active**: true
+-------
 
-**name**: Paula Krankenhaus 
-
-**gender**: Female
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Active: | true | Gender: | Female |
+| Other Id: | `urn:oid:1.2.40.0.10.1.4.3.2`/987654321 | | |
 
 
 

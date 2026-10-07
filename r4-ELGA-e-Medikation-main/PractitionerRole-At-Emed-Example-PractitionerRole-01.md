@@ -8,11 +8,15 @@
 
 Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
 
-**practitioner**: [Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md)
+Dr. Hausärztin: Ärztin/Arzt at Ordination Dr. Hausärztin
 
-**organization**: [Ordination Dr. Hausärztin](Organization-At-Emed-Example-Organization-01.md)
+-------
 
-**code**: Ärztin/Arzt
+| | |
+| :--- | :--- |
+| Practitioner: | [Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md) |
+| Organization: | [Ordination Dr. Hausärztin](Organization-At-Emed-Example-Organization-01.md) |
+| Role: | Ärztin/Arzt |
 
 
 

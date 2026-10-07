@@ -8,9 +8,16 @@
 
 Profile: [HL7® AT Core Organization Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-organization.html)
 
-**telecom**: [office@musterpraxis.at](mailto:office@musterpraxis.at), [+436500987654321](tel:+436500987654321)
+Unnamed Organization
 
-**address**: Hausarzt-Straße 8 Stiege 2 St. Wolfgang Salzburg 5350 AUT (work)
+-------
+
+| | |
+| :--- | :--- |
+| Contact Detail | * [office@musterpraxis.at](mailto:office@musterpraxis.at)
+* [+436500987654321](tel:+436500987654321)
+* Hausarzt-Straße 8 Stiege 2 St. Wolfgang Salzburg 5350 AUT (work)
+ |
 
 
 

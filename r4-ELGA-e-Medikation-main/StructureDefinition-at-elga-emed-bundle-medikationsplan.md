@@ -9,7 +9,7 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan | *Version*:0.1.0 | |
-| Draft as of 2026-10-02 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
+| Draft as of 2026-10-07 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:AtElgaEmedBundleMedikationsplan |
 
  
 Das Medikationsplan-Bundle vom Typ Searchset enthält: 
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](StructureDefinition-at-elga-emed-bundle-
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-02T13:24:17+00:00",
+  "date" : "2026-10-07T12:50:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -8,13 +8,16 @@
 
 Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
 
-**practitioner**: [Dr. Krankenhaus](Practitioner-At-Emed-Example-Practitioner-03.md)
+Dr. Krankenhaus: Fachärztin/Facharzt für Chirurgie at Krankenhaus
 
-**organization**: [Krankenhaus](Organization-At-Emed-Example-Organization-03.md)
+-------
 
-**code**: Fachärztin/Facharzt für Chirurgie
-
-**specialty**: Internal medicine
+| | |
+| :--- | :--- |
+| Practitioner: | [Dr. Krankenhaus](Practitioner-At-Emed-Example-Practitioner-03.md) |
+| Organization: | [Krankenhaus](Organization-At-Emed-Example-Organization-03.md) |
+| Role: | Fachärztin/Facharzt für Chirurgie |
+| Specialty: | Internal medicine |
 
 
 

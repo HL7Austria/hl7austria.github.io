@@ -8,11 +8,15 @@
 
 Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
 
-**practitioner**: [Dr. Apothekerin](Practitioner-At-Emed-Example-Practitioner-03.md)
+Dr. Apothekerin: Apothekerin/Apotheker at Amadeus Apotheke
 
-**organization**: [Amadeus Apotheke](Organization-At-Emed-Example-Organization-03.md)
+-------
 
-**code**: Apothekerin/Apotheker
+| | |
+| :--- | :--- |
+| Practitioner: | [Dr. Apothekerin](Practitioner-At-Emed-Example-Practitioner-03.md) |
+| Organization: | [Amadeus Apotheke](Organization-At-Emed-Example-Organization-03.md) |
+| Role: | Apothekerin/Apotheker |
 
 
 

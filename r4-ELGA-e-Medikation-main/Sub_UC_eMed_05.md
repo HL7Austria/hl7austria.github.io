@@ -36,7 +36,7 @@ Dabei können sowohl Arzneimittelabgaben zu bestehenden **Geplanten Abgaben** al
 
  ![](plantuml/UC_eMed_05_01_a.svg)
 
-#### Zugriffsvariante B: Durchgeführte Abgabe ohne Kontakt schreiben
+#### Zugriffsvariante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben
 
 Erfolgt der Zugriff **ohne Kontaktbestätigung** über den ****e-Med GroupIdentifier**** (z.B. codiert im Datamatrixcode eines e-Rezepts), kann der GDA ausschließlich **Durchgeführte Abgaben** in der e-Medikation dokumentieren, die sich auf die dem **e-Med GroupIdentifier** zugeordneten **Geplanten Abgaben** beziehen.
 

@@ -10,7 +10,7 @@
 | :--- | :--- | :--- |
 | *Official URL*:https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart | *Version*:0.1.0 | |
 | Active as of 2024-03-25 | *Responsible:*[ELGA GmbH](http://elga.gv.at) | *Computable Name*:elga-medikationrezeptart |
-| *Other Identifiers:*OID:1.2.40.0.34.10.68 (use: official, ) | | |
+| *Other Identifiers:*OID:1.2.40.0.34.10.68 (use: official) | | |
 
  
 **Description:** ELGA ValueSet for Prescription type 

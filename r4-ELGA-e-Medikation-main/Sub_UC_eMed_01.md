@@ -133,7 +133,7 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 
 #### Suchparameter
 
-Die Suche nach Medikationsplaneinträgen erfolgt mittels **GET** unter Angabe geeigneter Suchparameter:
+Die Suche nach Medikationsplaneinträgen erfolgt mittels **GET**-Request unter Angabe geeigneter Suchparameter:
 
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
@@ -154,7 +154,7 @@ Die gefundenen Medikationsplaneinträge können als Ausgangspunkt für weitere A
 
 #### Ablauf
 
-1. Der Client führt ein**GET**auf den Planentry-Search-Endpunkt mit den gewünschten Suchparametern aus (**MedicationRequest**mit**category = "Planeintrag"**).
+1. Der Client führt einen**GET**-Request auf den Planentry-Search-Endpunkt mit den gewünschten Suchparametern aus (**MedicationRequest**mit**category = "Planeintrag"**).
 1. Die Fachanwendung ermittelt anhand der Suchparameter die passenden Medikationsplaneinträge.
 1. Die Fachanwendung liefert die Suchergebnisse als Bundle vom Typ**searchset**zurück.
 1. Werden keine passenden Medikationsplaneinträge gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.

@@ -81,7 +81,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Dosage.timing.repeat.bounds[x]","Dosage.timing.repeat.bounds[x]","","","",0,1,"","","Y","Duration {[]} {[]}
 Range {[]} {[]}Period {[]} {[]}","Length/Range of lengths, or (Start and/or end) limits","Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule.","","","","","","","","","",,,,,"","type:$this}
-","",,"open","Timing.repeat.bounds[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","",,"closed","Timing.repeat.bounds[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","IVL(TS) used in a QSI"
 "Dosage.timing.repeat.bounds[x]:boundsPeriod","Dosage.timing.repeat.bounds[x]","boundsPeriod","","",0,1,"","","Y","Period {[]} {[]}
 ","Length/Range of lengths, or (Start and/or end) limits","Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule.","","","","","","","","","",,,,,"",,,,"Timing.repeat.bounds[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -101,6 +101,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Zeitraum der Einnahme: Ende.","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"per-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./high","DR.2"
+"Dosage.timing.repeat.bounds[x]:boundsDuration","Dosage.timing.repeat.bounds[x]","boundsDuration","","",0,1,"","","Y","Duration {[]} {[]}
+","Length/Range of lengths, or (Start and/or end) limits","Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule.","","","","","","","","","",,,,,"",,,,"Timing.repeat.bounds[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","IVL(TS) used in a QSI"
+"Dosage.timing.repeat.bounds[x]:boundsRange","Dosage.timing.repeat.bounds[x]","boundsRange","","",0,1,"","","Y","Range {[]} {[]}
+","Length/Range of lengths, or (Start and/or end) limits","Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule.","","","","","","","","","",,,,,"",,,,"Timing.repeat.bounds[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","IVL(TS) used in a QSI"
 "Dosage.timing.repeat.count","Dosage.timing.repeat.count","","","",0,1,"","","Y","positiveInt {[]} {[]}
 ","Number of times to repeat","A total count of the desired number of repetitions across the duration of the entire timing specification. If countMax is present, this element indicates the lower bound of the allowed range of count values.","If you have both bounds and count, then this should be understood as within the bounds period, until count times happens.","Repetitions may be limited by end time or total occurrences.","","","","","","","",,,,,"",,,,"Timing.repeat.count",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","PIVL.count"
@@ -219,7 +225,7 @@ Range {[]} {[]}Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/
 ",".maxDoseQuantity","RXO-23, RXE-19"
 "Dosage.maxDosePerAdministration","Dosage.maxDosePerAdministration","","","",0,1,"","","Y","Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1]]} {[]}
 ","Maximal Menge pro Abgabe","Upper limit on medication per administration.","This is intended for use as an adjunct to the dosage when there is an upper cap.  For example, a body surface area related dose with a maximum amount, such as 1.5 mg/m2 (maximum 2 mg) IV over 5 – 10 minutes would have doseQuantity of 1.5 mg/m2 and maxDosePerAdministration of 2 mg.","The maximum total quantity of a therapeutic substance that may be administered to a subject per administration.","","","","","","","",,,,,"",,,,"Dosage.maxDosePerAdministration",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","not supported"
+sqty-1:The comparator is not used on a SimpleQuantity {comparator.empty()}","not supported"
 "Dosage.maxDosePerLifetime","Dosage.maxDosePerLifetime","","","",0,1,"","","Y","Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/SimpleQuantity|4.0.1]]} {[]}
 ","Maximale Lebenszeitdosis","Upper limit on medication per lifetime of the patient.","","The maximum total quantity of a therapeutic substance that may be administered per lifetime of the subject.","","","","","","","",,,,,"",,,,"Dosage.maxDosePerLifetime",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","not supported"
+sqty-1:The comparator is not used on a SimpleQuantity {comparator.empty()}","not supported"

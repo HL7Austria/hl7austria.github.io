@@ -8,11 +8,15 @@
 
 Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
 
-**practitioner**: [Dr. Urlaubsvertretung](Practitioner-At-Emed-Example-Practitioner-04.md)
+Dr. Urlaubsvertretung: Ärztin/Arzt at Ordination Dr. Urlaubsvertretung
 
-**organization**: [Ordination Dr. Urlaubsvertretung](Organization-At-Emed-Example-Organization-04.md)
+-------
 
-**code**: Ärztin/Arzt
+| | |
+| :--- | :--- |
+| Practitioner: | [Dr. Urlaubsvertretung](Practitioner-At-Emed-Example-Practitioner-04.md) |
+| Organization: | [Ordination Dr. Urlaubsvertretung](Organization-At-Emed-Example-Organization-04.md) |
+| Role: | Ärztin/Arzt |
 
 
 
