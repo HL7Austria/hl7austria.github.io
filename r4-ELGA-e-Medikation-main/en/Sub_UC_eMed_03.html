@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>​Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03) - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+    <link rel="stylesheet" href="assets/css/liquid.css"/>
+    <link rel="stylesheet" href="assets/css/project.css"/>
+  	  <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/template.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+    <script src="assets/js/direction-management.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js" type="text/javascript"></script>
+	  <script src="assets/js/prism-fhirpath.js" type="text/javascript"></script>
+	  <script src="assets/js/prism-cql.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"11.4"}
+    h3,h4,h5,h6{--heading-prefix:"11.4"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+                <div id="project-nav">
+          <img src="assets/images/logo.jpg" alt="Logo" height="50"/>
+        </div>
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+      <li>
+        <a href="dosages.html">Dosierungen</a>
+      </li>
+      <li>
+        <a href="medication.html">Medikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+
+              
+
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="overview_use_case.html"><b>Overview Use Case</b></a></li><li><b>​Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03)</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="https://fhir.hl7.at/elga/emed/r4/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>​Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03)</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search" id="markdown-toc-sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a></li>
+  <li><a href="#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search" id="markdown-toc-sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a></li>
+  <li><a href="#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search" id="markdown-toc-sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search">Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)</a></li>
+</ul>
+
+</div>
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  font-size: 12px;
+  /* font-family: "Courier New", Courier; */
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.tabs .tab label {
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+  <!-- Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03) -->
+
+<p>Dieser technische Use Case beschreibt den lesenden Zugriff <a href="actors.html#rollen-und-berechtigungen">berechtigter Akteure</a> auf:</p>
+
+<ul>
+  <li><a href="Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Geplante Abgaben</a>, um vorgesehene Arzneimittelabgaben einzusehen,</li>
+  <li><a href="Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Durchgeführte Abgaben</a>, um bereits erfolgte Arzneimittelabgaben einzusehen</li>
+  <li><a href="Sub_UC_eMed_03.html#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search">Geplante und Durchgeführte Abgaben mit e-Med Groupidentifier</a>, um die zu einem e-Rezept zugehörigen <em>Gepanten Abgaben</em> und <em>Durchgeführten Abgaben</em> abzurufen zu können.</li>
+</ul>
+
+<p>Für ELGA-Teilnehmer und deren Vertretungen erfolgt der lesende Zugriff auf <em>Gepanten Abgaben</em> und <em>Durchgeführten Abgaben</em> über das ELGA-Zugangsportal.</p>
+
+<p>Für die übrigen Akteure erfolgt der lesende Zugriff über die e-Medikations-Schnittstelle des jeweiligen GDA-Systems.</p>
+
+<p>Dabei werden folgende <strong>Zugriffsarten</strong> unterschieden:</p>
+
+<ul>
+  <li>
+    <p><a name="l453">​</a><strong>Zugriff mit Kontaktbestätigung</strong>:
+Der Standardzugriff erfolgt nach nach Kontaktbestätigung des ELGA-Teilnehmers (z.B. mittels e-card). Dadurch erhält der GDA einen, seiner Rolle entsprechenden ELGA-Zugriff, inkl. lesenden Zugriff auf alle <em>Geplanten Abgaben</em> (siehe <a href="Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>) und auf alle <em>Durchgeführten Abgaben</em> (siehe <a href="Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>) und kann entsprechende Arzneimittelabgaben durchführen und dokumentieren (<a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01---durchgeführte-abgabe-schreiben">Dispense-Write</a>). Weiters kann der Medikationsplan des ELGA-Teilnehmers abgerufen werden (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Plan-Read</a>), um die die gesamte Medikation beurteilen zu können, oder <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">OTC-Abgaben</a> dokumentiert werden.</p>
+  </li>
+  <li>
+    <p><strong>Zugriff mittels <em>e-Med GroupIdentifier</em></strong>:
+Alternativ steht <strong>ohne Kontaktbestätigung</strong> des ELGA-Teilnehmers der Zugriff mittels <em>e-Med GroupIdentifier</em> (z.B. über den DataMatrix-Code eines e-Rezepts) zur Verfügung. Dieser ermöglicht ausschließlich einen <strong>eingeschränkten ELGA-Zugriff</strong> auf die dem <em>e-Med GroupIdentifier</em> zugeordneten <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> und wird in <a href="Sub_UC_eMed_03.html#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search">Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)</a> beschrieben.</p>
+  </li>
+</ul>
+
+<div class="hinweisbox">
+ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im <a href="Sub_UC_eMed_03.html">UC_eMed_03 Geplante und durchgeführte Abgaben lesen</a> beschrieben.<br/> 
+Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert. 
+</div>
+  <!-- Todo: Link korrigieren, Link zu allgemeinen BES-UCs ergänzen akl 2.10.2026 -->
+
+<h3 id="sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</h3>
+
+<p><em>Prescription-Search</em> dient dem Suche nach <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a> eines ELGA-Teilnehmers, um vorgesehene Arzneimittelabgaben einzusehen. Als <em>Geplante Abgabe</em> gilt eine <em>MedicationRequest</em>-Ressource mit <em>category = "Geplante Abgabe"</em>.</p>
+
+<p><em>Geplante Abgaben</em> bilden einige Inhalte des e-Rezepts ab. Wurden mehrere Arzneimittel verordnet und sind demselben e-Rezept zugeordnet, sind die zugehörigen <em>Geplanten Abgaben</em> mit demselben <em>e-Med GroupIdentifier</em> zu versehen, den auch das e-Rezept mitführt (bildet damit die Rezept-Klammer).</p>
+
+<h4 id="suchparameter">Suchparameter</h4>
+
+<p>Die Suche nach <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a> erfolgt mittels <strong>GET</strong>-Request unter Angabe geeigneter Suchparameter:</p>
+<ul>
+  <li>alle (ohne Einschränkung)   <!-- TODO sinnvoll? akl 2.10. --></li>
+  <li>in einem bestimmten Zeitraum erfasste</li>
+  <li>mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (inkl. Magistraler Zubereitungen)</li>
+  <li>mit einem bestimmten <a href="ValueSet-GeplanteAbgabeStatusVS.html">status</a>    <!-- Todo: entered-in-error nicht, weil nur eigene verworfen werden können? --></li>
+  <li>mit einem bestimmten <em>e-Med GroupIdentifier</em> 
+  <!-- * Erstellender GDA? Todo akl 2.10. --></li>
+</ul>
+
+<p>Die gefundenen <em>Geplanten Abgaben</em> können als Ausgangspunkt für weitere Abfragen verwendet werden:</p>
+<ul>
+  <li>zugehöriger Medikationsplaneintrag und Medikationsplanversion   <!-- wie kommt man auf die Planversion? keine Referenz im Planeintrag auf die List(version) Todo akl 7.10. -->
+    <ul>
+      <li>da in einer <em>Geplanten Abgabe</em> die Referenz auf den zugehöigen Planeintrag (<em>basedOn</em>) nicht versioniert ist, zeigt die <em>Geplante Abgabe</em> immer auf den aktuellen Planeintrag. Dieser kann zwischenzeitlich von den Inhalten der <em>Geplanten Abgabe</em> abweichen.</li>
+    </ul>
+  </li>
+  <li>zugehörige <em>Durchgeführte Abgaben</em> (gleicher <em>e-Med GroupIdentifier</em> der <em>Geplanten Abgabe</em>)</li>
+</ul>
+
+<p>Von ELGA-Teilnehmern gelöschte <em>Geplanten Abgaben</em> stehen nicht mehr zur Verfügung.</p>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>
+Suchparameter: Umsetzung in Arbeit.
+</p>
+</div>
+
+<h5 id="ablauf">Ablauf</h5>
+
+<ol>
+  <li>Der GDA führt einen <strong>GET</strong>-Request auf den Prescription-Search-Endpunkt mit <em>MedicationRequest.category = "Geplante Abgabe"</em> und Suchparametern aus</li>
+  <li>Die Fachanwendung ermittelt die den Suchkriterien entsprechenden <em>Geplanten Abgaben</em>.</li>
+  <li>Die Fachanwendung liefert das Suchergebnis als Bundle vom Typ <em>searchset</em> zurück.</li>
+  <li>Werden keine passenden Ressourcen gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.</li>
+  <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
+  <li>Optional kann der GDA den <em>Medikationsplan</em> (siehe <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>) und <em>Durchgeführte Abgaben</em> (siehe <a href="Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</a>) zur fachlichen Beurteilung abrufen.</li>
+</ol>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Frage:<br/>
+ad: Suchkritierien: <br/>
+- Geplante Abgabe zu einer Durchgeführten Abgabe: Reverse-Include erlaubt oder eigene Operation? <br/>
+- Gültigkeitszeitraum des Rezepts (validityPeriod)? <br/>
+- Erstellender GDA?<br/>
+</p>
+</div>
+
+<h5 id="sequenzdiagramm">Sequenzdiagramm</h5>
+
+<p><a href="plantuml/UC_eMed_03_01.svg"><img src="plantuml/UC_eMed_03_01.svg" alt="overview" style="width:50%;" class="mx-auto"/></a></p>
+
+<h3 id="sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</h3>
+
+<p><em>Dispense-Search</em> dient dem Suche nach <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a> eines ELGA-Teilnehmers, um bereits dokumentierte Arzneimittelabgaben einzusehen.</p>
+
+<p><em>Durchgeführten Abgaben</em> spiegeln den Status der Abgaben des e-Rezepts wider. Eine <em>Durchgeführte Abgabe</em>, die auf einer <em>Geplanten Abgabe</em> basiert, enthält den <em>e-Med GroupIdentifier</em> der zugehörigen <em>Geplanten Abgabe</em>. Dadurch können zusammengehörige <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> über denselben <em>e-Med GroupIdentifier</em> identifiziert und gemeinsam abgerufen werden.</p>
+
+<h4 id="suchparameter-1">Suchparameter</h4>
+
+<p>Die Suche nach <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a> erfolgt mittels <strong>GET</strong>-Request unter Angabe geeigneter Suchparameter:</p>
+<ul>
+  <li>alle (ohne Einschränkung)   <!-- TODO sinnvoll? akl 2.10. --></li>
+  <li>in einem bestimmten Zeitraum erfasste</li>
+  <li>mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (inkl. Magistraler Zubereitungen)</li>
+  <li>mit einem bestimmten <a href="ValueSet-DurchgefuehrteAbgabeStatusVS.html">status</a>   <!-- Todo: entered-in-error nicht, weil nur eigene verworfen werden können? -->
+  <!-- - mit einem bestimmten [type](ValueSet-DurchgefuehrteAbgabeTypVS.html) (Abgabeart) TODO akl 7.10. steht dzt nicht als Suchkriterium in UC3 --></li>
+  <li>mit einem bestimmten <em>e-Med GroupIdentifier</em> 
+  <!-- * Erstellender GDA? Todo akl 2.10. --></li>
+</ul>
+
+<p>Die gefundenen <em>Durchgeführten Abgaben</em> können als Ausgangspunkt für weitere Abfragen verwendet werden:</p>
+<ul>
+  <li>zugehörige <em>Geplante Abgabe</em> (gleicher <em>e-Med GroupIdentifier</em>)</li>
+</ul>
+
+<p>Von ELGA-Teilnehmern gelöschte <em>Durchgeführten Abgaben</em> stehen nicht mehr zur Verfügung.</p>
+
+<h5 id="ablauf-1">Ablauf</h5>
+
+<ol>
+  <li>Der GDA führt einen <strong>GET</strong>-Request auf den MedicationDispense-Search-Endpunkt mit Suchparametern aus.</li>
+  <li>Die Fachanwendung ermittelt alle den Suchkriterien entsprechenden <em>Durchgeführten Abgaben</em>.</li>
+  <li>Die Fachanwendung liefert das Suchergebnis als Bundle vom Typ <em>searchset</em> zurück.</li>
+  <li>Werden keine passenden Ressourcen gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.</li>
+  <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
+  <li>Optional kann der GDA den <em>Medikationsplan</em> (siehe <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>) oder <em>Geplante Abgaben</em> (siehe <a href="Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</a>) zur fachlichen Beurteilung abrufen.</li>
+</ol>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>
+Suchparameter: Umsetzung in Arbeit.
+</p>
+</div>
+
+<h5 id="sequenzdiagramm-1">Sequenzdiagramm</h5>
+
+<p><a href="plantuml/UC_eMed_03_02.svg"><img src="plantuml/UC_eMed_03_02.svg" alt="overview" style="width:50%;" class="mx-auto"/></a></p>
+
+  <!-- im Diagramm die Optionale Box über das GET schieben: -> würde optionale aufrufe hinten anreihen damit der fokus hier auf dispense-search liegt und lesefluss einfacher ist. dem client können wir hier sowieso keine reihenfolge vorgeben. -->
+
+<h3 id="sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search">Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)</h3>
+
+<p>Erfolgt die Arzneimittelabgabe <strong>ohne Kontaktbestätigung</strong> des ELGA-Teilnehmers, sondern auf Basis eines <em>e-Med GroupIdentifiers</em> (z.B. über den DataMatrix-Code eines e-Rezepts), erhält ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> einen eingeschränkten ELGA-Zugriff.</p>
+
+<p>Dieser umfasst ausschließlich den lesenden Zugriff auf die <strong>dem <em>e-Med GroupIdentifier</em></strong> <strong>zugeordneten</strong> <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em>. Der GDA kann anschließend <em>Durchgeführte Abgaben</em> ausschließlich für diesen <em>e-Med GroupIdentifier</em> dokumentieren (siehe <a href="Sub_UC_eMed_05.html#zugriffsvariante-b-durchgeführte-abgabe-mit-e-med-groupidentifier-schreiben">Zugriffsvariante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben</a>).</p>
+
+<p>Ein lesender Zugriff auf weitere <em>Geplante Abgaben</em> oder <em>Durchgeführte Abgaben</em> sowie auf den Medikationsplan des ELGA-Teilnehmers ist nicht möglich. Ebenso können keine weiteren <em>Durchgeführten Abgaben</em> (z.B. OTC- oder Notabgaben) in der e-Medikation des ELGA-Teilnehmers dokumentiert werden.</p>
+
+  <!-- Todo: Wie Zugriff auf alle selbst erstellten Ressourcen möglich? -->
+
+<h5 id="ablauf-2">Ablauf</h5>
+
+<ol>
+  <li><a name="l951">​</a>Der GDA führt die Custom Operation <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.GroupIdentifier.Search.html">$groupidentifier-search</a> aus und übermittelt einen <em>e-Med GroupIdentifier</em>.</li>
+  <li>Die Fachanwendung prüft den <em>e-Med GroupIdentifier</em>.</li>
+  <li>Ist der <em>e-Med GroupIdentifier</em> gültig, ermittelt die Fachanwendung alle <em>MedicationRequest</em>-Ressourcen der Kategorie <em>Geplante Abgabe</em> mit dem übermittelten <em>e-Med GroupIdentifier</em>.
+  <!-- 4 Ergibt die Suche mindestens eine offene Geplante Abgabe, ermittelt die Fachanwendung zusätzlich alle zugehörigen MedicationDispense*-Ressourcen mit: dem übermittelten e-Med GroupIdentifier und status = completed oder cancelled --></li>
+  <li>Die Fachanwendung ermittelt alle <em>MedicationDispense</em>-Ressourcen mit dem übermittelten <em>e-Med GroupIdentifier</em>.</li>
+  <li>Die Fachanwendung liefert die ermittelten <em>MedicationRequest</em>- und <em>MedicationDispense</em>-Ressourcen als Bundle vom Typ <em>searchset</em> zurück.</li>
+  <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
+</ol>
+
+<h5 id="sequenzdiagramm-2">Sequenzdiagramm</h5>
+
+<p><a href="plantuml/UC_eMed_03_03.svg"><img src="plantuml/UC_eMed_03_03.svg" alt="overview" style="width:60%;" class="mx-auto"/></a></p>
+
+<h5 id="custom-operations">Custom Operations</h5>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br/>$groupidentifier-search: in Arbeit.
+</p>
+</div>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+  <script src="assets/js/flags.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <script src="assets/js/togglechanges.js" type="text/javascript"> </script>
+  <script src="assets/js/requirements-table.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container" data-fhir="generated">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
+          Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-10-07 13:01:00 +0000">
+    2026-10-07
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

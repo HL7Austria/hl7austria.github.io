@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div>TODO: Some Narrative</div>
+  </text>
+  <contained>
+    <Medication>
+      <id value="at-emed-journey-medication-ramipril"/>
+      <meta>
+        <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"/>
+      </meta>
+      <code>
+        <coding>
+          <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+          <code value="2450836"/>
+          <display value="RAMIPRIL HEX TBL 5MG"/>
+        </coding>
+      </code>
+    </Medication>
+  </contained>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod">
+    <valuePeriod>
+      <start value="2026-02-27"/>
+    </valuePeriod>
+  </extension>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+    <valueMarkdown value="1-0-0-1 | Täglich: 1-0-0-0"/>
+  </extension>
+  <status value="active"/>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"/>
+      <code value="2"/>
+      <display value="Geplante Abgabe"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"/>
+      <code value="KASSEN"/>
+      <display value="Kassenrezept"/>
+    </coding>
+  </category>
+  <medicationReference>
+    <reference value="#at-emed-journey-medication-ramipril"/>
+  </medicationReference>
+  <subject>
+    <reference value="Patient/At-Emed-Example-Patient-01"/>
+    <display value="Anton Mustermann"/>
+  </subject>
+  <authoredOn value="2026-02-27T08:10:00+00:00"/>
+  <requester>
+    <reference value="PractitionerRole/At-Emed-Example-PractitionerRole-01"/>
+    <display value="Dr. Hausärztin"/>
+  </requester>
+  <basedOn>
+    <reference value="MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01"/>
+    <display value="Planeintrag 1"/>
+  </basedOn>
+  <groupIdentifier>
+    <value value="WYE82A2G8EEW"/>
+  </groupIdentifier>
+  <dosageInstruction>
+    <extension url="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory"/>
+          <code value="standard"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <sequence value="1"/>
+    <patientInstruction value="Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein."/>
+    <timing>
+      <repeat>
+        <frequency value="1"/>
+        <period value="1"/>
+        <periodUnit value="d"/>
+        <when value="MORN"/>
+      </repeat>
+    </timing>
+    <route>
+      <coding>
+        <system value="https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"/>
+        <code value="100000073619"/>
+        <display value="zum Einnehmen"/>
+      </coding>
+    </route>
+    <doseAndRate>
+      <doseQuantity>
+        <unit value="Stück"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="{Stueck}"/>
+      </doseQuantity>
+    </doseAndRate>
+  </dosageInstruction>
+  <dispenseRequest>
+    <validityPeriod>
+      <end value="2026-03-27"/>
+    </validityPeriod>
+    <numberOfRepeatsAllowed value="0"/>
+    <quantity>
+      <value value="1"/>
+      <unit value="Packung"/>
+    </quantity>
+  </dispenseRequest>
+</MedicationRequest>
