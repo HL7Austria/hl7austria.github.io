@@ -239,61 +239,94 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <h3 id="zusammenhang-zwischen-clinicalstatus-und-verificationstatus">Zusammenhang zwischen clinicalStatus und verificationStatus</h3>
 
-<h2 id="erlaubte-kombinationen-für-allergyintolerance">Erlaubte Kombinationen für AllergyIntolerance</h2>
+<p>Die Elemente <code class="language-plaintext highlighter-rouge">clinicalStatus</code> und <code class="language-plaintext highlighter-rouge">verificationStatus</code> stehen fachlich in engem Zusammenhang: Der <code class="language-plaintext highlighter-rouge">clinicalStatus</code> beschreibt, ob ein Zustand aktuell besteht, der <code class="language-plaintext highlighter-rouge">verificationStatus</code> gibt an, wie gesichert diese Aussage ist. Die FHIR-Basisspezifikation lässt viele Kombinationen dieser beiden Werte zu. Für e-Diagnose sind jedoch nur die in den folgenden Tabellen angeführten Kombinationen relevant und erlaubt. Andere Kombinationen sind im Rahmen von e-Diagnose nicht zu verwenden.</p>
+
+<p>Für jede erlaubte Kombination sind die fachliche Übersetzung sowie die Begründung bzw. zusätzliche Anforderungen (z.B. verpflichtende Angaben) angeführt.</p>
+
+<h4 id="erlaubte-kombinationen-für-condition">Erlaubte Kombinationen für Condition</h4>
 
 <table>
   <thead>
     <tr>
-      <th>clinicalStatus</th>
-      <th>verificationStatus</th>
+      <th><code class="language-plaintext highlighter-rouge">clinicalStatus</code></th>
+      <th><code class="language-plaintext highlighter-rouge">verificationStatus</code></th>
       <th>Fachliche Übersetzung</th>
       <th>Begründung</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>active</td>
-      <td>unconfirmed</td>
-      <td>nicht gesichert</td>
-      <td>anamnestisch übernommen aus anderem Dokument, mit fraglicher bzw. keiner klinischen Beschreibung</td>
-    </tr>
-    <tr>
-      <td>active</td>
-      <td>presumed</td>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td><code class="language-plaintext highlighter-rouge">provisional</code></td>
       <td>Verdacht auf</td>
-      <td>reaction ist verpflichtend anzugeben</td>
+      <td> </td>
     </tr>
     <tr>
-      <td>active</td>
-      <td>confirmed</td>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td><code class="language-plaintext highlighter-rouge">differential</code></td>
+      <td>Differentialdiagnose</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td>-</td>
       <td>gesichert</td>
-      <td>reaction ist verpflichtend anzugeben</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">inactive</code></td>
+      <td><code class="language-plaintext highlighter-rouge">refuted</code></td>
+      <td>Ausschluss von</td>
+      <td>nur Angabe falls explizit notwendig und medizinisch sinnvoll (sonst: bei jeder Fiebermessung: Ausschluss von Fieber)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">inactive</code></td>
+      <td>-</td>
+      <td>Zustand nach</td>
+      <td>Erfassen einer Diagnose, ohne Angabe eines expliziten <code class="language-plaintext highlighter-rouge">verificationStatus</code></td>
     </tr>
   </tbody>
 </table>
 
-<!--ToDo: noch offen: | resolved | refuted | Widerlegt / Ausschluss von | reaction ist verpflichtend anzugeben | -->
-
-<h2 id="erlaubte-kombinationen-für-condition">Erlaubte Kombinationen für Condition</h2>
+<h4 id="erlaubte-kombinationen-für-allergyintolerance">Erlaubte Kombinationen für AllergyIntolerance</h4>
 
 <table>
   <thead>
     <tr>
-      <th>clinicalStatus</th>
-      <th>verificationStatus</th>
+      <th><code class="language-plaintext highlighter-rouge">clinicalStatus</code></th>
+      <th><code class="language-plaintext highlighter-rouge">verificationStatus</code></th>
       <th>Fachliche Übersetzung</th>
       <th>Begründung</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>active</td>
-      <td>unconfirmed</td>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td><code class="language-plaintext highlighter-rouge">unconfirmed</code></td>
       <td>nicht gesichert</td>
       <td>anamnestisch übernommen aus anderem Dokument, mit fraglicher bzw. keiner klinischen Beschreibung</td>
     </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td><code class="language-plaintext highlighter-rouge">presumed</code></td>
+      <td>Verdacht auf</td>
+      <td><code class="language-plaintext highlighter-rouge">AllergyIntolerance.reaction</code> ist verpflichtend anzugeben</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td><code class="language-plaintext highlighter-rouge">confirmed</code></td>
+      <td>gesichert</td>
+      <td><code class="language-plaintext highlighter-rouge">AllergyIntolerance.reaction</code> ist verpflichtend anzugeben</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">resolved</code></td>
+      <td><code class="language-plaintext highlighter-rouge">refuted</code></td>
+      <td>Widerlegt/Ausschluss von</td>
+      <td><code class="language-plaintext highlighter-rouge">AllergyIntolerance.reaction</code> ist verpflichtend anzugeben</td>
+    </tr>
   </tbody>
 </table>
+
 
 
 
@@ -322,7 +355,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-08 12:55:00 +0000">
+  <span title="2026-10-08 13:59:00 +0000">
     2026-10-08
   </span>
 

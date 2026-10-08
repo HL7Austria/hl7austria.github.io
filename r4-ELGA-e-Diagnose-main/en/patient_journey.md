@@ -6,15 +6,49 @@ Das folgende Anwendungsbeispiel beschreibt anhand einer fiktiven **Patient Journ
 
 Die Patient Journey zeigt den Lebenszyklus der e-Diagnose von der erstmaligen Initialisierung der Summary-Listen über das Hinzufügen und Aktualisieren einzelner Einträge bis hin zur Korrektur bzw. Löschung eines Eintrags.
 
+‹
+‹
+‹
+‹
+‹
+‹
+
+03.03.2026
+Initialisierung
+
+03.03.2026
+1. Arztbesuch
+
+09.03.2026
+2. Arztbesuch
+
+09.03.2026
+Storno
+
+09.03.2026
+Korrektur
+
+20.04.2026
+Löschung
+
+›
+›
+›
+›
+›
+›
+
 03.03.2026**Initialisierung.** Die e-Diagnose Fachanwendung legt je Kategorie eine leere Summary-Liste an.
 
 03.03.2026**1. Arztbesuch.** Hypertonie und Amoxicillin-Allergie kommen in die Summary-Listen, die akute Angina nur in die Gesamtansicht.
 
 09.03.2026**2. Arztbesuch.** Morbus Crohn und Koloskopie werden in die Summary-Listen aufgenommen – Morbus Crohn allerdings irrtümlich mit dem Code für Hyperthyreose. Diarrhö und Candida-Balanitis kommen nur in die Gesamtansicht.
 
-09.03.2026**Storno und Korrektur.** Die Ärztin storniert den falsch codierten Eintrag, die Fachanwendung entfernt ihn aus der Summary-Liste. Danach erfasst sie Morbus Crohn korrekt und nimmt ihn in die Summary-Liste auf.
+09.03.2026**Storno.** Die Ärztin bemerkt den falschen Code und storniert den Eintrag. Die Fachanwendung entfernt ihn selbst aus der Summary-Liste.
 
-20.04.2026**Löschung durch den Patienten.** Max Mustermann löscht die Candida-Balanitis über das Portal aus seiner Gesamtansicht. Der stornierte Eintrag bleibt in der Gesamtansicht sichtbar.
+09.03.2026**Korrektur.** Die Ärztin erfasst Morbus Crohn korrekt und nimmt ihn in die Summary-Liste auf. Der stornierte Eintrag bleibt in der Gesamtansicht sichtbar.
+
+20.04.2026**Löschung durch den Patienten.** Max Mustermann löscht die Candida-Balanitis über das Portal aus seiner Gesamtansicht.
 
 Diagnosen
 
@@ -83,7 +117,7 @@ Summary-Liste erneut abrufen
 `200 Bundle`
 [List v2 + Hypertonie](Bundle-ConditionListSearchSet01.md) · Allergien: [List v2 + Amoxicillin](Bundle-AllergyListSearchSet01.md)
 
-`GET /Condition?patient=[id]`
+`GET /Condition`
 Gesamtansicht abrufen
 
 `200 Bundle`
@@ -121,7 +155,13 @@ Summary-Liste prüfen
 `200 OK`
 [Storno vermerkt](Condition-ConditionEntry03EnteredInError.md): practitioner, datetime, reason
 
-die Fachanwendung entfernt den Eintrag selbst aus der Summary-Liste – kein $write durch den Client · [List v4](Bundle-ConditionListSearchSet03.md), List.source = e-Diagnose Fachanwendung
+die Fachanwendung entfernt den Eintrag selbst aus der Summary-Liste – kein $write durch den Client · List.source = e-Diagnose Fachanwendung
+
+`GET /List?code=11450-4&_include=*`
+Ergebnis prüfen
+
+`200 Bundle`
+[List v4](Bundle-ConditionListSearchSet03.md), ohne den stornierten Eintrag
 
 `POST /Condition`
 [Morbus Crohn](Condition-ConditionEntry06.md), korrekt codiert
@@ -135,7 +175,9 @@ neue id
 `200 OK`
 [List v5](Bundle-ConditionListSearchSet04.md) gespeichert
 
-`GET /Condition?patient=[id]`
+der stornierte Eintrag ist weiterhin Teil der Gesamtansicht
+
+`GET /Condition`
 Gesamtansicht über das Portal abrufen
 
 `200 Bundle`
@@ -147,40 +189,13 @@ Candida-Balanitis, durch den ELGA-Teilnehmer über das Portal
 `200 OK`
 Eintrag unwiderruflich gelöscht
 
-`GET /Condition?patient=[id]`
+`GET /Condition`
 Ergebnis prüfen
 
 `200 Bundle`
 [5 Diagnosen](Bundle-ConditionSearchSet03.md), ohne Candida-Balanitis
 
 wäre der Eintrag in der Summary-Liste: neue Listenversion ohne ihn, List.source = Patient
-
-‹
-‹
-‹
-‹
-‹
-
-03.03.2026
-Initialisierung
-
-03.03.2026
-1. Arztbesuch
-
-09.03.2026
-2. Arztbesuch
-
-09.03.2026
-Storno & Korrektur
-
-20.04.2026
-Löschung
-
-›
-›
-›
-›
-›
 
 ### Erster Arztbesuch - Erstvorstellung und Initialisierung der e-Diagnose
 

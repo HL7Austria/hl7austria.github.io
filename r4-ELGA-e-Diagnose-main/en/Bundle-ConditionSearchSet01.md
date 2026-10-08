@@ -14,7 +14,7 @@
   "total" : 2,
   "link" : [{
     "relation" : "self",
-    "url" : "https://example.org/fhir/Condition?patient=Patient/example"
+    "url" : "https://example.org/fhir/Condition"
   }],
   "entry" : [{
     "fullUrl" : "https://example.org/fhir/Condition/ConditionEntry01",

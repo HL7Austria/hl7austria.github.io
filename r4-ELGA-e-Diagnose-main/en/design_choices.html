@@ -252,7 +252,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h3>
 
-<p>Informationen zu GDAs und Patienten werden nur von der e-Diagnose-Fachanwendung verwaltet. Als Client-Anwendung ist es ausreichend, für GDAs deren OID und für Patienten deren bPK-GH anzugeben. Die e-Diagnose-Fachanwendung löst diese logischen Identifier gegenüber dem GDA-I bzw. ZPI auf, erstellt - falls notwendig - entsprechende Ressourcen und setzt die erforderlichen Referenzen. Beim Abruf von Daten aus der e-Diagnose-Fachanwendung sind die aufgelösten Informationen enthalten.</p>
+<p>Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Diagnose-Fachanwendung verwaltet. Client-Anwendungen dürfen daher keine eigenen <code class="language-plaintext highlighter-rouge">Patient</code>-, <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) anzugeben:</p>
+
+<ul>
+  <li><strong>GDA:</strong> OID des GDA laut GDA-Index (GDA-I)</li>
+  <li><strong>Patient:</strong> bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)</li>
+</ul>
+
+<p>Die e-Diagnose-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ersetzt die logischen Referenzen durch Referenzen auf diese Ressourcen. Beim Abruf von Daten enthalten die Ressourcen daher die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung abgerufen werden.</p>
+
 
 
 
@@ -281,7 +289,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-08 12:55:00 +0000">
+  <span title="2026-10-08 13:59:00 +0000">
     2026-10-08
   </span>
 

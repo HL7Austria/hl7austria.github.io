@@ -14,7 +14,7 @@
   "total" : 1,
   "link" : [{
     "relation" : "self",
-    "url" : "https://example.org/fhir/List?patient=Patient/PatientExample&code=http://loinc.org|47519-4&_include=*"
+    "url" : "https://example.org/fhir/List?code=http://loinc.org|47519-4&_include=*"
   }],
   "entry" : [{
     "fullUrl" : "https://example.org/fhir/List/ProcedureList01",

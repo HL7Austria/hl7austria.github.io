@@ -12,5 +12,10 @@ In Arbeit.
 
 ### Informationen über GDA und Patienten
 
-Informationen zu GDAs und Patienten werden nur von der e-Diagnose-Fachanwendung verwaltet. Als Client-Anwendung ist es ausreichend, für GDAs deren OID und für Patienten deren bPK-GH anzugeben. Die e-Diagnose-Fachanwendung löst diese logischen Identifier gegenüber dem GDA-I bzw. ZPI auf, erstellt - falls notwendig - entsprechende Ressourcen und setzt die erforderlichen Referenzen. Beim Abruf von Daten aus der e-Diagnose-Fachanwendung sind die aufgelösten Informationen enthalten.
+Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Diagnose-Fachanwendung verwaltet. Client-Anwendungen dürfen daher keine eigenen `Patient`-, `Practitioner`-, `PractitionerRole`- oder `Organization`-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (`Reference.identifier`) anzugeben:
+
+* **GDA:** OID des GDA laut GDA-Index (GDA-I)
+* **Patient:** bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)
+
+Die e-Diagnose-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ersetzt die logischen Referenzen durch Referenzen auf diese Ressourcen. Beim Abruf von Daten enthalten die Ressourcen daher die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung abgerufen werden.
 
