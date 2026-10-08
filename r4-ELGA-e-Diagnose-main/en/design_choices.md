@@ -10,3 +10,7 @@ In Arbeit.
  
 * Info über unsicherheit bezüglich Patient Compartment
 
+### Informationen über GDA und Patienten
+
+Informationen zu GDAs und Patienten werden nur von der e-Diagnose-Fachanwendung verwaltet. Als Client-Anwendung ist es ausreichend, für GDAs deren OID und für Patienten deren bPK-GH anzugeben. Die e-Diagnose-Fachanwendung löst diese logischen Identifier gegenüber dem GDA-I bzw. ZPI auf, erstellt - falls notwendig - entsprechende Ressourcen und setzt die erforderlichen Referenzen. Beim Abruf von Daten aus der e-Diagnose-Fachanwendung sind die aufgelösten Informationen enthalten.
+
