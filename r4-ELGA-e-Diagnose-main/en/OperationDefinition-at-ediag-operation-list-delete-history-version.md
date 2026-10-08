@@ -17,7 +17,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-08T14:12:43+00:00",
+  "date" : "2026-10-08T15:20:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -49,6 +49,14 @@
     "max" : "1",
     "documentation" : "Die versionId der zu löschenden Version der Summary-Liste.",
     "type" : "id"
+  },
+  {
+    "name" : "fullUrl",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Die vollständige URL der zu löschenden Version der Summary-Liste.",
+    "type" : "url"
   }]
 }
 

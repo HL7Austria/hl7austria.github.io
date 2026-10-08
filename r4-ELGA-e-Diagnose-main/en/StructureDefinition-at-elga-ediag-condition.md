@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-10-08T14:12:43+00:00",
+  "date" : "2026-10-08T15:20:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -92,7 +92,14 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
     "element" : [{
       "id" : "Condition",
       "path" : "Condition",
-      "short" : "AT e-Diagnose Condition"
+      "short" : "AT e-Diagnose Condition",
+      "constraint" : [{
+        "key" : "condition-status-combination",
+        "severity" : "error",
+        "human" : "Erlaubte Kombinationen von clinicalStatus und verificationStatus: active mit provisional, differential oder ohne verificationStatus; inactive mit refuted oder ohne verificationStatus.",
+        "expression" : "verificationStatus.exists() implies ((verificationStatus.coding.exists(code = 'provisional' or code = 'differential') and clinicalStatus.coding.exists(code = 'active')) or (verificationStatus.coding.exists(code = 'refuted') and clinicalStatus.coding.exists(code = 'inactive')))",
+        "source" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+      }]
     },
     {
       "id" : "Condition.extension",
@@ -163,16 +170,23 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
     {
       "id" : "Condition.clinicalStatus",
       "path" : "Condition.clinicalStatus",
-      "short" : "Klinischer Status der Diagnose (z. B. Status post); mögliche Codes: active | recurrence | relapse | inactive | remission | resolved.",
+      "short" : "Klinischer Status der Diagnose (z. B. Status post); mögliche Codes: active | inactive.",
       "min" : 1,
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-condition-clinical-status-vs"
+      }
     },
     {
       "id" : "Condition.verificationStatus",
       "path" : "Condition.verificationStatus",
-      "short" : "Verifizierungsstatus der Diagnose, mögliche Codes: unconfirmed | provisional | differential | confirmed | refuted | entered-in-error.",
-      "min" : 1,
-      "mustSupport" : true
+      "short" : "Verifizierungsstatus der Diagnose, mögliche Codes: provisional | differential | refuted.",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-condition-verification-status-vs"
+      }
     },
     {
       "id" : "Condition.category",

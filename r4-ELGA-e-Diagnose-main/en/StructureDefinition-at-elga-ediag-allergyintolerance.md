@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-10-08T14:12:43+00:00",
+  "date" : "2026-10-08T15:20:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -77,7 +77,14 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
     "element" : [{
       "id" : "AllergyIntolerance",
       "path" : "AllergyIntolerance",
-      "short" : "AT e-Diagnose AllergyIntolerance"
+      "short" : "AT e-Diagnose AllergyIntolerance",
+      "constraint" : [{
+        "key" : "allergy-status-combination",
+        "severity" : "error",
+        "human" : "Erlaubte Kombinationen von clinicalStatus und verificationStatus: active mit unconfirmed, presumed oder confirmed; resolved mit refuted.",
+        "expression" : "(clinicalStatus.coding.exists(code = 'active') and verificationStatus.coding.exists(code = 'unconfirmed' or code = 'presumed' or code = 'confirmed')) or (clinicalStatus.coding.exists(code = 'resolved') and verificationStatus.coding.exists(code = 'refuted'))",
+        "source" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"
+      }]
     },
     {
       "id" : "AllergyIntolerance.extension",
@@ -148,16 +155,24 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
     {
       "id" : "AllergyIntolerance.clinicalStatus",
       "path" : "AllergyIntolerance.clinicalStatus",
-      "short" : "Status der Allergie; mögliche Codes: active | inactive | resolved.",
+      "short" : "Status der Allergie; mögliche Codes: active | resolved.",
       "min" : 1,
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-clinical-status-vs"
+      }
     },
     {
       "id" : "AllergyIntolerance.verificationStatus",
       "path" : "AllergyIntolerance.verificationStatus",
-      "short" : "Verifizierungsstatus der Allergie; mögliche Codes: unconfirmed | confirmed | refuted | entered-in-error.",
+      "short" : "Verifizierungsstatus der Allergie; mögliche Codes: unconfirmed | presumed | confirmed | refuted.",
       "min" : 1,
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-verification-status-vs"
+      }
     },
     {
       "id" : "AllergyIntolerance.type",

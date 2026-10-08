@@ -14,7 +14,7 @@
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-10-08T14:12:43+00:00",
+  "date" : "2026-10-08T15:20:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -402,6 +402,22 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-allergyintolerance-clinical-status-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-ediag-allergyintolerance-clinical-status-vs"
+      },
+      "name" : "AT e-Diagnose AllergyIntolerance Clinical Status",
+      "description" : "Value-Set mit den für e-Diagnose zulässigen Ausprägungen von AllergyIntolerance.clinicalStatus (siehe Workflowmanagement: Erlaubte Kombinationen für AllergyIntolerance).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "ValueSet-at-ediag-allergyintolerance-code.html"
       }],
       "reference" : {
@@ -418,6 +434,38 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-allergyintolerance-verification-status-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-ediag-allergyintolerance-verification-status-vs"
+      },
+      "name" : "AT e-Diagnose AllergyIntolerance Verification Status",
+      "description" : "Value-Set mit den für e-Diagnose zulässigen Ausprägungen von AllergyIntolerance.verificationStatus (siehe Workflowmanagement: Erlaubte Kombinationen für AllergyIntolerance).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-condition-clinical-status-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-ediag-condition-clinical-status-vs"
+      },
+      "name" : "AT e-Diagnose Condition Clinical Status",
+      "description" : "Value-Set mit den für e-Diagnose zulässigen Ausprägungen von Condition.clinicalStatus (siehe Workflowmanagement: Erlaubte Kombinationen für Condition).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "ValueSet-at-ediag-condition-code.html"
       }],
       "reference" : {
@@ -425,6 +473,54 @@
       },
       "name" : "AT e-Diagnose Condition Code",
       "description" : "Value-Set für die Codierung von Diagnosen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-condition-verification-status-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-ediag-condition-verification-status-vs"
+      },
+      "name" : "AT e-Diagnose Condition Verification Status",
+      "description" : "Value-Set mit den für e-Diagnose zulässigen Ausprägungen von Condition.verificationStatus (siehe Workflowmanagement: Erlaubte Kombinationen für Condition). Gesicherte Diagnosen (active) sowie Zustand nach (inactive) werden ohne verificationStatus erfasst.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-ediag-operationoutcome-details.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-ediag-operationoutcome-details"
+      },
+      "name" : "AT e-Diagnose OperationOutcome Details",
+      "description" : "Value-Set mit den für e-Diagnose zulässigen detaillierten Fehlercodes.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-at-ediag-codesystem-operationoutcome-details.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-ediag-codesystem-operationoutcome-details"
+      },
+      "name" : "AT e-Diagnose OperationOutcome Details",
+      "description" : "Dieses Codesystem legt die möglichen Fehlercodes im Rahmen der e-Diagnose-Fachanwendung fest.",
       "exampleBoolean" : false
     },
     {
@@ -505,6 +601,22 @@
       },
       "name" : "AT ELGA e-Diagnose List",
       "description" : "Das AT e-Diagnose List-Profil dient der strukturierten Listung von Einträgen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediat-operationoutcome.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-ediat-operationoutcome"
+      },
+      "name" : "AT ELGA e-Diagnose OperationOutcome",
+      "description" : "Dieses Profil gibt vor, welche Details im Rahmen der e-Diagnose im Fehlerfall...",
       "exampleBoolean" : false
     },
     {

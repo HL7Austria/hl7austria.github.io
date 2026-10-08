@@ -10,8 +10,6 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **clinicalStatus**: Active
 
-**verificationStatus**: Confirmed
-
 **code**: Suppurative tonsillitis
 
 **subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
@@ -54,12 +52,6 @@ Temperatur >38.5, Schmerzen beim Schlucken
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
       "code" : "active"
-    }]
-  },
-  "verificationStatus" : {
-    "coding" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-      "code" : "confirmed"
     }]
   },
   "code" : {

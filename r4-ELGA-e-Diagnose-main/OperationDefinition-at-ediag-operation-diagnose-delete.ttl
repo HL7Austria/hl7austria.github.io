@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "at-ediag-operation-diagnose-delete"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-delete</b></p><a name=\"at-ediag-operation-diagnose-delete\"> </a><a name=\"hcat-ediag-operation-diagnose-delete\"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-delete</b></p><a name=\"at-ediag-operation-diagnose-delete\"> </a><a name=\"hcat-ediag-operation-diagnose-delete\"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>diagnoseUrl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>Die vollständige URL der zu löschenden Diagnose.</p>\n</div></td></tr><tr><td>OUT</td><td>listUrl</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wird.</p>\n</div></td></tr></table></div>"
   ] ;
   fhir:OperationDefinition.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-delete"] ;
   fhir:OperationDefinition.version [ fhir:value "0.1.0"] ;
@@ -19,7 +19,7 @@
   fhir:OperationDefinition.status [ fhir:value "active"] ;
   fhir:OperationDefinition.kind [ fhir:value "operation"] ;
   fhir:OperationDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
-  fhir:OperationDefinition.date [ fhir:value "2026-10-08T14:12:43+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-10-08T15:20:56+00:00"^^xsd:dateTime] ;
   fhir:OperationDefinition.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:OperationDefinition.contact [
      fhir:index 0 ;
@@ -55,7 +55,24 @@
   ] ;
   fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
   fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
-  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean] .
+  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "diagnoseUrl" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die vollständige URL der zu löschenden Diagnose." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "url" ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "listUrl" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wird." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "url" ]
+  ] .
 
 # - ontology header ------------------------------------------------------------
 

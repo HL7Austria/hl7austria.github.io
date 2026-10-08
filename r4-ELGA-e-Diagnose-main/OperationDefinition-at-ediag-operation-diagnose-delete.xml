@@ -3,7 +3,9 @@
 <OperationDefinition xmlns="http://hl7.org/fhir">
   <id value="at-ediag-operation-diagnose-delete"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-delete</b></p><a name="at-ediag-operation-diagnose-delete"> </a><a name="hcat-ediag-operation-diagnose-delete"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-delete</b></p><a name="at-ediag-operation-diagnose-delete"> </a><a name="hcat-ediag-operation-diagnose-delete"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>diagnoseUrl</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td><td/><td><div><p>Die vollständige URL der zu löschenden Diagnose.</p>
+</div></td></tr><tr><td>OUT</td><td>listUrl</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td><td/><td><div><p>Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wird.</p>
+</div></td></tr></table></div>
   </text>
   <url value="https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-delete"/>
   <version value="0.1.0"/>
@@ -12,7 +14,7 @@
   <status value="active"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2026-10-08T14:12:43+00:00"/>
+  <date value="2026-10-08T15:20:56+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -39,4 +41,20 @@
   <system value="false"/>
   <type value="false"/>
   <instance value="true"/>
+  <parameter>
+    <name value="diagnoseUrl"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Die vollständige URL der zu löschenden Diagnose."/>
+    <type value="url"/>
+  </parameter>
+  <parameter>
+    <name value="listUrl"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wird."/>
+    <type value="url"/>
+  </parameter>
 </OperationDefinition>

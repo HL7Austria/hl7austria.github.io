@@ -2,27 +2,6 @@
 
 ## OperationDefinition: e-Diagnose Operation $write 
 
-### Wer ruft diese Operation in welchem Zusammenhang auf?
-
-Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. Allergien, Diagnosen, Prozeduren) aktualisieren (Einträge werden hinzugefügt/entfernt) oder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.
-
-### Voraussetzung für den Aufruf
-
-* Der GDA hat durch einen vorangeganenen Abruf (siehe Definition vom Abruf der aktuellen Summary-Liste) die aktuelle `versionId` der Summary-Liste ermittelt. Diese muss beim Aufruf dieser Operation als `If-Match`-Header mitgeschickt werden.
-
-### Detaillierte Business-Logik
-
-1. Nach erfolgreicher Validierung wird die Summary-Liste gespeichert.
-
-### Validierung / Fehlerbehandlung
-
-* Die übermittelte List-Ressource wird laut Profil geprüft.
-* `List.code` muss mit dem `code` der Operation übereinstimmen.
-* `List.subject` muss mit dem im Token enthaltenen Patienten übereinstimmen.
-* `List.source` muss mit dem im Token enthaltenen GDA übereinstimmen.
-* Der übermittelte `If-Match`-Header stimmt mit der `versionId` der Ressource am Server überein.
-* Für die List-Ressource gilt außerdem `entry.item.empty() implies emptyReason.coding.exists(system='http://terminology.hl7.org/CodeSystem/list-empty-reason' and code='nilknown')`.
-
 
 
 ## Resource Content
@@ -35,9 +14,10 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
   "version" : "0.1.0",
   "name" : "AtDiagListWrite",
   "title" : "e-Diagnose Operation $write",
-  "status" : "draft",
+  "status" : "active",
   "kind" : "operation",
-  "date" : "2026-10-08T14:12:43+00:00",
+  "experimental" : false,
+  "date" : "2026-10-08T15:20:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -55,6 +35,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
     }]
   }],
   "description" : "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
+  "purpose" : "### Wer ruft diese Operation in welchem Zusammenhang auf?\n\nMöchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagnosen, Prozeduren, Allergien) aktualisieren (Einträge werden hinzugefügt/entfernt)\noder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.\n\n### Voraussetzung für den Aufruf\n\n- Der GDA hat durch einen [vorangeganenen Abruf](https://build.fhir.org/ig/HL7Austria/ELGA-e-Diagnose-R4/branches/main/en/use_case_read.html#aktuelle-summary-liste-abrufen) die aktuelle `versionId` der Summary-Liste ermittelt. Diese muss beim Aufruf dieser Operation als `If-Match`-Header mitgeschickt werden.\n\n### Detaillierte Business-Logik\n\n1. Nach erfolgreicher Validierung wird die Summary-Liste gespeichert.\n\n### Validierung / Fehlerbehandlung\n\n* Die übermittelte List-Ressource wird laut Profil geprüft.\n* `List.code` muss mit dem `code` der Operation übereinstimmen.\n* `List.subject` muss mit dem im Token enthaltenen Patienten übereinstimmen.\n* `List.source` muss mit dem im Token enthaltenen GDA übereinstimmen.\n* Der übermittelte `If-Match`-Header stimmt mit der `versionId` der Ressource am Server überein.\n* Für die List-Ressource gilt außerdem `entry.item.empty() implies emptyReason.coding.exists(system='http://terminology.hl7.org/CodeSystem/list-empty-reason' and code='nilknown')`.",
   "affectsState" : true,
   "code" : "write",
   "resource" : ["List"],
@@ -67,7 +48,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
     "min" : 1,
     "max" : "1",
     "documentation" : "Der Parameter gibt an, welche Art von Einträgen in der Summary-Liste enthalten sind. Der Wert muss aus dem Value-Set [AtEdiagListCodeVS](ValueSet-at-ediag-list-code-vs.html) stammen.",
-    "type" : "code",
+    "type" : "CodeableConcept",
     "binding" : {
       "strength" : "required",
       "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-code-vs"
@@ -79,6 +60,15 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (z.B.. 
     "min" : 1,
     "max" : "1",
     "documentation" : "Der Parameter dient der Übermittlung der Summary-Liste.",
+    "type" : "List",
+    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
+  },
+  {
+    "name" : "list",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Die Summary-Liste, die nach erfolgreichem Aufruf der Operation gespeichert wurde.",
     "type" : "List",
     "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   }]
