@@ -35,10 +35,6 @@ Currently, the Austrian EHR system (ELGA) is mainly based on HL7® CDA®. In ord
 
 This guide is based on the [FHIR® R4](http://hl7.org/fhir/R4/) specification. In addition, this guide also relies on a number of parent implementation guides:
 
-### Dependencies
-
-This guide is based on the [FHIR R4](http://hl7.org/fhir/R4/) specification. In addition, this guide also relies on a number of parent implementation guides:
-
 ### Governance
 
 HL7® Austria is an official Affiliate of HL7® International. Within HL7® Austria the technical committee for FHIR® (TC FHIR®) is responsible to promote and disseminate the new upcoming standard HL7® FHIR®. The TC FHIR® deals with the standard-compliant and coordinated usage of HL7® FHIR® based communication solutions. It coordinates and describes necessary localizations and offers concrete help for FHIR®-compliant interfaces.
@@ -62,7 +58,7 @@ This Implementation Guide contains and references intellectual property owned by
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-10-08T09:33:46+00:00",
+  "date" : "2026-10-08T12:29:43+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
