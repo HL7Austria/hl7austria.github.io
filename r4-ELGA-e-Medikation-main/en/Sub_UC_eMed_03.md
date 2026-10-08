@@ -26,7 +26,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 **Prescription-Search** dient dem Suche nach [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) eines ELGA-Teilnehmers, um vorgesehene Arzneimittelabgaben einzusehen. Als **Geplante Abgabe** gilt eine **MedicationRequest**-Ressource mit **category = "Geplante Abgabe"**.
 
-**Geplante Abgaben** bilden einige Inhalte des e-Rezepts ab. Wurden mehrere Arzneimittel verordnet und sind demselben e-Rezept zugeordnet, sind die zugehörigen **Geplanten Abgaben** mit demselben **e-Med GroupIdentifier** zu versehen, den auch das e-Rezept mitführt (bildet damit die Rezept-Klammer).
+**Geplante Abgaben** dokumentieren medizinische Inhalte des e-Rezepts. Wurden mehrere Arzneimittel gleichzeitig verordnet und sind demselben e-Rezept zugeordnet, sind die zugehörigen **Geplanten Abgaben** mit demselben **e-Med GroupIdentifier** zu versehen, den auch das e-Rezept mitführt (bildet damit die Rezept-Klammer).
 
 #### Suchparameter
 

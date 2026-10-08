@@ -6,9 +6,10 @@ Dieser technische Use Case beschreibt den schreibenden Zugriff [berechtigter Akt
 
 Für ELGA-Teilnehmer (bzw. deren Vertretungen) erfolgt der schreibende Zugriff im Rahmen der Ausübung von Teilnehmerrechten ausschließlich über das ELGA-Zugangsportal. Für GDA erfolgt der schreibende Zugriff über die e-Medikation-Schnittstelle des jeweiligen GDA-Systems.
 
-Der schreibende Zugriff umfasst folgende Bearbeitungen der **aktuellen Version des Medikationsplans**:
+Der schreibende Zugriff umfasst folgende Bearbeitungen:
 
-* **GDA** können einzelne **Medikationsplaneinträge** 
+* **GDA** können in der **aktuellen Version des Medikationsplans** 
+* einzelne **Medikationsplaneinträge** 
 * [hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen),
 * [ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern),
 * [unverändert zur Kenntis nehmen](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-unverändert-zur-kenntnis-nehmen),
@@ -17,9 +18,12 @@ Der schreibende Zugriff umfasst folgende Bearbeitungen der **aktuellen Version d
 * [stornieren](Sub_UC_eMed_02.md#sub_uc_emed_02_07---planeintrag-im-medikationsplan-stornieren),
 * [mit abgelaufenem Einnahmezeitraum weiterverordnen oder beenden](Sub_UC_eMed_02.md#sub_uc_emed_02_09---abgelaufenen-planeintrag-weiterverordnen-oder-beenden)
  
+* im **Medikationsplan**: 
 * die [Reihenfolge der Planeinträge ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_10---reihenfolge-der-planeinträge-ändern)
 * einen [Leeren Medikationsplan dokumentieren](Sub_UC_eMed_02.md#sub_uc_emed_02_06---leeren-medikationsplan-dokumentieren).
-* **ELGA-Teilnehmer** können 
+ 
+ 
+* **ELGA-Teilnehmer** und deren Vertretungen können 
 * einzelne aktuelle oder historische [Planeinträge löschen](Sub_UC_eMed_02.md#sub_uc_emed_02_11---planeintrag-durch-elga-teilnehmer-löschen) oder
 * den aktuellen oder historische Versionen des gesamten [Medikationsplans löschen](Sub_UC_eMed_02.md#sub_uc_emed_02_12---medikationsplan-durch-elga-teilnehmer-löschen).
  
@@ -96,7 +100,7 @@ Der GDA führt ein **POST** [$plan-read](OperationDefinition-AtElgaEmed.List.Pla
 * **status** muss mit **active** oder **on-hold** dokumentiert werden (siehe [Status des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-des-medicationrequests-im-medikationsplaneintrag) und [Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status))
 * **intent = order** und **category = "Planeintrag"** sind für alle Planeinträge verpflichtend mit festem Wert zu dokumentieren
 * **reportedBoolean** erhält den Wert **false**, wenn die Medikation vom Ersteller des Planeintrags (GDA) selbst stammt, sonst **true**
-* **Medication**: zur Dokumentation des Arzneimittels wird die **Medication**-Ressource verwendet. Diese muss bei Medikamenten mit PZN beim Schreiben als **Logical Reference** mit **PZN und Name** angegeben werden (beim Lesen ist diese contained in der Ressource enthalten). Magistrale Zubereitungen sind immer als contained Ressource anzugeben (siehe Kapitel [Medikation](ELGA-e-Medikation-R4/output/medication.md)).
+* **medication**: zur Dokumentation des Arzneimittels wird die **Medication**-Ressource verwendet. Diese muss bei Medikamenten mit PZN beim Schreiben als **Logical Reference** mit **PZN und Name** angegeben werden (beim Lesen ist diese contained in der Ressource enthalten). Magistrale Zubereitungen sind immer als contained Ressource anzugeben (siehe Kapitel [Medikation](ELGA-e-Medikation-R4/output/medication.md)).
 * **subject**: [ELGA Core Patient](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-patient.html) darf **nicht geändert** werden. 
 * **authoredOn**: Datum der Erstellung des Planeintrags
 * **requester**: Ersteller des Planeintrags (GDA). AT ELGA Core Practitioner, PractitionerRole bzw. Organization Profile (siehe [ELGA Core](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/artifacts.html))
@@ -131,7 +135,7 @@ AtElgaEmedListMedikationsplan
 ```
 AtElgaEmedMedicationRequestPlaneintrag
     status: active | on-hold
-    category: "Planeintrag"  // fester Wert
+    category: 1 "Planeintrag"         //Kategorie zur Unterscheidung der MedicationRequests
     reportedBoolean: false | true       // false, wenn vom Ersteller des Planeintrags
     medicationReference.reference: Medikation mit PZN oder Magistrale Zubereitung // Contained Medication 
     authoredOn: Datum der Erstellung des Planeintrags    
