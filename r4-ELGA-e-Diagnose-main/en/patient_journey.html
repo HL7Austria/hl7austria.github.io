@@ -234,13 +234,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div class="markdown-toc">
-<ul id="markdown-toc">
-  <li><a href="#erster-arztbesuch---erstvorstellung-und-initialisierung-der-e-diagnose" id="markdown-toc-erster-arztbesuch---erstvorstellung-und-initialisierung-der-e-diagnose">Erster Arztbesuch - Erstvorstellung und Initialisierung der e-Diagnose</a></li>
-  <li><a href="#zweiter-arztbesuch---auftreten-von-nebenwirkungen-und-bearbeitung" id="markdown-toc-zweiter-arztbesuch---auftreten-von-nebenwirkungen-und-bearbeitung">Zweiter Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung</a></li>
-  <li><a href="#einsicht-in-e-diagnose-durch-elga-teilnehmer---eintrag-löschen" id="markdown-toc-einsicht-in-e-diagnose-durch-elga-teilnehmer---eintrag-löschen">Einsicht in e-Diagnose durch ELGA-Teilnehmer - Eintrag löschen</a></li>
-</ul>
-
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
 
 <p>Das folgende Anwendungsbeispiel beschreibt anhand einer fiktiven <strong>Patient Journey</strong>, wie die klinisch relevanten Informationen eines Patienten im Rahmen der e-Diagnose aufgebaut, ergänzt und aktualisiert werden. Dabei werden Diagnosen, Prozeduren sowie Allergien und Intoleranzen strukturiert erfasst und einzelne Einträge über die jeweiligen Summary-Listen hervorgehoben.</p>
@@ -291,6 +286,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 .pj .caption p{margin:0;max-width:72ch;color:var(--ink-2)}
 .pj .caption b{color:var(--ink);font-weight:600}
 .pj .caption .d{font-variant-numeric:tabular-nums;color:var(--blue);font-weight:600;margin-right:6px}
+
+/* clinical narrative of the current step */
+.pj .stories{margin:-12px 0 26px;padding-left:17px}
+.pj .story{max-width:80ch;font-size:14px;color:var(--ink)}
+.pj .story p{margin:0 0 8px}
+.pj .story p:last-child{margin-bottom:0}
+.pj .story a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
 
 /* three categories */
 .pj .cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
@@ -476,11 +478,40 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
   <div class="caption">
     <p class="st on0"><span class="d">03.03.2026</span><b>Initialisierung.</b> Die e-Diagnose Fachanwendung legt je Kategorie eine leere Summary-Liste an.</p>
-    <p class="st on1"><span class="d">03.03.2026</span><b>1. Arztbesuch.</b> Hypertonie und Amoxicillin-Allergie kommen in die Summary-Listen, die akute Angina nur in die Gesamtansicht.</p>
+    <p class="st on1"><span class="d">03.03.2026</span><b>1. Arztbesuch.</b> Hypertonie und Amoxicillin-Allergie kommen in die Summary-Listen, die eitrige Angina nur in die Gesamtansicht.</p>
     <p class="st on2"><span class="d">09.03.2026</span><b>2. Arztbesuch.</b> Morbus Crohn und Koloskopie werden in die Summary-Listen aufgenommen – Morbus Crohn allerdings irrtümlich mit dem Code für Hyperthyreose. Diarrhö und Candida-Balanitis kommen nur in die Gesamtansicht.</p>
     <p class="st on3"><span class="d">09.03.2026</span><b>Storno.</b> Die Ärztin bemerkt den falschen Code und storniert den Eintrag. Die Fachanwendung entfernt ihn selbst aus der Summary-Liste.</p>
     <p class="st on4"><span class="d">09.03.2026</span><b>Korrektur.</b> Die Ärztin erfasst Morbus Crohn korrekt und nimmt ihn in die Summary-Liste auf. Der stornierte Eintrag bleibt in der Gesamtansicht sichtbar.</p>
     <p class="st on5"><span class="d">20.04.2026</span><b>Löschung durch den Patienten.</b> Max Mustermann löscht die Candida-Balanitis über das Portal aus seiner Gesamtansicht.</p>
+  </div>
+
+  <div class="stories">
+    <div class="story st on0">
+      <p><a href="Practitioner-PractitionerExample.html">Dr. Musterärztin</a> sieht <a href="Patient-PatientExample.html">Max Mustermann</a> am 3. März 2026 erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.</p>
+      <p>Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden: Je Kategorie wird eine leere Summary-Liste angelegt. Sie referenziert den Patienten, die <a href="Device-DeviceExample.html">e-Diagnose-Fachanwendung</a> als erstellendes System sowie das Initialisierungsdatum. Als Begründung, warum die Liste leer ist, wird <code>List.emptyReason</code> auf <code>notstarted</code> gesetzt.</p>
+    </div>
+    <div class="story st on1">
+      <p>Im Rahmen der Anamnese berichtet Herr Mustermann über einen seit mehreren Jahren bestehenden, mit Lisinopril 10 mg behandelten Bluthochdruck sowie über eine Penicillinallergie seit seiner Kindheit.</p>
+      <p>Aktuell hat er Schmerzen beim Schlucken und Fieber über 38,5 °C; die Untersuchung zeigt eine eitrige Angina. Wegen der Penicillinallergie verzichtet die Ärztin auf Amoxicillin und verordnet Clarithromycin, dazu Mexalen 500 mg bei Bedarf.</p>
+      <p>Hypertonie und eitrige Angina werden jeweils als Condition erfasst, die Amoxicillin-Allergie als AllergyIntolerance. Hypertonie und Allergie nimmt die Ärztin in die Summary-Listen auf, damit sie auch anderen GDA beim Abruf angezeigt werden. Ein neuerlicher Abruf liefert die Summary-Einträge; über <a href="use_case_read.html#alle-einträge-abrufen">alle Einträge abrufen</a> erhält sie die Gesamtansicht aller Diagnosen.</p>
+    </div>
+    <div class="story st on2">
+      <p>Am 9. März 2026 hat sich die Angina deutlich gebessert. Herr Mustermann berichtet jedoch über Durchfall und Juckreiz im Genitalbereich. Die Ärztin stellt eine Pilzinfektion (Candida-Balanitis) fest, vermutlich als Folge der Antibiotikatherapie, und verordnet Clotrimazol 1 % Creme.</p>
+      <p>Herr Mustermann vermutet zudem, dass die Antibiotikatherapie einen Schub seines seit 2010 bestehenden Morbus Crohn ausgelöst hat. Da der Durchfall sowohl Nebenwirkung als auch Teil eines Schubs sein kann, wird die Ursache weiter abgeklärt; bis dahin soll er auf ausreichende Flüssigkeitszufuhr achten. Die letzte Koloskopie fand am 23. September 2025 statt.</p>
+      <p>Die Ärztin dokumentiert Morbus Crohn, die medikamenteninduzierte Diarrhö und die Candida-Balanitis sowie die Koloskopie als Prozedur. Morbus Crohn und Koloskopie nimmt sie in die jeweilige Summary-Liste auf.</p>
+    </div>
+    <div class="story st on3">
+      <p>Die Ärztin befürchtet, dass ihr ein Fehler unterlaufen ist, und ruft die Condition-Summary-Liste ab. Dabei fällt ihr auf, dass sie für Morbus Crohn den Code für Hyperthyreose gewählt hat.</p>
+      <p>Sie <a href="use_case_write.html#eintrag-stornieren">storniert</a> den Eintrag. Die e-Diagnose-Fachanwendung vermerkt die Stornierung und entfernt den Eintrag selbst aus der Summary-Liste.</p>
+    </div>
+    <div class="story st on4">
+      <p>Anschließend erfasst die Ärztin Morbus Crohn mit dem richtigen Code und nimmt die Diagnose in die Summary-Liste auf.</p>
+      <p>Stornierte Einträge bleiben Teil der Gesamtansicht. Der falsch codierte Eintrag ist daher in jedem Abruf aller Diagnosen enthalten – als storniert gekennzeichnet.</p>
+    </div>
+    <div class="story st on5">
+      <p>Am 20. April 2026 nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose und ruft alle Diagnosen ab. Dabei sieht er, dass die im März dokumentierte Pilzinfektion in seiner Gesamtansicht aufscheint. Er möchte das nicht und <a href="use_case_participant.html#eintrag-löschen">löscht</a> den Eintrag.</p>
+      <p>Der Eintrag wird daraufhin aus der Gesamtansicht gelöscht. Wäre die Diagnose auch Bestandteil der Summary-Liste, würde sie ebenfalls aus dieser entfernt; <code>List.source</code> wird in diesem Fall auf den Patienten gesetzt.</p>
+    </div>
   </div>
 
   <div class="cats">
@@ -591,70 +622,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </section>
 </div>
 
-<h3 id="erster-arztbesuch---erstvorstellung-und-initialisierung-der-e-diagnose">Erster Arztbesuch - Erstvorstellung und Initialisierung der e-Diagnose</h3>
-
-<p><strong>Abruf und Initialisierung der Summary-Listen</strong></p>
-
-<p><a href="Practitioner-PractitionerExample.html">Dr. Musterärztin</a> sieht <a href="Patient-PatientExample.html">Max Mustermann</a> am <strong>3. März 2026</strong> erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.</p>
-
-<p>Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese referenziert den Patienten <a href="Patient-PatientExample.html">Max Mustermann</a>, die <a href="Device-DeviceExample.html">e-Diagnose-Fachanwendung</a> als erstellendes System sowie das Initialisierungsdatum. Außerdem wird im Rahmen der Initialisierung der <code class="language-plaintext highlighter-rouge">List.emptyReason</code> auf <code class="language-plaintext highlighter-rouge">notstarted</code> gesetzt als Begründung dafür, warum die Summary-Liste leer ist, siehe:</p>
-<ul>
-  <li><a href="List-AllergyListEmpty.html">Beispiel für eine leere Allergy-Summary-Liste</a></li>
-  <li><a href="List-ConditionListEmpty.html">Beispiel für eine leere Condition-Summary-Liste</a></li>
-  <li><a href="List-ProcedureListEmpty.html">Beispiel für eine leere Procedure-Summary-Liste</a></li>
-</ul>
-
-<p><strong>Erfassung bestehender Diagnosen und Allergien</strong></p>
-
-<p>Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die aktuellen gesundheitlichen Probleme sowie bereits länger bestehende Grunderkrankungen und Allergien des Patienten. 
-Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden, mit Lisinopril 10 mg medikamentös behandelten Bluthochdruck. 
-Weiters gibt Herr Mustermann an, seit seiner Kindheit an einer Penicillinallergie zu leiden.</p>
-
-<p>Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5°C. Bei der körperlichen Untersuchung zeigt sich eine eitrige Angina.
-Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.</p>
-
-<p>Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die <a href="Condition-ConditionEntry01.html">Hypertonie</a> und die <a href="Condition-ConditionEntry02.html">eitrige Angina</a> werden jeweils eine Condition angelegt. Die Hypertonie wird dabei explizit in der Summary-Liste der Diagnosen angelegt, damit sie auch anderen GDA in Zukunft bei Abruf der Summary-Liste in dieser angezeigt wird. 
-Für die <a href="AllergyIntolerance-AllergyEntry01.html">Amoxicillin</a>-Allergie wird eine AllergyIntolerance angelegt. Aufgrund der medizinischen Relevanz wird dieser Eintrag durch Dr. Musterärztin in der Summary-Liste der Allergien und Intoleranzen gespeichert.</p>
-
-<p><strong>Abruf der Summary-Listen und aller Diagnoseeinträge</strong></p>
-
-<p>Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben <a href="Bundle-ConditionListSearchSet01.html">Condition-Summary-Liste</a> und <a href="Bundle-AllergyListSearchSet01.html">Allergy-Summary-Liste</a>.</p>
-
-<p>Um eine Gesamtansicht aller Diagnoseeinträge zu erhalten, ruft Dr. Musterärztin <a href="use_case_read.html#alle-einträge-abrufen">alle Einträge</a> ab
-und erhält <a href="Bundle-ConditionSearchSet01.html">alle dokumentierten Diagnosen</a> von Herrn Mustermann.</p>
-
-<h3 id="zweiter-arztbesuch---auftreten-von-nebenwirkungen-und-bearbeitung">Zweiter Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung</h3>
-
-<p><strong>Neue Beschwerden und diagnostische Abklärung</strong></p>
-
-<p>Die Symptome der eitrigen Angina haben sich durch die antibiotische Therapie deutlich gebessert. 
-Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am <strong>9. März 2026</strong> über Durchfall und Juckreiz im Genitalbereich.</p>
-
-<p>Bei der Untersuchung stellt Dr. Musterärztin eine Pilzinfektion fest, die vermutlich im Zusammenhang mit der vorausgegangenen Antibiotikatherapie steht.</p>
-
-<p>Herr Mustermann berichtet weiters, dass seit Beginn der Antibiotikatherapie Beschwerden aufgrund seines seit 2010 bestehenden Morbus Crohn aufgetreten sind und er vermutet, dass die Behandlung einen Schub ausgelöst hat.</p>
-
-<p>Dr. Musterärztin berücksichtigt diese Angabe bei der weiteren Beurteilung. Da Durchfall sowohl als Nebenwirkung der Antibiotikatherapie als auch im Rahmen eines Morbus-Crohn-Schubs auftreten kann, wird die Ursache entsprechend abgeklärt.
-Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte Koloskopie am 23. September 2025 stattgefunden hat.</p>
-
-<p><strong>Behandlung und Dokumentation</strong></p>
-
-<p>Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.</p>
-
-<p>Dr. Musterärztin dokumentiert die Diagnosen <a href="Condition-ConditionEntry03.html">Morbus Crohn</a>, <a href="Condition-ConditionEntry04.html">Medikamenteninduzierte Diarrhö</a>, sowie <a href="Condition-ConditionEntry05.html">Candida Balanitis</a>. Die <a href="Procedure-ProcedureEntry01.html">Koloskopie</a> wird als Prozedur dokumentiert.  Die Diagnose Morbus Crohn sowie die Prozedur Koloskopie werden durch Dr. Musterärztin in die jeweilige Summary-Liste aufgenommen, siehe <a href="Bundle-ProcedureListSearchSet01.html">Procedure-Summary-Liste</a>.</p>
-
-<p><strong>Abruf und Korrektur der Summary-Listen</strong></p>
-
-<p>Dr. Musterärztin befürchtet, dass ihr bei einer Diagnose ein Fehler unterlaufen ist und ruft die <a href="Bundle-ConditionListSearchSet02.html">Condition-Summary-Liste</a> ab, wobei ihr auffällt, dass sie einen falschen Code für Morbus Crohn gewählt hat. Sie storniert den <a href="Condition-ConditionEntry03EnteredInError.html">Eintrag mit dem falschen Code</a>, der in Folge durch die e-Diagnose-Fachanwendung aus der <a href="Bundle-ConditionListSearchSet03.html">Condition-Summary-Liste</a> entfernt wird. Anschließend erfasst sie <a href="Condition-ConditionEntry06.html">Morbus Crohn</a> richtig und nimmt die Diagnose in die <a href="Bundle-ConditionListSearchSet04.html">Condition-Summary-Liste</a> auf.</p>
-
-<h3 id="einsicht-in-e-diagnose-durch-elga-teilnehmer---eintrag-löschen">Einsicht in e-Diagnose durch ELGA-Teilnehmer - Eintrag löschen</h3>
-
-<p>Am <strong>20. April 2026</strong> nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose und ruft <a href="Bundle-ConditionSearchSet02.html">alle Diagnosen</a> ab. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht und <a href="use_case_participant.html#eintrag-löschen">löscht</a> den Eintrag.</p>
-
-<p>Dieser Eintrag wird daraufhin aus der Gesamtansicht <a href="Bundle-ConditionSearchSet03.html">aller Diagnosen</a> gelöscht. Ist die Diagnose auch Bestandteil der Summary-Liste der Diagnosen, wird sie ebenfalls aus dieser entfernt. In diesem Fall wird <code class="language-plaintext highlighter-rouge">List.source</code> auf den Patienten gesetzt.</p>
-
-<p>In der Gesamtansicht sind auch stornierte Einträge enthalten, weshalb der falsch codierte Morbus-Crohn-Eintrag Teil eines jeden Abrufs ist.</p>
-
 
 
 
@@ -683,7 +650,7 @@ Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-08 13:59:00 +0000">
+  <span title="2026-10-08 14:12:00 +0000">
     2026-10-08
   </span>
 

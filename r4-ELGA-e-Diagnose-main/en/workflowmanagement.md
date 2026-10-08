@@ -23,7 +23,7 @@ Für jede erlaubte Kombination sind die fachliche Übersetzung sowie die Begrün
 | | | | |
 | :--- | :--- | :--- | :--- |
 | `active` | `unconfirmed` | nicht gesichert | anamnestisch übernommen aus anderem Dokument, mit fraglicher bzw. keiner klinischen Beschreibung |
-| `active` | `presumed` | Verdacht auf | `AllergyIntolerance.reaction`ist verpflichtend anzugeben |
-| `active` | `confirmed` | gesichert | `AllergyIntolerance.reaction`ist verpflichtend anzugeben |
-| `resolved` | `refuted` | Widerlegt/Ausschluss von | `AllergyIntolerance.reaction`ist verpflichtend anzugeben |
+| `active` | `presumed` | Verdacht auf |   |
+| `active` | `confirmed` | gesichert |   |
+| `resolved` | `refuted` | Widerlegt/Ausschluss von |   |
 

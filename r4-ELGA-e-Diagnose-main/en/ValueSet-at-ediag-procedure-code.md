@@ -34,7 +34,7 @@
   "title" : "AT e-Diagnose Procedure Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-08T13:59:28+00:00",
+  "date" : "2026-10-08T14:12:43+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

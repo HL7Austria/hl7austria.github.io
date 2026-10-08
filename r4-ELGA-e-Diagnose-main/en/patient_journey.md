@@ -40,7 +40,7 @@ Löschung
 
 03.03.2026**Initialisierung.** Die e-Diagnose Fachanwendung legt je Kategorie eine leere Summary-Liste an.
 
-03.03.2026**1. Arztbesuch.** Hypertonie und Amoxicillin-Allergie kommen in die Summary-Listen, die akute Angina nur in die Gesamtansicht.
+03.03.2026**1. Arztbesuch.** Hypertonie und Amoxicillin-Allergie kommen in die Summary-Listen, die eitrige Angina nur in die Gesamtansicht.
 
 09.03.2026**2. Arztbesuch.** Morbus Crohn und Koloskopie werden in die Summary-Listen aufgenommen – Morbus Crohn allerdings irrtümlich mit dem Code für Hyperthyreose. Diarrhö und Candida-Balanitis kommen nur in die Gesamtansicht.
 
@@ -49,6 +49,34 @@ Löschung
 09.03.2026**Korrektur.** Die Ärztin erfasst Morbus Crohn korrekt und nimmt ihn in die Summary-Liste auf. Der stornierte Eintrag bleibt in der Gesamtansicht sichtbar.
 
 20.04.2026**Löschung durch den Patienten.** Max Mustermann löscht die Candida-Balanitis über das Portal aus seiner Gesamtansicht.
+
+[Dr. Musterärztin](Practitioner-PractitionerExample.md) sieht [Max Mustermann](Patient-PatientExample.md) am 3. März 2026 erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.
+
+Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden: Je Kategorie wird eine leere Summary-Liste angelegt. Sie referenziert den Patienten, die [e-Diagnose-Fachanwendung](Device-DeviceExample.md) als erstellendes System sowie das Initialisierungsdatum. Als Begründung, warum die Liste leer ist, wird `List.emptyReason` auf `notstarted` gesetzt.
+
+Im Rahmen der Anamnese berichtet Herr Mustermann über einen seit mehreren Jahren bestehenden, mit Lisinopril 10 mg behandelten Bluthochdruck sowie über eine Penicillinallergie seit seiner Kindheit.
+
+Aktuell hat er Schmerzen beim Schlucken und Fieber über 38,5 °C; die Untersuchung zeigt eine eitrige Angina. Wegen der Penicillinallergie verzichtet die Ärztin auf Amoxicillin und verordnet Clarithromycin, dazu Mexalen 500 mg bei Bedarf.
+
+Hypertonie und eitrige Angina werden jeweils als Condition erfasst, die Amoxicillin-Allergie als AllergyIntolerance. Hypertonie und Allergie nimmt die Ärztin in die Summary-Listen auf, damit sie auch anderen GDA beim Abruf angezeigt werden. Ein neuerlicher Abruf liefert die Summary-Einträge; über [alle Einträge abrufen](use_case_read.md#alle-einträge-abrufen) erhält sie die Gesamtansicht aller Diagnosen.
+
+Am 9. März 2026 hat sich die Angina deutlich gebessert. Herr Mustermann berichtet jedoch über Durchfall und Juckreiz im Genitalbereich. Die Ärztin stellt eine Pilzinfektion (Candida-Balanitis) fest, vermutlich als Folge der Antibiotikatherapie, und verordnet Clotrimazol 1 % Creme.
+
+Herr Mustermann vermutet zudem, dass die Antibiotikatherapie einen Schub seines seit 2010 bestehenden Morbus Crohn ausgelöst hat. Da der Durchfall sowohl Nebenwirkung als auch Teil eines Schubs sein kann, wird die Ursache weiter abgeklärt; bis dahin soll er auf ausreichende Flüssigkeitszufuhr achten. Die letzte Koloskopie fand am 23. September 2025 statt.
+
+Die Ärztin dokumentiert Morbus Crohn, die medikamenteninduzierte Diarrhö und die Candida-Balanitis sowie die Koloskopie als Prozedur. Morbus Crohn und Koloskopie nimmt sie in die jeweilige Summary-Liste auf.
+
+Die Ärztin befürchtet, dass ihr ein Fehler unterlaufen ist, und ruft die Condition-Summary-Liste ab. Dabei fällt ihr auf, dass sie für Morbus Crohn den Code für Hyperthyreose gewählt hat.
+
+Sie [storniert](use_case_write.md#eintrag-stornieren) den Eintrag. Die e-Diagnose-Fachanwendung vermerkt die Stornierung und entfernt den Eintrag selbst aus der Summary-Liste.
+
+Anschließend erfasst die Ärztin Morbus Crohn mit dem richtigen Code und nimmt die Diagnose in die Summary-Liste auf.
+
+Stornierte Einträge bleiben Teil der Gesamtansicht. Der falsch codierte Eintrag ist daher in jedem Abruf aller Diagnosen enthalten – als storniert gekennzeichnet.
+
+Am 20. April 2026 nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose und ruft alle Diagnosen ab. Dabei sieht er, dass die im März dokumentierte Pilzinfektion in seiner Gesamtansicht aufscheint. Er möchte das nicht und [löscht](use_case_participant.md#eintrag-löschen) den Eintrag.
+
+Der Eintrag wird daraufhin aus der Gesamtansicht gelöscht. Wäre die Diagnose auch Bestandteil der Summary-Liste, würde sie ebenfalls aus dieser entfernt; `List.source` wird in diesem Fall auf den Patienten gesetzt.
 
 Diagnosen
 
@@ -196,60 +224,4 @@ Ergebnis prüfen
 [5 Diagnosen](Bundle-ConditionSearchSet03.md), ohne Candida-Balanitis
 
 wäre der Eintrag in der Summary-Liste: neue Listenversion ohne ihn, List.source = Patient
-
-### Erster Arztbesuch - Erstvorstellung und Initialisierung der e-Diagnose
-
-**Abruf und Initialisierung der Summary-Listen**
-
-[Dr. Musterärztin](Practitioner-PractitionerExample.md) sieht [Max Mustermann](Patient-PatientExample.md) am **3. März 2026** erstmals in ihrer Ordination. Zur besseren klinischen Einschätzung ruft sie die vorhandenen medizinischen Informationen aus der e-Diagnose ab.
-
-Für Herrn Mustermann existieren bisher noch keine Summary-Listen, weshalb diese initialisiert werden. Für den Patienten wird für jede Kategorie eine leere Summary-Liste angelegt. Diese referenziert den Patienten [Max Mustermann](Patient-PatientExample.md), die [e-Diagnose-Fachanwendung](Device-DeviceExample.md) als erstellendes System sowie das Initialisierungsdatum. Außerdem wird im Rahmen der Initialisierung der `List.emptyReason` auf `notstarted` gesetzt als Begründung dafür, warum die Summary-Liste leer ist, siehe:
-
-* [Beispiel für eine leere Allergy-Summary-Liste](List-AllergyListEmpty.md)
-* [Beispiel für eine leere Condition-Summary-Liste](List-ConditionListEmpty.md)
-* [Beispiel für eine leere Procedure-Summary-Liste](List-ProcedureListEmpty.md)
-
-**Erfassung bestehender Diagnosen und Allergien**
-
-Im Rahmen der Anamnese und körperlichen Untersuchung erhebt die Ärztin die aktuellen gesundheitlichen Probleme sowie bereits länger bestehende Grunderkrankungen und Allergien des Patienten. Herr Mustermann berichtet über einen seit mehreren Jahren bestehenden, mit Lisinopril 10 mg medikamentös behandelten Bluthochdruck. Weiters gibt Herr Mustermann an, seit seiner Kindheit an einer Penicillinallergie zu leiden.
-
-Aktuell bestehen bei Herrn Mustermann Schmerzen beim Schlucken und Fieber über 38,5°C. Bei der körperlichen Untersuchung zeigt sich eine eitrige Angina. Aufgrund der bekannten Penicillinallergie wird auf eine Behandlung mit Amoxicillin verzichtet. Die Ärztin entscheidet sich für eine antibiotische Behandlung mit Clarithromycin. Zusätzlich wird Mexalen 500 mg bei Bedarf zur Schmerz- und Fieberbehandlung verordnet.
-
-Die relevanten Informationen werden in den jeweiligen Ressourcen dokumentiert. Für die [Hypertonie](Condition-ConditionEntry01.md) und die [eitrige Angina](Condition-ConditionEntry02.md) werden jeweils eine Condition angelegt. Die Hypertonie wird dabei explizit in der Summary-Liste der Diagnosen angelegt, damit sie auch anderen GDA in Zukunft bei Abruf der Summary-Liste in dieser angezeigt wird. Für die [Amoxicillin](AllergyIntolerance-AllergyEntry01.md)-Allergie wird eine AllergyIntolerance angelegt. Aufgrund der medizinischen Relevanz wird dieser Eintrag durch Dr. Musterärztin in der Summary-Liste der Allergien und Intoleranzen gespeichert.
-
-**Abruf der Summary-Listen und aller Diagnoseeinträge**
-
-Bei einem neuerlichen Abruf der e-Diagnose werden die eingetragenen Summary-Einträge (Hypertonie und Amoxicillin-Allergie) in den jeweiligen Kategorien der Summary-Listen zurückgegeben [Condition-Summary-Liste](Bundle-ConditionListSearchSet01.md) und [Allergy-Summary-Liste](Bundle-AllergyListSearchSet01.md).
-
-Um eine Gesamtansicht aller Diagnoseeinträge zu erhalten, ruft Dr. Musterärztin [alle Einträge](use_case_read.md#alle-einträge-abrufen) ab und erhält [alle dokumentierten Diagnosen](Bundle-ConditionSearchSet01.md) von Herrn Mustermann.
-
-### Zweiter Arztbesuch - Auftreten von Nebenwirkungen und Bearbeitung
-
-**Neue Beschwerden und diagnostische Abklärung**
-
-Die Symptome der eitrigen Angina haben sich durch die antibiotische Therapie deutlich gebessert. Allerdings berichtet Herr Mustermann bei seinem Ordinationsbesuch am **9. März 2026** über Durchfall und Juckreiz im Genitalbereich.
-
-Bei der Untersuchung stellt Dr. Musterärztin eine Pilzinfektion fest, die vermutlich im Zusammenhang mit der vorausgegangenen Antibiotikatherapie steht.
-
-Herr Mustermann berichtet weiters, dass seit Beginn der Antibiotikatherapie Beschwerden aufgrund seines seit 2010 bestehenden Morbus Crohn aufgetreten sind und er vermutet, dass die Behandlung einen Schub ausgelöst hat.
-
-Dr. Musterärztin berücksichtigt diese Angabe bei der weiteren Beurteilung. Da Durchfall sowohl als Nebenwirkung der Antibiotikatherapie als auch im Rahmen eines Morbus-Crohn-Schubs auftreten kann, wird die Ursache entsprechend abgeklärt. Im weiteren Gespräch erfährt Dr. Musterärztin, dass die letzte durchgeführte Koloskopie am 23. September 2025 stattgefunden hat.
-
-**Behandlung und Dokumentation**
-
-Zur Behandlung der Candida-Balanitis verordnet sie Clotrimazol 1 % Creme zur lokalen Anwendung. Bezüglich der Diarrhö wird Herr Mustermann angewiesen, auf eine ausreichende Flüssigkeitszufuhr zu achten. Aufgrund der bestehenden Morbus-Crohn-Erkrankung und der vorausgegangenen Antibiotikatherapie erfolgt eine weitere klinische Abklärung der Beschwerden.
-
-Dr. Musterärztin dokumentiert die Diagnosen [Morbus Crohn](Condition-ConditionEntry03.md), [Medikamenteninduzierte Diarrhö](Condition-ConditionEntry04.md), sowie [Candida Balanitis](Condition-ConditionEntry05.md). Die [Koloskopie](Procedure-ProcedureEntry01.md) wird als Prozedur dokumentiert. Die Diagnose Morbus Crohn sowie die Prozedur Koloskopie werden durch Dr. Musterärztin in die jeweilige Summary-Liste aufgenommen, siehe [Procedure-Summary-Liste](Bundle-ProcedureListSearchSet01.md).
-
-**Abruf und Korrektur der Summary-Listen**
-
-Dr. Musterärztin befürchtet, dass ihr bei einer Diagnose ein Fehler unterlaufen ist und ruft die [Condition-Summary-Liste](Bundle-ConditionListSearchSet02.md) ab, wobei ihr auffällt, dass sie einen falschen Code für Morbus Crohn gewählt hat. Sie storniert den [Eintrag mit dem falschen Code](Condition-ConditionEntry03EnteredInError.md), der in Folge durch die e-Diagnose-Fachanwendung aus der [Condition-Summary-Liste](Bundle-ConditionListSearchSet03.md) entfernt wird. Anschließend erfasst sie [Morbus Crohn](Condition-ConditionEntry06.md) richtig und nimmt die Diagnose in die [Condition-Summary-Liste](Bundle-ConditionListSearchSet04.md) auf.
-
-### Einsicht in e-Diagnose durch ELGA-Teilnehmer - Eintrag löschen
-
-Am **20. April 2026** nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose und ruft [alle Diagnosen](Bundle-ConditionSearchSet02.md) ab. Dabei stellt er fest, dass die im März 2026 dokumentierte Pilzinfektion in seiner Gesamtansicht aufscheint. Herr Mustermann möchte das nicht und [löscht](use_case_participant.md#eintrag-löschen) den Eintrag.
-
-Dieser Eintrag wird daraufhin aus der Gesamtansicht [aller Diagnosen](Bundle-ConditionSearchSet03.md) gelöscht. Ist die Diagnose auch Bestandteil der Summary-Liste der Diagnosen, wird sie ebenfalls aus dieser entfernt. In diesem Fall wird `List.source` auf den Patienten gesetzt.
-
-In der Gesamtansicht sind auch stornierte Einträge enthalten, weshalb der falsch codierte Morbus-Crohn-Eintrag Teil eines jeden Abrufs ist.
 
