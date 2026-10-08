@@ -2,47 +2,6 @@
 
 ## Example MedicationDispense: Beispiel Journey 03-01: Durchgeführte Abgabe 1
 
-Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
-
-**R5: Full representation of the dosage instructions (new)**: 
-
-1-0-1-0 | Täglich 1-0-1-0
-
-**R5: When the recording of the dispense started (new)**: 2026-03-01 15:15:00+0000
-
-**AT ELGA e-Medikation Extension Group Identifier**: WYE82A2G8EEW
-
-**status**: Completed
-
-**medication**: `#contained-medication-journey-03-01-02-magistral`
-
-**subject**: [Anton Mustermann](Patient-At-Emed-Example-Patient-01.md)
-
-### Performers
-
-| | |
-| :--- | :--- |
-| - | **Actor** |
-| * | [Amadeus Apotheke](Organization-At-Emed-Example-Organization-02.md) |
-
-**authorizingPrescription**: 
-
-* [Geplante Abgabe 2](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md)
-* [Planeintrag 2](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.md)
-
-**type**: FFC
-
-**quantity**: 1 1 (Details: UCUM code1 = '1')
-
-**whenHandedOver**: 2026-03-01 15:15:00+0000
-
-### DosageInstructions
-
-| | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| - | **Extension** | **Sequence** | **PatientInstruction** | **Timing** | **Route** |
-| * |  | 1 | Dünn auftragen. | Morning, Evening, 2 per 1 day | Anwendung auf der Haut |
-
 
 
 ## Resource Content
@@ -54,6 +13,59 @@ Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](Structu
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"]
   },
+  "contained" : [{
+    "resourceType" : "Medication",
+    "id" : "contained-medication-magistral-01",
+    "meta" : {
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
+    },
+    "form" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+        "code" : "100000073713",
+        "display" : "Salbe"
+      }]
+    },
+    "ingredient" : [{
+      "itemCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+          "code" : "A11HA30",
+          "display" : "Dexpanthenol"
+        }]
+      },
+      "strength" : {
+        "numerator" : {
+          "value" : 5,
+          "unit" : "g",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "g"
+        },
+        "denominator" : {
+          "value" : 100,
+          "unit" : "g",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "g"
+        }
+      }
+    },
+    {
+      "itemCodeableConcept" : {
+        "text" : "Salbengrundlage"
+      },
+      "isActive" : false,
+      "strength" : {
+        "numerator" : {
+          "value" : 95,
+          "unit" : "g"
+        },
+        "denominator" : {
+          "value" : 100,
+          "unit" : "g"
+        }
+      }
+    }]
+  }],
   "extension" : [{
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction",
     "valueMarkdown" : "1-0-1-0 | Täglich 1-0-1-0"
@@ -70,7 +82,7 @@ Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](Structu
   }],
   "status" : "completed",
   "medicationReference" : {
-    "reference" : "#contained-medication-journey-03-01-02-magistral"
+    "reference" : "#contained-medication-magistral-01"
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01",
@@ -127,7 +139,7 @@ Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](Structu
     },
     "route" : {
       "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
         "code" : "100000073566",
         "display" : "Anwendung auf der Haut"
       }]

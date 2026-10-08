@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-10-07T13:01:43+00:00",
+  "date" : "2026-10-08T06:44:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -157,11 +157,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "id" : "Dosage.route",
       "path" : "Dosage.route",
       "short" : "Art der Anwendung der Arznei. (z.B. oral, nasal, intravenös, subkutan). Kann bei codierten Arzneien aus der ASP-Liste entnommen werden.",
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"
-      }
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.route.coding.system",
+      "path" : "Dosage.route.coding.system",
+      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"
     },
     {
       "id" : "Dosage.method",

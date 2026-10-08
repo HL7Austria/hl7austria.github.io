@@ -14,7 +14,7 @@
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-07T13:01:43+00:00",
+  "date" : "2026-10-08T06:44:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -969,22 +969,6 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-At-Emed-Journey-01-02-List-Medikationsplan.html"
-      }],
-      "reference" : {
-        "reference" : "List/At-Emed-Journey-01-02-List-Medikationsplan"
-      },
-      "name" : "Beispiel Journey 01-02: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans, der 2 neue Planeinträge referenziert.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "List-4cb4dceb-173f-461a-a267-683ec33e4be1.html"
       }],
       "reference" : {
@@ -1017,22 +1001,6 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-01.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01"
-      },
-      "name" : "Beispiel Journey 01-02: Planeintrag 1",
-      "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "MedicationRequest-6bacfe23-d469-4945-bf3c-90c7e647aa52.html"
       }],
       "reference" : {
@@ -1056,22 +1024,6 @@
       },
       "name" : "Beispiel Journey 01-02: Planeintrag 1",
       "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und geänderten Dosierungsanweisungen ab.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02"
-      },
-      "name" : "Beispiel Journey 01-02: Planeintrag 2",
-      "description" : "Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {

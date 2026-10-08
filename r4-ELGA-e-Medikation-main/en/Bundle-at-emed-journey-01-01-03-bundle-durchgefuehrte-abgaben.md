@@ -17,7 +17,7 @@
   "total" : 0,
   "link" : [{
     "relation" : "self",
-    "url" : "[base]/MedicationDispense?recorded=lt2025-01-01"
+    "url" : "https://example.elga.com/base/MedicationDispense?recorded=lt2025-01-01"
   }]
 }
 

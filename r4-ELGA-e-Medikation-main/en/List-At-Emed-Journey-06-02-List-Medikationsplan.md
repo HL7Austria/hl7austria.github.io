@@ -11,7 +11,7 @@ Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga
 
 * **Items**: [MedicationRequest: extension = 2026-02-27 --> (ongoing),1-0-1-0 | Täglich: 1-0-1-0; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication RAMIPRIL HEX TBL 5MG; authoredOn = 2026-03-19 12:10:00+0000; courseOfTherapyType = Continuous long term therapy](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-01.md)
   * Flag: Planeintrag geändert
-* **Items**: [MedicationRequest: extension = 2026-02-27 --> 2026-03-20,1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication: form = Salbe; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Short course (acute) therapy](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.md)
+* **Items**: [MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02](MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02)
   * Flag: Planeintrag beibehalten
 * **Items**: [MedicationRequest: extension = 2026-03-19 --> (ongoing),1-1-1-1 | 4x täglich 1000 mg; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = ->Medication; authoredOn = 2026-03-19 12:10:00+0000; courseOfTherapyType = Short course (acute) therapy](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md)
   * Flag: Neuer Planeintrag

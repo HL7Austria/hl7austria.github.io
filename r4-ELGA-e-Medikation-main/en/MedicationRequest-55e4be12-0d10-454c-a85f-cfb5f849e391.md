@@ -16,7 +16,7 @@
   },
   "contained" : [{
     "resourceType" : "Medication",
-    "id" : "d9641fa3-9b85-4ab9-a843-c08e5a6fc007",
+    "id" : "contained-medication-magistral-01",
     "meta" : {
       "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
     },
@@ -89,7 +89,7 @@
   }],
   "reportedBoolean" : false,
   "medicationReference" : {
-    "reference" : "#d9641fa3-9b85-4ab9-a843-c08e5a6fc007"
+    "reference" : "#contained-medication-magistral-01"
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01"
@@ -129,7 +129,7 @@
     },
     "route" : {
       "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
         "code" : "100000073566",
         "display" : "Anwendung auf der Haut"
       }]

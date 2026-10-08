@@ -15,7 +15,7 @@
   },
   "contained" : [{
     "resourceType" : "Medication",
-    "id" : "contained-medication-journey-05-01-01",
+    "id" : "at-emed-journey-medication-ramipril",
     "meta" : {
       "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
     },
@@ -55,7 +55,7 @@
   }],
   "reportedBoolean" : false,
   "medicationReference" : {
-    "reference" : "#contained-medication-journey-05-01-01"
+    "reference" : "#at-emed-journey-medication-ramipril"
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01",

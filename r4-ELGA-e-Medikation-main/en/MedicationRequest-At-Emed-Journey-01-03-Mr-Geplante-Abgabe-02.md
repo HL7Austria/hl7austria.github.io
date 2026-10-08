@@ -17,7 +17,7 @@ TODO: Some Narrative
   },
   "contained" : [{
     "resourceType" : "Medication",
-    "id" : "contained-medication-journey-01-03-02-magistral",
+    "id" : "contained-medication-magistral-01",
     "meta" : {
       "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
     },
@@ -96,7 +96,7 @@ TODO: Some Narrative
     }]
   }],
   "medicationReference" : {
-    "reference" : "#contained-medication-journey-01-03-02-magistral"
+    "reference" : "#contained-medication-magistral-01"
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01",
@@ -140,7 +140,7 @@ TODO: Some Narrative
     },
     "route" : {
       "coding" : [{
-        "system" : "https://termgit.elga.gv.at/CodeSystem-medikationartanwendung.html",
+        "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
         "code" : "100000073566",
         "display" : "Anwendung auf der Haut"
       }]
