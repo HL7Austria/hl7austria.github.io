@@ -73,7 +73,7 @@ Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationreq
 | **completed** | **Geplante Abgabe****eingelöst**: Der Status wird durch die Fachwendung**automatisch**gesetzt, wenn alle möglichen Einlösungen erfolgt und die entsprechenden**Durchgeführten Abgaben**erstellt wurden. Sonderfall: Sollte im Anschluss eine**Durchgeführte Abgabe**den Status**entered-in-error**erhalten, setzt die Fachanwendung gegebenfalls die**Geplante Abgabe**automatisch wieder auf**active**. |
 | **stopped** | **Geplante Abgabe**ist**abgelaufen**, d.h. der Einlösezeitraum für die ausgewählte Rezeptart (**category:recipetype**) ist überschritten; der Status wird**automatisch durch die Fachanwendung**gesetzt. Die**Geplante Abgabe**ist damit abgeschlossen. |
 | **entered-in-error** | **Geplante Abgabe**wird aufgrund eines Fehlers storniert. Es wurden noch**keine Abgaben durchgeführt**. Die**Geplante Abgabe**wird damit abgeschlossen. |
-| **cancelled** | **Geplante Abgabe**erhält automatisch den Status**cancelled**("nicht abgegeben"), wenn eine**Durchgeführte Abgabe**als "Leerabgabe" dokumentiert wurde (den Status**cancelled**erhalten hat). Wird eine gecancelte**Durchgeführte Abgabe**storniert, wird die**Geplante Abgabe**automatisch wieder aktiviert. |
+| **cancelled** | **Geplante Abgabe**erhält automatisch den Status**cancelled**("nicht abgegeben"), wenn alle**Durchgeführten Abgaben**den Status**cancelled**erhalten haben. Wird eine gecancelte**Durchgeführte Abgabe**storniert, wird die**Geplante Abgabe**automatisch wieder aktiviert. |
 
 #### Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart
 

@@ -572,7 +572,7 @@ Offene Punkte: <br/>$dispense-write: in Arbeit.
   <li>Die tatsächlich abgegebene <strong>Packungsmenge</strong> <strong>MUSS</strong> in <em>MedicationDispense.quantity</em> angegeben werden. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden <em>Geplanten Abgabe</em>. 
 Eine <strong>Einlösung</strong> gilt als vollständig, wenn <em>MedicationDispense.type</em> den Wert <em>First Fill – Complete</em> oder <em>Part Fill - Complete</em> enthält. Die Anzahl der abgegebenen Packungen ist hierfür nicht maßgeblich.</li>
   <li>
-    <p>Die Maximalanzahl der zulässigen Einlösungen wird durch die zugehörige <em>Geplanten Abgabe</em> bestimmt (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
+    <p>Die Maximalanzahl der zulässigen Einlösungen wird durch die zugehörige <em>Geplanten Abgabe</em> bestimmt (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
   </li>
   <li>Wenn eine zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgabe</a> vorliegt, <strong>MUSS</strong> diese im Element <em>MedicationDispense.authorizingPrescription[geplanteAbgabe]</em> referenziert werden. Der zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">Planeintrag</a> <strong>MUSS</strong> über <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert werden. 
   <!-- TODO: ist kommt die Referenz auf den Planeintrag zustande? Automatisch durch die Fachanwendung oder durch den GDA? -> ergänzen in Relevante Elmente --></li>
@@ -592,7 +592,7 @@ Eine <strong>Einlösung</strong> gilt als vollständig, wenn <em>MedicationDispe
 <p>Existiert eine zugehörige <em>Geplante Abgabe</em>, prüft die Fachanwendung anhand <em>MedicationRequest.numberOfRepeatsAllowed</em>, ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Ist nur eine <strong>einmalige Einlösung</strong> möglich (z.B. Kassenrezept), setzt die Fachanwendung die <em>Geplanten Abgabe</em> auf den Status <em>completed</em>.</p>
 
 <p>Ermöglicht die <em>Geplante Abgabe</em> <strong>mehrere Einlösungen</strong> (<em>MedicationRequest.numberOfRepeatsAllowed</em> &gt; 0),
-wird je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt. Der Status der <em>Geplanten Abgabe</em> bleibt solange <em>active</em>, bis die letztmögliche Einlösung erfolgt ist (siehe<a href="Sub_UC_eMed_04.html#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
+wird je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt. Der Status der <em>Geplanten Abgabe</em> bleibt solange <em>active</em>, bis die letztmögliche Einlösung erfolgt ist (siehe<a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
 
 <h5 id="relevante-elemente-medicationdispense">Relevante Elemente (MedicationDispense)</h5>
 
@@ -643,7 +643,7 @@ enthalten.</li>
 
 <p>Der Status der <em>Geplanten Abgabe</em> bleibt <em>active</em>, solange weitere Einlösungen zulässig sind. Sind keine weiteren Einlösungen mehr möglich, setzt die Fachanwendung den Status der <em>Geplanten Abgabe</em> auf <em>completed</em>.</p>
 
-<p>Um die durch <em>MedicationDispense.type</em> definierte Sequenz <em>FFP → RFP → RFC</em> konsistent zu halten, darf immer nur die zuletzt gespeicherte <em>Durchgeführte Abgabe</em> verworfen werden. Mehrere <em>Durchgeführte Abgaben</em> können nur sequenziell in umgekehrter Reihenfolge ihrer Erstellung verworfen werden.</p>
+<p>Um die durch <em>MedicationDispense.type</em> definierte Sequenz <em>FFP → RFP → RFC</em> konsistent zu halten, darf immer nur die zuletzt gespeicherte <em>Durchgeführte Abgabe</em> storniert werden. Mehrere <em>Durchgeführte Abgaben</em> können nur sequenziell in umgekehrter Reihenfolge ihrer Erstellung storniert werden.</p>
 
   <!-- TODO: Prüfen ob hier nicht Storno gemeint ist: nur eigene stornierbar -->
 
@@ -835,7 +835,7 @@ Offene Punkte: <br/>$reference-plan: in Arbeit.
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-09 14:33:00 +0000">
+  <span title="2026-10-09 16:18:00 +0000">
     2026-10-09
   </span>
 

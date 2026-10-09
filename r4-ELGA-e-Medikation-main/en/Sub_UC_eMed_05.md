@@ -72,7 +72,7 @@ Für alle Abgabenvarianten gilt:
 * Über **MedicationDispense.type** werden Einzelabgabe, Teilabgaben/Besorgerprozess und Leerabgabe unterschieden (siehe [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)). Für Teilabgaben, Besorgerprozesse und Leerabgaben **MUSS** die jeweils vorgegebene **Sequenz** der zulässigen **MedicationDispense.type**-Werte eingehalten werden.
  
 * Die tatsächlich abgegebene **Packungsmenge** **MUSS** in **MedicationDispense.quantity** angegeben werden. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden **Geplanten Abgabe**. Eine **Einlösung** gilt als vollständig, wenn **MedicationDispense.type** den Wert **First Fill – Complete** oder **Part Fill - Complete** enthält. Die Anzahl der abgegebenen Packungen ist hierfür nicht maßgeblich.
-* Die Maximalanzahl der zulässigen Einlösungen wird durch die zugehörige **Geplanten Abgabe** bestimmt (siehe [Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung)).
+* Die Maximalanzahl der zulässigen Einlösungen wird durch die zugehörige **Geplanten Abgabe** bestimmt (siehe [Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung)).
 * Wenn eine zugehörige [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) vorliegt, **MUSS** diese im Element **MedicationDispense.authorizingPrescription[geplanteAbgabe]** referenziert werden. Der zugehörige [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) **MUSS** über **MedicationDispense.authorizingPrescription[planeintrag]** referenziert werden. 
 
 Die unterschiedlichen Arten der Abgabe und deren Abfolge sind dargestellt unter [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe).
@@ -87,7 +87,7 @@ Bei einer vollständigen Einzelabgabe **MUSS** eine **Durchgeführte Abgabe** wi
 
 Existiert eine zugehörige **Geplante Abgabe**, prüft die Fachanwendung anhand **MedicationRequest.numberOfRepeatsAllowed**, ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Ist nur eine **einmalige Einlösung** möglich (z.B. Kassenrezept), setzt die Fachanwendung die **Geplanten Abgabe** auf den Status **completed**.
 
-Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationRequest.numberOfRepeatsAllowed** > 0), wird je Einlösung eine **Durchgeführte Abgabe** erstellt. Der Status der **Geplanten Abgabe** bleibt solange **active**, bis die letztmögliche Einlösung erfolgt ist (siehe[Sub_UC_eMed_08_02 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_08_02---geplante-abgabe-beenden-durch-fachanwendung)).
+Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationRequest.numberOfRepeatsAllowed** > 0), wird je Einlösung eine **Durchgeführte Abgabe** erstellt. Der Status der **Geplanten Abgabe** bleibt solange **active**, bis die letztmögliche Einlösung erfolgt ist (siehe[Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung)).
 
 ##### Relevante Elemente (MedicationDispense)
 
@@ -135,7 +135,7 @@ Vor dem Speichern einer neuen **Durchgeführten Abgabe** **MUSS** die Fachanwend
 
 Der Status der **Geplanten Abgabe** bleibt **active**, solange weitere Einlösungen zulässig sind. Sind keine weiteren Einlösungen mehr möglich, setzt die Fachanwendung den Status der **Geplanten Abgabe** auf **completed**.
 
-Um die durch **MedicationDispense.type** definierte Sequenz **FFP → RFP → RFC** konsistent zu halten, darf immer nur die zuletzt gespeicherte **Durchgeführte Abgabe** verworfen werden. Mehrere **Durchgeführte Abgaben** können nur sequenziell in umgekehrter Reihenfolge ihrer Erstellung verworfen werden.
+Um die durch **MedicationDispense.type** definierte Sequenz **FFP → RFP → RFC** konsistent zu halten, darf immer nur die zuletzt gespeicherte **Durchgeführte Abgabe** storniert werden. Mehrere **Durchgeführte Abgaben** können nur sequenziell in umgekehrter Reihenfolge ihrer Erstellung storniert werden.
 
 ###### Relevante Elemente (MedicationDispense)
 
