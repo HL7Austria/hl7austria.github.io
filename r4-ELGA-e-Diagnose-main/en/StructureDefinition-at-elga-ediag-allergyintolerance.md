@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-all
   "name" : "AtEdiagAllergyIntolerance",
   "title" : "AT ELGA e-Diagnose AllergyIntolerance",
   "status" : "active",
-  "date" : "2026-10-09T08:15:54+00:00",
+  "date" : "2026-10-09T08:42:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

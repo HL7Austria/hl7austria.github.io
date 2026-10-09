@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-10-09T08:15:54+00:00",
+  "date" : "2026-10-09T08:42:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -295,6 +295,15 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
       "id" : "Condition.evidence",
       "path" : "Condition.evidence",
       "short" : "Verweis auf ELGA-Befunde als medizinische Evidenz."
+    },
+    {
+      "id" : "Condition.evidence.detail",
+      "path" : "Condition.evidence.detail",
+      "short" : "Verweis auf ELGA-Befunde als medizinische Evidenz.",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://profiles.ihe.net/ITI/MHD/StructureDefinition/IHE.MHD.Minimal.DocumentReference"]
+      }]
     },
     {
       "id" : "Condition.note",
