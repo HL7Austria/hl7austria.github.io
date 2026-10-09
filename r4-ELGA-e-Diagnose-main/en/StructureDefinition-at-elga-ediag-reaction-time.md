@@ -9,7 +9,7 @@
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
-* Examples for this Extension: [AllergyIntolerance/AllergyEntry01](AllergyIntolerance-AllergyEntry01.md) and [Bundle/AllergyListSearchSet01](Bundle-AllergyListSearchSet01.md)
+* Examples for this Extension: [AllergyIntolerance/AllergyEntry01](AllergyIntolerance-AllergyEntry01.md), [AllergyIntolerance/AllergyEntry01Request](AllergyIntolerance-AllergyEntry01Request.md) and [Bundle/AllergyListSearchSet01](Bundle-AllergyListSearchSet01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-reaction-time.json)
 
@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-rea
   "name" : "AtEdiagReactionTime",
   "title" : "AT ELGA Reaktionszeit",
   "status" : "active",
-  "date" : "2026-10-09T09:07:37+00:00",
+  "date" : "2026-10-09T12:41:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

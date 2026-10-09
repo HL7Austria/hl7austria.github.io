@@ -251,6 +251,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Abgrenzung zwischen e-Diagnose Anwendungsfällen und allem, was eine Client-Applikation vielleicht noch implementieren kann/soll</li>
 </ul>
 
+<p><a name="logische-referenzen"></a></p>
 <h3 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h3>
 
 <p>Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Diagnose-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen <code class="language-plaintext highlighter-rouge">Patient</code>-, <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) anzugeben:</p>
@@ -261,6 +262,84 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <p>Die e-Diagnose-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ersetzt die logischen Referenzen durch Referenzen auf diese Ressourcen. Beim Abruf von Daten enthalten die Ressourcen daher die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung abgerufen werden.</p>
+
+<p>Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. <code class="language-plaintext highlighter-rouge">recorder</code>, <code class="language-plaintext highlighter-rouge">asserter</code> oder <code class="language-plaintext highlighter-rouge">List.source</code>), ergibt sich aus dem jewiligen <code class="language-plaintext highlighter-rouge">Reference.identifer.system</code>, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Diagnose-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (<code class="language-plaintext highlighter-rouge">List.entry.item</code>) sind hingegen immer Referenzen auf bereits in der e-Diagnose-Fachanwendung gespeicherte Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>).</p>
+
+<div class="note-to-balloters">
+  <p>Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Diagnose-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegt.</p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Übermittelt durch die Client-Anwendung</th>
+      <th>Gespeichert bzw. abgerufen von der Fachanwendung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Referenz</td>
+      <td>logisch (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>)</td>
+      <td>aufgelöst (<code class="language-plaintext highlighter-rouge">Reference.reference</code>)</td>
+    </tr>
+    <tr>
+      <td>Patient</td>
+      <td><code class="language-plaintext highlighter-rouge">subject.identifier.system</code> = <code class="language-plaintext highlighter-rouge">urn:oid:1.2.40.0.10.2.1.1.149</code><br /><code class="language-plaintext highlighter-rouge">subject.identifier.value</code> = bPK-GH</td>
+      <td><code class="language-plaintext highlighter-rouge">subject.reference</code> = <code class="language-plaintext highlighter-rouge">Patient/PatientExample</code></td>
+    </tr>
+    <tr>
+      <td>GDA</td>
+      <td><code class="language-plaintext highlighter-rouge">recorder.identifier.system</code> = <code class="language-plaintext highlighter-rouge">urn:ietf:rfc:3986</code><br /><code class="language-plaintext highlighter-rouge">recorder.identifier.value</code> = OID laut GDA-I</td>
+      <td><code class="language-plaintext highlighter-rouge">recorder.reference</code> = <code class="language-plaintext highlighter-rouge">Practitioner/PractitionerExample</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einmal als gespeicherte Ressource:</p>
+
+<table class="grid">
+  <tr>
+    <th>Request: <a href="AllergyIntolerance-AllergyEntry01Request.html">AllergyEntry01Request</a></th>
+    <th>Gespeichert: <a href="AllergyIntolerance-AllergyEntry01.html">AllergyEntry01</a></th>
+  </tr>
+  <tr>
+    <td><pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/allergyintolerance.html#AllergyIntolerance">resourceType</a>" : "AllergyIntolerance",
+  ...
+  "<a href="http://hl7.org/fhir/R4/allergyintolerance.html#AllergyIntolerance.patient">patient</a>" : {
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.40.0.10.2.1.1.149",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+    }
+  },
+  ...
+  "<a href="http://hl7.org/fhir/R4/allergyintolerance.html#AllergyIntolerance.recorder">recorder</a>" : {
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:ietf:rfc:3986",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "urn:oid:1.2.40.0.34.99.4613.4"
+    }
+  },
+  ...
+}</code></pre>
+</td>
+    <td><pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/allergyintolerance.html#AllergyIntolerance">resourceType</a>" : "AllergyIntolerance",
+  ...
+  "<a href="http://hl7.org/fhir/R4/allergyintolerance.html#AllergyIntolerance.patient">patient</a>" : {
+    <a href="Patient-PatientExample.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/PatientExample"
+  },
+  ...
+  "<a href="http://hl7.org/fhir/R4/allergyintolerance.html#AllergyIntolerance.recorder">recorder</a>" : {
+    <a href="Practitioner-PractitionerExample.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/PractitionerExample"
+  },
+  ...
+}</code></pre>
+ </td>
+  </tr>
+</table>
+
+<p><strong>Konvention für die Beispiele:</strong> Beispiele mit dem Suffix <code class="language-plaintext highlighter-rouge">Request</code> (z. B. <a href="Condition-ConditionEntry01Request.html">ConditionEntry01Request</a>, <a href="AllergyIntolerance-AllergyEntry01Request.html">AllergyEntry01Request</a>, <a href="Procedure-ProcedureEntry01Request.html">ProcedureEntry01Request</a> sowie die in den <code class="language-plaintext highlighter-rouge">$write</code>-Parametern übermittelten Summary-Listen) zeigen die Ressource so, wie sie die Client-Anwendung übermittelt, also mit logischen Referenzen. Alle anderen Beispiele zeigen die Ressource so, wie sie die e-Diagnose-Fachanwendung speichert und zurückliefert, also mit aufgelösten Referenzen. Für die übrigen Einträge der <a href="patient_journey.html">Patient Journey</a> gilt dasselbe Muster; auf eigene Request-Beispiele wird verzichtet.</p>
 
 
 
@@ -290,7 +369,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-09 09:07:00 +0000">
+  <span title="2026-10-09 12:41:00 +0000">
     2026-10-09
   </span>
 

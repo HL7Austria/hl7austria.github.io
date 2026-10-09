@@ -11,7 +11,7 @@
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-10-09T09:07:37+00:00",
+  "date" : "2026-10-09T12:41:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1013,6 +1013,42 @@
       "name" : "Reaktionszeit Codes",
       "description" : "Zeitlicher Verlauf der Manifestation",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/AllergyEntry01Request"
+      },
+      "name" : "Request: Allergie erfassen (POST /AllergyIntolerance)",
+      "description" : "Beispiel der Allergie, wie sie die Client-Anwendung per POST an die e-Diagnose-Fachanwendung übermittelt: Patient und GDA werden als logische Referenzen (Reference.identifier) angegeben. Gespeicherte Fassung mit aufgelösten Referenzen: [AllergyEntry01](AllergyIntolerance-AllergyEntry01.html). Siehe [Designentscheidungen](design_choices.html#logische-referenzen).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ConditionEntry01Request"
+      },
+      "name" : "Request: Diagnose erfassen (POST /Condition)",
+      "description" : "Beispiel der Diagnose, wie sie die Client-Anwendung per POST an die e-Diagnose-Fachanwendung übermittelt: Patient und GDA werden als logische Referenzen (Reference.identifier) angegeben. Gespeicherte Fassung mit aufgelösten Referenzen: [ConditionEntry01](Condition-ConditionEntry01.html). Siehe [Designentscheidungen](design_choices.html#logische-referenzen).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Procedure"
+      }],
+      "reference" : {
+        "reference" : "Procedure/ProcedureEntry01Request"
+      },
+      "name" : "Request: Prozedur erfassen (POST /Procedure)",
+      "description" : "Beispiel der Prozedur, wie sie die Client-Anwendung per POST an die e-Diagnose-Fachanwendung übermittelt: Patient und GDA werden als logische Referenzen (Reference.identifier) angegeben. Gespeicherte Fassung mit aufgelösten Referenzen: [ProcedureEntry01](Procedure-ProcedureEntry01.html). Siehe [Designentscheidungen](design_choices.html#logische-referenzen).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"
     },
     {
       "extension" : [{

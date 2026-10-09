@@ -9,7 +9,7 @@ Dokumentiert Diagnosen und klinisch relevante Gesundheitszustände einer Person,
 **Usages:**
 
 * Refer to this Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
-* Examples for this Profile: [Condition/ConditionEntry01](Condition-ConditionEntry01.md), [Condition/ConditionEntry02](Condition-ConditionEntry02.md), [Condition/ConditionEntry03](Condition-ConditionEntry03.md), [Condition/ConditionEntry03EnteredInError](Condition-ConditionEntry03EnteredInError.md)... Show 3 more, [Condition/ConditionEntry04](Condition-ConditionEntry04.md), [Condition/ConditionEntry05](Condition-ConditionEntry05.md) and [Condition/ConditionEntry06](Condition-ConditionEntry06.md)
+* Examples for this Profile: [Condition/ConditionEntry01](Condition-ConditionEntry01.md), [Condition/ConditionEntry01Request](Condition-ConditionEntry01Request.md), [Condition/ConditionEntry02](Condition-ConditionEntry02.md), [Condition/ConditionEntry03](Condition-ConditionEntry03.md)... Show 4 more, [Condition/ConditionEntry03EnteredInError](Condition-ConditionEntry03EnteredInError.md), [Condition/ConditionEntry04](Condition-ConditionEntry04.md), [Condition/ConditionEntry05](Condition-ConditionEntry05.md) and [Condition/ConditionEntry06](Condition-ConditionEntry06.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.ediag.r4|current/StructureDefinition/StructureDefinition-at-elga-ediag-condition.json)
 
@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-10-09T09:07:37+00:00",
+  "date" : "2026-10-09T12:41:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
