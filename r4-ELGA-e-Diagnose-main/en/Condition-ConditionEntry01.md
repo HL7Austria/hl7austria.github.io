@@ -20,7 +20,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **recorder**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
-**asserter**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
+**asserter**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **note**: 
 
@@ -70,7 +70,7 @@ Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0.
     "reference" : "Practitioner/PractitionerExample"
   },
   "asserter" : {
-    "reference" : "Practitioner/PractitionerExample"
+    "reference" : "Patient/PatientExample"
   },
   "note" : [{
     "text" : "Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0."

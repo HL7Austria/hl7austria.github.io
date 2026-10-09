@@ -18,7 +18,7 @@ Profile: [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-edi
 
 **recorder**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
-**asserter**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
+**asserter**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 > **reaction****AT ELGA Reaktionszeit**: <6 Stunden**manifestation**: Exanthem, Emesis**onset**: 1983-03-01**note**: 
 > 
@@ -69,7 +69,7 @@ Hautausschlag und Erbrechen nach Penicillin-Einnahme
     "reference" : "Practitioner/PractitionerExample"
   },
   "asserter" : {
-    "reference" : "Practitioner/PractitionerExample"
+    "reference" : "Patient/PatientExample"
   },
   "reaction" : [{
     "extension" : [{

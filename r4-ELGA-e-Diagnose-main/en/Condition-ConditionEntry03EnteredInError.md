@@ -2,6 +2,8 @@
 
 ## Example Condition: Beispielinstanz einer stornierten Diagnose
 
+version: 2
+
 Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
 **AT ELGA Reported (Fremdangabe)**: true
@@ -25,7 +27,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **recorder**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
 
-**asserter**: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
+**asserter**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
 **note**: 
 
@@ -43,6 +45,7 @@ Seit 2010
   "resourceType" : "Condition",
   "id" : "ConditionEntry03EnteredInError",
   "meta" : {
+    "versionId" : "2",
     "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"]
   },
   "extension" : [{
@@ -92,7 +95,7 @@ Seit 2010
     "reference" : "Practitioner/PractitionerExample"
   },
   "asserter" : {
-    "reference" : "Practitioner/PractitionerExample"
+    "reference" : "Patient/PatientExample"
   },
   "note" : [{
     "text" : "Seit 2010"

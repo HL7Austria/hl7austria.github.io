@@ -70,6 +70,8 @@ Die Ärztin befürchtet, dass ihr ein Fehler unterlaufen ist, und ruft die Condi
 
 Sie [storniert](use_case_write.md#eintrag-stornieren) den Eintrag. Die e-Diagnose-Fachanwendung vermerkt die Stornierung und entfernt den Eintrag selbst aus der Summary-Liste.
 
+Der stornierte Eintrag ist Version 2 derselben Diagnose. Da Beispiele im Leitfaden eindeutige IDs benötigen, ist er als [eigenes Beispiel](Condition-ConditionEntry03EnteredInError.md) abgebildet; auf dem Server behält er seine ursprüngliche ID.
+
 Anschließend erfasst die Ärztin Morbus Crohn mit dem richtigen Code und nimmt die Diagnose in die Summary-Liste auf.
 
 Stornierte Einträge bleiben Teil der Gesamtansicht. Der falsch codierte Eintrag ist daher in jedem Abruf aller Diagnosen enthalten – als storniert gekennzeichnet.

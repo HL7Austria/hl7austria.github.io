@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "Reaktionszeit Codes",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-09T08:42:14+00:00",
+  "date" : "2026-10-09T09:07:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

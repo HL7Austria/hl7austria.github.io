@@ -4,7 +4,7 @@
 
 Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
-**AT ELGA Reported (Fremdangabe)**: true
+**AT ELGA Reported (Fremdangabe)**: false
 
 **identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/1238
 
@@ -42,7 +42,7 @@ Juckreiz im Genitalbereich bei bestehender AB-Therapie
   },
   "extension" : [{
     "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported",
-    "valueBoolean" : true
+    "valueBoolean" : false
   }],
   "identifier" : [{
     "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier",
