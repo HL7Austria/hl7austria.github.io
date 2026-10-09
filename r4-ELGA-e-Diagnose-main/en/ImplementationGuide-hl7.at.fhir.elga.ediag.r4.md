@@ -14,7 +14,7 @@
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-10-08T15:20:56+00:00",
+  "date" : "2026-10-09T06:09:27+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -9,10 +9,11 @@ In Arbeit.
 * ob History für Liste nötig, wird in https://github.com/HL7Austria/ELGA-e-Diagnose-R4/issues/13 noch diskutiert
  
 * Info über unsicherheit bezüglich Patient Compartment
+* Abgrenzung zwischen e-Diagnose Anwendungsfällen und allem, was eine Client-Applikation vielleicht noch implementieren kann/soll
 
 ### Informationen über GDA und Patienten
 
-Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Diagnose-Fachanwendung verwaltet. Client-Anwendungen dürfen daher keine eigenen `Patient`-, `Practitioner`-, `PractitionerRole`- oder `Organization`-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (`Reference.identifier`) anzugeben:
+Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Diagnose-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen `Patient`-, `Practitioner`-, `PractitionerRole`- oder `Organization`-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (`Reference.identifier`) anzugeben:
 
 * **GDA:** OID des GDA laut GDA-Index (GDA-I)
 * **Patient:** bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)
