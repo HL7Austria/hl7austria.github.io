@@ -219,6 +219,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#übersicht" id="markdown-toc-übersicht">Übersicht</a></li>
   <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
+  <li><a href="#kennzeichnung-der-relevanten-elemente" id="markdown-toc-kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</a></li>
+  <li><a href="#befüllung-der-narrativen-teile" id="markdown-toc-befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</a></li>
+  <li><a href="#informationen-über-gda-und-patienten" id="markdown-toc-informationen-über-gda-und-patienten">Informationen über GDA und Patienten</a></li>
+  <li><a href="#id-management" id="markdown-toc-id-management">ID-Management</a></li>
+  <li><a href="#optimistisches-locking-mit-etags" id="markdown-toc-optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</a></li>
+  <li><a href="#verwendung-der-fhir-history-funktion" id="markdown-toc-verwendung-der-fhir-history-funktion">Verwendung der FHIR History Funktion</a></li>
 </ul>
 
 </div>
@@ -483,7 +489,7 @@ h4 + .tabs {
 
 <p>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jeder Entry genau eine Referenz (<em>Reference</em>) auf einen Planeintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
 
-<p><a name="l456">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Planeintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+<p><a name="l480">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Planeintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
 
 <p>Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.</p>
 
@@ -550,6 +556,55 @@ Modifier + ausgewählte Elemente werden mit fachlicher Begründung auf 0..0 gese
 wann und warum versionierte Referenzen verwendet werden
 und wann nicht -->
 
+<h3 id="kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</h3>
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+<h3 id="befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</h3>
+
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+<h3 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h3>
+
+<p>Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Medikation-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen <code class="language-plaintext highlighter-rouge">Patient</code>-, <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) anzugeben:</p>
+
+<ul>
+  <li><strong>GDA:</strong> OID des GDA laut GDA-Index (GDA-I)</li>
+  <li><strong>Patient:</strong> bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)</li>
+</ul>
+
+<p>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ersetzt die logischen Referenzen durch Referenzen auf diese Ressourcen. Beim Abruf von Daten enthalten die Ressourcen daher die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung abgerufen werden.</p>
+
+<h3 id="id-management">ID-Management</h3>
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+<h3 id="optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</h3>
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+<h3 id="verwendung-der-fhir-history-funktion">Verwendung der FHIR History Funktion</h3>
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+<h4 id="versionierte-referenzen">Versionierte Referenzen</h4>
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+<h4 id="löschen-und-stornieren-von-versionierten-ressourcen">Löschen und Stornieren von versionierten Ressourcen</h4>
+
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+
 
 
 </div>
@@ -577,8 +632,8 @@ und wann nicht -->
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-08 20:06:00 +0000">
-    2026-10-08
+  <span title="2026-10-09 14:33:00 +0000">
+    2026-10-09
   </span>
 
           <br/>

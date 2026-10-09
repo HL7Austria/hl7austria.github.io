@@ -62,7 +62,7 @@ Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen
 | removed | stopped | Bestehender Planeintrag wird  dauerhaft gestoppt. Die Medikation wurde  abgesetzt. | |
 | removed | entered-in-error | Bestehender Planeintrag wird aufgrund eines Fehlers storniert | |
 
-#### Status des MedicationRequests in der geplanten Abgabe
+#### Status des MedicationRequests in der Geplanten Abgabe
 
 Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) kann, abhängig vom jeweiligen ([Use Case für Geplante Abgabe schreiben](Sub_UC_eMed_04.md#%E2%80%8Btechnische-use-cases-für-geplante-abgabe-schreiben-uc_emed_08)), unterschiedliche Status einnehmen (Element **status**):
 
@@ -70,21 +70,21 @@ Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationreq
 | | |
 | :--- | :--- |
 | **active** | **Geplante Abgabe****offen**: Status beim Erstellen einer Geplanten Abgabe, solange noch (Teil-)Abgaben offen sind (dh. Rezept kann noch eingelöst werden) |
-| **completed** | **Geplante Abgabe****eingelöst**: Der Status wird durch die Fachwendung**automatisch**gesetzt, wenn alle möglichen Einlösungen durchgeführt wurden. Sonderfall: Sollte im Anschluss eine**Durchgeführte Abgabe**den Status**entered-in-error**erhalten, setzt die Fachanwendung gegebenfalls die**Geplante Abgabe**automatisch wieder auf**active**. |
+| **completed** | **Geplante Abgabe****eingelöst**: Der Status wird durch die Fachwendung**automatisch**gesetzt, wenn alle möglichen Einlösungen erfolgt und die entsprechenden**Durchgeführten Abgaben**erstellt wurden. Sonderfall: Sollte im Anschluss eine**Durchgeführte Abgabe**den Status**entered-in-error**erhalten, setzt die Fachanwendung gegebenfalls die**Geplante Abgabe**automatisch wieder auf**active**. |
 | **stopped** | **Geplante Abgabe**ist**abgelaufen**, d.h. der Einlösezeitraum für die ausgewählte Rezeptart (**category:recipetype**) ist überschritten; der Status wird**automatisch durch die Fachanwendung**gesetzt. Die**Geplante Abgabe**ist damit abgeschlossen. |
-| **entered-in-error** | **Geplante Abgabe**wird aufgrund eines Fehlers verworfen. Es wurden noch**keine Abgaben durchgeführt**. Die**Geplante Abgabe**wird damit abgeschlossen. |
-| **cancelled** | **Geplante Abgabe**erhält automatisch den Status**cancelled**("nicht abgegeben"), wenn alle Durchgeführten Abgaben (jede Einlösung) den Status**cancelled**erhalten haben ("Leerabgabe"). Wird eine gecancelte Abgabe verworfen, wird die**Geplante Abgabe**automatisch wieder aktiviert. |
+| **entered-in-error** | **Geplante Abgabe**wird aufgrund eines Fehlers storniert. Es wurden noch**keine Abgaben durchgeführt**. Die**Geplante Abgabe**wird damit abgeschlossen. |
+| **cancelled** | **Geplante Abgabe**erhält automatisch den Status**cancelled**("nicht abgegeben"), wenn eine**Durchgeführte Abgabe**als "Leerabgabe" dokumentiert wurde (den Status**cancelled**erhalten hat). Wird eine gecancelte**Durchgeführte Abgabe**storniert, wird die**Geplante Abgabe**automatisch wieder aktiviert. |
 
 #### Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart
 
-| | | | | |
-| :--- | :--- | :--- | :--- | :--- |
-| Kassenrezept | 1 Monat ab Datum der Verordnung: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag | 1× (kann nur in 1 Apotheke eingelöst werden) | Im Zuge des "Besorgerprozesses" (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert. | Ein Kassenrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält das Rezept den Status "abgelaufen" (**stopped**). |
-| Privatrezept | 1 Monat ab Datum der Verordnung für die erste Einlösung; mindestens: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag; maximal: Beginn des Gültigkeitszeitraums + 1 Jahr (+ 1 Tag?) | Bis zu 6× (durch den Verordner festgelegt); kann in mehreren Apotheken eingelöst werden (je nach Anzahl der Einlösemöglichkeiten) | Keine Verlängerung möglich. | Ein Privatrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält es den Status (**stopped**). |
-| Substitutionsrezept | Angabe eines beliebigen Gültigkeitszeitraums durch den Verordner; Datum frei wählbar, aber später als das Beginndatum | 1× | Keine Verlängerung möglich. | Ein Substitutionsrezept erhält den Status (**stopped**), wenn das "Bis-Datum" erreicht ist. |
+| | | | |
+| :--- | :--- | :--- | :--- |
+| Kassenrezept | • 1 Monat ab Beginn des Gültigkeitszeitraums (ab Datum der Verordnung)z.B. Rezept wurde am 15.5. ausgestellt und kann bis inkl. 15.6. eingelöst werden | 1× (kann nur in 1 Apotheke eingelöst werden) | Im Zuge des "Besorgerprozesses" (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert. |
+| Privatrezept | Gültigkeit festgelegt durch verordnenden GDA:• mindestens: 1 Monat ab Beginn des Gültigkeitszeitraums• maximal: 1 Jahr ab Beginn des Gültigkeitszeitraums (1. Einlösung muss innerhalb eines Monats ab Datum der Verordnung erfolgen) | Bis zu 6× (durch den Verordner festgelegt); kann in mehreren Apotheken eingelöst werden (je nach Anzahl der Einlösemöglichkeiten) | Keine Verlängerung möglich. |
+| Substitutionsrezept | Gültigkeit festgelegt durch verordnenden GDA:• beliebige Dauer ab Beginn des Gültigkeitszeitraums• Wenn kein Datum angegeben: Beginn des Gültigkeitszeitraums + 1 Monat | 1× | Keine Verlängerung möglich. |
 
-[^1] Die Anzahl der Einlösungen gibt an, wie viele Einlösungen auf ein Rezept durchgeführt werden dürfen bis die Verordnung auf dem Rezept und das Rezept den Status eingelöst(**completed**) erhält.
- [^2] Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe wird in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert. Wird die Gültigkeitsdauer nicht angegeben, kann die Gültigkeitsdauer vom empfangenden System nur mit 1 Monat angenommen werden, gerechnet vom Erstellungsdatum an. 
+[^1] Die Anzahl der Einlösungen gibt an, wie oft ein Rezept eingelöst werden darf. Ist keine Einlösung mehr möglich erhält die zugehörige **Geplante Abgabe** den Status eingelöst (**completed**).
+ [^2] Ist der Gültigkeitszeitraum überschritten erhält die zugehörige **Geplante Abgabe** den Status abgelaufen (**stopped**). Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe kann in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert werden. 
 
 
 #### Status des MedicationDispense in der Durchgeführten Abgabe
@@ -95,7 +95,7 @@ Eine [Durchgeführte Abgabe](design_choices.md#durchgeführte-abgabe-AtElgaEmedM
 | :--- | :--- |
 | **completed** | Einzel- oder Teilabgabe wurde durchgeführt |
 | **cancelled** | **Durchgeführte Abgabe**gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (z.B. Medikation "abgesetzt" oder Medikation noch ausreichend vorhanden) |
-| **entered-in-error** | Vorhandene**Durchgeführte Abgabe**(im Status**completed**oder**cancelled**) wird aufgrund eines Fehlers verworfen (eine mögliche beendete**Geplante Abgabe**, wird dadurch wieder**aktiv**) |
+| **entered-in-error** | Vorhandene**Durchgeführte Abgabe**(im Status**completed**oder**cancelled**) wird aufgrund eines Fehlers storniert (eine mögliche beendete**Geplante Abgabe**, wird dadurch wieder**aktiv**) |
 
 #### Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben
 

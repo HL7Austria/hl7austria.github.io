@@ -99,7 +99,7 @@
     "display" : "Geplante Abgabe 2"
   },
   {
-    "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-02",
+    "reference" : "MedicationRequest/At-Emed-Journey-Planeintrag-02-Magistral-Dexpanthenol-v1",
     "display" : "Planeintrag 2"
   }],
   "type" : {

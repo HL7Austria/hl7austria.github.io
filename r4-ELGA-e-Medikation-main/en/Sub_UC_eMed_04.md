@@ -27,9 +27,15 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 ### Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)
 
-Der GDA kann basierend auf einem **bestehenden** **Medikationsplaneintrag** eine oder mehrere [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) erstellen. Für jedes zu rezeptierende Arzneimittel wird eine eigene **Geplante Abgabe** erstellt, um die medizinische Inhalte des e-Rezepts zu dokumentieren.
+Der GDA kann basierend auf der **aktuellen Version** eines bestehenden **Medikationsplaneintrags** eine oder mehrere [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) erstellen. Für jedes zu rezeptierende Arzneimittel wird eine eigene **Geplante Abgabe** erstellt, um die medizinische Inhalte des e-Rezepts zu dokumentieren.
 
-Falls für eine **Geplante Abgabe** noch kein Medikationsplaneintrag existiert, muss dieser zuerst erstellt werden (siehe [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen)). Unter gewissen Voraussetzungen kann ein bestehender Medikationsplaneintrag angepasst werden (siehe [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern)). Die medizinischen Inhalte von Planeintrag und **Geplanter Abgabe** (wie Arzneimittel und Dosierung) dürfen sich nicht unterscheiden.
+Falls für eine **Geplante Abgabe** noch kein Medikationsplaneintrag existiert, muss dieser zuerst erstellt werden (siehe [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen)). Unter gewissen Voraussetzungen kann ein bestehender Medikationsplaneintrag angepasst werden (siehe [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern)). Die medizinischen Inhalte von Planeintrag und **Geplanter Abgabe** (wie Arzneimittel und Dosierung) dürfen sich **nicht unterscheiden**.
+
+Wird der zugehörige Planeintrag nach der Erstellung einer **Geplanten Abgabe** geändert, kann die **Geplante Abgabe** weiterhin gültig bleiben oder gegebenenfalls storniert werden (siehe [Sub_UC_eMed_08_04 - Geplante Abgabe stornieren ($prescription-discard)](Sub_UC_eMed_04.md#sub_uc_emed_08_04---geplante-abgabe-stornieren-prescription-discard)).
+
+Medikationsplaneinträge können mehrfach rezeptiert werden und daher auch zu mehreren **Geplanten Abgaben** führen. <!– Können von einer Planeintragsversion gleichzeitig mehrere Geplante Abgaben aktiv sein? oder gilt nicht eher: Es können zu einem Planeintrag mehrere aktive **Geplante Abgaben** existieren, aber nur eine je Planeintragversion.
+
+Die Anzahl der **Geplanten Abgaben**, die mit demselben **e-Med Groupidentifier** gespeichert werden können, ist durch das Limit für die Anzahl der Medikamente je (e-)Rezept begrenzt.
 
 #### Ablauf
 
@@ -37,32 +43,25 @@ Der GDA führt ein **POST** [$plan-read](OperationDefinition-AtElgaEmed.List.Pla
 
 Basierend auf den enthaltenen Planeinträgen erstellt der GDA neue **Gelplante Abgaben** wie folgt:
 
-* **MedicationRequest**-Ressource(n) erstellen: [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)(StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html): 
-* **extension:effectiveDosePeriod**: Einnahmezeitraum. 
-* Period.start: aktuelles Datum oder in der Zukunft. 
-* Period.end: Datum in der Zukunft oder unbefristet. 
- 
-* **status** muss **active** sein (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe))
-* **intent = order** und **category:mrcategory = "Geplante Abgabe"** sind für alle Geplante Abgaben verpflichtend mit festem Wert zu dokumentieren
-* **category:recipetype**: die [Rezeptart](https://termgit.elga.gv.at/ValueSet-elga-medikationrezeptart.html) muss verpflichtend ausgewählt werden
-* **medication**: muss **identisch** sein mit der des Planeintrags. Enthält der Planeintrag ausschließlich Wirkstoffe, sind diese auch in der **Geplanten Abgabe** in der gleichen Form zu dokumentieren, anderenfalls muss der Planeintrag zuvor angepasst werden (z.B. Austausch der Wirkstoffe mit einem entsprechenden Arzneimittel der ASP-Liste (inkl. PZN)).
-* **subject**: [ELGA Core Patient](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-patient.html) darf **nicht geändert** werden. 
-* **authoredOn**: Datum der Erstellung
-* **requester**: Ersteller der **Geplanten Abgabe** (GDA): AT ELGA Core Practitioner, PractitionerRole bzw. Organization Profile (siehe [ELGA Core](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/artifacts.html))
-* **basedOn**: Referenz auf den zugrundeliegenden Planeintrag. Die Referenz ist **nicht versioniert**, verweist somit immer auf den aktuellen Planeintrag, auch wenn dieser zwischenzeitlich geändert wurde.
-* **dosageInstruction**: muss **identisch** sein mit der des Planeintrags.
-* **groupIdentifier**: 
-* Alle zeitgleich erstellten **Geplante Abgaben**, die zum selben e-Rezept gehören, müssen den selben **e-Med GroupIdentifier** tragen und **im selben [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md)** übermittelt werden. Der **e-Med GroupIdentifier** ermöglicht zusammengehörige **Geplante Abgaben** und **Durchgeführte Abgaben** gemeinsam abzurufen und kann über unterschiedliche Varianten bezogen werden (siehe [Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen](Sub_UC_eMed_04.md#sub_uc_emed_04_02---e-med-groupidentifier-beziehen)). Er bleibt solange gültig, solange die **Geplante Abgabe = active** ist.
+* ****MedicationRequest**-Ressource(n) erstellen:** [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)(StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html): 
+* **Geplanter Einnahmezeitraum**: (**extension:effectiveDosePeriod**): Beginn: aktuelles Datum oder Datum in der Zukunft, Ende: Datum in der Zukunft oder unbefristet. 
+* **Status** muss **active** sein (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe))
+* **Kategorie** (**category:mrcategory**): "Geplante Abgabe", zur Unterscheidung von Planeinträgen
+* [**Rezeptart**](https://termgit.elga.gv.at/ValueSet-elga-medikationrezeptart.html) (**category:recipetype**): muss verpflichtend ausgewählt werden
+* **Medikation**: muss **identisch** sein mit der des Planeintrags. Enthält der Planeintrag ausschließlich Wirkstoffe, sind diese auch in der **Geplanten Abgabe** in der gleichen Form zu dokumentieren, anderenfalls muss der Planeintrag zuvor angepasst werden (z.B. Austausch der Wirkstoffe mit einem entsprechenden Arzneimittel der ASP-Liste (inkl. PZN)).  
+* **Informationen zur Erstellung**: aktuelles Datum (**authoredOn**) und aktueller GDA als Ersteller (**requester**)
+* **Referenz auf den zugrundeliegenden Planeintrag** (**basedOn**): wird **nicht versioniert**, verweist somit immer auf den aktuellen Planeintrag, auch wenn dieser zwischenzeitlich geändert wurde.
+* **Dosierung** (**dosageInstruction**): muss **identisch** sein mit der des Planeintrags.
+* **e-Med GroupIdentifier** (**groupIdentifier**): 
+* Alle zeitgleich erstellten **Geplante Abgaben**, die zum selben (e-)Rezept gehören, müssen den selben **e-Med Groupidentifier** tragen und **im selben [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md)** übermittelt werden. Der **e-Med GroupIdentifier** ermöglicht zusammengehörige **Geplante Abgaben** und **Durchgeführte Abgaben** gemeinsam abzurufen und kann über unterschiedliche Varianten bezogen werden (siehe [Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen](Sub_UC_eMed_04.md#sub_uc_emed_04_02---e-med-groupidentifier-beziehen)). Er bleibt grundsätzlich solange gültig, solange die **Geplante Abgabe = active** ist.
 * Fehlt im übermittelten [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) bei allen **Geplanten Abgaben** der **e-Med GroupIdentifier**, ergänzt ihn die Fachanwendung.
  
-* **dispenseRequest**: 
-* **validityPeriod**: der Gültigkeitszeitraum zur Einlösung der **Geplanten Abgabe**, abhängig von der ausgewählten Rezeptart (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart))
-* **numberOfRepeatsAllowed**: die Anzahl möglicher weiterer **Einlösungen**, abhängig von der ausgewählten Rezeptart (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart))
-* **quantity**: Verpflichtende Angabe der Menge (Anzahl Packungen), die bei jeder Abgabe bereitgestellt werden soll, ist verpflichtend zu dokumentieren, da sich die Dosierhinweise immer auf eine Packung beziehen.
- 
+* **Gültigkeitszeitraum zur Einlösung** (**dispenseRequest.validityPeriod**) und
+* **Anzahl möglicher weiterer Einlösungen** (**dispenseRequest.numberOfRepeatsAllowed**) sind abhängig von der ausgewählten Rezeptart (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart))
+* **Bereitzustellende Menge** (**dispenseRequest.quantity**): Verpflichtende Angabe der Menge (Anzahl Packungen), die bei jeder Abgabe bereitgestellt werden soll.
  
 
-Die erstellten **Geplanten Abgaben** werden in einem [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) mittels **POST** [$prescription-write](Sub_UC_eMed_04.md#custom-operations) an die Fachanwendung übermittelt. 
+Alle zusammengehörenden, erstellten **Geplanten Abgaben** werden in einem eigenen [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) mittels **POST** [$prescription-write](Sub_UC_eMed_04.md#custom-operations) an die Fachanwendung übermittelt. 
 
 #### Relevante Elemente (MedicationRequest)
 
@@ -97,7 +96,7 @@ Der Ablauf zur Erstellung von **Geplanten Abgaben** und der Bezug des **e-Med Gr
 
 Der **e-Med GroupIdentifier** ("Rezeptklammer") wird via **POST** **$groupidentifier-create**  vorab von der Fachanwendung bezogen, in den **Geplanten Abgaben** ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den **Geplanten Abgaben** zu verknüpfen. Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) können parallel erfolgen (siehe Normalfall).
 
-Liefert e-Rezept einen Fehler zurück, können mittels POST **$prescription-discard** bereits in der e-Medikation erstellte **Geplante Abgaben** verworfen werden (siehe [Sub_UC_eMed_08_04 - Geplante Abgabe stornieren ($prescription-discard)](Sub_UC_eMed_04.md#sub_uc_emed_08_04---geplante-abgabe-stornieren-prescription-discard)). Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkorrektur erneut ein **Prescription-Write** erfolgen oder ein bereits durch den **e-Med groupIdentifer** verknüpftes e-Rezept wieder von den **Geplanten Abgaben** "entkoppelt" werden (siehe [Variante A: Fehlerfall](Sub_UC_eMed_04.md#variante-a-fehlerfall)). 
+Liefert e-Rezept einen Fehler zurück, können mittels POST **$prescription-discard** bereits in der e-Medikation erstellte **Geplante Abgaben** verworfen werden (siehe [Sub_UC_eMed_08_04 - Geplante Abgabe stornieren ($prescription-discard)](Sub_UC_eMed_04.md#sub_uc_emed_08_04---geplante-abgabe-stornieren-prescription-discard)). Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkorrektur erneut ein **Prescription-Write** erfolgen oder ein bereits durch den **e-Med groupIdentifer** verknüpftes e-Rezept wieder von den **Geplanten Abgaben** "entkoppelt" werden (siehe [Variante A: Fehlerfall](Sub_UC_eMed_04.md#variante-a-fehlerfall)).
 
 ###### Variante A: Normalfall
 
@@ -109,13 +108,13 @@ Liefert e-Rezept einen Fehler zurück, können mittels POST **$prescription-disc
 
 ##### Variante B: Sequentielles Erstellen von Geplanter Abgabe und e-Rezept
 
-Alternativ kann der **e-Med GroupIdentifier** durch die Fachanwendung automatisch ergänzt werden, wenn dieser beim **Prescription-Write** nicht in den **Geplanten Abgaben** im Transaction Bundle enthalten ist. Dadurch bleibt das Verhalten konsistent zur bestehenden e-Medikations-Implementierung. Hierfür müssen die Geplanten Abgaben gemeinsam in einem Transaction Bundle an die e-Medikation Fachanwendung übermittelt werden. Der Server ergänzt den **e-Med GroupIdentifier** während der Transaktionsverarbeitung. Die persistierten Ressourcen einschließlich des erzeugten **e-Med GroupIdentifiers** werden im Response an den Client zurückgegeben. Im Anschluss kann der Trigger zur Erstellung des e-Rezepts inkl. **e-Med GroupIdentifier** erfolgen.
+Alternativ kann der **e-Med GroupIdentifier** durch die Fachanwendung automatisch ergänzt werden, wenn dieser beim **Prescription-Write** nicht in den **Geplanten Abgaben** im Transaction Bundle enthalten ist. Dadurch bleibt das Verhalten konsistent zur bestehenden e-Medikations-Implementierung. Hierfür müssen die **Geplanten Abgaben**, die zu einem (e-)Rezept gehören, gemeinsam in einem [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) mit mittels **POST** [$prescription-write](Sub_UC_eMed_04.md#custom-operations) an die e-Medikation Fachanwendung übermittelt werden. Der Server ergänzt den **e-Med GroupIdentifier** während der Transaktionsverarbeitung und gibt die persistierten Ressourcen einschließlich des erzeugten **e-Med GroupIdentifiers** in der Response an den Client zurückgegeben. Im Anschluss kann der Trigger zur Erstellung des e-Rezepts inkl. **e-Med GroupIdentifier** erfolgen.
 
 ![](plantuml/UC_eMed_04_01_b.svg)
 
 ##### Variante C: Nachträgliche Verknüpfung des e-Rezepts mit dem e-Med GroupIdentifier
 
-Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](interactions.md#prescription-write) können parallel erfolgen (Variante A), allerdings noch ohne **e-Med GroupIdentifier**. Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zurück (wie in Variante B), der Client führt im Anschluss eine nachträgliche Verknüfung des bereits erstellten e-Rezepts mit den geplanten Abgaben mittels **e-Med GroupIdentifier** durch.
+Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) können parallel erfolgen (Variante A), allerdings noch ohne **e-Med GroupIdentifier**. Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zurück (wie in Variante B), der Client führt im Anschluss eine nachträgliche Verknüfung des bereits erstellten e-Rezepts mit den **Geplanten Abgaben** mittels **e-Med GroupIdentifier** durch.
 
 ![](plantuml/UC_eMed_04_01_c.svg)
 
@@ -124,9 +123,9 @@ Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](interactions.md
  Offene Punkte: 
 $groupidentifier-create: in Arbeit. 
 
-### Sub_UC_eMed_08_04 - Geplante Abgabe stornieren ($prescription-discard)
+### Sub_UC_eMed_08_04 - Geplante Abgabe stornieren (Prescription-Discard)
 
-Ein GDA kann eine selbsterfasste **Geplante Abgabe** aufgrund eines Fehlers stornieren, solange noch keine Abgaben durchgeführt (dh. noch keine zugehörige **Durchgeführten Abgaben** erstellt) wurden.
+Ein GDA kann eine selbsterfasste [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) aufgrund eines Fehlers stornieren, solange noch keine Abgaben durchgeführt (dh. noch keine zugehörige **Durchgeführten Abgaben** erstellt) wurden.
 
 * Ausnahme: Alle zugehörigen **Durchgeführten Abgaben** werden zuvor storniert 
 

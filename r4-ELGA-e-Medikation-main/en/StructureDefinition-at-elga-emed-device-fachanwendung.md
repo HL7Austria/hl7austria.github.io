@@ -6,6 +6,7 @@
 
 * Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
 * Refer to this Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md)
+* Examples for this Profile: [Device/At-Emed-Example-Device-01](Device-At-Emed-Example-Device-01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-device-fachanwendung.json)
 
@@ -30,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
   "name" : "AtElgaEmedDeviceFachanwendung",
   "title" : "At ELGA e-Medikation Device Fachanwendung",
   "status" : "draft",
-  "date" : "2026-10-08T20:06:16+00:00",
+  "date" : "2026-10-09T14:33:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

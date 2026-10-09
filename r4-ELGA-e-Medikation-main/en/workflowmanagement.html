@@ -432,7 +432,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><br/></p>
 
-<h4 id="status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</h4>
+<h4 id="status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der Geplanten Abgabe</h4>
 
 <p><a name="l1150">​</a>Eine <a href="design_choices.html#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest">Geplante Abgabe</a> kann, abhängig vom jeweiligen (<a href="Sub_UC_eMed_04.html#%E2%80%8Btechnische-use-cases-für-geplante-abgabe-schreiben-uc_emed_08">Use Case für Geplante Abgabe schreiben</a>), unterschiedliche Status einnehmen (Element <em>status</em>):<br/><br/></p>
 
@@ -454,7 +454,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td><strong>completed</strong></td>
-      <td><em>Geplante Abgabe</em> <strong>eingelöst</strong>: Der Status wird durch die Fachwendung <strong>automatisch</strong> gesetzt, wenn alle möglichen Einlösungen durchgeführt wurden. Sonderfall: Sollte im Anschluss eine <em>Durchgeführte Abgabe</em> den Status <em>entered-in-error</em> erhalten, setzt die Fachanwendung gegebenfalls die <em>Geplante Abgabe</em> automatisch wieder auf <em>active</em>.</td>
+      <td><em>Geplante Abgabe</em> <strong>eingelöst</strong>: Der Status wird durch die Fachwendung <strong>automatisch</strong> gesetzt, wenn alle möglichen Einlösungen erfolgt und die entsprechenden <em>Durchgeführten Abgaben</em> erstellt wurden. Sonderfall: Sollte im Anschluss eine <em>Durchgeführte Abgabe</em> den Status <em>entered-in-error</em> erhalten, setzt die Fachanwendung gegebenfalls die <em>Geplante Abgabe</em> automatisch wieder auf <em>active</em>.</td>
     </tr>
     <tr>
       <td><strong>stopped</strong></td>
@@ -462,11 +462,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td><strong>entered-in-error</strong></td>
-      <td><em>Geplante Abgabe</em> wird aufgrund eines Fehlers verworfen. Es wurden noch <strong>keine Abgaben durchgeführt</strong>. Die <em>Geplante Abgabe</em> wird damit abgeschlossen.</td>
+      <td><em>Geplante Abgabe</em> wird aufgrund eines Fehlers storniert. Es wurden noch <strong>keine Abgaben durchgeführt</strong>. Die <em>Geplante Abgabe</em> wird damit abgeschlossen.</td>
     </tr>
     <tr>
       <td><strong>cancelled</strong></td>
-      <td><em>Geplante Abgabe</em> erhält automatisch den Status <strong>cancelled</strong> ("nicht abgegeben"), wenn alle Durchgeführten Abgaben (jede Einlösung) den Status <strong>cancelled</strong> erhalten haben ("Leerabgabe"). Wird eine gecancelte Abgabe verworfen, wird die <em>Geplante Abgabe</em> automatisch wieder aktiviert.</td>
+      <td><em>Geplante Abgabe</em> erhält automatisch den Status <strong>cancelled</strong> ("nicht abgegeben"), wenn eine <em>Durchgeführte Abgabe</em> als "Leerabgabe" dokumentiert wurde (den Status <strong>cancelled</strong> erhalten hat). Wird eine gecancelte <em>Durchgeführte Abgabe</em> storniert, wird die <em>Geplante Abgabe</em> automatisch wieder aktiviert.</td>
     </tr>
   </tbody>
 </table>
@@ -490,44 +490,40 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <thead>
     <tr>
       <th>Rezeptart</th>
-      <th>Gültigkeit</th>
-      <th>Einlösungen</th>
+      <th>Gültigkeit[^2]</th>
+      <th>Einlösungen[^1]</th>
       <th>Verlängerung</th>
-      <th>Statuswechsel</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Kassenrezept</td>
-      <td>1 Monat ab Datum der Verordnung: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag</td>
+      <td><br/>• 1 Monat ab Beginn des Gültigkeitszeitraums (ab Datum der Verordnung) <br/><br/>z.B. Rezept wurde am 15.5. ausgestellt und kann bis inkl. 15.6. eingelöst werden</td>
       <td>1× (kann nur in 1 Apotheke eingelöst werden)</td>
       <td>Im Zuge des "Besorgerprozesses" (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert.</td>
-      <td>Ein Kassenrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält das Rezept den Status "abgelaufen" (<em>stopped</em>).</td>
     </tr>
     <tr>
       <td>Privatrezept</td>
-      <td>1 Monat ab Datum der Verordnung für die erste Einlösung; mindestens: Beginn des Gültigkeitszeitraums + 1 Monat + 1 Tag; maximal: Beginn des Gültigkeitszeitraums + 1 Jahr (+ 1 Tag?)</td>
+      <td>Gültigkeit festgelegt durch verordnenden GDA:<br/>• mindestens: 1 Monat ab Beginn des Gültigkeitszeitraums<br/>• maximal: 1 Jahr ab Beginn des Gültigkeitszeitraums (1. Einlösung muss innerhalb eines Monats ab Datum der Verordnung erfolgen)</td>
       <td>Bis zu 6× (durch den Verordner festgelegt); kann in mehreren Apotheken eingelöst werden (je nach Anzahl der Einlösemöglichkeiten)</td>
       <td>Keine Verlängerung möglich.</td>
-      <td>Ein Privatrezept muss innerhalb von 1 Monat eingelöst werden, sonst erhält es den Status (<em>stopped</em>).</td>
     </tr>
     <tr>
       <td>Substitutionsrezept</td>
-      <td>Angabe eines beliebigen Gültigkeitszeitraums durch den Verordner; Datum frei wählbar, aber später als das Beginndatum</td>
+      <td>Gültigkeit festgelegt durch verordnenden GDA:<br/>• beliebige Dauer ab Beginn des Gültigkeitszeitraums <br/>•	Wenn kein Datum angegeben: Beginn des Gültigkeitszeitraums + 1 Monat</td>
       <td>1×</td>
       <td>Keine Verlängerung möglich.</td>
-      <td>Ein Substitutionsrezept erhält den Status (<em>stopped</em>), wenn das "Bis-Datum" erreicht ist.</td>
     </tr>
   </tbody>
 </table>
 
-<p>[^1] Die Anzahl der Einlösungen gibt an, wie viele Einlösungen auf ein Rezept durchgeführt werden dürfen bis die Verordnung auf dem Rezept und das Rezept den Status eingelöst(<em>completed</em>) erhält.<br/>
-[^2] Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe wird in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert. Wird die Gültigkeitsdauer nicht angegeben, kann die Gültigkeitsdauer vom empfangenden System nur mit 1 Monat angenommen werden, gerechnet vom Erstellungsdatum an.
+<p>[^1] Die Anzahl der Einlösungen gibt an, wie oft ein Rezept eingelöst werden darf. Ist keine Einlösung mehr möglich erhält die zugehörige <em>Geplante Abgabe</em> den Status eingelöst (<em>completed</em>).<br/>
+[^2] Ist der Gültigkeitszeitraum überschritten erhält die zugehörige <em>Geplante Abgabe</em> den Status abgelaufen (<em>stopped</em>). Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe kann in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert werden. 
 <br/><br/></p>
 
 <h4 id="status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der Durchgeführten Abgabe</h4>
 
-<p><a name="l1543">​</a>Eine <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> kann, abhängig vom jeweiligen <a href="Sub_UC_eMed_05.html">Use Case für Durchgeführte Abgabe schreiben</a>, unterschiedliche Status einnehmen (Element <em>status</em>).</p>
+<p><a name="l1552">​</a>Eine <a href="design_choices.html#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense">Durchgeführte Abgabe</a> kann, abhängig vom jeweiligen <a href="Sub_UC_eMed_05.html">Use Case für Durchgeführte Abgabe schreiben</a>, unterschiedliche Status einnehmen (Element <em>status</em>).</p>
 
 <table>
   <thead>
@@ -547,7 +543,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td><strong>entered-in-error</strong></td>
-      <td>Vorhandene <em>Durchgeführte Abgabe</em> (im Status <em>completed</em> oder <em>cancelled</em>) wird aufgrund eines Fehlers verworfen (eine mögliche beendete <em>Geplante Abgabe</em>, wird dadurch wieder <em>aktiv</em>)</td>
+      <td>Vorhandene <em>Durchgeführte Abgabe</em> (im Status <em>completed</em> oder <em>cancelled</em>) wird aufgrund eines Fehlers storniert (eine mögliche beendete <em>Geplante Abgabe</em>, wird dadurch wieder <em>aktiv</em>)</td>
     </tr>
   </tbody>
 </table>
@@ -807,8 +803,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-08 20:06:00 +0000">
-    2026-10-08
+  <span title="2026-10-09 14:33:00 +0000">
+    2026-10-09
   </span>
 
           <br/>

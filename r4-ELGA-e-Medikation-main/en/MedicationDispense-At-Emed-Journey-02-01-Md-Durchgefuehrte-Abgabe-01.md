@@ -60,7 +60,7 @@
     "display" : "GeplanteAbgabe 1"
   },
   {
-    "reference" : "MedicationRequest/At-Emed-Journey-01-02-Mr-Planeintrag-01",
+    "reference" : "MedicationRequest/At-Emed-Journey-Planeintrag-01-Ramipril-v1",
     "display" : "Planeintrag 1"
   }],
   "type" : {

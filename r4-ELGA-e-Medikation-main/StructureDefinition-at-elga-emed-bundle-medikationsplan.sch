@@ -14,7 +14,6 @@
     <sch:rule context="f:Bundle">
       <sch:assert test="count(f:implicitRules) &lt;= 0">implicitRules: maximum cardinality of 'implicitRules' is 0</sch:assert>
       <sch:assert test="count(f:identifier) &lt;= 0">identifier: maximum cardinality of 'identifier' is 0</sch:assert>
-      <sch:assert test="count(f:timestamp) &lt;= 0">timestamp: maximum cardinality of 'timestamp' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

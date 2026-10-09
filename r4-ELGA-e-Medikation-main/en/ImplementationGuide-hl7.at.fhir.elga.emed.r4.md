@@ -14,7 +14,7 @@
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-08T20:06:16+00:00",
+  "date" : "2026-10-09T14:33:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -965,18 +965,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
+        "valueString" : "Bundle"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-4cb4dceb-173f-461a-a267-683ec33e4be1.html"
+        "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.html"
       }],
       "reference" : {
-        "reference" : "List/4cb4dceb-173f-461a-a267-683ec33e4be1"
+        "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response"
       },
-      "name" : "Beispiel Journey 01-02: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans, der 2 Planeinträge referenziert und Informationen über Reihenfolge und Änderungsstatus speichert.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
+      "name" : "Beispiel Journey 01-02: Medikationsplan-Bundle",
+      "description" : "Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
     },
     {
       "extension" : [{
@@ -1001,22 +1001,6 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-6bacfe23-d469-4945-bf3c-90c7e647aa52.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"
-      },
-      "name" : "Beispiel Journey 01-02: Planeintrag 1",
-      "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-01.html"
       }],
       "reference" : {
@@ -1024,22 +1008,6 @@
       },
       "name" : "Beispiel Journey 01-02: Planeintrag 1",
       "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und geänderten Dosierungsanweisungen ab.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
-      },
-      "name" : "Beispiel Journey 01-02: Planeintrag 2",
-      "description" : "Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
@@ -1104,7 +1072,7 @@
       },
       "name" : "Beispiel Journey 01: e-Med Fachanwendung",
       "description" : "Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt.",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"
     },
     {
       "extension" : [{

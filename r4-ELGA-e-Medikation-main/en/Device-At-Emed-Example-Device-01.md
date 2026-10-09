@@ -12,6 +12,9 @@ e-Medikation Fachanwendung.
 {
   "resourceType" : "Device",
   "id" : "At-Emed-Example-Device-01",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"]
+  },
   "deviceName" : [{
     "name" : "e-Med Fachanwendung",
     "type" : "user-friendly-name"
