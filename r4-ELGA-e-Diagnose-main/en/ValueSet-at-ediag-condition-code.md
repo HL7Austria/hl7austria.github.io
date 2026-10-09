@@ -37,7 +37,7 @@ Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Healt
   "title" : "AT e-Diagnose Condition Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-09T06:09:27+00:00",
+  "date" : "2026-10-09T08:15:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -17,7 +17,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-09T06:09:27+00:00",
+  "date" : "2026-10-09T08:15:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -55,7 +55,7 @@
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wird.",
+    "documentation" : "Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wurde.",
     "type" : "url"
   }]
 }
