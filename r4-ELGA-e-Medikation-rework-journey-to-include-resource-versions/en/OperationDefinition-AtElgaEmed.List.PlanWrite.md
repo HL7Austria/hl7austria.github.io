@@ -1,0 +1,82 @@
+# e-Med Operation für Plan-Write - ELGA e-Medikation (R4) DRAFT v0.1.0
+
+## OperationDefinition: e-Med Operation für Plan-Write 
+
+### Allgemeine Business-Logik aller schreibeneden Operations:
+
+* vor dem schreiben muss jede Ressource gegen das jeweilige Profil geprüft werden (inklusive Invarianten)
+* es muss geprüft werden, dass in allen Ressourcen der selbe Patient referenziert wird
+* …
+
+In Arbeit.
+
+### Business Logik
+
+In Arbeit.
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "AtElgaEmed.List.PlanWrite",
+  "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtElgaEmed.List.PlanWrite",
+  "version" : "0.1.0",
+  "name" : "AtElgaEmed_List_PlanWrite",
+  "title" : "e-Med Operation für Plan-Write",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-10-11T19:49:48+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
+  "affectsState" : true,
+  "code" : "write",
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "id",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *id* Parameter dient der Zuordnung des Patienten.",
+    "type" : "string"
+  },
+  {
+    "name" : "medikationsplan",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *medikationsplan* Parameter dient der Übermittlung der Medikationsplandaten des Patienten.",
+    "type" : "Bundle",
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter gibt Auskunft über den Erfolg der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/OperationOutcome"]
+  }]
+}
+
+```
