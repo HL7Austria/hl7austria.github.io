@@ -2,8 +2,9 @@
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="hl7.at.fhir.core.r5"/>
+  <language value="en"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.core.r5</b></p><a name="hl7.at.fhir.core.r5"> </a><a name="hchl7.at.fhir.core.r5"> </a><h2>HL7AustriaImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/core/r5/ImplementationGuide/hl7.at.fhir.core.r5</pre><div><p>An Implementation Guide for the HL7® Austria FHIR® Core Profiles.</p>
+    <status value="generated"/><div xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.core.r5</b></p><a name="hl7.at.fhir.core.r5"> </a><a name="hchl7.at.fhir.core.r5"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>HL7AustriaImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/core/r5/ImplementationGuide/hl7.at.fhir.core.r5</pre><div><p>An Implementation Guide for the HL7® Austria FHIR® Core Profiles.</p>
 </div></div>
   </text>
   <url value="https://fhir.hl7.at/core/r5/ImplementationGuide/hl7.at.fhir.core.r5"/>
@@ -11,7 +12,7 @@
   <name value="HL7AustriaImplementationGuide"/>
   <title value="HL7® Austria FHIR® Core Implementation Guide"/>
   <status value="active"/>
-  <date value="2026-08-11T21:36:48+00:00"/>
+  <date value="2026-10-11T20:03:30+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <contact>
     <name value="HL7® Austria, TC FHIR®"/>
@@ -29,7 +30,6 @@
   </contact>
   <description value="An Implementation Guide for the HL7® Austria FHIR® Core Profiles."/>
   <packageId value="hl7.at.fhir.core.r5"/>
-  <license value="CC0-1.0"/>
   <fhirVersion value="5.0.0"/>
   <dependsOn id="hl7tx">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -37,7 +37,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r5"/>
-    <version value="7.3.0"/>
+    <version value="7.4.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -49,7 +49,7 @@
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools.r5#1.1.2"/>
+      <valueCode value="hl7.fhir.uv.tools.r5#1.3.0"/>
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -89,7 +89,7 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/at-funktionscode"/>
+        <reference value="CodeSystem/at-core-funktionscode"/>
       </reference>
       <name value="CodeSystem for Austrian Funktionscodes Excerpt"/>
       <description value="CodeSystem for Austrian Funktionscodes Excerpt"/>
@@ -100,7 +100,7 @@
         <valueString value="HealthcareService"/>
       </extension>
       <reference>
-        <reference value="HealthcareService/ExampleHealthcareService"/>
+        <reference value="HealthcareService/HealthcareServiceRheumatologyExample"/>
       </reference>
       <name value="Example HealthcareService with Specialty"/>
       <description value="Example of a healthcare service with an Austrian Funktionscode as specialty."/>
@@ -531,19 +531,26 @@
         <system value="http://hl7.org/fhir/guide-parameter-code"/>
         <code value="path-pages"/>
       </code>
+      <value value="input/assets"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/guide-parameter-code"/>
+        <code value="path-pages"/>
+      </code>
       <value value="input/images"/>
     </parameter>
     <parameter>
       <code>
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="path-liquid"/>
+        <code value="path-liquid-template"/>
       </code>
       <value value="template/liquid"/>
     </parameter>
     <parameter>
       <code>
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="path-liquid"/>
+        <code value="path-liquid-template"/>
       </code>
       <value value="input/liquid"/>
     </parameter>
@@ -693,6 +700,13 @@
         <code value="tabbed-snapshots"/>
       </code>
       <value value="true"/>
+    </parameter>
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="i18n-default-lang"/>
+      </code>
+      <value value="en"/>
     </parameter>
   </definition>
 </ImplementationGuide>

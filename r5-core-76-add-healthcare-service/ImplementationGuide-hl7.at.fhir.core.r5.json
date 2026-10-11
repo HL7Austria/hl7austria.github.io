@@ -1,16 +1,17 @@
 {
   "resourceType" : "ImplementationGuide",
   "id" : "hl7.at.fhir.core.r5",
+  "language" : "en",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.core.r5</b></p><a name=\"hl7.at.fhir.core.r5\"> </a><a name=\"hchl7.at.fhir.core.r5\"> </a><h2>HL7AustriaImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/core/r5/ImplementationGuide/hl7.at.fhir.core.r5</pre><div><p>An Implementation Guide for the HL7® Austria FHIR® Core Profiles.</p>\n</div></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.core.r5</b></p><a name=\"hl7.at.fhir.core.r5\"> </a><a name=\"hchl7.at.fhir.core.r5\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p></div><h2>HL7AustriaImplementationGuide</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/core/r5/ImplementationGuide/hl7.at.fhir.core.r5</pre><div><p>An Implementation Guide for the HL7® Austria FHIR® Core Profiles.</p>\n</div></div>"
   },
   "url" : "https://fhir.hl7.at/core/r5/ImplementationGuide/hl7.at.fhir.core.r5",
   "version" : "2.1.0",
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-08-11T21:36:48+00:00",
+  "date" : "2026-10-11T20:03:30+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -28,7 +29,6 @@
   }],
   "description" : "An Implementation Guide for the HL7® Austria FHIR® Core Profiles.",
   "packageId" : "hl7.at.fhir.core.r5",
-  "license" : "CC0-1.0",
   "fhirVersion" : ["5.0.0"],
   "dependsOn" : [{
     "id" : "hl7tx",
@@ -38,7 +38,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.3.0"
+    "version" : "7.4.0"
   },
   {
     "id" : "hl7ext",
@@ -53,7 +53,7 @@
   "definition" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r5#1.1.2"
+      "valueCode" : "hl7.fhir.uv.tools.r5#1.3.0"
     }],
     "resource" : [{
       "extension" : [{
@@ -97,7 +97,7 @@
         "valueString" : "CodeSystem"
       }],
       "reference" : {
-        "reference" : "CodeSystem/at-funktionscode"
+        "reference" : "CodeSystem/at-core-funktionscode"
       },
       "name" : "CodeSystem for Austrian Funktionscodes Excerpt",
       "description" : "CodeSystem for Austrian Funktionscodes Excerpt",
@@ -109,7 +109,7 @@
         "valueString" : "HealthcareService"
       }],
       "reference" : {
-        "reference" : "HealthcareService/ExampleHealthcareService"
+        "reference" : "HealthcareService/HealthcareServiceRheumatologyExample"
       },
       "name" : "Example HealthcareService with Specialty",
       "description" : "Example of a healthcare service with an Austrian Funktionscode as specialty.",
@@ -565,19 +565,26 @@
         "system" : "http://hl7.org/fhir/guide-parameter-code",
         "code" : "path-pages"
       },
+      "value" : "input/assets"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/guide-parameter-code",
+        "code" : "path-pages"
+      },
       "value" : "input/images"
     },
     {
       "code" : {
         "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-        "code" : "path-liquid"
+        "code" : "path-liquid-template"
       },
       "value" : "template/liquid"
     },
     {
       "code" : {
         "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
-        "code" : "path-liquid"
+        "code" : "path-liquid-template"
       },
       "value" : "input/liquid"
     },
@@ -727,6 +734,13 @@
         "code" : "tabbed-snapshots"
       },
       "value" : "true"
+    },
+    {
+      "code" : {
+        "system" : "http://hl7.org/fhir/tools/CodeSystem/ig-parameters",
+        "code" : "i18n-default-lang"
+      },
+      "value" : "en"
     }]
   }
 }
