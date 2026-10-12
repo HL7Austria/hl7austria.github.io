@@ -9,7 +9,6 @@ In Arbeit.
 * ob History für Liste nötig, wird in https://github.com/HL7Austria/ELGA-e-Diagnose-R4/issues/13 noch diskutiert
  
 * Info über unsicherheit bezüglich Patient Compartment
-* Abgrenzung zwischen e-Diagnose Anwendungsfällen und allem, was eine Client-Applikation vielleicht noch implementieren kann/soll
 
 ### Informationen über GDA und Patienten
 
@@ -36,4 +35,8 @@ Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einma
   * Gespeichert:[AllergyEntry01](AllergyIntolerance-AllergyEntry01.md): 
 
 **Konvention für die Beispiele:** Beispiele mit dem Suffix `Request` (z. B. [ConditionEntry01Request](Condition-ConditionEntry01Request.md), [AllergyEntry01Request](AllergyIntolerance-AllergyEntry01Request.md), [ProcedureEntry01Request](Procedure-ProcedureEntry01Request.md) sowie die in den `$write`-Parametern übermittelten Summary-Listen) zeigen die Ressource so, wie sie die Client-Anwendung übermittelt, also mit logischen Referenzen. Alle anderen Beispiele zeigen die Ressource so, wie sie die e-Diagnose-Fachanwendung speichert und zurückliefert, also mit aufgelösten Referenzen. Für die übrigen Einträge der [Patient Journey](patient_journey.md) gilt dasselbe Muster; auf eigene Request-Beispiele wird verzichtet.
+
+### Abgrenzung der e-Diagnose-Fachanwendungen zu Client-Applikationen
+
+Die e-Diagnose-Fachanwendung bietet ein Mindestmaß an Funktionalität, um den Anforderungen gerecht zu werden. Darüber hinaus liegt es aber in der Verantwortung der Softwarehersteller für Client-Applikationen weiter Funktionen (z.B. Suche nach bestimmten Diagnosen auf Basis vom Code, Einschränkung auf einen bestimmten Zeitraum) zu implementieren.
 

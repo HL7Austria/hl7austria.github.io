@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-rel
   "name" : "AtEdiagRelatedPerson",
   "title" : "AT ELGA e-Diagnose RelatedPerson",
   "status" : "active",
-  "date" : "2026-10-12T13:54:53+00:00",
+  "date" : "2026-10-12T14:06:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
