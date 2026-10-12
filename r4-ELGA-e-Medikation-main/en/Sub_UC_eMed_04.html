@@ -523,7 +523,9 @@ Unter gewissen Voraussetzungen kann ein bestehender Medikationsplaneintrag angep
 
 <p>Wird der zugehörige Planeintrag nach der Erstellung einer <em>Geplanten Abgabe</em> geändert, kann die <em>Geplante Abgabe</em> weiterhin gültig bleiben oder gegebenenfalls storniert werden (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_03---geplante-abgabe-stornieren-prescription-discard">Sub_UC_eMed_04_03 - Geplante Abgabe stornieren ($prescription-discard)</a>).</p>
 
-<p>Medikationsplaneinträge können mehrfach rezeptiert werden und daher auch zu mehreren <em>Geplanten Abgaben</em> führen. &lt;!– Können von einer Planeintragsversion gleichzeitig mehrere Geplante Abgaben aktiv sein? oder gilt nicht eher: Es können zu einem Planeintrag mehrere aktive <em>Geplante Abgaben</em> existieren, aber nur eine je Planeintragversion.</p>
+<p>Medikationsplaneinträge können mehrfach rezeptiert werden und daher auch zu mehreren <em>Geplanten Abgaben</em> führen.</p>
+
+  <!-- Können von einer Planeintragsversion gleichzeitig mehrere Geplante Abgaben aktiv sein? oder gilt nicht eher: Es können zu einem Planeintrag mehrere aktive *Geplante Abgaben* existieren, aber nur eine je Planeintragversion. -->
 
 <p>Die Anzahl der <em>Geplanten Abgaben</em>, die mit demselben <em>e-Med Groupidentifier</em> gespeichert werden können, ist durch das Limit für die Anzahl der Medikamente je e-Rezept begrenzt.</p>
 
@@ -537,7 +539,7 @@ und widerspricht dem Usecase:
 
 <h4 id="ablauf">Ablauf</h4>
 
-<p><a name="l603">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und erhält von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> alle für die Erstellung der <em>Geplanten Abgaben</em> relevanten Ressourcen.</p>
+<p><a name="l602">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und erhält von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> alle für die Erstellung der <em>Geplanten Abgaben</em> relevanten Ressourcen.</p>
 
   <!-- im Planeintrag steht:   TODO klären, wie das in der Geplanten Abgabe gemacht wird akl 8.10.
     - *medication*: zur Dokumentation des Arzneimittels wird die *Medication*-Ressource verwendet. Diese muss bei Medikamenten mit PZN beim Schreiben als **Logical Reference** mit **PZN und Name** angegeben werden (beim Lesen ist diese contained in der Ressource enthalten). Magistrale Zubereitungen sind immer als contained Ressource anzugeben (siehe Kapitel [Medikation](ELGA-e-Medikation-R4/output/medication.html)). -->
@@ -692,7 +694,7 @@ Offene Punkte: <br/>$prescription-discard: in Arbeit.
 
 <h3 id="sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)</h3>
 
-<p><a name="l1099">​</a>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt und entsprechende <em>Durchgeführte Abgaben</em> erstellt (siehe <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_05_01 - Durchgeführte Abgabe erfassen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <strong><em>completed</em></strong> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
+<p><a name="l1098">​</a>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt und entsprechende <em>Durchgeführte Abgaben</em> erstellt (siehe <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_05_01 - Durchgeführte Abgabe erfassen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <strong><em>completed</em></strong> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
 
 <p><strong>Sonderfall</strong>: Wird die letzte <em>Durchgeführte Abgabe</em> im Anschluss storniert (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
 
@@ -803,7 +805,7 @@ Referenzen auf gelöschte Ressourcen (z.B. von bestehenden Durchgefürhte Abgabe
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-12 12:45:00 +0000">
+  <span title="2026-10-12 17:47:00 +0000">
     2026-10-12
   </span>
 

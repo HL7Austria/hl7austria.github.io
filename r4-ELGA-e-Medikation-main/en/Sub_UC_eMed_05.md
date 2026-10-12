@@ -2,52 +2,81 @@
 
 ## ​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)
 
-### Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)
+Dieser technische Use Case beschreibt den schreibenden Zugriff [berechtigter Akteure](actors.md#rollen-und-berechtigungen) auf [Durchgeführte Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) eines ELGA-Teilnehmers.
 
-Ein berechtigter GDA (siehe [Rollen und Berechtigungen](actors.md#rollen-und-berechtigungen)) dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer [Durchgeführten Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md).
+Für ELGA-Teilnehmer (bzw. deren Vertretungen) erfolgt der schreibende Zugriff im Rahmen der Ausübung von Teilnehmerrechten ausschließlich über das ELGA-Zugangsportal. Für GDA erfolgt der schreibende Zugriff über die e-Medikation-Schnittstelle des jeweiligen GDA-Systems.
 
-Je nachdem, ob ein ELGA-Kontakt vorliegt, werden zwei Zugriffsvarianten unterschieden:
+Der schreibende Zugriff umfasst folgende Bearbeitungen:
 
-* Zugriffsvariante A: Durchgeführte Abgabe mit Kontakt
-* Zugriffsvariante B: Durchgeführte Abgabe ohne Kontakt
+* **GDA** können **Durchgeführte Abgaben** 
+* [erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen-dispense-write)
+* [stornieren](Sub_UC_eMed_05.md#sub_uc_emed_05_02---durchgeführte-abgabe-stornieren)
+* im Nachhinein mit einem [Bezug zu einem Planeintrag](Sub_UC_eMed_05.md#sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellen) versehen
+ 
+* **ELGA-Teilnehmer** und deren Vertretungen können **Durchgeführte Abgaben**: 
+* [löschen](Sub_UC_eMed_05.md#sub_uc_emed_05_04---durchgeführte-abgabe-löschen-durch-elga-teilnehmer)
+ 
 
-#### Zugriffsvariante A: Durchgeführte Abgabe mit Kontakt schreiben
+Die **fachlichen Varianten** der **Durchgeführten Abgabe** (Abgabearten) werden in den folgenden Use Cases beschrieben:
 
-Erfolgt die Autorisierung des ELGA-Teilnehmers mit einer **Kontaktbestätigung** (z.B. über die e-card), kann der GDA auf die e-Medikation des ELGA-Teilnehmers zugreifen und sämtliche Arzneimittelabgaben dokumentieren.
+* [Vollständige Einzelabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_01---vollständige-einzelabgabe-erfassen)
+* [Teilabgaben erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_02---teilabgaben-erfassen)
+* [Besorgerprozess](Sub_UC_eMed_05.md#sub_uc_emed_05_01_03---besorgerprozess)
+* [Leerabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_04-leerabgabe-erfassen)
+* [Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen)
+* [Durchgeführte Abgabe nacherfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_06---durchgeführte-abgabe-nacherfassen)
+* [Substitution eines Arzneimittels erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_07-substitution-eines-arzneimittels-erfassen)
+
+ℹ️ Die fachlichen Anforderungen dieses Use Cases werden beschrieben in:
+*  [UC_eMed_05 Durchgeführte Abgabe schreiben](Sub_UC_eMed_05.md) 
+*  [UC_eMed_06 Teilnehmerrechte ausüben](Sub_UC_eMed_06.md) 
+Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
+
+### Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen (Dispense-Write)
+
+Ein GDA dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer [Durchgeführten Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md).
+
+Je nachdem, ob eine ELGA-Kontaktbestätigung vorliegt, werden beim schreibenden Zugriff einer **Durchgeführten Abgabe** folgende Zugriffsvarianten unterschieden.
+
+#### Variante A: Durchgeführte Abgabe mit ELGA-Kontaktbestätigung schreiben
+
+Liegt dem GDA eine **ELGA-Kontaktbestätigung** vor (z.B. über die e-card), kann der GDA auf die e-Medikation des ELGA-Teilnehmers zugreifen und sämtliche durchgeführte Arzneimittelabgaben dokumentieren.
 
 Dabei können sowohl Arzneimittelabgaben zu bestehenden **Geplanten Abgaben** als auch Arzneimittelabgaben ohne Bezug zu einer **Geplanten Abgabe**, beispielsweise OTC-Abgaben, erfasst werden.
 
 ##### Ablauf
 
-1. Der GDA ruft zur Ermittlung und Prüfung der zu dokumentierenden Abgaben den**aktuellen Medikationsplan**, die zugehörigen**Geplanten Abgaben**sowie bereits dokumentierte**Durchgeführte Abgaben**ab.
-1. Der GDA ermittelt auf Basis dieser und der Informationen des Patienten die zu dokumentierenden Arzneimittelabgaben und erstellt die entsprechenden[Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)gemäß der jeweils zutreffenden Abgabeart.
-1. Der GDA übermittelt die erstellten**Durchgeführten Abgaben**mittels POST**$dispense-write**als Transaction Bundle an die Fachanwendung.
-* **Durchgeführte Abgaben** mit unterschiedlichen **e-Med GroupIdentifier** **MÜSSEN** in separaten Transaction Bundles übermittelt werden.
-* Die für die jeweilige Abgabeart erforderlichen Angaben und Referenzen sind in den entsprechenden Use Cases zu den Abgabearten beschrieben.
+1. Der GDA ruft zur Ermittlung und Prüfung der zu dokumentierenden Abgaben den **aktuellen Medikationsplan** ([Plan-Read](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read)), die zugehörigen **Geplanten Abgaben** ([Prescription-Search](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search))sowie bereits dokumentierte **Durchgeführte Abgaben** ([Dispense-Search](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search)) ab.
+1. Der GDA führt anhand dessen und der Informationen des Patienten die entsprechenden Arzneimittelabgaben durch und dokumentiert diese in[Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)gemäß der jeweils zutreffenden Abgabeart (siehe Kapitel[Abgabearten](Sub_UC_eMed_05.md#abgabearten))
+* Existiert eine zugehörige **Geplante Abgabe** muss diese sowie der zugehörige Medikationsplaneintrag referenziert werden.
 
-1. Die Fachanwendung prüft die im Transaction Bundle enthaltenen**Durchgeführten Abgaben**.
-1. Bei erfolgreicher Prüfung werden die**Durchgeführten Abgaben**gespeichert. Abhängig von der Abgabeart und der Anzahl der Einlösungen kann die Fachanwendung dabei den Status einer zugehörigen**Geplanten Abgabe**automatisch ändern. Die entsprechenden fachlichen Regeln sind in den Use Cases der jeweiligen Abgabearten beschrieben.
-1. Bei erfolgreicher Verarbeitung bestätigt die Fachanwendung den Schreibvorgang mit**HTTP 200 OK**.
+1. Der GDA übermittelt die neu erstellten**Durchgeführten Abgaben**in einem[Durchgeführte Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-tx.md)mittels**POST**[$dispense-write](Sub_UC_eMed_05.md#custom-operations)an die Fachanwendung (unahängig von ihrem**e-Med Groupidentifier**).
+1. Die Fachanwendung validiert das Transaction Bundle und die darin enthaltenen**Durchgeführten Abgaben**.
+1. Bei erfolgreicher Prüfung werden die**Durchgeführten Abgaben**gespeichert. Abhängig von Abgabeart und Anzahl der Einlösungen kann die Fachanwendung automatisch eine Statusänderung der zugehörigen**Geplanten Abgabe**durchführen. Die entsprechenden fachlichen Regeln sind in den Use Cases der jeweiligen[Abgabearten](Sub_UC_eMed_05.md#abgabearten)beschrieben.
+1. Bei erfolgreicher Verarbeitung bestätigt die Fachanwendung den Schreibvorgang.
 1. Schlägt die Prüfung des Transaction Bundles fehl, wird der Schreibvorgang mit einem**OperationOutcome**abgelehnt.
 
  ![](plantuml/UC_eMed_05_01_a.svg)
 
-#### Zugriffsvariante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben
+#### Variante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben
 
-Erfolgt der Zugriff **ohne Kontaktbestätigung** über den ****e-Med GroupIdentifier**** (z.B. codiert im Datamatrixcode eines e-Rezepts), kann der GDA ausschließlich **Durchgeführte Abgaben** in der e-Medikation dokumentieren, die sich auf die dem **e-Med GroupIdentifier** zugeordneten **Geplanten Abgaben** beziehen.
+Erfolgt der Zugriff **ohne ELGA-Kontaktbestätigung** über den ****e-Med GroupIdentifier**** (z.B. codiert im Datamatrixcode eines e-Rezepts), kann der GDA ausschließlich **Durchgeführte Abgaben** in der e-Medikation dokumentieren, die sich auf die dem **e-Med GroupIdentifier** zugeordneten **Geplanten Abgaben** beziehen.
 
-Da kein weiterer ELGA-Zugriff auf die Medikationsdaten des ELGA-Teilnehmers möglich ist, können weder der aktuelle Medikationsplan noch weitere **Geplante Abgaben** oder **Durchgeführte Abgaben** abgerufen werden.
-
- ![](plantuml/UC_eMed_05_01_b.svg) 
+Da kein weiterer ELGA-Zugriff auf die Medikationsdaten des ELGA-Teilnehmers möglich ist, können weder der aktuelle Medikationsplan noch weitere **Geplante Abgaben** oder **Durchgeführte Abgaben** abgerufen bzw. Suchoperationen durchgeführt werden.
 
 ##### Ablauf
 
-1. Der GDA ruft über GroupIdentifier-Search die dem vorliegenden**e-Med GroupIdentifier**zugehörigen**Geplanten Abgaben**und bereits dokumentierten**Durchgeführten Abgaben**ab.
-1. Der GDA ermittelt auf Basis dieser und der Informationen des Patienten die zu dokumentierenden Arzneimittelabgaben und erstellt die entsprechenden[Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)gemäß der jeweils zutreffenden Abgabeart.
-1. Der GDA übermittelt die neu erstellten**Durchgeführten Abgaben**mittels POST**$dispense-write**als Transaction Bundle an die e-Med Fachanwendung.
-1. Die e-Med Fachanwendung prüft das Transaction Bundle und die darin enthaltenen**Durchgeführten Abgaben**, insbesondere deren Zuordnung zum vorliegenden**e-Med GroupIdentifier**. 5.Bei erfolgreicher Prüfung werden die**Durchgeführten Abgaben**gespeichert. Abhängig von Abgabeart und Anzahl der Einlösungen kann die Fachanwendung automatisch eine Statusänderung der zugehörigen**Geplanten Abgabe**durchführen.
-1. Bei erfolgreicher Verarbeitung bestätigt die Fachanwendung den Schreibvorgang mit**HTTP 200 OK**.
+1. Der GDA ruft mit [GroupIdentifier-Search](Sub_UC_eMed_03.md#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search) die zum vorliegenden **e-Med GroupIdentifier** zugehörigen **Geplanten Abgaben** und bereits dokumentierten **Durchgeführten Abgaben** ab.
+1. Der GDA führt anhand dieser und der Informationen des Patienten die entsprechenden Arzneimittelabgaben durch und dokumentiert diese in[Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)gemäß der jeweils zutreffenden Abgabeart (siehe Kapitel[Abgabearten](Sub_UC_eMed_05.md#abgabearten)):
+* Die zugehörige **Geplante Abgabe** und der **Medikationsplaneintrag** werden referenziert,
+* der vorliegende **e-Med GroupIdentifier** darin dokumentiert.
+
+1. Der GDA übermittelt die neu erstellten**Durchgeführten Abgaben**in einem[Durchgeführte Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-tx.md)mittels**POST**[$dispense-write](Sub_UC_eMed_05.md#custom-operations)an die Fachanwendung.
+1. Die Fachanwendung validiert das Transaction Bundle und die darin enthaltenen**Durchgeführten Abgaben**, insbesondere deren Zuordnung zum vorliegenden**e-Med GroupIdentifier**. 5.Bei erfolgreicher Prüfung werden die**Durchgeführten Abgaben**gespeichert. Abhängig von Abgabeart und Anzahl der Einlösungen kann die Fachanwendung automatisch eine Statusänderung der zugehörigen**Geplanten Abgabe**durchführen. Die entsprechenden fachlichen Regeln sind in den Use Cases der jeweiligen[Abgabearten](Sub_UC_eMed_05.md#abgabearten)beschrieben.
+1. Bei erfolgreicher Verarbeitung bestätigt die Fachanwendung den Schreibvorgang.
 1. Schlägt die Prüfung des Transaction Bundles fehl, wird der Schreibvorgang mit einem**OperationOutcome**abgelehnt.
+
+ ![](plantuml/UC_eMed_05_01_b.svg) 
 
 #### Custom Operations
 
@@ -55,16 +84,6 @@ Da kein weiterer ELGA-Zugriff auf die Medikationsdaten des ELGA-Teilnehmers mög
 $dispense-write: in Arbeit. 
 
 #### Abgabearten
-
-Die fachlichen Varianten der **Durchgeführten Abgabe** (Abgabearten) werden in den folgenden Use Cases beschrieben:
-
-* Sub_UC_eMed_05_01_01 – Vollständige Einzelabgabe erfassen
-* Sub_UC_eMed_05_01_02 – Teilabgaben erfassen
-* Sub_UC_eMed_05_01_03 – Besorgerprozess
-* Sub_UC_eMed_05_01_04 – Leerabgabe erfassen
-* Sub_UC_eMed_05_01_05 – Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen
-* Sub_UC_eMed_05_01_06 – Durchgeführte Abgabe nacherfassen
-* Sub_UC_eMed_05_01_07 – Substitution eines Arzneimittels erfassen
 
 Für alle Abgabenvarianten gilt:
 
@@ -220,11 +239,11 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
 
 Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Referenz auf die zugehörige **Geplante Abgabe** bzw. den **Planeintrag**.
 
-### Sub_UC_eMed_05_02 - Durchgeführte Abgabe verwerfen
+### Sub_UC_eMed_05_02 - Durchgeführte Abgabe stornieren
 
-Ein GDA (Apotheke) kann von ihm erstellte [Durchgeführte Abgaben](design_choices.md#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense), die sich im Status **completed** oder **cancelled** befinden, aufgrund eines Fehlers verwerfen.
+Ein GDA (Apotheke) kann von ihm erstellte [Durchgeführte Abgaben](design_choices.md#durchgeführte-abgabe-AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe-medicationdispense), die sich im Status **completed** oder **cancelled** befinden, aufgrund eines Fehlers stornieren.
 
-Um eine **Durchgeführte Abgabe** zu verwerfen, führt der GDA POST $dispense-discard aus:
+Um eine **Durchgeführte Abgabe** zu stornieren, führt der GDA POST $dispense-discard aus:
 
 * Der Status wird auf **entered-in-error** gesetzt,
 * der verantwortliche GDA (**requester**) und das Datum in **recorded** werden entsprechend aktualisiert.
@@ -247,14 +266,6 @@ $reference-plan: in Arbeit.
 
 ### Sub_UC_eMed_05_04 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)
 
-Der ELGA-Teilnehmer kann eine **Durchgeführte Abgabe** endgültig löschen.
-
-Die Löschung der **Durchgeführten Abgabe** umfasst:
-
-* die fachliche Entfernung der betreffenden **MedicationDispense-Ressource** sowie
-* die Entfernung aller zugehörigen historischen Ressourcenversionen (**_history**).
-
-Zum Löschen einer **Durchgeführte Abgabe** ruft der ELGA-Teilnehmer die betreffende **Durchgeführte Abgabe** im ELGA-Portal auf. Dieses führt zunächst eine Leseoperation auf die betreffende MedicationDispense-Ressource aus (GET MedicationDispense/[id]) und löscht anschließend die betreffende Geplante Abgabe mittels DELETE (DELETE [base]/MedicationDispense/[id]).
-
-Die Ressource einschließlich aller historischen Versionen darf nach erfolgreicher Löschung weder über reguläre FHIR-Interaktionen noch über administrative Schnittstellen abrufbar sein. 
+ Offene Punkte:
+ Umsetzung der Teilnehmerrechte: in Arbeit. 
 

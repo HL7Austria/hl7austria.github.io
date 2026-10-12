@@ -48,7 +48,11 @@ Die gefundenen **Geplanten Abgaben** können als Ausgangspunkt für weitere Abfr
 Von ELGA-Teilnehmern gelöschte **Geplanten Abgaben** stehen nicht mehr zur Verfügung.
 
  Offene Punkte: 
- Suchparameter: Umsetzung in Arbeit. 
+ Suchparameter: Umsetzung in Arbeit. ad: Suchkritierien: 
+ - Geplante Abgabe zu einer Durchgeführten Abgabe: Reverse-Include erlaubt oder eigene Operation? 
+ - Gültigkeitszeitraum des Rezepts (validityPeriod)? 
+ - Erstellender GDA?
+ 
 
 ##### Ablauf
 
@@ -58,15 +62,6 @@ Von ELGA-Teilnehmern gelöschte **Geplanten Abgaben** stehen nicht mehr zur Verf
 1. Werden keine passenden Ressourcen gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.
 1. Im Fehlerfall wird ein entsprechender**OperationOutcome**zurückgegeben.
 1. Optional kann der GDA den**Medikationsplan**(siehe[Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read)) und**Durchgeführte Abgaben**(siehe[Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search)) zur fachlichen Beurteilung abrufen.
-
- Offene Frage:
- ad: Suchkritierien: 
- - Geplante Abgabe zu einer Durchgeführten Abgabe: Reverse-Include erlaubt oder eigene Operation? 
- - Gültigkeitszeitraum des Rezepts (validityPeriod)? 
- - Erstellender GDA?
- 
-
-##### Sequenzdiagramm
 
 ![](plantuml/UC_eMed_03_01.svg)
 
@@ -92,6 +87,9 @@ Die gefundenen **Durchgeführten Abgaben** können als Ausgangspunkt für weiter
 
 Von ELGA-Teilnehmern gelöschte **Durchgeführten Abgaben** stehen nicht mehr zur Verfügung.
 
+ Offene Punkte: 
+ Suchparameter: Umsetzung in Arbeit. 
+
 ##### Ablauf
 
 1. Der GDA führt einen**GET**-Request auf den MedicationDispense-Search-Endpunkt mit Suchparametern aus.
@@ -100,11 +98,6 @@ Von ELGA-Teilnehmern gelöschte **Durchgeführten Abgaben** stehen nicht mehr zu
 1. Werden keine passenden Ressourcen gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.
 1. Im Fehlerfall wird ein entsprechender**OperationOutcome**zurückgegeben.
 1. Optional kann der GDA den**Medikationsplan**(siehe[Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read)) oder**Geplante Abgaben**(siehe[Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search)) zur fachlichen Beurteilung abrufen.
-
- Offene Punkte: 
- Suchparameter: Umsetzung in Arbeit. 
-
-##### Sequenzdiagramm
 
 ![](plantuml/UC_eMed_03_02.svg)
 
@@ -124,8 +117,6 @@ Ein lesender Zugriff auf weitere **Geplante Abgaben** oder **Durchgeführte Abga
 1. Die Fachanwendung ermittelt alle**MedicationDispense**-Ressourcen mit dem übermittelten**e-Med GroupIdentifier**.
 1. Die Fachanwendung liefert die ermittelten**MedicationRequest**- und**MedicationDispense**-Ressourcen als Bundle vom Typ**searchset**zurück.
 1. Im Fehlerfall wird ein entsprechender**OperationOutcome**zurückgegeben.
-
-##### Sequenzdiagramm
 
 ![](plantuml/UC_eMed_03_03.svg)
 
