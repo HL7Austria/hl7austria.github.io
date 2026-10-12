@@ -30,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-Healthcar
   "name" : "HL7ATCoreHealthcareService",
   "title" : "HL7® AT Core HealthcareService Profile",
   "status" : "active",
-  "date" : "2026-10-11T20:03:30+00:00",
+  "date" : "2026-10-12T11:43:50+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -93,7 +93,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-Healthcar
       "id" : "HealthcareService.specialty",
       "path" : "HealthcareService.specialty",
       "binding" : {
-        "strength" : "extensible",
+        "strength" : "preferred",
         "valueSet" : "https://fhir.hl7.at/core/r5/ValueSet/at-funktionscode-vs"
       }
     },

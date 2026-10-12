@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-addre
   "name" : "AddressMunicipalityCode",
   "title" : "Address Municipality Code",
   "status" : "active",
-  "date" : "2026-10-11T20:03:30+00:00",
+  "date" : "2026-10-12T11:43:50+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
