@@ -5,7 +5,6 @@
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) and [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md)
-* Examples for this Profile: [List/At-Emed-Journey-05-01-List-Medikationsplan](List-At-Emed-Journey-05-01-List-Medikationsplan.md), [List/At-Emed-Journey-06-02-List-Medikationsplan](List-At-Emed-Journey-06-02-List-Medikationsplan.md) and [List/At-Emed-Journey-07-02-List-Medikationsplan](List-At-Emed-Journey-07-02-List-Medikationsplan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-list-medikationsplan.json)
 
@@ -113,7 +112,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-09T16:18:46+00:00",
+  "date" : "2026-10-12T06:12:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -172,13 +171,39 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "mustSupport" : true
     },
     {
+      "id" : "List.meta.versionId",
+      "path" : "List.meta.versionId",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.meta.lastUpdated",
+      "path" : "List.meta.lastUpdated",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.meta.profile",
+      "path" : "List.meta.profile",
+      "mustSupport" : true
+    },
+    {
       "id" : "List.implicitRules",
       "path" : "List.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
       "max" : "0"
     },
     {
       "id" : "List.text",
       "path" : "List.text",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.text.status",
+      "path" : "List.text.status",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.text.div",
+      "path" : "List.text.div",
       "mustSupport" : true
     },
     {
@@ -228,13 +253,37 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "path" : "List.code",
       "short" : "Code der den Medikationsplan identifiziert",
       "min" : 1,
-      "fixedCodeableConcept" : {
-        "coding" : [{
-          "system" : "http://snomed.info/sct",
-          "code" : "736378000",
-          "display" : "Medikationsplan"
-        }]
-      },
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.code.coding",
+      "path" : "List.code.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.code.coding.system",
+      "path" : "List.code.coding.system",
+      "min" : 1,
+      "patternUri" : "http://snomed.info/sct",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.code.coding.version",
+      "path" : "List.code.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.code.coding.code",
+      "path" : "List.code.coding.code",
+      "min" : 1,
+      "fixedCode" : "736378000",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.code.coding.display",
+      "path" : "List.code.coding.display",
       "mustSupport" : true
     },
     {
@@ -249,9 +298,34 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "mustSupport" : true
     },
     {
+      "id" : "List.subject.reference",
+      "path" : "List.subject.reference",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.subject.type",
+      "path" : "List.subject.type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.subject.identifier",
+      "path" : "List.subject.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.subject.identifier.system",
+      "path" : "List.subject.identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.subject.identifier.value",
+      "path" : "List.subject.identifier.value",
+      "mustSupport" : true
+    },
+    {
       "id" : "List.encounter",
       "path" : "List.encounter",
-      "short" : "Fachliche Begründung: TODO",
+      "short" : "Fachliche Begründung: Es wird derzeit kein Behandlungskontext dokumentiert.",
       "max" : "0"
     },
     {
@@ -275,8 +349,34 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "mustSupport" : true
     },
     {
+      "id" : "List.source.reference",
+      "path" : "List.source.reference",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.source.type",
+      "path" : "List.source.type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.source.identifier",
+      "path" : "List.source.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.source.identifier.system",
+      "path" : "List.source.identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.source.identifier.value",
+      "path" : "List.source.identifier.value",
+      "mustSupport" : true
+    },
+    {
       "id" : "List.orderedBy",
       "path" : "List.orderedBy",
+      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -303,6 +403,34 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       }
     },
     {
+      "id" : "List.entry.flag.coding",
+      "path" : "List.entry.flag.coding",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.entry.flag.coding.system",
+      "path" : "List.entry.flag.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.entry.flag.coding.version",
+      "path" : "List.entry.flag.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.entry.flag.coding.code",
+      "path" : "List.entry.flag.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.entry.flag.coding.display",
+      "path" : "List.entry.flag.coding.display",
+      "mustSupport" : true
+    },
+    {
       "id" : "List.entry.deleted",
       "path" : "List.entry.deleted",
       "short" : "Fachliche Begründung: Keine Verwendung im Medikationsplan (da list.mode immer working).",
@@ -311,7 +439,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Fachliche Begründung: Kein Datum der initialen Aufnahme des Eintrags im Medikationsplan.\nDas Datum ist nur im referenzierten Medikationsplaneintrag ersichtlich.",
+      "short" : "Fachliche Begründung: Das Datum der initialen Aufnahme eines Eintrags wird nicht auf Ebene der Liste dokumentiert. Datumsinformationen werden im referenzierten Medikationsplaneintrag dokumentiert.",
       "max" : "0"
     },
     {
@@ -325,6 +453,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "mustSupport" : true
     },
     {
+      "id" : "List.entry.item.reference",
+      "path" : "List.entry.item.reference",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
       "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown | unavailable] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Patient nimmt derzeit keine Medikamente ein | unavailable: Plan ist leer weil alle Einträge entfernt wurden",
@@ -333,6 +467,34 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
         "strength" : "required",
         "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEmptyReasonVS"
       }
+    },
+    {
+      "id" : "List.emptyReason.coding",
+      "path" : "List.emptyReason.coding",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.emptyReason.coding.system",
+      "path" : "List.emptyReason.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.emptyReason.coding.version",
+      "path" : "List.emptyReason.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.emptyReason.coding.code",
+      "path" : "List.emptyReason.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.emptyReason.coding.display",
+      "path" : "List.emptyReason.coding.display",
+      "mustSupport" : true
     }]
   }
 }

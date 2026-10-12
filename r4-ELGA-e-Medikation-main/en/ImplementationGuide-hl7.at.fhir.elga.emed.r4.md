@@ -14,7 +14,7 @@
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-09T16:18:46+00:00",
+  "date" : "2026-10-12T06:12:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -442,6 +442,38 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-emed-operationoutcome-details.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-emed-operationoutcome-details"
+      },
+      "name" : "AT e-Medikation OperationOutcome Details",
+      "description" : "Value-Set mit den für e-Medikation zulässigen detaillierten Fehlercodes.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-at-emed-codesystem-operationoutcome-details.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-emed-codesystem-operationoutcome-details"
+      },
+      "name" : "AT e-Medikation OperationOutcome Details",
+      "description" : "Dieses Codesystem legt die möglichen Fehlercodes im Rahmen der e-Medikation-Fachanwendung fest.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -654,6 +686,22 @@
       "description" : "Das Medikationsplan-Bundle vom Typ Searchset enthält: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus\n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n- 1..1 Patient\n- 1..* Authors",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-operationoutcome.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-operationoutcome"
+      },
+      "name" : "AT ELGA e-Medikation OperationOutcome",
+      "description" : "Dieses Profil gibt vor, welche Details im Rahmen der e-Medikation im Fehlerfall...",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{
@@ -905,6 +953,22 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"
+      },
+      "name" : "Beispiel Journey 01-01-01: Medikationsplan-Bundle",
+      "description" : "Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "Bundle-at-emed-journey-01-01-02-bundle-geplanteAbgaben.html"
       }],
       "reference" : {
@@ -937,22 +1001,6 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.html"
-      }],
-      "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"
-      },
-      "name" : "Beispiel Journey 01-01: Medikationsplan-Bundle",
-      "description" : "Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html"
       }],
       "reference" : {
@@ -974,7 +1022,7 @@
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response"
       },
-      "name" : "Beispiel Journey 01-02: Medikationsplan-Bundle",
+      "name" : "Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response",
       "description" : "Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
     },
@@ -993,22 +1041,6 @@
       "name" : "Beispiel Journey 01-02: Plan-Write-Response",
       "description" : "Beispiel einer Response eines plan-write mit 2 neuen Planeinträgen",
       "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-01.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-01"
-      },
-      "name" : "Beispiel Journey 01-02: Planeintrag 1",
-      "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und geänderten Dosierungsanweisungen ab.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
       "extension" : [{
@@ -1189,34 +1221,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
+        "valueString" : "Bundle"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-At-Emed-Journey-05-01-List-Medikationsplan.html"
+        "valueUri" : "Bundle-At-Emed-Journey-05-01-Bundle-plan-read-response.html"
       }],
       "reference" : {
-        "reference" : "List/At-Emed-Journey-05-01-List-Medikationsplan"
+        "reference" : "Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response"
       },
-      "name" : "Beispiel Journey 05-01: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans mit 1 geänderten und 1 unveränderten Planeintrag.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-05-01-Mr-Planeintrag-01.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-05-01-Mr-Planeintrag-01"
-      },
-      "name" : "Beispiel Journey 05-02: Planeintrag 1",
-      "description" : "Bildet einen Planeintrag mit dem pausierten Arzneimittel Ramipril ab.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+      "name" : "Beispiel Journey 05-01: Medikationsplan-Bundle $plan-read Response",
+      "description" : "Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
     },
     {
       "extension" : [{
@@ -1237,38 +1253,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-At-Emed-Journey-06-02-List-Medikationsplan.html"
-      }],
-      "reference" : {
-        "reference" : "List/At-Emed-Journey-06-02-List-Medikationsplan"
-      },
-      "name" : "Beispiel Journey 06-02: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-03"
-      },
-      "name" : "Beispiel Journey 06-02: Planeintrag 3",
-      "description" : "Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"
       },
       {
@@ -1285,49 +1269,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "List"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "List-At-Emed-Journey-07-02-List-Medikationsplan.html"
-      }],
-      "reference" : {
-        "reference" : "List/At-Emed-Journey-07-02-List-Medikationsplan"
-      },
-      "name" : "Beispiel Journey 07-02: Medikationsplan",
-      "description" : "Beispiel eines Medikationsplans mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-07-02-Mr-Planeintrag-02.html"
+        "valueUri" : "MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.html"
       }],
       "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-07-02-Mr-Planeintrag-02"
+        "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
       },
       "name" : "Beispiel Journey 07-02: Planeintrag 2",
       "description" : "Bildet einen abgelaufenen Planeintrag ab (Dexpanthenol-Salbe).",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-07-02-Mr-Planeintrag-03.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-07-02-Mr-Planeintrag-03"
-      },
-      "name" : "Beispiel Journey 07-02: Planeintrag 3",
-      "description" : "Bildet einen geänderten Planeintrag ab: Arzneimittel (Magelan-Tropfen) ersetzt reine Wirkstoffangabe, angepasste Dosierung.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
@@ -1630,7 +1582,7 @@
         "reference" : "OperationDefinition/AtElgaEmed.List.PlanRead"
       },
       "name" : "e-Med Operation für Plan-Read",
-      "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines ELGA-Teilnehmers in einem für die Bearbeitung aufbereiteten Zustand ab. Existiert noch kein Medikationsplan, wird ein initialer Medikationsplan erzeugt.",
+      "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.\n\nHierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version\nder List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen\nein temporäres Medikationsplan-Bundle zur Auslieferung.\n\nExistiert noch kein Medikationsplan, erstellt und persistiert die\nFachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted.",
       "exampleBoolean" : false
     },
     {

@@ -41,8 +41,6 @@ POST
 **Headers:**
 `Content-Type: application/fhir+json`
 
-Request Body
-
 Response Body
 
 ##### Journey-01-01: Request 02 - geplante Abgaben Abrufen
@@ -77,11 +75,11 @@ Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten 
 Beispiele
 
 *  **Planeinträge erstellen:** 
-*  [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-01.md) 
-*  [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-01-02-Mr-Planeintrag-02.md) 
+*  [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-Planeintrag-01-Ramipril-v1.md) 
+*  [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-Planeintrag-02-Magistral-Dexpanthenol-v1.md) 
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-01-02-List-Medikationsplan.md) 
+*  [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-List-Medikationsplan-v1.md) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) 
@@ -105,6 +103,18 @@ POST
 
 Request Body
 Todo Replace with Parameter wrapper:
+
+Response Body
+
+#### Journey-01-02: Request 02 - Medikationsplan lesen
+
+Request
+
+POST
+`[base]/List/$plan-read`
+
+**Headers:**
+`Content-Type: application/fhir+json`
 
 Response Body
 
@@ -238,10 +248,10 @@ Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorüberge
 Beispiele
 
 *  **Planeintrag pausieren:** 
-*  [Planeintrag 1: Ramipril (Dauermedikation) pausieren](MedicationRequest-At-Emed-Journey-05-01-Mr-Planeintrag-01.md) 
+*  [Planeintrag 1: Ramipril (Dauermedikation) pausieren](MedicationRequest-At-Emed-Journey-Planeintrag-01-Ramipril-v2.md) 
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan: 1 Planeintrag aktualisiert, 1 Planeintrag unverändert](List-At-Emed-Journey-05-01-List-Medikationsplan.md) 
+*  [Medikationsplan: 1 Planeintrag aktualisiert, 1 Planeintrag unverändert](List-At-Emed-Journey-List-Medikationsplan-v3.md) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md) 
@@ -278,13 +288,13 @@ Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in d
 Beispiele
 
 *  **Planeintrag anpassen:** 
-*  [Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md) 
+*  [Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern](MedicationRequest-Planeintrag-03-Wirkstoff-Metamizol-vPOST.md) 
  
 *  **Planeintrag hinzufügen:** 
-*  [Neuer Planeintrag 3: Wirstoff Metamizol (in Arbeit)](MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-03.md)  
+*  [Neuer Planeintrag 3: Wirstoff Metamizol (in Arbeit)](MedicationRequest-Planeintrag-03-Wirkstoff-Metamizol-vPOST.md)  
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan: Planeintrag 1 geändert, Planeintrag 2 unverändert, Planeintrag 3 neu hinzugefügt](List-At-Emed-Journey-06-02-List-Medikationsplan.md) 
+*  [Medikationsplan: Planeintrag 1 geändert, Planeintrag 2 unverändert, Planeintrag 3 neu hinzugefügt](List-At-Emed-Journey-List-Medikationsplan-v4.md) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) 

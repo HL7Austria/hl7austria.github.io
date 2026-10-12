@@ -85,8 +85,11 @@
     "reference" : "#contained-medication-magistral-01"
   },
   "subject" : {
-    "reference" : "Patient/At-Emed-Example-Patient-01",
-    "display" : "Anton Mustermann"
+    "type" : "Patient",
+    "identifier" : {
+      "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+      "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+    }
   },
   "performer" : [{
     "actor" : {
@@ -99,7 +102,7 @@
     "display" : "Geplante Abgabe 2"
   },
   {
-    "reference" : "MedicationRequest/At-Emed-Journey-Planeintrag-02-Magistral-Dexpanthenol-v1",
+    "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391",
     "display" : "Planeintrag 2"
   }],
   "type" : {

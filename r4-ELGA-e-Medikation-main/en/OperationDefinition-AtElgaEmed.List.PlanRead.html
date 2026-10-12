@@ -273,7 +273,7 @@
           
 
             as of 
-2026-10-09
+2026-10-12
 
           
         
@@ -291,13 +291,73 @@
 
 
 <div data-fhir="generated">
-<p>Die $plan-read Operation ruft den aktuellen Medikationsplan eines ELGA-Teilnehmers in einem für die Bearbeitung aufbereiteten Zustand ab. Existiert noch kein Medikationsplan, wird ein initialer Medikationsplan erzeugt.</p>
+<p>Die $plan-read Operation ruft den aktuellen Medikationsplan eines
+ELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten
+Zustand ab.</p>
+
+<p>Hierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version
+der List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen
+ein temporäres Medikationsplan-Bundle zur Auslieferung.</p>
+
+<p>Existiert noch kein Medikationsplan, erstellt und persistiert die
+Fachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted.</p>
 
 </div>
 
 
   <!-- insert intro if present -->
   
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<h3 id="business-logik">Business Logik</h3>
+
+<p>Vor der Auslieferung prüft die Fachanwendung den Zustand des Medikationsplans:</p>
+
+<ol>
+  <li>
+    <p>Existiert noch kein Medikationsplan, wird eine initiale List-Ressource
+mit List.emptyReason = notstarted erstellt und als erste Version
+persistiert. Für die Auslieferung erfolgt keine Transformation.</p>
+  </li>
+  <li>Existiert ein Medikationsplan mit Planeinträgen, werden für das
+Auslieferungs-Bundle folgende Transformationen durchgeführt:
+    <ul>
+      <li>Planeinträge mit List.entry.flag = new oder changed werden auf
+unchanged gesetzt.</li>
+      <li>Bereits mit List.entry.flag = removed gekennzeichnete Planeinträge
+werden aus dem ausgelieferten Medikationsplan entfernt.</li>
+      <li>Planeinträge mit abgelaufenem Behandlungszeitraum werden mit
+List.entry.flag = removed gekennzeichnet und weiterhin ausgeliefert,
+damit der GDA die Medikation weiterverordnen kann. Anderenfalls
+wird der Planeintrag mit dem nächsten Schreibvorgang entfernt.</li>
+      <li>Sind nach der Transformation keine Planeinträge mehr vorhanden,
+wird List.emptyReason = nilknown gesetzt.</li>
+    </ul>
+  </li>
+  <li>Existiert ein leerer Medikationsplan mit List.emptyReason, erfolgt
+keine Transformation.</li>
+</ol>
+
+<p>Die Transformationen für das temporäre Auslieferungs-Bundle verändern
+die persistierten Ressourcen nicht. Davon ausgenommen ist die oben
+beschriebene initiale Erstellung eines noch nicht vorhandenen
+Medikationsplans.</p>
+
+<p>Das zurückgelieferte Medikationsplan-Bundle enthält die gegebenenfalls transformierte List-Ressource sowie sämtliche direkt oder indirekt von ihr referenzierten Ressourcen. Dazu werden alle Referenzen rekursiv aufgelöst: Enthält eine referenzierte Ressource weitere Referenzen, werden auch die darüber verknüpften Ressourcen in das Bundle aufgenommen.</p>
+
+<p>Auf diese Weise umfasst das Bundle beispielsweise auch die Autoren der MedicationRequest-Ressourcen, auf die die List-Ressource verweist.</p>
+
+<p>Der HTTP-Response-Header ETag enthält den ETag der aktuellen persistierten
+Version der List-Ressource. Dieser dient dem Optimistic Locking beim nachfolgenden Plan-Write.</p>
+
+<p>Im Fehlerfall wird ein HTTP-Fehlerstatus mit einem OperationOutcome
+zurückgegeben.</p>
+
+</div>
+
 
 
 
@@ -308,8 +368,12 @@
   
 
 
-  <div data-fhir="generated"><p class="res-header-id"/><a name="AtElgaEmed.List.PlanRead"> </a><a name="hcAtElgaEmed.List.PlanRead"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R4/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter im Falle eines Fehlers.</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a> (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan">AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan</a>)</td><td/><td><div><p>Das für die Bearbeitung aufbereitete Medikationsplan-Bundle. Es enthält die aktuelle oder gegebenenfalls initial erzeugte List-Ressource sowie alle von ihr referenzierten Ressourcen.</p>
+  <div data-fhir="generated"><p class="res-header-id"/><a name="AtElgaEmed.List.PlanRead"> </a><a name="hcAtElgaEmed.List.PlanRead"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><p>URL: [base]/List/$plan-read</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R4/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter im Falle eines Fehlers.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a> (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan">AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan</a>)</td><td/><td><div><p>Das temporäre, für die Bearbeitung aufbereitete Medikationsplan-Bundle.
+Es enthält die aktuelle, gegebenenfalls transformierte oder initial
+erzeugte List-Ressource sowie sämtliche von ihr referenzierten Ressourcen.</p>
+<p>Der ETag der aktuellen persistierten List-Version wird im HTTP-
+Response-Header übermittelt und ist kein Ausgabeparameter der Operation.</p>
 </div></td></tr></table></div>
 
   <!-- insert notes if present -->
@@ -344,8 +408,8 @@
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-09 16:18:00 +0000">
-    2026-10-09
+  <span title="2026-10-12 06:12:00 +0000">
+    2026-10-12
   </span>
 
           <br/>

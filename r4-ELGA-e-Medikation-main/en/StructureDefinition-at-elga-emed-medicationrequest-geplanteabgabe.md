@@ -18,6 +18,12 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.csv), [Excel](../StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.xlsx), [Schematron](../StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.sch) 
 
+### Notes:
+
+#### Regeln für den Inhalt der narrativen Teile
+
+In Arbeit.
+
 
 
 ## Resource Content
@@ -31,7 +37,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-09T16:18:46+00:00",
+  "date" : "2026-10-12T06:12:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -85,27 +91,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "id" : "MedicationRequest",
       "path" : "MedicationRequest",
       "short" : "Geplante Abgabe eines Arzneimittels aus dem Medikationsplan. Verwendet R5 Backport Extensions."
-    },
-    {
-      "id" : "MedicationRequest.id",
-      "path" : "MedicationRequest.id",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.meta",
-      "path" : "MedicationRequest.meta",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.implicitRules",
-      "path" : "MedicationRequest.implicitRules",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.text",
-      "path" : "MedicationRequest.text",
-      "min" : 1,
-      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.contained",

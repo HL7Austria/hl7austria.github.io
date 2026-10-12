@@ -71,8 +71,11 @@
         "reference" : "#at-emed-journey-medication-ramipril"
       },
       "subject" : {
-        "reference" : "Patient/At-Emed-Example-Patient-01",
-        "display" : "Anton Mustermann"
+        "type" : "Patient",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
       },
       "authoredOn" : "2026-02-27T08:10:00+00:00",
       "requester" : {
@@ -80,7 +83,7 @@
         "display" : "Dr. Hausärztin"
       },
       "basedOn" : [{
-        "reference" : "MedicationRequest/At-Emed-Journey-Planeintrag-01-Ramipril-v1",
+        "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52",
         "display" : "Planeintrag 1"
       }],
       "groupIdentifier" : {
@@ -233,8 +236,11 @@
         "reference" : "#contained-medication-magistral-01"
       },
       "subject" : {
-        "reference" : "Patient/At-Emed-Example-Patient-01",
-        "display" : "Anton Mustermann"
+        "type" : "Patient",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
       },
       "authoredOn" : "2026-02-27T10:20:00+00:00",
       "requester" : {
@@ -242,7 +248,7 @@
         "display" : "Dr. Hausärztin"
       },
       "basedOn" : [{
-        "reference" : "MedicationRequest/At-Emed-Journey-Planeintrag-02-Magistral-Dexpanthenol-v1",
+        "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391",
         "display" : "Planeintrag 2"
       }],
       "groupIdentifier" : {

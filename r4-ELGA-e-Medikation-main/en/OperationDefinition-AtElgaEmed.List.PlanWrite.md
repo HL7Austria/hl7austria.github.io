@@ -2,6 +2,18 @@
 
 ## OperationDefinition: e-Med Operation für Plan-Write 
 
+### Allgemeine Business-Logik aller schreibeneden Operations:
+
+* vor dem schreiben muss jede Ressource gegen das jeweilige Profil geprüft werden (inklusive Invarianten)
+* es muss geprüft werden, dass in allen Ressourcen der selbe Patient referenziert wird
+* …
+
+In Arbeit.
+
+### Business Logik
+
+In Arbeit.
+
 
 
 ## Resource Content
@@ -16,7 +28,7 @@
   "title" : "e-Med Operation für Plan-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-09T16:18:46+00:00",
+  "date" : "2026-10-12T06:12:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

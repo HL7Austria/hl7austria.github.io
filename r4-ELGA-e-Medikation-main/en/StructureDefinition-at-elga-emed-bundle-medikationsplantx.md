@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-09T16:18:46+00:00",
+  "date" : "2026-10-12T06:12:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -134,6 +134,27 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
         "code" : "List",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"]
       }]
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.resource.entry.item.extension",
+      "path" : "Bundle.entry.resource.entry.item.extension",
+      "min" : 1
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.resource.entry.item.extension:ResolveAsVersionSpecific",
+      "path" : "Bundle.entry.resource.entry.item.extension",
+      "sliceName" : "ResolveAsVersionSpecific",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/resolve-as-version-specific"]
+      }]
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.resource.entry.item.extension:ResolveAsVersionSpecific.value[x]",
+      "path" : "Bundle.entry.resource.entry.item.extension.value[x]",
+      "patternBoolean" : true
     },
     {
       "id" : "Bundle.entry:Medikationsplaneintrag",

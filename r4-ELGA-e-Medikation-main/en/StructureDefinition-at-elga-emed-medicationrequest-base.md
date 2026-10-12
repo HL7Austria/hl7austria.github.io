@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationRequestBase",
   "title" : "At ELGA e-Medikation MedicationRequest Base",
   "status" : "draft",
-  "date" : "2026-10-09T16:18:46+00:00",
+  "date" : "2026-10-12T06:12:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -96,6 +96,53 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
         "expression" : "dosageInstruction.count() <= 1 or dosageInstruction.sequence.where($this = 1).exists()",
         "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-base"
       }]
+    },
+    {
+      "id" : "MedicationRequest.id",
+      "path" : "MedicationRequest.id",
+      "short" : "Technische id der Ressource",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.meta",
+      "path" : "MedicationRequest.meta",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.meta.versionId",
+      "path" : "MedicationRequest.meta.versionId",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.meta.lastUpdated",
+      "path" : "MedicationRequest.meta.lastUpdated",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.meta.profile",
+      "path" : "MedicationRequest.meta.profile",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.implicitRules",
+      "path" : "MedicationRequest.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.text",
+      "path" : "MedicationRequest.text",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.text.status",
+      "path" : "MedicationRequest.text.status",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.text.div",
+      "path" : "MedicationRequest.text.div",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dosageInstruction",

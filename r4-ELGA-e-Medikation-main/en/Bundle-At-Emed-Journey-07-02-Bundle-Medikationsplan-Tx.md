@@ -19,13 +19,13 @@
     "fullUrl" : "https://example.elga.com/base/List/4cb4dceb-173f-461a-a267-683ec33e4be1",
     "resource" : {
       "resourceType" : "List",
-      "id" : "At-Emed-Journey-07-02-List-Medikationsplan",
+      "id" : "4cb4dceb-173f-461a-a267-683ec33e4be1",
       "meta" : {
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"]
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_At-Emed-Journey-07-02-List-Medikationsplan\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List At-Emed-Journey-07-02-List-Medikationsplan</b></p><a name=\"At-Emed-Journey-07-02-List-Medikationsplan\"> </a><a name=\"hcAt-Emed-Journey-07-02-List-Medikationsplan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-22 16:10:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann</a></td><td>Source: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-04.html\">Dr. Urlaubsvertretung</a></td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-06-02-Mr-Planeintrag-01.html\">MedicationRequest: extension = 2026-02-27 --&gt; (ongoing),1-0-1-0 | Täglich: 1-0-1-0; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication RAMIPRIL HEX TBL 5MG; authoredOn = 2026-03-19 12:10:00+0000; courseOfTherapyType = Continuous long term therapy</a></td><td>Planeintrag beibehalten</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-07-02-Mr-Planeintrag-02.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-20,1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen; status = stopped; statusReason = Planeintrag Abgelaufen; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Short course (acute) therapy</a></td><td>Planeintrag entfernt</td></tr><tr><td><a href=\"MedicationRequest-At-Emed-Journey-07-02-Mr-Planeintrag-03.html\">MedicationRequest: extension = 2026-03-19 --&gt; (ongoing),1-1-1-1 | 4 x täglich 40 Tropfen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication METAGELAN TR 500MG/ML; authoredOn = 2026-03-22 16:10:00+0000; courseOfTherapyType = Short course (acute) therapy</a></td><td>Planeintrag geändert</td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List 4cb4dceb-173f-461a-a267-683ec33e4be1</b></p><a name=\"4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a><a name=\"hc4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-list-medikationsplan.html\">AT ELGA e-Medikation List Medikationsplan</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-22 16:10:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Medikationsplan </td></tr><tr><td>Subject: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</td><td>Source: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-04.html\">Dr. Urlaubsvertretung</a></td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td><td>Flag</td></tr><tr><td><a href=\"Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.html#MedicationRequest_6bacfe23-d469-4945-bf3c-90c7e647aa52\">MedicationRequest: extension = 2026-02-27 --&gt; (ongoing),1-0-0-0 | Täglich: 1-0-0-0; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication RAMIPRIL HEX TBL 5MG; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Continuous long term therapy</a></td><td>Planeintrag beibehalten</td></tr><tr><td><a href=\"MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-20,1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen; status = stopped; statusReason = Planeintrag Abgelaufen; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication: form = Salbe; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Short course (acute) therapy</a></td><td>Planeintrag entfernt</td></tr><tr><td><a href=\"Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.html#MedicationRequest_7128c60c-126d-42b2-b575-dc26a2324b8b\">MedicationRequest: extension = 2026-03-19 --&gt; (ongoing),1-1-1-1 | 4 x täglich 40 Tropfen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication METAGELAN TR 500MG/ML; authoredOn = 2026-03-22 16:10:00+0000; courseOfTherapyType = Short course (acute) therapy</a></td><td>Planeintrag geändert</td></tr></table></div>"
       },
       "status" : "current",
       "mode" : "working",
@@ -37,8 +37,11 @@
         }]
       },
       "subject" : {
-        "reference" : "Patient/At-Emed-Example-Patient-01",
-        "display" : "Anton Mustermann"
+        "type" : "Patient",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
       },
       "date" : "2026-03-22T16:10:00+00:00",
       "source" : {
@@ -54,7 +57,11 @@
           }]
         },
         "item" : {
-          "reference" : "MedicationRequest/At-Emed-Journey-06-02-Mr-Planeintrag-01"
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/resolve-as-version-specific",
+            "valueBoolean" : true
+          }],
+          "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"
         }
       },
       {
@@ -66,7 +73,11 @@
           }]
         },
         "item" : {
-          "reference" : "MedicationRequest/At-Emed-Journey-07-02-Mr-Planeintrag-02"
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/resolve-as-version-specific",
+            "valueBoolean" : true
+          }],
+          "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
         }
       },
       {
@@ -78,7 +89,11 @@
           }]
         },
         "item" : {
-          "reference" : "MedicationRequest/At-Emed-Journey-07-02-Mr-Planeintrag-03"
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/resolve-as-version-specific",
+            "valueBoolean" : true
+          }],
+          "reference" : "MedicationRequest/7128c60c-126d-42b2-b575-dc26a2324b8b"
         }
       }]
     },
@@ -88,16 +103,17 @@
     }
   },
   {
-    "fullUrl" : "https://example.elga.com/base/MedicationRequest/urn:uuid:7f1294a2-f592-4547-881c-c15d1debc165",
+    "fullUrl" : "https://example.elga.com/base/MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391",
     "resource" : {
       "resourceType" : "MedicationRequest",
-      "id" : "At-Emed-Journey-07-02-Mr-Planeintrag-02",
+      "id" : "55e4be12-0d10-454c-a85f-cfb5f849e391",
       "meta" : {
+        "versionId" : "v2bb6cfb1d-70bd-41a4-adc3-c6b998e3874b",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
       },
       "text" : {
         "status" : "extensions",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-07-02-Mr-Planeintrag-02\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-07-02-Mr-Planeintrag-02</b></p><a name=\"At-Emed-Journey-07-02-Mr-Planeintrag-02\"> </a><a name=\"hcAt-Emed-Journey-07-02-Mr-Planeintrag-02\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-02-27 --&gt; 2026-03-20</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen</p>\n</div><p><b>status</b>: Stopped</p><p><b>statusReason</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason abgl}\">Planeintrag Abgelaufen</span></p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-07-02-Mr-Planeintrag-02/contained-medication-magistral-01\">Medication: form = Salbe</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann</a></p><p><b>authoredOn</b>: 2026-02-27 08:10:00+0000</p><p><b>requester</b>: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-01.html\">Dr. Hausärztin</a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Sequence</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>1</td><td>Morning, Evening, 2 per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationartanwendung 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-magistral-01</b></p><a name=\"At-Emed-Journey-07-02-Mr-Planeintrag-02/contained-medication-magistral-01\"> </a><a name=\"hcAt-Emed-Journey-07-02-Mr-Planeintrag-02/contained-medication-magistral-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html\">AT ELGA e-Medikation Medication Magistrale Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A11HA30}\">Dexpanthenol</span></p><p><b>strength</b>: 5 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 95 g/100 g</p></blockquote></blockquote></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_55e4be12-0d10-454c-a85f-cfb5f849e391\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest 55e4be12-0d10-454c-a85f-cfb5f849e391</b></p><a name=\"55e4be12-0d10-454c-a85f-cfb5f849e391\"> </a><a name=\"hc55e4be12-0d10-454c-a85f-cfb5f849e391\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: v2bb6cfb1d-70bd-41a4-adc3-c6b998e3874b</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-02-27 --&gt; 2026-03-20</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen</p>\n</div><p><b>status</b>: Stopped</p><p><b>statusReason</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason abgl}\">Planeintrag Abgelaufen</span></p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hc55e4be12-0d10-454c-a85f-cfb5f849e391/contained-medication-magistral-01\">Medication: form = Salbe</a></p><p><b>subject</b>: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</p><p><b>authoredOn</b>: 2026-02-27 08:10:00+0000</p><p><b>requester</b>: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-01.html\">Dr. Hausärztin</a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Sequence</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>1</td><td>Morning, Evening, 2 per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationartanwendung 100000073566}\">Anwendung auf der Haut</span></td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-magistral-01</b></p><a name=\"55e4be12-0d10-454c-a85f-cfb5f849e391/contained-medication-magistral-01\"> </a><a name=\"hc55e4be12-0d10-454c-a85f-cfb5f849e391/contained-medication-magistral-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html\">AT ELGA e-Medikation Medication Magistrale Medikation</a></p></div><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A11HA30}\">Dexpanthenol</span></p><p><b>strength</b>: 5 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 95 g/100 g</p></blockquote></blockquote></div>"
       },
       "contained" : [{
         "resourceType" : "Medication",
@@ -184,8 +200,11 @@
         "reference" : "#contained-medication-magistral-01"
       },
       "subject" : {
-        "reference" : "Patient/At-Emed-Example-Patient-01",
-        "display" : "Anton Mustermann"
+        "type" : "Patient",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
       },
       "authoredOn" : "2026-02-27T08:10:00+00:00",
       "requester" : {
@@ -232,20 +251,21 @@
     },
     "request" : {
       "method" : "PUT",
-      "url" : "MedicationRequest/urn:uuid:7f1294a2-f592-4547-881c-c15d1debc165"
+      "url" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
     }
   },
   {
-    "fullUrl" : "https://example.elga.com/base/MedicationRequest/urn:uuid:6852930e-6883-4301-b5c1-c142b746af8f",
+    "fullUrl" : "https://example.elga.com/base/MedicationRequest/7128c60c-126d-42b2-b575-dc26a2324b8b",
     "resource" : {
       "resourceType" : "MedicationRequest",
-      "id" : "At-Emed-Journey-07-02-Mr-Planeintrag-03",
+      "id" : "7128c60c-126d-42b2-b575-dc26a2324b8b",
       "meta" : {
+        "versionId" : "v2a455866f-a727-47fd-adef-f0f8591988f8",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
       },
       "text" : {
         "status" : "extensions",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-07-02-Mr-Planeintrag-03\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest At-Emed-Journey-07-02-Mr-Planeintrag-03</b></p><a name=\"At-Emed-Journey-07-02-Mr-Planeintrag-03\"> </a><a name=\"hcAt-Emed-Journey-07-02-Mr-Planeintrag-03\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-03-19 --&gt; (ongoing)</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-1-1-1 | 4 x täglich 40 Tropfen</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hcAt-Emed-Journey-07-02-Mr-Planeintrag-03/at-emed-journey-medication-metagelan\">Medication METAGELAN TR 500MG/ML</a></p><p><b>subject</b>: <a href=\"Patient-At-Emed-Example-Patient-01.html\">Anton Mustermann</a></p><p><b>authoredOn</b>: 2026-03-22 16:10:00+0000</p><p><b>requester</b>: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-04.html\">Dr. Urlaubsvertretung</a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><blockquote><p><b>dosageInstruction</b></p><p><b>AT ELGA e-Medikation Extension Dosierungskategorie</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory standard}\">Standard Administration</span></p><p><b>sequence</b>: 1</p><p><b>patientInstruction</b>: Nehmen Sie die Tropfen nach dem Essen ein.</p><p><b>timing</b>: Morning, Noon, Evening, Night, 4 per 1 day</p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>40 Tropfen<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{Tropfen} = '{Tropfen}')</span></td></tr></table></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #at-emed-journey-medication-metagelan</b></p><a name=\"At-Emed-Journey-07-02-Mr-Planeintrag-03/at-emed-journey-medication-metagelan\"> </a><a name=\"hcAt-Emed-Journey-07-02-Mr-Planeintrag-03/at-emed-journey-medication-metagelan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-standard-medikation.html\">AT ELGA e-Medikation Medication Medikation</a></p></div><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 4467812}\">METAGELAN TR 500MG/ML</span></p></blockquote></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_7128c60c-126d-42b2-b575-dc26a2324b8b\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest 7128c60c-126d-42b2-b575-dc26a2324b8b</b></p><a name=\"7128c60c-126d-42b2-b575-dc26a2324b8b\"> </a><a name=\"hc7128c60c-126d-42b2-b575-dc26a2324b8b\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: v2a455866f-a727-47fd-adef-f0f8591988f8</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html\">At ELGA e-Medikation MedicationRequest Planeintrag</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-03-19 --&gt; (ongoing)</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-1-1-1 | 4 x täglich 40 Tropfen</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS 1}\">Planeintrag</span></p><p><b>reported</b>: false</p><p><b>medication</b>: <a href=\"#hc7128c60c-126d-42b2-b575-dc26a2324b8b/at-emed-journey-medication-metagelan\">Medication METAGELAN TR 500MG/ML</a></p><p><b>subject</b>: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</p><p><b>authoredOn</b>: 2026-03-22 16:10:00+0000</p><p><b>requester</b>: <a href=\"PractitionerRole-At-Emed-Example-PractitionerRole-04.html\">Dr. Urlaubsvertretung</a></p><p><b>courseOfTherapyType</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy acute}\">Short course (acute) therapy</span></p><blockquote><p><b>dosageInstruction</b></p><p><b>AT ELGA e-Medikation Extension Dosierungskategorie</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory standard}\">Standard Administration</span></p><p><b>sequence</b>: 1</p><p><b>patientInstruction</b>: Nehmen Sie die Tropfen nach dem Essen ein.</p><p><b>timing</b>: Morning, Noon, Evening, Night, 4 per 1 day</p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>40 Tropfen<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{Tropfen} = '{Tropfen}')</span></td></tr></table></blockquote><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #at-emed-journey-medication-metagelan</b></p><a name=\"7128c60c-126d-42b2-b575-dc26a2324b8b/at-emed-journey-medication-metagelan\"> </a><a name=\"hc7128c60c-126d-42b2-b575-dc26a2324b8b/at-emed-journey-medication-metagelan\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-standard-medikation.html\">AT ELGA e-Medikation Medication Medikation</a></p></div><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/asp-liste 4467812}\">METAGELAN TR 500MG/ML</span></p></blockquote></div>"
       },
       "contained" : [{
         "resourceType" : "Medication",
@@ -285,8 +305,11 @@
         "reference" : "#at-emed-journey-medication-metagelan"
       },
       "subject" : {
-        "reference" : "Patient/At-Emed-Example-Patient-01",
-        "display" : "Anton Mustermann"
+        "type" : "Patient",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
       },
       "authoredOn" : "2026-03-22T16:10:00+00:00",
       "requester" : {
@@ -331,7 +354,7 @@
     },
     "request" : {
       "method" : "PUT",
-      "url" : "MedicationRequest/urn:uuid:6852930e-6883-4301-b5c1-c142b746af8f"
+      "url" : "MedicationRequest/7128c60c-126d-42b2-b575-dc26a2324b8b"
     }
   }]
 }

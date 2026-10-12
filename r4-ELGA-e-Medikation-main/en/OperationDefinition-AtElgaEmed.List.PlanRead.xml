@@ -4,8 +4,12 @@
   <id value="AtElgaEmed.List.PlanRead"/>
   <language value="en"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition AtElgaEmed.List.PlanRead</b></p><a name="AtElgaEmed.List.PlanRead"> </a><a name="hcAtElgaEmed.List.PlanRead"> </a><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R4/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter im Falle eines Fehlers.</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a> (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan">AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan</a>)</td><td/><td><div><p>Das für die Bearbeitung aufbereitete Medikationsplan-Bundle. Es enthält die aktuelle oder gegebenenfalls initial erzeugte List-Ressource sowie alle von ihr referenzierten Ressourcen.</p>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition AtElgaEmed.List.PlanRead</b></p><a name="AtElgaEmed.List.PlanRead"> </a><a name="hcAtElgaEmed.List.PlanRead"> </a><p>URL: [base]/List/$plan-read</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R4/operationoutcome.html" title="http://hl7.org/fhir/StructureDefinition/OperationOutcome">OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter im Falle eines Fehlers.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a> (<a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan">AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan</a>)</td><td/><td><div><p>Das temporäre, für die Bearbeitung aufbereitete Medikationsplan-Bundle.
+Es enthält die aktuelle, gegebenenfalls transformierte oder initial
+erzeugte List-Ressource sowie sämtliche von ihr referenzierten Ressourcen.</p>
+<p>Der ETag der aktuellen persistierten List-Version wird im HTTP-
+Response-Header übermittelt und ist kein Ausgabeparameter der Operation.</p>
 </div></td></tr></table></div>
   </text>
   <url value="https://fhir.hl7.at/elga/emed/r4/OperationDefinition/AtElgaEmed.List.PlanRead"/>
@@ -14,7 +18,7 @@
   <title value="e-Med Operation für Plan-Read"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2026-10-09T16:18:46+00:00"/>
+  <date value="2026-10-12T06:12:55+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -31,9 +35,10 @@
       <use value="work"/>
     </telecom>
   </contact>
-  <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines ELGA-Teilnehmers in einem für die Bearbeitung aufbereiteten Zustand ab. Existiert noch kein Medikationsplan, wird ein initialer Medikationsplan erzeugt."/>
+  <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines&#xA;ELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten&#xA;Zustand ab.&#xA;&#xA;Hierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version&#xA;der List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen&#xA;ein temporäres Medikationsplan-Bundle zur Auslieferung.&#xA;&#xA;Existiert noch kein Medikationsplan, erstellt und persistiert die&#xA;Fachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted."/>
   <affectsState value="true"/>
   <code value="plan-read"/>
+  <resource value="List"/>
   <system value="false"/>
   <type value="true"/>
   <instance value="false"/>
@@ -49,9 +54,9 @@
   <parameter>
     <name value="return"/>
     <use value="out"/>
-    <min value="0"/>
+    <min value="1"/>
     <max value="1"/>
-    <documentation value="Das für die Bearbeitung aufbereitete Medikationsplan-Bundle. Es enthält die aktuelle oder gegebenenfalls initial erzeugte List-Ressource sowie alle von ihr referenzierten Ressourcen."/>
+    <documentation value="Das temporäre, für die Bearbeitung aufbereitete Medikationsplan-Bundle.&#xA;Es enthält die aktuelle, gegebenenfalls transformierte oder initial&#xA;erzeugte List-Ressource sowie sämtliche von ihr referenzierten Ressourcen.&#xA;&#xA;Der ETag der aktuellen persistierten List-Version wird im HTTP-&#xA;Response-Header übermittelt und ist kein Ausgabeparameter der Operation."/>
     <type value="Bundle"/>
     <targetProfile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
   </parameter>

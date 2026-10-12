@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
   "name" : "AtElgaEmedExtensionGroupIdentifier",
   "title" : "AT ELGA e-Medikation Extension Group Identifier",
   "status" : "draft",
-  "date" : "2026-10-09T16:18:46+00:00",
+  "date" : "2026-10-12T06:12:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -95,7 +95,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
     {
       "id" : "Extension.value[x].system",
       "path" : "Extension.value[x].system",
-      "patternUri" : "http://tbd.com"
+      "patternUri" : "http://tbd.com",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.value[x].value",
+      "path" : "Extension.value[x].value",
+      "mustSupport" : true
     }]
   }
 }
