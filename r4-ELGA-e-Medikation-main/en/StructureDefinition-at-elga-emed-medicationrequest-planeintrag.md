@@ -37,7 +37,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -136,7 +136,28 @@ In Arbeit.
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.extension",
+      "path" : "MedicationRequest.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x]",
+      "path" : "MedicationRequest.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x].start",
+      "path" : "MedicationRequest.extension.value[x].start",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x].end",
+      "path" : "MedicationRequest.extension.value[x].end",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.extension:renderedDosageInstruction",
@@ -148,13 +169,18 @@ In Arbeit.
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.identifier",
-      "path" : "MedicationRequest.identifier",
-      "short" : "Planeintrag-ID.",
-      "max" : "1"
+      "id" : "MedicationRequest.extension:renderedDosageInstruction.extension",
+      "path" : "MedicationRequest.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.extension:renderedDosageInstruction.value[x]",
+      "path" : "MedicationRequest.extension.value[x]",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.status",
@@ -225,7 +251,7 @@ In Arbeit.
       "id" : "MedicationRequest.category.coding.code",
       "path" : "MedicationRequest.category.coding.code",
       "min" : 1,
-      "patternCode" : "1"
+      "patternCode" : "Planeintrag"
     },
     {
       "id" : "MedicationRequest.priority",

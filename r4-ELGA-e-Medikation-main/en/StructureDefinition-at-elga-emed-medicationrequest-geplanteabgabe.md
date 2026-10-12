@@ -37,7 +37,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -126,24 +126,61 @@ In Arbeit.
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.extension",
+      "path" : "MedicationRequest.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.url",
+      "path" : "MedicationRequest.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x]",
+      "path" : "MedicationRequest.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x].start",
+      "path" : "MedicationRequest.extension.value[x].start",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x].end",
+      "path" : "MedicationRequest.extension.value[x].end",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.extension:renderedDosageInstruction",
       "path" : "MedicationRequest.extension",
       "sliceName" : "renderedDosageInstruction",
-      "short" : "Vollständige Darstellung der Dosierungsanweisungen",
+      "short" : "Vollständige textuelle Zusammenfassung der Dosierungsanweisungen - wird von der Fachanwendung anhand der definiert Regeln befüllt.",
       "min" : 0,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.identifier",
-      "path" : "MedicationRequest.identifier",
+      "id" : "MedicationRequest.extension:renderedDosageInstruction.extension",
+      "path" : "MedicationRequest.extension.extension",
       "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.extension:renderedDosageInstruction.url",
+      "path" : "MedicationRequest.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.extension:renderedDosageInstruction.value[x]",
+      "path" : "MedicationRequest.extension.value[x]",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.status",
@@ -154,11 +191,6 @@ In Arbeit.
         "strength" : "required",
         "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/GeplanteAbgabeStatusVS"
       }
-    },
-    {
-      "id" : "MedicationRequest.statusReason",
-      "path" : "MedicationRequest.statusReason",
-      "max" : "0"
     },
     {
       "id" : "MedicationRequest.intent",
@@ -197,12 +229,24 @@ In Arbeit.
       "id" : "MedicationRequest.category:mrcategory.coding.system",
       "path" : "MedicationRequest.category.coding.system",
       "min" : 1,
-      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.category:mrcategory.coding.version",
+      "path" : "MedicationRequest.category.coding.version",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category:mrcategory.coding.code",
       "path" : "MedicationRequest.category.coding.code",
-      "patternCode" : "2"
+      "fixedCode" : "GeplAbgabe",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.category:mrcategory.coding.display",
+      "path" : "MedicationRequest.category.coding.display",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category:recipetype",
@@ -226,26 +270,35 @@ In Arbeit.
       "id" : "MedicationRequest.category:recipetype.coding.system",
       "path" : "MedicationRequest.category.coding.system",
       "min" : 1,
-      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"
+      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.category:recipetype.coding.version",
+      "path" : "MedicationRequest.category.coding.version",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category:recipetype.coding.code",
       "path" : "MedicationRequest.category.coding.code",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.priority",
-      "path" : "MedicationRequest.priority",
-      "max" : "0"
+      "id" : "MedicationRequest.category:recipetype.coding.display",
+      "path" : "MedicationRequest.category.coding.display",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.doNotPerform",
       "path" : "MedicationRequest.doNotPerform",
+      "short" : "Fachliche Begründung: Die geplante Abgabe bildet einen positiven Abgabeauftrag ab; ein ausdrückliches Verbot einer Abgabe wird nicht als eigene geplante Abgabe dokumentiert.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.reported[x]",
       "path" : "MedicationRequest.reported[x]",
+      "short" : "Fachliche Begründung: Die geplante Abgabe wird als Auftrag dokumentiert; eine Kennzeichnung als lediglich berichteter Auftrag würde die Bedeutung der Ressource verändern und wird daher nicht verwendet.",
       "max" : "0"
     },
     {
@@ -261,6 +314,26 @@ In Arbeit.
       "mustSupport" : true
     },
     {
+      "id" : "MedicationRequest.medication[x].reference",
+      "path" : "MedicationRequest.medication[x].reference",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.medication[x].identifier",
+      "path" : "MedicationRequest.medication[x].identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.medication[x].identifier.system",
+      "path" : "MedicationRequest.medication[x].identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.medication[x].identifier.value",
+      "path" : "MedicationRequest.medication[x].identifier.value",
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
       "short" : "Patient, für den die Geplante Abgabe ausgestellt werden soll (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
@@ -271,16 +344,24 @@ In Arbeit.
       "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.encounter",
-      "path" : "MedicationRequest.encounter",
-      "short" : "Aufenthalt/Begegnung, während dessen die Geplante Abgabe erstellt wurde. Keine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
+      "id" : "MedicationRequest.subject.reference",
+      "path" : "MedicationRequest.subject.reference",
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.supportingInformation",
-      "path" : "MedicationRequest.supportingInformation",
-      "short" : "Referenz auf zusätzliche Informationen (Ressource Any)\n(z. B. Größe und Gewicht des Patienten), die die Verschreibung des Medikaments unterstützen. \nKeine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
+      "id" : "MedicationRequest.subject.identifier",
+      "path" : "MedicationRequest.subject.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.subject.identifier.system",
+      "path" : "MedicationRequest.subject.identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.subject.identifier.value",
+      "path" : "MedicationRequest.subject.identifier.value",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.authoredOn",
@@ -303,40 +384,24 @@ In Arbeit.
       "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.performer",
-      "path" : "MedicationRequest.performer",
-      "short" : "Durchführende Person. Keine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
+      "id" : "MedicationRequest.requester.reference",
+      "path" : "MedicationRequest.requester.reference",
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.performerType",
-      "path" : "MedicationRequest.performerType",
-      "short" : "Keine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
+      "id" : "MedicationRequest.requester.identifier",
+      "path" : "MedicationRequest.requester.identifier",
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.recorder",
-      "path" : "MedicationRequest.recorder",
-      "short" : "Person der Dateineingabe. Keine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
+      "id" : "MedicationRequest.requester.identifier.system",
+      "path" : "MedicationRequest.requester.identifier.system",
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.reasonCode",
-      "path" : "MedicationRequest.reasonCode",
-      "short" : "Grund für die Verordnung des Arzneimittels als Code oder Referenz. Bis zur Verfügbarkeit von e-Diagnose keine Verwendung in geplanter Abgabe.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.instantiatesCanonical",
-      "path" : "MedicationRequest.instantiatesCanonical",
-      "short" : "URL, die auf eine Richtlinie/Guideline verweist, die von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.instantiatesUri",
-      "path" : "MedicationRequest.instantiatesUri",
-      "short" : "URL, die auf eine externe gepflegte Richtlinie/Guideline verweist, die von dieser \ngeplanten Abgabe ganz oder teilweise eingehalten wird. Keine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
+      "id" : "MedicationRequest.requester.identifier.value",
+      "path" : "MedicationRequest.requester.identifier.value",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.basedOn",
@@ -351,9 +416,24 @@ In Arbeit.
       "mustSupport" : true
     },
     {
+      "id" : "MedicationRequest.basedOn.reference",
+      "path" : "MedicationRequest.basedOn.reference",
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
       "short" : "Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. \nWerden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine \nGeplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.groupIdentifier.system",
+      "path" : "MedicationRequest.groupIdentifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.groupIdentifier.value",
+      "path" : "MedicationRequest.groupIdentifier.value",
       "mustSupport" : true
     },
     {
@@ -363,15 +443,19 @@ In Arbeit.
       "max" : "0"
     },
     {
-      "id" : "MedicationRequest.insurance",
-      "path" : "MedicationRequest.insurance",
-      "short" : "Versicherungsinformatinen als Coverage oder ClaimResponse Resource. Keine Verwendung in der geplanten Abgabe.",
-      "max" : "0"
-    },
-    {
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
       "short" : "Zusätzliche Informationen zur geplanten Abgabe (Kommunikation zwischen Arzt und Apotheke, die nicht die Dosierung betreffen).",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.note.time",
+      "path" : "MedicationRequest.note.time",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.note.text",
+      "path" : "MedicationRequest.note.text",
       "mustSupport" : true
     },
     {
@@ -387,21 +471,21 @@ In Arbeit.
       "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.dispenseRequest.initialFill",
-      "path" : "MedicationRequest.dispenseRequest.initialFill",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.dispenseRequest.dispenseInterval",
-      "path" : "MedicationRequest.dispenseRequest.dispenseInterval",
-      "max" : "0"
-    },
-    {
       "id" : "MedicationRequest.dispenseRequest.validityPeriod",
       "path" : "MedicationRequest.dispenseRequest.validityPeriod",
       "short" : "Gültigkeitszeitraum einer Geplante Abgabe (abhängig von Rezeptart): Kassenrezept: ab Erstelldatum 1 Monat, bei Teilabgabe verlängert sich Gültigkeitsdauer auf 3 Monate („Besorger“-Prozess). Privatrezept: ab Erstelldatum max. 365 Tage, die Gültigkeitsdauer kann vom Arzt definiert werden. Substitutionsrezept: Max. Gültigkeitsdauer 12 Monate.",
       "definition" : "Zeitraum in dem die Geplante Abgabe eingelöst werden kann.\nDer Gültigkeitszeitraum ist abhängig von der **Rezeptart**: \n* **Kassenrezept**: ab Erstelldatum einen Monat gültig (vom Ausstellungszeitpunkt bis zum gleichen Tag des Folgemonats 23:59 Uhr); validityPeriod.start kein Datum in der Zukunft; bei einer Teilabgabe verlängert sich die gesamte Gültigkeitsdauer auf 3 Monate („Besorger“-Prozess).\n* **Privatrezept**: ab Erstelldatum maximal 365 Tage gültig, wenn die erste Einlösung innerhalb von 1 Monat ab Erstelldatum erfolgt (sonst Status abgelaufen). validityPeriod.start kein Datum in der Zukunft; Die Gültigkeitsdauer (validityPeriod.end) kann vom Arzt definiert werden.\n* **Substitutionsrezept**: Maximale Gültigkeitsdauer 12 Monate. Das validityPeriod.start darf maximal einen Monat in der Zukunft liegen, gültig bis das validityPeriod.end erreicht ist.",
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.validityPeriod.start",
+      "path" : "MedicationRequest.dispenseRequest.validityPeriod.start",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.validityPeriod.end",
+      "path" : "MedicationRequest.dispenseRequest.validityPeriod.end",
       "mustSupport" : true
     },
     {
@@ -418,36 +502,6 @@ In Arbeit.
       "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll.\nDa sich die Angaben zum Arzneimittel jeweils auf eine Packung der Arznei beziehen, MUSS die Anzahl der auszugebenden Packungen angegeben werden (mindestens 1). \nDies gilt für Arzneimittel mit PZN und magistralen Zubereitungen.",
       "min" : 1,
       "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dispenseRequest.expectedSupplyDuration",
-      "path" : "MedicationRequest.dispenseRequest.expectedSupplyDuration",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.dispenseRequest.performer",
-      "path" : "MedicationRequest.dispenseRequest.performer",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.substitution",
-      "path" : "MedicationRequest.substitution",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.priorPrescription",
-      "path" : "MedicationRequest.priorPrescription",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.detectedIssue",
-      "path" : "MedicationRequest.detectedIssue",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.eventHistory",
-      "path" : "MedicationRequest.eventHistory",
-      "max" : "0"
     }]
   }
 }

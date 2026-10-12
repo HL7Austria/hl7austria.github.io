@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -79,7 +79,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     "element" : [{
       "id" : "Medication.id",
       "path" : "Medication.id",
-      "min" : 1,
+      "short" : "Technische id der Ressource",
       "mustSupport" : true
     },
     {
@@ -88,14 +88,48 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.meta.versionId",
+      "path" : "Medication.meta.versionId",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.meta.lastUpdated",
+      "path" : "Medication.meta.lastUpdated",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.meta.profile",
+      "path" : "Medication.meta.profile",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
       "id" : "Medication.implicitRules",
       "path" : "Medication.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
       "max" : "0"
     },
     {
       "id" : "Medication.text",
       "path" : "Medication.text",
       "mustSupport" : true
+    },
+    {
+      "id" : "Medication.text.status",
+      "path" : "Medication.text.status",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.text.div",
+      "path" : "Medication.text.div",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.modifierExtension",
+      "path" : "Medication.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "Medication.code",

@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

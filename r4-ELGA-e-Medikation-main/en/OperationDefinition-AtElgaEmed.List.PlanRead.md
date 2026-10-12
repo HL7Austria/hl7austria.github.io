@@ -39,7 +39,7 @@ Im Fehlerfall wird ein HTTP-Fehlerstatus mit einem OperationOutcome zurückgegeb
   "title" : "e-Med Operation für Plan-Read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -30,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -88,6 +88,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "MedicationDispense.id",
       "path" : "MedicationDispense.id",
+      "short" : "Technische id der Ressource",
       "mustSupport" : true
     },
     {
@@ -96,13 +97,41 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "MedicationDispense.meta.versionId",
+      "path" : "MedicationDispense.meta.versionId",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.meta.lastUpdated",
+      "path" : "MedicationDispense.meta.lastUpdated",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.meta.profile",
+      "path" : "MedicationDispense.meta.profile",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationDispense.implicitRules",
       "path" : "MedicationDispense.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
       "max" : "0"
     },
     {
       "id" : "MedicationDispense.text",
       "path" : "MedicationDispense.text",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.text.status",
+      "path" : "MedicationDispense.text.status",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.text.div",
+      "path" : "MedicationDispense.text.div",
       "mustSupport" : true
     },
     {
@@ -164,6 +193,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
         "code" : "Extension",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier"]
       }]
+    },
+    {
+      "id" : "MedicationDispense.modifierExtension",
+      "path" : "MedicationDispense.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.identifier",

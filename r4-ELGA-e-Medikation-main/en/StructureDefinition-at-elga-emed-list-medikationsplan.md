@@ -112,7 +112,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -183,6 +183,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
     {
       "id" : "List.meta.profile",
       "path" : "List.meta.profile",
+      "min" : 1,
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -232,14 +234,22 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "mustSupport" : true
     },
     {
+      "id" : "List.extension:PatientModified.url",
+      "path" : "List.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "List.modifierExtension",
+      "path" : "List.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Status des Medikationsplans. Mögliche Ausprägungen: [current | retired] Bedeutung: current: default | retired: nach Ableben des Patienten bis Ende der Aufbewahrungsfrist",
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListStatusVS"
-      }
+      "short" : "Status des Medikationsplans. Fixer Wert: current",
+      "patternCode" : "current",
+      "mustSupport" : true
     },
     {
       "id" : "List.mode",
@@ -332,7 +342,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "id" : "List.date",
       "path" : "List.date",
       "short" : "Letzte Aktualisierung des Medikationsplans.",
-      "min" : 1,
       "mustSupport" : true
     },
     {

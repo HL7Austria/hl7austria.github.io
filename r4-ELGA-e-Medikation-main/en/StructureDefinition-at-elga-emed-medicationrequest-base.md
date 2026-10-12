@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationRequestBase",
   "title" : "At ELGA e-Medikation MedicationRequest Base",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -121,6 +121,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "MedicationRequest.meta.profile",
       "path" : "MedicationRequest.meta.profile",
+      "min" : 1,
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -143,6 +145,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "id" : "MedicationRequest.text.div",
       "path" : "MedicationRequest.text.div",
       "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.modifierExtension",
+      "path" : "MedicationRequest.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.dosageInstruction",

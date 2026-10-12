@@ -44,7 +44,7 @@ TODO: Some Narrative
   "category" : [{
     "coding" : [{
       "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-      "code" : "2",
+      "code" : "GeplAbgabe",
       "display" : "Geplante Abgabe"
     }]
   },

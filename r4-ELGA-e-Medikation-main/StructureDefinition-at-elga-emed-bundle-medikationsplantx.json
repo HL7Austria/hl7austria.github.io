@@ -10,7 +10,7 @@
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-12T06:12:55+00:00",
+  "date" : "2026-10-12T12:45:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -2073,8 +2073,8 @@
       "short" : "Profiles this resource claims to conform to",
       "definition" : "A list of profiles (references to [StructureDefinition](http://hl7.org/fhir/R4/structuredefinition.html#) resources) that this resource claims to conform to. The URL is a reference to [StructureDefinition.url](http://hl7.org/fhir/R4/structuredefinition-definitions.html#StructureDefinition.url).",
       "comment" : "It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.",
-      "min" : 0,
-      "max" : "*",
+      "min" : 1,
+      "max" : "1",
       "base" : {
         "path" : "Meta.profile",
         "min" : 0,
@@ -2543,16 +2543,142 @@
       "isSummary" : false
     },
     {
+      "id" : "Bundle.entry:Medikationsplan.resource.extension:PatientModified.id",
+      "path" : "Bundle.entry.resource.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.resource.extension:PatientModified.extension",
+      "path" : "Bundle.entry.resource.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.resource.extension:PatientModified.url",
+      "path" : "Bundle.entry.resource.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-patient-modified",
+      "mustSupport" : true,
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.resource.extension:PatientModified.value[x]",
+      "path" : "Bundle.entry.resource.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "boolean"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "mustSupport" : true,
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
       "id" : "Bundle.entry:Medikationsplan.resource.modifierExtension",
       "path" : "Bundle.entry.resource.modifierExtension",
-      "short" : "Extensions that cannot be ignored",
-      "definition" : "May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
-      "comment" : "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-      "requirements" : "Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).",
-      "alias" : ["extensions",
-      "user content"],
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "definition" : "An Extension",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "DomainResource.modifierExtension",
         "min" : 0,
@@ -2579,11 +2705,7 @@
       }],
       "isModifier" : true,
       "isModifierReason" : "Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them",
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
+      "isSummary" : false
     },
     {
       "id" : "Bundle.entry:Medikationsplan.resource.identifier",
@@ -2622,7 +2744,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.status",
       "path" : "Bundle.entry.resource.status",
-      "short" : "Status des Medikationsplans. Mögliche Ausprägungen: [current | retired] Bedeutung: current: default | retired: nach Ableben des Patienten bis Ende der Aufbewahrungsfrist",
+      "short" : "Status des Medikationsplans. Fixer Wert: current",
       "definition" : "Indicates the current state of this list.",
       "comment" : "This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.",
       "min" : 1,
@@ -2635,6 +2757,7 @@
       "type" : [{
         "code" : "code"
       }],
+      "patternCode" : "current",
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -2648,8 +2771,13 @@
       "isModifierReason" : "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid",
       "isSummary" : true,
       "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "ListStatus"
+        }],
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListStatusVS"
+        "description" : "The current state of the list.",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/list-status|4.0.1"
       },
       "mapping" : [{
         "identity" : "w5",
@@ -3868,7 +3996,7 @@
       "definition" : "The date that the list was prepared.",
       "comment" : "The actual important date is the date of currency of the resources that were summarized, but it is usually assumed that these are current when the preparation occurs.",
       "requirements" : "Identifies how current the list is which affects relevance.",
-      "min" : 1,
+      "min" : 0,
       "max" : "1",
       "base" : {
         "path" : "List.date",

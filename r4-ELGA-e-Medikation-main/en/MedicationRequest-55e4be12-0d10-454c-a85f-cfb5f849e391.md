@@ -90,7 +90,7 @@
   "category" : [{
     "coding" : [{
       "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
-      "code" : "1",
+      "code" : "Planeintrag",
       "display" : "Planeintrag"
     }]
   }],
