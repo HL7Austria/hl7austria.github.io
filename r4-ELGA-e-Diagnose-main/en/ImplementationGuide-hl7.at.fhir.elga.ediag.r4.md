@@ -14,7 +14,7 @@
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4 (Draft)",
   "status" : "draft",
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1069,8 +1069,8 @@
       "reference" : {
         "reference" : "ValueSet/at-ediag-list-code-vs"
       },
-      "name" : "ELGA AT e-Diagnose List Entry Code Value Set",
-      "description" : "ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA.",
+      "name" : "ELGA AT e-Diagnose List Entry Code",
+      "description" : "ValueSet mit zulässigen Codes für Summary-Listen.",
       "exampleBoolean" : false
     },
     {
@@ -1088,6 +1088,38 @@
       "name" : "ELGA List Empty Reason Value Set",
       "description" : "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ConditionDeleteResponse01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ConditionDeleteResponse01"
+      },
+      "name" : "Parameters der Antwort auf $delete einer Diagnose",
+      "description" : "Beispiel der Ausgabeparameter der $delete-Operation, nachdem Max Mustermann die Diagnose Candida-Balanitis (ConditionEntry05) über das Portal gelöscht hat.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-ConditionEnteredInErrorResponse01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/ConditionEnteredInErrorResponse01"
+      },
+      "name" : "Parameters der Antwort auf $entered-in-error einer Diagnose",
+      "description" : "Beispiel der Ausgabeparameter der $entered-in-error-Operation, nachdem Dr. Musterärztin die fehlerhaft codierte Diagnose Morbus Crohn (ConditionEntry03) storniert hat.",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -1182,7 +1214,7 @@
         "reference" : "Parameters/ProcedureListWrite01"
       },
       "name" : "Parameters für $write der Procedure-Summary-Liste (Version 2)",
-      "description" : "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Koloskopie in die Procedure-Summary-Liste aufnimmt.",
+      "description" : "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die partielle Resektion des Dickdarms in die Procedure-Summary-Liste aufnimmt.",
       "exampleBoolean" : true
     },
     {

@@ -483,7 +483,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <div class="caption">
     <p class="st on0"><span class="d">03.03.2026</span><b>Initialisierung.</b> Die e-Diagnose Fachanwendung legt je Kategorie eine leere Summary-Liste an.</p>
     <p class="st on1"><span class="d">03.03.2026</span><b>1. Arztbesuch.</b> Hypertonie und Amoxicillin-Allergie kommen in die Summary-Listen, die eitrige Angina nur in die Gesamtansicht.</p>
-    <p class="st on2"><span class="d">09.03.2026</span><b>2. Arztbesuch.</b> Morbus Crohn und Koloskopie werden in die Summary-Listen aufgenommen – Morbus Crohn allerdings irrtümlich mit dem Code für Hyperthyreose. Diarrhö und Candida-Balanitis kommen nur in die Gesamtansicht.</p>
+    <p class="st on2"><span class="d">09.03.2026</span><b>2. Arztbesuch.</b> Morbus Crohn und partielle Resektion des Dickdarms werden in die Summary-Listen aufgenommen – Morbus Crohn allerdings irrtümlich mit dem Code für Hyperthyreose. Diarrhö und Candida-Balanitis kommen nur in die Gesamtansicht.</p>
     <p class="st on3"><span class="d">09.03.2026</span><b>Storno.</b> Die Ärztin bemerkt den falschen Code und storniert den Eintrag. Die Fachanwendung entfernt ihn selbst aus der Summary-Liste.</p>
     <p class="st on4"><span class="d">09.03.2026</span><b>Korrektur.</b> Die Ärztin erfasst Morbus Crohn korrekt und nimmt ihn in die Summary-Liste auf. Der stornierte Eintrag bleibt in der Gesamtansicht sichtbar.</p>
     <p class="st on5"><span class="d">20.04.2026</span><b>Löschung durch den Patienten.</b> Max Mustermann löscht die Candida-Balanitis über das Portal aus seiner Gesamtansicht.</p>
@@ -501,8 +501,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </div>
     <div class="story st on2">
       <p>Am 9. März 2026 hat sich die Angina deutlich gebessert. Herr Mustermann berichtet jedoch über Durchfall und Juckreiz im Genitalbereich. Die Ärztin stellt eine Pilzinfektion (Candida-Balanitis) fest, vermutlich als Folge der Antibiotikatherapie, und verordnet Clotrimazol 1 % Creme.</p>
-      <p>Herr Mustermann vermutet zudem, dass die Antibiotikatherapie einen Schub seines seit 2010 bestehenden Morbus Crohn ausgelöst hat. Da der Durchfall sowohl Nebenwirkung als auch Teil eines Schubs sein kann, wird die Ursache weiter abgeklärt; bis dahin soll er auf ausreichende Flüssigkeitszufuhr achten. Die letzte Koloskopie fand am 23. September 2025 statt.</p>
-      <p>Die Ärztin dokumentiert Morbus Crohn, die medikamenteninduzierte Diarrhö und die Candida-Balanitis sowie die Koloskopie als Prozedur. Morbus Crohn und Koloskopie nimmt sie in die jeweilige Summary-Liste auf.</p>
+      <p>Herr Mustermann vermutet zudem, dass die Antibiotikatherapie einen Schub seines seit 2010 bestehenden Morbus Crohn ausgelöst hat. Da der Durchfall sowohl Nebenwirkung als auch Teil eines Schubs sein kann, wird die Ursache weiter abgeklärt; bis dahin soll er auf ausreichende Flüssigkeitszufuhr achten. Im Zuge der Behandlung berichtet Herr Mustermann zudem von einer partiellen Resektion des Dickdarms, die im September 2025 durchgeführt wurde.</p>
+      <p>Die Ärztin dokumentiert Morbus Crohn, die medikamenteninduzierte Diarrhö und die Candida-Balanitis sowie die partielle Resektion des Dickdarms als Prozedur. Morbus Crohn und partielle Resektion des Dickdarms nimmt sie in die jeweilige Summary-Liste auf.</p>
     </div>
     <div class="story st on3">
       <p>Die Ärztin befürchtet, dass ihr ein Fehler unterlaufen ist, und ruft die Condition-Summary-Liste ab. Dabei fällt ihr auf, dass sie für Morbus Crohn den Code für Hyperthyreose gewählt hat.</p>
@@ -548,7 +548,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           <span class="field-t">Summary-Liste</span>
           <p class="empty st on0 on1">leer</p>
           <ul class="tags">
-            <li class="tag st on2 on3 on4 on5 new2"><a href="Procedure-ProcedureEntry01.html"><span>Koloskopie</span></a></li>
+            <li class="tag st on2 on3 on4 on5 new2"><a href="Procedure-ProcedureEntry01.html"><span>Partielle Resektion des Dickdarms</span></a></li>
           </ul>
         </div>
       </div>
@@ -573,53 +573,53 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="lanes"><span>Client &ndash; GDA-Software bzw. ELGA-Portal</span><span>e-Diagnose Fachanwendung</span></div>
     <div class="msgs">
       <!-- 0 Initialisierung -->
-      <div class="msg req st on0"><code>GET /List?code=11450-4&amp;_include=*</code><span class="t">aktuelle Summary-Liste abrufen</span></div>
+      <div class="msg req st on0"><code>GET /List?code=http://loinc.org|11450-4&amp;_include=*</code><span class="t">aktuelle Summary-Liste abrufen</span></div>
       <div class="msg res st on0"><code>200 Bundle</code><span class="t"><a href="List-ConditionListEmpty.html">leere Liste</a>, emptyReason notstarted, v1</span></div>
       <p class="note st on0">ebenso für <a href="List-ProcedureListEmpty.html">47519-4 (Prozeduren)</a> und <a href="List-AllergyListEmpty.html">48765-2 (Allergien)</a> · List.source = <a href="Device-DeviceExample.html">e-Diagnose Fachanwendung</a></p>
 
       <!-- 1 Erstvorstellung -->
       <div class="msg req st on1"><code>POST /Condition</code><span class="t">2× Diagnose (<a href="Condition-ConditionEntry01.html">Hypertonie</a>, <a href="Condition-ConditionEntry02.html">Angina</a>), dazu 1× POST /AllergyIntolerance (<a href="AllergyIntolerance-AllergyEntry01.html">Amoxicillin</a>)</span></div>
       <div class="msg res st on1"><code>201 Created</code><span class="t">je eine id pro Eintrag</span></div>
-      <div class="msg req st on1"><code>GET /List?code=11450-4&amp;_include=*</code><span class="t">Liste inkl. versionId holen</span></div>
+      <div class="msg req st on1"><code>GET /List?code=http://loinc.org|11450-4&amp;_include=*</code><span class="t">Liste inkl. versionId holen</span></div>
       <div class="msg res st on1"><code>200 Bundle</code><span class="t"><a href="List-ConditionListEmpty.html">List v1, leer</a></span></div>
       <div class="msg req st on1"><code>POST /List/$write</code><span class="t"><a href="Parameters-ConditionListWrite01.html">Parameters</a>: code, list (+ Hypertonie) · If-Match: W/"1"</span></div>
       <div class="msg res st on1"><code>200 OK</code><span class="t"><a href="List-ConditionList01.html">List v2</a> gespeichert</span></div>
       <p class="note st on1">gleicher Ablauf für die Allergie-Summary-Liste (48765-2): <a href="Parameters-AllergyListWrite01.html">$write</a> → <a href="List-AllergyList01.html">List v2</a></p>
-      <div class="msg req st on1"><code>GET /List?code=11450-4&amp;_include=*</code><span class="t">Summary-Liste erneut abrufen</span></div>
+      <div class="msg req st on1"><code>GET /List?code=http://loinc.org|11450-4&amp;_include=*</code><span class="t">Summary-Liste erneut abrufen</span></div>
       <div class="msg res st on1"><code>200 Bundle</code><span class="t"><a href="Bundle-ConditionListSearchSet01.html">List v2 + Hypertonie</a> · Allergien: <a href="Bundle-AllergyListSearchSet01.html">List v2 + Amoxicillin</a></span></div>
       <div class="msg req st on1"><code>GET /Condition</code><span class="t">Gesamtansicht abrufen</span></div>
       <div class="msg res st on1"><code>200 Bundle</code><span class="t"><a href="Bundle-ConditionSearchSet01.html">2 Diagnosen</a></span></div>
 
       <!-- 2 Zweiter Arztbesuch -->
-      <div class="msg req st on2"><code>POST /Condition</code><span class="t">3× Diagnose (<a href="Condition-ConditionEntry03.html">Morbus Crohn, falsch codiert</a>, <a href="Condition-ConditionEntry04.html">Diarrhö</a>, <a href="Condition-ConditionEntry05.html">Candida</a>), dazu 1× POST /Procedure (<a href="Procedure-ProcedureEntry01.html">Koloskopie</a>)</span></div>
+      <div class="msg req st on2"><code>POST /Condition</code><span class="t">3× Diagnose (<a href="Condition-ConditionEntry03.html">Morbus Crohn, falsch codiert</a>, <a href="Condition-ConditionEntry04.html">Diarrhö</a>, <a href="Condition-ConditionEntry05.html">Candida</a>), dazu 1× POST /Procedure (<a href="Procedure-ProcedureEntry01.html">Partielle Resektion des Dickdarms</a>)</span></div>
       <div class="msg res st on2"><code>201 Created</code><span class="t">je eine id pro Eintrag</span></div>
-      <div class="msg req st on2"><code>GET /List?code=11450-4&amp;_include=*</code><span class="t">Liste inkl. versionId holen</span></div>
+      <div class="msg req st on2"><code>GET /List?code=http://loinc.org|11450-4&amp;_include=*</code><span class="t">Liste inkl. versionId holen</span></div>
       <div class="msg res st on2"><code>200 Bundle</code><span class="t"><a href="Bundle-ConditionListSearchSet01.html">List v2, 1 Eintrag</a></span></div>
       <div class="msg req st on2"><code>POST /List/$write</code><span class="t"><a href="Parameters-ConditionListWrite02.html">Parameters</a>: + Morbus Crohn (Code: Hyperthyreose) · If-Match: W/"2"</span></div>
       <div class="msg res st on2"><code>200 OK</code><span class="t"><a href="List-ConditionList02.html">List v3</a> gespeichert</span></div>
-      <p class="note st on2">ebenso für die Prozeduren-Liste (47519-4): <a href="Parameters-ProcedureListWrite01.html">$write</a> mit If-Match: W/"1" → <a href="Bundle-ProcedureListSearchSet01.html">List v2 + Koloskopie</a></p>
+      <p class="note st on2">ebenso für die Prozeduren-Liste (47519-4): <a href="Parameters-ProcedureListWrite01.html">$write</a> mit If-Match: W/"1" → <a href="List-ProcedureList01.html">List v2</a></p>
 
       <!-- 3 Storno -->
-      <div class="msg req st on3"><code>GET /List?code=11450-4&amp;_include=*</code><span class="t">Summary-Liste prüfen</span></div>
+      <div class="msg req st on3"><code>GET /List?code=http://loinc.org|11450-4&amp;_include=*</code><span class="t">Summary-Liste prüfen</span></div>
       <div class="msg res st on3"><code>200 Bundle</code><span class="t"><a href="Bundle-ConditionListSearchSet02.html">List v3</a> – falscher Code für Morbus Crohn</span></div>
       <div class="msg req st on3"><code>POST /Condition/[id]/$entered-in-error</code><span class="t"><a href="Parameters-ConditionEnteredInErrorParameters01.html">Parameters</a>: reason = "Falscher Code ausgewählt"</span></div>
-      <div class="msg res st on3"><code>200 OK</code><span class="t"><a href="Condition-ConditionEntry03EnteredInError.html">Storno vermerkt</a>: practitioner, datetime, reason</span></div>
-      <p class="note st on3">die Fachanwendung entfernt den Eintrag selbst aus der Summary-Liste – kein $write durch den Client · List.source = e-Diagnose Fachanwendung</p>
-      <div class="msg req st on3"><code>GET /List?code=11450-4&amp;_include=*</code><span class="t">Ergebnis prüfen</span></div>
+      <div class="msg res st on3"><code>200 OK</code><span class="t"><a href="Parameters-ConditionEnteredInErrorResponse01.html">Parameters</a>: diagnose = <a href="Condition-ConditionEntry03EnteredInError.html">stornierter Eintrag</a> (practitioner, datetime, reason), list = <a href="List-ConditionList03.html">List v4</a></span></div>
+      <p class="note st on3">die Fachanwendung entfernt den Eintrag selbst aus der Summary-Liste und liefert die neue Listenversion in der Antwort mit – kein $write durch den Client · List.source = e-Diagnose Fachanwendung</p>
+      <div class="msg req st on3"><code>GET /List?code=http://loinc.org|11450-4&amp;_include=*</code><span class="t">Ergebnis prüfen</span></div>
       <div class="msg res st on3"><code>200 Bundle</code><span class="t"><a href="Bundle-ConditionListSearchSet03.html">List v4</a>, ohne den stornierten Eintrag</span></div>
 
       <!-- 4 Korrektur -->
       <div class="msg req st on4"><code>POST /Condition</code><span class="t"><a href="Condition-ConditionEntry06.html">Morbus Crohn</a>, korrekt codiert</span></div>
       <div class="msg res st on4"><code>201 Created</code><span class="t">neue id</span></div>
       <div class="msg req st on4"><code>POST /List/$write</code><span class="t"><a href="Parameters-ConditionListWrite03.html">Parameters</a>: + Morbus Crohn · If-Match: W/"4"</span></div>
-      <div class="msg res st on4"><code>200 OK</code><span class="t"><a href="Bundle-ConditionListSearchSet04.html">List v5</a> gespeichert</span></div>
+      <div class="msg res st on4"><code>200 OK</code><span class="t"><a href="List-ConditionList04.html">List v5</a> gespeichert</span></div>
       <p class="note st on4">der stornierte Eintrag ist weiterhin Teil der Gesamtansicht</p>
 
       <!-- 5 Löschung -->
       <div class="msg req st on5"><code>GET /Condition</code><span class="t">Gesamtansicht über das Portal abrufen</span></div>
       <div class="msg res st on5"><code>200 Bundle</code><span class="t"><a href="Bundle-ConditionSearchSet02.html">6 Diagnosen</a>, inkl. storniertem Eintrag</span></div>
       <div class="msg req st on5"><code>POST /Condition/[id]/$delete</code><span class="t">Candida-Balanitis, durch den ELGA-Teilnehmer über das Portal</span></div>
-      <div class="msg res st on5"><code>200 OK</code><span class="t">Eintrag unwiderruflich gelöscht</span></div>
+      <div class="msg res st on5"><code>200 OK</code><span class="t"><a href="Parameters-ConditionDeleteResponse01.html">Parameters</a>: diagnose = <a href="Condition-ConditionEntry05.html">gelöschter Eintrag</a> · Eintrag unwiderruflich gelöscht</span></div>
       <div class="msg req st on5"><code>GET /Condition</code><span class="t">Ergebnis prüfen</span></div>
       <div class="msg res st on5"><code>200 Bundle</code><span class="t"><a href="Bundle-ConditionSearchSet03.html">5 Diagnosen</a>, ohne Candida-Balanitis</span></div>
       <p class="note st on5">wäre der Eintrag in der Summary-Liste: neue Listenversion ohne ihn, List.source = Patient</p>
@@ -655,8 +655,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-09 12:41:00 +0000">
-    2026-10-09
+  <span title="2026-10-12 13:54:00 +0000">
+    2026-10-12
   </span>
 
           <br/>

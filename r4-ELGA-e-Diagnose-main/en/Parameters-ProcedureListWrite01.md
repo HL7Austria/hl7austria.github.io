@@ -12,7 +12,10 @@
   "id" : "ProcedureListWrite01",
   "parameter" : [{
     "name" : "code",
-    "valueCode" : "47519-4"
+    "valueCoding" : {
+      "system" : "http://loinc.org",
+      "code" : "47519-4"
+    }
   },
   {
     "name" : "list",

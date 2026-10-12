@@ -12,7 +12,10 @@
   "id" : "AllergyListWrite01",
   "parameter" : [{
     "name" : "code",
-    "valueCode" : "48765-2"
+    "valueCoding" : {
+      "system" : "http://loinc.org",
+      "code" : "48765-2"
+    }
   },
   {
     "name" : "list",

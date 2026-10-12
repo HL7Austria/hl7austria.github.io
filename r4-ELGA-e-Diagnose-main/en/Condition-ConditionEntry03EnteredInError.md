@@ -10,7 +10,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 > **AT ELGA Entered In Error**
 * practitioner: [Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md)
-* datetime: 2026-03-09 10:30:00+0100
+* datetime: 2026-03-09 10:30:00+0000
 * reason: Falscher Code ausgewählt
 
 **identifier**: `https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier`/1236
@@ -61,7 +61,7 @@ Seit 2010
     },
     {
       "url" : "datetime",
-      "valueDateTime" : "2026-03-09T10:30:00+01:00"
+      "valueDateTime" : "2026-03-09T10:30:00+00:00"
     },
     {
       "url" : "reason",

@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "Business Identifier Codes",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

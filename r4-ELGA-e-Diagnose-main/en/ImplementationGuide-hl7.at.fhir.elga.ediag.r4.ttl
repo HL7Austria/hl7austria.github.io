@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ELGAeDiagnoseR4"] ;
   fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4 (Draft)"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-09T12:41:54+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-12T13:54:53+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -1083,8 +1083,8 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-code-vs> ;
          fhir:Reference.reference [ fhir:value "ValueSet/at-ediag-list-code-vs" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ELGA AT e-Diagnose List Entry Code Value Set" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ELGA AT e-Diagnose List Entry Code" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit zulässigen Codes für Summary-Listen." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -1100,6 +1100,34 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "ELGA List Empty Reason Value Set" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Parameters/ConditionDeleteResponse01> ;
+         fhir:Reference.reference [ fhir:value "Parameters/ConditionDeleteResponse01" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Parameters der Antwort auf $delete einer Diagnose" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Ausgabeparameter der $delete-Operation, nachdem Max Mustermann die Diagnose Candida-Balanitis (ConditionEntry05) über das Portal gelöscht hat." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Parameters" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Parameters/ConditionEnteredInErrorResponse01> ;
+         fhir:Reference.reference [ fhir:value "Parameters/ConditionEnteredInErrorResponse01" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Parameters der Antwort auf $entered-in-error einer Diagnose" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Ausgabeparameter der $entered-in-error-Operation, nachdem Dr. Musterärztin die fehlerhaft codierte Diagnose Morbus Crohn (ConditionEntry03) storniert hat." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
        fhir:Element.extension [
@@ -1182,7 +1210,7 @@
          fhir:Reference.reference [ fhir:value "Parameters/ProcedureListWrite01" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Parameters für $write der Procedure-Summary-Liste (Version 2)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Koloskopie in die Procedure-Summary-Liste aufnimmt." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die partielle Resektion des Dickdarms in die Procedure-Summary-Liste aufnimmt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
        fhir:index -1 ;

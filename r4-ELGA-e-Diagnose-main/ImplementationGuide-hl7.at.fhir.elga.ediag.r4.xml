@@ -12,7 +12,7 @@
   <name value="ELGAeDiagnoseR4"/>
   <title value="ELGA e-Diagnose R4 (Draft)"/>
   <status value="draft"/>
-  <date value="2026-10-09T12:41:54+00:00"/>
+  <date value="2026-10-12T13:54:53+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -759,8 +759,8 @@
       <reference>
         <reference value="ValueSet/at-ediag-list-code-vs"/>
       </reference>
-      <name value="ELGA AT e-Diagnose List Entry Code Value Set"/>
-      <description value="ValueSet mit zulässigen Codes für das Flag eines List-Entries in ELGA."/>
+      <name value="ELGA AT e-Diagnose List Entry Code"/>
+      <description value="ValueSet mit zulässigen Codes für Summary-Listen."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -773,6 +773,28 @@
       <name value="ELGA List Empty Reason Value Set"/>
       <description value="ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ConditionDeleteResponse01"/>
+      </reference>
+      <name value="Parameters der Antwort auf $delete einer Diagnose"/>
+      <description value="Beispiel der Ausgabeparameter der $delete-Operation, nachdem Max Mustermann die Diagnose Candida-Balanitis (ConditionEntry05) über das Portal gelöscht hat."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/ConditionEnteredInErrorResponse01"/>
+      </reference>
+      <name value="Parameters der Antwort auf $entered-in-error einer Diagnose"/>
+      <description value="Beispiel der Ausgabeparameter der $entered-in-error-Operation, nachdem Dr. Musterärztin die fehlerhaft codierte Diagnose Morbus Crohn (ConditionEntry03) storniert hat."/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -837,7 +859,7 @@
         <reference value="Parameters/ProcedureListWrite01"/>
       </reference>
       <name value="Parameters für $write der Procedure-Summary-Liste (Version 2)"/>
-      <description value="Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Koloskopie in die Procedure-Summary-Liste aufnimmt."/>
+      <description value="Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die partielle Resektion des Dickdarms in die Procedure-Summary-Liste aufnimmt."/>
       <exampleBoolean value="true"/>
     </resource>
     <resource>

@@ -4,7 +4,7 @@
   "language" : "en",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-delete</b></p><a name=\"at-ediag-operation-diagnose-delete\"> </a><a name=\"hcat-ediag-operation-diagnose-delete\"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>diagnoseUrl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>Die vollständige URL der zu löschenden Diagnose.</p>\n</div></td></tr><tr><td>OUT</td><td>listUrl</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wurde.</p>\n</div></td></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-delete</b></p><a name=\"at-ediag-operation-diagnose-delete\"> </a><a name=\"hcat-ediag-operation-diagnose-delete\"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>diagnose</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-elga-ediag-condition.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition\">AT ELGA e-Diagnose Condition</a>, <a href=\"StructureDefinition-at-elga-ediag-procedure.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure\">AT ELGA e-Diagnose Procedure</a>, <a href=\"StructureDefinition-at-elga-ediag-allergyintolerance.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance\">AT ELGA e-Diagnose AllergyIntolerance</a>)</td><td/><td><div><p>Die gelöschte Diagnose.</p>\n</div></td></tr><tr><td>OUT</td><td>list</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a> (<a href=\"StructureDefinition-at-elga-ediag-list.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list\">AT ELGA e-Diagnose List</a>)</td><td/><td><div><p>Die Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wurde.</p>\n</div></td></tr></table></div>"
   },
   "url" : "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-delete",
   "version" : "0.1.0",
@@ -13,7 +13,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -41,19 +41,23 @@
   "type" : false,
   "instance" : true,
   "parameter" : [{
-    "name" : "diagnoseUrl",
+    "name" : "diagnose",
     "use" : "out",
     "min" : 1,
     "max" : "1",
-    "documentation" : "Die vollständige URL der zu löschenden Diagnose.",
-    "type" : "url"
+    "documentation" : "Die gelöschte Diagnose.",
+    "type" : "Resource",
+    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition",
+    "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure",
+    "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"]
   },
   {
-    "name" : "listUrl",
+    "name" : "list",
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wurde.",
-    "type" : "url"
+    "documentation" : "Die Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wurde.",
+    "type" : "List",
+    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   }]
 }

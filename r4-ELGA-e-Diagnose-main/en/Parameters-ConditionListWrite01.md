@@ -12,7 +12,10 @@
   "id" : "ConditionListWrite01",
   "parameter" : [{
     "name" : "code",
-    "valueCode" : "11450-4"
+    "valueCoding" : {
+      "system" : "http://loinc.org",
+      "code" : "11450-4"
+    }
   },
   {
     "name" : "list",

@@ -8,7 +8,7 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
 
 **status**: Completed
 
-**code**: Colonoscopy
+**code**: Partial excision of large intestine
 
 **subject**: Identifier: `urn:oid:1.2.40.0.10.2.1.1.149`/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=
 
@@ -37,8 +37,8 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "73761001",
-      "display" : "Colonoscopy"
+      "code" : "27010001",
+      "display" : "Partial excision of large intestine"
     }]
   },
   "subject" : {

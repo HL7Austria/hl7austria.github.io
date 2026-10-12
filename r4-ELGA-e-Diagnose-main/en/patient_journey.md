@@ -44,7 +44,7 @@ Löschung
 
 03.03.2026**1. Arztbesuch.** Hypertonie und Amoxicillin-Allergie kommen in die Summary-Listen, die eitrige Angina nur in die Gesamtansicht.
 
-09.03.2026**2. Arztbesuch.** Morbus Crohn und Koloskopie werden in die Summary-Listen aufgenommen – Morbus Crohn allerdings irrtümlich mit dem Code für Hyperthyreose. Diarrhö und Candida-Balanitis kommen nur in die Gesamtansicht.
+09.03.2026**2. Arztbesuch.** Morbus Crohn und partielle Resektion des Dickdarms werden in die Summary-Listen aufgenommen – Morbus Crohn allerdings irrtümlich mit dem Code für Hyperthyreose. Diarrhö und Candida-Balanitis kommen nur in die Gesamtansicht.
 
 09.03.2026**Storno.** Die Ärztin bemerkt den falschen Code und storniert den Eintrag. Die Fachanwendung entfernt ihn selbst aus der Summary-Liste.
 
@@ -64,9 +64,9 @@ Hypertonie und eitrige Angina werden jeweils als Condition erfasst, die Amoxicil
 
 Am 9. März 2026 hat sich die Angina deutlich gebessert. Herr Mustermann berichtet jedoch über Durchfall und Juckreiz im Genitalbereich. Die Ärztin stellt eine Pilzinfektion (Candida-Balanitis) fest, vermutlich als Folge der Antibiotikatherapie, und verordnet Clotrimazol 1 % Creme.
 
-Herr Mustermann vermutet zudem, dass die Antibiotikatherapie einen Schub seines seit 2010 bestehenden Morbus Crohn ausgelöst hat. Da der Durchfall sowohl Nebenwirkung als auch Teil eines Schubs sein kann, wird die Ursache weiter abgeklärt; bis dahin soll er auf ausreichende Flüssigkeitszufuhr achten. Die letzte Koloskopie fand am 23. September 2025 statt.
+Herr Mustermann vermutet zudem, dass die Antibiotikatherapie einen Schub seines seit 2010 bestehenden Morbus Crohn ausgelöst hat. Da der Durchfall sowohl Nebenwirkung als auch Teil eines Schubs sein kann, wird die Ursache weiter abgeklärt; bis dahin soll er auf ausreichende Flüssigkeitszufuhr achten. Im Zuge der Behandlung berichtet Herr Mustermann zudem von einer partiellen Resektion des Dickdarms, die im September 2025 durchgeführt wurde.
 
-Die Ärztin dokumentiert Morbus Crohn, die medikamenteninduzierte Diarrhö und die Candida-Balanitis sowie die Koloskopie als Prozedur. Morbus Crohn und Koloskopie nimmt sie in die jeweilige Summary-Liste auf.
+Die Ärztin dokumentiert Morbus Crohn, die medikamenteninduzierte Diarrhö und die Candida-Balanitis sowie die partielle Resektion des Dickdarms als Prozedur. Morbus Crohn und partielle Resektion des Dickdarms nimmt sie in die jeweilige Summary-Liste auf.
 
 Die Ärztin befürchtet, dass ihr ein Fehler unterlaufen ist, und ruft die Condition-Summary-Liste ab. Dabei fällt ihr auf, dass sie für Morbus Crohn den Code für Hyperthyreose gewählt hat.
 
@@ -101,7 +101,7 @@ Prozeduren
 Summary-Liste
 leer
 
-* [Koloskopie](Procedure-ProcedureEntry01.md)
+* [Partielle Resektion des Dickdarms](Procedure-ProcedureEntry01.md)
 
 Allergien und Intoleranzen
 
@@ -115,7 +115,7 @@ Datenaustausch in diesem Schritt
 Client – GDA-Software bzw. ELGA-Portal
 e-Diagnose Fachanwendung
 
-`GET /List?code=11450-4&_include=*`
+`GET /List?code=http://loinc.org|11450-4&_include=*`
 aktuelle Summary-Liste abrufen
 
 `200 Bundle`
@@ -129,7 +129,7 @@ ebenso für [47519-4 (Prozeduren)](List-ProcedureListEmpty.md) und [48765-2 (All
 `201 Created`
 je eine id pro Eintrag
 
-`GET /List?code=11450-4&_include=*`
+`GET /List?code=http://loinc.org|11450-4&_include=*`
 Liste inkl. versionId holen
 
 `200 Bundle`
@@ -143,7 +143,7 @@ Liste inkl. versionId holen
 
 gleicher Ablauf für die Allergie-Summary-Liste (48765-2): [$write](Parameters-AllergyListWrite01.md) → [List v2](List-AllergyList01.md)
 
-`GET /List?code=11450-4&_include=*`
+`GET /List?code=http://loinc.org|11450-4&_include=*`
 Summary-Liste erneut abrufen
 
 `200 Bundle`
@@ -156,12 +156,12 @@ Gesamtansicht abrufen
 [2 Diagnosen](Bundle-ConditionSearchSet01.md)
 
 `POST /Condition`
-3× Diagnose ([Morbus Crohn, falsch codiert](Condition-ConditionEntry03.md), [Diarrhö](Condition-ConditionEntry04.md), [Candida](Condition-ConditionEntry05.md)), dazu 1× POST /Procedure ([Koloskopie](Procedure-ProcedureEntry01.md))
+3× Diagnose ([Morbus Crohn, falsch codiert](Condition-ConditionEntry03.md), [Diarrhö](Condition-ConditionEntry04.md), [Candida](Condition-ConditionEntry05.md)), dazu 1× POST /Procedure ([Partielle Resektion des Dickdarms](Procedure-ProcedureEntry01.md))
 
 `201 Created`
 je eine id pro Eintrag
 
-`GET /List?code=11450-4&_include=*`
+`GET /List?code=http://loinc.org|11450-4&_include=*`
 Liste inkl. versionId holen
 
 `200 Bundle`
@@ -173,9 +173,9 @@ Liste inkl. versionId holen
 `200 OK`
 [List v3](List-ConditionList02.md) gespeichert
 
-ebenso für die Prozeduren-Liste (47519-4): [$write](Parameters-ProcedureListWrite01.md) mit If-Match: W/"1" → [List v2 + Koloskopie](Bundle-ProcedureListSearchSet01.md)
+ebenso für die Prozeduren-Liste (47519-4): [$write](Parameters-ProcedureListWrite01.md) mit If-Match: W/"1" → [List v2](List-ProcedureList01.md)
 
-`GET /List?code=11450-4&_include=*`
+`GET /List?code=http://loinc.org|11450-4&_include=*`
 Summary-Liste prüfen
 
 `200 Bundle`
@@ -185,11 +185,11 @@ Summary-Liste prüfen
 [Parameters](Parameters-ConditionEnteredInErrorParameters01.md): reason = "Falscher Code ausgewählt"
 
 `200 OK`
-[Storno vermerkt](Condition-ConditionEntry03EnteredInError.md): practitioner, datetime, reason
+[Parameters](Parameters-ConditionEnteredInErrorResponse01.md): diagnose = [stornierter Eintrag](Condition-ConditionEntry03EnteredInError.md) (practitioner, datetime, reason), list = [List v4](List-ConditionList03.md)
 
-die Fachanwendung entfernt den Eintrag selbst aus der Summary-Liste – kein $write durch den Client · List.source = e-Diagnose Fachanwendung
+die Fachanwendung entfernt den Eintrag selbst aus der Summary-Liste und liefert die neue Listenversion in der Antwort mit – kein $write durch den Client · List.source = e-Diagnose Fachanwendung
 
-`GET /List?code=11450-4&_include=*`
+`GET /List?code=http://loinc.org|11450-4&_include=*`
 Ergebnis prüfen
 
 `200 Bundle`
@@ -205,7 +205,7 @@ neue id
 [Parameters](Parameters-ConditionListWrite03.md): + Morbus Crohn · If-Match: W/"4"
 
 `200 OK`
-[List v5](Bundle-ConditionListSearchSet04.md) gespeichert
+[List v5](List-ConditionList04.md) gespeichert
 
 der stornierte Eintrag ist weiterhin Teil der Gesamtansicht
 
@@ -219,7 +219,7 @@ Gesamtansicht über das Portal abrufen
 Candida-Balanitis, durch den ELGA-Teilnehmer über das Portal
 
 `200 OK`
-Eintrag unwiderruflich gelöscht
+[Parameters](Parameters-ConditionDeleteResponse01.md): diagnose = [gelöschter Eintrag](Condition-ConditionEntry05.md) · Eintrag unwiderruflich gelöscht
 
 `GET /Condition`
 Ergebnis prüfen

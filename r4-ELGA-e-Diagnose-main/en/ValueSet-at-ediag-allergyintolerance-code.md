@@ -6,6 +6,17 @@
 
 * [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
 
+Dieses Value-Set gliedert sich in zwei große Bereiche:
+
+* Für Allergien und Intoleranzen, die auf Medikamente zurückzuführen sind, sollen Codes aus dem Codesystem `https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe` verwendet werden.
+* Für Allergien und Intoleranzen, die **nicht** auf Medikamente zurückzuführen sind, sollen Codes aus SNOMED CT `http://snomed.info/sct` verwendet werden.
+
+* Für Allergien und Intoleranzen, die keinen Medikamentenbezug haben, orientieren sich die Inhalte am Value-Set eHDSIAllergenNoDrug des Master Valueset Catalogue (MVC) von MyHealth@EU.
+* Dieses Value-Set wurde für die e-Diagnose entworfen und wird auf den [österreichische e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
+* Der IG Publisher baut aktuell auf SNOMED Intl. Version http://snomed.info/sct/900000000000207008/version/20250201 auf, weshalb weniger Konzepte in diesem Value-Set angezeigt werden als in der aktuellen Version von SNOMED CT verfügbar sind. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
+* Aktuell werden österreichische Übersetzungen auf Basis der Austrian Extension in dem Value-Set noch nicht aufgelöst. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
+* Eine Expansion dieses Value-Sets ist zurzeit nicht möglich, weil das referenzierte Value-Set ([https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages](https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages)) vom IG Publisher nicht aufgelöst werden kann.
+
 ### Logical Definition (CLD)
 
  
@@ -32,7 +43,7 @@ No Expansion for this valueset (not supported by Publication Tooling)
   "title" : "AT e-Diagnose AllergyIntolerance Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

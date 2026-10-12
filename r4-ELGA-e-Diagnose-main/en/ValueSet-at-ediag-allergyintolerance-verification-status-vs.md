@@ -6,6 +6,8 @@
 
 * [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
 
+* Dieses Value-Set wurde für die e-Diagnose entworfen und wird auf den [österreichische e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
+
 ### Logical Definition (CLD)
 
  
@@ -30,7 +32,7 @@
   "title" : "AT e-Diagnose AllergyIntolerance Verification Status",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

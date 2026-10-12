@@ -8,7 +8,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Date: 2026-03-09 09:30:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
+| Date: 2026-03-09 10:30:00+0000 | Mode: Working List | Status: Current | Code: Problem list - Reported |
 | Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md) | Source:[Device: type = Gerät](Device-DeviceExample.md) | | |
 
 * **Items**: [Condition Hypertensive disorder, systemic arterial](Condition-ConditionEntry01.md)
@@ -36,7 +36,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
   "subject" : {
     "reference" : "Patient/PatientExample"
   },
-  "date" : "2026-03-09T09:30:00+00:00",
+  "date" : "2026-03-09T10:30:00+00:00",
   "source" : {
     "reference" : "Device/DeviceExample"
   },

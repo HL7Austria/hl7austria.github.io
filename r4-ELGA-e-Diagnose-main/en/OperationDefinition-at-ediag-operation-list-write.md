@@ -17,7 +17,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -48,7 +48,7 @@
     "min" : 1,
     "max" : "1",
     "documentation" : "Der Parameter gibt an, welche Art von Einträgen in der Summary-Liste enthalten sind. Der Wert muss aus dem Value-Set [AtEdiagListCodeVS](ValueSet-at-ediag-list-code-vs.html) stammen.",
-    "type" : "CodeableConcept",
+    "type" : "Coding",
     "binding" : {
       "strength" : "required",
       "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-code-vs"
@@ -64,7 +64,7 @@
     "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   },
   {
-    "name" : "list",
+    "name" : "return",
     "use" : "out",
     "min" : 1,
     "max" : "1",

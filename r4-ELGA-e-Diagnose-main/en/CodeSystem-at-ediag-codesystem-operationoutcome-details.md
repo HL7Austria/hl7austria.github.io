@@ -2,6 +2,9 @@
 
 ## CodeSystem: AT e-Diagnose OperationOutcome Details 
 
+* Dieses Codesystem wurde für die e-Diagnose entworfen und wird auf den [österreichische e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
+* Dieses Codesystem ist aktuell leer, weil noch keine detaillierten Fehlercodes der e-Diagnose-Fachanwendung bekannt sind.
+
 This Code system is referenced in the definition of the following value sets:
 
 * [AT e-Diagnose OperationOutcome Details](ValueSet-at-ediag-operationoutcome-details.md)
@@ -24,7 +27,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "AT e-Diagnose OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

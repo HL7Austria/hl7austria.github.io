@@ -17,7 +17,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -51,12 +51,13 @@
     "type" : "id"
   },
   {
-    "name" : "listHistoryUrl",
+    "name" : "return",
     "use" : "out",
     "min" : 1,
     "max" : "1",
-    "documentation" : "Die vollständige URL der gelöschten Version der Summary-Liste.",
-    "type" : "url"
+    "documentation" : "Die gelöschte Version der Summary-Liste.",
+    "type" : "List",
+    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   }]
 }
 

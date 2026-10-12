@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "at-ediag-operation-diagnose-entered-in-error"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-entered-in-error</b></p><a name=\"at-ediag-operation-diagnose-entered-in-error\"> </a><a name=\"hcat-ediag-operation-diagnose-entered-in-error\"> </a><p>URL: [base]/Condition/[id]/$entered-in-error</p><p>URL: [base]/Procedure/[id]/$entered-in-error</p><p>URL: [base]/AllergyIntolerance/[id]/$entered-in-error</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>reason</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Grund für die Stornierung der Diagnose.</p>\n</div></td></tr><tr><td>OUT</td><td>resource</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a></td><td/><td><div><p>Die aktualisierte Diagnose nach der Stornierung.</p>\n</div></td></tr><tr><td>OUT</td><td>listUrl</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls entfernt wurde.</p>\n</div></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-diagnose-entered-in-error</b></p><a name=\"at-ediag-operation-diagnose-entered-in-error\"> </a><a name=\"hcat-ediag-operation-diagnose-entered-in-error\"> </a><p>URL: [base]/Condition/[id]/$entered-in-error</p><p>URL: [base]/Procedure/[id]/$entered-in-error</p><p>URL: [base]/AllergyIntolerance/[id]/$entered-in-error</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>reason</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>Grund für die Stornierung der Diagnose.</p>\n</div></td></tr><tr><td>OUT</td><td>diagnose</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-elga-ediag-condition.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition\">AT ELGA e-Diagnose Condition</a>, <a href=\"StructureDefinition-at-elga-ediag-procedure.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure\">AT ELGA e-Diagnose Procedure</a>, <a href=\"StructureDefinition-at-elga-ediag-allergyintolerance.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance\">AT ELGA e-Diagnose AllergyIntolerance</a>)</td><td/><td><div><p>Die aktualisierte Diagnose nach der Stornierung.</p>\n</div></td></tr><tr><td>OUT</td><td>list</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a> (<a href=\"StructureDefinition-at-elga-ediag-list.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list\">AT ELGA e-Diagnose List</a>)</td><td/><td><div><p>Die Summary-Liste, aus der die Diagnose gegebenenfalls entfernt wurde.</p>\n</div></td></tr></table></div>"
   ] ;
   fhir:OperationDefinition.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-diagnose-entered-in-error"] ;
   fhir:OperationDefinition.version [ fhir:value "0.1.0"] ;
@@ -19,7 +19,7 @@
   fhir:OperationDefinition.status [ fhir:value "active"] ;
   fhir:OperationDefinition.kind [ fhir:value "operation"] ;
   fhir:OperationDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
-  fhir:OperationDefinition.date [ fhir:value "2026-10-09T12:41:54+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-10-12T13:54:53+00:00"^^xsd:dateTime] ;
   fhir:OperationDefinition.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:OperationDefinition.contact [
      fhir:index 0 ;
@@ -66,20 +66,38 @@
      fhir:OperationDefinition.parameter.type [ fhir:value "string" ]
   ], [
      fhir:index 1 ;
-     fhir:OperationDefinition.parameter.name [ fhir:value "resource" ] ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "diagnose" ] ;
      fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
      fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
      fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
      fhir:OperationDefinition.parameter.documentation [ fhir:value "Die aktualisierte Diagnose nach der Stornierung." ] ;
-     fhir:OperationDefinition.parameter.type [ fhir:value "Resource" ]
+     fhir:OperationDefinition.parameter.type [ fhir:value "Resource" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+     ], [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure" ;
+       fhir:index 1 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure>
+     ], [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance" ;
+       fhir:index 2 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance>
+     ]
   ], [
      fhir:index 2 ;
-     fhir:OperationDefinition.parameter.name [ fhir:value "listUrl" ] ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "list" ] ;
      fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
      fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
      fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls entfernt wurde." ] ;
-     fhir:OperationDefinition.parameter.type [ fhir:value "url" ]
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die Summary-Liste, aus der die Diagnose gegebenenfalls entfernt wurde." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "List" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+     ]
   ] .
 
 # - ontology header ------------------------------------------------------------

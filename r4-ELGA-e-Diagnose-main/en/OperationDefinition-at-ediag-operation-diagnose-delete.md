@@ -17,7 +17,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -43,20 +43,24 @@
   "type" : false,
   "instance" : true,
   "parameter" : [{
-    "name" : "diagnoseUrl",
+    "name" : "diagnose",
     "use" : "out",
     "min" : 1,
     "max" : "1",
-    "documentation" : "Die vollständige URL der zu löschenden Diagnose.",
-    "type" : "url"
+    "documentation" : "Die gelöschte Diagnose.",
+    "type" : "Resource",
+    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition",
+    "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure",
+    "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"]
   },
   {
-    "name" : "listUrl",
+    "name" : "list",
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Die vollständige URL der Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wurde.",
-    "type" : "url"
+    "documentation" : "Die Summary-Liste, aus der die Diagnose gegebenenfalls gelöscht wurde.",
+    "type" : "List",
+    "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   }]
 }
 

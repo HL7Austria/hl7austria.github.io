@@ -8,7 +8,7 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
 
 **status**: Completed
 
-**code**: Colonoscopy
+**code**: Partial excision of large intestine
 
 **subject**: [Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md)
 
@@ -37,8 +37,8 @@ Profile: [AT ELGA e-Diagnose Procedure](StructureDefinition-at-elga-ediag-proced
   "code" : {
     "coding" : [{
       "system" : "http://snomed.info/sct",
-      "code" : "73761001",
-      "display" : "Colonoscopy"
+      "code" : "27010001",
+      "display" : "Partial excision of large intestine"
     }]
   },
   "subject" : {

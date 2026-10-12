@@ -16,7 +16,7 @@ Dieser Anwendungsfall ermöglicht dem GDA das Erfassen eines neuen Eintrags in d
 
 1. Der GDA wählt den gewünschten Art des Eintrags (Condition, Procedure oder AllergyIntolerance) aus.
 1. Der GDA erstellt einen neuen Eintrag und erfasst die erforderlichen fachlichen Informationen.
-1. Der GDA führt ein`POST /[Condition|Procedure|AllergyIntolerance`aus und übermittelt die neue Ressource an die e-Diagnose-Fachanwendung.
+1. Der GDA führt ein`POST /[Condition|Procedure|AllergyIntolerance]`aus und übermittelt die neue Ressource an die e-Diagnose-Fachanwendung.
 1. Die e-Diagnose-Fachanwendung validiert die übermittelte Ressource.
 1. Ist die Validierung erfolgreich, wird die neue Ressource gespeichert. Ist die Validierung nicht erfolgreich, wird die Ressource nicht gespeichert. Die Fachanwendung liefert ein**OperationOutcome**mit den aufgetretenen Validierungsfehlern zurück.
 

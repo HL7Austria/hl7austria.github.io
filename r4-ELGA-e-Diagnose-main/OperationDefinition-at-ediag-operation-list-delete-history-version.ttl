@@ -10,7 +10,7 @@
   fhir:Resource.id [ fhir:value "at-ediag-operation-list-delete-history-version"] ;
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ] ;
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-list-delete-history-version</b></p><a name=\"at-ediag-operation-list-delete-history-version\"> </a><a name=\"hcat-ediag-operation-list-delete-history-version\"> </a><p>URL: [base]/List/[id]/$delete-history-version</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>versionId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#id\">id</a></td><td/><td><div><p>Die versionId der zu löschenden Version der Summary-Liste.</p>\n</div></td></tr><tr><td>OUT</td><td>listHistoryUrl</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>Die vollständige URL der gelöschten Version der Summary-Liste.</p>\n</div></td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-list-delete-history-version</b></p><a name=\"at-ediag-operation-list-delete-history-version\"> </a><a name=\"hcat-ediag-operation-list-delete-history-version\"> </a><p>URL: [base]/List/[id]/$delete-history-version</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>versionId</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#id\">id</a></td><td/><td><div><p>Die versionId der zu löschenden Version der Summary-Liste.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a> (<a href=\"StructureDefinition-at-elga-ediag-list.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list\">AT ELGA e-Diagnose List</a>)</td><td/><td><div><p>Die gelöschte Version der Summary-Liste.</p>\n</div></td></tr></table></div>"
   ] ;
   fhir:OperationDefinition.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-delete-history-version"] ;
   fhir:OperationDefinition.version [ fhir:value "0.1.0"] ;
@@ -19,7 +19,7 @@
   fhir:OperationDefinition.status [ fhir:value "active"] ;
   fhir:OperationDefinition.kind [ fhir:value "operation"] ;
   fhir:OperationDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
-  fhir:OperationDefinition.date [ fhir:value "2026-10-09T12:41:54+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-10-12T13:54:53+00:00"^^xsd:dateTime] ;
   fhir:OperationDefinition.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:OperationDefinition.contact [
      fhir:index 0 ;
@@ -60,12 +60,17 @@
      fhir:OperationDefinition.parameter.type [ fhir:value "id" ]
   ], [
      fhir:index 1 ;
-     fhir:OperationDefinition.parameter.name [ fhir:value "listHistoryUrl" ] ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ] ;
      fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
      fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
      fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
-     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die vollständige URL der gelöschten Version der Summary-Liste." ] ;
-     fhir:OperationDefinition.parameter.type [ fhir:value "url" ]
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die gelöschte Version der Summary-Liste." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "List" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+     ]
   ] .
 
 # - ontology header ------------------------------------------------------------

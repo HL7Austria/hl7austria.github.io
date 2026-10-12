@@ -11,7 +11,7 @@ Profile: [AT ELGA e-Diagnose List](StructureDefinition-at-elga-ediag-list.md)
 | Date: 2026-03-09 10:00:00+0000 | Mode: Working List | Status: Current | Code: History of Procedures Document |
 | Subject:[Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)](Patient-PatientExample.md) | Source:[Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)](Practitioner-PractitionerExample.md) | | |
 
-* **Items**: [Procedure Colonoscopy](Procedure-ProcedureEntry01.md)
+* **Items**: [Procedure Partial excision of large intestine](Procedure-ProcedureEntry01.md)
 
 
 

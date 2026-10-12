@@ -6,6 +6,9 @@
 
 * [AT ELGA e-Diagnose OperationOutcome](StructureDefinition-at-elga-ediat-operationoutcome.md)
 
+* Dieses Value-Set wurde für die e-Diagnose entworfen und wird auf den [österreichische e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
+* Dieses Value-Set ist aktuell leer, weil noch keine detaillierten Fehlercodes der e-Diagnose-Fachanwendung bekannt sind.
+
 ### Logical Definition (CLD)
 
  
@@ -30,7 +33,7 @@
   "title" : "AT e-Diagnose OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-09T12:41:54+00:00",
+  "date" : "2026-10-12T13:54:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
