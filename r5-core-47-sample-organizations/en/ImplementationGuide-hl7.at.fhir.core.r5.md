@@ -14,7 +14,7 @@
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-10-13T04:23:07+00:00",
+  "date" : "2026-10-13T10:45:01+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -120,6 +120,22 @@
       },
       "name" : "CodeSystem for Austrian Funktionscodes Excerpt",
       "description" : "CodeSystem for Austrian Funktionscodes Excerpt",
+      "isExample" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-core-ext-composition-terminologyDate.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-core-ext-composition-terminologyDate"
+      },
+      "name" : "Composition Terminology Date",
+      "description" : "HL7® Austria FHIR® Core Extension for documenting the date of last synchronization of the locally stored value sets for usage by the content creating system with the terminology server.\n\nOnly intended for representing `hl7at:terminologyDate` when transforming CDA documents to FHIR; must not be used in FHIR-native applications.",
       "isExample" : false
     },
     {

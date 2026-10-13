@@ -40,7 +40,7 @@ Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4): Ärztin/Arzt für Allgemeinme
   },
   "code" : [{
     "coding" : [{
-      "system" : "https://termgit.elga.gv.at/ValueSet/hl7-at-practitionerrole",
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
       "code" : "100",
       "display" : "Ärztin/Arzt für Allgemeinmedizin"
     }]

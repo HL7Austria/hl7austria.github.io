@@ -53,7 +53,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Type of service that may be delivered or performed","The specific type of service that may be delivered or performed.","","","","","","","","","",,"example","Additional details about where the content was created (e.g. clinical specialty).","http://hl7.org/fhir/ValueSet/service-type|5.0.0","",,,,"HealthcareService.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "at-core-HealthcareService","HealthcareService.specialty","HealthcareService.specialty","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
-","Specialties handled by the HealthcareService","Collection of specialties handled by the Healthcare service. This is more of a medical term.","","","","","","","","","",,"extensible","","https://fhir.hl7.at/core/r5/ValueSet/at-funktionscode-vs","",,,,"HealthcareService.specialty",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Specialties handled by the HealthcareService","Collection of specialties handled by the Healthcare service. This is more of a medical term.","","","","","","","","","",,"preferred","","https://fhir.hl7.at/core/r5/ValueSet/at-funktionscode-vs","",,,,"HealthcareService.specialty",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "at-core-HealthcareService","HealthcareService.location","HealthcareService.location","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[https://fhir.hl7.at/core/r5/StructureDefinition/at-core-location]]}
 ","Location(s) where service may be provided","The location(s) where this healthcare service may be provided.","","","","","","","","","",,,,,"",,,,"HealthcareService.location",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -227,6 +227,24 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "at-core-ext-address-municipalityCode","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-municipalityCode""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
 "at-core-ext-address-municipalityCode","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","string {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"at-core-ext-composition-terminologyDate","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Date of last value set synchronization with the terminology server","HL7® Austria FHIR® Core Extension for documenting the date of last synchronization of the locally stored value sets for usage by the content creating system with the terminology server.
+
+Only intended for representing `hl7at:terminologyDate` when transforming CDA documents to FHIR; must not be used in FHIR-native applications.","","","","","","","","","",,,,,"",,,,"Extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-ext-composition-terminologyDate","Extension.id","Extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+",""
+"at-core-ext-composition-terminologyDate","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"at-core-ext-composition-terminologyDate","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-composition-terminologyDate""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"at-core-ext-composition-terminologyDate","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","date {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
