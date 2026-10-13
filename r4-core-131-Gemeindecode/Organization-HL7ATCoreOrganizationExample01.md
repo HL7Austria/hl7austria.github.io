@@ -8,15 +8,20 @@
 
 Profile: [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md)
 
-**identifier**: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.3.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.3, `urn:oid:1.2.40.0.34.4.10`/K101, `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
+Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)
 
-**type**: Allgemeine Krankenanstalt
+-------
 
-**name**: Amadeus Spital
-
-**address**: Mozartgasse 1-7 Haupteingang St. Wolfgang Salzburg 5350 AUT (work)
-
-> **contact****telecom**: [info@amadeusspital.at](mailto:info@amadeusspital.at), [+43.6138.3453446.0](tel:+43.6138.3453446.0)
+| | |
+| :--- | :--- |
+| Type: | Allgemeine Krankenanstalt |
+| Other Ids: | * `urn:oid:1.2.40.0.34.4.10`/K101
+* `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
+ |
+| Contact Detail | Mozartgasse 1-7 Haupteingang St. Wolfgang Salzburg 5350 AUT (work) |
+| Contact Detail | * [info@amadeusspital.at](mailto:info@amadeusspital.at)
+* [+43.6138.3453446.0](tel:+43.6138.3453446.0)
+ |
 
 
 

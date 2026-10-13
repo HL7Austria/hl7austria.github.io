@@ -9,9 +9,9 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode | *Version*:2.1.0 | |
-| Active as of 2026-09-11 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
+| Active as of 2026-10-13 | *Responsible:*[HL7® Austria, TC FHIR®](https://hl7.at/technische-komitees/tc-fhir/) | *Computable Name*:AddressMunicipalityCode |
 
-HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality key is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.md). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf).
+HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.md). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf).
 
 **Context of Use**
 
@@ -47,7 +47,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
   "name" : "AddressMunicipalityCode",
   "title" : "Address Municipality Code (Gemeindecode)",
   "status" : "active",
-  "date" : "2026-09-11T12:27:00+00:00",
+  "date" : "2026-10-13T07:58:23+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -63,7 +63,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
       "value" : "mailto:tc-fhir@hl7.at"
     }]
   }],
-  "description" : "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality key is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf).",
+  "description" : "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf).",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -88,7 +88,7 @@ Other representations of profile: [CSV](StructureDefinition-at-core-ext-address-
       "id" : "Extension",
       "path" : "Extension",
       "short" : "Address Municipality Code (Gemeindecode)",
-      "definition" : "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality key is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."
+      "definition" : "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."
     },
     {
       "id" : "Extension.extension",

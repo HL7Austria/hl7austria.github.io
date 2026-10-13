@@ -8,15 +8,15 @@
 
 Profile: [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md)
 
-Muster Andreas Bauer Male, DoB: 1990-12-24 ( Patient internal identifier: 0815 (use: official, ))
+Muster Andreas Bauer Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: official))
 
 -------
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Deceased: | 2019-01-14 17:22:00+1000 | Marital Status: | Married |
-| Other Ids: | * Social Security number/1111241261 (use: official, )
-* National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0 (use: official, )
+| Other Ids: | * National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0 (use: official)
+* Patient internal identifier/0815 (use: official)
  | | |
 | Contact Detail | * [+43.2682.40400](tel:+43.2682.40400)
 * Berggasse 13a Eisenstadt Burgenland 7000 AUT (home)
