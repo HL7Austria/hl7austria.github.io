@@ -14,7 +14,7 @@
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-10-13T06:32:12+00:00",
+  "date" : "2026-10-13T12:58:59+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -451,6 +451,22 @@
       "name" : "Example HealthcareService with Specialty",
       "description" : "Example of a healthcare service with an Austrian Funktionscode as specialty.",
       "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-core-vbpk.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-core-vbpk"
+      },
+      "name" : "HL7AT Core vbPK",
+      "description" : "This value set contains the OIDs for the vbPK (Verschlüsseltes bereichsspezifisches Personenkennzeichen) in Austria according to [E-Government-Bereichsabgrenzungsverordnung – E-Gov-BerAbgrV](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003476).",
+      "exampleBoolean" : false
     },
     {
       "extension" : [{

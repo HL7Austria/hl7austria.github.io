@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-addre
   "name" : "AddressAdditionalInformation",
   "title" : "Address Additional Information",
   "status" : "active",
-  "date" : "2026-10-13T06:32:12+00:00",
+  "date" : "2026-10-13T12:58:59+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
