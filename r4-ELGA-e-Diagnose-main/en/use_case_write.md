@@ -41,7 +41,7 @@ Dieser Anwedungsfall erlaubt dem GDA die Stornierung eines Eintrags. Dabei ist e
 
 Dieser Anwendungsfall beschreibt die Bearbeitung eines Eintrags in der Gesamtansicht.
 
-Daten bestehender Einträge können nicht im Sinne eines Updates (`PUT`) verändert werden. Die Daten können von der Client-Anwendung in einen neuen Eintrag übernommen, angepasst und als [neuer Eintrag](#eintrag-erfassen) in der e-Diagnose-Fachanwendung gespeichert werden.
+Daten bestehender Einträge können nicht im Sinne eines Updates (`PUT`) verändert werden (siehe [Designentscheidungen](design_choices.md)). Die Daten können von der Client-Anwendung in einen neuen Eintrag übernommen, angepasst und als [neuer Eintrag](#eintrag-erfassen) in der e-Diagnose-Fachanwendung gespeichert werden.
 
 Die Bearbeitung innerhalb einer Summary-Liste wird [hier](#eintrag-in-der-summary-liste-bearbeiten) beschrieben.
 
@@ -63,7 +63,7 @@ Dieser Anwendungsfall beschreibt die fachliche Bestätigung einer initialisierte
 
 Eine leere Summary-Liste mit dem Wert `List.emptyReason = nilknown` bedeutet, dass für den Patienten derzeit keine Summary-Einträge vorliegen. Der Status dokumentiert somit explizit das Fehlen von Summary-Einträgen und ist von einer initial noch nicht befüllten Summary-Liste `List.emptyReason = notstarted` zu unterscheiden.
 
-Dieser Anwendungsfall kann pro Patient maximal einmal auftreten.
+Dieser Anwendungsfall kann pro Patient für jede der drei Summary-Listen maximal einmal auftreten.
 
 ##### Ablauf
 
@@ -98,7 +98,7 @@ Die `$write`-Operation ist eine eigenständige Operation, die allerdings einen *
 1. **GDA 2**macht**fachliche Änderungen**an der Summary-Liste.
 1. **GDA 2**aktualisiert mittels[$write-Operation](use_case_write.md#summary-liste-aktualisieren-write)die Summary-Liste.
 1. Im Rahmen der Validierung der übermittelten Summary-Liste prüft die Fachanwendung, ob der mitgeschickte`If-Match`-Header mit der aktuellen`versionId`der Summary-Liste übereinstimmt.
-1. Die Prüfung verläuft erfolgreich, weil beide den Wert`123`haben. Die Änderungen werden übernommen und die neue Version der Summary-Liste wird persistiert. Dabei erhält die Summary-Liste die neue`List.meta.version`mit dem Wert`124`.
+1. Die Prüfung verläuft erfolgreich, weil beide den Wert`123`haben. Die Änderungen werden übernommen und die neue Version der Summary-Liste wird persistiert. Dabei erhält die Summary-Liste die neue`List.meta.versionId`mit dem Wert`124`.
 1. **GDA 2**erhält die Meldung, dass die Aktualisierung erfolgreich durchgeführt wurde.
 1. Anschließend will**GDA 1**mittels[$write-Operation](use_case_write.md#summary-liste-aktualisieren-write)ebenfalls seine Version der Summary-Liste speichern.
 1. Die Fachanwendung validiert erneut die übermittelte Summary-Liste. Die Prüfung schlägt fehl, weil die aktuelle Summary-Liste in der Fachanwendung mittlerweile die`List.meta.versionId`mit dem Wert`124`besitzt. Die Fachanwendung lehnt das Speichern ab.
@@ -156,7 +156,7 @@ Dieser Anwendungsfall erlaubt es dem GDA, die Reihenfolge der Einträge innerhal
 
 Dieser Anwendungsfall beschreibt die fachliche Bearbeitung von Einträgen, die Teil einer Summary-Liste sind.
 
-Daten bestehender Einträge können nicht im Sinne eines Updates (`PUT`) verändert werden. Die Daten können von der Client-Anwendung in einen neuen Eintrag übernommen, angepasst und als [neuer Eintrag](#eintrag-erfassen) in der e-Diagnose-Fachanwendung gespeichert werden.
+Daten bestehender Einträge können nicht im Sinne eines Updates (`PUT`) verändert werden (siehe [Designentscheidungen](design_choices.md)). Die Daten können von der Client-Anwendung in einen neuen Eintrag übernommen, angepasst und als [neuer Eintrag](#eintrag-erfassen) in der e-Diagnose-Fachanwendung gespeichert werden.
 
 > Die tatsächliche Reihenfolge der Bearbeitungsschritte kann variieren.
 
@@ -171,7 +171,7 @@ Daten bestehender Einträge können nicht im Sinne eines Updates (`PUT`) veränd
 1. Der GDA[erfasst den neuen Eintrag](#eintrag-erfassen)in der e-Diagnose-Fachanwendung.
 1. Der GDA entfernt den alten Eintrag aus der Summary-Liste, indem der entsprechende`List.entry`entfernt wird.
 1. Der GDA fügt den neuen Eintrag zur Summary-Liste hinzu, indem der Eintrag als neuer`List.entry`in die Liste eingefügt wird.
-* `List.entry.item` enthält die Referenz auf den bestehenden Eintrag.
+* `List.entry.item` enthält die Referenz auf den neuen Eintrag.
 
 1. Der GDA führt die[`$write`-Operation](use_case_write.md#summary-liste-aktualisieren-write)aus und übermittelt die aktualisierte Liste an die Fachanwendung.
 

@@ -2,6 +2,24 @@
 
 ## OperationDefinition: e-Diagnose Operation $delete 
 
+### Wer ruft diese Operation in welchem Zusammenhang auf?
+
+Möchte der ELGA-Teilnehmer eine Diagnose aus der e-Diagnose Fachanwendung löschen, muss diese Operation ausgeführt werden.
+
+### Voraussetzung für den Aufruf
+
+* Die zu löschende Diagnose muss in der e-Diagnose Fachanwendung vorhanden sein.
+
+### Detaillierte Business-Logik
+
+1. Die Diagnose (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID aus der e-Diagnose Fachanwendung gelöscht.
+1. Ist die Diagnose Teil der jeweiligen Summary-Liste, wird sie auch aus der Summary-Liste entfernt.
+1. Als`List.source`wird in diesem Fall der Patient angegeben.
+
+### Validierung / Fehlerbehandlung
+
+* Die zu löschende Diagnose muss in der e-Diagnose Fachanwendung vorhanden sein.
+
 
 
 ## Resource Content
@@ -17,7 +35,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-12T14:31:02+00:00",
+  "date" : "2026-10-13T07:15:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

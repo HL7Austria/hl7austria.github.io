@@ -236,17 +236,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
+  <li><a href="#kein-update-auf-einzelne-einträge" id="markdown-toc-kein-update-auf-einzelne-einträge">Kein Update auf einzelne Einträge</a></li>
   <li><a href="#informationen-über-gda-und-patienten" id="markdown-toc-informationen-über-gda-und-patienten">Informationen über GDA und Patienten</a></li>
   <li><a href="#abgrenzung-der-e-diagnose-fachanwendungen-zu-client-applikationen" id="markdown-toc-abgrenzung-der-e-diagnose-fachanwendungen-zu-client-applikationen">Abgrenzung der e-Diagnose-Fachanwendungen zu Client-Applikationen</a></li>
 </ul>
 
 </div>
+<p><a name="update-entry"></a></p>
+<h3 id="kein-update-auf-einzelne-einträge">Kein Update auf einzelne Einträge</h3>
 
-<p>In Arbeit.</p>
+<p>Einträge (<code class="language-plaintext highlighter-rouge">Condition</code>, <code class="language-plaintext highlighter-rouge">Procedure</code>, <code class="language-plaintext highlighter-rouge">AllergyIntolerance</code>) werden ausschließlich per <code class="language-plaintext highlighter-rouge">POST</code> angelegt und können von Client-Anwendungen nicht per <code class="language-plaintext highlighter-rouge">PUT</code> verändert werden. Jeder Eintrag ist damit eine eigenständige Ressource ohne inhaltliche Versionen.</p>
 
-<ul>
-  <li>Nur <code class="language-plaintext highlighter-rouge">POST</code> für Einträge.</li>
-</ul>
+<p>Hintergrund ist die Versionierung der Summary-Liste: Jede Listenversion soll genau die Einträge zeigen, die zum jeweiligen Zeitpunkt eingetragen waren. Wären Einträge veränderbar, ließe sich das nur über versionierte Referenzen in <code class="language-plaintext highlighter-rouge">List.entry.item</code> sicherstellen. Diese wollte man für die e-Diagnose vermeiden, weil die Komplexität der Anwendung höher gewesen wäre. Stattdessen wird bei einer inhaltlichen Korrektur ein neuer Eintrag angelegt und die Summary-Liste aktualisiert.</p>
+
+<p>Davon unberührt sind die Operationen <a href="OperationDefinition-at-ediag-operation-diagnose-entered-in-error.html"><code class="language-plaintext highlighter-rouge">$entered-in-error</code></a> und <a href="OperationDefinition-at-ediag-operation-diagnose-delete.html"><code class="language-plaintext highlighter-rouge">$delete</code></a>. Bei einer Stornierung ergänzt die e-Diagnose-Fachanwendung lediglich die Angaben zur Stornierung (GDA, Zeitpunkt, Grund); alle weiteren Informationen des Eintrags bleiben unverändert. Bei einer Löschung durch den ELGA-Teilnehmer wird der Eintrag als Ganzes entfernt.</p>
 
 <p><a name="logische-referenzen"></a></p>
 <h3 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h3>
@@ -262,8 +265,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. <code class="language-plaintext highlighter-rouge">recorder</code>, <code class="language-plaintext highlighter-rouge">asserter</code> oder <code class="language-plaintext highlighter-rouge">List.source</code>), ergibt sich aus dem jewiligen <code class="language-plaintext highlighter-rouge">Reference.identifer.system</code>, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Diagnose-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (<code class="language-plaintext highlighter-rouge">List.entry.item</code>) sind hingegen immer Referenzen auf bereits in der e-Diagnose-Fachanwendung gespeicherte Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>).</p>
 
-<div class="note-to-balloters">
-  <p>Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Diagnose-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegt.</p>
+<div class="dragon">
+  <p>Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Diagnose-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Diagnose-Fachanwendung einfließen.</p>
 </div>
 
 <table>
@@ -370,8 +373,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-12 14:31:00 +0000">
-    2026-10-12
+  <span title="2026-10-13 07:15:00 +0000">
+    2026-10-13
   </span>
 
           <br/>

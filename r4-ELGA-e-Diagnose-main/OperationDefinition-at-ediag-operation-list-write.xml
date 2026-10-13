@@ -15,7 +15,7 @@
   <status value="active"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <date value="2026-10-12T14:31:02+00:00"/>
+  <date value="2026-10-13T07:15:40+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -33,7 +33,7 @@
     </telecom>
   </contact>
   <description value="Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird."/>
-  <purpose value="### Wer ruft diese Operation in welchem Zusammenhang auf?&#xA;&#xA;Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagnosen, Prozeduren, Allergien) aktualisieren (Einträge werden hinzugefügt/entfernt)&#xA;oder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.&#xA;&#xA;### Voraussetzung für den Aufruf&#xA;&#xA;- Der GDA hat durch einen [vorangeganenen Abruf](https://build.fhir.org/ig/HL7Austria/ELGA-e-Diagnose-R4/branches/main/en/use_case_read.html#aktuelle-summary-liste-abrufen) die aktuelle `versionId` der Summary-Liste ermittelt. Diese muss beim Aufruf dieser Operation als `If-Match`-Header mitgeschickt werden.&#xA;&#xA;### Detaillierte Business-Logik&#xA;&#xA;1. Nach erfolgreicher Validierung wird die Summary-Liste gespeichert.&#xA;&#xA;### Validierung / Fehlerbehandlung&#xA;&#xA;* Die übermittelte List-Ressource wird laut Profil geprüft.&#xA;* `List.code` muss mit dem `code` der Operation übereinstimmen.&#xA;* `List.subject` muss mit dem im Token enthaltenen Patienten übereinstimmen.&#xA;* `List.source` muss mit dem im Token enthaltenen GDA übereinstimmen.&#xA;* Der übermittelte `If-Match`-Header stimmt mit der `versionId` der Ressource am Server überein.&#xA;* Für die List-Ressource gilt außerdem `entry.item.empty() implies emptyReason.coding.exists(system='http://terminology.hl7.org/CodeSystem/list-empty-reason' and code='nilknown')`."/>
+  <purpose value="### Wer ruft diese Operation in welchem Zusammenhang auf?&#xA;&#xA;Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagnosen, Prozeduren, Allergien) aktualisieren (Einträge werden hinzugefügt/entfernt)&#xA;oder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.&#xA;&#xA;### Voraussetzung für den Aufruf&#xA;&#xA;- Der GDA hat durch einen [vorangegangenen Abruf](use_case_read.html#aktuelle-summary-liste-abrufen) die aktuelle `versionId` der Summary-Liste ermittelt. Diese muss beim Aufruf dieser Operation als `If-Match`-Header mitgeschickt werden.&#xA;&#xA;### Detaillierte Business-Logik&#xA;&#xA;1. Nach erfolgreicher Validierung wird die Summary-Liste gespeichert.&#xA;&#xA;### Validierung / Fehlerbehandlung&#xA;&#xA;* Die übermittelte List-Ressource wird laut Profil geprüft.&#xA;* `List.code` muss mit dem `code` der Operation übereinstimmen.&#xA;* `List.subject` muss mit dem im Token enthaltenen Patienten übereinstimmen.&#xA;* `List.source` muss mit dem im Token enthaltenen GDA übereinstimmen.&#xA;* Der übermittelte `If-Match`-Header stimmt mit der `versionId` der Ressource am Server überein.&#xA;* Für die List-Ressource gilt außerdem `entry.item.empty() implies emptyReason.coding.exists(system='http://terminology.hl7.org/CodeSystem/list-empty-reason' and code='nilknown')`."/>
   <affectsState value="true"/>
   <code value="write"/>
   <resource value="List"/>

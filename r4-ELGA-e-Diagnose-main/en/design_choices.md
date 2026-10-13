@@ -2,9 +2,13 @@
 
 ## Designentscheidungen
 
-In Arbeit.
+### Kein Update auf einzelne Einträge
 
-* Nur `POST` für Einträge.
+Einträge (`Condition`, `Procedure`, `AllergyIntolerance`) werden ausschließlich per `POST` angelegt und können von Client-Anwendungen nicht per `PUT` verändert werden. Jeder Eintrag ist damit eine eigenständige Ressource ohne inhaltliche Versionen.
+
+Hintergrund ist die Versionierung der Summary-Liste: Jede Listenversion soll genau die Einträge zeigen, die zum jeweiligen Zeitpunkt eingetragen waren. Wären Einträge veränderbar, ließe sich das nur über versionierte Referenzen in `List.entry.item` sicherstellen. Diese wollte man für die e-Diagnose vermeiden, weil die Komplexität der Anwendung höher gewesen wäre. Stattdessen wird bei einer inhaltlichen Korrektur ein neuer Eintrag angelegt und die Summary-Liste aktualisiert.
+
+Davon unberührt sind die Operationen [`$entered-in-error`](OperationDefinition-at-ediag-operation-diagnose-entered-in-error.md) und [`$delete`](OperationDefinition-at-ediag-operation-diagnose-delete.md). Bei einer Stornierung ergänzt die e-Diagnose-Fachanwendung lediglich die Angaben zur Stornierung (GDA, Zeitpunkt, Grund); alle weiteren Informationen des Eintrags bleiben unverändert. Bei einer Löschung durch den ELGA-Teilnehmer wird der Eintrag als Ganzes entfernt.
 
 ### Informationen über GDA und Patienten
 
@@ -17,7 +21,7 @@ Die e-Diagnose-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zen
 
 Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. `recorder`, `asserter` oder `List.source`), ergibt sich aus dem jewiligen `Reference.identifer.system`, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Diagnose-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (`List.entry.item`) sind hingegen immer Referenzen auf bereits in der e-Diagnose-Fachanwendung gespeicherte Ressourcen (`Reference.reference`).
 
-Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Diagnose-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die `Practitioner`-, `PractitionerRole`- und/oder `Organization`-Ressourcen umlegt.
+Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Diagnose-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die `Practitioner`-, `PractitionerRole`- und/oder `Organization`-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Diagnose-Fachanwendung einfließen.
 
 | | | |
 | :--- | :--- | :--- |

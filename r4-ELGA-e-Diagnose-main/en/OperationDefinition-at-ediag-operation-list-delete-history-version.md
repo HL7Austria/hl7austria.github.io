@@ -2,6 +2,23 @@
 
 ## OperationDefinition: e-Diagnose Operation $delete-history-version 
 
+### Wer ruft diese Operation in welchem Zusammenhang auf?
+
+Möchte der ELGA-Teilnehmer eine Version einer Summary-Liste aus der e-Diagnose Fachanwendung löschen, muss diese Operation ausgeführt werden.
+
+### Voraussetzung für den Aufruf
+
+* Es sind Versionen der Summary-Liste vorhanden, die gelöscht werden können.
+
+### Detaillierte Business-Logik
+
+1. Die Version einer Summary-Liste wird anhand der übergebenen`versionId`aus der e-Diagnose Fachanwendung gelöscht.
+1. Wurde die letzte Version einer Summary-Liste gelöscht, erstellt die e-Diagnose Fachanwendung automatisch eine neue Summary-Liste mit`List.emptyReason=nilknown`.
+
+### Validierung / Fehlerbehandlung
+
+* Die zu löschende Version der Summary-Liste muss in der e-Diagnose Fachanwendung vorhanden sein.
+
 
 
 ## Resource Content
@@ -17,7 +34,7 @@
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-12T14:31:02+00:00",
+  "date" : "2026-10-13T07:15:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
