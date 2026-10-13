@@ -84,7 +84,7 @@
     <sch:title>f:RelatedPerson/f:gender</sch:title>
     <sch:rule context="f:RelatedPerson/f:gender">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-gender-administrativeGenderAddition']) &lt;= 1">extension with URL = 'http://hl7.at/fhir/HL7ATCoreProfiles/5.0.0/StructureDefinition/at-core-ext-gender-administrativeGenderAddition': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-gender-administrativeGenderAddition']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-gender-administrativeGenderAddition': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
