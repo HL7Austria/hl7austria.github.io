@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
   "name" : "HL7ATCoreAddress",
   "title" : "HL7® AT Core Address Profile",
   "status" : "active",
-  "date" : "2026-10-13T17:05:56+00:00",
+  "date" : "2026-10-13T17:36:16+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

@@ -12,8 +12,9 @@ Martin Gruber (official) - next of kin (Social Security number: 1234120983)
 | :--- | :--- | :--- | :--- |
 | Active: | true | Gender: | Male |
 | Date of Birth: | 1983-09-12 | | |
-| Patient: | [Felix Gruber (official) Male, DoB: 2014-04-17](Patient-PatientFelixGruber.md) | | |
+| Patient: | [Felix Gruber (official) Male, DoB: 2014-04-17 ( Social Security number: 1234170414)](Patient-PatientFelixGruber.md) | | |
 | Relationship: | next of kin | | |
+| Other Id: | National unique individual identifier/BPK-TEST-XY67889 | | |
 | Contact Detail | * [+43 660 284 73 19](tel:+436602847319)
 * Hütteldorfer Straße 86, Stiege 2, Tür 7 Wien Wien 1150 AUT (home)
  | | |
@@ -41,6 +42,20 @@ Martin Gruber (official) - next of kin (Social Security number: 1234120983)
     "value" : "1234120983",
     "assigner" : {
       "display" : "Dachverband der österreichischen Sozialversicherungsträger"
+    }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "NI",
+        "display" : "National unique individual identifier"
+      }]
+    },
+    "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+    "value" : "BPK-TEST-XY67889",
+    "assigner" : {
+      "display" : "Bundesministerium für Inneres"
     }
   }],
   "active" : true,
