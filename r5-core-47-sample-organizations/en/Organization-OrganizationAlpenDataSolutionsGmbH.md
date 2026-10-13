@@ -100,11 +100,7 @@ AlpenData Solutions GmbH (Non-Healthcare Business or Corporation) (Tax ID number
   },
   {
     "purpose" : {
-      "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
-        "code" : "TECH",
-        "display" : "Technical Support"
-      }]
+      "text" : "Technical Support"
     },
     "telecom" : [{
       "system" : "email",
