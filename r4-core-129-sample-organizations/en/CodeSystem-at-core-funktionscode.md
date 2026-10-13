@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "CodeSystem for Austrian Funktionscodes Excerpt",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-11T21:26:51+00:00",
+  "date" : "2026-10-13T04:51:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

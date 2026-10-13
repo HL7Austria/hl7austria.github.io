@@ -44,7 +44,7 @@ Gemeindeamt Sonnenfeld (Gemeindeverwaltung) (urn:oid:1.2.40.0.10.2.1.1.71#123456
     "coding" : [{
       "system" : "http://terminology.hl7.org/CodeSystem/organization-type",
       "code" : "govt",
-      "display" : "Government or Public Sector"
+      "display" : "Government"
     }],
     "text" : "Gemeindeverwaltung"
   }],

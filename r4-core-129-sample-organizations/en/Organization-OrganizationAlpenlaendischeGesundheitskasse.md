@@ -39,7 +39,7 @@ Alpenländische Gesundheitskasse (Gesetzlicher Krankenversicherungsträger) (htt
   "active" : true,
   "type" : [{
     "coding" : [{
-      "system" : "https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype",
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
       "code" : "406",
       "display" : "Sozialversicherung"
     }],
