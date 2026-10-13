@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r5/Organization/HL7ATCoreOrganizationExample01> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATCoreOrganizationExample01"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-organization"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/core/r5/StructureDefinition/at-core-organization>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization HL7ATCoreOrganizationExample01</b></p><a name=\"HL7ATCoreOrganizationExample01\"> </a><a name=\"hcHL7ATCoreOrganizationExample01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-organization.html\">HL7® AT Core Organization Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"The kind(s) of organization that this is\">Type:</td><td colspan=\"3\"><span title=\"Codes:{https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype 300}\">Allgemeine Krankenanstalt</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li><code>urn:oid:1.2.40.0.34.4.10</code>/K101</li><li><code>urn:oid:1.2.40.0.10.1.4.3.2</code>/123456789</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the organization\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"mailto:info@amadeusspital.at\">info@amadeusspital.at</a></li><li><a href=\"tel:+43.6138.3453446.0\">+43.6138.3453446.0</a></li><li>Mozartgasse 1-7 Haupteingang St. Wolfgang Salzburg 5350 AUT (work)</li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:ietf:rfc:3986"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "urn:oid:1.2.40.0.34.99.4613.3" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Bundesministerium für Gesundheit" ]
+     ]
+  ] [
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.34.4.10"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "K101" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Österreichisches Bundesministerium für Gesundheit" ]
+     ]
+  ] [
+     fhir:system [ fhir:v "urn:oid:1.2.40.0.10.1.4.3.2"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "123456789" ] ;
+     fhir:assigner [
+       fhir:display [ fhir:v "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "300" ] ;
+       fhir:display [ fhir:v "Allgemeine Krankenanstalt" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Amadeus Spital"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "info@amadeusspital.at" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "+43.6138.3453446.0" ] ;
+       fhir:use [ fhir:v "mobile" ]
+     ] ) ;
+     fhir:address [
+       fhir:use [ fhir:v "work" ] ;
+       fhir:type [ fhir:v "both" ] ;
+       fhir:line ( [
+         fhir:v "Mozartgasse 1-7 Haupteingang" ;
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Mozartgasse"
+           ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "1-7"
+           ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Haupteingang"
+           ]
+         ] [
+           fhir:url [ fhir:v "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-additionalInformation"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Barrierefreier Zugang"
+           ]
+         ] )
+       ] ) ;
+       fhir:city [ fhir:v "St. Wolfgang" ] ;
+       fhir:state [ fhir:v "Salzburg" ] ;
+       fhir:postalCode [ fhir:v "5350" ] ;
+       fhir:country [ fhir:v "AUT" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
