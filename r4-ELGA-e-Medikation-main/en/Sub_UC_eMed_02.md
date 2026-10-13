@@ -134,7 +134,7 @@ AtElgaEmedListMedikationsplan
 ```
 AtElgaEmedMedicationRequestPlaneintrag
     status: active | on-hold
-    category: 1 "Planeintrag"         //Kategorie zur Unterscheidung der MedicationRequests
+    category: "Planeintrag"         //Kategorie zur Unterscheidung der MedicationRequests
     reportedBoolean: false | true       // false, wenn vom Ersteller des Planeintrags
     medicationReference.reference: Medikation mit PZN oder Magistrale Zubereitung // Contained Medication 
     authoredOn: Datum der Erstellung des Planeintrags    
