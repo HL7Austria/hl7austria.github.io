@@ -37,7 +37,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-14T18:50:32+00:00",
+  "date" : "2026-10-14T21:19:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -91,17 +91,6 @@ In Arbeit.
       "id" : "MedicationRequest",
       "path" : "MedicationRequest",
       "short" : "Geplante Abgabe eines Arzneimittels aus dem Medikationsplan. Verwendet R5 Backport Extensions."
-    },
-    {
-      "id" : "MedicationRequest.contained",
-      "path" : "MedicationRequest.contained",
-      "short" : "TODO",
-      "type" : [{
-        "code" : "Medication",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
-        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
-      }],
-      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.extension",
@@ -304,7 +293,7 @@ In Arbeit.
     {
       "id" : "MedicationRequest.medication[x]",
       "path" : "MedicationRequest.medication[x]",
-      "short" : "Das Arzneimittel wird immer in einer contained Medication Ressource dokumentiert, damit \nArzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als logische Referenz dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -316,21 +305,6 @@ In Arbeit.
     {
       "id" : "MedicationRequest.medication[x].reference",
       "path" : "MedicationRequest.medication[x].reference",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.medication[x].identifier",
-      "path" : "MedicationRequest.medication[x].identifier",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.medication[x].identifier.system",
-      "path" : "MedicationRequest.medication[x].identifier.system",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.medication[x].identifier.value",
-      "path" : "MedicationRequest.medication[x].identifier.value",
       "mustSupport" : true
     },
     {
@@ -471,6 +445,12 @@ In Arbeit.
       "mustSupport" : true
     },
     {
+      "id" : "MedicationRequest.dispenseRequest.modifierExtension",
+      "path" : "MedicationRequest.dispenseRequest.modifierExtension",
+      "short" : "Fachliche Begründung: Für die Abgabedetails sind keine zusätzlichen Erweiterungen vorgesehen, die deren Bedeutung verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationRequest.dispenseRequest.validityPeriod",
       "path" : "MedicationRequest.dispenseRequest.validityPeriod",
       "short" : "Gültigkeitszeitraum einer Geplante Abgabe (abhängig von Rezeptart): Kassenrezept: ab Erstelldatum 1 Monat, bei Teilabgabe verlängert sich Gültigkeitsdauer auf 3 Monate („Besorger“-Prozess). Privatrezept: ab Erstelldatum max. 365 Tage, die Gültigkeitsdauer kann vom Arzt definiert werden. Substitutionsrezept: Max. Gültigkeitsdauer 12 Monate.",
@@ -501,6 +481,21 @@ In Arbeit.
       "path" : "MedicationRequest.dispenseRequest.quantity",
       "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll.\nDa sich die Angaben zum Arzneimittel jeweils auf eine Packung der Arznei beziehen, MUSS die Anzahl der auszugebenden Packungen angegeben werden (mindestens 1). \nDies gilt für Arzneimittel mit PZN und magistralen Zubereitungen.",
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.quantity.value",
+      "path" : "MedicationRequest.dispenseRequest.quantity.value",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.quantity.unit",
+      "path" : "MedicationRequest.dispenseRequest.quantity.unit",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.quantity.code",
+      "path" : "MedicationRequest.dispenseRequest.quantity.code",
       "mustSupport" : true
     }]
   }

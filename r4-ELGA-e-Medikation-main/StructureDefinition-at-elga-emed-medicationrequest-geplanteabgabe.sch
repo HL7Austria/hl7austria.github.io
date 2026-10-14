@@ -154,6 +154,7 @@
   <sch:pattern>
     <sch:title>f:MedicationRequest/f:dispenseRequest</sch:title>
     <sch:rule context="f:MedicationRequest/f:dispenseRequest">
+      <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
       <sch:assert test="count(f:validityPeriod) &gt;= 1">validityPeriod: minimum cardinality of 'validityPeriod' is 1</sch:assert>
       <sch:assert test="count(f:numberOfRepeatsAllowed) &gt;= 1">numberOfRepeatsAllowed: minimum cardinality of 'numberOfRepeatsAllowed' is 1</sch:assert>
       <sch:assert test="count(f:quantity) &gt;= 1">quantity: minimum cardinality of 'quantity' is 1</sch:assert>
@@ -165,6 +166,17 @@
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:start) &lt;= 1">start: maximum cardinality of 'start' is 1</sch:assert>
       <sch:assert test="count(f:end) &lt;= 1">end: maximum cardinality of 'end' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:MedicationRequest/f:dispenseRequest/f:quantity</sch:title>
+    <sch:rule context="f:MedicationRequest/f:dispenseRequest/f:quantity">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
+      <sch:assert test="count(f:comparator) &lt;= 0">comparator: maximum cardinality of 'comparator' is 0</sch:assert>
+      <sch:assert test="count(f:unit) &lt;= 1">unit: maximum cardinality of 'unit' is 1</sch:assert>
+      <sch:assert test="count(f:system) &lt;= 1">system: maximum cardinality of 'system' is 1</sch:assert>
+      <sch:assert test="count(f:code) &lt;= 1">code: maximum cardinality of 'code' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

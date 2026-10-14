@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleDurchgefuehrteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben",
   "status" : "draft",
-  "date" : "2026-10-14T18:50:32+00:00",
+  "date" : "2026-10-14T21:19:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

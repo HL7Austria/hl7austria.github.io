@@ -38,6 +38,10 @@ Das Medikationsplan-Bundle dient ausschließlich der Auslieferung eines Medikati
 
 In Arbeit.
 
+#### Serverhalten bei Elementen ohne MS Markierung
+
+In Arbeit.
+
 ### Befüllung der Narrativen Teile
 
 In Arbeit.

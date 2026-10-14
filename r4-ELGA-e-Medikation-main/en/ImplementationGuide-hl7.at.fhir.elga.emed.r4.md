@@ -14,7 +14,7 @@
   "name" : "ELGAeMedikationR4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-14T18:50:32+00:00",
+  "date" : "2026-10-14T21:19:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1855,6 +1855,22 @@
       },
       "name" : "ELGA List.entry.flag Value Set",
       "description" : "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtElgaEmedValueSetCourseOfTherapyType.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtElgaEmedValueSetCourseOfTherapyType"
+      },
+      "name" : "ELGA MedicationRequest courseOfTherapyType ValueSet",
+      "description" : "Zulässige Ausprägungen des Elements courseOfTherapyType in ELGA.",
       "exampleBoolean" : false
     },
     {

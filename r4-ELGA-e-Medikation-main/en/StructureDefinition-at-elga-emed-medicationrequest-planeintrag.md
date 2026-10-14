@@ -37,7 +37,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-14T18:50:32+00:00",
+  "date" : "2026-10-14T21:19:26+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -124,7 +124,8 @@ In Arbeit.
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.extension:effectiveDosePeriod",
@@ -143,6 +144,11 @@ In Arbeit.
       "id" : "MedicationRequest.extension:effectiveDosePeriod.extension",
       "path" : "MedicationRequest.extension.extension",
       "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.extension:effectiveDosePeriod.url",
+      "path" : "MedicationRequest.extension.url",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x]",
@@ -178,6 +184,11 @@ In Arbeit.
       "max" : "0"
     },
     {
+      "id" : "MedicationRequest.extension:renderedDosageInstruction.url",
+      "path" : "MedicationRequest.extension.url",
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationRequest.extension:renderedDosageInstruction.value[x]",
       "path" : "MedicationRequest.extension.value[x]",
       "mustSupport" : true
@@ -204,12 +215,31 @@ In Arbeit.
     {
       "id" : "MedicationRequest.statusReason.coding",
       "path" : "MedicationRequest.statusReason.coding",
-      "short" : "Codierte Begründung für den Status des Planeintrags."
+      "short" : "Codierte Begründung für den Status des Planeintrags.",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.statusReason.coding.system",
+      "path" : "MedicationRequest.statusReason.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.statusReason.coding.version",
+      "path" : "MedicationRequest.statusReason.coding.version",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.statusReason.coding.code",
       "path" : "MedicationRequest.statusReason.coding.code",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.statusReason.coding.display",
+      "path" : "MedicationRequest.statusReason.coding.display",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.statusReason.text",
@@ -239,30 +269,37 @@ In Arbeit.
     {
       "id" : "MedicationRequest.category.coding",
       "path" : "MedicationRequest.category.coding",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category.coding.system",
       "path" : "MedicationRequest.category.coding.system",
       "min" : 1,
-      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.category.coding.version",
+      "path" : "MedicationRequest.category.coding.version",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category.coding.code",
       "path" : "MedicationRequest.category.coding.code",
       "min" : 1,
-      "patternCode" : "Planeintrag"
+      "patternCode" : "Planeintrag",
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.priority",
-      "path" : "MedicationRequest.priority",
-      "short" : " Medikationsplaneinträge können nicht mit einer Priorität versehen werden: (req) routine | urgent | asap | stat.",
-      "max" : "0"
+      "id" : "MedicationRequest.category.coding.display",
+      "path" : "MedicationRequest.category.coding.display",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.doNotPerform",
       "path" : "MedicationRequest.doNotPerform",
-      "short" : "Arzneimittel, die (z.B. aufgrund einer Allergie) nicht eingenommen bzw. verordnet werden dürfen, werden nicht dokumentiert.",
+      "short" : "Fachliche Begründung: Arzneimittel, die (z.B. aufgrund einer Allergie) nicht eingenommen bzw. verordnet werden dürfen, werden nicht im Plan dokumentiert. Der Plan zeigt das Medizinische Soll an.",
       "max" : "0"
     },
     {
@@ -276,23 +313,8 @@ In Arbeit.
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 1
-    },
-    {
-      "id" : "MedicationRequest.reported[x]:reportedReference",
-      "path" : "MedicationRequest.reported[x]",
-      "sliceName" : "reportedReference",
-      "short" : "Keine Verwendung im Medikationsplan.",
-      "min" : 0,
-      "max" : "0",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Patient",
-        "http://hl7.org/fhir/StructureDefinition/Practitioner",
-        "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
-        "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
-        "http://hl7.org/fhir/StructureDefinition/Organization"]
-      }]
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.reported[x]:reportedBoolean",
@@ -319,6 +341,11 @@ In Arbeit.
       "mustSupport" : true
     },
     {
+      "id" : "MedicationRequest.medication[x].reference",
+      "path" : "MedicationRequest.medication[x].reference",
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
       "short" : "ELGA-Teilnehmer, für den der Medikationsplan dokumentiert wird.",
@@ -329,16 +356,24 @@ In Arbeit.
       "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.encounter",
-      "path" : "MedicationRequest.encounter",
-      "short" : "Es wird kein Behandlungskontext dokumentiert.",
-      "max" : "0"
+      "id" : "MedicationRequest.subject.reference",
+      "path" : "MedicationRequest.subject.reference",
+      "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.supportingInformation",
-      "path" : "MedicationRequest.supportingInformation",
-      "short" : "Keine Referenzen auf zusätzliche Patienteninformationen (Ressource Any) im Planeintrag.",
-      "max" : "0"
+      "id" : "MedicationRequest.subject.identifier",
+      "path" : "MedicationRequest.subject.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.subject.identifier.system",
+      "path" : "MedicationRequest.subject.identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.subject.identifier.value",
+      "path" : "MedicationRequest.subject.identifier.value",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.authoredOn",
@@ -350,7 +385,7 @@ In Arbeit.
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "Arzt oder Ärztin, die den Planeintrag erstellt hat und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
+      "short" : "GDA welcher den Planeintrag erstellt hat und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -361,56 +396,9 @@ In Arbeit.
       "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.performer",
-      "path" : "MedicationRequest.performer",
-      "short" : "Der gewünschte Ausführende der medikamentösen Behandlung (z.B. der Ausführende der Medikamentengabe). Keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.performerType",
-      "path" : "MedicationRequest.performerType",
-      "short" : "Rollen: https://hl7.org/fhir/R4/valueset-performer-role.html. Keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.recorder",
-      "path" : "MedicationRequest.recorder",
-      "short" : "Die Person, die den Planeintrag im Auftrag eines GDA eingegeben hat.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.reasonCode",
-      "path" : "MedicationRequest.reasonCode",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.reasonReference",
-      "path" : "MedicationRequest.reasonReference",
-      "short" : "Grund für die Verordnung des Arzneimittels. Wird zu einem späteren Zeitpunkt im Kontext von EDiagnose ergänzt.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.instantiatesCanonical",
-      "path" : "MedicationRequest.instantiatesCanonical",
-      "short" : "URL, die auf eine Richtlinie/Guideline verweist, die von diesem Planeintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.instantiatesUri",
-      "path" : "MedicationRequest.instantiatesUri",
-      "short" : "URL, die auf eine extern gepflegte Richtlinie/Guideline verweist, die von diesem Planeintrag ganz oder teilweise eingehalten wird. Derzeit keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.basedOn",
-      "path" : "MedicationRequest.basedOn",
-      "short" : "Keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
-      "short" : "Erst bei der geplanten Abgabe (Rezepterstellung) relevant.",
+      "short" : "Fachliche Begründung: Eine Rezept-Klammer wird erst bei der Erstellung geplanter Abgaben benötigt und nicht im Planeintrag dokumentiert.",
       "max" : "0"
     },
     {
@@ -418,13 +406,39 @@ In Arbeit.
       "path" : "MedicationRequest.courseOfTherapyType",
       "short" : "Gesamtmuster der Medikamentengabe. Mögliche Ausprägungen: [continuous | acute ]",
       "min" : 1,
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetCourseOfTherapyType"
+      }
+    },
+    {
+      "id" : "MedicationRequest.courseOfTherapyType.coding",
+      "path" : "MedicationRequest.courseOfTherapyType.coding",
+      "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.insurance",
-      "path" : "MedicationRequest.insurance",
-      "short" : "Keine Verwendung im Planeintrag.",
-      "max" : "0"
+      "id" : "MedicationRequest.courseOfTherapyType.coding.system",
+      "path" : "MedicationRequest.courseOfTherapyType.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.courseOfTherapyType.coding.version",
+      "path" : "MedicationRequest.courseOfTherapyType.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.courseOfTherapyType.coding.code",
+      "path" : "MedicationRequest.courseOfTherapyType.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.courseOfTherapyType.coding.display",
+      "path" : "MedicationRequest.courseOfTherapyType.coding.display",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.note",
@@ -434,38 +448,19 @@ In Arbeit.
       "mustSupport" : true
     },
     {
-      "id" : "MedicationRequest.dosageInstruction",
-      "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext."
+      "id" : "MedicationRequest.note.time",
+      "path" : "MedicationRequest.note.time",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.note.text",
+      "path" : "MedicationRequest.note.text",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dispenseRequest",
       "path" : "MedicationRequest.dispenseRequest",
-      "short" : "Details zur geplanten Abgabe des Arzneimittels im Medikationsplan. Keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.substitution",
-      "path" : "MedicationRequest.substitution",
-      "short" : "Gibt an, ob das Arzneimittel substituiert werden darf (Absicht des Arztes, der den Planeintrag erstellt). Derzeit keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.priorPrescription",
-      "path" : "MedicationRequest.priorPrescription",
-      "short" : "Im Falle einer Änderung wird auf den ersetzten Planeintrag verwiesen.",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.detectedIssue",
-      "path" : "MedicationRequest.detectedIssue",
-      "short" : "Klinisches Problem mit Maßnahme (Referenz auf Ressouce DetectedIssue). Keine Verwendung im Planeintrag.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationRequest.eventHistory",
-      "path" : "MedicationRequest.eventHistory",
-      "short" : "Referenz auf Provenance-Ressourcen, die verschiedene relevante Versionen dieser Ressource dokumentieren. Keine Verwendung im Planeintrag.",
+      "short" : "Fachliche Begründung: Abgabedetails werden in der geplanten Abgabe und nicht im Planeintrag dokumentiert.",
       "max" : "0"
     }]
   }
