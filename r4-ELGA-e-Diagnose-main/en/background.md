@@ -2,7 +2,7 @@
 
 ## Hintergrund
 
-Die strukturierte Dokumentation und der Austausch von Conditions, Procedures und AllergiesIntolerances sind eine wesentliche Grundlage für die medizinische Versorgung. Die e-Diagnose soll diese Informationen übergreifend in ELGA verfügbar machen und damit eine gesamthafte Übersicht über den Gesundheitszustand sowie die weitere Behandlung unterstützen. Zudem soll sie die Grundlage für die Austrian Patient Summary (APS) schaffen.
+Die strukturierte Dokumentation und der Austausch von Diagnosen, Prozeduren sowie Allergien und Intoleranzen sind eine wesentliche Grundlage für die medizinische Versorgung. Die e-Diagnose soll diese Informationen übergreifend in ELGA verfügbar machen und damit eine gesamthafte Übersicht über den Gesundheitszustand sowie die weitere Behandlung unterstützen. Zudem soll sie die Grundlage für die [Austrian Patient Summary (APS)](https://fhir.hl7.at/elga/aps/r4) schaffen.
 
 ### Fachliches Umfeld & Datenkategorien
 
@@ -10,10 +10,9 @@ Die IPS unterscheidet mehrere Datenkategorien. Diese werden im Rahmen der Konzep
 
 | | | |
 | :--- | :--- | :--- |
-| **Problem List** | Conditions | Diagnosen-Summary-Liste |
-| **History of Past Problems** | Conditions | Diagnosen-Summary-Einträge |
-| **History of Procedures** | Procedures | Prozeduren-Summary-Einträge |
-| **Allergies and Intolerances** | AllergiesIntolerances | Allergie- und Intoleranzen-Summary-Einträge |
+| **Problems** | Condition | Summary-Liste für Diagnosen |
+| **History of Procedures** | Procedure | Summary-Liste für Prozeduren |
+| **Allergies and Intolerances** | AllergyIntolerance | Summary-Liste für Allergien und Intoleranzen |
 
 ![](summary_listen_dokumentstruktur.png)
 

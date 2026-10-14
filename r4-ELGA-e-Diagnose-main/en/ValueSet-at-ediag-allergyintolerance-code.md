@@ -43,7 +43,7 @@ No Expansion for this valueset (not supported by Publication Tooling)
   "title" : "AT e-Diagnose AllergyIntolerance Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-13T07:15:40+00:00",
+  "date" : "2026-10-14T06:31:33+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
