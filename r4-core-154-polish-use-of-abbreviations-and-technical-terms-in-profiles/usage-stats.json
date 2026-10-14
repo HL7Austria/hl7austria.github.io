@@ -12,9 +12,23 @@
     },
     {
       "url": "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode",
-      "title": "Address Municipality Code",
+      "title": "Address Municipality Code (Gemeindecode)",
       "types": [
         "string"
+      ]
+    },
+    {
+      "url": "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityKey",
+      "title": "Address GKZ (Gemeindekennziffer)",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-composition-terminologyDate",
+      "title": "Composition Terminology Date",
+      "types": [
+        "date"
       ]
     },
     {
@@ -91,6 +105,12 @@
     }
   ],
   "profiles": {
+    "HealthcareService": [
+      {
+        "url": "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService",
+        "title": "HL7® AT Core HealthcareService Profile"
+      }
+    ],
     "Location": [
       {
         "url": "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location",
@@ -222,6 +242,11 @@
       "Practitioner.address.line"
     ],
     "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode": [
+      "Address",
+      "Patient.address",
+      "Patient.contact.address"
+    ],
+    "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityKey": [
       "Address",
       "Patient.address",
       "Patient.contact.address"
