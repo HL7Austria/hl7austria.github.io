@@ -30,7 +30,7 @@
   "title" : "ELGA List Empty Reason Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-13T16:03:24+00:00",
+  "date" : "2026-10-14T07:51:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -57,9 +57,6 @@
       },
       {
         "code" : "notstarted"
-      },
-      {
-        "code" : "unavailable"
       }]
     }]
   }

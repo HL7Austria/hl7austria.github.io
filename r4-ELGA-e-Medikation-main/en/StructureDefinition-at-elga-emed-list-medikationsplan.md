@@ -112,7 +112,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-13T16:03:24+00:00",
+  "date" : "2026-10-14T07:51:23+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -470,7 +470,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
     {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown | unavailable] Bedeutung: notstarted: Intitalzustand - noch nie befüllt | nilknown: Patient nimmt derzeit keine Medikamente ein | unavailable: Plan ist leer weil alle Einträge entfernt wurden",
+      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown ] Bedeutung: notstarted: Intitalzustand - noch nie befüllt; nilknown: Der Plan wurde vom GDA explizit als leer dokumentiert oder alle Einträge wurden abgesetzt, storniert oder gelöscht.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
