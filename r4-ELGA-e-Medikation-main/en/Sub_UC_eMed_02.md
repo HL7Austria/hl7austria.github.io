@@ -198,8 +198,6 @@ AtElgaEmedMedicationRequestPlaneintrag
     [...]
     authoredOn: Datum der Änderung des Planeintrags    
     requester: für die Änderung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
 
 ```
 
@@ -295,8 +293,7 @@ AtElgaEmedMedicationRequestPlaneintrag
     [...]
     authoredOn: Datum der Änderung des Planeintrags    
     requester: für die Änderung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
+
 
 ```
 
@@ -380,8 +377,6 @@ AtElgaEmedMedicationRequestPlaneintrag
     [...]
     authoredOn: Datum der Stornierung  
     requester: für die Stornierung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
 
 ```
 
@@ -436,8 +431,7 @@ AtElgaEmedMedicationRequestPlaneintrag
     [...]
     authoredOn: Datum der Beendigung  
     requester: für die Beendigung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
+
 
 ```
 
@@ -448,7 +442,7 @@ Planeinträge mit abgelaufenem Einnahmezeitraum (überschrittenes Enddatum in **
 **Varianten:**
 
 * **1.A** Möchte der GDA die Einnahme **weiterverordnen**, muss er entsprechende Anpassungen vornehmen (siehe [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern)).
-* **1.B** Soll die Einnahme **nicht weiterverordnet** werden, nimmt der GDA **keine Änderung** am List.entry.flag und der abgelaufene Planeintrag muss entsprechend angepasst werden. 
+* **1.B** Soll die Einnahme **nicht weiterverordnet** werden, nimmt der GDA **keine Änderung** am List.entry.flag vor. Der abgelaufene Planeintrag muss entsprechend angepasst werden (siehe [Relevante Elemente (MedicationRequest - Planeintrag 1)(1.B)](Sub_UC_eMed_02.md#relevante-elemente-medicationrequest---planeintrag-1-6-1b)) 
 
 Er übermittelt mit **POST** [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md) den aktualisierten Medikationsplan in einem [Transaction Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md):
 
@@ -471,16 +465,16 @@ AtElgaEmedListMedikationsplan
 
 ```
 
-#### Relevante Elemente (MedicationRequest - Planeintrag 1)
+#### Relevante Elemente (MedicationRequest - Planeintrag 1) (1.B)
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
-    extension:effectiveDosePeriod: liegt in der Vergangenheit         // bleibt unverändert
-    status: stopped                        // von Fachanwendung gesetzt, bleibt unverändert
-    statusReason.coding: abgelaufen        // von Fachanwendung gesetzt,´bleibt unverändert
+    extension:effectiveDosePeriod: liegt in der Vergangenheit   // bleibt unverändert
+    status: stopped                     
+    statusReason.coding: abgelaufen        
     [...]
-    authoredOn: Datum der aktuellen Bearbeitung         // vom GDA gesetzt
-    requester: das Ablaufen zur Kenntnis nehmender GDA  // vom GDA gesetzt
+    authoredOn: Datum der aktuellen Bearbeitung         
+    requester: das Ablaufen zur Kenntnis nehmender GDA  
 
 ```
 

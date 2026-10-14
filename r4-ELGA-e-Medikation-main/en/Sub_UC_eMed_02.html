@@ -741,8 +741,6 @@ Bei fehlender <strong>fachlicher Kontinuität</strong> der Bearbeitung eines Pla
     [...]
     authoredOn: Datum der Änderung des Planeintrags    
     requester: für die Änderung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
 </code></pre>
 <p>  <!-- statusReason.coding: prüfen ob nur bei stopped und entered-in-error möglich sein soll, Invariante TODO: akl 29.09.2026
  priorPrescription: Referenz auf ersetzte Planeintragsversion in Beispielen ergänzen! --></p>
@@ -852,8 +850,7 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     [...]
     authoredOn: Datum der Änderung des Planeintrags    
     requester: für die Änderung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
+
 </code></pre>
   <!-- Grund für Aktivierung (optional) prüfen, akl 30.09.2026 -->
 
@@ -951,8 +948,6 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     [...]
     authoredOn: Datum der Stornierung  
     requester: für die Stornierung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
 </code></pre>
 
 <h3 id="sub_uc_emed_02_08---planeintrag-im-medikationsplan-beenden">Sub_UC_eMed_02_08 - Planeintrag im Medikationsplan beenden</h3>
@@ -1013,8 +1008,7 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     [...]
     authoredOn: Datum der Beendigung  
     requester: für die Beendigung verantwortlicher GDA 
-    [...]
-    priorPrescription: Referenz auf ersetzte Planeintragsversion
+
 </code></pre>
 
 <h3 id="sub_uc_emed_02_09---abgelaufenen-planeintrag-weiterverordnen-oder-beenden">Sub_UC_eMed_02_09 - Abgelaufenen Planeintrag weiterverordnen oder beenden</h3>
@@ -1027,16 +1021,17 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     <p><strong>1.A</strong> Möchte der GDA die Einnahme <strong>weiterverordnen</strong>, muss er entsprechende Anpassungen vornehmen (siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a>).</p>
   </li>
   <li>
-    <p><strong>1.B</strong> Soll die Einnahme <strong>nicht weiterverordnet</strong> werden, nimmt der GDA <strong>keine Änderung</strong> am List.entry.flag und der abgelaufene Planeintrag muss entsprechend angepasst werden.    <!-- TODO siehe unten . --></p>
+    <p><a name="l2082">​</a><strong>1.B</strong> Soll die Einnahme <strong>nicht weiterverordnet</strong> werden, nimmt der GDA <strong>keine Änderung</strong> am List.entry.flag vor. Der abgelaufene Planeintrag muss entsprechend angepasst werden (siehe <a href="Sub_UC_eMed_02.html#relevante-elemente-medicationrequest---planeintrag-1-6-1b">Relevante Elemente (MedicationRequest - Planeintrag 1)(1.B)</a>)
+  <!-- - **1.B** Soll die Einnahme **nicht weiterverordnet** werden, nimmt der GDA **keine Änderung** am List.entry.flag und dem abgelaufenen Planeintrag vor (auch kein Beendigungsgrund und keine Aktualisierung des GDAs im Planeintrag). --></p>
   </li>
 </ul>
 
-<p><a name="l2096">​</a>Er übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p><a name="l2099">​</a>Er übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>alle geänderten Ressourcen (inkl. der beendeten) sind inline im Bundle enthalten</li>
 </ul>
 
-<p><a name="l2114">​</a>Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
+<p><a name="l2117">​</a>Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
 
 <h4 id="relevante-elemente-list-1b">Relevante Elemente (List) (1.B)</h4>
 
@@ -1051,7 +1046,7 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
         item: Referenz auf den Planeintrag 2  
 </code></pre>
 
-<h4 id="relevante-elemente-medicationrequest---planeintrag-1-6">Relevante Elemente (MedicationRequest - Planeintrag 1)</h4>
+<h4 id="relevante-elemente-medicationrequest---planeintrag-1-1b">Relevante Elemente (MedicationRequest - Planeintrag 1) (1.B)</h4>
 
   <!-- ```JSON
 AtElgaEmedMedicationRequestPlaneintrag
@@ -1059,12 +1054,12 @@ AtElgaEmedMedicationRequestPlaneintrag
 ``` -->
 
 <pre><code class="language-JSON">AtElgaEmedMedicationRequestPlaneintrag
-    extension:effectiveDosePeriod: liegt in der Vergangenheit         // bleibt unverändert
-    status: stopped                        // von Fachanwendung gesetzt, bleibt unverändert
-    statusReason.coding: abgelaufen        // von Fachanwendung gesetzt,´bleibt unverändert
+    extension:effectiveDosePeriod: liegt in der Vergangenheit   // bleibt unverändert
+    status: stopped                     
+    statusReason.coding: abgelaufen        
     [...]
-    authoredOn: Datum der aktuellen Bearbeitung         // vom GDA gesetzt
-    requester: das Ablaufen zur Kenntnis nehmender GDA  // vom GDA gesetzt
+    authoredOn: Datum der aktuellen Bearbeitung         
+    requester: das Ablaufen zur Kenntnis nehmender GDA  
 </code></pre>
   <!-- Todo: Prüfen, ob diese Annahmen korrekt sind, akl 30.9.2026
 priorPrescription überall rausnhemen -->
@@ -1076,7 +1071,7 @@ Der Einnahmezeitraum der im Planeintrag dokumentierten Arzneimittel darf noch ni
 
 <h4 id="ablauf-8">Ablauf</h4>
 
-<p><a name="l2156">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p><a name="l2159">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -1088,7 +1083,7 @@ Der Einnahmezeitraum der im Planeintrag dokumentierten Arzneimittel darf noch ni
   <li><em>MedicationRequest</em>-Ressource(n): Planeinträge (<a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">AtElgaEmedMedicationRequestPlaneintrag</a>) bleiben <strong>unverändert</strong>.</li>
 </ul>
 
-<p><a name="l2218">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p><a name="l2221">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
   <li>neue oder geänderte Ressourcen sind im Transaction Bundle enthalten,</li>
@@ -1248,7 +1243,7 @@ Mögliche Lösung: Vor dem Löschen prüfen, ob die referenzierten Planeinträge
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-14 10:33:00 +0000">
+  <span title="2026-10-14 18:50:00 +0000">
     2026-10-14
   </span>
 

@@ -30,7 +30,7 @@
   "title" : "AT e-Medikation OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-14T10:33:13+00:00",
+  "date" : "2026-10-14T18:50:32+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
