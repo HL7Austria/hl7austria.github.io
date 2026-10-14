@@ -308,15 +308,16 @@ Ein GDA kann explizit dokumentieren, dass für den Patienten derzeit **keine Med
 
 Der GDA führt ein **POST** [$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md) aus und bearbeitet die von der Fachanwendung im [Medikationsplan-Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) bereitgestellten Ressourcen:
 
-Die Vorgehensweise unterscheidet sich je nach Inhalt des Medikationspans:
+Die Vorgehensweise unterscheidet sich je nach Inhalt des temporären Medikationsplans:
 
 1. der Medikationsplan ist**leer**:
 * **A.** er befindet sich noch im **Initialzustand** mit **List.emptyReason = notstarted** oder
-* **B.** er ist **nach dem Absetzen oder Stornieren aller Planeinträge** leer mit **List.emptyReason = unavailable** In beiden Fällen erstellt der GDA eine neue Planversion mit **List.emptyReason = nilknown** und übermittelt mit **POST** [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md) den aktualisierten Medikationsplan in einem [Transaction Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md)
+* **B.** er ist **nach dem Absetzen oder Stornieren aller Planeinträge** leer mit **List.emptyReason = nilknown** 
+ In beiden Fällen übermittelt der GDA mit **POST** [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md) eine neue Planversion mit **List.emptyReason = nilknown** in einem [Transaction Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md).
 
 1. es bestehen**Planeinträge**: der GDA
 * **beendet** (siehe [Sub_UC_eMed_02_08 - Planeintrag im Medikationsplan beenden](Sub_UC_eMed_02.md#sub_uc_emed_02_08---planeintrag-im-medikationsplan-beenden)) und/oder
-* **storniert** (siehe [Sub_UC_eMed_02_07 - Planeintrag im Medikationsplan stornieren](Sub_UC_eMed_02.md#sub_uc_emed_02_07---planeintrag-im-medikationsplan-stornieren)) sämtliche Planeinträge. Beim nächsten [$plan-read](OperationDefinition-AtElgaEmed.List.PlanRead.md) erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit **List.emptyReason = unavailable** aus. Optional kann der GDA nun explizit einen leeren Plan dokumentieren (siehe 1.B).
+* **storniert** (siehe [Sub_UC_eMed_02_07 - Planeintrag im Medikationsplan stornieren](Sub_UC_eMed_02.md#sub_uc_emed_02_07---planeintrag-im-medikationsplan-stornieren)) sämtliche Planeinträge. Beim nächsten [$plan-read](OperationDefinition-AtElgaEmed.List.PlanRead.md) erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit **List.emptyReason = nilknown** aus. Optional kann der GDA nun explizit einen leeren Plan dokumentieren (siehe 1.B).
 
 #### Relevante Elemente (List) (1.A + 1.B)
 
@@ -447,7 +448,7 @@ Planeinträge mit abgelaufenem Einnahmezeitraum (überschrittenes Enddatum in **
 **Varianten:**
 
 * **1.A** Möchte der GDA die Einnahme **weiterverordnen**, muss er entsprechende Anpassungen vornehmen (siehe [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern)).
-* **1.B** Soll die Einnahme **nicht weiterverordnet** werden, nimmt der GDA **keine Änderung** am List.entry.flag und dem abgelaufenen Planeintrag vor (auch kein Beendigungsgrund und keine Aktualisierung des GDAs im Planeintrag).
+* **1.B** Soll die Einnahme **nicht weiterverordnet** werden, nimmt der GDA **keine Änderung** am List.entry.flag und der abgelaufene Planeintrag muss entsprechend angepasst werden. 
 
 Er übermittelt mit **POST** [$plan-write](OperationDefinition-AtEmed.List.PlanWrite.md) den aktualisierten Medikationsplan in einem [Transaction Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md):
 
@@ -474,7 +475,12 @@ AtElgaEmedListMedikationsplan
 
 ```
 AtElgaEmedMedicationRequestPlaneintrag
-    // unverändert (verantwortlicher GDA, Datum, Status bleiben unverändert)
+    extension:effectiveDosePeriod: liegt in der Vergangenheit         // bleibt unverändert
+    status: stopped                        // von Fachanwendung gesetzt, bleibt unverändert
+    statusReason.coding: abgelaufen        // von Fachanwendung gesetzt,´bleibt unverändert
+    [...]
+    authoredOn: Datum der aktuellen Bearbeitung         // vom GDA gesetzt
+    requester: das Ablaufen zur Kenntnis nehmender GDA  // vom GDA gesetzt
 
 ```
 

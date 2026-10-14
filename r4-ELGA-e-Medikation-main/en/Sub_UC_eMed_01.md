@@ -10,7 +10,8 @@ Der lesende Zugriff umfasst:
 
 * den Abruf des **aktuellen Medikationsplans**, der für eine mögliche Bearbeitung aufbereitet ist ([Plan-Read](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read)),
 * die Suche und den Abruf **historischer Versionen des Medikationsplans** ([Plan-History-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search)),
-* die Suche und den Abruf **einzelner Medikationsplaneinträge** bzw. historischer Versionen ([Planentry-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search))sowie
+* die Suche und den Abruf **einzelner Medikationsplaneinträge** ([Planentry-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search)) sowie
+* die Suche und den Abruf **historischer Medikationsplaneintragversionen** ([Planentry-History-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search)) sowie
 * Abruf eines **Verzeichnisses historischer Medikationspläne** ([Plan-History-Directory-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search)) 
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im
@@ -56,9 +57,10 @@ Die **persistierten Ressourcen am Server** werden durch die Transformationen fü
 * Stornierte und beendete Planeinträge mit **List.entry.flag = **removed**** werden aus dem Medikationsplan **entfernt**.
 * Planeinträge mit **abgelaufenem Behandlungszeitraum** werden mit **List.entry.flag = removed** gekennzeichnet und werden mit **ausgeliefert**, um dem GDA die Möglichkeit zu geben, das Medikament weiterzuverodnen. Anderenfalls nimmt der GDA zur Kenntnis, dass der Planeintrag mit seinem nächsten Schreibvorgang entfernt wird.
  
-* Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt. 
 
+* Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt.  
 1. **Es existiert ein leerer Medikationsplan**(mit einem[List.emptyReason](https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html)).
+ 
 * Es erfolgt keine Transformation.
 
 1. Das**Medikationsplan-Bundle**ist zur Auslieferung bereit. Es enthält:

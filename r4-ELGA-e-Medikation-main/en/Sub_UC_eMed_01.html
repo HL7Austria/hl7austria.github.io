@@ -478,7 +478,8 @@ h4 + .tabs {
 <ul>
   <li>den Abruf des <strong>aktuellen Medikationsplans</strong>, der für eine mögliche Bearbeitung aufbereitet ist (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Plan-Read</a>),</li>
   <li><a name="l432">​</a>die Suche und den Abruf <strong>historischer Versionen des Medikationsplans</strong> (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---historische-medikationsplanversion-lesen-plan-history-search">Plan-History-Search</a>),</li>
-  <li><a name="l441">​</a>die Suche und den Abruf <strong>einzelner Medikationsplaneinträge</strong> bzw. historischer Versionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Planentry-Search</a>)sowie</li>
+  <li><a name="l441">​</a>die Suche und den Abruf <strong>einzelner Medikationsplaneinträge</strong> (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Planentry-Search</a>) sowie</li>
+  <li><a name="l450">​</a>die Suche und den Abruf <strong>historischer Medikationsplaneintragversionen</strong> (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_04---medikationsplaneinträge-lesen-planentry-search">Planentry-History-Search</a>) sowie</li>
   <li>Abruf eines <strong>Verzeichnisses historischer Medikationspläne</strong> (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_05---verzeichnis-historischer-medikationspläne-lesen-plan-history-directory-search">Plan-History-Directory-Search</a>)   <!-- Todo: -> keine fachliche Anforderung für Plan-History-Directory-Search? akl 25.09.2026 --></li>
 </ul>
 
@@ -492,15 +493,17 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <p><em>Plan-Read</em> dient dem Abruf des aktuellen Medikationsplans in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
 
-<p><a name="l482">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein <strong>temporäres</strong> <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
+<p><a name="l491">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein <strong>temporäres</strong> <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
 
 <h4 id="ablauf">Ablauf</h4>
 
 <ol>
-  <li><a name="l502">​</a>Der Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li><a name="l511">​</a>Der Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft den Zustand des Medikationsplans und erzeugt ein Medikationsplan-Bundle zur Auslieferung (siehe <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</a>).</li>
   <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält im HTTP-Header den <strong><em>ETag</em></strong> der aktuellen Version der <em>List</em>-Ressource für das <a href="https://hl7.org/fhir/http.html#concurrency"><strong>Optimistic Locking</strong></a>.</li>
 </ol>
+
+  <!-- Etag kapitel verlinken, TODO check ob noch im header   design_choices.html#optimistisches-locking-mit-etags -->
 
 <p>Nachfolgend kann der Medikationsplan vom GDA bearbeitet und mittels <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Plan-Write</a> gespeichert werden.</p>
 
@@ -517,7 +520,7 @@ Fehlercodes sind noch zu definieren.
 
 <h4 id="custom-operations">Custom Operations</h4>
 
-<p><a name="l551">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+<p><a name="l562">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
 
 <h4 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h4>
 
@@ -543,15 +546,23 @@ Fehlercodes sind noch zu definieren.
           <li>Planeinträge mit <strong>abgelaufenem Behandlungszeitraum</strong> werden mit <em>List.entry.flag = removed</em> gekennzeichnet und werden mit <strong>ausgeliefert</strong>, um dem GDA die Möglichkeit zu geben, das Medikament weiterzuverodnen. Anderenfalls nimmt der GDA zur Kenntnis, dass der Planeintrag mit seinem nächsten Schreibvorgang entfernt wird.</li>
         </ul>
       </li>
-      <li>Sind nach der Transformation keine Planeinträge mehr vorhanden, wird <em>List.emptyReason = nilknown</em> gesetzt.
-  <!-- Todo: wie ermittelt die Fachanwendung, ob Behandlungszeitraum abgelaufen akl 25.09.2026 --></li>
     </ul>
   </li>
-  <li><strong>Es existiert ein leerer Medikationsplan</strong> (mit einem <a href="https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html">List.emptyReason</a>).
-    <ul>
-      <li>Es erfolgt keine Transformation.</li>
-    </ul>
+</ol>
+
+  <!-- todo: auch medicationrequests mit neuem status vorbereitet -->
+
+<ul>
+  <li>Sind nach der Transformation keine Planeinträge mehr vorhanden, wird <em>List.emptyReason = nilknown</em> gesetzt.
+  <!-- Todo: wie ermittelt die Fachanwendung, ob Behandlungszeitraum abgelaufen akl 25.09.2026 -->
+    <ol>
+      <li><strong>Es existiert ein leerer Medikationsplan</strong> (mit einem <a href="https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html">List.emptyReason</a>).</li>
+    </ol>
   </li>
+  <li>Es erfolgt keine Transformation.</li>
+</ul>
+
+<ol>
   <li>Das <strong>Medikationsplan-Bundle</strong> ist zur Auslieferung bereit. Es enthält:
     <ul>
       <li>die (ggf. transformierte) <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource,</li>
@@ -641,7 +652,7 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
 <h4 id="ablauf-3">Ablauf</h4>
 
 <ol>
-  <li><a name="l887">​</a>Ein Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li><a name="l907">​</a>Ein Client führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan xistiert.</li>
   <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
   <li>Die List-Ressource wird als erste Version persistiert.</li>
@@ -766,7 +777,7 @@ Offene Punkte: <br/>$plan-history-directory-search: in Arbeit.
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-14 07:51:00 +0000">
+  <span title="2026-10-14 10:33:00 +0000">
     2026-10-14
   </span>
 
