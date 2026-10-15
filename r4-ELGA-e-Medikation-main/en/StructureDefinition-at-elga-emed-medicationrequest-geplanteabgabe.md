@@ -37,7 +37,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-14T21:19:26+00:00",
+  "date" : "2026-10-15T08:30:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -238,6 +238,12 @@ In Arbeit.
       "mustSupport" : true
     },
     {
+      "id" : "MedicationRequest.category:mrcategory.text",
+      "path" : "MedicationRequest.category.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationRequest.category:recipetype",
       "path" : "MedicationRequest.category",
       "sliceName" : "recipetype",
@@ -253,7 +259,8 @@ In Arbeit.
     {
       "id" : "MedicationRequest.category:recipetype.coding",
       "path" : "MedicationRequest.category.coding",
-      "min" : 1
+      "min" : 1,
+      "max" : "1"
     },
     {
       "id" : "MedicationRequest.category:recipetype.coding.system",
@@ -277,6 +284,12 @@ In Arbeit.
       "id" : "MedicationRequest.category:recipetype.coding.display",
       "path" : "MedicationRequest.category.coding.display",
       "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.category:recipetype.text",
+      "path" : "MedicationRequest.category.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.doNotPerform",
@@ -326,6 +339,12 @@ In Arbeit.
       "id" : "MedicationRequest.subject.identifier",
       "path" : "MedicationRequest.subject.identifier",
       "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.subject.identifier.use",
+      "path" : "MedicationRequest.subject.identifier.use",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.subject.identifier.system",

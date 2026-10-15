@@ -37,7 +37,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-14T21:19:26+00:00",
+  "date" : "2026-10-15T08:30:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -217,6 +217,7 @@ In Arbeit.
       "path" : "MedicationRequest.statusReason.coding",
       "short" : "Codierte Begründung für den Status des Planeintrags.",
       "min" : 1,
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -270,6 +271,7 @@ In Arbeit.
       "id" : "MedicationRequest.category.coding",
       "path" : "MedicationRequest.category.coding",
       "min" : 1,
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -295,6 +297,12 @@ In Arbeit.
       "id" : "MedicationRequest.category.coding.display",
       "path" : "MedicationRequest.category.coding.display",
       "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.category.text",
+      "path" : "MedicationRequest.category.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.doNotPerform",
@@ -366,6 +374,12 @@ In Arbeit.
       "mustSupport" : true
     },
     {
+      "id" : "MedicationRequest.subject.identifier.use",
+      "path" : "MedicationRequest.subject.identifier.use",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationRequest.subject.identifier.system",
       "path" : "MedicationRequest.subject.identifier.system",
       "mustSupport" : true
@@ -416,6 +430,7 @@ In Arbeit.
       "id" : "MedicationRequest.courseOfTherapyType.coding",
       "path" : "MedicationRequest.courseOfTherapyType.coding",
       "min" : 1,
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -439,6 +454,12 @@ In Arbeit.
       "id" : "MedicationRequest.courseOfTherapyType.coding.display",
       "path" : "MedicationRequest.courseOfTherapyType.coding.display",
       "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.courseOfTherapyType.text",
+      "path" : "MedicationRequest.courseOfTherapyType.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.note",

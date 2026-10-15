@@ -112,7 +112,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-14T21:19:26+00:00",
+  "date" : "2026-10-15T08:30:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -297,6 +297,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "mustSupport" : true
     },
     {
+      "id" : "List.code.text",
+      "path" : "List.code.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
       "id" : "List.subject",
       "path" : "List.subject",
       "short" : "ELGA-Teilnehmer, für den der Medikationsplan dokumentiert wird.",
@@ -321,6 +327,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "id" : "List.subject.identifier",
       "path" : "List.subject.identifier",
       "mustSupport" : true
+    },
+    {
+      "id" : "List.subject.identifier.use",
+      "path" : "List.subject.identifier.use",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "List.subject.identifier.system",
@@ -373,6 +385,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "mustSupport" : true
     },
     {
+      "id" : "List.source.identifier.use",
+      "path" : "List.source.identifier.use",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
       "id" : "List.source.identifier.system",
       "path" : "List.source.identifier.system",
       "mustSupport" : true
@@ -415,6 +433,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "id" : "List.entry.flag.coding",
       "path" : "List.entry.flag.coding",
       "min" : 1,
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -438,6 +457,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "id" : "List.entry.flag.coding.display",
       "path" : "List.entry.flag.coding.display",
       "mustSupport" : true
+    },
+    {
+      "id" : "List.entry.flag.text",
+      "path" : "List.entry.flag.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "List.entry.deleted",
@@ -481,6 +506,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "id" : "List.emptyReason.coding",
       "path" : "List.emptyReason.coding",
       "min" : 1,
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -504,6 +530,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "id" : "List.emptyReason.coding.display",
       "path" : "List.emptyReason.coding.display",
       "mustSupport" : true
+    },
+    {
+      "id" : "List.emptyReason.text",
+      "path" : "List.emptyReason.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     }]
   }
 }

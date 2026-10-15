@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-10-14T21:19:26+00:00",
+  "date" : "2026-10-15T08:30:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -141,7 +141,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.code.coding",
       "path" : "Medication.code.coding",
-      "min" : 1
+      "min" : 1,
+      "max" : "1"
     },
     {
       "id" : "Medication.code.coding.system",
