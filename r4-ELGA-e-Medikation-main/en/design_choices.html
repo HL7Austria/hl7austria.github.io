@@ -218,13 +218,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#übersicht" id="markdown-toc-übersicht">Übersicht</a></li>
-  <li><a href="#relevante-profile" id="markdown-toc-relevante-profile">Relevante Profile</a></li>
-  <li><a href="#kennzeichnung-der-relevanten-elemente" id="markdown-toc-kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</a></li>
-  <li><a href="#befüllung-der-narrativen-teile" id="markdown-toc-befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</a></li>
-  <li><a href="#informationen-über-gda-und-patienten" id="markdown-toc-informationen-über-gda-und-patienten">Informationen über GDA und Patienten</a></li>
-  <li><a href="#id-management" id="markdown-toc-id-management">ID-Management</a></li>
-  <li><a href="#optimistisches-locking-mit-etags" id="markdown-toc-optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</a></li>
-  <li><a href="#verwendung-der-fhir-history-funktion" id="markdown-toc-verwendung-der-fhir-history-funktion">Verwendung der FHIR History Funktion</a></li>
+  <li><a href="#fachliche-entscheidungen" id="markdown-toc-fachliche-entscheidungen">Fachliche Entscheidungen</a></li>
+  <li><a href="#technische-entscheidungen" id="markdown-toc-technische-entscheidungen">Technische Entscheidungen</a></li>
 </ul>
 
 </div>
@@ -483,19 +478,19 @@ h4 + .tabs {
 
   <!-- TODO Pfeile zu Patient und Practitioner? Umrandung Medikationsplan-Bundle strichliert -->
 
-<h3 id="relevante-profile">Relevante Profile</h3>
+<h4 id="relevante-profile">Relevante Profile</h4>
 
-<h4 id="medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan: AtElgaEmedListMedikationsplan (<em>List</em>)</h4>
+<h5 id="medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan: AtElgaEmedListMedikationsplan (<em>List</em>)</h5>
 
 <p>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <em>List</em>-Ressource abgebildet. Diese enthält 0..* Einträge (<em>List.entry</em>), wobei jeder Entry genau eine Referenz (<em>Reference</em>) auf einen Planeintrag (<em>MedicationRequest</em>) in <em>List.entry.item</em> beinhaltet.</p>
 
-<p><a name="l482">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Planeintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+<p><a name="l462">​</a>Die Reihenfolge der Einträge kann durch den GDA festgelegt werden. Jeder Listeneintrag enthält im Element <em>List.entry.flag</em> den Änderungsstatus des jeweiligen Planeintrags (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
 
 <p>Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.</p>
 
   <!-- TODO: Wiederverwendbarkeit der Liste für e-Diagnose und e-Behandlungsplan -->
 
-<h4 id="medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneintrag bzw. Planeintrag: AtElgaEmedMedicationRequestPlaneintrag (<em>MedicationRequest</em>)</h4>
+<h5 id="medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneintrag bzw. Planeintrag: AtElgaEmedMedicationRequestPlaneintrag (<em>MedicationRequest</em>)</h5>
 
 <p>Ein Planeintrag im Medikationsplan wird durch eine <em>MedicationRequest</em>-Ressource der Kategorie "Planeintrag" abgebildet. Die Ressource enthält genau ein Medikament mit der zugehörigen Dosierung, wobei das Medikament verpflichtend in einer contained <em>Medication</em>-Ressource innerhalb des MedicationRequests dokumentiert wird.
 Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer <em>Geplanten Abgabe</em> dienen.</p>
@@ -504,7 +499,7 @@ Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer <
 
 <p>Abhängig vom List.entry.flag kann der Planeintrag nur bestimmte Statuswerte annehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</p>
 
-<h4 id="medikationsplan-bundle-atelgaemedbundlemedikationsplan-medikationsplan-bundle">Medikationsplan-Bundle: AtElgaEmedBundleMedikationsplan (<em>Medikationsplan-Bundle</em>)</h4>
+<h5 id="medikationsplan-bundle-atelgaemedbundlemedikationsplan-medikationsplan-bundle">Medikationsplan-Bundle: AtElgaEmedBundleMedikationsplan (<em>Medikationsplan-Bundle</em>)</h5>
 
 <p>Das Medikationsplan-Bundle dient ausschließlich der Auslieferung eines Medikationsplans. Es wird von der Fachanwendung bei Bedarf aus einer List-Ressource sowie den von dieser referenzierten Ressourcenversionen erzeugt und <strong>nicht persistiert</strong>.</p>
 
@@ -556,23 +551,36 @@ Modifier + ausgewählte Elemente werden mit fachlicher Begründung auf 0..0 gese
 wann und warum versionierte Referenzen verwendet werden
 und wann nicht -->
 
-<h3 id="kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</h3>
+<h3 id="fachliche-entscheidungen">Fachliche Entscheidungen</h3>
+
+<h4 id="abhängigkeit-planeintrag-und-geplante-abgabe">Abhängigkeit Planeintrag und geplante Abgabe</h4>
+  <!-- welche Elemente gleich? soll die prüfung wirklich ablehnen bei abweichungen ect.? -->
+
+<h3 id="technische-entscheidungen">Technische Entscheidungen</h3>
+
+<h4 id="kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</h4>
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
 
-<h4 id="serverhalten-bei-elementen-ohne-ms-markierung">Serverhalten bei Elementen ohne MS Markierung</h4>
+<h5 id="serverhalten-bei-elementen-ohne-ms-markierung">Serverhalten bei Elementen ohne MS Markierung</h5>
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
 
-<h3 id="befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</h3>
+<h4 id="befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</h4>
 
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
 
-<h3 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h3>
+<h4 id="profile-für-die-abbildung-von-operation-in--output">Profile für die Abbildung von Operation In &amp; Output</h4>
+  <!-- TX, write-Response und lesende Operations brauchen eigene Profile -> implementer Feedback erwünscht -->
+<div class="note-to-balloters">
+  <p>In Arbeit.</p>
+</div>
+
+<h4 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h4>
 
 <p>Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Medikation-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen <code class="language-plaintext highlighter-rouge">Patient</code>-, <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) anzugeben:</p>
 
@@ -583,28 +591,29 @@ und wann nicht -->
 
 <p>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ersetzt die logischen Referenzen durch Referenzen auf diese Ressourcen. Beim Abruf von Daten enthalten die Ressourcen daher die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung abgerufen werden.</p>
 
-<h3 id="id-management">ID-Management</h3>
+<h4 id="id-management">ID-Management</h4>
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
 
-<h3 id="optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</h3>
+<h4 id="optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</h4>
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
 
-<h3 id="verwendung-der-fhir-history-funktion">Verwendung der FHIR History Funktion</h3>
+<h4 id="verwendung-der-fhir-history-funktion">Verwendung der FHIR History Funktion</h4>
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
 
-<h4 id="versionierte-referenzen">Versionierte Referenzen</h4>
+<h5 id="versionierte-referenzen">Versionierte Referenzen</h5>
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
 
-<h4 id="löschen-und-stornieren-von-versionierten-ressourcen">Löschen und Stornieren von versionierten Ressourcen</h4>
-
+<h5 id="löschen-und-stornieren-von-versionierten-ressourcen">Löschen und Stornieren von versionierten Ressourcen</h5>
+  <!-- horizontales und vertikales löschen in FHIR -->
+  <!-- fachlich und technische Beschreibung -->
 <div class="note-to-balloters">
   <p>In Arbeit.</p>
 </div>
@@ -637,7 +646,7 @@ und wann nicht -->
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-15 13:39:00 +0000">
+  <span title="2026-10-15 16:16:00 +0000">
     2026-10-15
   </span>
 

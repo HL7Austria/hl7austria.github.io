@@ -45,11 +45,13 @@ Die **persistierten Ressourcen am Server** werden durch die Transformationen fü
 
 #### Ablauf
 
-1. **Es existiert kein Medikationsplan**:
-* Es wird gemäß ein [initialer Medikationsplan]((Sub_UC_eMed_01.md#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan)) erstellt ([List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource mit **List.emptyReason = notstarted**).
+A) **Es existiert kein Medikationsplan**:
+
+* Es wird gemäß [Sub_UC_eMed_01_01_01 initialer Medikationsplan]((Sub_UC_eMed_01.md#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan)) erstellt ([List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource mit **List.emptyReason = notstarted**).
 * Es erfolgt keine Transformation.
 
-1. **Es existiert ein Medikationsplan mit Planeinträgen**:
+B) **Es existiert ein Medikationsplan mit Planeinträgen**:
+
 * Folgende Transformationen werden durchgeführt (siehe [Status des List.entry.flags im Medikationsplan](workflowmanagement.md#status-des-listentryflags-im-medikationsplan)): 
 * Neue oder geänderte Planeinträge (**List.entry.flag = new** oder **changed**) werden auf ****unchanged**** gesetzt.
 * Stornierte und beendete Planeinträge mit **List.entry.flag = **removed**** werden aus dem Medikationsplan **entfernt**.
@@ -57,10 +59,12 @@ Die **persistierten Ressourcen am Server** werden durch die Transformationen fü
 * Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt. 
  
 
-1. **Es existiert ein leerer Medikationsplan**(mit einem[List.emptyReason](https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html)).
+C) **Es existiert ein leerer Medikationsplan** (mit einem [List.emptyReason](https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html)).
+
 * Es erfolgt keine Transformation.
 
-1. Das**Medikationsplan-Bundle**ist zur Auslieferung bereit. Es enthält:
+D) Das **Medikationsplan-Bundle** ist zur Auslieferung bereit. Es enthält:
+
 * die (ggf. transformierte) [List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource,
 * sämtliche von der **List** referenzierten Ressourcen
 
@@ -74,13 +78,10 @@ Der dabei erzeugte initiale Medikationsplan besitzt den Wert **List.emptyReason 
 
 Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Zugangsportal ausgelöst werden.
 
- Offene Punkte:
- Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patienten getriggert werden (nicht mehr Teil von $plan-read)? 
-
 #### Ablauf
 
 1. Ein Client führt**POST**[$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md)aus.
-1. Die Fachanwendung prüft, ob bereits ein Medikationsplan xistiert.
+1. Die Fachanwendung prüft, ob bereits ein Medikationsplan existiert.
 1. Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit**emptyReason = notstarted**.
 1. Die List-Ressource wird als erste Version persistiert.
 1. Für das**Plan-Read**erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Bundle zur Auslieferung.
@@ -97,8 +98,11 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
 * **Erstellungszeitpunkt**
-* **Status**: [Value Set](ValueSet-PlaneintragStatusVS.md)
-* **StatusReason**: [Value Set](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
+* [**Status**](ValueSet-PlaneintragStatusVS.md)
+* [**StatusReason**](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
+
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ 
 
 Die gefundenen Planeinträge können als Ausgangspunkt für weitere Abfragen verwendet werden:
 
@@ -117,15 +121,19 @@ Die gefundenen Planeinträge können als Ausgangspunkt für weitere Abfragen ver
 
 ### Sub_UC_eMed_01_03 Suche und den Abruf historischer Versionen (History-Search)
 
-Diese umfasst die Suche und den Abruf historischer Medikationsplan- und Planeintragversionen und eine Verzeichnissuche der Medikationspanversionen. 
+Diese umfasst die Suche und den Abruf historischer Medikationsplan- und Planeintragsversionen und eine Verzeichnissuche der Medikationspanversionen.Die History-Search ermöglicht die Suche und den Abruf gespeicherter Versionen des Medikationsplans und seiner Planeinträge. Dabei werden drei Abfragen unterschieden:
 
-Die hiefür verwendete Operation [$history-search](Sub_UC_eMed_01.md#custom-operations-1) und die entsprechenden Inputparameter werden in den folgenden Use Cases beschrieben.
+* Plan-History-Search liefert Medikationsplanversionen einschließlich der jeweils referenzierten Ressourcenversionen.
+* Planentry-History-Search liefert aktuelle und historische Versionen einzelner Medikationsplaneinträge.
+* Plan-History-Directory-Search liefert ein Verzeichnis der Medikationsplanversionen in Form der jeweiligen List-Ressourcen, ohne die referenzierten Ressourcen mitzuliefern. Dies ermöglicht einen Überblick über die verfügbaren Versionen, bevor ausgewählte Medikationsplanversionen einschließlich aller referenzierten Ressourcen abgerufen werden.
+
+Die Abfragen dienen der Nachvollziehbarkeit der Historie gespeicherter Medikationsinformationen. Anders als bei Plan-Read werden die zurückgegebenen Versionen nicht für eine anschließende Bearbeitung aufbereitet, sondern unverändert ausgeliefert. Die hiefür verwendete Operation [$history-search](Sub_UC_eMed_01.md#custom-operations-1) und die entsprechenden Inputparameter werden in den folgenden Use Cases beschrieben.
 
 #### Sub_UC_eMed_01_03_01 - Historische Medikationsplanversionen suchen (Plan-History-Search)
 
-Bei der **Plan-History-Search** rekonstruiert die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen und liefert diese unverändert aus. Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.
+Bei der **Plan-History-Search** löst die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen auf und liefert diese unverändert aus. Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.
 
-Bei der **Plan-History-Search** erfolgt **keine Änderung** der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter Medikationsplanversionen.
+Bei der **Plan-History-Search** erfolgt **keine Änderung** der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter historischer Medikationsplanversionen.
 
 ##### Inputparameter
 
@@ -138,9 +146,12 @@ Der Abruf erfolgt mittels POST [$history-search](Sub_UC_eMed_01.md#custom-operat
 * **Planeintragsid mit Version**: Abrufen der Medikationsplanversionen, die genau diese Planeintragsversion enthalten.
 * **StatusReason eines im Plan einthaltenen Planeintrags**: Abrufen aller Planversionen, mit Planeinträgen mit bestimmtem [statusReason](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md). 
 
-#### Sub_UC_eMed_01_03_02 - Historische Planeintragversionen suchen (Planentry-History-Search)
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ 
 
-**Planentry-History-Search** ermöglicht den Zugriff auf aktuelle und historische Versionen von Medikationsplaneinträge und somit die Nachverfolgung von Änderungen an Medikationsplaneinträgen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.
+#### Sub_UC_eMed_01_03_02 - Historische Planeintragsversionen suchen (Planentry-History-Search)
+
+**Planentry-History-Search** ermöglicht den Zugriff auf historische Versionen von Medikationsplaneinträgen und somit die Nachverfolgung von Änderungen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.
 
 #### Inputparameter
 
@@ -150,26 +161,26 @@ Der Abruf erfolgt mittels POST [$history-search](Sub_UC_eMed_01.md#custom-operat
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
 * **Erstellungszeitpunkt**
-* **Status**: [Value Set](ValueSet-PlaneintragStatusVS.md)
-* **StatusReason**: [Value Set](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
+* [**Status**] (ValueSet-PlaneintragStatusVS.html)
+* [**StatusReason**](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
+
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ 
 
 Die gefundenen Planeinträge können als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:
 
-* **Geplante Abgaben** ([Prescription-Search](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search))
-* **Durchgeführte Abgaben** ([Dispense-Search](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search))
 * die zugehörigen Medikationsplanversionen ([Plan-History-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_03_01---historische-medikationsplanversionen-suchen-plan-history-search))
 
 #### Sub_UC_eMed_01_03_03 - Verzeichnis der Medikationspanversionen lesen (Plan-History-Directory-Search)
 
-Gleich wie Sub_UC_eMed_01_03_01 - Historische Medikationsplanversionen suchen (Plan-History-Search) nur list ohne referenzierte Ressourcen.
+Plan-History-Directory-Search ermöglicht die Suche nach Medikationsplanversionen und liefert ein Verzeichnis der gefundenen Versionen. Im Unterschied zur Plan-History-Search enthält das zurückgegebene searchset-Bundle ausschließlich die jeweiligen List-Ressourcen, ohne die darin referenzierten Ressourcen mitzuliefern. Die List-Ressourcen werden unverändert ausgeliefert.
 
- Offene Punkte: 
-in Arbeit. 
+Die Abfrage dient dazu, einen Überblick über die verfügbaren Medikationsplanversionen zu erhalten. Ausgewählte Versionen können anschließend mittels Plan-History-Search einschließlich der jeweils referenzierten Ressourcenversionen abgerufen werden.
 
 #### Ablauf
 
 1. Der Client führt POST[$history-search](Sub_UC_eMed_01.md#custom-operations-1)mit geeigneten Inputparametern aus.
-1. Die Fachanwendung ermittelt anhand dieser die historischen Ressourcen-Versionen und rekonstruiert gegebenenfalls historische Medikationsplanversionen, indem sie die zugehörigen Versionen der referenzierten Ressourcen ermittelt.
+1. Die Fachanwendung ermittelt anhand dieser die historischen Ressourcen-Versionen und löst die darin referenzierten Versionen auf.
 1. Die Fachanwendung liefert das Ergebnis in einem Bundle vom Typ searchset zurück.
 1. Werden keine passenden Ressourcen-Versionen gefunden, enthält das zurückgelieferte**searchset**Bundle keine Einträge.
 1. Im Fehlerfall wird ein entsprechender**OperationOutcome**zurückgegeben.

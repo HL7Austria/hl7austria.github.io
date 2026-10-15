@@ -38,6 +38,9 @@ Die Suche nach [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationreq
 * mit einem bestimmten [status](ValueSet-GeplanteAbgabeStatusVS.md) 
 * mit einem bestimmten **e-Med GroupIdentifier** 
 
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ 
+
 Die gefundenen **Geplanten Abgaben** können als Ausgangspunkt für weitere Abfragen verwendet werden:
 
 * zugehöriger Medikationsplaneintrag und Medikationsplanversion  
@@ -47,11 +50,7 @@ Die gefundenen **Geplanten Abgaben** können als Ausgangspunkt für weitere Abfr
 
 Von ELGA-Teilnehmern gelöschte **Geplanten Abgaben** stehen nicht mehr zur Verfügung.
 
- Offene Punkte: 
- Suchparameter: Umsetzung in Arbeit. ad: Suchkritierien: 
- - Geplante Abgabe zu einer Durchgeführten Abgabe: Reverse-Include erlaubt oder eigene Operation? 
- - Gültigkeitszeitraum des Rezepts (validityPeriod)? 
- - Erstellender GDA?
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
  
 
 ##### Ablauf
@@ -87,8 +86,8 @@ Die gefundenen **Durchgeführten Abgaben** können als Ausgangspunkt für weiter
 
 Von ELGA-Teilnehmern gelöschte **Durchgeführten Abgaben** stehen nicht mehr zur Verfügung.
 
- Offene Punkte: 
- Suchparameter: Umsetzung in Arbeit. 
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ 
 
 ##### Ablauf
 

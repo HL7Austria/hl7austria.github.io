@@ -11,6 +11,9 @@
 
 In Arbeit.
 
+ Offener Punkt:
+ - OperationOutcome noch zu definieren 
+
 ### Business Logik
 
 * Das List.date wird von der Fachanwendung als Teil der Transaktion befüllt
@@ -31,7 +34,7 @@ In Arbeit.
   "title" : "e-Med Operation für Plan-Write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-15T13:39:50+00:00",
+  "date" : "2026-10-15T16:16:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
