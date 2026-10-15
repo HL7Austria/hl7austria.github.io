@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-15T16:16:55+00:00",
+  "date" : "2026-10-15T16:39:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -565,7 +565,7 @@
         "reference" : "StructureDefinition/at-elga-emed-list-medikationsplan"
       },
       "name" : "AT ELGA e-Medikation List Medikationsplan",
-      "description" : "Der Medikationsplan wird durch eine List-Ressource abgebildet und enthält:\n- 0..* Einträge (List.entry). \nJedes List.entry.item enhält genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest).\nDie Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. \nJeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.",
+      "description" : "Profil für einen Medikationsplan.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
     },
@@ -666,7 +666,7 @@
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
       },
       "name" : "At ELGA e-Medikation MedicationRequest Planeintrag",
-      "description" : "Ein Planeintrag im Medikationsplan wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nSie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird.\nDer Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet.",
+      "description" : "Profil für einen Medikationsplaneintrag.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
     },
@@ -683,7 +683,7 @@
         "reference" : "StructureDefinition/at-elga-emed-bundle-medikationsplan"
       },
       "name" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
-      "description" : "Das Medikationsplan-Bundle vom Typ Searchset enthält: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus\n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n- 1..1 Patient\n- 1..* Authors",
+      "description" : "Profil für den Medikationsplan als Ergebnis der $plan-read Operation.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
     },
@@ -782,7 +782,7 @@
         "reference" : "StructureDefinition/at-elga-emed-bundle-medikationsplantx"
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
-      "description" : "Das Medikationsplan-Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und enthält: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n\nAlle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.",
+      "description" : "Profil für das Schreiben des Medikationsplans mit der $plan-write Operation.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
     },

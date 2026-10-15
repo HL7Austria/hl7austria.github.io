@@ -310,18 +310,274 @@ AT ELGA e-Medikation List Medikationsplan
   </table>
 
 <div data-fhir="generated">
-<p>Der Medikationsplan wird durch eine List-Ressource abgebildet und enthält:</p>
-<ul>
-  <li>0..* Einträge (List.entry). 
-Jedes List.entry.item enhält genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest).
-Die Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. 
-Jeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.</li>
-</ul>
+<p>Profil für einen Medikationsplan.</p>
 
 </div>
 
 
   <!-- insert intro if present -->
+
+
+
+
+<div markdown="1" style="display:inline-block">
+
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+.table-responsive {
+display: block;
+width: 100%;
+overflow-x: auto;
+max-height: 600px;
+overflow-y: auto;
+}
+.table-responsive > table {
+width: 100%;}
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  background: #f5f5f5;
+}
+.table-responsive table {
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+/* Kopfzeile sticky */
+.table-responsive th {
+  position: sticky;
+  top: 0;
+  background: rgb(228, 228, 228);
+  z-index: 2;
+}
+/* Erste Spalte sticky */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 3;
+}
+
+.table-responsive th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: rgb(228, 228, 228);
+  z-index: 4;
+}
+
+.hinweisbox {
+  font-size: 12px;
+  /* font-family: "Courier New", Courier; */
+  border: 1px solid #156082;
+  background: #dae8f8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.tabs .tab label {
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+<p>Die <strong><code class="language-plaintext highlighter-rouge">List</code></strong>-Ressource bildet den Medikationsplan ab und enthält keinen oder mehrere Einträge (<code class="language-plaintext highlighter-rouge">List.entry</code>):</p>
+<ul>
+  <li>Jeder Eintrag referenziert über <code class="language-plaintext highlighter-rouge">List.entry.item</code> genau einen Medikationsplaneintrag (<code class="language-plaintext highlighter-rouge">MedicationRequest</code>).</li>
+  <li>Die Reihenfolge der <code class="language-plaintext highlighter-rouge">List.entry</code>-Elemente bestimmt die Reihenfolge der Planeinträge im Medikationsplan.</li>
+  <li>Das Element <code class="language-plaintext highlighter-rouge">List.entry.flag</code> kennzeichnet den Änderungsstatus des jeweiligen Medikationsplaneintrags.</li>
+  <li>Ein leerer Medikationsplan muss mit einem <code class="language-plaintext highlighter-rouge">emtptyReason</code> gekennzeichnet sein.</li>
+</ul>
+
+<p>Relevante Use Cases:</p>
+<ul>
+  <li><a href="Sub_UC_eMed_02.html#%E2%80%8Btechnische-use-cases-für-medikationsplan-schreiben-uc_emed_02">Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)</a></li>
+</ul>
+
+</div>
 
 
 
@@ -640,7 +896,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9b7292f-1c18-4764-9423-bd9182c1ac22
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 232bd896-e1c1-46b8-ac1e-664a9e5e3650
 document.getElementById('cbat-elga-emed-list-medikationsplanK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-list-medikationsplanK'), 'binding', document.getElementById('cbat-elga-emed-list-medikationsplanK-binding').checked, document.getElementById('ppat-elga-emed-list-medikationsplanK'));
 document.getElementById('cbat-elga-emed-list-medikationsplanK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1156,7 +1412,7 @@ filterDesc(document.getElementById('at-elga-emed-list-medikationsplanK'), 'oblig
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="text-decoration:line-through"></span><span style="text-decoration:line-through">0</span><span style="text-decoration:line-through">..</span><span style="text-decoration:line-through">0</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Fachliche Begrüundung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Fachliche Begründung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="ap" data-fhir="generated-heirarchy"><td role="rowheader" style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">List.</span><a no-external="true" href="StructureDefinition-at-elga-emed-list-medikationsplan-definitions.html#List.entry" data-no-external="true">entry</a><a name="List.entry"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.50">0</span><span style="opacity: 0.50">..</span><span style="opacity: 0.50">*</span></td>
@@ -1252,7 +1508,7 @@ filterDesc(document.getElementById('at-elga-emed-list-medikationsplanK'), 'oblig
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="text-decoration:line-through"></span><span style="text-decoration:line-through">0</span><span style="text-decoration:line-through">..</span><span style="text-decoration:line-through">0</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Fachliche Begründung: TODO</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9b7292f-1c18-4764-9423-bd9182c1ac22
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 232bd896-e1c1-46b8-ac1e-664a9e5e3650
 document.getElementById('cbat-elga-emed-list-medikationsplanD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-list-medikationsplanD'), 'binding', document.getElementById('cbat-elga-emed-list-medikationsplanD-binding').checked, document.getElementById('ppat-elga-emed-list-medikationsplanD'));
 document.getElementById('cbat-elga-emed-list-medikationsplanD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1876,7 +2132,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">If this coding was chosen directly by the user</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9b7292f-1c18-4764-9423-bd9182c1ac22
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 232bd896-e1c1-46b8-ac1e-664a9e5e3650
 document.getElementById('cbat-elga-emed-list-medikationsplanS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-list-medikationsplanS'), 'binding', document.getElementById('cbat-elga-emed-list-medikationsplanS-binding').checked, document.getElementById('ppat-elga-emed-list-medikationsplanS'));
 document.getElementById('cbat-elga-emed-list-medikationsplanS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2722,7 +2978,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Representation defined by the system</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9b7292f-1c18-4764-9423-bd9182c1ac22
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 232bd896-e1c1-46b8-ac1e-664a9e5e3650
 document.getElementById('cbat-elga-emed-list-medikationsplanKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-list-medikationsplanKA'), 'binding', document.getElementById('cbat-elga-emed-list-medikationsplanKA-binding').checked, document.getElementById('ppat-elga-emed-list-medikationsplanKA'));
 document.getElementById('cbat-elga-emed-list-medikationsplanKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3237,7 +3493,7 @@ filterDesc(document.getElementById('at-elga-emed-list-medikationsplanKA'), 'obli
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="text-decoration:line-through"></span><span style="text-decoration:line-through">0</span><span style="text-decoration:line-through">..</span><span style="text-decoration:line-through">0</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
-<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Fachliche Begrüundung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)</span></td></tr>
+<td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Fachliche Begründung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)</span></td></tr>
 <tr fhir="generated-heirarchy" style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="a-ap" data-fhir="generated-heirarchy"><td role="rowheader" style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">List.</span><a no-external="true" href="StructureDefinition-at-elga-emed-list-medikationsplan-definitions.html#List.entry" data-no-external="true">entry</a><a name="a-List.entry"> </a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.50">0</span><span style="opacity: 0.50">..</span><span style="opacity: 0.50">*</span></td>
@@ -3333,7 +3589,7 @@ filterDesc(document.getElementById('at-elga-emed-list-medikationsplanKA'), 'obli
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="text-decoration:line-through"></span><span style="text-decoration:line-through">0</span><span style="text-decoration:line-through">..</span><span style="text-decoration:line-through">0</span></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="font-style: italic">Fachliche Begründung: TODO</span></td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9b7292f-1c18-4764-9423-bd9182c1ac22
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 232bd896-e1c1-46b8-ac1e-664a9e5e3650
 document.getElementById('cbat-elga-emed-list-medikationsplanDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-list-medikationsplanDA'), 'binding', document.getElementById('cbat-elga-emed-list-medikationsplanDA-binding').checked, document.getElementById('ppat-elga-emed-list-medikationsplanDA'));
 document.getElementById('cbat-elga-emed-list-medikationsplanDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -3954,7 +4210,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">0..1</td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td>
 <td style="vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">If this coding was chosen directly by the user</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // c9b7292f-1c18-4764-9423-bd9182c1ac22
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 232bd896-e1c1-46b8-ac1e-664a9e5e3650
 document.getElementById('cbat-elga-emed-list-medikationsplanSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-list-medikationsplanSA'), 'binding', document.getElementById('cbat-elga-emed-list-medikationsplanSA-binding').checked, document.getElementById('ppat-elga-emed-list-medikationsplanSA'));
 document.getElementById('cbat-elga-emed-list-medikationsplanSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -4831,7 +5087,7 @@ Als Erweiterung des FHIR-Basisstandards können alle unten aufgeführten Suchpar
   <tr>
     <td>code</td>
     <td><a href="https://hl7.org/fhir/R4/search.html#token">token</a></td>
-    <td><div><a name="l19613">​</a><a href="list.html">List</a>: Art der Liste (in diesem Fall: Medikationsplan)</div></td>
+    <td><div><a name="l19663">​</a><a href="list.html">List</a>: Art der Liste (in diesem Fall: Medikationsplan)</div></td>
     <td><code>List.code</code></td>
   </tr>
   <tr>
@@ -4959,7 +5215,7 @@ Als Erweiterung des FHIR-Basisstandards können alle unten aufgeführten Suchpar
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-15 16:16:00 +0000">
+  <span title="2026-10-15 16:39:00 +0000">
     2026-10-15
   </span>
 

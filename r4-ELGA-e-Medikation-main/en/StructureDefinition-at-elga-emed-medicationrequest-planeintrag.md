@@ -2,6 +2,14 @@
 
 ## Resource Profile: At ELGA e-Medikation MedicationRequest Planeintrag 
 
+Die Ressource **`MedicationRequest`** bildet einen Planeintrag des Medikationsplans ab.
+
+Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer Conditional Reference über PZN und Displayname dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen.
+
+Relevante Use Cases:
+
+* [Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)](Sub_UC_eMed_02.md#%E2%80%8Btechnische-use-cases-für-medikationsplan-schreiben-uc_emed_02)
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) and [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md)
@@ -37,7 +45,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-15T16:16:55+00:00",
+  "date" : "2026-10-15T16:39:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -54,7 +62,7 @@ In Arbeit.
       "use" : "work"
     }]
   }],
-  "description" : "Ein Planeintrag im Medikationsplan wird durch eine \"MedicationRequest\"-Ressource abgebildet.\nSie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer logischen Referenz über die PZN dokumentiert wird.\nDer Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer \"Geplanten Abgabe\" dienen. Es werden R5-Backport-Extensions verwendet.",
+  "description" : "Profil für einen Medikationsplaneintrag.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -196,7 +204,7 @@ In Arbeit.
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status des Planeintrags. Mögliche Ausprägungen: [active | on-hold | completed | stopped | entered-in-error]. Bedeutung: active: Planeintrag einer aktiven Medikation, die eingenommen werden soll | on-hold: Planeintrag ist pausiert, die Therapie ist unterbrochen (Wiederaufnahme vorgesehen) | completed: Therapie gemäß Planeintrag wie geplant durchgeführt und abgeschlossen | stopped: Therapie gemäß Planeintrag vorzeitig gestoppt und abgeschlossen | entered-in-error: Fehlerhafter Planeintrag storniert und abgeschlossen.",
+      "short" : "Status des Planeintrags. Mögliche Ausprägungen: [active | on-hold | stopped | entered-in-error]. Bedeutung: active: aktuell einzunehmende Medikation | on-hold: pausierte Medikation (aktuell nicht einzunehmen) | stopped: wird nicht weiter verordnet (unabhängig ob vorzeitig abgesetzt, abgeschlossen oder Behandlungszeitraum abgelaufen   \n| entered-in-error: Fehlerhafter Planeintrag storniert und abgeschlossen.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",

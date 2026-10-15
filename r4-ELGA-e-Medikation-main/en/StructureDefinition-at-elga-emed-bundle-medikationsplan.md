@@ -2,6 +2,15 @@
 
 ## Resource Profile: AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan 
 
+Das Medikationsplan-Bundle vom Typ `searchset` enthält den
+
+* Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
+* keinen oder mehrere Medikationsplaneinträge (MedicationRequests)
+* den Patienten
+* einen oder mehrere Authors (verantwortliche Ersteller/Bearbeiter)
+
+Details zur `$plan-read`-Operation siehe [Sub_UC_eMed_01_01 – Aktuellen Medikationsplan lesen (Plan-Read)](https://fhir.hl7.at/r4-ELGA-e-Medikation-main/en/Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read).
+
 **Usages:**
 
 * Examples for this Profile: [Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md), [Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response](Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.md) and [Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response](Bundle-At-Emed-Journey-05-01-Bundle-plan-read-response.md)
@@ -29,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-15T16:16:55+00:00",
+  "date" : "2026-10-15T16:39:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -46,7 +55,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "use" : "work"
     }]
   }],
-  "description" : "Das Medikationsplan-Bundle vom Typ Searchset enthält: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus\n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n- 1..1 Patient\n- 1..* Authors",
+  "description" : "Profil für den Medikationsplan als Ergebnis der $plan-read Operation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",

@@ -2,6 +2,15 @@
 
 ## Resource Profile: AT ELGA e-Medikation Transaction Bundle Medikationsplan 
 
+Das Medikationsplan-Bundle vom Typ `transaction` dient dem schreibenden Zugriff auf den Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und enthält:
+
+* Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus
+* keinen oder mehrere Medikationsplaneinträge (MedicationRequests)
+
+Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.
+
+Details zur `$plan-write`-Operation siehe [Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write).
+
 **Usages:**
 
 * Examples for this Profile: [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md)
@@ -29,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-15T16:16:55+00:00",
+  "date" : "2026-10-15T16:39:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -46,7 +55,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "use" : "work"
     }]
   }],
-  "description" : "Das Medikationsplan-Bundle vom Typ Transaction dient dem schreibenden Zugriff auf den Medikationsplan (Aktualisierung aller enthaltenen Ressourcen) und enthält: \n- 1..1 Medikationsplan (List): Liste mit Referenzen auf Medikationsplaneinträge und zur Abbildung von Reihenfolge und Änderungsstatus \n- 0..* Medikationsplaneinträge (MedicationRequests): Medikation und Dosierung\n\nAlle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen inline im Bundle enthalten sein, alle unveränderten Ressourcen werden referenziert.",
+  "description" : "Profil für das Schreiben des Medikationsplans mit der $plan-write Operation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",

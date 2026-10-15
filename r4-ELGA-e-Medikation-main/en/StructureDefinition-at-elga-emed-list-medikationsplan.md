@@ -2,6 +2,17 @@
 
 ## Resource Profile: AT ELGA e-Medikation List Medikationsplan 
 
+Die **`List`**-Ressource bildet den Medikationsplan ab und enthält keinen oder mehrere Einträge (`List.entry`):
+
+* Jeder Eintrag referenziert über `List.entry.item` genau einen Medikationsplaneintrag (`MedicationRequest`).
+* Die Reihenfolge der `List.entry`-Elemente bestimmt die Reihenfolge der Planeinträge im Medikationsplan.
+* Das Element `List.entry.flag` kennzeichnet den Änderungsstatus des jeweiligen Medikationsplaneintrags.
+* Ein leerer Medikationsplan muss mit einem `emtptyReason` gekennzeichnet sein.
+
+Relevante Use Cases:
+
+* [Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)](Sub_UC_eMed_02.md#%E2%80%8Btechnische-use-cases-für-medikationsplan-schreiben-uc_emed_02)
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) and [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md)
@@ -112,7 +123,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-15T16:16:55+00:00",
+  "date" : "2026-10-15T16:39:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -129,7 +140,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "use" : "work"
     }]
   }],
-  "description" : "Der Medikationsplan wird durch eine List-Ressource abgebildet und enthält:\n- 0..* Einträge (List.entry). \nJedes List.entry.item enhält genau eine Referenz auf einen Medikationsplaneintrag (MedicationRequest).\nDie Reihung der List.entries bestimmt die Reihenfolge der Medikationsplaneinträge. \nJeder Listeneintrag enthält im Element List.entry.flag den Änderungsstatus des jeweiligen Medikationsplaneintrags.",
+  "description" : "Profil für einen Medikationsplan.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -409,7 +420,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
     {
       "id" : "List.note",
       "path" : "List.note",
-      "short" : "Fachliche Begrüundung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)",
+      "short" : "Fachliche Begründung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)",
       "max" : "0"
     },
     {
