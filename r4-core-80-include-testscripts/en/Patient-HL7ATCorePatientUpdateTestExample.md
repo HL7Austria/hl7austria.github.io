@@ -31,8 +31,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (use:
 * Managing Organization: [Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md)
 * Also see: [Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual))](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)
  | | |
-| Patient Religion: | * code: Katholische Kirche (o.n.A.)
- | | |
+| [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Katholische Kirche (o.n.A.) | | |
 | Patient Citizenship: | * code: Österreich
 * period: 2016-07-30 08:30:00+0100 --> 2022-07-30 08:35:00+0100
  | | |
@@ -49,17 +48,14 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (use:
     "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"]
   },
   "extension" : [{
-    "extension" : [{
-      "url" : "code",
-      "valueCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://termgit.elga.gv.at/ValueSet/elga-religiousaffiliation",
-          "code" : "100",
-          "display" : "Katholische Kirche (o.n.A.)"
-        }]
-      }
-    }],
-    "url" : "http://hl7.org/fhir/StructureDefinition/patient-religion"
+    "url" : "http://hl7.org/fhir/StructureDefinition/patient-religion",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/CodeSystem/hl7-at-religionaustria",
+        "code" : "100",
+        "display" : "Katholische Kirche (o.n.A.)"
+      }]
+    }
   },
   {
     "extension" : [{

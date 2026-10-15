@@ -36,7 +36,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-10-15T08:45:14+00:00",
+  "date" : "2026-10-15T11:23:47+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
