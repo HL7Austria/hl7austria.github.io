@@ -2,10 +2,6 @@
 
 ## Publikationsinformationen
 
-### Gesetzliche Grundlagen
-
-Gemäß § 2 Abs. 9 lit. f GTelG 2012 umfassen „ELGA-Gesundheitsdaten“ die zur weiteren Behandlung, Betreuung oder Sicherung der Versorgungskontinuität von ELGA-Teilnehmer/inne/n wesentlich sein könnten auch Patient/inn/endaten gemäß Art. 14 Abs. 2 lit. b sublit. i der Richtlinie 2011/24/EU über die Ausübung der Patientenrechte in der grenzüberschreitenden Gesundheitsversorgung („patient summary“).
-
 ### Verbindlichkeit
 
 Die Verbindlichkeit und die Umsetzungsfrist dieses Leitfadens sind im Gesundheitstelematikgesetz 2012, BGBl.I Nr.111/2012 sowie in den darauf fußenden ELGA-Verordnungen geregelt.

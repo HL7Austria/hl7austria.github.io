@@ -8,10 +8,12 @@
 
 Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Health Codierservice](https://codierservice.ehealth.gv.at/) als Ergebnis einer Eingabe haben könnte.
 
-* Aktuell werden **alle** Klinisch relevante Erscheinungen zugelassen. Auf Basis des Codierservice wird diese Menge noch reduziert.
+* Aktuell werden **alle** [klinisch relevanten Erscheinungen](https://snomedbrowser.org/?perspective=full&conceptId1=404684003&edition=MAIN/SNOMEDCT-AT&release=&languages=de,en) zugelassen. Auf Basis des Codierservice wird diese Menge noch reduziert.
 * Dieses Value-Set wurde für die e-Diagnose entworfen und wird auf den [österreichische e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
-* Der IG Publisher baut aktuell auf SNOMED Intl. Version http://snomed.info/sct/900000000000207008/version/20250201 auf, weshalb weniger Konzepte in diesem Value-Set angezeigt werden als in der aktuellen Version von SNOMED CT verfügbar sind. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
-* Aktuell werden österreichische Übersetzungen auf Basis der Austrian Extension in dem Value-Set noch nicht aufgelöst. Dieses Problem wird bereinigt, sobald das Value-Set auf den österreichische e-Health Terminologieserver verschoben wird.
+* Mit der Bereitstellung der aktuellen Version der International Edition von SNOMED CT inklusive der Austrian Extension am österreichische e-Health Terminologieserver werden folgende Punkte aufgelöst: 
+* Der IG Publisher hat zurzeit nur Zugriff auf die International Edition von SNOMED CT in der Version http://snomed.info/sct/900000000000207008/version/20250201, weshalb weniger Konzepte in diesem Value-Set angezeigt werden als in der aktuellen Version von SNOMED CT verfügbar sind.
+* Aktuell werden österreichische Übersetzungen auf Basis der Austrian Extension in dem Value-Set noch nicht aufgelöst.
+ 
 
 ### Logical Definition (CLD)
 
@@ -37,7 +39,7 @@ Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Healt
   "title" : "AT e-Diagnose Condition Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-14T06:31:33+00:00",
+  "date" : "2026-10-15T07:03:41+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

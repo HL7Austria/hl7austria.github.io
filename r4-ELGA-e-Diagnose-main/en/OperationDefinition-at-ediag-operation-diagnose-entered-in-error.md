@@ -38,7 +38,7 @@ Möchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss d
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-14T06:31:33+00:00",
+  "date" : "2026-10-15T07:03:41+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
