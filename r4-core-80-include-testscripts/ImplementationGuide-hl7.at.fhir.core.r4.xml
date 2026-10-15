@@ -12,7 +12,7 @@
   <name value="HL7AustriaImplementationGuide"/>
   <title value="HL7® Austria FHIR® Core Implementation Guide"/>
   <status value="active"/>
-  <date value="2026-10-09T10:16:42+00:00"/>
+  <date value="2026-10-15T08:45:14+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <contact>
     <name value="HL7® Austria, TC FHIR®"/>
@@ -286,8 +286,19 @@
       <reference>
         <reference value="StructureDefinition/at-core-ext-address-municipalityCode"/>
       </reference>
-      <name value="Address Municipality Code"/>
-      <description value="HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address"/>
+      <name value="Address Municipality Code (Gemeindecode)"/>
+      <description value="HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-core-ext-address-municipalityKey"/>
+      </reference>
+      <name value="Address Municipality Key (Gemeindekennziffer)"/>
+      <description value="HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -299,6 +310,50 @@
       </reference>
       <name value="Administrative Gender Addition"/>
       <description value="HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). &#xD;&#xA;The extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-core-funktionscode"/>
+      </reference>
+      <name value="CodeSystem for Austrian Funktionscodes Excerpt"/>
+      <description value="CodeSystem for Austrian Funktionscodes Excerpt"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-core-ext-composition-terminologyDate"/>
+      </reference>
+      <name value="Composition Terminology Date"/>
+      <description value="HL7® Austria FHIR® Core Extension for documenting the date of last synchronization of the locally stored value sets for usage by the content creating system with the terminology server.&#xA;&#xA;Only intended for representing `hl7at:terminologyDate` when transforming CDA documents to FHIR; must not be used in FHIR-native applications."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/HealthcareServiceRheumatologyExample"/>
+      </reference>
+      <name value="Example HealthcareService with Specialty"/>
+      <description value="Example of a healthcare service with an Austrian Funktionscode as specialty."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-core-vbpk"/>
+      </reference>
+      <name value="HL7AT Core vbPK"/>
+      <description value="This value set contains the OIDs for the vbPK (Verschlüsseltes bereichsspezifisches Personenkennzeichen) in Austria according to [E-Government-Bereichsabgrenzungsverordnung – E-Gov-BerAbgrV](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&amp;Gesetzesnummer=20003476)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -481,6 +536,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/at-core-HealthcareService"/>
+      </reference>
+      <name value="HL7® AT Core HealthcareService Profile"/>
+      <description value="HL7® Austria FHIR® Core Profile for healthcare service data in Austria."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/at-core-location"/>
       </reference>
       <name value="HL7® AT Core Location Profile"/>
@@ -584,6 +650,17 @@
       </reference>
       <name value="System OID"/>
       <description value="HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.&#xD;&#xA;The extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-funktionscode-vs"/>
+      </reference>
+      <name value="ValueSet for Austrian Funktionscodes Excerpt"/>
+      <description value="ValueSet for Austrian Funktionscodes Excerpt"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

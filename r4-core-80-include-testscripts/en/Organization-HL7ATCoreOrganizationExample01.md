@@ -53,7 +53,7 @@ Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)
   }],
   "type" : [{
     "coding" : [{
-      "system" : "https://termgit.elga.gv.at/ValueSet/hl7-at-organizationtype",
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-gtelvogdarollen",
       "code" : "300",
       "display" : "Allgemeine Krankenanstalt"
     }]

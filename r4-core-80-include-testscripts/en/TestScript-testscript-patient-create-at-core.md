@@ -32,7 +32,7 @@ This FHIR Test Script is licensed under Creative Commons (CC0) 'No Rights Reserv
 > **id**patient-create
 **autocreate**: false**autodelete**: false**resource**: [Andreas Bucher Male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (use: official))](Patient-HL7ATCorePatientCreateTestExample.md)
 
-**profile**: [http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient)
+**profile**: [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md)
 
 ### Variables
 
@@ -119,7 +119,7 @@ This FHIR Test Script is licensed under Creative Commons (CC0) 'No Rights Reserv
   }],
   "profile" : [{
     "id" : "at-core-patient-profile",
-    "reference" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-patient"
+    "reference" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
   }],
   "variable" : [{
     "name" : "patientResourceId",

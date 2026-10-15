@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
   "name" : "HL7ATCoreAddress",
   "title" : "HL7® AT Core Address Profile",
   "status" : "active",
-  "date" : "2026-10-09T10:16:42+00:00",
+  "date" : "2026-10-15T08:45:14+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -107,6 +107,17 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode"]
+      }]
+    },
+    {
+      "id" : "Address.extension:municipalityKey",
+      "path" : "Address.extension",
+      "sliceName" : "municipalityKey",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityKey"]
       }]
     },
     {

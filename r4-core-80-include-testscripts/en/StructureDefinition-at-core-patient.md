@@ -38,7 +38,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-10-09T10:16:42+00:00",
+  "date" : "2026-10-15T08:45:14+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -181,6 +181,10 @@ Usage of the European Health Insurance Card (EHIC):
         "discriminator" : [{
           "type" : "value",
           "path" : "type.coding.code"
+        },
+        {
+          "type" : "value",
+          "path" : "system"
         }],
         "ordered" : false,
         "rules" : "open"
@@ -249,7 +253,7 @@ Usage of the European Health Insurance Card (EHIC):
       "path" : "Patient.identifier",
       "sliceName" : "bPK",
       "min" : 0,
-      "max" : "*"
+      "max" : "1"
     },
     {
       "id" : "Patient.identifier:bPK.type",
@@ -293,6 +297,42 @@ Usage of the European Health Insurance Card (EHIC):
       "id" : "Patient.identifier:bPK.assigner.display",
       "path" : "Patient.identifier.assigner.display",
       "fixedString" : "Bundesministerium für Inneres"
+    },
+    {
+      "id" : "Patient.identifier:vbPK",
+      "path" : "Patient.identifier",
+      "sliceName" : "vbPK",
+      "min" : 0,
+      "max" : "*"
+    },
+    {
+      "id" : "Patient.identifier:vbPK.type",
+      "path" : "Patient.identifier.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
+      }
+    },
+    {
+      "id" : "Patient.identifier:vbPK.type.coding.system",
+      "path" : "Patient.identifier.type.coding.system",
+      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+    },
+    {
+      "id" : "Patient.identifier:vbPK.type.coding.code",
+      "path" : "Patient.identifier.type.coding.code",
+      "min" : 1,
+      "fixedCode" : "ANON"
+    },
+    {
+      "id" : "Patient.identifier:vbPK.system",
+      "path" : "Patient.identifier.system",
+      "short" : "OID for the specific vbPK in Austria",
+      "min" : 1,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/core/r4/ValueSet/at-core-vbpk"
+      }
     },
     {
       "id" : "Patient.identifier:localPatientId",

@@ -113,7 +113,8 @@
     "uses" : {
     },
     "StructureDefinition-at-core-location.html" : "HL7® AT Core Location Profile",
-    "StructureDefinition-at-core-practitionerRole.html" : "HL7® AT Core PractitionerRole Profile"
+    "StructureDefinition-at-core-practitionerRole.html" : "HL7® AT Core PractitionerRole Profile",
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/designation-use",
@@ -156,8 +157,8 @@
     "uses" : {
     },
     "StructureDefinition-at-core-location.html" : "HL7® AT Core Location Profile",
-    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile",
-    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile"
+    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile",
+    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/identifier-use",
@@ -172,9 +173,9 @@
     "uses" : {
     },
     "StructureDefinition-at-core-location.html" : "HL7® AT Core Location Profile",
-    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile",
     "StructureDefinition-at-core-patient.html" : "HL7® AT Core Patient Profile",
-    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile"
+    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile",
+    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/jurisdiction",
@@ -204,12 +205,13 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-at-core-valueset.html" : "HL7® AT Core ValueSet Profile",
     "StructureDefinition-at-core-location.html" : "HL7® AT Core Location Profile",
-    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile",
-    "StructureDefinition-at-core-patient.html" : "HL7® AT Core Patient Profile",
     "StructureDefinition-at-core-practitionerRole.html" : "HL7® AT Core PractitionerRole Profile",
-    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile"
+    "StructureDefinition-at-core-patient.html" : "HL7® AT Core Patient Profile",
+    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile",
+    "StructureDefinition-at-core-valueset.html" : "HL7® AT Core ValueSet Profile",
+    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile",
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
   },
   {
     "url" : "http://hl7.org/fhir/ValueSet/link-type",
@@ -311,6 +313,20 @@
     "StructureDefinition-at-core-patient.html" : "HL7® AT Core Patient Profile"
   },
   {
+    "url" : "http://hl7.org/fhir/ValueSet/program",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "Program",
+    "title" : "Program",
+    "description" : "This value set defines an example set of codes that could be can be used to classify groupings of service-types/specialties.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/program"],
+    "oids" : ["2.16.840.1.113883.4.642.3.1383"],
+    "sources" : ["2.16.840.1.113883.4.642.3.1383"],
+    "uses" : {
+    },
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
+  },
+  {
     "url" : "http://hl7.org/fhir/ValueSet/publication-status",
     "version" : "4.0.1",
     "status" : "active",
@@ -337,9 +353,65 @@
     "uses" : {
     },
     "StructureDefinition-at-core-location.html" : "HL7® AT Core Location Profile",
-    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile",
     "StructureDefinition-at-core-patient.html" : "HL7® AT Core Patient Profile",
-    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile"
+    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile",
+    "StructureDefinition-at-core-organization.html" : "HL7® AT Core Organization Profile"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/service-category",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceCategory",
+    "title" : "Service category",
+    "description" : "This value set defines an example set of codes that can be used to classify groupings of service-types/specialties.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/service-category"],
+    "oids" : ["2.16.840.1.113883.4.642.3.516"],
+    "sources" : ["2.16.840.1.113883.4.642.3.516"],
+    "uses" : {
+    },
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/service-provision-conditions",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceProvisionConditions",
+    "title" : "ServiceProvisionConditions",
+    "description" : "The code(s) that detail the conditions under which the healthcare service is available/offered.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/service-provision-conditions"],
+    "oids" : ["2.16.840.1.113883.4.642.3.514"],
+    "sources" : ["2.16.840.1.113883.4.642.3.514"],
+    "uses" : {
+    },
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/service-referral-method",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ReferralMethod",
+    "title" : "ReferralMethod",
+    "description" : "The methods of referral can be used when referring to a specific HealthCareService resource.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/service-referral-method"],
+    "oids" : ["2.16.840.1.113883.4.642.3.510"],
+    "sources" : ["2.16.840.1.113883.4.642.3.510"],
+    "uses" : {
+    },
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
+  },
+  {
+    "url" : "http://hl7.org/fhir/ValueSet/service-type",
+    "version" : "4.0.1",
+    "status" : "draft",
+    "name" : "ServiceType",
+    "title" : "Service type",
+    "description" : "This value set defines an example set of codes of service-types.",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/service-type"],
+    "oids" : ["2.16.840.1.113883.4.642.3.518"],
+    "sources" : ["2.16.840.1.113883.4.642.3.518"],
+    "uses" : {
+    },
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
   },
   {
     "url" : "http://terminology.hl7.org/ValueSet/v2-0116",
@@ -380,5 +452,30 @@
     "uses" : {
     },
     "StructureDefinition-at-core-location.html" : "HL7® AT Core Location Profile"
+  },
+  {
+    "url" : "https://fhir.hl7.at/core/r4/ValueSet/at-core-vbpk",
+    "version" : "2.1.0",
+    "status" : "active",
+    "name" : "HL7ATCoreVBPK",
+    "title" : "HL7AT Core vbPK",
+    "description" : "This value set contains the OIDs for the vbPK (Verschlüsseltes bereichsspezifisches Personenkennzeichen) in Austria according to [E-Government-Bereichsabgrenzungsverordnung – E-Gov-BerAbgrV](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003476).",
+    "systems" : ["urn:ietf:rfc:3986"],
+    "uses" : {
+    },
+    "StructureDefinition-at-core-patient.html" : "HL7® AT Core Patient Profile",
+    "StructureDefinition-at-core-practitioner.html" : "HL7® AT Core Practitioner Profile"
+  },
+  {
+    "url" : "https://fhir.hl7.at/core/r4/ValueSet/at-funktionscode-vs",
+    "version" : "2.1.0",
+    "status" : "draft",
+    "name" : "HealthcareServiceSpecialtyVS",
+    "title" : "ValueSet for Austrian Funktionscodes Excerpt",
+    "description" : "ValueSet for Austrian Funktionscodes Excerpt",
+    "systems" : ["https://fhir.hl7.at/core/r4/CodeSystem/at-core-funktionscode"],
+    "uses" : {
+    },
+    "StructureDefinition-at-core-HealthcareService.html" : "HL7® AT Core HealthcareService Profile"
   }]
 }

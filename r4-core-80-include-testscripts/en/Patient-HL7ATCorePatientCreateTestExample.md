@@ -24,11 +24,11 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (use:
 | Emergency Contact: | * Julia Tochter (Female)
 * Heimstrasse 1 Wien 1220 AUT 
 * [+43.664.12345678](tel:+43.664.12345678)
-* Organization:[Organization/Organization-example-f001-burgers](Organization/Organization-example-f001-burgers)
+* Organization:[Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md)
 * Valid Period:2016-07-30 08:30:00+0100 --> 2019-07-30 08:35:00+0100
  | | |
-| Links: | * General Practitioner: [Organization/Organization-example-f001-burgers](Organization/Organization-example-f001-burgers)
-* Managing Organization: [Organization/Organization-example-f001-burgers](Organization/Organization-example-f001-burgers)
+| Links: | * General Practitioner: [Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md)
+* Managing Organization: [Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md)
 * Also see: [Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual))](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)
  | | |
 | Patient Citizenship: | * code: Österreich
@@ -51,7 +51,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (use:
       "url" : "code",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/CodeSystem/at-core-cs-iso-3166-1-alpha-3",
+          "system" : "https://termgit.elga.gv.at/CodeSystem/iso-3166-1-alpha-3",
           "code" : "AUT",
           "display" : "Österreich"
         }]
@@ -198,7 +198,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (use:
     },
     "gender" : "female",
     "organization" : {
-      "reference" : "Organization/Organization-example-f001-burgers"
+      "reference" : "Organization/HL7ATCoreOrganizationExample01"
     },
     "period" : {
       "start" : "2016-07-30T08:30:00+01:00",
@@ -215,10 +215,10 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Social Security Number: 1111241261 (use:
     "preferred" : true
   }],
   "generalPractitioner" : [{
-    "reference" : "Organization/Organization-example-f001-burgers"
+    "reference" : "Organization/HL7ATCoreOrganizationExample01"
   }],
   "managingOrganization" : {
-    "reference" : "Organization/Organization-example-f001-burgers"
+    "reference" : "Organization/HL7ATCoreOrganizationExample01"
   },
   "link" : [{
     "other" : {

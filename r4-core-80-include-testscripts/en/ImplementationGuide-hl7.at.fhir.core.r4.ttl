@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "HL7AustriaImplementationGuide"] ;
   fhir:ImplementationGuide.title [ fhir:value "HL7® Austria FHIR® Core Implementation Guide"] ;
   fhir:ImplementationGuide.status [ fhir:value "active"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-09T10:16:42+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-15T08:45:14+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "HL7® Austria, TC FHIR®"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -428,8 +428,22 @@
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-ext-address-municipalityCode" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Address Municipality Code" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the municipality code part of the Austrian address" ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Address Municipality Code (Gemeindecode)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityKey> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-ext-address-municipalityKey" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Address Municipality Key (Gemeindekennziffer)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -444,6 +458,65 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Administrative Gender Addition" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). \r\nThe extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/CodeSystem/at-core-funktionscode> ;
+         fhir:Reference.reference [ fhir:value "CodeSystem/at-core-funktionscode" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "CodeSystem for Austrian Funktionscodes Excerpt" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CodeSystem for Austrian Funktionscodes Excerpt" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-composition-terminologyDate> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-ext-composition-terminologyDate" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Composition Terminology Date" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for documenting the date of last synchronization of the locally stored value sets for usage by the content creating system with the terminology server.\n\nOnly intended for representing `hl7at:terminologyDate` when transforming CDA documents to FHIR; must not be used in FHIR-native applications." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "HealthcareService" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/HealthcareService/HealthcareServiceRheumatologyExample> ;
+         fhir:Reference.reference [ fhir:value "HealthcareService/HealthcareServiceRheumatologyExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example HealthcareService with Specialty" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a healthcare service with an Austrian Funktionscode as specialty." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/ValueSet/at-core-vbpk> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/at-core-vbpk" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7AT Core vbPK" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This value set contains the OIDs for the vbPK (Verschlüsseltes bereichsspezifisches Personenkennzeichen) in Austria according to [E-Government-Bereichsabgrenzungsverordnung – E-Gov-BerAbgrV](https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003476)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -721,6 +794,20 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-HealthcareService" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7® AT Core HealthcareService Profile" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Profile for healthcare service data in Austria." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-location" ]
        ] ;
@@ -852,6 +939,20 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "System OID" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the capturing of OID in ValueSets to reference the CodeSystem they come from.\r\nThe extension is used to document the OID of the system of a code referenced in a ValueSet, to align FHIR with the HL7 Austria CDA document guidelines." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/ValueSet/at-funktionscode-vs> ;
+         fhir:Reference.reference [ fhir:value "ValueSet/at-funktionscode-vs" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ValueSet for Austrian Funktionscodes Excerpt" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet for Austrian Funktionscodes Excerpt" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ] ;
      fhir:ImplementationGuide.definition.page [
