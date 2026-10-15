@@ -11,10 +11,10 @@
   "language" : "en",
   "url" : "https://fhir.hl7.at/elga/emed/r4/ImplementationGuide/hl7.at.fhir.elga.emed.r4",
   "version" : "0.1.0",
-  "name" : "ELGAeMedikationR4",
+  "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-15T11:48:20+00:00",
+  "date" : "2026-10-15T13:39:50+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

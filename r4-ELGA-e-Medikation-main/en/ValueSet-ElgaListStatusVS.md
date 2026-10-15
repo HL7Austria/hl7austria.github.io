@@ -30,7 +30,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA List Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-15T11:48:20+00:00",
+  "date" : "2026-10-15T13:39:50+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
