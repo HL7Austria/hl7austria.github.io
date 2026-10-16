@@ -12,7 +12,7 @@
   <name value="HL7AustriaImplementationGuide"/>
   <title value="HL7® Austria FHIR® Core Implementation Guide"/>
   <status value="active"/>
-  <date value="2026-10-15T11:23:47+00:00"/>
+  <date value="2026-10-16T06:17:07+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <contact>
     <name value="HL7® Austria, TC FHIR®"/>
@@ -599,6 +599,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-core-related-person"/>
+      </reference>
+      <name value="HL7® AT Core RelatedPerson Profile"/>
+      <description value="HL7® Austria FHIR® Core Profile for a related person in Austria.&#xD;&#xA;The HL7® AT Core RelatedPerson is based upon the core FHIR® RelatedPeson Resource and designed to meet the applicable demographic data elements in Austria. Note, this extension represents the common structure of a person information within Austrian information systems."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="TestScript"/>
       </extension>
       <reference>
@@ -640,6 +651,28 @@
       <name value="Patient Religion"/>
       <description value="**DEPRECATED** HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.&#xD;&#xA;The extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&amp;loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/PatientFelixGruber"/>
+      </reference>
+      <name value="PatientFelixGruber"/>
+      <description value="Example of a fictional minor patient living in Vienna, whose father is represented by a RelatedPerson resource."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RelatedPerson"/>
+      </extension>
+      <reference>
+        <reference value="RelatedPerson/RelatedPersonMartinGruber"/>
+      </reference>
+      <name value="RelatedPersonMartinGruber"/>
+      <description value="Example of Martin Gruber, the fictional father and next of kin of the minor patient Felix Gruber."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-related-person"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
