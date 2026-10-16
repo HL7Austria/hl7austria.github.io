@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-related-p
   "name" : "HL7ATCoreRelatedPerson",
   "title" : "HL7® AT Core RelatedPerson Profile",
   "status" : "active",
-  "date" : "2026-10-16T06:17:07+00:00",
+  "date" : "2026-10-16T08:44:30+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
