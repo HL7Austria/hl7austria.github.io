@@ -36,7 +36,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-10-13T05:41:37+00:00",
+  "date" : "2026-10-16T04:50:14+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -163,24 +163,22 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "path" : "Practitioner.identifier",
       "sliceName" : "vbPK",
       "min" : 0,
-      "max" : "1"
+      "max" : "*"
     },
     {
       "id" : "Practitioner.identifier:vbPK.system",
       "path" : "Practitioner.identifier.system",
-      "short" : "OID for the vbPK in Austria",
+      "short" : "OID for the specific vbPK in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.34.4.22"
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/core/r5/ValueSet/at-core-vbpk"
+      }
     },
     {
       "id" : "Practitioner.identifier:vbPK.value",
       "path" : "Practitioner.identifier.value",
       "min" : 1
-    },
-    {
-      "id" : "Practitioner.identifier:vbPK.assigner.display",
-      "path" : "Practitioner.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Inneres"
     },
     {
       "id" : "Practitioner.gender.extension",

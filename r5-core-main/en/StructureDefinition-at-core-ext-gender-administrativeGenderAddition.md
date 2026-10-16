@@ -8,7 +8,7 @@
 
 **Usages:**
 
-* Use this Extension: [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md) and [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md)
+* Use this Extension: [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md), [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md) and [HL7® AT Core RelatedPerson Profile](StructureDefinition-at-core-related-person.md)
 * Examples for this Extension: [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-ext-gender-administrativeGenderAddition.json)
@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-gende
   "name" : "AdministrativeGenderAddition",
   "title" : "Administrative Gender Addition",
   "status" : "active",
-  "date" : "2026-10-13T05:41:37+00:00",
+  "date" : "2026-10-16T04:50:14+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

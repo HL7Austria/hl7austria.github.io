@@ -12,7 +12,14 @@
     },
     {
       "url": "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-municipalityCode",
-      "title": "Address Municipality Code",
+      "title": "Address Municipality Code (Gemeindecode)",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-municipalityKey",
+      "title": "Address Municipality Key (Gemeindekennziffer)",
       "types": [
         "string"
       ]
@@ -102,6 +109,12 @@
     }
   ],
   "profiles": {
+    "HealthcareService": [
+      {
+        "url": "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-HealthcareService",
+        "title": "HL7® AT Core HealthcareService Profile"
+      }
+    ],
     "Location": [
       {
         "url": "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-location",
@@ -132,6 +145,12 @@
         "title": "HL7® AT Core PractitionerRole Profile"
       }
     ],
+    "RelatedPerson": [
+      {
+        "url": "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-related-person",
+        "title": "HL7® AT Core RelatedPerson Profile"
+      }
+    ],
     "ValueSet": [
       {
         "url": "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-valueset",
@@ -157,21 +176,24 @@
       "Organization.contact.address.line",
       "Patient.address.line",
       "Patient.contact.address.line",
-      "Practitioner.address.line"
+      "Practitioner.address.line",
+      "RelatedPerson.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
       "Address.line",
       "Organization.contact.address.line",
       "Patient.address.line",
       "Patient.contact.address.line",
-      "Practitioner.address.line"
+      "Practitioner.address.line",
+      "RelatedPerson.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
       "Address.line",
       "Organization.contact.address.line",
       "Patient.address.line",
       "Patient.contact.address.line",
-      "Practitioner.address.line"
+      "Practitioner.address.line",
+      "RelatedPerson.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-birthPlace": [
       "Patient"
@@ -231,10 +253,16 @@
       "Patient.address",
       "Patient.contact.address"
     ],
+    "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-municipalityKey": [
+      "Address",
+      "Patient.address",
+      "Patient.contact.address"
+    ],
     "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-gender-administrativeGenderAddition": [
       "Patient.contact.gender",
       "Patient.gender",
-      "Practitioner.gender"
+      "Practitioner.gender",
+      "RelatedPerson.gender"
     ],
     "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-valueset-systemoid": [
       "ValueSet.compose.include",

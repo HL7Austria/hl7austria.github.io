@@ -118,6 +118,10 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
     "extension" : [{
       "url" : "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-municipalityCode",
       "valueString" : "40101"
+    },
+    {
+      "url" : "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-municipalityKey",
+      "valueString" : "40101"
     }],
     "use" : "home",
     "type" : "both",

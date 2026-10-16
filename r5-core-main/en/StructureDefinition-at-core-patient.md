@@ -4,7 +4,8 @@
 
 **Usages:**
 
-* Examples for this Profile: [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample02-deceasedTime](Patient-HL7ATCorePatientExample02-deceasedTime.md), [Patient/HL7ATCorePatientExample03-deceasedBoolean](Patient-HL7ATCorePatientExample03-deceasedBoolean.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md)... Show 3 more, [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md) and [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md)
+* Refer to this Profile: [HL7® AT Core RelatedPerson Profile](StructureDefinition-at-core-related-person.md)
+* Examples for this Profile: [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample02-deceasedTime](Patient-HL7ATCorePatientExample02-deceasedTime.md), [Patient/HL7ATCorePatientExample03-deceasedBoolean](Patient-HL7ATCorePatientExample03-deceasedBoolean.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md)... Show 4 more, [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md) and [Patient/PatientFelixGruber](Patient-PatientFelixGruber.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-patient.json)
 
@@ -38,7 +39,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-10-13T05:41:37+00:00",
+  "date" : "2026-10-16T04:50:14+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -186,6 +187,10 @@ Usage of the European Health Insurance Card (EHIC):
         "discriminator" : [{
           "type" : "value",
           "path" : "type.coding.code"
+        },
+        {
+          "type" : "value",
+          "path" : "system"
         }],
         "ordered" : false,
         "rules" : "open"
@@ -254,7 +259,7 @@ Usage of the European Health Insurance Card (EHIC):
       "path" : "Patient.identifier",
       "sliceName" : "bPK",
       "min" : 0,
-      "max" : "*"
+      "max" : "1"
     },
     {
       "id" : "Patient.identifier:bPK.type",
@@ -298,6 +303,42 @@ Usage of the European Health Insurance Card (EHIC):
       "id" : "Patient.identifier:bPK.assigner.display",
       "path" : "Patient.identifier.assigner.display",
       "fixedString" : "Bundesministerium für Inneres"
+    },
+    {
+      "id" : "Patient.identifier:vbPK",
+      "path" : "Patient.identifier",
+      "sliceName" : "vbPK",
+      "min" : 0,
+      "max" : "*"
+    },
+    {
+      "id" : "Patient.identifier:vbPK.type",
+      "path" : "Patient.identifier.type",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
+      }
+    },
+    {
+      "id" : "Patient.identifier:vbPK.type.coding.system",
+      "path" : "Patient.identifier.type.coding.system",
+      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+    },
+    {
+      "id" : "Patient.identifier:vbPK.type.coding.code",
+      "path" : "Patient.identifier.type.coding.code",
+      "min" : 1,
+      "fixedCode" : "ANON"
+    },
+    {
+      "id" : "Patient.identifier:vbPK.system",
+      "path" : "Patient.identifier.system",
+      "short" : "OID for the specific vbPK in Austria",
+      "min" : 1,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/core/r5/ValueSet/at-core-vbpk"
+      }
     },
     {
       "id" : "Patient.identifier:localPatientId",

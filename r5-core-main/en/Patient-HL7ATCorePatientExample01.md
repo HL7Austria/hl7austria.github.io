@@ -12,6 +12,7 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
 | :--- | :--- |
 | Other Ids: | * National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=
 * Patient internal identifier/0815
+* Anonymous identifier/R0g6b2VMZFNFYjBsKzhrU2RKV2pPWXlZbW5Za2kwPQ==
  |
 | Contact Detail | * [office@hl7.at](mailto:office@hl7.at)
 * [+436501234567890](tel:+436501234567890)
@@ -96,6 +97,17 @@ Max Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
     "assigner" : {
       "display" : "Ein GDA in Österreich"
     }
+  },
+  {
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "ANON",
+        "display" : "Anonymous identifier"
+      }]
+    },
+    "system" : "urn:oid:1.2.40.0.34.4.22.1",
+    "value" : "R0g6b2VMZFNFYjBsKzhrU2RKV2pPWXlZbW5Za2kwPQ=="
   }],
   "name" : [{
     "family" : "Mustermann",

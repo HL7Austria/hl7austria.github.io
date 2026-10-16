@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Use this DataType Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md), [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md) and [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
+* Use this DataType Profile: [HL7® AT Core HealthcareService Profile](StructureDefinition-at-core-HealthcareService.md), [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md), [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md) and [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r5|current/StructureDefinition/StructureDefinition-at-core-extendedContactDetail.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-extendedC
   "name" : "HL7ATCoreExtendedContactDetail",
   "title" : "HL7® AT Core ExtendedContactDetail Profile",
   "status" : "active",
-  "date" : "2026-10-13T05:41:37+00:00",
+  "date" : "2026-10-16T04:50:14+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -59,10 +59,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-extendedC
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "ExtendedContactDetail",
-      "path" : "ExtendedContactDetail"
-    },
-    {
       "id" : "ExtendedContactDetail.address",
       "path" : "ExtendedContactDetail.address",
       "type" : [{
