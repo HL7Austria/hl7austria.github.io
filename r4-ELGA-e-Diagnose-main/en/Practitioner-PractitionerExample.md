@@ -1,4 +1,4 @@
-# Beispiel Practitioner - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Beispiel Practitioner - ELGA e-Diagnose R4 v0.1.0
 
 ## Example Practitioner: Beispiel Practitioner
 

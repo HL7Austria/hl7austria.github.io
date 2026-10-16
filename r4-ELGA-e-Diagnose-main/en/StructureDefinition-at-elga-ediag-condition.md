@@ -1,4 +1,4 @@
-# AT ELGA e-Diagnose Condition - ELGA e-Diagnose R4 (Draft) v0.1.0
+# AT ELGA e-Diagnose Condition - ELGA e-Diagnose R4 v0.1.0
 
 ## Resource Profile: AT ELGA e-Diagnose Condition 
 
@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
   "name" : "AtEdiagCondition",
   "title" : "AT ELGA e-Diagnose Condition",
   "status" : "active",
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -145,7 +145,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "mustSupport" : true
     },
     {
       "id" : "Condition.identifier:businessIdentifier",
@@ -154,18 +155,26 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-con
       "short" : "Identifier innerhalb der e-Diagnose für einen Eintrag.",
       "definition" : "Dieser Identifier wird von der Fachanwendung e-Diagnose vergeben, sollte dieser durch den Client nicht gesetzt werden. Ein Client kann diesen Identifier nutzen, um einzelne Einträge im Zuge einer Bearbeitung miteinander zu verknüpfen.",
       "min" : 0,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Condition.identifier:businessIdentifier.use",
+      "path" : "Condition.identifier.use",
+      "max" : "0"
     },
     {
       "id" : "Condition.identifier:businessIdentifier.system",
       "path" : "Condition.identifier.system",
       "min" : 1,
-      "patternUri" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier"
+      "patternUri" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-codesystem-business-identifier",
+      "mustSupport" : true
     },
     {
       "id" : "Condition.identifier:businessIdentifier.value",
       "path" : "Condition.identifier.value",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Condition.clinicalStatus",

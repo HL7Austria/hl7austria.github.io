@@ -1,4 +1,4 @@
-# Beispielinstanz einer Allergie für die Summary-Liste - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Beispielinstanz einer Allergie für die Summary-Liste - ELGA e-Diagnose R4 v0.1.0
 
 ## Example AllergyIntolerance: Beispielinstanz einer Allergie für die Summary-Liste
 

@@ -1,4 +1,4 @@
-# Workflowmanagement - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Workflowmanagement - ELGA e-Diagnose R4 v0.1.0
 
 ## Workflowmanagement
 
@@ -17,13 +17,4 @@ Für jede erlaubte Kombination sind die fachliche Übersetzung sowie die Begrün
 | `active` | - | gesichert |   |
 | `inactive` | `refuted` | Ausschluss von | nur Angabe falls explizit notwendig und medizinisch sinnvoll (sonst: bei jeder Fiebermessung: Ausschluss von Fieber) |
 | `inactive` | - | Zustand nach | Erfassen einer Diagnose, ohne Angabe eines expliziten`verificationStatus` |
-
-#### Erlaubte Kombinationen für AllergyIntolerance
-
-| | | | |
-| :--- | :--- | :--- | :--- |
-| `active` | `unconfirmed` | nicht gesichert | anamnestisch übernommen aus anderem Dokument, mit fraglicher bzw. keiner klinischen Beschreibung |
-| `active` | `presumed` | Verdacht auf |   |
-| `active` | `confirmed` | gesichert |   |
-| `resolved` | `refuted` | Widerlegt/Ausschluss von |   |
 

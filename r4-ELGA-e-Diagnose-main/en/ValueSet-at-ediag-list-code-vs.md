@@ -1,4 +1,4 @@
-# ELGA AT e-Diagnose List Entry Code - ELGA e-Diagnose R4 (Draft) v0.1.0
+# ELGA AT e-Diagnose List Entry Code - ELGA e-Diagnose R4 v0.1.0
 
 ## ValueSet: ELGA AT e-Diagnose List Entry Code (Experimental) 
 
@@ -32,7 +32,7 @@
   "title" : "ELGA AT e-Diagnose List Entry Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

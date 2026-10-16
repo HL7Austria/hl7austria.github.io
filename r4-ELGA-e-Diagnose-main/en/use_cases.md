@@ -1,4 +1,4 @@
-# Überblick Anwendungsfälle - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Überblick Anwendungsfälle - ELGA e-Diagnose R4 v0.1.0
 
 ## Überblick Anwendungsfälle
 

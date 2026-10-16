@@ -1,27 +1,27 @@
-# e-Diagnose Operation $entered-in-error - ELGA e-Diagnose R4 (Draft) v0.1.0
+# e-Diagnose Operation $entered-in-error - ELGA e-Diagnose R4 v0.1.0
 
 ## OperationDefinition: e-Diagnose Operation $entered-in-error 
 
 ### Wer ruft diese Operation in welchem Zusammenhang auf?
 
-Möchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss diese Operation ausgeführt werden.
+Möchte der GDA einen Eintrag in der e-Diagnose Fachanwendung stornieren, muss diese Operation ausgeführt werden.
 
 ### Voraussetzung für den Aufruf
 
-* Die zu stornierende Diagnose muss in der e-Diagnose Fachanwendung vorhanden sein.
+* Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.
 
 ### Detaillierte Business-Logik
 
-1. Die Diagnose (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID in der e-Diagnose Fachanwendung storniert.
-1. Als`[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[practitioner]`wird von der e-Diagnose Fachanwendung der GDA, der die Stornierung durchführt, dokumentiert.
-1. Als`[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[datetime]`wird von der e-Diagnose Fachanwendung das Datum und die Uhrzeit der Stornierung dokumentiert.
-1. Als`[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[reason]`wird der Grund für die Stornierung, der vom GDA angegeben werden kann, festgehalten.
-1. Alle weiteren Informationen der Diagnose bleiben unverändert erhalten.
-1. Ist die Diagnose Teil der jeweiligen Summary-Liste, wird sie aus der Summary-Liste entfernt.
+1. Der Eintrag (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID in der e-Diagnose Fachanwendung storniert.
+1. Als`[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[practitioner]`wird durch die e-Diagnose Fachanwendung der GDA, der die Stornierung durchführt, dokumentiert.
+1. Als`[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[datetime]`wird durch die e-Diagnose Fachanwendung das Datum und die Uhrzeit der Stornierung dokumentiert.
+1. Als`[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[reason]`wird der Grund für die Stornierung, der vom GDA angegeben werden**kann**, festgehalten.
+1. Alle weiteren Informationen des Eintrags bleiben unverändert erhalten.
+1. Ist der Eintrag Teil der jeweiligen Summary-Liste, wird er aus der Summary-Liste entfernt.
 
 ### Validierung / Fehlerbehandlung
 
-* Die zu stornierende Diagnose muss in der e-Diagnose Fachanwendung vorhanden sein.
+* Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.
 
 
 
@@ -38,7 +38,7 @@ Möchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss d
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -55,8 +55,8 @@ Möchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss d
       "use" : "work"
     }]
   }],
-  "description" : "Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung.",
-  "purpose" : "### Wer ruft diese Operation in welchem Zusammenhang auf?\n\nMöchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss diese Operation ausgeführt werden.\n\n### Voraussetzung für den Aufruf\n\n- Die zu stornierende Diagnose muss in der e-Diagnose Fachanwendung vorhanden sein.\n\n### Detaillierte Business-Logik\n\n1. Die Diagnose (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID in der e-Diagnose Fachanwendung storniert.\n  1. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[practitioner]` wird von der e-Diagnose Fachanwendung der GDA, der die Stornierung durchführt, dokumentiert.\n  2. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[datetime]` wird von der e-Diagnose Fachanwendung das Datum und die Uhrzeit der Stornierung dokumentiert.\n  3. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[reason]` wird der Grund für die Stornierung, der vom GDA angegeben werden kann, festgehalten.\n2. Alle weiteren Informationen der Diagnose bleiben unverändert erhalten.\n3. Ist die Diagnose Teil der jeweiligen Summary-Liste, wird sie aus der Summary-Liste entfernt.\n\n### Validierung / Fehlerbehandlung\n\n- Die zu stornierende Diagnose muss in der e-Diagnose Fachanwendung vorhanden sein.",
+  "description" : "Die `$entered-in-error`-Operation storniert einen bestimmten Eintrag in der e-Diagnose Fachanwendung.",
+  "purpose" : "### Wer ruft diese Operation in welchem Zusammenhang auf?\n\nMöchte der GDA einen Eintrag in der e-Diagnose Fachanwendung stornieren, muss diese Operation ausgeführt werden.\n\n### Voraussetzung für den Aufruf\n\n- Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.\n\n### Detaillierte Business-Logik\n\n1. Der Eintrag (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID in der e-Diagnose Fachanwendung storniert.\n  1. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[practitioner]` wird durch die e-Diagnose Fachanwendung der GDA, der die Stornierung durchführt, dokumentiert.\n  2. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[datetime]` wird  durch die e-Diagnose Fachanwendung das Datum und die Uhrzeit der Stornierung dokumentiert.\n  3. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[reason]` wird der Grund für die Stornierung, der vom GDA angegeben werden **kann**, festgehalten.\n2. Alle weiteren Informationen des Eintrags bleiben unverändert erhalten.\n3. Ist der Eintrag Teil der jeweiligen Summary-Liste, wird er aus der Summary-Liste entfernt.\n\n### Validierung / Fehlerbehandlung\n\n- Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.",
   "affectsState" : true,
   "code" : "entered-in-error",
   "resource" : ["Condition", "Procedure", "AllergyIntolerance"],
@@ -68,7 +68,7 @@ Möchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss d
     "use" : "in",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Grund für die Stornierung der Diagnose.",
+    "documentation" : "Grund für die Stornierung des Eintrags.",
     "type" : "string"
   },
   {
@@ -76,7 +76,7 @@ Möchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss d
     "use" : "out",
     "min" : 1,
     "max" : "1",
-    "documentation" : "Die aktualisierte Diagnose nach der Stornierung.",
+    "documentation" : "Der aktualisierte Eintrag nach der Stornierung.",
     "type" : "Resource",
     "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition",
     "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure",
@@ -87,7 +87,7 @@ Möchte der GDA eine Diagnose in der e-Diagnose Fachanwendung stornieren, muss d
     "use" : "out",
     "min" : 0,
     "max" : "1",
-    "documentation" : "Die Summary-Liste, aus der die Diagnose gegebenenfalls entfernt wurde.",
+    "documentation" : "Die Summary-Liste, aus der der Eintrag gegebenenfalls entfernt wurde.",
     "type" : "List",
     "targetProfile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
   }]

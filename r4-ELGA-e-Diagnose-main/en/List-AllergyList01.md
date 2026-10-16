@@ -1,4 +1,4 @@
-# Allergie Summary-Liste mit einem Summary-Eintrag - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Allergie Summary-Liste mit einem Summary-Eintrag - ELGA e-Diagnose R4 v0.1.0
 
 ## Example List: Allergie Summary-Liste mit einem Summary-Eintrag
 

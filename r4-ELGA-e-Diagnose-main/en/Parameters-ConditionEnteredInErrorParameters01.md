@@ -1,4 +1,4 @@
-# Parameters für $entered-in-error einer Diagnose - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Parameters für $entered-in-error einer Diagnose - ELGA e-Diagnose R4 v0.1.0
 
 ## Example Parameters: Parameters für $entered-in-error einer Diagnose
 

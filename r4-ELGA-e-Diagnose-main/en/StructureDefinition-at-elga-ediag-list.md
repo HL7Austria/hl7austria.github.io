@@ -1,4 +1,4 @@
-# AT ELGA e-Diagnose List - ELGA e-Diagnose R4 (Draft) v0.1.0
+# AT ELGA e-Diagnose List - ELGA e-Diagnose R4 v0.1.0
 
 ## Resource Profile: AT ELGA e-Diagnose List 
 
@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-lis
   "name" : "AtEdiagList",
   "title" : "AT ELGA e-Diagnose List",
   "status" : "active",
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

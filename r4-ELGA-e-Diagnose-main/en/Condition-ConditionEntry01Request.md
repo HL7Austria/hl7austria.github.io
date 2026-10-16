@@ -1,4 +1,4 @@
-# Request: Diagnose erfassen (POST /Condition) - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Request: Diagnose erfassen (POST /Condition) - ELGA e-Diagnose R4 v0.1.0
 
 ## Example Condition: Request: Diagnose erfassen (POST /Condition)
 
@@ -18,7 +18,7 @@ Profile: [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condit
 
 **recordedDate**: 2026-03-03 00:00:00+0000
 
-**recorder**: Identifier: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/7.2.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4
+**recorder**: Identifier: [Uniform Resource Identifier (URI)](http://terminology.hl7.org/6.5.0/NamingSystem-uri.html)/urn:oid:1.2.40.0.34.99.4613.4
 
 **asserter**: Identifier: `urn:oid:1.2.40.0.10.2.1.1.149`/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=
 

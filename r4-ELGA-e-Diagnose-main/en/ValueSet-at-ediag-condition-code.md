@@ -1,9 +1,10 @@
-# AT e-Diagnose Condition Code - ELGA e-Diagnose R4 (Draft) v0.1.0
+# AT e-Diagnose Condition Code - ELGA e-Diagnose R4 v0.1.0
 
 ## ValueSet: AT e-Diagnose Condition Code (Experimental) 
 
  **References** 
 
+* [AT ELGA e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
 * [AT ELGA e-Diagnose Condition](StructureDefinition-at-elga-ediag-condition.md)
 
 Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Health Codierservice](https://codierservice.ehealth.gv.at/) als Ergebnis einer Eingabe haben könnte.
@@ -39,7 +40,7 @@ Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Healt
   "title" : "AT e-Diagnose Condition Code",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

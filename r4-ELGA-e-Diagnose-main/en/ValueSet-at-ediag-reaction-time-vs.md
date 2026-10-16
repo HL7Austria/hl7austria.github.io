@@ -1,4 +1,4 @@
-# AT e-Diagnose Reaction Time Value Set - ELGA e-Diagnose R4 (Draft) v0.1.0
+# AT e-Diagnose Reaction Time Value Set - ELGA e-Diagnose R4 v0.1.0
 
 ## ValueSet: AT e-Diagnose Reaction Time Value Set (Experimental) 
 
@@ -32,7 +32,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "AT e-Diagnose Reaction Time Value Set",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

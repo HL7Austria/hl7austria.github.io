@@ -1,4 +1,4 @@
-# Hintergrund - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Hintergrund - ELGA e-Diagnose R4 v0.1.0
 
 ## Hintergrund
 

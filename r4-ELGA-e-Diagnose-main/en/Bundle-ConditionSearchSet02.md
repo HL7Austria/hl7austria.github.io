@@ -1,4 +1,4 @@
-# SearchSet-Bundle der Diagnosen eines Patienten - ELGA e-Diagnose R4 (Draft) v0.1.0
+# SearchSet-Bundle der Diagnosen eines Patienten - ELGA e-Diagnose R4 v0.1.0
 
 ## Example Bundle: SearchSet-Bundle der Diagnosen eines Patienten
 

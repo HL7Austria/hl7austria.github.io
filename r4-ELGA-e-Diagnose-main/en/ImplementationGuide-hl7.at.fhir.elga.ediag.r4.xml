@@ -10,9 +10,9 @@
   <url value="https://fhir.hl7.at/elga/ediag/r4/ImplementationGuide/hl7.at.fhir.elga.ediag.r4"/>
   <version value="0.1.0"/>
   <name value="ELGAeDiagnoseR4"/>
-  <title value="ELGA e-Diagnose R4 (Draft)"/>
+  <title value="ELGA e-Diagnose R4"/>
   <status value="draft"/>
-  <date value="2026-10-15T07:03:41+00:00"/>
+  <date value="2026-10-16T09:08:48+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -76,7 +76,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="ci-build"/>
+        <valueString value="Normativ"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -419,7 +419,7 @@
         <reference value="StructureDefinition/at-elga-ediag-allergyintolerance"/>
       </reference>
       <name value="AT ELGA e-Diagnose AllergyIntolerance"/>
-      <description value="Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an."/>
+      <description value="Dieses AllergyIntolerance-Profil passt die AllergyIntolerance-Resource für die Anforderungen der e-Diagnose an."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -486,6 +486,17 @@
       </reference>
       <name value="AT ELGA Entered In Error"/>
       <description value="Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-ediag-ext-evidence"/>
+      </reference>
+      <name value="AT ELGA Evidenz (e-Befund)"/>
+      <description value="Verweis auf e-Befunde (z. B. Laborbefund, Entlassungsbrief) als medizinische Evidenz, analog zu Condition.evidence.detail."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -716,7 +727,7 @@
         <reference value="OperationDefinition/at-ediag-operation-diagnose-delete"/>
       </reference>
       <name value="e-Diagnose Operation $delete"/>
-      <description value="Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung."/>
+      <description value="Die `$delete`-Operation löscht einen bestimmten Eintrag aus der e-Diagnose Fachanwendung."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -738,7 +749,7 @@
         <reference value="OperationDefinition/at-ediag-operation-diagnose-entered-in-error"/>
       </reference>
       <name value="e-Diagnose Operation $entered-in-error"/>
-      <description value="Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung."/>
+      <description value="Die `$entered-in-error`-Operation storniert einen bestimmten Eintrag in der e-Diagnose Fachanwendung."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1039,7 +1050,7 @@
           <valueUrl value="index.html"/>
         </extension>
         <nameUrl value="index.html"/>
-        <title value="Home"/>
+        <title value="e-Diagnose"/>
         <generation value="markdown"/>
       </page>
       <page>

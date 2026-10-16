@@ -12,8 +12,10 @@
   <sch:pattern>
     <sch:title>f:AllergyIntolerance</sch:title>
     <sch:rule context="f:AllergyIntolerance">
+      <sch:assert test="count(f:implicitRules) &lt;= 0">implicitRules: maximum cardinality of 'implicitRules' is 0</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reported': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-entered-in-error': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
       <sch:assert test="count(f:clinicalStatus) &gt;= 1">clinicalStatus: minimum cardinality of 'clinicalStatus' is 1</sch:assert>
       <sch:assert test="count(f:verificationStatus) &gt;= 1">verificationStatus: minimum cardinality of 'verificationStatus' is 1</sch:assert>
       <sch:assert test="count(f:type) &lt;= 0">type: maximum cardinality of 'type' is 0</sch:assert>
@@ -34,7 +36,7 @@
     <sch:title>f:AllergyIntolerance/f:identifier</sch:title>
     <sch:rule context="f:AllergyIntolerance/f:identifier">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:use) &lt;= 1">use: maximum cardinality of 'use' is 1</sch:assert>
+      <sch:assert test="count(f:use) &lt;= 0">use: maximum cardinality of 'use' is 0</sch:assert>
       <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:system) &gt;= 1">system: minimum cardinality of 'system' is 1</sch:assert>
       <sch:assert test="count(f:system) &lt;= 1">system: maximum cardinality of 'system' is 1</sch:assert>
@@ -56,10 +58,9 @@
     <sch:rule context="f:AllergyIntolerance/f:reaction">
       <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time']) &gt;= 1">extension with URL = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time']) &lt;= 1">extension with URL = 'https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
       <sch:assert test="count(f:substance) &lt;= 0">substance: maximum cardinality of 'substance' is 0</sch:assert>
       <sch:assert test="count(f:description) &lt;= 0">description: maximum cardinality of 'description' is 0</sch:assert>
-      <sch:assert test="count(f:severity) &lt;= 0">severity: maximum cardinality of 'severity' is 0</sch:assert>
-      <sch:assert test="count(f:exposureRoute) &lt;= 0">exposureRoute: maximum cardinality of 'exposureRoute' is 0</sch:assert>
       <sch:assert test="count(f:note) &lt;= 1">note: maximum cardinality of 'note' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

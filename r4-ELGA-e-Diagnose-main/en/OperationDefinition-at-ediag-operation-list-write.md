@@ -1,4 +1,4 @@
-# e-Diagnose Operation $write - ELGA e-Diagnose R4 (Draft) v0.1.0
+# e-Diagnose Operation $write - ELGA e-Diagnose R4 v0.1.0
 
 ## OperationDefinition: e-Diagnose Operation $write 
 
@@ -38,7 +38,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagno
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -56,7 +56,7 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagno
     }]
   }],
   "description" : "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird.",
-  "purpose" : "### Wer ruft diese Operation in welchem Zusammenhang auf?\n\nMöchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagnosen, Prozeduren, Allergien) aktualisieren (Einträge werden hinzugefügt/entfernt)\noder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.\n\n### Voraussetzung für den Aufruf\n\n- Der GDA hat durch einen [vorangegangenen Abruf](use_case_read.html#aktuelle-summary-liste-abrufen) die aktuelle `versionId` der Summary-Liste ermittelt. Diese muss beim Aufruf dieser Operation als `If-Match`-Header mitgeschickt werden.\n\n### Detaillierte Business-Logik\n\n1. Nach erfolgreicher Validierung wird die Summary-Liste gespeichert.\n\n### Validierung / Fehlerbehandlung\n\n* Die übermittelte List-Ressource wird laut Profil geprüft.\n* `List.code` muss mit dem `code` der Operation übereinstimmen.\n* `List.subject` muss mit dem im Token enthaltenen Patienten übereinstimmen.\n* `List.source` muss mit dem im Token enthaltenen GDA übereinstimmen.\n* Der übermittelte `If-Match`-Header stimmt mit der `versionId` der Ressource am Server überein.\n* Für die List-Ressource gilt außerdem `entry.item.empty() implies emptyReason.coding.exists(system='http://terminology.hl7.org/CodeSystem/list-empty-reason' and code='nilknown')`.",
+  "purpose" : "### Wer ruft diese Operation in welchem Zusammenhang auf?\n\nMöchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagnosen, Prozeduren, Allergien) aktualisieren (Einträge werden hinzugefügt/entfernt)\noder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.\n\n### Voraussetzung für den Aufruf\n\n- Der GDA hat durch einen [vorangegangenen Abruf](use_case_read.html#aktuelle-summary-liste-abrufen) die aktuelle `versionId` der Summary-Liste ermittelt. Diese muss beim Aufruf dieser Operation als `If-Match`-Header mitgeschickt werden.\n\n### Detaillierte Business-Logik\n\n1. Nach erfolgreicher Validierung wird die Summary-Liste gespeichert.\n\n### Validierung / Fehlerbehandlung\n\n* Die übermittelte List-Ressource wird laut Profil geprüft.\n* Der übermittelte `If-Match`-Header stimmt mit der `versionId` der Ressource am Server überein.\n* Für die List-Ressource gilt außerdem `entry.item.empty() implies emptyReason.coding.exists(system='http://terminology.hl7.org/CodeSystem/list-empty-reason' and code='nilknown')`.",
   "affectsState" : true,
   "code" : "write",
   "resource" : ["List"],
@@ -64,18 +64,6 @@ Möchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagno
   "type" : true,
   "instance" : false,
   "parameter" : [{
-    "name" : "code",
-    "use" : "in",
-    "min" : 1,
-    "max" : "1",
-    "documentation" : "Der Parameter gibt an, welche Art von Einträgen in der Summary-Liste enthalten sind. Der Wert muss aus dem Value-Set [AtEdiagListCodeVS](ValueSet-at-ediag-list-code-vs.html) stammen.",
-    "type" : "Coding",
-    "binding" : {
-      "strength" : "required",
-      "valueSet" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-list-code-vs"
-    }
-  },
-  {
     "name" : "list",
     "use" : "in",
     "min" : 1,

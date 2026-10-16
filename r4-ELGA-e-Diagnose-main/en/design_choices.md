@@ -1,4 +1,4 @@
-# Designentscheidungen - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Designentscheidungen - ELGA e-Diagnose R4 v0.1.0
 
 ## Designentscheidungen
 
@@ -39,4 +39,19 @@ Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einma
 ### Abgrenzung der e-Diagnose-Fachanwendungen zu Client-Applikationen
 
 Die e-Diagnose-Fachanwendung bietet ein Mindestmaß an Funktionalität, um den Anforderungen gerecht zu werden. Darüber hinaus liegt es aber in der Verantwortung der Softwarehersteller für Client-Applikationen weiter Funktionen (z.B. Suche nach bestimmten Diagnosen auf Basis vom Code, Einschränkung auf einen bestimmten Zeitraum) zu implementieren.
+
+### MustSupport-Kennzeichnung von relevanten Elementen
+
+Relevanten Elemente innerhalb der Profile werden mit [MustSupport](https://hl7.org/fhir/R4/conformance-rules.html#mustSupport) gekennzeichnet.
+
+Alle so gekennzeichneten Elemente werden von der e-Diagnose-Fachanwendung verarbeitet.
+
+#### Elemente ohne MustSupport-Kennzeichnung
+
+Grundsätzlich werden alle [Modifier](https://hl7.org/fhir/R4/conformance-rules.html#isModifier)-Elemente, die von der e-Diagnose-Fachanwendung nicht benötigt werden, verboten (`0..0`).
+
+Für alle anderen Elemente gilt folgendes:
+
+* Ist ein Element optional (`0..1`, `0..*`) und ist es nicht durch MustSupport gekennzeichnet, wird es von der e-Diagnose-Fachanwendung ignoriert und nicht weiter verarbeitet.
+* Ist ein Element verboten (`0..0`), darf es nicht befüllt werden.
 

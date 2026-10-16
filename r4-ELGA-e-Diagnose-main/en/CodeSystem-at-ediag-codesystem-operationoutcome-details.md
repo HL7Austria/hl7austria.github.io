@@ -1,4 +1,4 @@
-# AT e-Diagnose OperationOutcome Details - ELGA e-Diagnose R4 (Draft) v0.1.0
+# AT e-Diagnose OperationOutcome Details - ELGA e-Diagnose R4 v0.1.0
 
 ## CodeSystem: AT e-Diagnose OperationOutcome Details 
 
@@ -27,7 +27,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "AT e-Diagnose OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

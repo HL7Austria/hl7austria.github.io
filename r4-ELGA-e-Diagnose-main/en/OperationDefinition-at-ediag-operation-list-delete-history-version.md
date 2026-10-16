@@ -1,4 +1,4 @@
-# e-Diagnose Operation $delete-history-version - ELGA e-Diagnose R4 (Draft) v0.1.0
+# e-Diagnose Operation $delete-history-version - ELGA e-Diagnose R4 v0.1.0
 
 ## OperationDefinition: e-Diagnose Operation $delete-history-version 
 
@@ -34,7 +34,7 @@ Möchte der ELGA-Teilnehmer eine Version einer Summary-Liste aus der e-Diagnose 
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

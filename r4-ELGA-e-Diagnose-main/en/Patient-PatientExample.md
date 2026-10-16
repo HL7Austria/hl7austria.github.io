@@ -1,4 +1,4 @@
-# Beispiel Patient - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Beispiel Patient - ELGA e-Diagnose R4 v0.1.0
 
 ## Example Patient: Beispiel Patient
 

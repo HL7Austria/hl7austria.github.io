@@ -1,4 +1,4 @@
-# Umfang und Inhalt - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Umfang und Inhalt - ELGA e-Diagnose R4 v0.1.0
 
 ## Umfang und Inhalt
 
@@ -15,7 +15,7 @@ Im Rahmen der Anwendung e-Diagnose werden folgenden Begriffe definiert:
 
 ### Systemumfeld
 
-Das Systemumfeld der e-Diagnose umfasst alle Akteure, Systeme und organisatorischen Einheiten, die im Rahmen der Dokumentation, Einsichtnahme oder Nutzung der gespeicherten Conditions, Procedures und AllergiesIntolerances eingebunden sind.
+Das Systemumfeld der e-Diagnose umfasst alle Akteure, Systeme und organisatorische Einheiten, die im Rahmen der Dokumentation, Einsichtnahme oder Nutzung der gespeicherten Conditions, Procedures und AllergiesIntolerances eingebunden sind.
 
 ![](ediag_systemumfeld.png)
 
@@ -23,29 +23,25 @@ Das Systemumfeld der e-Diagnose umfasst alle Akteure, Systeme und organisatorisc
 
 Im Fokus der e-Diagnose steht der ELGA-Teilnehmer und dessen Gesamtheit der dokumentierten Conditions, Procedures und AllergiesIntolerances, welche von GDA festgestellt werden und die interdisziplinäre Zusammenarbeit des Behandlungsteams unterstützen sollen, um so einen bestmöglichen Outcome für den ELGA-Teilnehmer zu ermöglichen.
 
-Der Zugriff von ELGA-Teilnehmern und deren Vertretungen auf die e-Diagnose erfolgt über das Gesundheitsportal unter Nutzung der bestehenden Identifikationsmechanismen. ELGA-Teilnehmer können Einsicht in ihre gespeicherten Daten nehmen sowie Teilnehmerrechte wahrnehmen. Eine direkte medizinische Dokumentation durch ELGA-Teilnehmer und deren Vertretungen ist nicht vorgesehen.
+Der Zugriff von ELGA-Teilnehmern und deren Vertretungen auf die e-Diagnose erfolgt über das Gesundheitsportal unter Nutzung der bestehenden Identifikationsmechanismen. ELGA-Teilnehmer können Einsicht in ihre gespeicherten Daten nehmen sowie Teilnehmerrechte wahrnehmen. Eine direkte medizinische Dokumentation durch ELGA-Teilnehmer und deren Vertretungen ist zum jetzigen Zeitpunkt nicht vorgesehen.
 
 Die Einsichtnahme in die e-Diagnose sowie die Wahrnehmung von Teilnehmerrechten kann auch durch gesetzlich oder rechtswirksam bevollmächtigte Vertretungsbefugte (Vertretung) im Rahmen der jeweils geltenden rechtlichen Bestimmungen erfolgen. Der Zugriff erfolgt dabei – analog zu ELGA-Teilnehmern – über das Gesundheitsportal unter Nutzung der bestehenden Identifikationsmechanismen.
 
 #### GDA
 
-GDA dokumentieren und nutzen die Inhalte der e-Diagnose im Rahmen eines aktiven Behandlungsverhältnisses. Die Conditions, Procedures, Alerts/Flags und AllergiesIntolerances werden von GDA dokumentiert und stehen auch allen weiteren behandelnden bzw. berechtigten GDA zur Verfügung.
+GDA dokumentieren und nutzen die Inhalte der e-Diagnose im Rahmen eines aktiven Behandlungsverhältnisses. Die Conditions, Procedures und AllergiesIntolerances werden von GDA dokumentiert und stehen auch allen weiteren behandelnden bzw. berechtigten GDA zur Verfügung.
 
 Der Zugriff erfolgt primär über angebundene Primärsysteme (z. B. AIS/KIS) oder alternativ über das GDA-Portal. Die Authentifizierung und Autorisierung erfolgen gemäß GTelG 2012 unter Nutzung des bestehenden ELGA-Berechtigungssystems. Der Zugriff ist ausschließlich im Rahmen eines aktiven Behandlungsverhältnisses zulässig. Perspektivisch ist sicherzustellen, dass die e-Diagnose allen Berufsgruppen zugänglich gemacht wird, für welche dies nach berufsrechtlichen und datenschutzrechtlichen Vorgaben zulässig und geboten ist.
 
 #### Unterstützende ELGA-Einrichtungen
 
-Zur organisatorischen Unterstützung bestehen als Teile der ELGA und e-Health Supporteinrichtung die ELGA-Ombudsstelle (OBST), die Widerspruchstelle (WIST) sowie die Serviceline (SEL):
+Zur organisatorischen Unterstützung bestehen als Teile der ELGA und e-Health Supporteinrichtung die ELGA-Ombudsstelle (OBST)/e-Health Servicestelle (EHS), die Widerspruchstelle (WIST) sowie die Serviceline (SEL):
 
-* OBST: Zur Wahrung der Teilnehmerrechte für ELGA-Teilnehmer und deren Vertretungen.
+* OBST/EHS: Zur Wahrung der Teilnehmerrechte für ELGA-Teilnehmer und deren Vertretungen.
 * WIST: Zum Einbringen von Opt-Out bzw. GDA-Sperren für ELGA-Teilnehmer und deren Vertretungen (ohne Verwendung des ELGA-Portals).
 * SEL: Für Fragen und Auskünfte von ELGA-Teilnehmer und deren Vertretungen (Nutzung) und GDA (Nutzung und Anbindung an ELGA). Die SEL hat keinen Zugriff auf Gesundheitsdaten der ELGA-Teilnehmer, unterstützt allerdings in Verwendung der Systeme – beispielsweise indem die Verfügbarkeit von Systemen überprüft wird.
 
-### Diagnosencodierung
+### Abgrenzung
 
-Die Erfassung der Daten erfolgt dabei strukturiert und standardisiert auf Basis von HL7 FHIR sowie SNOMED CT.
-
-![](ediag_datenwege.png)
-
-Unterstützt durch das e-Health-Codierservice kann parallel die Dokumentation gemäß Bundesgesetz über die Dokumentation im Gesundheitswesen (DokuG) gegenüber der Sozialversicherung (SV) und dem BMASGPK abgewickelt werden.
+Die e-Diagnose regelt keine Abrechnungs- und Verrechnungsprozesse gegenüber der Sozialversicherung. Ebenso ist die ambulante Diagnosecodierung – im Sinne sämtlicher Tätigkeiten im Rahmen der Aufgaben gemäß DokuG samt dazugehöriger Durchführungsverordnung – nicht Teil der e-Diagnose.
 

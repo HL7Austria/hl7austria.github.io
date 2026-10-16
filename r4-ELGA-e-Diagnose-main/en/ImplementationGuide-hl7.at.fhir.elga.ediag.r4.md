@@ -1,4 +1,4 @@
-# Resource ELGA e-Diagnose R4 (Draft)
+# Resource ELGA e-Diagnose R4
 
 
 
@@ -12,9 +12,9 @@
   "url" : "https://fhir.hl7.at/elga/ediag/r4/ImplementationGuide/hl7.at.fhir.elga.ediag.r4",
   "version" : "0.1.0",
   "name" : "ELGAeDiagnoseR4",
-  "title" : "ELGA e-Diagnose R4 (Draft)",
+  "title" : "ELGA e-Diagnose R4",
   "status" : "draft",
-  "date" : "2026-10-15T07:03:41+00:00",
+  "date" : "2026-10-16T09:08:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -90,7 +90,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "ci-build"
+        "valueString" : "Normativ"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -574,7 +574,7 @@
         "reference" : "StructureDefinition/at-elga-ediag-allergyintolerance"
       },
       "name" : "AT ELGA e-Diagnose AllergyIntolerance",
-      "description" : "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an.",
+      "description" : "Dieses AllergyIntolerance-Profil passt die AllergyIntolerance-Resource für die Anforderungen der e-Diagnose an.",
       "exampleBoolean" : false
     },
     {
@@ -671,6 +671,22 @@
       },
       "name" : "AT ELGA Entered In Error",
       "description" : "Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-ediag-ext-evidence.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-ediag-ext-evidence"
+      },
+      "name" : "AT ELGA Evidenz (e-Befund)",
+      "description" : "Verweis auf e-Befunde (z. B. Laborbefund, Entlassungsbrief) als medizinische Evidenz, analog zu Condition.evidence.detail.",
       "exampleBoolean" : false
     },
     {
@@ -1006,7 +1022,7 @@
         "reference" : "OperationDefinition/at-ediag-operation-diagnose-delete"
       },
       "name" : "e-Diagnose Operation $delete",
-      "description" : "Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung.",
+      "description" : "Die `$delete`-Operation löscht einen bestimmten Eintrag aus der e-Diagnose Fachanwendung.",
       "exampleBoolean" : false
     },
     {
@@ -1038,7 +1054,7 @@
         "reference" : "OperationDefinition/at-ediag-operation-diagnose-entered-in-error"
       },
       "name" : "e-Diagnose Operation $entered-in-error",
-      "description" : "Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung.",
+      "description" : "Die `$entered-in-error`-Operation storniert einen bestimmten Eintrag in der e-Diagnose Fachanwendung.",
       "exampleBoolean" : false
     },
     {
@@ -1471,7 +1487,7 @@
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "Home",
+        "title" : "e-Diagnose",
         "generation" : "markdown"
       },
       {

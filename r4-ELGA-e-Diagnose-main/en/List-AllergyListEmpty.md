@@ -1,4 +1,4 @@
-# Allergy-Summary-Liste (notstarted) - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Allergy-Summary-Liste (notstarted) - ELGA e-Diagnose R4 v0.1.0
 
 ## Example List: Allergy-Summary-Liste (notstarted)
 

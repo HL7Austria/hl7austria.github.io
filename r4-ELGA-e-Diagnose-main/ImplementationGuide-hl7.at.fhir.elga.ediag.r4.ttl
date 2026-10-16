@@ -16,9 +16,9 @@
   fhir:ImplementationGuide.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/ImplementationGuide/hl7.at.fhir.elga.ediag.r4"] ;
   fhir:ImplementationGuide.version [ fhir:value "0.1.0"] ;
   fhir:ImplementationGuide.name [ fhir:value "ELGAeDiagnoseR4"] ;
-  fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4 (Draft)"] ;
+  fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-15T07:03:41+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-16T09:08:48+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index 0 ;
@@ -118,7 +118,7 @@
        ], [
          fhir:index 1 ;
          fhir:Extension.url [ fhir:value "value" ] ;
-         fhir:Extension.valueString [ fhir:value "ci-build" ]
+         fhir:Extension.valueString [ fhir:value "Normativ" ]
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
@@ -608,7 +608,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-allergyintolerance" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Diagnose AllergyIntolerance" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Dieses AllergyIntolerance-Profil passt die AllergyIntolerance-Resource für die Anforderungen der e-Diagnose an." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 13 ;
@@ -702,6 +702,20 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-evidence> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-ext-evidence" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA Evidenz (e-Befund)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Verweis auf e-Befunde (z. B. Laborbefund, Entlassungsbrief) als medizinische Evidenz, analog zu Condition.evidence.detail." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 20 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-reaction-time> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-reaction-time" ]
        ] ;
@@ -709,7 +723,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Zeitlicher Verlauf der Manifestation (<6h, 6-24h, >24h, unknown)" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 20 ;
+       fhir:index 21 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -723,7 +737,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Kennzeichnet, ob eine Information fremdberichtet ist (z. B. vom Patienten oder Dritten)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 21 ;
+       fhir:index 22 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -737,7 +751,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz eines Devices dass die Fachanwendung initial erstellt" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 22 ;
+       fhir:index 23 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -751,7 +765,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz eines Patienten" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 23 ;
+       fhir:index 24 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -765,7 +779,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispielinstanz eines Arztes" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 24 ;
+       fhir:index 25 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -782,7 +796,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance>
        ]
      ], [
-       fhir:index 25 ;
+       fhir:index 26 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -799,7 +813,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 26 ;
+       fhir:index 27 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -816,7 +830,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 27 ;
+       fhir:index 28 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -833,7 +847,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 28 ;
+       fhir:index 29 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -850,7 +864,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 29 ;
+       fhir:index 30 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -867,7 +881,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 30 ;
+       fhir:index 31 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -884,7 +898,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 31 ;
+       fhir:index 32 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -901,7 +915,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure>
        ]
      ], [
-       fhir:index 32 ;
+       fhir:index 33 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -918,7 +932,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 33 ;
+       fhir:index 34 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -932,7 +946,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Dieses CodeSystem enthält kein Konzepte sondern dient als System für den Identifier einzelner Einträge in der e-Diagnose." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 34 ;
+       fhir:index 35 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -949,7 +963,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 35 ;
+       fhir:index 36 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -966,7 +980,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 36 ;
+       fhir:index 37 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -983,7 +997,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 37 ;
+       fhir:index 38 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1000,7 +1014,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 38 ;
+       fhir:index 39 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1017,7 +1031,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 39 ;
+       fhir:index 40 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1028,10 +1042,10 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-diagnose-delete" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $delete" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$delete`-Operation löscht einen bestimmten Eintrag aus der e-Diagnose Fachanwendung." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 40 ;
+       fhir:index 41 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1045,7 +1059,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$delete-history-version`-Operation löscht eine bestimmte Version einer Summary-Liste aus der e-Diagnose Fachanwendung." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 41 ;
+       fhir:index 42 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1056,10 +1070,10 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-diagnose-entered-in-error" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $entered-in-error" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$entered-in-error`-Operation storniert einen bestimmten Eintrag in der e-Diagnose Fachanwendung." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 42 ;
+       fhir:index 43 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1073,7 +1087,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 43 ;
+       fhir:index 44 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1087,7 +1101,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet mit zulässigen Codes für Summary-Listen." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 44 ;
+       fhir:index 45 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1101,7 +1115,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 45 ;
+       fhir:index 46 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1115,7 +1129,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Ausgabeparameter der $delete-Operation, nachdem Max Mustermann die Diagnose Candida-Balanitis (ConditionEntry05) über das Portal gelöscht hat." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 46 ;
+       fhir:index 47 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1129,7 +1143,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Ausgabeparameter der $entered-in-error-Operation, nachdem Dr. Musterärztin die fehlerhaft codierte Diagnose Morbus Crohn (ConditionEntry03) storniert hat." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 47 ;
+       fhir:index 48 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1143,7 +1157,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $entered-in-error-Operation, mit der Dr. Musterärztin die fehlerhaft codierte Diagnose Morbus Crohn (ConditionEntry03) storniert." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 48 ;
+       fhir:index 49 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1157,7 +1171,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Amoxicillin-Allergie in die Allergy-Summary-Liste aufnimmt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 49 ;
+       fhir:index 50 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1171,7 +1185,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die Hypertonie in die Condition-Summary-Liste aufnimmt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 50 ;
+       fhir:index 51 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1185,7 +1199,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die (fehlerhaft codierte) Diagnose Morbus Crohn in die Condition-Summary-Liste aufnimmt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 51 ;
+       fhir:index 52 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1199,7 +1213,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die korrekt codierte Diagnose Morbus Crohn in die Condition-Summary-Liste aufnimmt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 52 ;
+       fhir:index 53 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1213,7 +1227,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel der Eingabeparameter der $write-Operation, mit der Dr. Musterärztin die partielle Resektion des Dickdarms in die Procedure-Summary-Liste aufnimmt." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 53 ;
+       fhir:index 54 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1230,7 +1244,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 54 ;
+       fhir:index 55 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1247,7 +1261,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
        ]
      ], [
-       fhir:index 55 ;
+       fhir:index 56 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1261,7 +1275,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Zeitlicher Verlauf der Manifestation" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 56 ;
+       fhir:index 57 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1278,7 +1292,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance>
        ]
      ], [
-       fhir:index 57 ;
+       fhir:index 58 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1295,7 +1309,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
        ]
      ], [
-       fhir:index 58 ;
+       fhir:index 59 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1312,7 +1326,7 @@
          fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure>
        ]
      ], [
-       fhir:index 59 ;
+       fhir:index 60 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1326,7 +1340,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 60 ;
+       fhir:index 61 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1340,7 +1354,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit der Allergy-Summary-Liste nach dem ersten Arztbesuch inklusive der referenzierten Allergie." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 61 ;
+       fhir:index 62 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1354,7 +1368,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit der Condition-Summary-Liste nach dem ersten Arztbesuch inklusive der referenzierten Diagnose." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 62 ;
+       fhir:index 63 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1368,7 +1382,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit der Condition-Summary-Liste während des zweiten Arztbesuchs inklusive der referenzierten Diagnosen, darunter der fehlerhaft codierte Eintrag." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 63 ;
+       fhir:index 64 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1382,7 +1396,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit der Condition-Summary-Liste, nachdem die e-Diagnose-Fachanwendung den stornierten Eintrag entfernt hat, inklusive der referenzierten Diagnose." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 64 ;
+       fhir:index 65 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1396,7 +1410,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit der korrigierten Condition-Summary-Liste inklusive der referenzierten Diagnosen." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 65 ;
+       fhir:index 66 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1410,7 +1424,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 66 ;
+       fhir:index 67 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1424,7 +1438,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Beispiel eines SearchSet-Bundles mit mehreren Condition-Ressourcen eines Patienten" ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 67 ;
+       fhir:index 68 ;
        fhir:Element.extension [
          fhir:index 0 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
@@ -1455,7 +1469,7 @@
            fhir:Extension.valueUrl [ fhir:value "index.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Home" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "e-Diagnose" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index 1 ;

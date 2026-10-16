@@ -6,7 +6,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Designentscheidungen - ELGA e-Diagnose R4 (Draft) v0.1.0</title>
+    <title>Designentscheidungen - ELGA e-Diagnose R4 v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,9 +58,9 @@
         </div>
 
         <div id="ig-status" data-fhir="generated">
-          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Diagnose R4 (Draft)</span>
+          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Diagnose R4</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - ci-build
+            <span style="display:inline-block;">0.1.0 - Normativ
 
 
             </span>
@@ -217,7 +217,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 (Draft) - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Designentscheidungen</h2>
   
 
@@ -239,6 +239,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#kein-update-auf-einzelne-einträge" id="markdown-toc-kein-update-auf-einzelne-einträge">Kein Update auf einzelne Einträge</a></li>
   <li><a href="#informationen-über-gda-und-patienten" id="markdown-toc-informationen-über-gda-und-patienten">Informationen über GDA und Patienten</a></li>
   <li><a href="#abgrenzung-der-e-diagnose-fachanwendungen-zu-client-applikationen" id="markdown-toc-abgrenzung-der-e-diagnose-fachanwendungen-zu-client-applikationen">Abgrenzung der e-Diagnose-Fachanwendungen zu Client-Applikationen</a></li>
+  <li><a href="#mustsupport-kennzeichnung-von-relevanten-elementen" id="markdown-toc-mustsupport-kennzeichnung-von-relevanten-elementen">MustSupport-Kennzeichnung von relevanten Elementen</a></li>
 </ul>
 
 </div>
@@ -344,6 +345,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="abgrenzung-der-e-diagnose-fachanwendungen-zu-client-applikationen">Abgrenzung der e-Diagnose-Fachanwendungen zu Client-Applikationen</h3>
 
 <p>Die e-Diagnose-Fachanwendung bietet ein Mindestmaß an Funktionalität, um den Anforderungen gerecht zu werden. Darüber hinaus liegt es aber in der Verantwortung der Softwarehersteller für Client-Applikationen weiter Funktionen (z.B. Suche nach bestimmten Diagnosen auf Basis vom Code, Einschränkung auf einen bestimmten Zeitraum) zu implementieren.</p>
+<h3 id="mustsupport-kennzeichnung-von-relevanten-elementen">MustSupport-Kennzeichnung von relevanten Elementen</h3>
+
+<p>Relevanten Elemente innerhalb der Profile werden mit <a href="https://hl7.org/fhir/R4/conformance-rules.html#mustSupport">MustSupport</a> gekennzeichnet.</p>
+
+<p>Alle so gekennzeichneten Elemente werden von der e-Diagnose-Fachanwendung verarbeitet.</p>
+
+<h4 id="elemente-ohne-mustsupport-kennzeichnung">Elemente ohne MustSupport-Kennzeichnung</h4>
+
+<p>Grundsätzlich werden alle <a href="https://hl7.org/fhir/R4/conformance-rules.html#isModifier">Modifier</a>-Elemente, die von der e-Diagnose-Fachanwendung nicht benötigt werden, verboten (<code class="language-plaintext highlighter-rouge">0..0</code>).</p>
+
+<p>Für alle anderen Elemente gilt folgendes:</p>
+<ul>
+  <li>Ist ein Element optional (<code class="language-plaintext highlighter-rouge">0..1</code>, <code class="language-plaintext highlighter-rouge">0..*</code>) und ist es nicht durch MustSupport gekennzeichnet, wird es von der e-Diagnose-Fachanwendung ignoriert und nicht weiter verarbeitet.</li>
+  <li>Ist ein Element verboten (<code class="language-plaintext highlighter-rouge">0..0</code>), darf es nicht befüllt werden.</li>
+</ul>
 
 
 
@@ -373,8 +389,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-15 07:03:00 +0000">
-    2026-10-15
+  <span title="2026-10-16 09:08:00 +0000">
+    2026-10-16
   </span>
 
           <br/>

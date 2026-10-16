@@ -16,9 +16,9 @@
   fhir:ImplementationGuide.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/ImplementationGuide/hl7.at.fhir.elga.ediag.r4"] ;
   fhir:ImplementationGuide.version [ fhir:value "0.1.0"] ;
   fhir:ImplementationGuide.name [ fhir:value "ELGAeDiagnoseR4"] ;
-  fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4 (Draft)"] ;
+  fhir:ImplementationGuide.title [ fhir:value "ELGA e-Diagnose R4"] ;
   fhir:ImplementationGuide.status [ fhir:value "draft"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-15T07:03:41+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-16T09:08:48+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "ELGA GmbH"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -118,7 +118,7 @@
        ], [
          fhir:index -1 ;
          fhir:Extension.url [ fhir:value "value" ] ;
-         fhir:Extension.valueString [ fhir:value "ci-build" ]
+         fhir:Extension.valueString [ fhir:value "Normativ" ]
        ] ;
        fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter" ]
      ], [
@@ -608,7 +608,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-allergyintolerance" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA e-Diagnose AllergyIntolerance" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Das AT e-Diagnose AllergyIntolerance-Profil leitet sich vom AllergyIntolerance-Profil ab und passt dieses für die Anforderungen der e-Diagnose an." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Dieses AllergyIntolerance-Profil passt die AllergyIntolerance-Resource für die Anforderungen der e-Diagnose an." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -693,6 +693,20 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA Entered In Error" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Kennzeichnet, ob eine Information fehlerhaft eingegeben wurde." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-evidence> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-elga-ediag-ext-evidence" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "AT ELGA Evidenz (e-Befund)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Verweis auf e-Befunde (z. B. Laborbefund, Entlassungsbrief) als medizinische Evidenz, analog zu Condition.evidence.detail." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -1028,7 +1042,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-diagnose-delete" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $delete" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$delete`-Operation löscht eine bestimmte Diagnose aus der e-Diagnose Fachanwendung." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$delete`-Operation löscht einen bestimmten Eintrag aus der e-Diagnose Fachanwendung." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -1056,7 +1070,7 @@
          fhir:Reference.reference [ fhir:value "OperationDefinition/at-ediag-operation-diagnose-entered-in-error" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "e-Diagnose Operation $entered-in-error" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$entered-in-error`-Operation storniert eine bestimmte Diagnose in der e-Diagnose Fachanwendung." ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Die `$entered-in-error`-Operation storniert einen bestimmten Eintrag in der e-Diagnose Fachanwendung." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -1455,7 +1469,7 @@
            fhir:Extension.valueUrl [ fhir:value "index.html" ]
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ] ;
-         fhir:ImplementationGuide.definition.page.title [ fhir:value "Home" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "e-Diagnose" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ], [
          fhir:index -1 ;

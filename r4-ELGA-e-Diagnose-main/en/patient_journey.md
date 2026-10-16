@@ -1,4 +1,4 @@
-# Patient Journey - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Patient Journey - ELGA e-Diagnose R4 v0.1.0
 
 ## Patient Journey
 
@@ -80,7 +80,7 @@ Stornierte Einträge bleiben Teil der Gesamtansicht. Der falsch codierte Eintrag
 
 Am 20. April 2026 nimmt Herr Mustermann über das Portal Einsicht in seine e-Diagnose und ruft alle Diagnosen ab. Dabei sieht er, dass die im März dokumentierte Pilzinfektion in seiner Gesamtansicht aufscheint. Er möchte das nicht und [löscht](use_case_participant.md#eintrag-löschen) den Eintrag.
 
-Der Eintrag wird daraufhin aus der Gesamtansicht gelöscht. Wäre die Diagnose auch Bestandteil der Summary-Liste, würde sie ebenfalls aus dieser entfernt; `List.source` wird in diesem Fall auf den Patienten gesetzt.
+Der Eintrag wird daraufhin aus der Gesamtansicht gelöscht. Wäre der Eintrag auch Bestandteil der Summary-Liste, würde er ebenfalls aus dieser entfernt; `List.source` wird in diesem Fall auf den Patienten gesetzt.
 
 Diagnosen
 

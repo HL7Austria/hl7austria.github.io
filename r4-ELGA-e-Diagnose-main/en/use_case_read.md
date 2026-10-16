@@ -1,4 +1,4 @@
-# Lesender Zugriff - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Lesender Zugriff - ELGA e-Diagnose R4 v0.1.0
 
 ## Lesender Zugriff
 
@@ -63,7 +63,7 @@ Dieser Anwendungsfall dient der Anzeige aktuellen und historischer Versionen der
 1. Der GDA oder der ELGA-Teilnehmer rufen die[aktuelle Summary-Liste](use_case_read.md#aktuelle-summary-liste-abrufen)ab, wodurch sie das entsprechende SearchSet-Bundle und damit die`id`der Summary-Liste erhalten.
 1. In einem zweiten Request kann der GDA oder der ELGA-Teilnehmer jetzt auf alle Versionen (auch die aktuelle) der Summary-Liste zugreifen.
 1. Die e-Diagnose Fachanwendung liefert ein History-Bundle zurück, das alle Summary-Listenversionen enthält.`GET /List/[id]/_history`
-1. Zu einer Summary-Listenversion können die[referenzierten Diagnosen von der e-Diagnose Fachanwendung](#einzelnen-eintrag-abrufen)abgefragt werden.
+1. Zu einer Summary-Listenversion können die[referenzierten Einträge von der e-Diagnose-Fachanwendung](#einzelnen-eintrag-abrufen)abgefragt werden.
 
 ###### Alternativer Ablauf
 

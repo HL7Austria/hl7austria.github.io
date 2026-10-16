@@ -1,4 +1,4 @@
-# Condition Summary-Liste (Zweiter Arztbesuch - korrigiert) - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Condition Summary-Liste (Zweiter Arztbesuch - korrigiert) - ELGA e-Diagnose R4 v0.1.0
 
 ## Example List: Condition Summary-Liste (Zweiter Arztbesuch - korrigiert)
 

@@ -1,4 +1,4 @@
-# Beispielinstanz einer Diagnose für die Summary - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Beispielinstanz einer Diagnose für die Summary - ELGA e-Diagnose R4 v0.1.0
 
 ## Example Condition: Beispielinstanz einer Diagnose für die Summary
 

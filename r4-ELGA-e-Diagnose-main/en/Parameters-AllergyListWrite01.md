@@ -1,4 +1,4 @@
-# Parameters für $write der Allergy-Summary-Liste (Version 2) - ELGA e-Diagnose R4 (Draft) v0.1.0
+# Parameters für $write der Allergy-Summary-Liste (Version 2) - ELGA e-Diagnose R4 v0.1.0
 
 ## Example Parameters: Parameters für $write der Allergy-Summary-Liste (Version 2)
 
