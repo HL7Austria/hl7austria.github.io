@@ -14,7 +14,7 @@ Relevante Use Cases:
 
 * Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) and [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md)
 * Refer to this Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) and [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
-* Examples for this Profile: [MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391](MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.md), [MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed](MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) and [MedicationRequest/AtEmedExampleDosageStandardAdministration3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md)
+* Examples for this Profile: [MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed](MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) and [MedicationRequest/AtEmedExampleDosageStandardAdministration3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationrequest-planeintrag.json)
 
@@ -45,7 +45,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-16T10:13:15+00:00",
+  "date" : "2026-10-16T11:00:25+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
