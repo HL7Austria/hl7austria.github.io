@@ -1,0 +1,57 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "at-elga-emed-operation-prescription-discard",
+  "language" : "en",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-elga-emed-operation-prescription-discard</b></p><a name=\"at-elga-emed-operation-prescription-discard\"> </a><a name=\"hcat-elga-emed-operation-prescription-discard\"> </a><p>URL: [base]/MedicationRequest/[id]/$prescription-discard</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html\" title=\"https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe\">At ELGA e-Medikation MedicationRequest Geplante Abgabe</a>)</td><td/><td><div><p>Die Geplante Abgabe so wie sie nach dem Ausführen der Operation am Server persistiert ist.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-elga-emed-operationoutcome.html\" title=\"https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome\">AT ELGA e-Medikation OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter im Falle eines Fehlers.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-prescription-discard",
+  "version" : "0.1.0",
+  "name" : "AtElgaEmedPrescriptionDiscard",
+  "title" : "e-Med Operation für $prescription-discard",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-10-17T19:55:22+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Operation für das Stornieren von Geplanten Abgaben",
+  "affectsState" : true,
+  "code" : "prescription-discard",
+  "resource" : ["MedicationRequest"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Die Geplante Abgabe so wie sie nach dem Ausführen der Operation am Server persistiert ist.",
+    "type" : "Resource",
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
+  },
+  {
+    "name" : "return",
+    "use" : "out",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter im Falle eines Fehlers.",
+    "type" : "Resource",
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome"]
+  }]
+}

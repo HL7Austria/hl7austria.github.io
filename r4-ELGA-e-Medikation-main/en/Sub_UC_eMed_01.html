@@ -500,12 +500,12 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <p><em>Plan-Read</em> dient dem Abruf des aktuellen Medikationsplans in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
 
-<p><a name="l488">​</a>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein <strong>temporäres</strong> <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a>.</p>
+<p>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein <strong>temporäres</strong> <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a>.</p>
 
 <h4 id="ablauf">Ablauf</h4>
 
 <ol>
-  <li><a name="l508">​</a>Der Client führt <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li>Der Client führt <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft den Zustand des Medikationsplans (siehe Kapitel <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</a>) und erzeugt ein <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung.</li>
   <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält im HTTP-Header den <strong><em>ETag</em></strong> der aktuellen Version der <em>List</em>-Ressource für das <a href="https://hl7.org/fhir/http.html#concurrency"><strong>Optimistic Locking</strong></a> (siehe auch <a href="design_choices.html#optimistisches-locking-mit-etags">Designentscheidungen - Optimistisches Locking mit ETags</a>).</li>
 </ol>
@@ -520,7 +520,9 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <h4 id="custom-operations">Custom Operations</h4>
 
-<p><a name="l563">​</a>POST <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a></p>
+<ul>
+  <li><em>POST</em> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a></li>
+</ul>
 
 <h4 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h4>
 
@@ -532,7 +534,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <p>A) <strong>Es existiert kein Medikationsplan</strong>:</p>
 <ul>
-  <li><a name="l600">​</a>Es wird gemäß <a href="(Sub_UC_eMed_01.html#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan)">Sub_UC_eMed_01_01_01 initialer Medikationsplan</a> erstellt (<a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource mit <em>List.emptyReason = notstarted</em>).</li>
+  <li><a name="l605">​</a>Es wird gemäß <a href="(Sub_UC_eMed_01.html#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan)">Sub_UC_eMed_01_01_01 initialer Medikationsplan</a> erstellt (<a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource mit <em>List.emptyReason = notstarted</em>).</li>
   <li>Es erfolgt keine Transformation.</li>
 </ul>
 
@@ -566,7 +568,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <h4 id="sub_uc_emed_01_01_01---initial-erstellter-medikationsplan">Sub_UC_eMed_01_01_01 - Initial erstellter Medikationsplan</h4>
 
-<p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> noch kein Medikationsplan für den ELGA-Teilnehmer existiert.</p>
+<p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> noch kein Medikationsplan für den ELGA-Teilnehmer existiert.</p>
 
 <p>Der dabei erzeugte initiale Medikationsplan besitzt den Wert <em>List.emptyReason = notstarted</em>. Dieser kennzeichnet ausschließlich den <strong>Initialzustand</strong> des Medikationsplans und bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden. Er trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.</p>
 
@@ -583,7 +585,7 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
 <h4 id="ablauf-2">Ablauf</h4>
 
 <ol>
-  <li><a name="l750">​</a>Ein Client führt <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus.</li>
+  <li>Ein Client führt <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus.</li>
   <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan existiert.</li>
   <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
   <li>Die List-Ressource wird als erste Version persistiert.</li>
@@ -611,7 +613,7 @@ Soll die Erstellung durch das Berechtigungssystem beim ersten Aufruf eines Patie
 </ul>
 
 <div class="dragon">
-<p class="note-to-balloters"><a name="l842">​</a>
+<p class="note-to-balloters"><a name="l847">​</a>
 Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="nteractions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
 </p>
 </div>
@@ -684,7 +686,7 @@ Offene Punkte:<br>
 </ul>
 
 <div class="dragon">
-<p class="note-to-balloters"><a name="l1024">​</a>
+<p class="note-to-balloters"><a name="l1029">​</a>
 Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="nteractions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
 </p>
 </div>
@@ -709,7 +711,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 </ul>
 
 <div class="dragon">
-<p class="note-to-balloters"><a name="l1092">​</a>
+<p class="note-to-balloters"><a name="l1097">​</a>
 Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="nteractions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
 </p>
 </div>
@@ -800,7 +802,7 @@ GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&dat
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-17 00:02:00 +0000">
+  <span title="2026-10-17 19:55:00 +0000">
     2026-10-17
   </span>
 

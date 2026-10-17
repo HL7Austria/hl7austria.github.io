@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-17T00:02:12+00:00",
+  "date" : "2026-10-17T19:55:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -451,10 +451,10 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-at-emed-operationoutcome-details.html"
+        "valueUri" : "ValueSet-at-elga-emed-operationoutcome-details.html"
       }],
       "reference" : {
-        "reference" : "ValueSet/at-emed-operationoutcome-details"
+        "reference" : "ValueSet/at-elga-emed-operationoutcome-details"
       },
       "name" : "AT e-Medikation OperationOutcome Details",
       "description" : "Value-Set mit den für e-Medikation zulässigen detaillierten Fehlercodes.",
@@ -1565,12 +1565,76 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-AtElgaEmed.List.PlanRead.html"
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-dispense-discard.html"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/AtElgaEmed.List.PlanRead"
+        "reference" : "OperationDefinition/at-elga-emed-operation-dispense-discard"
       },
-      "name" : "e-Med Operation für Plan-Read",
+      "name" : "e-Med Operation für $dispense-discard",
+      "description" : "Operation für das Stornieren von Durchgeführten Abgaben",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-dispense-write.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-dispense-write"
+      },
+      "name" : "e-Med Operation für $dispense-write",
+      "description" : "Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-groupidentifier-create.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-groupidentifier-create"
+      },
+      "name" : "e-Med Operation für $groupidentifier-create",
+      "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-groupidentifier-search.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-groupidentifier-search"
+      },
+      "name" : "e-Med Operation für $groupidentifier-search",
+      "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-plan-read.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-plan-read"
+      },
+      "name" : "e-Med Operation für $plan-read",
       "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.\n\nHierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version\nder List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen\nein temporäres Medikationsplan-Bundle zur Auslieferung.\n\nExistiert noch kein Medikationsplan, erstellt und persistiert die\nFachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted.",
       "exampleBoolean" : false
     },
@@ -1581,13 +1645,61 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-AtElgaEmed.List.PlanWrite.html"
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-plan-write.html"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/AtElgaEmed.List.PlanWrite"
+        "reference" : "OperationDefinition/at-elga-emed-operation-plan-write"
       },
-      "name" : "e-Med Operation für Plan-Write",
+      "name" : "e-Med Operation für $plan-write",
       "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-prescription-discard.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-prescription-discard"
+      },
+      "name" : "e-Med Operation für $prescription-discard",
+      "description" : "Operation für das Stornieren von Geplanten Abgaben",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-prescription-write.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-prescription-write"
+      },
+      "name" : "e-Med Operation für $prescription-write",
+      "description" : "Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-reference-plan.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-reference-plan"
+      },
+      "name" : "e-Med Operation für $reference-plan",
+      "description" : "Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen.",
       "exampleBoolean" : false
     },
     {
@@ -1876,54 +1988,6 @@
       },
       "name" : "ELGA_MedikationRezeptart",
       "description" : "**Description:** ELGA ValueSet for Prescription type\n\n**Beschreibung:** ELGA ValueSet für RezeptArt",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-emed-operation-reference-plan.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-emed-operation-reference-plan"
-      },
-      "name" : "eMed Operation $reference-plan",
-      "description" : "Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-emed-operation-groupidentifier-prescription-search.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-emed-operation-groupidentifier-prescription-search"
-      },
-      "name" : "eMed Operation für GroupIdentifier Prescription Search",
-      "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-emed-operation-groupidentifier-create.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-emed-operation-groupidentifier-create"
-      },
-      "name" : "eMed Operation für GroupIdentifier-Create",
-      "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
       "exampleBoolean" : false
     },
     {

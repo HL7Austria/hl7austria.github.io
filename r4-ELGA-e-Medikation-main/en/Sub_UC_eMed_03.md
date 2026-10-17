@@ -110,7 +110,7 @@ Ein lesender Zugriff auf weitere **Geplante Abgaben** oder **Durchgeführte Abga
 
 ##### Ablauf
 
-1. Der GDA führt die Custom Operation**POST**[$groupidentifier-search](OperationDefinition-AtElgaEmed.GroupIdentifier.Search.md)aus und übermittelt einen**e-Med GroupIdentifier**.
+1. Der GDA führt die Custom Operation**POST**[$groupidentifier-search](OperationDefinition-at-elga-emed-operation-groupidentifier-search.md)aus und übermittelt einen**e-Med GroupIdentifier**.
 1. Die Fachanwendung prüft den**e-Med GroupIdentifier**.
 1. Ist der**e-Med GroupIdentifier**gültig, ermittelt die Fachanwendung alle**MedicationRequest**-Ressourcen der Kategorie**Geplante Abgabe**mit dem übermittelten**e-Med GroupIdentifier**.
 1. Die Fachanwendung ermittelt alle**MedicationDispense**-Ressourcen mit dem übermittelten**e-Med GroupIdentifier**.
@@ -121,6 +121,5 @@ Ein lesender Zugriff auf weitere **Geplante Abgaben** oder **Durchgeführte Abga
 
 ##### Custom Operations
 
- Offene Punkte: 
-$groupidentifier-search: in Arbeit. 
+* **POST** [$groupidentifier-search](OperationDefinition-at-emed-groupidentifier-search.md)
 

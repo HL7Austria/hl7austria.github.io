@@ -547,9 +547,9 @@ Offene Frage:<br>
 <p>Für jeden Schreibvorgang auf dem <strong>aktuellen Medikationsplan MUSS</strong> der folgende technische Ablauf eingehalten werden:</p>
 
 <ol>
-  <li><strong>Aktuellen Medikationsplan abrufen</strong>: mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> (siehe <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
+  <li><strong>Aktuellen Medikationsplan abrufen</strong>: mittels <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> (siehe <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a>).</li>
   <li><strong>Medikationsplan-Bundle bearbeiten</strong>: Die im zurückgegebenen Medikationsplan-Bundle enthaltenen Ressourcen entsprechend dem jeweiligen fachlichen Anwendungsfall bearbeiten.</li>
-  <li><strong>Aktualisierten Medikationsplan speichern</strong>: mittels <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a> an die Fachanwendung übermitteln. Der technische Ablauf, einschließlich der Integritätsprüfung mittels <em>ETag</em>, wird im <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</a> beschrieben.
+  <li><strong>Aktualisierten Medikationsplan speichern</strong>: mittels <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a> an die Fachanwendung übermitteln. Der technische Ablauf, einschließlich der Integritätsprüfung mittels <em>ETag</em>, wird im <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</a> beschrieben.
   <!-- "Fachanwendung" generell mit "e-Medikationssystem" ersetzen? TODO akl 28.09.2026 --></li>
 </ol>
 
@@ -561,13 +561,13 @@ Offene Frage:<br>
 
 <h3 id="sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</h3>
 
-<p>Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (<a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>), um konkurrierende Änderungen am Medikationsplan zu erkennen.
+<p>Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (<a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>), um konkurrierende Änderungen am Medikationsplan zu erkennen.
   <!-- TODO: Link zur ETag-Beschreibung im ELGA-Core ergänzen --></p>
 
 <h4 id="ablauf">Ablauf</h4>
 
 <ol>
-  <li><a name="l672">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.PlanWrite.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx">Medikationsplan-Transaction-Bundle</a>. <br/>Der Request enthält:
+  <li><a name="l672">​</a>Das GDA-System übermittelt den aktualisierten Medikationsplan mittels <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> als <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx">Medikationsplan-Transaction-Bundle</a>. <br/>Der Request enthält:
     <ul>
       <li>alle <strong>neuen</strong>, <strong>geänderten</strong> und <strong>zu entfernenden</strong> Ressourcen im Transaction Bundle</li>
       <li>im Header den von der Fachanwendung beim <em>$plan-read</em> übermittelten <strong>ETag</strong> (zur Durchführung des <a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>)</li>
@@ -579,7 +579,7 @@ Offene Frage:<br>
   <li>Die Fachanwendung erstellt neue Versionen der geänderten Ressourcen und <strong>persistiert</strong> diese.</li>
   <li>Die Fachanwendung bestätigt die erfolgreiche Aktualisierung des Medikationsplans.</li>
   <li>Schlägt die Validierung fehl, wird der Schreibvorgang mit einem <strong>OperationOutcome</strong> abgelehnt.</li>
-  <li>Stimmt der übermittelte <em>ETag</em> nicht mit dem der Fachanwendung überein, wird der Schreibvorgang mit einem <em>OperationOutcome</em> <strong>abgelehnt</strong>. Vor einem erneuten Schreibversuch muss der Medikationsplan mittels <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> erneut abgerufen und auf Basis der aktuellen Version bearbeitet werden.</li>
+  <li>Stimmt der übermittelte <em>ETag</em> nicht mit dem der Fachanwendung überein, wird der Schreibvorgang mit einem <em>OperationOutcome</em> <strong>abgelehnt</strong>. Vor einem erneuten Schreibversuch muss der Medikationsplan mittels <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> erneut abgerufen und auf Basis der aktuellen Version bearbeitet werden.</li>
 </ol>
 
 <p><br/>
@@ -589,7 +589,7 @@ Offene Frage:<br>
 <h4 id="custom-operations">Custom Operations</h4>
 
 <ul>
-  <li><a name="l787">​</a><a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a></li>
+  <li><em>POST</em> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a></li>
 </ul>
 
 <h3 id="sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</h3>
@@ -599,7 +599,7 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder nicht (Fremdme
 
 <h4 id="ablauf-1">Ablauf</h4>
 
-<p><a name="l801">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -619,7 +619,7 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder nicht (Fremdme
       <li><strong>Status</strong> muss <em>active</em> oder <em>on-hold</em> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
       <li><strong>Kategorie</strong> (<em>category</em>): "Planeintrag", zur Unterscheidung von <em>Geplanten Abgaben</em></li>
       <li><strong>Berichtete Medikation</strong> (<em>reportedBoolean</em>): erhält den Wert <em>false</em>, wenn die Medikation vom Ersteller des Planeintrags (GDA) selbst stammt, sonst <em>true</em></li>
-      <li><a name="l931">​</a><strong>Medikation</strong> (<em>medication</em>): zur Dokumentation des Arzneimittels wird die <em>Medication</em>-Ressource verwendet. Diese muss bei Medikamenten mit PZN beim Schreiben als <strong>Conditional Reference</strong> mit <strong>PZN und Name</strong> dokumentiert werden (beim Lesen ist diese contained in der Ressource enthalten). Arznemittelverschreibungen ausschließlich basierend auf Wirkstoffangaben und Magistrale Zubereitungen sind immer als contained Ressource anzugeben (siehe Kapitel <a href="ELGA-e-Medikation-R4/output/medication.html">Medikation</a>).</li>
+      <li><a name="l934">​</a><strong>Medikation</strong> (<em>medication</em>): zur Dokumentation des Arzneimittels wird die <em>Medication</em>-Ressource verwendet. Diese muss bei Medikamenten mit PZN beim Schreiben als <strong>Conditional Reference</strong> mit <strong>PZN und Name</strong> dokumentiert werden (beim Lesen ist diese contained in der Ressource enthalten). Arznemittelverschreibungen ausschließlich basierend auf Wirkstoffangaben und Magistrale Zubereitungen sind immer als contained Ressource anzugeben (siehe Kapitel <a href="ELGA-e-Medikation-R4/output/medication.html">Medikation</a>).</li>
       <li><strong>Informationen zur Erstellung</strong> des Planeintrags: aktuelles Datum (<em>authoredOn</em>) und aktueller GDA als Ersteller (<em>requester</em>)</li>
       <li><strong>Art der Medikation</strong> (<em>courseOfTherapyType</em>): Mögliche Ausprägungen sind <em>continuous</em> für Dauermedikation und <em>acute</em> für Akutmedikation. Bei Aktumedikation ist in <em>extension:effectiveDosePeriod</em> verpflichtend ein Enddatum für den Einnahmezeitraum zu dokumentieren. Bei Dauermedikation kann ein Enddatum dokumentiert werden.   <!-- TODO: Achtung Inkonsistenz Invariante bei Dauermedikation Enddatum! --></li>
       <li><strong>Dosierung</strong> (<em>dosageInstruction</em>): siehe <a href="dosages.html">Dosierungen</a></li>
@@ -627,13 +627,13 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder nicht (Fremdme
   </li>
 </ul>
 
-<p><a name="l993">​</a>Im Anschluss übermittelt der GDA mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Im Anschluss übermittelt der GDA mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>alle neuen <em>MedicationRequests</em> sind im Transaction Bundle enthalten</li>
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der <em>List-Ressource</em> nur referenziert.</li>
 </ul>
 
-<p><a name="l1020">​</a>Anmerkung: Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> ändert die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> den Status der List.entry.flags von <em>new</em> automatisch auf <em>unchanged</em>.</p>
+<p>Anmerkung: Beim nächsten <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> ändert die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> den Status der List.entry.flags von <em>new</em> automatisch auf <em>unchanged</em>.</p>
 
 <h4 id="relevante-elemente-list">Relevante Elemente (List)</h4>
 
@@ -674,7 +674,7 @@ Bei fehlender <strong>fachlicher Kontinuität</strong> der Bearbeitung eines Pla
 
 <h4 id="ablauf-2">Ablauf</h4>
 
-<p><a name="l1066">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -699,12 +699,12 @@ Bei fehlender <strong>fachlicher Kontinuität</strong> der Bearbeitung eines Pla
   </li>
 </ul>
 
-<p><a name="l1192">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>alle geänderten <em>MedicationRequests</em> sind im Transaction Bundle enthalten</li>
 </ul>
 
-<p><a name="l1213">​</a>Anmerkung: Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> ändert die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> den Status der List.entry.flags von <em>changed</em> automatisch auf <em>unchanged</em>.</p>
+<p>Anmerkung: Beim nächsten <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> ändert die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> den Status der List.entry.flags von <em>changed</em> automatisch auf <em>unchanged</em>.</p>
 
 <h4 id="relevante-elemente-list-1">Relevante Elemente (List)</h4>
 
@@ -738,7 +738,7 @@ Bedingung dafür ist, dass der Einnahmezeitraum des im Planeintrag dokumentierte
 
 <h4 id="ablauf-3">Ablauf</h4>
 
-<p><a name="l1257">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -755,7 +755,7 @@ Bedingung dafür ist, dass der Einnahmezeitraum des im Planeintrag dokumentierte
   <li><em>MedicationRequest</em>-Ressource(n): Die zu behaltenden Planeinträge (<a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">AtElgaEmedMedicationRequestPlaneintrag</a>) bleiben <strong>unverändert</strong>.</li>
 </ul>
 
-<p><a name="l1343">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste <strong>nur referenziert</strong>.</li>
 </ul>
@@ -784,7 +784,7 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
 
 <h4 id="ablauf-4">Ablauf</h4>
 
-<p><a name="l1388">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -802,18 +802,18 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     <!-- - *id*: bestehende *id* darf **nicht geändert** werden -->
     <ul>
       <li><strong>Status</strong> muss beim <strong>Pausieren</strong> mit <em>on-hold</em> und beim <strong>Reaktivieren</strong> mit <em>active</em> dokumentiert werden (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
-      <li><a name="l1493">​</a><strong>Grund für die Pausierung/Aktivierung</strong> (<em>statusReason.coding</em>) optionalerer Grund für die Pausierung als Code oder Freitext (siehe <a href="AtElgaEmedValueSetPlaneintragStatusReasonVS">ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html</a>)</li>
+      <li><a name="l1496">​</a><strong>Grund für die Pausierung/Aktivierung</strong> (<em>statusReason.coding</em>) optionalerer Grund für die Pausierung als Code oder Freitext (siehe <a href="AtElgaEmedValueSetPlaneintragStatusReasonVS">ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html</a>)</li>
       <li>falls weitere Elemente geändert werden, siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a></li>
     </ul>
   </li>
 </ul>
 
-<p><a name="l1512">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>alle geänderten Ressourcen sind inline im Bundle enthalten</li>
 </ul>
 
-<p><a name="l1530">​</a>Anmerkung: Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> ändert die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> den Status der List.entry.flags von <em>changed</em> automatisch auf <em>unchanged</em>.</p>
+<p>Anmerkung: Beim nächsten <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> ändert die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> den Status der List.entry.flags von <em>changed</em> automatisch auf <em>unchanged</em>.</p>
 
 <h4 id="relevante-elemente-list-3">Relevante Elemente (List)</h4>
 
@@ -846,22 +846,22 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
 
 <h4 id="ablauf-5">Ablauf</h4>
 
-<p><a name="l1573">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <p>Die Vorgehensweise unterscheidet sich je nach Inhalt des temporären Medikationsplans:</p>
 <ol>
   <li>der Medikationsplan ist <strong>leer</strong>:
     <ul>
       <li><strong>A.</strong> er befindet sich noch im <strong>Initialzustand</strong> mit <em>List.emptyReason = notstarted</em> oder</li>
-      <li><a name="l1608">​</a><strong>B.</strong> er ist <strong>nach dem Absetzen oder Stornieren aller Planeinträge</strong> leer mit <em>List.emptyReason = nilknown</em> <br/>
- In beiden Fällen übermittelt der GDA mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> eine neue Planversion mit <em>List.emptyReason = nilknown</em> in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>.</li>
+      <li><strong>B.</strong> er ist <strong>nach dem Absetzen oder Stornieren aller Planeinträge</strong> leer mit <em>List.emptyReason = nilknown</em> <br/>
+ In beiden Fällen übermittelt der GDA mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> eine neue Planversion mit <em>List.emptyReason = nilknown</em> in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>.</li>
     </ul>
   </li>
   <li>es bestehen <strong>Planeinträge</strong>: der GDA
     <ul>
       <li><strong>beendet</strong> (siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_08---planeintrag-im-medikationsplan-beenden">Sub_UC_eMed_02_08 - Planeintrag im Medikationsplan beenden</a>) und/oder</li>
       <li><strong>storniert</strong> (siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_07---planeintrag-im-medikationsplan-stornieren">Sub_UC_eMed_02_07 - Planeintrag im Medikationsplan stornieren</a>)
- sämtliche Planeinträge. Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.PlanRead.html">$plan-read</a> erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit <em>List.emptyReason = nilknown</em> aus. Optional kann der GDA nun explizit einen leeren Plan dokumentieren (siehe 1.B).</li>
+ sämtliche Planeinträge. Beim nächsten <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> erkennt die Fachanwendung diesen Zustand und liefert den Medikationsplan mit <em>List.emptyReason = nilknown</em> aus. Optional kann der GDA nun explizit einen leeren Plan dokumentieren (siehe 1.B).</li>
     </ul>
   </li>
 </ol>
@@ -882,7 +882,7 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
 
 <h4 id="ablauf-6">Ablauf</h4>
 
-<p><a name="l1685">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -900,18 +900,18 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     <!-- - *id*: bestehende *id* darf **nicht geändert** werden -->
     <ul>
       <li><strong>Status</strong> muss <strong><em>entered-in-error</em></strong> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
-      <li><a name="l1782">​</a><strong>Grund für die Stornierung</strong> (<em>statusReason.coding</em>) muss <strong>verpflichend</strong> mit als Code oder Freitext dokumentiert werden (siehe <a href="AtElgaEmedValueSetPlaneintragStatusReasonVS">ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html</a>)</li>
+      <li><a name="l1785">​</a><strong>Grund für die Stornierung</strong> (<em>statusReason.coding</em>) muss <strong>verpflichend</strong> mit als Code oder Freitext dokumentiert werden (siehe <a href="AtElgaEmedValueSetPlaneintragStatusReasonVS">ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html</a>)</li>
       <li>falls weitere Elemente geändert werden, siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a></li>
     </ul>
   </li>
 </ul>
 
-<p><a name="l1804">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>alle zu entfernenden <em>MedicationRequests</em> sind im Transaction Bundle enthalten</li>
 </ul>
 
-<p><a name="l1825">​</a>Anmerkung: Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
+<p>Anmerkung: Beim nächsten <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
 
 <h4 id="relevante-elemente-list-4">Relevante Elemente (List)</h4>
 
@@ -942,7 +942,7 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
 
 <h4 id="ablauf-7">Ablauf</h4>
 
-<p><a name="l1860">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -960,18 +960,18 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     <!-- - *id*: bestehende *id* darf **nicht geändert** werden -->
     <ul>
       <li><strong>Status</strong> muss <strong><em>stopped</em></strong> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
-      <li><a name="l1957">​</a><strong>Grund für die Beendigung</strong> (<em>statusReason.coding</em>) muss <strong>verpflichend</strong> mit als Code oder Freitext dokumentiert werden (siehe <a href="AtElgaEmedValueSetPlaneintragStatusReasonVS">ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html</a>)</li>
+      <li><a name="l1960">​</a><strong>Grund für die Beendigung</strong> (<em>statusReason.coding</em>) muss <strong>verpflichend</strong> mit als Code oder Freitext dokumentiert werden (siehe <a href="AtElgaEmedValueSetPlaneintragStatusReasonVS">ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html</a>)</li>
       <li>falls weitere Elemente geändert werden, siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a></li>
     </ul>
   </li>
 </ul>
 
-<p><a name="l1979">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>alle zu beendeten <em>MedicationRequests</em> sind im Transaction Bundle enthalten</li>
 </ul>
 
-<p><a name="l2000">​</a>Anmerkung: Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
+<p>Anmerkung: Beim nächsten <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
 
 <h4 id="relevante-elemente-list-5">Relevante Elemente (List)</h4>
 
@@ -1007,17 +1007,17 @@ TODO: Anja Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
     <p><strong>1.A</strong> Möchte der GDA die Einnahme <strong>weiterverordnen</strong>, muss er entsprechende Anpassungen vornehmen (siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a>).</p>
   </li>
   <li>
-    <p><a name="l2066">​</a><strong>1.B</strong> Soll die Einnahme <strong>nicht weiterverordnet</strong> werden, nimmt der GDA <strong>keine Änderung</strong> am List.entry.flag vor. Der abgelaufene Planeintrag muss entsprechend angepasst werden (siehe <a href="Sub_UC_eMed_02.html#relevante-elemente-medicationrequest---planeintrag-1-6-1b">Relevante Elemente (MedicationRequest - Planeintrag 1)(1.B)</a>)
+    <p><a name="l2069">​</a><strong>1.B</strong> Soll die Einnahme <strong>nicht weiterverordnet</strong> werden, nimmt der GDA <strong>keine Änderung</strong> am List.entry.flag vor. Der abgelaufene Planeintrag muss entsprechend angepasst werden (siehe <a href="Sub_UC_eMed_02.html#relevante-elemente-medicationrequest---planeintrag-1-6-1b">Relevante Elemente (MedicationRequest - Planeintrag 1)(1.B)</a>)
   <!-- - **1.B** Soll die Einnahme **nicht weiterverordnet** werden, nimmt der GDA **keine Änderung** am List.entry.flag und dem abgelaufenen Planeintrag vor (auch kein Beendigungsgrund und keine Aktualisierung des GDAs im Planeintrag). --></p>
   </li>
 </ul>
 
-<p><a name="l2083">​</a>Er übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Er übermittelt mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>alle geänderten Ressourcen (inkl. der beendeten) sind inline im Bundle enthalten</li>
 </ul>
 
-<p><a name="l2101">​</a>Beim nächsten <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
+<p>Beim nächsten <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> entfernt die Fachanwendung im zur Auslieferung bereitgestellten <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> die mit <em>removed</em> gekennzeichneten Einträge automatisch aus dem Mediaktionsplan.</p>
 
 <h4 id="relevante-elemente-list-1b">Relevante Elemente (List) (1.B)</h4>
 
@@ -1057,7 +1057,7 @@ Der Einnahmezeitraum der im Planeintrag dokumentierten Arzneimittel darf noch ni
 
 <h4 id="ablauf-8">Ablauf</h4>
 
-<p><a name="l2143">​</a>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-AtElgaEmed.List.Planread.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
+<p>Der GDA führt ein <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus und bearbeitet die von der Fachanwendung im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> bereitgestellten Ressourcen:</p>
 
 <ul>
   <li><em>List</em>-Ressource bearbeiten: <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">AtElgaEmedListMedikationsplan</a>:
@@ -1069,7 +1069,7 @@ Der Einnahmezeitraum der im Planeintrag dokumentierten Arzneimittel darf noch ni
   <li><em>MedicationRequest</em>-Ressource(n): Planeinträge (<a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">AtElgaEmedMedicationRequestPlaneintrag</a>) bleiben <strong>unverändert</strong>.</li>
 </ul>
 
-<p><a name="l2205">​</a>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-AtEmed.List.PlanWrite.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
+<p>Der GDA übermittelt mit <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> den aktualisierten Medikationsplan in einem <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Transaction Bundle</a>:</p>
 <ul>
   <li>die unveränderten Ressourcen sind nicht im Bundle enthalten, sondern werden in der Liste nur referenziert</li>
   <li>neue oder geänderte Ressourcen sind im Transaction Bundle enthalten,</li>
@@ -1229,7 +1229,7 @@ Mögliche Lösung: Vor dem Löschen prüfen, ob die referenzierten Planeinträge
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-17 00:02:00 +0000">
+  <span title="2026-10-17 19:55:00 +0000">
     2026-10-17
   </span>
 

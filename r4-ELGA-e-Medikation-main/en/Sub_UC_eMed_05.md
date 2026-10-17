@@ -220,8 +220,7 @@ Da kein weiterer ELGA-Zugriff auf die Medikationsdaten des ELGA-Teilnehmers mög
 
 #### Custom Operations
 
- Offene Punkte: 
-$dispense-write: in Arbeit. 
+* **POST** [$dispense-write](OperationDefinition-at-elga-emed-operation-dispense-write.md)
 
 ### Sub_UC_eMed_05_02 - Durchgeführte Abgabe stornieren
 
@@ -237,8 +236,7 @@ Eine stornierte **Durchgeführte Abgabe** kann nicht mehr bearbeitet werden und 
 
 #### Custom Operations
 
- Offene Punkte: 
-$dispense-discard: in Arbeit. 
+* **POST** [$dispense-discard](OperationDefinition-at-elga-emed-operation-dispense-discard.md)
 
 ### Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen/entfernen
 
@@ -246,9 +244,7 @@ Sofern für die [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicat
 
 #### Custom Operations
 
- Offene Punkte: 
-$reference-plan: in Arbeit. 
-$dereference-plan: in Arbeit. 
+* **POST** [$reference-plan](OperationDefinition-at-elga-emed-operation-reference-plan.md)
 
 ### Sub_UC_eMed_05_04 - Durchgeführte Abgabe löschen (durch ELGA-Teilnehmer)
 

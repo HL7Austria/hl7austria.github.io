@@ -40,7 +40,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-17T00:02:12+00:00",
+  "date" : "2026-10-17T19:55:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -188,6 +188,18 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       }]
     },
     {
+      "id" : "MedicationDispense.extension:statusChanged",
+      "path" : "MedicationDispense.extension",
+      "sliceName" : "statusChanged",
+      "short" : "Datum der Statusänderung. Dies ist nur bei einem Status von: cancelled | entered-in-error | stopped relevant.",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.statusChanged"]
+      }]
+    },
+    {
       "id" : "MedicationDispense.extension:groupIdentifier",
       "path" : "MedicationDispense.extension",
       "sliceName" : "groupIdentifier",
@@ -218,7 +230,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
-      "short" : "Status der Durchgeführten Abgabe. Mögliche Ausprägungen: [completed | entered-in-error | stopped] Bedeutung: completed: Die Durchgeführte Abgabe ist abgeschlossen. | entered-in-error: Die Durchgeführte Abgabe wird aufgrund falscher Eingabe storniert. | stopped: Die Abgabe wird nicht durchgeführt (Medikament wird abgesetzt).",
+      "short" : "Status der Durchgeführten Abgabe. Mögliche Ausprägungen: [completed | cancelled | entered-in-error ] Bedeutung: completed: Die Durchgeführte Abgabe ist abgeschlossen. | cancelled: Leerabgabe | entered-in-error: Die Durchgeführte Abgabe wird aufgrund falscher Eingabe storniert.",
       "mustSupport" : true
     },
     {

@@ -12,7 +12,7 @@
   <name value="ELGA-e-Medikation-R4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-17T00:02:12+00:00"/>
+  <date value="2026-10-17T19:55:22+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -343,7 +343,7 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/at-emed-operationoutcome-details"/>
+        <reference value="ValueSet/at-elga-emed-operationoutcome-details"/>
       </reference>
       <name value="AT e-Medikation OperationOutcome Details"/>
       <description value="Value-Set mit den für e-Medikation zulässigen detaillierten Fehlercodes."/>
@@ -1112,9 +1112,53 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/AtElgaEmed.List.PlanRead"/>
+        <reference value="OperationDefinition/at-elga-emed-operation-dispense-discard"/>
       </reference>
-      <name value="e-Med Operation für Plan-Read"/>
+      <name value="e-Med Operation für $dispense-discard"/>
+      <description value="Operation für das Stornieren von Durchgeführten Abgaben"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-dispense-write"/>
+      </reference>
+      <name value="e-Med Operation für $dispense-write"/>
+      <description value="Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-groupidentifier-create"/>
+      </reference>
+      <name value="e-Med Operation für $groupidentifier-create"/>
+      <description value="Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-groupidentifier-search"/>
+      </reference>
+      <name value="e-Med Operation für $groupidentifier-search"/>
+      <description value="Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-plan-read"/>
+      </reference>
+      <name value="e-Med Operation für $plan-read"/>
       <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines&#xA;ELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten&#xA;Zustand ab.&#xA;&#xA;Hierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version&#xA;der List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen&#xA;ein temporäres Medikationsplan-Bundle zur Auslieferung.&#xA;&#xA;Existiert noch kein Medikationsplan, erstellt und persistiert die&#xA;Fachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1123,10 +1167,43 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/AtElgaEmed.List.PlanWrite"/>
+        <reference value="OperationDefinition/at-elga-emed-operation-plan-write"/>
       </reference>
-      <name value="e-Med Operation für Plan-Write"/>
+      <name value="e-Med Operation für $plan-write"/>
       <description value="Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-prescription-discard"/>
+      </reference>
+      <name value="e-Med Operation für $prescription-discard"/>
+      <description value="Operation für das Stornieren von Geplanten Abgaben"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-prescription-write"/>
+      </reference>
+      <name value="e-Med Operation für $prescription-write"/>
+      <description value="Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-reference-plan"/>
+      </reference>
+      <name value="e-Med Operation für $reference-plan"/>
+      <description value="Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1325,39 +1402,6 @@
       </reference>
       <name value="ELGA_MedikationRezeptart"/>
       <description value="**Description:** ELGA ValueSet for Prescription type&#xA;&#xA;**Beschreibung:** ELGA ValueSet für RezeptArt"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
-        <reference value="OperationDefinition/at-emed-operation-reference-plan"/>
-      </reference>
-      <name value="eMed Operation $reference-plan"/>
-      <description value="Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
-        <reference value="OperationDefinition/at-emed-operation-groupidentifier-prescription-search"/>
-      </reference>
-      <name value="eMed Operation für GroupIdentifier Prescription Search"/>
-      <description value="Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf geplante Abgaben mittels e-Med GroupIdentifier erfolgen soll."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="OperationDefinition"/>
-      </extension>
-      <reference>
-        <reference value="OperationDefinition/at-emed-operation-groupidentifier-create"/>
-      </reference>
-      <name value="eMed Operation für GroupIdentifier-Create"/>
-      <description value="Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

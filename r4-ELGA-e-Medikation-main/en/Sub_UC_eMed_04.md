@@ -45,7 +45,7 @@ Der Status der **Geplanten Abgabe** bleibt solange **active**, bis die letztmög
 
 #### Ablauf
 
-Der GDA führt ein **POST** [$plan-read](OperationDefinition-AtElgaEmed.List.Planread.md) aus und erhält von der Fachanwendung im [Medikationsplan-Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) alle für die Erstellung der **Geplanten Abgaben** relevanten Ressourcen.
+Der GDA führt ein **POST** [$plan-read](OperationDefinition-at-elga-emed-operation-plan-read.md) aus und erhält von der Fachanwendung im [Medikationsplan-Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) alle für die Erstellung der **Geplanten Abgaben** relevanten Ressourcen.
 
 Basierend auf den enthaltenen Planeinträgen erstellt der GDA neue **Gelplante Abgaben** wie folgt:
 
@@ -91,8 +91,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ##### Custom Operations
 
- Offene Punkte: 
-$prescription-write: in Arbeit. 
+* **POST** [$prescription-write](OperationDefinition-at-elga-emed-operation-prescription-write.md)
 
 ### Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen
 
@@ -126,8 +125,7 @@ Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](Sub_UC_eMed_04.
 
 ##### Custom Operations
 
- Offene Punkte: 
-$groupidentifier-create: in Arbeit. 
+* **POST** [$groupidentifier-create](OperationDefinition-at-elga-emed-operation-groupidentifier-create.md)
 
 ### Sub_UC_eMed_04_03 - Geplante Abgabe stornieren (Prescription-Discard)
 
@@ -156,8 +154,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ##### Custom Operations
 
- Offene Punkte: 
-$prescription-discard: in Arbeit. 
+* **POST** [$prescription-discard](OperationDefinition-at-elga-emed-operation-prescription-discard.md)
 
 ### Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)
 
