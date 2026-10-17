@@ -12,7 +12,7 @@
   <name value="ELGA-e-Medikation-R4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-16T11:00:25+00:00"/>
+  <date value="2026-10-17T00:02:12+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -460,7 +460,7 @@
         <reference value="StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
       </reference>
       <name value="AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe"/>
-      <description value="Dokumentiert eine &quot;Durchgeführte Abgabe&quot; eines Arzneimittels (&quot;MedicationDispense&quot;-Ressource). &#xA;Die &quot;Durchgeführte Abgabe&quot; enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. &#xA;Es können Abweichungen zur &quot;Geplanten Abgabe&quot; hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.&#xA;Sofern eine zugehörige &quot;Geplanten Abgabe&quot; vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige &quot;Geplante Abgabe&quot;, ersichtlich.&#xA;Der aktuelle Status einer &quot;Durchgeführten Abgabe&quot; wird mittels &quot;status&quot;- und &quot;type&quot;-Element dokumentiert. Es werden R5-Backport-Extensions verwendet."/>
+      <description value="Profil einer &quot;Durchgeführten Abgabe&quot; eines Arzneimittels aus dem Medikationsplan."/>
       <exampleBoolean value="false"/>
       <groupingId value="DurchgefuehrteAbgabe"/>
     </resource>
@@ -483,7 +483,7 @@
         <reference value="StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
       </reference>
       <name value="At ELGA e-Medikation MedicationRequest Geplante Abgabe"/>
-      <description value="Bildet eine &quot;Geplante Abgabe&quot; eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag ab (&quot;MedicationRequest&quot;-Ressource mit Kategorie &quot;Geplante Abgabe&quot;):&#xA;Sie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. &#xA;Werden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine &quot;Geplante Abgabe&quot; mit demselben &quot;e-Med GroupIdentifier&quot; erstellt (bildet 'Rezept-Klammer'). &#xA;Es werden R5-Backport-Extensions verwendet."/>
+      <description value="Profil einer &quot;Geplanten Abgabe&quot; eines Arzneimittels aus dem Medikationsplan."/>
       <exampleBoolean value="false"/>
       <groupingId value="GeplanteAbgabe"/>
     </resource>
@@ -1325,6 +1325,17 @@
       </reference>
       <name value="ELGA_MedikationRezeptart"/>
       <description value="**Description:** ELGA ValueSet for Prescription type&#xA;&#xA;**Beschreibung:** ELGA ValueSet für RezeptArt"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-emed-operation-reference-plan"/>
+      </reference>
+      <name value="eMed Operation $reference-plan"/>
+      <description value="Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

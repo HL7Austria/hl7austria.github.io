@@ -2,6 +2,16 @@
 
 ## Resource Profile: AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe 
 
+Die Ressource **`MedicationDispense`** bildet eine **Durchgeführte Abgabe** ab.
+
+Sie enthält das abgegebe Arzneimittel mit dessen Dosierung und dient somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Eine **Durchgeführte Abgabe** kann sich auf einen Planeintrag und/oder eine **Geplante Abgabe** beziehen und trägt dann denselben **e-Med GroupIdentifier**. Sie kann hinsichtlich des tatsächlich abgegebenen Arzneimittels und dessen Dosierung von Planeintrag und **Geplanter Abgabe** abweichen.
+
+Der aktuelle Status einer **Durchgeführten Abgabe** wird mittels **status**- und **type**-Element dokumentiert (siehe [Status des MedicationDispense in der Durchgeführten Abgabe](workflowmanagement.md#status-des-medicationdispense-in-der-durchgeführten-abgabe)).
+
+Relevante Use Cases:
+
+* [Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen)
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben](StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-tx.md)
@@ -30,7 +40,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-16T11:00:25+00:00",
+  "date" : "2026-10-17T00:02:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -47,7 +57,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "use" : "work"
     }]
   }],
-  "description" : "Dokumentiert eine \"Durchgeführte Abgabe\" eines Arzneimittels (\"MedicationDispense\"-Ressource). \nDie \"Durchgeführte Abgabe\" enthält die abgegebene Medikation und deren Dosierung und dient somit der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation. \nEs können Abweichungen zur \"Geplanten Abgabe\" hinsichtlich des Medikaments und dessen Dosierung dokumentiert werden.\nSofern eine zugehörige \"Geplanten Abgabe\" vorliegt, muss diese mit dem zugehörigen Planeintrag referenziert werden. Eine mögliche Substitution des Medikaments ist implizit, durch die Referenz auf die zugehörige \"Geplante Abgabe\", ersichtlich.\nDer aktuelle Status einer \"Durchgeführten Abgabe\" wird mittels \"status\"- und \"type\"-Element dokumentiert. Es werden R5-Backport-Extensions verwendet.",
+  "description" : "Profil einer \"Durchgeführten Abgabe\" eines Arzneimittels aus dem Medikationsplan.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -81,11 +91,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "MedicationDispense",
-      "path" : "MedicationDispense",
-      "short" : "Durchgeführte Abgabe eines Arzneimittels mit oder ohne Bezug zur geplanten Abgabe. Verwendet R5 Backport Extensions."
-    },
-    {
       "id" : "MedicationDispense.id",
       "path" : "MedicationDispense.id",
       "short" : "Technische id der Ressource",

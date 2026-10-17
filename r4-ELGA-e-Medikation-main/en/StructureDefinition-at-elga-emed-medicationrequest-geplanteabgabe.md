@@ -2,6 +2,16 @@
 
 ## Resource Profile: At ELGA e-Medikation MedicationRequest Geplante Abgabe 
 
+Die Ressource **`MedicationRequest`** mit Kategorie "Geplante Abgabe" bildet eine **Geplante Abgabe** ab.
+
+Sie enthält genau das im zugehörigen Planeintrag verordnete Arzneimittel mit dessen Dosierung und dient somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Arzneimittel gleichzeitig verordnet (und sind demselben e-Rezept zugeordnet), wird für jedes Arzneimittel eine **Geplante Abgabe** mit demselben **e-Med GroupIdentifier** erstellt.
+
+Der aktuelle Status einer geplanten Abgabe wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)).
+
+Relevante Use Cases:
+
+* [Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write)
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Transaction Bundle geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md)
@@ -37,7 +47,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-16T11:00:25+00:00",
+  "date" : "2026-10-17T00:02:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -54,7 +64,7 @@ In Arbeit.
       "use" : "work"
     }]
   }],
-  "description" : "Bildet eine \"Geplante Abgabe\" eines Arzneimittels aus dem zugrundeliegenden Medikationsplaneintrag ab (\"MedicationRequest\"-Ressource mit Kategorie \"Geplante Abgabe\"):\nSie enthält die verordnete Medikation und deren Dosierung und spielgelt die Inhalte des e-Rezepts wider. Geplante Abgaben dienen somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. \nWerden mehrere Medikamente gleichzeitig verschrieben und sollen demselben e-Rezept zugeordnet sein, wird für jedes Medikament eine \"Geplante Abgabe\" mit demselben \"e-Med GroupIdentifier\" erstellt (bildet 'Rezept-Klammer'). \nEs werden R5-Backport-Extensions verwendet.",
+  "description" : "Profil einer \"Geplanten Abgabe\" eines Arzneimittels aus dem Medikationsplan.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -88,11 +98,6 @@ In Arbeit.
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "MedicationRequest",
-      "path" : "MedicationRequest",
-      "short" : "Geplante Abgabe eines Arzneimittels aus dem Medikationsplan. Verwendet R5 Backport Extensions."
-    },
-    {
       "id" : "MedicationRequest.extension",
       "path" : "MedicationRequest.extension",
       "slicing" : {

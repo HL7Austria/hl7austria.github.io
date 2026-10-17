@@ -16,7 +16,7 @@
   "title" : "eMed Operation für GroupIdentifier-Create",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-16T11:00:25+00:00",
+  "date" : "2026-10-17T00:02:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
