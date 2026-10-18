@@ -1,0 +1,118 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/RelatedPerson/RelatedPersonMartinGruber> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "RelatedPersonMartinGruber"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-related-person" ;
+       fhir:index -1 ;
+       fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-related-person>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson RelatedPersonMartinGruber</b></p><a name=\"RelatedPersonMartinGruber\"> </a><a name=\"hcRelatedPersonMartinGruber\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-related-person.html\">HL7® AT Core RelatedPerson Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Martin Gruber (official) - father (Social Security number: 1234120983)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td>true</td><td style=\"background-color: #f3f5da\" title=\"Administrative gender\">Gender:</td><td>Male</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Date of birth\">Date of Birth:</td><td colspan=\"3\">1983-09-12</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient this person is related to\">Patient:</td><td colspan=\"3\"><a href=\"Patient-PatientFelixGruber.html\">Felix Gruber (official) Male, DoB: 2014-04-17 ( Social Security number: 1234170414)</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The nature of the relationship between the patient and the related person\">Relationship:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode FTH}\">father</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\">National unique individual identifier/BPK-TEST-XY67889</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Related Person\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"tel:+436602847319\">+43 660 284 73 19</a></li><li>Hütteldorfer Straße 86, Stiege 2, Tür 7 Wien Wien 1150 AUT (home)</li></ul></td></tr></table></div>"
+  ] ;
+  fhir:RelatedPerson.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "SS" ] ;
+         fhir:Coding.display [ fhir:value "Social Security number" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.1.4.3.1" ] ;
+     fhir:Identifier.value [ fhir:value "1234120983" ] ;
+     fhir:Identifier.assigner [
+       fhir:Reference.display [ fhir:value "Dachverband der österreichischen Sozialversicherungsträger" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ] ;
+         fhir:Coding.code [ fhir:value "NI" ] ;
+         fhir:Coding.display [ fhir:value "National unique individual identifier" ]
+       ]
+     ] ;
+     fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.2.1.1.149" ] ;
+     fhir:Identifier.value [ fhir:value "BPK-TEST-XY67889" ] ;
+     fhir:Identifier.assigner [
+       fhir:Reference.display [ fhir:value "Bundesministerium für Inneres" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:RelatedPerson.patient [
+     fhir:link <https://fhir.hl7.at/core/r4/Patient/PatientFelixGruber> ;
+     fhir:Reference.reference [ fhir:value "Patient/PatientFelixGruber" ]
+  ] ;
+  fhir:RelatedPerson.relationship [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ] ;
+       fhir:Coding.code [ fhir:value "FTH" ] ;
+       fhir:Coding.display [ fhir:value "father" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.name [
+     fhir:index -1 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Gruber" ] ;
+     fhir:HumanName.given [
+       fhir:value "Martin" ;
+       fhir:index -1
+     ]
+  ] ;
+  fhir:RelatedPerson.telecom [
+     fhir:index -1 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "+43 660 284 73 19" ] ;
+     fhir:ContactPoint.use [ fhir:value "mobile" ]
+  ] ;
+  fhir:RelatedPerson.gender [ fhir:value "male"] ;
+  fhir:RelatedPerson.birthDate [ fhir:value "1983-09-12"^^xsd:date] ;
+  fhir:RelatedPerson.address [
+     fhir:index -1 ;
+     fhir:Address.use [ fhir:value "home" ] ;
+     fhir:Address.type [ fhir:value "both" ] ;
+     fhir:Address.line [
+       fhir:value "Hütteldorfer Straße 86, Stiege 2, Tür 7" ;
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName" ] ;
+         fhir:Extension.valueString [ fhir:value "Hütteldorfer Straße" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber" ] ;
+         fhir:Extension.valueString [ fhir:value "86" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator" ] ;
+         fhir:Extension.valueString [ fhir:value "Stiege 2, Tür 7" ]
+       ]
+     ] ;
+     fhir:Address.city [ fhir:value "Wien" ] ;
+     fhir:Address.state [ fhir:value "Wien" ] ;
+     fhir:Address.postalCode [ fhir:value "1150" ] ;
+     fhir:Address.country [ fhir:value "AUT" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/RelatedPerson/RelatedPersonMartinGruber.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
