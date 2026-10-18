@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-17T19:55:22+00:00",
+  "date" : "2026-10-18T08:01:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -711,6 +711,57 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-organization.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-organization"
+      },
+      "name" : "AT ELGA e-Medikation Organization",
+      "description" : "Profil für die Struktur von Organisationen",
+      "exampleBoolean" : false,
+      "groupingId" : "Stammdaten"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-patient.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-patient"
+      },
+      "name" : "AT ELGA e-Medikation Patient",
+      "description" : "Profil für die Struktur der Patienten Ressource",
+      "exampleBoolean" : false,
+      "groupingId" : "Stammdaten"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-practitioner.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-practitioner"
+      },
+      "name" : "AT ELGA e-Medikation Practitioner",
+      "description" : "Profil für die Struktur der Practitioner Ressource",
+      "exampleBoolean" : false,
+      "groupingId" : "Stammdaten"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       },
       {
@@ -870,54 +921,6 @@
       "name" : "AtElgaEmedDosageTimedAdministration",
       "exampleBoolean" : false,
       "groupingId" : "Dosierungen"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-organization.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-organization"
-      },
-      "name" : "AtElgaEmedOrganization",
-      "exampleBoolean" : false,
-      "groupingId" : "Stammdaten"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-patient.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-patient"
-      },
-      "name" : "AtElgaEmedPatient",
-      "exampleBoolean" : false,
-      "groupingId" : "Stammdaten"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-practitioner.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-practitioner"
-      },
-      "name" : "AtElgaEmedPractitioner",
-      "exampleBoolean" : false,
-      "groupingId" : "Stammdaten"
     },
     {
       "extension" : [{

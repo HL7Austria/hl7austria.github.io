@@ -1,6 +1,6 @@
-# AtElgaEmedPractitioner - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Practitioner - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: AtElgaEmedPractitioner 
+## Resource Profile: AT ELGA e-Medikation Practitioner 
 
 **Usages:**
 
@@ -27,8 +27,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-prac
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
   "version" : "0.1.0",
   "name" : "AtElgaEmedPractitioner",
+  "title" : "AT ELGA e-Medikation Practitioner",
   "status" : "draft",
-  "date" : "2026-10-17T19:55:22+00:00",
+  "date" : "2026-10-18T08:01:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -45,6 +46,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-prac
       "use" : "work"
     }]
   }],
+  "description" : "Profil für die Struktur der Practitioner Ressource",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",

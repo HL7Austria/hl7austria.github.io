@@ -1,6 +1,6 @@
-# AtElgaEmedOrganization - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Organization - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: AtElgaEmedOrganization 
+## Resource Profile: AT ELGA e-Medikation Organization 
 
 **Usages:**
 
@@ -27,8 +27,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization",
   "version" : "0.1.0",
   "name" : "AtElgaEmedOrganization",
+  "title" : "AT ELGA e-Medikation Organization",
   "status" : "draft",
-  "date" : "2026-10-17T19:55:22+00:00",
+  "date" : "2026-10-18T08:01:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -45,6 +46,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
       "use" : "work"
     }]
   }],
+  "description" : "Profil für die Struktur von Organisationen",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",
