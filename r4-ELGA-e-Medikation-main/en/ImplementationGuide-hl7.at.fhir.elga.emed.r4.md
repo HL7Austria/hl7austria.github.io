@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-18T08:01:40+00:00",
+  "date" : "2026-10-18T09:33:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1895,6 +1895,22 @@
       },
       "name" : "ELGA e-Med Medikationsplaneintrag StatusReason Value Set",
       "description" : "ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest).",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtElgaEmedValueSetMedikationsplanHTTPCodes.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtElgaEmedValueSetMedikationsplanHTTPCodes"
+      },
+      "name" : "ELGA Emed ValueSet Medikationsplan HTTP Codes",
+      "description" : "ValueSet für die zulässigen HTTP Codes beim Medikationsplan schreiben",
       "exampleBoolean" : false
     },
     {

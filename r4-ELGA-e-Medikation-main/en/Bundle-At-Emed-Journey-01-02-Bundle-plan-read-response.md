@@ -14,7 +14,6 @@
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"]
   },
   "type" : "searchset",
-  "timestamp" : "2026-02-27T08:10:00+00:00",
   "link" : [{
     "relation" : "self",
     "url" : "https://example.elga.com/base/List/$plan-read"

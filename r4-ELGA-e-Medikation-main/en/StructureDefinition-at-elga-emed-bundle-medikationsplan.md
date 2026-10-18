@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-18T08:01:40+00:00",
+  "date" : "2026-10-18T09:33:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -90,11 +90,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
     {
       "id" : "Bundle.implicitRules",
       "path" : "Bundle.implicitRules",
-      "max" : "0"
-    },
-    {
-      "id" : "Bundle.identifier",
-      "path" : "Bundle.identifier",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
       "max" : "0"
     },
     {
@@ -102,6 +98,29 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "path" : "Bundle.type",
       "short" : "Art des Bundles. Für Medikationspläne immer \"searchset\".",
       "patternCode" : "searchset",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.link",
+      "path" : "Bundle.link",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.link.modifierExtension",
+      "path" : "Bundle.link.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.link.relation",
+      "path" : "Bundle.link.relation",
+      "patternString" : "self",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.link.url",
+      "path" : "Bundle.link.url",
       "mustSupport" : true
     },
     {
@@ -119,31 +138,24 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry.link",
-      "path" : "Bundle.entry.link",
-      "max" : "0"
-    },
-    {
-      "id" : "Bundle.entry.fullUrl",
-      "path" : "Bundle.entry.fullUrl",
-      "min" : 1
-    },
-    {
       "id" : "Bundle.entry:Medikationsplan",
       "path" : "Bundle.entry",
       "sliceName" : "Medikationsplan",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:Medikationsplan.link",
-      "path" : "Bundle.entry.link",
+      "id" : "Bundle.entry:Medikationsplan.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
       "id" : "Bundle.entry:Medikationsplan.fullUrl",
       "path" : "Bundle.entry.fullUrl",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:Medikationsplan.resource",
@@ -152,24 +164,54 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "type" : [{
         "code" : "List",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.search",
+      "path" : "Bundle.entry.search",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.search.modifierExtension",
+      "path" : "Bundle.entry.search.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.search.mode",
+      "path" : "Bundle.entry.search.mode",
+      "min" : 1,
+      "patternCode" : "match",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplan.request",
+      "path" : "Bundle.entry.request",
+      "short" : "Fachliche Begründung: In einem Searchset Bundle darf kein Request vorkommen.",
+      "max" : "0",
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:Medikationsplaneintrag",
       "path" : "Bundle.entry",
       "sliceName" : "Medikationsplaneintrag",
       "min" : 0,
-      "max" : "*"
+      "max" : "*",
+      "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:Medikationsplaneintrag.link",
-      "path" : "Bundle.entry.link",
+      "id" : "Bundle.entry:Medikationsplaneintrag.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
       "id" : "Bundle.entry:Medikationsplaneintrag.fullUrl",
       "path" : "Bundle.entry.fullUrl",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:Medikationsplaneintrag.resource",
@@ -178,24 +220,54 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "type" : [{
         "code" : "MedicationRequest",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag.search",
+      "path" : "Bundle.entry.search",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag.search.modifierExtension",
+      "path" : "Bundle.entry.search.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag.search.mode",
+      "path" : "Bundle.entry.search.mode",
+      "min" : 1,
+      "patternCode" : "include",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag.request",
+      "path" : "Bundle.entry.request",
+      "short" : "Fachliche Begründung: In einem Searchset Bundle darf kein Request vorkommen.",
+      "max" : "0",
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:Patient",
       "path" : "Bundle.entry",
       "sliceName" : "Patient",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:Patient.link",
-      "path" : "Bundle.entry.link",
+      "id" : "Bundle.entry:Patient.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
       "id" : "Bundle.entry:Patient.fullUrl",
       "path" : "Bundle.entry.fullUrl",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:Patient.resource",
@@ -204,24 +276,54 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "type" : [{
         "code" : "Patient",
         "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Patient.search",
+      "path" : "Bundle.entry.search",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Patient.search.modifierExtension",
+      "path" : "Bundle.entry.search.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Patient.search.mode",
+      "path" : "Bundle.entry.search.mode",
+      "min" : 1,
+      "patternCode" : "include",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Patient.request",
+      "path" : "Bundle.entry.request",
+      "short" : "Fachliche Begründung: In einem Searchset Bundle darf kein Request vorkommen.",
+      "max" : "0",
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:Authors",
       "path" : "Bundle.entry",
       "sliceName" : "Authors",
       "min" : 1,
-      "max" : "*"
+      "max" : "*",
+      "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:Authors.link",
-      "path" : "Bundle.entry.link",
+      "id" : "Bundle.entry:Authors.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
       "id" : "Bundle.entry:Authors.fullUrl",
       "path" : "Bundle.entry.fullUrl",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:Authors.resource",
@@ -238,7 +340,38 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       {
         "code" : "PractitionerRole",
         "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
-      }]
+      },
+      {
+        "code" : "Organization",
+        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-organization"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Authors.search",
+      "path" : "Bundle.entry.search",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Authors.search.modifierExtension",
+      "path" : "Bundle.entry.search.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Bundle.entry:Authors.search.mode",
+      "path" : "Bundle.entry.search.mode",
+      "min" : 1,
+      "patternCode" : "include",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Authors.request",
+      "path" : "Bundle.entry.request",
+      "short" : "Fachliche Begründung: In einem Searchset Bundle darf kein Request vorkommen.",
+      "max" : "0",
+      "mustSupport" : true
     }]
   }
 }

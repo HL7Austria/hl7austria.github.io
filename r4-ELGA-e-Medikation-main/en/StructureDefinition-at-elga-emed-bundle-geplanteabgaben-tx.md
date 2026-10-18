@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleGeplanteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle geplante Abgaben",
   "status" : "draft",
-  "date" : "2026-10-18T08:01:40+00:00",
+  "date" : "2026-10-18T09:33:28+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -79,23 +79,17 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "path" : "Bundle"
     },
     {
+      "id" : "Bundle.implicitRules",
+      "path" : "Bundle.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
+      "max" : "0"
+    },
+    {
       "id" : "Bundle.type",
       "path" : "Bundle.type",
       "short" : "Art des Bundles. Für schreibenden Zugriff immer Typ \"transaction\".",
       "patternCode" : "transaction",
       "mustSupport" : true
-    },
-    {
-      "id" : "Bundle.timestamp",
-      "path" : "Bundle.timestamp",
-      "short" : "Zeitpunkt der Erstellung des Bundles.",
-      "min" : 1,
-      "mustSupport" : true
-    },
-    {
-      "id" : "Bundle.link",
-      "path" : "Bundle.link",
-      "max" : "0"
     },
     {
       "id" : "Bundle.entry",
@@ -114,24 +108,29 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
         "human" : "Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.",
         "expression" : "resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()",
         "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:geplanteAbgaben",
       "path" : "Bundle.entry",
       "sliceName" : "geplanteAbgaben",
       "min" : 1,
-      "max" : "*"
+      "max" : "*",
+      "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben.link",
-      "path" : "Bundle.entry.link",
+      "id" : "Bundle.entry:geplanteAbgaben.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
       "id" : "Bundle.entry:geplanteAbgaben.fullUrl",
       "path" : "Bundle.entry.fullUrl",
-      "short" : "Eindeutige URL für den Eintrag im Bundle. "
+      "short" : "Eindeutige URL für den Eintrag im Bundle. ",
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:geplanteAbgaben.resource",
@@ -140,17 +139,32 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "type" : [{
         "code" : "MedicationRequest",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:geplanteAbgaben.request",
+      "path" : "Bundle.entry.request",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:geplanteAbgaben.request.modifierExtension",
+      "path" : "Bundle.entry.request.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "Bundle.entry:geplanteAbgaben.request.method",
       "path" : "Bundle.entry.request.method",
-      "patternCode" : "POST"
+      "patternCode" : "POST",
+      "mustSupport" : true
     },
     {
       "id" : "Bundle.entry:geplanteAbgaben.request.url",
       "path" : "Bundle.entry.request.url",
-      "patternUri" : "MedicationRequest"
+      "patternUri" : "MedicationRequest",
+      "mustSupport" : true
     }]
   }
 }
