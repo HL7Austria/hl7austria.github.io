@@ -1,6 +1,6 @@
-# AtElgaEmedDosageFreeTextAdministration - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Freitext-Dosierschema - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Data Type Profile: AtElgaEmedDosageFreeTextAdministration 
+## Data Type Profile: AT ELGA e-Medikation Freitext-Dosierschema 
 
 **Usages:**
 
@@ -16,6 +16,16 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosage-freetext-administration.csv), [Excel](../StructureDefinition-at-elga-emed-dosage-freetext-administration.xlsx), [Schematron](../StructureDefinition-at-elga-emed-dosage-freetext-administration.sch) 
 
+### Notes:
+
+### Regeln für Dosierungen im Freitext Schema
+
+ Die finale Beschreibung der Regeln für dieses Schema wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. 
+
+### Bildung der Textdarstellung
+
+ Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen dieses Dosierschemas wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. 
+
 
 
 ## Resource Content
@@ -27,8 +37,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-freetext-administration",
   "version" : "0.1.0",
   "name" : "AtElgaEmedDosageFreeTextAdministration",
+  "title" : "AT ELGA e-Medikation Freitext-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -45,6 +56,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "use" : "work"
     }]
   }],
+  "description" : "Profil für das Freitext-Dosierschema",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -68,19 +80,89 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "sliceName" : "DosageCategory"
     },
     {
-      "id" : "Dosage.extension:DosageCategory.value[x]",
-      "path" : "Dosage.extension.value[x]",
-      "fixedCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
-          "code" : "freitext"
-        }]
-      }
+      "id" : "Dosage.extension:DosageCategory.value[x].coding.code",
+      "path" : "Dosage.extension.value[x].coding.code",
+      "patternCode" : "freitext"
     },
     {
       "id" : "Dosage.text",
       "path" : "Dosage.text",
       "min" : 1
+    },
+    {
+      "id" : "Dosage.timing.repeat.extension:TimingDayOfMonth",
+      "path" : "Dosage.timing.repeat.extension",
+      "sliceName" : "TimingDayOfMonth",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.duration",
+      "path" : "Dosage.timing.repeat.duration",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.durationMax",
+      "path" : "Dosage.timing.repeat.durationMax",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.durationUnit",
+      "path" : "Dosage.timing.repeat.durationUnit",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.frequency",
+      "path" : "Dosage.timing.repeat.frequency",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.frequencyMax",
+      "path" : "Dosage.timing.repeat.frequencyMax",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.period",
+      "path" : "Dosage.timing.repeat.period",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.periodMax",
+      "path" : "Dosage.timing.repeat.periodMax",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.periodUnit",
+      "path" : "Dosage.timing.repeat.periodUnit",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.dayOfWeek",
+      "path" : "Dosage.timing.repeat.dayOfWeek",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.timeOfDay",
+      "path" : "Dosage.timing.repeat.timeOfDay",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.when",
+      "path" : "Dosage.timing.repeat.when",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.asNeeded[x]",
+      "path" : "Dosage.asNeeded[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.asNeeded[x]:asNeededBoolean",
+      "path" : "Dosage.asNeeded[x]",
+      "sliceName" : "asNeededBoolean",
+      "max" : "0",
+      "type" : [{
+        "code" : "boolean"
+      }]
     }]
   }
 }

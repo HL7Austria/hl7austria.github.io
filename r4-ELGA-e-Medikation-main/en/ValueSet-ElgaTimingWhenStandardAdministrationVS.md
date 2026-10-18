@@ -4,7 +4,7 @@
 
  **References** 
 
-* [AtElgaEmedDosageStandardAdministration](StructureDefinition-at-elga-emed-dosage-standard-administration.md)
+* [AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema](StructureDefinition-at-elga-emed-dosage-standard-administration.md)
 
 ### Logical Definition (CLD)
 
@@ -30,7 +30,7 @@
   "title" : "ELGA Dosierung Timing When ValueSet für Tageszeitenschema",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -1,6 +1,6 @@
-# ELGA List Empty Reason Value Set - ELGA e-Medikation (R4) DRAFT v0.1.0
+# ELGA List Empty Reason ValueSet - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## ValueSet: ELGA List Empty Reason Value Set (Experimental) 
+## ValueSet: ELGA List Empty Reason ValueSet (Experimental) 
 
  **References** 
 
@@ -27,10 +27,10 @@
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaListEmptyReasonVS",
   "version" : "0.1.0",
   "name" : "ElgaListEmptyReasonVS",
-  "title" : "ELGA List Empty Reason Value Set",
+  "title" : "ELGA List Empty Reason ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

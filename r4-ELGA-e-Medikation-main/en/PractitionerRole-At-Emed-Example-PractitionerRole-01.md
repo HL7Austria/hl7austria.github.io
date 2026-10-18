@@ -2,7 +2,7 @@
 
 ## Example PractitionerRole: Beispiel PractitionerRole Allgemeinmedizinerin 01
 
-Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
+Profile: [AT ELGA e-Medikation PractitionerRole](StructureDefinition-at-elga-emed-practitionerrole.md)
 
 Dr. Hausärztin: Ärztin/Arzt at Ordination Dr. Hausärztin
 
@@ -23,7 +23,7 @@ Dr. Hausärztin: Ärztin/Arzt at Ordination Dr. Hausärztin
   "resourceType" : "PractitionerRole",
   "id" : "At-Emed-Example-PractitionerRole-01",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
   },
   "practitioner" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01",

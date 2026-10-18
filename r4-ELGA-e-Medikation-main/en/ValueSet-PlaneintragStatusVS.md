@@ -1,6 +1,6 @@
-# ELGA e-Med Medikationsplaneintrag Status Value Set - ELGA e-Medikation (R4) DRAFT v0.1.0
+# ELGA e-Med Medikationsplaneintrag Status ValueSet - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## ValueSet: ELGA e-Med Medikationsplaneintrag Status Value Set (Experimental) 
+## ValueSet: ELGA e-Med Medikationsplaneintrag Status ValueSet (Experimental) 
 
  **References** 
 
@@ -27,10 +27,10 @@
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/PlaneintragStatusVS",
   "version" : "0.1.0",
   "name" : "PlaneintragStatusVS",
-  "title" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
+  "title" : "ELGA e-Med Medikationsplaneintrag Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

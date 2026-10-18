@@ -2,7 +2,7 @@
 
 ## Example Practitioner: Beispiel Urlaubsvertreung
 
-Profile: [AT ELGA Core Practitioner Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitioner.html)
+Profile: [AT ELGA e-Medikation Practitioner](StructureDefinition-at-elga-emed-practitioner.md)
 
 Erna Urlaubsvertretung (OID:1.2.40.0.34.99.4613.4)
 
@@ -22,7 +22,7 @@ Erna Urlaubsvertretung (OID:1.2.40.0.34.99.4613.4)
   "resourceType" : "Practitioner",
   "id" : "At-Emed-Example-Practitioner-04",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"]
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",

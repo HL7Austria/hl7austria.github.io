@@ -9,7 +9,7 @@
 **Usages:**
 
 * Use this Extension: [AT ELGA e-Medikation Dosage Dosierung](StructureDefinition-at-elga-emed-dosage-dosierung.md)
-* Examples for this Extension: [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response](Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.md), [Bundle/At-Emed-Journey-01-02-Bundle-plan-write-response](Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.md), [Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx.md)... Show 17 more, [Bundle/At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx.md), [Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx.md), [Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response](Bundle-At-Emed-Journey-05-01-Bundle-plan-read-response.md), [Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx](Bundle-At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx.md), [MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01.md), [MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02.md), [MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02.md), [MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed](MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.md), [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.md), [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md), [MedicationRequest/At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) and [MedicationRequest/AtEmedExampleDosageStandardAdministration3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md)
+* Examples for this Extension: [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response](Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.md), [Bundle/At-Emed-Journey-01-02-Bundle-plan-write-response](Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.md), [Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx.md)... Show 16 more, [Bundle/At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx.md), [Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx.md), [Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response](Bundle-At-Emed-Journey-05-01-Bundle-plan-read-response.md), [Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx](Bundle-At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx.md), [MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01.md), [MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02.md), [MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02](MedicationDispense-At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02.md), [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.md), [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md), [MedicationRequest/At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) and [MedicationRequest/AtEmedExampleDosageStandardAdministration3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-extension-dosage-category.json)
 
@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
   "name" : "AtElgaEmedExtensionDosageCategory",
   "title" : "AT ELGA e-Medikation Extension Dosierungskategorie",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -82,7 +82,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
     {
       "id" : "Extension.url",
       "path" : "Extension.url",
-      "fixedUri" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category"
+      "fixedUri" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+      "mustSupport" : true
     },
     {
       "id" : "Extension.value[x]",
@@ -91,11 +92,48 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
       "type" : [{
         "code" : "CodeableConcept"
       }],
+      "mustSupport" : true,
       "binding" : {
         "strength" : "required",
         "description" : "Code für die Art der Dosierung",
         "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetDosageCategory"
       }
+    },
+    {
+      "id" : "Extension.value[x].coding",
+      "path" : "Extension.value[x].coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.value[x].coding.system",
+      "path" : "Extension.value[x].coding.system",
+      "min" : 1,
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.value[x].coding.version",
+      "path" : "Extension.value[x].coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.value[x].coding.code",
+      "path" : "Extension.value[x].coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.value[x].coding.display",
+      "path" : "Extension.value[x].coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Extension.value[x].text",
+      "path" : "Extension.value[x].text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     }]
   }
 }

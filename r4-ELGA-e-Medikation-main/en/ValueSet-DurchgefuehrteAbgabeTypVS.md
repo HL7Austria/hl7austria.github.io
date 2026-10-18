@@ -1,6 +1,6 @@
-# ELGA e-Med Durchgeführte Abgabe Typ Value Set - ELGA e-Medikation (R4) DRAFT v0.1.0
+# ELGA e-Med Durchgeführte Abgabe Typ ValueSet - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## ValueSet: ELGA e-Med Durchgeführte Abgabe Typ Value Set (Experimental) 
+## ValueSet: ELGA e-Med Durchgeführte Abgabe Typ ValueSet (Experimental) 
 
  **References** 
 
@@ -27,10 +27,10 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/DurchgefuehrteAbgabeTypVS",
   "version" : "0.1.0",
   "name" : "DurchgefuehrteAbgabeTypVS",
-  "title" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
+  "title" : "ELGA e-Med Durchgeführte Abgabe Typ ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

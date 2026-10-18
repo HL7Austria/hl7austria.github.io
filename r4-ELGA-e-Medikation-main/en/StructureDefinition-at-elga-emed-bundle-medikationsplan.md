@@ -38,7 +38,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -101,6 +101,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
+      "id" : "Bundle.total",
+      "path" : "Bundle.total",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "Bundle.link",
       "path" : "Bundle.link",
       "min" : 1,
@@ -138,18 +144,18 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
+      "id" : "Bundle.entry.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "Bundle.entry:Medikationsplan",
       "path" : "Bundle.entry",
       "sliceName" : "Medikationsplan",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
-    },
-    {
-      "id" : "Bundle.entry:Medikationsplan.modifierExtension",
-      "path" : "Bundle.entry.modifierExtension",
-      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
-      "max" : "0"
     },
     {
       "id" : "Bundle.entry:Medikationsplan.fullUrl",
@@ -202,12 +208,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:Medikationsplaneintrag.modifierExtension",
-      "path" : "Bundle.entry.modifierExtension",
-      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
-      "max" : "0"
-    },
-    {
       "id" : "Bundle.entry:Medikationsplaneintrag.fullUrl",
       "path" : "Bundle.entry.fullUrl",
       "min" : 1,
@@ -258,12 +258,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:Patient.modifierExtension",
-      "path" : "Bundle.entry.modifierExtension",
-      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
-      "max" : "0"
-    },
-    {
       "id" : "Bundle.entry:Patient.fullUrl",
       "path" : "Bundle.entry.fullUrl",
       "min" : 1,
@@ -275,7 +269,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "min" : 1,
       "type" : [{
         "code" : "Patient",
-        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"]
       }],
       "mustSupport" : true
     },
@@ -314,12 +308,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:Authors.modifierExtension",
-      "path" : "Bundle.entry.modifierExtension",
-      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
-      "max" : "0"
-    },
-    {
       "id" : "Bundle.entry:Authors.fullUrl",
       "path" : "Bundle.entry.fullUrl",
       "min" : 1,
@@ -331,7 +319,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "min" : 1,
       "type" : [{
         "code" : "Practitioner",
-        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner"]
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"]
       },
       {
         "code" : "Device",
@@ -339,11 +327,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       },
       {
         "code" : "PractitionerRole",
-        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
       },
       {
         "code" : "Organization",
-        "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-organization"]
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"]
       }],
       "mustSupport" : true
     },

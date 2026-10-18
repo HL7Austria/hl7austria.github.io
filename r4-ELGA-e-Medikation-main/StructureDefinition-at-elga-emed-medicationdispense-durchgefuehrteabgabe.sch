@@ -35,6 +35,7 @@
       <sch:assert test="count(f:whenPrepared) &lt;= 0">whenPrepared: maximum cardinality of 'whenPrepared' is 0</sch:assert>
       <sch:assert test="count(f:destination) &lt;= 0">destination: maximum cardinality of 'destination' is 0</sch:assert>
       <sch:assert test="count(f:receiver) &lt;= 0">receiver: maximum cardinality of 'receiver' is 0</sch:assert>
+      <sch:assert test="count(f:note) &lt;= 1">note: maximum cardinality of 'note' is 1</sch:assert>
       <sch:assert test="count(f:substitution) &lt;= 0">substitution: maximum cardinality of 'substitution' is 0</sch:assert>
       <sch:assert test="count(f:detectedIssue) &lt;= 0">detectedIssue: maximum cardinality of 'detectedIssue' is 0</sch:assert>
       <sch:assert test="count(f:eventHistory) &lt;= 0">eventHistory: maximum cardinality of 'eventHistory' is 0</sch:assert>

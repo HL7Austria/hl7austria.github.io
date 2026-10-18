@@ -2,7 +2,7 @@
 
 ## Example PractitionerRole: Beispiel PractitionerRole Apothekerin
 
-Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
+Profile: [AT ELGA e-Medikation PractitionerRole](StructureDefinition-at-elga-emed-practitionerrole.md)
 
 Dr. Apothekerin: Apothekerin/Apotheker at Amadeus Apotheke
 
@@ -23,7 +23,7 @@ Dr. Apothekerin: Apothekerin/Apotheker at Amadeus Apotheke
   "resourceType" : "PractitionerRole",
   "id" : "At-Emed-Example-PractitionerRole-02",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
   },
   "practitioner" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-03",

@@ -133,7 +133,9 @@ TODO: Some Narrative
       "repeat" : {
         "boundsDuration" : {
           "value" : 3,
-          "unit" : "wk"
+          "unit" : "wk",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "wk"
         },
         "frequency" : 2,
         "period" : 1,

@@ -2,7 +2,7 @@
 
 ## Example PractitionerRole: Beispiel PractitionerRole Urlaubsvertretung
 
-Profile: [AT ELGA Core PractitionerRole Profil](https://build.fhir.org/ig/HL7Austria/ELGA-Core-R4/StructureDefinition-at-elga-core-practitionerRole.html)
+Profile: [AT ELGA e-Medikation PractitionerRole](StructureDefinition-at-elga-emed-practitionerrole.md)
 
 Dr. Urlaubsvertretung: Ärztin/Arzt at Ordination Dr. Urlaubsvertretung
 
@@ -23,7 +23,7 @@ Dr. Urlaubsvertretung: Ärztin/Arzt at Ordination Dr. Urlaubsvertretung
   "resourceType" : "PractitionerRole",
   "id" : "At-Emed-Example-PractitionerRole-04",
   "meta" : {
-    "profile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
   },
   "practitioner" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-04",

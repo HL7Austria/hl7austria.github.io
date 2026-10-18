@@ -7,7 +7,18 @@
       "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
       "title": "AT ELGA e-Medikation Extension Dosierungskategorie",
       "types": [
-        "CodeableConcept"
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "string",
+        "Extension",
+        "uri",
+        "string",
+        "code",
+        "string",
+        "boolean",
+        "string"
       ]
     },
     {
@@ -117,11 +128,16 @@
         "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
         "title": "AT ELGA e-Medikation Practitioner"
       }
+    ],
+    "PractitionerRole": [
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole",
+        "title": "AT ELGA e-Medikation PractitionerRole"
+      }
     ]
   },
   "usage": {
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation": [
-      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Organization.contact.address.line",
       "Patient.address.line",
@@ -140,7 +156,6 @@
       "Practitioner.gender"
     ],
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-patient-religion": [
-      "Bundle.entry.resource",
       "Patient"
     ],
     "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-valueset-systemoid": [
@@ -182,7 +197,6 @@
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator": [
-      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Organization.contact.address.line",
       "Patient.address.line",
@@ -190,7 +204,6 @@
       "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber": [
-      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Organization.contact.address.line",
       "Patient.address.line",
@@ -198,7 +211,6 @@
       "Practitioner.address.line"
     ],
     "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName": [
-      "Bundle.entry.resource.address.line",
       "Organization.address.line",
       "Organization.contact.address.line",
       "Patient.address.line",
@@ -209,7 +221,6 @@
       "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-citizenship": [
-      "Bundle.entry.resource",
       "Patient"
     ],
     "http://hl7.org/fhir/StructureDefinition/regex": [
@@ -241,9 +252,6 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
       "ImplementationGuide.dependsOn"
-    ],
-    "http://hl7.org/fhir/tools/StructureDefinition/implied-type-slice": [
-      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"

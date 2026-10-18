@@ -4,7 +4,9 @@
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Specification
+* Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
+* Refer to this Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
+* Examples for this Profile: [Patient/At-Emed-Example-Patient-01](Patient-At-Emed-Example-Patient-01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-patient.json)
 
@@ -29,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
   "name" : "AtElgaEmedPatient",
   "title" : "AT ELGA e-Medikation Patient",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -85,10 +87,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
-      "id" : "Patient",
-      "path" : "Patient"
-    },
-    {
       "id" : "Patient.identifier",
       "path" : "Patient.identifier",
       "min" : 1,
@@ -105,6 +103,31 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
       "path" : "Patient.identifier.use",
       "short" : "Fachliche Begründung: TODO",
       "max" : "0"
+    },
+    {
+      "id" : "Patient.identifier:socialSecurityNumber.type",
+      "path" : "Patient.identifier.type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:socialSecurityNumber.type.coding.system",
+      "path" : "Patient.identifier.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:socialSecurityNumber.type.coding.version",
+      "path" : "Patient.identifier.type.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:socialSecurityNumber.type.coding.code",
+      "path" : "Patient.identifier.type.coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:socialSecurityNumber.type.coding.display",
+      "path" : "Patient.identifier.type.coding.display",
+      "mustSupport" : true
     },
     {
       "id" : "Patient.identifier:socialSecurityNumber.system",
@@ -131,6 +154,31 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
       "max" : "0"
     },
     {
+      "id" : "Patient.identifier:bPK.type",
+      "path" : "Patient.identifier.type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:bPK.type.coding.system",
+      "path" : "Patient.identifier.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:bPK.type.coding.version",
+      "path" : "Patient.identifier.type.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:bPK.type.coding.code",
+      "path" : "Patient.identifier.type.coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:bPK.type.coding.display",
+      "path" : "Patient.identifier.type.coding.display",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.identifier:bPK.system",
       "path" : "Patient.identifier.system",
       "mustSupport" : true
@@ -151,6 +199,31 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
       "path" : "Patient.identifier.use",
       "short" : "Fachliche Begründung: TODO",
       "max" : "0"
+    },
+    {
+      "id" : "Patient.identifier:localPatientId.type",
+      "path" : "Patient.identifier.type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:localPatientId.type.coding.system",
+      "path" : "Patient.identifier.type.coding.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:localPatientId.type.coding.version",
+      "path" : "Patient.identifier.type.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:localPatientId.type.coding.code",
+      "path" : "Patient.identifier.type.coding.code",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:localPatientId.type.coding.display",
+      "path" : "Patient.identifier.type.coding.display",
+      "mustSupport" : true
     },
     {
       "id" : "Patient.identifier:localPatientId.system",

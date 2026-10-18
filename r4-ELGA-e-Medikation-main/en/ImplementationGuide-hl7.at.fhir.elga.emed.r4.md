@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -505,7 +505,7 @@
         "reference" : "StructureDefinition/at-elga-emed-dosage-dosierung"
       },
       "name" : "AT ELGA e-Medikation Dosage Dosierung",
-      "description" : "AT ELGA e-Medikation Dosage Dosierung",
+      "description" : "Basisprofil für alle Dosierungschemata",
       "exampleBoolean" : false,
       "groupingId" : "Dosierungen"
     },
@@ -556,6 +556,23 @@
       "name" : "AT ELGA e-Medikation Extension Patient Modified",
       "description" : "AT ELGA e-Medikation Extension, die Angibt, ob in einer Ressource eine Änderung vom Patienten veranlasst wurde.",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-freetext-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-dosage-freetext-administration"
+      },
+      "name" : "AT ELGA e-Medikation Freitext-Dosierschema",
+      "description" : "Profil für das Freitext-Dosierschema",
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
     },
     {
       "extension" : [{
@@ -762,6 +779,39 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-practitionerrole.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-practitionerrole"
+      },
+      "name" : "AT ELGA e-Medikation PractitionerRole",
+      "description" : "Profil für die Struktur der PractitionerRole Ressource",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:complex-type"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-dosage-standard-administration.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-dosage-standard-administration"
+      },
+      "name" : "AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema",
+      "description" : "Profil für das Standard-Tageszeiten-Dosierschema",
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       },
       {
@@ -773,7 +823,8 @@
       },
       "name" : "AT ELGA e-Medikation Timing",
       "description" : "AT ELGA e-Medikation Timing",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Dosierungen"
     },
     {
       "extension" : [{
@@ -846,85 +897,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-dosage-freetext-administration.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-dosage-freetext-administration"
-      },
-      "name" : "AtElgaEmedDosageFreeTextAdministration",
-      "exampleBoolean" : false,
-      "groupingId" : "Dosierungen"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-dosage-frequency-administration.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-dosage-frequency-administration"
-      },
-      "name" : "AtElgaEmedDosageFrequencyAdministration",
-      "exampleBoolean" : false,
-      "groupingId" : "Dosierungen"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-dosage-other-administration.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-dosage-other-administration"
-      },
-      "name" : "AtElgaEmedDosageOtherAdministration",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-dosage-standard-administration.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-dosage-standard-administration"
-      },
-      "name" : "AtElgaEmedDosageStandardAdministration",
-      "exampleBoolean" : false,
-      "groupingId" : "Dosierungen"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:complex-type"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "StructureDefinition-at-elga-emed-dosage-timed-administration.html"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/at-elga-emed-dosage-timed-administration"
-      },
-      "name" : "AtElgaEmedDosageTimedAdministration",
-      "exampleBoolean" : false,
-      "groupingId" : "Dosierungen"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
       },
       {
@@ -936,7 +908,7 @@
       },
       "name" : "Beispiel Allgemeinmedizinerin 01",
       "description" : "Beispiel einer Allgemeinmedizinerin (Dr. Hausärztin).",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"
     },
     {
       "extension" : [{
@@ -952,7 +924,7 @@
       },
       "name" : "Beispiel Apothekerin 02",
       "description" : "Beispiel einer Apothekerin (Dr. Apothekerin).",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"
     },
     {
       "extension" : [{
@@ -1320,7 +1292,7 @@
       },
       "name" : "Beispiel Krankenhausärztin",
       "description" : "Beispiel Ärztin im Krankenhaus (Dr. Krankenhaus).",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"
     },
     {
       "extension" : [{
@@ -1383,22 +1355,6 @@
       },
       "name" : "Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3",
       "description" : "Medikationsplaneintrag mit Dosierung im Tageszeitenschema",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.html"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed"
-      },
-      "name" : "Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration",
-      "description" : "Medikationsplaneintrag mit Dosierung mit Timed Administration",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
@@ -1479,7 +1435,7 @@
       },
       "name" : "Beispiel Patient 01",
       "description" : "Beispiel eines Patienten (Anton Mustermann).",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"
     },
     {
       "extension" : [{
@@ -1495,7 +1451,7 @@
       },
       "name" : "Beispiel PractitionerRole Allgemeinmedizinerin 01",
       "description" : "Beispiel einer Allgemeinmedizinerin und ihrer Organisation (Dr. Hausärztin + Ordination)",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
     },
     {
       "extension" : [{
@@ -1511,7 +1467,7 @@
       },
       "name" : "Beispiel PractitionerRole Apothekerin",
       "description" : "Beispiel einer Apothekerin (Dr. Apothekerin + Apotheke)",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
     },
     {
       "extension" : [{
@@ -1527,7 +1483,7 @@
       },
       "name" : "Beispiel PractitionerRole Urlaubsvertretung",
       "description" : "Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination)",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
     },
     {
       "extension" : [{
@@ -1543,7 +1499,7 @@
       },
       "name" : "Beispiel PractitionerRole Ärztin im Krankenhaus",
       "description" : "Beispiel einer Ärztin im Krankenhaus (Dr. Krankenhaus + Organisation)",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
     },
     {
       "extension" : [{
@@ -1559,7 +1515,7 @@
       },
       "name" : "Beispiel Urlaubsvertreung",
       "description" : "Beispiel einer Allgemeinmedizinerin (Dr. Urlaubsvertreung).",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"
     },
     {
       "extension" : [{
@@ -1781,7 +1737,7 @@
       "reference" : {
         "reference" : "ValueSet/DurchgefuehrteAbgabeStatusVS"
       },
-      "name" : "ELGA e-Med Durchgeführte Abgabe Status Value Set",
+      "name" : "ELGA e-Med Durchgeführte Abgabe Status ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen eines Status einer Durchgeführten Abgabe (MedicationDispense).",
       "exampleBoolean" : false
     },
@@ -1797,7 +1753,7 @@
       "reference" : {
         "reference" : "ValueSet/DurchgefuehrteAbgabeTypVS"
       },
-      "name" : "ELGA e-Med Durchgeführte Abgabe Typ Value Set",
+      "name" : "ELGA e-Med Durchgeführte Abgabe Typ ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen eines Typs einer Durchgeführten Abgabe (MedicationDispense).",
       "exampleBoolean" : false
     },
@@ -1877,7 +1833,7 @@
       "reference" : {
         "reference" : "ValueSet/PlaneintragStatusVS"
       },
-      "name" : "ELGA e-Med Medikationsplaneintrag Status Value Set",
+      "name" : "ELGA e-Med Medikationsplaneintrag Status ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest).",
       "exampleBoolean" : false
     },
@@ -1893,7 +1849,7 @@
       "reference" : {
         "reference" : "ValueSet/AtElgaEmedValueSetPlaneintragStatusReasonVS"
       },
-      "name" : "ELGA e-Med Medikationsplaneintrag StatusReason Value Set",
+      "name" : "ELGA e-Med Medikationsplaneintrag StatusReason ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest).",
       "exampleBoolean" : false
     },
@@ -1925,7 +1881,7 @@
       "reference" : {
         "reference" : "ValueSet/ElgaListEmptyReasonVS"
       },
-      "name" : "ELGA List Empty Reason Value Set",
+      "name" : "ELGA List Empty Reason ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.",
       "exampleBoolean" : false
     },
@@ -1973,8 +1929,24 @@
       "reference" : {
         "reference" : "ValueSet/ElgaListEntryFlagVS"
       },
-      "name" : "ELGA List.entry.flag Value Set",
+      "name" : "ELGA List.entry.flag ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-at-elga-emed-medicationdispense-type-vs.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/at-elga-emed-medicationdispense-type-vs"
+      },
+      "name" : "ELGA MedicationDispense Type ValueSet",
+      "description" : "ValueSet für zulässige Ausprägungen des Elements type einer MedicationDispense.",
       "exampleBoolean" : false
     },
     {

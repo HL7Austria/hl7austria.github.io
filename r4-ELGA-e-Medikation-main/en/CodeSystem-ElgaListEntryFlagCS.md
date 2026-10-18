@@ -4,7 +4,7 @@
 
 This Code system is referenced in the definition of the following value sets:
 
-* [ELGA List.entry.flag Value Set](ValueSet-ElgaListEntryFlagVS.md)
+* [ELGA List.entry.flag ValueSet](ValueSet-ElgaListEntryFlagVS.md)
 
 -------
 
@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "ELGA List.entry.flag CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

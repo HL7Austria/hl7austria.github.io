@@ -21,6 +21,7 @@
       <sch:assert test="count(f:basedOn) &gt;= 1">basedOn: minimum cardinality of 'basedOn' is 1</sch:assert>
       <sch:assert test="count(f:basedOn) &lt;= 1">basedOn: maximum cardinality of 'basedOn' is 1</sch:assert>
       <sch:assert test="count(f:courseOfTherapyType) &lt;= 0">courseOfTherapyType: maximum cardinality of 'courseOfTherapyType' is 0</sch:assert>
+      <sch:assert test="count(f:note) &lt;= 1">note: maximum cardinality of 'note' is 1</sch:assert>
       <sch:assert test="count(f:dispenseRequest) &gt;= 1">dispenseRequest: minimum cardinality of 'dispenseRequest' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>

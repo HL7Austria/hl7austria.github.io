@@ -14,7 +14,7 @@ Relevante Use Cases:
 
 * Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) and [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md)
 * Refer to this Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) and [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
-* Examples for this Profile: [MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed](MedicationRequest-At-Emed-Example-Mr-Dosierung-Timed.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) and [MedicationRequest/AtEmedExampleDosageStandardAdministration3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md)
+* Examples for this Profile: [MedicationRequest/AtEmedExampleDosageStandardAdministration1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) and [MedicationRequest/AtEmedExampleDosageStandardAdministration3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationrequest-planeintrag.json)
 
@@ -28,9 +28,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
 
 ### Notes:
 
+#### Search Parameters
+
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 #### Regeln für den Inhalt der narrativen Teile
 
-In Arbeit.
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
 
 
@@ -45,7 +49,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -359,6 +363,7 @@ In Arbeit.
     {
       "id" : "MedicationRequest.medication[x].reference",
       "path" : "MedicationRequest.medication[x].reference",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -367,7 +372,7 @@ In Arbeit.
       "short" : "ELGA-Teilnehmer, für den der Medikationsplan dokumentiert wird.",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"]
       }],
       "mustSupport" : true
     },
@@ -400,21 +405,47 @@ In Arbeit.
     {
       "id" : "MedicationRequest.authoredOn",
       "path" : "MedicationRequest.authoredOn",
-      "short" : "Datum der Erstellung des Planeintrags.",
+      "short" : "Datum der Verordnung des Planeintrags.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "GDA welcher den Planeintrag erstellt hat und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
+      "short" : "GDA welcher den Planeintrag zuletzt bearbeitet hat und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole",
         "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
       }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.requester.reference",
+      "path" : "MedicationRequest.requester.reference",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.requester.identifier",
+      "path" : "MedicationRequest.requester.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.requester.identifier.use",
+      "path" : "MedicationRequest.requester.identifier.use",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationRequest.requester.identifier.system",
+      "path" : "MedicationRequest.requester.identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.requester.identifier.value",
+      "path" : "MedicationRequest.requester.identifier.value",
       "mustSupport" : true
     },
     {
@@ -474,11 +505,6 @@ In Arbeit.
       "path" : "MedicationRequest.note",
       "short" : "Zusätzliche Informationen zum Planeintrag.",
       "max" : "1",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.note.time",
-      "path" : "MedicationRequest.note.time",
       "mustSupport" : true
     },
     {

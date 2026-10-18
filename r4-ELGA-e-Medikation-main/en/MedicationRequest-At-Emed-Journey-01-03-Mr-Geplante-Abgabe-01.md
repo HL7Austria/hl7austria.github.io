@@ -106,6 +106,7 @@ TODO: Some Narrative
     },
     "doseAndRate" : [{
       "doseQuantity" : {
+        "value" : 1,
         "unit" : "Stück",
         "system" : "http://unitsofmeasure.org",
         "code" : "{Stueck}"

@@ -1,6 +1,6 @@
-# AtElgaEmedDosageStandardAdministration - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Data Type Profile: AtElgaEmedDosageStandardAdministration 
+## Data Type Profile: AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema 
 
 **Usages:**
 
@@ -18,10 +18,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
 
 ### Notes:
 
- Offene Punkte:
- In Arbeit. (doseAndRate in Textdarstellung,...) 
-
 ### Regeln für Standarddosierungen im Tageszeitenschema
+
+ Die finale Beschreibung der Regeln für dieses Schema wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. 
 
  Dieses Profil repräsentiert strukturierte, wiederkehrende Dosierungen anhand von Tageszeiten. Die Dosierungskategorie ist immer `standard`. 
 
@@ -349,6 +348,8 @@ Beispiel: montags morgens und nachts, freitags nur morgens.
 
 ### Bildung der Textdarstellung
 
+ Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen dieses Dosierschemas wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. Konkret wurden bisher nur Elemente aus `timing.repeat` und `doseAndRate` in die Textdarstellung aufgenommen. Weitere relevante Elemente (z.B. `site`, `route`, `method`, `additionalInstruction`,`timing.repeat.bounsPeriod[x]`) werden bis zum nächsten Ballot finalisiert. 
+
  Die Textdarstellung wird je Einnahmeregel gebildet. Alle `Dosage`-Einträge mit derselben `sequence` und derselben Dosierungskategorie gehören zu derselben Einnahmeregel. Unterschiedliche Sequenznummern ergeben getrennte Einnahmeregeln. 
 
  Die Darstellung besteht, sofern möglich, aus Kurz- und Langform. Beide Teile werden durch ` | ` getrennt. 
@@ -448,8 +449,9 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-standard-administration",
   "version" : "0.1.0",
   "name" : "AtElgaEmedDosageStandardAdministration",
+  "title" : "AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -466,6 +468,7 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
       "use" : "work"
     }]
   }],
+  "description" : "Profil für das Standard-Tageszeiten-Dosierschema",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -535,14 +538,9 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
       "sliceName" : "DosageCategory"
     },
     {
-      "id" : "Dosage.extension:DosageCategory.value[x]",
-      "path" : "Dosage.extension.value[x]",
-      "fixedCodeableConcept" : {
-        "coding" : [{
-          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
-          "code" : "standard"
-        }]
-      }
+      "id" : "Dosage.extension:DosageCategory.value[x].coding.code",
+      "path" : "Dosage.extension.value[x].coding.code",
+      "patternCode" : "standard"
     },
     {
       "id" : "Dosage.timing.repeat.frequency",

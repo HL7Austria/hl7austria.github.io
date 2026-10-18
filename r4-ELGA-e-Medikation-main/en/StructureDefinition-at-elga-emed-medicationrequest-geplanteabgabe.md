@@ -30,9 +30,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
 
 ### Notes:
 
+#### Search Parameters
+
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 #### Regeln für den Inhalt der narrativen Teile
 
-In Arbeit.
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
 
 
@@ -47,7 +51,7 @@ In Arbeit.
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -323,6 +327,7 @@ In Arbeit.
     {
       "id" : "MedicationRequest.medication[x].reference",
       "path" : "MedicationRequest.medication[x].reference",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -331,7 +336,7 @@ In Arbeit.
       "short" : "Patient, für den die Geplante Abgabe ausgestellt werden soll (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"]
       }],
       "mustSupport" : true
     },
@@ -364,7 +369,7 @@ In Arbeit.
     {
       "id" : "MedicationRequest.authoredOn",
       "path" : "MedicationRequest.authoredOn",
-      "short" : "Datum der Ausstellung der geplanten Abgabe.",
+      "short" : "Datum der Verordnung der geplanten Abgabe.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -375,8 +380,8 @@ In Arbeit.
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole",
         "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
       }],
       "mustSupport" : true
@@ -444,11 +449,7 @@ In Arbeit.
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
       "short" : "Zusätzliche Informationen zur geplanten Abgabe (Kommunikation zwischen Arzt und Apotheke, die nicht die Dosierung betreffen).",
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.note.time",
-      "path" : "MedicationRequest.note.time",
+      "max" : "1",
       "mustSupport" : true
     },
     {

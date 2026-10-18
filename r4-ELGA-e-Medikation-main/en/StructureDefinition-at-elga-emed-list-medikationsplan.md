@@ -110,6 +110,10 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   * **Description**: Wirkstoff der enthaltenen Medication
   * **Expression**: `List.entry.item.resolve().ofType(MedicationRequest).medication.resolve().ofType(Medication).ingredient.item.ofType(CodeableConcept)`
 
+#### Regeln für den Inhalt der narrativen Teile
+
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 
 
 ## Resource Content
@@ -123,7 +127,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -320,7 +324,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"]
       }],
       "mustSupport" : true
     },
@@ -374,8 +378,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole",
         "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"]
       }],
       "mustSupport" : true

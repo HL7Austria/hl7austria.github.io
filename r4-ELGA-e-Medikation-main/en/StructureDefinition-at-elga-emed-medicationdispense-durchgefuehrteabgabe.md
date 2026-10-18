@@ -27,6 +27,16 @@ You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir
 
 Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.csv), [Excel](../StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.xlsx), [Schematron](../StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.sch) 
 
+### Notes:
+
+#### Search Parameters
+
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
+#### Regeln für den Inhalt der narrativen Teile
+
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 
 
 ## Resource Content
@@ -40,7 +50,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -262,7 +272,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "min" : 1,
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-patient"]
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"]
       }],
       "mustSupport" : true
     },
@@ -290,8 +300,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \nder/die die Durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitioner",
-        "https://fhir.hl7.at/elga/core/r4/StructureDefinition/at-elga-core-practitionerRole",
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole",
         "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
       }],
       "mustSupport" : true
@@ -316,7 +326,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
         "ordered" : false,
         "rules" : "closed"
       },
-      "short" : "Referenz auf zugehörige Geplante Abgabe (MedicationRequest), sofern diese existiert bzw. \nPlaneintrag (MedicationRequest). Es muss nicht zwingend eine Geplante Abgabe referenziert werden, da es auch durchgeführte \nAbgaben ohne Geplante Abgabe geben kann (z.B. Notfall oder OTC-Medikation)."
+      "short" : "Referenz auf zugehörige Geplante Abgabe (MedicationRequest), sofern diese existiert bzw. \nPlaneintrag (MedicationRequest). Es muss nicht zwingend eine Geplante Abgabe referenziert werden, da es auch durchgeführte \nAbgaben ohne Geplante Abgabe geben kann (z.B. Notfall oder OTC-Medikation).",
+      "max" : "2",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.authorizingPrescription:geplanteAbgabe",
@@ -347,7 +359,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "path" : "MedicationDispense.type",
       "short" : "Art der Abgabe (z.B. für Teilabgaben). Mögliche Ausprägungen: [FFC | FFP | RFP | RFC | EM]. Bedeutung: FFC: First Fill - Complete | FFP: First Fill - Part Fill | RFP: Refill - Part Fill | RFC: Refill - Complete | EM: Emergency Supply.",
       "min" : 1,
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-medicationdispense-type-vs"
+      }
     },
     {
       "id" : "MedicationDispense.quantity",
@@ -386,6 +402,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "id" : "MedicationDispense.note",
       "path" : "MedicationDispense.note",
       "short" : "Zusätzliche Informationen zur Abgabe, die nicht anders dokumentiert werden kann.",
+      "max" : "1",
       "mustSupport" : true
     },
     {
@@ -394,49 +411,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "slicing" : {
         "discriminator" : [{
           "type" : "value",
-          "path" : "extension.value"
+          "path" : "extension.value.ofType(CodeableConcept).coding.code"
         }],
         "ordered" : false,
         "rules" : "closed"
       },
       "short" : "Gibt an, wie das abgegebene Arzneimittel vom Patienten einzunehmen ist. \nDer Apotheker überprüft die Medikamentenverordnung vor der Abgabe und passt die Dosierungsanweisung gegebenenfalls auf Grundlage des tatsächlich abgegebenen Produkts an.",
       "min" : 1,
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.dosageInstruction:otherDosage",
-      "path" : "MedicationDispense.dosageInstruction",
-      "sliceName" : "otherDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-other-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.dosageInstruction:timedDosage",
-      "path" : "MedicationDispense.dosageInstruction",
-      "sliceName" : "timedDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-timed-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.dosageInstruction:frequencyDosage",
-      "path" : "MedicationDispense.dosageInstruction",
-      "sliceName" : "frequencyDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-frequency-administration"]
-      }],
       "mustSupport" : true
     },
     {

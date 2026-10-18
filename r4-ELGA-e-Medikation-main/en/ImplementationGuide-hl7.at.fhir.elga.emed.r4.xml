@@ -12,7 +12,7 @@
   <name value="ELGA-e-Medikation-R4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-18T09:33:28+00:00"/>
+  <date value="2026-10-18T20:24:08+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -379,7 +379,7 @@
         <reference value="StructureDefinition/at-elga-emed-dosage-dosierung"/>
       </reference>
       <name value="AT ELGA e-Medikation Dosage Dosierung"/>
-      <description value="AT ELGA e-Medikation Dosage Dosierung"/>
+      <description value="Basisprofil für alle Dosierungschemata"/>
       <exampleBoolean value="false"/>
       <groupingId value="Dosierungen"/>
     </resource>
@@ -415,6 +415,18 @@
       <name value="AT ELGA e-Medikation Extension Patient Modified"/>
       <description value="AT ELGA e-Medikation Extension, die Angibt, ob in einer Ressource eine Änderung vom Patienten veranlasst wurde."/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-freetext-administration"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Freitext-Dosierschema"/>
+      <description value="Profil für das Freitext-Dosierschema"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -560,6 +572,29 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-practitionerrole"/>
+      </reference>
+      <name value="AT ELGA e-Medikation PractitionerRole"/>
+      <description value="Profil für die Struktur der PractitionerRole Ressource"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-standard-administration"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema"/>
+      <description value="Profil für das Standard-Tageszeiten-Dosierschema"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:complex-type"/>
       </extension>
       <reference>
@@ -568,6 +603,7 @@
       <name value="AT ELGA e-Medikation Timing"/>
       <description value="AT ELGA e-Medikation Timing"/>
       <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -619,60 +655,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-emed-dosage-freetext-administration"/>
-      </reference>
-      <name value="AtElgaEmedDosageFreeTextAdministration"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Dosierungen"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-emed-dosage-frequency-administration"/>
-      </reference>
-      <name value="AtElgaEmedDosageFrequencyAdministration"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Dosierungen"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-emed-dosage-other-administration"/>
-      </reference>
-      <name value="AtElgaEmedDosageOtherAdministration"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-emed-dosage-standard-administration"/>
-      </reference>
-      <name value="AtElgaEmedDosageStandardAdministration"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Dosierungen"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:complex-type"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/at-elga-emed-dosage-timed-administration"/>
-      </reference>
-      <name value="AtElgaEmedDosageTimedAdministration"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="Dosierungen"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Practitioner"/>
       </extension>
       <reference>
@@ -680,7 +662,7 @@
       </reference>
       <name value="Beispiel Allgemeinmedizinerin 01"/>
       <description value="Beispiel einer Allgemeinmedizinerin (Dr. Hausärztin)."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -691,7 +673,7 @@
       </reference>
       <name value="Beispiel Apothekerin 02"/>
       <description value="Beispiel einer Apothekerin (Dr. Apothekerin)."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -944,7 +926,7 @@
       </reference>
       <name value="Beispiel Krankenhausärztin"/>
       <description value="Beispiel Ärztin im Krankenhaus (Dr. Krankenhaus)."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -987,17 +969,6 @@
       </reference>
       <name value="Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3"/>
       <description value="Medikationsplaneintrag mit Dosierung im Tageszeitenschema"/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="MedicationRequest"/>
-      </extension>
-      <reference>
-        <reference value="MedicationRequest/At-Emed-Example-Mr-Dosierung-Timed"/>
-      </reference>
-      <name value="Beispiel Medikationsplaneintrag mit Dosierung mit Timed Administration"/>
-      <description value="Medikationsplaneintrag mit Dosierung mit Timed Administration"/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
     </resource>
     <resource>
@@ -1053,7 +1024,7 @@
       </reference>
       <name value="Beispiel Patient 01"/>
       <description value="Beispiel eines Patienten (Anton Mustermann)."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1064,7 +1035,7 @@
       </reference>
       <name value="Beispiel PractitionerRole Allgemeinmedizinerin 01"/>
       <description value="Beispiel einer Allgemeinmedizinerin und ihrer Organisation (Dr. Hausärztin + Ordination)"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1075,7 +1046,7 @@
       </reference>
       <name value="Beispiel PractitionerRole Apothekerin"/>
       <description value="Beispiel einer Apothekerin (Dr. Apothekerin + Apotheke)"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1086,7 +1057,7 @@
       </reference>
       <name value="Beispiel PractitionerRole Urlaubsvertretung"/>
       <description value="Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination)"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1097,7 +1068,7 @@
       </reference>
       <name value="Beispiel PractitionerRole Ärztin im Krankenhaus"/>
       <description value="Beispiel einer Ärztin im Krankenhaus (Dr. Krankenhaus + Organisation)"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1108,7 +1079,7 @@
       </reference>
       <name value="Beispiel Urlaubsvertreung"/>
       <description value="Beispiel einer Allgemeinmedizinerin (Dr. Urlaubsvertreung)."/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1260,7 +1231,7 @@
       <reference>
         <reference value="ValueSet/DurchgefuehrteAbgabeStatusVS"/>
       </reference>
-      <name value="ELGA e-Med Durchgeführte Abgabe Status Value Set"/>
+      <name value="ELGA e-Med Durchgeführte Abgabe Status ValueSet"/>
       <description value="ValueSet für zulässige Ausprägungen eines Status einer Durchgeführten Abgabe (MedicationDispense)."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1271,7 +1242,7 @@
       <reference>
         <reference value="ValueSet/DurchgefuehrteAbgabeTypVS"/>
       </reference>
-      <name value="ELGA e-Med Durchgeführte Abgabe Typ Value Set"/>
+      <name value="ELGA e-Med Durchgeführte Abgabe Typ ValueSet"/>
       <description value="ValueSet für zulässige Ausprägungen eines Typs einer Durchgeführten Abgabe (MedicationDispense)."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1326,7 +1297,7 @@
       <reference>
         <reference value="ValueSet/PlaneintragStatusVS"/>
       </reference>
-      <name value="ELGA e-Med Medikationsplaneintrag Status Value Set"/>
+      <name value="ELGA e-Med Medikationsplaneintrag Status ValueSet"/>
       <description value="ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest)."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1337,7 +1308,7 @@
       <reference>
         <reference value="ValueSet/AtElgaEmedValueSetPlaneintragStatusReasonVS"/>
       </reference>
-      <name value="ELGA e-Med Medikationsplaneintrag StatusReason Value Set"/>
+      <name value="ELGA e-Med Medikationsplaneintrag StatusReason ValueSet"/>
       <description value="ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest)."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1359,7 +1330,7 @@
       <reference>
         <reference value="ValueSet/ElgaListEmptyReasonVS"/>
       </reference>
-      <name value="ELGA List Empty Reason Value Set"/>
+      <name value="ELGA List Empty Reason ValueSet"/>
       <description value="ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste."/>
       <exampleBoolean value="false"/>
     </resource>
@@ -1392,8 +1363,19 @@
       <reference>
         <reference value="ValueSet/ElgaListEntryFlagVS"/>
       </reference>
-      <name value="ELGA List.entry.flag Value Set"/>
+      <name value="ELGA List.entry.flag ValueSet"/>
       <description value="ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-medicationdispense-type-vs"/>
+      </reference>
+      <name value="ELGA MedicationDispense Type ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen des Elements type einer MedicationDispense."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

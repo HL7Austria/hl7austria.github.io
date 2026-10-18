@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Derived from this DataType Profile: [AtElgaEmedDosageFreeTextAdministration](StructureDefinition-at-elga-emed-dosage-freetext-administration.md), [AtElgaEmedDosageFrequencyAdministration](StructureDefinition-at-elga-emed-dosage-frequency-administration.md), [AtElgaEmedDosageOtherAdministration](StructureDefinition-at-elga-emed-dosage-other-administration.md), [AtElgaEmedDosageStandardAdministration](StructureDefinition-at-elga-emed-dosage-standard-administration.md) and [AtElgaEmedDosageTimedAdministration](StructureDefinition-at-elga-emed-dosage-timed-administration.md)
+* Derived from this DataType Profile: [AT ELGA e-Medikation Freitext-Dosierschema](StructureDefinition-at-elga-emed-dosage-freetext-administration.md) and [AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema](StructureDefinition-at-elga-emed-dosage-standard-administration.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-dosage-dosierung.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -46,7 +46,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "use" : "work"
     }]
   }],
-  "description" : "AT ELGA e-Medikation Dosage Dosierung",
+  "description" : "Basisprofil für alle Dosierungschemata",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",
@@ -78,7 +78,14 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.modifierExtension",
+      "path" : "Dosage.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "Dosage.sequence",
@@ -96,12 +103,49 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.additionalInstruction",
       "path" : "Dosage.additionalInstruction",
-      "short" : "Codierte Anweisungen oder Warnhinweise für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels. (ex):\nhttps://hl7.org/fhir/R4/valueset-additional-instruction-codes.html."
+      "short" : "Codierte Anweisungen oder Warnhinweise für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels. (ex):\nhttps://hl7.org/fhir/R4/valueset-additional-instruction-codes.html.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.additionalInstruction.coding",
+      "path" : "Dosage.additionalInstruction.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.additionalInstruction.coding.system",
+      "path" : "Dosage.additionalInstruction.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.additionalInstruction.coding.version",
+      "path" : "Dosage.additionalInstruction.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.additionalInstruction.coding.code",
+      "path" : "Dosage.additionalInstruction.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.additionalInstruction.coding.display",
+      "path" : "Dosage.additionalInstruction.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.additionalInstruction.text",
+      "path" : "Dosage.additionalInstruction.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "Dosage.patientInstruction",
       "path" : "Dosage.patientInstruction",
-      "short" : "Freitext Anweisungen für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels."
+      "short" : "Freitext Anweisungen für den Patienten, z.B. zur Einnahme oder zur Aufbewahrung des Arzneimittels.",
+      "mustSupport" : true
     },
     {
       "id" : "Dosage.timing",
@@ -151,7 +195,43 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.site",
       "path" : "Dosage.site",
-      "short" : "Körperstelle, an der das Medikament angewendet wird, z.B. Haut, Auge, Ohr etc."
+      "short" : "Körperstelle, an der das Medikament angewendet wird, z.B. Haut, Auge, Ohr etc.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.site.coding",
+      "path" : "Dosage.site.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.site.coding.system",
+      "path" : "Dosage.site.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.site.coding.version",
+      "path" : "Dosage.site.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.site.coding.code",
+      "path" : "Dosage.site.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.site.coding.display",
+      "path" : "Dosage.site.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.site.text",
+      "path" : "Dosage.site.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "Dosage.route",
@@ -160,9 +240,40 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "mustSupport" : true
     },
     {
+      "id" : "Dosage.route.coding",
+      "path" : "Dosage.route.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
       "id" : "Dosage.route.coding.system",
       "path" : "Dosage.route.coding.system",
-      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"
+      "min" : 1,
+      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.route.coding.version",
+      "path" : "Dosage.route.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.route.coding.code",
+      "path" : "Dosage.route.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.route.coding.display",
+      "path" : "Dosage.route.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.route.text",
+      "path" : "Dosage.route.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "Dosage.method",
@@ -171,16 +282,46 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "mustSupport" : true
     },
     {
+      "id" : "Dosage.method.coding",
+      "path" : "Dosage.method.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.method.coding.system",
+      "path" : "Dosage.method.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.method.coding.version",
+      "path" : "Dosage.method.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.method.coding.code",
+      "path" : "Dosage.method.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.method.coding.display",
+      "path" : "Dosage.method.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.method.text",
+      "path" : "Dosage.method.text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
       "id" : "Dosage.doseAndRate",
       "path" : "Dosage.doseAndRate",
       "short" : "Menge des verabreichten Medikaments",
       "max" : "1",
       "mustSupport" : true
-    },
-    {
-      "id" : "Dosage.doseAndRate.type",
-      "path" : "Dosage.doseAndRate.type",
-      "short" : "Art der Dosierung, z.B. berechnet, wie verordnet (ex): https://hl7.org/fhir/R4/valueset-dose-rate-type.html"
     },
     {
       "id" : "Dosage.doseAndRate.dose[x]",
@@ -193,7 +334,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
         "ordered" : false,
         "rules" : "open"
       },
-      "short" : "Menge des verabreichten Medikaments pro Zeiteinheit."
+      "short" : "Menge des verabreichten Medikaments pro Dosis.",
+      "mustSupport" : true
     },
     {
       "id" : "Dosage.doseAndRate.dose[x]:doseRange",
@@ -208,10 +350,122 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "mustSupport" : true
     },
     {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.low",
+      "path" : "Dosage.doseAndRate.dose[x].low",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.low.value",
+      "path" : "Dosage.doseAndRate.dose[x].low.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.low.unit",
+      "path" : "Dosage.doseAndRate.dose[x].low.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.low.system",
+      "path" : "Dosage.doseAndRate.dose[x].low.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.low.code",
+      "path" : "Dosage.doseAndRate.dose[x].low.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.high",
+      "path" : "Dosage.doseAndRate.dose[x].high",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.high.value",
+      "path" : "Dosage.doseAndRate.dose[x].high.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.high.unit",
+      "path" : "Dosage.doseAndRate.dose[x].high.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.high.system",
+      "path" : "Dosage.doseAndRate.dose[x].high.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseRange.high.code",
+      "path" : "Dosage.doseAndRate.dose[x].high.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "Dosage.doseAndRate.dose[x]:doseQuantity",
       "path" : "Dosage.doseAndRate.dose[x]",
       "sliceName" : "doseQuantity",
-      "short" : "Mapping auf doseQuantity",
+      "short" : "TODO",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Quantity",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/SimpleQuantity"]
+      }],
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
+      }
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseQuantity.value",
+      "path" : "Dosage.doseAndRate.dose[x].value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseQuantity.unit",
+      "path" : "Dosage.doseAndRate.dose[x].unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseQuantity.system",
+      "path" : "Dosage.doseAndRate.dose[x].system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.dose[x]:doseQuantity.code",
+      "path" : "Dosage.doseAndRate.dose[x].code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "type",
+          "path" : "$this"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "short" : "Menge des verabreichten Medikaments pro Zeiteinheit.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateQuantity",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "sliceName" : "rateQuantity",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -221,27 +475,316 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "mustSupport" : true
     },
     {
-      "id" : "Dosage.doseAndRate.dose[x]:doseQuantity.unit",
-      "path" : "Dosage.doseAndRate.dose[x].unit",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
-      }
+      "id" : "Dosage.doseAndRate.rate[x]:rateQuantity.value",
+      "path" : "Dosage.doseAndRate.rate[x].value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateQuantity.unit",
+      "path" : "Dosage.doseAndRate.rate[x].unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateQuantity.system",
+      "path" : "Dosage.doseAndRate.rate[x].system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateQuantity.code",
+      "path" : "Dosage.doseAndRate.rate[x].code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "sliceName" : "rateRange",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Range"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.low",
+      "path" : "Dosage.doseAndRate.rate[x].low",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.low.value",
+      "path" : "Dosage.doseAndRate.rate[x].low.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.low.unit",
+      "path" : "Dosage.doseAndRate.rate[x].low.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.low.system",
+      "path" : "Dosage.doseAndRate.rate[x].low.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.low.code",
+      "path" : "Dosage.doseAndRate.rate[x].low.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.high",
+      "path" : "Dosage.doseAndRate.rate[x].high",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.high.value",
+      "path" : "Dosage.doseAndRate.rate[x].high.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.high.unit",
+      "path" : "Dosage.doseAndRate.rate[x].high.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.high.system",
+      "path" : "Dosage.doseAndRate.rate[x].high.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRange.high.code",
+      "path" : "Dosage.doseAndRate.rate[x].high.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio",
+      "path" : "Dosage.doseAndRate.rate[x]",
+      "sliceName" : "rateRatio",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Ratio"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.numerator",
+      "path" : "Dosage.doseAndRate.rate[x].numerator",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.numerator.value",
+      "path" : "Dosage.doseAndRate.rate[x].numerator.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.numerator.comparator",
+      "path" : "Dosage.doseAndRate.rate[x].numerator.comparator",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.numerator.unit",
+      "path" : "Dosage.doseAndRate.rate[x].numerator.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.numerator.system",
+      "path" : "Dosage.doseAndRate.rate[x].numerator.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.numerator.code",
+      "path" : "Dosage.doseAndRate.rate[x].numerator.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.denominator",
+      "path" : "Dosage.doseAndRate.rate[x].denominator",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.denominator.value",
+      "path" : "Dosage.doseAndRate.rate[x].denominator.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.denominator.comparator",
+      "path" : "Dosage.doseAndRate.rate[x].denominator.comparator",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.denominator.unit",
+      "path" : "Dosage.doseAndRate.rate[x].denominator.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.denominator.system",
+      "path" : "Dosage.doseAndRate.rate[x].denominator.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.doseAndRate.rate[x]:rateRatio.denominator.code",
+      "path" : "Dosage.doseAndRate.rate[x].denominator.code",
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Dosage.maxDosePerPeriod",
       "path" : "Dosage.maxDosePerPeriod",
-      "short" : "Maximale Menge pro Zeiteinheit"
+      "short" : "Maximale Menge pro Zeiteinheit",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.numerator",
+      "path" : "Dosage.maxDosePerPeriod.numerator",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.numerator.value",
+      "path" : "Dosage.maxDosePerPeriod.numerator.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.numerator.comparator",
+      "path" : "Dosage.maxDosePerPeriod.numerator.comparator",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.numerator.unit",
+      "path" : "Dosage.maxDosePerPeriod.numerator.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.numerator.system",
+      "path" : "Dosage.maxDosePerPeriod.numerator.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.numerator.code",
+      "path" : "Dosage.maxDosePerPeriod.numerator.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.denominator",
+      "path" : "Dosage.maxDosePerPeriod.denominator",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.denominator.value",
+      "path" : "Dosage.maxDosePerPeriod.denominator.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.denominator.comparator",
+      "path" : "Dosage.maxDosePerPeriod.denominator.comparator",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.denominator.unit",
+      "path" : "Dosage.maxDosePerPeriod.denominator.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.denominator.system",
+      "path" : "Dosage.maxDosePerPeriod.denominator.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerPeriod.denominator.code",
+      "path" : "Dosage.maxDosePerPeriod.denominator.code",
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Dosage.maxDosePerAdministration",
       "path" : "Dosage.maxDosePerAdministration",
-      "short" : "Maximal Menge pro Abgabe"
+      "short" : "Maximal Menge pro Abgabe",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerAdministration.value",
+      "path" : "Dosage.maxDosePerAdministration.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerAdministration.unit",
+      "path" : "Dosage.maxDosePerAdministration.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerAdministration.system",
+      "path" : "Dosage.maxDosePerAdministration.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerAdministration.code",
+      "path" : "Dosage.maxDosePerAdministration.code",
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Dosage.maxDosePerLifetime",
       "path" : "Dosage.maxDosePerLifetime",
-      "short" : "Maximale Lebenszeitdosis"
+      "short" : "Maximale Lebenszeitdosis",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerLifetime.value",
+      "path" : "Dosage.maxDosePerLifetime.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerLifetime.unit",
+      "path" : "Dosage.maxDosePerLifetime.unit",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerLifetime.system",
+      "path" : "Dosage.maxDosePerLifetime.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Dosage.maxDosePerLifetime.code",
+      "path" : "Dosage.maxDosePerLifetime.code",
+      "min" : 1,
+      "mustSupport" : true
     }]
   }
 }

@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationRequestBase",
   "title" : "At ELGA e-Medikation MedicationRequest Base",
   "status" : "draft",
-  "date" : "2026-10-18T09:33:28+00:00",
+  "date" : "2026-10-18T20:24:08+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -169,48 +169,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "slicing" : {
         "discriminator" : [{
           "type" : "value",
-          "path" : "extension.value"
+          "path" : "extension.value.ofType(CodeableConcept).coding.code"
         }],
         "ordered" : false,
         "rules" : "closed"
       },
       "min" : 1,
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:otherDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "otherDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-other-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:timedDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "timedDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-timed-administration"]
-      }],
-      "mustSupport" : true
-    },
-    {
-      "id" : "MedicationRequest.dosageInstruction:frequencyDosage",
-      "path" : "MedicationRequest.dosageInstruction",
-      "sliceName" : "frequencyDosage",
-      "min" : 0,
-      "max" : "*",
-      "type" : [{
-        "code" : "Dosage",
-        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-frequency-administration"]
-      }],
       "mustSupport" : true
     },
     {
