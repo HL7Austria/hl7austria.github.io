@@ -166,6 +166,31 @@
   <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="download.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
 
@@ -218,8 +243,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#die-bestehende-e-medikation-auf-basis-von-cda" id="markdown-toc-die-bestehende-e-medikation-auf-basis-von-cda">Die bestehende e-Medikation auf Basis von CDA</a></li>
+  <li><a href="#ausgangspunkt-die-strukturellen-grenzen-der-medikationsliste" id="markdown-toc-ausgangspunkt-die-strukturellen-grenzen-der-medikationsliste">Ausgangspunkt: die strukturellen Grenzen der Medikationsliste</a></li>
+  <li><a href="#fachliche-weiterentwicklung-der-medikationsplan-dokumentiert-das-medizinische-soll" id="markdown-toc-fachliche-weiterentwicklung-der-medikationsplan-dokumentiert-das-medizinische-soll">Fachliche Weiterentwicklung: der Medikationsplan dokumentiert das medizinische SOLL</a></li>
+  <li><a href="#technische-weiterentwicklung-fhir-statt-cda" id="markdown-toc-technische-weiterentwicklung-fhir-statt-cda">Technische Weiterentwicklung: FHIR statt CDA</a></li>
+</ul>
+
 </div>
 <style>
 .no-number {
@@ -463,7 +494,64 @@ h4 + .tabs {
 
 </style>
 
-<p>In Arbeit.</p>
+<p>Die ELGA e-Medikation ist seit 2015 auf Basis des „ELGA CDA Implementierungsleitfaden: e-Medikation“ (V2.06.6) produktiv; die Festlegungen dieses Leitfadens sind über die ELGA-Verordnung 2015 verbindlich. Der vorliegende FHIR Implementation Guide (IG) beschreibt die Ablöse der bestehenden Lösung in zwei Dimensionen: fachlich durch die Einführung eines eigenständig geführten Medikationsplans und technisch durch die Ablöse des dokumentenorientierten CDA-Standards durch den ressourcenorientierten FHIR-Standard.</p>
+
+<p>Ausgangspunkt der Neuentwicklung ist eine strukturelle Lücke in der bestehenden e-Medikation: Die automatisch generierte Medikationsliste bildet ausschließlich einen IST-Zustand ab, also das, was über die ELGA e-Medikation verordnet und abgegeben wurde. Der medizinische SOLL-Zustand – die Festlegung, welche Medikation ein ELGA-Teilnehmer für welchen Zeitraum einnehmen soll – war strukturell nicht dokumentierbar. Erst der neue Medikationsplan schließt diese Lücke. Im Zuge der fachlichen Erweiterung wird zugleich die technische Basis erneuert: ein ressourcenbasiertes FHIR-Modell mit zentraler Fachanwendung und REST-Schnittstelle anstelle dokumentbasierter CDA-Nachrichten.</p>
+
+<h3 id="die-bestehende-e-medikation-auf-basis-von-cda">Die bestehende e-Medikation auf Basis von CDA</h3>
+
+<p>Die e-Medikation nach dem CDA-Leitfaden (V2.06.6) ist dokumentenorientiert. Bei den Dokumenten der e-Medikation handelt es sich fachlich nicht um Befund-Dokumente im engeren Sinne, sondern um zwischen IT-Systemen ausgetauschte Nachrichtentypen, die technisch als CDA-Dokumente realisiert sind:</p>
+
+<ul>
+  <li><strong>Rezept</strong> (mit genau einer Verordnung je Arzneimittel; das Rezept bildet die Klammer über die Verordnungen),</li>
+  <li><strong>Abgabe</strong> (Dokumentation der erfolgten Arzneimittelabgabe),</li>
+  <li><strong>Pharmazeutische Empfehlung</strong> (Korrekturmeldung, mit der Verordnungen und Abgaben geändert, storniert oder abgesetzt werden),</li>
+  <li><strong>Medikationsliste</strong> (automatisch generiertes, konsolidiertes On-Demand-Dokument aus Verordnungen und Abgaben).</li>
+</ul>
+
+<p>Der Leitfaden beschreibt zwölf Anwendungsfälle für die Akteure Arztpraxis, Krankenanstalt, Apotheke, Pflegeeinrichtung sowie ELGA-Teilnehmer und deren Vertretungen: Verordnung(en) mit Rezept anlegen, Rezept abrufen, Verordnung/Rezept ändern und stornieren; Abgabe mittels eMED-ID, über e-card oder ohne Verordnung durchführen; Abgabe abrufen, ändern, stornieren und absetzen; sowie das Abrufen der Medikationsliste. Änderungen und Stornierungen werden nicht am ursprünglichen Dokument vorgenommen, sondern als eigene Korrekturmeldungsdokumente abgelegt. Der fachliche Zustand ergibt sich aus der Dokumentlage (fixer Statuscode je Dokumentart: Verordnungen mit OFFEN, EINGELÖST, STORNIERT, ABGELAUFEN, NICHT_ABGEGEBEN; Abgaben mit ABGEGEBEN, ABGESETZT, STORNIERT).</p>
+
+<h3 id="ausgangspunkt-die-strukturellen-grenzen-der-medikationsliste">Ausgangspunkt: die strukturellen Grenzen der Medikationsliste</h3>
+
+<p>Die Medikationsliste wird bei jedem Aufruf serverseitig aus den gespeicherten Verordnungen und Abgaben neu erstellt. Es handelt sich damit um ein abgeleitetes Dokument; hieraus ergibt sich seine strukturelle Unvollständigkeit:</p>
+
+<ul>
+  <li><strong>IST statt SOLL:</strong> Die Medikationsliste gibt Verordnungen und Abgaben wieder. Der Therapieverlauf – welche Medikation für welchen Zeitraum einzunehmen ist – ist nicht als eigenständige, geführte Information abgebildet.</li>
+  <li><strong>Unvollständiger Medikationsüberblick:</strong> Dauermedikation, die nicht über ELGA-Rezepte läuft (u. a. Medikation in Krankenanstalten, private Verordnungswege, Auslandsrezepte), ist in der Liste nicht enthalten.</li>
+  <li><strong>Therapieentscheidungen nur indirekt abgebildet:</strong> Ein Absetzen wird als Korrekturmeldung an der jeweiligen Abgabe dokumentiert, nicht als Entscheidung im Therapieverlauf.</li>
+  <li><strong>Keine geführte Historie:</strong> Es existiert jeweils nur die aktuelle, konsolidierte Sicht; frühere Zustände der Medikation sind nicht reproduzierbar.</li>
+  <li><strong>Keine dokumentierte Abwesenheit von Medikation:</strong> Die Aussage, dass ein ELGA-Teilnehmer bewusst keine Medikation einnimmt, ist mit einem generierten Dokument nicht abbildbar.</li>
+</ul>
+
+<p>Aufgrund dieser Grenzen ist die Medikationsliste als vollständige und verlässliche Datengrundlage nur eingeschränkt geeignet, etwa für die Übernahme von Medikationsinformationen in andere ELGA-Anwendungen wie die <em>Austrian Patient Summary</em>.</p>
+
+<h3 id="fachliche-weiterentwicklung-der-medikationsplan-dokumentiert-das-medizinische-soll">Fachliche Weiterentwicklung: der Medikationsplan dokumentiert das medizinische SOLL</h3>
+
+<p>Kern des neuen Modells ist der Medikationsplan (siehe <a href="design_choices.html">Designentscheidungen</a>): eine eigenständig geführte <em>List</em>-Ressource, die Medikationsplaneinträge (<em>MedicationRequest</em>) referenziert. Jeder Planeintrag dokumentiert genau ein verordnetes Arzneimittel samt Dosierung, unabhängig davon, ob und auf welchem Weg es abgegeben wurde. Auf Basis der Planeinträge werden <em>Geplante Abgaben (MedicationRequest)</em> erstellt; auf diesen aufbauend werden <em>Durchgeführte Abgaben (MedicationDispense)</em> dokumentiert.</p>
+
+<p>Der Medikationsplan schließt die beschriebenen Grenzen der bisherigen e-Medikation:</p>
+
+<ul>
+  <li><strong>Dokumentation des SOLL-Zustands:</strong> Die Medikation eines ELGA-Teilnehmers wird aktiv geführt – mit Einnahmezeitraum, Dosierung und Status – und nicht aus Verordnungen und Abgaben abgeleitet.</li>
+  <li><strong>Geführte Therapieentscheidungen:</strong> Pausieren, Beenden und Absetzen eines Medikaments werden am Planeintrag dokumentiert; die fachliche Entscheidung ist damit Teil des geführten Medikationsplans statt einer Kennzeichnung an einzelnen Abgaben.</li>
+  <li><strong>Durchgängige Bezüge:</strong> <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> referenzieren, soweit möglich, den zugrunde liegenden Planeintrag; Arzneimittel und Dosierung der <em>Geplanten Abgabe</em> dürfen sich vom Planeintrag nicht unterscheiden.</li>
+  <li><strong>Vollständigkeit durch Kenntnisnahme:</strong> Fremde Verordnungen (u.a. Auslandsrezepte, Medikation aus Krankenanstalten) können als Planeintrag unverändert zur Kenntnis genommen werden; auch Medikamente außerhalb der ELGA-Prozesse sind damit Teil des Plans.</li>
+  <li><strong>Explizite Abwesenheit von Medikation:</strong> Ein leerer Medikationsplan kann ausdrücklich dokumentiert werden.</li>
+  <li><strong>Nachvollziehbare Historie:</strong> Änderungen erzeugen neue versionierte Ressourcen; historische Medikationspläne sind über die History-Suche abrufbar.</li>
+</ul>
+
+<h3 id="technische-weiterentwicklung-fhir-statt-cda">Technische Weiterentwicklung: FHIR statt CDA</h3>
+
+<p>Die fachliche Erweiterung ist zugleich Anlass einer grundlegenden Erneuerung der technischen Basis. Der Wechsel von CDA auf FHIR (R4) verändert das Grundmodell der e-Medikation (siehe <a href="design_choices.html">Designentscheidungen</a>):</p>
+
+<ul>
+  <li><strong>Ressourcen statt Dokumente:</strong> Anstelle unveränderlicher, abgelegter Dokumente werden versionierte Einzelressourcen (List, MedicationRequest, MedicationDispense) geführt. Änderungen und Stornierungen werden über Statuswechsel und neue Versionen abgebildet; eigene Korrekturmeldungsdokumente entfallen.</li>
+  <li><strong>Fachanwendung mit REST-Schnittstelle:</strong> Die bisherige dokumentbasierte Ablage und der dokumentbezogene Abruf werden durch eine zentrale Fachanwendung mit definierten Custom-Operations ($plan-read, $prescription-write, $prescription-discard, $dispense-write u. a.) abgelöst.</li>
+  <li><strong>Explizite Konsistenz- und Nebenläufigkeitskontrolle:</strong> Konsistenzregeln zwischen Plan und Planeinträgen sowie ETag-basiertes Locking steuern gleichzeitige Schreibzugriffe.</li>
+  <li><strong>Historie als Basisfunktion:</strong> Versionierte Ressourcen und versionierte Referenzen ermöglichen die Rekonstruktion jedes früheren Zustands des Medikationsplans.</li>
+  <li><strong>Anschluss an das FHIR-Ökosystem:</strong> R4 ist die am weitesten verbreitete FHIR-Version und die Basis der nationalen und internationalen Bezugspunkte dieses Leitfadens (u.a. HL7® AT Core Profiles, International Patient Summary, EHDS HL7 EU IGs). Der Medikationsplan wird damit zur konsistenten Datengrundlage für Anwendungen wie die <em>Austrian Patient Summary</em>.</li>
+</ul>
+
 
 
 
@@ -492,7 +580,7 @@ h4 + .tabs {
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-19 16:11:00 +0000">
+  <span title="2026-10-19 18:28:00 +0000">
     2026-10-19
   </span>
 

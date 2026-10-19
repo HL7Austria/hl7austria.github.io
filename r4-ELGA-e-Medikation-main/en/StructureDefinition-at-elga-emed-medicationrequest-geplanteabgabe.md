@@ -14,7 +14,7 @@ Relevante Use Cases:
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation Transaction Bundle geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md)
+* Use this Profile: [AT ELGA e-Medikation Transaction Bundle Geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md)
 * Refer to this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
 * Examples for this Profile: [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.md), [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md) and [MedicationRequest/At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md)
 
@@ -51,7 +51,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-19T16:11:48+00:00",
+  "date" : "2026-10-19T18:28:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -303,13 +303,13 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.doNotPerform",
       "path" : "MedicationRequest.doNotPerform",
-      "short" : "Fachliche Begründung: Die geplante Abgabe bildet einen positiven Abgabeauftrag ab; ein ausdrückliches Verbot einer Abgabe wird nicht als eigene geplante Abgabe dokumentiert.",
+      "short" : "Fachliche Begründung: Die Geplante Abgabe bildet einen positiven Abgabeauftrag ab; ein ausdrückliches Verbot einer Abgabe wird nicht als eigene Geplante Abgabe dokumentiert.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.reported[x]",
       "path" : "MedicationRequest.reported[x]",
-      "short" : "Fachliche Begründung: Die geplante Abgabe wird als Auftrag dokumentiert; eine Kennzeichnung als lediglich berichteter Auftrag würde die Bedeutung der Ressource verändern und wird daher nicht verwendet.",
+      "short" : "Fachliche Begründung: Die Geplante Abgabe wird als Auftrag dokumentiert; eine Kennzeichnung als lediglich berichteter Auftrag würde die Bedeutung der Ressource verändern und wird daher nicht verwendet.",
       "max" : "0"
     },
     {

@@ -43,7 +43,7 @@ POST
 
 Response Body
 
-##### Journey-01-01: Request 02 - geplante Abgaben Abrufen
+##### Journey-01-01: Request 02 - Geplante Abgaben abrufen
 
 Request
 

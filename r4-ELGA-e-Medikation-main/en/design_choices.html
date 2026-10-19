@@ -163,6 +163,31 @@
   <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="download.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
 </ul>
             </div>    <!-- /.nav-collapse -->
 
@@ -481,7 +506,7 @@ h4 + .tabs {
 
 <h4 id="medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan: AtElgaEmedListMedikationsplan (<em>List</em>)</h4>
 
-<p><a name="l445">​</a>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource abgebildet, welche keinen oder mehrere Planeinträge referenziert. Jeder Planeintrag ist im <em>List.entry.flag</em> durch einen Status gekennzeichnet (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+<p><a name="l492">​</a>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource abgebildet, welche keinen oder mehrere Planeinträge referenziert. Jeder Planeintrag ist im <em>List.entry.flag</em> durch einen Status gekennzeichnet (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
 
 <p>Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.</p>
 
@@ -531,11 +556,11 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 <h3 id="fachliche-designentscheidungen">Fachliche Designentscheidungen</h3>
 
 <h4 id="abhängigkeit-von-planeintrag-und-geplanter-abgabe">Abhängigkeit von Planeintrag und Geplanter Abgabe</h4>
-<p>Gemäß Fachkonzept müssen Arzneimittel und Dosierung einer <em>Geplanten Abgabe</em> zum Zeitpunkt ihrer Erstellung mit dem zugehörigen Planeintrag identisch sein (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01</a>). Dies umfasst insbesondere das verordnete Arzneimittel einschließlich seiner PZN beziehungsweise die dokumentierten Wirkstoffe sowie die Dosierungsangaben. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine <em>Geplanten Abgabe</em> erstellt werden kann.</p>
+<p>Gemäß Fachkonzept müssen Arzneimittel und Dosierung einer <em>Geplanten Abgabe</em> zum Zeitpunkt ihrer Erstellung mit dem zugehörigen Planeintrag identisch sein (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01</a>). Dies umfasst insbesondere das verordnete Arzneimittel einschließlich seiner PZN beziehungsweise die dokumentierten Wirkstoffe sowie die Dosierungsangaben. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine <em>Geplante Abgabe</em> erstellt werden kann.</p>
 
-<p>Ziel dieser Vorgabe ist es, die Erstellung einer Geplanten Abgabe verbindlich mit der Aktualisierung des Medikationsplans zu verknüpfen. Der verordnende GDA soll die vorgesehene Medikation nicht ausschließlich in der Geplanten Abgabe dokumentieren, sondern erforderliche Änderungen auch im zugehörigen Planeintrag vornehmen. Der Medikationsplan soll dadurch die zum Zeitpunkt der Verordnung vorgesehene Medikation widerspiegeln. Eine neue Geplante Abgabe kann somit nicht auf Grundlage eines inhaltlich abweichenden Planeintrags erstellt werden.</p>
+<p>Ziel dieser Vorgabe ist es, die Erstellung einer <em>Geplanten Abgabe</em> verbindlich mit der Aktualisierung des Medikationsplans zu verknüpfen. Der verordnende GDA soll die vorgesehene Medikation nicht ausschließlich in der <em>Geplanten Abgabe</em> dokumentieren, sondern erforderliche Änderungen auch im zugehörigen Planeintrag vornehmen. Der Medikationsplan soll dadurch die zum Zeitpunkt der Verordnung vorgesehene Medikation widerspiegeln. Eine neue <em>Geplante Abgabe</em> kann somit nicht auf Grundlage eines inhaltlich abweichenden Planeintrags erstellt werden.</p>
 
-<p>Die Übereinstimmung wird ausschließlich zum Zeitpunkt der Erstellung der <em>Geplanten Abgabe</em> gefordert. Eine spätere Änderung des Planeintrags macht eine bereits erstellte Geplante Abgabe nicht automatisch ungültig. Da <code class="language-plaintext highlighter-rouge">basedOn</code> unversioniert ist, verweist diese Referenz auf den jeweils aktuellen Zustand des Planeintrags und hält nicht fest, welche Planeintragsversion bei der Erstellung der Geplanten Abgabe zugrunde lag.</p>
+<p>Die Übereinstimmung wird ausschließlich zum Zeitpunkt der Erstellung der <em>Geplanten Abgabe</em> gefordert. Eine spätere Änderung des Planeintrags macht eine bereits erstellte <em>Geplante Abgabe</em> nicht automatisch ungültig. Da <code class="language-plaintext highlighter-rouge">basedOn</code> unversioniert ist, verweist diese Referenz auf den jeweils aktuellen Zustand des Planeintrags und hält nicht fest, welche Planeintragsversion bei der Erstellung der <em>Geplanten Abgabe</em> zugrunde lag.</p>
 
 <p><strong>Vergleichsumfang</strong></p>
 
@@ -610,31 +635,33 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 
 <p><em>Vorteile von A:</em></p>
 <ul>
-  <li>Die Erstellung einer Geplanten Abgabe setzt voraus, dass die zu verordnende Medikation auch im Planeintrag dokumentiert ist.</li>
-  <li>Medikationsplan und <em>Geplante Abgabe</em> sind widerspruchsfrei. Änderungen des Präparats oder der Dosierung können nicht ausschließlich in der Geplanten Abgabe vorgenommen werden.</li>
+  <li>Die Erstellung einer <em>Geplanten Abgabe</em> setzt voraus, dass die zu verordnende Medikation auch im Planeintrag dokumentiert ist.</li>
+  <li>Medikationsplan und <em>Geplante Abgabe</em> sind widerspruchsfrei. Änderungen des Präparats oder der Dosierung können nicht ausschließlich in der <em>Geplanten Abgabe</em> vorgenommen werden.</li>
   <li>Die Pflege des Medikationsplans wird dadurch verbindlich in den Verordnungsablauf eingebunden.</li>
-  <li>Planeintrag und Geplante Abgabe verwenden zum Zeitpunkt der Erstellung dieselbe Arzneimittel- und Dosierungsdarstellung. 
-<em>Nachteile von A:</em></li>
+  <li>Planeintrag und <em>Geplante Abgabe</em> verwenden zum Zeitpunkt der Erstellung dieselbe Arzneimittel- und Dosierungsdarstellung.</li>
+</ul>
+
+<p><em>Nachteile von A:</em></p>
+<ul>
   <li>Der Planeintrag muss, falls dort nur ein Wirkstoff dokumentiert ist, vorab angepasst werden.</li>
-  <li>Eine Wirkstoff-Angabe im Medikationsplan wird durch das Erstellen einer geplante Abgabe früher oder später immer durch ein Präparat ersetzt.</li>
+  <li>Eine Wirkstoff-Angabe im Medikationsplan wird durch das Erstellen einer <em>Geplante Abgabe</em> früher oder später immer durch ein Präparat ersetzt.</li>
 </ul>
 
 <p><em>Vorteile von B:</em></p>
 <ul>
-  <li>Eine wirkstoffbasierte Darstellung kann im Medikationsplan erhalten bleiben, während die Geplante Abgabe das konkret verordnete Präparat dokumentiert.</li>
+  <li>Eine wirkstoffbasierte Darstellung kann im Medikationsplan erhalten bleiben, während die G<em>eplante Abgabe</em> das konkret verordnete Präparat dokumentiert.</li>
   <li>Eine reine Konkretisierung zum Präparat erfordert keine Änderung des Planeintrags.</li>
   <li>Der Medikationsplan kann unabhängig von einzelnen Präparateentscheidungen auf Wirkstoffebene geführt werden.
 <em>Nachteile von B:</em></li>
-  <li>Die Prüfregel wird komplexer (Wirkstoffabgleich).Die Übereinstimmung lässt sich nicht allein anhand identischer Arzneimittelangaben prüfen. Es sind zusätzliche Regeln für die fachliche Zuordnung zwischen Wirkstoffangabe und Präparat erforderlich.</li>
-  <li>Medikationsplan und Geplante Abgabe enthalten unterschiedliche Darstellungsebenen derselben vorgesehenen Verordnung. Diese müssen für Anwender klar visualisiert werden.</li>
+  <li>Die Prüfregel wird komplexer (Wirkstoffabgleich). Die Übereinstimmung lässt sich nicht allein anhand identischer Arzneimittelangaben prüfen. Es sind zusätzliche Regeln für die fachliche Zuordnung zwischen Wirkstoffangabe und Präparat erforderlich.</li>
+  <li>Medikationsplan und <em>Geplante Abgabe</em> enthalten unterschiedliche Darstellungsebenen derselben vorgesehenen Verordnung. Diese müssen für Anwender klar visualisiert werden.</li>
 </ul>
 
 <div class="dragon">
   <p class="note-to-balloters">
 
-- Wie bleibt der Medikationsplan verständlich, wenn das abgegebene Arzneimittel vom Wirkstoff oder Präparat im Planeintrag und von der geplanten Abgabe abweicht?
+- Wie bleibt der Medikationsplan verständlich, wenn das abgegebene Arzneimittel vom Wirkstoff oder Präparat im Planeintrag und von der <i>Geplanten Abgabe</i> abweicht?<br/>
 - Soll <code class="language-plaintext highlighter-rouge">basedOn</code> versioniert werden, um die geprüfte Planeintrag-Version nachvollziehen zu können?
-
 </p>
 </div>
 
@@ -646,7 +673,7 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 <ul>
   <li><em>List.entry.flag</em> <em>new</em> und <em>changed</em> werden als <em>unchanged</em> ausgeliefert.</li>
   <li>Einträge mit <em>removed</em> werden nicht ausgeliefert. Bleibt kein Eintrag übrig, wird <em>List.emptyReason = nilknown</em> gesetzt.</li>
-  <li>Abgelaufene Planeinträge werden mit <em>removed</em> und <em>stopped</em> ausgeliefert (siehe UC_eMed_02_09).</li>
+  <li>Abgelaufene Planeinträge werden mit <em>removed</em> und <em>stopped</em> ausgeliefert.</li>
 </ul>
 
 <p><em>Plan-History-Search</em> liefert dagegen alle Inhalte, Status und Flags unverändert.</p>
@@ -654,7 +681,7 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 <div class="dragon">
   <p class="note-to-balloters">
 
-* <strong>Zu klären:</strong> Soll der GDA den aufbereiteten Zustand erhalten (Variante A, aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand (Variante B)?**
+* - Soll der GDA den aufbereiteten Zustand erhalten (Variante A, aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand (Variante B)?
 </p>
 </div>
 
@@ -662,7 +689,7 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 
 <h4 id="gruppierung-von-medikamenten">Gruppierung von Medikamenten</h4>
   <!-- - derzeit eigene MRs
-- kein Freitext auf List Ebene daher text der zu gruppen von medikamenten gehört muss in alle kopiert werden
+- kein Freitext auf List Ebene daher muss anweisung die zu gruppen von medikamenten gehört in alle zugehörigen planeinträge kopiert werden
 - -->
 
 <p>TODO</p>
@@ -670,7 +697,7 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 <h3 id="technische-designentscheidungen">Technische Designentscheidungen</h3>
 
 <h4 id="kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</h4>
-<p>Die in der e-Medikation relevanten Elemente werden nach einem Whitelisting-Ansatz festgelegt. Hierzu werden Elemente, die fachlich verarbeitet, gespeichert und in weiterer Folge für die Anzeige bereitgestellt werden sollen, in den Profilen explizit mit dem Must Support Flag MS gekennzeichnet.</p>
+<p>Die in der e-Medikation relevanten Elemente werden nach einem Whitelisting-Ansatz festgelegt. Hierzu werden Elemente, die fachlich verarbeitet, gespeichert und in weiterer Folge für die Anzeige bereitgestellt werden sollen, in den Profilen explizit mit dem <em>Must Support Flag MS</em> gekennzeichnet.</p>
 
 <p>Bei der Profilierung gelten folgende Regeln:</p>
 <ul>
@@ -695,7 +722,8 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 <div class="dragon">
   <p class="note-to-balloters">
 Ergänzend könnten Obligations eingesetzt werden, um die mit der Kennzeichnung verbundenen Pflichten für die beteiligten Akteure präziser festzulegen.
-International werden Obligations von vielen Ländern für unterschiedliche use cases eingesetzt. Sollen Obligations eingesetzt werden, um die MS Markierungen noch aussagekräftiger zu machen? Feedback aus der Community ist erwünscht.
+International werden Obligations von vielen Ländern für unterschiedliche Use Cases eingesetzt.<br/>
+Sollen Obligations eingesetzt werden, um die MS Markierungen noch aussagekräftiger zu machen? Feedback aus der Community ist erwünscht.
 </p>
 </div>
 
@@ -729,14 +757,14 @@ International werden Obligations von vielen Ländern für unterschiedliche use c
 
 <h6 id="sonderfall-plan-read">Sonderfall $plan-read</h6>
 
-<p>Die Operation $plan-read unterscheidet sich von der Rückgabe persistierter Ressourcen, da sie für die Auslieferung einen aufbereiteten Medikationsplan erzeugt. Dabei werden unter anderem Flags angepasst und zum Entfernen markierte Planeinträge aus der ausgelieferten Darstellung entfernt. Diese Transformationen verändern die persistierten Ressourcen nicht.</p>
+<p>Die Operation <em>$plan-read</em> unterscheidet sich von der Rückgabe persistierter Ressourcen, da sie für die Auslieferung einen aufbereiteten Medikationsplan erzeugt. Dabei werden unter anderem Flags angepasst und zum Entfernen markierte Planeinträge aus der ausgelieferten Darstellung entfernt. Diese Transformationen verändern die persistierten Ressourcen nicht.</p>
 
 <p>Für die Profilierung sind somit drei unterschiedliche Darstellungen zu berücksichtigen:</p>
 
 <ul>
   <li>die vom Client übermittelte Eingabe eines Schreibvorgangs;</li>
   <li>die persistierten Ressourcen und deren Rückgabe nach einem erfolgreichen Schreibvorgang;</li>
-  <li>die für $plan-read transformierte Auslieferungsdarstellung.</li>
+  <li>die für <em>$plan-read</em> transformierte Auslieferungsdarstellung.</li>
 </ul>
 
 <h5 id="mögliche-ansätze-zur-profilierung">Mögliche Ansätze zur Profilierung</h5>
@@ -756,14 +784,14 @@ Gemeinsame Ressourcenprofile beschreiben die fachlichen Inhalte. Abweichende Anf
 
 <h5 id="ausgabeprofile-für-weitere-lesende-interaktionen">Ausgabeprofile für weitere lesende Interaktionen</h5>
 
-<p>Zusätzlich ist zu entscheiden, ob für lesende Interaktionen, beispielsweise GET von geplanten Abgaben oder $history-search, eigene Ausgabe-Bundle-Profile definiert werden sollen.</p>
+<p>Zusätzlich ist zu entscheiden, ob für lesende Interaktionen, beispielsweise GET von <em>Geplanten Abgaben</em> oder <em>$history-search</em>, eigene Ausgabe-Bundle-Profile definiert werden sollen.</p>
 
-<p>Zur Diskussion steht, ob die Festlegung auf ein Bundle vom Typ searchset zusammen mit der Beschreibung der Operation ausreicht oder ob die erwartete Antwortstruktur weiter eingeschränkt werden soll. Ein eigenes Ausgabeprofil würde die strukturellen Erwartungen an die Antwort explizit beschreiben. Operationsspezifische Regeln wären weiterhin erforderlich, um die Auswahl der zurückgegebenen Ressourcen und gegebenenfalls durchzuführende Transformationen festzulegen.</p>
+<p>Zur Diskussion steht, ob die Festlegung auf ein Bundle vom Typ <em>searchset</em> zusammen mit der Beschreibung der Operation ausreicht oder ob die erwartete Antwortstruktur weiter eingeschränkt werden soll. Ein eigenes Ausgabeprofil würde die strukturellen Erwartungen an die Antwort explizit beschreiben. Operationsspezifische Regeln wären weiterhin erforderlich, um die Auswahl der zurückgegebenen Ressourcen und gegebenenfalls durchzuführende Transformationen festzulegen.</p>
 
 <div class="dragon">
   <div class="note-to-balloters">
 <ul>
-<li>Sind getrennte Ressourcenprofile für die Eingabe schreibender Operationen und die Rückgabe persistierter Ressourcen erforderlich, oder reichen gemeinsame Profile mit operationsspezifischen Regeln aus?</li>
+<li>Sind getrennte Ressourcenprofile für die Eingabe schreibender Operationen und die Rückgabe persistierter Ressourcen erforderlich oder reichen gemeinsame Profile mit operationsspezifischen Regeln aus?</li>
 <li>Sollen serverseitig verwaltete Elemente wie <code>meta.versionId</code>, <code>meta.lastUpdated</code> und <code>Resource.text</code> in Schreibanfragen ausgeschlossen werden, oder sollen vorhandene Werte akzeptiert und serverseitig ignoriert beziehungsweise ersetzt werden?</li>
 <li>Benötigt die transformierte Ausgabe von <code>$plan-read</code> eigene Ressourcenprofile, oder reichen ein spezifisches Bundle-Profil und die dokumentierte Transformationslogik aus?</li>
 <li>Sollen für weitere lesende Interaktionen wie z.B. <code>$history-search</code> und  <code>GET [base]/MedicationDispense</code> eigene Ausgabe-Bundle-Profile definiert werden, die über die Festlegung von <code>Bundle.type = searchset</code> hinausgehen?</li>
@@ -772,25 +800,28 @@ Gemeinsame Ressourcenprofile beschreiben die fachlichen Inhalte. Abweichende Anf
 </div>
 
 <h4 id="versionierung">Versionierung</h4>
+
 <p>TODO</p>
+
 <h5 id="versionierte-referenzen">Versionierte Referenzen</h5>
-<p>TODO
-&lt;!– wann und warum versionierte Referenzen verwendet werden
-und wann nicht</p>
 
-<p>o	Referenzmanagement (Patient + Prakt. ohne Version), Geplante + Durchgef. Abg. ohne versionierte Referenzen</p>
+<p>TODO</p>
 
-<p>wie erkennt client aktuelle liste? (passt nirgends richtig dazu)
+  <!-- - wann und warum versionierte Referenzen verwendet werden und wann nicht
+- Referenzmanagement (Patient + Prakt. ohne Version), Geplante + Durchgef. Abg. ohne versionierte Referenzen
+- wie erkennt client aktuelle liste? (passt nirgends richtig dazu)
 version nicht aufsteigend, mit etag (soll nicht version verraten), datum: timestamp dann relevant
-man könnte liste retired setzen, snapshot ua? –&gt;</p>
+man könnte liste retired setzen, snapshot ua? -->
 
 <h4 id="id-management">ID-Management</h4>
+
 <p>TODO
-  <!-- o	id-Management (optional bei POST, verpflichtend bei PUT, bei Auslieferung von der Fachanwendung immer befüllt) --></p>
+  <!-- id-Management (optional bei POST, verpflichtend bei PUT, bei Auslieferung von der Fachanwendung immer befüllt) --></p>
 
 <h4 id="optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</h4>
-<p>TODO
-Der ETag identifiziert die persistierte List-Version. Die Fachanwendung nutzt ihn beim Plan-Write, um zu erkennen, ob zwischen Plan-Read und Plan-Write jemand anderes den Plan geändert hat (Optimistic Locking). Ist die Version gleich geblieben, gilt das Write als konfliktfrei.</p>
+<p>TODO</p>
+
+<p>Der ETag identifiziert die persistierte List-Version. Die Fachanwendung nutzt ihn beim Plan-Write, um zu erkennen, ob zwischen Plan-Read und Plan-Write jemand anderes den Plan geändert hat (Optimistic Locking). Ist die Version gleich geblieben, gilt das Write als konfliktfrei.</p>
 
   <!-- o	meta.versionid kann als etag verwendet werden; implementierungsabh.
 o	Read-to-Write-Konzept: ETag zur Integritätsprüfung (Optimistic Locking) erwähnen
@@ -806,7 +837,7 @@ auch für nicht (wirklich) versionierte ressourcen wie geplante und durchgeführ
   <li><strong>Patient:</strong> bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)</li>
 </ul>
 
-<p><a name="l1145">​</a>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ergänzt die logischen Referenzen um Referenzen auf diese Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>). Die übermittelten logischen Referenzen (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) dürfen dabei nicht ersetzt werden, sondern bleiben unverändert erhalten. Beim Abruf von Daten enthalten die Ressourcen daher sowohl die logischen als auch die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung nur mittels <code class="language-plaintext highlighter-rouge">_include</code> abgerufen werden (siehe <a href="#verwendung-von-_include">Verwendung von _include</a>).</p>
+<p><a name="l1251">​</a>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ergänzt die logischen Referenzen um Referenzen auf diese Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>). Die übermittelten logischen Referenzen (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) dürfen dabei nicht ersetzt werden, sondern bleiben unverändert erhalten. Beim Abruf von Daten enthalten die Ressourcen daher sowohl die logischen als auch die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung nur mittels <code class="language-plaintext highlighter-rouge">_include</code> abgerufen werden (siehe <a href="#verwendung-von-_include">Verwendung von _include</a>).</p>
 
 <p>Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. <code class="language-plaintext highlighter-rouge">recorder</code>, <code class="language-plaintext highlighter-rouge">asserter</code> oder <code class="language-plaintext highlighter-rouge">List.source</code>), ergibt sich aus dem jewiligen <code class="language-plaintext highlighter-rouge">Reference.identifer.system</code>, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Medikation-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (<code class="language-plaintext highlighter-rouge">List.entry.item</code>) sind hingegen immer Referenzen auf bereits in der e-Medikation-Fachanwendung gespeicherte Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>).</p>
 
@@ -826,8 +857,8 @@ auch für nicht (wirklich) versionierte ressourcen wie geplante und durchgeführ
   </tr>
   <tr>
     <td><strong>Beispieldateien</strong></td>
-    <td><a name="l1221">​</a><a href="At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a></td>
-    <td><a name="l1225">​</a><a href="At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a></td>
+    <td><a name="l1327">​</a><a href="At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a></td>
+    <td><a name="l1331">​</a><a href="At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a></td>
   </tr>
   <tr>
     <td><strong>Beispielfragmente</strong></td>
@@ -874,9 +905,9 @@ auch für nicht (wirklich) versionierte ressourcen wie geplante und durchgeführ
 
 <h4 id="befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</h4>
 
-<p>Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Resource.text) zentral durch die Fachanwendung erzeugt. Ziel ist eine einheitliche und nachvollziehbare Darstellung der wesentlichen Ressourceninhalte. Die Narrative muss dem jeweils gespeicherten beziehungsweise ausgelieferten Zustand entsprechen und nach serverseitigen Änderungen oder Transformationen entsprechend angepasst werden.</p>
+<p>Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Resource.text) zentral durch die Fachanwendung erzeugt. Ziel ist eine einheitliche und nachvollziehbare Darstellung der wesentlichen Ressourceninhalte. Die Narrative muss dem jeweils gespeicherten bzw. ausgelieferten Zustand entsprechen und nach serverseitigen Änderungen oder Transformationen entsprechend angepasst werden.</p>
 
-<p>Die Generierung berücksichtigt sowohl strukturierte Angaben als auch relevante Freitextinformationen. Die Narrative ergänzt die strukturierten Daten, ersetzt diese jedoch nicht. Davon zu unterscheiden sind fachlich erfasste Freitexte, beispielsweise ergänzende Hinweise oder eine nicht strukturiert abbildbare Dosierungsanweisung; diese bleiben eigenständige Inhalte und werden bei der Generierung berücksichtigt. Die unterschiedlichen Textfelder und ihr jeweiliger Geltungsbereich sind im Abschnitt <a href="dosages.html#textdarstellungen-und-ergänzende-hinweise">Textdarstellungen und ergänzende Hinweise im Kapitel der Dosierungen</a> beschrieben.</p>
+<p>Die Generierung berücksichtigt sowohl strukturierte Angaben als auch Freitextinformationen. Die Narrative ergänzt die strukturierten Daten, ersetzt diese jedoch nicht. Davon zu unterscheiden sind fachlich erfasste Freitexte, beispielsweise ergänzende Hinweise oder eine nicht strukturiert abbildbare Dosierungsanweisung; diese bleiben eigenständige Inhalte und werden bei der Generierung berücksichtigt. Die unterschiedlichen Textfelder und ihr jeweiliger Geltungsbereich sind im Abschnitt <a href="dosages.html#textdarstellungen-und-ergänzende-hinweise">Textdarstellungen und ergänzende Hinweise im Kapitel der Dosierungen</a> beschrieben.</p>
 
 <div class="dragon">
   <p class="note-to-balloters">
@@ -896,17 +927,14 @@ Dieser Abschnitt beschreibt die zur Diskussion stehenden Konzepte für das Lösc
 </p>
 </div>
 
-<p>Das fachliche Stornieren durch einen GDA ist vom Löschen auf Veranlassung von ELGA-Teilnehmer:innen zu unterscheiden.</p>
+<p><br/>
+Das fachliche Stornieren durch einen GDA ist vom Löschen auf Veranlassung von ELGA-Teilnehmer:innen zu unterscheiden.</p>
 
-<p>Beim Stornieren wird ein fachlicher Sachverhalt zurückgenommen beziehungsweise als nicht mehr gültig gekennzeichnet. Die betroffenen Ressourcen bleiben erhalten und es wird nur der status geändert sodass die ursprüngliche Dokumentation und die nachfolgende Stornierung nachvollziehbar bleiben. Die konkrete Abbildung erfolgt entsprechend den für die jeweilige Ressource festgelegten Status- und Workflowregeln.</p>
+<p>Beim Stornieren wird ein fachlicher Sachverhalt zurückgenommen beziehungsweise als nicht mehr gültig gekennzeichnet. Die betroffenen Ressourcen bleiben erhalten und es wird nur der <em>status</em> geändert, sodass die ursprüngliche Dokumentation und die nachfolgende Stornierung nachvollziehbar bleiben. Die konkrete Abbildung erfolgt entsprechend den für die jeweilige Ressource festgelegten Status- und Workflowregeln.</p>
 
 <p>Das Löschen auf Veranlassung von ELGA-Teilnehmer:innen verfolgt hingegen das Ziel, die betroffenen Inhalte dauerhaft aus dem verfügbaren Datenbestand einschließlich der jeweils betroffenen Historie zu entfernen. Eine reine Statusänderung oder das Ausblenden aus dem aktuellen Medikationsplan reicht dafür nicht aus.</p>
 
-<p>Der genaue Umfang dieser Löschung wird im Rahmen der Teilnehmerrechte festgelegt.
-  <!-- horizontales und vertikales löschen in FHIR -->
-  <!-- fachlich und technische Beschreibung --></p>
-
-  <!-- abgrenzung stornieren durch gda, bleibt nachvollziehbar, löschen durch teilnehmer rückstandslos? -->
+<p>Der genaue Umfang dieser Löschung wird im Rahmen der Teilnehmerrechte festgelegt.</p>
 
 <h5 id="löschen-von-medikationsplan-und-medikationsplaneinträgen">Löschen von Medikationsplan und Medikationsplaneinträgen</h5>
 
@@ -994,7 +1022,7 @@ DELETE [base]/MedicationRequest/[id]/_history
 
 <p>Beim vertikalen Löschen werden einzelne Medikationsplanversionen (Versionen der <code class="language-plaintext highlighter-rouge">List</code>-Ressource) unwiderruflich gelöscht. Die darin referenzierten Planeinträge werden nicht pauschal einschließlich ihrer gesamten Historie gelöscht. Stattdessen wird für jede referenzierte MedicationRequest-Version geprüft, ob sie von einer verbleibenden Medikationsplanversion weiterhin referenziert wird.</p>
 
-<p>Nur die nicht MedicationRequest-Versionen auf die keine Referenz mehr zeigt sollen zusätzlich gelöscht werden. Andere Versionen des MedicationRequests bleiben erhalten. Dadurch bleiben bestehende Referenzen auflösbar.</p>
+<p>Nur die MedicationRequest-Versionen auf die keine Referenz mehr zeigt, sollen zusätzlich gelöscht werden. Andere Versionen des MedicationRequests bleiben erhalten. Dadurch bleiben bestehende Referenzen auflösbar.</p>
 
 <p><strong>Löschen einer historischen Medikationsplanversion</strong></p>
 
@@ -1014,7 +1042,7 @@ DELETE [base]/MedicationRequest/[id]/_history
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE [base]/List/[id]/_history/[vid]
 DELETE [base]/MedicationRequest/[id]/_history/[vid]
 </code></pre></div></div>
-<p>Diese Interaktion schließt die jeweils aktuelle Ressourcenversion ausdrücklich aus. Sollte eine zu entfernende MedicationRequest-Version zugleich deren aktuelle Version sein, ist daher ein gesondertes Vorgehen erforderlich. Daher würde auch hier eine custom Operation <code class="language-plaintext highlighter-rouge">[base]/MedicationRequest $delete-history</code> bzw. <code class="language-plaintext highlighter-rouge">[base]/List $delete-history</code> zum Einsatz kommen.</p>
+<p>Diese Interaktion schließt die jeweils aktuelle Ressourcenversion ausdrücklich aus. Sollte eine zu entfernende MedicationRequest-Version zugleich deren aktuelle Version sein, ist daher ein gesondertes Vorgehen erforderlich. Daher würde auch hier eine Custom Operation <code class="language-plaintext highlighter-rouge">[base]/MedicationRequest $delete-history</code> bzw. <code class="language-plaintext highlighter-rouge">[base]/List $delete-history</code> zum Einsatz kommen.</p>
 
 <p><strong>Löschen der aktuellen Medikationsplanversion</strong>
 Beim Löschen des aktuellen Medikationsplans soll verhindert werden, dass eine ältere Medikationsplanversion unbeabsichtigt wieder als aktueller Plan verwendet wird.</p>
@@ -1037,13 +1065,14 @@ Beim Löschen des aktuellen Medikationsplans soll verhindert werden, dass eine �
 
 <p>Für diesen Fall ist zu entscheiden, ob eine ältere verbleibende MedicationRequest-Version wieder als aktuelle Version bereitgestellt werden soll.</p>
 
-<p>Die Entscheidung ist insbesondere für unversionierte Referenzen relevant. Im bisherigen Design ist beispielsweise die Referenz einer Geplanten Abgabe auf ihren Planeintrag über basedOn unversioniert. Daher muss geprüft werden, welche Auswirkungen eine Löschung oder ein Wechsel des aktuellen Planeintragszustands auf diese Referenzen hat.</p>
+<p>Die Entscheidung ist insbesondere für unversionierte Referenzen relevant. Im bisherigen Design ist beispielsweise die Referenz einer <em>Geplanten Abgabe</em> auf ihren Planeintrag über basedOn unversioniert. Daher muss geprüft werden, welche Auswirkungen eine Löschung oder ein Wechsel des aktuellen Planeintragszustands auf diese Referenzen hat.</p>
 
-<p><strong>Übergreifende Anforderungen und offene Abgrenzungen</strong>
-Unabhängig von der gewählten technischen Variante sind folgende Punkte festzulegen:</p>
+<p><strong>Übergreifende Anforderungen und offene Abgrenzungen</strong></p>
+
+<p>Unabhängig von der gewählten technischen Variante sind folgende Punkte festzulegen:</p>
 
 <ul>
-  <li>Referenzintegrität: Die Prüfung darf sich nicht ausschließlich auf List.entry.item beschränken, wenn weitere Ressourcen auf den betroffenen Planeintrag oder eine seiner Versionen verweisen. Insbesondere ist zu entscheiden, wie Referenzen aus Geplanten und Durchgeführten Abgaben behandelt werden.</li>
+  <li>Referenzintegrität: Die Prüfung darf sich nicht ausschließlich auf List.entry.item beschränken, wenn weitere Ressourcen auf den betroffenen Planeintrag oder eine seiner Versionen verweisen. Insbesondere ist zu entscheiden, wie Referenzen aus <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> behandelt werden.</li>
   <li>Abgeleitete Inhalte: Narrative, Suchergebnisse und erzeugte Bundles dürfen die gelöschten Inhalte nicht weiterhin enthalten.</li>
 </ul>
 
@@ -1055,7 +1084,7 @@ Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem A
 <li>Ist die Unterscheidung zwischen horizontalem Löschen eines Planeintrags einschließlich aller Versionen und vertikalem Löschen einzelner Medikationsplanversionen fachlich ausreichend?</li>
 <li>Wie sollen historische Medikationsplanversionen beim horizontalen Löschen bereinigt werden: unter Beibehaltung ihrer bisherigen <code>meta.versionId</code> oder durch bereinigte Ersatzdarstellungen mit neuer Versionskennung? Welche Alternativen vermeiden eine Veränderung bereits identifizierter historischer Inhalte?</li>
 <li>Wie können bei einer Ersatzdarstellung die ursprüngliche zeitliche Einordnung, die Zuordnung zum fachlichen Planzustand und bestehende versionierte Referenzen erhalten beziehungsweise nachvollziehbar behandelt werden?</li>
-<li>Sollen betroffene <code>List.entry</code>-Elemente vollständig entfernt werden, oder soll ein Hinweis auf gelöschte Inhalte erhalten bleiben? Darf daraus die Anzahl gelöschter Einträge erkennbar sein?</li>
+<li>Sollen betroffene <code>List.entry</code>-Elemente vollständig entfernt werden oder soll ein Hinweis auf gelöschte Inhalte erhalten bleiben? Darf daraus die Anzahl gelöschter Einträge erkennbar sein?</li>
 <li>Ist es fachlich richtig, beim Löschen der aktuellen Medikationsplanversion einen neuen leeren Plan mit der Fachanwendung als Autor und <code>PatientModified = true</code> bereitzustellen? Welcher Wert für <code>List.emptyReason</code> soll diesen Zustand beschreiben?</li>
 <li>Wie soll eine zu löschende aktuelle <code>MedicationRequest</code>-Version behandelt werden, wenn ältere Versionen weiterhin benötigt werden? Darf eine ältere Version wieder zur aktuellen Version werden, insbesondere im Hinblick auf unversionierte Referenzen?</li>
 <li>Welche weiteren Referenzen, insbesondere aus Geplanten und Durchgeführten Abgaben, müssen bei der Bestimmung des Löschumfangs berücksichtigt werden?</li>
@@ -1091,7 +1120,7 @@ Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem A
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-19 16:11:00 +0000">
+  <span title="2026-10-19 18:28:00 +0000">
     2026-10-19
   </span>
 

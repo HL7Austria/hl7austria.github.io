@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-19T16:11:48+00:00",
+  "date" : "2026-10-19T18:28:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -855,7 +855,7 @@
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
       },
-      "name" : "AT ELGA e-Medikation Transaction Bundle geplante Abgaben",
+      "name" : "AT ELGA e-Medikation Transaction Bundle Geplante Abgaben",
       "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, \ndie gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. \nIst kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.",
       "exampleBoolean" : false,
       "groupingId" : "GeplanteAbgabe"
@@ -2180,6 +2180,60 @@
           }],
           "nameUrl" : "patient_journey.html",
           "title" : "Patient Journey",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "contributors.html"
+          }],
+          "nameUrl" : "contributors.html",
+          "title" : "Autoren und Mitwirkende",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "download.html"
+          }],
+          "nameUrl" : "download.html",
+          "title" : "Download",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "publication_info.html"
+          }],
+          "nameUrl" : "publication_info.html",
+          "title" : "Publikationsinformationen",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "dependencies.html"
+          }],
+          "nameUrl" : "dependencies.html",
+          "title" : "Dependencies",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "copyright.html"
+          }],
+          "nameUrl" : "copyright.html",
+          "title" : "Copyright",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "imprint.html"
+          }],
+          "nameUrl" : "imprint.html",
+          "title" : "Impressum",
           "generation" : "markdown"
         }]
       }]

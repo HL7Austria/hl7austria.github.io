@@ -18,7 +18,7 @@ In diesem IG werden daher alle Requests ab dem `/[type]` dargestellt.
 | **GET** | `/List/[id]/_history` | `history-instance` | Die gesamte Historie des Medikationsplan abrufen | GDA, PAT |  |
 | **GET** | `/List/[id]/_history/[vid]` | `vread` | Historische Medikationsplanversion(en) lesenStandardabfrage mit _include | GDA, PAT |  |
 | **POST** | `/MedicationRequest` | `$prescription-write` | Geplante Abgabe schreiben | GDA |  |
-| **POST** | `/MedicationRequest` | `$prescription-discard` | Eigene geplante Abgabe verwerfen | GDA |  |
+| **POST** | `/MedicationRequest` | `$prescription-discard` | Eigene Geplante Abgabe stornieren | GDA |  |
 | **POST** | `/MedicationRequest` | `$plan-entry-delete` | Planeintrag löschen | GDA |  |
 | **GET** | `/MedicationRequest?category=GeplAbgabe` | `search-type` | Geplante Abgaben suchen (`?category=GeplAbgabe`) | GDA, PAT | [Geplante Abgabe (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-geplanteAbgabe.md#search-parameters) |
 | **GET** | `/MedicationRequest?category=Planeintrag` | `search-type` | Planeinträge suchen (`?category=Planeintrag`) | GDA, PAT | [Planeintrag (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md#search-parameters) |
@@ -27,7 +27,7 @@ In diesem IG werden daher alle Requests ab dem `/[type]` dargestellt.
 | **GET** | `/MedicationRequest/[id]/_history/[vid]` | `vread` | eine historische Planeintragsversion lesenOptionale Abfrage mit _include | GDA, PAT |  |
 | **DELETE** | `/MedicationRequest` | `prescription-delete` | Geplante Abgabe löschen | PAT |  |
 | **POST** | `/MedicationDispense` | `$dispense-write` | Durchgeführte Abgabe schreiben | GDA |  |
-| **POST** | `/MedicationDispense` | `$dispense-discard` | Eigene durchgeführte Abgabe verwerfen | GDA |  |
+| **POST** | `/MedicationDispense` | `$dispense-discard` | Eigene durchgeführte Abgabe stornieren | GDA |  |
 | **POST** | `/MedicationDispense` | `$reference-plan` | Referenz auf Medikationsplan erstellen | GDA |  |
 | **GET** | `/MedicationDispense` | `search-type` | dispense-search: Durchgeführte Abgaben suchen | GDA, PAT | [MedicationDispense (Search-) parameters](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md#search-parameters) |
 | **DELETE** | `/MedicationDispense` | `dispense-delete` | Durchgeführte Abgabe löschen | PAT |  |

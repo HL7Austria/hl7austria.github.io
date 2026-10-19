@@ -1,6 +1,6 @@
-# AT ELGA e-Medikation Transaction Bundle geplante Abgaben - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Transaction Bundle Geplante Abgaben - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: AT ELGA e-Medikation Transaction Bundle geplante Abgaben 
+## Resource Profile: AT ELGA e-Medikation Transaction Bundle Geplante Abgaben 
 
 **Usages:**
 
@@ -27,9 +27,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx",
   "version" : "0.1.0",
   "name" : "AtElgaEmedBundleGeplanteAbgabenTx",
-  "title" : "AT ELGA e-Medikation Transaction Bundle geplante Abgaben",
+  "title" : "AT ELGA e-Medikation Transaction Bundle Geplante Abgaben",
   "status" : "draft",
-  "date" : "2026-10-19T16:11:48+00:00",
+  "date" : "2026-10-19T18:28:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

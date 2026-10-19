@@ -451,7 +451,7 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
   "name" : "AtElgaEmedDosageStandardAdministration",
   "title" : "AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-19T16:11:48+00:00",
+  "date" : "2026-10-19T18:28:35+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
