@@ -5,7 +5,7 @@
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core RelatedPerson Profile](StructureDefinition-at-core-related-person.md)
-* Examples for this Profile: [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample02-deceasedTime](Patient-HL7ATCorePatientExample02-deceasedTime.md), [Patient/HL7ATCorePatientExample03-deceasedBoolean](Patient-HL7ATCorePatientExample03-deceasedBoolean.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md)... Show 4 more, [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md) and [Patient/PatientFelixGruber](Patient-PatientFelixGruber.md)
+* Examples for this Profile: [Patient/HL7ATCorePatientCreateTestExample](Patient-HL7ATCorePatientCreateTestExample.md), [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample02-deceasedTime](Patient-HL7ATCorePatientExample02-deceasedTime.md), [Patient/HL7ATCorePatientExample03-deceasedBoolean](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)... Show 6 more, [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md), [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md), [Patient/HL7ATCorePatientUpdateTestExample](Patient-HL7ATCorePatientUpdateTestExample.md) and [Patient/PatientFelixGruber](Patient-PatientFelixGruber.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-patient.json)
 
@@ -39,7 +39,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-10-18T14:14:36+00:00",
+  "date" : "2026-10-19T12:51:52+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

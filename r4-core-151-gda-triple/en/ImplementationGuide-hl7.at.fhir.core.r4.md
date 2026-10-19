@@ -14,7 +14,7 @@
   "name" : "HL7AustriaImplementationGuide",
   "title" : "HL7® Austria FHIR® Core Implementation Guide",
   "status" : "active",
-  "date" : "2026-10-18T14:14:36+00:00",
+  "date" : "2026-10-19T12:51:52+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -587,6 +587,22 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientCreateTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/HL7ATCorePatientCreateTestExample"
+      },
+      "name" : "HL7ATCorePatientCreateTestExample",
+      "description" : "Example with all elements for the usage of the HL7 AT Core Patient Profile",
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "Patient-HL7ATCorePatientExample01.html"
       }],
       "reference" : {
@@ -690,6 +706,21 @@
       },
       "name" : "HL7ATCorePatientExample07-MunicipalityCode",
       "description" : "Example for the usage of the HL7 AT Core Patient Profile that includes a municipality code",
+      "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Patient-HL7ATCorePatientUpdateTestExample.html"
+      }],
+      "reference" : {
+        "reference" : "Patient/HL7ATCorePatientUpdateTestExample"
+      },
+      "name" : "HL7ATCorePatientUpdateTestExample",
       "exampleCanonical" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"
     },
     {
@@ -850,6 +881,38 @@
       },
       "name" : "HL7® AT Core RelatedPerson Profile",
       "description" : "HL7® Austria FHIR® Core Profile for a related person in Austria.\r\nThe HL7® AT Core RelatedPerson is based upon the core FHIR® RelatedPeson Resource and designed to meet the applicable demographic data elements in Austria. Note, this extension represents the common structure of a person information within Austrian information systems.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "TestScript"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "TestScript-testscript-patient-create-at-core.html"
+      }],
+      "reference" : {
+        "reference" : "TestScript/testscript-patient-create-at-core"
+      },
+      "name" : "HL7® AT Core TestScript - Patient Create",
+      "description" : "TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientCreateTestExample. Expected Result: the server accepts creation of a Patient resource that is conformant to the AT Core Patient profile. The server-assigned logical id is captured in the patientResourceId variable so it can be fed into the AT Core Patient Update test script.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "TestScript"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "TestScript-testscript-patient-update-at-core.html"
+      }],
+      "reference" : {
+        "reference" : "TestScript/testscript-patient-update-at-core"
+      },
+      "name" : "HL7® AT Core TestScript - Patient Update",
+      "description" : "TestScript updating an existing patient resource conformant to the AT Core Patient profile on a FHIR Server using the JSON format. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientUpdateTestExample with an updated PI value of “11-22-33-44”. Expected Result: the server accepts the update of a Patient resource that is conformant to the AT Core Patient profile. Precondition: the target resource already exists on the server; the setup phase establishes this itself by PUTting the fixture to the same id first, so the test can assert a strict 200 regardless of what ran before it. The patientResourceId variable MUST carry the same value as Patient.id inside the fixture body.",
       "exampleBoolean" : false
     },
     {
@@ -1171,6 +1234,15 @@
         }],
         "nameUrl" : "index.html",
         "title" : "Home",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "tests.html"
+        }],
+        "nameUrl" : "tests.html",
+        "title" : "Tests",
         "generation" : "markdown"
       }]
     },
