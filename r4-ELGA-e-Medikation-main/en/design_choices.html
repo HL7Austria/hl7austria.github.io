@@ -219,6 +219,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#übersicht-der-relevanten-ressourcen" id="markdown-toc-übersicht-der-relevanten-ressourcen">Übersicht der Relevanten Ressourcen</a></li>
   <li><a href="#fachliche-designentscheidungen" id="markdown-toc-fachliche-designentscheidungen">Fachliche Designentscheidungen</a></li>
+  <li><a href="#technische-designentscheidungen" id="markdown-toc-technische-designentscheidungen">Technische Designentscheidungen</a></li>
+  <li><a href="#informationen-über-gda-und-patienten" id="markdown-toc-informationen-über-gda-und-patienten">Informationen über GDA und Patienten</a></li>
 </ul>
 
 </div>
@@ -479,7 +481,7 @@ h4 + .tabs {
 
 <h4 id="medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan: AtElgaEmedListMedikationsplan (<em>List</em>)</h4>
 
-<p><a name="l437">​</a>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource abgebildet, welche keinen oder mehrere Planeinträge referenziert. Jeder Planeintrag ist im <em>List.entry.flag</em> durch einen Status gekennzeichnet (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+<p><a name="l445">​</a>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource abgebildet, welche keinen oder mehrere Planeinträge referenziert. Jeder Planeintrag ist im <em>List.entry.flag</em> durch einen Status gekennzeichnet (siehe <a href="workflowmanagement.html#status-der-list-entry-flag-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
 
 <p>Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.</p>
 
@@ -632,177 +634,189 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 
 - Wie bleibt der Medikationsplan verständlich, wenn das abgegebene Arzneimittel vom Wirkstoff oder Präparat im Planeintrag und von der geplanten Abgabe abweicht?
 - Soll <code class="language-plaintext highlighter-rouge">basedOn</code> versioniert werden, um die geprüfte Planeintrag-Version nachvollziehen zu können?
-</p>
-  <div>
 
-#### Automatische Statusänderungen der beim Plan-Read ausgelieferten Ressourcen
+</p>
+</div>
+
+<h4 id="automatische-statusänderungen-der-beim-plan-read-ausgelieferten-ressourcen">Automatische Statusänderungen der beim Plan-Read ausgelieferten Ressourcen</h4>
   <!-- Welche Felde können/sollen von der Fachanwendung vorbefüllt werden (Datumfelder, GDA, Patient, status bei list.entry.flag removed + default-Begründung: abgelaufen usw.) -->
 
-*Plan-Read* liefert den Medikationsplan in einem für die Bearbeitung aufbereiteten Zustand. Die Fachanwendung erzeugt dazu aus der aktuellen *List*-Version ein **temporäres** Bundle. Die persistierten Ressourcen bleiben unverändert:
+<p><em>Plan-Read</em> liefert den Medikationsplan in einem für die Bearbeitung aufbereiteten Zustand. Die Fachanwendung erzeugt dazu aus der aktuellen <em>List</em>-Version ein <strong>temporäres</strong> Bundle. Die persistierten Ressourcen bleiben unverändert:</p>
 
-- *List.entry.flag* *new* und *changed* werden als *unchanged* ausgeliefert.
-- Einträge mit *removed* werden nicht ausgeliefert. Bleibt kein Eintrag übrig, wird *List.emptyReason = nilknown* gesetzt.
-- Abgelaufene Planeinträge werden mit *removed* und *stopped* ausgeliefert (siehe UC_eMed_02_09).
+<ul>
+  <li><em>List.entry.flag</em> <em>new</em> und <em>changed</em> werden als <em>unchanged</em> ausgeliefert.</li>
+  <li>Einträge mit <em>removed</em> werden nicht ausgeliefert. Bleibt kein Eintrag übrig, wird <em>List.emptyReason = nilknown</em> gesetzt.</li>
+  <li>Abgelaufene Planeinträge werden mit <em>removed</em> und <em>stopped</em> ausgeliefert (siehe UC_eMed_02_09).</li>
+</ul>
 
-*Plan-History-Search* liefert dagegen alle Inhalte, Status und Flags unverändert.
+<p><em>Plan-History-Search</em> liefert dagegen alle Inhalte, Status und Flags unverändert.</p>
 
 <div class="dragon">
-      <p class="note-to-balloters">
+  <p class="note-to-balloters">
 
 * <strong>Zu klären:</strong> Soll der GDA den aufbereiteten Zustand erhalten (Variante A, aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand (Variante B)?**
 </p>
-      <div>
+</div>
 
   <!-- - Das Beispiel Journey-01-02 zeigt *unchanged* mit *stopped*, UC_eMed_01 verlangt *removed* mit *stopped*. -->
 
-#### Gruppierung von Medikamenten
+<h4 id="gruppierung-von-medikamenten">Gruppierung von Medikamenten</h4>
   <!-- - derzeit eigene MRs
 - kein Freitext auf List Ebene daher text der zu gruppen von medikamenten gehört muss in alle kopiert werden
 - -->
 
-TODO
+<p>TODO</p>
 
-### Technische Designentscheidungen
+<h3 id="technische-designentscheidungen">Technische Designentscheidungen</h3>
 
-#### Kennzeichnung der relevanten Elemente
-Die in der e-Medikation relevanten Elemente werden nach einem Whitelisting-Ansatz festgelegt. Hierzu werden Elemente, die fachlich verarbeitet, gespeichert und in weiterer Folge für die Anzeige bereitgestellt werden sollen, in den Profilen explizit mit dem Must Support Flag MS gekennzeichnet.
+<h4 id="kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</h4>
+<p>Die in der e-Medikation relevanten Elemente werden nach einem Whitelisting-Ansatz festgelegt. Hierzu werden Elemente, die fachlich verarbeitet, gespeichert und in weiterer Folge für die Anzeige bereitgestellt werden sollen, in den Profilen explizit mit dem Must Support Flag MS gekennzeichnet.</p>
 
-Bei der Profilierung gelten folgende Regeln:
-- Elemente, die von der zentralen Fachanwendung fachlich verarbeitet werden sollen, MÜSSEN mit Must Support gekennzeichnet werden.
-- Elemente, deren Verwendung aufgrund einer fachlichen Entscheidung ausgeschlossen wird, MÜSSEN auf die Kardinalität 0..0 eingeschränkt werden. Der Ausschluss MUSS fachlich begründet und dokumentiert werden.
-- Liegt keine fachliche Entscheidung zur Verwendung eines Elements vor, bleibt dessen Definition unverändert. Insbesondere wird ein Element nicht allein deshalb auf 0..0 eingeschränkt, weil es derzeit nicht verwendet wird. Ohne Must-Support-Kennzeichnung wird es jedoch nicht in die fachliche Verarbeitung aufgenommen.
-- Für Modifier-Elemente MUSS eine explizite Entscheidung über deren Zulässigkeit und Verarbeitung getroffen und dokumentiert werden. Sie DÜRFEN NICHT ohne fachliche Bewertung der allgemeinen Regel für nicht unterstützte Elemente unterliegen.
+<p>Bei der Profilierung gelten folgende Regeln:</p>
+<ul>
+  <li>Elemente, die von der zentralen Fachanwendung fachlich verarbeitet werden sollen, MÜSSEN mit Must Support gekennzeichnet werden.</li>
+  <li>Elemente, deren Verwendung aufgrund einer fachlichen Entscheidung ausgeschlossen wird, MÜSSEN auf die Kardinalität 0..0 eingeschränkt werden. Der Ausschluss MUSS fachlich begründet und dokumentiert werden.</li>
+  <li>Liegt keine fachliche Entscheidung zur Verwendung eines Elements vor, bleibt dessen Definition unverändert. Insbesondere wird ein Element nicht allein deshalb auf 0..0 eingeschränkt, weil es derzeit nicht verwendet wird. Ohne Must-Support-Kennzeichnung wird es jedoch nicht in die fachliche Verarbeitung aufgenommen.</li>
+  <li>Für Modifier-Elemente MUSS eine explizite Entscheidung über deren Zulässigkeit und Verarbeitung getroffen und dokumentiert werden. Sie DÜRFEN NICHT ohne fachliche Bewertung der allgemeinen Regel für nicht unterstützte Elemente unterliegen.</li>
+</ul>
 
-Damit wird zwischen dem expliziten Ausschluss eines Elements und seiner fehlenden Unterstützung unterschieden: Ein auf 0..0 eingeschränktes Element DARF NICHT übermittelt werden. Ein anderweitig zulässiges Element ohne Must-Support-Kennzeichnung kann übermittelt werden, wird jedoch gemäß den nachfolgend beschriebenen Regeln ignoriert.
+<p>Damit wird zwischen dem expliziten Ausschluss eines Elements und seiner fehlenden Unterstützung unterschieden: Ein auf 0..0 eingeschränktes Element DARF NICHT übermittelt werden. Ein anderweitig zulässiges Element ohne Must-Support-Kennzeichnung kann übermittelt werden, wird jedoch gemäß den nachfolgend beschriebenen Regeln ignoriert.</p>
 
+<h5 id="kardinalitäten">Kardinalitäten</h5>
+<p>Die in den anzuwendenden Profilen festgelegten Kardinalitäten MÜSSEN eingehalten werden. Fehlt ein verpflichtendes Element oder wird die zulässige maximale Anzahl von Wiederholungen überschritten, MUSS die Operation abgelehnt werden. Dies gilt insbesondere für die Übermittlung von Elementen, deren Kardinalität auf 0..0 eingeschränkt wurde. Die Ablehnung MUSS durch ein entsprechendes OperationOutcome begründet werden.</p>
 
-##### Kardinalitäten
-Die in den anzuwendenden Profilen festgelegten Kardinalitäten MÜSSEN eingehalten werden. Fehlt ein verpflichtendes Element oder wird die zulässige maximale Anzahl von Wiederholungen überschritten, MUSS die Operation abgelehnt werden. Dies gilt insbesondere für die Übermittlung von Elementen, deren Kardinalität auf 0..0 eingeschränkt wurde. Die Ablehnung MUSS durch ein entsprechendes OperationOutcome begründet werden.
+<h5 id="must-support-profilierung">Must Support Profilierung</h5>
+<p>Die Must-Support-Kennzeichnung legt in diesem Implementierungsleitfaden fest, welche Elemente die zentrale Fachanwendung fachlich unterstützt. Übermittelte Werte dieser Elemente MÜSSEN entsprechend den jeweiligen fachlichen Regeln verarbeitet, gespeichert und für eine nachgelagerte Anzeige bereitgestellt werden.</p>
 
-##### Must Support Profilierung 
-Die Must-Support-Kennzeichnung legt in diesem Implementierungsleitfaden fest, welche Elemente die zentrale Fachanwendung fachlich unterstützt. Übermittelte Werte dieser Elemente MÜSSEN entsprechend den jeweiligen fachlichen Regeln verarbeitet, gespeichert und für eine nachgelagerte Anzeige bereitgestellt werden.
+<p>Die Kennzeichnung begründet für sich allein keine Pflicht, ein Element in jeder Instanz zu übermitteln. Ob ein Element vorhanden sein muss, ergibt sich aus seiner Mindestkardinalität sowie aus gegebenenfalls zusätzlich festgelegten Bedingungen und Invarianten.</p>
 
-Die Kennzeichnung begründet für sich allein keine Pflicht, ein Element in jeder Instanz zu übermitteln. Ob ein Element vorhanden sein muss, ergibt sich aus seiner Mindestkardinalität sowie aus gegebenenfalls zusätzlich festgelegten Bedingungen und Invarianten.
-
-Bei der Kennzeichnung komplexer Elemente wird eindeutig festgelegt, welche ihrer Unterelemente unterstützt werden. Aus der Must-Support-Kennzeichnung eines übergeordneten Elements wird keine pauschale Unterstützung sämtlicher Unterelemente abgeleitet.
-
+<p>Bei der Kennzeichnung komplexer Elemente wird eindeutig festgelegt, welche ihrer Unterelemente unterstützt werden. Aus der Must-Support-Kennzeichnung eines übergeordneten Elements wird keine pauschale Unterstützung sämtlicher Unterelemente abgeleitet.</p>
 
 <div class="dragon">
-          <p class="note-to-balloters">
+  <p class="note-to-balloters">
 Ergänzend könnten Obligations eingesetzt werden, um die mit der Kennzeichnung verbundenen Pflichten für die beteiligten Akteure präziser festzulegen.
 International werden Obligations von vielen Ländern für unterschiedliche use cases eingesetzt. Sollen Obligations eingesetzt werden, um die MS Markierungen noch aussagekräftiger zu machen? Feedback aus der Community ist erwünscht.
 </p>
-        </div>
+</div>
 
+<h5 id="serverhalten-bei-elementen-ohne-ms-markierung">Serverhalten bei Elementen ohne MS Markierung</h5>
+<p>Werden Elemente ohne Must-Support-Kennzeichnung übermittelt, MUSS die zentrale Fachanwendung diese Elemente ignorieren. Sie werden nicht fachlich verarbeitet, gespeichert oder für die Anzeige im Portal bereitgestellt.</p>
 
-##### Serverhalten bei Elementen ohne MS Markierung
-Werden Elemente ohne Must-Support-Kennzeichnung übermittelt, MUSS die zentrale Fachanwendung diese Elemente ignorieren. Sie werden nicht fachlich verarbeitet, gespeichert oder für die Anzeige im Portal bereitgestellt.
+<p>Die Response MUSS ein OperationOutcome enthalten, das mit <code class="language-plaintext highlighter-rouge">OperationOutcome.issue.severity = information</code> auf die ignorierten Elemente hinweist. Die Meldung MUSS die betroffenen Elemente eindeutig benennen und deutlich machen, dass deren Inhalte weder verarbeitet noch gespeichert wurden. Die Übermittlung solcher Elemente allein führt nicht zur Ablehnung der Operation.</p>
 
-Die Response MUSS ein OperationOutcome enthalten, das mit `OperationOutcome.issue.severity = information` auf die ignorierten Elemente hinweist. Die Meldung MUSS die betroffenen Elemente eindeutig benennen und deutlich machen, dass deren Inhalte weder verarbeitet noch gespeichert wurden. Die Übermittlung solcher Elemente allein führt nicht zur Ablehnung der Operation.
+<p>Diese Regel DARF NICHT verwendet werden, um Profilverletzungen zu tolerieren. Insbesondere MÜSSEN übermittelte Elemente mit der Kardinalität 0..0 zur Ablehnung führen. Für Modifier-Elemente gelten die jeweils explizit festgelegten Entscheidungen.</p>
 
-Diese Regel DARF NICHT verwendet werden, um Profilverletzungen zu tolerieren. Insbesondere MÜSSEN übermittelte Elemente mit der Kardinalität 0..0 zur Ablehnung führen. Für Modifier-Elemente gelten die jeweils explizit festgelegten Entscheidungen.
+<h4 id="profile-für-die-abbildung-von-operation-in--output">Profile für die Abbildung von Operation In &amp; Output</h4>
 
-#### Profile für die Abbildung von Operation In &amp; Output
+<p>Die Ressourcen und Bundles unterscheiden sich abhängig davon, ob sie als Eingabe einer schreibenden Operation, als Ergebnis eines Schreibvorgangs oder als Ausgabe einer lesenden Operation verwendet werden. Diese Unterschiede entstehen durch serverseitige Ergänzungen, die Auflösung von Referenzen sowie durch operationsspezifische Transformationen bei der Auslieferung.</p>
 
-Die Ressourcen und Bundles unterscheiden sich abhängig davon, ob sie als Eingabe einer schreibenden Operation, als Ergebnis eines Schreibvorgangs oder als Ausgabe einer lesenden Operation verwendet werden. Diese Unterschiede entstehen durch serverseitige Ergänzungen, die Auflösung von Referenzen sowie durch operationsspezifische Transformationen bei der Auslieferung.
+<p>Es ist daher zu entscheiden, ob für diese unterschiedlichen Verwendungszwecke eigene Ressourcen- und Bundle-Profile definiert werden sollen oder ob gemeinsame Profile in Verbindung mit ergänzenden Regeln in den jeweiligen OperationDefinitions ausreichen.</p>
 
-Es ist daher zu entscheiden, ob für diese unterschiedlichen Verwendungszwecke eigene Ressourcen- und Bundle-Profile definiert werden sollen oder ob gemeinsame Profile in Verbindung mit ergänzenden Regeln in den jeweiligen OperationDefinitions ausreichen.
+<h5 id="unterschiede-zwischen-eingabe-persistiertem-zustand-und-ausgabe">Unterschiede zwischen Eingabe, persistiertem Zustand und Ausgabe</h5>
 
-##### Unterschiede zwischen Eingabe, persistiertem Zustand und Ausgabe
+<p>Bei schreibenden Operationen übermittelt der Client Ressourcen, die durch die zentrale Fachanwendung vor der Persistierung ergänzt und aufbereitet werden. Insbesondere werden serverseitig verwaltete Elemente wie meta.versionId, meta.lastUpdated und die gemäß IG zu erzeugende Narrative (Resource.text) durch die Fachanwendung gesetzt beziehungsweise erzeugt. Die erfolgreiche Schreibantwort enthält hingegen die Ressourcen in ihrem tatsächlich persistierten Zustand einschließlich der serverseitigen Ergänzungen.</p>
 
-Bei schreibenden Operationen übermittelt der Client Ressourcen, die durch die zentrale Fachanwendung vor der Persistierung ergänzt und aufbereitet werden. Insbesondere werden serverseitig verwaltete Elemente wie meta.versionId, meta.lastUpdated und die gemäß IG zu erzeugende Narrative (Resource.text) durch die Fachanwendung gesetzt beziehungsweise erzeugt. Die erfolgreiche Schreibantwort enthält hingegen die Ressourcen in ihrem tatsächlich persistierten Zustand einschließlich der serverseitigen Ergänzungen.
+<p>Für die Eingabe ist noch festzulegen, ob diese serverseitig verwalteten Elemente ausdrücklich ausgeschlossen werden sollen oder ob bereits vorhandene Werte übermittelt werden dürfen, vom Server jedoch ignoriert beziehungsweise ersetzt werden. Diese Unterscheidung ist insbesondere für Clients relevant, die zuvor gelesene Ressourcen als Grundlage eines nachfolgenden Schreibvorgangs verwenden.</p>
 
-Für die Eingabe ist noch festzulegen, ob diese serverseitig verwalteten Elemente ausdrücklich ausgeschlossen werden sollen oder ob bereits vorhandene Werte übermittelt werden dürfen, vom Server jedoch ignoriert beziehungsweise ersetzt werden. Diese Unterscheidung ist insbesondere für Clients relevant, die zuvor gelesene Ressourcen als Grundlage eines nachfolgenden Schreibvorgangs verwenden.
+<p>Auch die Darstellung von Referenzen unterscheidet sich zwischen Eingabe und Ausgabe:</p>
 
-Auch die Darstellung von Referenzen unterscheidet sich zwischen Eingabe und Ausgabe:
+<ul>
+  <li>Logische Referenzen über Reference.identifier, beispielsweise auf Patient oder Practitioner, werden beim Schreiben durch die Fachanwendung aufgelöst und durch Referenzen auf die tatsächlich zugeordneten Ressourcen ersetzt.</li>
+  <li>Die für Medication vorgesehenen Conditional References (PZN+Displayname) werden serverseitig aufgelöst. Die Medication wird anschließend als enthaltene Ressource (contained) abgebildet. Diese Darstellung wird dann beim Lesen ausgeliefert.</li>
+</ul>
 
-- Logische Referenzen über Reference.identifier, beispielsweise auf Patient oder Practitioner, werden beim Schreiben durch die Fachanwendung aufgelöst und durch Referenzen auf die tatsächlich zugeordneten Ressourcen ersetzt.
-- Die für Medication vorgesehenen Conditional References (PZN+Displayname) werden serverseitig aufgelöst. Die Medication wird anschließend als enthaltene Ressource (contained) abgebildet. Diese Darstellung wird dann beim Lesen ausgeliefert.
+<p>Die für die Eingabe zulässige Darstellung ist damit nicht in allen Fällen mit der persistierten und zurückgegebenen Darstellung identisch.</p>
 
-Die für die Eingabe zulässige Darstellung ist damit nicht in allen Fällen mit der persistierten und zurückgegebenen Darstellung identisch.
+<h6 id="sonderfall-plan-read">Sonderfall $plan-read</h6>
 
-###### Sonderfall $plan-read
+<p>Die Operation $plan-read unterscheidet sich von der Rückgabe persistierter Ressourcen, da sie für die Auslieferung einen aufbereiteten Medikationsplan erzeugt. Dabei werden unter anderem Flags angepasst und zum Entfernen markierte Planeinträge aus der ausgelieferten Darstellung entfernt. Diese Transformationen verändern die persistierten Ressourcen nicht.</p>
 
-Die Operation $plan-read unterscheidet sich von der Rückgabe persistierter Ressourcen, da sie für die Auslieferung einen aufbereiteten Medikationsplan erzeugt. Dabei werden unter anderem Flags angepasst und zum Entfernen markierte Planeinträge aus der ausgelieferten Darstellung entfernt. Diese Transformationen verändern die persistierten Ressourcen nicht. 
+<p>Für die Profilierung sind somit drei unterschiedliche Darstellungen zu berücksichtigen:</p>
 
-Für die Profilierung sind somit drei unterschiedliche Darstellungen zu berücksichtigen:
+<ul>
+  <li>die vom Client übermittelte Eingabe eines Schreibvorgangs;</li>
+  <li>die persistierten Ressourcen und deren Rückgabe nach einem erfolgreichen Schreibvorgang;</li>
+  <li>die für $plan-read transformierte Auslieferungsdarstellung.</li>
+</ul>
 
-- die vom Client übermittelte Eingabe eines Schreibvorgangs;
-- die persistierten Ressourcen und deren Rückgabe nach einem erfolgreichen Schreibvorgang;
-- die für $plan-read transformierte Auslieferungsdarstellung.
+<h5 id="mögliche-ansätze-zur-profilierung">Mögliche Ansätze zur Profilierung</h5>
 
+<p>Für die Abbildung dieser Unterschiede werden folgende Ansätze zur Diskussion gestellt:</p>
 
-##### Mögliche Ansätze zur Profilierung
+<ul>
+  <li>
+    <p><strong>Eigene Profile für Eingabe und Ausgabe</strong>:
+Unterschiede hinsichtlich serverseitig verwalteter Elemente, zulässiger Referenzdarstellungen und erforderlicher Inhalte werden durch getrennte Ressourcenprofile beschrieben. Eigene Bundle-Profile legen zusätzlich die Struktur und Zusammensetzung der jeweiligen Eingabe und Ausgabe fest.</p>
+  </li>
+  <li>
+    <p><strong>Gemeinsame Profile mit operationsspezifischen Regeln</strong>:
+Gemeinsame Ressourcenprofile beschreiben die fachlichen Inhalte. Abweichende Anforderungen für Eingabe und Ausgabe werden in den jeweiligen OperationDefinitions und der zugehörigen Business-Logik festgelegt. Hierzu gehören insbesondere das Verhalten bei übermittelten serverseitigen Metadaten sowie die Auflösung und Umwandlung von Referenzen.</p>
+  </li>
+</ul>
 
-Für die Abbildung dieser Unterschiede werden folgende Ansätze zur Diskussion gestellt:
+<h5 id="ausgabeprofile-für-weitere-lesende-interaktionen">Ausgabeprofile für weitere lesende Interaktionen</h5>
 
-- **Eigene Profile für Eingabe und Ausgabe**:
-Unterschiede hinsichtlich serverseitig verwalteter Elemente, zulässiger Referenzdarstellungen und erforderlicher Inhalte werden durch getrennte Ressourcenprofile beschrieben. Eigene Bundle-Profile legen zusätzlich die Struktur und Zusammensetzung der jeweiligen Eingabe und Ausgabe fest.
+<p>Zusätzlich ist zu entscheiden, ob für lesende Interaktionen, beispielsweise GET von geplanten Abgaben oder $history-search, eigene Ausgabe-Bundle-Profile definiert werden sollen.</p>
 
-- **Gemeinsame Profile mit operationsspezifischen Regeln**:
-Gemeinsame Ressourcenprofile beschreiben die fachlichen Inhalte. Abweichende Anforderungen für Eingabe und Ausgabe werden in den jeweiligen OperationDefinitions und der zugehörigen Business-Logik festgelegt. Hierzu gehören insbesondere das Verhalten bei übermittelten serverseitigen Metadaten sowie die Auflösung und Umwandlung von Referenzen.
-
-##### Ausgabeprofile für weitere lesende Interaktionen
-
-Zusätzlich ist zu entscheiden, ob für lesende Interaktionen, beispielsweise GET von geplanten Abgaben oder $history-search, eigene Ausgabe-Bundle-Profile definiert werden sollen.
-
-Zur Diskussion steht, ob die Festlegung auf ein Bundle vom Typ searchset zusammen mit der Beschreibung der Operation ausreicht oder ob die erwartete Antwortstruktur weiter eingeschränkt werden soll. Ein eigenes Ausgabeprofil würde die strukturellen Erwartungen an die Antwort explizit beschreiben. Operationsspezifische Regeln wären weiterhin erforderlich, um die Auswahl der zurückgegebenen Ressourcen und gegebenenfalls durchzuführende Transformationen festzulegen.
+<p>Zur Diskussion steht, ob die Festlegung auf ein Bundle vom Typ searchset zusammen mit der Beschreibung der Operation ausreicht oder ob die erwartete Antwortstruktur weiter eingeschränkt werden soll. Ein eigenes Ausgabeprofil würde die strukturellen Erwartungen an die Antwort explizit beschreiben. Operationsspezifische Regeln wären weiterhin erforderlich, um die Auswahl der zurückgegebenen Ressourcen und gegebenenfalls durchzuführende Transformationen festzulegen.</p>
 
 <div class="dragon">
-          <p class="note-to-balloters">
+  <div class="note-to-balloters">
 <ul>
 <li>Sind getrennte Ressourcenprofile für die Eingabe schreibender Operationen und die Rückgabe persistierter Ressourcen erforderlich, oder reichen gemeinsame Profile mit operationsspezifischen Regeln aus?</li>
 <li>Sollen serverseitig verwaltete Elemente wie <code>meta.versionId</code>, <code>meta.lastUpdated</code> und <code>Resource.text</code> in Schreibanfragen ausgeschlossen werden, oder sollen vorhandene Werte akzeptiert und serverseitig ignoriert beziehungsweise ersetzt werden?</li>
 <li>Benötigt die transformierte Ausgabe von <code>$plan-read</code> eigene Ressourcenprofile, oder reichen ein spezifisches Bundle-Profil und die dokumentierte Transformationslogik aus?</li>
 <li>Sollen für weitere lesende Interaktionen wie z.B. <code>$history-search</code> und  <code>GET [base]/MedicationDispense</code> eigene Ausgabe-Bundle-Profile definiert werden, die über die Festlegung von <code>Bundle.type = searchset</code> hinausgehen?</li>
 </ul>
-</p>
-        </div>
+</div>
+</div>
 
-#### Versionierung
-TODO
-##### Versionierte Referenzen
-TODO
-  <!-- wann und warum versionierte Referenzen verwendet werden
-und wann nicht
+<h4 id="versionierung">Versionierung</h4>
+<p>TODO</p>
+<h5 id="versionierte-referenzen">Versionierte Referenzen</h5>
+<p>TODO
+&lt;!– wann und warum versionierte Referenzen verwendet werden
+und wann nicht</p>
 
-o	Referenzmanagement (Patient + Prakt. ohne Version), Geplante + Durchgef. Abg. ohne versionierte Referenzen
+<p>o	Referenzmanagement (Patient + Prakt. ohne Version), Geplante + Durchgef. Abg. ohne versionierte Referenzen</p>
 
-wie erkennt client aktuelle liste? (passt nirgends richtig dazu)
+<p>wie erkennt client aktuelle liste? (passt nirgends richtig dazu)
 version nicht aufsteigend, mit etag (soll nicht version verraten), datum: timestamp dann relevant
-man könnte liste retired setzen, snapshot ua? -->
+man könnte liste retired setzen, snapshot ua? –&gt;</p>
 
-#### ID-Management
-TODO
-  <!-- o	id-Management (optional bei POST, verpflichtend bei PUT, bei Auslieferung von der Fachanwendung immer befüllt) -->
+<h4 id="id-management">ID-Management</h4>
+<p>TODO
+  <!-- o	id-Management (optional bei POST, verpflichtend bei PUT, bei Auslieferung von der Fachanwendung immer befüllt) --></p>
 
-#### Optimistisches Locking mit ETags
-TODO
-Der ETag identifiziert die persistierte List-Version. Die Fachanwendung nutzt ihn beim Plan-Write, um zu erkennen, ob zwischen Plan-Read und Plan-Write jemand anderes den Plan geändert hat (Optimistic Locking). Ist die Version gleich geblieben, gilt das Write als konfliktfrei.
+<h4 id="optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</h4>
+<p>TODO
+Der ETag identifiziert die persistierte List-Version. Die Fachanwendung nutzt ihn beim Plan-Write, um zu erkennen, ob zwischen Plan-Read und Plan-Write jemand anderes den Plan geändert hat (Optimistic Locking). Ist die Version gleich geblieben, gilt das Write als konfliktfrei.</p>
 
   <!-- o	meta.versionid kann als etag verwendet werden; implementierungsabh.
 o	Read-to-Write-Konzept: ETag zur Integritätsprüfung (Optimistic Locking) erwähnen
 etag für list ausreichend? auch für planeinträge?
 auch für nicht (wirklich) versionierte ressourcen wie geplante und durchgeführte? -->
 
-### Informationen über GDA und Patienten
+<h3 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h3>
 
-Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Medikation-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen `Patient`-, `Practitioner`-, `PractitionerRole`- oder `Organization`-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (`Reference.identifier`) anzugeben:
+<p>Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Medikation-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen <code class="language-plaintext highlighter-rouge">Patient</code>-, <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) anzugeben:</p>
 
-- **GDA:** OID des GDA laut GDA-Index (GDA-I)
-- **Patient:** bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)
+<ul>
+  <li><strong>GDA:</strong> OID des GDA laut GDA-Index (GDA-I)</li>
+  <li><strong>Patient:</strong> bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)</li>
+</ul>
 
-Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ergänzt die logischen Referenzen um Referenzen auf diese Ressourcen (`Reference.reference`). Die übermittelten logischen Referenzen (`Reference.identifier`) dürfen dabei nicht ersetzt werden, sondern bleiben unverändert erhalten. Beim Abruf von Daten enthalten die Ressourcen daher sowohl die logischen als auch die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung nur mittels `_include` abgerufen werden (siehe [Verwendung von _include](#verwendung-von-_include)).
+<p><a name="l1145">​</a>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ergänzt die logischen Referenzen um Referenzen auf diese Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>). Die übermittelten logischen Referenzen (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) dürfen dabei nicht ersetzt werden, sondern bleiben unverändert erhalten. Beim Abruf von Daten enthalten die Ressourcen daher sowohl die logischen als auch die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung nur mittels <code class="language-plaintext highlighter-rouge">_include</code> abgerufen werden (siehe <a href="#verwendung-von-_include">Verwendung von _include</a>).</p>
 
-Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. `recorder`, `asserter` oder `List.source`), ergibt sich aus dem jewiligen `Reference.identifer.system`, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Medikation-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (`List.entry.item`) sind hingegen immer Referenzen auf bereits in der e-Medikation-Fachanwendung gespeicherte Ressourcen (`Reference.reference`).
+<p>Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. <code class="language-plaintext highlighter-rouge">recorder</code>, <code class="language-plaintext highlighter-rouge">asserter</code> oder <code class="language-plaintext highlighter-rouge">List.source</code>), ergibt sich aus dem jewiligen <code class="language-plaintext highlighter-rouge">Reference.identifer.system</code>, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Medikation-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (<code class="language-plaintext highlighter-rouge">List.entry.item</code>) sind hingegen immer Referenzen auf bereits in der e-Medikation-Fachanwendung gespeicherte Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>).</p>
 
 <div class="dragon">
-          <p>Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Medikation-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Medikation-Fachanwendung einfließen.</p>
-        </div>
+  <p>Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Medikation-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Medikation-Fachanwendung einfließen.</p>
+</div>
 
-<br/>
+<p><br/></p>
 
-Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einmal als gespeicherte Ressource:
+<p>Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einmal als gespeicherte Ressource:</p>
 
 <table class="grid">
   <tr>
@@ -812,8 +826,8 @@ Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einma
   </tr>
   <tr>
     <td><strong>Beispieldateien</strong></td>
-    <td><a name="l903">​</a><a href="At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a></td>
-    <td><a name="l907">​</a><a href="At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a></td>
+    <td><a name="l1221">​</a><a href="At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a></td>
+    <td><a name="l1225">​</a><a href="At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a></td>
   </tr>
   <tr>
     <td><strong>Beispielfragmente</strong></td>
@@ -858,166 +872,186 @@ Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einma
   </tr>
 </table>
 
-#### Befüllung der Narrativen Teile
+<h4 id="befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</h4>
 
-Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Resource.text) zentral durch die Fachanwendung erzeugt. Ziel ist eine einheitliche und nachvollziehbare Darstellung der wesentlichen Ressourceninhalte. Die Narrative muss dem jeweils gespeicherten beziehungsweise ausgelieferten Zustand entsprechen und nach serverseitigen Änderungen oder Transformationen entsprechend angepasst werden.
+<p>Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Resource.text) zentral durch die Fachanwendung erzeugt. Ziel ist eine einheitliche und nachvollziehbare Darstellung der wesentlichen Ressourceninhalte. Die Narrative muss dem jeweils gespeicherten beziehungsweise ausgelieferten Zustand entsprechen und nach serverseitigen Änderungen oder Transformationen entsprechend angepasst werden.</p>
 
-Die Generierung berücksichtigt sowohl strukturierte Angaben als auch relevante Freitextinformationen. Die Narrative ergänzt die strukturierten Daten, ersetzt diese jedoch nicht. Davon zu unterscheiden sind fachlich erfasste Freitexte, beispielsweise ergänzende Hinweise oder eine nicht strukturiert abbildbare Dosierungsanweisung; diese bleiben eigenständige Inhalte und werden bei der Generierung berücksichtigt. Die unterschiedlichen Textfelder und ihr jeweiliger Geltungsbereich sind im Abschnitt [Textdarstellungen und ergänzende Hinweise im Kapitel der Dosierungen](dosages.html#textdarstellungen-und-ergänzende-hinweise) beschrieben.
+<p>Die Generierung berücksichtigt sowohl strukturierte Angaben als auch relevante Freitextinformationen. Die Narrative ergänzt die strukturierten Daten, ersetzt diese jedoch nicht. Davon zu unterscheiden sind fachlich erfasste Freitexte, beispielsweise ergänzende Hinweise oder eine nicht strukturiert abbildbare Dosierungsanweisung; diese bleiben eigenständige Inhalte und werden bei der Generierung berücksichtigt. Die unterschiedlichen Textfelder und ihr jeweiliger Geltungsbereich sind im Abschnitt <a href="dosages.html#textdarstellungen-und-ergänzende-hinweise">Textdarstellungen und ergänzende Hinweise im Kapitel der Dosierungen</a> beschrieben.</p>
 
 <div class="dragon">
-          <p class="note-to-balloters">
+  <p class="note-to-balloters">
 Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen der einzelnen Ressourcen und Dosierschemata wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.
- &lt;/ul&gt;
 </p>
-        </div>
-<br/>
+</div>
+<p><br/></p>
 
   <!-- * Regelwerk für text Generierung (durch Fachanw.)
     * text beim Schreiben leer, beim lesen 1..1 -->
 
-#### Löschen und Stornieren von versionierten Ressourcen
+<h4 id="löschen-und-stornieren-von-versionierten-ressourcen">Löschen und Stornieren von versionierten Ressourcen</h4>
 
 <div class="dragon">
-          <p class="note-to-balloters">
+  <p class="note-to-balloters">
 Dieser Abschnitt beschreibt die zur Diskussion stehenden Konzepte für das Löschen und Stornieren versionierter Ressourcen sowie deren Auswirkungen auf den Medikationsplan und seine Historie. Die beschriebenen Löschvarianten sind bislang nicht im IG umgesetzt. Insbesondere zur Behandlung historischer Ressourcenversionen, zur Referenzintegrität und zur technischen Umsetzbarkeit wird Feedback aus der Community erbeten.
 </p>
-        </div>
+</div>
 
-Das fachliche Stornieren durch einen GDA ist vom Löschen auf Veranlassung von ELGA-Teilnehmer:innen zu unterscheiden.
+<p>Das fachliche Stornieren durch einen GDA ist vom Löschen auf Veranlassung von ELGA-Teilnehmer:innen zu unterscheiden.</p>
 
-Beim Stornieren wird ein fachlicher Sachverhalt zurückgenommen beziehungsweise als nicht mehr gültig gekennzeichnet. Die betroffenen Ressourcen bleiben erhalten und es wird nur der status geändert sodass die ursprüngliche Dokumentation und die nachfolgende Stornierung nachvollziehbar bleiben. Die konkrete Abbildung erfolgt entsprechend den für die jeweilige Ressource festgelegten Status- und Workflowregeln.
+<p>Beim Stornieren wird ein fachlicher Sachverhalt zurückgenommen beziehungsweise als nicht mehr gültig gekennzeichnet. Die betroffenen Ressourcen bleiben erhalten und es wird nur der status geändert sodass die ursprüngliche Dokumentation und die nachfolgende Stornierung nachvollziehbar bleiben. Die konkrete Abbildung erfolgt entsprechend den für die jeweilige Ressource festgelegten Status- und Workflowregeln.</p>
 
-Das Löschen auf Veranlassung von ELGA-Teilnehmer:innen verfolgt hingegen das Ziel, die betroffenen Inhalte dauerhaft aus dem verfügbaren Datenbestand einschließlich der jeweils betroffenen Historie zu entfernen. Eine reine Statusänderung oder das Ausblenden aus dem aktuellen Medikationsplan reicht dafür nicht aus.
+<p>Das Löschen auf Veranlassung von ELGA-Teilnehmer:innen verfolgt hingegen das Ziel, die betroffenen Inhalte dauerhaft aus dem verfügbaren Datenbestand einschließlich der jeweils betroffenen Historie zu entfernen. Eine reine Statusänderung oder das Ausblenden aus dem aktuellen Medikationsplan reicht dafür nicht aus.</p>
 
-Der genaue Umfang dieser Löschung wird im Rahmen der Teilnehmerrechte festgelegt.
+<p>Der genaue Umfang dieser Löschung wird im Rahmen der Teilnehmerrechte festgelegt.
   <!-- horizontales und vertikales löschen in FHIR -->
-  <!-- fachlich und technische Beschreibung -->
+  <!-- fachlich und technische Beschreibung --></p>
 
   <!-- abgrenzung stornieren durch gda, bleibt nachvollziehbar, löschen durch teilnehmer rückstandslos? -->
 
-##### Löschen von Medikationsplan und Medikationsplaneinträgen
+<h5 id="löschen-von-medikationsplan-und-medikationsplaneinträgen">Löschen von Medikationsplan und Medikationsplaneinträgen</h5>
 
-Für das Löschen sind zwei unterschiedliche Konzepte zu unterscheiden: das **horizontale Löschen von Medikationsplaneinträgen** und das **vertikale Löschen von Medikationsplänen**.
+<p>Für das Löschen sind zwei unterschiedliche Konzepte zu unterscheiden: das <strong>horizontale Löschen von Medikationsplaneinträgen</strong> und das <strong>vertikale Löschen von Medikationsplänen</strong>.</p>
 
-- Horizontales Löschen: Ein bestimmter Medikationsplaneintrag wird über alle Medikationsplanversionen hinweg einschließlich seiner gesamten Versionshistorie gelöscht.
-- Vertikales Löschen: Eine bestimmte Medikationsplanversion wird gelöscht. Zusätzlich werden jene Versionen der darin referenzierten Planeinträge gelöscht, die von keiner verbleibenden Medikationsplanversion mehr benötigt werden.
+<ul>
+  <li>Horizontales Löschen: Ein bestimmter Medikationsplaneintrag wird über alle Medikationsplanversionen hinweg einschließlich seiner gesamten Versionshistorie gelöscht.</li>
+  <li>Vertikales Löschen: Eine bestimmte Medikationsplanversion wird gelöscht. Zusätzlich werden jene Versionen der darin referenzierten Planeinträge gelöscht, die von keiner verbleibenden Medikationsplanversion mehr benötigt werden.</li>
+</ul>
 
-Die Begriffe „horizontal“ und „vertikal“ beschreiben hier den fachlichen Löschumfang und keine eigenständigen FHIR-Interaktionen.
+<p>Die Begriffe „horizontal“ und „vertikal“ beschreiben hier den fachlichen Löschumfang und keine eigenständigen FHIR-Interaktionen.</p>
 
-Das horizontale Löschen ermöglicht es, einen bestimmten Medikationsplaneintrag einschließlich seines Verlaufs zu entfernen, ohne zugleich die Dokumentation anderer Medikationen zu verlieren. Stünde ausschließlich das vertikale Löschen zur Verfügung, müssten alle Medikationsplanversionen gelöscht werden, in denen der betreffende Eintrag enthalten ist. Abhängig davon, wie lange dieser Eintrag im Medikationsplan geführt wurde, könnte dies einen erheblichen Teil der Planhistorie betreffen. Dabei würden auch Informationen zu anderen Medikationen entfernt, auf die sich das Löschanliegen nicht bezieht. Das horizontale Löschen soll solche zusätzlichen Informationsverluste möglichst vermeiden.
+<p>Das horizontale Löschen ermöglicht es, einen bestimmten Medikationsplaneintrag einschließlich seines Verlaufs zu entfernen, ohne zugleich die Dokumentation anderer Medikationen zu verlieren. Stünde ausschließlich das vertikale Löschen zur Verfügung, müssten alle Medikationsplanversionen gelöscht werden, in denen der betreffende Eintrag enthalten ist. Abhängig davon, wie lange dieser Eintrag im Medikationsplan geführt wurde, könnte dies einen erheblichen Teil der Planhistorie betreffen. Dabei würden auch Informationen zu anderen Medikationen entfernt, auf die sich das Löschanliegen nicht bezieht. Das horizontale Löschen soll solche zusätzlichen Informationsverluste möglichst vermeiden.</p>
 
-Das vertikale Löschen setzt hingegen an einem bestimmten dokumentierten Planstand an und nicht am gesamten Verlauf einer einzelnen Medikation. Es ermöglicht, eine ausgewählte Medikationsplanversion zu entfernen, während andere Planversionen und die dafür weiterhin benötigten Planeintragsversionen erhalten bleiben. Beide Konzepte unterscheiden sich somit darin, worauf sich das Löschanliegen bezieht: auf einen einzelnen Eintrag über seinen Verlauf hinweg oder auf einen bestimmten Stand des gesamten Medikationsplans.
+<p>Das vertikale Löschen setzt hingegen an einem bestimmten dokumentierten Planstand an und nicht am gesamten Verlauf einer einzelnen Medikation. Es ermöglicht, eine ausgewählte Medikationsplanversion zu entfernen, während andere Planversionen und die dafür weiterhin benötigten Planeintragsversionen erhalten bleiben. Beide Konzepte unterscheiden sich somit darin, worauf sich das Löschanliegen bezieht: auf einen einzelnen Eintrag über seinen Verlauf hinweg oder auf einen bestimmten Stand des gesamten Medikationsplans.</p>
 
-[![diagram](Löschen_horizontal_vertikal.png){: style="width: 60%"}](Löschen_horizontal_vertikal.png)
+<p><a href="Löschen_horizontal_vertikal.png"><img src="Löschen_horizontal_vertikal.png" alt="diagram" style="width: 60%"/></a></p>
 
+<p><strong>Horizontales Löschen von Medikationsplaneinträgen</strong></p>
 
-**Horizontales Löschen von Medikationsplaneinträgen**
+<p>Beim horizontalen Löschen wird ein Medikationsplaneintrag (<code class="language-plaintext highlighter-rouge">MedicationRequest</code>) einschließlich aller Versionen unwiderruflich gelöscht. Der Eintrag ist damit weder in aktuellen noch in historischen Medikationsplanversionen oder über einen direkten Abruf seiner Ressourcenversionen verfügbar.</p>
 
-Beim horizontalen Löschen wird ein Medikationsplaneintrag (`MedicationRequest`) einschließlich aller Versionen unwiderruflich gelöscht. Der Eintrag ist damit weder in aktuellen noch in historischen Medikationsplanversionen oder über einen direkten Abruf seiner Ressourcenversionen verfügbar.
+<p>Der zur Diskussion stehende Ablauf umfasst:</p>
+<ol>
+  <li>Ermitteln aller Versionen der betroffenen MedicationRequest-Ressource.</li>
+  <li>Ermitteln aller aktuellen und historischen List-Versionen, die eine dieser Versionen referenzieren.</li>
+  <li>Entfernen der betroffenen List.entry-Elemente aus diesen Medikationsplanversionen.</li>
+  <li>Kennzeichnen der betroffenen Medikationsplanversionen mit List.extension:PatientModified = true.</li>
+  <li>Dauerhaftes Löschen sämtlicher Versionen der betroffenen MedicationRequest-Ressource.</li>
+</ol>
 
-Der zur Diskussion stehende Ablauf umfasst:
-1. Ermitteln aller Versionen der betroffenen MedicationRequest-Ressource.
-2. Ermitteln aller aktuellen und historischen List-Versionen, die eine dieser Versionen referenzieren.
-3. Entfernen der betroffenen List.entry-Elemente aus diesen Medikationsplanversionen.
-4. Kennzeichnen der betroffenen Medikationsplanversionen mit List.extension:PatientModified = true.
-5. Dauerhaftes Löschen sämtlicher Versionen der betroffenen MedicationRequest-Ressource.
+<p>Das <code class="language-plaintext highlighter-rouge">extension:PatientModified</code>-Flag kennzeichnet, dass die ursprüngliche Dokumentation des jeweiligen Medikationsplans aufgrund einer durch Teilnehmer:innen veranlassten Löschung nicht mehr vollständig verfügbar ist.</p>
 
-Das `extension:PatientModified`-Flag kennzeichnet, dass die ursprüngliche Dokumentation des jeweiligen Medikationsplans aufgrund einer durch Teilnehmer:innen veranlassten Löschung nicht mehr vollständig verfügbar ist. 
+<p>Die übrigen Planeinträge und deren Versionshistorie bleiben von der Löschung unberührt.</p>
 
-Die übrigen Planeinträge und deren Versionshistorie bleiben von der Löschung unberührt. 
+<p>Enthält eine betroffene Medikationsplanversion nach der Bereinigung keine Einträge mehr, ist zusätzlich festzulegen, wie dieser Zustand durch List.emptyReason abgebildet wird.</p>
 
-Enthält eine betroffene Medikationsplanversion nach der Bereinigung keine Einträge mehr, ist zusätzlich festzulegen, wie dieser Zustand durch List.emptyReason abgebildet wird.
+<p>Die Löschung muss auch bei der Erzeugung von Narrativen und Auslieferungs-Bundles berücksichtigt werden. Bereits entfernte Inhalte dürfen nicht über solche Darstellungen weiterhin verfügbar sein.</p>
 
-Die Löschung muss auch bei der Erzeugung von Narrativen und Auslieferungs-Bundles berücksichtigt werden. Bereits entfernte Inhalte dürfen nicht über solche Darstellungen weiterhin verfügbar sein.
+<p><strong>Technische Einordnung des horizontalen Löschens</strong></p>
 
-**Technische Einordnung des horizontalen Löschens**
+<p>Ein reguläres FHIR-delete ist nicht mit der vollständigen Entfernung aller Ressourcenversionen gleichzusetzen. Bei versionierenden Servern bleibt die bisherige Historie grundsätzlich erhalten; die Löschung wird als weiterer Zustand in der Historie dokumentiert. FHIR R4 erlaubt jedoch eine vollständige Entfernung einschließlich Historie, wenn entsprechende Richtlinien oder fachliche Regeln dies vorsehen.</p>
 
-Ein reguläres FHIR-delete ist nicht mit der vollständigen Entfernung aller Ressourcenversionen gleichzusetzen. Bei versionierenden Servern bleibt die bisherige Historie grundsätzlich erhalten; die Löschung wird als weiterer Zustand in der Historie dokumentiert. FHIR R4 erlaubt jedoch eine vollständige Entfernung einschließlich Historie, wenn entsprechende Richtlinien oder fachliche Regeln dies vorsehen.
-
-Im aktuellen FHIR-CI-Build sind zusätzlich folgende Interaktionen beschrieben:
-```
-DELETE [base]/MedicationRequest/[id]
+<p>Im aktuellen FHIR-CI-Build sind zusätzlich folgende Interaktionen beschrieben:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE [base]/MedicationRequest/[id]
 DELETE [base]/MedicationRequest/[id]/_history
-```
-Die erste Interaktion löscht die Ressource im Sinne des regulären [delete](https://build.fhir.org/http.html#delete). Die zweite Interaktion [delete-history](https://build.fhir.org/http.html#delete-history) entfernt die historischen Versionen, nicht jedoch den aktuellen Zustand. Die Kombination ist daher eine technische Orientierung für die Entfernung der Ressourceninhalte und ihrer Historie.
+</code></pre></div></div>
+<p>Die erste Interaktion löscht die Ressource im Sinne des regulären <a href="https://build.fhir.org/http.html#delete">delete</a>. Die zweite Interaktion <a href="https://build.fhir.org/http.html#delete-history">delete-history</a> entfernt die historischen Versionen, nicht jedoch den aktuellen Zustand. Die Kombination ist daher eine technische Orientierung für die Entfernung der Ressourceninhalte und ihrer Historie.</p>
 
-Diese zusätzlichen History-Löschinteraktionen sind nicht Bestandteil der REST-Interaktionen von FHIR R4. Daher würde eine custom Operation `[base]/MedicationRequest $delete` zum Einsatz kommen.
+<p>Diese zusätzlichen History-Löschinteraktionen sind nicht Bestandteil der REST-Interaktionen von FHIR R4. Daher würde eine custom Operation <code class="language-plaintext highlighter-rouge">[base]/MedicationRequest $delete</code> zum Einsatz kommen.</p>
 
-**Umgang mit betroffenen historischen Medikationsplanversionen**
+<p><strong>Umgang mit betroffenen historischen Medikationsplanversionen</strong></p>
 
-Das horizontale Löschen betrifft nicht nur die zu löschende MedicationRequest, sondern auch bereits gespeicherte historische List-Versionen: Sowohl das Entfernen von List.entry als auch das Setzen von PatientModified verändern deren bisherigen Inhalt.
+<p>Das horizontale Löschen betrifft nicht nur die zu löschende MedicationRequest, sondern auch bereits gespeicherte historische List-Versionen: Sowohl das Entfernen von List.entry als auch das Setzen von PatientModified verändern deren bisherigen Inhalt.</p>
 
-Hier besteht ein grundlegender Konflikt mit der Verwendung der FHIR-Historie als Abbildung unveränderlicher Ressourcenversionen. Ein reguläres FHIR-update erzeugt eine neue aktuelle Version; eine Aktualisierung einer bestimmten historischen Version ist nicht vorgesehen.
+<p>Hier besteht ein grundlegender Konflikt mit der Verwendung der FHIR-Historie als Abbildung unveränderlicher Ressourcenversionen. Ein reguläres FHIR-update erzeugt eine neue aktuelle Version; eine Aktualisierung einer bestimmten historischen Version ist nicht vorgesehen.</p>
 
-| Variante   | Beschreibung| Wesentliche Konsequenzen     |
-| ------------------ | ------------------- | --------------- |
-| A: Bereinigung unter Beibehaltung der meta.versionId | Die betroffene historische List-Version wird bereinigt und mit PatientModified = true gekennzeichnet. Ihre bisherige meta.versionId bleibt erhalten.        | Bestehende versionierte Referenzen bleiben verwendbar. Unter derselben Versionskennung wäre jedoch nach der Löschung ein anderer Inhalt verfügbar. Der Umgang mit meta.lastUpdated, ETags, Caches und bereits abgerufenen Darstellungen müsste ausdrücklich geregelt werden. |
-| B: Ersatz durch eine bereinigte Version mit neuer meta.versionId | Für den betroffenen historischen Planstand wird eine bereinigte Ersatzdarstellung mit neuer Versionskennung erzeugt. Die ursprüngliche Version wird dauerhaft gelöscht. | Die geänderte Darstellung erhält eine eigene Versionskennung. Allerdings müssen die Zuordnung zum ursprünglichen fachlichen Planstand, die zeitliche Einordnung und der Umgang mit Referenzen auf die entfernte Version geregelt werden. |
+<table>
+  <thead>
+    <tr>
+      <th>Variante</th>
+      <th>Beschreibung</th>
+      <th>Wesentliche Konsequenzen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A: Bereinigung unter Beibehaltung der meta.versionId</td>
+      <td>Die betroffene historische List-Version wird bereinigt und mit PatientModified = true gekennzeichnet. Ihre bisherige meta.versionId bleibt erhalten.</td>
+      <td>Bestehende versionierte Referenzen bleiben verwendbar. Unter derselben Versionskennung wäre jedoch nach der Löschung ein anderer Inhalt verfügbar. Der Umgang mit meta.lastUpdated, ETags, Caches und bereits abgerufenen Darstellungen müsste ausdrücklich geregelt werden.</td>
+    </tr>
+    <tr>
+      <td>B: Ersatz durch eine bereinigte Version mit neuer meta.versionId</td>
+      <td>Für den betroffenen historischen Planstand wird eine bereinigte Ersatzdarstellung mit neuer Versionskennung erzeugt. Die ursprüngliche Version wird dauerhaft gelöscht.</td>
+      <td>Die geänderte Darstellung erhält eine eigene Versionskennung. Allerdings müssen die Zuordnung zum ursprünglichen fachlichen Planstand, die zeitliche Einordnung und der Umgang mit Referenzen auf die entfernte Version geregelt werden.</td>
+    </tr>
+  </tbody>
+</table>
 
-Variante B ist nicht allein durch ein reguläres update umsetzbar: Dieses erzeugt eine neue aktuelle Version und ersetzt nicht gezielt eine Version innerhalb der bestehenden Historie. Auch diese Variante benötigt daher ein ausdrücklich beschriebenes Konzept für die Abbildung historischer Planstände.
+<p>Variante B ist nicht allein durch ein reguläres update umsetzbar: Dieses erzeugt eine neue aktuelle Version und ersetzt nicht gezielt eine Version innerhalb der bestehenden Historie. Auch diese Variante benötigt daher ein ausdrücklich beschriebenes Konzept für die Abbildung historischer Planstände.</p>
 
-Als weitere fachliche Alternative kann diskutiert werden, gelöschte Einträge durch einen Hinweis auf nicht mehr verfügbare Inhalte zu ersetzen (broken-link oder Referenz ersetzt durch data-absent-reason-extension), anstatt das jeweilige List.entry vollständig zu entfernen. Damit bliebe erkennbar, dass und gegebenenfalls wie viele Einträge gelöscht wurden. Ob diese Information erhalten bleiben darf und wie sie profiliert werden könnte, ist gesondert zu entscheiden. Das Problem der nachträglichen Veränderung historischer Planversionen würde dadurch nicht entfallen.
+<p>Als weitere fachliche Alternative kann diskutiert werden, gelöschte Einträge durch einen Hinweis auf nicht mehr verfügbare Inhalte zu ersetzen (broken-link oder Referenz ersetzt durch data-absent-reason-extension), anstatt das jeweilige List.entry vollständig zu entfernen. Damit bliebe erkennbar, dass und gegebenenfalls wie viele Einträge gelöscht wurden. Ob diese Information erhalten bleiben darf und wie sie profiliert werden könnte, ist gesondert zu entscheiden. Das Problem der nachträglichen Veränderung historischer Planversionen würde dadurch nicht entfallen.</p>
 
-**Vertikales Löschen von Medikationsplänen**
+<p><strong>Vertikales Löschen von Medikationsplänen</strong></p>
 
-Beim vertikalen Löschen werden einzelne Medikationsplanversionen (Versionen der `List`-Ressource) unwiderruflich gelöscht. Die darin referenzierten Planeinträge werden nicht pauschal einschließlich ihrer gesamten Historie gelöscht. Stattdessen wird für jede referenzierte MedicationRequest-Version geprüft, ob sie von einer verbleibenden Medikationsplanversion weiterhin referenziert wird.
+<p>Beim vertikalen Löschen werden einzelne Medikationsplanversionen (Versionen der <code class="language-plaintext highlighter-rouge">List</code>-Ressource) unwiderruflich gelöscht. Die darin referenzierten Planeinträge werden nicht pauschal einschließlich ihrer gesamten Historie gelöscht. Stattdessen wird für jede referenzierte MedicationRequest-Version geprüft, ob sie von einer verbleibenden Medikationsplanversion weiterhin referenziert wird.</p>
 
-Nur die nicht MedicationRequest-Versionen auf die keine Referenz mehr zeigt sollen zusätzlich gelöscht werden. Andere Versionen des MedicationRequests bleiben erhalten. Dadurch bleiben bestehende Referenzen auflösbar.
+<p>Nur die nicht MedicationRequest-Versionen auf die keine Referenz mehr zeigt sollen zusätzlich gelöscht werden. Andere Versionen des MedicationRequests bleiben erhalten. Dadurch bleiben bestehende Referenzen auflösbar.</p>
 
-**Löschen einer historischen Medikationsplanversion**
+<p><strong>Löschen einer historischen Medikationsplanversion</strong></p>
 
-Für das Löschen einer historischen Medikationsplanversion wird folgender Ablauf vorgeschlagen:
+<p>Für das Löschen einer historischen Medikationsplanversion wird folgender Ablauf vorgeschlagen:</p>
 
-1. Ermitteln der zu löschenden List-Version und der darin referenzierten MedicationRequest-Versionen.
-2. Ermitteln, welche dieser MedicationRequest-Versionen von keiner verbleibenden Medikationsplanversion mehr referenziert werden.
-3. Dauerhaftes Löschen der ausgewählten historischen List-Version.
-4. Dauerhaftes Löschen der gemäß Schritt 2 nicht mehr benötigten MedicationRequest-Versionen.
+<ol>
+  <li>Ermitteln der zu löschenden List-Version und der darin referenzierten MedicationRequest-Versionen.</li>
+  <li>Ermitteln, welche dieser MedicationRequest-Versionen von keiner verbleibenden Medikationsplanversion mehr referenziert werden.</li>
+  <li>Dauerhaftes Löschen der ausgewählten historischen List-Version.</li>
+  <li>Dauerhaftes Löschen der gemäß Schritt 2 nicht mehr benötigten MedicationRequest-Versionen.</li>
+</ol>
 
-Die verbleibenden Medikationsplanversionen und die weiterhin benötigten Planeintragsversionen bleiben unverändert. Die gelöschte Planversion ist anschließend nicht mehr Teil der Historie.
+<p>Die verbleibenden Medikationsplanversionen und die weiterhin benötigten Planeintragsversionen bleiben unverändert. Die gelöschte Planversion ist anschließend nicht mehr Teil der Historie.</p>
 
-Die Entfernung einer einzelnen historischen Ressourcenversion entspricht konzeptionell der im FHIR-CI-Build beschriebenen Interaktion (delete-history-version)[https://build.fhir.org/http.html#delete-history-version]:
+<p>Die Entfernung einer einzelnen historischen Ressourcenversion entspricht konzeptionell der im FHIR-CI-Build beschriebenen Interaktion <a href="https://build.fhir.org/http.html#delete-history-version">delete-history-version</a>:</p>
 
-```
-DELETE [base]/List/[id]/_history/[vid]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE [base]/List/[id]/_history/[vid]
 DELETE [base]/MedicationRequest/[id]/_history/[vid]
-```
-Diese Interaktion schließt die jeweils aktuelle Ressourcenversion ausdrücklich aus. Sollte eine zu entfernende MedicationRequest-Version zugleich deren aktuelle Version sein, ist daher ein gesondertes Vorgehen erforderlich. Daher würde auch hier eine custom Operation `[base]/MedicationRequest $delete-history` bzw. `[base]/List $delete-history` zum Einsatz kommen.
+</code></pre></div></div>
+<p>Diese Interaktion schließt die jeweils aktuelle Ressourcenversion ausdrücklich aus. Sollte eine zu entfernende MedicationRequest-Version zugleich deren aktuelle Version sein, ist daher ein gesondertes Vorgehen erforderlich. Daher würde auch hier eine custom Operation <code class="language-plaintext highlighter-rouge">[base]/MedicationRequest $delete-history</code> bzw. <code class="language-plaintext highlighter-rouge">[base]/List $delete-history</code> zum Einsatz kommen.</p>
 
+<p><strong>Löschen der aktuellen Medikationsplanversion</strong>
+Beim Löschen des aktuellen Medikationsplans soll verhindert werden, dass eine ältere Medikationsplanversion unbeabsichtigt wieder als aktueller Plan verwendet wird.</p>
 
-**Löschen der aktuellen Medikationsplanversion**
-Beim Löschen des aktuellen Medikationsplans soll verhindert werden, dass eine ältere Medikationsplanversion unbeabsichtigt wieder als aktueller Plan verwendet wird.
+<p>Für diesen Fall wird folgender fachlicher Zielzustand vorgeschlagen:</p>
 
-Für diesen Fall wird folgender fachlicher Zielzustand vorgeschlagen:
+<ol>
+  <li>Die bisher aktuelle List-Version wird dauerhaft gelöscht.</li>
+  <li>Die darin referenzierten MedicationRequest-Versionen werden gelöscht, sofern sie von keiner verbleibenden Medikationsplanversion mehr referenziert werden.</li>
+  <li>Unter derselben List.id wird eine neue, leere Medikationsplanversion mit einer neuen meta.versionId bereitgestellt.</li>
+  <li>Als Autor beziehungsweise Quelle des neuen leeren Medikationsplans wird das Device der Fachanwendung eingetragen.</li>
+  <li>Der neue leere Medikationsplan wird mit List.extension:PatientModified = true gekennzeichnet.</li>
+</ol>
 
-1. Die bisher aktuelle List-Version wird dauerhaft gelöscht.
-2. Die darin referenzierten MedicationRequest-Versionen werden gelöscht, sofern sie von keiner verbleibenden Medikationsplanversion mehr referenziert werden.
-3. Unter derselben List.id wird eine neue, leere Medikationsplanversion mit einer neuen meta.versionId bereitgestellt.
-4. Als Autor beziehungsweise Quelle des neuen leeren Medikationsplans wird das Device der Fachanwendung eingetragen.
-5. Der neue leere Medikationsplan wird mit List.extension:PatientModified = true gekennzeichnet.
+<p>Die verbleibenden historischen Medikationsplanversionen bleiben verfügbar. Der aktuelle Medikationsplan ist jedoch leer und wird nicht aus einer älteren Version wiederhergestellt. Die konkrete Belegung von List.emptyReason ist noch festzulegen.</p>
 
-Die verbleibenden historischen Medikationsplanversionen bleiben verfügbar. Der aktuelle Medikationsplan ist jedoch leer und wird nicht aus einer älteren Version wiederhergestellt. Die konkrete Belegung von List.emptyReason ist noch festzulegen.
+<p><strong>Auswirkungen auf die aktuelle Version von Medikationsplaneinträgen</strong></p>
 
+<p>Beim vertikalen Löschen kann eine MedicationRequest-Version betroffen sein, die zwar von keiner verbleibenden Medikationsplanversion mehr benötigt wird, technisch aber die aktuelle Version dieser Ressource darstellt.</p>
 
-**Auswirkungen auf die aktuelle Version von Medikationsplaneinträgen**
+<p>Für diesen Fall ist zu entscheiden, ob eine ältere verbleibende MedicationRequest-Version wieder als aktuelle Version bereitgestellt werden soll.</p>
 
-Beim vertikalen Löschen kann eine MedicationRequest-Version betroffen sein, die zwar von keiner verbleibenden Medikationsplanversion mehr benötigt wird, technisch aber die aktuelle Version dieser Ressource darstellt.
+<p>Die Entscheidung ist insbesondere für unversionierte Referenzen relevant. Im bisherigen Design ist beispielsweise die Referenz einer Geplanten Abgabe auf ihren Planeintrag über basedOn unversioniert. Daher muss geprüft werden, welche Auswirkungen eine Löschung oder ein Wechsel des aktuellen Planeintragszustands auf diese Referenzen hat.</p>
 
-Für diesen Fall ist zu entscheiden, ob eine ältere verbleibende MedicationRequest-Version wieder als aktuelle Version bereitgestellt werden soll.
+<p><strong>Übergreifende Anforderungen und offene Abgrenzungen</strong>
+Unabhängig von der gewählten technischen Variante sind folgende Punkte festzulegen:</p>
 
-Die Entscheidung ist insbesondere für unversionierte Referenzen relevant. Im bisherigen Design ist beispielsweise die Referenz einer Geplanten Abgabe auf ihren Planeintrag über basedOn unversioniert. Daher muss geprüft werden, welche Auswirkungen eine Löschung oder ein Wechsel des aktuellen Planeintragszustands auf diese Referenzen hat.
-
-**Übergreifende Anforderungen und offene Abgrenzungen**
-Unabhängig von der gewählten technischen Variante sind folgende Punkte festzulegen:
-
-- Referenzintegrität: Die Prüfung darf sich nicht ausschließlich auf List.entry.item beschränken, wenn weitere Ressourcen auf den betroffenen Planeintrag oder eine seiner Versionen verweisen. Insbesondere ist zu entscheiden, wie Referenzen aus Geplanten und Durchgeführten Abgaben behandelt werden.
-- Abgeleitete Inhalte: Narrative, Suchergebnisse und erzeugte Bundles dürfen die gelöschten Inhalte nicht weiterhin enthalten.
-
+<ul>
+  <li>Referenzintegrität: Die Prüfung darf sich nicht ausschließlich auf List.entry.item beschränken, wenn weitere Ressourcen auf den betroffenen Planeintrag oder eine seiner Versionen verweisen. Insbesondere ist zu entscheiden, wie Referenzen aus Geplanten und Durchgeführten Abgaben behandelt werden.</li>
+  <li>Abgeleitete Inhalte: Narrative, Suchergebnisse und erzeugte Bundles dürfen die gelöschten Inhalte nicht weiterhin enthalten.</li>
+</ul>
 
 <div class="dragon">
-          <p class="note-to-balloters">
+  <p class="note-to-balloters">
 Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem Abschnitt wird besonders um fachliches und technisches Feedback gebeten. Insbesondere sollen Erfahrungen aus der Implementierung versionierender FHIR-Server und vergleichbarer Konzepte berücksichtigt werden.
 </p>
-          <ul>
+  <ul>
 <li>Ist die Unterscheidung zwischen horizontalem Löschen eines Planeintrags einschließlich aller Versionen und vertikalem Löschen einzelner Medikationsplanversionen fachlich ausreichend?</li>
 <li>Wie sollen historische Medikationsplanversionen beim horizontalen Löschen bereinigt werden: unter Beibehaltung ihrer bisherigen <code>meta.versionId</code> oder durch bereinigte Ersatzdarstellungen mit neuer Versionskennung? Welche Alternativen vermeiden eine Veränderung bereits identifizierter historischer Inhalte?</li>
 <li>Wie können bei einer Ersatzdarstellung die ursprüngliche zeitliche Einordnung, die Zuordnung zum fachlichen Planzustand und bestehende versionierte Referenzen erhalten beziehungsweise nachvollziehbar behandelt werden?</li>
@@ -1028,9 +1062,6 @@ Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem A
 <li>Welche der beschriebenen Varianten können bestehende FHIR-R4-Server umsetzen? Welche zusätzlichen Operationen oder serverinternen Funktionen wären erforderlich?</li>
 <li>Wie sollen  <code>meta.versionId</code>, <code>meta.lastUpdated</code>, ETags nach einer Löschung behandelt werden?</li>
 </ul>
-        </div>
-</div>
-    </div></div>
 </div>
 
 
@@ -1060,7 +1091,7 @@ Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem A
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-19 15:55:00 +0000">
+  <span title="2026-10-19 16:11:00 +0000">
     2026-10-19
   </span>
 
