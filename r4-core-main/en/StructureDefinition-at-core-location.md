@@ -30,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-location.
   "name" : "HL7ATCoreLocation",
   "title" : "HL7® AT Core Location Profile",
   "status" : "active",
-  "date" : "2026-10-19T05:20:34+00:00",
+  "date" : "2026-10-19T13:05:38+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -99,7 +99,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-location.
       "path" : "Location.identifier.system",
       "short" : "OID for the Krankenanstaltennummer (KA-Nr) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.34.4.10"
+      "patternUri" : "urn:oid:1.2.40.0.34.4.10"
     },
     {
       "id" : "Location.identifier:KANR.value",
@@ -110,7 +110,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-location.
     {
       "id" : "Location.identifier:KANR.assigner.display",
       "path" : "Location.identifier.assigner.display",
-      "fixedString" : "Österreichisches Bundesministerium für Gesundheit"
+      "patternString" : "Österreichisches Bundesministerium für Gesundheit"
     },
     {
       "id" : "Location.address",
