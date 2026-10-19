@@ -39,7 +39,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-10-19T12:51:52+00:00",
+  "date" : "2026-10-19T13:41:41+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -207,30 +207,22 @@ Usage of the European Health Insurance Card (EHIC):
       "max" : "1"
     },
     {
-      "id" : "Patient.identifier:socialSecurityNumber.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:socialSecurityNumber.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:socialSecurityNumber.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "SS"
+      "patternCode" : "SS"
     },
     {
       "id" : "Patient.identifier:socialSecurityNumber.system",
       "path" : "Patient.identifier.system",
       "short" : "OID for the Social Security Number in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.1.4.3.1",
+      "patternUri" : "urn:oid:1.2.40.0.10.1.4.3.1",
       "mapping" : [{
         "identity" : "at-core-mapping-patient2cdaatv3",
         "map" : ".id[1].root"
@@ -247,7 +239,7 @@ Usage of the European Health Insurance Card (EHIC):
     {
       "id" : "Patient.identifier:socialSecurityNumber.assigner.display",
       "path" : "Patient.identifier.assigner.display",
-      "fixedString" : "Dachverband der österreichischen Sozialversicherungsträger"
+      "patternString" : "Dachverband der österreichischen Sozialversicherungsträger"
     },
     {
       "id" : "Patient.identifier:bPK",
@@ -257,30 +249,22 @@ Usage of the European Health Insurance Card (EHIC):
       "max" : "1"
     },
     {
-      "id" : "Patient.identifier:bPK.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:bPK.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:bPK.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "NI"
+      "patternCode" : "NI"
     },
     {
       "id" : "Patient.identifier:bPK.system",
       "path" : "Patient.identifier.system",
       "short" : "OID for the bPK in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.2.1.1.149",
+      "patternUri" : "urn:oid:1.2.40.0.10.2.1.1.149",
       "mapping" : [{
         "identity" : "at-core-mapping-patient2cdaatv3",
         "map" : ".id.where(root='1.2.40.0.10.2.1.1.149').root"
@@ -297,7 +281,7 @@ Usage of the European Health Insurance Card (EHIC):
     {
       "id" : "Patient.identifier:bPK.assigner.display",
       "path" : "Patient.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Inneres"
+      "patternString" : "Bundesministerium für Inneres"
     },
     {
       "id" : "Patient.identifier:vbPK",
@@ -307,23 +291,15 @@ Usage of the European Health Insurance Card (EHIC):
       "max" : "*"
     },
     {
-      "id" : "Patient.identifier:vbPK.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:vbPK.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:vbPK.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "ANON"
+      "patternCode" : "ANON"
     },
     {
       "id" : "Patient.identifier:vbPK.system",
@@ -343,23 +319,15 @@ Usage of the European Health Insurance Card (EHIC):
       "max" : "1"
     },
     {
-      "id" : "Patient.identifier:localPatientId.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:localPatientId.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:localPatientId.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "PI"
+      "patternCode" : "PI"
     },
     {
       "id" : "Patient.identifier:localPatientId.system",

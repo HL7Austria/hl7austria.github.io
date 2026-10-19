@@ -11,7 +11,7 @@ Sarah Berger (official) (https://hebammenregister.example#HB-EXAMPLE-001)
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Active: | true | Gender: | Female |
-| Other Id: | `urn:oid:1.2.40.0.34.4.22`/VBPK-GH-EXAMPLE-Sarah-Berger-001 | | |
+| Other Id: | `urn:oid:1.2.40.0.34.4.22.1`/VBPK-GH-EXAMPLE-Sarah-Berger-001 | | |
 | Qualification: | Hebamme (Bachelor of Science in Health Studies)* Valid Period: 2020-07-01 --> (ongoing)
 * Issued By: Fiktive Fachhochschule für Gesundheitsberufe
  | | |
@@ -35,7 +35,7 @@ Sarah Berger (official) (https://hebammenregister.example#HB-EXAMPLE-001)
     }
   },
   {
-    "system" : "urn:oid:1.2.40.0.34.4.22",
+    "system" : "urn:oid:1.2.40.0.34.4.22.1",
     "value" : "VBPK-GH-EXAMPLE-Sarah-Berger-001",
     "assigner" : {
       "display" : "Bundesministerium für Inneres"

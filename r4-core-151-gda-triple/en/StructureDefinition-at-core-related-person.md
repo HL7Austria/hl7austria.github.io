@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-related-p
   "name" : "HL7ATCoreRelatedPerson",
   "title" : "HL7® AT Core RelatedPerson Profile",
   "status" : "active",
-  "date" : "2026-10-19T12:51:52+00:00",
+  "date" : "2026-10-19T13:41:41+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -100,73 +100,57 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-related-p
       "max" : "1"
     },
     {
-      "id" : "RelatedPerson.identifier:socialSecurityNumber.type",
-      "path" : "RelatedPerson.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "RelatedPerson.identifier:socialSecurityNumber.type.coding.system",
       "path" : "RelatedPerson.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "RelatedPerson.identifier:socialSecurityNumber.type.coding.code",
       "path" : "RelatedPerson.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "SS"
+      "patternCode" : "SS"
     },
     {
       "id" : "RelatedPerson.identifier:socialSecurityNumber.system",
       "path" : "RelatedPerson.identifier.system",
       "short" : "OID for the Social Security Number in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.1.4.3.1"
+      "patternUri" : "urn:oid:1.2.40.0.10.1.4.3.1"
     },
     {
       "id" : "RelatedPerson.identifier:socialSecurityNumber.assigner.display",
       "path" : "RelatedPerson.identifier.assigner.display",
-      "fixedString" : "Dachverband der österreichischen Sozialversicherungsträger"
+      "patternString" : "Dachverband der österreichischen Sozialversicherungsträger"
     },
     {
       "id" : "RelatedPerson.identifier:bPK",
       "path" : "RelatedPerson.identifier",
       "sliceName" : "bPK",
       "min" : 0,
-      "max" : "*"
-    },
-    {
-      "id" : "RelatedPerson.identifier:bPK.type",
-      "path" : "RelatedPerson.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
+      "max" : "1"
     },
     {
       "id" : "RelatedPerson.identifier:bPK.type.coding.system",
       "path" : "RelatedPerson.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "RelatedPerson.identifier:bPK.type.coding.code",
       "path" : "RelatedPerson.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "NI"
+      "patternCode" : "NI"
     },
     {
       "id" : "RelatedPerson.identifier:bPK.system",
       "path" : "RelatedPerson.identifier.system",
       "short" : "OID for the bPK in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.2.1.1.149"
+      "patternUri" : "urn:oid:1.2.40.0.10.2.1.1.149"
     },
     {
       "id" : "RelatedPerson.identifier:bPK.assigner.display",
       "path" : "RelatedPerson.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Inneres"
+      "patternString" : "Bundesministerium für Inneres"
     },
     {
       "id" : "RelatedPerson.patient",

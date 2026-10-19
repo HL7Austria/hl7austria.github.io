@@ -37,7 +37,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
   "name" : "HL7ATCoreOrganization",
   "title" : "HL7® AT Core Organization Profile",
   "status" : "active",
-  "date" : "2026-10-19T12:51:52+00:00",
+  "date" : "2026-10-19T13:41:41+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -109,7 +109,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "path" : "Organization.identifier.system",
       "short" : "A GDA in Austria is represented via an URI (OID)",
       "min" : 1,
-      "fixedUri" : "urn:ietf:rfc:3986"
+      "patternUri" : "urn:ietf:rfc:3986"
     },
     {
       "id" : "Organization.identifier:GDA-OID.value",
@@ -120,7 +120,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
     {
       "id" : "Organization.identifier:GDA-OID.assigner.display",
       "path" : "Organization.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Gesundheit"
+      "patternString" : "Bundesministerium für Gesundheit"
     },
     {
       "id" : "Organization.identifier:VPNR",
@@ -134,7 +134,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "path" : "Organization.identifier.system",
       "short" : "OID for the Vertragspartnernummer (VPNR) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.1.4.3.2"
+      "patternUri" : "urn:oid:1.2.40.0.10.1.4.3.2"
     },
     {
       "id" : "Organization.identifier:VPNR.value",
@@ -144,7 +144,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
     {
       "id" : "Organization.identifier:VPNR.assigner.display",
       "path" : "Organization.identifier.assigner.display",
-      "fixedString" : "Dachverband der österreichischen Sozialversicherungsträger"
+      "patternString" : "Dachverband der österreichischen Sozialversicherungsträger"
     },
     {
       "id" : "Organization.identifier:VKZ",
@@ -158,7 +158,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "path" : "Organization.identifier.system",
       "short" : "OID for the Verwaltungskennzeichen (VKZ) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.2.1.1.71"
+      "patternUri" : "urn:oid:1.2.40.0.10.2.1.1.71"
     },
     {
       "id" : "Organization.identifier:VKZ.value",
@@ -168,7 +168,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
     {
       "id" : "Organization.identifier:VKZ.assigner.display",
       "path" : "Organization.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Finanzen"
+      "patternString" : "Bundesministerium für Finanzen"
     },
     {
       "id" : "Organization.identifier:KANR",
@@ -182,7 +182,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "path" : "Organization.identifier.system",
       "short" : "OID for the Krankenanstaltennummer (KA-Nr) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.34.4.10"
+      "patternUri" : "urn:oid:1.2.40.0.34.4.10"
     },
     {
       "id" : "Organization.identifier:KANR.value",
@@ -193,7 +193,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
     {
       "id" : "Organization.identifier:KANR.assigner.display",
       "path" : "Organization.identifier.assigner.display",
-      "fixedString" : "Österreichisches Bundesministerium für Gesundheit"
+      "patternString" : "Österreichisches Bundesministerium für Gesundheit"
     },
     {
       "id" : "Organization.type",

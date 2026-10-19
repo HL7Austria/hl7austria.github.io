@@ -11,7 +11,7 @@ Lukas Steiner (OID:1.2.40.0.34.99.4613.5)
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Active: | true | Gender: | Male |
-| Other Id: | `urn:oid:1.2.40.0.34.4.22`/VBPK-GH-EXAMPLE-LUKAS-STEINER-001 | | |
+| Other Id: | `urn:oid:1.2.40.0.34.4.22.1`/VBPK-GH-EXAMPLE-LUKAS-STEINER-001 | | |
 | Qualification: | Doctor of Medicine (MD)* Valid Period: 1999-07-09 --> (ongoing)
 * Issued By: Medizinische Universität Sonnenfeld
  | | |
@@ -41,7 +41,7 @@ Lukas Steiner (OID:1.2.40.0.34.99.4613.5)
     }
   },
   {
-    "system" : "urn:oid:1.2.40.0.34.4.22",
+    "system" : "urn:oid:1.2.40.0.34.4.22.1",
     "value" : "VBPK-GH-EXAMPLE-LUKAS-STEINER-001",
     "assigner" : {
       "display" : "Bundesministerium für Inneres"

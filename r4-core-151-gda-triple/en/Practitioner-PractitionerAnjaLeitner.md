@@ -11,7 +11,7 @@ Anja Leitner (official) (OID:1.2.40.0.34.99.4613.8)
 | | | | |
 | :--- | :--- | :--- | :--- |
 | Active: | true | Gender: | Female |
-| Other Id: | `urn:oid:1.2.40.0.34.4.22`/VBPK-GH-EXAMPLE-Anja-Leitner-001 | | |
+| Other Id: | `urn:oid:1.2.40.0.34.4.22.1`/VBPK-GH-EXAMPLE-Anja-Leitner-001 | | |
 | Qualification: | Doctor of Medicine (MD)* Valid Period: 2005-06-30 --> (ongoing)
 * Issued By: Medizinische Universität Sonnenfeld
  | | |
@@ -38,7 +38,7 @@ Anja Leitner (official) (OID:1.2.40.0.34.99.4613.8)
     "value" : "urn:oid:1.2.40.0.34.99.4613.8"
   },
   {
-    "system" : "urn:oid:1.2.40.0.34.4.22",
+    "system" : "urn:oid:1.2.40.0.34.4.22.1",
     "value" : "VBPK-GH-EXAMPLE-Anja-Leitner-001",
     "assigner" : {
       "display" : "Bundesministerium für Inneres"
