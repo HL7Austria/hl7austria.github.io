@@ -36,7 +36,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-10-14T13:25:21+00:00",
+  "date" : "2026-10-19T13:57:06+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -118,7 +118,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "path" : "Practitioner.identifier.system",
       "short" : "A Gesundheitsdiensteanbieter (GDA) in Austria is represented via a URI (OID)",
       "min" : 1,
-      "fixedUri" : "urn:ietf:rfc:3986"
+      "patternUri" : "urn:ietf:rfc:3986"
     },
     {
       "id" : "Practitioner.identifier:GDA-OID.value",
@@ -129,7 +129,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
     {
       "id" : "Practitioner.identifier:GDA-OID.assigner.display",
       "path" : "Practitioner.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Gesundheit"
+      "patternString" : "Bundesministerium für Gesundheit"
     },
     {
       "id" : "Practitioner.identifier:VPNR",
@@ -145,7 +145,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "path" : "Practitioner.identifier.system",
       "short" : "OID for the Vertragspartnernummer (VPNR) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.1.4.3.2"
+      "patternUri" : "urn:oid:1.2.40.0.10.1.4.3.2"
     },
     {
       "id" : "Practitioner.identifier:VPNR.value",
@@ -155,7 +155,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
     {
       "id" : "Practitioner.identifier:VPNR.assigner.display",
       "path" : "Practitioner.identifier.assigner.display",
-      "fixedString" : "Dachverband der österreichischen Sozialversicherungsträger"
+      "patternString" : "Dachverband der österreichischen Sozialversicherungsträger"
     },
     {
       "id" : "Practitioner.identifier:vbPK",

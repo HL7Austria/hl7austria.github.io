@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "HL7AustriaImplementationGuide"] ;
   fhir:ImplementationGuide.title [ fhir:value "HL7® Austria FHIR® Core Implementation Guide"] ;
   fhir:ImplementationGuide.status [ fhir:value "active"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-14T13:25:21+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-19T13:57:06+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "HL7® Austria, TC FHIR®"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -594,6 +594,23 @@
          fhir:Extension.valueString [ fhir:value "Patient" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Patient/HL7ATCorePatientCreateTestExample> ;
+         fhir:Reference.reference [ fhir:value "Patient/HL7ATCorePatientCreateTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7ATCorePatientCreateTestExample" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example with all elements for the usage of the HL7 AT Core Patient Profile" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Patient" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://fhir.hl7.at/core/r4/Patient/HL7ATCorePatientExample01> ;
          fhir:Reference.reference [ fhir:value "Patient/HL7ATCorePatientExample01" ]
        ] ;
@@ -701,6 +718,22 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7ATCorePatientExample07-MunicipalityCode" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example for the usage of the HL7 AT Core Patient Profile that includes a municipality code" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Patient" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Patient/HL7ATCorePatientUpdateTestExample> ;
+         fhir:Reference.reference [ fhir:value "Patient/HL7ATCorePatientUpdateTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7ATCorePatientUpdateTestExample" ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
@@ -845,6 +878,48 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-related-person> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-related-person" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7® AT Core RelatedPerson Profile" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Profile for a related person in Austria.\r\nThe HL7® AT Core RelatedPerson is based upon the core FHIR® RelatedPeson Resource and designed to meet the applicable demographic data elements in Austria. Note, this extension represents the common structure of a person information within Austrian information systems." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/TestScript/testscript-patient-create-at-core> ;
+         fhir:Reference.reference [ fhir:value "TestScript/testscript-patient-create-at-core" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7® AT Core TestScript - Patient Create" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientCreateTestExample. Expected Result: the server accepts creation of a Patient resource that is conformant to the AT Core Patient profile. The server-assigned logical id is captured in the patientResourceId variable so it can be fed into the AT Core Patient Update test script." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/TestScript/testscript-patient-update-at-core> ;
+         fhir:Reference.reference [ fhir:value "TestScript/testscript-patient-update-at-core" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7® AT Core TestScript - Patient Update" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "TestScript updating an existing patient resource conformant to the AT Core Patient profile on a FHIR Server using the JSON format. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientUpdateTestExample with an updated PI value of “11-22-33-44”. Expected Result: the server accepts the update of a Patient resource that is conformant to the AT Core Patient profile. Precondition: the target resource already exists on the server; the setup phase establishes this itself by PUTting the fixture to the same id first, so the test can assert a strict 200 regardless of what ran before it. The patientResourceId variable MUST carry the same value as Patient.id inside the fixture body." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-valueset> ;
          fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-valueset" ]
        ] ;
@@ -865,6 +940,40 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient Religion" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "**DEPRECATED** HL7® Austria FHIR® Core Extension for the religion (registered in Austria) of a patient.\r\nThe extension is used to encode the religious confession of a patient (only confessions registered in Austria). Furthermore, it uses the official [HL7 AT CodeSystem](https://termpub.gesundheit.gv.at:443/TermBrowser/gui/main/main.zul?loadType=CodeSystem&loadName=HL7 AT ReligionAustria) for religion and is therefore aligned with the ELGA ValueSet, respectively." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Patient" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Patient/PatientFelixGruber> ;
+         fhir:Reference.reference [ fhir:value "Patient/PatientFelixGruber" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PatientFelixGruber" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a fictional minor patient living in Vienna, whose father is represented by a RelatedPerson resource." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "RelatedPerson" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/RelatedPerson/RelatedPersonMartinGruber> ;
+         fhir:Reference.reference [ fhir:value "RelatedPerson/RelatedPersonMartinGruber" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "RelatedPersonMartinGruber" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Martin Gruber, the fictional father and next of kin of the minor patient Felix Gruber." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-related-person" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-related-person>
+       ]
      ], [
        fhir:index -1 ;
        fhir:Element.extension [
@@ -912,6 +1021,16 @@
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Home" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Element.extension [
+           fhir:index -1 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "tests.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "tests.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Tests" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ]
      ] ;

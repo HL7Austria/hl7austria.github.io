@@ -9,7 +9,7 @@
 **Usages:**
 
 * Use this Extension: [HL7® AT Core Address Profile](StructureDefinition-at-core-address.md)
-* Examples for this Extension: [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md), [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md), [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md)... Show 3 more, [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md) and [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md)
+* Examples for this Extension: [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md), [Patient/HL7ATCorePatientCreateTestExample](Patient-HL7ATCorePatientCreateTestExample.md), [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md)... Show 5 more, [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md), [Patient/HL7ATCorePatientUpdateTestExample](Patient-HL7ATCorePatientUpdateTestExample.md) and [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-ext-address-additionalInformation.json)
 
@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-addre
   "name" : "AddressAdditionalInformation",
   "title" : "Address Additional Information",
   "status" : "active",
-  "date" : "2026-10-14T13:25:21+00:00",
+  "date" : "2026-10-19T13:57:06+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Use this DataType Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md), [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md), [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md) and [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md)
+* Use this DataType Profile: [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md), [HL7® AT Core Organization Profile](StructureDefinition-at-core-organization.md), [HL7® AT Core Patient Profile](StructureDefinition-at-core-patient.md), [HL7® AT Core Practitioner Profile](StructureDefinition-at-core-practitioner.md) and [HL7® AT Core RelatedPerson Profile](StructureDefinition-at-core-related-person.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-address.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
   "name" : "HL7ATCoreAddress",
   "title" : "HL7® AT Core Address Profile",
   "status" : "active",
-  "date" : "2026-10-14T13:25:21+00:00",
+  "date" : "2026-10-19T13:57:06+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
