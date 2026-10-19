@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TestScript xmlns="http://hl7.org/fhir">
+  <id value="testscript-patient-create-at-core"/>
+  <url value="https://fhir.hl7.at/core/r4/TestScript/testscript-patient-create-at-core"/>
+  <version value="2.1.0"/>
+  <name value="TestScriptATCorePatientCreate"/>
+  <title value="HL7® AT Core TestScript - Patient Create"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-09-15"/>
+  <publisher value="HL7® Austria, TC FHIR®"/>
+  <contact>
+    <name value="HL7® Austria, TC FHIR®"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://hl7.at/technische-komitees/tc-fhir/"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Technical Committee for FHIR® at HL7® Austria"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:tc-fhir@hl7.at"/>
+    </telecom>
+  </contact>
+  <description value="TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientCreateTestExample. Expected Result: the server accepts creation of a Patient resource that is conformant to the AT Core Patient profile. The server-assigned logical id is captured in the patientResourceId variable so it can be fed into the AT Core Patient Update test script."/>
+  <copyright value="This FHIR Test Script is licensed under Creative Commons (CC0) 'No Rights Reserved'. Learn more at https://creativecommons.org/licenses"/>
+  <fixture id="patient-create">
+    <autocreate value="false"/>
+    <autodelete value="false"/>
+    <resource>
+      <reference value="Patient/HL7ATCorePatientCreateTestExample"/>
+    </resource>
+  </fixture>
+  <profile id="at-core-patient-profile">
+    <reference value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"/>
+  </profile>
+  <variable>
+    <name value="patientResourceId"/>
+    <description value="The server-assigned logical id of the Patient created by this test script. It is read from the create response body, which is why the operation asks for 'Prefer: return=representation'."/>
+    <expression value="Patient.id"/>
+    <sourceId value="create-response"/>
+  </variable>
+  <test id="Step1-RegisterNewPatient">
+    <name value="RegisterNewPatient"/>
+    <description value="Create a new patient conformant to the AT Core Patient profile. The server assigns the resource id."/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="create"/>
+        </type>
+        <resource value="Patient"/>
+        <description value="POST the Patient fixture to [base]/Patient. The server assigns the resource id."/>
+        <accept value="application/fhir+json"/>
+        <contentType value="application/fhir+json"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <requestHeader>
+          <field value="Prefer"/>
+          <value value="return=representation"/>
+        </requestHeader>
+        <responseId value="create-response"/>
+        <sourceId value="patient-create"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the returned HTTP status is 200(OK) or 201(Created)."/>
+        <direction value="response"/>
+        <operator value="in"/>
+        <responseCode value="200,201"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Validate that the returned resource conforms to the HL7 AT Core Patient profile."/>
+        <direction value="response"/>
+        <validateProfileId value="at-core-patient-profile"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+</TestScript>
