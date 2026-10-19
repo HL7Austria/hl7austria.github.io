@@ -36,7 +36,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-10-13T11:00:34+00:00",
+  "date" : "2026-10-19T14:20:01+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -116,7 +116,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "path" : "Practitioner.identifier.system",
       "short" : "A GDA in Austria is represented via an URI (OID)",
       "min" : 1,
-      "fixedUri" : "urn:ietf:rfc:3986"
+      "patternUri" : "urn:ietf:rfc:3986"
     },
     {
       "id" : "Practitioner.identifier:GDA-OID.value",
@@ -127,7 +127,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
     {
       "id" : "Practitioner.identifier:GDA-OID.assigner.display",
       "path" : "Practitioner.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Gesundheit"
+      "patternString" : "Bundesministerium für Gesundheit"
     },
     {
       "id" : "Practitioner.identifier:VPNR",
@@ -141,7 +141,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "path" : "Practitioner.identifier.system",
       "short" : "OID for the Vertragspartnernummer (VPNR) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.1.4.3.2"
+      "patternUri" : "urn:oid:1.2.40.0.10.1.4.3.2"
     },
     {
       "id" : "Practitioner.identifier:VPNR.value",
@@ -151,31 +151,29 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
     {
       "id" : "Practitioner.identifier:VPNR.assigner.display",
       "path" : "Practitioner.identifier.assigner.display",
-      "fixedString" : "Dachverband der österreichischen Sozialversicherungsträger"
+      "patternString" : "Dachverband der österreichischen Sozialversicherungsträger"
     },
     {
       "id" : "Practitioner.identifier:vbPK",
       "path" : "Practitioner.identifier",
       "sliceName" : "vbPK",
       "min" : 0,
-      "max" : "1"
+      "max" : "*"
     },
     {
       "id" : "Practitioner.identifier:vbPK.system",
       "path" : "Practitioner.identifier.system",
-      "short" : "OID for the vbPK in Austria",
+      "short" : "OID for the specific vbPK in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.34.4.22"
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/core/r4/ValueSet/at-core-vbpk"
+      }
     },
     {
       "id" : "Practitioner.identifier:vbPK.value",
       "path" : "Practitioner.identifier.value",
       "min" : 1
-    },
-    {
-      "id" : "Practitioner.identifier:vbPK.assigner.display",
-      "path" : "Practitioner.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Inneres"
     },
     {
       "id" : "Practitioner.address",

@@ -43,7 +43,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-patie
   "name" : "PatientReligion",
   "title" : "Patient Religion",
   "status" : "retired",
-  "date" : "2026-10-13T11:00:34+00:00",
+  "date" : "2026-10-19T14:20:01+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
