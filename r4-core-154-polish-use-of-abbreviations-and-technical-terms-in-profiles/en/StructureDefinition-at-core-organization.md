@@ -12,7 +12,7 @@ The goal of this profile is to cover all kind of organizations that are active i
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core HealthcareService Profile](StructureDefinition-at-core-HealthcareService.md), [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md) and [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
-* Examples for this Profile: [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md) and [Landeskrankenhaus Hall in Tirol](Organization-HL7ATCoreOrganizationExample02-MultipleVPNR.md)
+* Examples for this Profile: [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md), [Landeskrankenhaus Hall in Tirol](Organization-HL7ATCoreOrganizationExample02-MultipleVPNR.md), [Abteilung für Innere Medizin – Amadeus Spital](Organization-OrganizationAmadeusSpitalInnereMedizin.md), [Gruppenpraxis Frauenmedizin Sonnenfeld OG](Organization-OrganizationGruppenpraxisFrauenmedizinSonnenfeld.md) and [Ordination Dr. Lukas Steiner](Organization-OrganizationOrdinationLukasSteiner.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-organization.json)
 
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
   "name" : "HL7ATCoreOrganization",
   "title" : "HL7® AT Core Organization Profile",
   "status" : "active",
-  "date" : "2026-10-19T13:57:06+00:00",
+  "date" : "2026-10-19T15:00:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

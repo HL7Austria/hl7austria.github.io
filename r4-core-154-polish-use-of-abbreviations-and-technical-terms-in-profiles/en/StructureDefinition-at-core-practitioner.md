@@ -11,7 +11,7 @@ In Austria, practitioners in healthcare are commonly called “Gesundheitsdienst
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
-* Examples for this Profile: [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md)
+* Examples for this Profile: [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md), [Practitioner/PractitionerAnjaLeitner](Practitioner-PractitionerAnjaLeitner.md), [Practitioner/PractitionerLukasSteiner](Practitioner-PractitionerLukasSteiner.md), [Practitioner/PractitionerSarahBerger](Practitioner-PractitionerSarahBerger.md) and [Practitioner/PractitionerThomasHofer](Practitioner-PractitionerThomasHofer.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-practitioner.json)
 
@@ -36,7 +36,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-10-19T13:57:06+00:00",
+  "date" : "2026-10-19T15:00:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Examples for this Profile: [Rheumatology Service](HealthcareService-HealthcareServiceRheumatologyExample.md)
+* Examples for this Profile: [Hebammensprechstunde – Schwangerschaft und Wochenbett](HealthcareService-HealthcareServiceHebammenberatung.md), [Rheumatology Service](HealthcareService-HealthcareServiceRheumatologyExample.md) and [Gynäkologische Ultraschalldiagnostik](HealthcareService-HealthcareServiceUltraschall.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-HealthcareService.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-Healthcar
   "name" : "HL7ATCoreHealthcareService",
   "title" : "HL7® AT Core HealthcareService Profile",
   "status" : "active",
-  "date" : "2026-10-19T13:57:06+00:00",
+  "date" : "2026-10-19T15:00:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

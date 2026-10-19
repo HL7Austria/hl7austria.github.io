@@ -5,7 +5,7 @@
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core HealthcareService Profile](StructureDefinition-at-core-HealthcareService.md) and [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md)
-* Examples for this Profile: [Campus Graz](Location-HL7ATCoreLocationGraz.md) and [Campus Linz](Location-HL7ATCoreLocationLinz.md)
+* Examples for this Profile: [Campus Graz](Location-HL7ATCoreLocationGraz.md), [Campus Linz](Location-HL7ATCoreLocationLinz.md) and [Ordination Dr. Lukas Steiner – Salzburg](Location-LocationOrdinationLukasSteiner.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-location.json)
 
@@ -30,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-location.
   "name" : "HL7ATCoreLocation",
   "title" : "HL7® AT Core Location Profile",
   "status" : "active",
-  "date" : "2026-10-19T13:57:06+00:00",
+  "date" : "2026-10-19T15:00:46+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
