@@ -30,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-Healthcar
   "name" : "HL7ATCoreHealthcareService",
   "title" : "HL7® AT Core HealthcareService Profile",
   "status" : "active",
-  "date" : "2026-10-19T08:31:12+00:00",
+  "date" : "2026-10-19T12:08:07+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
