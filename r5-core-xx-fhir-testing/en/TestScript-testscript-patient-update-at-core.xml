@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TestScript xmlns="http://hl7.org/fhir">
+  <id value="testscript-patient-update-at-core"/>
+  <language value="en"/>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-TestScript.origin">
+    <extension url="index">
+      <valueInteger value="1"/>
+    </extension>
+    <extension url="profile">
+      <valueCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-origin-types"/>
+        <code value="FHIR-Client"/>
+      </valueCoding>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-TestScript.destination">
+    <extension url="index">
+      <valueInteger value="1"/>
+    </extension>
+    <extension url="profile">
+      <valueCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types"/>
+        <code value="FHIR-Server"/>
+      </valueCoding>
+    </extension>
+  </extension>
+  <url value="https://fhir.hl7.at/core/r5/TestScript/testscript-patient-update-at-core"/>
+  <version value="2.1.0"/>
+  <name value="TestScriptATCorePatientUpdate"/>
+  <title value="HL7® AT Core TestScript - Patient Update"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2026-09-15"/>
+  <publisher value="HL7® Austria, TC FHIR®"/>
+  <contact>
+    <name value="HL7® Austria, TC FHIR®"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://hl7.at/technische-komitees/tc-fhir/"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Technical Committee for FHIR® at HL7® Austria"/>
+    <telecom>
+      <system value="email"/>
+      <value value="mailto:tc-fhir@hl7.at"/>
+    </telecom>
+  </contact>
+  <description value="TestScript updating an existing patient resource conformant to the AT Core Patient profile on a FHIR Server using the JSON format. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientUpdateTestExample with an updated PI value of “11-22-33-44”. Expected Result: the server accepts the update of a Patient resource that is conformant to the AT Core Patient profile. Precondition: the target resource already exists on the server; the setup phase establishes this itself by PUTting the fixture to the same id first, so the test can assert a strict 200 regardless of what ran before it. The patientResourceId variable MUST carry the same value as Patient.id inside the fixture body."/>
+  <copyright value="This FHIR Test Script is licensed under Creative Commons (CC0) 'No Rights Reserved'. Learn more at https://creativecommons.org/licenses"/>
+  <fixture id="patient-update">
+    <autocreate value="false"/>
+    <autodelete value="false"/>
+    <resource>
+      <reference value="Patient/HL7ATCorePatientUpdateTestExample"/>
+    </resource>
+  </fixture>
+  <profile value="https://fhir.hl7.at/core/r5/StructureDefinition/at-core-patient">
+    <id value="at-core-patient-profile"/>
+  </profile>
+  <variable>
+    <name value="patientResourceId"/>
+    <defaultValue value="HL7ATCorePatientUpdateTestExample"/>
+    <description value="Enter the patient FHIR resource id the FHIR Client will send to the FHIR Server. It MUST be identical to Patient.id inside the fixture body, otherwise the server returns HTTP 400 Bad Request (FHIR R4 RESTful 'update' interaction)."/>
+    <hint value="[Resource Id]"/>
+  </variable>
+  <setup>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="update"/>
+        </type>
+        <resource value="Patient"/>
+        <description value="PUT the Patient fixture to [base]/Patient/${patientResourceId} so the resource exists before the update test runs. This relies on the FHIR 'update as create' interaction and therefore succeeds whether or not the resource was already present on the server. Without it the test operation would create the resource itself and the server would answer 201 instead of 200."/>
+        <accept value="application/fhir+json"/>
+        <contentType value="application/fhir+json"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <params value="/${patientResourceId}"/>
+        <responseId value="setup-response"/>
+        <sourceId value="patient-update"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm the server accepted the setup resource: 200(OK) if it already existed, 201(Created) if it was created by this setup action."/>
+        <direction value="response"/>
+        <operator value="in"/>
+        <responseCode value="200,201"/>
+        <stopTestOnFail value="true"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </setup>
+  <test id="Step1-UpdatePatient">
+    <name value="UpdatePatient"/>
+    <description value="Update a patient resource conformant to the AT Core Patient profile."/>
+    <action>
+      <operation>
+        <type>
+          <system value="http://terminology.hl7.org/CodeSystem/testscript-operation-codes"/>
+          <code value="update"/>
+        </type>
+        <resource value="Patient"/>
+        <description value="PUT the Patient fixture to [base]/Patient/${patientResourceId}."/>
+        <accept value="application/fhir+json"/>
+        <contentType value="application/fhir+json"/>
+        <destination value="1"/>
+        <encodeRequestUrl value="true"/>
+        <origin value="1"/>
+        <params value="/${patientResourceId}"/>
+        <requestHeader>
+          <field value="Prefer"/>
+          <value value="return=representation"/>
+        </requestHeader>
+        <responseId value="update-response"/>
+        <sourceId value="patient-update"/>
+      </operation>
+    </action>
+    <action>
+      <assert>
+        <description value="Confirm that the returned HTTP status is 200(OK)."/>
+        <direction value="response"/>
+        <operator value="equals"/>
+        <responseCode value="200"/>
+        <stopTestOnFail value="true"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+    <action>
+      <assert>
+        <description value="Validate that the returned resource conforms to the HL7 AT Core Patient profile."/>
+        <direction value="response"/>
+        <stopTestOnFail value="true"/>
+        <validateProfileId value="at-core-patient-profile"/>
+        <warningOnly value="false"/>
+      </assert>
+    </action>
+  </test>
+</TestScript>
