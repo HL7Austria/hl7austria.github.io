@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-gende
   "name" : "AdministrativeGenderAddition",
   "title" : "Administrative Gender Addition",
   "status" : "active",
-  "date" : "2026-10-16T17:40:42+00:00",
+  "date" : "2026-10-20T06:06:44+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -98,8 +98,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-gende
     "element" : [{
       "id" : "Extension",
       "path" : "Extension",
-      "short" : "Administrative Gender Addition",
-      "definition" : "HL7® Austria FHIR® Core Extension for the administrative gender of a person (Patient, Practitioner, ...). \r\nThe extension is used to add the missing codes and is applied in case the code for administrative gender itself is set to 'other'."
+      "short" : "Additional administrative gender (Geschlecht)",
+      "definition" : "Additional administrative gender code (Geschlecht) required in Austria that is not covered by the FHIR administrative gender codes. The extension is only applied in case the administrative gender itself is set to 'other' (Ergänzung zu 'other')."
     },
     {
       "id" : "Extension.extension",

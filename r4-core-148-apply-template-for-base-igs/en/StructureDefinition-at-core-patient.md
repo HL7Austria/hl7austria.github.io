@@ -2,10 +2,19 @@
 
 ## Resource Profile: HL7® AT Core Patient Profile 
 
+The goal of this profile is to represent the demographic data of patients in the Austrian healthcare domain. Organizations and persons providing healthcare services in Austria are commonly called “Gesundheitsdiensteanbieter (GDA)” (in English: Healthcare Service Provider). This German abbreviation is therefore used throughout this profile where it is relevant. Austrian patients are usually identified with one or more of the following identifiers:
+
+* The “Sozialversicherungsnummer (SVNR)” which is the Austrian social security number provided by the Federation of Austrian Social Insurances (Dachverband der österreichischen Sozialversicherungsträger).
+* A “Bereichsspezifisches Personenkennzeichen (bPK)” which is a sector-specific personal identifier used in Austrian e-Government processes and provided by the Federal Ministry of the Interior (Bundesministerium für Inneres).
+* A “Verschlüsseltes bereichsspezifisches Personenkennzeichen (vbPK)” which is the encrypted form of the bPK for a specific sector (e.g. GH for Gesundheit, SV for Sozialversicherung, AS for Amtliche Statistik) according to the E-Government-Bereichsabgrenzungsverordnung (E-Gov-BerAbgrV).
+* A local patient identifier which is assigned by a GDA (e.g. the patient ID of a hospital information system) and is only unique within the namespace of that GDA.
+
+The identifiers are distinguished by the identifier type code of the HL7 v2 table 0203: “SS” (Social Security number) for the SVNR, “NI” (National unique individual identifier) for the bPK, “ANON” (Anonymous identifier) for the vbPK and “PI” (Patient internal identifier) for the local patient identifier. Further identifier types can be found in the [HL7 AT Patient Identifier](https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier) value set.
+
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core RelatedPerson Profile](StructureDefinition-at-core-related-person.md)
-* Examples for this Profile: [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample02-deceasedTime](Patient-HL7ATCorePatientExample02-deceasedTime.md), [Patient/HL7ATCorePatientExample03-deceasedBoolean](Patient-HL7ATCorePatientExample03-deceasedBoolean.md), [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md)... Show 4 more, [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md) and [Patient/PatientFelixGruber](Patient-PatientFelixGruber.md)
+* Examples for this Profile: [Patient/HL7ATCorePatientCreateTestExample](Patient-HL7ATCorePatientCreateTestExample.md), [Patient/HL7ATCorePatientExample01](Patient-HL7ATCorePatientExample01.md), [Patient/HL7ATCorePatientExample02-deceasedTime](Patient-HL7ATCorePatientExample02-deceasedTime.md), [Patient/HL7ATCorePatientExample03-deceasedBoolean](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)... Show 6 more, [Patient/HL7ATCorePatientExample04-Full](Patient-HL7ATCorePatientExample04-Full.md), [Patient/HL7ATCorePatientExample05-FullElga](Patient-HL7ATCorePatientExample05-FullElga.md), [Patient/HL7ATCorePatientExample06-GenderExtension](Patient-HL7ATCorePatientExample06-GenderExtension.md), [Patient/HL7ATCorePatientExample07-MunicipalityCode](Patient-HL7ATCorePatientExample07-MunicipalityCode.md), [Patient/HL7ATCorePatientUpdateTestExample](Patient-HL7ATCorePatientUpdateTestExample.md) and [Patient/PatientFelixGruber](Patient-PatientFelixGruber.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-patient.json)
 
@@ -39,7 +48,7 @@ Usage of the European Health Insurance Card (EHIC):
   "name" : "HL7ATCorePatient",
   "title" : "HL7® AT Core Patient Profile",
   "status" : "active",
-  "date" : "2026-10-16T17:40:42+00:00",
+  "date" : "2026-10-20T06:06:44+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -203,34 +212,28 @@ Usage of the European Health Insurance Card (EHIC):
       "id" : "Patient.identifier:socialSecurityNumber",
       "path" : "Patient.identifier",
       "sliceName" : "socialSecurityNumber",
+      "short" : "Sozialversicherungsnummer (SVNR)",
+      "definition" : "The Austrian social security number (Sozialversicherungsnummer, SVNR) of the patient, assigned by the Federation of Austrian Social Insurances (Dachverband der österreichischen Sozialversicherungsträger).",
       "min" : 0,
       "max" : "1"
     },
     {
-      "id" : "Patient.identifier:socialSecurityNumber.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:socialSecurityNumber.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:socialSecurityNumber.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "SS"
+      "patternCode" : "SS"
     },
     {
       "id" : "Patient.identifier:socialSecurityNumber.system",
       "path" : "Patient.identifier.system",
-      "short" : "OID for the Social Security Number in Austria",
+      "short" : "OID for the Sozialversicherungsnummer (SVNR) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.1.4.3.1",
+      "patternUri" : "urn:oid:1.2.40.0.10.1.4.3.1",
       "mapping" : [{
         "identity" : "at-core-mapping-patient2cdaatv3",
         "map" : ".id[1].root"
@@ -247,40 +250,34 @@ Usage of the European Health Insurance Card (EHIC):
     {
       "id" : "Patient.identifier:socialSecurityNumber.assigner.display",
       "path" : "Patient.identifier.assigner.display",
-      "fixedString" : "Dachverband der österreichischen Sozialversicherungsträger"
+      "patternString" : "Dachverband der österreichischen Sozialversicherungsträger"
     },
     {
       "id" : "Patient.identifier:bPK",
       "path" : "Patient.identifier",
       "sliceName" : "bPK",
+      "short" : "Bereichsspezifisches Personenkennzeichen (bPK)",
+      "definition" : "The sector-specific personal identifier (Bereichsspezifisches Personenkennzeichen, bPK) of the patient, used in Austrian e-Government processes and assigned by the Federal Ministry of the Interior (Bundesministerium für Inneres).",
       "min" : 0,
       "max" : "1"
     },
     {
-      "id" : "Patient.identifier:bPK.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:bPK.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:bPK.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "NI"
+      "patternCode" : "NI"
     },
     {
       "id" : "Patient.identifier:bPK.system",
       "path" : "Patient.identifier.system",
-      "short" : "OID for the bPK in Austria",
+      "short" : "OID for the bereichsspezifisches Personenkennzeichen (bPK) in Austria",
       "min" : 1,
-      "fixedUri" : "urn:oid:1.2.40.0.10.2.1.1.149",
+      "patternUri" : "urn:oid:1.2.40.0.10.2.1.1.149",
       "mapping" : [{
         "identity" : "at-core-mapping-patient2cdaatv3",
         "map" : ".id.where(root='1.2.40.0.10.2.1.1.149').root"
@@ -297,38 +294,32 @@ Usage of the European Health Insurance Card (EHIC):
     {
       "id" : "Patient.identifier:bPK.assigner.display",
       "path" : "Patient.identifier.assigner.display",
-      "fixedString" : "Bundesministerium für Inneres"
+      "patternString" : "Bundesministerium für Inneres"
     },
     {
       "id" : "Patient.identifier:vbPK",
       "path" : "Patient.identifier",
       "sliceName" : "vbPK",
+      "short" : "Verschlüsseltes bereichsspezifisches Personenkennzeichen (vbPK)",
+      "definition" : "The encrypted sector-specific personal identifier (Verschlüsseltes bereichsspezifisches Personenkennzeichen, vbPK) of the patient, used in Austrian e-Government processes. The OID of the system identifies the sector (e.g. GH for Gesundheit, SV for Sozialversicherung, AS for Amtliche Statistik) according to the E-Government-Bereichsabgrenzungsverordnung (E-Gov-BerAbgrV).",
       "min" : 0,
       "max" : "*"
     },
     {
-      "id" : "Patient.identifier:vbPK.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:vbPK.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:vbPK.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "ANON"
+      "patternCode" : "ANON"
     },
     {
       "id" : "Patient.identifier:vbPK.system",
       "path" : "Patient.identifier.system",
-      "short" : "OID for the specific vbPK in Austria",
+      "short" : "OID for the specific verschlüsseltes bereichsspezifisches Personenkennzeichen (vbPK) in Austria",
       "min" : 1,
       "binding" : {
         "strength" : "required",
@@ -339,27 +330,21 @@ Usage of the European Health Insurance Card (EHIC):
       "id" : "Patient.identifier:localPatientId",
       "path" : "Patient.identifier",
       "sliceName" : "localPatientId",
+      "short" : "Local patient identifier (lokale Patientenkennung)",
+      "definition" : "A local patient identifier (lokale Patientenkennung) assigned by a healthcare service provider (Gesundheitsdiensteanbieter, GDA), e.g. the patient ID of a hospital information system. It is only unique within the namespace of the assigning GDA.",
       "min" : 0,
       "max" : "1"
     },
     {
-      "id" : "Patient.identifier:localPatientId.type",
-      "path" : "Patient.identifier.type",
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/hl7-at-patientidentifier"
-      }
-    },
-    {
       "id" : "Patient.identifier:localPatientId.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
-      "fixedUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
+      "patternUri" : "http://terminology.hl7.org/CodeSystem/v2-0203"
     },
     {
       "id" : "Patient.identifier:localPatientId.type.coding.code",
       "path" : "Patient.identifier.type.coding.code",
       "min" : 1,
-      "fixedCode" : "PI"
+      "patternCode" : "PI"
     },
     {
       "id" : "Patient.identifier:localPatientId.system",
@@ -475,6 +460,8 @@ Usage of the European Health Insurance Card (EHIC):
       "id" : "Patient.gender.extension:AdministrativeGenderAddition",
       "path" : "Patient.gender.extension",
       "sliceName" : "AdministrativeGenderAddition",
+      "short" : "Additional administrative gender (Geschlecht)",
+      "definition" : "Additional administrative gender code (Geschlecht) required in Austria that is not covered by the FHIR administrative gender codes. The extension is only applied in case the administrative gender itself is set to 'other' (Ergänzung zu 'other').",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -841,6 +828,8 @@ Usage of the European Health Insurance Card (EHIC):
       "id" : "Patient.contact.gender.extension:AdministrativeGenderAddition",
       "path" : "Patient.contact.gender.extension",
       "sliceName" : "AdministrativeGenderAddition",
+      "short" : "Additional administrative gender (Geschlecht)",
+      "definition" : "Additional administrative gender code (Geschlecht) required in Austria that is not covered by the FHIR administrative gender codes. The extension is only applied in case the administrative gender itself is set to 'other' (Ergänzung zu 'other').",
       "min" : 0,
       "max" : "1",
       "type" : [{

@@ -1,6 +1,6 @@
-# Address Municipality Key (Gemeindekennziffer) - HL7® Austria FHIR® Core Implementation Guide v2.1.0
+# Address GKZ (Gemeindekennziffer) - HL7® Austria FHIR® Core Implementation Guide v2.1.0
 
-## Extension: Address Municipality Key (Gemeindekennziffer) 
+## Extension: Address GKZ (Gemeindekennziffer) 
 
 **Context of Use**
 
@@ -32,9 +32,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-addre
   "url" : "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityKey",
   "version" : "2.1.0",
   "name" : "AddressMunicipalityKey",
-  "title" : "Address Municipality Key (Gemeindekennziffer)",
+  "title" : "Address GKZ (Gemeindekennziffer)",
   "status" : "active",
-  "date" : "2026-10-16T17:40:42+00:00",
+  "date" : "2026-10-20T06:06:44+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -74,8 +74,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-addre
     "element" : [{
       "id" : "Extension",
       "path" : "Extension",
-      "short" : "Address Municipality Key (Gemeindekennziffer)",
-      "definition" : "HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."
+      "short" : "Gemeindekennziffer (GKZ)",
+      "definition" : "The Gemeindekennziffer (GKZ) of the Austrian municipality the address belongs to, as published by Statistics Austria (Statistik Austria). It is generally identical to the municipality code (Gemeindecode), except in Vienna, where the Gemeindekennziffer is 90001 for the whole city while the Gemeindecode varies by district."
     },
     {
       "id" : "Extension.extension",

@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.name [ fhir:value "HL7AustriaImplementationGuide"] ;
   fhir:ImplementationGuide.title [ fhir:value "HL7® Austria FHIR® Core Implementation Guide"] ;
   fhir:ImplementationGuide.status [ fhir:value "active"] ;
-  fhir:ImplementationGuide.date [ fhir:value "2026-10-16T17:40:42+00:00"^^xsd:dateTime] ;
+  fhir:ImplementationGuide.date [ fhir:value "2026-10-20T06:06:44+00:00"^^xsd:dateTime] ;
   fhir:ImplementationGuide.publisher [ fhir:value "HL7® Austria, TC FHIR®"] ;
   fhir:ImplementationGuide.contact [
      fhir:index -1 ;
@@ -425,11 +425,11 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode> ;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-ext-address-municipalityCode" ]
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityKey> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-ext-address-municipalityKey" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Address Municipality Code (Gemeindecode)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Address GKZ (Gemeindekennziffer)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -439,11 +439,11 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityKey> ;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-ext-address-municipalityKey" ]
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-ext-address-municipalityCode> ;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/at-core-ext-address-municipalityCode" ]
        ] ;
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Address Municipality Key (Gemeindekennziffer)" ] ;
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)." ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Address Municipality Code (Gemeindecode)" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index -1 ;
@@ -500,6 +500,40 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example HealthcareService with Specialty" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a healthcare service with an Austrian Funktionscode as specialty." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "HealthcareService" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/HealthcareService/HealthcareServiceHebammenberatung> ;
+         fhir:Reference.reference [ fhir:value "HealthcareService/HealthcareServiceHebammenberatung" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HealthcareServiceHebammenberatung" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a midwifery consultation service provided by a freelance midwife in cooperation with the fictional Frauenmedizin Sonnenfeld group practice." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "HealthcareService" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/HealthcareService/HealthcareServiceUltraschall> ;
+         fhir:Reference.reference [ fhir:value "HealthcareService/HealthcareServiceUltraschall" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HealthcareServiceUltraschall" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a gynecological ultrasound service offered by the fictional Frauenmedizin Sonnenfeld private medical group practice." ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService" ;
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService>
@@ -585,6 +619,23 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization" ;
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Patient" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Patient/HL7ATCorePatientCreateTestExample> ;
+         fhir:Reference.reference [ fhir:value "Patient/HL7ATCorePatientCreateTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7ATCorePatientCreateTestExample" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example with all elements for the usage of the HL7 AT Core Patient Profile" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
        ]
      ], [
        fhir:index -1 ;
@@ -701,6 +752,22 @@
        ] ;
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7ATCorePatientExample07-MunicipalityCode" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example for the usage of the HL7 AT Core Patient Profile that includes a municipality code" ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Patient" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Patient/HL7ATCorePatientUpdateTestExample> ;
+         fhir:Reference.reference [ fhir:value "Patient/HL7ATCorePatientUpdateTestExample" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7ATCorePatientUpdateTestExample" ] ;
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
@@ -856,6 +923,34 @@
        fhir:Element.extension [
          fhir:index -1 ;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/TestScript/testscript-patient-create-at-core> ;
+         fhir:Reference.reference [ fhir:value "TestScript/testscript-patient-create-at-core" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7® AT Core TestScript - Patient Create" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientCreateTestExample. Expected Result: the server accepts creation of a Patient resource that is conformant to the AT Core Patient profile. The server-assigned logical id is captured in the patientResourceId variable so it can be fed into the AT Core Patient Update test script." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "TestScript" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/TestScript/testscript-patient-update-at-core> ;
+         fhir:Reference.reference [ fhir:value "TestScript/testscript-patient-update-at-core" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7® AT Core TestScript - Patient Update" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "TestScript updating an existing patient resource conformant to the AT Core Patient profile on a FHIR Server using the JSON format. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientUpdateTestExample with an updated PI value of “11-22-33-44”. Expected Result: the server accepts the update of a Patient resource that is conformant to the AT Core Patient profile. Precondition: the target resource already exists on the server; the setup phase establishes this itself by PUTting the fixture to the same id first, so the test can assert a strict 200 regardless of what ran before it. The patientResourceId variable MUST carry the same value as Patient.id inside the fixture body." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ] ;
        fhir:ImplementationGuide.definition.resource.reference [
@@ -865,6 +960,74 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "HL7® AT Core ValueSet Profile" ] ;
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "HL7® Austria FHIR® Core Profile for valuesets in Austria.\r\nThe HL7® AT Core ValueSet is based upon the core FHIR® ValueSet Resource and defines the use of the OID extension." ] ;
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Location" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Location/LocationOrdinationLukasSteiner> ;
+         fhir:Reference.reference [ fhir:value "Location/LocationOrdinationLukasSteiner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "LocationOrdinationLukasSteiner" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the physical location of Dr. Lukas Steiner's individual medical practice in Salzburg." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Organization" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Organization/OrganizationAmadeusSpitalInnereMedizin> ;
+         fhir:Reference.reference [ fhir:value "Organization/OrganizationAmadeusSpitalInnereMedizin" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "OrganizationAmadeusSpitalInnereMedizin" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the fictional Department of Internal Medicine at Amadeus Spital, demonstrating an organizational department within a hospital." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Organization" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Organization/OrganizationGruppenpraxisFrauenmedizinSonnenfeld> ;
+         fhir:Reference.reference [ fhir:value "Organization/OrganizationGruppenpraxisFrauenmedizinSonnenfeld" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "OrganizationGruppenpraxisFrauenmedizinSonnenfeld" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of a fictional Austrian private medical group practice for gynecology and obstetrics in Linz, operated as an Offene Gesellschaft (OG)." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Organization" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Organization/OrganizationOrdinationLukasSteiner> ;
+         fhir:Reference.reference [ fhir:value "Organization/OrganizationOrdinationLukasSteiner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "OrganizationOrdinationLukasSteiner" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the fictional Austrian individual medical practice Ordination Dr. Lukas Steiner, providing specialist care in internal medicine." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization>
+       ]
      ], [
        fhir:index -1 ;
        fhir:Element.extension [
@@ -895,6 +1058,159 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ;
          fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Practitioner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Practitioner/PractitionerAnjaLeitner> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/PractitionerAnjaLeitner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerAnjaLeitner" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Dr. Anja Leitner, a fictional Austrian specialist in gynecology and obstetrics and partner of the Frauenmedizin Sonnenfeld private medical group practice." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Practitioner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Practitioner/PractitionerLukasSteiner> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/PractitionerLukasSteiner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerLukasSteiner" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of the fictional Austrian physician Dr. Lukas Steiner, who practices at both Amadeus Spital and his own medical office." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/PractitionerRole/PractitionerRoleAnjaLeitnerSonnenfeld> ;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/PractitionerRoleAnjaLeitnerSonnenfeld" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerRoleAnjaLeitnerSonnenfeld" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Dr. Anja Leitner practicing gynecology and obstetrics at the fictional Frauenmedizin Sonnenfeld private medical group practice." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/PractitionerRole/PractitionerRoleLukasSteinerOrdination> ;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/PractitionerRoleLukasSteinerOrdination" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerRoleLukasSteinerOrdination" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Dr. Lukas Steiner practicing as a specialist in internal medicine at his individual medical office." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/PractitionerRole/PractitionerRoleLukasSteinerSpital> ;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/PractitionerRoleLukasSteinerSpital" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerRoleLukasSteinerSpital" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Dr. Lukas Steiner serving as head of the Department of Internal Medicine at the fictional Austrian hospital Amadeus Spital." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/PractitionerRole/PractitionerRoleSarahBergerSonnenfeld> ;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/PractitionerRoleSarahBergerSonnenfeld" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerRoleSarahBergerSonnenfeld" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of freelance midwife Sarah Berger providing midwifery consultations in cooperation with the fictional Frauenmedizin Sonnenfeld private medical group practice." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "PractitionerRole" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/PractitionerRole/PractitionerRoleThomasHoferSonnenfeld> ;
+         fhir:Reference.reference [ fhir:value "PractitionerRole/PractitionerRoleThomasHoferSonnenfeld" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerRoleThomasHoferSonnenfeld" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Dr. Thomas Hofer practicing gynecology and obstetrics at the fictional Frauenmedizin Sonnenfeld private medical group practice." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Practitioner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Practitioner/PractitionerSarahBerger> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/PractitionerSarahBerger" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerSarahBerger" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Sarah Berger, BSc, a fictional Austrian midwife providing freelance midwifery services in cooperation with the Frauenmedizin Sonnenfeld group practice in Linz." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner>
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:Element.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ] ;
+         fhir:Extension.valueString [ fhir:value "Practitioner" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://fhir.hl7.at/core/r4/Practitioner/PractitionerThomasHofer> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/PractitionerThomasHofer" ]
+       ] ;
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "PractitionerThomasHofer" ] ;
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Example of Dr. Thomas Hofer, a fictional Austrian specialist in gynecology and obstetrics and partner of the Frauenmedizin Sonnenfeld private medical group practice." ] ;
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner" ;
+         fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner>
        ]
      ], [
        fhir:index -1 ;
@@ -1010,6 +1326,16 @@
          ] ;
          fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "imprint.html" ] ;
          fhir:ImplementationGuide.definition.page.title [ fhir:value "Imprint" ] ;
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ], [
+         fhir:index -1 ;
+         fhir:Element.extension [
+           fhir:index -1 ;
+           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name" ] ;
+           fhir:Extension.valueUrl [ fhir:value "tests.html" ]
+         ] ;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "tests.html" ] ;
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "Tests" ] ;
          fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
        ]
      ] ;
