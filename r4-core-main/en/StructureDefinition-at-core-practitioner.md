@@ -2,16 +2,16 @@
 
 ## Resource Profile: HL7® AT Core Practitioner Profile 
 
-In Austria, practitioners in healthcare are commonly called “Gesundheitsdienstleistungsanbieter (GDA)” (in English: Healthcare Service Provider). This German abbreviation is therefore used throughout this profile. Austrian GDAs are usually identified with one or more of the following identifiers:
+In Austria, practitioners in healthcare are commonly called “Gesundheitsdiensteanbieter (GDA)” (in English: Healthcare Service Provider). This German abbreviation is therefore used throughout this profile. Austrian GDAs are usually identified with one or more of the following identifiers:
 
-* The “GDA OID” which is maintained in the Austrian GDA-Index.
+* The “GDA-OID” which is maintained in the Austrian GDA-Index.
 * A “Vertragspartnernummer (VPNR)“ which is an identifier provided by the Federation of Austrian Social Insurances.
 * A “ Verschlüsseltes bereichsspezifisches Personenkennzeichen (vbPK)” which is an encrypted personal unique identifier used for practitioners.
 
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
-* Examples for this Profile: [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md)
+* Examples for this Profile: [Practitioner/HL7ATCorePractitionerExample01](Practitioner-HL7ATCorePractitionerExample01.md), [Practitioner/PractitionerAnjaLeitner](Practitioner-PractitionerAnjaLeitner.md), [Practitioner/PractitionerLukasSteiner](Practitioner-PractitionerLukasSteiner.md), [Practitioner/PractitionerSarahBerger](Practitioner-PractitionerSarahBerger.md) and [Practitioner/PractitionerThomasHofer](Practitioner-PractitionerThomasHofer.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-practitioner.json)
 
@@ -36,7 +36,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
   "name" : "HL7ATCorePractitioner",
   "title" : "HL7® AT Core Practitioner Profile",
   "status" : "active",
-  "date" : "2026-10-19T13:05:38+00:00",
+  "date" : "2026-10-20T07:19:58+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -108,20 +108,22 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "id" : "Practitioner.identifier:GDA-OID",
       "path" : "Practitioner.identifier",
       "sliceName" : "GDA-OID",
+      "short" : "Gesundheitsdiensteanbieter-OID (GDA-OID)",
+      "definition" : "The OID of the healthcare service provider (Gesundheitsdiensteanbieter, GDA) as registered in the Austrian GDA-Index. The OID is assigned by the Federal Ministry of Health (Bundesministerium für Gesundheit).",
       "min" : 0,
       "max" : "1"
     },
     {
       "id" : "Practitioner.identifier:GDA-OID.system",
       "path" : "Practitioner.identifier.system",
-      "short" : "A GDA in Austria is represented via an URI (OID)",
+      "short" : "A Gesundheitsdiensteanbieter (GDA) in Austria is represented via a URI (OID)",
       "min" : 1,
       "patternUri" : "urn:ietf:rfc:3986"
     },
     {
       "id" : "Practitioner.identifier:GDA-OID.value",
       "path" : "Practitioner.identifier.value",
-      "short" : "OID for the GDA in Austria",
+      "short" : "OID for the Gesundheitsdiensteanbieter (GDA) in Austria",
       "min" : 1
     },
     {
@@ -133,6 +135,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "id" : "Practitioner.identifier:VPNR",
       "path" : "Practitioner.identifier",
       "sliceName" : "VPNR",
+      "short" : "Vertragspartnernummer (VPNR)",
+      "definition" : "The contract partner number (Vertragspartnernummer, VPNR) of the practitioner, assigned by the Federation of Austrian Social Insurances (Dachverband der österreichischen Sozialversicherungsträger).",
       "min" : 0,
       "max" : "*"
     },
@@ -157,13 +161,15 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "id" : "Practitioner.identifier:vbPK",
       "path" : "Practitioner.identifier",
       "sliceName" : "vbPK",
+      "short" : "Verschlüsseltes bereichsspezifisches Personenkennzeichen (vbPK)",
+      "definition" : "The encrypted sector-specific personal identifier (Verschlüsseltes bereichsspezifisches Personenkennzeichen, vbPK) of the practitioner, used in Austrian e-Government processes. The OID of the system identifies the sector (e.g. GH for Gesundheit, SV for Sozialversicherung, AS for Amtliche Statistik) according to the E-Government-Bereichsabgrenzungsverordnung (E-Gov-BerAbgrV).",
       "min" : 0,
       "max" : "*"
     },
     {
       "id" : "Practitioner.identifier:vbPK.system",
       "path" : "Practitioner.identifier.system",
-      "short" : "OID for the specific vbPK in Austria",
+      "short" : "OID for the specific verschlüsseltes bereichsspezifisches Personenkennzeichen (vbPK) in Austria",
       "min" : 1,
       "binding" : {
         "strength" : "required",
@@ -199,6 +205,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
       "id" : "Practitioner.gender.extension:AdministrativeGenderAddition",
       "path" : "Practitioner.gender.extension",
       "sliceName" : "AdministrativeGenderAddition",
+      "short" : "Additional administrative gender (Geschlecht)",
+      "definition" : "Additional administrative gender code (Geschlecht) required in Austria that is not covered by the FHIR administrative gender codes. The extension is only applied in case the administrative gender itself is set to 'other' (Ergänzung zu 'other').",
       "min" : 0,
       "max" : "1",
       "type" : [{

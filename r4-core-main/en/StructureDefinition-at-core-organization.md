@@ -2,9 +2,9 @@
 
 ## Resource Profile: HL7® AT Core Organization Profile 
 
-The goal of this profile is to cover all kind of organizations that are active in the Austrian healthcare domain. Most of the organizations in healthcare are commonly called “Gesundheitsdienstleistungsanbieter (GDA)” (in English: Healthcare Service Provider). This German abbreviation is therefore used throughout this profile where it is relevant. Austrian organizations are usually identified with one or more of the following identifiers:
+The goal of this profile is to cover all kind of organizations that are active in the Austrian healthcare domain. Most of the organizations in healthcare are commonly called “Gesundheitsdiensteanbieter (GDA)” (in English: Healthcare Service Provider). This German abbreviation is therefore used throughout this profile where it is relevant. Austrian organizations are usually identified with one or more of the following identifiers:
 
-* The “GDA OID” which is maintained in the Austrian GDA-Index.
+* The “GDA-OID” which is maintained in the Austrian GDA-Index.
 * A “Vertragspartnernummer (VPNR)“ which is an identifier provided by the Federation of Austrian Social Insurances.
 * A “Verwaltungskennzeichen (VKZ)” which is an identifier used for the Austrian e-Government process.
 * A "Krankenanstaltennummer (KA-Nr)" which is an identifier specifically for hospitals in Austria
@@ -12,7 +12,7 @@ The goal of this profile is to cover all kind of organizations that are active i
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core HealthcareService Profile](StructureDefinition-at-core-HealthcareService.md), [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md) and [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
-* Examples for this Profile: [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md) and [Landeskrankenhaus Hall in Tirol](Organization-HL7ATCoreOrganizationExample02-MultipleVPNR.md)
+* Examples for this Profile: [Bildungsverein Perspektiva](Organization-HL7ATCoreOrganizationBildungsvereinPerspektiva.md), [Amadeus Spital](Organization-HL7ATCoreOrganizationExample01.md), [Landeskrankenhaus Hall in Tirol](Organization-HL7ATCoreOrganizationExample02-MultipleVPNR.md), [AlpenData Solutions GmbH](Organization-OrganizationAlpenDataSolutionsGmbH.md)... Show 5 more, [Alpenländische Gesundheitskasse](Organization-OrganizationAlpenlaendischeGesundheitskasse.md), [Abteilung für Innere Medizin – Amadeus Spital](Organization-OrganizationAmadeusSpitalInnereMedizin.md), [Gruppenpraxis Frauenmedizin Sonnenfeld OG](Organization-OrganizationGruppenpraxisFrauenmedizinSonnenfeld.md), [Ordination Dr. Lukas Steiner](Organization-OrganizationOrdinationLukasSteiner.md) and [Gemeindeamt Sonnenfeld](Organization-OrganizationStadtgemeindeSonnenfeld.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-organization.json)
 
@@ -37,7 +37,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
   "name" : "HL7ATCoreOrganization",
   "title" : "HL7® AT Core Organization Profile",
   "status" : "active",
-  "date" : "2026-10-19T13:05:38+00:00",
+  "date" : "2026-10-20T07:19:58+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -101,20 +101,22 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "id" : "Organization.identifier:GDA-OID",
       "path" : "Organization.identifier",
       "sliceName" : "GDA-OID",
+      "short" : "Gesundheitsdiensteanbieter-OID (GDA-OID)",
+      "definition" : "The OID of the healthcare service provider (Gesundheitsdiensteanbieter, GDA) as registered in the Austrian GDA-Index. The OID is assigned by the Federal Ministry of Health (Bundesministerium für Gesundheit).",
       "min" : 0,
       "max" : "1"
     },
     {
       "id" : "Organization.identifier:GDA-OID.system",
       "path" : "Organization.identifier.system",
-      "short" : "A GDA in Austria is represented via an URI (OID)",
+      "short" : "A Gesundheitsdiensteanbieter (GDA) in Austria is represented via a URI (OID)",
       "min" : 1,
       "patternUri" : "urn:ietf:rfc:3986"
     },
     {
       "id" : "Organization.identifier:GDA-OID.value",
       "path" : "Organization.identifier.value",
-      "short" : "OID for the GDA in Austria",
+      "short" : "OID for the Gesundheitsdiensteanbieter (GDA) in Austria",
       "min" : 1
     },
     {
@@ -126,6 +128,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "id" : "Organization.identifier:VPNR",
       "path" : "Organization.identifier",
       "sliceName" : "VPNR",
+      "short" : "Vertragspartnernummer (VPNR)",
+      "definition" : "The contract partner number (Vertragspartnernummer, VPNR) of the organization, assigned by the Federation of Austrian Social Insurances (Dachverband der österreichischen Sozialversicherungsträger).",
       "min" : 0,
       "max" : "*"
     },
@@ -150,6 +154,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "id" : "Organization.identifier:VKZ",
       "path" : "Organization.identifier",
       "sliceName" : "VKZ",
+      "short" : "Verwaltungskennzeichen (VKZ)",
+      "definition" : "The administrative identifier (Verwaltungskennzeichen, VKZ) of the organization, used in Austrian e-Government processes and assigned by the Federal Ministry of Finance (Bundesministerium für Finanzen).",
       "min" : 0,
       "max" : "1"
     },
@@ -174,6 +180,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
       "id" : "Organization.identifier:KANR",
       "path" : "Organization.identifier",
       "sliceName" : "KANR",
+      "short" : "Krankenanstaltennummer (KA-Nr)",
+      "definition" : "The hospital identification number (Krankenanstaltennummer, KA-Nr) of the organization according to the Austrian hospital register (Krankenanstaltenkataster), assigned by the Federal Ministry of Health (Österreichisches Bundesministerium für Gesundheit). Virtual KA-Nrs are suffixed with '+' (e.g. 'K101+').",
       "min" : 0,
       "max" : "1"
     },
@@ -187,7 +195,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-organizat
     {
       "id" : "Organization.identifier:KANR.value",
       "path" : "Organization.identifier.value",
-      "short" : "Krankenanstaltennummer according to Krankenanstaltenkataster. Virtual KANRs are suffixed with '+' (e.g. 'K101+')",
+      "short" : "Krankenanstaltennummer according to Krankenanstaltenkataster. Virtual KA-Nrs are suffixed with '+' (e.g. 'K101+')",
       "min" : 1
     },
     {

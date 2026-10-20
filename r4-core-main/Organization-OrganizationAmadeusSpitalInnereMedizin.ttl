@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/Organization/OrganizationAmadeusSpitalInnereMedizin> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "OrganizationAmadeusSpitalInnereMedizin"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization OrganizationAmadeusSpitalInnereMedizin</b></p><a name=\"OrganizationAmadeusSpitalInnereMedizin\"> </a><a name=\"hcOrganizationAmadeusSpitalInnereMedizin\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-organization.html\">HL7® AT Core Organization Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Abteilung für Innere Medizin – Amadeus Spital (Abteilung für Innere Medizin)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The kind(s) of organization that this is\">Type:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/organization-type dept}\">Abteilung für Innere Medizin</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other names this is known by\">Alias:</td><td colspan=\"3\">Innere Medizin</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The organization of which this organization forms a part\">Part Of:</td><td colspan=\"3\"><a href=\"Organization-HL7ATCoreOrganizationExample01.html\">Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the organization\">Contact Detail</td><td colspan=\"3\"><ul><li><a href=\"mailto:innere-medizin@amadeus-spital.example\">innere-medizin@amadeus-spital.example</a></li><li><a href=\"tel:+43662555120\">+43 662 555 120</a></li></ul></td></tr></table></div>"
+  ] ;
+  fhir:Organization.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:Organization.type [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/organization-type" ] ;
+       fhir:Coding.code [ fhir:value "dept" ] ;
+       fhir:Coding.display [ fhir:value "Hospital Department" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Abteilung für Innere Medizin" ]
+  ] ;
+  fhir:Organization.name [ fhir:value "Abteilung für Innere Medizin – Amadeus Spital"] ;
+  fhir:Organization.alias [
+     fhir:value "Innere Medizin" ;
+     fhir:index 0
+  ] ;
+  fhir:Organization.telecom [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "email" ] ;
+     fhir:ContactPoint.value [ fhir:value "innere-medizin@amadeus-spital.example" ] ;
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "+43 662 555 120" ] ;
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ] ;
+  fhir:Organization.partOf [
+     fhir:link <https://fhir.hl7.at/core/r4/Organization/HL7ATCoreOrganizationExample01> ;
+     fhir:Reference.reference [ fhir:value "Organization/HL7ATCoreOrganizationExample01" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/Organization/OrganizationAmadeusSpitalInnereMedizin.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

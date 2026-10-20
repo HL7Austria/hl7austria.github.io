@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
   "name" : "HL7ATCoreAddress",
   "title" : "HL7® AT Core Address Profile",
   "status" : "active",
-  "date" : "2026-10-19T13:05:38+00:00",
+  "date" : "2026-10-20T07:19:58+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -102,6 +102,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
       "id" : "Address.extension:municipalityCode",
       "path" : "Address.extension",
       "sliceName" : "municipalityCode",
+      "short" : "Municipality code (Gemeindecode)",
+      "definition" : "The municipality code (Gemeindecode) of the Austrian municipality the address belongs to, as published by Statistics Austria (Statistik Austria). It is generally identical to the Gemeindekennziffer (GKZ), except in Vienna, where the Gemeindecode varies by district while the Gemeindekennziffer is 90001 for the whole city.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -110,9 +112,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
       }]
     },
     {
-      "id" : "Address.extension:municipalityKey",
+      "id" : "Address.extension:GKZ",
       "path" : "Address.extension",
-      "sliceName" : "municipalityKey",
+      "sliceName" : "GKZ",
+      "short" : "Gemeindekennziffer (GKZ)",
+      "definition" : "The Gemeindekennziffer (GKZ) of the Austrian municipality the address belongs to, as published by Statistics Austria (Statistik Austria). It is generally identical to the municipality code (Gemeindecode), except in Vienna, where the Gemeindekennziffer is 90001 for the whole city while the Gemeindecode varies by district.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -141,8 +145,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
       "id" : "Address.line.extension:street",
       "path" : "Address.line.extension",
       "sliceName" : "street",
-      "short" : "Name of the street",
-      "definition" : "Name of the street without the street number",
+      "short" : "Street name (Straßenname)",
+      "definition" : "Name of the street (Straßenname) without the street number.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -154,8 +158,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
       "id" : "Address.line.extension:streetNumber",
       "path" : "Address.line.extension",
       "sliceName" : "streetNumber",
-      "short" : "Number of the street",
-      "definition" : "Number of the street without the street name",
+      "short" : "Street number (Hausnummer)",
+      "definition" : "Number of the house (Hausnummer) without the street name.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -167,8 +171,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
       "id" : "Address.line.extension:floorDoorNumber",
       "path" : "Address.line.extension",
       "sliceName" : "floorDoorNumber",
-      "short" : "Floor and/or door number",
-      "definition" : "Floor and/or door number",
+      "short" : "Floor and/or door number (Stiege, Stock, Tür)",
+      "definition" : "Additional locator information within a building, such as staircase (Stiege), floor (Stock) and/or door number (Tür).",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -180,8 +184,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-address.c
       "id" : "Address.line.extension:additionalInformation",
       "path" : "Address.line.extension",
       "sliceName" : "additionalInformation",
-      "short" : "Additional Information",
-      "definition" : "Additional information about the street address",
+      "short" : "Additional address information (Adresszusatz)",
+      "definition" : "Additional information about the street address (Adresszusatz), e.g. street direction, P.O. Box number or delivery hints.",
       "min" : 0,
       "max" : "1",
       "type" : [{
