@@ -16,7 +16,7 @@ project_dict = {
     'r4-pica': 'AIST-PICA-R4',
     'r5-AGES-MedicinalProduct': 'AGES-MedicinalProduct-R5',
     'r5-core': 'HL7-AT-FHIR-Core-R5',
-    'r4-ELGA-e-medikation': 'ELGA-e-Medikation-R4',
+    'r4-ELGA-e-Medikation': 'ELGA-e-Medikation-R4',
     'r5-ELGA-e-medikation': 'ELGA-FHIR-e-Medikation-R5',
     'r5-ELGA-MOPED': 'ELGA-MOPED-R5',
     'r5-LinkedCare': 'LinkedCare',
