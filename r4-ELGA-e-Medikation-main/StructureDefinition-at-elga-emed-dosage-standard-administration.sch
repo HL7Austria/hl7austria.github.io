@@ -46,6 +46,7 @@
     <sch:rule context="f:Dosage/f:timing">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
+      <sch:assert test="count(f:event) &lt;= 0">event: maximum cardinality of 'event' is 0</sch:assert>
       <sch:assert test="count(f:repeat) &lt;= 1">repeat: maximum cardinality of 'repeat' is 1</sch:assert>
       <sch:assert test="count(f:code) &lt;= 1">code: maximum cardinality of 'code' is 1</sch:assert>
     </sch:rule>
@@ -55,11 +56,11 @@
     <sch:rule context="f:Dosage/f:timing/f:repeat">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/StructureDefinition/timing-dayOfMonth']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/StructureDefinition/timing-dayOfMonth': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:count) &lt;= 1">count: maximum cardinality of 'count' is 1</sch:assert>
-      <sch:assert test="count(f:countMax) &lt;= 1">countMax: maximum cardinality of 'countMax' is 1</sch:assert>
-      <sch:assert test="count(f:duration) &lt;= 1">duration: maximum cardinality of 'duration' is 1</sch:assert>
-      <sch:assert test="count(f:durationMax) &lt;= 1">durationMax: maximum cardinality of 'durationMax' is 1</sch:assert>
-      <sch:assert test="count(f:durationUnit) &lt;= 1">durationUnit: maximum cardinality of 'durationUnit' is 1</sch:assert>
+      <sch:assert test="count(f:count) &lt;= 0">count: maximum cardinality of 'count' is 0</sch:assert>
+      <sch:assert test="count(f:countMax) &lt;= 0">countMax: maximum cardinality of 'countMax' is 0</sch:assert>
+      <sch:assert test="count(f:duration) &lt;= 0">duration: maximum cardinality of 'duration' is 0</sch:assert>
+      <sch:assert test="count(f:durationMax) &lt;= 0">durationMax: maximum cardinality of 'durationMax' is 0</sch:assert>
+      <sch:assert test="count(f:durationUnit) &lt;= 0">durationUnit: maximum cardinality of 'durationUnit' is 0</sch:assert>
       <sch:assert test="count(f:frequency) &gt;= 1">frequency: minimum cardinality of 'frequency' is 1</sch:assert>
       <sch:assert test="count(f:frequency) &lt;= 1">frequency: maximum cardinality of 'frequency' is 1</sch:assert>
       <sch:assert test="count(f:frequencyMax) &lt;= 0">frequencyMax: maximum cardinality of 'frequencyMax' is 0</sch:assert>

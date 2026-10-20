@@ -2,10 +2,12 @@
 
 ## Resource Profile: AT ELGA e-Medikation Medication Medikation 
 
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) and [At ELGA e-Medikation MedicationRequest Base](StructureDefinition-at-elga-emed-medicationrequest-base.md)
-* Refer to this Profile: [AT ELGA e-Medikation Medication Magistrale Medikation](StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.md), [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-standard-medikation.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
+* Refer to this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
 * Examples for this Profile: [Medication/at-emed-journey-medication-ramipril](Medication-at-emed-journey-medication-ramipril.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medication-standard-medikation.json)
@@ -31,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-10-20T15:36:59+00:00",
+  "date" : "2026-10-20T16:38:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -85,16 +87,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.meta",
       "path" : "Medication.meta",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.meta.versionId",
-      "path" : "Medication.meta.versionId",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.meta.lastUpdated",
-      "path" : "Medication.meta.lastUpdated",
       "mustSupport" : true
     },
     {
@@ -206,47 +198,77 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.ingredient.item[x]",
       "path" : "Medication.ingredient.item[x]",
+      "short" : "Inhaltsstoff codiert. Wirkstoff-Codes stammen aus der ATC-Klassifikation (Anatomical Therapeutic Chemical Classification), die von der WHO herausgegeben wird. Weitere Codes, wie auch die deutsche Bezeichnung der Codes, entsprechen dem GKV-Arzneimittelindex im Wissenschaftlichen Institut der AOK (WidO), AOK Bundesverband GbR, Deutschland, welcher auf den WHO ATC basiert. Zusätzlich kommen ergänzende Codes aus dem Arzneimittelverzeichnis der AGES zum Einsatz.",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x].coding",
+      "path" : "Medication.ingredient.item[x].coding",
       "slicing" : {
         "discriminator" : [{
-          "type" : "type",
+          "type" : "value",
           "path" : "$this"
         }],
         "ordered" : false,
         "rules" : "open"
-      },
-      "type" : [{
-        "code" : "CodeableConcept"
-      },
-      {
-        "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"],
-        "aggregation" : ["contained"]
-      }]
+      }
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemCodeableConcept",
-      "path" : "Medication.ingredient.item[x]",
-      "sliceName" : "itemCodeableConcept",
+      "id" : "Medication.ingredient.item[x].coding:ATCWidO",
+      "path" : "Medication.ingredient.item[x].coding",
+      "sliceName" : "ATCWidO",
       "min" : 0,
       "max" : "1",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetATC"
+      }
+    },
+    {
+      "id" : "Medication.ingredient.item[x].coding:ATCWidO.system",
+      "path" : "Medication.ingredient.item[x].coding.system",
+      "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemReference",
-      "path" : "Medication.ingredient.item[x]",
-      "sliceName" : "itemReference",
-      "short" : "Referenz auf Ressourcen Substance im Fall von magistraler Anwendung.",
+      "id" : "Medication.ingredient.item[x].coding:ATCWidO.code",
+      "path" : "Medication.ingredient.item[x].coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x].coding:WirkstoffeAges",
+      "path" : "Medication.ingredient.item[x].coding",
+      "sliceName" : "WirkstoffeAges",
       "min" : 0,
       "max" : "1",
-      "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"],
-        "aggregation" : ["contained"]
-      }],
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages"
+      }
+    },
+    {
+      "id" : "Medication.ingredient.item[x].coding:WirkstoffeAges.system",
+      "path" : "Medication.ingredient.item[x].coding.system",
+      "min" : 1,
       "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x].coding:WirkstoffeAges.code",
+      "path" : "Medication.ingredient.item[x].coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x].text",
+      "path" : "Medication.ingredient.item[x].text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "Medication.ingredient.isActive",

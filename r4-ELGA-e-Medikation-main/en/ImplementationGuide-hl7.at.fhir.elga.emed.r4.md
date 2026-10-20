@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-20T15:36:59+00:00",
+  "date" : "2026-10-20T16:38:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -555,6 +555,22 @@
       },
       "name" : "AT ELGA e-Medikation Extension Patient Modified",
       "description" : "AT ELGA e-Medikation Extension, die Angibt, ob in einer Ressource eine Änderung vom Patienten veranlasst wurde.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-extension-rezeptur.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-extension-rezeptur"
+      },
+      "name" : "AT ELGA e-Medikation Extension Rezeptur",
+      "description" : "AT ELGA e-Medikation Extension für die Rezeptur für die Zubereitung einer magistralen Zubereitung",
       "exampleBoolean" : false
     },
     {

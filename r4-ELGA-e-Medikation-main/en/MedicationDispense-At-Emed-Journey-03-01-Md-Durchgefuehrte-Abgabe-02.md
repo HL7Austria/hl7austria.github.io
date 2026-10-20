@@ -34,6 +34,7 @@
           "display" : "Dexpanthenol"
         }]
       },
+      "isActive" : true,
       "strength" : {
         "numerator" : {
           "value" : 5,

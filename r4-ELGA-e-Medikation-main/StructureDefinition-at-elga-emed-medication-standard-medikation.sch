@@ -82,4 +82,10 @@
       <sch:assert test="count(f:code) &lt;= 1">code: maximum cardinality of 'code' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Medication/f:ingredient/f:item[x] 1</sch:title>
+    <sch:rule context="f:Medication/f:ingredient/f:item[x]">
+      <sch:assert test="count(f:text) &lt;= 0">text: maximum cardinality of 'text' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>

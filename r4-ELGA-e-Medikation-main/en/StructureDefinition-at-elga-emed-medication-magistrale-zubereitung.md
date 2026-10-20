@@ -2,6 +2,8 @@
 
 ## Resource Profile: AT ELGA e-Medikation Medication Magistrale Medikation 
 
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) and [At ELGA e-Medikation MedicationRequest Base](StructureDefinition-at-elga-emed-medicationrequest-base.md)
@@ -31,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationMagistraleZubereitung",
   "title" : "AT ELGA e-Medikation Medication Magistrale Medikation",
   "status" : "draft",
-  "date" : "2026-10-20T15:36:59+00:00",
+  "date" : "2026-10-20T16:38:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -89,16 +91,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
-      "id" : "Medication.meta.versionId",
-      "path" : "Medication.meta.versionId",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Medication.meta.lastUpdated",
-      "path" : "Medication.meta.lastUpdated",
-      "mustSupport" : true
-    },
-    {
       "id" : "Medication.meta.profile",
       "path" : "Medication.meta.profile",
       "min" : 1,
@@ -127,6 +119,35 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.extension",
+      "path" : "Medication.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Medication.extension:Rezeptur",
+      "path" : "Medication.extension",
+      "sliceName" : "Rezeptur",
+      "min" : 0,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.extension:Rezeptur.value[x]",
+      "path" : "Medication.extension.value[x]",
+      "short" : "Angabe der Rezeptur für die Zubereitung"
+    },
+    {
       "id" : "Medication.modifierExtension",
       "path" : "Medication.modifierExtension",
       "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
@@ -135,7 +156,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.code",
       "path" : "Medication.code",
-      "short" : "Code des Arzneimittels.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.text",
+      "path" : "Medication.code.text",
+      "short" : "Titel der Medikation",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -167,6 +194,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.amount.numerator.comparator",
+      "path" : "Medication.amount.numerator.comparator",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
       "id" : "Medication.amount.numerator.code",
       "path" : "Medication.amount.numerator.code",
       "min" : 1,
@@ -194,42 +227,43 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.ingredient",
       "path" : "Medication.ingredient",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "isActive"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
       "short" : "Wirkstoffe.",
       "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.item[x]",
-      "path" : "Medication.ingredient.item[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      },
-      "type" : [{
-        "code" : "CodeableConcept"
-      },
-      {
-        "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
-      }]
-    },
-    {
-      "id" : "Medication.ingredient.item[x]:itemCodeableConcept",
-      "path" : "Medication.ingredient.item[x]",
-      "sliceName" : "itemCodeableConcept",
-      "short" : "Inhaltsstoff codiert. Wirkstoff-Codes stammen aus der ATC-Klassifikation (Anatomical Therapeutic Chemical Classification), die von der WHO herausgegeben wird. Weitere Codes, wie auch die deutsche Bezeichnung der Codes, entsprechen dem GKV-Arzneimittelindex im Wissenschaftlichen Institut der AOK (WidO), AOK Bundesverband GbR, Deutschland, welcher auf den WHO ATC basiert. Zusätzlich kommen ergänzende Codes aus dem Arzneimittelverzeichnis der AGES zum Einsatz.",
+      "id" : "Medication.ingredient:activeIngredient",
+      "path" : "Medication.ingredient",
+      "sliceName" : "activeIngredient",
       "min" : 0,
-      "max" : "1",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }]
+      "max" : "*",
+      "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding",
+      "id" : "Medication.ingredient:activeIngredient.modifierExtension",
+      "path" : "Medication.ingredient.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x]",
+      "path" : "Medication.ingredient.item[x]",
+      "short" : "Inhaltsstoff codiert. Wirkstoff-Codes stammen aus der ATC-Klassifikation (Anatomical Therapeutic Chemical Classification), die von der WHO herausgegeben wird. Weitere Codes, wie auch die deutsche Bezeichnung der Codes, entsprechen dem GKV-Arzneimittelindex im Wissenschaftlichen Institut der AOK (WidO), AOK Bundesverband GbR, Deutschland, welcher auf den WHO ATC basiert. Zusätzlich kommen ergänzende Codes aus dem Arzneimittelverzeichnis der AGES zum Einsatz.",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding",
       "path" : "Medication.ingredient.item[x].coding",
       "slicing" : {
         "discriminator" : [{
@@ -238,10 +272,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:ATCWidO",
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:ATCWidO",
       "path" : "Medication.ingredient.item[x].coding",
       "sliceName" : "ATCWidO",
       "min" : 0,
@@ -253,12 +290,29 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       }
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:ATCWidO.system",
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:ATCWidO.system",
       "path" : "Medication.ingredient.item[x].coding.system",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:WirkstoffeAges",
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:ATCWidO.version",
+      "path" : "Medication.ingredient.item[x].coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:ATCWidO.code",
+      "path" : "Medication.ingredient.item[x].coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:ATCWidO.display",
+      "path" : "Medication.ingredient.item[x].coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:WirkstoffeAges",
       "path" : "Medication.ingredient.item[x].coding",
       "sliceName" : "WirkstoffeAges",
       "min" : 0,
@@ -270,31 +324,82 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       }
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemCodeableConcept.coding:WirkstoffeAges.system",
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:WirkstoffeAges.system",
       "path" : "Medication.ingredient.item[x].coding.system",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.item[x]:itemReference",
-      "path" : "Medication.ingredient.item[x]",
-      "sliceName" : "itemReference",
-      "short" : "Referenz auf Substance oder enthaltene Medikation von magistraler Anwendung.",
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:WirkstoffeAges.version",
+      "path" : "Medication.ingredient.item[x].coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:WirkstoffeAges.code",
+      "path" : "Medication.ingredient.item[x].coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x].coding:WirkstoffeAges.display",
+      "path" : "Medication.ingredient.item[x].coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.item[x].text",
+      "path" : "Medication.ingredient.item[x].text",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.isActive",
+      "path" : "Medication.ingredient.isActive",
+      "min" : 1,
+      "patternBoolean" : true,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:activeIngredient.strength",
+      "path" : "Medication.ingredient.strength",
+      "short" : "Menge der vorhandenen Zutaten.",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:inactiveIngredient",
+      "path" : "Medication.ingredient",
+      "sliceName" : "inactiveIngredient",
       "min" : 0,
-      "max" : "1",
+      "max" : "*",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:inactiveIngredient.modifierExtension",
+      "path" : "Medication.ingredient.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.ingredient:inactiveIngredient.item[x]",
+      "path" : "Medication.ingredient.item[x]",
       "type" : [{
-        "code" : "Reference",
-        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
+        "code" : "CodeableConcept"
       }],
       "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.isActive",
-      "path" : "Medication.ingredient.isActive",
-      "short" : "Aktive Wirkstoff TRUE/FALSE",
+      "id" : "Medication.ingredient:inactiveIngredient.item[x].text",
+      "path" : "Medication.ingredient.item[x].text",
       "mustSupport" : true
     },
     {
-      "id" : "Medication.ingredient.strength",
+      "id" : "Medication.ingredient:inactiveIngredient.isActive",
+      "path" : "Medication.ingredient.isActive",
+      "min" : 1,
+      "patternBoolean" : false,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient:inactiveIngredient.strength",
       "path" : "Medication.ingredient.strength",
       "short" : "Menge der vorhandenen Zutaten.",
       "mustSupport" : true

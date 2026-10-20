@@ -5,6 +5,7 @@
  **References** 
 
 * [AT ELGA e-Medikation Medication Magistrale Medikation](StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.md)
+* [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-standard-medikation.md)
 
 ### Logical Definition (CLD)
 
@@ -32,7 +33,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "ELGA Dosage Category Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-20T15:36:59+00:00",
+  "date" : "2026-10-20T16:38:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

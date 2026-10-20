@@ -54,7 +54,7 @@ Dosage
         period: 1
         periodUnit: d
         when: MORN (morgens) | NIGHT (nachts)
-        doseAndRate
+    doseAndRate
         doseQuantity
         value: 1
         unit: Stück
@@ -348,7 +348,7 @@ Beispiel: montags morgens und nachts, freitags nur morgens.
 
 ### Bildung der Textdarstellung
 
- Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen dieses Dosierschemas wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. Konkret wurden bisher nur Elemente aus `timing.repeat` und `doseAndRate` in die Textdarstellung aufgenommen. Weitere relevante Elemente (z.B. `site`, `route`, `method`, `additionalInstruction`,`timing.repeat.bounsPeriod[x]`) werden bis zum nächsten Ballot finalisiert. 
+ Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen dieses Dosierschemas wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. Konkret wurden bisher nur Elemente aus `timing.repeat` und `doseAndRate` in die Textdarstellung aufgenommen. Weitere relevante Elemente (z.B. `site`, `route`, `method`, `additionalInstruction`,`timing.repeat.bounsPeriod[x],...`) werden bis zum nächsten Ballot finalisiert. 
 
  Die Textdarstellung wird je Einnahmeregel gebildet. Alle `Dosage`-Einträge mit derselben `sequence` und derselben Dosierungskategorie gehören zu derselben Einnahmeregel. Unterschiedliche Sequenznummern ergeben getrennte Einnahmeregeln. 
 
@@ -451,7 +451,7 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
   "name" : "AtElgaEmedDosageStandardAdministration",
   "title" : "AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-20T15:36:59+00:00",
+  "date" : "2026-10-20T16:38:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -541,6 +541,36 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
       "id" : "Dosage.extension:DosageCategory.value[x].coding.code",
       "path" : "Dosage.extension.value[x].coding.code",
       "patternCode" : "standard"
+    },
+    {
+      "id" : "Dosage.timing.event",
+      "path" : "Dosage.timing.event",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.count",
+      "path" : "Dosage.timing.repeat.count",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.countMax",
+      "path" : "Dosage.timing.repeat.countMax",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.duration",
+      "path" : "Dosage.timing.repeat.duration",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.durationMax",
+      "path" : "Dosage.timing.repeat.durationMax",
+      "max" : "0"
+    },
+    {
+      "id" : "Dosage.timing.repeat.durationUnit",
+      "path" : "Dosage.timing.repeat.durationUnit",
+      "max" : "0"
     },
     {
       "id" : "Dosage.timing.repeat.frequency",

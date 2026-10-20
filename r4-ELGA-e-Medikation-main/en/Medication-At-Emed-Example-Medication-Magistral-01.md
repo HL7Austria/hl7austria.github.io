@@ -6,7 +6,7 @@ Profile: [AT ELGA e-Medikation Medication Magistrale Medikation](StructureDefini
 
 **form**: Salbe
 
-> **ingredient****item**: Dexpanthenol**strength**: 5 g (Details: UCUM codeg = 'g')/100 g (Details: UCUM codeg = 'g')
+> **ingredient****item**: Dexpanthenol**isActive**: true**strength**: 5 g (Details: UCUM codeg = 'g')/100 g (Details: UCUM codeg = 'g')
 
 > **ingredient****item**: Salbengrundlage**isActive**: false**strength**: 95 g/100 g
 
@@ -36,6 +36,7 @@ Profile: [AT ELGA e-Medikation Medication Magistrale Medikation](StructureDefini
         "display" : "Dexpanthenol"
       }]
     },
+    "isActive" : true,
     "strength" : {
       "numerator" : {
         "value" : 5,

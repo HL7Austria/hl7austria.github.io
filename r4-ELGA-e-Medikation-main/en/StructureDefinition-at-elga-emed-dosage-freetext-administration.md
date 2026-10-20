@@ -39,7 +39,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageFreeTextAdministration",
   "title" : "AT ELGA e-Medikation Freitext-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-20T15:36:59+00:00",
+  "date" : "2026-10-20T16:38:16+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -90,64 +90,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "min" : 1
     },
     {
-      "id" : "Dosage.timing.repeat.extension:TimingDayOfMonth",
-      "path" : "Dosage.timing.repeat.extension",
-      "sliceName" : "TimingDayOfMonth",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.duration",
-      "path" : "Dosage.timing.repeat.duration",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.durationMax",
-      "path" : "Dosage.timing.repeat.durationMax",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.durationUnit",
-      "path" : "Dosage.timing.repeat.durationUnit",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.frequency",
-      "path" : "Dosage.timing.repeat.frequency",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.frequencyMax",
-      "path" : "Dosage.timing.repeat.frequencyMax",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.period",
-      "path" : "Dosage.timing.repeat.period",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.periodMax",
-      "path" : "Dosage.timing.repeat.periodMax",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.periodUnit",
-      "path" : "Dosage.timing.repeat.periodUnit",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.dayOfWeek",
-      "path" : "Dosage.timing.repeat.dayOfWeek",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.timeOfDay",
-      "path" : "Dosage.timing.repeat.timeOfDay",
-      "max" : "0"
-    },
-    {
-      "id" : "Dosage.timing.repeat.when",
-      "path" : "Dosage.timing.repeat.when",
+      "id" : "Dosage.timing",
+      "path" : "Dosage.timing",
       "max" : "0"
     },
     {

@@ -36,6 +36,7 @@ TODO: Some Narrative
           "display" : "Dexpanthenol"
         }]
       },
+      "isActive" : true,
       "strength" : {
         "numerator" : {
           "value" : 5,
