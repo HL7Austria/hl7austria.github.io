@@ -525,13 +525,13 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <h3 id="sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)</h3>
 
-<p><em>Prescription-Search</em> dient der Suche nach <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a> eines ELGA-Teilnehmers, um vorgesehene Arzneimittelabgaben einzusehen. Als <em>Geplante Abgabe</em> gilt eine <em>MedicationRequest</em>-Ressource mit <em>category = "Geplante Abgabe"</em>.</p>
+<p><em>Prescription-Search</em> dient der Suche nach <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a> eines ELGA-Teilnehmers, um vorgesehene Arzneimittelabgaben einzusehen. Als <em>Geplante Abgabe</em> gilt eine <em>MedicationRequest</em>-Ressource mit <em>category "Geplante Abgabe"</em>.</p>
 
 <p><em>Geplante Abgaben</em> dokumentieren medizinische Inhalte des e-Rezepts. Wurden mehrere Arzneimittel gleichzeitig verordnet und sind demselben e-Rezept zugeordnet, sind die zugehörigen <em>Geplanten Abgaben</em> mit demselben <em>e-Med GroupIdentifier</em> zu versehen, den auch das e-Rezept mitführt (bildet damit die Rezept-Klammer).</p>
 
 <h4 id="suchparameter">Suchparameter</h4>
 
-<p>Die Suche nach <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a> erfolgt mittels <strong>GET</strong>-Request unter Angabe geeigneter Suchparameter:</p>
+<p>Die Suche nach <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplanten Abgaben</a> erfolgt mittels <strong>GET</strong>-Request unter Angabe geeigneter Suchparameter:</p>
 <ul>
   <li>alle (ohne Einschränkung)   <!-- TODO sinnvoll? akl 2.10. --></li>
   <li>in einem bestimmten Zeitraum erfasste</li>
@@ -547,6 +547,8 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 </p>
 </div>
 
+<p><br/></p>
+
 <p>Die gefundenen <em>Geplanten Abgaben</em> können als Ausgangspunkt für weitere Abfragen verwendet werden:</p>
 <ul>
   <li>zugehöriger Medikationsplaneintrag und Medikationsplanversion   <!-- wie kommt man auf die Planversion? keine Referenz im Planeintrag auf die List(version) Todo akl 7.10. -->
@@ -559,18 +561,12 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 
 <p>Von ELGA-Teilnehmern gelöschte <em>Geplanten Abgaben</em> stehen nicht mehr zur Verfügung.</p>
 
-<div class="dragon">
-<p class="note-to-balloters"><a name="l702">​</a>
-Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="nteractions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
-</p>
-</div>
-
   <!-- - Gültigkeitszeitraum des Rezepts (validityPeriod)? <br> -->
 
 <h5 id="ablauf">Ablauf</h5>
 
 <ol>
-  <li>Der GDA führt einen <strong>GET</strong>-Request auf den Prescription-Search-Endpunkt mit <em>MedicationRequest.category = "Geplante Abgabe"</em> und Suchparametern aus</li>
+  <li>Der GDA führt einen <strong>GET</strong>-Request auf den Prescription-Search-Endpunkt mit <em>MedicationRequest.category "Geplante Abgabe"</em> und Suchparametern aus</li>
   <li>Die Fachanwendung ermittelt die den Suchkriterien entsprechenden <em>Geplanten Abgaben</em>.</li>
   <li>Die Fachanwendung liefert das Suchergebnis als Bundle vom Typ <em>searchset</em> zurück.</li>
   <li>Werden keine passenden Ressourcen gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.</li>
@@ -582,9 +578,9 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 
 <h3 id="sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)</h3>
 
-<p><em>Dispense-Search</em> dient dem Suche nach <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a> eines ELGA-Teilnehmers, um bereits dokumentierte Arzneimittelabgaben einzusehen.</p>
+<p><em>Dispense-Search</em> dient der Suche nach <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a> eines ELGA-Teilnehmers, um bereits dokumentierte Arzneimittelabgaben einzusehen.</p>
 
-<p><em>Durchgeführten Abgaben</em> spiegeln den Status der Abgaben des e-Rezepts wider. Eine <em>Durchgeführte Abgabe</em>, die auf einer <em>Geplanten Abgabe</em> basiert, enthält den <em>e-Med GroupIdentifier</em> der zugehörigen <em>Geplanten Abgabe</em>. Dadurch können zusammengehörige <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> über denselben <em>e-Med GroupIdentifier</em> identifiziert und gemeinsam abgerufen werden.</p>
+<p><em>Durchgeführte Abgaben</em> spiegeln den Status der Abgaben des e-Rezepts wider. Eine <em>Durchgeführte Abgabe</em>, die auf einer <em>Geplanten Abgabe</em> basiert, enthält den <em>e-Med GroupIdentifier</em> der zugehörigen <em>Geplanten Abgabe</em>. Dadurch können zusammengehörige <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> über denselben <em>e-Med GroupIdentifier</em> identifiziert und gemeinsam abgerufen werden.</p>
 
 <h4 id="suchparameter-1">Suchparameter</h4>
 
@@ -607,7 +603,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 <p>Von ELGA-Teilnehmern gelöschte <em>Durchgeführten Abgaben</em> stehen nicht mehr zur Verfügung.</p>
 
 <div class="dragon">
-<p class="note-to-balloters"><a name="l872">​</a>
+<p class="note-to-balloters"><a name="l864">​</a>
 Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="nteractions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
 </p>
 </div>
@@ -631,7 +627,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 
 <p>Erfolgt die Arzneimittelabgabe <strong>ohne Kontaktbestätigung</strong> des ELGA-Teilnehmers, sondern auf Basis eines <em>e-Med GroupIdentifiers</em> (z.B. über den DataMatrix-Code eines e-Rezepts), erhält ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> einen eingeschränkten ELGA-Zugriff.</p>
 
-<p><a name="l950">​</a>Dieser umfasst ausschließlich den lesenden Zugriff auf die <strong>dem <em>e-Med GroupIdentifier</em></strong> <strong>zugeordneten</strong> <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em>. Der GDA kann anschließend <em>Durchgeführte Abgaben</em> ausschließlich für diesen <em>e-Med GroupIdentifier</em> dokumentieren (siehe <a href="Sub_UC_eMed_05.html#zugriffsvariante-b-durchgeführte-abgabe-mit-e-med-groupidentifier-schreiben">Zugriffsvariante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben</a>).</p>
+<p><a name="l942">​</a>Dieser umfasst ausschließlich den lesenden Zugriff auf die <strong>dem <em>e-Med GroupIdentifier</em></strong> <strong>zugeordneten</strong> <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em>. Der GDA kann anschließend <em>Durchgeführte Abgaben</em> ausschließlich für diesen <em>e-Med GroupIdentifier</em> dokumentieren (siehe <a href="Sub_UC_eMed_05.html#zugriffsvariante-b-durchgeführte-abgabe-mit-e-med-groupidentifier-schreiben">Zugriffsvariante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben</a>).</p>
 
 <p>Ein lesender Zugriff auf weitere <em>Geplante Abgaben</em> oder <em>Durchgeführte Abgaben</em> sowie auf den Medikationsplan des ELGA-Teilnehmers ist nicht möglich. Ebenso können keine weiteren <em>Durchgeführten Abgaben</em> (z.B. OTC- oder Notabgaben) in der e-Medikation des ELGA-Teilnehmers dokumentiert werden.</p>
 
@@ -654,7 +650,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 <h5 id="custom-operations">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1066">​</a><em>POST</em> <a href="OperationDefinition-at-emed-groupidentifier-search.html">$groupidentifier-search</a></li>
+  <li><a name="l1058">​</a><em>POST</em> <a href="OperationDefinition-at-emed-groupidentifier-search.html">$groupidentifier-search</a></li>
 </ul>
 
 
@@ -685,7 +681,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-20 08:04:00 +0000">
+  <span title="2026-10-20 12:30:00 +0000">
     2026-10-20
   </span>
 

@@ -24,13 +24,13 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 ### Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)
 
-**Prescription-Search** dient der Suche nach [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) eines ELGA-Teilnehmers, um vorgesehene Arzneimittelabgaben einzusehen. Als **Geplante Abgabe** gilt eine **MedicationRequest**-Ressource mit **category = "Geplante Abgabe"**.
+**Prescription-Search** dient der Suche nach [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) eines ELGA-Teilnehmers, um vorgesehene Arzneimittelabgaben einzusehen. Als **Geplante Abgabe** gilt eine **MedicationRequest**-Ressource mit **category "Geplante Abgabe"**.
 
 **Geplante Abgaben** dokumentieren medizinische Inhalte des e-Rezepts. Wurden mehrere Arzneimittel gleichzeitig verordnet und sind demselben e-Rezept zugeordnet, sind die zugehörigen **Geplanten Abgaben** mit demselben **e-Med GroupIdentifier** zu versehen, den auch das e-Rezept mitführt (bildet damit die Rezept-Klammer).
 
 #### Suchparameter
 
-Die Suche nach [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) erfolgt mittels **GET**-Request unter Angabe geeigneter Suchparameter:
+Die Suche nach [Geplanten Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) erfolgt mittels **GET**-Request unter Angabe geeigneter Suchparameter:
 
 * alle (ohne Einschränkung) 
 * in einem bestimmten Zeitraum erfasste
@@ -50,12 +50,9 @@ Die gefundenen **Geplanten Abgaben** können als Ausgangspunkt für weitere Abfr
 
 Von ELGA-Teilnehmern gelöschte **Geplanten Abgaben** stehen nicht mehr zur Verfügung.
 
- Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
- 
-
 ##### Ablauf
 
-1. Der GDA führt einen**GET**-Request auf den Prescription-Search-Endpunkt mit**MedicationRequest.category = "Geplante Abgabe"**und Suchparametern aus
+1. Der GDA führt einen**GET**-Request auf den Prescription-Search-Endpunkt mit**MedicationRequest.category "Geplante Abgabe"**und Suchparametern aus
 1. Die Fachanwendung ermittelt die den Suchkriterien entsprechenden**Geplanten Abgaben**.
 1. Die Fachanwendung liefert das Suchergebnis als Bundle vom Typ**searchset**zurück.
 1. Werden keine passenden Ressourcen gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.
@@ -66,9 +63,9 @@ Von ELGA-Teilnehmern gelöschte **Geplanten Abgaben** stehen nicht mehr zur Verf
 
 ### Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)
 
-**Dispense-Search** dient dem Suche nach [Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) eines ELGA-Teilnehmers, um bereits dokumentierte Arzneimittelabgaben einzusehen.
+**Dispense-Search** dient der Suche nach [Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) eines ELGA-Teilnehmers, um bereits dokumentierte Arzneimittelabgaben einzusehen.
 
-**Durchgeführten Abgaben** spiegeln den Status der Abgaben des e-Rezepts wider. Eine **Durchgeführte Abgabe**, die auf einer **Geplanten Abgabe** basiert, enthält den **e-Med GroupIdentifier** der zugehörigen **Geplanten Abgabe**. Dadurch können zusammengehörige **Geplante Abgaben** und **Durchgeführte Abgaben** über denselben **e-Med GroupIdentifier** identifiziert und gemeinsam abgerufen werden.
+**Durchgeführte Abgaben** spiegeln den Status der Abgaben des e-Rezepts wider. Eine **Durchgeführte Abgabe**, die auf einer **Geplanten Abgabe** basiert, enthält den **e-Med GroupIdentifier** der zugehörigen **Geplanten Abgabe**. Dadurch können zusammengehörige **Geplante Abgaben** und **Durchgeführte Abgaben** über denselben **e-Med GroupIdentifier** identifiziert und gemeinsam abgerufen werden.
 
 #### Suchparameter
 

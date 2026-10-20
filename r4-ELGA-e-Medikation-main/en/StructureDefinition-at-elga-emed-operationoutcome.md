@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-oper
   "name" : "AtElgaEmedOperationOutcome",
   "title" : "AT ELGA e-Medikation OperationOutcome",
   "status" : "active",
-  "date" : "2026-10-20T08:04:36+00:00",
+  "date" : "2026-10-20T12:30:11+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
