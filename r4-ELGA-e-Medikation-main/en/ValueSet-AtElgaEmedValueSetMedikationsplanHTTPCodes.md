@@ -30,7 +30,7 @@
   "title" : "ELGA Emed ValueSet Medikationsplan HTTP Codes",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-19T18:28:35+00:00",
+  "date" : "2026-10-20T08:04:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

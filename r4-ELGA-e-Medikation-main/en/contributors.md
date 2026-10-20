@@ -2,7 +2,7 @@
 
 ## Autoren und Mitwirkende
 
-Dieser Implementierungsleitfaden entstand durch die Arbeitsgruppe e-Medikation. Die Arbeiten für den vorliegenden Leitfaden wurden von den Autoren gemäß dem Stand der Technik und mit größtmöglicher Sorgfalt erbracht.
+Dieser Implementierungsleitfaden wurde im Rahmen des Projekts Digital unterstützte Medikationsprozesse - e-Medikationsplan ausgearbeitet. Dabei wurden verschiedene Expert:innen (uA seitens ÖÄK, ÖAK, ÖGAM) eingebunden und die fachliche Konzeption der ELGA GmbH mit Vertreter:innen der ELGA-Systempartner (BMASGPK, Bundesländern und Sozialversicherung) weiterentwickelt. Die Arbeiten für den vorliegenden Leitfaden wurden von den Autor:innen gemäß dem Stand der Technik und mit größtmöglicher Sorgfalt erbracht.
 
 ### Autoren
 
