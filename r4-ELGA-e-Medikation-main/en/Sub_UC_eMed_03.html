@@ -542,8 +542,8 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 </ul>
 
 <div class="dragon">
-<p class="note-to-balloters"><a name="l641">​</a>
-Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="nteractions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
+<p class="note-to-balloters">
+Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="interactions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
 </p>
 </div>
 
@@ -598,13 +598,18 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 <p>Die gefundenen <em>Durchgeführten Abgaben</em> können als Ausgangspunkt für weitere Abfragen verwendet werden:</p>
 <ul>
   <li>zugehörige <em>Geplante Abgabe</em> (gleicher <em>e-Med GroupIdentifier</em>)</li>
+  <li>zugehöriger Medikationsplaneintrag und Medikationsplanversion
+    <ul>
+      <li>da in einer <em>Durchgeführten Abgabe</em> die Referenzen auf den zugehöigen Planeintrag (<em>authorizingPrescription:planeintrag</em>) und die zugehörige <em>Geplante Abgabe</em> (<em>authorizingPrescription:geplanteAbgabe</em>) nicht versioniert sind, zeigt die <em>Durchgeführte Abgabe</em> immer auf die aktuellen Ressourcenversionen. Der Planeintrag kann zwischenzeitlich von den Inhalten der <em>Durchgeführte Abgabe</em> abweichen, die <em>Geplante Abgabe</em> kann zischenzeitlich einen anderen Status besitzen.</li>
+    </ul>
+  </li>
 </ul>
 
-<p>Von ELGA-Teilnehmern gelöschte <em>Durchgeführten Abgaben</em> stehen nicht mehr zur Verfügung.</p>
+<p>Von ELGA-Teilnehmern gelöschte <em>Durchgeführte Abgaben</em> stehen nicht mehr zur Verfügung.</p>
 
 <div class="dragon">
-<p class="note-to-balloters"><a name="l864">​</a>
-Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="nteractions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
+<p class="note-to-balloters">
+Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="interactions.html#suchparameter-überblick">Suchparameter Überblick</a> <br/>
 </p>
 </div>
 
@@ -627,7 +632,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 
 <p>Erfolgt die Arzneimittelabgabe <strong>ohne Kontaktbestätigung</strong> des ELGA-Teilnehmers, sondern auf Basis eines <em>e-Med GroupIdentifiers</em> (z.B. über den DataMatrix-Code eines e-Rezepts), erhält ein <a href="actors.html#rollen-und-berechtigungen">berechtigter GDA</a> einen eingeschränkten ELGA-Zugriff.</p>
 
-<p><a name="l942">​</a>Dieser umfasst ausschließlich den lesenden Zugriff auf die <strong>dem <em>e-Med GroupIdentifier</em></strong> <strong>zugeordneten</strong> <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em>. Der GDA kann anschließend <em>Durchgeführte Abgaben</em> ausschließlich für diesen <em>e-Med GroupIdentifier</em> dokumentieren (siehe <a href="Sub_UC_eMed_05.html#zugriffsvariante-b-durchgeführte-abgabe-mit-e-med-groupidentifier-schreiben">Zugriffsvariante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben</a>).</p>
+<p><a name="l972">​</a>Dieser umfasst ausschließlich den lesenden Zugriff auf die <strong>dem <em>e-Med GroupIdentifier</em></strong> <strong>zugeordneten</strong> <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em>. Der GDA kann anschließend <em>Durchgeführte Abgaben</em> ausschließlich für diesen <em>e-Med GroupIdentifier</em> dokumentieren (siehe <a href="Sub_UC_eMed_05.html#zugriffsvariante-b-durchgeführte-abgabe-mit-e-med-groupidentifier-schreiben">Zugriffsvariante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben</a>).</p>
 
 <p>Ein lesender Zugriff auf weitere <em>Geplante Abgaben</em> oder <em>Durchgeführte Abgaben</em> sowie auf den Medikationsplan des ELGA-Teilnehmers ist nicht möglich. Ebenso können keine weiteren <em>Durchgeführten Abgaben</em> (z.B. OTC- oder Notabgaben) in der e-Medikation des ELGA-Teilnehmers dokumentiert werden.</p>
 
@@ -650,7 +655,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
 <h5 id="custom-operations">Custom Operations</h5>
 
 <ul>
-  <li><a name="l1058">​</a><em>POST</em> <a href="OperationDefinition-at-emed-groupidentifier-search.html">$groupidentifier-search</a></li>
+  <li><a name="l1088">​</a><em>POST</em> <a href="OperationDefinition-at-emed-groupidentifier-search.html">$groupidentifier-search</a></li>
 </ul>
 
 
@@ -681,7 +686,7 @@ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden soll
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-20 12:30:00 +0000">
+  <span title="2026-10-20 15:36:00 +0000">
     2026-10-20
   </span>
 

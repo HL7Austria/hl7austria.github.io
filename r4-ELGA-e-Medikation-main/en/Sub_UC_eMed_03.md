@@ -38,7 +38,7 @@ Die Suche nach [Geplanten Abgaben](StructureDefinition-at-elga-emed-medicationre
 * mit einem bestimmten [status](ValueSet-GeplanteAbgabeStatusVS.md) 
 * mit einem bestimmten **e-Med GroupIdentifier** 
 
- Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
 
 Die gefundenen **Geplanten Abgaben** können als Ausgangspunkt für weitere Abfragen verwendet werden:
@@ -80,10 +80,13 @@ Die Suche nach [Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medica
 Die gefundenen **Durchgeführten Abgaben** können als Ausgangspunkt für weitere Abfragen verwendet werden:
 
 * zugehörige **Geplante Abgabe** (gleicher **e-Med GroupIdentifier**)
+* zugehöriger Medikationsplaneintrag und Medikationsplanversion 
+* da in einer **Durchgeführten Abgabe** die Referenzen auf den zugehöigen Planeintrag (**authorizingPrescription:planeintrag**) und die zugehörige **Geplante Abgabe** (**authorizingPrescription:geplanteAbgabe**) nicht versioniert sind, zeigt die **Durchgeführte Abgabe** immer auf die aktuellen Ressourcenversionen. Der Planeintrag kann zwischenzeitlich von den Inhalten der **Durchgeführte Abgabe** abweichen, die **Geplante Abgabe** kann zischenzeitlich einen anderen Status besitzen.
+ 
 
-Von ELGA-Teilnehmern gelöschte **Durchgeführten Abgaben** stehen nicht mehr zur Verfügung.
+Von ELGA-Teilnehmern gelöschte **Durchgeführte Abgaben** stehen nicht mehr zur Verfügung.
 
- Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
 
 ##### Ablauf

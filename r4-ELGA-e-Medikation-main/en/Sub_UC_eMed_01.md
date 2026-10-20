@@ -101,7 +101,7 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 * [**Status**](ValueSet-PlaneintragStatusVS.md)
 * [**StatusReason**](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
 
- Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
 
 Die gefundenen Planeinträge können als Ausgangspunkt für weitere Abfragen verwendet werden:
@@ -146,7 +146,7 @@ Der Abruf erfolgt mittels POST [$history-search](Sub_UC_eMed_01.md#custom-operat
 * **Planeintragsid mit Version**: Abrufen der Medikationsplanversionen, die genau diese Planeintragsversion enthalten.
 * **StatusReason eines im Plan einthaltenen Planeintrags**: Abrufen aller Planversionen, mit Planeinträgen mit bestimmtem [statusReason](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md). 
 
- Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
 
 #### Sub_UC_eMed_01_03_02 - Historische Planeintragsversionen suchen (Planentry-History-Search)
@@ -164,7 +164,7 @@ Der Abruf erfolgt mittels POST [$history-search](Sub_UC_eMed_01.md#custom-operat
 * [**Status**] (ValueSet-PlaneintragStatusVS.html)
 * [**StatusReason**](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
 
- Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](nteractions.md#suchparameter-überblick) 
+ Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
 
 Die gefundenen Planeinträge können als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:

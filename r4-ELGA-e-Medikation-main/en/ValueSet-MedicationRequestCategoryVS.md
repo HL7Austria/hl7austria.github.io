@@ -31,7 +31,7 @@
   "title" : "ELGA e-Med MedicationRequest Kategorie ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-20T12:30:11+00:00",
+  "date" : "2026-10-20T15:36:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
