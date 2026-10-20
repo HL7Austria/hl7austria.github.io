@@ -1,0 +1,87 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-write> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "at-ediag-operation-list-write"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-list-write</b></p><a name=\"at-ediag-operation-list-write\"> </a><a name=\"hcat-ediag-operation-list-write\"> </a><p>URL: [base]/List/$write</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>list</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a> (<a href=\"StructureDefinition-at-elga-ediag-list.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list\">AT e-Diagnose Summary-Liste</a>)</td><td/><td><div><p>Der Parameter dient der Übermittlung der Summary-Liste.</p>\n</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a> (<a href=\"StructureDefinition-at-elga-ediag-list.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list\">AT e-Diagnose Summary-Liste</a>)</td><td/><td><div><p>Die Summary-Liste, die nach erfolgreichem Aufruf der Operation gespeichert wurde.</p>\n</div></td></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-write"] ;
+  fhir:OperationDefinition.version [ fhir:value "0.1.0"] ;
+  fhir:OperationDefinition.name [ fhir:value "AtDiagListWrite"] ;
+  fhir:OperationDefinition.title [ fhir:value "e-Diagnose Operation $write"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-10-20T08:47:52+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.publisher [ fhir:value "ELGA GmbH"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "ELGA GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://elga.gv.at" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "ELGA GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://elga.gv.at" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "Die `$write`-Operation wird aufgerufen, wenn eine Summary-Liste geschrieben wird."] ;
+  fhir:OperationDefinition.purpose [ fhir:value "### Wer ruft diese Operation in welchem Zusammenhang auf?\n\nMöchte der GDA die Summary-Liste für eine bestimmte Art von Einträgen (Diagnosen, Prozeduren, Allergien) aktualisieren (Einträge werden hinzugefügt/entfernt)\noder möchte der GDA die Reihenfolge der Einträge ändern, so muss diese Operation ausgeführt werden.\n\n### Voraussetzung für den Aufruf\n\n- Der GDA hat durch einen [vorangegangenen Abruf](use_case_read.html#aktuelle-summary-liste-abrufen) die aktuelle `versionId` der Summary-Liste ermittelt. Diese muss beim Aufruf dieser Operation als `If-Match`-Header mitgeschickt werden.\n\n### Detaillierte Business-Logik\n\n1. Als `List.subject` wird durch die e-Diagnose Fachanwendung der Patient dokumentiert.\n2. Als `List.source` wird  durch die e-Diagnose Fachanwendung der GDA, der die Änderung durchführt, dokumentiert.\n3. Als `List.date` wird durch die e-Diagnose Fachanwendung das Datum und die Uhrzeit der Änderung dokumentiert.\n4. Nach erfolgreicher Validierung wird die Summary-Liste gespeichert.\n\n### Validierung / Fehlerbehandlung\n\n* Die übermittelte List-Ressource wird laut Profil geprüft.\n* Der übermittelte `If-Match`-Header stimmt mit der `versionId` der Ressource am Server überein.\n* Für die List-Ressource gilt außerdem `entry.item.empty() implies emptyReason.coding.exists(system='http://terminology.hl7.org/CodeSystem/list-empty-reason' and code='nilknown')`."] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "write"] ;
+  fhir:OperationDefinition.resource [
+     fhir:value "List" ;
+     fhir:index 0
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "list" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Der Parameter dient der Übermittlung der Summary-Liste." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "List" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "return" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die Summary-Liste, die nach erfolgreichem Aufruf der Operation gespeichert wurde." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "List" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-write.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

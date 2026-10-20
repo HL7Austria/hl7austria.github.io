@@ -1,0 +1,93 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/Parameters/ConditionDeleteResponse01> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ConditionDeleteResponse01"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:Parameters.parameter [
+     fhir:index -1 ;
+     fhir:Parameters.parameter.name [ fhir:value "entry" ] ;
+     fhir:Parameters.parameter.resource [
+       a fhir:Condition ;
+       fhir:Resource.id [ fhir:value "ConditionEntry05" ] ;
+       fhir:Resource.meta [
+         fhir:Meta.profile [
+           fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+           fhir:index -1 ;
+           fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+         ]
+       ] ;
+       fhir:Resource.language [ fhir:value "en" ] ;
+       fhir:DomainResource.extension [
+         fhir:index -1 ;
+         fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-reported" ] ;
+         fhir:Extension.valueBoolean [ fhir:value "false"^^xsd:boolean ]
+       ] ;
+       fhir:Condition.identifier [
+         fhir:index -1 ;
+         fhir:Identifier.system [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-business-identifier" ] ;
+         fhir:Identifier.value [ fhir:value "1238" ]
+       ] ;
+       fhir:Condition.clinicalStatus [
+         fhir:CodeableConcept.coding [
+           fhir:index -1 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ;
+           fhir:Coding.version [ fhir:value "3.0.0" ] ;
+           fhir:Coding.code [ fhir:value "active" ]
+         ]
+       ] ;
+       fhir:Condition.code [
+         fhir:CodeableConcept.coding [
+           fhir:index -1 ;
+           a sct:52643007 ;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+           fhir:Coding.code [ fhir:value "52643007" ] ;
+           fhir:Coding.display [ fhir:value "Candidal balanitis" ]
+         ]
+       ] ;
+       fhir:Condition.subject [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Patient/PatientExample> ;
+         fhir:Reference.reference [ fhir:value "Patient/PatientExample" ] ;
+         fhir:Reference.identifier [
+           fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.2.1.1.149" ] ;
+           fhir:Identifier.value [ fhir:value "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=" ]
+         ]
+       ] ;
+       fhir:Condition.onsetDateTime [ fhir:value "2026-03-09"^^xsd:date ] ;
+       fhir:Condition.recordedDate [ fhir:value "2026-03-09T09:52:00+00:00"^^xsd:dateTime ] ;
+       fhir:Condition.recorder [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ] ;
+         fhir:Reference.identifier [
+           fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+           fhir:Identifier.value [ fhir:value "urn:oid:1.2.40.0.34.99.4613.4" ]
+         ]
+       ] ;
+       fhir:Condition.asserter [
+         fhir:link <https://fhir.hl7.at/elga/ediag/r4/Practitioner/PractitionerExample> ;
+         fhir:Reference.reference [ fhir:value "Practitioner/PractitionerExample" ] ;
+         fhir:Reference.identifier [
+           fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+           fhir:Identifier.value [ fhir:value "urn:oid:1.2.40.0.34.99.4613.4" ]
+         ]
+       ] ;
+       fhir:Condition.note [
+         fhir:index -1 ;
+         fhir:Annotation.text [ fhir:value "Juckreiz im Genitalbereich bei bestehender AB-Therapie" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/Parameters/ConditionDeleteResponse01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

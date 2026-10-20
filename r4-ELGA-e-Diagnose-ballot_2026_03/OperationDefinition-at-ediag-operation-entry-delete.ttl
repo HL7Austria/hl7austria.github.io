@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-delete> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "at-ediag-operation-entry-delete"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-ediag-operation-entry-delete</b></p><a name=\"at-ediag-operation-entry-delete\"> </a><a name=\"hcat-ediag-operation-entry-delete\"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>entry</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-elga-ediag-condition.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition\">AT e-Diagnose Condition</a>, <a href=\"StructureDefinition-at-elga-ediag-procedure.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure\">AT e-Diagnose Procedure</a>, <a href=\"StructureDefinition-at-elga-ediag-allergyintolerance.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance\">AT e-Diagnose AllergyIntolerance</a>)</td><td/><td><div><p>Der gelöschte Eintrag.</p>\n</div></td></tr><tr><td>OUT</td><td>list</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/list.html\">List</a> (<a href=\"StructureDefinition-at-elga-ediag-list.html\" title=\"https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list\">AT e-Diagnose Summary-Liste</a>)</td><td/><td><div><p>Die Summary-Liste, aus der der Eintrag gegebenenfalls gelöscht wurde.</p>\n</div></td></tr></table></div>"
+  ] ;
+  fhir:OperationDefinition.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-delete"] ;
+  fhir:OperationDefinition.version [ fhir:value "0.1.0"] ;
+  fhir:OperationDefinition.name [ fhir:value "AtDiagEntryDelete"] ;
+  fhir:OperationDefinition.title [ fhir:value "e-Diagnose Operation $delete"] ;
+  fhir:OperationDefinition.status [ fhir:value "active"] ;
+  fhir:OperationDefinition.kind [ fhir:value "operation"] ;
+  fhir:OperationDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.date [ fhir:value "2026-10-20T08:47:52+00:00"^^xsd:dateTime] ;
+  fhir:OperationDefinition.publisher [ fhir:value "ELGA GmbH"] ;
+  fhir:OperationDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "ELGA GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "http://elga.gv.at" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "ELGA GmbH" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://elga.gv.at" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:OperationDefinition.description [ fhir:value "Die `$delete`-Operation löscht einen bestimmten Eintrag aus der e-Diagnose Fachanwendung."] ;
+  fhir:OperationDefinition.purpose [ fhir:value "### Wer ruft diese Operation in welchem Zusammenhang auf?\n\nMöchte der ELGA-Teilnehmer einen Eintrag aus der e-Diagnose Fachanwendung löschen, muss diese Operation ausgeführt werden.\n\n### Anwendungskontext\n\nDie Teilnehmerrechte können – abgesehen vom Widerspruch über die ELGA-Widerspruchstelle (WIST) und der Unterstützung durch die ELGA-Ombudsstelle (OBST) – ausschließlich über das Zugangsportal gemäß § 23 Abs. 1 GTelG 2012 ausgeübt werden.\n\n### Voraussetzung für den Aufruf\n\n- Der zu löschende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.\n\n### Detaillierte Business-Logik\n\n1. Der Eintrag (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID aus der e-Diagnose Fachanwendung gelöscht.\n2. Ist der Eintrag Teil der jeweiligen Summary-Liste, wird er auch aus der Summary-Liste entfernt. Als Autor (`List.source`) der Summary-Liste wird der Patient dokumentiert.\n  1. Ist es der letzte Eintrag, der aus der jeweiligen Summary-Liste entfernt wurde, erhält die Summary-Liste `List.emptyReason=nilknown`. \n\n### Validierung / Fehlerbehandlung\n\n- Der zu löschende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein."] ;
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.code [ fhir:value "delete"] ;
+  fhir:OperationDefinition.resource [
+     fhir:value "Condition" ;
+     fhir:index 0
+  ], [
+     fhir:value "Procedure" ;
+     fhir:index 1
+  ], [
+     fhir:value "AllergyIntolerance" ;
+     fhir:index 2
+  ] ;
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean] ;
+  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean] ;
+  fhir:OperationDefinition.parameter [
+     fhir:index 0 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "entry" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Der gelöschte Eintrag." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "Resource" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition>
+     ], [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure" ;
+       fhir:index 1 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure>
+     ], [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance" ;
+       fhir:index 2 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance>
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:OperationDefinition.parameter.name [ fhir:value "list" ] ;
+     fhir:OperationDefinition.parameter.use [ fhir:value "out" ] ;
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ] ;
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ] ;
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "Die Summary-Liste, aus der der Eintrag gegebenenfalls gelöscht wurde." ] ;
+     fhir:OperationDefinition.parameter.type [ fhir:value "List" ] ;
+     fhir:OperationDefinition.parameter.targetProfile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list>
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-delete.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

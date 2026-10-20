@@ -1,0 +1,165 @@
+# SearchSet-Bundle der Allergy-Summary-Liste (Version 2) - ELGA e-Diagnose R4 v0.1.0
+
+## Example Bundle: SearchSet-Bundle der Allergy-Summary-Liste (Version 2)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "AllergyListSearchSet01",
+  "type" : "searchset",
+  "total" : 1,
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://example.org/fhir/List?code=http://loinc.org|48765-2&_include=List:item"
+  }],
+  "entry" : [{
+    "fullUrl" : "https://example.org/fhir/List/AllergyList01",
+    "resource" : {
+      "resourceType" : "List",
+      "id" : "AllergyList01",
+      "meta" : {
+        "versionId" : "2",
+        "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_AllergyList01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List AllergyList01</b></p><a name=\"AllergyList01\"> </a><a name=\"hcAllergyList01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 2</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-list.html\">AT e-Diagnose Summary-Liste</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-03 08:10:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Allergies and adverse reactions Document </td></tr><tr><td>Subject: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></td><td>Source: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr><tr><td><a href=\"AllergyIntolerance-AllergyEntry01.html\">AllergyIntolerance AMOXICILLIN</a></td></tr></table></div>"
+      },
+      "status" : "current",
+      "mode" : "working",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "48765-2"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/PatientExample",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "date" : "2026-03-03T08:10:00+00:00",
+      "source" : {
+        "reference" : "Practitioner/PractitionerExample",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+        }
+      },
+      "entry" : [{
+        "item" : {
+          "reference" : "AllergyIntolerance/AllergyEntry01"
+        }
+      }]
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/AllergyIntolerance/AllergyEntry01",
+    "resource" : {
+      "resourceType" : "AllergyIntolerance",
+      "id" : "AllergyEntry01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"AllergyIntolerance_AllergyEntry01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: AllergyIntolerance AllergyEntry01</b></p><a name=\"AllergyEntry01\"> </a><a name=\"hcAllergyEntry01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-allergyintolerance.html\">AT e-Diagnose AllergyIntolerance</a></p></div><p><b>AT e-Diagnose Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-business-identifier</code>/4711</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/allergyintolerance-verification confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe 1708923}\">AMOXICILLIN</span></p><p><b>patient</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>recordedDate</b>: 2026-03-03 08:07:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><blockquote><p><b>reaction</b></p><p><b>AT e-Diagnose Reaktionszeit</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time lt6h}\">&lt;6 Stunden</span></p><p><b>manifestation</b>: <span title=\"Codes:{http://snomed.info/sct 271807003}\">Exanthem</span>, <span title=\"Codes:{http://snomed.info/sct 422400008}\">Emesis</span></p><p><b>onset</b>: 1983-03-01</p><p><b>note</b>: </p><blockquote><div><p>Hautausschlag und Erbrechen nach Penicillin-Einnahme</p>\n</div></blockquote></blockquote></div>"
+      },
+      "extension" : [{
+        "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-reported",
+        "valueBoolean" : true
+      }],
+      "identifier" : [{
+        "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-business-identifier",
+        "value" : "4711"
+      }],
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+          "version" : "1.0.1",
+          "code" : "active"
+        }]
+      },
+      "verificationStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+          "version" : "1.0.1",
+          "code" : "confirmed"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
+          "code" : "1708923",
+          "display" : "AMOXICILLIN"
+        }]
+      },
+      "patient" : {
+        "reference" : "Patient/PatientExample",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "recordedDate" : "2026-03-03T08:07:00+00:00",
+      "recorder" : {
+        "reference" : "Practitioner/PractitionerExample",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+        }
+      },
+      "asserter" : {
+        "reference" : "Patient/PatientExample",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "reaction" : [{
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-reaction-time",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time",
+              "code" : "lt6h",
+              "display" : "<6 Stunden"
+            }]
+          }
+        }],
+        "manifestation" : [{
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "271807003",
+            "display" : "Exanthem"
+          }]
+        },
+        {
+          "coding" : [{
+            "system" : "http://snomed.info/sct",
+            "code" : "422400008",
+            "display" : "Emesis"
+          }]
+        }],
+        "onset" : "1983-03-01",
+        "note" : [{
+          "text" : "Hautausschlag und Erbrechen nach Penicillin-Einnahme"
+        }]
+      }]
+    },
+    "search" : {
+      "mode" : "include"
+    }
+  }]
+}
+
+```

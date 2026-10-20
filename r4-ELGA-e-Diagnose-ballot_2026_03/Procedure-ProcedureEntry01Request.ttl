@@ -1,0 +1,68 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/Procedure/ProcedureEntry01Request> a fhir:Procedure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ProcedureEntry01Request"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure" ;
+       fhir:index 0 ;
+       fhir:link <https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Procedure ProcedureEntry01Request</b></p><a name=\"ProcedureEntry01Request\"> </a><a name=\"hcProcedureEntry01Request\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-procedure.html\">AT e-Diagnose Procedure</a></p></div><p><b>AT e-Diagnose Reported (Fremdangabe)</b>: true</p><p><b>R5: When the procedure was first captured in the subject's record (new)</b>: 2026-03-09 09:53:00+0000</p><p><b>status</b>: Completed</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 43075005}\">Partial resection of colon</span></p><p><b>subject</b>: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</p><p><b>performed</b>: 2025-09-23 09:30:00+0200</p><p><b>recorder</b>: Identifier: <a href=\"http://terminology.hl7.org/7.4.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt #xD;#xA;#xD;#xA;This oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: #xD;#xA;#xD;#xA;Note that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.#xD;#xA;#xD;#xA;This OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:oid:1.2.40.0.34.99.4613.4</p><p><b>asserter</b>: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-reported" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-Procedure.recorded" ] ;
+     fhir:Extension.valueDateTime [ fhir:value "2026-03-09T09:53:00+00:00"^^xsd:dateTime ]
+  ] ;
+  fhir:Procedure.status [ fhir:value "completed"] ;
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:43075005 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "43075005" ] ;
+       fhir:Coding.display [ fhir:value "Partial resection of colon" ]
+     ]
+  ] ;
+  fhir:Procedure.subject [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.2.1.1.149" ] ;
+       fhir:Identifier.value [ fhir:value "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=" ]
+     ]
+  ] ;
+  fhir:Procedure.performedDateTime [ fhir:value "2025-09-23T09:30:00+02:00"^^xsd:dateTime] ;
+  fhir:Procedure.recorder [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "urn:ietf:rfc:3986" ] ;
+       fhir:Identifier.value [ fhir:value "urn:oid:1.2.40.0.34.99.4613.4" ]
+     ]
+  ] ;
+  fhir:Procedure.asserter [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "urn:oid:1.2.40.0.10.2.1.1.149" ] ;
+       fhir:Identifier.value [ fhir:value "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/elga/ediag/r4/Procedure/ProcedureEntry01Request.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

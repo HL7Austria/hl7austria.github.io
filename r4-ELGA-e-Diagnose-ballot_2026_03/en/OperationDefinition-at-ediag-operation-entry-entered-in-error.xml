@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="at-ediag-operation-entry-entered-in-error"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition at-ediag-operation-entry-entered-in-error</b></p><a name="at-ediag-operation-entry-entered-in-error"> </a><a name="hcat-ediag-operation-entry-entered-in-error"> </a><p>URL: [base]/Condition/[id]/$entered-in-error</p><p>URL: [base]/Procedure/[id]/$entered-in-error</p><p>URL: [base]/AllergyIntolerance/[id]/$entered-in-error</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>reason</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Grund für die Stornierung des Eintrags.</p>
+</div></td></tr><tr><td>OUT</td><td>entry</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="StructureDefinition-at-elga-ediag-condition.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition">AT e-Diagnose Condition</a>, <a href="StructureDefinition-at-elga-ediag-procedure.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure">AT e-Diagnose Procedure</a>, <a href="StructureDefinition-at-elga-ediag-allergyintolerance.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance">AT e-Diagnose AllergyIntolerance</a>)</td><td/><td><div><p>Der aktualisierte Eintrag nach der Stornierung.</p>
+</div></td></tr><tr><td>OUT</td><td>list</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/list.html">List</a> (<a href="StructureDefinition-at-elga-ediag-list.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list">AT e-Diagnose Summary-Liste</a>)</td><td/><td><div><p>Die Summary-Liste, aus der der Eintrag gegebenenfalls entfernt wurde.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-entered-in-error"/>
+  <version value="0.1.0"/>
+  <name value="AtEdiagEntryEnteredInError"/>
+  <title value="e-Diagnose Operation $entered-in-error"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <experimental value="false"/>
+  <date value="2026-10-20T08:47:52+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Die `$entered-in-error`-Operation storniert einen bestimmten Eintrag in der e-Diagnose Fachanwendung."/>
+  <purpose value="### Wer ruft diese Operation in welchem Zusammenhang auf?&#xA;&#xA;Möchte der GDA einen Eintrag in der e-Diagnose Fachanwendung stornieren, muss diese Operation ausgeführt werden.&#xA;&#xA;### Voraussetzung für den Aufruf&#xA;&#xA;- Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.&#xA;&#xA;### Detaillierte Business-Logik&#xA;&#xA;1. Der Eintrag (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID in der e-Diagnose Fachanwendung storniert.&#xA;  1. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[practitioner]` wird durch die e-Diagnose Fachanwendung der GDA, der die Stornierung durchführt, dokumentiert.&#xA;  2. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[datetime]` wird  durch die e-Diagnose Fachanwendung das Datum und die Uhrzeit der Stornierung dokumentiert.&#xA;  3. Als `[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[reason]` wird der Grund für die Stornierung, der vom GDA angegeben werden **kann**, festgehalten.&#xA;2. Alle weiteren Informationen des Eintrags bleiben unverändert erhalten.&#xA;3. Ist der Eintrag Teil der jeweiligen Summary-Liste, wird er aus der Summary-Liste entfernt. Als Autor (`List.source`) der Summary-Liste wird der GDA dokumentiert.&#xA;  1. Ist es der letzte Eintrag, der aus der jeweiligen Summary-Liste entfernt wurde, erhält die Summary-Liste `List.emptyReason=nilknown`.&#xA;&#xA;### Validierung / Fehlerbehandlung&#xA;&#xA;- Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein."/>
+  <affectsState value="true"/>
+  <code value="entered-in-error"/>
+  <resource value="Condition"/>
+  <resource value="Procedure"/>
+  <resource value="AllergyIntolerance"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="reason"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Grund für die Stornierung des Eintrags."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="entry"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der aktualisierte Eintrag nach der Stornierung."/>
+    <type value="Resource"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"/>
+  </parameter>
+  <parameter>
+    <name value="list"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Die Summary-Liste, aus der der Eintrag gegebenenfalls entfernt wurde."/>
+    <type value="List"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+  </parameter>
+</OperationDefinition>

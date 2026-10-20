@@ -1,0 +1,132 @@
+# SearchSet-Bundle der Condition-Summary-Liste (Version 4) - ELGA e-Diagnose R4 v0.1.0
+
+## Example Bundle: SearchSet-Bundle der Condition-Summary-Liste (Version 4)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "ConditionListSearchSet03",
+  "type" : "searchset",
+  "total" : 1,
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://example.org/fhir/List?code=http://loinc.org|11450-4&_include=List:item"
+  }],
+  "entry" : [{
+    "fullUrl" : "https://example.org/fhir/List/ConditionList03",
+    "resource" : {
+      "resourceType" : "List",
+      "id" : "ConditionList03",
+      "meta" : {
+        "versionId" : "4",
+        "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_ConditionList03\"> </a><p class=\"res-header-id\"><b>Generated Narrative: List ConditionList03</b></p><a name=\"ConditionList03\"> </a><a name=\"hcConditionList03\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">version: 4</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-list.html\">AT e-Diagnose Summary-Liste</a></p></div><table class=\"clstu\"><tr><td>Date: 2026-03-09 10:30:00+0000 </td><td>Mode: Working List </td><td>Status: Current </td><td>Code: Problem list - Reported </td></tr><tr><td>Subject: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></td><td>Source: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></td></tr></table><table class=\"grid\"><tr style=\"backgound-color: #eeeeee\"><td><b>Items</b></td></tr><tr><td><a href=\"Condition-ConditionEntry01.html\">Condition Hypertensive disorder, systemic arterial</a></td></tr></table></div>"
+      },
+      "status" : "current",
+      "mode" : "working",
+      "code" : {
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "11450-4"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/PatientExample",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "date" : "2026-03-09T10:30:00+00:00",
+      "source" : {
+        "reference" : "Practitioner/PractitionerExample",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+        }
+      },
+      "entry" : [{
+        "item" : {
+          "reference" : "Condition/ConditionEntry01"
+        }
+      }]
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  },
+  {
+    "fullUrl" : "https://example.org/fhir/Condition/ConditionEntry01",
+    "resource" : {
+      "resourceType" : "Condition",
+      "id" : "ConditionEntry01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_ConditionEntry01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition ConditionEntry01</b></p><a name=\"ConditionEntry01\"> </a><a name=\"hcConditionEntry01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-ediag-condition.html\">AT e-Diagnose Condition</a></p></div><p><b>AT e-Diagnose Reported (Fremdangabe)</b>: true</p><p><b>identifier</b>: <code>https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-business-identifier</code>/1234</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 38341003}\">Hypertensive disorder, systemic arterial</span></p><p><b>subject</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>onset</b>: 2022-06-01</p><p><b>recordedDate</b>: 2026-03-03 08:05:00+0000</p><p><b>recorder</b>: <a href=\"Practitioner-PractitionerExample.html\">Melanie Musterärztin (OID:1.2.40.0.34.99.4613.4)</a></p><p><b>asserter</b>: <a href=\"Patient-PatientExample.html\">Max Mustermann  Male, DoB: 1970-01-01 ( Social Security number: 1234010100)</a></p><p><b>note</b>: </p><blockquote><div><p>Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0.</p>\n</div></blockquote></div>"
+      },
+      "extension" : [{
+        "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-ext-reported",
+        "valueBoolean" : true
+      }],
+      "identifier" : [{
+        "system" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-business-identifier",
+        "value" : "1234"
+      }],
+      "clinicalStatus" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "version" : "3.0.0",
+          "code" : "active"
+        }]
+      },
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "38341003",
+          "display" : "Hypertensive disorder, systemic arterial"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/PatientExample",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "onsetDateTime" : "2022-06-01",
+      "recordedDate" : "2026-03-03T08:05:00+00:00",
+      "recorder" : {
+        "reference" : "Practitioner/PractitionerExample",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+        }
+      },
+      "asserter" : {
+        "reference" : "Patient/PatientExample",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "note" : [{
+        "text" : "Patient berichtet über bekannte Hypertonie seit 2022, Lisinopril 10mg 1-0-0."
+      }]
+    },
+    "search" : {
+      "mode" : "include"
+    }
+  }]
+}
+
+```

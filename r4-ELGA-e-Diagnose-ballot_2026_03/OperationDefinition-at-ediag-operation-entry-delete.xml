@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="at-ediag-operation-entry-delete"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition at-ediag-operation-entry-delete</b></p><a name="at-ediag-operation-entry-delete"> </a><a name="hcat-ediag-operation-entry-delete"> </a><p>URL: [base]/Condition/[id]/$delete</p><p>URL: [base]/Procedure/[id]/$delete</p><p>URL: [base]/AllergyIntolerance/[id]/$delete</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>entry</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="StructureDefinition-at-elga-ediag-condition.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition">AT e-Diagnose Condition</a>, <a href="StructureDefinition-at-elga-ediag-procedure.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure">AT e-Diagnose Procedure</a>, <a href="StructureDefinition-at-elga-ediag-allergyintolerance.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance">AT e-Diagnose AllergyIntolerance</a>)</td><td/><td><div><p>Der gelöschte Eintrag.</p>
+</div></td></tr><tr><td>OUT</td><td>list</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/list.html">List</a> (<a href="StructureDefinition-at-elga-ediag-list.html" title="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list">AT e-Diagnose Summary-Liste</a>)</td><td/><td><div><p>Die Summary-Liste, aus der der Eintrag gegebenenfalls gelöscht wurde.</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-delete"/>
+  <version value="0.1.0"/>
+  <name value="AtDiagEntryDelete"/>
+  <title value="e-Diagnose Operation $delete"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <experimental value="false"/>
+  <date value="2026-10-20T08:47:52+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="Die `$delete`-Operation löscht einen bestimmten Eintrag aus der e-Diagnose Fachanwendung."/>
+  <purpose value="### Wer ruft diese Operation in welchem Zusammenhang auf?&#xA;&#xA;Möchte der ELGA-Teilnehmer einen Eintrag aus der e-Diagnose Fachanwendung löschen, muss diese Operation ausgeführt werden.&#xA;&#xA;### Anwendungskontext&#xA;&#xA;Die Teilnehmerrechte können – abgesehen vom Widerspruch über die ELGA-Widerspruchstelle (WIST) und der Unterstützung durch die ELGA-Ombudsstelle (OBST) – ausschließlich über das Zugangsportal gemäß § 23 Abs. 1 GTelG 2012 ausgeübt werden.&#xA;&#xA;### Voraussetzung für den Aufruf&#xA;&#xA;- Der zu löschende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.&#xA;&#xA;### Detaillierte Business-Logik&#xA;&#xA;1. Der Eintrag (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID aus der e-Diagnose Fachanwendung gelöscht.&#xA;2. Ist der Eintrag Teil der jeweiligen Summary-Liste, wird er auch aus der Summary-Liste entfernt. Als Autor (`List.source`) der Summary-Liste wird der Patient dokumentiert.&#xA;  1. Ist es der letzte Eintrag, der aus der jeweiligen Summary-Liste entfernt wurde, erhält die Summary-Liste `List.emptyReason=nilknown`. &#xA;&#xA;### Validierung / Fehlerbehandlung&#xA;&#xA;- Der zu löschende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein."/>
+  <affectsState value="true"/>
+  <code value="delete"/>
+  <resource value="Condition"/>
+  <resource value="Procedure"/>
+  <resource value="AllergyIntolerance"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="entry"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="Der gelöschte Eintrag."/>
+    <type value="Resource"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance"/>
+  </parameter>
+  <parameter>
+    <name value="list"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Die Summary-Liste, aus der der Eintrag gegebenenfalls gelöscht wurde."/>
+    <type value="List"/>
+    <targetProfile value="https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-list"/>
+  </parameter>
+</OperationDefinition>
