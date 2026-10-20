@@ -12,7 +12,7 @@
   <name value="HL7AustriaImplementationGuide"/>
   <title value="HL7® Austria FHIR® Core Implementation Guide"/>
   <status value="active"/>
-  <date value="2026-10-19T14:20:01+00:00"/>
+  <date value="2026-10-20T06:52:38+00:00"/>
   <publisher value="HL7® Austria, TC FHIR®"/>
   <contact>
     <name value="HL7® Austria, TC FHIR®"/>
@@ -284,10 +284,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-core-ext-address-municipalityCode"/>
+        <reference value="StructureDefinition/at-core-ext-address-municipalityKey"/>
       </reference>
-      <name value="Address Municipality Code (Gemeindecode)"/>
-      <description value="HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."/>
+      <name value="Address GKZ (Gemeindekennziffer)"/>
+      <description value="HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -295,10 +295,10 @@
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/at-core-ext-address-municipalityKey"/>
+        <reference value="StructureDefinition/at-core-ext-address-municipalityCode"/>
       </reference>
-      <name value="Address Municipality Key (Gemeindekennziffer)"/>
-      <description value="HL7® Austria FHIR® Core Extension for the municipality key (Gemeindekennziffer) part of the Austrian address. The municipality key is related to the [municipality code (Gemeindecode)](StructureDefinition-at-core-ext-address-municipalityCode.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."/>
+      <name value="Address Municipality Code (Gemeindecode)"/>
+      <description value="HL7® Austria FHIR® Core Extension for the municipality code (Gemeindecode) part of the Austrian address. The municipality code is related to the [municipality key (Gemeindekennziffer)](StructureDefinition-at-core-ext-address-municipalityKey.html). While these two are generally identical, there is one notable exception: in Vienna, the municipality key (Gemeindekennziffer) is consistently 90001, whereas the municipality code (Gemeindecode) varies by district. The current list of values is provided by [Statistik Austria](https://www.statistik.at/verzeichnis/reglisten/gemliste_knz.pdf)."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -343,6 +343,28 @@
       </reference>
       <name value="Example HealthcareService with Specialty"/>
       <description value="Example of a healthcare service with an Austrian Funktionscode as specialty."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/HealthcareServiceHebammenberatung"/>
+      </reference>
+      <name value="HealthcareServiceHebammenberatung"/>
+      <description value="Example of a midwifery consultation service provided by a freelance midwife in cooperation with the fictional Frauenmedizin Sonnenfeld group practice."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="HealthcareService"/>
+      </extension>
+      <reference>
+        <reference value="HealthcareService/HealthcareServiceUltraschall"/>
+      </reference>
+      <name value="HealthcareServiceUltraschall"/>
+      <description value="Example of a gynecological ultrasound service offered by the fictional Frauenmedizin Sonnenfeld private medical group practice."/>
       <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-HealthcareService"/>
     </resource>
     <resource>
@@ -654,6 +676,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/LocationOrdinationLukasSteiner"/>
+      </reference>
+      <name value="LocationOrdinationLukasSteiner"/>
+      <description value="Example of the physical location of Dr. Lukas Steiner's individual medical practice in Salzburg."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-location"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Organization"/>
       </extension>
       <reference>
@@ -672,6 +705,39 @@
       </reference>
       <name value="OrganizationAlpenlaendischeGesundheitskasse"/>
       <description value="Example of the fictional Austrian social health insurance institution Alpenländische Gesundheitskasse."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationAmadeusSpitalInnereMedizin"/>
+      </reference>
+      <name value="OrganizationAmadeusSpitalInnereMedizin"/>
+      <description value="Example of the fictional Department of Internal Medicine at Amadeus Spital, demonstrating an organizational department within a hospital."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationGruppenpraxisFrauenmedizinSonnenfeld"/>
+      </reference>
+      <name value="OrganizationGruppenpraxisFrauenmedizinSonnenfeld"/>
+      <description value="Example of a fictional Austrian private medical group practice for gynecology and obstetrics in Linz, operated as an Offene Gesellschaft (OG)."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/OrganizationOrdinationLukasSteiner"/>
+      </reference>
+      <name value="OrganizationOrdinationLukasSteiner"/>
+      <description value="Example of the fictional Austrian individual medical practice Ordination Dr. Lukas Steiner, providing specialist care in internal medicine."/>
       <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-organization"/>
     </resource>
     <resource>
@@ -706,6 +772,105 @@
       <name value="PatientFelixGruber"/>
       <description value="Example of a fictional minor patient living in Vienna, whose father is represented by a RelatedPerson resource."/>
       <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/PractitionerAnjaLeitner"/>
+      </reference>
+      <name value="PractitionerAnjaLeitner"/>
+      <description value="Example of Dr. Anja Leitner, a fictional Austrian specialist in gynecology and obstetrics and partner of the Frauenmedizin Sonnenfeld private medical group practice."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/PractitionerLukasSteiner"/>
+      </reference>
+      <name value="PractitionerLukasSteiner"/>
+      <description value="Example of the fictional Austrian physician Dr. Lukas Steiner, who practices at both Amadeus Spital and his own medical office."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/PractitionerRoleAnjaLeitnerSonnenfeld"/>
+      </reference>
+      <name value="PractitionerRoleAnjaLeitnerSonnenfeld"/>
+      <description value="Example of Dr. Anja Leitner practicing gynecology and obstetrics at the fictional Frauenmedizin Sonnenfeld private medical group practice."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/PractitionerRoleLukasSteinerOrdination"/>
+      </reference>
+      <name value="PractitionerRoleLukasSteinerOrdination"/>
+      <description value="Example of Dr. Lukas Steiner practicing as a specialist in internal medicine at his individual medical office."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/PractitionerRoleLukasSteinerSpital"/>
+      </reference>
+      <name value="PractitionerRoleLukasSteinerSpital"/>
+      <description value="Example of Dr. Lukas Steiner serving as head of the Department of Internal Medicine at the fictional Austrian hospital Amadeus Spital."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/PractitionerRoleSarahBergerSonnenfeld"/>
+      </reference>
+      <name value="PractitionerRoleSarahBergerSonnenfeld"/>
+      <description value="Example of freelance midwife Sarah Berger providing midwifery consultations in cooperation with the fictional Frauenmedizin Sonnenfeld private medical group practice."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/PractitionerRoleThomasHoferSonnenfeld"/>
+      </reference>
+      <name value="PractitionerRoleThomasHoferSonnenfeld"/>
+      <description value="Example of Dr. Thomas Hofer practicing gynecology and obstetrics at the fictional Frauenmedizin Sonnenfeld private medical group practice."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitionerRole"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/PractitionerSarahBerger"/>
+      </reference>
+      <name value="PractitionerSarahBerger"/>
+      <description value="Example of Sarah Berger, BSc, a fictional Austrian midwife providing freelance midwifery services in cooperation with the Frauenmedizin Sonnenfeld group practice in Linz."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/PractitionerThomasHofer"/>
+      </reference>
+      <name value="PractitionerThomasHofer"/>
+      <description value="Example of Dr. Thomas Hofer, a fictional Austrian specialist in gynecology and obstetrics and partner of the Frauenmedizin Sonnenfeld private medical group practice."/>
+      <exampleCanonical value="https://fhir.hl7.at/core/r4/StructureDefinition/at-core-practitioner"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

@@ -5,7 +5,7 @@
 **Usages:**
 
 * Refer to this Profile: [HL7® AT Core HealthcareService Profile](StructureDefinition-at-core-HealthcareService.md) and [HL7® AT Core Location Profile](StructureDefinition-at-core-location.md)
-* Examples for this Profile: [Campus Graz](Location-HL7ATCoreLocationGraz.md) and [Campus Linz](Location-HL7ATCoreLocationLinz.md)
+* Examples for this Profile: [Campus Graz](Location-HL7ATCoreLocationGraz.md), [Campus Linz](Location-HL7ATCoreLocationLinz.md) and [Ordination Dr. Lukas Steiner – Salzburg](Location-LocationOrdinationLukasSteiner.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-location.json)
 
@@ -30,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-location.
   "name" : "HL7ATCoreLocation",
   "title" : "HL7® AT Core Location Profile",
   "status" : "active",
-  "date" : "2026-10-19T14:20:01+00:00",
+  "date" : "2026-10-20T06:52:38+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
@@ -84,6 +84,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-location.
       "id" : "Location.identifier:KANR",
       "path" : "Location.identifier",
       "sliceName" : "KANR",
+      "short" : "Krankenanstaltennummer (KA-Nr)",
+      "definition" : "The hospital identification number (Krankenanstaltennummer, KA-Nr) of the hospital site in the more fine-grained 6-character format ('K' + 3 digits + '.' + 1 digit, e.g. 'K460.1'), assigned by the Federal Ministry of Health (Österreichisches Bundesministerium für Gesundheit). The 4-character KA-Nr remains an identifier on the Organization resource only. The first 4 characters of the Location KA-Nr SHALL match the Organization KA-Nr.",
       "min" : 0,
       "max" : "1",
       "constraint" : [{
@@ -104,7 +106,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-location.
     {
       "id" : "Location.identifier:KANR.value",
       "path" : "Location.identifier.value",
-      "short" : "Krankenanstaltennummer (hospital identification number) in the more fine-grained 6-character format, used to represent a hospital site. The 4-character hospital identification number remains an identifier on the Organization resource only. The first 4 characters of the Location KANR SHALL match the Organization KANR.“",
+      "short" : "Krankenanstaltennummer (hospital identification number) in the more fine-grained 6-character format, used to represent a hospital site. The 4-character hospital identification number remains an identifier on the Organization resource only. The first 4 characters of the Location KA-Nr SHALL match the Organization KA-Nr.",
       "min" : 1
     },
     {

@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Examples for this Profile: [PractitionerRole/HL7ATCorePractitionerRoleExample01](PractitionerRole-HL7ATCorePractitionerRoleExample01.md)
+* Examples for this Profile: [PractitionerRole/HL7ATCorePractitionerRoleExample01](PractitionerRole-HL7ATCorePractitionerRoleExample01.md), [PractitionerRole/PractitionerRoleAnjaLeitnerSonnenfeld](PractitionerRole-PractitionerRoleAnjaLeitnerSonnenfeld.md), [PractitionerRole/PractitionerRoleLukasSteinerOrdination](PractitionerRole-PractitionerRoleLukasSteinerOrdination.md), [PractitionerRole/PractitionerRoleLukasSteinerSpital](PractitionerRole-PractitionerRoleLukasSteinerSpital.md)... Show 2 more, [PractitionerRole/PractitionerRoleSarahBergerSonnenfeld](PractitionerRole-PractitionerRoleSarahBergerSonnenfeld.md) and [PractitionerRole/PractitionerRoleThomasHoferSonnenfeld](PractitionerRole-PractitionerRoleThomasHoferSonnenfeld.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.core.r4|current/StructureDefinition/StructureDefinition-at-core-practitionerRole.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-practitio
   "name" : "HL7ATCorePractitionerRole",
   "title" : "HL7® AT Core PractitionerRole Profile",
   "status" : "active",
-  "date" : "2026-10-19T14:20:01+00:00",
+  "date" : "2026-10-20T06:52:38+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
