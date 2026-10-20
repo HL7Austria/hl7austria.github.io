@@ -1,0 +1,115 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/TestScript/testscript-patient-create-at-core> a fhir:TestScript ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "testscript-patient-create-at-core"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:TestScript.url [ fhir:value "https://fhir.hl7.at/core/r4/TestScript/testscript-patient-create-at-core"] ;
+  fhir:TestScript.version [ fhir:value "2.1.0"] ;
+  fhir:TestScript.name [ fhir:value "TestScriptATCorePatientCreate"] ;
+  fhir:TestScript.title [ fhir:value "HL7® AT Core TestScript - Patient Create"] ;
+  fhir:TestScript.status [ fhir:value "active"] ;
+  fhir:TestScript.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:TestScript.date [ fhir:value "2026-09-15"^^xsd:date] ;
+  fhir:TestScript.publisher [ fhir:value "HL7® Austria, TC FHIR®"] ;
+  fhir:TestScript.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "HL7® Austria, TC FHIR®" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://hl7.at/technische-komitees/tc-fhir/" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Technical Committee for FHIR® at HL7® Austria" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "mailto:tc-fhir@hl7.at" ]
+     ]
+  ] ;
+  fhir:TestScript.description [ fhir:value "TestScript creating a patient resource conformant to the AT Core Patient profile on a FHIR Server. The FHIR Client may use any input patient resource, but the script provides an example patient: Andreas Bucher - HL7ATCorePatientCreateTestExample. Expected Result: the server accepts creation of a Patient resource that is conformant to the AT Core Patient profile. The server-assigned logical id is captured in the patientResourceId variable so it can be fed into the AT Core Patient Update test script."] ;
+  fhir:TestScript.copyright [ fhir:value "This FHIR Test Script is licensed under Creative Commons (CC0) 'No Rights Reserved'. Learn more at https://creativecommons.org/licenses"] ;
+  fhir:TestScript.fixture [
+     fhir:index -1 ;
+     fhir:Element.id [ fhir:value "patient-create" ] ;
+     fhir:TestScript.fixture.autocreate [ fhir:value "false"^^xsd:boolean ] ;
+     fhir:TestScript.fixture.autodelete [ fhir:value "false"^^xsd:boolean ] ;
+     fhir:TestScript.fixture.resource [
+       fhir:link <https://fhir.hl7.at/core/r4/Patient/HL7ATCorePatientCreateTestExample> ;
+       fhir:Reference.reference [ fhir:value "Patient/HL7ATCorePatientCreateTestExample" ]
+     ]
+  ] ;
+  fhir:TestScript.profile [
+     fhir:index -1 ;
+     fhir:link <https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient> ;
+     fhir:Element.id [ fhir:value "at-core-patient-profile" ] ;
+     fhir:Reference.reference [ fhir:value "https://fhir.hl7.at/core/r4/StructureDefinition/at-core-patient" ]
+  ] ;
+  fhir:TestScript.variable [
+     fhir:index -1 ;
+     fhir:TestScript.variable.name [ fhir:value "patientResourceId" ] ;
+     fhir:TestScript.variable.description [ fhir:value "The server-assigned logical id of the Patient created by this test script. It is read from the create response body, which is why the operation asks for 'Prefer: return=representation'." ] ;
+     fhir:TestScript.variable.expression [ fhir:value "Patient.id" ] ;
+     fhir:TestScript.variable.sourceId [ fhir:value "create-response" ]
+  ] ;
+  fhir:TestScript.test [
+     fhir:index -1 ;
+     fhir:Element.id [ fhir:value "Step1-RegisterNewPatient" ] ;
+     fhir:TestScript.test.name [ fhir:value "RegisterNewPatient" ] ;
+     fhir:TestScript.test.description [ fhir:value "Create a new patient conformant to the AT Core Patient profile. The server assigns the resource id." ] ;
+     fhir:TestScript.test.action [
+       fhir:index -1 ;
+       fhir:TestScript.test.action.operation [
+         fhir:TestScript.setup.action.operation.type [
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/testscript-operation-codes" ] ;
+           fhir:Coding.code [ fhir:value "create" ]
+         ] ;
+         fhir:TestScript.setup.action.operation.resource [ fhir:value "Patient" ] ;
+         fhir:TestScript.setup.action.operation.description [ fhir:value "POST the Patient fixture to [base]/Patient. The server assigns the resource id." ] ;
+         fhir:TestScript.setup.action.operation.accept [ fhir:value "application/fhir+json" ] ;
+         fhir:TestScript.setup.action.operation.contentType [ fhir:value "application/fhir+json" ] ;
+         fhir:TestScript.setup.action.operation.destination [ fhir:value "1"^^xsd:integer ] ;
+         fhir:TestScript.setup.action.operation.encodeRequestUrl [ fhir:value "true"^^xsd:boolean ] ;
+         fhir:TestScript.setup.action.operation.origin [ fhir:value "1"^^xsd:integer ] ;
+         fhir:TestScript.setup.action.operation.requestHeader [
+           fhir:index -1 ;
+           fhir:TestScript.setup.action.operation.requestHeader.field [ fhir:value "Prefer" ] ;
+           fhir:TestScript.setup.action.operation.requestHeader.value [ fhir:value "return=representation" ]
+         ] ;
+         fhir:TestScript.setup.action.operation.responseId [ fhir:value "create-response" ] ;
+         fhir:TestScript.setup.action.operation.sourceId [ fhir:value "patient-create" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:TestScript.test.action.assert [
+         fhir:TestScript.setup.action.assert.description [ fhir:value "Confirm that the returned HTTP status is 200(OK) or 201(Created)." ] ;
+         fhir:TestScript.setup.action.assert.direction [ fhir:value "response" ] ;
+         fhir:TestScript.setup.action.assert.operator [ fhir:value "in" ] ;
+         fhir:TestScript.setup.action.assert.responseCode [ fhir:value "200,201" ] ;
+         fhir:TestScript.setup.action.assert.warningOnly [ fhir:value "false"^^xsd:boolean ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:TestScript.test.action.assert [
+         fhir:TestScript.setup.action.assert.description [ fhir:value "Validate that the returned resource conforms to the HL7 AT Core Patient profile." ] ;
+         fhir:TestScript.setup.action.assert.direction [ fhir:value "response" ] ;
+         fhir:TestScript.setup.action.assert.validateProfileId [ fhir:value "at-core-patient-profile" ] ;
+         fhir:TestScript.setup.action.assert.warningOnly [ fhir:value "false"^^xsd:boolean ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r4/TestScript/testscript-patient-create-at-core.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
