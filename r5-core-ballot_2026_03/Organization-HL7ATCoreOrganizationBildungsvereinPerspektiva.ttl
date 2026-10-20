@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r5/Organization/HL7ATCoreOrganizationBildungsvereinPerspektiva> a fhir:Organization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HL7ATCoreOrganizationBildungsvereinPerspektiva"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-organization"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/core/r5/StructureDefinition/at-core-organization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Organization HL7ATCoreOrganizationBildungsvereinPerspektiva</b></p><a name=\"HL7ATCoreOrganizationBildungsvereinPerspektiva\"> </a><a name=\"hcHL7ATCoreOrganizationBildungsvereinPerspektiva\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-organization.html\">HL7® AT Core Organization Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Bildungsverein Perspektiva (Gemeinnütziger Bildungsverein) (urn:publicid:gv.at:baseid+XZVR#123456789)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The kind(s) of organization that this is\">Type:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/organization-type edu}\">Gemeinnütziger Bildungsverein</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other names this is known by\">Alias:</td><td colspan=\"3\">Perspektiva</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the organization\">Administrative:</td><td colspan=\"3\"><ul><li><a href=\"mailto:office@perspektiva.example\">office@perspektiva.example</a></li><li><a href=\"tel:+43732555310\">+43 732 555 310</a></li><li>Bildungsgasse 8, 1. Stock Linz Oberösterreich 4020 AUT (work)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the organization\">Kursanmeldung:</td><td colspan=\"3\"><ul><li><a href=\"mailto:kurse@perspektiva.example\">kurse@perspektiva.example</a></li><li><a href=\"https://perspektiva.example/kurse\">https://perspektiva.example/kurse</a></li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "urn:publicid:gv.at:baseid+XZVR"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "123456789" ]
+  ] ) ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/organization-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "edu" ] ;
+       fhir:display [ fhir:v "Educational Institute" ]
+     ] ) ;
+     fhir:text [ fhir:v "Gemeinnütziger Bildungsverein" ]
+  ] ) ; # 
+  fhir:name [ fhir:v "Bildungsverein Perspektiva"] ; # 
+  fhir:alias ( [ fhir:v "Perspektiva"] ) ; # 
+  fhir:contact ( [
+     fhir:purpose [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/contactentity-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ADMIN" ] ;
+         fhir:display [ fhir:v "Administrative" ]
+       ] )
+     ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "office@perspektiva.example" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "+43 732 555 310" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] ) ;
+     fhir:address [
+       fhir:use [ fhir:v "work" ] ;
+       fhir:type [ fhir:v "both" ] ;
+       fhir:line ( [
+         fhir:v "Bildungsgasse 8, 1. Stock" ;
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Bildungsgasse"
+           ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "8"
+           ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "1. Stock"
+           ]
+         ] [
+           fhir:url [ fhir:v "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-ext-address-additionalInformation"^^xsd:anyURI ] ;
+           fhir:value [
+             a fhir:string ;
+             fhir:v "Vereinsbüro"
+           ]
+         ] )
+       ] ) ;
+       fhir:city [ fhir:v "Linz" ] ;
+       fhir:state [ fhir:v "Oberösterreich" ] ;
+       fhir:postalCode [ fhir:v "4020" ] ;
+       fhir:country [ fhir:v "AUT" ]
+     ]
+  ] [
+     fhir:purpose [
+       fhir:text [ fhir:v "Kursanmeldung" ]
+     ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "kurse@perspektiva.example" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://perspektiva.example/kurse" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

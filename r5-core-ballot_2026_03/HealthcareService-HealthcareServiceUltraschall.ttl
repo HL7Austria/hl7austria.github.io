@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r5/HealthcareService/HealthcareServiceUltraschall> a fhir:HealthcareService ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "HealthcareServiceUltraschall"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-HealthcareService"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/core/r5/StructureDefinition/at-core-HealthcareService>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: HealthcareService HealthcareServiceUltraschall</b></p><a name=\"HealthcareServiceUltraschall\"> </a><a name=\"hcHealthcareServiceUltraschall\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-HealthcareService.html\">HL7® AT Core HealthcareService Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Gynäkologische Ultraschalldiagnostik (Gynäkologische Ultraschalldiagnostik) by Gruppenpraxis Frauenmedizin Sonnenfeld OG (Ärztliche Gruppenpraxis für Frauenheilkunde und Geburtshilfe (OG)) (urn:publicid:gv.at:baseid+XFN#999998x)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The organization that provides this service\">Provided By:</td><td colspan=\"3\"><a href=\"Organization-OrganizationGruppenpraxisFrauenmedizinSonnenfeld.html\">Gruppenpraxis Frauenmedizin Sonnenfeld OG (Ärztliche Gruppenpraxis für Frauenheilkunde und Geburtshilfe (OG)) (urn:publicid:gv.at:baseid+XFN#999998x)</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Broad category of service being performed or delivered\">Category:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/service-category 28}\">Specialist Obstetrics &amp; Gynecology</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The type of service that may be delivered or performed\">Type:</td><td colspan=\"3\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/service-type 213}\">Gynäkologische Ultraschalldiagnostik</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The specialties of the services that are provided\">Specialty:</td><td colspan=\"3\"><span title=\"Codes:{http://snomed.info/sct 394585009}\">Obstetrics and gynecology</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"When the service is (and is not) available\">Availability:</td><td colspan=\"3\"><ul><li>Monday, Wednesday: 08:00:00 - 12:00:00</li><li>Thursday: 14:00:00 - 17:00:00</li></ul></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:providedBy [
+     fhir:link <https://fhir.hl7.at/core/r5/Organization/OrganizationGruppenpraxisFrauenmedizinSonnenfeld> ;
+     fhir:reference [ fhir:v "Organization/OrganizationGruppenpraxisFrauenmedizinSonnenfeld" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/service-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "28" ] ;
+       fhir:display [ fhir:v "Specialist Obstetrics & Gynecology" ]
+     ] )
+  ] ) ; # 
+  fhir:type ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/service-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "213" ] ;
+       fhir:display [ fhir:v "Obstetric/Gynaecological Ultrasound" ]
+     ] ) ;
+     fhir:text [ fhir:v "Gynäkologische Ultraschalldiagnostik" ]
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:coding ( [
+       a sct:394585009 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "394585009" ] ;
+       fhir:display [ fhir:v "Obstetrics and gynecology" ]
+     ] )
+  ] ) ; # 
+  fhir:name [ fhir:v "Gynäkologische Ultraschalldiagnostik"] ; # 
+  fhir:availability ( [
+     fhir:availableTime ( [
+       fhir:daysOfWeek ( [ fhir:v "mon" ] [ fhir:v "wed" ] ) ;
+       fhir:availableStartTime [ fhir:v "08:00:00"^^xsd:time ] ;
+       fhir:availableEndTime [ fhir:v "12:00:00"^^xsd:time ]
+     ] [
+       fhir:daysOfWeek ( [ fhir:v "thu" ] ) ;
+       fhir:availableStartTime [ fhir:v "14:00:00"^^xsd:time ] ;
+       fhir:availableEndTime [ fhir:v "17:00:00"^^xsd:time ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

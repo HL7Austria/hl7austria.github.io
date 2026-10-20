@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.hl7.at/core/r5/PractitionerRole/PractitionerRoleLukasSteinerSpital> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PractitionerRoleLukasSteinerSpital"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.hl7.at/core/r5/StructureDefinition/at-core-practitionerRole"^^xsd:anyURI ;
+       fhir:link <https://fhir.hl7.at/core/r5/StructureDefinition/at-core-practitionerRole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole PractitionerRoleLukasSteinerSpital</b></p><a name=\"PractitionerRoleLukasSteinerSpital\"> </a><a name=\"hcPractitionerRoleLukasSteinerSpital\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-core-practitionerRole.html\">HL7® AT Core PractitionerRole Profile</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Lukas Steiner (OID:1.2.40.0.34.99.4613.5): Fachärztin/Facharzt für Innere Medizin und Rheumatologie, Primar / Abteilungsvorstand Innere Medizin at Abteilung für Innere Medizin – Amadeus Spital (Abteilung für Innere Medizin)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The practitioner who is able to provide the services in this role\">Practitioner:</td><td colspan=\"3\"><a href=\"Practitioner-PractitionerLukasSteiner.html\">Lukas Steiner (OID:1.2.40.0.34.99.4613.5)</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The organization where the practitioner performs the roles\">Organization:</td><td colspan=\"3\"><a href=\"Organization-OrganizationAmadeusSpitalInnereMedizin.html\">Abteilung für Innere Medizin – Amadeus Spital (Abteilung für Innere Medizin)</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Roles which this practitioner is authorized to perform for the organization\">Role:</td><td colspan=\"3\"><ul><li><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/elga-fachaerzte 166}\">Fachärztin/Facharzt für Innere Medizin und Rheumatologie</span></li><li><span title=\"Codes:\">Primar / Abteilungsvorstand Innere Medizin</span></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The specialties of the practitioner in this role\">Specialty:</td><td colspan=\"3\"><span title=\"Codes:{http://snomed.info/sct 394810000}\">Rheumatology</span></td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:active [ fhir:v true] ; # 
+  fhir:practitioner [
+     fhir:link <https://fhir.hl7.at/core/r5/Practitioner/PractitionerLukasSteiner> ;
+     fhir:reference [ fhir:v "Practitioner/PractitionerLukasSteiner" ]
+  ] ; # 
+  fhir:organization [
+     fhir:link <https://fhir.hl7.at/core/r5/Organization/OrganizationAmadeusSpitalInnereMedizin> ;
+     fhir:reference [ fhir:v "Organization/OrganizationAmadeusSpitalInnereMedizin" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://termgit.elga.gv.at/CodeSystem/elga-fachaerzte"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "166" ] ;
+       fhir:display [ fhir:v "Fachärztin/Facharzt für Innere Medizin und Rheumatologie" ]
+     ] )
+  ] [
+     fhir:text [ fhir:v "Primar / Abteilungsvorstand Innere Medizin" ]
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:coding ( [
+       a sct:394810000 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "394810000" ] ;
+       fhir:display [ fhir:v "Rheumatology" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

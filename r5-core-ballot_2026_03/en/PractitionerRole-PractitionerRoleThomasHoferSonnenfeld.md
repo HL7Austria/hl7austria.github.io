@@ -1,0 +1,53 @@
+# PractitionerRoleThomasHoferSonnenfeld - HL7® Austria FHIR® Core Implementation Guide v2.1.0
+
+## Example PractitionerRole: PractitionerRoleThomasHoferSonnenfeld
+
+Profile: [HL7® AT Core PractitionerRole Profile](StructureDefinition-at-core-practitionerRole.md)
+
+Thomas Hofer (official) (OID:1.2.40.0.34.99.4613.9): Fachärztin/Facharzt für Frauenheilkunde und Geburtshilfe at Gruppenpraxis Frauenmedizin Sonnenfeld OG (Ärztliche Gruppenpraxis für Frauenheilkunde und Geburtshilfe (OG)) (urn:publicid:gv.at:baseid+XFN#999998x)
+
+-------
+
+| | |
+| :--- | :--- |
+| Active: | true |
+| Practitioner: | [Thomas Hofer (official) (OID:1.2.40.0.34.99.4613.9)](Practitioner-PractitionerThomasHofer.md) |
+| Organization: | [Gruppenpraxis Frauenmedizin Sonnenfeld OG (Ärztliche Gruppenpraxis für Frauenheilkunde und Geburtshilfe (OG)) (urn:publicid:gv.at:baseid+XFN#999998x)](Organization-OrganizationGruppenpraxisFrauenmedizinSonnenfeld.md) |
+| Role: | Fachärztin/Facharzt für Frauenheilkunde und Geburtshilfe |
+| Specialty: | Obstetrics and gynecology |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "PractitionerRoleThomasHoferSonnenfeld",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/core/r5/StructureDefinition/at-core-practitionerRole"]
+  },
+  "active" : true,
+  "practitioner" : {
+    "reference" : "Practitioner/PractitionerThomasHofer"
+  },
+  "organization" : {
+    "reference" : "Organization/OrganizationGruppenpraxisFrauenmedizinSonnenfeld"
+  },
+  "code" : [{
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/elga-fachaerzte",
+      "code" : "108",
+      "display" : "Fachärztin/Facharzt für Frauenheilkunde und Geburtshilfe"
+    }]
+  }],
+  "specialty" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "394585009",
+      "display" : "Obstetrics and gynecology"
+    }]
+  }]
+}
+
+```
