@@ -18,7 +18,7 @@ Dabei werden folgende **Zugriffsarten** unterschieden:
 * **Zugriff mittels **e-Med GroupIdentifier****: Alternativ steht **ohne Kontaktbestätigung** des ELGA-Teilnehmers der Zugriff mittels **e-Med GroupIdentifier** (z.B. über den DataMatrix-Code eines e-Rezepts) zur Verfügung. Dieser ermöglicht ausschließlich einen **eingeschränkten ELGA-Zugriff** auf die dem **e-Med GroupIdentifier** zugeordneten **Geplanten Abgaben** und **Durchgeführten Abgaben** und wird in [Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search) beschrieben.
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im
-[UC_eMed_03 Geplante und durchgeführte Abgaben lesen](Sub_UC_eMed_03.md)beschrieben.
+[UC_eMed_03 Geplante und durchgeführte Abgaben lesen](https://dev.elga.gv.at/apis/emed/use-cases/)beschrieben.
 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
@@ -43,7 +43,7 @@ Die Suche nach [Geplanten Abgaben](StructureDefinition-at-elga-emed-medicationre
 
 Die gefundenen **Geplanten Abgaben** können als Ausgangspunkt für weitere Abfragen verwendet werden:
 
-* zugehöriger Medikationsplaneintrag und Medikationsplanversion  
+* zugehöriger Medikationsplaneintrag und Medikationsplanversion 
 * da in einer **Geplanten Abgabe** die Referenz auf den zugehöigen Planeintrag (**basedOn**) nicht versioniert ist, zeigt die **Geplante Abgabe** immer auf den aktuellen Planeintrag. Dieser kann zwischenzeitlich von den Inhalten der **Geplanten Abgabe** abweichen.
  
 * zugehörige **Durchgeführte Abgaben** (gleicher **e-Med GroupIdentifier** der **Geplanten Abgabe**)

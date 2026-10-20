@@ -9,11 +9,11 @@ Für ELGA-Teilnehmer und deren Vertretungen erfolgt der lesende Zugriff über da
 Der lesende Zugriff umfasst:
 
 * den Abruf des **aktuellen Medikationsplans**, der für eine mögliche Bearbeitung aufbereitet ist ([Plan-Read](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read)),
-* die Suche und den Abruf **einzelner aktueller Planeinträge** ([Planentry-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_02---medikationsplaneinträge-lesen-planentry-search)) sowie
+* die Suche und den Abruf **aktueller Planeinträge** ([Planentry-Search](Sub_UC_eMed_01.md#sub_uc_emed_01_02---medikationsplaneinträge-suchen-planentry-search)) sowie
 * die Suche und den Abruf (History-Search):
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im
-[UC_eMed_01 Medikationsplan lesen](Sub_UC_eMed_01.md)beschrieben.
+[UC_eMed_01 Medikationsplan lesen](https://dev.elga.gv.at/apis/emed/use-cases/)beschrieben.
 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
@@ -47,7 +47,7 @@ Die **persistierten Ressourcen am Server** werden durch die Transformationen fü
 
 A) **Es existiert kein Medikationsplan**:
 
-* Es wird gemäß [Sub_UC_eMed_01_01_01 initialer Medikationsplan]((Sub_UC_eMed_01.md#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan)) erstellt ([List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource mit **List.emptyReason = notstarted**).
+* Es wird ein initialer Medikationsplan erstellt (siehe [Sub_UC_eMed_01_01_01 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan)) mit einer [List](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource und **List.emptyReason = notstarted**.
 * Es erfolgt keine Transformation.
 
 B) **Es existiert ein Medikationsplan mit Planeinträgen**:
@@ -55,8 +55,8 @@ B) **Es existiert ein Medikationsplan mit Planeinträgen**:
 * Folgende Transformationen werden durchgeführt (siehe [Status des List.entry.flags im Medikationsplan](workflowmanagement.md#status-des-listentryflags-im-medikationsplan)): 
 * Neue oder geänderte Planeinträge (**List.entry.flag = new** oder **changed**) werden auf ****unchanged**** gesetzt.
 * Stornierte und beendete Planeinträge mit **List.entry.flag = **removed**** werden aus dem Medikationsplan **entfernt**.
-* Planeinträge mit **abgelaufenem Behandlungszeitraum** werden mit **List.entry.flag = removed** gekennzeichnet und werden mit **ausgeliefert**, um dem GDA die Möglichkeit zu geben, das Arzneimittel weiterzuverodnen. Anderenfalls nimmt der GDA zur Kenntnis, dass der Planeintrag mit seinem nächsten Schreibvorgang entfernt wird. 
-* Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt. 
+* Planeinträge mit **abgelaufenem Behandlungszeitraum** werden mit **List.entry.flag = removed** gekennzeichnet und werden mit **ausgeliefert**, um dem GDA die Möglichkeit zu geben, das Arzneimittel weiterzuverodnen. Anderenfalls nimmt der GDA zur Kenntnis, dass der Planeintrag mit seinem nächsten Schreibvorgang entfernt wird.
+* Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt.
  
 
 C) **Es existiert ein leerer Medikationsplan** (mit einem [List.emptyReason](https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html)).

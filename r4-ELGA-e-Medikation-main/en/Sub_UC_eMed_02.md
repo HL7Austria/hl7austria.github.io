@@ -31,11 +31,11 @@ Der schreibende Zugriff umfasst folgende Bearbeitungen:
 Jede Änderung am Medikationsplan führt zur Erstellung einer **neuen Medikationsplanversion**. Für GDA gilt zusätzich:
 
 * Historische Medikationspläne bzw. Planeinträge können **nicht** bearbeitet werden.
-* Die Verträglichkeit der neu hinzugefügten/geänderten Medikation mit dem bestehenden Medikationsplan gilt mit der Erstellung einer neuen Medikationsplanversion als bestätigt. 
+* Die Verträglichkeit der neu hinzugefügten/geänderten Medikation mit dem bestehenden Medikationsplan gilt mit der Erstellung einer neuen Medikationsplanversion als bestätigt.
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden beschrieben in:
-*  [UC_eMed_02 Medikationsplan schreiben](Sub_UC_eMed_02.md) 
-*  [UC_eMed_06 Teilnehmerrechte ausüben](Sub_UC_eMed_06.md) 
+*  [UC_eMed_02 Medikationsplan schreiben](https://dev.elga.gv.at/apis/emed/use-cases/) 
+*  [UC_eMed_06 Teilnehmerrechte ausüben](https://dev.elga.gv.at/apis/emed/use-cases/) 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
 ### Allgemeiner Ablauf Medikationsplan bearbeiten und schreiben
@@ -52,7 +52,7 @@ Die nachfolgenden technischen Use Cases beschreiben die für den jeweiligen Anwe
 
 ### Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)
 
-Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation [$plan-write](OperationDefinition-at-elga-emed-operation-plan-write.md). Die Fachanwendung verwendet den im Request übermittelten **ETag** zur Integritätsprüfung ([Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)), um konkurrierende Änderungen am Medikationsplan zu erkennen. 
+Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation [$plan-write](OperationDefinition-at-elga-emed-operation-plan-write.md). Die Fachanwendung verwendet den im Request übermittelten **ETag** zur Integritätsprüfung ([Optimistic Locking](https://hl7.org/fhir/http.html#concurrency)), um konkurrierende Änderungen am Medikationsplan zu erkennen.
 
 #### Ablauf
 
@@ -90,7 +90,7 @@ Der GDA führt ein **POST** [$plan-read](OperationDefinition-at-elga-emed-operat
  
  
 * **MedicationRequest**-Ressource(n) erstellen: [AtElgaEmedMedicationRequestPlaneintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md): 
-* **Einnahmezeitraum** (**extension:effectiveDosePeriod**): Einnahme-Startdatum kann in der Zukunft oder in der Vergangenheit liegen (Nacherfassung);  das Einnahme-Enddatum darf nicht in der Vergangenheit liegen.
+* **Einnahmezeitraum** (**extension:effectiveDosePeriod**): Einnahme-Startdatum kann in der Zukunft oder in der Vergangenheit liegen (Nacherfassung); das Einnahme-Enddatum darf nicht in der Vergangenheit liegen.
 * **Status** muss **active** oder **on-hold** sein (siehe [Status des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-des-medicationrequests-im-medikationsplaneintrag) und [Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status))
 * **Kategorie** (**category**): "Planeintrag", zur Unterscheidung von **Geplanten Abgaben**
 * **Kennzeichnung, ob die Medikationsinformation berichtet wurde** (**reportedBoolean**): erhält den Wert **false**, wenn die Medikation vom Ersteller des Planeintrags (GDA) selbst stammt, sonst **true**

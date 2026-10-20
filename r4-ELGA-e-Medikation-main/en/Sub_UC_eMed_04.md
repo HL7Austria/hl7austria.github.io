@@ -26,7 +26,7 @@ Der schreibende Zugriff umfasst folgende Bearbeitungen:
 von **Geplanten Abgaben**.
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden beschrieben in:
-*  [UC_eMed_04 Geplante Abgabe schreiben](Sub_UC_eMed_04.md) 
+*  [UC_eMed_04 Geplante Abgabe schreiben](https://dev.elga.gv.at/apis/emed/use-cases/) 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
 ### Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)
@@ -67,7 +67,7 @@ Basierend auf den enthaltenen Planeinträgen erstellt der GDA neue **Gelplante A
 * **Bereitzustellende Menge** (**dispenseRequest.quantity**): Verpflichtende Angabe der Menge (Anzahl Packungen), die bei jeder Abgabe bereitgestellt werden soll.
  
 
-Alle zusammengehörenden, erstellten **Geplanten Abgaben** werden in einem eigenen [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) mittels **POST** [$prescription-write](Sub_UC_eMed_04.md#custom-operations) an die Fachanwendung übermittelt. 
+Alle zusammengehörenden, erstellten **Geplanten Abgaben** werden in einem eigenen [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) mittels **POST** [$prescription-write](Sub_UC_eMed_04.md#custom-operations) an die Fachanwendung übermittelt.
 
 #### Relevante Elemente (MedicationRequest)
 
