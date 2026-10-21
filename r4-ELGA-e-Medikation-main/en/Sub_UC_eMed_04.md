@@ -54,7 +54,7 @@ Basierend auf den enthaltenen Planeinträgen erstellt der GDA neue **Gelplante A
 * **Status** muss **active** sein (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe))
 * **Kategorie** (**category:mrcategory**): "Geplante Abgabe", zur Unterscheidung von Planeinträgen
 * [**Rezeptart**](https://termgit.elga.gv.at/ValueSet-elga-medikationrezeptart.html) (**category:recipetype**): muss verpflichtend ausgewählt werden
-* **Medikation**: muss **identisch** sein mit der des Planeintrags. Enthält der Planeintrag ausschließlich Wirkstoffe, sind diese auch in der **Geplanten Abgabe** in der gleichen Form zu dokumentieren, anderenfalls muss der Planeintrag zuvor angepasst werden (z.B. Austausch der Wirkstoffe mit einem entsprechenden Arzneimittel der ASP-Liste (inkl. PZN)).
+* **Medikation**: muss **identisch** sein mit der des Planeintrags. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine **Geplante Abgabe** erstellt werden kann.
 * **Informationen zur Erstellung**: aktuelles Datum (**authoredOn**) und aktueller GDA als Ersteller (**requester**)
 * **Referenz auf den zugrundeliegenden Planeintrag** (**basedOn**): wird **nicht versioniert**, verweist somit immer auf den aktuellen Planeintrag, auch wenn dieser zukünftig geändert wird.
 * **Dosierung** (**dosageInstruction**): muss **identisch** sein mit der des Planeintrags.

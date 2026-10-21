@@ -61,7 +61,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $prescription-write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-21T10:08:52+00:00",
+  "date" : "2026-10-21T11:24:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
