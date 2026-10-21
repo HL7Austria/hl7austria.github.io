@@ -9,15 +9,15 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/StepCountQuantityQuestionnaire | *Version*:0.1.0 | |
-| Active as of 2026-08-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuantityQuestionnaire |
+| Active as of 2026-10-21 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:StepCountQuantityQuestionnaire |
 
  
-A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000. 
+A simple questionnaire for asking how many steps the patient has taken today. Only allows values between 0 and 150,000. 
 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-26
+2026-10-21
 
 Links:
 [Table of Contents](toc.md)|
@@ -39,7 +39,7 @@ Links:
   "status" : "active",
   "experimental" : false,
   "subjectType" : ["Patient"],
-  "date" : "2026-08-26T07:28:06+00:00",
+  "date" : "2026-10-21T09:39:19+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -56,7 +56,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values inbetween 0 and 150,000.",
+  "description" : "A simple questionnaire for asking how many steps the patient has taken today. Only allows values between 0 and 150,000.",
   "item" : [{
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/questionnaire-unitOption",

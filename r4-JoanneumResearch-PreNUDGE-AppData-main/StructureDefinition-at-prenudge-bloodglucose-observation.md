@@ -9,10 +9,10 @@
 | | | |
 | :--- | :--- | :--- |
 | *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation | *Version*:0.1.0 | |
-| Draft as of 2026-08-26 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
+| Draft as of 2026-10-21 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:AtPrenudgeObservationBloodGlucose |
 
  
-This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL. 
+This FHIR profile is defining the Blood Glucose Observation. The blood glucose option only allows values between 0 and 999 mg/dL. 
 
 **Usages:**
 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](StructureDefinition-at-prenudge-bloodglu
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-08-26
+2026-10-21
 
 Links:
 [Table of Contents](toc.md)|
@@ -48,7 +48,7 @@ Links:
   "name" : "AtPrenudgeObservationBloodGlucose",
   "title" : "AT PreNUDGE Observation Blood Glucose (only in mg/dL)",
   "status" : "draft",
-  "date" : "2026-08-26T07:28:06+00:00",
+  "date" : "2026-10-21T09:39:19+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -65,7 +65,7 @@ Links:
       "use" : "work"
     }]
   }],
-  "description" : "This FHIR profile is defining the Blood Glucose Observation, similar to the Observation Social History - Alcohol Use from the IPS. The blood glucose option only allows values inbetween 0 and 999 mg/dL.",
+  "description" : "This FHIR profile is defining the Blood Glucose Observation. The blood glucose option only allows values between 0 and 999 mg/dL.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -109,7 +109,7 @@ Links:
       "constraint" : [{
         "key" : "bloodglucose-range",
         "severity" : "error",
-        "human" : "Blood glucose must be inbetween 0 and 999 mg/dL.",
+        "human" : "Blood glucose must be between 0 and 999 mg/dL.",
         "expression" : "value.ofType(Quantity).value >= 0 and value.ofType(Quantity).value <= 999",
         "source" : "https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-bloodglucose-observation"
       }]
