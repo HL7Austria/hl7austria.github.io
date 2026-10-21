@@ -4,7 +4,9 @@
 
 Die Ressource **`MedicationRequest`** bildet einen Planeintrag des Medikationsplans ab.
 
-Sie enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer Conditional Reference über PZN und Displayname dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen.
+Ein Planeintrag ist eine autorisierte ärztliche Anordnung und stellt eine verbindliche Einnahmeanweisung für den Patienten dar.
+
+Er enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel entweder verpflichtend mit einer contained Medication-Ressource oder einer Conditional Reference über PZN und Displayname dokumentiert wird. Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer "Geplanten Abgabe" dienen.
 
 Relevante Use Cases:
 
@@ -49,7 +51,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-21T11:24:22+00:00",
+  "date" : "2026-10-21T12:17:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -104,17 +106,10 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "path" : "MedicationRequest",
       "short" : "Planeintrag",
       "constraint" : [{
-        "key" : "at-emed-planeintrag-status-reason-beim-absetzen",
+        "key" : "at-emed-planeintrag-status-reason-beim-absetzen-oder-pausieren",
         "severity" : "error",
-        "human" : "Bei Status 'stopped' oder 'entered-in-error' muss ein statusReason angegeben werden.",
-        "expression" : "(status = 'stopped' or status = 'entered-in-error') implies statusReason.coding.code.exists()",
-        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
-      },
-      {
-        "key" : "e-med-continuous-medication-effectiveDosePeriod",
-        "severity" : "error",
-        "human" : "Eine Dauermedikation (courseOfTherapyType = #continuous) darf kein Enddatum besitzen.",
-        "expression" : "courseOfTherapyType.where(coding.code='continuous' and coding.system = 'http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy').exists() implies extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod').value.ofType(Period).end.exists().not()",
+        "human" : "Bei Status 'stopped' oder 'on-hold' muss ein statusReason angegeben werden.",
+        "expression" : "(status = 'stopped' or status = 'on-hold') implies statusReason.coding.code.exists()",
         "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
       },
       {
@@ -143,7 +138,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationRequest.extension:effectiveDosePeriod",
       "path" : "MedicationRequest.extension",
       "sliceName" : "effectiveDosePeriod",
-      "short" : "Zeitraum, in dem das Arzneimittel eingenommen werden soll.",
+      "short" : "Zeitraum, in dem das Arzneimittel eingenommen werden soll. Bei Dauermedikation kann optional ein Enddatum dokumentiert werden. Bei Aktumedikation ist verpflichtend ein Enddatum zu dokumentieren. Der Einnahmezeitraum muss mit den zeitlichen Einschränkungen der Dosage übereinstimmen",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -208,7 +203,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status des Planeintrags. Mögliche Ausprägungen: [active | on-hold | stopped | entered-in-error]. Bedeutung: active: aktuell einzunehmende Medikation | on-hold: pausierte Medikation (aktuell nicht einzunehmen) | stopped: wird nicht weiter verordnet (unabhängig ob vorzeitig abgesetzt, abgeschlossen oder Behandlungszeitraum abgelaufen   \n| entered-in-error: Fehlerhafter Planeintrag storniert und abgeschlossen.",
+      "short" : "Status des Planeintrags. Mögliche Ausprägungen: [active | on-hold | stopped | entered-in-error]. Bedeutung: active: aktuell einzunehmende Medikation | on-hold: pausierte Medikation (aktuell nicht einzunehmen) | stopped: wird nicht weiter verordnet (unabhängig ob vorzeitig abgesetzt, abgeschlossen oder Behandlungszeitraum abgelaufen)   \n| entered-in-error: fehlerhafter Planeintrag storniert und abgeschlossen",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -218,6 +213,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.statusReason",
       "path" : "MedicationRequest.statusReason",
+      "short" : "Begründung für den Status des Planeintrags.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -227,7 +223,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.statusReason.coding",
       "path" : "MedicationRequest.statusReason.coding",
-      "short" : "Codierte Begründung für den Status des Planeintrags.",
+      "short" : "Codierte Begründung für den Status. Wenn status stopped oder on-hold, verpflichtend anzugeben. Existiert kein passender Code, muss \"other\" ausgewählt werden und ein Freitext in dokumentiert werden.",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
@@ -263,14 +259,14 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.intent",
       "path" : "MedicationRequest.intent",
-      "short" : "Ein Planeintrag ist eine autorisierte ärztliche Anordnung und stellt eine verbindliche Einnahmeanweisung für den Patienten dar, auf dessen Basis eine Geplante Abgabe erstellt werden kann. Fixer Wert: \"order\". (req) proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option. https://hl7.org/fhir/R4/valueset-medicationrequest-intent.html",
+      "short" : "Fixer Wert: \"order\".",
       "patternCode" : "order",
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category",
       "path" : "MedicationRequest.category",
-      "short" : "Kategorie zur Unterscheidung eines Planeintrags von einer geplanten Abgabe (beide haben intent order)",
+      "short" : "Kategorie zur Unterscheidung eines Planeintrags von einer Geplanten Abgabe (beide haben intent order).",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true,
@@ -313,7 +309,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.category.text",
       "path" : "MedicationRequest.category.text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -351,7 +346,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.medication[x]",
       "path" : "MedicationRequest.medication[x]",
-      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als logische Referenz dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als conditional reference dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -389,7 +384,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.subject.identifier.use",
       "path" : "MedicationRequest.subject.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -405,14 +399,14 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.authoredOn",
       "path" : "MedicationRequest.authoredOn",
-      "short" : "Datum der Verordnung des Planeintrags.",
+      "short" : "Datum der Erstellung des Planeintrags.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "GDA welcher den Planeintrag zuletzt bearbeitet hat und für den Inhalt verantwortlich ist. Eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen.",
+      "short" : "GDA, welcher den Planeintrag zuletzt bearbeitet hat und für den Inhalt verantwortlich ist.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -435,7 +429,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.requester.identifier.use",
       "path" : "MedicationRequest.requester.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -451,13 +444,13 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
-      "short" : "Fachliche Begründung: Eine Rezept-Klammer wird erst bei der Erstellung geplanter Abgaben benötigt und nicht im Planeintrag dokumentiert.",
+      "short" : "Fachliche Begründung: Eine Rezept-Klammer wird erst bei der Erstellung Geplanter Abgaben benötigt und nicht im Planeintrag dokumentiert.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.courseOfTherapyType",
       "path" : "MedicationRequest.courseOfTherapyType",
-      "short" : "Gesamtmuster der Medikamentengabe. Mögliche Ausprägungen: [continuous | acute ]",
+      "short" : "Art der Medikation. Mögliche Ausprägungen: [continuous | acute]",
       "min" : 1,
       "mustSupport" : true,
       "binding" : {
@@ -515,7 +508,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dispenseRequest",
       "path" : "MedicationRequest.dispenseRequest",
-      "short" : "Fachliche Begründung: Abgabedetails werden in der geplanten Abgabe und nicht im Planeintrag dokumentiert.",
+      "short" : "Fachliche Begründung: Abgabedetails werden in der Geplanten Abgabe und nicht im Planeintrag dokumentiert.",
       "max" : "0"
     }]
   }

@@ -31,7 +31,7 @@ TODO: Some Narrative
     "ingredient" : [{
       "itemCodeableConcept" : {
         "coding" : [{
-          "system" : "https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages",
+          "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
           "code" : "100000092240"
         }]
       }

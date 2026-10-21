@@ -389,7 +389,7 @@ Der GDA führt ein **POST** [$plan-read](OperationDefinition-at-elga-emed-operat
  
 * **MedicationRequest**-Ressource(n) bearbeiten: [AtElgaEmedMedicationRequestPlaneintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md):  
 * **Status** muss ****stopped**** sein (siehe [Status des MedicationRequests im Medikationsplaneintrag](workflowmanagement.md#status-des-medicationrequests-im-medikationsplaneintrag) und [Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status))
-* **Absetzgrund** (**statusReason.coding**) muss **verpflichend** mit Code dokumentiert werden. Existiert im Valueset (siehe [ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html](AtElgaEmedValueSetPlaneintragStatusReasonVS)) kein passender Code, muss "other" ausgewählt werden und ein Freitext in **coding.text** dokumentiert werden.
+* **Absetzgrund** (**statusReason.coding**) muss **verpflichend** mit Code dokumentiert werden. Existiert im Valueset (siehe [ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html](AtElgaEmedValueSetPlaneintragStatusReasonVS)) kein passender Code, muss "other" ausgewählt werden und ein Freitext in **statusReason.text** dokumentiert werden.
 * falls weitere Elemente geändert werden, siehe [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern)
  
 
@@ -463,7 +463,7 @@ AtElgaEmedListMedikationsplan
 AtElgaEmedMedicationRequestPlaneintrag
     extension:effectiveDosePeriod: liegt in der Vergangenheit   // bleibt unverändert
     status: stopped                     
-    statusReason.coding: abgelaufen        
+    statusReason.coding: abgl                   // abgelaufen        
     [...]
     authoredOn: Datum der aktuellen Bearbeitung         
     requester: das Ablaufen zur Kenntnis nehmender GDA  

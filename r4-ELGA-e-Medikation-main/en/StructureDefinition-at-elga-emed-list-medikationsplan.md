@@ -55,7 +55,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
   * **Expression**: `List.meta.profile`
 * **Name**: code
   * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
-  * **Description**: [List](list.md): Art der Liste (in diesem Fall: Medikationsplan)
+  * **Description**: Art der Liste (in diesem Fall: Medikationsplan)
   * **Expression**: `List.code`
 * **Name**: date
   * **Type**: [date](https://hl7.org/fhir/R4/search.html#date)
@@ -127,7 +127,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-21T11:24:22+00:00",
+  "date" : "2026-10-21T12:17:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

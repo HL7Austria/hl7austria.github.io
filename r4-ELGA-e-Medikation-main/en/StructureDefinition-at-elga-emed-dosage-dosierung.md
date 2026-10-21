@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-10-21T11:24:22+00:00",
+  "date" : "2026-10-21T12:17:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -421,7 +421,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationmengenart"
       }
     },
     {

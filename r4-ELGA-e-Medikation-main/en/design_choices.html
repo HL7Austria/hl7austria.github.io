@@ -556,7 +556,7 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 <h3 id="fachliche-designentscheidungen">Fachliche Designentscheidungen</h3>
 
 <h4 id="abhängigkeit-von-planeintrag-und-geplanter-abgabe">Abhängigkeit von Planeintrag und Geplanter Abgabe</h4>
-<p>Gemäß Fachkonzept müssen Arzneimittel und Dosierung einer <em>Geplanten Abgabe</em> zum Zeitpunkt ihrer Erstellung mit dem zugehörigen Planeintrag identisch sein (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01</a>). Dies umfasst insbesondere das verordnete Arzneimittel einschließlich seiner PZN beziehungsweise die dokumentierten Wirkstoffe sowie die Dosierungsangaben. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine <em>Geplante Abgabe</em> erstellt werden kann.</p>
+<p>Gemäß Fachkonzept müssen Arzneimittel und Dosierung einer <em>Geplanten Abgabe</em> zum Zeitpunkt ihrer Erstellung mit dem zugehörigen Planeintrag identisch sein (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01</a>). Dies umfasst insbesondere das verordnete Arzneimittel einschließlich seiner PZN, beziehungsweise die dokumentierten Wirkstoffe, sowie die Dosierungsangaben. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine <em>Geplante Abgabe</em> erstellt werden kann.</p>
 
 <p>Ziel dieser Vorgabe ist es, die Erstellung einer <em>Geplanten Abgabe</em> verbindlich mit der Aktualisierung des Medikationsplans zu verknüpfen. Der verordnende GDA soll die vorgesehene Medikation nicht ausschließlich in der <em>Geplanten Abgabe</em> dokumentieren, sondern erforderliche Änderungen auch im zugehörigen Planeintrag vornehmen. Der Medikationsplan soll dadurch die zum Zeitpunkt der Verordnung vorgesehene Medikation widerspiegeln. Eine neue <em>Geplante Abgabe</em> kann somit nicht auf Grundlage eines inhaltlich abweichenden Planeintrags erstellt werden.</p>
 
@@ -651,8 +651,11 @@ Das Transaction Bundle dient der Aktualisierung aller enthaltenen Ressourcen und
 <ul>
   <li>Eine wirkstoffbasierte Darstellung kann im Medikationsplan erhalten bleiben, während die G<em>eplante Abgabe</em> das konkret verordnete Präparat dokumentiert.</li>
   <li>Eine reine Konkretisierung zum Präparat erfordert keine Änderung des Planeintrags.</li>
-  <li>Der Medikationsplan kann unabhängig von einzelnen Präparateentscheidungen auf Wirkstoffebene geführt werden.
-<em>Nachteile von B:</em></li>
+  <li>Der Medikationsplan kann unabhängig von einzelnen Präparateentscheidungen auf Wirkstoffebene geführt werden.</li>
+</ul>
+
+<p><em>Nachteile von B:</em></p>
+<ul>
   <li>Die Prüfregel wird komplexer (Wirkstoffabgleich). Die Übereinstimmung lässt sich nicht allein anhand identischer Arzneimittelangaben prüfen. Es sind zusätzliche Regeln für die fachliche Zuordnung zwischen Wirkstoffangabe und Präparat erforderlich.</li>
   <li>Medikationsplan und <em>Geplante Abgabe</em> enthalten unterschiedliche Darstellungsebenen derselben vorgesehenen Verordnung. Diese müssen für Anwender klar visualisiert werden.</li>
 </ul>
@@ -837,12 +840,14 @@ auch für nicht (wirklich) versionierte ressourcen wie geplante und durchgeführ
   <li><strong>Patient:</strong> bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)</li>
 </ul>
 
-<p><a name="l1251">​</a>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ergänzt die logischen Referenzen um Referenzen auf diese Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>). Die übermittelten logischen Referenzen (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) dürfen dabei nicht ersetzt werden, sondern bleiben unverändert erhalten. Beim Abruf von Daten enthalten die Ressourcen daher sowohl die logischen als auch die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung nur mittels <code class="language-plaintext highlighter-rouge">_include</code> abgerufen werden (siehe <a href="#verwendung-von-_include">Verwendung von _include</a>).</p>
+<p><a name="l1256">​</a>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ergänzt die logischen Referenzen um Referenzen auf diese Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>). Die übermittelten logischen Referenzen (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) dürfen dabei nicht ersetzt werden, sondern bleiben unverändert erhalten. Beim Abruf von Daten enthalten die Ressourcen daher sowohl die logischen als auch die aufgelösten Referenzen; die referenzierten Ressourcen können über die Fachanwendung nur mittels <code class="language-plaintext highlighter-rouge">_include</code> abgerufen werden (siehe <a href="#verwendung-von-_include">Verwendung von _include</a>).</p>
 
 <p>Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. <code class="language-plaintext highlighter-rouge">recorder</code>, <code class="language-plaintext highlighter-rouge">asserter</code> oder <code class="language-plaintext highlighter-rouge">List.source</code>), ergibt sich aus dem jewiligen <code class="language-plaintext highlighter-rouge">Reference.identifer.system</code>, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Medikation-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (<code class="language-plaintext highlighter-rouge">List.entry.item</code>) sind hingegen immer Referenzen auf bereits in der e-Medikation-Fachanwendung gespeicherte Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>).</p>
 
 <div class="dragon">
-  <p>Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Medikation-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Medikation-Fachanwendung einfließen.</p>
+  <p class="note-to-balloters">
+Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Medikation-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Medikation-Fachanwendung einfließen.
+</p>
 </div>
 
 <p><br/></p>
@@ -857,8 +862,8 @@ auch für nicht (wirklich) versionierte ressourcen wie geplante und durchgeführ
   </tr>
   <tr>
     <td><strong>Beispieldateien</strong></td>
-    <td><a name="l1327">​</a><a href="At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a></td>
-    <td><a name="l1331">​</a><a href="At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a></td>
+    <td><a name="l1332">​</a><a href="At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a></td>
+    <td><a name="l1336">​</a><a href="At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a></td>
   </tr>
   <tr>
     <td><strong>Beispielfragmente</strong></td>
@@ -1120,7 +1125,7 @@ Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem A
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-21 11:24:00 +0000">
+  <span title="2026-10-21 12:17:00 +0000">
     2026-10-21
   </span>
 

@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Medikation",
   "status" : "draft",
-  "date" : "2026-10-21T11:24:22+00:00",
+  "date" : "2026-10-21T12:17:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -181,7 +181,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet-elga-medikationmengenart"
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationmengenart"
       }
     },
     {
@@ -211,7 +211,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "slicing" : {
         "discriminator" : [{
           "type" : "value",
-          "path" : "$this"
+          "path" : "system"
         }],
         "ordered" : false,
         "rules" : "open"
@@ -223,16 +223,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "sliceName" : "ATCWidO",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetATC"
-      }
+      "mustSupport" : true
     },
     {
       "id" : "Medication.ingredient.item[x].coding:ATCWidO.system",
       "path" : "Medication.ingredient.item[x].coding.system",
       "min" : 1,
+      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
       "mustSupport" : true
     },
     {
@@ -247,16 +244,13 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "sliceName" : "WirkstoffeAges",
       "min" : 0,
       "max" : "1",
-      "mustSupport" : true,
-      "binding" : {
-        "strength" : "required",
-        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages"
-      }
+      "mustSupport" : true
     },
     {
       "id" : "Medication.ingredient.item[x].coding:WirkstoffeAges.system",
       "path" : "Medication.ingredient.item[x].coding.system",
       "min" : 1,
+      "patternUri" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
       "mustSupport" : true
     },
     {

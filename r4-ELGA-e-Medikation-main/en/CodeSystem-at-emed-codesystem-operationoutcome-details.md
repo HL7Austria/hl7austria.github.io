@@ -1,10 +1,10 @@
-# AT e-Medikation OperationOutcome Details - ELGA e-Medikation (R4) DRAFT v0.1.0
+# CodeSystem für AT e-Medikation OperationOutcome Details - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## CodeSystem: AT e-Medikation OperationOutcome Details 
+## CodeSystem: CodeSystem für AT e-Medikation OperationOutcome Details 
 
 This Code system is referenced in the definition of the following value sets:
 
-* [AT e-Medikation OperationOutcome Details](ValueSet-at-elga-emed-operationoutcome-details.md)
+* [ValueSet für AT e-Medikation OperationOutcome Details](ValueSet-at-elga-emed-operationoutcome-details.md)
 
 -------
 
@@ -21,10 +21,10 @@ This Code system is referenced in the definition of the following value sets:
   "url" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-emed-codesystem-operationoutcome-details",
   "version" : "0.1.0",
   "name" : "AtElgaEmedOperationOutcomeDetailsCS",
-  "title" : "AT e-Medikation OperationOutcome Details",
+  "title" : "CodeSystem für AT e-Medikation OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-21T11:24:22+00:00",
+  "date" : "2026-10-21T12:17:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

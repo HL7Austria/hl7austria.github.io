@@ -1,6 +1,6 @@
-# TBD - ELGA e-Medikation (R4) DRAFT v0.1.0
+# Example Parameters Request Body - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Example Parameters: TBD
+## Example Parameters: Example Parameters Request Body
 
 
 
@@ -11,12 +11,12 @@
   "resourceType" : "Parameters",
   "id" : "Journey-01-01-Request-Body-01",
   "parameter" : [{
-    "name" : "tbd",
-    "valueString" : "tbd"
+    "name" : "TODO",
+    "valueString" : "TODO"
   },
   {
-    "name" : "tbd2",
-    "valueString" : "tbd2"
+    "name" : "TODO",
+    "valueString" : "TODO"
   }]
 }
 

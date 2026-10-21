@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-21T11:24:22+00:00",
+  "date" : "2026-10-21T12:17:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -439,38 +439,6 @@
       "description" : "Suchparameter"
     }],
     "resource" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-at-elga-emed-operationoutcome-details.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/at-elga-emed-operationoutcome-details"
-      },
-      "name" : "AT e-Medikation OperationOutcome Details",
-      "description" : "Value-Set mit den für e-Medikation zulässigen detaillierten Fehlercodes.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "CodeSystem-at-emed-codesystem-operationoutcome-details.html"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/at-emed-codesystem-operationoutcome-details"
-      },
-      "name" : "AT e-Medikation OperationOutcome Details",
-      "description" : "Dieses Codesystem legt die möglichen Fehlercodes im Rahmen der e-Medikation-Fachanwendung fest.",
-      "exampleBoolean" : false
-    },
-    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
@@ -1530,6 +1498,22 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-at-emed-codesystem-operationoutcome-details.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/at-emed-codesystem-operationoutcome-details"
+      },
+      "name" : "CodeSystem für AT e-Medikation OperationOutcome Details",
+      "description" : "Dieses Codesystem legt die möglichen Fehlercodes im Rahmen der e-Medikation-Fachanwendung fest.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       },
       {
@@ -1684,22 +1668,6 @@
         "reference" : "CodeSystem/AtElgaEmedCodeSystemDosageCategory"
       },
       "name" : "ELGA Dosage Category Status CodeSystem",
-      "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-AtElgaEmedValueSetATC.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/AtElgaEmedValueSetATC"
-      },
-      "name" : "ELGA Dosage Category Status ValueSet",
       "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
       "exampleBoolean" : false
     },
@@ -2042,6 +2010,22 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-Journey-01-01-Request-Body-01.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/Journey-01-01-Request-Body-01"
+      },
+      "name" : "Example Parameters Request Body",
+      "description" : "Example Parameters Request Body",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       },
       {
@@ -2058,18 +2042,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
+        "valueString" : "ValueSet"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Parameters-Journey-01-01-Request-Body-01.html"
+        "valueUri" : "ValueSet-at-elga-emed-operationoutcome-details.html"
       }],
       "reference" : {
-        "reference" : "Parameters/Journey-01-01-Request-Body-01"
+        "reference" : "ValueSet/at-elga-emed-operationoutcome-details"
       },
-      "name" : "TBD",
-      "description" : "TBD",
-      "exampleBoolean" : true
+      "name" : "ValueSet für AT e-Medikation OperationOutcome Details",
+      "description" : "Value-Set mit den für e-Medikation zulässigen detaillierten Fehlercodes.",
+      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{
