@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-prac
   "name" : "AtElgaEmedPractitionerRole",
   "title" : "AT ELGA e-Medikation PractitionerRole",
   "status" : "draft",
-  "date" : "2026-10-21T12:17:05+00:00",
+  "date" : "2026-10-21T14:17:59+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
