@@ -2,7 +2,7 @@
 
 ## Resource Profile: At ELGA e-Medikation MedicationRequest Planeintrag 
 
-Die Ressource **`MedicationRequest`** bildet einen Planeintrag des Medikationsplans ab.
+Die Ressource **`MedicationRequest`** mit der Kategorie "Planeintrag" bildet einen Planeintrag des Medikationsplans ab.
 
 Ein Planeintrag ist eine autorisierte ärztliche Anordnung und stellt eine verbindliche Einnahmeanweisung für den Patienten dar.
 
@@ -51,7 +51,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-21T14:17:59+00:00",
+  "date" : "2026-10-21T15:07:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -104,7 +104,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     "element" : [{
       "id" : "MedicationRequest",
       "path" : "MedicationRequest",
-      "short" : "Planeintrag",
       "constraint" : [{
         "key" : "at-emed-planeintrag-status-reason-beim-absetzen-oder-pausieren",
         "severity" : "error",
@@ -138,7 +137,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationRequest.extension:effectiveDosePeriod",
       "path" : "MedicationRequest.extension",
       "sliceName" : "effectiveDosePeriod",
-      "short" : "Zeitraum, in dem das Arzneimittel eingenommen werden soll. Bei Dauermedikation kann optional ein Enddatum dokumentiert werden. Bei Aktumedikation ist verpflichtend ein Enddatum zu dokumentieren. Der Einnahmezeitraum muss mit den zeitlichen Einschränkungen der Dosage übereinstimmen",
+      "short" : "Zeitraum, in dem das Arzneimittel eingenommen werden soll. Bei Dauermedikation kann optional ein Enddatum dokumentiert werden. Bei Aktumedikation ist verpflichtend ein Enddatum zu dokumentieren. Der Einnahmezeitraum muss mit den zeitlichen Einschränkungen der Dosage übereinstimmen.",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -203,7 +202,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status des Planeintrags. Mögliche Ausprägungen: [active | on-hold | stopped | entered-in-error]. Bedeutung: active: aktuell einzunehmende Medikation | on-hold: pausierte Medikation (aktuell nicht einzunehmen) | stopped: wird nicht weiter verordnet (unabhängig ob vorzeitig abgesetzt, abgeschlossen oder Behandlungszeitraum abgelaufen)   \n| entered-in-error: fehlerhafter Planeintrag storniert und abgeschlossen",
+      "short" : "Status des Planeintrags. Mögliche Ausprägungen: [active | on-hold | stopped | entered-in-error]. Bedeutung: active: aktuell einzunehmende Medikation | on-hold: pausierte Medikation (aktuell nicht einzunehmen) | stopped: wird nicht weiter verordnet (unabhängig ob vorzeitig abgesetzt, abgeschlossen oder Behandlungszeitraum abgelaufen)   \n| entered-in-error: fehlerhafter Planeintrag storniert",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",

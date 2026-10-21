@@ -549,12 +549,12 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <p>MedicationDispense-Ressource: <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe</a></p>
 <ul>
-  <li><strong>Informationen zur Erstellung/Aktualisierung</strong>: aktuelles Datum und durchführende, für die Abgabe verantwortliche Person (<em>extension:recorded</em>, <em>performer.actor</em>)</li>
+  <li><strong>Informationen zur Erstellung/Aktualisierung</strong>: aktuelles Datum (extension:recorded<em>) und durchführender, für die Abgabe verantwortlicher GDA (</em>performer:dispenseGDA* mit <em>dispenseGDA.function</em> = "dispenseGDA")</li>
   <li><strong>e-Med GroupIdentifier</strong> (<em>extension:groupIdentifier</em>): Sofern eine zugehörige <em>Geplante Abgabe</em> vorliegt, muss der entsprechende <em>e-Med GroupIdentifier</em> in der <em>Durchgeführte Abgabe</em> dokumentiert werden. Dies ermöglicht einen gemeinsamen Abruf zusammengehöriger <em>Geplanter Abgaben</em> und <em>Durchgeführter Abgaben</em> (siehe <a href="Sub_UC_eMed_03.html#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search">Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)</a>).</li>
   <li><strong>Status</strong>: <em>status</em> (siehe <a href="workflowmanagement.html#status-des-medicationdispense-in-der-durchgeführten-abgabe">Status des MedicationDispense in der Durchgeführten Abgabe</a>) und <em>type</em> bestimmen den Status einer <em>Durchgeführten Abgabe</em> und können sich auf den Status der zugehörigen <em>Geplanten Abgabe</em> auswirken (siehe <a href="workflowmanagement.html#abhängigkeiten-der-geplanten-abgabe-und-der-durchgeführten-abgaben">Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben</a>):
     <ul>
       <li>Über <strong><em>type</em></strong> werden Einzelabgabe, Teilabgaben/Besorgerprozess und Leerabgabe unterschieden (siehe <a href="workflowmanagement.html#varianten-der-teil-abgabe">Durchgeführte Abgabe - Varianten der (Teil-)Abgabe</a>). Für Teilabgaben, Besorgerprozesse und Leerabgaben muss die jeweils vorgegebene <strong>Sequenz</strong> der zulässigen <em>type</em>-Werte eingehalten werden.</li>
-      <li><strong>Zulässige Einlösungen</strong>: Die Maximalanzahl zulässiger Einlösugnen wird durch die zugehörige <em>Geplante Abgabe</em> bestimmt (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)</a>). Eine Einlösung gilt als vollständig, wenn <em>type</em> den Wert <em>First Fill – Complete</em> oder <em>Part Fill - Complete</em> enthält.</li>
+      <li><strong>Zulässige Einlösungen</strong>: Die Maximalanzahl zulässiger Einlösugnen wird durch die zugehörige <em>Geplante Abgabe</em> bestimmt (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)</a>). Eine Einlösung gilt als vollständig, wenn <em>type</em> den Wert <em>First Fill – Complete</em> oder <em>Part Fill - Complete</em> enthält.</li>
     </ul>
   </li>
   <li><strong>Medikation und Dosierung</strong>: tatsächlich abgegebenes Medikament (<em>medication</em>) und Dosierung (<em>dosageInstruction</em>). Diese können, sofern ein zugehöriger Planeintrag und eine <em>Geplante Abgabe</em> vorliegen, von der dort angegebenen Medikation und Dosierung abweichen.</li>
@@ -569,7 +569,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 <h4 id="relevante-elemente-medicationdispense">Relevante Elemente (MedicationDispense)</h4>
 
 <pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
-    recorded: Datum der Erstellung der Durchgeführten Abgabe
+    extension:recorded: Datum der Erstellung der Durchgeführten Abgabe
     extension:groupIdentifier: e-Med GroupIdentifier                      // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
     status: abhänging von Use Case    
     medicationReference.reference: Tatsächlich abgegebenes Medikament     // Conditional Reference oder Contained Medication
@@ -595,7 +595,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 <p>Existiert eine zugehörige <em>Geplante Abgabe</em>, prüft die Fachanwendung anhand <em>MedicationRequest.numberOfRepeatsAllowed</em>, ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Ist nur eine <strong>einmalige Einlösung</strong> möglich (z.B. Kassenrezept), setzt die Fachanwendung die <em>Geplanten Abgabe</em> auf den Status <em>completed</em>.</p>
 
 <p>Ermöglicht die <em>Geplante Abgabe</em> <strong>mehrere Einlösungen</strong> (<em>MedicationRequest.numberOfRepeatsAllowed</em> &gt; 0),
-muss je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt werden. Der Status der <em>Geplanten Abgabe</em> bleibt solange <em>active</em>, bis die letztmögliche Einlösung erfolgt ist (siehe<a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)</a>).</p>
+muss je Einlösung eine <em>Durchgeführte Abgabe</em> erstellt werden. Der Status der <em>Geplanten Abgabe</em> bleibt solange <em>active</em>, bis die letztmögliche Einlösung erfolgt ist (siehe<a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)</a>).</p>
 
 <h4 id="sub_uc_emed_05_01_02---teilabgaben-erfassen">Sub_UC_eMed_05_01_02 - Teilabgaben erfassen</h4>
 
@@ -800,9 +800,11 @@ Wenn eine stornierte <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <h3 id="sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellenentfernen">Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen/entfernen</h3>
 
-<p>Sofern für die <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführte Abgabe</a> im Nachhinein ein <em>Planeintrag</em> erstellt wurde, kann auch nachträglich jederzeit von einem GDA (unabhängig vom Erfasser) mit <strong>POST</strong> <a href="Sub_UC_eMed_05.html#custom-operations-2">$reference-plan</a> ein <em>Planeintrag</em> (in <em>authorizingPrescription[planeintrag]</em>) referenziert werden.</p>
+<p>Sofern für eine <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführte Abgabe</a> ein Planeintrag vorliegt, kann ein GDA nachträglich und unabhängig davon, welcher GDA die Abgabe erfasst hat, mittels <strong>POST</strong> <a href="Sub_UC_eMed_05.html#custom-operations-2">$reference-plan</a> einen Planeintrag in referenzieren oder die bestehende Referenz ändern.</p>
 
-  <!-- TODO: Wird Datum/Author aktualisert? -->
+<p>Dabei werden der die Referenz herstellende GDA als <em>performer:referenceGDA</em> mit <em>dispenseGDA.function = referenceGDA</em> sowie der Zeitpunkt der Änderung in <em>extension:statusChanged</em> dokumentiert. Die Referenz zum Planeintrag wird in <em>authorizingPrescription[planeintrag]</em> dokumentiert.</p>
+
+<p>Die Operation kann wiederholt aufgerufen werden, um die Referenz zu ändern.</p>
 
 <h4 id="custom-operations-2">Custom Operations</h4>
 <ul>
@@ -847,7 +849,7 @@ Wenn eine stornierte <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-21 14:17:00 +0000">
+  <span title="2026-10-21 15:07:00 +0000">
     2026-10-21
   </span>
 

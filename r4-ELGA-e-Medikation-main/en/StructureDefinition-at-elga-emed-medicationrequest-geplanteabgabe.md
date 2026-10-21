@@ -2,11 +2,13 @@
 
 ## Resource Profile: At ELGA e-Medikation MedicationRequest Geplante Abgabe 
 
-Die Ressource **`MedicationRequest`** mit Kategorie "Geplante Abgabe" bildet eine **Geplante Abgabe** ab.
+Die Ressource **`MedicationRequest`** mit der Kategorie "Geplante Abgabe" bildet eine **Geplante Abgabe** ab.
 
-Sie enthält genau das im zugehörigen Planeintrag verordnete Arzneimittel mit dessen Dosierung und dient somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Arzneimittel gleichzeitig verordnet (und sind demselben e-Rezept zugeordnet), wird für jedes Arzneimittel eine **Geplante Abgabe** mit demselben **e-Med GroupIdentifier** erstellt.
+Sie repräsentiert den Auftrag zur Abgabe eines Arzneimittels sowie die entsprechende Autorisierung durch den Verfasser.
 
-Der aktuelle Status einer geplanten Abgabe wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests in der geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)).
+Sie enthält genau das im zugehörigen Planeintrag verordnete Arzneimittel mit dessen Dosierung und dient somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Arzneimittel gemeinsam verordnet (und sind demselben e-Rezept zugeordnet), wird für jedes Arzneimittel eine **Geplante Abgabe** mit demselben **e-Med GroupIdentifier** erstellt.
+
+Der aktuelle Status einer Geplanten Abgabe wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)).
 
 Relevante Use Cases:
 
@@ -51,7 +53,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-21T14:17:59+00:00",
+  "date" : "2026-10-21T15:07:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

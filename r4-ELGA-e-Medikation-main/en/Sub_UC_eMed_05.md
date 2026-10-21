@@ -44,11 +44,11 @@ Ein GDA dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer i
 
 MedicationDispense-Ressource: [AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
 
-* **Informationen zur Erstellung/Aktualisierung**: aktuelles Datum und durchführende, für die Abgabe verantwortliche Person (**extension:recorded**, **performer.actor**)
+* **Informationen zur Erstellung/Aktualisierung**: aktuelles Datum (extension:recorded**) und durchführender, für die Abgabe verantwortlicher GDA (**performer:dispenseGDA* mit **dispenseGDA.function** = "dispenseGDA")
 * **e-Med GroupIdentifier** (**extension:groupIdentifier**): Sofern eine zugehörige **Geplante Abgabe** vorliegt, muss der entsprechende **e-Med GroupIdentifier** in der **Durchgeführte Abgabe** dokumentiert werden. Dies ermöglicht einen gemeinsamen Abruf zusammengehöriger **Geplanter Abgaben** und **Durchgeführter Abgaben** (siehe [Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search)).
 * **Status**: **status** (siehe [Status des MedicationDispense in der Durchgeführten Abgabe](workflowmanagement.md#status-des-medicationdispense-in-der-durchgeführten-abgabe)) und **type** bestimmen den Status einer **Durchgeführten Abgabe** und können sich auf den Status der zugehörigen **Geplanten Abgabe** auswirken (siehe [Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben](workflowmanagement.md#abhängigkeiten-der-geplanten-abgabe-und-der-durchgeführten-abgaben)): 
 * Über ****type**** werden Einzelabgabe, Teilabgaben/Besorgerprozess und Leerabgabe unterschieden (siehe [Durchgeführte Abgabe - Varianten der (Teil-)Abgabe](workflowmanagement.md#varianten-der-teil-abgabe)). Für Teilabgaben, Besorgerprozesse und Leerabgaben muss die jeweils vorgegebene **Sequenz** der zulässigen **type**-Werte eingehalten werden.
-* **Zulässige Einlösungen**: Die Maximalanzahl zulässiger Einlösugnen wird durch die zugehörige **Geplante Abgabe** bestimmt (siehe [Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung)). Eine Einlösung gilt als vollständig, wenn **type** den Wert **First Fill – Complete** oder **Part Fill - Complete** enthält.
+* **Zulässige Einlösungen**: Die Maximalanzahl zulässiger Einlösugnen wird durch die zugehörige **Geplante Abgabe** bestimmt (siehe [Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung)). Eine Einlösung gilt als vollständig, wenn **type** den Wert **First Fill – Complete** oder **Part Fill - Complete** enthält.
  
 * **Medikation und Dosierung**: tatsächlich abgegebenes Medikament (**medication**) und Dosierung (**dosageInstruction**). Diese können, sofern ein zugehöriger Planeintrag und eine **Geplante Abgabe** vorliegen, von der dort angegebenen Medikation und Dosierung abweichen.
 * **Abgegebene Packungen** (**quantity**): dokumentiert die tatsächlich abgegeben Packungsanzahl. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden **Geplanten Abgabe**.
@@ -62,7 +62,7 @@ Die **fachlichen Varianten** der **Durchgeführten Abgabe** werden in den folgen
 
 ```
 AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
-    recorded: Datum der Erstellung der Durchgeführten Abgabe
+    extension:recorded: Datum der Erstellung der Durchgeführten Abgabe
     extension:groupIdentifier: e-Med GroupIdentifier                      // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
     status: abhänging von Use Case    
     medicationReference.reference: Tatsächlich abgegebenes Medikament     // Conditional Reference oder Contained Medication
@@ -87,7 +87,7 @@ Bei einer vollständigen Einzelabgabe muss eine [Durchgeführte Abgaben](Structu
 
 Existiert eine zugehörige **Geplante Abgabe**, prüft die Fachanwendung anhand **MedicationRequest.numberOfRepeatsAllowed**, ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Ist nur eine **einmalige Einlösung** möglich (z.B. Kassenrezept), setzt die Fachanwendung die **Geplanten Abgabe** auf den Status **completed**.
 
-Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationRequest.numberOfRepeatsAllowed** > 0), muss je Einlösung eine **Durchgeführte Abgabe** erstellt werden. Der Status der **Geplanten Abgabe** bleibt solange **active**, bis die letztmögliche Einlösung erfolgt ist (siehe[Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung)).
+Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationRequest.numberOfRepeatsAllowed** > 0), muss je Einlösung eine **Durchgeführte Abgabe** erstellt werden. Der Status der **Geplanten Abgabe** bleibt solange **active**, bis die letztmögliche Einlösung erfolgt ist (siehe[Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung)).
 
 #### Sub_UC_eMed_05_01_02 - Teilabgaben erfassen
 
@@ -246,7 +246,11 @@ Eine stornierte **Durchgeführte Abgabe** kann nicht mehr bearbeitet werden und 
 
 ### Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen/entfernen
 
-Sofern für die [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) im Nachhinein ein **Planeintrag** erstellt wurde, kann auch nachträglich jederzeit von einem GDA (unabhängig vom Erfasser) mit **POST** [$reference-plan](Sub_UC_eMed_05.md#custom-operations-2) ein **Planeintrag** (in **authorizingPrescription[planeintrag]**) referenziert werden.
+Sofern für eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) ein Planeintrag vorliegt, kann ein GDA nachträglich und unabhängig davon, welcher GDA die Abgabe erfasst hat, mittels **POST** [$reference-plan](Sub_UC_eMed_05.md#custom-operations-2) einen Planeintrag in referenzieren oder die bestehende Referenz ändern.
+
+Dabei werden der die Referenz herstellende GDA als **performer:referenceGDA** mit **dispenseGDA.function = referenceGDA** sowie der Zeitpunkt der Änderung in **extension:statusChanged** dokumentiert. Die Referenz zum Planeintrag wird in **authorizingPrescription[planeintrag]** dokumentiert.
+
+Die Operation kann wiederholt aufgerufen werden, um die Referenz zu ändern.
 
 #### Custom Operations
 

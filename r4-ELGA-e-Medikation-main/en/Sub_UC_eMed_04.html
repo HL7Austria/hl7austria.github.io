@@ -245,7 +245,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write" id="markdown-toc-sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)</a></li>
   <li><a href="#sub_uc_emed_04_02---e-med-groupidentifier-beziehen" id="markdown-toc-sub_uc_emed_04_02---e-med-groupidentifier-beziehen">Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen</a></li>
   <li><a href="#sub_uc_emed_04_03---geplante-abgabe-stornieren-prescription-discard" id="markdown-toc-sub_uc_emed_04_03---geplante-abgabe-stornieren-prescription-discard">Sub_UC_eMed_04_03 - Geplante Abgabe stornieren (Prescription-Discard)</a></li>
-  <li><a href="#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung" id="markdown-toc-sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)</a></li>
+  <li><a href="#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung" id="markdown-toc-sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)</a></li>
   <li><a href="#sub_uc_emed_04_05---geplante-abgabe-abgelaufen-durch-fachanwendung" id="markdown-toc-sub_uc_emed_04_05---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_04_05 - Geplante Abgabe abgelaufen (durch Fachanwendung)</a></li>
   <li><a href="#sub_uc_emed_04_06---geplante-abgabe-gecancelt-durch-fachanwendung" id="markdown-toc-sub_uc_emed_04_06---geplante-abgabe-gecancelt-durch-fachanwendung">Sub_UC_eMed_04_06 - Geplante Abgabe gecancelt (durch Fachanwendung)</a></li>
   <li><a href="#sub_uc_emed_04_07---geplante-abgabe-löschen-durch-elga-teilnehmer-prescription-delete" id="markdown-toc-sub_uc_emed_04_07---geplante-abgabe-löschen-durch-elga-teilnehmer-prescription-delete">Sub_UC_eMed_04_07 - Geplante Abgabe löschen (durch ELGA-Teilnehmer) (Prescription-Delete)</a></li>
@@ -519,7 +519,7 @@ h4 + .tabs {
   </li>
   <li><strong>Automatisch</strong> durch die <strong>Fachanwendung</strong> umgesetzt werden:
     <ul>
-      <li><a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Beenden</a></li>
+      <li><a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung">Abschließen</a></li>
       <li><a href="Sub_UC_eMed_04.html#sub_uc_emed_04_05---geplante-abgabe-abgelaufen-durch-fachanwendung">Ablauf</a></li>
       <li><a href="Sub_UC_eMed_04.html#sub_uc_emed_04_06---geplante-abgabe-gecancelt-durch-fachanwendung">Canceln</a></li>
     </ul>
@@ -553,7 +553,7 @@ Unter gewissen Voraussetzungen kann ein bestehender Medikationsplaneintrag angep
 
 <p>Die Anzahl der <em>Geplanten Abgaben</em>, die mit demselben <em>e-Med GroupIdentifier</em> gespeichert werden können, ist durch das Limit für die Anzahl der Medikamente je e-Rezept begrenzt.</p>
 
-<p>Der Status der <em>Geplanten Abgabe</em> bleibt solange <em>active</em>, bis sie zeitlich abläuft (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_05 - Geplante Abgabe abgelaufen (durch Fachanwendung)</a>) oder die letztmögliche Einlösung erfolgt ist .</p>
+<p>Der Status der <em>Geplanten Abgabe</em> bleibt solange <em>active</em>, bis sie zeitlich abläuft (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_05---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_04_05 - Geplante Abgabe abgelaufen (durch Fachanwendung)</a>) oder die letztmögliche Einlösung erfolgt ist .</p>
 
 <h4 id="ablauf">Ablauf</h4>
 
@@ -689,7 +689,7 @@ Die Fachanwendung ändert dadurch den <em>status</em> der betreffenden <em>Gepla
   <li><em>POST</em> <a href="OperationDefinition-at-elga-emed-operation-prescription-discard.html">$prescription-discard</a></li>
 </ul>
 
-<h3 id="sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)</h3>
+<h3 id="sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)</h3>
   <!-- TODO: abschließen -> Workflowdiagramm  akl 20.10. -->
 
 <p><a name="l1129">​</a>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt und entsprechende <em>Durchgeführte Abgaben</em> erstellt (siehe <a href="Sub_UC_eMed_05.html#Sub_UC_eMed_05_01---durchgeführte-abgabe-erfassen">Sub_UC_eMed_05_01 - Durchgeführte Abgabe erfassen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <strong><em>completed</em></strong> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der Geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
@@ -776,7 +776,7 @@ Die Fachanwendung ändert dadurch den <em>status</em> der betreffenden <em>Gepla
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-21 14:17:00 +0000">
+  <span title="2026-10-21 15:07:00 +0000">
     2026-10-21
   </span>
 

@@ -18,7 +18,7 @@ Der schreibende Zugriff umfasst folgende Bearbeitungen:
 * [löschen](Sub_UC_eMed_04.md#sub_uc_emed_04_07---geplante-abgabe-löschen-durch-elga-teilnehmer-prescription-delete)
  
 * **Automatisch** durch die **Fachanwendung** umgesetzt werden: 
-* [Beenden](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung)
+* [Abschließen](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung)
 * [Ablauf](Sub_UC_eMed_04.md#sub_uc_emed_04_05---geplante-abgabe-abgelaufen-durch-fachanwendung)
 * [Canceln](Sub_UC_eMed_04.md#sub_uc_emed_04_06---geplante-abgabe-gecancelt-durch-fachanwendung)
  
@@ -41,7 +41,7 @@ Medikationsplaneinträge können mehrfach rezeptiert werden und daher auch zu me
 
 Die Anzahl der **Geplanten Abgaben**, die mit demselben **e-Med GroupIdentifier** gespeichert werden können, ist durch das Limit für die Anzahl der Medikamente je e-Rezept begrenzt.
 
-Der Status der **Geplanten Abgabe** bleibt solange **active**, bis sie zeitlich abläuft (siehe [Sub_UC_eMed_04_05 - Geplante Abgabe abgelaufen (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-beenden-durch-fachanwendung)) oder die letztmögliche Einlösung erfolgt ist .
+Der Status der **Geplanten Abgabe** bleibt solange **active**, bis sie zeitlich abläuft (siehe [Sub_UC_eMed_04_05 - Geplante Abgabe abgelaufen (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_05---geplante-abgabe-abgelaufen-durch-fachanwendung)) oder die letztmögliche Einlösung erfolgt ist .
 
 #### Ablauf
 
@@ -151,7 +151,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 * **POST** [$prescription-discard](OperationDefinition-at-elga-emed-operation-prescription-discard.md)
 
-### Sub_UC_eMed_04_04 - Geplante Abgabe beenden (durch Fachanwendung)
+### Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)
 
 Wurden alle möglichen Einlösungen einer **Geplanten Abgabe** planmäßig durchgeführt und entsprechende **Durchgeführte Abgaben** erstellt (siehe [Sub_UC_eMed_05_01 - Durchgeführte Abgabe erfassen](Sub_UC_eMed_05.md#Sub_UC_eMed_05_01---durchgeführte-abgabe-erfassen)), setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status ****completed**** (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplante Abgabe** ist damit abgeschlossen.
 
