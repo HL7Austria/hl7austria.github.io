@@ -61,6 +61,12 @@
     }
   },
   "performer" : [{
+    "function" : {
+      "coding" : [{
+        "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedValueSetMedicationDispensePerformerFunctionCS",
+        "code" : "dispenseGDA"
+      }]
+    },
     "actor" : {
       "reference" : "Organization/At-Emed-Example-Organization-02",
       "display" : "Amadeus Apotheke"

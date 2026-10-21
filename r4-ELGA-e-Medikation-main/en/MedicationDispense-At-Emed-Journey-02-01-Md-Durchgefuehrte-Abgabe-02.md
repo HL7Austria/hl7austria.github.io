@@ -93,6 +93,12 @@
     }
   },
   "performer" : [{
+    "function" : {
+      "coding" : [{
+        "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedValueSetMedicationDispensePerformerFunctionCS",
+        "code" : "dispenseGDA"
+      }]
+    },
     "actor" : {
       "reference" : "Organization/At-Emed-Example-Organization-02",
       "display" : "Amadeus Apotheke"
@@ -116,6 +122,7 @@
     "system" : "http://unitsofmeasure.org",
     "code" : "0"
   },
+  "whenHandedOver" : "2026-02-28T11:00:00+00:00",
   "dosageInstruction" : [{
     "extension" : [{
       "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",

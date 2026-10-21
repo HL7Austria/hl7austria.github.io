@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-21T09:52:38+00:00",
+  "date" : "2026-10-21T10:08:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -78,12 +78,6 @@
     "uri" : "https://profiles.ihe.net/PHARM/MPD/ImplementationGuide/ihe.pharm.mpd",
     "packageId" : "ihe.pharm.mpd.r4",
     "version" : "1.0.0-comment-2"
-  },
-  {
-    "id" : "hl7_at_fhir_elga_core_r4",
-    "uri" : "https://fhir.hl7.at/elga/core/r4/ImplementationGuide/hl7.at.fhir.elga.core.r4",
-    "packageId" : "hl7.at.fhir.elga.core.r4",
-    "version" : "current"
   }],
   "definition" : {
     "extension" : [{
@@ -1796,6 +1790,38 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "CodeSystem-AtElgaEmedValueSetMedicationDispensePerformerFunctionCS.html"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/AtElgaEmedValueSetMedicationDispensePerformerFunctionCS"
+      },
+      "name" : "ELGA e-Med MedicationDispense Performer Function CodeSystem",
+      "description" : "Codesystem für zulässige Ausprägungen der MedicationDispense Performer Function.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtElgaEmedValueSetMedicationDispensePerformerFunctionVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtElgaEmedValueSetMedicationDispensePerformerFunctionVS"
+      },
+      "name" : "ELGA e-Med MedicationDispense Performer Function ValueSet",
+      "description" : "ValueSet für zulässige Ausprägungen der MedicationDispense Performer Function.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "CodeSystem-MedicationRequestCategoryCS.html"
       }],
       "reference" : {
@@ -1947,6 +1973,22 @@
       },
       "name" : "ELGA List.entry.flag ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "ValueSet-AtElgaEmedValueSetMedicationDispenseStatusVS.html"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AtElgaEmedValueSetMedicationDispenseStatusVS"
+      },
+      "name" : "ELGA MedicationDispense Status ValueSet",
+      "description" : "Zulässige Ausprägungen des Status einer MedicationDispense-Ressource in ELGA.",
       "exampleBoolean" : false
     },
     {

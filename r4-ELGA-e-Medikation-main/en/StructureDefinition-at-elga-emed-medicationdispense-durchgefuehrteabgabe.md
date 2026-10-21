@@ -50,7 +50,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-21T09:52:38+00:00",
+  "date" : "2026-10-21T10:08:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -183,7 +183,23 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.renderedDosageInstruction"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:renderedDosageInstruction.extension",
+      "path" : "MedicationDispense.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.extension:renderedDosageInstruction.url",
+      "path" : "MedicationDispense.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:renderedDosageInstruction.value[x]",
+      "path" : "MedicationDispense.extension.value[x]",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.extension:recorded",
@@ -195,7 +211,23 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.recorded"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:recorded.extension",
+      "path" : "MedicationDispense.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.extension:recorded.url",
+      "path" : "MedicationDispense.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:recorded.value[x]",
+      "path" : "MedicationDispense.extension.value[x]",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.extension:statusChanged",
@@ -207,7 +239,23 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "type" : [{
         "code" : "Extension",
         "profile" : ["http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationDispense.statusChanged"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:statusChanged.extension",
+      "path" : "MedicationDispense.extension.extension",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.extension:statusChanged.url",
+      "path" : "MedicationDispense.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:statusChanged.value[x]",
+      "path" : "MedicationDispense.extension.value[x]",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.extension:groupIdentifier",
@@ -219,22 +267,28 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "type" : [{
         "code" : "Extension",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-group-identifier"]
-      }]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:groupIdentifier.url",
+      "path" : "MedicationDispense.extension.url",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:groupIdentifier.value[x]",
+      "path" : "MedicationDispense.extension.value[x]",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.extension:groupIdentifier.value[x].use",
+      "path" : "MedicationDispense.extension.value[x].use",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.modifierExtension",
       "path" : "MedicationDispense.modifierExtension",
       "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationDispense.identifier",
-      "path" : "MedicationDispense.identifier",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationDispense.partOf",
-      "path" : "MedicationDispense.partOf",
       "max" : "0"
     },
     {
@@ -244,19 +298,9 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "mustSupport" : true
     },
     {
-      "id" : "MedicationDispense.statusReason[x]",
-      "path" : "MedicationDispense.statusReason[x]",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationDispense.category",
-      "path" : "MedicationDispense.category",
-      "max" : "0"
-    },
-    {
       "id" : "MedicationDispense.medication[x]",
       "path" : "MedicationDispense.medication[x]",
-      "short" : "Abgegebenes Medikament. Das Medikament wird immer in einer contained Medication Ressource dokumentiert, damit \nArzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als conditional reference dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -266,9 +310,15 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "mustSupport" : true
     },
     {
+      "id" : "MedicationDispense.medication[x].reference",
+      "path" : "MedicationDispense.medication[x].reference",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationDispense.subject",
       "path" : "MedicationDispense.subject",
-      "short" : "Patient, für den die Durchgeführte Abgabe ausgestellt wird (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
+      "short" : "Patient, für den die Geplante Abgabe ausgestellt werden soll (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -277,39 +327,186 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "mustSupport" : true
     },
     {
-      "id" : "MedicationDispense.context",
-      "path" : "MedicationDispense.context",
+      "id" : "MedicationDispense.subject.reference",
+      "path" : "MedicationDispense.subject.reference",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.subject.identifier",
+      "path" : "MedicationDispense.subject.identifier",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.subject.identifier.use",
+      "path" : "MedicationDispense.subject.identifier.use",
+      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
-      "id" : "MedicationDispense.supportingInformation",
-      "path" : "MedicationDispense.supportingInformation",
-      "max" : "0"
+      "id" : "MedicationDispense.subject.identifier.system",
+      "path" : "MedicationDispense.subject.identifier.system",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.subject.identifier.value",
+      "path" : "MedicationDispense.subject.identifier.value",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.performer",
       "path" : "MedicationDispense.performer",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "function"
+        }],
+        "ordered" : false,
+        "rules" : "closed"
+      },
       "short" : "Durchführende Person",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
     },
     {
+      "id" : "MedicationDispense.performer.function",
+      "path" : "MedicationDispense.performer.function",
+      "short" : "Rolle der Person, die die Abgabe durchgeführt hat.",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetMedicationDispensePerformerFunctionVS"
+      }
+    },
+    {
       "id" : "MedicationDispense.performer.actor",
       "path" : "MedicationDispense.performer.actor",
-      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization, \nder/die die Durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
+      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization,der/die die Durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
         "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole",
         "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
-      }],
+      }]
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA",
+      "path" : "MedicationDispense.performer",
+      "sliceName" : "dispenseGDA",
+      "min" : 0,
+      "max" : "1",
       "mustSupport" : true
     },
     {
-      "id" : "MedicationDispense.location",
-      "path" : "MedicationDispense.location",
+      "id" : "MedicationDispense.performer:dispenseGDA.modifierExtension",
+      "path" : "MedicationDispense.performer.modifierExtension",
       "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.function",
+      "path" : "MedicationDispense.performer.function",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.function.coding",
+      "path" : "MedicationDispense.performer.function.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.function.coding.system",
+      "path" : "MedicationDispense.performer.function.coding.system",
+      "min" : 1,
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedValueSetMedicationDispensePerformerFunctionCS",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.function.coding.version",
+      "path" : "MedicationDispense.performer.function.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.function.coding.code",
+      "path" : "MedicationDispense.performer.function.coding.code",
+      "min" : 1,
+      "patternCode" : "dispenseGDA",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.function.coding.display",
+      "path" : "MedicationDispense.performer.function.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.function.text",
+      "path" : "MedicationDispense.performer.function.text",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.performer:dispenseGDA.actor",
+      "path" : "MedicationDispense.performer.actor",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA",
+      "path" : "MedicationDispense.performer",
+      "sliceName" : "referenceGDA",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.modifierExtension",
+      "path" : "MedicationDispense.performer.modifierExtension",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.function",
+      "path" : "MedicationDispense.performer.function",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.function.coding",
+      "path" : "MedicationDispense.performer.function.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.function.coding.system",
+      "path" : "MedicationDispense.performer.function.coding.system",
+      "min" : 1,
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedValueSetMedicationDispensePerformerFunctionCS",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.function.coding.version",
+      "path" : "MedicationDispense.performer.function.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.function.coding.code",
+      "path" : "MedicationDispense.performer.function.coding.code",
+      "min" : 1,
+      "patternCode" : "referenceGDA",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.function.coding.display",
+      "path" : "MedicationDispense.performer.function.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.function.text",
+      "path" : "MedicationDispense.performer.function.text",
+      "max" : "0"
+    },
+    {
+      "id" : "MedicationDispense.performer:referenceGDA.actor",
+      "path" : "MedicationDispense.performer.actor",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.authorizingPrescription",
@@ -373,36 +570,22 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "mustSupport" : true
     },
     {
-      "id" : "MedicationDispense.daysSupply",
-      "path" : "MedicationDispense.daysSupply",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationDispense.whenPrepared",
-      "path" : "MedicationDispense.whenPrepared",
-      "max" : "0"
-    },
-    {
       "id" : "MedicationDispense.whenHandedOver",
       "path" : "MedicationDispense.whenHandedOver",
       "short" : "Der Zeitpunkt, zu dem das abgegebene Produkt dem Patienten oder seinem Vertreter zur Verfügung gestellt wurde.",
+      "min" : 1,
       "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.destination",
-      "path" : "MedicationDispense.destination",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationDispense.receiver",
-      "path" : "MedicationDispense.receiver",
-      "max" : "0"
     },
     {
       "id" : "MedicationDispense.note",
       "path" : "MedicationDispense.note",
       "short" : "Zusätzliche Informationen zur Abgabe, die nicht anders dokumentiert werden kann.",
       "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.note.text",
+      "path" : "MedicationDispense.note.text",
       "mustSupport" : true
     },
     {
@@ -443,24 +626,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-dosage-standard-administration"]
       }],
       "mustSupport" : true
-    },
-    {
-      "id" : "MedicationDispense.substitution",
-      "path" : "MedicationDispense.substitution",
-      "short" : "Gibt an, ob im Rahmen der Abgabe eine Substitution vorgenommen wurde oder nicht.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationDispense.detectedIssue",
-      "path" : "MedicationDispense.detectedIssue",
-      "short" : "Referenenz auf DetectedIssue Ressource. Keine Verwendung in durchgeführter Abgabe.",
-      "max" : "0"
-    },
-    {
-      "id" : "MedicationDispense.eventHistory",
-      "path" : "MedicationDispense.eventHistory",
-      "short" : "Bezeichnet eine Liste von Provenance-Ressourcen, die verschiedene relevante Versionen \ndieser Ressource dokumentieren.",
-      "max" : "0"
     }]
   }
 }
