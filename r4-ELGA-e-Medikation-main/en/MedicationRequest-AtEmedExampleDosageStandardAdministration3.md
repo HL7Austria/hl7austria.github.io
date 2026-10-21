@@ -24,7 +24,15 @@
         "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
         "code" : "3756804"
       }]
-    }
+    },
+    "ingredient" : [{
+      "itemCodeableConcept" : {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages",
+          "code" : "100000090365"
+        }]
+      }
+    }]
   }],
   "extension" : [{
     "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",

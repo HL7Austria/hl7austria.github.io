@@ -36,7 +36,7 @@
   <name value="AtElgaEmedBundleMedikationsplanTx"/>
   <title value="AT ELGA e-Medikation Transaction Bundle Medikationsplan"/>
   <status value="draft"/>
-  <date value="2026-10-20T17:05:58+00:00"/>
+  <date value="2026-10-21T09:29:04+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -2658,7 +2658,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.status">
       <path value="Bundle.entry.resource.status"/>
-      <short value="Status des Medikationsplans. Fixer Wert: current"/>
+      <short value="Status des Medikationsplans. Fixer Wert: current."/>
       <definition value="Indicates the current state of this list."/>
       <comment value="This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid."/>
       <min value="1"/>
@@ -2783,7 +2783,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.code">
       <path value="Bundle.entry.resource.code"/>
-      <short value="Code der den Medikationsplan identifiziert"/>
+      <short value="Code, der den Medikationsplan identifiziert."/>
       <definition value="This code defines the purpose of the list - why it was created."/>
       <comment value="If there is no code, the purpose of the list is implied where it is used, such as in a document section using Document.section.code."/>
       <requirements value="Lists often contain subsets of resources rather than an exhaustive list.  The code identifies what type of subset is included."/>
@@ -3217,7 +3217,7 @@
         <valueBoolean value="true"/>
       </extension>
       <path value="Bundle.entry.resource.code.text"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="Plain text representation of the concept"/>
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
       <comment value="Very often the text is the same as a displayName of one of the codings."/>
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>
@@ -3545,7 +3545,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.subject.identifier.use">
       <path value="Bundle.entry.resource.subject.identifier.use"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="usual | official | temp | secondary | old (If known)"/>
       <definition value="The purpose of this identifier."/>
       <comment value="Applications can assume that an identifier is permanent unless it explicitly says that it is temporary."/>
       <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
@@ -4186,7 +4186,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.source.identifier.use">
       <path value="Bundle.entry.resource.source.identifier.use"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="usual | official | temp | secondary | old (If known)"/>
       <definition value="The purpose of this identifier."/>
       <comment value="Applications can assume that an identifier is permanent unless it explicitly says that it is temporary."/>
       <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
@@ -4469,7 +4469,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.orderedBy">
       <path value="Bundle.entry.resource.orderedBy"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="What order the list has"/>
       <definition value="What order applies to the items in the list."/>
       <comment value="Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order."/>
       <requirements value="Important for presentation and rendering.  Lists may be sorted to place more important information first or to group related entries."/>
@@ -4508,7 +4508,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.note">
       <path value="Bundle.entry.resource.note"/>
-      <short value="Fachliche Begründung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)"/>
+      <short value="Fachliche Begründung: Auf dieser Ebene existieren keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests (Planeinträgen möglich)."/>
       <definition value="Comments that apply to the overall list."/>
       <min value="0"/>
       <max value="0"/>
@@ -4677,7 +4677,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.entry.flag">
       <path value="Bundle.entry.resource.entry.flag"/>
-      <short value="Kennzeichnet die Art der Änderung des Medikationsplaneintrags: [New | Unchanged | Changed | Removed] Bedeutung: New: Neuer Planeintrag wird hinzugefügt | Unchanged: Bestehender Planeintrag wird beibehalten und zur Kenntnis genommen | Changed: Bestehender Planeintrag wird geändert | Removed: Bestehender Planeintrag wird entfernt"/>
+      <short value="Kennzeichnet die Art der Änderung des Medikationsplaneintrags: [new | unchanged | changed | removed]. Bedeutung: new: Neuer Planeintrag wird hinzugefügt | unchanged: Bestehender Planeintrag wird beibehalten und zur Kenntnis genommen | changed: Bestehender Planeintrag wird geändert | removed: Bestehender Planeintrag wird entfernt"/>
       <definition value="The flag allows the system constructing the list to indicate the role and significance of the item in the list."/>
       <comment value="The flag can only be understood in the context of the List.code. If the flag means that the entry has actually been deleted from the list, the deleted element SHALL be true. Deleted can only be used if the List.mode is &quot;changes&quot;."/>
       <requirements value="This field is present to support various clinical uses of lists, such as a discharge summary medication list, where flags specify whether the medication was added, modified, or deleted from the list."/>
@@ -5101,7 +5101,7 @@
         <valueBoolean value="true"/>
       </extension>
       <path value="Bundle.entry.resource.entry.flag.text"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="Plain text representation of the concept"/>
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
       <comment value="Very often the text is the same as a displayName of one of the codings."/>
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>
@@ -5174,7 +5174,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.entry.date">
       <path value="Bundle.entry.resource.entry.date"/>
-      <short value="Fachliche Begründung: Das Datum der initialen Aufnahme eines Eintrags wird nicht auf Ebene der Liste dokumentiert. Datumsinformationen werden im referenzierten Medikationsplaneintrag dokumentiert."/>
+      <short value="Fachliche Begründung: Das Datum der initialen Aufnahme eines Eintrags wird nicht auf Ebene der Liste, sondern im referenzierten Medikationsplaneintrag dokumentiert."/>
       <definition value="When this item was added to the list."/>
       <requirements value="The date may be significant for understanding the meaning of items in a working list."/>
       <min value="0"/>
@@ -5593,7 +5593,7 @@
     </element>
     <element id="Bundle.entry:Medikationsplan.resource.emptyReason">
       <path value="Bundle.entry.resource.emptyReason"/>
-      <short value="Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown ] Bedeutung: notstarted: Intitalzustand - noch nie befüllt; nilknown: Der Plan wurde vom GDA explizit als leer dokumentiert oder alle Einträge wurden abgesetzt, storniert oder gelöscht."/>
+      <short value="Begründung, welshalb der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown ] Bedeutung: notstarted: Intitalzustand - noch nie befüllt; nilknown: Der Plan wurde vom GDA explizit als leer dokumentiert oder alle Einträge wurden abgesetzt, storniert oder gelöscht."/>
       <definition value="If the list is empty, why the list is empty."/>
       <comment value="The various reasons for an empty list make a significant interpretation to its interpretation. Note that this code is for use when the entire list has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases."/>
       <requirements value="Allows capturing things like &quot;none exist&quot; or &quot;not asked&quot; which can be important for most lists."/>
@@ -6018,7 +6018,7 @@
         <valueBoolean value="true"/>
       </extension>
       <path value="Bundle.entry.resource.emptyReason.text"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="Plain text representation of the concept"/>
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
       <comment value="Very often the text is the same as a displayName of one of the codings."/>
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>

@@ -61,7 +61,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $dispense-write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-20T17:05:58+00:00",
+  "date" : "2026-10-21T09:29:04+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

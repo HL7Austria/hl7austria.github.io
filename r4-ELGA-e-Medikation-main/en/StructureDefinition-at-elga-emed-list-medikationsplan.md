@@ -127,7 +127,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-20T17:05:58+00:00",
+  "date" : "2026-10-21T09:29:04+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -262,7 +262,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.status",
       "path" : "List.status",
-      "short" : "Status des Medikationsplans. Fixer Wert: current",
+      "short" : "Status des Medikationsplans. Fixer Wert: current.",
       "patternCode" : "current",
       "mustSupport" : true
     },
@@ -276,7 +276,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.code",
       "path" : "List.code",
-      "short" : "Code der den Medikationsplan identifiziert",
+      "short" : "Code, der den Medikationsplan identifiziert.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -314,7 +314,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.code.text",
       "path" : "List.code.text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -346,7 +345,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.subject.identifier.use",
       "path" : "List.subject.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -402,7 +400,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.source.identifier.use",
       "path" : "List.source.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -418,13 +415,12 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.orderedBy",
       "path" : "List.orderedBy",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
       "id" : "List.note",
       "path" : "List.note",
-      "short" : "Fachliche Begründung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)",
+      "short" : "Fachliche Begründung: Auf dieser Ebene existieren keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests (Planeinträgen möglich).",
       "max" : "0"
     },
     {
@@ -436,7 +432,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.entry.flag",
       "path" : "List.entry.flag",
-      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: [New | Unchanged | Changed | Removed] Bedeutung: New: Neuer Planeintrag wird hinzugefügt | Unchanged: Bestehender Planeintrag wird beibehalten und zur Kenntnis genommen | Changed: Bestehender Planeintrag wird geändert | Removed: Bestehender Planeintrag wird entfernt",
+      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: [new | unchanged | changed | removed]. Bedeutung: new: Neuer Planeintrag wird hinzugefügt | unchanged: Bestehender Planeintrag wird beibehalten und zur Kenntnis genommen | changed: Bestehender Planeintrag wird geändert | removed: Bestehender Planeintrag wird entfernt",
       "min" : 1,
       "mustSupport" : true,
       "binding" : {
@@ -476,7 +472,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.entry.flag.text",
       "path" : "List.entry.flag.text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -488,7 +483,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.entry.date",
       "path" : "List.entry.date",
-      "short" : "Fachliche Begründung: Das Datum der initialen Aufnahme eines Eintrags wird nicht auf Ebene der Liste dokumentiert. Datumsinformationen werden im referenzierten Medikationsplaneintrag dokumentiert.",
+      "short" : "Fachliche Begründung: Das Datum der initialen Aufnahme eines Eintrags wird nicht auf Ebene der Liste, sondern im referenzierten Medikationsplaneintrag dokumentiert.",
       "max" : "0"
     },
     {
@@ -510,7 +505,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.emptyReason",
       "path" : "List.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown ] Bedeutung: notstarted: Intitalzustand - noch nie befüllt; nilknown: Der Plan wurde vom GDA explizit als leer dokumentiert oder alle Einträge wurden abgesetzt, storniert oder gelöscht.",
+      "short" : "Begründung, welshalb der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown ] Bedeutung: notstarted: Intitalzustand - noch nie befüllt; nilknown: Der Plan wurde vom GDA explizit als leer dokumentiert oder alle Einträge wurden abgesetzt, storniert oder gelöscht.",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -549,7 +544,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "List.emptyReason.text",
       "path" : "List.emptyReason.text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     }]
   }

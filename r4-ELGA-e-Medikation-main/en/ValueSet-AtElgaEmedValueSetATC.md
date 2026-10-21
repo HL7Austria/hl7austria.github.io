@@ -33,7 +33,7 @@ No Expansion for this valueset (Unknown Code System)
   "title" : "ELGA Dosage Category Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-20T17:05:58+00:00",
+  "date" : "2026-10-21T09:29:04+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

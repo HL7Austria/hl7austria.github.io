@@ -10,7 +10,7 @@
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-20T17:05:58+00:00",
+  "date" : "2026-10-21T09:29:04+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -2738,7 +2738,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.status",
       "path" : "Bundle.entry.resource.status",
-      "short" : "Status des Medikationsplans. Fixer Wert: current",
+      "short" : "Status des Medikationsplans. Fixer Wert: current.",
       "definition" : "Indicates the current state of this list.",
       "comment" : "This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.",
       "min" : 1,
@@ -2868,7 +2868,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.code",
       "path" : "Bundle.entry.resource.code",
-      "short" : "Code der den Medikationsplan identifiziert",
+      "short" : "Code, der den Medikationsplan identifiziert.",
       "definition" : "This code defines the purpose of the list - why it was created.",
       "comment" : "If there is no code, the purpose of the list is implied where it is used, such as in a document section using Document.section.code.",
       "requirements" : "Lists often contain subsets of resources rather than an exhaustive list.  The code identifies what type of subset is included.",
@@ -3318,7 +3318,7 @@
         "valueBoolean" : true
       }],
       "path" : "Bundle.entry.resource.code.text",
-      "short" : "Fachliche Begründung: TODO",
+      "short" : "Plain text representation of the concept",
       "definition" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
       "comment" : "Very often the text is the same as a displayName of one of the codings.",
       "requirements" : "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
@@ -3658,7 +3658,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.subject.identifier.use",
       "path" : "Bundle.entry.resource.subject.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
+      "short" : "usual | official | temp | secondary | old (If known)",
       "definition" : "The purpose of this identifier.",
       "comment" : "Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
       "requirements" : "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
@@ -4322,7 +4322,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.source.identifier.use",
       "path" : "Bundle.entry.resource.source.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
+      "short" : "usual | official | temp | secondary | old (If known)",
       "definition" : "The purpose of this identifier.",
       "comment" : "Applications can assume that an identifier is permanent unless it explicitly says that it is temporary.",
       "requirements" : "Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers.",
@@ -4615,7 +4615,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.orderedBy",
       "path" : "Bundle.entry.resource.orderedBy",
-      "short" : "Fachliche Begründung: TODO",
+      "short" : "What order the list has",
       "definition" : "What order applies to the items in the list.",
       "comment" : "Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order.",
       "requirements" : "Important for presentation and rendering.  Lists may be sorted to place more important information first or to group related entries.",
@@ -4656,7 +4656,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.note",
       "path" : "Bundle.entry.resource.note",
-      "short" : "Fachliche Begründung: Auf dieser Ebene keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests(Planeinträgen möglich)",
+      "short" : "Fachliche Begründung: Auf dieser Ebene existieren keine Freitext-Anmerkungen im Medikationsplan. Freitext ist in den jeweiligen MedicationRequests (Planeinträgen möglich).",
       "definition" : "Comments that apply to the overall list.",
       "min" : 0,
       "max" : "0",
@@ -4831,7 +4831,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.entry.flag",
       "path" : "Bundle.entry.resource.entry.flag",
-      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: [New | Unchanged | Changed | Removed] Bedeutung: New: Neuer Planeintrag wird hinzugefügt | Unchanged: Bestehender Planeintrag wird beibehalten und zur Kenntnis genommen | Changed: Bestehender Planeintrag wird geändert | Removed: Bestehender Planeintrag wird entfernt",
+      "short" : "Kennzeichnet die Art der Änderung des Medikationsplaneintrags: [new | unchanged | changed | removed]. Bedeutung: new: Neuer Planeintrag wird hinzugefügt | unchanged: Bestehender Planeintrag wird beibehalten und zur Kenntnis genommen | changed: Bestehender Planeintrag wird geändert | removed: Bestehender Planeintrag wird entfernt",
       "definition" : "The flag allows the system constructing the list to indicate the role and significance of the item in the list.",
       "comment" : "The flag can only be understood in the context of the List.code. If the flag means that the entry has actually been deleted from the list, the deleted element SHALL be true. Deleted can only be used if the List.mode is \"changes\".",
       "requirements" : "This field is present to support various clinical uses of lists, such as a discharge summary medication list, where flags specify whether the medication was added, modified, or deleted from the list.",
@@ -5270,7 +5270,7 @@
         "valueBoolean" : true
       }],
       "path" : "Bundle.entry.resource.entry.flag.text",
-      "short" : "Fachliche Begründung: TODO",
+      "short" : "Plain text representation of the concept",
       "definition" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
       "comment" : "Very often the text is the same as a displayName of one of the codings.",
       "requirements" : "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
@@ -5345,7 +5345,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.entry.date",
       "path" : "Bundle.entry.resource.entry.date",
-      "short" : "Fachliche Begründung: Das Datum der initialen Aufnahme eines Eintrags wird nicht auf Ebene der Liste dokumentiert. Datumsinformationen werden im referenzierten Medikationsplaneintrag dokumentiert.",
+      "short" : "Fachliche Begründung: Das Datum der initialen Aufnahme eines Eintrags wird nicht auf Ebene der Liste, sondern im referenzierten Medikationsplaneintrag dokumentiert.",
       "definition" : "When this item was added to the list.",
       "requirements" : "The date may be significant for understanding the meaning of items in a working list.",
       "min" : 0,
@@ -5782,7 +5782,7 @@
     {
       "id" : "Bundle.entry:Medikationsplan.resource.emptyReason",
       "path" : "Bundle.entry.resource.emptyReason",
-      "short" : "Begründung, warum der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown ] Bedeutung: notstarted: Intitalzustand - noch nie befüllt; nilknown: Der Plan wurde vom GDA explizit als leer dokumentiert oder alle Einträge wurden abgesetzt, storniert oder gelöscht.",
+      "short" : "Begründung, welshalb der Medikationsplan leer ist. Mögliche Ausprägungen: [notstarted |  nilknown ] Bedeutung: notstarted: Intitalzustand - noch nie befüllt; nilknown: Der Plan wurde vom GDA explizit als leer dokumentiert oder alle Einträge wurden abgesetzt, storniert oder gelöscht.",
       "definition" : "If the list is empty, why the list is empty.",
       "comment" : "The various reasons for an empty list make a significant interpretation to its interpretation. Note that this code is for use when the entire list has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.",
       "requirements" : "Allows capturing things like \"none exist\" or \"not asked\" which can be important for most lists.",
@@ -6222,7 +6222,7 @@
         "valueBoolean" : true
       }],
       "path" : "Bundle.entry.resource.emptyReason.text",
-      "short" : "Fachliche Begründung: TODO",
+      "short" : "Plain text representation of the concept",
       "definition" : "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
       "comment" : "Very often the text is the same as a displayName of one of the codings.",
       "requirements" : "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",

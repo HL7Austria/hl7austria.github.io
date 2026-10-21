@@ -6,6 +6,13 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
 
 **code**: RAMIPRIL HEX TBL 5MG
 
+### Ingredients
+
+| | |
+| :--- | :--- |
+| - | **Item[x]** |
+| * | 100000092240 |
+
 
 
 ## Resource Content
@@ -23,7 +30,15 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
       "code" : "2450836",
       "display" : "RAMIPRIL HEX TBL 5MG"
     }]
-  }
+  },
+  "ingredient" : [{
+    "itemCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages",
+        "code" : "100000092240"
+      }]
+    }
+  }]
 }
 
 ```

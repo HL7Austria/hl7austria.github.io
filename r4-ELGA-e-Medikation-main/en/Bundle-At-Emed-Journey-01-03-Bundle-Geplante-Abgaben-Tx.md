@@ -39,7 +39,15 @@
             "code" : "2450836",
             "display" : "RAMIPRIL HEX TBL 5MG"
           }]
-        }
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/ValueSet/elga-wirkstoffe-ages",
+              "code" : "100000092240"
+            }]
+          }
+        }]
       }],
       "extension" : [{
         "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
