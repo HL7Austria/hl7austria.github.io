@@ -61,7 +61,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $prescription-discard",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-21T15:07:55+00:00",
+  "date" : "2026-10-21T15:51:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

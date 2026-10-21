@@ -53,7 +53,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-21T15:07:55+00:00",
+  "date" : "2026-10-21T15:51:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -119,8 +119,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationRequest.extension:effectiveDosePeriod",
       "path" : "MedicationRequest.extension",
       "sliceName" : "effectiveDosePeriod",
-      "short" : "Zeitraum, in dem die Medikation eingenommen werden soll.",
-      "definition" : "Zeitraum, über den die Medikation eingenommen werden soll. Wenn mehrere dosageInstruction-Zeilen vorhanden sind (z. B. bei einer ausschleichenden Dosierung), entspricht dieser Zeitraum dem frühesten Startdatum und dem spätesten Enddatum der dosageInstructions.",
+      "short" : "Geplanter Einnahmezeitraum. Beginn: aktuelles Datum oder in der Zukunft, Ende: Datum in der Zukunft oder unbefristet. Der geplante Einnahmezeitraum muss mit den zeitlichen Einschränkungen der Dosage übereinstimmen.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -185,7 +184,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.status",
       "path" : "MedicationRequest.status",
-      "short" : "Status der geplanten Abgabe. Mögliche Ausprägung: [active | completed | entered-in-error | stopped]. Bedeutung: active: offene, Geplante Abgabe | completed: Geplante Abgabe abgeschlossen | entered-in-error: nach fehlerhafter Eingabe; Storno nur möglich, wenn noch keine zugehörige Abgabe durchgeführt wurde | stopped: Verwendung zu prüfen (Status soll analog zu e-Rezept abgebildet werden)",
+      "short" : "Status der Geplanten Abgabe. Mögliche Ausprägung: [active | completed | entered-in-error | stopped | cancelled]. Bedeutung: active: offene, Geplante Abgabe | completed: Geplante Abgabe abgeschlossen (automatisch durch Fachanwendung gesetzt)| entered-in-error: nach fehlerhafter Eingabe (Storno nur möglich, wenn noch keine Abgabe durchgeführt wurde) | stopped: Geplante Abgabe zeitlich abgelaufen (automatisch durch Fachanwendung gesetzt) | cancelled: Geplante Abgabe cancelled, wenn alle Durchgeführten Abgaben (jede Einlösung) den Status cancelled haben (automatisch durch Fachanwendung gesetzt)",
       "mustSupport" : true,
       "binding" : {
         "strength" : "required",
@@ -195,7 +194,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.intent",
       "path" : "MedicationRequest.intent",
-      "short" : "Die Geplante Abgabe stellt einen Auftrag zur Durchführung und eine Autorisierung des Verfassers dar; daher ist intent immer \"order\".",
+      "short" : "Fixer Wert: \"order\".",
       "patternCode" : "order",
       "mustSupport" : true
     },
@@ -216,7 +215,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationRequest.category:mrcategory",
       "path" : "MedicationRequest.category",
       "sliceName" : "mrcategory",
-      "short" : "Kategorie zur Unterscheidung eines Medikationsplaneintrags von einer geplanten Abgabe (beide haben intent order)",
+      "short" : "Kategorie zur Unterscheidung einer Geplanten Abgabe von einem Planeintrag (beide haben intent order).",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true,
@@ -251,7 +250,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.category:mrcategory.text",
       "path" : "MedicationRequest.category.text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -317,7 +315,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.medication[x]",
       "path" : "MedicationRequest.medication[x]",
-      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als conditional reference dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als Conditional Reference dokumentiert. Muss mit dem Planeintrag übereinstimmen.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -335,7 +333,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.subject",
       "path" : "MedicationRequest.subject",
-      "short" : "Patient, für den die Geplante Abgabe ausgestellt werden soll (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
+      "short" : "ELGA-Teilnehmer, für den die Geplante Abgabe erstellt wird.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"]
@@ -355,7 +353,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.subject.identifier.use",
       "path" : "MedicationRequest.subject.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -371,14 +368,14 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.authoredOn",
       "path" : "MedicationRequest.authoredOn",
-      "short" : "Datum der Verordnung der geplanten Abgabe.",
+      "short" : "Datum der Erstellung der Geplanten Abgabe.",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.requester",
       "path" : "MedicationRequest.requester",
-      "short" : "Der Arzt oder die Ärztin, die die Geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist \n(eindeutig identifiziert über den GDA-Index und berechtigt auf die ELGA e-Medikation des Patienten zuzugreifen).",
+      "short" : "GDA, welcher die Geplante Abgabe erstellt hat und für den Inhalt verantwortlich ist.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -411,7 +408,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.basedOn",
       "path" : "MedicationRequest.basedOn",
-      "short" : "Referenz auf die (aktuelle) Version des zugrundeliegenden Medikationsplaneintrags, auf dem diese Geplante Abgabe basiert.",
+      "short" : "Referenz auf die aktuelle Version des zugrundeliegenden Planeintrags, auf dem diese Geplante Abgabe basiert.",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -428,7 +425,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.groupIdentifier",
       "path" : "MedicationRequest.groupIdentifier",
-      "short" : "Als groupIdentifier dient die eMED-ID, die auch im e-Rezept mitgeführt wird. \nWerden von einem:r Arzt:Ärtztin mehrere Arzneimittel gleichzeitig verordnet, wird für jedes Arzneimittel eine \nGeplante Abgabe mit demselben groupIdentifier erstellt (bildet 'Rezept-Klammer').",
+      "short" : "Der e-Med GroupIdentifier bildet die Rezept-Klammer. Geplante Abgaben, die demselben e-Rezept zugeordnet sind, führen denselben e-Med GroupIdentifier.",
       "mustSupport" : true
     },
     {
@@ -444,13 +441,13 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.courseOfTherapyType",
       "path" : "MedicationRequest.courseOfTherapyType",
-      "short" : "Gesamtmuster der Medikamentengabe (z.B. saisonal). Keine Verwendung in der geplanten Abgabe.",
+      "short" : "Art der Medikation. Keine Verwendung in der Geplanten Abgabe.",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
-      "short" : "Zusätzliche Informationen zur geplanten Abgabe (Kommunikation zwischen Arzt und Apotheke, die nicht die Dosierung betreffen).",
+      "short" : "Zusätzliche Informationen zur Geplanten Abgabe, die nicht die Dosierung betreffen.",
       "max" : "1",
       "mustSupport" : true
     },
@@ -467,7 +464,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dispenseRequest",
       "path" : "MedicationRequest.dispenseRequest",
-      "short" : "Details zur geplanten Abgabe des Arzneimittels.",
+      "short" : "Informationen zur geplanten Abgabe des Arzneimittels.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -480,8 +477,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dispenseRequest.validityPeriod",
       "path" : "MedicationRequest.dispenseRequest.validityPeriod",
-      "short" : "Gültigkeitszeitraum einer Geplante Abgabe (abhängig von Rezeptart): Kassenrezept: ab Erstelldatum 1 Monat, bei Teilabgabe verlängert sich Gültigkeitsdauer auf 3 Monate („Besorger“-Prozess). Privatrezept: ab Erstelldatum max. 365 Tage, die Gültigkeitsdauer kann vom Arzt definiert werden. Substitutionsrezept: Max. Gültigkeitsdauer 12 Monate.",
-      "definition" : "Zeitraum in dem die Geplante Abgabe eingelöst werden kann.\nDer Gültigkeitszeitraum ist abhängig von der **Rezeptart**: \n* **Kassenrezept**: ab Erstelldatum einen Monat gültig (vom Ausstellungszeitpunkt bis zum gleichen Tag des Folgemonats 23:59 Uhr); validityPeriod.start kein Datum in der Zukunft; bei einer Teilabgabe verlängert sich die gesamte Gültigkeitsdauer auf 3 Monate („Besorger“-Prozess).\n* **Privatrezept**: ab Erstelldatum maximal 365 Tage gültig, wenn die erste Einlösung innerhalb von 1 Monat ab Erstelldatum erfolgt (sonst Status abgelaufen). validityPeriod.start kein Datum in der Zukunft; Die Gültigkeitsdauer (validityPeriod.end) kann vom Arzt definiert werden.\n* **Substitutionsrezept**: Maximale Gültigkeitsdauer 12 Monate. Das validityPeriod.start darf maximal einen Monat in der Zukunft liegen, gültig bis das validityPeriod.end erreicht ist.",
+      "short" : "Gültigkeitszeitraum einer Geplante Abgabe (abhängig von der Rezeptart).",
       "min" : 1,
       "mustSupport" : true
     },
@@ -498,15 +494,14 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
       "path" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
-      "short" : "Die Anzahl der weiteren möglichen Einlösungen (abhängig von Rezeptart): Kassenrezept: keine weitere Einlösung möglich (fixer Wert 0). Privatrezept: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden. Substitutionsrezept: keine weitere Einlösung möglich (fixer Wert 0)",
-      "definition" : "Anzahl der weiteren möglichen Einlösungen:\n* **Kassenrezept**: keine weitere Einlösung möglich (fixer Wert 0)\n* **Privatrezept**: bis zu 6 Einlösungen, Anzahl der möglichen Einlösungen kann vom Arzt definiert werden\n* **Substitutionsrezept**: keine weitere Einlösung möglich (fixer Wert 0) ",
+      "short" : "Die Anzahl der weiteren möglichen Einlösungen (abhängig von der Rezeptart).",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dispenseRequest.quantity",
       "path" : "MedicationRequest.dispenseRequest.quantity",
-      "short" : "Menge des Medikaments, die bei jeder Abgabe bereitgestellt werden soll.\nDa sich die Angaben zum Arzneimittel jeweils auf eine Packung der Arznei beziehen, MUSS die Anzahl der auszugebenden Packungen angegeben werden (mindestens 1). \nDies gilt für Arzneimittel mit PZN und magistralen Zubereitungen.",
+      "short" : "Bereitzustellende Menge bei jeder Abgabe bereitgestellt.",
       "min" : 1,
       "mustSupport" : true
     },

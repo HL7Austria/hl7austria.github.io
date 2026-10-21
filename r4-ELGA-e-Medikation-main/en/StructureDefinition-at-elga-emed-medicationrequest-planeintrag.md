@@ -51,7 +51,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-21T15:07:55+00:00",
+  "date" : "2026-10-21T15:51:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -345,7 +345,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.medication[x]",
       "path" : "MedicationRequest.medication[x]",
-      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als conditional reference dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als Conditional Reference dokumentiert.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -489,13 +489,12 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.courseOfTherapyType.text",
       "path" : "MedicationRequest.courseOfTherapyType.text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
       "id" : "MedicationRequest.note",
       "path" : "MedicationRequest.note",
-      "short" : "Zusätzliche Informationen zum Planeintrag.",
+      "short" : "Zusätzliche Informationen zum Planeintrag, die nicht die Dosierung betreffen.",
       "max" : "1",
       "mustSupport" : true
     },
