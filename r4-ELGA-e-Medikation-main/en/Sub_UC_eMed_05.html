@@ -673,8 +673,6 @@ Die <em>type</em>-Sequenz <em>FFP → RFP → RFC</em> muss dabei konsistent geh
 
 <p>Die Anzahl der möglichen Einlösungen einer <em>Geplanten Abgabe</em> reduziert sich nach einer Leerabgabe, d.h. sie bleibt weiterhin <em>active</em> wenn weitere Einlösungen möglich sind. Nur wenn alle möglichen Einlösungen mit <em>cancelled</em> gespeichert wurden, wird die zugehörige <em>Geplante Abgabe</em> automatisch auf <em>cancelled</em> gesetzt, sonst auf <em>completed</em>.</p>
 
-<p>Wird die letztmögliche gecancelete <em>Durchgeführte Abgabe</em> storniert, wird der Status der zugehörigen <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
-
 <!-- Kann wieder rückgängig gemacht werden (durch Storno). (S31. v2 Absetzdatum + GDA relevant (statusChanged R6)  -->
 
 <h4 id="sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen">Sub_UC_eMed_05_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen</h4>
@@ -801,9 +799,9 @@ Wenn eine stornierte <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
 
 <h3 id="sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellenentfernen">Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen/entfernen</h3>
 
-<p>Sofern für eine <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführte Abgabe</a> ein Planeintrag vorliegt, kann ein GDA nachträglich und unabhängig davon, welcher GDA die Abgabe erfasst hat, mittels <strong>POST</strong> <a href="Sub_UC_eMed_05.html#custom-operations-2">$reference-plan</a> einen Planeintrag in referenzieren oder die bestehende Referenz ändern.</p>
+<p>Sofern für eine <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführte Abgabe</a> ein Planeintrag vorliegt, kann ein GDA nachträglich und unabhängig davon, welcher GDA die Abgabe erfasst hat, mittels <strong>POST</strong> <a href="Sub_UC_eMed_05.html#custom-operations-2">$reference-plan</a> einen Planeintrag referenzieren oder die bestehende Referenz ändern.</p>
 
-<p>Dabei werden der die Referenz herstellende GDA als <em>performer:referenceGDA</em> mit <em>dispenseGDA.function = referenceGDA</em> sowie der Zeitpunkt der Änderung in <em>extension:statusChanged</em> dokumentiert. Die Referenz zum Planeintrag wird in <em>authorizingPrescription[planeintrag]</em> dokumentiert.</p>
+<p>Dabei werden der die Referenz herstellende GDA als <em>performer:referenceGDA</em> mit <em>dispenseGDA.function = referenceGDA</em> sowie der Zeitpunkt dokumentiert. Die Referenz zum Planeintrag wird in <em>authorizingPrescription[planeintrag]</em> dokumentiert.</p>
 
 <p>Die Operation kann wiederholt aufgerufen werden, um die Referenz zu ändern.</p>
 
@@ -849,7 +847,7 @@ Wenn eine stornierte <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-22 12:03:00 +0000">
+  <span title="2026-10-22 12:14:00 +0000">
     2026-10-22
   </span>
 

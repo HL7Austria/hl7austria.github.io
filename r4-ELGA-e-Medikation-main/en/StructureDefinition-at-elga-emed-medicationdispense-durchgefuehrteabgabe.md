@@ -52,7 +52,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-22T12:03:52+00:00",
+  "date" : "2026-10-22T12:14:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -236,7 +236,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.extension:statusChanged",
       "path" : "MedicationDispense.extension",
       "sliceName" : "statusChanged",
-      "short" : "Datum der Statusänderung. Dies ist nur bei einem Status von: cancelled | entered-in-error | stopped relevant.",
+      "short" : "Datum der Statusänderung. Dies ist nur bei einem Status von entered-in-error relevant.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -264,7 +264,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.extension:groupIdentifier",
       "path" : "MedicationDispense.extension",
       "sliceName" : "groupIdentifier",
-      "short" : "Als groupIdentifier dient der e-Med GroupIdentifier der zugehörigen Geplanten Abgabe (wird auch im e-Rezept mitgeführt).",
+      "short" : "Als groupIdentifier dient der \"e-Med GroupIdentifier\" der zugehörigen Geplanten Abgabe (wird auch im e-Rezept mitgeführt).",
       "min" : 0,
       "max" : "1",
       "type" : [{

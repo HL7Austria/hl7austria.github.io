@@ -151,8 +151,6 @@ Dieser Einlösevorgang ist damit beendet.
 
 Die Anzahl der möglichen Einlösungen einer **Geplanten Abgabe** reduziert sich nach einer Leerabgabe, d.h. sie bleibt weiterhin **active** wenn weitere Einlösungen möglich sind. Nur wenn alle möglichen Einlösungen mit **cancelled** gespeichert wurden, wird die zugehörige **Geplante Abgabe** automatisch auf **cancelled** gesetzt, sonst auf **completed**.
 
-Wird die letztmögliche gecancelete **Durchgeführte Abgabe** storniert, wird der Status der zugehörigen **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
-
 #### Sub_UC_eMed_05_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen
 
 In folgenden Fällen liegt bei der Erfassung einer [Durchgeführte Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) keine zugehörige **Geplante Abgabe** vor:
@@ -247,9 +245,9 @@ Wird die letztmögliche **Durchgeführte Abgabe** storniert, wird der Status der
 
 ### Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen/entfernen
 
-Sofern für eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) ein Planeintrag vorliegt, kann ein GDA nachträglich und unabhängig davon, welcher GDA die Abgabe erfasst hat, mittels **POST** [$reference-plan](Sub_UC_eMed_05.md#custom-operations-2) einen Planeintrag in referenzieren oder die bestehende Referenz ändern.
+Sofern für eine [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) ein Planeintrag vorliegt, kann ein GDA nachträglich und unabhängig davon, welcher GDA die Abgabe erfasst hat, mittels **POST** [$reference-plan](Sub_UC_eMed_05.md#custom-operations-2) einen Planeintrag referenzieren oder die bestehende Referenz ändern.
 
-Dabei werden der die Referenz herstellende GDA als **performer:referenceGDA** mit **dispenseGDA.function = referenceGDA** sowie der Zeitpunkt der Änderung in **extension:statusChanged** dokumentiert. Die Referenz zum Planeintrag wird in **authorizingPrescription[planeintrag]** dokumentiert.
+Dabei werden der die Referenz herstellende GDA als **performer:referenceGDA** mit **dispenseGDA.function = referenceGDA** sowie der Zeitpunkt dokumentiert. Die Referenz zum Planeintrag wird in **authorizingPrescription[planeintrag]** dokumentiert.
 
 Die Operation kann wiederholt aufgerufen werden, um die Referenz zu ändern.
 
