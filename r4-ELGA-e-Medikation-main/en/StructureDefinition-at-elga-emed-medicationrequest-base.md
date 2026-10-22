@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationRequestBase",
   "title" : "At ELGA e-Medikation MedicationRequest Base",
   "status" : "draft",
-  "date" : "2026-10-22T08:46:49+00:00",
+  "date" : "2026-10-22T09:37:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -149,7 +149,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "MedicationRequest.contained",
       "path" : "MedicationRequest.contained",
-      "short" : "TODO",
+      "short" : "Es sind nur die hier definierten contained Medication-Ressourcen zulässig. Contained (eingebettete) Ressourcen werden nicht separat versioniert, sondern ausschließlich im Rahmen der übergeordneten Ressource versioniert.",
       "type" : [{
         "code" : "Medication",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",

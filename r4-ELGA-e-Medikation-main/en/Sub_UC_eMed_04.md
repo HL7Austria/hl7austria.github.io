@@ -62,9 +62,9 @@ Basierend auf den enthaltenen Planeinträgen erstellt der GDA neue **Gelplante A
 * Alle gemeinsam erstellten **Geplanten Abgaben**, die zum selben e-Rezept gehören, müssen den selben **e-Med GroupIdentifier** tragen und **im selben [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md)** übermittelt werden. Der **e-Med GroupIdentifier** ermöglicht zusammengehörige **Geplante Abgaben** und **Durchgeführte Abgaben** gemeinsam abzurufen und kann über unterschiedliche Varianten bezogen werden (siehe [Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen](Sub_UC_eMed_04.md#sub_uc_emed_04_02---e-med-groupidentifier-beziehen)). Er bleibt grundsätzlich solange gültig, solange die **Geplante Abgabe = active** ist.
 * Fehlt im übermittelten [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) bei allen **Geplanten Abgaben** der **e-Med GroupIdentifier**, vergibt ihn die Fachanwendung. Alle enthaltenen **Geplanten Abgaben** gehören dann zum selben **e-Med GroupIdentifier**.
  
-* **Gültigkeitszeitraum der Einlösung** (**dispenseRequest.validityPeriod**) und
-* **Anzahl möglicher weiterer Einlösungen** (**dispenseRequest.numberOfRepeatsAllowed**) sind abhängig von der ausgewählten Rezeptart (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart))
-* **Bereitzustellende Menge** (**dispenseRequest.quantity**): Verpflichtende Angabe der Menge (Anzahl Packungen), die bei jeder Abgabe bereitgestellt werden soll.
+* **Gültigkeitszeitraum der **Geplante Abgabe**** (**dispenseRequest.validityPeriod**) und
+* **Anzahl möglicher weiterer Einlösungen** (**dispenseRequest.numberOfRepeatsAllowed**) sind u.a. abhängig von der ausgewählten Rezeptart (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart))
+* **Bereitzustellende Menge** (**dispenseRequest.quantity**): Verpflichtende Angabe der Menge (Anzahl Packungen), die bei jeder Einlösung bereitgestellt werden soll.
  
 
 Alle zusammengehörenden, erstellten **Geplanten Abgaben** werden in einem eigenen [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) mittels **POST** [$prescription-write](Sub_UC_eMed_04.md#custom-operations) an die Fachanwendung übermittelt.

@@ -53,7 +53,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-22T08:46:49+00:00",
+  "date" : "2026-10-22T09:37:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -315,7 +315,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.medication[x]",
       "path" : "MedicationRequest.medication[x]",
-      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als Conditional Reference dokumentiert. Muss mit dem Planeintrag übereinstimmen.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als Conditional Reference dokumentiert. Muss bei der Erstellung mit der medication im zugehörigen Planeintrag übereinstimmen.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -459,12 +459,12 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dosageInstruction",
       "path" : "MedicationRequest.dosageInstruction",
-      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext."
+      "short" : "Angabe der Dosierinformationen strukturiert oder als Freitext. Muss bei der Erstellung mit der dosageInstruction im zugehörigen Planeintrag übereinstimmen."
     },
     {
       "id" : "MedicationRequest.dispenseRequest",
       "path" : "MedicationRequest.dispenseRequest",
-      "short" : "Informationen zur geplanten Abgabe des Arzneimittels.",
+      "short" : "Informationen zur vorgesehenen Abgabe des Arzneimittels.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -477,7 +477,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dispenseRequest.validityPeriod",
       "path" : "MedicationRequest.dispenseRequest.validityPeriod",
-      "short" : "Gültigkeitszeitraum einer Geplante Abgabe (abhängig von der Rezeptart).",
+      "short" : "Gültigkeitszeitraum der Geplante Abgabe (u.a. abhängig von der Rezeptart).",
       "min" : 1,
       "mustSupport" : true
     },
@@ -494,14 +494,14 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
       "path" : "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed",
-      "short" : "Die Anzahl der weiteren möglichen Einlösungen (abhängig von der Rezeptart).",
+      "short" : "Die Anzahl der möglichen weiteren Einlösungen (u.a. abhängig von der Rezeptart).",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.dispenseRequest.quantity",
       "path" : "MedicationRequest.dispenseRequest.quantity",
-      "short" : "Bereitzustellende Menge bei jeder Abgabe bereitgestellt.",
+      "short" : "Bereitzustellende Menge bei jeder Einlösung.",
       "min" : 1,
       "mustSupport" : true
     },
