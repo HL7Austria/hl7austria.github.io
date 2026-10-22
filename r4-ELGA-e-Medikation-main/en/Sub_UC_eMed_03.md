@@ -102,7 +102,7 @@ Von ELGA-Teilnehmern gelöschte **Durchgeführte Abgaben** stehen nicht mehr zur
 
 ### Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)
 
-Erfolgt die Arzneimittelabgabe **ohne Kontaktbestätigung** des ELGA-Teilnehmers, sondern auf Basis eines **e-Med GroupIdentifiers** (z.B. über den DataMatrix-Code eines e-Rezepts), erhält ein [berechtigter GDA](actors.md#rollen-und-berechtigungen) einen eingeschränkten ELGA-Zugriff.
+Erfolgt die Arzneimittelabgabe **ohne Kontaktbestätigung** des ELGA-Teilnehmers, sondern auf Basis eines **e-Med GroupIdentifiers** (z.B. über den DataMatrix-Code eines e-Rezepts), erhält ein berechtigter GDA einen eingeschränkten ELGA-Zugriff.
 
 Dieser umfasst ausschließlich den lesenden Zugriff auf die **dem **e-Med GroupIdentifier**** **zugeordneten** **Geplanten Abgaben** und **Durchgeführten Abgaben**. Der GDA kann anschließend **Durchgeführte Abgaben** ausschließlich für diesen **e-Med GroupIdentifier** dokumentieren (siehe [Variante B: Durchgeführte Abgabe mit e-Med GroupIdentifier schreiben](Sub_UC_eMed_05.md#variante-b-durchgeführte-abgabe-mit-e-med-groupidentifier-schreiben)).
 
