@@ -51,7 +51,7 @@ Basierend auf den enthaltenen Planeinträgen erstellt der GDA neue **Gelplante A
 
 * **MedicationRequest**-Ressource(n) erstellen: [Geplante Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) 
 * **Geplanter Einnahmezeitraum**: (**extension:effectiveDosePeriod**): Beginn: aktuelles Datum oder Datum in der Zukunft, Ende: Datum in der Zukunft oder unbefristet.
-* **Status** muss **active** sein (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe))
+* **Status** muss **active** sein (siehe [Status der Geplanten Abgabe (MedicationRequest)](workflowmanagement.md#status-der-geplanten-abgabe-medicationrequest))
 * **Kategorie** (**category:mrcategory**): "Geplante Abgabe", zur Unterscheidung von Planeinträgen
 * [**Rezeptart**](https://termgit.elga.gv.at/ValueSet-elga-medikationrezeptart.html) (**category:recipetype**): muss verpflichtend ausgewählt werden
 * **Medikation**: muss **identisch** sein mit der des Planeintrags. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine **Geplante Abgabe** erstellt werden kann.
@@ -153,7 +153,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ### Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)
 
-Wurden alle möglichen Einlösungen einer **Geplanten Abgabe** planmäßig durchgeführt und entsprechende **Durchgeführte Abgaben** erstellt (siehe [Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen)), setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status ****completed**** (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplante Abgabe** ist damit abgeschlossen.
+Wurden alle möglichen Einlösungen einer **Geplanten Abgabe** planmäßig durchgeführt und entsprechende **Durchgeführte Abgaben** erstellt (siehe [Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen)), setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status ****completed**** (siehe [Status der Geplanten Abgabe (MedicationRequest)](workflowmanagement.md#status-der-geplanten-abgabe-medicationrequest)). Die **Geplante Abgabe** ist damit abgeschlossen.
 
 **Sonderfall**: Wird die letzte **Durchgeführte Abgabe** im Anschluss storniert (Status **entered-in-error**), wird der Status der **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
 
@@ -171,7 +171,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ### Sub_UC_eMed_04_05 - Geplante Abgabe abgelaufen (durch Fachanwendung)
 
-Ist der Gültigkeitszeitraum in **dispenseRequest.validityPeriod** der **Geplanten Abgabe** gemäß der ausgewählten Rezeptart (category:recipetype) (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart)) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status ****stopped**** (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)). Die **Geplante Abgabe** ist damit abgeschlossen.
+Ist der Gültigkeitszeitraum in **dispenseRequest.validityPeriod** der **Geplanten Abgabe** gemäß der ausgewählten Rezeptart (category:recipetype) (siehe [Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart](workflowmanagement.md#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart)) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die **Geplante Abgabe** **automatisch** auf den Status ****stopped**** (siehe [Status der Geplanten Abgabe (MedicationRequest)](workflowmanagement.md#status-der-geplanten-abgabe-medicationrequest)). Die **Geplante Abgabe** ist damit abgeschlossen.
 
 #### Relevante Elemente (MedicationRequest)
 
@@ -185,7 +185,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ### Sub_UC_eMed_04_06 - Geplante Abgabe gecancelt (durch Fachanwendung)
 
-Eine **Geplante Abgabe** erhält **automatisch** den Status ****cancelled**** (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)), wenn **alle** **Durchgeführten Abgaben** (jede Einlösung) den Status **cancelled** erhalten haben (siehe [Sub_UC_eMed_05_01_04 Leerabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_04-leerabgabe-erfassen)). Die **Geplanten Abgabe** ist damit abgeschlossen.
+Eine **Geplante Abgabe** erhält **automatisch** den Status ****cancelled**** (siehe [Status der Geplanten Abgabe (MedicationRequest)](workflowmanagement.md#status-der-geplanten-abgabe-medicationrequest)), wenn **alle** **Durchgeführten Abgaben** (jede Einlösung) den Status **cancelled** erhalten haben (siehe [Sub_UC_eMed_05_01_04 Leerabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_04-leerabgabe-erfassen)). Die **Geplanten Abgabe** ist damit abgeschlossen.
 
 Sonderfall: Wird die letzte **Durchgeführte Abgabe** im Anschluss storniert (Status **entered-in-error**), wird der Status der **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
 

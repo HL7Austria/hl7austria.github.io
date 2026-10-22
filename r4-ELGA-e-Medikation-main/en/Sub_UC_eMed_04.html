@@ -565,7 +565,7 @@ Unter gewissen Voraussetzungen kann ein bestehender Medikationsplaneintrag angep
   <li><em>MedicationRequest</em>-Ressource(n) erstellen: <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgaben</a>
     <ul>
       <li><strong>Geplanter Einnahmezeitraum</strong>: (<em>extension:effectiveDosePeriod</em>): Beginn: aktuelles Datum oder Datum in der Zukunft, Ende: Datum in der Zukunft oder unbefristet.</li>
-      <li><strong>Status</strong> muss <em>active</em> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der Geplanten Abgabe</a>)</li>
+      <li><strong>Status</strong> muss <em>active</em> sein (siehe <a href="workflowmanagement.html#status-der-geplanten-abgabe-medicationrequest">Status der Geplanten Abgabe (MedicationRequest)</a>)</li>
       <li><strong>Kategorie</strong> (<em>category:mrcategory</em>): "Geplante Abgabe", zur Unterscheidung von Planeinträgen</li>
       <li><a href="https://termgit.elga.gv.at/ValueSet-elga-medikationrezeptart.html"><strong>Rezeptart</strong></a> (<em>category:recipetype</em>): muss verpflichtend ausgewählt werden</li>
       <li><strong>Medikation</strong>: muss <strong>identisch</strong> sein mit der des Planeintrags. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine <em>Geplante Abgabe</em> erstellt werden kann.</li>
@@ -692,7 +692,7 @@ Die Fachanwendung ändert dadurch den <em>status</em> der betreffenden <em>Gepla
 <h3 id="sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung">Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)</h3>
 <!-- TODO: abschließen -> Workflowdiagramm  akl 20.10.-->
 
-<p>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt und entsprechende <em>Durchgeführte Abgaben</em> erstellt (siehe <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen">Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <strong><em>completed</em></strong> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der Geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
+<p>Wurden alle möglichen Einlösungen einer <em>Geplanten Abgabe</em> planmäßig durchgeführt und entsprechende <em>Durchgeführte Abgaben</em> erstellt (siehe <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen">Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen</a>), setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <strong><em>completed</em></strong> (siehe <a href="workflowmanagement.html#status-der-geplanten-abgabe-medicationrequest">Status der Geplanten Abgabe (MedicationRequest)</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
 
 <p><strong>Sonderfall</strong>: Wird die letzte <em>Durchgeführte Abgabe</em> im Anschluss storniert (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
 
@@ -708,7 +708,7 @@ Die Fachanwendung ändert dadurch den <em>status</em> der betreffenden <em>Gepla
 
 <h3 id="sub_uc_emed_04_05---geplante-abgabe-abgelaufen-durch-fachanwendung">Sub_UC_eMed_04_05 - Geplante Abgabe abgelaufen (durch Fachanwendung)</h3>
 
-<p>Ist der Gültigkeitszeitraum in <em>dispenseRequest.validityPeriod</em> der <em>Geplanten Abgabe</em> gemäß der ausgewählten Rezeptart (category:recipetype) (siehe <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</a>) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <strong><em>stopped</em></strong> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der Geplanten Abgabe</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
+<p>Ist der Gültigkeitszeitraum in <em>dispenseRequest.validityPeriod</em> der <em>Geplanten Abgabe</em> gemäß der ausgewählten Rezeptart (category:recipetype) (siehe <a href="workflowmanagement.html#gültigkeit-von-geplanten-abgaben-basierend-auf-der-rezeptart">Gültigkeit von Geplanten Abgaben basierend auf der Rezeptart</a>) oder den Einschränkungen des GDAs überschritten, setzt die Fachanwendung die <em>Geplante Abgabe</em> <strong>automatisch</strong> auf den Status <strong><em>stopped</em></strong> (siehe <a href="workflowmanagement.html#status-der-geplanten-abgabe-medicationrequest">Status der Geplanten Abgabe (MedicationRequest)</a>). Die <em>Geplante Abgabe</em> ist damit abgeschlossen.</p>
 
 <h4 id="relevante-elemente-medicationrequest-3">Relevante Elemente (MedicationRequest)</h4>
 
@@ -720,7 +720,7 @@ Die Fachanwendung ändert dadurch den <em>status</em> der betreffenden <em>Gepla
 
 <h3 id="sub_uc_emed_04_06---geplante-abgabe-gecancelt-durch-fachanwendung">Sub_UC_eMed_04_06 - Geplante Abgabe gecancelt (durch Fachanwendung)</h3>
 
-<p>Eine <em>Geplante Abgabe</em> erhält <strong>automatisch</strong> den Status <strong><em>cancelled</em></strong> (siehe <a href="workflowmanagement.html#status-des-medicationrequests-in-der-geplanten-abgabe">Status des MedicationRequests in der Geplanten Abgabe</a>), wenn <strong>alle</strong> <em>Durchgeführten Abgaben</em> (jede Einlösung) den Status <em>cancelled</em> erhalten haben (siehe <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_04-leerabgabe-erfassen">Sub_UC_eMed_05_01_04 Leerabgabe erfassen</a>). Die <em>Geplanten Abgabe</em> ist damit abgeschlossen.</p>
+<p>Eine <em>Geplante Abgabe</em> erhält <strong>automatisch</strong> den Status <strong><em>cancelled</em></strong> (siehe <a href="workflowmanagement.html#status-der-geplanten-abgabe-medicationrequest">Status der Geplanten Abgabe (MedicationRequest)</a>), wenn <strong>alle</strong> <em>Durchgeführten Abgaben</em> (jede Einlösung) den Status <em>cancelled</em> erhalten haben (siehe <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_04-leerabgabe-erfassen">Sub_UC_eMed_05_01_04 Leerabgabe erfassen</a>). Die <em>Geplanten Abgabe</em> ist damit abgeschlossen.</p>
 
 <p>Sonderfall: Wird die letzte <em>Durchgeführte Abgabe</em> im Anschluss storniert (Status <em>entered-in-error</em>), wird der Status der <em>Geplanten Abgabe</em> durch die Fachanwendung wieder auf <em>active</em> gesetzt.</p>
 
@@ -774,7 +774,7 @@ Die Fachanwendung ändert dadurch den <em>status</em> der betreffenden <em>Gepla
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-22 11:28:00 +0000">
+  <span title="2026-10-22 12:03:00 +0000">
     2026-10-22
   </span>
 

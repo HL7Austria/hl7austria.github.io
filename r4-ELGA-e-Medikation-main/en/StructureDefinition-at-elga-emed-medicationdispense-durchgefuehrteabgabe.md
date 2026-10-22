@@ -6,7 +6,7 @@ Die Ressource **`MedicationDispense`** bildet eine **Durchgeführte Abgabe** ab.
 
 Sie enthält das abgegebe Arzneimittel mit dessen Dosierung und dient somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Eine **Durchgeführte Abgabe** kann sich auf einen Planeintrag und/oder eine **Geplante Abgabe** beziehen und trägt dann denselben **e-Med GroupIdentifier**. Sie kann hinsichtlich des tatsächlich abgegebenen Arzneimittels und dessen Dosierung von Planeintrag und **Geplanter Abgabe** abweichen.
 
-Der aktuelle Status einer **Durchgeführten Abgabe** wird mittels **status**- und **type**-Element dokumentiert (siehe [Status des MedicationDispense in der Durchgeführten Abgabe](workflowmanagement.md#status-des-medicationdispense-in-der-durchgeführten-abgabe)).
+Der aktuelle Status einer **Durchgeführten Abgabe** wird mittels **status**- und **type**-Element dokumentiert (siehe [Status der Durchgeführten Abgabe (MedicationDispense)](workflowmanagement.md#status-der-durchgeführten-abgabe-medicationdispense)).
 
 Relevante Use Cases:
 
@@ -52,7 +52,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-22T11:28:40+00:00",
+  "date" : "2026-10-22T12:03:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -69,7 +69,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "use" : "work"
     }]
   }],
-  "description" : "Profil einer \"Durchgeführten Abgabe\" eines Arzneimittels aus dem Medikationsplan.",
+  "description" : "Profil einer \"Durchgeführten Abgabe\" eines Arzneimittels.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -144,6 +144,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.text.status",
       "path" : "MedicationDispense.text.status",
+      "short" : "Siehe Notes - \"Regeln für den Inhalt der narrativen Teile in den Notes\".",
       "mustSupport" : true
     },
     {
@@ -154,7 +155,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.contained",
       "path" : "MedicationDispense.contained",
-      "short" : "TODO",
+      "short" : "Es sind nur die hier definierten contained Medication-Ressourcen zulässig. Contained (eingebettete) Ressourcen werden nicht separat versioniert, sondern ausschließlich im Rahmen der übergeordneten Ressource versioniert.",
       "type" : [{
         "code" : "Medication",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -179,7 +180,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.extension:renderedDosageInstruction",
       "path" : "MedicationDispense.extension",
       "sliceName" : "renderedDosageInstruction",
-      "short" : "Vollständige Darstellung der Dosierungsanweisungen",
+      "short" : "Vollständige textuelle Zusammenfassung der Dosierungsanweisungen - wird von der Fachanwendung anhand der definiert Regeln befüllt.",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -296,7 +297,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
-      "short" : "Status der Durchgeführten Abgabe. Mögliche Ausprägungen: [completed | cancelled | entered-in-error ] Bedeutung: completed: Die Durchgeführte Abgabe ist abgeschlossen. | cancelled: Leerabgabe | entered-in-error: Die Durchgeführte Abgabe wird aufgrund falscher Eingabe storniert.",
+      "short" : "Status der Durchgeführten Abgabe. Mögliche Ausprägungen: [completed | cancelled | entered-in-error ] Bedeutung: completed: Die Durchgeführte Abgabe ist abgeschlossen (Einzel- oder Teilabgabe durchgeführt) | cancelled: Leerabgabe wird durchgeführt | entered-in-error: Die Durchgeführte Abgabe wird aufgrund eines Fehlers storniert.",
       "mustSupport" : true
     },
     {

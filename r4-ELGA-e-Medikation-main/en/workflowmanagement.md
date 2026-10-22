@@ -30,7 +30,7 @@ Je nach Zugriffsart (Plan-History-Search, Plan-Read oder Write) ergeben sich unt
 | **changed** | - List-Entries, die vom Vorgänger-GDA mit**changed**geflaggt wurden, bleiben beim Plan-History-Search**unverändert**.- Die geänderten MedicationRequests sind im Medikationsplan-Bundle enthalten. | - List-Entries, die vom Vorgänger-GDA mit**changed**geflaggt wurden, werden beim Plan-Read von der**Fachanwendung**als**unchanged**geflaggt.- Die betreffenden MedicationRequests sind im Medikationsplan-Bundle enthalten. | - List-Entries, die vom aktuellen GDA mit**changed**geflaggt werden, wurden geändert.- Die betreffenden MedicationRequests müssen im Transaction Bundle**enthalten**sein. |
 | **removed** | - List-Entries, die vom Vorgänger-GDA mit**removed**geflaggt wurden, bleiben beim Plan-History-Search**unverändert**.- Die zum Entfernen markierten MedicationRequests sind im Medikationsplan-Bundle enthalten. | - List-Entries, die vom Vorgänger-GDA mit**removed**geflaggt wurden, werden beim Plan-Read von der**Fachanwendung entfernt**.- Die betreffenden MedicationRequests sind im Medikationsplan-Bundle**nicht enthalten**. | - List-Entries, die beim schreibenden Zugriff vom aktuellen GDA mit**removed**geflaggt wurden, sollen aus dem Medikationsplan entfernt werden.- Die betreffenden MedicationRequests werden u.a. mit dem entsprechenden Status geflaggt und müssen im Transaction Bundle**enthalten**sein. |
 
-#### Status des MedicationRequests im Medikationsplaneintrag
+#### Status des Medikationsplaneintrags (MedicationRequest)
 
 Das **status**-Element der MedicationRequest-Ressource beschreibt den **aktuellen Zustand eines Medikationsplaneintrags**.
 
@@ -62,7 +62,7 @@ Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen
 | removed | stopped | Bestehender Planeintrag wird  dauerhaft gestoppt. Die Medikation wurde  abgesetzt. | |
 | removed | entered-in-error | Bestehender Planeintrag wird aufgrund eines Fehlers storniert | |
 
-#### Status des MedicationRequests in der Geplanten Abgabe
+#### Status der Geplanten Abgabe (MedicationRequest)
 
 Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest) kann, abhängig vom jeweiligen ([Use Case für Geplante Abgabe schreiben](Sub_UC_eMed_04.md)), unterschiedliche Status einnehmen (Element **status**):
 
@@ -87,14 +87,14 @@ Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationreq
  [^2] Ist der Gültigkeitszeitraum überschritten erhält die zugehörige **Geplante Abgabe** den Status abgelaufen (**stopped**). Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe kann in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert werden. 
 
 
-#### Status des MedicationDispense in der Durchgeführten Abgabe
+#### Status der Durchgeführten Abgabe (MedicationDispense)
 
 Eine [Durchgeführte Abgabe](design_choices.md#durchgeführte-abgabe-atelgaemedmedicationdispensedurchgefuehrteabgabe-medicationdispense) kann, abhängig vom jeweiligen [Use Case für Durchgeführte Abgabe schreiben](Sub_UC_eMed_05.md), unterschiedliche Status einnehmen (Element **status**).
 
 | | |
 | :--- | :--- |
-| **completed** | Einzel- oder Teilabgabe wurde durchgeführt |
-| **cancelled** | **Durchgeführte Abgabe**gecancelt: Der Patient benötigt die Medikation einer geplanten Abgabe nicht (z.B. Medikation "abgesetzt" oder Medikation noch ausreichend vorhanden) |
+| **completed** | Die Durchgeführte Abgabe ist abgeschlossen (Einzel- oder Teilabgabe durchgeführt). |
+| **cancelled** | **Durchgeführte Abgabe**gecancelt (Leerabgabe): Der Patient benötigt die Medikation einer**Geplanten Abgabe**nicht. |
 | **entered-in-error** | Vorhandene**Durchgeführte Abgabe**(im Status**completed**oder**cancelled**) wird aufgrund eines Fehlers storniert (eine mögliche beendete**Geplante Abgabe**, wird dadurch wieder**aktiv**) |
 
 #### Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben

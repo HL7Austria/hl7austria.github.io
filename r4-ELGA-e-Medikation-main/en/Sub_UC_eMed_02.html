@@ -628,7 +628,7 @@ Dabei muss er dokumentieren, ob dieser von ihm selbst stammt oder nicht (Fremdme
   <li><em>MedicationRequest</em>-Ressource(n) erstellen: <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">AtElgaEmedMedicationRequestPlaneintrag</a>:
     <ul>
       <li><strong>Einnahmezeitraum</strong> (<em>extension:effectiveDosePeriod</em>): Einnahme-Startdatum kann in der Zukunft oder in der Vergangenheit liegen (Nacherfassung); das Einnahme-Enddatum darf nicht in der Vergangenheit liegen.</li>
-      <li><strong>Status</strong> muss <em>active</em> oder <em>on-hold</em> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
+      <li><strong>Status</strong> muss <em>active</em> oder <em>on-hold</em> sein (siehe <a href="workflowmanagement.html#status-des-medikationsplaneintrags-medicationrequest">Status des Medikationsplaneintrags (MedicationRequest)</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
       <li><strong>Kategorie</strong> (<em>category</em>): "Planeintrag", zur Unterscheidung von <em>Geplanten Abgaben</em></li>
       <li><strong>Kennzeichnung, ob die Medikationsinformation berichtet wurde</strong> (<em>reportedBoolean</em>): erhält den Wert <em>false</em>, wenn die Medikation vom Ersteller des Planeintrags (GDA) selbst stammt, sonst <em>true</em></li>
       <li><strong>Medikation</strong> (<em>medication</em>): zur Dokumentation des Arzneimittels wird die <em>Medication</em>-Ressource verwendet. Diese muss bei Medikamenten mit PZN beim Schreiben als <strong>Conditional Reference</strong> mit <strong>PZN und Name</strong> dokumentiert werden (beim Lesen ist diese contained in der Ressource enthalten). Arznemittelverschreibungen ausschließlich basierend auf Wirkstoffangaben und Magistrale Zubereitungen sind immer als contained Ressource anzugeben (siehe Kapitel <a href="medication.html">Medikation</a>).</li>
@@ -704,7 +704,7 @@ Bei fehlender <strong>fachlicher Kontinuität</strong> der Bearbeitung eines Pla
   <!-- - *id*: bestehende *id* darf **nicht geändert** werden -->
     <ul>
       <li><strong>Einnahmezeitraum</strong> (<em>extension:effectiveDosePeriod</em>): falls ein Enddatum existiert, darf es nicht in der Vergangenheit liegen</li>
-      <li><strong>Status</strong> muss <em>active</em> oder <em>on-hold</em> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
+      <li><strong>Status</strong> muss <em>active</em> oder <em>on-hold</em> sein (siehe <a href="workflowmanagement.html#status-des-medikationsplaneintrags-medicationrequest">Status des Medikationsplaneintrags (MedicationRequest)</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
       <li><strong>Grund für die Änderung</strong> (<em>statusReason.coding</em>) optional codiert oder Freitext</li>
       <li>alle weiteren Elemente analog zu <em>MedicationRequest</em>-Ressource(n) erstellen, siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen">Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen</a></li>
     </ul>
@@ -812,7 +812,7 @@ TODO: Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
   <li><em>MedicationRequest</em>-Ressource(n) bearbeiten: <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">AtElgaEmedMedicationRequestPlaneintrag</a>: 
   <!-- - *id*: bestehende *id* darf **nicht geändert** werden -->
     <ul>
-      <li><strong>Status</strong> muss beim <strong>Pausieren</strong> mit <em>on-hold</em> und beim <strong>Reaktivieren</strong> mit <em>active</em> dokumentiert werden (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
+      <li><strong>Status</strong> muss beim <strong>Pausieren</strong> mit <em>on-hold</em> und beim <strong>Reaktivieren</strong> mit <em>active</em> dokumentiert werden (siehe <a href="workflowmanagement.html#status-des-medikationsplaneintrags-medicationrequest">Status des Medikationsplaneintrags (MedicationRequest)</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
       <li><strong>Grund für die Pausierung</strong> (<em>statusReason.coding</em>) verpflichtender Grund für die Pausierung als Code oder Freitext (siehe <a href="ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html">AtElgaEmedValueSetPlaneintragStatusReasonVS</a>) <!-- TODO muss der Grund beim Aktivieren wieder entfernt werden? akl. 19.10.--></li>
       <li>falls weitere Elemente geändert werden, siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a></li>
     </ul>
@@ -908,7 +908,7 @@ TODO: Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
   <li><em>MedicationRequest</em>-Ressource(n) bearbeiten: <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">AtElgaEmedMedicationRequestPlaneintrag</a>: 
   <!-- - *id*: bestehende *id* darf **nicht geändert** werden -->
     <ul>
-      <li><strong>Status</strong> muss <strong><em>entered-in-error</em></strong> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
+      <li><strong>Status</strong> muss <strong><em>entered-in-error</em></strong> sein (siehe <a href="workflowmanagement.html#status-des-medikationsplaneintrags-medicationrequest">Status des Medikationsplaneintrags (MedicationRequest)</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
       <li>falls weitere Elemente geändert werden, siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a></li>
     </ul>
   </li>
@@ -966,7 +966,7 @@ TODO: Dosierschemata prüfen + Link ergänzen akl 30.09.2026 --></p>
   <li><em>MedicationRequest</em>-Ressource(n) bearbeiten: <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">AtElgaEmedMedicationRequestPlaneintrag</a>: 
   <!-- - *id*: bestehende *id* darf **nicht geändert** werden -->
     <ul>
-      <li><strong>Status</strong> muss <strong><em>stopped</em></strong> sein (siehe <a href="workflowmanagement.html#status-des-medicationrequests-im-medikationsplaneintrag">Status des MedicationRequests im Medikationsplaneintrag</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
+      <li><strong>Status</strong> muss <strong><em>stopped</em></strong> sein (siehe <a href="workflowmanagement.html#status-des-medikationsplaneintrags-medicationrequest">Status des Medikationsplaneintrags (MedicationRequest)</a> und <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>)</li>
       <li><strong>Absetzgrund</strong> (<em>statusReason.coding</em>) muss <strong>verpflichend</strong> mit Code dokumentiert werden. Existiert im Valueset (siehe <a href="ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.html">AtElgaEmedValueSetPlaneintragStatusReasonVS</a>) kein passender Code, muss "other" ausgewählt werden und ein Freitext in <em>statusReason.text</em> dokumentiert werden.</li>
       <li>falls weitere Elemente geändert werden, siehe <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern">Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern</a></li>
     </ul>
@@ -1141,7 +1141,7 @@ Der Einnahmezeitraum der im Planeintrag dokumentierten Arzneimittel darf noch ni
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-22 11:28:00 +0000">
+  <span title="2026-10-22 12:03:00 +0000">
     2026-10-22
   </span>
 

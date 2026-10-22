@@ -8,7 +8,7 @@ Sie repräsentiert den Auftrag zur Abgabe eines Arzneimittels sowie die entsprec
 
 Sie enthält genau das im zugehörigen Planeintrag verordnete Arzneimittel mit dessen Dosierung und dient somit der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation. Werden mehrere Arzneimittel gemeinsam verordnet (und sind demselben e-Rezept zugeordnet), wird für jedes Arzneimittel eine **Geplante Abgabe** mit demselben **e-Med GroupIdentifier** erstellt.
 
-Der aktuelle Status einer Geplanten Abgabe wird im **status**-Element dokumentiert (siehe [Status des MedicationRequests in der Geplanten Abgabe](workflowmanagement.md#status-des-medicationrequests-in-der-geplanten-abgabe)).
+Der aktuelle Status einer Geplanten Abgabe wird im **status**-Element dokumentiert (siehe [Status der Geplanten Abgabe (MedicationRequest)](workflowmanagement.md#status-der-geplanten-abgabe-medicationrequest)).
 
 Relevante Use Cases:
 
@@ -55,7 +55,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-22T11:28:40+00:00",
+  "date" : "2026-10-22T12:03:52+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
