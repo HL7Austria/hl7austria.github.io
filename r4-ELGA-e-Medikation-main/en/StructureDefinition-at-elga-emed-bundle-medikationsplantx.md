@@ -11,6 +11,8 @@ Alle neuen bzw. geänderten und zu entfernenden Medikationsplaneinträge müssen
 
 Details zur `$plan-write`-Operation siehe [Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write).
 
+Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Examples for this Profile: [Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md), [Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) and [Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md)
@@ -38,7 +40,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-22T09:48:24+00:00",
+  "date" : "2026-10-22T11:28:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -516,9 +516,9 @@ AtElgaEmedMedicationRequestPlaneintrag
 
 ### Sub_UC_eMed_02_11 - Planeintrag durch ELGA-Teilnehmer löschen
 
- Ausüben der Teilnehmerrechte: in Arbeit. 
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
 ### Sub_UC_eMed_02_12 - Medikationsplan durch ELGA-Teilnehmer löschen
 
- Ausüben der Teilnehmerrechte: in Arbeit. 
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
