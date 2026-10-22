@@ -53,7 +53,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-22T12:14:48+00:00",
+  "date" : "2026-10-22T18:22:51+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -177,7 +177,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationRequest.extension:renderedDosageInstruction",
       "path" : "MedicationRequest.extension",
       "sliceName" : "renderedDosageInstruction",
-      "short" : "Vollständige textuelle Zusammenfassung der Dosierungsanweisungen - wird von der Fachanwendung anhand der definiert Regeln befüllt.",
+      "short" : "Vollständige textuelle Zusammenfassung der Dosierungsanweisungen - wird von der Fachanwendung anhand der definierten Regeln befüllt..",
       "min" : 0,
       "max" : "1",
       "type" : [{

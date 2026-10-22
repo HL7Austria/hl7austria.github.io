@@ -52,7 +52,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-22T12:14:48+00:00",
+  "date" : "2026-10-22T18:22:51+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -180,7 +180,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.extension:renderedDosageInstruction",
       "path" : "MedicationDispense.extension",
       "sliceName" : "renderedDosageInstruction",
-      "short" : "Vollständige textuelle Zusammenfassung der Dosierungsanweisungen - wird von der Fachanwendung anhand der definiert Regeln befüllt.",
+      "short" : "Vollständige textuelle Zusammenfassung der Dosierungsanweisungen - wird von der Fachanwendung anhand der definierten Regeln befüllt..",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -208,7 +208,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.extension:recorded",
       "path" : "MedicationDispense.extension",
       "sliceName" : "recorded",
-      "short" : "Datum und Uhrzeit, zu denen die Abgabe erfasst wurde. Dies muss nicht unbedingt mit dem Zeitpunkt übereinstimmen, zu dem das Medikament dem Patienten ausgehändigt wurde (z.B. bei Nacherfassung der Abgabe).",
+      "short" : "Datum und Uhrzeit, zu denen die Geplante Abgabe erfasst wurde.",
       "min" : 1,
       "max" : "1",
       "type" : [{
@@ -303,7 +303,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.medication[x]",
       "path" : "MedicationDispense.medication[x]",
-      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als conditional reference dokumentiert, damit Arzneimittel mit und ohne PZN einheitlich dokumentiert werden können.",
+      "short" : "Das Arzneimittel wird in einer contained Medication Ressource oder als Conditional Reference dokumentiert. Diese kann, sofern ein zugehöriger Planeintrag und eine Geplante Abgabe vorliegen, von der dort angegebenen Medikation abweichen.",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
@@ -321,7 +321,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.subject",
       "path" : "MedicationDispense.subject",
-      "short" : "Patient, für den die Geplante Abgabe ausgestellt werden soll (über Zentralen Patientenindex identifiziert und Teilnehmer von ELGA e-Medikation).",
+      "short" : "ELGA-Teilnehmer, für den die Durchgeführte Abgabe dokumentiert wird.",
       "min" : 1,
       "type" : [{
         "code" : "Reference",
@@ -342,7 +342,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.subject.identifier.use",
       "path" : "MedicationDispense.subject.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -366,7 +365,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "ordered" : false,
         "rules" : "closed"
       },
-      "short" : "Durchführende Person",
       "min" : 1,
       "max" : "1",
       "mustSupport" : true
@@ -374,7 +372,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.performer.function",
       "path" : "MedicationDispense.performer.function",
-      "short" : "Rolle der Person, die die Abgabe durchgeführt hat.",
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetMedicationDispensePerformerFunctionVS"
@@ -383,7 +380,6 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.performer.actor",
       "path" : "MedicationDispense.performer.actor",
-      "short" : "Refrenz auf Practitioner, PractitionerRole, Organization,der/die die Durchgeführte Abgabe erstellt hat und für den Inhalt verantwortlich ist (identifiziert über den GDA-Index und berechtigt \nauf die ELGA e-Medikation des Patienten zuzugreifen).",
       "type" : [{
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
@@ -407,6 +403,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.performer:dispenseGDA.function",
       "path" : "MedicationDispense.performer.function",
+      "short" : "Rolle des der Abgabe durchführenden GDA. Fester Wert: dispenseGDA.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -449,6 +446,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.performer:dispenseGDA.actor",
       "path" : "MedicationDispense.performer.actor",
+      "short" : "GDA, der die Abgabe durchführt und verantwortet.",
       "mustSupport" : true
     },
     {
@@ -467,6 +465,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.performer:referenceGDA.function",
       "path" : "MedicationDispense.performer.function",
+      "short" : "Rolle des den Planeintrag nachträglich referenzierenden GDA. Fester Wert: referenceGDA.",
       "min" : 1,
       "mustSupport" : true
     },
@@ -509,6 +508,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.performer:referenceGDA.actor",
       "path" : "MedicationDispense.performer.actor",
+      "short" : "GDA, der nachträglich eine Referenz zu einem Planeintrag herstellt.",
       "mustSupport" : true
     },
     {
@@ -526,7 +526,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "ordered" : false,
         "rules" : "closed"
       },
-      "short" : "Referenz auf zugehörige Geplante Abgabe (MedicationRequest), sofern diese existiert bzw. \nPlaneintrag (MedicationRequest). Es muss nicht zwingend eine Geplante Abgabe referenziert werden, da es auch durchgeführte \nAbgaben ohne Geplante Abgabe geben kann (z.B. Notfall oder OTC-Medikation).",
+      "short" : "Verpflichtende Referenzen auf zugehörige Geplante Abgabe (MedicationRequest) bzw. zugehörigen \nPlaneintrag (MedicationRequest), sofern diese existieren.",
       "max" : "2",
       "mustSupport" : true
     },
@@ -557,7 +557,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.type",
       "path" : "MedicationDispense.type",
-      "short" : "Art der Abgabe (z.B. für Teilabgaben). Mögliche Ausprägungen: [FFC | FFP | RFP | RFC | EM]. Bedeutung: FFC: First Fill - Complete | FFP: First Fill - Part Fill | RFP: Refill - Part Fill | RFC: Refill - Complete | EM: Emergency Supply.",
+      "short" : "Art der Abgabe. Mögliche Ausprägungen: [FFC | FFP | RFP | RFC | EM]. Bedeutung: FFC: First Fill - Complete (Beendigung einer Einzelabgabe) | FFP: First Fill - Part Fill (1. Teilabgabe oder Besorgerprozess) | RFP: Refill - Part Fill (weitere Teilabgabe) | RFC: Refill - Complete (letzte Teilabgabe) | EM: Emergency Supply.",
       "min" : 1,
       "mustSupport" : true,
       "binding" : {
@@ -575,14 +575,14 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationDispense.whenHandedOver",
       "path" : "MedicationDispense.whenHandedOver",
-      "short" : "Der Zeitpunkt, zu dem das abgegebene Produkt dem Patienten oder seinem Vertreter zur Verfügung gestellt wurde.",
+      "short" : "Der Zeitpunkt, zu dem das Arzneimittel aushändigt wurde. Kann vom Erstellzeitpunkt der Durchgeführten Abgabe abweichen (z.B. bei Nacherfassung der Abgabe).",
       "min" : 1,
       "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.note",
       "path" : "MedicationDispense.note",
-      "short" : "Zusätzliche Informationen zur Abgabe, die nicht anders dokumentiert werden kann.",
+      "short" : "Zusätzliche Informationen zur Abgabe, die nicht die Dosierung betreffen.",
       "max" : "1",
       "mustSupport" : true
     },
@@ -602,7 +602,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "ordered" : false,
         "rules" : "closed"
       },
-      "short" : "Gibt an, wie das abgegebene Arzneimittel vom Patienten einzunehmen ist. \nDer Apotheker überprüft die Medikamentenverordnung vor der Abgabe und passt die Dosierungsanweisung gegebenenfalls auf Grundlage des tatsächlich abgegebenen Produkts an.",
+      "short" : "Gibt an, wie das abgegebene Arzneimittel vom Patienten einzunehmen ist. Diese kann, sofern ein zugehöriger Planeintrag und eine Geplante Abgabe vorliegen, von der dort angegebenen Dosierung abweichen.",
       "min" : 1,
       "mustSupport" : true
     },
