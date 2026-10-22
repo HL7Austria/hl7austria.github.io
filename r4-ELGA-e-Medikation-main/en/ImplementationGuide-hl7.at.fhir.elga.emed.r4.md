@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-21T15:51:37+00:00",
+  "date" : "2026-10-22T07:17:51+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -2111,15 +2111,6 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "actors.html"
-        }],
-        "nameUrl" : "actors.html",
-        "title" : "Akteure",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "workflowmanagement.html"
         }],
         "nameUrl" : "workflowmanagement.html",
@@ -2156,21 +2147,12 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "overview_use_case.html"
+          "valueUrl" : "overview_sub_use_case.html"
         }],
-        "nameUrl" : "overview_use_case.html",
-        "title" : "Overview Use Case",
+        "nameUrl" : "overview_sub_use_case.html",
+        "title" : "Use Cases Übersicht (fachlich und technisch)",
         "generation" : "markdown",
         "page" : [{
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-            "valueUrl" : "overview_sub_use_case.html"
-          }],
-          "nameUrl" : "overview_sub_use_case.html",
-          "title" : "Use Cases Übersicht (fachlich und technisch)",
-          "generation" : "markdown"
-        },
-        {
           "extension" : [{
             "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
             "valueUrl" : "Sub_UC_eMed_01.html"

@@ -9,7 +9,7 @@ Für ELGA-Teilnehmer (bzw. deren Vertretungen) erfolgt der schreibende Zugriff i
 Der schreibende Zugriff umfasst folgende Bearbeitungen:
 
 * **GDA** können **Durchgeführte Abgaben** 
-* [erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-schreiben-dispense-write) 
+* [erstellen](Sub_UC_eMed_05.md#durchgeführte-abgabe-schreiben-dispense-write) 
  
 * [mit ELGA-Kontaktbestätigung](Sub_UC_eMed_05.md#variante-a-durchgeführte-abgabe-mit-elga-kontaktbestätigung-schreiben)
 
@@ -29,7 +29,7 @@ Die **fachlichen Varianten der Erfassung** und die Inhalte von **Durchgeführten
 * [Teilabgaben erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_02---teilabgaben-erfassen)
 * [Besorgerprozess](Sub_UC_eMed_05.md#sub_uc_emed_05_01_03---besorgerprozess)
 * [Leerabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_04-leerabgabe-erfassen)
-* [Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen)
+* [Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen)
 * [Durchgeführte Abgabe nacherfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_06---durchgeführte-abgabe-nacherfassen)
 * [Substitution eines Arzneimittels erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_07-substitution-eines-arzneimittels-erfassen)
 
@@ -78,7 +78,7 @@ AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
 
 #### Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen
 
-Eine vollständige Einzelabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordnete Arzneimenge für eine Einlösung vollständig abgegeben wird. Existiert keine zugehörige **Geplante Abgabe**, ist [Sub_UC_eMed_05_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen) anzuwenden.
+Eine vollständige Einzelabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordnete Arzneimenge für eine Einlösung vollständig abgegeben wird. Existiert keine zugehörige **Geplante Abgabe**, ist [Sub_UC_eMed_05_01_05 - Durchgeführte Abgabe ohne Bezug zu einer Geplanten Abgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_05---durchgeführte-abgabe-ohne-bezug-zu-einer-geplanten-abgabe-erfassen) anzuwenden.
 
 Bei einer vollständigen Einzelabgabe muss eine [Durchgeführte Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) wie folgt erstellt werden:
 
@@ -93,7 +93,7 @@ Ermöglicht die **Geplante Abgabe** **mehrere Einlösungen** (**MedicationReques
 
 Eine Teilabgabe liegt vor, wenn die in der **Geplanten Abgabe** verordneten Arzneimenge für eine Einlösung nicht vollständig abgegeben wird, weil nur ein Teil der verordneten Arzneimenge eingelöst werden soll oder kann.
 
-Sonderfälle von Teilabgaben sind Besorgerprozess (siehe [Sub_UC_eMed_05_01_03 - Besorgerprozess](Sub_UC_eMed_05_01_03---besorgerprozess)) und Leerabgabe (siehe [Sub_UC_eMed_05_01_05 Leerabgabe erfassen](Sub_UC_eMed_05.md#Sub_UC_eMed_05_01_05-leerabgabe-erfassen)).
+Sonderfälle von Teilabgaben sind Besorgerprozess (siehe [Sub_UC_eMed_05_01_03 - Besorgerprozess](Sub_UC_eMed_05.md#sub_uc_emed_05_01_03---besorgerprozess)) und Leerabgabe (siehe [Sub_UC_eMed_05_01_04 Leerabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_04-leerabgabe-erfassen)).
 
 Für **jede** Teilabgabe muss eine [Durchgeführte Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) wie folgt erstellt werden:
 
@@ -159,9 +159,9 @@ In folgenden Fällen liegt bei der Erfassung einer [Durchgeführte Abgaben](Stru
 * **Durchgeführte Abgaben**, die zwar auf einem Rezept basieren, wofür jedoch keine **Geplante Abgabe** in der e-Medikation gespeichert wurde (z.B. verschreibender GDA ohne ELGA-Anbindung)
 * **Geplante Abgabe** ist bereits abgeschlossen, abgelaufen oder storniert.
 
-Die Felder authorizingPrescription[geplanteabgabe] für die Referenz auf die zugehörige **Geplante Abgabe** bleibt leer. Falls ein Planeintrag vorhanden ist, kann dieser in authorizingPrescription[planeintrag] referenziert werden, ansonsten bleibt auch dieser leer. Ein berechtigter GDA kann im Nachhinein einen Bezug zwischen der **Durchgeführten Abgabe** und einem **Planeintrag** herstellen, (siehe [Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellen)).
+Die Felder authorizingPrescription[geplanteabgabe] für die Referenz auf die zugehörige **Geplante Abgabe** bleibt leer. Falls ein Planeintrag vorhanden ist, kann dieser in authorizingPrescription[planeintrag] referenziert werden, ansonsten bleibt auch dieser leer. Ein berechtigter GDA kann im Nachhinein einen Bezug zwischen der **Durchgeführten Abgabe** und einem **Planeintrag** herstellen, (siehe [Sub_UC_eMed_05_03 - Bezug zu einem Planeintrag herstellen/entfernen](Sub_UC_eMed_05.md#sub_uc_emed_05_03---bezug-zu-einem-planeintrag-herstellenentfernen)).
 
-Analog zu [Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen](Sub_UC_eMed_05.md#Sub_UC_eMed_05_01_01---vollständige-einzelabgabe-erfassen) gilt bei der Erstellung der **Durchgeführten Abgabe**:
+Analog zu [Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_01---vollständige-einzelabgabe-erfassen) gilt bei der Erstellung der **Durchgeführten Abgabe**:
 
 * ****type****: **FFC (First Fill – Complete)**
 * ****status****: **completed**
@@ -178,7 +178,7 @@ Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Ref
 
 ### Durchgeführte Abgabe schreiben (Dispense-Write)
 
-Ein GDA dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer [Durchgeführten Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) (siehe [Sub_UC_eMed_05_01_01 Durchgeführte Abgaben erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_01-durchgeführte-abgaben-erfassen)).
+Ein GDA dokumentiert die Abgabe eines Arzneimittels für einen ELGA-Teilnehmer in einer [Durchgeführten Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) (siehe [Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen)).
 
 Je nachdem, ob eine ELGA-Kontaktbestätigung vorliegt, werden beim schreibenden Zugriff einer **Durchgeführten Abgabe** folgende Zugriffsvarianten unterschieden.
 

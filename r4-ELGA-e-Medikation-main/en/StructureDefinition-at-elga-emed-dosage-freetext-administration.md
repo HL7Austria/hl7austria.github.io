@@ -39,7 +39,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageFreeTextAdministration",
   "title" : "AT ELGA e-Medikation Freitext-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-21T15:51:37+00:00",
+  "date" : "2026-10-22T07:17:51+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

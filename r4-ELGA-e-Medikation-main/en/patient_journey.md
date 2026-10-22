@@ -27,8 +27,8 @@ Beispiele
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
-*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
-*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search) 
 *  [Sub_UC_eMed_01_01_01 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan) 
 
 ##### Journey-01-01: Request 01 - Medikationsplan abrufen
@@ -75,15 +75,15 @@ Dr. Hausärztin erstellt zwei Medikationsplaneinträge und klärt den Patienten 
 Beispiele
 
 *  **Planeinträge erstellen:** 
-*  [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](MedicationRequest-At-Emed-Journey-Planeintrag-01-Ramipril-v1.md) 
-*  [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](MedicationRequest-At-Emed-Journey-Planeintrag-02-Magistral-Dexpanthenol-v1.md) 
+*  [Planeintrag 1: Ramipril 5 mg Tabletten, 1 x täglich morgens (Dauermedikation)](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md#MedicationRequest_5e947f71-6881-46cc-9b06-81a1743aa674) 
+*  [Planeintrag 2: Dexpanthenol-5-%-Salbe, 2 × täglich für 3 Wochen, dünn auftragen](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md#MedicationRequest_7f1294a2-f592-4547-881c-c15d1debc165) 
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan ergänzt mit 2 Planeinträgen](List-At-Emed-Journey-List-Medikationsplan-v1.md) 
+*  [Medikationsplan ergänzt mit 2 Planeinträgen](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md#List_4cb4dceb-173f-461a-a267-683ec33e4be1) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) 
-*  [Dr. Hausärztin](Practitioner-At-Emed-Example-PractitionerRole-01.md) 
+*  [Dr. Hausärztin](PractitionerRole-At-Emed-Example-PractitionerRole-01.md) 
  
 
 Use Cases
@@ -169,9 +169,9 @@ Beispiele
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
-*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
-*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
-*  [Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)](Sub_UC_eMed_05.md#zugriffsvariante-a-durchgeführte-abgabe-mit-kontakt-schreiben) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)](Sub_UC_eMed_05.md#variante-a-durchgeführte-abgabe-mit-elga-kontaktbestätigung-schreiben) 
 *  [Sub_UC_eMed_05_01_01 - Vollständige Einzelabgabe erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_01---vollständige-einzelabgabe-erfassen) 
 *  [Sub_UC_eMed_05_01_03 - Besorgerprozess](Sub_UC_eMed_05.md#sub_uc_emed_05_01_03---besorgerprozess) 
 
@@ -199,9 +199,9 @@ Beispiele
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
-*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
-*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
-*  [Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)](Sub_UC_eMed_05.md#zugriffsvariante-a-durchgeführte-abgabe-mit-kontakt-schreiben) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_05_01 - Durchgeführte Abgabe schreiben (Dispense-Write)(Variante A: Zugriff mit Kontakt)](Sub_UC_eMed_05.md#variante-a-durchgeführte-abgabe-mit-elga-kontaktbestätigung-schreiben) 
 *  [Sub_UC_eMed_05_01_03 - Besorgerprozess](Sub_UC_eMed_05.md#sub_uc_emed_05_01_03---besorgerprozess) 
 
 #### Journey-03: Ablauf - Abgabe in der Apotheke (Teil 2)
@@ -227,8 +227,8 @@ Beispiele
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
-*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
-*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search) 
 
 #### Journey-04: Ablauf - Patient ruft Medikationsplan ab
 
@@ -248,10 +248,10 @@ Dr. Hausärztin weist Herrn Mustermann an, Ramipril vor der Operation vorüberge
 Beispiele
 
 *  **Planeintrag pausieren:** 
-*  [Planeintrag 1: Ramipril (Dauermedikation) pausieren](MedicationRequest-At-Emed-Journey-Planeintrag-01-Ramipril-v2.md) 
+*  [Planeintrag 1: Ramipril (Dauermedikation) pausieren](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md#MedicationRequest_6bacfe23-d469-4945-bf3c-90c7e647aa52) 
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan: 1 Planeintrag aktualisiert, 1 Planeintrag unverändert](List-At-Emed-Journey-List-Medikationsplan-v3.md) 
+*  [Medikationsplan: 1 Planeintrag aktualisiert, 1 Planeintrag unverändert](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md#List_4cb4dceb-173f-461a-a267-683ec33e4be1) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.md) 
@@ -260,8 +260,8 @@ Beispiele
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
-*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_01---geplante-abgaben-lesen-prescription-search) 
-*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_07_02---durchgeführte-abgaben-lesen-dispense-search) 
+*  [Sub_UC_eMed_03_01 - Geplante Abgaben lesen (Prescription-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search) 
+*  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search) 
 *  [Sub_UC_eMed_02_05 - Planeintrag pausieren oder reaktivieren](Sub_UC_eMed_02.md#sub_uc_emed_02_05---planeintrag-pausieren-oder-reaktivieren) 
 *  [Sub_UC_eMed_02_04 - Planeintrag unverändert zur Kenntnis nehmen](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-unverändert-zur-kenntnis-nehmen) 
 
@@ -288,13 +288,13 @@ Zusätzlich wird die pausierte Ramipril Medikation wieder aufgenommen, aber in d
 Beispiele
 
 *  **Planeintrag anpassen:** 
-*  [Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern](MedicationRequest-Planeintrag-03-Wirkstoff-Metamizol-vPOST.md) 
+*  [Neuer Planeintrag 1: Ramipril aktivieren + Dosierung ändern](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md#MedicationRequest_6bacfe23-d469-4945-bf3c-90c7e647aa52) 
  
 *  **Planeintrag hinzufügen:** 
-*  [Neuer Planeintrag 3: Wirstoff Metamizol (in Arbeit)](MedicationRequest-Planeintrag-03-Wirkstoff-Metamizol-vPOST.md)  
+*  [Neuer Planeintrag 3: Wirstoff Metamizol (in Arbeit)](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md#MedicationRequest_6852930e-6883-4301-b5c1-c142b746af8f)  
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan: Planeintrag 1 geändert, Planeintrag 2 unverändert, Planeintrag 3 neu hinzugefügt](List-At-Emed-Journey-List-Medikationsplan-v4.md) 
+*  [Medikationsplan: Planeintrag 1 geändert, Planeintrag 2 unverändert, Planeintrag 3 neu hinzugefügt](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md#List_4cb4dceb-173f-461a-a267-683ec33e4be1) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx.md) 
@@ -303,8 +303,8 @@ Beispiele
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
-*  [Sub_UC_eMed_02.html#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen](Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen) 
-*  [Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern](Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern) 
+*  [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen) 
+*  [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern) 
 *  Referenz auf Wirkstoffangabe im Medikationsplan: in Arbeit.  
 *  [Sub_UC_eMed_02_04 - Planeintrag unverändert zur Kenntnis nehmen](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-unverändert-zur-kenntnis-nehmen) 
 
@@ -331,22 +331,22 @@ Der Behandlungszeitraum für die **Dexpanthenol-Salbe** ist zwischenzeitlich **a
 Beispiele
 
 *  **Planeintrag anpassen:** 
-*  [Neuer Planeintrag 3: passendes Arzneimittel zur Wirkstoffeangabe verodnen](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-03.md) 
+*  [Neuer Planeintrag 3: passendes Arzneimittel zur Wirkstoffeangabe verodnen](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md#MedicationRequest_7128c60c-126d-42b2-b575-dc26a2324b8b) 
  
 *  **abgelaufenen Planeintrag bestätigen:** (keine Änderung erforderlich) 
-*  [Neuer Planeintrag 2: Statusänderung wurde bereits durch Fachanwendung vorgenommen](MedicationRequest-At-Emed-Journey-07-01-Mr-Planeintrag-02.md) 
+*  [Neuer Planeintrag 2: Statusänderung wurde bereits durch Fachanwendung vorgenommen](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md#MedicationRequest_55e4be12-0d10-454c-a85f-cfb5f849e391) 
  
 *  **Medikationsplan aktualisieren:** 
-*  [Medikationsplan: Planeintrag 1 unverändert, Planeintrag 2 abgelaufen, Planeintrag 3: Wirkstoffangabe mit Arzneimittel ersetzt](List-At-Emed-Journey-07-01-List-Medikationsplan.md) 
+*  [Medikationsplan: Planeintrag 1 unverändert, Planeintrag 2 abgelaufen, Planeintrag 3: Wirkstoffangabe mit Arzneimittel ersetzt](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md#List_4cb4dceb-173f-461a-a267-683ec33e4be1) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle](Bundle-At-Emed-Journey-07-01-Bundle-Medikationsplan-Tx.md) 
+*  [Transaction Bundle](Bundle-At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx.md) 
  
 
 Use Cases
 
 *  [Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) 
-*  [Sub_UC_eMed_02.html#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern](Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern) 
+*  [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern) 
 *  Abgelaufener Planeintrag: zu verlinken.  
 *  [Sub_UC_eMed_02_04 - Planeintrag unverändert zur Kenntnis nehmen](Sub_UC_eMed_02.md#sub_uc_emed_02_04---planeintrag-unverändert-zur-kenntnis-nehmen) 
 
@@ -357,10 +357,10 @@ Zuletzt erstellt Dr. Urlaubsvertretung eine **Geplante Abgabe** für zwei Packun
 Beispiele
 
 *  **Geplante Abgaben erstellen:** 
-*  [Geplante Abgabe zu Planeintrag 3 (Metagelan )](MedicationRequest-At-Emed-Journey-07-02-Mr-Geplante-Abgabe-03.md) 
+*  [Geplante Abgabe zu Planeintrag 3 (Metagelan )](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle mit Geplanter Abgabe](Bundle-At-Emed-Journey-07-02-Bundle-Geplante-Abgaben-Tx.md) 
+*  [Transaction Bundle mit Geplanter Abgabe](Bundle-At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx.md) 
  
 
 Use Cases

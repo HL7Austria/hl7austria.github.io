@@ -10,7 +10,7 @@ Er enthält genau ein Arzneimittel mit dessen Dosierung, wobei das Arzneimittel 
 
 Relevante Use Cases:
 
-* [Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)](Sub_UC_eMed_02.md#%E2%80%8Btechnische-use-cases-für-medikationsplan-schreiben-uc_emed_02)
+* [Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)](Sub_UC_eMed_02.md)
 
 **Usages:**
 
@@ -51,7 +51,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-21T15:51:37+00:00",
+  "date" : "2026-10-22T07:17:51+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
