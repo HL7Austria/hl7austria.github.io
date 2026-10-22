@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-22T09:37:30+00:00",
+  "date" : "2026-10-22T09:48:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1007,6 +1007,38 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-6bacfe23-d469-4945-bf3c-90c7e647aa52.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"
+      },
+      "name" : "Beispiel Journey 01-02: Planeintrag 1",
+      "description" : "Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
+      },
+      "name" : "Beispiel Journey 01-02: Planeintrag 2",
+      "description" : "Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.html"
       }],
       "reference" : {
@@ -1207,6 +1239,22 @@
       "name" : "Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle",
       "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag beinhaltet.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "MedicationRequest-7128c60c-126d-42b2-b575-dc26a2324b8b.html"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/7128c60c-126d-42b2-b575-dc26a2324b8b"
+      },
+      "name" : "Beispiel Journey 06-02: Planeintrag 3",
+      "description" : "Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
     },
     {
       "extension" : [{
