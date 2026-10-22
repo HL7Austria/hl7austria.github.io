@@ -2,7 +2,7 @@
 
 ## ​Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)
 
-Dieser technische Use Case beschreibt den schreibenden Zugriff [berechtigter Akteure](actors.md#rollen-und-berechtigungen) auf den Medikationsplan eines ELGA-Teilnehmers.
+Dieser technische Use Case beschreibt den schreibenden Zugriff berechtigter Akteure auf den Medikationsplan eines ELGA-Teilnehmers.
 
 Für ELGA-Teilnehmer (bzw. deren Vertretungen) erfolgt der schreibende Zugriff im Rahmen der Ausübung von Teilnehmerrechten ausschließlich über das ELGA-Zugangsportal. Für GDA erfolgt der schreibende Zugriff über die e-Medikation-Schnittstelle des jeweiligen GDA-Systems.
 

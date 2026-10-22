@@ -25,7 +25,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div><a name=\"MedicationRequest_At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03\"> </a>TODO: Some Narrative</div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03\"> </a>TODO: Some Narrative</div>"
       },
       "contained" : [{
         "resourceType" : "Medication",

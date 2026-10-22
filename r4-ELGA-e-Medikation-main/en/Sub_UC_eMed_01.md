@@ -2,7 +2,7 @@
 
 ## ​Technische Use Cases für Medikationsplan lesen (UC_eMed_01)
 
-Dieser technische Use Case beschreibt den lesenden Zugriff [berechtigter Akteure](actors.md#rollen-und-berechtigungen) auf den Medikationsplan eines ELGA-Teilnehmers.
+Dieser technische Use Case beschreibt den lesenden Zugriff berechtigter Akteure auf den Medikationsplan eines ELGA-Teilnehmers.
 
 Für ELGA-Teilnehmer und deren Vertretungen erfolgt der lesende Zugriff über das ELGA-Zugangsportal. Für die übrigen Akteure erfolgt der lesende Zugriff über die e-Medikations-Schnittstelle des jeweiligen GDA-Systems.
 

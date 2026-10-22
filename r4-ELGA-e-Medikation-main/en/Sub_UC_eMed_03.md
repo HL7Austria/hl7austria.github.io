@@ -2,7 +2,7 @@
 
 ## ​Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03)
 
-Dieser technische Use Case beschreibt den lesenden Zugriff [berechtigter Akteure](actors.md#rollen-und-berechtigungen) auf:
+Dieser technische Use Case beschreibt den lesenden Zugriff berechtigter Akteure auf:
 
 * [Geplante Abgaben](Sub_UC_eMed_03.md#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search), um vorgesehene Arzneimittelabgaben einzusehen,
 * [Durchgeführte Abgaben](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search), um bereits erfolgte Arzneimittelabgaben einzusehen
