@@ -4,11 +4,13 @@
 
 ### Überblick der Statusänderungen der e-Medikation Ressourcen
 
+![](Workflowmanagement_status_abhaengigkeiten.svg) 
+
 #### Status des List.entry.flags im Medikationsplan
 
-Ein **Medikationsplaneintrag** kann, abhängig vom jeweiligen ([Use Case für Medikationsplan schreiben](Sub_UC_eMed_02.md)), unterschiedliche Status einnehmen. Dieser Status wird sowohl in der MedicationRequest-Ressource selbst als auch auf List-Ebene im Element List.entry.flag dokumentiert.
+Ein **Medikationsplaneintrag** kann, abhängig vom jeweiligen ([Use Case für Medikationsplan schreiben](Sub_UC_eMed_02.md)), unterschiedliche Status einnehmen. Dieser Status wird sowohl in der MedicationRequest-Ressource selbst als auch auf **List-Ebene** im **List.entry.flag** dokumentiert.
 
-Das **flag**-Element eines Entries der List-Ressource beschreibt die **Art der Änderung eines Mediaktionsplaneintrags auf Listenebene** und kann folgende Status einnehmen (siehe [CodeSystem-ElgaListEntryFlagCS](CodeSystem-ElgaListEntryFlagCS.md)): 
+Das **List.entry.flag** kann folgende Status einnehmen (siehe [CodeSystem-ElgaListEntryFlagCS](CodeSystem-ElgaListEntryFlagCS.md)): 
 
 
 | | |
@@ -41,7 +43,7 @@ Im Kontext des Medikationsplans kann dieses Element folgende Statuswerte annehme
 | :--- | :--- |
 | **active** | Der Planeintrag dokumentiert eine aktuell einzunehmende Medikation. |
 | **on-hold** | Der Planeintrag dokumentiert ein pausierte Medikation (aktuell nicht einzunehmen). |
-| **stopped** | Der Planeintrag ist nicht länger aktiv. Die Medikation wird nicht weiter verordnet. Dies gilt unabhängig davon, ob der Behandlungszeitraum abgelaufen ist, die Medikation vorzeitig abgesetzt wurde. Der Planeintrag wird damit abgeschlossen (Endzustand). (*) |
+| **stopped** | Der Planeintrag ist nicht länger aktiv. Die Medikation wird nicht weiter verordnet. Dies gilt unabhängig davon, ob der Einnahmezeitraum abgelaufen ist oder die Medikation vorzeitig abgesetzt wurde. Der Planeintrag wird damit abgeschlossen (Endzustand). (*) |
 | **entered-in-error** | Der Planeintrag ist storniert. Der Planeintrag wird damit abgeschlossen (Endzustand). |
 
 (*) Abweichung vom verpflichtenden Value-Set [medicationrequest-status](https://hl7.org/fhir/R4/valueset-medicationrequest-status.html): Der Status **stopped** vereint die Defintionen von **completed** und **stopped** und entspricht dem Stataus **ended** aus FHIR R6.
@@ -51,16 +53,22 @@ Im Kontext des Medikationsplans kann dieses Element folgende Statuswerte annehme
 Da der Status eines Medikationsplaneintrags im Medikationsplan auf **zwei Ebenen** geführt wird (List.entry.flag und MedicationRequest.status), müssen diese beiden Ebenen zur Sicherstellung einer konsistenten Verarbeitung inhaltlich aufeinander abgestimmt sein. Die folgende Tabelle beschreibt die geltenden Konsistenzregeln zwischen List.entry.flag und MedicationRequest.status in Abhängigkeit vom jeweiligen Use Case: 
 
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| Neuen Planeintrag zum Medikationsplan hinzufügen | new | active | Neuer Planeintrag wird erstellt und ist aktiv- der Behandlungszeitraum kann in der Zukunft liegen |
-| new | on-hold | Neuer Planeintrag wird erstellt, wird aber pausiert | |
-| Bestehenden Planeintrag im Medikationsplan beibehalten/zur Kenntnis nehmen | unchanged | active | Bestehender Planeintrag bleibt unverändert- der Behandlungszeitraum darf noch nicht abgelaufen sein |
-| unchanged | on-hold | Bestehender Planeintrag bleibt unverändert pausiert- der Behandlungszeitraum darf noch nicht abgelaufen sein | |
-| Bestehenden Planeintrag im Medikationsplan ändern | changed | active | Bestehender Planeintrag wird geändert |
-| changed | on-hold | Bestehender Planeintrag wird geändert und pausiert | |
-| removed | stopped | Bestehender Planeintrag wird  dauerhaft gestoppt. Die Medikation wurde  abgesetzt. | |
-| removed | entered-in-error | Bestehender Planeintrag wird aufgrund eines Fehlers storniert | |
+* **removed**: Neuen Planeintrag zum Medikationsplan hinzufügen
+  * **entered-in-error**: **new**
+  * Bestehender Planeintrag wird aufgrund eines Fehlers storniert.: **active**
+  * ?: Neuer Planeintrag wird erstellt und ist aktiv. Der Einnahmezeitraum kann in der Zukunft liegen.
+* **removed**: Bestehenden Planeintrag im Medikationsplan beibehalten/zur Kenntnis nehmen
+  * **entered-in-error**: **unchanged**
+  * Bestehender Planeintrag wird aufgrund eines Fehlers storniert.: **active**
+  * ?: Bestehender Planeintrag bleibt unverändert. Der Einnahmezeitraum darf noch nicht abgelaufen sein.
+* **removed**: Bestehenden Planeintrag im Medikationsplan ändern
+  * **entered-in-error**: **changed**
+  * Bestehender Planeintrag wird aufgrund eines Fehlers storniert.: **active**
+  * ?: Bestehender Planeintrag wird geändert.
+* **removed**: Bestehenden Planeintrag aus Medikationsplan entfernen
+  * **entered-in-error**: **removed**
+  * Bestehender Planeintrag wird aufgrund eines Fehlers storniert.: **stopped**
+  * ?: Bestehender Planeintrag wird dauerhaft gestoppt. Die Medikation wird nicht weiter verordnet.
 
 #### Status der Geplanten Abgabe (MedicationRequest)
 
@@ -79,15 +87,20 @@ Eine [Geplante Abgabe](design_choices.md#geplante-abgabe-atelgaemedmedicationreq
 
 | | | | |
 | :--- | :--- | :--- | :--- |
-| Kassenrezept | • 1 Monat ab Beginn des Gültigkeitszeitraums (ab Datum der Verordnung)z.B. Rezept wurde am 15.5. ausgestellt und kann bis inkl. 15.6. eingelöst werden | 1× (kann nur in 1 Apotheke eingelöst werden) | Im Zuge des "Besorgerprozesses" (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert. |
-| Privatrezept | Gültigkeit festgelegt durch verordnenden GDA:• mindestens: 1 Monat ab Beginn des Gültigkeitszeitraums• maximal: 1 Jahr ab Beginn des Gültigkeitszeitraums (1. Einlösung muss innerhalb eines Monats ab Datum der Verordnung erfolgen) | Bis zu 6× (durch den Verordner festgelegt); kann in mehreren Apotheken eingelöst werden (je nach Anzahl der Einlösemöglichkeiten) | Keine Verlängerung möglich. |
-| Substitutionsrezept | Gültigkeit festgelegt durch verordnenden GDA:• beliebige Dauer ab Beginn des Gültigkeitszeitraums• Wenn kein Datum angegeben: Beginn des Gültigkeitszeitraums + 1 Monat | 1× | Keine Verlängerung möglich. |
+| Kassenrezept | * 1 Monat ab Beginn des Gültigkeitszeitraums (ab Datum der Verordnung)
+z.B: Rezept wurde am 15.5. ausgestellt und kann bis inkl. 15.6. eingelöst werden. | 1× (kann nur in 1 Apotheke eingelöst werden) | Im Zuge des „Besorgerprozesses“ (Medikament muss erst bestellt werden) wird bei einer gespeicherten Teilabgabe die gesamte Gültigkeitsdauer auf 3 Monate verlängert. |
+| Privatrezept | Gültigkeit festgelegt durch verordnenden GDA:* Mindestens: 1 Monat ab Beginn des Gültigkeitszeitraums
+*  Maximal: 1 Jahr ab Beginn des Gültigkeitszeitraums (1. Einlösung muss innerhalb eines Monats ab Datum der Verordnung erfolgen) 
+ | Bis zu 6× (durch den Verordner festgelegt); kann in mehreren Apotheken eingelöst werden (je nach Anzahl der Einlösemöglichkeiten) | Keine Verlängerung möglich. |
+| Substitutionsrezept | Gültigkeit festgelegt durch verordnenden GDA:* Beliebige Dauer ab Beginn des Gültigkeitszeitraums
+*  Wenn kein Datum angegeben: Beginn des Gültigkeitszeitraums + 1 Monat 
+ | 1× | Keine Verlängerung möglich. |
 
-[^1] Die Anzahl der Einlösungen gibt an, wie oft ein Rezept eingelöst werden darf. Ist keine Einlösung mehr möglich erhält die zugehörige **Geplante Abgabe** den Status eingelöst (**completed**).
- [^2] Ist der Gültigkeitszeitraum überschritten erhält die zugehörige **Geplante Abgabe** den Status abgelaufen (**stopped**). Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe kann in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert werden. 
+[1] Die Anzahl der Einlösungen gibt an, wie oft ein Rezept eingelöst werden darf. Ist keine Einlösung mehr möglich erhält die zugehörige **Geplante Abgabe** den Status eingelöst (**completed**).
+ [2] Ist der Gültigkeitszeitraum überschritten erhält die zugehörige **Geplante Abgabe** den Status abgelaufen (**stopped**). Das Einlösen eines Rezepts nach Ablauf der Gültigkeit wird durch e-Medikation nicht verhindert. Die Abgabe kann in diesem Fall ohne Verordnungsbezug in e-Medikation gespeichert werden. 
 
 
-#### Status der Durchgeführten Abgabe (MedicationDispense)
+#### Status des MedicationDispense in der Durchgeführten Abgabe
 
 Eine [Durchgeführte Abgabe](design_choices.md#durchgeführte-abgabe-atelgaemedmedicationdispensedurchgefuehrteabgabe-medicationdispense) kann, abhängig vom jeweiligen [Use Case für Durchgeführte Abgabe schreiben](Sub_UC_eMed_05.md), unterschiedliche Status einnehmen (Element **status**).
 
@@ -95,20 +108,20 @@ Eine [Durchgeführte Abgabe](design_choices.md#durchgeführte-abgabe-atelgaemedm
 | :--- | :--- |
 | **completed** | Die Durchgeführte Abgabe ist abgeschlossen (Einzel- oder Teilabgabe durchgeführt). |
 | **cancelled** | **Durchgeführte Abgabe**gecancelt (Leerabgabe): Der Patient benötigt die Medikation einer**Geplanten Abgabe**nicht. |
-| **entered-in-error** | Vorhandene**Durchgeführte Abgabe**(im Status**completed**oder**cancelled**) wird aufgrund eines Fehlers storniert (eine mögliche beendete**Geplante Abgabe**, wird dadurch wieder**aktiv**) |
+| **entered-in-error** | Vorhandene**Durchgeführte Abgabe**(im Status**completed**oder**cancelled**) wird aufgrund eines Fehlers storniert (eine mögliche abgeschlossene**Geplante Abgabe**, wird dadurch wieder**aktiv**) |
 
 #### Abhängigkeiten der Geplanten Abgabe und der Durchgeführten Abgaben
 
 | | | | | | | | | | |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Geplante Abgabe**basierend auf Planeintrag erfassen | active | Planeintrag bleibt active, unabhängig von Status der geplanten Abgabe (*) | active | OFFEN | z.B. 6 Einlösungen bei Privatrezept |   |   | noch keine bzw. noch nicht alle mögl. Einlösungen erfolgt (mit Status completed) |   |
-| **Geplante Abgabe**beenden (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der geplanten Abgabe (*) | completed | EINGELÖST | auf Basis der Durchgeführten Abgaben automatisch gesetzt durch Fachanwendung; dh. Alle möglichen Einlösungen sind abgechlossen (entweder completed oder cancelled) | completed | ABGEGEBEN | alle möglichen Einlösungen erfolgt | **Durchgeführte Abgabe**erfassen |
-| **Geplante Abgabe**stornieren | active | Planeintrag bleibt active, unabhängig von Status der geplanten Abgabe (*) | entered-in-error | STORNIERT | bei fehlerhafter Eingabe, wenn noch keine Abgabe durchgeführt |   |   | keine Durchgeführten Abgaben vorhanden |   |
-| **Geplante Abgabe**abgelaufen (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der geplanten Abgabe (*) | stopped | ABGELAUFEN | automatisch erkannt durch Fachanwendung | kein relevanter Status | kein relevanter Status | noch keine bzw. noch nicht alle mögl. Einlösungen erfolgtZu abgelaufenen geplanten Abgaben können keine Abgaben mehr gespeichert werden. Die (nachträgliche) Speicherung von Abgaben zu einem abgelaufenen Rezept kann im Anlassfall allerdings ohne Verordnungsbezug erfolgen. |   |
-| **Geplante Abgabe**nicht abgegeben (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der geplanten Abgabe (*) | cancelled | NICHT_ABGEGEBEN | automatisch, wenn alle Einlösungen im MedicationDispense den Status "cancelled" erhalten haben | cancelled | ABGESETZT | Apotheker dokumentiert in der Durchgeführten Abgabe, dass der Patient das Medikament in der geplanten Abgabe nicht einnimmt (mit Packungen 0) (entspricht der Leerabgabe).Kann wieder rückgängig gemacht werden (durch Storno) | **Durchgeführten Abgabe**abgesetzt |
+| **Geplante Abgabe**basierend auf Planeintrag erfassen | active | Planeintrag bleibt active, unabhängig von Status der Geplanten Abgabe (*) | active | OFFEN | z.B. 6 Einlösungen bei Privatrezept |   |   | noch keine bzw. noch nicht alle mögl. Einlösungen erfolgt (mit Status completed) |   |
+| **Geplante Abgabe**beenden (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der Geplanten Abgabe (*) | completed | EINGELÖST | auf Basis der Durchgeführten Abgaben automatisch gesetzt durch Fachanwendung; dh. Alle möglichen Einlösungen sind abgechlossen (entweder completed oder cancelled) | completed | ABGEGEBEN | alle möglichen Einlösungen erfolgt | **Durchgeführte Abgabe**erfassen |
+| **Geplante Abgabe**stornieren | active | Planeintrag bleibt active, unabhängig von Status der Geplanten Abgabe (*) | entered-in-error | STORNIERT | bei fehlerhafter Eingabe, wenn noch keine Abgabe durchgeführt |   |   | keine Durchgeführten Abgaben vorhanden |   |
+| **Geplante Abgabe**abgelaufen (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der Geplanten Abgabe (*) | stopped | ABGELAUFEN | automatisch erkannt durch Fachanwendung | kein relevanter Status | kein relevanter Status | noch keine bzw. noch nicht alle mögl. Einlösungen erfolgt.Zu abgelaufenen Geplanten Abgaben können keine Abgaben mehr gespeichert werden. Die (nachträgliche) Speicherung von Abgaben zu einem abgelaufenen Rezept kann im Anlassfall allerdings ohne Verordnungsbezug erfolgen. |   |
+| **Geplante Abgabe**nicht abgegeben (durch Fachanwendung) | active | Planeintrag bleibt active, unabhängig von Status der Geplanten Abgabe (*) | cancelled | NICHT_ABGEGEBEN | automatisch, wenn alle Einlösungen im MedicationDispense den Status "cancelled" erhalten haben | cancelled | ABGESETZT | Apotheker dokumentiert in der Durchgeführten Abgabe, dass der Patient das Medikament in der Geplanten Abgabe nicht benötigt (mit Packungen 0) (Leerabgabe).Eine Stornierung ist möglich. | **Durchgeführten Abgabe**abgesetzt |
 |   |   |   |   |   |   | entered-in-error | STORNIERT | bei fehlerhafter Eingabe | **Durchgeführte Abgabe**stornieren |
 
-(*) solange ein evtl. Behandlungszeitraum nicht überschritten
+(*) solange ein evtl. Einnahmezeitraum nicht überschritten
 
 #### Varianten der (Teil-)Abgabe
 
@@ -118,16 +131,15 @@ Im Element **MedicationDispense.type** einer Durchgeführten Abgabe wird die Art
 
 | | | | | |
 | :--- | :--- | :--- | :--- | :--- |
-| Einzelabgabe (einmalige Einlösemöglichkeit) | completed | Sofern**Geplante Abgabe**vorhanden, wird diese nach erfolgter Abgabe automatisch auf**completed**gesetzt. | type: FFC (First Fill - Complete)quantity:  x Packungenstatus: „completed“ | Abgabe abgeschlossen |
+| Einzelabgabe (einmalige Einlösemöglichkeit) | completed | Sofern**Geplante Abgabe**vorhanden, wird diese nach erfolgter Abgabe automatisch auf**completed**gesetzt. | type: FFC (First Fill - Complete)quantity: x Packungenstatus: „completed“ | Abgabe abgeschlossen |
 | Vollständige Einzelabgabe (bei mehrmaliger Einlösemöglichkeit) | activewenn letzte Einlösung abgeschlossen: completed | **Geplante Abgabe**bleibt nach erfolgter Abgabe**active**und wird erst nach der letzten möglichen Einlösung von der Fachanwendung automatisch auf**completed**gesetzt. | type: FFC (First Fill - Complete)quantity: x Packungenstatus: „completed“ | je Einlösung wird eine**Durchgeführte Abgabe**erstellt |
 | 1. Teilabgabe | active | **Geplante Abgabe**bleibt**active** | type: FFP (First Fill - Part Fill)quantity: x Packungenstatus: „completed“ | Je Teilabgabe wird eine**Durchgeführte Abgabe**erstellt.**Geplante Abgabe**kann nicht mehr in einer anderen Apotheke abgegeben werden |
-| Weitere Teilabgabe | active | **Geplante Abgabe**bleibt**active** | type: RFP (Refill - Part Fill)quantity: x Packungenstatus: „completed“ |   |
-| Letzte Teilabgabe | completed | **Geplante Abgabe**bleibt**active**, solange weitere Einlösungen möglich. Danach setzt die Fachanwendung den Status der**Geplanten Abgabe**auf**completed**. | type:  RFC (Refill - Complete)quantity:  x Packungenstatus: „completed“ |   |
-| "Besorgerprozess": Arzneimittel von Apotheke bestellt / zubereitet (ohne Abgabe) | active | **Geplante Abgabe**bleibt**active** | type: FFP (First Fill - Part Fill)quantity: 0 Packungen (wurden ausgegeben)status: „completed“ | Arzneimittel bestellt oder Magistrale Zubereitung in Vorbereitung. Geplante Abgabe kann nicht mehr in einer anderen Apotheke abgegeben werden |
-| "Besorgerprozess": Arzneimittel nach Teilabgaben von Apotheke bestellt (ohne Abgabe) | active | **Geplante Abgabe**bleibt**active** | type: FFP (Refill – Part Fill)quantity: 0 Packungen (wurden  ausgegeben)status: „completed“ | Arzneimittel nach bereits erfolgter Teilabgabe bestellt oder Magistrale Zubereitung in Vorbereitung. |
-| Leerabgabe beendet Einzelabgabe | cancelled | wenn alle möglichen Einlösungen mit**cancelled**gespeichert wurden, wird die zugehörige**Geplante Abgabe**automatisch auf**cancelled**gesetzt, sonst auf**completed**. | type: FFC (First Fill - Complete)quantity:  0 Packungenstatus: „cancelled“ | Das Arzneimittel einer geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. |
+| Weitere Teilabgabe | active | **Geplante Abgabe**bleibt**active** | type: RFP (Refill – Part Fill)quantity: x Packungenstatus: „completed“ |   |
+| Letzte Teilabgabe | completed | **Geplante Abgabe**bleibt**active**, solange weitere Einlösungen möglich. Danach setzt die Fachanwendung den Status der**Geplanten Abgabe**auf**completed**. | type: RFC (Refill - Complete)quantity: x Packungenstatus: „completed“ |   |
+| "Besorgerprozess": Arzneimittel von Apotheke bestellt / zubereitet (ohne Abgabe) | active | **Geplante Abgabe**bleibt**active** | type: FFP (First Fill - Part Fill)quantity: 0 Packungen (wurden ausgegeben)status: „completed“ | Arzneimittel bestellt oder Magistrale Zubereitung in Vorbereitung. |
+| "Besorgerprozess": Arzneimittel nach Teilabgaben von Apotheke bestellt (ohne Abgabe) | active | **Geplante Abgabe**bleibt**active** | type: FFP (Refill – Part Fill)quantity: 0 Packungen (wurden ausgegeben)status: „completed“ | Arzneimittel nach bereits erfolgter Teilabgabe bestellt oder Magistrale Zubereitung in Vorbereitung. |
+| Leerabgabe beendet Einzelabgabe | cancelled | wenn alle möglichen Einlösungen mit**cancelled**gespeichert wurden, wird die zugehörige**Geplante Abgabe**automatisch auf**cancelled**gesetzt, sonst auf**completed**. | type: FFC (First Fill - Complete)quantity: 0 Packungenstatus: „cancelled“ | Das Arzneimittel einer Geplanten Abgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. |
 | Leerabgabe beendet Teilabgabe | completed oder cancelled | wenn alle möglichen Einlösungen mit**cancelled**gespeichert wurden, wird die zugehörige**Geplante Abgabe**automatisch auf**cancelled**gesetzt, sonst auf**completed**. | type: RFC (Refill - Complete)quantity: 0 Packungenstatus: „cancelled“ | Teilabgabe wird vom Patienten nicht benötigt und daher als Leerabgabe vermerkt. Dieser Einlösevorgang ist damit beendet. |
-| Notabgabe |  - | keine**Geplante Abgabe**vorhanden | type: FFC (First Fill - Complete)quantity: x Packungenstatus: „completed“ | Das Medikament wurde ohne zugrundeliegende**Geplante Abgabe**abgegeben.Es wird kein Rezept nachgereicht |
-| Rezept wird nachgebracht |  - | keine**Geplante Abgabe**vorhanden | type: FFC (First Fill - Complete)quantity: x Packungenstatus: „completed“ | Medikament wurde abgegeben, das formale Rezept wird später nachgereicht. Planeintrag kann nacherfasst werden. |
-| OTC Abgabe (rezeptfrei) |  - | keine**Geplante Abgabe**vorhanden | type: FFC (First Fill - Complete)quantity: x Packungenstatus: „completed“ | Rezeptfreies MedA52:E57ikament wurde abgegeben. Ein Planeintrag für Wechselwirkungsrelevante Medikatmente soll nacherfasst werden. |
+| Notabgabe | - | keine**Geplante Abgabe**vorhanden | type: FFC (First Fill - Complete)quantity: x Packungenstatus: „completed“ | Das Medikament wurde ohne zugrundeliegende**Geplante Abgabe**abgegeben. Ein Planeintrag kann nacherfasst werden. |
+| OTC Abgabe (rezeptfrei) | - | keine**Geplante Abgabe**vorhanden | type: FFC (First Fill - Complete)quantity: x Packungenstatus: „completed“ | Rezeptfreies Medikament wurde abgegeben. Ein Planeintrag kann nacherfasst werden. |
 

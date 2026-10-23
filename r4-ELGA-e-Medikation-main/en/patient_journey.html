@@ -48,8 +48,8 @@
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"10.6"}
-    h3,h4,h5,h6{--heading-prefix:"10.6"}</style>
+    <style type="text/css">h2{--heading-prefix:"11.6"}
+    h3,h4,h5,h6{--heading-prefix:"11.6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -117,6 +117,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
       </li>
       <li>
         <a href="workflowmanagement.html">Workflowmanagement</a>
@@ -253,6 +256,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
+
 <style>
 .no-number {
     --heading-prefix: none;
@@ -275,53 +279,91 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   background: #e4e4e4;
 }
 
+/* Tabellencontainer mit horizontalem und vertikalem Scrollen */
 .table-responsive {
-display: block;
-width: 100%;
-overflow-x: auto;
-max-height: 600px;
-overflow-y: auto;
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
+
 .table-responsive > table {
-width: 100%;}
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid #e8eef0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
+}
+
+/* Tabellenzellen */
 .table-responsive th,
 .table-responsive td {
   padding: 15px;
-  background: #f5f5f5;
+  color: #202c33;
+  background: #ffffff;
+  text-align: left;
 }
-.table-responsive table {
-  border-collapse: separate;
-  border-spacing: 3px;
-}
-/* Kopfzeile sticky */
-.table-responsive th {
+
+/* Sticky Tabellenkopf */
+.table-responsive thead th {
   position: sticky;
   top: 0;
-  background: rgb(228, 228, 228);
-  z-index: 2;
+  z-index: 10;
+  background: #cbd6d9;
+  color: #102d46;
 }
-/* Erste Spalte sticky */
+
+/* Erste Spalte horizontal fixieren */
 .table-responsive th:first-child,
 .table-responsive td:first-child {
   position: sticky;
   left: 0;
-  background: rgb(228, 228, 228);
   z-index: 3;
 }
 
-.table-responsive th:first-child {
+/* Linke obere Ecke über allen anderen Sticky-Zellen */
+.table-responsive thead th:first-child {
   position: sticky;
   top: 0;
   left: 0;
-  background: rgb(228, 228, 228);
-  z-index: 4;
+  z-index: 20;
+  background: #cbd6d9;
+  color: #102d46;
 }
 
+/* Alternierende Zeilenfarben */
+.table-responsive tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td {
+  background: #e9edef;
+}
+
+/* Erste Spalte passend zur jeweiligen Zeilenfarbe */
+.table-responsive tbody tr:nth-child(odd) td:first-child {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td:first-child {
+  background: #e9edef;
+}
+
+/* Use-Case-Zellen wie Überschriften formatieren */
+.table-responsive table tbody td.use-case-heading {
+  background: #e8eef0 !important;
+  color: #294b56;
+  font-weight: bold;
+}
+
+/* Hinweisbox */
 .hinweisbox {
   font-size: 12px;
-  /* font-family: "Courier New", Courier; */
-  border: 1px solid #156082;
-  background: #dae8f8;
+  border: 1px solid #246783;
+  background: #e0e7e9;
   padding: 8px 12px;
   border-radius: 4px;
   margin: 8px 0;
@@ -2909,7 +2951,7 @@ Einträge durch patient löschen, stornieren, rezept wieder öffnen, wenn teilab
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-23 13:54:00 +0000">
+  <span title="2026-10-23 16:16:00 +0000">
     2026-10-23
   </span>
 

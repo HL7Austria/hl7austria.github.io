@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationMagistraleZubereitung",
   "title" : "AT ELGA e-Medikation Medication Magistrale Medikation",
   "status" : "draft",
-  "date" : "2026-10-23T13:54:21+00:00",
+  "date" : "2026-10-23T16:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "use" : "work"
     }]
   }],
-  "description" : "Bildet eine Magistrale Zubereitung in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
+  "description" : "Bildet eine Magistrale Zubereitung in der Medication-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "script10.6",

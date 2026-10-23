@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "ELGA e-Med MedicationRequest Kategorie CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-23T13:54:21+00:00",
+  "date" : "2026-10-23T16:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -41,7 +41,7 @@ This Code system is referenced in the definition of the following value sets:
       "use" : "work"
     }]
   }],
-  "description" : "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen.",
+  "description" : "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von Geplanten Abgaben und Medikationsplaneinträgen.",
   "caseSensitive" : false,
   "content" : "complete",
   "count" : 2,

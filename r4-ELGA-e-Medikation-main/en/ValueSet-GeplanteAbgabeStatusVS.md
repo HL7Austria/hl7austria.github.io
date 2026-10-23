@@ -30,7 +30,7 @@
   "title" : "ELGA e-Med Geplante Abgabe Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-23T13:54:21+00:00",
+  "date" : "2026-10-23T16:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -47,7 +47,7 @@
       "use" : "work"
     }]
   }],
-  "description" : "ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest).",
+  "description" : "ValueSet für zulässige Ausprägungen eines Status einer Geplanten Abgabe (MedicationRequest).",
   "compose" : {
     "include" : [{
       "system" : "http://hl7.org/fhir/CodeSystem/medicationrequest-status",

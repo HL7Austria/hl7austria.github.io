@@ -2,6 +2,12 @@
 
 ## Resource Profile: AT ELGA e-Medikation Transaction Bundle Geplante Abgaben 
 
+Das Bundle vom Typ `transaction` dient dem schreibenden Zugriff und besteht aus allen Geplanten Abgaben, die gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der Geplanten Abgaben einen `e-Med GroupIdentifier` enthalten. Ist dieser nicht enthalten, so erhalten alle Geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen `e-Med GroupIdentifier`.
+
+Details siehe [Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write).
+
+Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Examples for this Profile: [Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx.md) and [Bundle/At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx](Bundle-At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx.md)
@@ -29,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleGeplanteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Geplante Abgaben",
   "status" : "draft",
-  "date" : "2026-10-23T13:54:21+00:00",
+  "date" : "2026-10-23T16:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -46,7 +52,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "use" : "work"
     }]
   }],
-  "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, \ndie gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. \nIst kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.",
+  "description" : "Profil für das Schreiben des Medikationsplans mit der $prescription-write Operation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",
@@ -105,7 +111,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "constraint" : [{
         "key" : "at-emed-geplante-abgaben-group-identifier-einheitlich",
         "severity" : "error",
-        "human" : "Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.",
+        "human" : "Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.",
         "expression" : "resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()",
         "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
       }],

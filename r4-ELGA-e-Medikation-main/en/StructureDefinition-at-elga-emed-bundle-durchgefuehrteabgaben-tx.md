@@ -2,6 +2,12 @@
 
 ## Resource Profile: AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben 
 
+"Das Bundle vom Typ `transaction` dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, die gemeinsam geschrieben werden sollen."
+
+Details siehe [Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen).
+
+Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Examples for this Profile: [Bundle/At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx.md) and [Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx](Bundle-At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx.md)
@@ -29,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleDurchgefuehrteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben",
   "status" : "draft",
-  "date" : "2026-10-23T13:54:21+00:00",
+  "date" : "2026-10-23T16:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -46,7 +52,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "use" : "work"
     }]
   }],
-  "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, \ndie gemeinsam geschrieben werden sollen.",
+  "description" : "Profil für das Schreiben des Medikationsplans mit der $dispense-write Operation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",

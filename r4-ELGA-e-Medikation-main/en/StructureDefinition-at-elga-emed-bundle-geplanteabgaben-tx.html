@@ -50,8 +50,8 @@
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"11.6"}
-    h3,h4,h5,h6{--heading-prefix:"11.6"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.6"}
+    h3,h4,h5,h6{--heading-prefix:"12.6"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -119,6 +119,9 @@
     <ul class="dropdown-menu">
       <li>
         <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
       </li>
       <li>
         <a href="workflowmanagement.html">Workflowmanagement</a>
@@ -347,14 +350,309 @@ AT ELGA e-Medikation Transaction Bundle Geplante Abgaben
   </table>
 
 <div data-fhir="generated">
-<p>Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, 
-die gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. 
-Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.</p>
+<p>Profil für das Schreiben des Medikationsplans mit der $prescription-write Operation.</p>
 
 </div>
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+/* Tabellencontainer mit horizontalem und vertikalem Scrollen */
+.table-responsive {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.table-responsive > table {
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid #e8eef0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
+}
+
+/* Tabellenzellen */
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  color: #202c33;
+  background: #ffffff;
+  text-align: left;
+}
+
+/* Sticky Tabellenkopf */
+.table-responsive thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Erste Spalte horizontal fixieren */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+
+/* Linke obere Ecke über allen anderen Sticky-Zellen */
+.table-responsive thead th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Alternierende Zeilenfarben */
+.table-responsive tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td {
+  background: #e9edef;
+}
+
+/* Erste Spalte passend zur jeweiligen Zeilenfarbe */
+.table-responsive tbody tr:nth-child(odd) td:first-child {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td:first-child {
+  background: #e9edef;
+}
+
+/* Use-Case-Zellen wie Überschriften formatieren */
+.table-responsive table tbody td.use-case-heading {
+  background: #e8eef0 !important;
+  color: #294b56;
+  font-weight: bold;
+}
+
+/* Hinweisbox */
+.hinweisbox {
+  font-size: 12px;
+  border: 1px solid #246783;
+  background: #e0e7e9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.tabs .tab label {
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+<p>Das Bundle vom Typ <code class="language-plaintext highlighter-rouge">transaction</code> dient dem schreibenden Zugriff und besteht aus allen Geplanten Abgaben, die gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der Geplanten Abgaben einen <code class="language-plaintext highlighter-rouge">e-Med GroupIdentifier</code> enthalten. Ist dieser nicht enthalten, so erhalten alle Geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen <code class="language-plaintext highlighter-rouge">e-Med GroupIdentifier</code>.</p>
+
+<p>Details siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)</a>.</p>
+
+<div class="note-to-balloters">
+
+  <p>Die Übersetzungen der <code class="language-plaintext highlighter-rouge">short-descriptions</code> werden noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.</p>
+
+</div>
+
+</div>
 
 
 
@@ -426,7 +724,7 @@ Ist kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transac
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported" class="xhtPieceItalic">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span><a href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( bdl-5, bdl-8, at-emed-geplante-abgaben-group-identifier-einheitlich )" class="xhtConstraintStyle xhtPieceItalic">C</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">1</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">*</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement" class="xhtPieceItalic">BackboneElement</a></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
 <tr fhir="generated-heirarchy" id="k-aba" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck033.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Bundle.Slices for entry.</span>entry:All Slices<a name="k-Bundle.entry.2"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -471,7 +769,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">1..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri</a></td>
 <td style="" class="hierarchy xhtCellBorder0">URL for HTTP equivalent of this entry<br/><span class="xhtPieceBold">Required Pattern: </span><span class="xhtPieceDarkGreen">MedicationRequest</span> (extensions allowed)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cbe43f16-de53-4780-bf57-adff0c9106ab
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2e8e0065-01b7-4078-8e8b-882c23f8f764
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txK-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txK'), 'binding', document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txK-binding').checked, document.getElementById('ppat-elga-emed-bundle-geplanteabgaben-txK'));
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txK-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -565,7 +863,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txK'), '
     <td>at-emed-geplante-abgaben-group-identifier-einheitlich</td>
     <td>error</td>
     <td>Bundle.entry</td>
-    <td>Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
+    <td>Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
     <td>
       <code>resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()</code>
     </td>
@@ -725,7 +1023,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txK'), '
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported" class="xhtPieceItalic">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span><a href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( at-emed-geplante-abgaben-group-identifier-einheitlich )" class="xhtConstraintStyle xhtPieceItalic">C</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">1</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic xhtPieceDeEmphasized">*</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement" class="xhtPieceItalic xhtPieceDeEmphasized">BackboneElement</a></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
 <tr fhir="generated-heirarchy" id="aca" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck025.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_end_slicer-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Bundle.Slices for entry.</span><a no-external="true" href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx-definitions.html#Bundle.entry:geplanteAbgaben" title="Slice geplanteAbgaben" data-no-external="true">entry:geplanteAbgaben</a><a name="Bundle.entry:geplanteAbgaben"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span></td>
 <td style="" class="hierarchy xhtCellBorder0">1..*</td>
@@ -766,7 +1064,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txK'), '
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">1</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">URL for HTTP equivalent of this entry</span><br/><span class="xhtPieceBold">Required Pattern: </span><span class="xhtPieceDarkGreen">MedicationRequest</span> (extensions allowed)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cbe43f16-de53-4780-bf57-adff0c9106ab
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2e8e0065-01b7-4078-8e8b-882c23f8f764
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txD-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txD'), 'binding', document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txD-binding').checked, document.getElementById('ppat-elga-emed-bundle-geplanteabgaben-txD'));
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txD-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -809,7 +1107,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txD'), '
     <td>at-emed-geplante-abgaben-group-identifier-einheitlich</td>
     <td>error</td>
     <td>Bundle.entry</td>
-    <td>Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
+    <td>Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
     <td>
       <code>resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()</code>
     </td>
@@ -904,7 +1202,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported" class="xhtPieceItalic">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span><a href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( bdl-5, bdl-8, at-emed-geplante-abgaben-group-identifier-einheitlich )" class="xhtConstraintStyle xhtPieceItalic">C</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">1</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">*</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement" class="xhtPieceItalic">BackboneElement</a></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
 <tr fhir="generated-heirarchy" id="s-aia" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck133.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Bundle.Slices for entry.</span>entry:All Slices<a name="s-Bundle.entry.2"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -1236,7 +1534,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Signature">Signature</a></td>
 <td style="" class="hierarchy xhtCellBorder0">Digital Signature</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cbe43f16-de53-4780-bf57-adff0c9106ab
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2e8e0065-01b7-4078-8e8b-882c23f8f764
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txS-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txS'), 'binding', document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txS-binding').checked, document.getElementById('ppat-elga-emed-bundle-geplanteabgaben-txS'));
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txS-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1391,7 +1689,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txS'), '
     <td>at-emed-geplante-abgaben-group-identifier-einheitlich</td>
     <td>error</td>
     <td>Bundle.entry</td>
-    <td>Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
+    <td>Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
     <td>
       <code>resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()</code>
     </td>
@@ -1654,7 +1952,7 @@ Summary
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported" class="xhtPieceItalic">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span><a href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( bdl-5, bdl-8, at-emed-geplante-abgaben-group-identifier-einheitlich )" class="xhtConstraintStyle xhtPieceItalic">C</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">1</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">*</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement" class="xhtPieceItalic">BackboneElement</a></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
 <tr fhir="generated-heirarchy" id="ka-aba" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck033.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Bundle.Slices for entry.</span>entry:All Slices<a name="ka-Bundle.entry.2"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -1699,7 +1997,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">1..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri">uri</a></td>
 <td style="" class="hierarchy xhtCellBorder0">URL for HTTP equivalent of this entry<br/><span class="xhtPieceBold">Required Pattern: </span><span class="xhtPieceDarkGreen">MedicationRequest</span> (extensions allowed)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cbe43f16-de53-4780-bf57-adff0c9106ab
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2e8e0065-01b7-4078-8e8b-882c23f8f764
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txKA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txKA'), 'binding', document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txKA-binding').checked, document.getElementById('ppat-elga-emed-bundle-geplanteabgaben-txKA'));
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txKA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -1792,7 +2090,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txKA'), 
     <td>at-emed-geplante-abgaben-group-identifier-einheitlich</td>
     <td>error</td>
     <td>Bundle.entry</td>
-    <td>Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
+    <td>Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
     <td>
       <code>resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()</code>
     </td>
@@ -1952,7 +2250,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txKA'), 
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported" class="xhtPieceItalic">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span><a href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( at-emed-geplante-abgaben-group-identifier-einheitlich )" class="xhtConstraintStyle xhtPieceItalic">C</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">1</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic xhtPieceDeEmphasized">*</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement" class="xhtPieceItalic xhtPieceDeEmphasized">BackboneElement</a></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic xhtPieceDeEmphasized">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
 <tr fhir="generated-heirarchy" id="a-aca" class="xhtRowBorder0 xhtRowEven" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck025.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_blank.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_end_slicer-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_slice_item.png" alt="" style="background-color: white; background-color: inherit" title="Slice Item" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Bundle.Slices for entry.</span><a no-external="true" href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx-definitions.html#Bundle.entry:geplanteAbgaben" title="Slice geplanteAbgaben" data-no-external="true">entry:geplanteAbgaben</a><a name="a-Bundle.entry:geplanteAbgaben"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span></td>
 <td style="" class="hierarchy xhtCellBorder0">1..*</td>
@@ -1993,7 +2291,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txKA'), 
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">1</span><span class="xhtPieceDeEmphasized">..</span><span class="xhtPieceDeEmphasized">1</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#uri" class="xhtPieceDeEmphasized">uri</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceDeEmphasized">URL for HTTP equivalent of this entry</span><br/><span class="xhtPieceBold">Required Pattern: </span><span class="xhtPieceDarkGreen">MedicationRequest</span> (extensions allowed)</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cbe43f16-de53-4780-bf57-adff0c9106ab
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2e8e0065-01b7-4078-8e8b-882c23f8f764
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txDA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txDA'), 'binding', document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txDA-binding').checked, document.getElementById('ppat-elga-emed-bundle-geplanteabgaben-txDA'));
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txDA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2033,7 +2331,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txDA'), 
     <td>at-emed-geplante-abgaben-group-identifier-einheitlich</td>
     <td>error</td>
     <td>Bundle.entry</td>
-    <td>Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
+    <td>Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
     <td>
       <code>resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()</code>
     </td>
@@ -2128,7 +2426,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0"><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: white; background-color: #B60000" title="This element must be supported" class="xhtPieceItalic">S</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element must be supported. </span><span aria-hidden="true" style="padding-left: 3px; padding-right: 3px; color: black; background-color: white" title="This element is included in summaries" class="xhtPieceItalic">Σ</span><span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only"> This element is included in summaries. </span><a href="http://hl7.org/fhir/R4/conformance-rules.html#constraints" title="This element has or is affected by constraints ( bdl-5, bdl-8, at-emed-geplante-abgaben-group-identifier-einheitlich )" class="xhtConstraintStyle xhtPieceItalic">C</a></td>
 <td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic"></span><span class="xhtPieceItalic">1</span><span class="xhtPieceItalic">..</span><span class="xhtPieceItalic">*</span></td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement" class="xhtPieceItalic">BackboneElement</a></td>
-<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
+<td style="" class="hierarchy xhtCellBorder0"><span class="xhtPieceItalic">Entry in the bundle - will have a resource or information</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slice: </span><span class="xhtPieceItalic">Unordered, Closed by type:resource</span><br class="xhtPieceItalic constraint"/><span class="xhtPieceItalic constraint">Constraints: </span><span title="must be a resource unless there's a request or response" class="xhtPieceBold xhtPieceItalic constraint">bdl-5</span><span class="xhtPieceItalic constraint">, </span><span title="fullUrl cannot be a version specific reference" class="xhtPieceBold xhtPieceItalic constraint">bdl-8</span><span class="xhtPieceItalic constraint">, </span><span title="Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine." class="xhtPieceBold xhtPieceItalic constraint">at-emed-geplante-abgaben-group-identifier-einheitlich</span><br class="xhtPieceItalic"/><span class="xhtPieceItalic">This repeating element order: For bundles of type 'document' and 'message', the first resource is special (must be Composition or MessageHeader respectively). For all bundles, the meaning of the order of entries depends on the bundle type</span><br class="xhtPieceItalic"/><span class="xhtPieceBold xhtPieceItalic">Slicing Note: </span><span class="xhtPieceItalic">The rules on this element (including its children) apply to all the slices, but are not repeated in them</span></td></tr>
 <tr fhir="generated-heirarchy" id="sa-aia" class="xhtRowBorder0 xhtRowOdd" data-fhir="generated-heirarchy"><td role="rowheader" style="background-image: url(tbl_bck133.png)" class="hierarchy xhtCellBorder0 xhtCellNoWrap"><img src="tbl_spacer.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="" style="background-color: inherit" class="hierarchy"/><img onClick="tableRowAction(this)" src="tbl_vjoin_slicer-open.png" alt="" style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="" style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0" class="sr-only">Bundle.Slices for entry.</span>entry:All Slices<a name="sa-Bundle.entry.2"> </a></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
 <td style="" class="hierarchy xhtCellBorder0"></td>
@@ -2460,7 +2758,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <td style="" class="hierarchy xhtCellBorder0">0..1</td>
 <td style="" class="hierarchy xhtCellBorder0"><a href="http://hl7.org/fhir/R4/datatypes.html#Signature">Signature</a></td>
 <td style="" class="hierarchy xhtCellBorder0">Digital Signature</td></tr>
-<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // cbe43f16-de53-4780-bf57-adff0c9106ab
+<tr fhir="generated-heirarchy" data-fhir="generated-heirarchy"><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="https://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr><script type="text/javascript">  // 2e8e0065-01b7-4078-8e8b-882c23f8f764
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txSA-binding').checked = 'false' != localStorage.getItem('ht-table-states-binding');
 filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txSA'), 'binding', document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txSA-binding').checked, document.getElementById('ppat-elga-emed-bundle-geplanteabgaben-txSA'));
 document.getElementById('cbat-elga-emed-bundle-geplanteabgaben-txSA-constraint').checked = 'false' != localStorage.getItem('ht-table-states-constraint');
@@ -2613,7 +2911,7 @@ filterDesc(document.getElementById('at-elga-emed-bundle-geplanteabgaben-txSA'), 
     <td>at-emed-geplante-abgaben-group-identifier-einheitlich</td>
     <td>error</td>
     <td>Bundle.entry</td>
-    <td>Entweder müssen alle geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
+    <td>Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.</td>
     <td>
       <code>resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()</code>
     </td>
@@ -2890,7 +3188,7 @@ Summary
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-23 13:54:00 +0000">
+  <span title="2026-10-23 16:16:00 +0000">
     2026-10-23
   </span>
 

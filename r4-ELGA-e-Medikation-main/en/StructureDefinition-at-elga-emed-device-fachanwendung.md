@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
   "name" : "AtElgaEmedDeviceFachanwendung",
   "title" : "At ELGA e-Medikation Device Fachanwendung",
   "status" : "draft",
-  "date" : "2026-10-23T13:54:21+00:00",
+  "date" : "2026-10-23T16:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -48,7 +48,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
       "use" : "work"
     }]
   }],
-  "description" : "Das Device welches die eMed Fachanwendung abbildet",
+  "description" : "Das Device, welches die eMed Fachanwendung abbildet",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "rim",

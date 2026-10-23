@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-23T13:54:21+00:00",
+  "date" : "2026-10-23T16:16:05+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -451,7 +451,7 @@
         "reference" : "StructureDefinition/at-elga-emed-device-fachanwendung"
       },
       "name" : "At ELGA e-Medikation Device Fachanwendung",
-      "description" : "Das Device welches die eMed Fachanwendung abbildet",
+      "description" : "Das Device, welches die eMed Fachanwendung abbildet",
       "exampleBoolean" : false
     },
     {
@@ -582,7 +582,7 @@
         "reference" : "StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"
       },
       "name" : "AT ELGA e-Medikation Medication Magistrale Medikation",
-      "description" : "Bildet eine Magistrale Zubereitung in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
+      "description" : "Bildet eine Magistrale Zubereitung in der Medication-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
       "exampleBoolean" : false,
       "groupingId" : "Medikation"
     },
@@ -616,7 +616,7 @@
         "reference" : "StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"
       },
       "name" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
-      "description" : "Profil einer \"Durchgeführten Abgabe\" eines Arzneimittels.",
+      "description" : "Profil einer Durchgeführten Abgabe eines Arzneimittels.",
       "exampleBoolean" : false,
       "groupingId" : "DurchgefuehrteAbgabe"
     },
@@ -649,7 +649,7 @@
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
       },
       "name" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
-      "description" : "Profil einer \"Geplanten Abgabe\" eines Arzneimittels aus dem Medikationsplan.",
+      "description" : "Profil einer Geplanten Abgabe eines Arzneimittels aus dem Medikationsplan.",
       "exampleBoolean" : false,
       "groupingId" : "GeplanteAbgabe"
     },
@@ -817,7 +817,7 @@
         "reference" : "StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben",
-      "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, \ndie gemeinsam geschrieben werden sollen.",
+      "description" : "Profil für das Schreiben des Medikationsplans mit der $dispense-write Operation.",
       "exampleBoolean" : false,
       "groupingId" : "DurchgefuehrteAbgabe"
     },
@@ -834,7 +834,7 @@
         "reference" : "StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle Geplante Abgaben",
-      "description" : "Das Bundle vom Typ Transaction dient dem schreibenden Zugriff und besteht aus allen geplanten Abgaben, \ndie gemeinsam geschrieben werden sollen. Es müssen entweder alle oder keine der geplanten Abgaben einen groupIdentifier enthalten. \nIst kein groupIdentifier enthalten so erhalten alle geplanten Abgaben im Transaction Bundle einen neuen gemeinsamen groupIdentifier.",
+      "description" : "Profil für das Schreiben des Medikationsplans mit der $prescription-write Operation.",
       "exampleBoolean" : false,
       "groupingId" : "GeplanteAbgabe"
     },
@@ -1732,7 +1732,7 @@
         "reference" : "ValueSet/GeplanteAbgabeStatusVS"
       },
       "name" : "ELGA e-Med Geplante Abgabe Status ValueSet",
-      "description" : "ValueSet für zulässige Ausprägungen eines Status einer geplanten Abgabe (MedicationRequest).",
+      "description" : "ValueSet für zulässige Ausprägungen eines Status einer Geplanten Abgabe (MedicationRequest).",
       "exampleBoolean" : false
     },
     {
@@ -1780,7 +1780,7 @@
         "reference" : "CodeSystem/MedicationRequestCategoryCS"
       },
       "name" : "ELGA e-Med MedicationRequest Kategorie CodeSystem",
-      "description" : "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen.",
+      "description" : "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von Geplanten Abgaben und Medikationsplaneinträgen.",
       "exampleBoolean" : false
     },
     {
@@ -1796,7 +1796,7 @@
         "reference" : "ValueSet/MedicationRequestCategoryVS"
       },
       "name" : "ELGA e-Med MedicationRequest Kategorie ValueSet",
-      "description" : "ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von geplanten Abgaben und Medikationsplaneinträgen",
+      "description" : "ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von Geplanten Abgaben und Medikationsplaneinträgen",
       "exampleBoolean" : false
     },
     {
@@ -2108,6 +2108,15 @@
         }],
         "nameUrl" : "interactions.html",
         "title" : "Transaktionen",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "actors.html"
+        }],
+        "nameUrl" : "actors.html",
+        "title" : "Akteure",
         "generation" : "markdown"
       },
       {
