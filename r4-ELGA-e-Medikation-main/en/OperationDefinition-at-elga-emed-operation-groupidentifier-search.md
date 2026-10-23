@@ -20,7 +20,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $groupidentifier-search",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-22T18:22:51+00:00",
+  "date" : "2026-10-23T11:54:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

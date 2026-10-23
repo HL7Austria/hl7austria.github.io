@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
   "name" : "AtElgaEmedExtensionRezeptur",
   "title" : "AT ELGA e-Medikation Extension Rezeptur",
   "status" : "draft",
-  "date" : "2026-10-22T18:22:51+00:00",
+  "date" : "2026-10-23T11:54:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
