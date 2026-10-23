@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "ELGA e-Med MedicationDispense Performer Function CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-23T11:54:03+00:00",
+  "date" : "2026-10-23T12:23:07+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
