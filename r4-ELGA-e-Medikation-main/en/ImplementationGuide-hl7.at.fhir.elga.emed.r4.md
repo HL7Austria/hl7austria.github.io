@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-23T12:23:07+00:00",
+  "date" : "2026-10-23T13:54:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1397,7 +1397,7 @@
       },
       "name" : "Beispiel Organisation Apotheke",
       "description" : "Beispiel Organisation: Apotheke.",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"
     },
     {
       "extension" : [{
@@ -1413,7 +1413,7 @@
       },
       "name" : "Beispiel Organisation Hausärztin",
       "description" : "Beispiel Organisation: Ordination einer Hausärztin.",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"
     },
     {
       "extension" : [{
@@ -1429,7 +1429,7 @@
       },
       "name" : "Beispiel Organisation Krankenhaus",
       "description" : "Beispiel Organisation: Krankenhaus.",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"
     },
     {
       "extension" : [{
@@ -1445,7 +1445,7 @@
       },
       "name" : "Beispiel Organisation Urlaubsvertretung",
       "description" : "Beispiel Organisation: Ordination der Urlaubsvertretung.",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"
     },
     {
       "extension" : [{
@@ -1462,70 +1462,6 @@
       "name" : "Beispiel Patient 01",
       "description" : "Beispiel eines Patienten (Anton Mustermann).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "PractitionerRole"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-01.html"
-      }],
-      "reference" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01"
-      },
-      "name" : "Beispiel PractitionerRole Allgemeinmedizinerin 01",
-      "description" : "Beispiel einer Allgemeinmedizinerin und ihrer Organisation (Dr. Hausärztin + Ordination)",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "PractitionerRole"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-02.html"
-      }],
-      "reference" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-02"
-      },
-      "name" : "Beispiel PractitionerRole Apothekerin",
-      "description" : "Beispiel einer Apothekerin (Dr. Apothekerin + Apotheke)",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "PractitionerRole"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-04.html"
-      }],
-      "reference" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-04"
-      },
-      "name" : "Beispiel PractitionerRole Urlaubsvertretung",
-      "description" : "Beispiel einer Urlaubsvertretung und ihrer Organisation (Dr. Urlaubsvertretung + Ordination)",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "PractitionerRole"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "PractitionerRole-At-Emed-Example-PractitionerRole-03.html"
-      }],
-      "reference" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-03"
-      },
-      "name" : "Beispiel PractitionerRole Ärztin im Krankenhaus",
-      "description" : "Beispiel einer Ärztin im Krankenhaus (Dr. Krankenhaus + Organisation)",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"
     },
     {
       "extension" : [{

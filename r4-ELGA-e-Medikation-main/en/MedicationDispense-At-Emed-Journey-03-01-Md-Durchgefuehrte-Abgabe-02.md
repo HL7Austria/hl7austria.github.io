@@ -100,7 +100,7 @@
       }]
     },
     "actor" : {
-      "reference" : "Organization/At-Emed-Example-Organization-02",
+      "reference" : "Practitioner/At-Emed-Example-Practitioner-02",
       "display" : "Amadeus Apotheke"
     }
   }],

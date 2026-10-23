@@ -30,7 +30,7 @@
   "title" : "ValueSet für AT e-Medikation OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-23T12:23:07+00:00",
+  "date" : "2026-10-23T13:54:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

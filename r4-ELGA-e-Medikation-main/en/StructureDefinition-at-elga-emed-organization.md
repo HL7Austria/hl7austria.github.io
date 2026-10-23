@@ -4,7 +4,8 @@
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
+* Refer to this Profile: [AT ELGA e-Medikation PractitionerRole](StructureDefinition-at-elga-emed-practitionerrole.md)
+* Examples for this Profile: [Organization/At-Emed-Example-Organization-01](Organization-At-Emed-Example-Organization-01.md), [Amadeus Apotheke](Organization-At-Emed-Example-Organization-02.md), [Amadeus Apotheke](Organization-At-Emed-Example-Organization-03.md) and [Organization/At-Emed-Example-Organization-04](Organization-At-Emed-Example-Organization-04.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-organization.json)
 
@@ -29,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "name" : "AtElgaEmedOrganization",
   "title" : "AT ELGA e-Medikation Organization",
   "status" : "draft",
-  "date" : "2026-10-23T12:23:07+00:00",
+  "date" : "2026-10-23T13:54:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -75,6 +76,10 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "Organization",
+      "path" : "Organization"
+    },
+    {
       "id" : "Organization.identifier",
       "path" : "Organization.identifier",
       "min" : 1,

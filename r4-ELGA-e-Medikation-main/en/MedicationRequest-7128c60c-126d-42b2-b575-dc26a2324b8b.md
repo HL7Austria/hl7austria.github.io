@@ -65,7 +65,7 @@
   },
   "authoredOn" : "2026-03-19T12:10:00+00:00",
   "requester" : {
-    "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-03",
+    "reference" : "Practitioner/At-Emed-Example-Practitioner-03",
     "display" : "Dr. Krankenhaus"
   },
   "courseOfTherapyType" : {

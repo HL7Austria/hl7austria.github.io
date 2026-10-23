@@ -83,7 +83,7 @@ Beispiele
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) 
-*  [Dr. Hausärztin](PractitionerRole-At-Emed-Example-PractitionerRole-01.md) 
+*  [Dr. Hausärztin](Practitioner-At-Emed-Example-Practitioner-01.md) 
  
 
 Use Cases

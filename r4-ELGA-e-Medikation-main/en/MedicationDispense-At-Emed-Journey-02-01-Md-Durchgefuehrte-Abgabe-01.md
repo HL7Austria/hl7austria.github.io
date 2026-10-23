@@ -68,8 +68,7 @@
       }]
     },
     "actor" : {
-      "reference" : "Organization/At-Emed-Example-Organization-02",
-      "display" : "Amadeus Apotheke"
+      "reference" : "Practitioner/At-Emed-Example-Practitioner-02"
     }
   }],
   "authorizingPrescription" : [{

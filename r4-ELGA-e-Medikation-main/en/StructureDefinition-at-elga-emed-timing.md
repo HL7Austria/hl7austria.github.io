@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-timi
   "name" : "AtElgaEmedTiming",
   "title" : "AT ELGA e-Medikation Timing",
   "status" : "draft",
-  "date" : "2026-10-23T12:23:07+00:00",
+  "date" : "2026-10-23T13:54:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -87,7 +87,7 @@
       },
       "authoredOn" : "2026-02-27T08:10:00+00:00",
       "requester" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01",
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
         "display" : "Dr. Hausärztin"
       },
       "basedOn" : [{
@@ -254,7 +254,7 @@
       },
       "authoredOn" : "2026-02-27T10:20:00+00:00",
       "requester" : {
-        "reference" : "PractitionerRole/At-Emed-Example-PractitionerRole-01",
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
         "display" : "Dr. Hausärztin"
       },
       "basedOn" : [{

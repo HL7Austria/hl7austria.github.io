@@ -2,7 +2,7 @@
 
 ## Example Organization: Beispiel Organisation Krankenhaus
 
-Profile: [HL7® AT Core Organization Profile](http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/2.0.0/StructureDefinition-at-core-organization.html)
+Profile: [AT ELGA e-Medikation Organization](StructureDefinition-at-elga-emed-organization.md)
 
 Amadeus Apotheke (Öffentliche Apotheke) (OID:1.2.40.0.34.99.4613.3)
 
@@ -14,9 +14,7 @@ Amadeus Apotheke (Öffentliche Apotheke) (OID:1.2.40.0.34.99.4613.3)
 | Other Ids: | * `urn:oid:1.2.40.0.34.4.10`/K101+
 * `urn:oid:1.2.40.0.10.1.4.3.2`/123456789
  |
-| Contact Detail | Krankenhaus-Straße 1-7 Haupteingang St. Wolfgang Salzburg 5350 AUT (work) |
-| Contact Detail | * [info@amadeusapotheke.at](mailto:info@amadeusapotheke.at)
-* [+43.6138.3453446.0](tel:+43.6138.3453446.0)
+| Contact Detail | * Krankenhaus-Straße 1-7 Haupteingang St. Wolfgang Salzburg 5350 AUT (work)
  |
 
 
@@ -28,7 +26,7 @@ Amadeus Apotheke (Öffentliche Apotheke) (OID:1.2.40.0.34.99.4613.3)
   "resourceType" : "Organization",
   "id" : "At-Emed-Example-Organization-03",
   "meta" : {
-    "profile" : ["http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-organization"]
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"]
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",
@@ -59,44 +57,34 @@ Amadeus Apotheke (Öffentliche Apotheke) (OID:1.2.40.0.34.99.4613.3)
     }]
   }],
   "name" : "Amadeus Apotheke",
-  "address" : [{
-    "use" : "work",
-    "type" : "both",
-    "line" : ["Krankenhaus-Straße 1-7 Haupteingang"],
-    "_line" : [{
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-        "valueString" : "Krankenhaus-Straße"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-        "valueString" : "1-7"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
-        "valueString" : "Haupteingang"
-      },
-      {
-        "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
-        "valueString" : "Barrierefreier Zugang"
-      }]
-    }],
-    "city" : "St. Wolfgang",
-    "state" : "Salzburg",
-    "postalCode" : "5350",
-    "country" : "AUT"
-  }],
   "contact" : [{
-    "telecom" : [{
-      "system" : "email",
-      "value" : "info@amadeusapotheke.at",
-      "use" : "work"
-    },
-    {
-      "system" : "phone",
-      "value" : "+43.6138.3453446.0",
-      "use" : "home"
-    }]
+    "address" : {
+      "use" : "work",
+      "type" : "both",
+      "line" : ["Krankenhaus-Straße 1-7 Haupteingang"],
+      "_line" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+          "valueString" : "Krankenhaus-Straße"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+          "valueString" : "1-7"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+          "valueString" : "Haupteingang"
+        },
+        {
+          "url" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/StructureDefinition/at-core-ext-address-additionalInformation",
+          "valueString" : "Barrierefreier Zugang"
+        }]
+      }],
+      "city" : "St. Wolfgang",
+      "state" : "Salzburg",
+      "postalCode" : "5350",
+      "country" : "AUT"
+    }
   }]
 }
 
