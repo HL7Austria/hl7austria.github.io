@@ -2,7 +2,7 @@
 
 ## Resource Profile: AT ELGA e-Medikation Parameters Out $dispense-discard 
 
-Die $dispense-discard Operation wird direkt auf Instanzebene aufgerufen. Dem Server wird dabei keine Ressource übermittelt, weshalb im Gegensatz zu $dispense-write weder ein Transaction-Response Bundle noch OperationOutcome(s) mit Hinweisen zu ignorierten Must-Support Elementen zurückgegeben werden. Die Antwort enthält daher entweder das Ergebnis der Stornierung oder einen Fehler:
+Die $dispense-discard Operation wird direkt auf Instanzebene aufgerufen. Dem Server wird dabei keine Ressource übermittelt, weshalb im Gegensatz zu $dispense-write weder ein Transaction-Response Bundle noch OperationOutcome(s) mit Hinweisen zu ignorierten Must-Support Elementen zurückgegeben werden. Die Antwort enthält daher entweder das Ergebnis der Stornierung oder Fehler:
 
 * Bei Erfolg enthält die Antwort die stornierte Durchgeführte Abgabe, so wie sie nach dem Ausführen der Operation am Server persistiert ist. Wurde durch die Stornierung der Status der zugehörigen Geplanten Abgabe geändert (z.B. wird eine abgeschlossene (**completed**) oder nicht abgegebene (**cancelled**) Geplante Abgabe wieder auf **active** gesetzt, siehe [Workflowmanagement](workflowmanagement.md)), ist zusätzlich die Geplante Abgabe in ihrem nach der Operation persistierten Zustand enthalten. Die Geplante Abgabe darf nur gemeinsam mit der stornierten Durchgeführten Abgabe enthalten sein.
 * Im Fehlerfall enthält die Antwort ausschließlich ein OperationOutcome mit dem Fehler, der zur Ablehnung der Operation geführt hat.
@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
   "name" : "AtElgaEmedParametersOutDispenseDiscard",
   "title" : "AT ELGA e-Medikation Parameters Out $dispense-discard",
   "status" : "draft",
-  "date" : "2026-10-26T17:56:13+00:00",
+  "date" : "2026-10-26T18:36:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -75,8 +75,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
       "constraint" : [{
         "key" : "at-emed-dispense-discard-out-ergebnis",
         "severity" : "error",
-        "human" : "Es ist entweder die stornierte Durchgeführte Abgabe (Erfolgsfall) oder ein OperationOutcome mit einem Issue der Schwere 'error' oder 'fatal' (Fehlerfall) enthalten, nicht beides.",
-        "expression" : "(parameter.resource.ofType(MedicationDispense).exists() and parameter.resource.ofType(OperationOutcome).empty()) or (parameter.resource.ofType(MedicationDispense).empty() and parameter.resource.ofType(OperationOutcome).issue.where(severity = 'error' or severity = 'fatal').exists())",
+        "human" : "Es ist entweder die stornierte Durchgeführte Abgabe (Erfolgsfall) oder mindestens ein OperationOutcome mit einem Issue der Schwere 'error' oder 'fatal' (Fehlerfall) enthalten.",
+        "expression" : "parameter.resource.ofType(MedicationDispense).exists()  or (parameter.resource.ofType(MedicationDispense).empty() and parameter.resource.ofType(OperationOutcome).issue.where(severity = 'error' or severity = 'fatal').exists())",
         "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-dispense-discard"
       },
       {

@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
   "name" : "AtElgaEmedParametersOutPrescriptionDiscard",
   "title" : "AT ELGA e-Medikation Parameters Out $prescription-discard",
   "status" : "draft",
-  "date" : "2026-10-26T17:56:13+00:00",
+  "date" : "2026-10-26T18:36:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T17:56:13+00:00",
+  "date" : "2026-10-26T18:36:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -831,6 +831,23 @@
       },
       "name" : "AT ELGA e-Medikation Parameters Out $prescription-write",
       "description" : "Profil für den Rückgabewert der $prescription-write Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-reference-plan.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-reference-plan"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $reference-plan",
+      "description" : "Profil für den Rückgabewert der $reference-plan Operation.",
       "exampleBoolean" : false,
       "groupingId" : "OperationParameter"
     },
