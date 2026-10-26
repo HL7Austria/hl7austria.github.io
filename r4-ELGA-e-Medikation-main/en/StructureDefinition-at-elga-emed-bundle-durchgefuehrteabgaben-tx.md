@@ -1,8 +1,8 @@
-# AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben 
+## Resource Profile: AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben 
 
-"Das Bundle vom Typ `transaction` dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, die gemeinsam geschrieben werden sollen."
+Das Bundle vom Typ `transaction` dient dem schreibenden Zugriff und besteht aus allen Durchgeführten Abgaben, die gemeinsam geschrieben werden sollen.
 
 Details siehe [Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen](Sub_UC_eMed_05.md#sub_uc_emed_05_01---durchgeführte-abgabe-erstellen).
 
@@ -33,9 +33,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx",
   "version" : "0.1.0",
   "name" : "AtElgaEmedBundleDurchgefuehrteAbgabenTx",
-  "title" : "AT ELGA e-Medikation Transaction Bundle durchgeführte Abgaben",
+  "title" : "AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben",
   "status" : "draft",
-  "date" : "2026-10-26T12:04:07+00:00",
+  "date" : "2026-10-26T13:41:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
