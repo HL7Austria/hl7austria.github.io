@@ -11,7 +11,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T18:36:30+00:00",
+  "date" : "2026-10-26T20:24:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -697,6 +697,19 @@
       },
       "name" : "AT ELGA e-Medikation Parameters Out $dispense-write",
       "description" : "Profil für den Rückgabewert der $dispense-write Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-plan-read"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $plan-read",
+      "description" : "Profil für den Rückgabewert der $plan-read Operation.",
       "exampleBoolean" : false,
       "groupingId" : "OperationParameter"
     },
@@ -1436,7 +1449,7 @@
         "reference" : "OperationDefinition/at-elga-emed-operation-plan-read"
       },
       "name" : "e-Med Operation für $plan-read",
-      "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.\n\nHierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version\nder List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen\nein temporäres Medikationsplan-Bundle zur Auslieferung.\n\nExistiert noch kein Medikationsplan, erstellt und persistiert die\nFachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted.",
+      "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.",
       "exampleBoolean" : false,
       "groupingId" : "Operationen"
     },

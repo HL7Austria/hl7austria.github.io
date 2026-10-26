@@ -12,7 +12,7 @@
   <name value="ELGA-e-Medikation-R4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-26T18:36:30+00:00"/>
+  <date value="2026-10-26T20:24:37+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -573,6 +573,18 @@
       </reference>
       <name value="AT ELGA e-Medikation Parameters Out $dispense-write"/>
       <description value="Profil für den Rückgabewert der $dispense-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-plan-read"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $plan-read"/>
+      <description value="Profil für den Rückgabewert der $plan-read Operation."/>
       <exampleBoolean value="false"/>
       <groupingId value="OperationParameter"/>
     </resource>
@@ -1252,7 +1264,7 @@
         <reference value="OperationDefinition/at-elga-emed-operation-plan-read"/>
       </reference>
       <name value="e-Med Operation für $plan-read"/>
-      <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines&#xA;ELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten&#xA;Zustand ab.&#xA;&#xA;Hierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version&#xA;der List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen&#xA;ein temporäres Medikationsplan-Bundle zur Auslieferung.&#xA;&#xA;Existiert noch kein Medikationsplan, erstellt und persistiert die&#xA;Fachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted."/>
+      <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines&#xA;ELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten&#xA;Zustand ab."/>
       <exampleBoolean value="false"/>
       <groupingId value="Operationen"/>
     </resource>

@@ -4,6 +4,8 @@
 
 ### Operation spezifische Business Logik
 
+Die e-Medikation-Fachanwendung erzeugt aus der aktuellen Version der List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen ein temporäres Medikationsplan-Bundle zur Auslieferung.
+
 Vor der Auslieferung prüft die Fachanwendung den Zustand des Medikationsplans:
 
 1. Existiert noch kein Medikationsplan, wird eine initiale List-Ressource mit List.emptyReason = notstarted erstellt und als erste Version persistiert. Für die Auslieferung erfolgt keine Transformation.
@@ -39,7 +41,7 @@ Im Fehlerfall wird ein HTTP-Fehlerstatus mit einem OperationOutcome zurückgegeb
   "title" : "e-Med Operation für $plan-read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-26T18:36:30+00:00",
+  "date" : "2026-10-26T20:24:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -56,7 +58,7 @@ Im Fehlerfall wird ein HTTP-Fehlerstatus mit einem OperationOutcome zurückgegeb
       "use" : "work"
     }]
   }],
-  "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.\n\nHierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version\nder List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen\nein temporäres Medikationsplan-Bundle zur Auslieferung.\n\nExistiert noch kein Medikationsplan, erstellt und persistiert die\nFachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted.",
+  "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.",
   "affectsState" : true,
   "code" : "plan-read",
   "resource" : ["List"],
@@ -68,18 +70,9 @@ Im Fehlerfall wird ein HTTP-Fehlerstatus mit einem OperationOutcome zurückgegeb
     "use" : "out",
     "min" : 1,
     "max" : "1",
-    "documentation" : "Das temporäre, für die Bearbeitung aufbereitete Medikationsplan-Bundle.\nEs enthält die aktuelle, gegebenenfalls transformierte oder initial\nerzeugte List-Ressource sowie sämtliche von ihr referenzierten Ressourcen.\n\nDer ETag der aktuellen persistierten List-Version wird im HTTP-\nResponse-Header übermittelt und ist kein Ausgabeparameter der Operation.",
-    "type" : "Bundle",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"]
-  },
-  {
-    "name" : "return",
-    "use" : "out",
-    "min" : 0,
-    "max" : "1",
-    "documentation" : "Der *return* Parameter im Falle eines Fehlers.",
+    "documentation" : "Der *return* Parameter enthält je nach Erfolg der Operation OperationOutcome(s)\nund falls die Operation erfolgreich war auch das temporäre, für die Bearbeitung\naufbereitete Medikationsplan-Bundle. Es enthält die aktuelle, gegebenenfalls\ntransformierte oder initial erzeugte List-Ressource sowie sämtliche von ihr\nreferenzierten Ressourcen.\n\nDer ETag der aktuellen persistierten List-Version wird im HTTP-\nResponse-Header übermittelt und ist kein Ausgabeparameter der Operation.",
     "type" : "Resource",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome"]
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read"]
   }]
 }
 

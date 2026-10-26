@@ -15,6 +15,7 @@ Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächs
 
 **Usages:**
 
+* Use this Profile: [AT ELGA e-Medikation Parameters Out $plan-read](StructureDefinition-at-elga-emed-parameters-out-plan-read.md)
 * Examples for this Profile: [Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan](Bundle-At-Emed-Journey-01-01-01-Bundle-Medikationsplan.md), [Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response](Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.md) and [Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response](Bundle-At-Emed-Journey-05-01-Bundle-plan-read-response.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-medikationsplan.json)
@@ -40,7 +41,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-26T18:36:30+00:00",
+  "date" : "2026-10-26T20:24:37+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
