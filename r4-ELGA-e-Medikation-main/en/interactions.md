@@ -6,31 +6,26 @@ Die Umsetzung des Patientenkontakts in den Transaktionen ist nicht Teil des Ball
 
 In diesem IG werden daher alle Requests ab dem `/[type]` dargestellt.
 
-| | | | | | |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **POST** | `/` | `$groupidentifier-create` | Erzeugen eines neuen e-Med GroupIdentifiers für Geplante Abgaben | GDA |  |
-| **POST** | `/` | `$groupidentifier-search` | Geplante und durchgeführte Abgaben mittels e-Med GroupIdentifier lesen | GDA |  |
-| **POST** | `/List` | `$plan-read` | Aktuelle Medikationsplanversion lesen | GDA, PAT |  |
-| **POST** | `/List` | `$plan-write` | Neue Version eines Medikationsplans schreiben | GDA |  |
-| **POST** | `/List` | `$patient-plan-write` | Medikationsplaneinträge löschen | PAT |  |
-| **POST** | `/List` | `$plan-delete` | Aktuelle oder historische Medikationsplanversion löschen | PAT |  |
-| **GET** | `/List/_history` | `history-type` | plan-history-search & plan-history-directory-search:In historischen Medikationsplanversion(en) suchen und alle referenzierten Ressourcen inkludierenz.B. (`_include=*&item=MedicationRequest/[id]&date=...`)Directory-Search wenn include nicht verwendet wird. | GDA, PAT | [List (Search-) parameters](StructureDefinition-at-elga-emed-list-medikationsplan.md#search-parameters) |
-| **GET** | `/List/[id]/_history` | `history-instance` | Die gesamte Historie des Medikationsplan abrufen | GDA, PAT |  |
-| **GET** | `/List/[id]/_history/[vid]` | `vread` | Historische Medikationsplanversion(en) lesenStandardabfrage mit _include | GDA, PAT |  |
-| **POST** | `/MedicationRequest` | `$prescription-write` | Geplante Abgabe schreiben | GDA |  |
-| **POST** | `/MedicationRequest` | `$prescription-discard` | Eigene Geplante Abgabe stornieren | GDA |  |
-| **POST** | `/MedicationRequest` | `$plan-entry-delete` | Planeintrag löschen | GDA |  |
-| **GET** | `/MedicationRequest?category=GeplAbgabe` | `search-type` | Geplante Abgaben suchen (`?category=GeplAbgabe`) | GDA, PAT | [Geplante Abgabe (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md#search-parameters) |
-| **GET** | `/MedicationRequest?category=Planeintrag` | `search-type` | Planeinträge suchen (`?category=Planeintrag`) | GDA, PAT | [Planeintrag (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md#search-parameters) |
-| **GET** | `/MedicationRequest/_history?category=Planeintrag` | `history-type` | In historischen Planeintragsversion(en) suchen und alle referenzierten Ressourcen inkludierenz.B. (`_include=*&category=Planeintrag&autor=Practitioner/[id]&medication-code=...&date=...&...`)Directory-Search wenn include nicht verwendet wird. | GDA, PAT | [Planeintrag (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md#search-parameters) |
-| **GET** | `/MedicationRequest/[id]/_history` | `history-instance` | Die gesamte Historie eines Medikationsplaneintrags abrufen | GDA, PAT |  |
-| **GET** | `/MedicationRequest/[id]/_history/[vid]` | `vread` | eine historische Planeintragsversion lesenOptionale Abfrage mit _include | GDA, PAT |  |
-| **DELETE** | `/MedicationRequest` | `prescription-delete` | Geplante Abgabe löschen | PAT |  |
-| **POST** | `/MedicationDispense` | `$dispense-write` | Durchgeführte Abgabe schreiben | GDA |  |
-| **POST** | `/MedicationDispense` | `$dispense-discard` | Eigene durchgeführte Abgabe stornieren | GDA |  |
-| **POST** | `/MedicationDispense` | `$reference-plan` | Referenz auf Medikationsplan erstellen | GDA |  |
-| **GET** | `/MedicationDispense` | `search-type` | dispense-search: Durchgeführte Abgaben suchen | GDA, PAT | [MedicationDispense (Search-) parameters](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md#search-parameters) |
-| **DELETE** | `/MedicationDispense` | `dispense-delete` | Durchgeführte Abgabe löschen | PAT |  |
+| | | | | | | |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **POST** | `/` | `$groupidentifier-create` |  | Erzeugen eines neuen e-Med GroupIdentifiers für Geplante Abgaben | GDA |  |
+| **POST** | `/` | `$groupidentifier-search` |  | Geplante und durchgeführte Abgaben mittels e-Med GroupIdentifier lesen | GDA |  |
+| **POST** | `/List` | `$plan-read` | Medikationsplan | Aktuelle Medikationsplanversion lesen | GDA, PAT |  |
+| **POST** | `/List` | `$plan-write` | Medikationsplan | Neue Version eines Medikationsplans schreiben | GDA |  |
+| **POST** | `/List` | `$history-delete` | Medikationsplan | Aktuelle oder historische Medikationsplanversion löschen | PAT |  |
+| **POST** | `/List` | `$history-search` | Medikationsplan | plan-history-search & plan-history-directory-search:In historischen Medikationsplanversion(en) suchen und alle referenzierten Ressourcen inkludieren. Directory-Search wenn der Parameter`include`nicht verwendet wird. | GDA, PAT | [List (Search-) parameters](StructureDefinition-at-elga-emed-list-medikationsplan.md#search-parameters) |
+| **POST** | `/MedicationRequest` | `$prescription-write` | [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) | Geplante Abgabe schreiben | GDA |  |
+| **POST** | `/MedicationRequest` | `$history-search` | [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) | In historischen Planeintragsversionen suchen und alle referenzierten Ressourcen inkludieren. Nur MedicationRequests ohne referenzierte Ressourcen, wenn`include`nicht verwendet wird.Gilt ausschließlich für Planeinträge, nicht für geplante Abgaben. | GDA, PAT | [Planeintrag (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md#search-parameters) |
+| **GET** | `/MedicationRequest?category=Planeintrag` | `search-type` | [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) | planentry-search: Aktuelle Planeinträge suchen (`?category=Planeintrag`) | GDA, PAT | [Planeintrag (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md#search-parameters) |
+| **GET** | `/MedicationRequest?category=GeplAbgabe` | `search-type` | [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) | prescription-search: Geplante Abgaben suchen (`?category=GeplAbgabe`) | GDA, PAT | [Geplante Abgabe (Search-) parameters](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md#search-parameters) |
+| **POST** | `/MedicationRequest/[id]` | `$prescription-discard` | [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) | Eigene geplante Abgabe stornieren | GDA |  |
+| **POST** | `/MedicationRequest/[id]` | `$planentry-delete` | [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) | Gesamte Historie eines Planeintrags löschen | PAT |  |
+| **DELETE** | `/MedicationRequest/[id]` | `delete` | [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) | prescription-delete: Geplante Abgabe löschen; nur für geplante Abgaben | PAT |  |
+| **POST** | `/MedicationDispense` | `$dispense-write` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | Durchgeführte Abgabe schreiben | GDA |  |
+| **GET** | `/MedicationDispense` | `search-type` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | dispense-search: Durchgeführte Abgaben suchen | GDA, PAT | [MedicationDispense (Search-) parameters](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md#search-parameters) |
+| **POST** | `/MedicationDispense/[id]` | `$dispense-discard` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | Eigene durchgeführte Abgabe stornieren | GDA |  |
+| **POST** | `/MedicationDispense/[id]` | `$reference-plan` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | Referenz auf Medikationsplan erstellen | GDA |  |
+| **DELETE** | `/MedicationDispense/[id]` | `delete` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | dispense-delete: Durchgeführte Abgabe löschen | PAT |  |
 
 ### Suchparameter Überblick
 

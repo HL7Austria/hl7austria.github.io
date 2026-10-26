@@ -496,7 +496,7 @@ DELETE [base]/MedicationRequest/[id]/_history
 
 Die erste Interaktion löscht die Ressource im Sinne des regulären [delete](https://build.fhir.org/http.html#delete). Die zweite Interaktion [delete-history](https://build.fhir.org/http.html#delete-history) entfernt die historischen Versionen, nicht jedoch den aktuellen Zustand. Die Kombination ist daher eine technische Orientierung für die Entfernung der Ressourceninhalte und ihrer Historie.
 
-Diese zusätzlichen History-Löschinteraktionen sind nicht Bestandteil der REST-Interaktionen von FHIR R4. Daher würde eine custom Operation `[base]/MedicationRequest $delete` zum Einsatz kommen.
+Diese zusätzlichen History-Löschinteraktionen sind nicht Bestandteil der REST-Interaktionen von FHIR R4. Daher würde eine custom Operation `[base]/MedicationRequest/[id] $planentry-delete` zum Einsatz kommen.
 
 **Umgang mit betroffenen historischen Medikationsplanversionen**
 
@@ -538,7 +538,7 @@ DELETE [base]/MedicationRequest/[id]/_history/[vid]
 
 ```
 
-Diese Interaktion schließt die jeweils aktuelle Ressourcenversion ausdrücklich aus. Sollte eine zu entfernende MedicationRequest-Version zugleich deren aktuelle Version sein, ist daher ein gesondertes Vorgehen erforderlich. Daher würde auch hier eine Custom Operation `[base]/MedicationRequest $delete-history` bzw. `[base]/List $delete-history` zum Einsatz kommen.
+Diese Interaktion schließt die jeweils aktuelle Ressourcenversion ausdrücklich aus. Sollte eine zu entfernende MedicationRequest-Version zugleich deren aktuelle Version sein, ist daher ein gesondertes Vorgehen erforderlich. Daher würde auch hier eine Custom Operation `[base]/List $history-delete` zum Einsatz kommen.
 
 **Löschen der aktuellen Medikationsplanversion** Beim Löschen des aktuellen Medikationsplans soll verhindert werden, dass eine ältere Medikationsplanversion unbeabsichtigt wieder als aktueller Plan verwendet wird.
 

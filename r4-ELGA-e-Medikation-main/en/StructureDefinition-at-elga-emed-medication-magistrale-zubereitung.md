@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationMagistraleZubereitung",
   "title" : "AT ELGA e-Medikation Medication Magistrale Medikation",
   "status" : "draft",
-  "date" : "2026-10-26T13:41:17+00:00",
+  "date" : "2026-10-26T13:57:36+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
