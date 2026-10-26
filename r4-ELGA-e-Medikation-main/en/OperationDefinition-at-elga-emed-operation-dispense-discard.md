@@ -59,7 +59,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $dispense-discard",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-26T17:20:41+00:00",
+  "date" : "2026-10-26T17:56:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -86,20 +86,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "parameter" : [{
     "name" : "return",
     "use" : "out",
-    "min" : 0,
+    "min" : 1,
     "max" : "1",
-    "documentation" : "Die Durchgeführte Abgabe so wie sie nach dem Ausführen der Operation am Server persistiert ist.",
+    "documentation" : "Der *return* Parameter enthält je nach Erfolg der Operation entweder die stornierte Durchgeführte Abgabe (sowie ggf. die dadurch in ihrem Status geänderte Geplante Abgabe), so wie sie nach dem Ausführen der Operation am Server persistiert ist oder ein OperationOutcome mit dem Fehler, der zur Ablehnung der Operation geführt hat.",
     "type" : "Resource",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"]
-  },
-  {
-    "name" : "return",
-    "use" : "out",
-    "min" : 0,
-    "max" : "1",
-    "documentation" : "Der *return* Parameter im Falle eines Fehlers.",
-    "type" : "Resource",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome"]
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-dispense-discard"]
   }]
 }
 

@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation Parameters Out $dispense-write](StructureDefinition-at-elga-emed-parameters-out-dispense-write.md), [AT ELGA e-Medikation Parameters Out $plan-write](StructureDefinition-at-elga-emed-parameters-out-plan-write.md) and [AT ELGA e-Medikation Parameters Out $prescription-write](StructureDefinition-at-elga-emed-parameters-out-prescription-write.md)
+* Use this Profile: [AT ELGA e-Medikation Parameters Out $dispense-discard](StructureDefinition-at-elga-emed-parameters-out-dispense-discard.md), [AT ELGA e-Medikation Parameters Out $dispense-write](StructureDefinition-at-elga-emed-parameters-out-dispense-write.md), [AT ELGA e-Medikation Parameters Out $plan-write](StructureDefinition-at-elga-emed-parameters-out-plan-write.md), [AT ELGA e-Medikation Parameters Out $prescription-discard](StructureDefinition-at-elga-emed-parameters-out-prescription-discard.md) and [AT ELGA e-Medikation Parameters Out $prescription-write](StructureDefinition-at-elga-emed-parameters-out-prescription-write.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-operationoutcome.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-oper
   "name" : "AtElgaEmedOperationOutcome",
   "title" : "AT ELGA e-Medikation OperationOutcome",
   "status" : "active",
-  "date" : "2026-10-26T17:20:41+00:00",
+  "date" : "2026-10-26T17:56:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

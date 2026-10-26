@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T17:20:41+00:00",
+  "date" : "2026-10-26T17:56:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -756,6 +756,23 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-dispense-discard.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-dispense-discard"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $dispense-discard",
+      "description" : "Profil für den Rückgabewert der $dispense-discard Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-dispense-write.html"
       }],
       "reference" : {
@@ -780,6 +797,23 @@
       },
       "name" : "AT ELGA e-Medikation Parameters Out $plan-write",
       "description" : "Profil für den Rückgabewert der $plan-write Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-prescription-discard.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-prescription-discard"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $prescription-discard",
+      "description" : "Profil für den Rückgabewert der $prescription-discard Operation.",
       "exampleBoolean" : false,
       "groupingId" : "OperationParameter"
     },

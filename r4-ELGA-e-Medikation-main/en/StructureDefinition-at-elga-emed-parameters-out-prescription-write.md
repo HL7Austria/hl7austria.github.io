@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
   "name" : "AtElgaEmedParametersOutPrescriptionWrite",
   "title" : "AT ELGA e-Medikation Parameters Out $prescription-write",
   "status" : "draft",
-  "date" : "2026-10-26T17:20:41+00:00",
+  "date" : "2026-10-26T17:56:13+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -78,6 +78,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
       }]
     },
     {
+      "id" : "Parameters.implicitRules",
+      "path" : "Parameters.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
+      "max" : "0"
+    },
+    {
       "id" : "Parameters.parameter",
       "path" : "Parameters.parameter",
       "slicing" : {
@@ -88,6 +94,17 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
         "rules" : "closed"
       },
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Parameters.parameter.modifierExtension",
+      "path" : "Parameters.parameter.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Parameters.parameter.name",
+      "path" : "Parameters.parameter.name",
       "mustSupport" : true
     },
     {
@@ -114,6 +131,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
     {
       "id" : "Parameters.parameter:operationOutcome.value[x]",
       "path" : "Parameters.parameter.value[x]",
+      "short" : "Fachliche Begründung: Der Parameter transportiert ausschließlich eine Ressource, ein Wert ist nicht vorgesehen.",
       "max" : "0"
     },
     {
@@ -129,6 +147,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
     {
       "id" : "Parameters.parameter:operationOutcome.part",
       "path" : "Parameters.parameter.part",
+      "short" : "Fachliche Begründung: Verschachtelte Parameter sind nicht vorgesehen.",
       "max" : "0"
     },
     {
@@ -155,6 +174,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
     {
       "id" : "Parameters.parameter:geplanteAbgaben.value[x]",
       "path" : "Parameters.parameter.value[x]",
+      "short" : "Fachliche Begründung: Der Parameter transportiert ausschließlich eine Ressource, ein Wert ist nicht vorgesehen.",
       "max" : "0"
     },
     {
@@ -170,6 +190,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
     {
       "id" : "Parameters.parameter:geplanteAbgaben.part",
       "path" : "Parameters.parameter.part",
+      "short" : "Fachliche Begründung: Verschachtelte Parameter sind nicht vorgesehen.",
       "max" : "0"
     }]
   }
