@@ -55,7 +55,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-26T16:01:21+00:00",
+  "date" : "2026-10-26T16:19:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -227,6 +227,13 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       }
     },
     {
+      "id" : "MedicationRequest.category:mrcategory.coding",
+      "path" : "MedicationRequest.category.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
       "id" : "MedicationRequest.category:mrcategory.coding.system",
       "path" : "MedicationRequest.category.coding.system",
       "min" : 1,
@@ -271,7 +278,8 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationRequest.category:recipetype.coding",
       "path" : "MedicationRequest.category.coding",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "MedicationRequest.category:recipetype.coding.system",
@@ -397,6 +405,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "mustSupport" : true
     },
     {
+      "id" : "MedicationRequest.requester.identifier.use",
+      "path" : "MedicationRequest.requester.identifier.use",
+      "max" : "0"
+    },
+    {
       "id" : "MedicationRequest.requester.identifier.system",
       "path" : "MedicationRequest.requester.identifier.system",
       "mustSupport" : true
@@ -428,6 +441,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "path" : "MedicationRequest.groupIdentifier",
       "short" : "Der \"e-Med GroupIdentifier\" bildet die Rezept-Klammer. Geplante Abgaben, die demselben e-Rezept zugeordnet sind, führen denselben e-Med GroupIdentifier.",
       "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.groupIdentifier.use",
+      "path" : "MedicationRequest.groupIdentifier.use",
+      "max" : "0"
     },
     {
       "id" : "MedicationRequest.groupIdentifier.system",

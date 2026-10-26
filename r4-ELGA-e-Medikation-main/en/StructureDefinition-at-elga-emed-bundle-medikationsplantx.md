@@ -40,7 +40,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplanTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-26T16:01:21+00:00",
+  "date" : "2026-10-26T16:19:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -131,6 +131,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
+      "id" : "Bundle.entry:Medikationsplan.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "Bundle.entry:Medikationsplan.fullUrl",
       "path" : "Bundle.entry.fullUrl",
       "min" : 1,
@@ -200,6 +206,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "min" : 0,
       "max" : "*",
       "mustSupport" : true
+    },
+    {
+      "id" : "Bundle.entry:Medikationsplaneintrag.modifierExtension",
+      "path" : "Bundle.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "Bundle.entry:Medikationsplaneintrag.fullUrl",

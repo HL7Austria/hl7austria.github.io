@@ -107,6 +107,7 @@
     <sch:title>f:MedicationDispense/f:performer</sch:title>
     <sch:rule context="f:MedicationDispense/f:performer">
       <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
+      <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
       <sch:assert test="count(f:function) &gt;= 1">function: minimum cardinality of 'function' is 1</sch:assert>
       <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
       <sch:assert test="count(f:function) &gt;= 1">function: minimum cardinality of 'function' is 1</sch:assert>

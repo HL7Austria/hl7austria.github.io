@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationMagistraleZubereitung",
   "title" : "AT ELGA e-Medikation Medication Magistrale Medikation",
   "status" : "draft",
-  "date" : "2026-10-26T16:01:21+00:00",
+  "date" : "2026-10-26T16:19:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -400,12 +400,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "path" : "Medication.ingredient.strength",
       "short" : "Menge der vorhandenen Zutaten.",
       "mustSupport" : true
-    },
-    {
-      "id" : "Medication.batch",
-      "path" : "Medication.batch",
-      "short" : "Informationen zur Charge des Arzneimittels.",
-      "max" : "0"
     }]
   }
 }

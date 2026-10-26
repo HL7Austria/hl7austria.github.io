@@ -52,7 +52,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-26T16:01:21+00:00",
+  "date" : "2026-10-26T16:19:19+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -174,7 +174,8 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "ordered" : false,
         "rules" : "open"
       },
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.extension:renderedDosageInstruction",
@@ -366,12 +367,18 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "rules" : "closed"
       },
       "min" : 1,
-      "max" : "1",
       "mustSupport" : true
+    },
+    {
+      "id" : "MedicationDispense.performer.modifierExtension",
+      "path" : "MedicationDispense.performer.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "MedicationDispense.performer.function",
       "path" : "MedicationDispense.performer.function",
+      "mustSupport" : true,
       "binding" : {
         "strength" : "required",
         "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetMedicationDispensePerformerFunctionVS"
@@ -384,7 +391,8 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "code" : "Reference",
         "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
         "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
-      }]
+      }],
+      "mustSupport" : true
     },
     {
       "id" : "MedicationDispense.performer:dispenseGDA",
@@ -446,6 +454,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.performer:dispenseGDA.actor",
       "path" : "MedicationDispense.performer.actor",
       "short" : "GDA, der die Abgabe durchführt und verantwortet.",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
+      }],
       "mustSupport" : true
     },
     {
@@ -453,7 +466,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "path" : "MedicationDispense.performer",
       "sliceName" : "referenceGDA",
       "min" : 0,
-      "max" : "1",
+      "max" : "*",
       "mustSupport" : true
     },
     {
@@ -508,6 +521,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.performer:referenceGDA.actor",
       "path" : "MedicationDispense.performer.actor",
       "short" : "GDA, der nachträglich eine Referenz zu einem Planeintrag herstellt.",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner",
+        "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
+      }],
       "mustSupport" : true
     },
     {
