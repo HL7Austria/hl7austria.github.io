@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T16:19:19+00:00",
+  "date" : "2026-10-26T17:11:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -611,6 +611,23 @@
       },
       "name" : "AT ELGA e-Medikation Medication Medikation",
       "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
+      "exampleBoolean" : false,
+      "groupingId" : "Medikation"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-medication-wirkstoff.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-medication-wirkstoff"
+      },
+      "name" : "AT ELGA e-Medikation Medication Wirkstoff",
+      "description" : "Bildet einen Wirkstoff in der Medication-Ressource ab. Wird grundsätzlich verwendet im Planeintrag.",
       "exampleBoolean" : false,
       "groupingId" : "Medikation"
     },

@@ -8,7 +8,7 @@ Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächs
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) and [At ELGA e-Medikation MedicationRequest Base](StructureDefinition-at-elga-emed-medicationrequest-base.md)
+* Use this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Base](StructureDefinition-at-elga-emed-medicationrequest-base.md) and [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
 * Refer to this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
 * Examples for this Profile: [Medication/At-Emed-Example-Medication-Magistral-01](Medication-At-Emed-Example-Medication-Magistral-01.md)
 
@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationMagistraleZubereitung",
   "title" : "AT ELGA e-Medikation Medication Magistrale Medikation",
   "status" : "draft",
-  "date" : "2026-10-26T16:19:19+00:00",
+  "date" : "2026-10-26T17:11:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -131,13 +131,14 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "min" : 1
     },
     {
       "id" : "Medication.extension:Rezeptur",
       "path" : "Medication.extension",
       "sliceName" : "Rezeptur",
-      "min" : 0,
+      "min" : 1,
       "max" : "1",
       "type" : [{
         "code" : "Extension",
@@ -159,6 +160,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.code",
       "path" : "Medication.code",
+      "min" : 1,
       "mustSupport" : true
     },
     {
@@ -197,10 +199,21 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.amount.numerator.value",
+      "path" : "Medication.amount.numerator.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "Medication.amount.numerator.comparator",
       "path" : "Medication.amount.numerator.comparator",
       "short" : "Fachliche Begründung: TODO",
       "max" : "0"
+    },
+    {
+      "id" : "Medication.amount.numerator.unit",
+      "path" : "Medication.amount.numerator.unit",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.amount.numerator.code",
@@ -213,19 +226,36 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       }
     },
     {
+      "id" : "Medication.amount.denominator",
+      "path" : "Medication.amount.denominator",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
       "id" : "Medication.amount.denominator.value",
       "path" : "Medication.amount.denominator.value",
-      "patternDecimal" : 1
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.denominator.comparator",
+      "path" : "Medication.amount.denominator.comparator",
+      "short" : "Fachliche Begründung: TODO",
+      "max" : "0"
     },
     {
       "id" : "Medication.amount.denominator.unit",
       "path" : "Medication.amount.denominator.unit",
-      "max" : "0"
+      "mustSupport" : true
     },
     {
       "id" : "Medication.amount.denominator.code",
       "path" : "Medication.amount.denominator.code",
-      "max" : "0"
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationmengenart"
+      }
     },
     {
       "id" : "Medication.ingredient",
@@ -240,6 +270,20 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       },
       "short" : "Wirkstoffe.",
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.modifierExtension",
+      "path" : "Medication.ingredient.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
+      "id" : "Medication.ingredient.item[x]",
+      "path" : "Medication.ingredient.item[x]",
+      "type" : [{
+        "code" : "CodeableConcept"
+      }],
       "mustSupport" : true
     },
     {

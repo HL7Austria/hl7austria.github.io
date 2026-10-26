@@ -18,7 +18,18 @@
     "resourceType" : "Medication",
     "id" : "at-emed-journey-medication-wirkstoff-metamizol",
     "meta" : {
-      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
+      "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-wirkstoff"]
+    },
+    "amount" : {
+      "numerator" : {
+        "value" : 1000,
+        "unit" : "mg",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mg"
+      },
+      "denominator" : {
+        "value" : 1
+      }
     },
     "ingredient" : [{
       "itemCodeableConcept" : {

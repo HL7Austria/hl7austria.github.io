@@ -102,6 +102,10 @@
       {
         "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
         "title": "AT ELGA e-Medikation Medication Medikation"
+      },
+      {
+        "url": "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-wirkstoff",
+        "title": "AT ELGA e-Medikation Medication Wirkstoff"
       }
     ],
     "MedicationDispense": [
@@ -306,7 +310,10 @@
       "List"
     ],
     "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur": [
-      "Medication"
+      "Bundle.entry.resource.contained",
+      "Medication",
+      "MedicationDispense.contained",
+      "MedicationRequest.contained"
     ]
   }
 }

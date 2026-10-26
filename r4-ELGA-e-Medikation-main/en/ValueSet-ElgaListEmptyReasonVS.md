@@ -30,7 +30,7 @@
   "title" : "ELGA List Empty Reason ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-26T16:19:19+00:00",
+  "date" : "2026-10-26T17:11:45+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
