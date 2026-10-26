@@ -109,7 +109,52 @@ Die Übereinstimmung wird ausschließlich zum Zeitpunkt der Erstellung der **Gep
 
 #### Gruppierung von Medikamenten
 
-TODO
+Manche Arzneimittel müssen gemeinsam oder in einem festgelegten zeitlichen Abstand zueinander eingenommen werden. Beispiele sind die gleichzeitige Einnahme mehrerer Arzneimittel im Rahmen einer Eradikationstherapie oder ein Abstand von mehreren Stunden zwischen Levothyroxin und Eisen- bzw. Calciumpräparaten. Es ist zu entscheiden, ob und wie dieser Zusammenhang zwischen mehreren Planeinträgen im Medikationsplan abgebildet wird.
+
+**Aktueller Stand**
+
+Jedes Arzneimittel wird als eigenständiger Planeintrag (**MedicationRequest**) dokumentiert. Eine strukturierte Verknüpfung zwischen Planeinträgen ist derzeit nicht vorgesehen:
+
+* Auf Ebene des Medikationsplans gibt es keinen Freitext (`List.note` ist auf 0..0 eingeschränkt).
+* `MedicationRequest.groupIdentifier` ist im Planeintrag ausgeschlossen. In der **Geplanten Abgabe** bildet der `MedicationRequest.groupIdentifier` als **e-Med GroupIdentifier** die Rezept-Klammer. Der Basisstandard definiert [groupIdentifier](https://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.groupIdentifier) außerdem als Kennung für gemeinsam verordnete Requests und nicht für gemeinsam einzunehmende Arzneimittel.
+* Die strukturierte Dosierung kann Einnahmezeitpunkte relativ zu Tagesereignissen abbilden, nicht jedoch relativ zur Einnahme eines anderen Arzneimittels.
+
+Ein Hinweis zur gemeinsamen bzw. zeitlich versetzten Einnahme muss daher als Freitext in jeden betroffenen Planeintrag übernommen werden.
+
+**Mögliche Abbildungsvarianten**
+
+| | |
+| :--- | :--- |
+| A: Freitext in jedem Planeintrag (aktuell) | Der Hinweis wird in jedem betroffenen Planeintrag als Freitext dokumentiert, z.B. in`dosageInstruction.patientInstruction`oder`note`(siehe[Textdarstellungen und ergänzende Hinweise](dosages.md#textdarstellungen-und-ergänzende-hinweise)). |
+| B: Übergeordneter**MedicationRequest** | Ein zusätzlicher**MedicationRequest**enthält die gemeinsame Dosierungsangabe. Die zugehörigen Planeinträge verweisen über[basedOn](https://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.basedOn)auf diesen. |
+
+**Vorteile von A:**
+
+* Es sind keine zusätzlichen Ressourcen, Referenzen oder Konsistenzregeln erforderlich.
+* Wird der Hinweis in `dosageInstruction.patientInstruction` dokumentiert, ist er Teil der Dosierung und wird damit auch in die **Geplante Abgabe** übernommen (siehe [Abhängigkeit von Planeintrag und Geplanter Abgabe](#abhängigkeit-von-planeintrag-und-geplanter-abgabe)).
+
+**Nachteile von A:**
+
+* Der Hinweis wird redundant in mehreren Planeinträgen geführt und ist nicht maschinenlesbar. Die Zusammengehörigkeit kann nicht als Gruppe dargestellt werden.
+* Wird einer der Planeinträge geändert oder abgesetzt, müssen die Hinweise in den übrigen Planeinträgen manuell angepasst werden. Anderenfalls verweist ein Hinweis auf ein nicht mehr eingenommenes Arzneimittel.
+* Eine Änderung des Hinweises erzeugt neue Versionen aller betroffenen Planeinträge.
+
+**Vorteile von B:**
+
+* Die gemeinsame Dosierungsangabe wird nur einmal dokumentiert.
+* Die Zusammengehörigkeit ist strukturiert und maschinenlesbar abgebildet.
+
+**Nachteile von B:**
+
+* [MedicationRequest.medication[x]](https://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.medication_x_) ist im Basisstandard verpflichtend (1..1). Ein übergeordneter **MedicationRequest** ohne eigenes Arzneimittel ist damit nicht ohne Hilfskonstrukt abbildbar.
+* Die Semantik von `basedOn` („Plan oder Request, der durch diesen Request ganz oder teilweise erfüllt wird“) passt nur bedingt zu einer gemeinsamen Einnahmeanweisung.
+* Es sind zusätzliche Regeln erforderlich: Wird der übergeordnete **MedicationRequest** als eigener Eintrag im Medikationsplan geführt? Wie hängen Status und **List.entry.flag** zusammen? Welche Dosierung gilt für den Abgleich mit der **Geplanten Abgabe**?
+* Die strukturierte Eingabe und Darstellung ist für Client-Anwendungen aufwändig.
+
+* Ist die Abbildung als Freitext in den einzelnen Planeinträgen (Variante A) für die Praxis ausreichend oder wird eine strukturierte Gruppierung benötigt? Welche konkreten Anwendungsfälle gibt es und wie häufig treten diese auf?
+* Falls Variante A beibehalten wird: Soll der Hinweis in `dosageInstruction.patientInstruction` (Teil der Dosierung, wird in die *Geplante Abgabe* übernommen) oder in `note` dokumentiert werden?
+* Falls eine strukturierte Gruppierung benötigt wird: Ist Variante B oder eine andere Alternative zu bevorzugen? Können Client-Anwendungen die Eingabe und Darstellung einer solchen Gruppierung umsetzen?
+* Wie soll mit einer Gruppierung umgegangen werden, wenn einer der zugehörigen Planeinträge geändert, abgesetzt oder durch ELGA-Teilnehmer:innen gelöscht wird?
 
 ### Technische Designentscheidungen
 
@@ -198,23 +243,166 @@ Zur Diskussion steht, ob die Festlegung auf ein Bundle vom Typ **searchset** zus
 
 #### Versionierung
 
-TODO
+Die Fachanwendung speichert alle e-Medikation-Ressourcen versioniert: den Medikationsplan (**List**), die Planeinträge und **Geplanten Abgaben** (**MedicationRequest**) sowie die **Durchgeführten Abgaben** (**MedicationDispense**). Sie unterstützt damit die vollständige Versionierung gemäß [Support for Versions](https://hl7.org/fhir/R4/http.html#versions): `meta.versionId` wird gepflegt und frühere Versionen sind für MedicationRequests und für die List Ressource über $history abrufbar (siehe [Transaktionen](interactions.md)). Enthaltene Ressourcen (**contained**), wie die **Medication**, werden gemeinsam mit der sie enthaltenden Ressource versioniert.
+
+Historische Versionen können von GDAs nicht bearbeitet werden. Änderungen erfolgen immer auf Basis der aktuellen Version (siehe [Sub_UC_eMed_02](Sub_UC_eMed_02.md)). Ausgenommen davon ist das Löschen auf Veranlassung von ELGA-Teilnehmer:innen (siehe [Löschen und Stornieren von versionierten Ressourcen](#löschen-und-stornieren-von-versionierten-ressourcen)).
+
+**Entstehung neuer Versionen**
+
+Jedes Update, das zu einer inhaltlichen Änderung einer Ressource führt, erzeugt eine neue Version. Die Fachanwendung vergibt dabei eine neue `meta.versionId` und setzt `meta.lastUpdated` auf den Speicherzeitpunkt (siehe [Allgemeine Business-Logik für schreibende Operations](schreibende-operations-allgemein.md)). Die Response enthält die neu vergebene Version.
+
+Ist die übermittelte Ressource inhaltlich identisch mit ihrer aktuellen Version, wird keine neue Version erzeugt. Damit wird verhindert, dass wiederholtes Speichern derselben Daten zu einer Vielzahl inhaltsgleicher Versionen führt. Beim Vergleich bleiben die serverseitig verwalteten Elemente `meta.versionId`, `meta.lastUpdated` und die von der Fachanwendung erzeugte Narrative (`Resource.text`) unberücksichtigt. Die Response enthält in diesem Fall die unveränderte aktuelle Version.
+
+Da `List.date` bei jedem Plan-Write von der Fachanwendung gesetzt wird, führt jeder erfolgreiche Plan-Write zu einer neuen Medikationsplanversion. Dies gilt auch dann, wenn alle Planeinträge unverändert übernommen werden (**List.entry.flag = unchanged**), etwa um die Reihenfolge der bestehenden Medikation zu verändern.
+
+**Versionskennung**
+
+Die `meta.versionId` wird ausschließlich von der Fachanwendung vergeben. Vom Client übermittelte Werte für `meta.versionId` und `meta.lastUpdated` werden gemäß [update](https://hl7.org/fhir/R4/http.html#update) ignoriert.
+
+Der Basisstandard erlaubt dem Server, die Versionskennung in beliebiger Form zu erzeugen, solange sie dem Datentyp **id** entspricht und innerhalb der Versionen derselben Ressource eindeutig ist (siehe [Managing Resource Contention](https://hl7.org/fhir/R4/http.html#concurrency)). Clients DÜRFEN die `meta.versionId` daher nur als opake Kennung verwenden und keine Reihenfolge oder Anzahl von Versionen daraus ableiten. Die zeitliche Reihenfolge der Versionen ergibt sich aus den jeweiligen Datumselementen der Ressourcen.
+
+Die aktuelle Version einer Ressource wird über [read](https://hl7.org/fhir/R4/http.html#read) bzw. für den Medikationsplan über [$plan-read](OperationDefinition-at-elga-emed-operation-plan-read.md) ermittelt. Historische Medikationsplanversionen sind inhaltlich nicht als solche gekennzeichnet, da `List.status` fix **current** ist. Ob eine abgerufene Version die aktuelle ist, kann nur durch Vergleich mit der aktuellen Version festgestellt werden.
+
+* Welche Elemente sollen beim Vergleich auf inhaltliche Gleichheit unberücksichtigt bleiben?
+* Wie soll die Fachanwendung reagieren, wenn ein Planeintrag mit *List.entry.flag = changed* übermittelt wird, der inhaltlich identisch mit der aktuellen Version ist: Ablehnen oder ohne neue Planeintragsversion als *unchanged* behandeln?
+* Soll ein Plan-Write, bei dem alle Planeinträge unverändert bleiben, eine neue Medikationsplanversion erzeugen (aktuell) oder nur dann, wenn sich Planeinträge ändern?
+* Soll es eine zusätzliche Kennung in den Daten des Medikationsplans geben, um die aktuelle Version des Medikationsplans zu markieren? Aus den Ergebnisse einer historischen Suche kann nicht abgeleitet werden, ob die aktuelle Version der Liste enthalten ist. Derzeit kann die aktuelle Version nur über plan-read ermittelt werden. 
 
 ##### Versionierte Referenzen
 
-TODO
+Eine Referenz kann [versionsspezifisch](https://hl7.org/fhir/R4/references.html#versions) auf eine bestimmte Ressourcenversion verweisen (`[type]/[id]/_history/[vid]`) oder unversioniert auf die jeweils aktuelle Version (`[type]/[id]`). In diesem Implementierungsleitfaden werden die Referenzen wie folgt verwendet:
+
+| | | |
+| :--- | :--- | :--- |
+| Medikationsplan → Planeintrag (`List.entry.item`) | ja | Jede Medikationsplanversion muss den zum Zeitpunkt der Speicherung gültigen Stand der Planeinträge wiedergeben. Nur so kann ein historischer Medikationsplan rekonstruiert werden. |
+| **Geplante Abgabe**→ Planeintrag (`basedOn`) | nein | Die**Geplante Abgabe**verweist immer auf den aktuellen Planeintrag (siehe[Sub_UC_eMed_04_01](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write)). |
+| **Durchgeführte Abgabe**→ Planeintrag bzw.**Geplante Abgabe**(`authorizingPrescription`) | nein | Die**Durchgeführte Abgabe**verweist immer auf die aktuellen Versionen (siehe[Sub_UC_eMed_03](Sub_UC_eMed_03.md)). |
+| Ressourcen → Patient und GDA (z.B.`subject`,`requester`,`List.source`,`performer`) | nein | Die Identität ist über die logische Referenz (bPK-GH bzw. OID) dauerhaft festgelegt (siehe[Informationen über GDA und Patienten](#informationen-über-gda-und-patienten)). |
+| Planeintrag bzw. Abgabe →**Medication** | – | Die**Medication**ist als**contained**Ressource enthalten und wird mit der enthaltenden Ressource versioniert. |
+
+**Erzeugung der versionierten Referenzen im Medikationsplan**
+
+Bei der Verarbeitung einer [Transaction](https://hl7.org/fhir/R4/http.html#trules) ersetzt der Server Referenzen auf neu angelegte Ressourcen (**urn:uuid**) durch die vergebenen Ressourcen-IDs. Bereits versionsspezifische Referenzen bleiben versionsspezifisch. Unversionierte Referenzen werden im jedoch nicht in versionierte Referenzen umgewandelt.
+
+Der Client kennt die Version eines neuen oder geänderten Planeintrags erst nach dem Plan-Write. Daher wird im [Medikationsplan-Transaction-Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md) jede Referenz in `List.entry.item` verpflichtend mit der Extension [resolve-as-version-specific](https://hl7.org/fhir/extensions/StructureDefinition-resolve-as-version-specific.html) (`valueBoolean = true`) gekennzeichnet. Die Extension stammt aus dem FHIR Extensions Pack und ist auch für R4 anwendbar. Die Fachanwendung ersetzt die gekennzeichneten Referenzen durch versionierte Referenzen auf jene Planeintragsversion, die nach Abschluss der Transaktion aktuell ist:
+
+* **neue Planeinträge** (POST): Die **urn:uuid** wird durch die Referenz auf die neu angelegte Version ersetzt.
+* **geänderte bzw. zu entfernende Planeinträge** (PUT): Die Referenz verweist auf die durch die Transaktion entstandene Version.
+* **unveränderte Planeinträge** (nur referenziert, nicht im Bundle enthalten): Die Referenz verweist auf die aktuelle, unveränderte Version.
+
+In der persistierten **List**-Ressource ist die Extension nicht mehr enthalten. Ein Beispiel zeigen das [Transaction Bundle](Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.md) und das zugehörige [plan-write Response Bundle](Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.md).
+
+**Unversionierte Referenzen der Abgaben auf Planeinträge**
+
+Die Referenzen von **Geplanten Abgaben** und **Durchgeführten Abgaben** auf Planeinträge sind nicht versioniert. Eine spätere Änderung des Planeintrags ist damit über die Abgabe sichtbar, es ist jedoch nicht nachvollziehbar, auf welcher Planeintragsversion die Abgabe beruht.
+
+| | |
+| :--- | :--- |
+| A: unversioniert (aktuell) | Die Referenz verweist immer auf die aktuelle Version des Planeintrags bzw. der**Geplanten Abgabe**. |
+| B: versioniert | Die Fachanwendung löst die Referenz beim Speichern der Abgabe auf die zu diesem Zeitpunkt aktuelle Version auf (analog zu`List.entry.item`). |
+
+**Vorteile von A:**
+
+* Die Abgabe zeigt immer den aktuellen Zustand des Planeintrags, z.B. ob dieser inzwischen pausiert oder abgesetzt wurde.
+
+**Nachteile von A:**
+
+* Es ist nicht nachvollziehbar, welche Planeintragsversion der Erstellung der **Geplanten Abgabe** zugrunde lag. Die bei der Erstellung geforderte Übereinstimmung von Arzneimittel und Dosierung kann im Nachhinein nicht überprüft werden.
+* Ressourcen, die auf eine bestimmte Planeintragsversion verweisen, können nicht gezielt gesucht werden (siehe [Sub_UC_eMed_01](Sub_UC_eMed_01.md)).
+
+**Vorteile von B:**
+
+* Der Zusammenhang zwischen Abgabe und Planeintragsversion ist eindeutig dokumentiert.
+* Die aktuelle Version bleibt ermittelbar, da sich die unversionierte Referenz durch Weglassen von `/_history/[vid]` ergibt.
+
+**Nachteile von B:**
+
+* Beim Löschen von Planeintragsversionen müssen auch die Referenzen aus **Geplanten Abgaben** und **Durchgeführten Abgaben** berücksichtigt werden.
+* Clients müssen die aktuelle Version des Planeintrags gesondert abrufen, um dessen aktuellen Zustand anzuzeigen.
+* Suchparameter auf diese Referenzen müssen auch versionierte Referenzwerte berücksichtigen.
+
+**Referenzen auf Patient und GDA**
+
+Referenzen auf Patient, Practitioner, PractitionerRole und Organization sind nicht versioniert. Die Identität des Patienten bzw. GDA ist über die logische Referenz dauerhaft festgelegt. Die angezeigten Stammdaten (z.B. Name, Fachrichtung, Organisation) entsprechen jedoch dem aktuellen Stand der jeweiligen Ressource und nicht zwingend dem Stand zum Zeitpunkt der Dokumentation. Ob dies für die Historie ausreicht, hängt auch davon ab, wie die Fachanwendung Änderungen aus GDA-I und ZPI in die Ressourcen übernimmt (siehe [Informationen über GDA und Patienten](#informationen-über-gda-und-patienten)).
+
+* Sollen die Referenzen von *Geplanten Abgaben* und *Durchgeführten Abgaben* auf Planeinträge versioniert werden oder soll der Verweis weiterhin auf die jeweils aktuelle Version zeigen? (siehe auch [Abhängigkeit von Planeintrag und Geplanter Abgabe](#abhängigkeit-von-planeintrag-und-geplanter-abgabe))
+* Müssen Referenzen auf Patient und GDA für die Historie versioniert sein, damit z.B. Name und Rolle des GDA zum Zeitpunkt der Dokumentation erhalten bleiben? Alternativ könnte der Name in `Reference.display` festgehalten werden.
+* Wie soll die Fachanwendung reagieren, wenn ein Client im Medikationsplan-Transaction-Bundle bereits eine versionierte Referenz in `List.entry.item` übermittelt: Ablehnen, oder akzeptieren, sofern sie auf die aktuelle Version verweist?
 
 #### ID-Management
 
-TODO 
+Die logische ID (`Resource.id`) aller persistierten Ressourcen wird ausschließlich von der Fachanwendung vergeben. Sie bleibt über alle Versionen einer Ressource unverändert und ist bei der Auslieferung durch die Fachanwendung immer befüllt.
+
+Die Ressourcen werden in Transaction Bundles übermittelt. Dabei gelten die [Transaction Processing Rules](https://hl7.org/fhir/R4/http.html#trules) sowie die Regeln zur [Auflösung von Referenzen in Bundles](https://hl7.org/fhir/R4/bundle.html#references):
+
+| | | |
+| :--- | :--- | :--- |
+| `Bundle.entry.fullUrl` | temporäre, vom Client erzeugte**urn:uuid** | absolute URL der bestehenden Ressource (`[base]/[type]/[id]`) |
+| `Bundle.entry.request.url` | `[type]` | `[type]/[id]` |
+| `Resource.id` | optional, wird ignoriert | verpflichtend, identisch mit der`[id]`in`request.url` |
+| `meta.versionId`,`meta.lastUpdated` | werden ignoriert | werden ignoriert |
+
+**Neue Ressourcen (POST)**
+
+Neue Ressourcen erhalten im Transaction Bundle eine temporäre **urn:uuid** als `fullUrl`. Andere Ressourcen im selben Bundle verweisen über diese **urn:uuid** auf die neue Ressource. Die Fachanwendung vergibt während der Verarbeitung die IDs und ersetzt alle Referenzen auf die temporären **urn:uuid** durch Referenzen auf die angelegten Ressourcen. Wo dies festgelegt ist, werden die Referenzen dabei durch versionierte Referenzen ersetzt (siehe [Versionierte Referenzen](#versionierte-referenzen)).
+
+**Bestehende Ressourcen (PUT)**
+
+Bei einer Änderung referenzieren `fullUrl` und `request.url` die bestehende Ressource über ihre logische ID. Diese ist dem Client aus dem vorangegangenen Lesezugriff bekannt, z.B. aus dem Medikationsplan-Bundle des [$plan-read](OperationDefinition-at-elga-emed-operation-plan-read.md). Die Ressource erhält eine neue `meta.versionId`, sofern sich ihr Inhalt geändert hat (siehe [Versionierung](#versionierung)). Gemäß [update](https://hl7.org/fhir/R4/http.html#update) MUSS die Operation abgelehnt werden, wenn `Resource.id` fehlt oder von der ID in `request.url` abweicht.
+
+Das Anlegen von Ressourcen mit einer vom Client festgelegten ID über PUT ([Update as Create](https://hl7.org/fhir/R4/http.html#upsert)) ist nicht vorgesehen. Ein PUT auf eine nicht vorhandene Ressource wird abgelehnt.
+
+Für die einzelnen Ressourcen ergibt sich daraus:
+
+* **Medikationsplan** (**List**): Pro ELGA-Teilnehmer existiert genau eine Medikationsplan **List**-Ressource (`List.code = http://snomed.info/sct#736378000`). Diese wird von der Fachanwendung angelegt (**List.emptyReason = notstarted**). Clients ändern den Medikationsplan daher immer über PUT.
+* **Planeinträge**: neue Planeinträge über POST, geänderte und zu entfernende Planeinträge über PUT im [Medikationsplan-Transaction-Bundle](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md).
+* ****Geplante Abgaben** und **Durchgeführte Abgaben****: neue Abgaben über POST im jeweiligen Transaction Bundle. Spätere Änderungen erfolgen über eigene Operations auf die bestehende Ressource (z.B. [$prescription-discard](OperationDefinition-at-elga-emed-operation-prescription-discard.md)).
+
+**Response**
+
+Die Response auf ein Transaction Bundle ist ein Bundle vom Typ **transaction-response**. Für jede Ressource enthält [Bundle.entry.response](https://hl7.org/fhir/R4/bundle-definitions.html#Bundle.entry.response):
+
+* `status`: **201** bei neu angelegten, **200** bei geänderten Ressourcen,
+* `location`: die versionierte URL der persistierten Version (`[base]/[type]/[id]/_history/[vid]`), 
+* `lastModified`: der Speicherzeitpunkt.
+
+Ein Beispiel zeigt das [plan-write Response Bundle](Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.md).
+
+* Soll `Resource.id` bei neuen Ressourcen (POST) weggelassen werden müssen, statt optional zu sein und ignoriert zu werden?
 
 #### Optimistisches Locking mit ETags
 
-TODO
+Der Basisstandard beschreibt unter [Managing Resource Contention](https://hl7.org/fhir/R4/http.html#concurrency) ein Verfahren, um gleichzeitige Schreibinteraktionen zu verhindern: Der Server liefert mit einer Ressource einen ETag. Bei einem Update sendet der Client diesen Wert im Header `If-Match` zurück. Weicht er von der aktuellen Version ab, lehnt der Server das Update ab (**Optimistic Locking**).
 
-Der ETag identifiziert die persistierte List-Version. Die Fachanwendung nutzt ihn beim Plan-Write, um zu erkennen, ob zwischen Plan-Read und Plan-Write jemand anderes den Plan geändert hat (Optimistic Locking). Ist die Version gleich geblieben, gilt das Write als konfliktfrei.
+**Anwendung auf den Medikationsplan**
 
-### Informationen über GDA und Patienten
+In der e-Medikation schützt der ETag den Medikationsplan als Ganzes. Er bezieht sich auf die aktuelle persistierte Version der **List**-Ressource. Planeinträge können nur gemeinsam mit dem Medikationsplan über Plan-Write geändert werden und jeder Plan-Write erzeugt eine neue **List**-Version. Der ETag der **List** erkennt damit auch zwischenzeitliche Änderungen an den Planeinträgen.
+
+Der Ablauf ist in [Sub_UC_eMed_01_01](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read) und [Sub_UC_eMed_02_01](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write) beschrieben:
+
+1. Die Fachanwendung liefert bei[$plan-read](OperationDefinition-at-elga-emed-operation-plan-read.md)im HTTP-Response-Header den ETag der aktuellen persistierten**List**-Version.
+1. Der Client übermittelt diesen ETag beim[$plan-write](OperationDefinition-at-elga-emed-operation-plan-write.md)im HTTP-Request-Header`If-Match`.
+1. Die Fachanwendung vergleicht den übermittelten ETag mit dem ETag der aktuell persistierten**List**-Version:
+* Stimmen beide überein, wurde der Medikationsplan seit dem $plan-read nicht geändert und der Schreibvorgang wird verarbeitet.
+* Stimmen sie nicht überein, wird der Schreibvorgang mit einem OperationOutcome abgelehnt. Der Client muss den Medikationsplan erneut mittels $plan-read abrufen und seine Änderungen auf Basis der aktuellen Version durchführen.
+* Fehlt der Header `If-Match`, wird der Schreibvorgang ebenfalls abgelehnt.
+
+Abweichend vom Basisstandard wird der ETag hier für das Ergebnis einer Operation (Plan-Read) geliefert und bezieht sich auf die darin enthaltene **List**-Ressource. Im Basisstandard wird für Ressourcen in einem Bundle kein geimeinsamer ETag geliefert, sondern `Bundle.request.ifMatch` und `Bundle.response.etag` verwendet. Zu beachten ist außerdem, dass die bei $plan-read ausgelieferte **List** transformiert ist (siehe [Automatische Statusänderungen](#automatische-statusänderungen-der-beim-plan-read-ausgelieferten-ressourcen)). Der ETag bezieht sich dennoch auf die persistierte Version.
+
+**Wert des ETags**
+
+Die Bildung des ETags ist implementierungsabhängig. Clients DÜRFEN den Wert nur unverändert zurücksenden und nicht interpretieren. Die Verwendung der `meta.versionId` der **List** ist eine mögliche Variante, die dem Basisstandard entspricht.
+
+**Alternative: ETag im Transaction Bundle**
+
+Anstelle des HTTP-Headers kann der ETag im Medikationsplan-Transaction-Bundle über [Bundle.entry.request.ifMatch](https://hl7.org/fhir/R4/bundle-definitions.html#Bundle.entry.request.ifMatch) des **List**-Eintrags übermittelt werden. Damit wäre das Bundle in sich vollständig. Ein zusätzlicher HTTP-Header für die Custom Operation wäre nicht erforderlich.
+
+* Soll der ETag beim $plan-write im HTTP-Header `If-Match` oder in `Bundle.entry.request.ifMatch` des *List*-Eintrags im Medikationsplan-Transaction-Bundle übermittelt werden?
+* Soll als ETag verpflichtend die `meta.versionId` der *List* verwendet werden oder soll der Wert implementierungsabhängig bleiben?
+* Ist der ETag der *List* ausreichend oder werden zusätzlich ETags für Planeinträge benötigt?
+* Ist ein Optimistic Locking auch für schreibende Operations auf *Geplante Abgaben* und *Durchgeführte Abgaben* erforderlich, oder reichen die Regeln für zulässige Statusübergänge aus?
+
+#### Informationen über GDA und Patienten
 
 Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Medikation-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen `Patient`-, `Practitioner`-, `PractitionerRole`- oder `Organization`-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (`Reference.identifier`) anzugeben:
 

@@ -30,7 +30,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA e-Med Durchgeführte Abgabe Typ ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-23T16:16:05+00:00",
+  "date" : "2026-10-26T11:42:48+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
