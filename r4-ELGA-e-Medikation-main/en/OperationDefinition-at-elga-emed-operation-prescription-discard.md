@@ -11,8 +11,6 @@
 
 Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementierungsleitfadens. Sie gelten sowohl für unmittelbar übermittelte Änderungen als auch für daraus resultierende serverseitige Folgeänderungen. Input und Output sind in den [Parameters](#parameters) festgelegt.Ergänzende Regelungen werden in der für die [Operation spezifischen Business-Logik](#operation-spezifische-business-logik) beschrieben.
 
-Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementierungsleitfadens. Sie gelten sowohl für unmittelbar übermittelte Änderungen als auch für daraus resultierende serverseitige Folgeänderungen. Input und Output sind in der jeweiligen OperationDefinition festgelegt. Ergänzende Regelungen werden in der operationsspezifischen Business-Logik beschrieben.
-
 #### Generell
 
 * Für alle im IG entsprechend festgelegten Ressourcen MUSS die Narrative (.text) gemäß den ressourcenspezifischen Regeln erzeugt werden. Nach serverseitigen Änderungen MUSS sichergestellt sein, dass die Narrative dem tatsächlich gespeicherten beziehungsweise ausgelieferten strukturierten Inhalt entspricht.
@@ -61,7 +59,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $prescription-discard",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-26T13:57:36+00:00",
+  "date" : "2026-10-26T16:01:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

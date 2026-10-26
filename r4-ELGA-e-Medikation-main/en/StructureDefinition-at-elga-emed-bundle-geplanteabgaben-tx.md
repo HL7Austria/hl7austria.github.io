@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleGeplanteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Geplante Abgaben",
   "status" : "draft",
-  "date" : "2026-10-26T13:57:36+00:00",
+  "date" : "2026-10-26T16:01:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "use" : "work"
     }]
   }],
-  "description" : "Profil für das Schreiben des Medikationsplans mit der $prescription-write Operation.",
+  "description" : "Profil für das Schreiben der Geplanten Abgaben mit der $prescription-write Operation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",
@@ -82,7 +82,14 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "differential" : {
     "element" : [{
       "id" : "Bundle",
-      "path" : "Bundle"
+      "path" : "Bundle",
+      "constraint" : [{
+        "key" : "at-emed-geplante-abgaben-group-identifier-einheitlich",
+        "severity" : "error",
+        "human" : "Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.",
+        "expression" : "entry.resource.ofType(MedicationRequest).groupIdentifier.exists().not() or entry.resource.ofType(MedicationRequest).where(groupIdentifier.exists()).count() = entry.resource.ofType(MedicationRequest).count()",
+        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
+      }]
     },
     {
       "id" : "Bundle.implicitRules",
@@ -100,46 +107,24 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
     {
       "id" : "Bundle.entry",
       "path" : "Bundle.entry",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "resource"
-        }],
-        "rules" : "closed"
-      },
       "min" : 1,
-      "constraint" : [{
-        "key" : "at-emed-geplante-abgaben-group-identifier-einheitlich",
-        "severity" : "error",
-        "human" : "Entweder müssen alle Geplanten Abgaben einen groupIdentifier enthalten oder keine.",
-        "expression" : "resource.ofType(MedicationRequest).groupIdentifier.exists().not() or resource.ofType(MedicationRequest).groupIdentifier.exists().count() = resource.ofType(MedicationRequest).count()",
-        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
-      }],
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben",
-      "path" : "Bundle.entry",
-      "sliceName" : "geplanteAbgaben",
-      "min" : 1,
-      "max" : "*",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Bundle.entry:geplanteAbgaben.modifierExtension",
+      "id" : "Bundle.entry.modifierExtension",
       "path" : "Bundle.entry.modifierExtension",
       "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben.fullUrl",
+      "id" : "Bundle.entry.fullUrl",
       "path" : "Bundle.entry.fullUrl",
       "short" : "Eindeutige URL für den Eintrag im Bundle. ",
       "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben.resource",
+      "id" : "Bundle.entry.resource",
       "path" : "Bundle.entry.resource",
       "min" : 1,
       "type" : [{
@@ -149,25 +134,25 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben.request",
+      "id" : "Bundle.entry.request",
       "path" : "Bundle.entry.request",
       "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben.request.modifierExtension",
+      "id" : "Bundle.entry.request.modifierExtension",
       "path" : "Bundle.entry.request.modifierExtension",
       "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben.request.method",
+      "id" : "Bundle.entry.request.method",
       "path" : "Bundle.entry.request.method",
       "patternCode" : "POST",
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:geplanteAbgaben.request.url",
+      "id" : "Bundle.entry.request.url",
       "path" : "Bundle.entry.request.url",
       "patternUri" : "MedicationRequest",
       "mustSupport" : true

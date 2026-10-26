@@ -50,8 +50,8 @@
 	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"12.26"}
-    h3,h4,h5,h6{--heading-prefix:"12.26"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.23"}
+    h3,h4,h5,h6{--heading-prefix:"12.23"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -340,8 +340,6 @@
 <h3 id="allgemeine-business-logik-für-schreibende-operations">Allgemeine Business-Logik für schreibende Operations</h3>
 <p>Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementierungsleitfadens. Sie gelten sowohl für unmittelbar übermittelte Änderungen als auch für daraus resultierende serverseitige Folgeänderungen. Input und Output sind in den <a href="#parameters">Parameters</a> festgelegt.Ergänzende Regelungen werden in der für die <a href="#operation-spezifische-business-logik">Operation spezifischen Business-Logik</a> beschrieben.</p>
 
-<p>Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementierungsleitfadens. Sie gelten sowohl für unmittelbar übermittelte Änderungen als auch für daraus resultierende serverseitige Folgeänderungen. Input und Output sind in der jeweiligen OperationDefinition festgelegt. Ergänzende Regelungen werden in der operationsspezifischen Business-Logik beschrieben.</p>
-
 <h4 id="generell">Generell</h4>
 <ul>
   <li>Für alle im IG entsprechend festgelegten Ressourcen MUSS die Narrative (.text) gemäß den ressourcenspezifischen Regeln erzeugt werden. Nach serverseitigen Änderungen MUSS sichergestellt sein, dass die Narrative dem tatsächlich gespeicherten beziehungsweise ausgelieferten strukturierten Inhalt entspricht.</li>
@@ -398,8 +396,7 @@
 
 
   <div data-fhir="generated"><p class="res-header-id"/><a name="at-elga-emed-operation-prescription-write"> </a><a name="hcat-elga-emed-operation-prescription-write"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><p>URL: [base]/MedicationRequest/$prescription-write</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>geplanteAbgaben</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/bundle.html">Bundle</a> (<a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx">AT ELGA e-Medikation Transaction Bundle Geplante Abgaben</a>)</td><td/><td><div><p>Der <em>geplanteAbgaben</em> Parameter dient der Übermittlung der Geplanten Abgaben die geschrieben werden sollen.</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R4/bundle.html" title="http://hl7.org/fhir/StructureDefinition/Bundle">Bundle</a>)</td><td/><td><div><p>Der <em>return</em> Parameter enthält die persistierten Ressourcen.</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="StructureDefinition-at-elga-emed-operationoutcome.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome">AT ELGA e-Medikation OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter im Falle eines Fehlers.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="StructureDefinition-at-elga-emed-parameters-out-prescription-write.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-prescription-write">AT ELGA e-Medikation Parameters Out $prescription-write</a>)</td><td/><td><div><p>Der <em>return</em> Parameter enthält je nach Erfolg der Operation OperationOutcome(s) und falls die Operation erfolgreich war auch die persistierten Ressourcen.</p>
 </div></td></tr></table></div>
 
   <!-- insert notes if present -->
@@ -434,7 +431,7 @@
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-26 13:57:00 +0000">
+  <span title="2026-10-26 16:01:00 +0000">
     2026-10-26
   </span>
 

@@ -12,7 +12,7 @@
   <name value="ELGA-e-Medikation-R4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-26T13:57:36+00:00"/>
+  <date value="2026-10-26T16:01:21+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -329,6 +329,14 @@
       <name value="Stammdaten"/>
       <description value="Stammdaten"/>
     </grouping>
+    <grouping id="Operationen">
+      <name value="Operationen"/>
+      <description value="Definitionen der im Leitfaden enthaltenen Custom Operations"/>
+    </grouping>
+    <grouping id="OperationParameter">
+      <name value="Ein- und Ausgabeparameter der Interaktionen"/>
+      <description value="Profile für die Ein- und Ausgabe der Operationen (Transaction-Bundles, Response-Bundles, OperationOutcome, Parameters)"/>
+    </grouping>
     <grouping id="Suchparameter">
       <name value="Suchparameter"/>
       <description value="Suchparameter"/>
@@ -343,6 +351,7 @@
       <name value="At ELGA e-Medikation Device Fachanwendung"/>
       <description value="Das Device, welches die eMed Fachanwendung abbildet"/>
       <exampleBoolean value="false"/>
+      <groupingId value="Stammdaten"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -505,7 +514,7 @@
       <name value="AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan"/>
       <description value="Profil für den Medikationsplan als Ergebnis der $plan-read Operation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Medikationsplan"/>
+      <groupingId value="OperationParameter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -517,6 +526,7 @@
       <name value="AT ELGA e-Medikation OperationOutcome"/>
       <description value="Dieses Profil gibt vor, welche Details im Rahmen der e-Medikation im Fehlerfall..."/>
       <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -529,6 +539,42 @@
       <description value="Profil für die Struktur von Organisationen"/>
       <exampleBoolean value="false"/>
       <groupingId value="Stammdaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-dispense-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $dispense-write"/>
+      <description value="Profil für den Rückgabewert der $dispense-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-plan-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $plan-write"/>
+      <description value="Profil für den Rückgabewert der $plan-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-prescription-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $prescription-write"/>
+      <description value="Profil für den Rückgabewert der $prescription-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -564,6 +610,7 @@
       <name value="AT ELGA e-Medikation PractitionerRole"/>
       <description value="Profil für die Struktur der PractitionerRole Ressource"/>
       <exampleBoolean value="false"/>
+      <groupingId value="Stammdaten"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -597,9 +644,9 @@
         <reference value="StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"/>
       </reference>
       <name value="AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben"/>
-      <description value="Profil für das Schreiben des Medikationsplans mit der $dispense-write Operation."/>
+      <description value="Profil für das Schreiben der Durchgeführten Abgaben mit der $dispense-write Operation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="DurchgefuehrteAbgabe"/>
+      <groupingId value="OperationParameter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -609,9 +656,9 @@
         <reference value="StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"/>
       </reference>
       <name value="AT ELGA e-Medikation Transaction Bundle Geplante Abgaben"/>
-      <description value="Profil für das Schreiben des Medikationsplans mit der $prescription-write Operation."/>
+      <description value="Profil für das Schreiben der Geplanten Abgaben mit der $prescription-write Operation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="GeplanteAbgabe"/>
+      <groupingId value="OperationParameter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -623,7 +670,43 @@
       <name value="AT ELGA e-Medikation Transaction Bundle Medikationsplan"/>
       <description value="Profil für das Schreiben des Medikationsplans mit der $plan-write Operation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="Medikationsplan"/>
+      <groupingId value="OperationParameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-write-response"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction-Response Bundle Durchgeführte Abgaben"/>
+      <description value="Profil für die Antwort des Servers auf das Schreiben von Durchgeführten Abgaben mit der $dispense-write Operation. Das Bundle enthält die persistierten Durchgeführten Abgaben."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-geplanteabgaben-write-response"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction-Response Bundle Geplante Abgaben"/>
+      <description value="Profil für die Antwort des Servers auf das Schreiben von Geplanten Abgaben mit der $prescription-write Operation. Das Bundle enthält die persistierten Geplanten Abgaben."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan-write-response"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction-Response Bundle Medikationsplan"/>
+      <description value="Profil für die Antwort des Servers auf das Schreiben des Medikationsplans mit der $plan-write Operation. Das Bundle enthält den persistierten Medikationsplan sowie die persistierten Medikationsplaneinträge."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationParameter"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -723,7 +806,7 @@
       </reference>
       <name value="Beispiel Journey 01-02: Plan-Write-Response"/>
       <description value="Beispiel einer Response eines plan-write mit 2 neuen Planeinträgen"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-write-response"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1075,6 +1158,7 @@
       <name value="e-Med Operation für $dispense-discard"/>
       <description value="Operation für das Stornieren von Durchgeführten Abgaben"/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1086,6 +1170,7 @@
       <name value="e-Med Operation für $dispense-write"/>
       <description value="Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1097,6 +1182,7 @@
       <name value="e-Med Operation für $groupidentifier-create"/>
       <description value="Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1108,6 +1194,7 @@
       <name value="e-Med Operation für $groupidentifier-search"/>
       <description value="Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1119,6 +1206,7 @@
       <name value="e-Med Operation für $plan-read"/>
       <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines&#xA;ELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten&#xA;Zustand ab.&#xA;&#xA;Hierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version&#xA;der List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen&#xA;ein temporäres Medikationsplan-Bundle zur Auslieferung.&#xA;&#xA;Existiert noch kein Medikationsplan, erstellt und persistiert die&#xA;Fachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1130,6 +1218,7 @@
       <name value="e-Med Operation für $plan-write"/>
       <description value="Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1141,6 +1230,7 @@
       <name value="e-Med Operation für $prescription-discard"/>
       <description value="Operation für das Stornieren von Geplanten Abgaben"/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1152,6 +1242,7 @@
       <name value="e-Med Operation für $prescription-write"/>
       <description value="Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1163,6 +1254,7 @@
       <name value="e-Med Operation für $reference-plan"/>
       <description value="Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen."/>
       <exampleBoolean value="false"/>
+      <groupingId value="Operationen"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

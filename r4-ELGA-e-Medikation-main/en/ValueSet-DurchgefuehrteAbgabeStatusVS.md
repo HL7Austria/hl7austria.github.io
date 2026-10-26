@@ -30,7 +30,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA e-Med Durchgeführte Abgabe Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-26T13:57:36+00:00",
+  "date" : "2026-10-26T16:01:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

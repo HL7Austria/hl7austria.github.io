@@ -11,8 +11,6 @@
 
 Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementierungsleitfadens. Sie gelten sowohl für unmittelbar übermittelte Änderungen als auch für daraus resultierende serverseitige Folgeänderungen. Input und Output sind in den [Parameters](#parameters) festgelegt.Ergänzende Regelungen werden in der für die [Operation spezifischen Business-Logik](#operation-spezifische-business-logik) beschrieben.
 
-Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementierungsleitfadens. Sie gelten sowohl für unmittelbar übermittelte Änderungen als auch für daraus resultierende serverseitige Folgeänderungen. Input und Output sind in der jeweiligen OperationDefinition festgelegt. Ergänzende Regelungen werden in der operationsspezifischen Business-Logik beschrieben.
-
 #### Generell
 
 * Für alle im IG entsprechend festgelegten Ressourcen MUSS die Narrative (.text) gemäß den ressourcenspezifischen Regeln erzeugt werden. Nach serverseitigen Änderungen MUSS sichergestellt sein, dass die Narrative dem tatsächlich gespeicherten beziehungsweise ausgelieferten strukturierten Inhalt entspricht.
@@ -63,7 +61,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $plan-write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-26T13:57:36+00:00",
+  "date" : "2026-10-26T16:01:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -99,20 +97,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   {
     "name" : "return",
     "use" : "out",
-    "min" : 0,
+    "min" : 1,
     "max" : "1",
-    "documentation" : "Der *return* Parameter enthält die persistierten Ressourcen.",
+    "documentation" : "Der *return* Parameter enthält je nach Erfolg der Operation OperationOutcome(s) und falls die Operation erfolgreich war auch die persistierten Ressourcen.",
     "type" : "Resource",
-    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Bundle"]
-  },
-  {
-    "name" : "return",
-    "use" : "out",
-    "min" : 0,
-    "max" : "1",
-    "documentation" : "Der *return* Parameter im Falle eines Fehlers.",
-    "type" : "Resource",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome"]
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-write"]
   }]
 }
 

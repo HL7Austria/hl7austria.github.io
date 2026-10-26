@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleDurchgefuehrteAbgabenTx",
   "title" : "AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben",
   "status" : "draft",
-  "date" : "2026-10-26T13:57:36+00:00",
+  "date" : "2026-10-26T16:01:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -52,7 +52,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       "use" : "work"
     }]
   }],
-  "description" : "Profil für das Schreiben des Medikationsplans mit der $dispense-write Operation.",
+  "description" : "Profil für das Schreiben der Durchgeführten Abgaben mit der $dispense-write Operation.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "v2",
@@ -100,39 +100,24 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
     {
       "id" : "Bundle.entry",
       "path" : "Bundle.entry",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "resource"
-        }],
-        "rules" : "closed"
-      },
       "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben",
-      "path" : "Bundle.entry",
-      "sliceName" : "durchgefuehrteAbgaben",
-      "min" : 1,
-      "max" : "*",
-      "mustSupport" : true
-    },
-    {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben.modifierExtension",
+      "id" : "Bundle.entry.modifierExtension",
       "path" : "Bundle.entry.modifierExtension",
       "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben.fullUrl",
+      "id" : "Bundle.entry.fullUrl",
       "path" : "Bundle.entry.fullUrl",
       "short" : "Eindeutige URL für den Eintrag im Bundle. ",
       "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben.resource",
+      "id" : "Bundle.entry.resource",
       "path" : "Bundle.entry.resource",
       "min" : 1,
       "type" : [{
@@ -141,25 +126,25 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       }]
     },
     {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben.request",
+      "id" : "Bundle.entry.request",
       "path" : "Bundle.entry.request",
       "min" : 1,
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben.request.modifierExtension",
+      "id" : "Bundle.entry.request.modifierExtension",
       "path" : "Bundle.entry.request.modifierExtension",
       "short" : "Fachliche Begründung: Es sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
       "max" : "0"
     },
     {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben.request.method",
+      "id" : "Bundle.entry.request.method",
       "path" : "Bundle.entry.request.method",
       "patternCode" : "POST",
       "mustSupport" : true
     },
     {
-      "id" : "Bundle.entry:durchgefuehrteAbgaben.request.url",
+      "id" : "Bundle.entry.request.url",
       "path" : "Bundle.entry.request.url",
       "patternUri" : "MedicationDispense",
       "mustSupport" : true

@@ -14,7 +14,6 @@
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"]
   },
   "type" : "transaction",
-  "timestamp" : "2026-03-22T16:10:00+00:00",
   "entry" : [{
     "fullUrl" : "urn:uuid:7a1fd5cc-e600-4a30-9f7d-15d653dc88ff",
     "resource" : {

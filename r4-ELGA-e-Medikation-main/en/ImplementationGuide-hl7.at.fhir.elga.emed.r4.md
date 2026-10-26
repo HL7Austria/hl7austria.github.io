@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T13:57:36+00:00",
+  "date" : "2026-10-26T16:01:21+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -434,6 +434,16 @@
       "description" : "Stammdaten"
     },
     {
+      "id" : "Operationen",
+      "name" : "Operationen",
+      "description" : "Definitionen der im Leitfaden enthaltenen Custom Operations"
+    },
+    {
+      "id" : "OperationParameter",
+      "name" : "Ein- und Ausgabeparameter der Interaktionen",
+      "description" : "Profile für die Ein- und Ausgabe der Operationen (Transaction-Bundles, Response-Bundles, OperationOutcome, Parameters)"
+    },
+    {
       "id" : "Suchparameter",
       "name" : "Suchparameter",
       "description" : "Suchparameter"
@@ -452,7 +462,8 @@
       },
       "name" : "At ELGA e-Medikation Device Fachanwendung",
       "description" : "Das Device, welches die eMed Fachanwendung abbildet",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Stammdaten"
     },
     {
       "extension" : [{
@@ -685,7 +696,7 @@
       "name" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
       "description" : "Profil für den Medikationsplan als Ergebnis der $plan-read Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "Medikationsplan"
+      "groupingId" : "OperationParameter"
     },
     {
       "extension" : [{
@@ -701,7 +712,8 @@
       },
       "name" : "AT ELGA e-Medikation OperationOutcome",
       "description" : "Dieses Profil gibt vor, welche Details im Rahmen der e-Medikation im Fehlerfall...",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
     },
     {
       "extension" : [{
@@ -719,6 +731,57 @@
       "description" : "Profil für die Struktur von Organisationen",
       "exampleBoolean" : false,
       "groupingId" : "Stammdaten"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-dispense-write.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-dispense-write"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $dispense-write",
+      "description" : "Profil für den Rückgabewert der $dispense-write Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-plan-write.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-plan-write"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $plan-write",
+      "description" : "Profil für den Rückgabewert der $plan-write Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-prescription-write.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-prescription-write"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $prescription-write",
+      "description" : "Profil für den Rückgabewert der $prescription-write Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
     },
     {
       "extension" : [{
@@ -768,7 +831,8 @@
       },
       "name" : "AT ELGA e-Medikation PractitionerRole",
       "description" : "Profil für die Struktur der PractitionerRole Ressource",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Stammdaten"
     },
     {
       "extension" : [{
@@ -817,9 +881,9 @@
         "reference" : "StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben",
-      "description" : "Profil für das Schreiben des Medikationsplans mit der $dispense-write Operation.",
+      "description" : "Profil für das Schreiben der Durchgeführten Abgaben mit der $dispense-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "DurchgefuehrteAbgabe"
+      "groupingId" : "OperationParameter"
     },
     {
       "extension" : [{
@@ -834,9 +898,9 @@
         "reference" : "StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
       },
       "name" : "AT ELGA e-Medikation Transaction Bundle Geplante Abgaben",
-      "description" : "Profil für das Schreiben des Medikationsplans mit der $prescription-write Operation.",
+      "description" : "Profil für das Schreiben der Geplanten Abgaben mit der $prescription-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "GeplanteAbgabe"
+      "groupingId" : "OperationParameter"
     },
     {
       "extension" : [{
@@ -853,7 +917,58 @@
       "name" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
       "description" : "Profil für das Schreiben des Medikationsplans mit der $plan-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "Medikationsplan"
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-bundle-durchgefuehrteabgaben-write-response.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-write-response"
+      },
+      "name" : "AT ELGA e-Medikation Transaction-Response Bundle Durchgeführte Abgaben",
+      "description" : "Profil für die Antwort des Servers auf das Schreiben von Durchgeführten Abgaben mit der $dispense-write Operation. Das Bundle enthält die persistierten Durchgeführten Abgaben.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-bundle-geplanteabgaben-write-response.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-bundle-geplanteabgaben-write-response"
+      },
+      "name" : "AT ELGA e-Medikation Transaction-Response Bundle Geplante Abgaben",
+      "description" : "Profil für die Antwort des Servers auf das Schreiben von Geplanten Abgaben mit der $prescription-write Operation. Das Bundle enthält die persistierten Geplanten Abgaben.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-bundle-medikationsplan-write-response.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-bundle-medikationsplan-write-response"
+      },
+      "name" : "AT ELGA e-Medikation Transaction-Response Bundle Medikationsplan",
+      "description" : "Profil für die Antwort des Servers auf das Schreiben des Medikationsplans mit der $plan-write Operation. Das Bundle enthält den persistierten Medikationsplan sowie die persistierten Medikationsplaneinträge.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
     },
     {
       "extension" : [{
@@ -998,7 +1113,7 @@
       },
       "name" : "Beispiel Journey 01-02: Plan-Write-Response",
       "description" : "Beispiel einer Response eines plan-write mit 2 neuen Planeinträgen",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-write-response"
     },
     {
       "extension" : [{
@@ -1509,7 +1624,8 @@
       },
       "name" : "e-Med Operation für $dispense-discard",
       "description" : "Operation für das Stornieren von Durchgeführten Abgaben",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1525,7 +1641,8 @@
       },
       "name" : "e-Med Operation für $dispense-write",
       "description" : "Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1541,7 +1658,8 @@
       },
       "name" : "e-Med Operation für $groupidentifier-create",
       "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1557,7 +1675,8 @@
       },
       "name" : "e-Med Operation für $groupidentifier-search",
       "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1573,7 +1692,8 @@
       },
       "name" : "e-Med Operation für $plan-read",
       "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.\n\nHierfür erzeugt die e-Medikation-Fachanwendung aus der aktuellen Version\nder List-Ressource sowie sämtlichen von ihr referenzierten Ressourcen\nein temporäres Medikationsplan-Bundle zur Auslieferung.\n\nExistiert noch kein Medikationsplan, erstellt und persistiert die\nFachanwendung eine initiale List-Ressource mit List.emptyReason = notstarted.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1589,7 +1709,8 @@
       },
       "name" : "e-Med Operation für $plan-write",
       "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1605,7 +1726,8 @@
       },
       "name" : "e-Med Operation für $prescription-discard",
       "description" : "Operation für das Stornieren von Geplanten Abgaben",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1621,7 +1743,8 @@
       },
       "name" : "e-Med Operation für $prescription-write",
       "description" : "Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
@@ -1637,7 +1760,8 @@
       },
       "name" : "e-Med Operation für $reference-plan",
       "description" : "Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen.",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "Operationen"
     },
     {
       "extension" : [{
