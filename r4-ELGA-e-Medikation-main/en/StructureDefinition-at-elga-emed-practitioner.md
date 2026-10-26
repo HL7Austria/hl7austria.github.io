@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
+* Use this Profile: [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md) and [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
 * Refer to this Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md), [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md), [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md) and [AT ELGA e-Medikation PractitionerRole](StructureDefinition-at-elga-emed-practitionerrole.md)
 * Examples for this Profile: [Practitioner/At-Emed-Example-Practitioner-01](Practitioner-At-Emed-Example-Practitioner-01.md), [Practitioner/At-Emed-Example-Practitioner-02](Practitioner-At-Emed-Example-Practitioner-02.md), [Practitioner/At-Emed-Example-Practitioner-03](Practitioner-At-Emed-Example-Practitioner-03.md) and [Practitioner/At-Emed-Example-Practitioner-04](Practitioner-At-Emed-Example-Practitioner-04.md)
 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-prac
   "name" : "AtElgaEmedPractitioner",
   "title" : "AT ELGA e-Medikation Practitioner",
   "status" : "draft",
-  "date" : "2026-10-26T20:24:37+00:00",
+  "date" : "2026-10-26T20:58:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

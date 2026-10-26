@@ -20,7 +20,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $groupidentifier-create",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-26T20:24:37+00:00",
+  "date" : "2026-10-26T20:58:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -44,29 +44,13 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "type" : false,
   "instance" : false,
   "parameter" : [{
-    "name" : "groupidentifier",
-    "use" : "out",
-    "min" : 0,
-    "max" : "1",
-    "documentation" : "Der *groupidentifier* Parameter enthält den angefragten GroupIdentifier.",
-    "type" : "string"
-  },
-  {
-    "name" : "datamatrixcode",
-    "use" : "out",
-    "min" : 0,
-    "max" : "1",
-    "documentation" : "Der *datamatrixcode* Parameter enthält den DataMatrix-Code.",
-    "type" : "Attachment"
-  },
-  {
     "name" : "return",
     "use" : "out",
-    "min" : 0,
+    "min" : 1,
     "max" : "1",
-    "documentation" : "Der *return* Parameter im Falle eines Fehlers.",
+    "documentation" : "Der *return* Parameter enthält je nach Erfolg der Operation entweder den neu erzeugten e-Med GroupIdentifier und den zugehörigen DataMatrix-Code oder ein OperationOutcome mit dem Fehler, der zur Ablehnung der Operation geführt hat.",
     "type" : "Resource",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome"]
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-groupidentifier-create"]
   }]
 }
 

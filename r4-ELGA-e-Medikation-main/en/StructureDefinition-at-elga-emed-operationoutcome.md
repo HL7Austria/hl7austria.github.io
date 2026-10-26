@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation Parameters Out $dispense-discard](StructureDefinition-at-elga-emed-parameters-out-dispense-discard.md), [AT ELGA e-Medikation Parameters Out $dispense-write](StructureDefinition-at-elga-emed-parameters-out-dispense-write.md), [AT ELGA e-Medikation Parameters Out $plan-read](StructureDefinition-at-elga-emed-parameters-out-plan-read.md), [AT ELGA e-Medikation Parameters Out $plan-write](StructureDefinition-at-elga-emed-parameters-out-plan-write.md)... Show 3 more, [AT ELGA e-Medikation Parameters Out $prescription-discard](StructureDefinition-at-elga-emed-parameters-out-prescription-discard.md), [AT ELGA e-Medikation Parameters Out $prescription-write](StructureDefinition-at-elga-emed-parameters-out-prescription-write.md) and [AT ELGA e-Medikation Parameters Out $reference-plan](StructureDefinition-at-elga-emed-parameters-out-reference-plan.md)
+* Use this Profile: [AT ELGA e-Medikation Parameters Out $dispense-discard](StructureDefinition-at-elga-emed-parameters-out-dispense-discard.md), [AT ELGA e-Medikation Parameters Out $dispense-write](StructureDefinition-at-elga-emed-parameters-out-dispense-write.md), [AT ELGA e-Medikation Parameters Out $groupidentifier-create](StructureDefinition-at-elga-emed-parameters-out-groupidentifier-create.md), [AT ELGA e-Medikation Parameters Out $groupidentifier-search](StructureDefinition-at-elga-emed-parameters-out-groupidentifier-search.md)... Show 5 more, [AT ELGA e-Medikation Parameters Out $plan-read](StructureDefinition-at-elga-emed-parameters-out-plan-read.md), [AT ELGA e-Medikation Parameters Out $plan-write](StructureDefinition-at-elga-emed-parameters-out-plan-write.md), [AT ELGA e-Medikation Parameters Out $prescription-discard](StructureDefinition-at-elga-emed-parameters-out-prescription-discard.md), [AT ELGA e-Medikation Parameters Out $prescription-write](StructureDefinition-at-elga-emed-parameters-out-prescription-write.md) and [AT ELGA e-Medikation Parameters Out $reference-plan](StructureDefinition-at-elga-emed-parameters-out-reference-plan.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-operationoutcome.json)
 
@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-oper
   "name" : "AtElgaEmedOperationOutcome",
   "title" : "AT ELGA e-Medikation OperationOutcome",
   "status" : "active",
-  "date" : "2026-10-26T20:24:37+00:00",
+  "date" : "2026-10-26T20:58:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

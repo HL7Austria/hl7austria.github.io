@@ -20,7 +20,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $groupidentifier-search",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-26T20:24:37+00:00",
+  "date" : "2026-10-26T20:58:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -54,20 +54,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   {
     "name" : "return",
     "use" : "out",
-    "min" : 0,
+    "min" : 1,
     "max" : "1",
-    "documentation" : "Der *return* Parameter enthält die angefragte(n) Geplante(n) und Durchgeführten Abgabe(n).",
+    "documentation" : "Der *return* Parameter enthält je nach Erfolg der Operation OperationOutcome(s) und falls die Operation erfolgreich war auch das Bundle mit den angefragten Geplanten und Durchgeführten Abgaben.",
     "type" : "Resource",
-    "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Bundle"]
-  },
-  {
-    "name" : "return",
-    "use" : "out",
-    "min" : 0,
-    "max" : "1",
-    "documentation" : "Der *return* Parameter im Falle eines Fehlers.",
-    "type" : "Resource",
-    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome"]
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-groupidentifier-search"]
   }]
 }
 

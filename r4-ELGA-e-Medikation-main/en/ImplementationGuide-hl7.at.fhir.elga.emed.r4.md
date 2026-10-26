@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T20:24:37+00:00",
+  "date" : "2026-10-26T20:58:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -790,6 +790,40 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-groupidentifier-create.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-groupidentifier-create"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $groupidentifier-create",
+      "description" : "Profil für den Rückgabewert der $groupidentifier-create Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-groupidentifier-search.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-parameters-out-groupidentifier-search"
+      },
+      "name" : "AT ELGA e-Medikation Parameters Out $groupidentifier-search",
+      "description" : "Profil für den Rückgabewert der $groupidentifier-search Operation.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
         "valueUri" : "StructureDefinition-at-elga-emed-parameters-out-plan-read.html"
       }],
       "reference" : {
@@ -918,6 +952,23 @@
       "description" : "Profil für die Struktur der PractitionerRole Ressource",
       "exampleBoolean" : false,
       "groupingId" : "Stammdaten"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.html"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/at-elga-emed-bundle-groupidentifier-search-result"
+      },
+      "name" : "AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search",
+      "description" : "Profil für das Ergebnis der $groupidentifier-search Operation. Das Bundle enthält die dem e-Med GroupIdentifier zugeordneten Geplanten und Durchgeführten Abgaben sowie die von ihnen referenzierten Patient- und Autoren-Ressourcen.",
+      "exampleBoolean" : false,
+      "groupingId" : "OperationParameter"
     },
     {
       "extension" : [{

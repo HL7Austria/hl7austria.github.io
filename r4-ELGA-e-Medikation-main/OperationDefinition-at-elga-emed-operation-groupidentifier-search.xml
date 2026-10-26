@@ -4,8 +4,7 @@
   <id value="at-elga-emed-operation-groupidentifier-search"/>
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition at-elga-emed-operation-groupidentifier-search</b></p><a name="at-elga-emed-operation-groupidentifier-search"> </a><a name="hcat-elga-emed-operation-groupidentifier-search"> </a><p>URL: [base]/$groupidentifier-search</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>groupidentifier</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>Der <em>groupidentifier</em> Parameter enthält den angefragten GroupIdentifier.</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="http://hl7.org/fhir/R4/bundle.html" title="http://hl7.org/fhir/StructureDefinition/Bundle">Bundle</a>)</td><td/><td><div><p>Der <em>return</em> Parameter enthält die angefragte(n) Geplante(n) und Durchgeführten Abgabe(n).</p>
-</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="StructureDefinition-at-elga-emed-operationoutcome.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome">AT ELGA e-Medikation OperationOutcome</a>)</td><td/><td><div><p>Der <em>return</em> Parameter im Falle eines Fehlers.</p>
+</div></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="StructureDefinition-at-elga-emed-parameters-out-groupidentifier-search.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-groupidentifier-search">AT ELGA e-Medikation Parameters Out $groupidentifier-search</a>)</td><td/><td><div><p>Der <em>return</em> Parameter enthält je nach Erfolg der Operation OperationOutcome(s) und falls die Operation erfolgreich war auch das Bundle mit den angefragten Geplanten und Durchgeführten Abgaben.</p>
 </div></td></tr></table></div>
   </text>
   <url value="https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-groupidentifier-search"/>
@@ -14,7 +13,7 @@
   <title value="e-Med Operation für $groupidentifier-search"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2026-10-26T20:24:37+00:00"/>
+  <date value="2026-10-26T20:58:24+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -48,19 +47,10 @@
   <parameter>
     <name value="return"/>
     <use value="out"/>
-    <min value="0"/>
+    <min value="1"/>
     <max value="1"/>
-    <documentation value="Der *return* Parameter enthält die angefragte(n) Geplante(n) und Durchgeführten Abgabe(n)."/>
+    <documentation value="Der *return* Parameter enthält je nach Erfolg der Operation OperationOutcome(s) und falls die Operation erfolgreich war auch das Bundle mit den angefragten Geplanten und Durchgeführten Abgaben."/>
     <type value="Resource"/>
-    <targetProfile value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
-  </parameter>
-  <parameter>
-    <name value="return"/>
-    <use value="out"/>
-    <min value="0"/>
-    <max value="1"/>
-    <documentation value="Der *return* Parameter im Falle eines Fehlers."/>
-    <type value="Resource"/>
-    <targetProfile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-operationoutcome"/>
+    <targetProfile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-groupidentifier-search"/>
   </parameter>
 </OperationDefinition>
