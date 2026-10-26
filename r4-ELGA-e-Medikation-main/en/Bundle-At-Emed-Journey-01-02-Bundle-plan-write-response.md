@@ -48,6 +48,10 @@
       "date" : "2026-02-27T08:10:00+00:00",
       "source" : {
         "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+        },
         "display" : "Dr. Hausärztin"
       },
       "entry" : [{

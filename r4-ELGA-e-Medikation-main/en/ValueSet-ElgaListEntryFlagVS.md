@@ -30,7 +30,7 @@
   "title" : "ELGA List.entry.flag ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-26T11:42:48+00:00",
+  "date" : "2026-10-26T12:04:07+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

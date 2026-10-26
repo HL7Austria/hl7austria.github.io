@@ -92,8 +92,9 @@ Die Übereinstimmung wird ausschließlich zum Zeitpunkt der Erstellung der **Gep
 * Die Prüfregel wird komplexer (Wirkstoffabgleich). Die Übereinstimmung lässt sich nicht allein anhand identischer Arzneimittelangaben prüfen. Es sind zusätzliche Regeln für die fachliche Zuordnung zwischen Wirkstoffangabe und Präparat erforderlich.
 * Medikationsplan und **Geplante Abgabe** enthalten unterschiedliche Darstellungsebenen derselben vorgesehenen Verordnung. Diese müssen für Anwender klar visualisiert werden.
 
- - Wie bleibt der Medikationsplan verständlich, wenn das abgegebene Arzneimittel vom Wirkstoff oder Präparat im Planeintrag und von der *Geplanten Abgabe* abweicht?
- - Soll `basedOn` versioniert werden, um die geprüfte Planeintrag-Version nachvollziehen zu können? 
+* Wie bleibt der Medikationsplan verständlich, wenn das abgegebene Arzneimittel vom Wirkstoff oder Präparat im Planeintrag und von der *Geplanten Abgabe* abweicht?
+
+* Soll `basedOn` versioniert werden, um die geprüfte Planeintrag-Version nachvollziehen zu können?
 
 #### Automatische Statusänderungen der beim Plan-Read ausgelieferten Ressourcen
 
@@ -105,7 +106,9 @@ Die Übereinstimmung wird ausschließlich zum Zeitpunkt der Erstellung der **Gep
 
 **Plan-History-Search** liefert dagegen alle Inhalte, Status und Flags unverändert.
 
- * - Soll der GDA den aufbereiteten Zustand erhalten (Variante A, aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand (Variante B)? 
+*  
+* Soll der GDA den aufbereiteten Zustand erhalten (Variante A, aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand (Variante B)?
+ 
 
 #### Gruppierung von Medikamenten
 
@@ -183,8 +186,8 @@ Die Kennzeichnung begründet für sich allein keine Pflicht, ein Element in jede
 
 Bei der Kennzeichnung komplexer Elemente wird eindeutig festgelegt, welche ihrer Unterelemente unterstützt werden. Aus der Must-Support-Kennzeichnung eines übergeordneten Elements wird keine pauschale Unterstützung sämtlicher Unterelemente abgeleitet.
 
- Ergänzend könnten Obligations eingesetzt werden, um die mit der Kennzeichnung verbundenen Pflichten für die beteiligten Akteure präziser festzulegen. International werden Obligations von vielen Ländern für unterschiedliche Use Cases eingesetzt.
- Sollen Obligations eingesetzt werden, um die MS Markierungen noch aussagekräftiger zu machen? Feedback aus der Community ist erwünscht. 
+Ergänzend könnten Obligations eingesetzt werden, um die mit der Kennzeichnung verbundenen Pflichten für die beteiligten Akteure präziser festzulegen. International werden Obligations von vielen Ländern für unterschiedliche Use Cases eingesetzt.
+ Sollen Obligations eingesetzt werden, um die MS Markierungen noch aussagekräftiger zu machen? Feedback aus der Community ist erwünscht.
 
 ##### Serverhalten bei Elementen ohne MS Markierung
 
@@ -249,7 +252,7 @@ Historische Versionen können von GDAs nicht bearbeitet werden. Änderungen erfo
 
 **Entstehung neuer Versionen**
 
-Jedes Update, das zu einer inhaltlichen Änderung einer Ressource führt, erzeugt eine neue Version. Die Fachanwendung vergibt dabei eine neue `meta.versionId` und setzt `meta.lastUpdated` auf den Speicherzeitpunkt (siehe [Allgemeine Business-Logik für schreibende Operations](schreibende-operations-allgemein.md)). Die Response enthält die neu vergebene Version.
+Jedes Update, das zu einer inhaltlichen Änderung einer Ressource führt, erzeugt eine neue Version. Die Fachanwendung vergibt dabei eine neue `meta.versionId` und setzt `meta.lastUpdated` auf den Speicherzeitpunkt. Die Response enthält die neu vergebene Version.
 
 Ist die übermittelte Ressource inhaltlich identisch mit ihrer aktuellen Version, wird keine neue Version erzeugt. Damit wird verhindert, dass wiederholtes Speichern derselben Daten zu einer Vielzahl inhaltsgleicher Versionen führt. Beim Vergleich bleiben die serverseitig verwalteten Elemente `meta.versionId`, `meta.lastUpdated` und die von der Fachanwendung erzeugte Narrative (`Resource.text`) unberücksichtigt. Die Response enthält in diesem Fall die unveränderte aktuelle Version.
 
@@ -413,7 +416,7 @@ Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Z
 
 Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. `requester`, `performer` oder `List.source`), ergibt sich aus dem jewiligen `Reference.identifer.system`, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Medikation-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (`List.entry.item`) sind hingegen immer Referenzen auf bereits in der e-Medikation-Fachanwendung gespeicherte Ressourcen (`Reference.reference`) oder Ressourcen, welche im TransactionBundle mitgeliefert werden.
 
- Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Medikation-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die `Practitioner`-, `PractitionerRole`- und/oder `Organization`-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Medikation-Fachanwendung einfließen. 
+Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Medikation-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die `Practitioner`-, `PractitionerRole`- und/oder `Organization`-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Medikation-Fachanwendung einfließen.
 
 Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einmal als gespeicherte Ressource:
 
@@ -430,11 +433,11 @@ Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Res
 
 Die Generierung berücksichtigt sowohl strukturierte Angaben als auch Freitextinformationen. Die Narrative ergänzt die strukturierten Daten, ersetzt diese jedoch nicht. Davon zu unterscheiden sind fachlich erfasste Freitexte, beispielsweise ergänzende Hinweise oder eine nicht strukturiert abbildbare Dosierungsanweisung; diese bleiben eigenständige Inhalte und werden bei der Generierung berücksichtigt. Die unterschiedlichen Textfelder und ihr jeweiliger Geltungsbereich sind im Abschnitt [Textdarstellungen und ergänzende Hinweise im Kapitel der Dosierungen](dosages.md#textdarstellungen-und-ergänzende-hinweise) beschrieben.
 
- Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen der einzelnen Ressourcen und Dosierschemata wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. 
+Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen der einzelnen Ressourcen und Dosierschemata wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.
 
 #### Löschen und Stornieren von versionierten Ressourcen
 
- Dieser Abschnitt beschreibt die zur Diskussion stehenden Konzepte für das Löschen und Stornieren versionierter Ressourcen sowie deren Auswirkungen auf den Medikationsplan und seine Historie. Die beschriebenen Löschvarianten sind bislang nicht im IG umgesetzt. Insbesondere zur Behandlung historischer Ressourcenversionen, zur Referenzintegrität und zur technischen Umsetzbarkeit wird Feedback aus der Community erbeten. 
+Dieser Abschnitt beschreibt die zur Diskussion stehenden Konzepte für das Löschen und Stornieren versionierter Ressourcen sowie deren Auswirkungen auf den Medikationsplan und seine Historie. Die beschriebenen Löschvarianten sind bislang nicht im IG umgesetzt. Insbesondere zur Behandlung historischer Ressourcenversionen, zur Referenzintegrität und zur technischen Umsetzbarkeit wird Feedback aus der Community erbeten.
 
  Das fachliche Stornieren durch einen GDA ist vom Löschen auf Veranlassung von ELGA-Teilnehmer:innen zu unterscheiden.
 
@@ -564,7 +567,7 @@ Unabhängig von der gewählten technischen Variante sind folgende Punkte festzul
 * Referenzintegrität: Die Prüfung darf sich nicht ausschließlich auf List.entry.item beschränken, wenn weitere Ressourcen auf den betroffenen Planeintrag oder eine seiner Versionen verweisen. Insbesondere ist zu entscheiden, wie Referenzen aus **Geplanten Abgaben** und **Durchgeführten Abgaben** behandelt werden.
 * Abgeleitete Inhalte: Narrative, Suchergebnisse und erzeugte Bundles dürfen die gelöschten Inhalte nicht weiterhin enthalten.
 
- Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem Abschnitt wird besonders um fachliches und technisches Feedback gebeten. Insbesondere sollen Erfahrungen aus der Implementierung versionierender FHIR-Server und vergleichbarer Konzepte berücksichtigt werden. 
+Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem Abschnitt wird besonders um fachliches und technisches Feedback gebeten. Insbesondere sollen Erfahrungen aus der Implementierung versionierender FHIR-Server und vergleichbarer Konzepte berücksichtigt werden.
 
 * Ist die Unterscheidung zwischen horizontalem Löschen eines Planeintrags einschließlich aller Versionen und vertikalem Löschen einzelner Medikationsplanversionen fachlich ausreichend?
 * Wie sollen historische Medikationsplanversionen beim horizontalen Löschen bereinigt werden: unter Beibehaltung ihrer bisherigen `meta.versionId` oder durch bereinigte Ersatzdarstellungen mit neuer Versionskennung? Welche Alternativen vermeiden eine Veränderung bereits identifizierter historischer Inhalte?
