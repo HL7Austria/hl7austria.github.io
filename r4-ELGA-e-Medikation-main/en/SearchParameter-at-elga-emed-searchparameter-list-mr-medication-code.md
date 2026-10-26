@@ -1,6 +1,6 @@
-# at-elga-emed-searchparameter-list-mr-medication-code - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation SearchParameter List Medication Code - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## SearchParameter: at-elga-emed-searchparameter-list-mr-medication-code 
+## SearchParameter: AT ELGA e-Medikation SearchParameter List Medication Code 
 
 
 
@@ -14,7 +14,7 @@
   "version" : "0.1.0",
   "name" : "Medication Code",
   "status" : "active",
-  "date" : "2026-10-26T20:58:24+00:00",
+  "date" : "2026-10-26T21:10:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -31,11 +31,11 @@
       "use" : "work"
     }]
   }],
-  "description" : "The code of the medication that is part of this MedicationRequest",
+  "description" : "Suchparameter für den Code (PZN) eines Arzneimittels, das in einem MedicationRequest eines Medikationsplans (List) enthalten ist.",
   "code" : "medicationrequest-medication-code",
   "base" : ["List"],
   "type" : "token",
-  "expression" : "List.entry.item.resolve().ofType(MedicationRequest).medication.resolve().ofType(Medication).ingredient.item.ofType(CodeableConcept)"
+  "expression" : "List.entry.item.resolve().ofType(MedicationRequest).medication.resolve().ofType(Medication).code.ofType(CodeableConcept)"
 }
 
 ```

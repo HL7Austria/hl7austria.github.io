@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T20:58:24+00:00",
+  "date" : "2026-10-26T21:10:14+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -956,6 +956,23 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "SearchParameter-at-elga-emed-searchparameter-list-mr-medication-code.html"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/at-elga-emed-searchparameter-list-mr-medication-code"
+      },
+      "name" : "AT ELGA e-Medikation SearchParameter List Medication Code",
+      "description" : "Suchparameter für den Code (PZN) eines Arzneimittels, das in einem MedicationRequest eines Medikationsplans (List) enthalten ist.",
+      "exampleBoolean" : false,
+      "groupingId" : "Suchparameter"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       },
       {
@@ -1105,23 +1122,6 @@
       "description" : "Profil für die Antwort des Servers auf das Schreiben des Medikationsplans mit der $plan-write Operation. Das Bundle enthält den persistierten Medikationsplan sowie die persistierten Medikationsplaneinträge.",
       "exampleBoolean" : false,
       "groupingId" : "OperationParameter"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "SearchParameter"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "SearchParameter-at-elga-emed-searchparameter-list-mr-medication-code.html"
-      }],
-      "reference" : {
-        "reference" : "SearchParameter/at-elga-emed-searchparameter-list-mr-medication-code"
-      },
-      "name" : "at-elga-emed-searchparameter-list-mr-medication-code",
-      "description" : "The code of the medication that is part of this MedicationRequest",
-      "exampleBoolean" : false,
-      "groupingId" : "Suchparameter"
     },
     {
       "extension" : [{
