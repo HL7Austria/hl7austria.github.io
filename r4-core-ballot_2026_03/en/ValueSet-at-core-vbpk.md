@@ -33,7 +33,7 @@ This value set was designed for the HL7AT Core IGs (R4 and R5) and will be moved
   "title" : "HL7AT Core vbPK",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-20T09:17:47+00:00",
+  "date" : "2026-10-27T15:46:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",

@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-value
   "name" : "SystemOID",
   "title" : "System OID",
   "status" : "active",
-  "date" : "2026-10-20T09:17:47+00:00",
+  "date" : "2026-10-27T15:46:04+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
