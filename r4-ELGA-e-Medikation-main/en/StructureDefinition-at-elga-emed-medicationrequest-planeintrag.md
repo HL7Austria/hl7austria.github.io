@@ -53,7 +53,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
   "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-26T21:10:14+00:00",
+  "date" : "2026-10-27T12:33:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -70,7 +70,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "use" : "work"
     }]
   }],
-  "description" : "Profil für einen Medikationsplaneintrag.",
+  "description" : "Profil für einen Planeintrag.",
   "fhirVersion" : "4.0.1",
   "mapping" : [{
     "identity" : "workflow",
@@ -401,7 +401,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.authoredOn",
       "path" : "MedicationRequest.authoredOn",
-      "short" : "Datum der Erstellung des Planeintrags.",
+      "short" : "Datum der Erstellung/Änderung des Planeintrags.",
       "min" : 1,
       "mustSupport" : true
     },

@@ -616,7 +616,7 @@ Unter gewissen Voraussetzungen kann ein bestehender Medikationsplaneintrag angep
       <li><strong>Dosierung</strong> (<em>dosageInstruction</em>): muss <strong>identisch</strong> sein mit der des Planeintrags.</li>
       <li><strong>e-Med GroupIdentifier</strong> (<em>groupIdentifier</em>):
         <ul>
-          <li>Alle gemeinsam erstellten <em>Geplanten Abgaben</em>, die zum selben e-Rezept gehören, müssen den selben <em>e-Med GroupIdentifier</em> tragen und <strong>im selben <a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html">Geplante Abgaben-Transaction Bundle</a></strong> übermittelt werden. Der <em>e-Med GroupIdentifier</em> ermöglicht zusammengehörige <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> gemeinsam abzurufen und kann über unterschiedliche Varianten bezogen werden (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_02---e-med-groupidentifier-beziehen">Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen</a>). Er bleibt grundsätzlich solange gültig, solange die <em>Geplante Abgabe = active</em> ist.</li>
+          <li>Alle <em>Geplanten Abgaben</em>, die zum selben e-Rezept gehören, müssen den selben <em>e-Med GroupIdentifier</em> tragen und sollen <strong>im selben <a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html">Geplante Abgaben-Transaction Bundle</a></strong> übermittelt werden. Der <em>e-Med GroupIdentifier</em> ermöglicht zusammengehörige <em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em> gemeinsam abzurufen und kann über unterschiedliche Varianten bezogen werden (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_02---e-med-groupidentifier-beziehen">Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen</a>). Er bleibt gültig, solange mindestens eine der zugehörigen <em>Geplanten Abgaben</em> den Status <em>active</em> hat. Die Anzahl der <em>Geplanten Abgaben</em>, die mit demselben <em>e-Med Groupldentifier</em> gespeichert werden können, ist durch das Limit für die Anzahl der Medikamente je e-Rezept begrenzt.</li>
           <li>Fehlt im übermittelten <a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html">Geplante Abgaben-Transaction Bundle</a> bei allen <em>Geplanten Abgaben</em> der <em>e-Med GroupIdentifier</em>, vergibt ihn die Fachanwendung. Alle enthaltenen <em>Geplanten Abgaben</em> gehören dann zum selben <em>e-Med GroupIdentifier</em>.</li>
         </ul>
       </li>
@@ -664,7 +664,7 @@ Unter gewissen Voraussetzungen kann ein bestehender Medikationsplaneintrag angep
 <p>Der <em>e-Med GroupIdentifier</em> wird mittels <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-groupidentifier-create.html">$groupidentifier-create</a> vorab von der Fachanwendung bezogen, in den zusammengehörenden <em>Geplanten Abgaben</em> ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den <em>Geplanten Abgaben</em> zu verknüpfen.
 Der Trigger zu Erstellung des e-Rezepts und <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Prescription-Write</a> können parallel erfolgen (siehe Normalfall).</p>
 
-<p>Liefert e-Rezept einen Fehler zurück, können mittels <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-prescription-discard.html">$prescription-discard</a> bereits in der e-Medikation erstellte <em>Geplante Abgaben</em> storniert werden (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_03---geplante-abgabe-stornieren-prescription-discard">Sub_UC_eMed_04_03 - Geplante Abgabe stornieren (Prescription-Discard)</a>).
+<p>Liefert die e-Rezept-Anwendung einen Fehler zurück, können mittels <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-prescription-discard.html">$prescription-discard</a> bereits in der e-Medikation erstellte <em>Geplante Abgaben</em> storniert werden (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_03---geplante-abgabe-stornieren-prescription-discard">Sub_UC_eMed_04_03 - Geplante Abgabe stornieren (Prescription-Discard)</a>).
 Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkorrektur erneut ein <em>Prescription-Write</em> erfolgen oder ein bereits durch den <em>e-Med groupIdentifer</em> verknüpftes e-Rezept wieder von den <em>Geplanten Abgaben</em> "entkoppelt" werden (siehe <a href="Sub_UC_eMed_04.html#variante-a-fehlerfall">Variante A: Fehlerfall</a>).</p>
 
 <h6 id="variante-a-normalfall">Variante A: Normalfall</h6>
@@ -682,7 +682,7 @@ Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkor
 <h5 id="variante-b-sequentielles-erstellen-von-geplanter-abgabe-und-e-rezept">Variante B: Sequentielles Erstellen von Geplanter Abgabe und e-Rezept</h5>
 
 <p>Alternativ kann der <em>e-Med GroupIdentifier</em> durch die Fachanwendung automatisch ergänzt werden, wenn dieser beim <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Prescription-Write</a> nicht in den <em>Geplanten Abgaben</em> im Transaction Bundle enthalten ist. Dadurch bleibt das Verhalten konsistent zur bestehenden e-Medikations-Implementierung.
-Hierfür müssen die <em>Geplanten Abgaben</em>, die zu einem e-Rezept gehören, gemeinsam in einem <a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html">Geplante Abgaben-Transaction Bundle</a> mittels <strong>POST</strong> <a href="Sub_UC_eMed_04.html#custom-operations">$prescription-write</a> an die e-Medikation Fachanwendung übermittelt werden. Der Server ergänzt den <em>e-Med GroupIdentifier</em> während der Transaktionsverarbeitung und gibt die persistierten Ressourcen einschließlich des erzeugten <em>e-Med GroupIdentifiers</em> in der Response an den Client zurückgegeben.
+Hierfür müssen die <em>Geplanten Abgaben</em>, die zu einem e-Rezept gehören, gemeinsam in einem <a href="StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.html">Geplante Abgaben-Transaction Bundle</a> mittels <strong>POST</strong> <a href="Sub_UC_eMed_04.html#custom-operations">$prescription-write</a> an die e-Medikation Fachanwendung übermittelt werden. Der Server ergänzt den <em>e-Med GroupIdentifier</em> während der Transaktionsverarbeitung und gibt die persistierten Ressourcen einschließlich des erzeugten <em>e-Med GroupIdentifiers</em> in der Response an den Client zurück.
 Im Anschluss kann der Trigger zur Erstellung des e-Rezepts inkl. <em>e-Med GroupIdentifier</em> erfolgen.</p>
 
 <p><a href="plantuml/UC_eMed_04_01_b.svg"><img src="plantuml/UC_eMed_04_01_b.svg" alt="overview" class="mx-auto" style="width:60%;" /></a></p>
@@ -816,8 +816,8 @@ Die Fachanwendung ändert dadurch den <em>status</em> der betreffenden <em>Gepla
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-26 21:10:00 +0000">
-    2026-10-26
+  <span title="2026-10-27 12:33:00 +0000">
+    2026-10-27
   </span>
 
           <br/>

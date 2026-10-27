@@ -597,7 +597,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
     </ul>
   </li>
   <li><strong>Medikation und Dosierung</strong>: tatsächlich abgegebenes Medikament (<em>medication</em>) und Dosierung (<em>dosageInstruction</em>). Diese können, sofern ein zugehöriger Planeintrag und eine <em>Geplante Abgabe</em> vorliegen, von der dort angegebenen Medikation und Dosierung abweichen.</li>
-  <li><strong>Abgegebene Packungen</strong> (<em>quantity</em>): dokumentiert die tatsächlich abgegeben Packungsanzahl. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden <em>Geplanten Abgabe</em>.</li>
+  <li><strong>Abgegebene Packungen</strong> (<em>quantity</em>): dokumentiert die tatsächlich abgegebene Packungsanzahl. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden <em>Geplanten Abgabe</em>.</li>
   <li><strong>Zugehörige <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplante Abgabe</a></strong>: Sofern diese vorliegt, muss diese im Element <em>authorizingPrescription[geplanteAbgabe]</em> referenziert werden.</li>
   <li><strong>Zugehöriger <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">Planeintrag</a>:</strong> Sofern eine Geplante Abgabe vorliegt, muss auch der zugehörige Planeintrag über <em>MedicationDispense.authorizingPrescription[planeintrag]</em> referenziert werden.</li>
   <li><strong>Zeitpunkt der Arzneimittelaushändigung</strong> (<em>whenHandedOver</em>), kann vom Zeitpunkt der Erstellung der <em>Durchgeführten Abgabe</em> (<em>extension:recorded</em>) abweichen (siehe <a href="Sub_UC_eMed_05.html#sub_uc_emed_05_01_06---durchgeführte-abgabe-nacherfassen">Sub_UC_eMed_05_01_06 - Durchgeführte Abgabe nacherfassen</a>).</li>
@@ -610,12 +610,12 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 <pre><code class="language-JSON">AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
     extension:recorded: Datum der Erstellung der Durchgeführten Abgabe
     extension:groupIdentifier: e-Med GroupIdentifier                      // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
-    status: abhänging von Use Case    
+    status: abhängig von Use Case    
     medicationReference.reference: Tatsächlich abgegebenes Medikament     // Conditional Reference oder Contained Medication
     performer.actor: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
     authorizingPrescription[geplanteabgabe]: Verpflichtende Referenz auf zugehörige Geplante Abgabe  // Ausnahme: siehe Sub_UC_eMed_05_01_05
     authorizingPrescription[planeintrag]: Verpflichtende Referenz auf Planeintrag                    // Ausnahme: siehe Sub_UC_eMed_05_01_05
-    type: abhänging von Use Case                                          // Art der Abgabe
+    type: abhängig von Use Case                                          // Art der Abgabe
     quantity: Abgegebene Packungen                                        // Packungen je Einlösung
     whenHandedOver: Zeitpunkt der Arzneimittelaushändigung
     dosageInstruction: angepasst an abgegebene Medikation
@@ -679,7 +679,7 @@ enthalten.</li>
   <li><strong><em>type</em></strong>:
     <ul>
       <li>zu Beginn des Besorgerprozesses: <em>FFP (First Fill – Part Fill)</em>,</li>
-      <li>nach bereits erfolgten Teilabgaben: <em>FFP (Refill – Part Fill)</em></li>
+      <li>nach bereits erfolgten Teilabgaben: <em>RFP (Refill – Part Fill)</em></li>
     </ul>
   </li>
   <li><strong>Abgegebene Packungen</strong> (<em>quantity</em>): muss mit <strong>0</strong> dokumentiert werden</li>
@@ -739,7 +739,7 @@ Die <em>type</em>-Sequenz <em>FFP → RFP → RFC</em> muss dabei konsistent geh
 
 <h4 id="sub_uc_emed_05_01_07-substitution-eines-arzneimittels-erfassen">Sub_UC_eMed_05_01_07 Substitution eines Arzneimittels erfassen</h4>
 
-<p>Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Referenz auf die zugehörige <em>Geplante Abgabe</em> bzw. den <em>Planeintrag</em>.
+<p>Eine Substitution eines Arzneimittels ist nur implizit ersichtlich, durch die Referenz auf die zugehörige <em>Geplante Abgabe</em> bzw. den <em>Planeintrag</em>.
 Die Medikation der <em>Durchgeführten Abgabe</em> weicht dann von der Medikation in Planeintrag und <em>Geplanter Abgabe</em> ab.</p>
 
 <h3 id="durchgeführte-abgabe-schreiben-dispense-write">Durchgeführte Abgabe schreiben (Dispense-Write)</h3>
@@ -885,8 +885,8 @@ Wenn eine stornierte <em>Durchgeführte Abgabe</em> Teil eines e-Rezepts mit wei
           IG &copy; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-26 21:10:00 +0000">
-    2026-10-26
+  <span title="2026-10-27 12:33:00 +0000">
+    2026-10-27
   </span>
 
           <br/>

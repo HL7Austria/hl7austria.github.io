@@ -45,7 +45,7 @@ Unabhängig von der verwendeten Dosierungskategorie gelten insbesondere für meh
 * Dosierungsanweisungen mit unterschiedlichen `sequence`-Werten beschreiben aufeinanderfolgende Behandlungsphasen. Die Reihenfolge ergibt sich aus dem aufsteigenden `sequence`-Wert.
 * `sequence`-Werte MÜSSEN positiv sein und ohne Lücken vergeben werden.
 * Werden zeitliche Grenzen über `timing.repeat.bounds[x]` angegeben, MÜSSEN diese innerhalb einer Sequenz konsistent verwendet werden. Insbesondere dürfen parallele Dosierungsanweisungen nicht in `timing.repeat.bounds[x]` voneinander abweichen.
-* Wird in einer der Dosierungen `boundsPeriod` verwendet so müssen alle Dosierungen `timing.repeat.boundsPeriod` verwenden
+* Wird in einer der Dosierungen `boundsPeriod` verwendet, so müssen alle Dosierungen `timing.repeat.boundsPeriod` verwenden
 * Alle Dosierungsanweisungen MÜSSEN immer denselben Wiederholungszeitraum verwenden. `timing.repeat.period` und `timing.repeat.periodUnit` dürfen innerhalb einer Sequenz nicht voneinander abweichen (immer täglich oder immer wöchentlich bzw. monatlich)
 * Für unterschiedliche Sequenzen dürfen unterschiedliche zeitliche Begrenzungen verwendet werden, sofern diese eine widerspruchsfreie zeitliche Abfolge der Behandlungsphasen ergeben und `effectiveDosePeriod` nicht widersprechen.
 * `timing.repeat.bounds[x]` und `effectiveDosePeriod` MÜSSEN widerspruchsfrei sein. Ein durch `boundsPeriod` angegebener Zeitraum darf nicht außerhalb von `effectiveDosePeriod` liegen.

@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "ELGA List.entry.flag CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-26T21:10:14+00:00",
+  "date" : "2026-10-27T12:33:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

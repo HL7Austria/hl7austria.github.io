@@ -51,7 +51,7 @@ MedicationDispense-Ressource: [AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe]
 * **Zulässige Einlösungen**: Die Maximalanzahl zulässiger Einlösungen wird durch die zugehörige **Geplante Abgabe** bestimmt (siehe [Sub_UC_eMed_04_04 - Geplante Abgabe abgeschlossen (durch Fachanwendung)](Sub_UC_eMed_04.md#sub_uc_emed_04_04---geplante-abgabe-abgeschlossen-durch-fachanwendung)). Eine Einlösung gilt als vollständig, wenn **type** den Wert **First Fill – Complete** oder **Part Fill - Complete** enthält.
  
 * **Medikation und Dosierung**: tatsächlich abgegebenes Medikament (**medication**) und Dosierung (**dosageInstruction**). Diese können, sofern ein zugehöriger Planeintrag und eine **Geplante Abgabe** vorliegen, von der dort angegebenen Medikation und Dosierung abweichen.
-* **Abgegebene Packungen** (**quantity**): dokumentiert die tatsächlich abgegeben Packungsanzahl. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden **Geplanten Abgabe**.
+* **Abgegebene Packungen** (**quantity**): dokumentiert die tatsächlich abgegebene Packungsanzahl. Die Fachanwendung prüft diese Menge jedoch nicht im Kontext einer gegebenenfalls zugrunde liegenden **Geplanten Abgabe**.
 * **Zugehörige [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)**: Sofern diese vorliegt, muss diese im Element **authorizingPrescription[geplanteAbgabe]** referenziert werden.
 * **Zugehöriger [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md):** Sofern eine Geplante Abgabe vorliegt, muss auch der zugehörige Planeintrag über **MedicationDispense.authorizingPrescription[planeintrag]** referenziert werden.
 * **Zeitpunkt der Arzneimittelaushändigung** (**whenHandedOver**), kann vom Zeitpunkt der Erstellung der **Durchgeführten Abgabe** (**extension:recorded**) abweichen (siehe [Sub_UC_eMed_05_01_06 - Durchgeführte Abgabe nacherfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_06---durchgeführte-abgabe-nacherfassen)).
@@ -64,12 +64,12 @@ Die **fachlichen Varianten** der **Durchgeführten Abgabe** werden in den folgen
 AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe
     extension:recorded: Datum der Erstellung der Durchgeführten Abgabe
     extension:groupIdentifier: e-Med GroupIdentifier                      // verpflichtende Angabe, sofern zugehörige Geplante Abgabe vorhanden
-    status: abhänging von Use Case    
+    status: abhängig von Use Case    
     medicationReference.reference: Tatsächlich abgegebenes Medikament     // Conditional Reference oder Contained Medication
     performer.actor: veranwortlicher GDA (Apotheke) für die Durchgeführte Abgabe 
     authorizingPrescription[geplanteabgabe]: Verpflichtende Referenz auf zugehörige Geplante Abgabe  // Ausnahme: siehe Sub_UC_eMed_05_01_05
     authorizingPrescription[planeintrag]: Verpflichtende Referenz auf Planeintrag                    // Ausnahme: siehe Sub_UC_eMed_05_01_05
-    type: abhänging von Use Case                                          // Art der Abgabe
+    type: abhängig von Use Case                                          // Art der Abgabe
     quantity: Abgegebene Packungen                                        // Packungen je Einlösung
     whenHandedOver: Zeitpunkt der Arzneimittelaushändigung
     dosageInstruction: angepasst an abgegebene Medikation
@@ -124,7 +124,7 @@ Entsprechend den Regeln für Teilabgaben muss eine [Durchgeführte Abgaben](Stru
 * ****status****: **completed**
 * ****type****: 
 * zu Beginn des Besorgerprozesses: **FFP (First Fill – Part Fill)**,
-* nach bereits erfolgten Teilabgaben: **FFP (Refill – Part Fill)**
+* nach bereits erfolgten Teilabgaben: **RFP (Refill – Part Fill)**
  
 * **Abgegebene Packungen** (**quantity**): muss mit **0** dokumentiert werden
 
@@ -174,7 +174,7 @@ Alle weiteren Elemente sind entsprechend des Use Cases zu befüllen.
 
 #### Sub_UC_eMed_05_01_07 Substitution eines Arzneimittels erfassen
 
-Eine Substitution eines Arzneimittels ist nur implizit ersichtich, durch die Referenz auf die zugehörige **Geplante Abgabe** bzw. den **Planeintrag**. Die Medikation der **Durchgeführten Abgabe** weicht dann von der Medikation in Planeintrag und **Geplanter Abgabe** ab.
+Eine Substitution eines Arzneimittels ist nur implizit ersichtlich, durch die Referenz auf die zugehörige **Geplante Abgabe** bzw. den **Planeintrag**. Die Medikation der **Durchgeführten Abgabe** weicht dann von der Medikation in Planeintrag und **Geplanter Abgabe** ab.
 
 ### Durchgeführte Abgabe schreiben (Dispense-Write)
 

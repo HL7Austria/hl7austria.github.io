@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-26T21:10:14+00:00",
+  "date" : "2026-10-27T12:33:12+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -43,7 +43,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.4.0"
+    "version" : "7.5.0"
   },
   {
     "id" : "hl7ext",
@@ -694,7 +694,7 @@
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
       },
       "name" : "At ELGA e-Medikation MedicationRequest Planeintrag",
-      "description" : "Profil für einen Medikationsplaneintrag.",
+      "description" : "Profil für einen Planeintrag.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
     },
