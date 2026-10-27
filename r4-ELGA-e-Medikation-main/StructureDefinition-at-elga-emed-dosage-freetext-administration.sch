@@ -14,6 +14,7 @@
     <sch:rule context="f:Dosage">
       <sch:assert test="count(f:text) &gt;= 1">text: minimum cardinality of 'text' is 1</sch:assert>
       <sch:assert test="count(f:timing) &lt;= 0">timing: maximum cardinality of 'timing' is 0</sch:assert>
+      <sch:assert test="count(f:asNeeded[x]) &lt;= 0">asNeeded[x]: maximum cardinality of 'asNeeded[x]' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

@@ -33,7 +33,7 @@
   <name value="AtElgaEmedDosageStandardAdministration"/>
   <title value="AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema"/>
   <status value="draft"/>
-  <date value="2026-10-27T20:05:18+00:00"/>
+  <date value="2026-10-27T21:19:55+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -3531,57 +3531,6 @@
     </element>
     <element id="Dosage.asNeeded[x]">
       <path value="Dosage.asNeeded[x]"/>
-      <slicing>
-        <discriminator>
-          <type value="type"/>
-          <path value="$this"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="closed"/>
-      </slicing>
-      <short value="Take &quot;as needed&quot; (for x)"/>
-      <definition value="Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept)."/>
-      <comment value="Can express &quot;as needed&quot; without a reason by setting the Boolean = True.  In this case the CodeableConcept is not populated.  Or you can express &quot;as needed&quot; with a reason by including the CodeableConcept.  In this case the Boolean is assumed to be True.  If you set the Boolean to False, then the dose is given according to the schedule and is not &quot;prn&quot; or &quot;as needed&quot;."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Dosage.asNeeded[x]"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="boolean"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="MedicationAsNeededReason"/>
-        </extension>
-        <strength value="example"/>
-        <description value="A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example &quot;pain&quot;, &quot;30 minutes prior to sexual intercourse&quot;, &quot;on flare-up&quot; etc."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/medication-as-needed-reason|4.0.1"/>
-      </binding>
-      <mapping>
-        <identity value="v2"/>
-        <map value="TQ1-9"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".outboundRelationship[typeCode=PRCN].target[classCode=OBS, moodCode=EVN, code=&quot;as needed&quot;].value=boolean or codable concept"/>
-      </mapping>
-    </element>
-    <element id="Dosage.asNeeded[x]:asNeededBoolean">
-      <path value="Dosage.asNeeded[x]"/>
-      <sliceName value="asNeededBoolean"/>
       <short value="Bedarfsmedikation: Ja/Nein"/>
       <definition value="Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept)."/>
       <comment value="Can express &quot;as needed&quot; without a reason by setting the Boolean = True.  In this case the CodeableConcept is not populated.  Or you can express &quot;as needed&quot; with a reason by including the CodeableConcept.  In this case the Boolean is assumed to be True.  If you set the Boolean to False, then the dose is given according to the schedule and is not &quot;prn&quot; or &quot;as needed&quot;."/>
@@ -3606,49 +3555,6 @@
       <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
-      <mapping>
-        <identity value="v2"/>
-        <map value="TQ1-9"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".outboundRelationship[typeCode=PRCN].target[classCode=OBS, moodCode=EVN, code=&quot;as needed&quot;].value=boolean or codable concept"/>
-      </mapping>
-    </element>
-    <element id="Dosage.asNeeded[x]:asNeededCodeableConcept">
-      <path value="Dosage.asNeeded[x]"/>
-      <sliceName value="asNeededCodeableConcept"/>
-      <short value="Bedarfsmedikation: Grund für die Bedarfsmedikation"/>
-      <definition value="Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept)."/>
-      <comment value="Can express &quot;as needed&quot; without a reason by setting the Boolean = True.  In this case the CodeableConcept is not populated.  Or you can express &quot;as needed&quot; with a reason by including the CodeableConcept.  In this case the Boolean is assumed to be True.  If you set the Boolean to False, then the dose is given according to the schedule and is not &quot;prn&quot; or &quot;as needed&quot;."/>
-      <min value="0"/>
-      <max value="0"/>
-      <base>
-        <path value="Dosage.asNeeded[x]"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="MedicationAsNeededReason"/>
-        </extension>
-        <strength value="example"/>
-        <description value="A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example &quot;pain&quot;, &quot;30 minutes prior to sexual intercourse&quot;, &quot;on flare-up&quot; etc."/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/medication-as-needed-reason|4.0.1"/>
-      </binding>
       <mapping>
         <identity value="v2"/>
         <map value="TQ1-9"/>

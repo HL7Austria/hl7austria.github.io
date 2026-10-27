@@ -89,7 +89,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * **POST** [$prescription-write](OperationDefinition-at-elga-emed-operation-prescription-write.md)
 
@@ -97,33 +97,33 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 Der Ablauf zur Erstellung von **Geplanten Abgaben** und der Bezug des **e-Med GroupIdentifiers** kann unterschiedlich erfolgen. Exemplarisch werden drei Varianten angeführt.
 
-##### Variante A: Vorab-Ermittlung des e-Med GroupIdentifiers (GroupIdentifier-Create)
+#### Variante A: Vorab-Ermittlung des e-Med GroupIdentifiers (GroupIdentifier-Create)
 
 Der **e-Med GroupIdentifier** wird mittels **POST** [$groupidentifier-create](OperationDefinition-at-elga-emed-operation-groupidentifier-create.md) vorab von der Fachanwendung bezogen, in den zusammengehörenden **Geplanten Abgaben** ergänzt und zur Erstellung des e-Rezepts an die e-Rezept-Anwendung mitgegeben, um dieses mit den **Geplanten Abgaben** zu verknüpfen. Der Trigger zu Erstellung des e-Rezepts und [Prescription-Write](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) können parallel erfolgen (siehe Normalfall).
 
 Liefert die e-Rezept-Anwendung einen Fehler zurück, können mittels **POST** [$prescription-discard](OperationDefinition-at-elga-emed-operation-prescription-discard.md) bereits in der e-Medikation erstellte **Geplante Abgaben** storniert werden (siehe [Sub_UC_eMed_04_03 - Geplante Abgabe stornieren (Prescription-Discard)](Sub_UC_eMed_04.md#sub_uc_emed_04_03---geplante-abgabe-stornieren-prescription-discard)). Liefert die e-Medikation Fachanwendung einen Fehler zurück, kann nach Fehlerkorrektur erneut ein **Prescription-Write** erfolgen oder ein bereits durch den **e-Med groupIdentifer** verknüpftes e-Rezept wieder von den **Geplanten Abgaben** "entkoppelt" werden (siehe [Variante A: Fehlerfall](Sub_UC_eMed_04.md#variante-a-fehlerfall)).
 
-###### Variante A: Normalfall
+##### Variante A: Normalfall
 
 ![](plantuml/UC_eMed_04_01_a_normal.svg)
 
-###### Variante A: Fehlerfall
+##### Variante A: Fehlerfall
 
 ![](plantuml/UC_eMed_04_01_a_fehler.svg)
 
-##### Variante B: Sequentielles Erstellen von Geplanter Abgabe und e-Rezept
+#### Variante B: Sequentielles Erstellen von Geplanter Abgabe und e-Rezept
 
 Alternativ kann der **e-Med GroupIdentifier** durch die Fachanwendung automatisch ergänzt werden, wenn dieser beim [Prescription-Write](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) nicht in den **Geplanten Abgaben** im Transaction Bundle enthalten ist. Dadurch bleibt das Verhalten konsistent zur bestehenden e-Medikations-Implementierung. Hierfür müssen die **Geplanten Abgaben**, die zu einem e-Rezept gehören, gemeinsam in einem [Geplante Abgaben-Transaction Bundle](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md) mittels **POST** [$prescription-write](Sub_UC_eMed_04.md#custom-operations) an die e-Medikation Fachanwendung übermittelt werden. Der Server ergänzt den **e-Med GroupIdentifier** während der Transaktionsverarbeitung und gibt die persistierten Ressourcen einschließlich des erzeugten **e-Med GroupIdentifiers** in der Response an den Client zurück. Im Anschluss kann der Trigger zur Erstellung des e-Rezepts inkl. **e-Med GroupIdentifier** erfolgen.
 
 ![](plantuml/UC_eMed_04_01_b.svg)
 
-##### Variante C: Nachträgliche Verknüpfung des e-Rezepts mit dem e-Med GroupIdentifier
+#### Variante C: Nachträgliche Verknüpfung des e-Rezepts mit dem e-Med GroupIdentifier
 
 Der Trigger zur Erstellung des e-Rezepts und [Prescription-Write](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) können parallel erfolgen (Variante A), allerdings noch ohne **e-Med GroupIdentifier**. Die e-Medikation Fachanwendung ergänzt diesen und liefert ihn an den Client zurück (wie in Variante B), der Client führt im Anschluss eine nachträgliche Verknüfung des bereits erstellten e-Rezepts mit den **Geplanten Abgaben** mittels **e-Med GroupIdentifier** durch.
 
 ![](plantuml/UC_eMed_04_01_c.svg)
 
-##### Custom Operations
+#### Custom Operations
 
 * **POST** [$groupidentifier-create](OperationDefinition-at-elga-emed-operation-groupidentifier-create.md)
 
@@ -147,7 +147,7 @@ AtElgaEmedMedicationRequestGeplanteAbgabe
 
 ```
 
-##### Custom Operations
+#### Custom Operations
 
 * **POST** [$prescription-discard](OperationDefinition-at-elga-emed-operation-prescription-discard.md)
 

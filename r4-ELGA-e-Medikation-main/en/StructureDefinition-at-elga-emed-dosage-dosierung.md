@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-10-27T20:05:18+00:00",
+  "date" : "2026-10-27T21:19:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -160,37 +160,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.asNeeded[x]",
       "path" : "Dosage.asNeeded[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "open"
-      }
-    },
-    {
-      "id" : "Dosage.asNeeded[x]:asNeededBoolean",
-      "path" : "Dosage.asNeeded[x]",
-      "sliceName" : "asNeededBoolean",
       "short" : "Bedarfsmedikation: Ja/Nein",
-      "min" : 0,
-      "max" : "1",
       "type" : [{
         "code" : "boolean"
       }],
       "mustSupport" : true
-    },
-    {
-      "id" : "Dosage.asNeeded[x]:asNeededCodeableConcept",
-      "path" : "Dosage.asNeeded[x]",
-      "sliceName" : "asNeededCodeableConcept",
-      "short" : "Bedarfsmedikation: Grund für die Bedarfsmedikation",
-      "min" : 0,
-      "max" : "0",
-      "type" : [{
-        "code" : "CodeableConcept"
-      }]
     },
     {
       "id" : "Dosage.site",

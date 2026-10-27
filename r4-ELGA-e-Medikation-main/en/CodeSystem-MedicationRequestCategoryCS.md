@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "ELGA e-Med MedicationRequest Kategorie CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-27T20:05:18+00:00",
+  "date" : "2026-10-27T21:19:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

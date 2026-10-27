@@ -172,7 +172,7 @@ Anschließend speichert sie die neuen **Durchgeführte Abgaben** in der e-Medika
 Beispiele
 
 *  **Durchgeführte Abgaben erstellen:** 
-*  [Durchgeführte Abgabe (Ramipril)](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01.md) (Vollständige Einzelabgabe) 
+*  [Durchgeführte Abgabe (Ramipril)](Bundle-At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx.md) (Vollständige Einzelabgabe) 
 *  [Durchgeführte Abgabe (Dexpanthenol-Salbe)](MedicationDispense-At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02.md) (Besorgerprozess) 
  
 *  **Transaction Bundle:** 
@@ -371,7 +371,7 @@ Zuletzt erstellt Dr. Urlaubsvertretung eine **Geplante Abgabe** für zwei Packun
 Beispiele
 
 *  **Geplante Abgaben erstellen:** 
-*  [Geplante Abgabe zu Planeintrag 3 (Metagelan )](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md) 
+*  [Geplante Abgabe zu Planeintrag 3 (Metagelan )](Bundle-At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx.md) 
  
 *  **Transaction Bundle:** 
 *  [Transaction Bundle mit Geplanter Abgabe](Bundle-At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx.md) 

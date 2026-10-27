@@ -10,7 +10,7 @@
   "name" : "AtElgaEmedDosageStandardAdministration",
   "title" : "AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-27T20:05:18+00:00",
+  "date" : "2026-10-27T21:19:55+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -3636,59 +3636,6 @@
     {
       "id" : "Dosage.asNeeded[x]",
       "path" : "Dosage.asNeeded[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
-      "short" : "Take \"as needed\" (for x)",
-      "definition" : "Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).",
-      "comment" : "Can express \"as needed\" without a reason by setting the Boolean = True.  In this case the CodeableConcept is not populated.  Or you can express \"as needed\" with a reason by including the CodeableConcept.  In this case the Boolean is assumed to be True.  If you set the Boolean to False, then the dose is given according to the schedule and is not \"prn\" or \"as needed\".",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Dosage.asNeeded[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "boolean"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "binding" : {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-          "valueString" : "MedicationAsNeededReason"
-        }],
-        "strength" : "example",
-        "description" : "A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example \"pain\", \"30 minutes prior to sexual intercourse\", \"on flare-up\" etc.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason|4.0.1"
-      },
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "TQ1-9"
-      },
-      {
-        "identity" : "rim",
-        "map" : ".outboundRelationship[typeCode=PRCN].target[classCode=OBS, moodCode=EVN, code=\"as needed\"].value=boolean or codable concept"
-      }]
-    },
-    {
-      "id" : "Dosage.asNeeded[x]:asNeededBoolean",
-      "path" : "Dosage.asNeeded[x]",
-      "sliceName" : "asNeededBoolean",
       "short" : "Bedarfsmedikation: Ja/Nein",
       "definition" : "Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).",
       "comment" : "Can express \"as needed\" without a reason by setting the Boolean = True.  In this case the CodeableConcept is not populated.  Or you can express \"as needed\" with a reason by including the CodeableConcept.  In this case the Boolean is assumed to be True.  If you set the Boolean to False, then the dose is given according to the schedule and is not \"prn\" or \"as needed\".",
@@ -3713,51 +3660,6 @@
       "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
-      "mapping" : [{
-        "identity" : "v2",
-        "map" : "TQ1-9"
-      },
-      {
-        "identity" : "rim",
-        "map" : ".outboundRelationship[typeCode=PRCN].target[classCode=OBS, moodCode=EVN, code=\"as needed\"].value=boolean or codable concept"
-      }]
-    },
-    {
-      "id" : "Dosage.asNeeded[x]:asNeededCodeableConcept",
-      "path" : "Dosage.asNeeded[x]",
-      "sliceName" : "asNeededCodeableConcept",
-      "short" : "Bedarfsmedikation: Grund für die Bedarfsmedikation",
-      "definition" : "Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).",
-      "comment" : "Can express \"as needed\" without a reason by setting the Boolean = True.  In this case the CodeableConcept is not populated.  Or you can express \"as needed\" with a reason by including the CodeableConcept.  In this case the Boolean is assumed to be True.  If you set the Boolean to False, then the dose is given according to the schedule and is not \"prn\" or \"as needed\".",
-      "min" : 0,
-      "max" : "0",
-      "base" : {
-        "path" : "Dosage.asNeeded[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : true,
-      "binding" : {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-          "valueString" : "MedicationAsNeededReason"
-        }],
-        "strength" : "example",
-        "description" : "A coded concept identifying the precondition that should be met or evaluated prior to consuming or administering a medication dose.  For example \"pain\", \"30 minutes prior to sexual intercourse\", \"on flare-up\" etc.",
-        "valueSet" : "http://hl7.org/fhir/ValueSet/medication-as-needed-reason|4.0.1"
-      },
       "mapping" : [{
         "identity" : "v2",
         "map" : "TQ1-9"

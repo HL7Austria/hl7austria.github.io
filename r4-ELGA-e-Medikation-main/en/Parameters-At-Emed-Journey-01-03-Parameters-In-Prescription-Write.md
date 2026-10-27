@@ -26,48 +26,6 @@
           "meta" : {
             "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
           },
-          "contained" : [{
-            "resourceType" : "Medication",
-            "id" : "at-emed-journey-medication-ramipril",
-            "meta" : {
-              "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
-            },
-            "code" : {
-              "coding" : [{
-                "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
-                "code" : "2450836",
-                "display" : "RAMIPRIL HEX TBL 5MG"
-              }]
-            },
-            "ingredient" : [{
-              "itemCodeableConcept" : {
-                "coding" : [{
-                  "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
-                  "code" : "C09AA05",
-                  "display" : "Ramipril"
-                },
-                {
-                  "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
-                  "code" : "100000092240"
-                }]
-              },
-              "isActive" : true,
-              "strength" : {
-                "numerator" : {
-                  "value" : 5,
-                  "unit" : "mg",
-                  "system" : "http://unitsofmeasure.org",
-                  "code" : "mg"
-                },
-                "denominator" : {
-                  "value" : 1,
-                  "unit" : "Stück",
-                  "system" : "http://unitsofmeasure.org",
-                  "code" : "{Stueck}"
-                }
-              }
-            }]
-          }],
           "extension" : [{
             "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
             "valuePeriod" : {
@@ -95,7 +53,7 @@
             }]
           }],
           "medicationReference" : {
-            "reference" : "#at-emed-journey-medication-ramipril"
+            "reference" : "Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&code:text=RAMIPRIL%20HEX%20TBL%205MG"
           },
           "subject" : {
             "identifier" : {

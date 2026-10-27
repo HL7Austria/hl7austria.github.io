@@ -50,7 +50,7 @@ Die gefundenen **Geplanten Abgaben** können als Ausgangspunkt für weitere Abfr
 
 Von ELGA-Teilnehmern gelöschte **Geplanten Abgaben** stehen nicht mehr zur Verfügung.
 
-##### Ablauf
+#### Ablauf
 
 1. Der GDA führt einen**GET**-Request auf den Prescription-Search-Endpunkt mit**MedicationRequest.category "Geplante Abgabe"**und Suchparametern aus
 1. Die Fachanwendung ermittelt die den Suchkriterien entsprechenden**Geplanten Abgaben**.
@@ -89,7 +89,7 @@ Von ELGA-Teilnehmern gelöschte **Durchgeführte Abgaben** stehen nicht mehr zur
  Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
 
-##### Ablauf
+#### Ablauf
 
 1. Der GDA führt einen**GET**-Request auf den MedicationDispense-Search-Endpunkt mit Suchparametern aus.
 1. Die Fachanwendung ermittelt alle den Suchkriterien entsprechenden**Durchgeführten Abgaben**.
@@ -108,7 +108,7 @@ Dieser umfasst ausschließlich den lesenden Zugriff auf die **dem **e-Med GroupI
 
 Ein lesender Zugriff auf weitere **Geplante Abgaben** oder **Durchgeführte Abgaben** sowie auf den Medikationsplan des ELGA-Teilnehmers ist nicht möglich. Ebenso können keine weiteren **Durchgeführten Abgaben** (z.B. OTC- oder Notabgaben) in der e-Medikation des ELGA-Teilnehmers dokumentiert werden.
 
-##### Ablauf
+#### Ablauf
 
 1. Der GDA führt die Custom Operation**POST**[$groupidentifier-search](OperationDefinition-at-elga-emed-operation-groupidentifier-search.md)aus und übermittelt einen**e-Med GroupIdentifier**.
 1. Die Fachanwendung prüft den**e-Med GroupIdentifier**.
@@ -119,7 +119,7 @@ Ein lesender Zugriff auf weitere **Geplante Abgaben** oder **Durchgeführte Abga
 
 ![](plantuml/UC_eMed_03_03.svg)
 
-##### Custom Operations
+#### Custom Operations
 
 * **POST** [$groupidentifier-search](OperationDefinition-at-elga-emed-operation-groupidentifier-search.md)
 

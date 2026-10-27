@@ -97,7 +97,7 @@
         "value" : 2,
         "unit" : "Stück",
         "system" : "http://unitsofmeasure.org",
-        "code" : "Stueck"
+        "code" : "{Stueck}"
       }
     }]
   },
@@ -125,7 +125,7 @@
         "value" : 1,
         "unit" : "Stück",
         "system" : "http://unitsofmeasure.org",
-        "code" : "Stueck"
+        "code" : "{Stueck}"
       }
     }]
   }]

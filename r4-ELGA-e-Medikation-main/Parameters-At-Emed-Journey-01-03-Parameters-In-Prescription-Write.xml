@@ -18,49 +18,6 @@
               <meta>
                 <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
               </meta>
-              <contained>
-                <Medication>
-                  <id value="at-emed-journey-medication-ramipril"/>
-                  <meta>
-                    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"/>
-                  </meta>
-                  <code>
-                    <coding>
-                      <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
-                      <code value="2450836"/>
-                      <display value="RAMIPRIL HEX TBL 5MG"/>
-                    </coding>
-                  </code>
-                  <ingredient>
-                    <itemCodeableConcept>
-                      <coding>
-                        <system value="https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido"/>
-                        <code value="C09AA05"/>
-                        <display value="Ramipril"/>
-                      </coding>
-                      <coding>
-                        <system value="https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe"/>
-                        <code value="100000092240"/>
-                      </coding>
-                    </itemCodeableConcept>
-                    <isActive value="true"/>
-                    <strength>
-                      <numerator>
-                        <value value="5"/>
-                        <unit value="mg"/>
-                        <system value="http://unitsofmeasure.org"/>
-                        <code value="mg"/>
-                      </numerator>
-                      <denominator>
-                        <value value="1"/>
-                        <unit value="Stück"/>
-                        <system value="http://unitsofmeasure.org"/>
-                        <code value="{Stueck}"/>
-                      </denominator>
-                    </strength>
-                  </ingredient>
-                </Medication>
-              </contained>
               <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod">
                 <valuePeriod>
                   <start value="2026-02-27"/>
@@ -86,7 +43,7 @@
                 </coding>
               </category>
               <medicationReference>
-                <reference value="#at-emed-journey-medication-ramipril"/>
+                <reference value="Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&amp;code:text=RAMIPRIL%20HEX%20TBL%205MG"/>
               </medicationReference>
               <subject>
                 <identifier>
