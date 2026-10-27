@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
   "name" : "AtElgaEmedParametersOutGroupIdentifierSearch",
   "title" : "AT ELGA e-Medikation Parameters Out $groupidentifier-search",
   "status" : "draft",
-  "date" : "2026-10-27T12:33:12+00:00",
+  "date" : "2026-10-27T12:53:20+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

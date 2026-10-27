@@ -195,7 +195,7 @@ Für die zeitliche Begrenzung einer Dosierungsanweisung stehen folgende Variante
 
 ### Textdarstellungen und ergänzende Hinweise
 
- Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen der einzelnen Ressourcen und Dosierschemata wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. </ul> 
+ Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen der einzelnen Ressourcen und Dosierschemata wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht. 
 
 Die strukturierte Dosierung ist die primäre, maschinenlesbare Repräsentation. **Die Textdarstellung unterstützt die menschliche Lesbarkeit, darf jedoch nicht als Ersatz für strukturierte Daten verwendet werden, wenn die Dosierung durch ein unterstütztes Dosierschema vollständig abbildbar ist.**
 
@@ -211,10 +211,10 @@ Die folgenden Elemente unterstützen die menschenlesbare Darstellung von Ressour
 | :--- | :--- | :--- |
 | `MedicationRequest.text` | `Narrative`→ XHTML in`div` | Menschenlesbare Textrepräsentation der wesentlichen Informationen der gesamten Ressource. Enthält die für das Verständnis relevanten Informationen einschließlich der Dosierung und der (`contained`)`Medication`. |
 | `MedicationRequest.note.text` | `markdown`innerhalb von`Annotation` | Zusätzliche Informationen zum Planeintrag, z. B. „Kontrolle der Blutwerte innerhalb von vier Wochen erforderlich“. |
-| `MedicationRequest.extension:renderedDosageInstruction` | `markdown`(`valueMarkdown`) | Da ein MedicationRequest/MedicationDispense mehrere Dosages besitzten kann bildet renderedDosageInstruction eine gesamte Textrepräsentation aller Medicationrequest.dosageInstructions ab. Gibt es nur eine dosageInstruction so entspricht der inhalt von extension:renderedDosageInstruction dem Inhalt von dosageInstruction.text. |
-| `MedicationRequest.dosageInstruction.text` | `string` | Textrepräsentation einer einzelnen`Dosage`-Instanz. Berücksichtigt auch die Inhalte von`additionalInstruction`und`patientInstruction`. Bei einer Dosierung die nicht strukturiert abgebildet werden kann stellt dieses Element das Freitextfeld für die Repräsentation der Dosierung dar. |
+| `MedicationRequest.extension:renderedDosageInstruction` | `markdown`(`valueMarkdown`) | Da ein MedicationRequest/MedicationDispense mehrere Dosages besitzten kann bildet renderedDosageInstruction eine gesamte Textrepräsentation aller Medicationrequest.dosageInstructions ab. Gibt es nur eine dosageInstruction so entspricht der Inhalt von extension:renderedDosageInstruction dem Inhalt von dosageInstruction.text. |
+| `MedicationRequest.dosageInstruction.text` | `string` | Textrepräsentation einer einzelnen`Dosage`-Instanz. Berücksichtigt auch die Inhalte von`additionalInstruction`und`patientInstruction`. Bei einer Dosierung die nicht strukturiert abgebildet werden kann, stellt dieses Element das Freitextfeld für die Repräsentation der Dosierung dar. |
 | `MedicationRequest.dosageInstruction.additionalInstruction` | `CodeableConcept` | Ergänzende Einnahme- oder Anwendungshinweise und Warnhinweise, die codiert angegeben werden können. |
-| `MedicationRequest.dosageInstruction.patientInstruction` | `string` | Zusätzlicher Einnahme/Anwendungs-hinweis für den Patienten. |
+| `MedicationRequest.dosageInstruction.patientInstruction` | `string` | Zusätzlicher Einnahme-/Anwendungshinweis für den Patienten. |
 
  `Dosage.additionalInstruction` KANN für ergänzende, standardisiert codierbare Einnahme-, Anwendungs- oder Warnhinweise verwendet werden. Das Element ergänzt die eigentliche Dosierungsanweisung, ersetzt jedoch weder `Dosage.timing`, `doseAndRate` noch `Dosage.patientInstruction`. 
 
