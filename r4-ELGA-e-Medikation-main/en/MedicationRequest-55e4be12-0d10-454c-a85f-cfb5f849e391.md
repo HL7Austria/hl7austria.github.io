@@ -2,6 +2,8 @@
 
 ## Example MedicationRequest: Beispiel Journey 01-02: Planeintrag 2
 
+TODO
+
 
 
 ## Resource Content
@@ -12,6 +14,7 @@
   "id" : "55e4be12-0d10-454c-a85f-cfb5f849e391",
   "meta" : {
     "versionId" : "v101275d13-fd59-4781-99ae-744fb90a1ba0",
+    "lastUpdated" : "2026-02-27T08:10:00.360+00:00",
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
   },
   "contained" : [{
@@ -33,6 +36,17 @@
         "code" : "100000073713",
         "display" : "Salbe"
       }]
+    },
+    "amount" : {
+      "numerator" : {
+        "value" : 100,
+        "unit" : "g",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "g"
+      },
+      "denominator" : {
+        "value" : 1
+      }
     },
     "ingredient" : [{
       "itemCodeableConcept" : {
@@ -66,11 +80,15 @@
       "strength" : {
         "numerator" : {
           "value" : 95,
-          "unit" : "g"
+          "unit" : "g",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "g"
         },
         "denominator" : {
           "value" : 100,
-          "unit" : "g"
+          "unit" : "g",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "g"
         }
       }
     }]
@@ -101,7 +119,6 @@
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01",
-    "type" : "Patient",
     "identifier" : {
       "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
       "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
@@ -110,7 +127,10 @@
   "authoredOn" : "2026-02-27T08:10:00+00:00",
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
-    "display" : "Dr. Hausärztin"
+    "identifier" : {
+      "system" : "urn:ietf:rfc:3986",
+      "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+    }
   },
   "courseOfTherapyType" : {
     "coding" : [{

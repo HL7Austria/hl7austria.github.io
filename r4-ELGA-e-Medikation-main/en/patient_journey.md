@@ -31,39 +31,32 @@ Use Cases
 *  [Sub_UC_eMed_03_02 - Durchgeführte Abgaben lesen (Dispense-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search) 
 *  [Sub_UC_eMed_01_01_01 - Initial erstellter Medikationsplan](Sub_UC_eMed_01.md#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan) 
 
-##### Journey-01-01: Request 01 - Medikationsplan abrufen
+##### Journey-01-01: Request 01 - Medikationsplan abrufen ($plan-read)
 
 Request
 
 POST
 `[base]/List/$plan-read`
 
-**Headers:**
-`Content-Type: application/fhir+json`
+Die Operation besitzt keine Eingabeparameter, der Request enthält keinen Body.
 
 Response Body
 
-##### Journey-01-01: Request 02 - Geplante Abgaben abrufen
+##### Journey-01-01: Request 02 - Geplante Abgaben abrufen (Prescription-Search)
 
 Request
 
 GET
-`[base]/MedicationRequest?category=https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS|2&status=active`
-
-**Headers:**
-`Content-Type: application/fhir+json`
+`[base]/MedicationRequest?category=https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS|GeplAbgabe&status=active`
 
 Response Body
 
-##### Journey-01-01: Request 03 - Durchgeführte Abgaben Abrufen
+##### Journey-01-01: Request 03 - Durchgeführte Abgaben abrufen (Dispense-Search)
 
 Request
 
 GET
-`[base]/MedicationDispense?recorded=lt2025-01-01`
-
-**Headers:**
-`Content-Type: application/fhir+json`
+`[base]/MedicationDispense`
 
 Response Body
 
@@ -91,30 +84,25 @@ Use Cases
 *  [Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)](Sub_UC_eMed_02.md#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write) 
 *  [Sub_UC_eMed_02_02 - Planeintrag in Medikationsplan hinzufügen](Sub_UC_eMed_02.md#sub_uc_emed_02_02---planeintrag-in-medikationsplan-hinzufügen) 
 
-#### Journey-01-02: Request 01 - Medikationsplan schreiben
+##### Journey-01-02: Request 01 - Medikationsplan schreiben ($plan-write)
 
 Request
 
 POST
 `[base]/List/$plan-write`
 
-**Headers:**
-`Content-Type: application/fhir+json`
-
 Request Body
-Todo Replace with Parameter wrapper:
 
 Response Body
 
-#### Journey-01-02: Request 02 - Medikationsplan lesen
+##### Journey-01-02: Request 02 - Medikationsplan lesen ($plan-read)
 
 Request
 
 POST
 `[base]/List/$plan-read`
 
-**Headers:**
-`Content-Type: application/fhir+json`
+Die Operation besitzt keine Eingabeparameter, der Request enthält keinen Body.
 
 Response Body
 
@@ -122,22 +110,48 @@ Im aktualisierten Medikationsplan sind die neuen Planeinträge sowie das Datum d
 
 #### Journey-01-03
 
-Dr. Hausärztin erstellt für beide Medikamente ein Kassenrezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer **Geplante Abgabe** in der e-Medikation. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.
+Dr. Hausärztin erstellt für beide Medikamente ein Kassenrezept (Papier oder e-Rezept) und dokumentiert den Rezeptiervorgang in einer **Geplante Abgabe** in der e-Medikation. Dazu bezieht ihre Software vorab einen **e-Med GroupIdentifier** (Variante A), der beiden **Geplanten Abgaben** sowie dem e-Rezept mitgegeben wird und diese miteinander verknüpft. Herr Mustermann kann nun mit dem Rezept die Medikamente in der Apotheke abholen.
 
 Beispiele
 
 *  **Geplante Abgaben erstellen:** 
-*  [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.md) 
-*  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md) 
+*  [Geplante Abgabe zu Planeintrag 1 (Ramipril)](MedicationRequest-d9d43746-69ab-4ed8-9200-3a939f7224de.md) 
+*  [Geplante Abgabe zu Planeintrag 2 (Dexpanthenol-Salbe)](MedicationRequest-f564f377-ef44-4943-9bb2-fccc8a5db24a.md) 
+ 
+*  **e-Med GroupIdentifier:** 
+*  [e-Med GroupIdentifier mit DataMatrix-Code](Parameters-At-Emed-Journey-01-03-Parameters-Out-GroupIdentifier-Create.md) 
  
 *  **Transaction Bundle:** 
-*  [Transaction Bundle mit Geplante Abgaben](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx.md) 
+*  [Transaction Bundle mit Geplanten Abgaben](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx.md) 
+*  [Transaction-Response Bundle mit persistierten Geplanten Abgaben](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Write-Response.md) 
  
 
 Use Cases
 
 *  [Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)](Sub_UC_eMed_04.md#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write) 
 *  [Sub_UC_eMed_04_02 - e-Med GroupIdentifier beziehen (Variante A)](Sub_UC_eMed_04.md#variante-a-vorab-ermittlung-des-e-med-groupidentifiers-groupidentifier-create) 
+
+##### Journey-01-03: Request 01 - e-Med GroupIdentifier beziehen ($groupidentifier-create)
+
+Request
+
+POST
+`[base]/$groupidentifier-create`
+
+Die Operation besitzt keine Eingabeparameter, der Request enthält keinen Body.
+
+Response Body
+
+##### Journey-01-03: Request 02 - Geplante Abgaben schreiben ($prescription-write)
+
+Request
+
+POST
+`[base]/MedicationRequest/$prescription-write`
+
+Request Body
+
+Response Body
 
 #### Journey-01: Ablauf - Erster Arztbesuch
 

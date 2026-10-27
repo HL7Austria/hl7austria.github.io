@@ -8,10 +8,9 @@ Melanie Hausärztin (OID:1.2.40.0.34.99.4613.4)
 
 -------
 
-| | | | |
-| :--- | :--- | :--- | :--- |
-| Active: | true | Gender: | Female |
-| Other Id: | `urn:oid:1.2.40.0.10.1.4.3.2`/987654321 | | |
+| | |
+| :--- | :--- |
+| Other Id: | `urn:oid:1.2.40.0.10.1.4.3.2`/987654321 |
 
 
 
@@ -26,25 +25,17 @@ Melanie Hausärztin (OID:1.2.40.0.34.99.4613.4)
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:1.2.40.0.34.99.4613.4",
-    "assigner" : {
-      "display" : "Bundesministerium für Gesundheit"
-    }
+    "value" : "urn:oid:1.2.40.0.34.99.4613.4"
   },
   {
     "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
-    "value" : "987654321",
-    "assigner" : {
-      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-    }
+    "value" : "987654321"
   }],
-  "active" : true,
   "name" : [{
     "family" : "Hausärztin",
     "given" : ["Melanie"],
     "prefix" : ["Prof. Dr."]
-  }],
-  "gender" : "female"
+  }]
 }
 
 ```

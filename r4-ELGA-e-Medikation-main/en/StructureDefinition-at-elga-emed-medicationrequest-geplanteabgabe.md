@@ -20,7 +20,7 @@ Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächs
 
 * Use this Profile: [AT ELGA e-Medikation Transaction Bundle Geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-tx.md), [AT ELGA e-Medikation Transaction-Response Bundle Geplante Abgaben](StructureDefinition-at-elga-emed-bundle-geplanteabgaben-write-response.md), [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md), [AT ELGA e-Medikation Parameters Out $dispense-discard](StructureDefinition-at-elga-emed-parameters-out-dispense-discard.md) and [AT ELGA e-Medikation Parameters Out $prescription-discard](StructureDefinition-at-elga-emed-parameters-out-prescription-discard.md)
 * Refer to this Profile: [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
-* Examples for this Profile: [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.md), [MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02](MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.md) and [MedicationRequest/At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md)
+* Examples for this Profile: [MedicationRequest/At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03](MedicationRequest-At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03.md), [MedicationRequest/d9d43746-69ab-4ed8-9200-3a939f7224de](MedicationRequest-d9d43746-69ab-4ed8-9200-3a939f7224de.md) and [MedicationRequest/f564f377-ef44-4943-9bb2-fccc8a5db24a](MedicationRequest-f564f377-ef44-4943-9bb2-fccc8a5db24a.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.json)
 
@@ -55,7 +55,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-27T19:38:06+00:00",
+  "date" : "2026-10-27T20:05:18+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -542,6 +542,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.dispenseRequest.quantity.unit",
       "path" : "MedicationRequest.dispenseRequest.quantity.unit",
+      "mustSupport" : true
+    },
+    {
+      "id" : "MedicationRequest.dispenseRequest.quantity.system",
+      "path" : "MedicationRequest.dispenseRequest.quantity.system",
       "mustSupport" : true
     },
     {

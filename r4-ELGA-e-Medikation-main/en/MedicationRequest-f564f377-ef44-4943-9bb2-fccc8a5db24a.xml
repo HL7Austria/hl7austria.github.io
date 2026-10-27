@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="f564f377-ef44-4943-9bb2-fccc8a5db24a"/>
+  <meta>
+    <versionId value="v12e98d46b-0356-4ec1-afb8-433f65596d1d"/>
+    <lastUpdated value="2026-02-27T08:15:00.231+00:00"/>
+    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+  </meta>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+  </text>
+  <contained>
+    <Medication>
+      <id value="contained-medication-magistral-01"/>
+      <meta>
+        <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"/>
+      </meta>
+      <extension url="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur">
+        <valueMarkdown value="TODO: Beispielrezeptur"/>
+      </extension>
+      <code>
+        <text value="Dexpanthenol-5-%-Salbe"/>
+      </code>
+      <form>
+        <coding>
+          <system value="https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform"/>
+          <code value="100000073713"/>
+          <display value="Salbe"/>
+        </coding>
+      </form>
+      <amount>
+        <numerator>
+          <value value="100"/>
+          <unit value="g"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="g"/>
+        </numerator>
+        <denominator>
+          <value value="1"/>
+        </denominator>
+      </amount>
+      <ingredient>
+        <itemCodeableConcept>
+          <coding>
+            <system value="https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido"/>
+            <code value="A11HA30"/>
+            <display value="Dexpanthenol"/>
+          </coding>
+        </itemCodeableConcept>
+        <isActive value="true"/>
+        <strength>
+          <numerator>
+            <value value="5"/>
+            <unit value="g"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="g"/>
+          </numerator>
+          <denominator>
+            <value value="100"/>
+            <unit value="g"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="g"/>
+          </denominator>
+        </strength>
+      </ingredient>
+      <ingredient>
+        <itemCodeableConcept>
+          <text value="Salbengrundlage"/>
+        </itemCodeableConcept>
+        <isActive value="false"/>
+        <strength>
+          <numerator>
+            <value value="95"/>
+            <unit value="g"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="g"/>
+          </numerator>
+          <denominator>
+            <value value="100"/>
+            <unit value="g"/>
+            <system value="http://unitsofmeasure.org"/>
+            <code value="g"/>
+          </denominator>
+        </strength>
+      </ingredient>
+    </Medication>
+  </contained>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod">
+    <valuePeriod>
+      <start value="2026-02-27"/>
+      <end value="2026-03-20"/>
+    </valuePeriod>
+  </extension>
+  <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+    <valueMarkdown value="1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen"/>
+  </extension>
+  <status value="active"/>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS"/>
+      <code value="GeplAbgabe"/>
+      <display value="Geplante Abgabe"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"/>
+      <code value="KASSEN"/>
+      <display value="Kassenrezept"/>
+    </coding>
+  </category>
+  <medicationReference>
+    <reference value="#contained-medication-magistral-01"/>
+  </medicationReference>
+  <subject>
+    <reference value="Patient/At-Emed-Example-Patient-01"/>
+    <identifier>
+      <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+      <value value="GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="/>
+    </identifier>
+  </subject>
+  <authoredOn value="2026-02-27T08:15:00+00:00"/>
+  <requester>
+    <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
+    <identifier>
+      <system value="urn:ietf:rfc:3986"/>
+      <value value="urn:oid:1.2.40.0.34.99.4613.4"/>
+    </identifier>
+  </requester>
+  <basedOn>
+    <reference value="MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"/>
+  </basedOn>
+  <groupIdentifier>
+    <system value="http://tbd.com"/>
+    <value value="WYE82A2G8EEW"/>
+  </groupIdentifier>
+  <dosageInstruction>
+    <extension url="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category">
+      <valueCodeableConcept>
+        <coding>
+          <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory"/>
+          <code value="standard"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <sequence value="1"/>
+    <patientInstruction value="Dünn auftragen."/>
+    <timing>
+      <repeat>
+        <boundsDuration>
+          <value value="3"/>
+          <unit value="wk"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="wk"/>
+        </boundsDuration>
+        <frequency value="2"/>
+        <period value="1"/>
+        <periodUnit value="d"/>
+        <when value="MORN"/>
+        <when value="EVE"/>
+      </repeat>
+    </timing>
+    <route>
+      <coding>
+        <system value="https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"/>
+        <code value="100000073566"/>
+        <display value="Anwendung auf der Haut"/>
+      </coding>
+    </route>
+  </dosageInstruction>
+  <dispenseRequest>
+    <validityPeriod>
+      <start value="2026-02-27"/>
+      <end value="2026-03-27"/>
+    </validityPeriod>
+    <numberOfRepeatsAllowed value="0"/>
+    <quantity>
+      <value value="1"/>
+      <unit value="Packung"/>
+    </quantity>
+  </dispenseRequest>
+</MedicationRequest>

@@ -129,7 +129,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-27T19:38:06+00:00",
+  "date" : "2026-10-27T20:05:18+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -171,7 +171,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         "key" : "at-emed-list-same-patient",
         "severity" : "error",
         "human" : "Alle in der Liste referenzierten Patienten müssen gleich sein",
-        "expression" : "subject.resolve() = entry.item.resolve().ofType(MedicationRequest).subject.resolve()",
+        "expression" : "entry.item.resolve().ofType(MedicationRequest).all(subject.identifier.system = %context.subject.identifier.system and subject.identifier.value = %context.subject.identifier.value)",
         "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"
       }]
     },

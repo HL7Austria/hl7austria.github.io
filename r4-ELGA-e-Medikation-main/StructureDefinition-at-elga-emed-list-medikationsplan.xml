@@ -69,7 +69,7 @@
   <name value="AtElgaEmedListMedikationsplan"/>
   <title value="AT ELGA e-Medikation List Medikationsplan"/>
   <status value="draft"/>
-  <date value="2026-10-27T19:38:06+00:00"/>
+  <date value="2026-10-27T20:05:18+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -195,7 +195,7 @@
         <key value="at-emed-list-same-patient"/>
         <severity value="error"/>
         <human value="Alle in der Liste referenzierten Patienten müssen gleich sein"/>
-        <expression value="subject.resolve() = entry.item.resolve().ofType(MedicationRequest).subject.resolve()"/>
+        <expression value="entry.item.resolve().ofType(MedicationRequest).all(subject.identifier.system = %context.subject.identifier.system and subject.identifier.value = %context.subject.identifier.value)"/>
         <source value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
       </constraint>
       <isModifier value="false"/>
@@ -4188,7 +4188,7 @@
         <key value="at-emed-list-same-patient"/>
         <severity value="error"/>
         <human value="Alle in der Liste referenzierten Patienten müssen gleich sein"/>
-        <expression value="subject.resolve() = entry.item.resolve().ofType(MedicationRequest).subject.resolve()"/>
+        <expression value="entry.item.resolve().ofType(MedicationRequest).all(subject.identifier.system = %context.subject.identifier.system and subject.identifier.value = %context.subject.identifier.value)"/>
         <source value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
       </constraint>
     </element>

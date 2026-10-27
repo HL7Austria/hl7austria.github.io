@@ -5,6 +5,7 @@
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Parameters Out $prescription-write](StructureDefinition-at-elga-emed-parameters-out-prescription-write.md)
+* Examples for this Profile: [Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Write-Response](Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Write-Response.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-bundle-geplanteabgaben-write-response.json)
 
@@ -29,7 +30,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleGeplanteAbgabenWriteResponse",
   "title" : "AT ELGA e-Medikation Transaction-Response Bundle Geplante Abgaben",
   "status" : "draft",
-  "date" : "2026-10-27T19:38:06+00:00",
+  "date" : "2026-10-27T20:05:18+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -2,6 +2,8 @@
 
 ## Example MedicationRequest: Beispiel Journey 01-02: Planeintrag 1
 
+TODO
+
 
 
 ## Resource Content
@@ -12,6 +14,7 @@
   "id" : "6bacfe23-d469-4945-bf3c-90c7e647aa52",
   "meta" : {
     "versionId" : "v1aeb5e5e8-785a-430b-afef-ee57335b213d",
+    "lastUpdated" : "2026-02-27T08:10:00.314+00:00",
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
   },
   "contained" : [{
@@ -30,9 +33,29 @@
     "ingredient" : [{
       "itemCodeableConcept" : {
         "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+          "code" : "C09AA05",
+          "display" : "Ramipril"
+        },
+        {
           "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
           "code" : "100000092240"
         }]
+      },
+      "isActive" : true,
+      "strength" : {
+        "numerator" : {
+          "value" : 5,
+          "unit" : "mg",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "mg"
+        },
+        "denominator" : {
+          "value" : 1,
+          "unit" : "Stück",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "{Stueck}"
+        }
       }
     }]
   }],
@@ -61,7 +84,6 @@
   },
   "subject" : {
     "reference" : "Patient/At-Emed-Example-Patient-01",
-    "type" : "Patient",
     "identifier" : {
       "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
       "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
@@ -70,7 +92,10 @@
   "authoredOn" : "2026-02-27T08:10:00+00:00",
   "requester" : {
     "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
-    "display" : "Dr. Hausärztin"
+    "identifier" : {
+      "system" : "urn:ietf:rfc:3986",
+      "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+    }
   },
   "courseOfTherapyType" : {
     "coding" : [{

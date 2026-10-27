@@ -27,7 +27,7 @@ Die Referenz erfolgt anhand der PZN, beispielsweise:
 
 ```
 "medicationReference" : {
-    "reference" : "Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&code:text=RAMIPRIL"
+    "reference" : "Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&code:text=RAMIPRIL%20HEX%20TBL%205MG"
   },
 
 ```

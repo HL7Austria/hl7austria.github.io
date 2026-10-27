@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-27T19:38:06+00:00",
+  "date" : "2026-10-27T20:05:18+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -434,14 +434,54 @@
       "description" : "Stammdaten"
     },
     {
-      "id" : "Operations",
-      "name" : "Operations",
-      "description" : "Definitionen der im Leitfaden enthaltenen Custom Operations"
+      "id" : "OpPlanRead",
+      "name" : "$plan-read",
+      "description" : "Operation $plan-read inkl. Ein- und Ausgabeparameter"
     },
     {
-      "id" : "OperationParameter",
-      "name" : "Ein- und Ausgabeparameter der Interaktionen",
-      "description" : "Profile für die Ein- und Ausgabe der Operationen (Transaction-Bundles, Response-Bundles, OperationOutcome, Parameters)"
+      "id" : "OpPlanWrite",
+      "name" : "$plan-write",
+      "description" : "Operation $plan-write inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OpReferencePlan",
+      "name" : "$reference-plan",
+      "description" : "Operation $reference-plan inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OpPrescriptionWrite",
+      "name" : "$prescription-write",
+      "description" : "Operation $prescription-write inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OpPrescriptionDiscard",
+      "name" : "$prescription-discard",
+      "description" : "Operation $prescription-discard inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OpDispenseWrite",
+      "name" : "$dispense-write",
+      "description" : "Operation $dispense-write inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OpDispenseDiscard",
+      "name" : "$dispense-discard",
+      "description" : "Operation $dispense-discard inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OpGroupidentifierCreate",
+      "name" : "$groupidentifier-create",
+      "description" : "Operation $groupidentifier-create inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OpGroupidentifierSearch",
+      "name" : "$groupidentifier-search",
+      "description" : "Operation $groupidentifier-search inkl. Ein- und Ausgabeparameter"
+    },
+    {
+      "id" : "OperationCommon",
+      "name" : "Gemeinsame Profile der Operationen",
+      "description" : "Profile, die von allen Operationen verwendet werden"
     },
     {
       "id" : "Suchparameter",
@@ -713,7 +753,7 @@
       "name" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
       "description" : "Profil für den Medikationsplan als Ergebnis der $plan-read Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPlanRead"
     },
     {
       "extension" : [{
@@ -730,7 +770,7 @@
       "name" : "AT ELGA e-Medikation OperationOutcome",
       "description" : "Dieses Profil gibt vor, welche Details im Rahmen der e-Medikation im Fehlerfall...",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OperationCommon"
     },
     {
       "extension" : [{
@@ -764,7 +804,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $dispense-discard",
       "description" : "Profil für den Rückgabewert der $dispense-discard Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpDispenseDiscard"
     },
     {
       "extension" : [{
@@ -781,7 +821,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $dispense-write",
       "description" : "Profil für den Rückgabewert der $dispense-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpDispenseWrite"
     },
     {
       "extension" : [{
@@ -798,7 +838,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $groupidentifier-create",
       "description" : "Profil für den Rückgabewert der $groupidentifier-create Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpGroupidentifierCreate"
     },
     {
       "extension" : [{
@@ -815,7 +855,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $groupidentifier-search",
       "description" : "Profil für den Rückgabewert der $groupidentifier-search Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpGroupidentifierSearch"
     },
     {
       "extension" : [{
@@ -832,7 +872,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $plan-read",
       "description" : "Profil für den Rückgabewert der $plan-read Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPlanRead"
     },
     {
       "extension" : [{
@@ -849,7 +889,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $plan-write",
       "description" : "Profil für den Rückgabewert der $plan-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPlanWrite"
     },
     {
       "extension" : [{
@@ -866,7 +906,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $prescription-discard",
       "description" : "Profil für den Rückgabewert der $prescription-discard Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPrescriptionDiscard"
     },
     {
       "extension" : [{
@@ -883,7 +923,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $prescription-write",
       "description" : "Profil für den Rückgabewert der $prescription-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPrescriptionWrite"
     },
     {
       "extension" : [{
@@ -900,7 +940,7 @@
       "name" : "AT ELGA e-Medikation Parameters Out $reference-plan",
       "description" : "Profil für den Rückgabewert der $reference-plan Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpReferencePlan"
     },
     {
       "extension" : [{
@@ -985,7 +1025,7 @@
       "name" : "AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search",
       "description" : "Profil für das Ergebnis der $groupidentifier-search Operation. Das Bundle enthält die dem e-Med GroupIdentifier zugeordneten Geplanten und Durchgeführten Abgaben sowie die von ihnen referenzierten Patient- und Autoren-Ressourcen.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpGroupidentifierSearch"
     },
     {
       "extension" : [{
@@ -1036,7 +1076,7 @@
       "name" : "AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben",
       "description" : "Profil für das Schreiben der Durchgeführten Abgaben mit der $dispense-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpDispenseWrite"
     },
     {
       "extension" : [{
@@ -1053,7 +1093,7 @@
       "name" : "AT ELGA e-Medikation Transaction Bundle Geplante Abgaben",
       "description" : "Profil für das Schreiben der Geplanten Abgaben mit der $prescription-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPrescriptionWrite"
     },
     {
       "extension" : [{
@@ -1070,7 +1110,7 @@
       "name" : "AT ELGA e-Medikation Transaction Bundle Medikationsplan",
       "description" : "Profil für das Schreiben des Medikationsplans mit der $plan-write Operation.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPlanWrite"
     },
     {
       "extension" : [{
@@ -1087,7 +1127,7 @@
       "name" : "AT ELGA e-Medikation Transaction-Response Bundle Durchgeführte Abgaben",
       "description" : "Profil für die Antwort des Servers auf das Schreiben von Durchgeführten Abgaben mit der $dispense-write Operation. Das Bundle enthält die persistierten Durchgeführten Abgaben.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpDispenseWrite"
     },
     {
       "extension" : [{
@@ -1104,7 +1144,7 @@
       "name" : "AT ELGA e-Medikation Transaction-Response Bundle Geplante Abgaben",
       "description" : "Profil für die Antwort des Servers auf das Schreiben von Geplanten Abgaben mit der $prescription-write Operation. Das Bundle enthält die persistierten Geplanten Abgaben.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPrescriptionWrite"
     },
     {
       "extension" : [{
@@ -1121,7 +1161,7 @@
       "name" : "AT ELGA e-Medikation Transaction-Response Bundle Medikationsplan",
       "description" : "Profil für die Antwort des Servers auf das Schreiben des Medikationsplans mit der $plan-write Operation. Das Bundle enthält den persistierten Medikationsplan sowie die persistierten Medikationsplaneinträge.",
       "exampleBoolean" : false,
-      "groupingId" : "OperationParameter"
+      "groupingId" : "OpPlanWrite"
     },
     {
       "extension" : [{
@@ -1154,6 +1194,22 @@
       "name" : "Beispiel Apothekerin 02",
       "description" : "Beispiel einer Apothekerin (Dr. Apothekerin).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-At-Emed-Journey-01-01-01-Parameters-Out-Plan-Read.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/At-Emed-Journey-01-01-01-Parameters-Out-Plan-Read"
+      },
+      "name" : "Beispiel Journey 01-01-01: $plan-read Response",
+      "description" : "Beispiel einer Response eines $plan-read mit dem initial erstellten, leeren Medikationsplan.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read"
     },
     {
       "extension" : [{
@@ -1202,6 +1258,54 @@
       "name" : "Beispiel Journey 01-01-03: Durchgeführte Abgaben-Bundle",
       "description" : "Beispiel eines leeren Durchgeführte Abgaben-Bundles.",
       "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-At-Emed-Journey-01-02-Parameters-Out-Plan-Read.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/At-Emed-Journey-01-02-Parameters-Out-Plan-Read"
+      },
+      "name" : "Beispiel Journey 01-02: $plan-read Response",
+      "description" : "Beispiel einer Response eines $plan-read mit dem Medikationsplan und 2 Planeinträgen.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-At-Emed-Journey-01-02-Parameters-In-Plan-Write.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/At-Emed-Journey-01-02-Parameters-In-Plan-Write"
+      },
+      "name" : "Beispiel Journey 01-02: $plan-write Request",
+      "description" : "Beispiel eines Request Body eines $plan-write mit dem Medikationsplan-Transaction-Bundle.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-At-Emed-Journey-01-02-Parameters-Out-Plan-Write.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/At-Emed-Journey-01-02-Parameters-Out-Plan-Write"
+      },
+      "name" : "Beispiel Journey 01-02: $plan-write Response",
+      "description" : "Beispiel einer Response eines $plan-write mit dem persistierten Medikationsplan und 2 neuen Planeinträgen.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-write"
     },
     {
       "extension" : [{
@@ -1286,17 +1390,65 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-At-Emed-Journey-01-03-Parameters-Out-GroupIdentifier-Create.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/At-Emed-Journey-01-03-Parameters-Out-GroupIdentifier-Create"
+      },
+      "name" : "Beispiel Journey 01-03: $groupidentifier-create Response",
+      "description" : "Beispiel einer Response eines $groupidentifier-create mit dem neu erzeugten e-Med GroupIdentifier und dem zugehörigen DataMatrix-Code.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-groupidentifier-create"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-At-Emed-Journey-01-03-Parameters-In-Prescription-Write.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/At-Emed-Journey-01-03-Parameters-In-Prescription-Write"
+      },
+      "name" : "Beispiel Journey 01-03: $prescription-write Request",
+      "description" : "Beispiel eines Request Body eines $prescription-write mit dem Geplante-Abgaben-Transaction-Bundle.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Parameters-At-Emed-Journey-01-03-Parameters-Out-Prescription-Write.html"
+      }],
+      "reference" : {
+        "reference" : "Parameters/At-Emed-Journey-01-03-Parameters-Out-Prescription-Write"
+      },
+      "name" : "Beispiel Journey 01-03: $prescription-write Response",
+      "description" : "Beispiel einer Response eines $prescription-write mit 2 persistierten Geplanten Abgaben.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-prescription-write"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "MedicationRequest"
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01.html"
+        "valueUri" : "MedicationRequest-d9d43746-69ab-4ed8-9200-3a939f7224de.html"
       }],
       "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01"
+        "reference" : "MedicationRequest/d9d43746-69ab-4ed8-9200-3a939f7224de"
       },
       "name" : "Beispiel Journey 01-03: Geplante Abgabe 1",
-      "description" : "Bildet eine Geplante Abgabe des Arzneimittels Ramipril mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab.",
+      "description" : "Bildet eine persistierte Geplante Abgabe des Arzneimittels Ramipril mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
@@ -1306,13 +1458,13 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "MedicationRequest-At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02.html"
+        "valueUri" : "MedicationRequest-f564f377-ef44-4943-9bb2-fccc8a5db24a.html"
       }],
       "reference" : {
-        "reference" : "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02"
+        "reference" : "MedicationRequest/f564f377-ef44-4943-9bb2-fccc8a5db24a"
       },
       "name" : "Beispiel Journey 01-03: Geplante Abgabe 2",
-      "description" : "Bildet eine Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und den Dosierungsanweisungen gemäß zugehörigem Planeintrag ab.",
+      "description" : "Bildet eine persistierte Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und den Dosierungsanweisungen gemäß zugehörigem Planeintrag ab.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
     },
     {
@@ -1330,6 +1482,22 @@
       "name" : "Beispiel Journey 01-03: Geplante-Abgaben-Transaction-Bundle",
       "description" : "Beispiel eines Transaction Bundles mit 2 Geplanten Abgaben.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "Bundle-At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Write-Response.html"
+      }],
+      "reference" : {
+        "reference" : "Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Write-Response"
+      },
+      "name" : "Beispiel Journey 01-03: Prescription-Write-Response",
+      "description" : "Beispiel einer Response eines prescription-write mit 2 neuen Geplanten Abgaben",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-write-response"
     },
     {
       "extension" : [{
@@ -1761,7 +1929,7 @@
       "name" : "e-Med Operation für $dispense-discard",
       "description" : "Operation für das Stornieren von Durchgeführten Abgaben",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpDispenseDiscard"
     },
     {
       "extension" : [{
@@ -1778,7 +1946,7 @@
       "name" : "e-Med Operation für $dispense-write",
       "description" : "Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen.",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpDispenseWrite"
     },
     {
       "extension" : [{
@@ -1795,7 +1963,7 @@
       "name" : "e-Med Operation für $groupidentifier-create",
       "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpGroupidentifierCreate"
     },
     {
       "extension" : [{
@@ -1812,7 +1980,7 @@
       "name" : "e-Med Operation für $groupidentifier-search",
       "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpGroupidentifierSearch"
     },
     {
       "extension" : [{
@@ -1829,7 +1997,7 @@
       "name" : "e-Med Operation für $plan-read",
       "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpPlanRead"
     },
     {
       "extension" : [{
@@ -1846,7 +2014,7 @@
       "name" : "e-Med Operation für $plan-write",
       "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpPlanWrite"
     },
     {
       "extension" : [{
@@ -1863,7 +2031,7 @@
       "name" : "e-Med Operation für $prescription-discard",
       "description" : "Operation für das Stornieren von Geplanten Abgaben",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpPrescriptionDiscard"
     },
     {
       "extension" : [{
@@ -1880,7 +2048,7 @@
       "name" : "e-Med Operation für $prescription-write",
       "description" : "Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen.",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpPrescriptionWrite"
     },
     {
       "extension" : [{
@@ -1897,7 +2065,7 @@
       "name" : "e-Med Operation für $reference-plan",
       "description" : "Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen.",
       "exampleBoolean" : false,
-      "groupingId" : "Operations"
+      "groupingId" : "OpReferencePlan"
     },
     {
       "extension" : [{
@@ -2250,22 +2418,6 @@
       "name" : "ELGA_MedikationRezeptart",
       "description" : "**Description:** ELGA ValueSet for Prescription type\n\n**Beschreibung:** ELGA ValueSet für RezeptArt",
       "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Parameters"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Parameters-Journey-01-01-Request-Body-01.html"
-      }],
-      "reference" : {
-        "reference" : "Parameters/Journey-01-01-Request-Body-01"
-      },
-      "name" : "Example Parameters Request Body",
-      "description" : "Example Parameters Request Body",
-      "exampleBoolean" : true
     },
     {
       "extension" : [{

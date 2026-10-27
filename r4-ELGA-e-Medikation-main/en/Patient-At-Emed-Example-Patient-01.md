@@ -34,10 +34,7 @@ Anton Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
       }]
     },
     "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
-    "value" : "1234010100",
-    "assigner" : {
-      "display" : "Dachverband der österreichischen Sozialversicherungsträger"
-    }
+    "value" : "1234010100"
   },
   {
     "type" : {
@@ -48,10 +45,7 @@ Anton Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
       }]
     },
     "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
-    "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=",
-    "assigner" : {
-      "display" : "Bundesministerium für Inneres"
-    }
+    "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
   },
   {
     "type" : {
@@ -62,10 +56,7 @@ Anton Mustermann Male, DoB: 1900-01-01 ( Social Security number: 1234010100)
       }]
     },
     "system" : "urn:oid:1.2.3.4.5",
-    "value" : "0815",
-    "assigner" : {
-      "display" : "Ein GDA in Österreich"
-    }
+    "value" : "0815"
   }],
   "name" : [{
     "family" : "Mustermann",

@@ -33,6 +33,17 @@
         "display" : "Salbe"
       }]
     },
+    "amount" : {
+      "numerator" : {
+        "value" : 100,
+        "unit" : "g",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "g"
+      },
+      "denominator" : {
+        "value" : 1
+      }
+    },
     "ingredient" : [{
       "itemCodeableConcept" : {
         "coding" : [{
@@ -65,11 +76,15 @@
       "strength" : {
         "numerator" : {
           "value" : 95,
-          "unit" : "g"
+          "unit" : "g",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "g"
         },
         "denominator" : {
           "value" : 100,
-          "unit" : "g"
+          "unit" : "g",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "g"
         }
       }
     }]
@@ -112,7 +127,7 @@
     }
   }],
   "authorizingPrescription" : [{
-    "reference" : "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-02",
+    "reference" : "MedicationRequest/f564f377-ef44-4943-9bb2-fccc8a5db24a",
     "display" : "Geplante Abgabe 2"
   },
   {

@@ -8,7 +8,7 @@ Der ETag der aktuellen persistierten List-Version wird im HTTP-Response-Header Ã
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Specification
+* Examples for this Profile: [Parameters/At-Emed-Journey-01-01-01-Parameters-Out-Plan-Read](Parameters-At-Emed-Journey-01-01-01-Parameters-Out-Plan-Read.md) and [Parameters/At-Emed-Journey-01-02-Parameters-Out-Plan-Read](Parameters-At-Emed-Journey-01-02-Parameters-Out-Plan-Read.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-parameters-out-plan-read.json)
 
@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
   "name" : "AtElgaEmedParametersOutPlanRead",
   "title" : "AT ELGA e-Medikation Parameters Out $plan-read",
   "status" : "draft",
-  "date" : "2026-10-27T19:38:06+00:00",
+  "date" : "2026-10-27T20:05:18+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

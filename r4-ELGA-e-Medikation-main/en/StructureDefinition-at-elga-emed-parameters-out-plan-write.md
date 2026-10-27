@@ -6,7 +6,7 @@ Bei Erfolg enthält die Antwort das Transaction-Response Bundle mit dem persisti
 
 **Usages:**
 
-* This Profile is not used by any profiles in this Specification
+* Examples for this Profile: [Parameters/At-Emed-Journey-01-02-Parameters-Out-Plan-Write](Parameters-At-Emed-Journey-01-02-Parameters-Out-Plan-Write.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-parameters-out-plan-write.json)
 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-para
   "name" : "AtElgaEmedParametersOutPlanWrite",
   "title" : "AT ELGA e-Medikation Parameters Out $plan-write",
   "status" : "draft",
-  "date" : "2026-10-27T19:38:06+00:00",
+  "date" : "2026-10-27T20:05:18+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

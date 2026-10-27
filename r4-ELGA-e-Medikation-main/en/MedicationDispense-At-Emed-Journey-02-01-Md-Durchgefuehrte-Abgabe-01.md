@@ -29,9 +29,29 @@
     "ingredient" : [{
       "itemCodeableConcept" : {
         "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+          "code" : "C09AA05",
+          "display" : "Ramipril"
+        },
+        {
           "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
           "code" : "100000092240"
         }]
+      },
+      "isActive" : true,
+      "strength" : {
+        "numerator" : {
+          "value" : 5,
+          "unit" : "mg",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "mg"
+        },
+        "denominator" : {
+          "value" : 1,
+          "unit" : "Stück",
+          "system" : "http://unitsofmeasure.org",
+          "code" : "{Stueck}"
+        }
       }
     }]
   }],
@@ -72,7 +92,7 @@
     }
   }],
   "authorizingPrescription" : [{
-    "reference" : "MedicationRequest/At-Emed-Journey-01-03-Mr-Geplante-Abgabe-01",
+    "reference" : "MedicationRequest/d9d43746-69ab-4ed8-9200-3a939f7224de",
     "display" : "GeplanteAbgabe 1"
   },
   {

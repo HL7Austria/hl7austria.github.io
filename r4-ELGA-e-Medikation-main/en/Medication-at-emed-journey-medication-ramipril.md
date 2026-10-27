@@ -8,10 +8,10 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
 
 ### Ingredients
 
-| | |
-| :--- | :--- |
-| - | **Item[x]** |
-| * | 100000092240 |
+| | | | |
+| :--- | :--- | :--- | :--- |
+| - | **Item[x]** | **IsActive** | **Strength** |
+| * | Ramipril | true | 5 mg (Details: UCUM codemg = 'mg')/1 Stück (Details: UCUM code{Stueck} = '{Stueck}') |
 
 
 
@@ -34,9 +34,29 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
   "ingredient" : [{
     "itemCodeableConcept" : {
       "coding" : [{
+        "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+        "code" : "C09AA05",
+        "display" : "Ramipril"
+      },
+      {
         "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
         "code" : "100000092240"
       }]
+    },
+    "isActive" : true,
+    "strength" : {
+      "numerator" : {
+        "value" : 5,
+        "unit" : "mg",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "mg"
+      },
+      "denominator" : {
+        "value" : 1,
+        "unit" : "Stück",
+        "system" : "http://unitsofmeasure.org",
+        "code" : "{Stueck}"
+      }
     }
   }]
 }

@@ -23,7 +23,7 @@ e-Medikation Fachanwendung.
     "coding" : [{
       "system" : "http://snomed.info/sct",
       "code" : "49062001",
-      "display" : "Gerät"
+      "display" : "Device"
     }]
   }
 }
