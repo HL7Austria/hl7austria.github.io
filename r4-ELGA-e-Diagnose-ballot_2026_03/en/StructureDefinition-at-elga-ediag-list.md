@@ -37,7 +37,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-lis
   "name" : "AtEdiagList",
   "title" : "AT e-Diagnose Summary-Liste",
   "status" : "active",
-  "date" : "2026-10-20T08:47:52+00:00",
+  "date" : "2026-10-27T15:15:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

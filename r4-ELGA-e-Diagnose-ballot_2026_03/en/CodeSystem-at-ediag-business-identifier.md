@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "AT e-Diagnose Business Identifier CS",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-20T08:47:52+00:00",
+  "date" : "2026-10-27T15:15:47+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
