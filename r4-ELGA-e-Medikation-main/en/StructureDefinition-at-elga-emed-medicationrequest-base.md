@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationRequestBase",
   "title" : "At ELGA e-Medikation MedicationRequest Base",
   "status" : "draft",
-  "date" : "2026-10-27T13:46:50+00:00",
+  "date" : "2026-10-27T19:38:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -134,6 +134,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "MedicationRequest.text",
       "path" : "MedicationRequest.text",
+      "short" : "Narrative - wird immer durch die Fachanwendung generiert.",
       "mustSupport" : true
     },
     {

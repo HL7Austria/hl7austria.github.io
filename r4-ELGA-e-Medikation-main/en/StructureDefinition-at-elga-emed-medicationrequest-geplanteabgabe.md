@@ -55,7 +55,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
   "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-27T13:46:50+00:00",
+  "date" : "2026-10-27T19:38:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -157,6 +157,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     {
       "id" : "MedicationRequest.extension:effectiveDosePeriod.value[x].start",
       "path" : "MedicationRequest.extension.value[x].start",
+      "min" : 1,
       "mustSupport" : true
     },
     {

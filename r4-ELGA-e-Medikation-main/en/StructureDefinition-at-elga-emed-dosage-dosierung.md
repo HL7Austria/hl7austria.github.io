@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-10-27T13:46:50+00:00",
+  "date" : "2026-10-27T19:38:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -97,7 +97,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.text",
       "path" : "Dosage.text",
-      "short" : "Freitext-Dosierungsanweisung, wenn keine strukturierte Angabe möglich ist.",
+      "short" : "Textdarstellung der Dosierung: bei strukturierter Dosierung durch die Fachanwendung generiert, sonst Freitext-Dosierungsanweisung (wenn keine strukturierte Angabe möglich ist).",
       "mustSupport" : true
     },
     {

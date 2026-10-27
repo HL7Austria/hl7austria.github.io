@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-27T13:46:50+00:00",
+  "date" : "2026-10-27T19:38:06+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -434,8 +434,8 @@
       "description" : "Stammdaten"
     },
     {
-      "id" : "Operationen",
-      "name" : "Operationen",
+      "id" : "Operations",
+      "name" : "Operations",
       "description" : "Definitionen der im Leitfaden enthaltenen Custom Operations"
     },
     {
@@ -1761,7 +1761,7 @@
       "name" : "e-Med Operation für $dispense-discard",
       "description" : "Operation für das Stornieren von Durchgeführten Abgaben",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1778,7 +1778,7 @@
       "name" : "e-Med Operation für $dispense-write",
       "description" : "Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen.",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1795,7 +1795,7 @@
       "name" : "e-Med Operation für $groupidentifier-create",
       "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1812,7 +1812,7 @@
       "name" : "e-Med Operation für $groupidentifier-search",
       "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1829,7 +1829,7 @@
       "name" : "e-Med Operation für $plan-read",
       "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1846,7 +1846,7 @@
       "name" : "e-Med Operation für $plan-write",
       "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1863,7 +1863,7 @@
       "name" : "e-Med Operation für $prescription-discard",
       "description" : "Operation für das Stornieren von Geplanten Abgaben",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1880,7 +1880,7 @@
       "name" : "e-Med Operation für $prescription-write",
       "description" : "Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen.",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{
@@ -1897,7 +1897,7 @@
       "name" : "e-Med Operation für $reference-plan",
       "description" : "Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen.",
       "exampleBoolean" : false,
-      "groupingId" : "Operationen"
+      "groupingId" : "Operations"
     },
     {
       "extension" : [{

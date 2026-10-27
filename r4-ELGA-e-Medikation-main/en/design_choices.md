@@ -107,7 +107,7 @@ Die Übereinstimmung wird ausschließlich zum Zeitpunkt der Erstellung der **Gep
 **Plan-History-Search** liefert dagegen alle Inhalte, Status und Flags unverändert.
 
 *  
-* Soll der GDA den aufbereiteten Zustand erhalten (Variante A, aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand (Variante B)?
+* Soll der GDA den aufbereiteten Zustand erhalten (aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand?
  
 
 #### Gruppierung von Medikamenten
@@ -326,10 +326,9 @@ Die Referenzen von **Geplanten Abgaben** und **Durchgeführten Abgaben** auf Pla
 
 **Referenzen auf Patient und GDA**
 
-Referenzen auf Patient, Practitioner, PractitionerRole und Organization sind nicht versioniert. Die Identität des Patienten bzw. GDA ist über die logische Referenz dauerhaft festgelegt. Die angezeigten Stammdaten (z.B. Name, Fachrichtung, Organisation) entsprechen jedoch dem aktuellen Stand der jeweiligen Ressource und nicht zwingend dem Stand zum Zeitpunkt der Dokumentation. Ob dies für die Historie ausreicht, hängt auch davon ab, wie die Fachanwendung Änderungen aus GDA-I und ZPI in die Ressourcen übernimmt (siehe [Informationen über GDA und Patienten](#informationen-über-gda-und-patienten)).
+Referenzen auf Patient, Practitioner, PractitionerRole und Organization sind nicht versioniert. Die Identität des Patienten bzw. GDA ist über die logische Referenz dauerhaft festgelegt. Die angezeigten Stammdaten (z.B. Name, Fachrichtung, Organisation) entsprechen jedoch dem aktuellen Stand der jeweiligen Ressource und nicht zwingend dem Stand zum Zeitpunkt der Dokumentation.
 
 * Sollen die Referenzen von *Geplanten Abgaben* und *Durchgeführten Abgaben* auf Planeinträge versioniert werden oder soll der Verweis weiterhin auf die jeweils aktuelle Version zeigen? (siehe auch [Abhängigkeit von Planeintrag und Geplanter Abgabe](#abhängigkeit-von-planeintrag-und-geplanter-abgabe))
-* Müssen Referenzen auf Patient und GDA für die Historie versioniert sein, damit z.B. Name und Rolle des GDA zum Zeitpunkt der Dokumentation erhalten bleiben? Alternativ könnte der Name in `Reference.display` festgehalten werden.
 * Wie soll die Fachanwendung reagieren, wenn ein Client im Medikationsplan-Transaction-Bundle bereits eine versionierte Referenz in `List.entry.item` übermittelt: Ablehnen, oder akzeptieren, sofern sie auf die aktuelle Version verweist?
 
 #### ID-Management
@@ -371,7 +370,7 @@ Die Response auf ein Transaction Bundle ist ein Bundle vom Typ **transaction-res
 
 Ein Beispiel zeigt das [plan-write Response Bundle](Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.md).
 
-* Soll `Resource.id` bei neuen Ressourcen (POST) weggelassen werden müssen, statt optional zu sein und ignoriert zu werden?
+* Kann die `Resource.id` bei neuen Ressourcen (POST) befüllt sein und wird von der Fachanwendung ignoriert oder darf das Element gar nicht vorhanden sein?
 
 #### Optimistisches Locking mit ETags
 
@@ -400,11 +399,6 @@ Die Bildung des ETags ist implementierungsabhängig. Clients DÜRFEN den Wert nu
 
 Anstelle des HTTP-Headers kann der ETag im Medikationsplan-Transaction-Bundle über [Bundle.entry.request.ifMatch](https://hl7.org/fhir/R4/bundle-definitions.html#Bundle.entry.request.ifMatch) des **List**-Eintrags übermittelt werden. Damit wäre das Bundle in sich vollständig. Ein zusätzlicher HTTP-Header für die Custom Operation wäre nicht erforderlich.
 
-* Soll der ETag beim $plan-write im HTTP-Header `If-Match` oder in `Bundle.entry.request.ifMatch` des *List*-Eintrags im Medikationsplan-Transaction-Bundle übermittelt werden?
-* Soll als ETag verpflichtend die `meta.versionId` der *List* verwendet werden oder soll der Wert implementierungsabhängig bleiben?
-* Ist der ETag der *List* ausreichend oder werden zusätzlich ETags für Planeinträge benötigt?
-* Ist ein Optimistic Locking auch für schreibende Operations auf *Geplante Abgaben* und *Durchgeführte Abgaben* erforderlich, oder reichen die Regeln für zulässige Statusübergänge aus?
-
 #### Informationen über GDA und Patienten
 
 Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Medikation-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen `Patient`-, `Practitioner`-, `PractitionerRole`- oder `Organization`-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (`Reference.identifier`) anzugeben:
@@ -429,7 +423,7 @@ Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einma
 
 #### Befüllung der Narrativen Teile
 
-Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Resource.text) zentral durch die Fachanwendung erzeugt. Ziel ist eine einheitliche und nachvollziehbare Darstellung der wesentlichen Ressourceninhalte. Die Narrative muss dem jeweils gespeicherten bzw. ausgelieferten Zustand entsprechen und nach serverseitigen Änderungen oder Transformationen entsprechend angepasst werden.
+Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Resource.text) zentral durch die Fachanwendung erzeugt. Ziel ist eine einheitliche und nachvollziehbare Darstellung der wesentlichen Ressourceninhalte. Die Narrative muss dem jeweils gespeicherten bzw. ausgelieferten Zustand entsprechen und nach serverseitigen Änderungen oder Transformationen entsprechend angepasst werden. Ebenso wird `extension:renderedDosageInstruction` immer durch die Fachanwendung generiert; `Dosage.text` wird bei strukturierten Dosierungen generiert und enthält nur bei der Dosierungskategorie `freitext` die vom GDA erfasste Dosierungsanweisung.
 
 Die Generierung berücksichtigt sowohl strukturierte Angaben als auch Freitextinformationen. Die Narrative ergänzt die strukturierten Daten, ersetzt diese jedoch nicht. Davon zu unterscheiden sind fachlich erfasste Freitexte, beispielsweise ergänzende Hinweise oder eine nicht strukturiert abbildbare Dosierungsanweisung; diese bleiben eigenständige Inhalte und werden bei der Generierung berücksichtigt. Die unterschiedlichen Textfelder und ihr jeweiliger Geltungsbereich sind im Abschnitt [Textdarstellungen und ergänzende Hinweise im Kapitel der Dosierungen](dosages.md#textdarstellungen-und-ergänzende-hinweise) beschrieben.
 
