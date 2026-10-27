@@ -55,7 +55,7 @@ GET
 
 Response Body
 
-##### Journey-01-01: Request 03 - durchgeführte Abgaben Abrufen
+##### Journey-01-01: Request 03 - Durchgeführte Abgaben Abrufen
 
 Request
 

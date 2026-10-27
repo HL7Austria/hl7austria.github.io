@@ -18,7 +18,7 @@ Dabei werden folgende **Zugriffsarten** unterschieden:
 * **Zugriff mittels **e-Med GroupIdentifier****: Alternativ steht **ohne Kontaktbestätigung** des ELGA-Teilnehmers der Zugriff mittels **e-Med GroupIdentifier** (z.B. über den DataMatrix-Code eines e-Rezepts) zur Verfügung. Dieser ermöglicht ausschließlich einen **eingeschränkten ELGA-Zugriff** auf die dem **e-Med GroupIdentifier** zugeordneten **Geplanten Abgaben** und **Durchgeführten Abgaben** und wird in [Sub_UC_eMed_03_03 - Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier lesen (GroupIdentifier-Search)](Sub_UC_eMed_03.md#sub_uc_emed_03_03---geplante-und-durchgeführte-abgaben-mittels-e-med-groupidentifier-lesen-groupidentifier-search) beschrieben.
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im
-[UC_eMed_03 Geplante und durchgeführte Abgaben lesen](https://dev.elga.gv.at/apis/emed/use-cases/)beschrieben.
+[UC_eMed_03 Geplante und Durchgeführte Abgaben lesen](https://dev.elga.gv.at/apis/emed/use-cases/)beschrieben.
 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
@@ -32,7 +32,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 Die Suche nach [Geplanten Abgaben](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) erfolgt mittels **GET**-Request unter Angabe geeigneter Suchparameter:
 
-* alle (ohne Einschränkung) 
+* alle (ohne Einschränkung)
 * in einem bestimmten Zeitraum erfasste
 * mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (inkl. Magistraler Zubereitungen)
 * mit einem bestimmten [status](ValueSet-GeplanteAbgabeStatusVS.md) 
@@ -71,10 +71,10 @@ Von ELGA-Teilnehmern gelöschte **Geplanten Abgaben** stehen nicht mehr zur Verf
 
 Die Suche nach [Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) erfolgt mittels **GET**-Request unter Angabe geeigneter Suchparameter:
 
-* alle (ohne Einschränkung) 
+* alle (ohne Einschränkung)
 * in einem bestimmten Zeitraum erfasste
 * mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (inkl. Magistraler Zubereitungen)
-* mit einem bestimmten [status](ValueSet-DurchgefuehrteAbgabeStatusVS.md)  
+* mit einem bestimmten [status](ValueSet-DurchgefuehrteAbgabeStatusVS.md) 
 * mit einem bestimmten **e-Med GroupIdentifier** 
 
 Die gefundenen **Durchgeführten Abgaben** können als Ausgangspunkt für weitere Abfragen verwendet werden:
