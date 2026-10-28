@@ -43,6 +43,9 @@ TODO
         "unit" : "Stück",
         "system" : "http://unitsofmeasure.org",
         "code" : "{Stueck}"
+      },
+      "denominator" : {
+        "value" : 1
       }
     },
     "ingredient" : [{

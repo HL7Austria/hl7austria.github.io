@@ -38,7 +38,7 @@ Der Medikationsplan schließt die beschriebenen Grenzen der bisherigen e-Medikat
 * **Dokumentation des SOLL-Zustands:** Die Medikation eines ELGA-Teilnehmers wird aktiv geführt – mit Einnahmezeitraum, Dosierung und Status – und nicht aus Verordnungen und Abgaben abgeleitet.
 * **Geführte Therapieentscheidungen:** Pausieren, Beenden und Absetzen eines Medikaments werden am Planeintrag dokumentiert; die fachliche Entscheidung ist damit Teil des geführten Medikationsplans statt einer Kennzeichnung an einzelnen Abgaben.
 * **Durchgängige Bezüge:** **Geplante Abgaben** und **Durchgeführte Abgaben** referenzieren, soweit möglich, den zugrunde liegenden Planeintrag; Arzneimittel und Dosierung der **Geplanten Abgabe** dürfen sich vom Planeintrag nicht unterscheiden.
-* **Vollständigkeit durch Kenntnisnahme:** Fremde Verordnungen (u.a. Auslandsrezepte, Medikation aus Krankenanstalten) können als Planeintrag unverändert zur Kenntnis genommen werden; auch Medikamente außerhalb der ELGA-Prozesse sind damit Teil des Plans.
+* **Vollständigkeit durch Kenntnisnahme:** Fremde Verordnungen (u.a. nachgetragene Auslandsrezepte, Medikation aus Krankenanstalten) können als Planeintrag unverändert zur Kenntnis genommen werden; auch Medikamente außerhalb der ELGA-Prozesse sind damit Teil des Plans.
 * **Explizite Abwesenheit von Medikation:** Ein leerer Medikationsplan kann ausdrücklich dokumentiert werden.
 * **Nachvollziehbare Historie:** Änderungen erzeugen neue versionierte Ressourcen; historische Medikationspläne sind über die History-Suche abrufbar.
 
@@ -47,7 +47,7 @@ Der Medikationsplan schließt die beschriebenen Grenzen der bisherigen e-Medikat
 Die fachliche Erweiterung ist zugleich Anlass einer grundlegenden Erneuerung der technischen Basis. Der Wechsel von CDA auf FHIR (R4) verändert das Grundmodell der e-Medikation (siehe [Designentscheidungen](design_choices.md)):
 
 * **Ressourcen statt Dokumente:** Anstelle unveränderlicher, abgelegter Dokumente werden versionierte Einzelressourcen (List, MedicationRequest, MedicationDispense) geführt. Änderungen und Stornierungen werden über Statuswechsel und neue Versionen abgebildet; eigene Korrekturmeldungsdokumente entfallen.
-* **Fachanwendung mit REST-Schnittstelle:** Die bisherige dokumentbasierte Ablage und der dokumentbezogene Abruf werden durch eine zentrale Fachanwendung mit definierten Custom-Operations ($plan-read, $prescription-write, $prescription-discard, $dispense-write u. a.) abgelöst.
+* **Fachanwendung mit REST-Schnittstelle:** Die bisherige dokumentbasierte Ablage und der dokumentbezogene Abruf werden durch eine zentrale Fachanwendung mit standard FHIR Interaktionen und definierten Custom-Operations ($plan-read, $prescription-write, $prescription-discard, $dispense-write u. a.) abgelöst.
 * **Explizite Konsistenz- und Nebenläufigkeitskontrolle:** Konsistenzregeln zwischen Plan und Planeinträgen sowie ETag-basiertes Locking steuern gleichzeitige Schreibzugriffe.
 * **Historie als Basisfunktion:** Versionierte Ressourcen und versionierte Referenzen ermöglichen die Rekonstruktion jedes früheren Zustands des Medikationsplans.
 * **Anschluss an das FHIR-Ökosystem:** R4 ist die am weitesten verbreitete FHIR-Version und die Basis der nationalen und internationalen Bezugspunkte dieses Leitfadens (u.a. HL7® AT Core Profiles, International Patient Summary, EHDS HL7 EU IGs). Der Medikationsplan wird damit zur konsistenten Datengrundlage für Anwendungen wie die **Austrian Patient Summary**.

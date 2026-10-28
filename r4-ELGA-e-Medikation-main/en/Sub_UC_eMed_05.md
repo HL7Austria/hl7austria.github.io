@@ -34,8 +34,8 @@ Die **fachlichen Varianten der Erfassung** und die Inhalte von **Durchgeführten
 * [Substitution eines Arzneimittels erfassen](Sub_UC_eMed_05.md#sub_uc_emed_05_01_07-substitution-eines-arzneimittels-erfassen)
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden beschrieben in:
-*  [UC_eMed_05 Durchgeführte Abgabe schreiben](https://dev.elga.gv.at/apis/emed/use-cases/) 
-*  [UC_eMed_06 Teilnehmerrechte ausüben](https://dev.elga.gv.at/apis/emed/use-cases/) 
+*  [UC_eMed_05 Durchgeführte Abgabe schreiben](https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_05%20Durchgef%C3%BChrte%20Abgabe%20schreiben.pdf) 
+*  [UC_eMed_06 Teilnehmerrechte ausüben](https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_06%20Teilnehmerrechte%20aus%C3%BCben.pdf) 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
 ### Sub_UC_eMed_05_01 - Durchgeführte Abgabe erstellen

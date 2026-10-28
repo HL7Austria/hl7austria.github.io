@@ -13,7 +13,7 @@ Der lesende Zugriff umfasst:
 * die Suche und den Abruf (History-Search):
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im
-[UC_eMed_01 Medikationsplan lesen](https://dev.elga.gv.at/apis/emed/use-cases/)beschrieben.
+[UC_eMed_01 Medikationsplan lesen](https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_01%20Medikationsplan%20lesen.pdf)beschrieben.
 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 

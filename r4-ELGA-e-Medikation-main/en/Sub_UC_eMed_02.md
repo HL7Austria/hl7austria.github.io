@@ -34,8 +34,8 @@ Jede Änderung am Medikationsplan führt zur Erstellung einer **neuen Medikation
 * Die Verträglichkeit der neu hinzugefügten/geänderten Medikation mit dem bestehenden Medikationsplan gilt mit der Erstellung einer neuen Medikationsplanversion als bestätigt.
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden beschrieben in:
-*  [UC_eMed_02 Medikationsplan schreiben](https://dev.elga.gv.at/apis/emed/use-cases/) 
-*  [UC_eMed_06 Teilnehmerrechte ausüben](https://dev.elga.gv.at/apis/emed/use-cases/) 
+*  [UC_eMed_02 Medikationsplan schreiben](https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_02%20Medikationsplan%20schreiben.pdf) 
+*  [UC_eMed_06 Teilnehmerrechte ausüben](https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_06%20Teilnehmerrechte%20aus%C3%BCben.pdf) 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
 ### Allgemeiner Ablauf Medikationsplan bearbeiten und schreiben

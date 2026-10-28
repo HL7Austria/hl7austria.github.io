@@ -26,7 +26,8 @@ Der schreibende Zugriff umfasst folgende Bearbeitungen:
 von **Geplanten Abgaben**.
 
 ℹ️ Die fachlichen Anforderungen dieses Use Cases werden beschrieben in:
-*  [UC_eMed_04 Geplante Abgabe schreiben](https://dev.elga.gv.at/apis/emed/use-cases/) 
+*  [UC_eMed_04 Geplante Abgabe schreiben](https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_04%20Geplante%20Abgabe%20schreiben.pdf) 
+*  [UC_eMed_06 Teilnehmerrechte ausüben](https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_06%20Teilnehmerrechte%20aus%C3%BCben.pdf) 
 Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert.
 
 ### Sub_UC_eMed_04_01 - Geplante Abgabe erstellen (Prescription-Write)

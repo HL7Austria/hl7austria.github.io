@@ -8,7 +8,7 @@ Profile: [AT ELGA e-Medikation Medication Profil für die Standardmedikation mit
 
 **form**: Tablette
 
-**amount**: 30 Stück (Details: UCUM code{Stueck} = '{Stueck}')/?
+**amount**: 30 Stück (Details: UCUM code{Stueck} = '{Stueck}')/1
 
 ### Ingredients
 
@@ -48,6 +48,9 @@ Profile: [AT ELGA e-Medikation Medication Profil für die Standardmedikation mit
       "unit" : "Stück",
       "system" : "http://unitsofmeasure.org",
       "code" : "{Stueck}"
+    },
+    "denominator" : {
+      "value" : 1
     }
   },
   "ingredient" : [{

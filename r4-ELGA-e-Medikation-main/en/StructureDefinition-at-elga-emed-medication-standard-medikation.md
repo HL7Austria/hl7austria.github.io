@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN",
   "status" : "draft",
-  "date" : "2026-10-28T15:47:56+00:00",
+  "date" : "2026-10-28T21:33:03+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -190,7 +190,23 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.amount.denominator",
       "path" : "Medication.amount.denominator",
-      "max" : "0"
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.denominator.value",
+      "path" : "Medication.amount.denominator.value",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.denominator.code",
+      "path" : "Medication.amount.denominator.code",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://termgit.elga.gv.at/ValueSet/elga-medikationmengenart"
+      }
     },
     {
       "id" : "Medication.ingredient",
