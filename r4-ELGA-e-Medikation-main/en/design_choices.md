@@ -10,7 +10,7 @@ Zentrale Ressource ist der Medikationsplan (**List**), der die einzelnen Medikat
 
 Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet . Medikationsplan-Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.
 
- ![](Uebersicht_e_Medikation_Ressourcen.drawio.svg)
+ ![](Uebersicht_e_Medikation_Ressourcen.svg)
 
 #### Medikationsplan: AtElgaEmedListMedikationsplan (List)
 

@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-27T21:19:55+00:00",
+  "date" : "2026-10-28T09:21:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -53,7 +53,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   },
   {
     "id" : "hl7_fhir_eu_mpd",

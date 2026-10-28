@@ -30,7 +30,7 @@
   "title" : "ELGA MedicationDispense Type ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-27T21:19:55+00:00",
+  "date" : "2026-10-28T09:21:39+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
