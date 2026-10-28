@@ -121,6 +121,21 @@
                 "display" : "RAMIPRIL HEX TBL 5MG"
               }]
             },
+            "form" : {
+              "coding" : [{
+                "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+                "code" : "100000073664",
+                "display" : "Tablette"
+              }]
+            },
+            "amount" : {
+              "numerator" : {
+                "value" : 30,
+                "unit" : "Stück",
+                "system" : "http://unitsofmeasure.org",
+                "code" : "{Stueck}"
+              }
+            },
             "ingredient" : [{
               "itemCodeableConcept" : {
                 "coding" : [{
@@ -130,7 +145,8 @@
                 },
                 {
                   "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
-                  "code" : "100000092240"
+                  "code" : "100000092240",
+                  "display" : "RAMIPRIL"
                 }]
               },
               "isActive" : true,

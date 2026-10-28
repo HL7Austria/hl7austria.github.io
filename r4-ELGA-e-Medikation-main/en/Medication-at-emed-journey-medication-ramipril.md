@@ -2,9 +2,13 @@
 
 ## Example Medication: Beispiel Medikation Ramipril
 
-Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elga-emed-medication-standard-medikation.md)
+Profile: [AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN](StructureDefinition-at-elga-emed-medication-standard-medikation.md)
 
 **code**: RAMIPRIL HEX TBL 5MG
+
+**form**: Tablette
+
+**amount**: 30 Stück (Details: UCUM code{Stueck} = '{Stueck}')/?
 
 ### Ingredients
 
@@ -31,6 +35,21 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
       "display" : "RAMIPRIL HEX TBL 5MG"
     }]
   },
+  "form" : {
+    "coding" : [{
+      "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+      "code" : "100000073664",
+      "display" : "Tablette"
+    }]
+  },
+  "amount" : {
+    "numerator" : {
+      "value" : 30,
+      "unit" : "Stück",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "{Stueck}"
+    }
+  },
   "ingredient" : [{
     "itemCodeableConcept" : {
       "coding" : [{
@@ -40,7 +59,8 @@ Profile: [AT ELGA e-Medikation Medication Medikation](StructureDefinition-at-elg
       },
       {
         "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
-        "code" : "100000092240"
+        "code" : "100000092240",
+        "display" : "RAMIPRIL"
       }]
     },
     "isActive" : true,

@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-28T09:21:39+00:00",
+  "date" : "2026-10-28T10:28:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -671,7 +671,7 @@
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medication-standard-medikation"
       },
-      "name" : "AT ELGA e-Medikation Medication Medikation",
+      "name" : "AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN",
       "description" : "Bildet ein Arzneimittel in der \"Medication\"-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe.",
       "exampleBoolean" : false,
       "groupingId" : "Medikation"
@@ -2568,7 +2568,7 @@
           "valueUrl" : "medication.html"
         }],
         "nameUrl" : "medication.html",
-        "title" : "Medikation",
+        "title" : "Medikation - Repräsentation von Arzneimitteln",
         "generation" : "markdown"
       },
       {

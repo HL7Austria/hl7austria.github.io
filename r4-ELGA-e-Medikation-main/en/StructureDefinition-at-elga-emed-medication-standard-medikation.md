@@ -1,6 +1,6 @@
-# AT ELGA e-Medikation Medication Medikation - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: AT ELGA e-Medikation Medication Medikation 
+## Resource Profile: AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN 
 
 Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.
 
@@ -33,9 +33,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation",
   "version" : "0.1.0",
   "name" : "AtElgaEmedMedicationStandardMedikation",
-  "title" : "AT ELGA e-Medikation Medication Medikation",
+  "title" : "AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN",
   "status" : "draft",
-  "date" : "2026-10-28T09:21:39+00:00",
+  "date" : "2026-10-28T10:28:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

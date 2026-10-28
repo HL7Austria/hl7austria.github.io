@@ -6,7 +6,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Medikation - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
+    <title>Medikation - Repräsentation von Arzneimitteln - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -206,7 +206,7 @@
     <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Medikation</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Medikation - Repräsentation von Arzneimitteln</b></li>
 
         </ul>
       </div>  <!-- /container -->
@@ -227,7 +227,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
-  <h2>Medikation</h2>
+  <h2>Medikation - Repräsentation von Arzneimitteln</h2>
   
 
 
@@ -243,31 +243,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#medikation-mit-pzn" id="markdown-toc-medikation-mit-pzn">Medikation mit PZN</a></li>
+  <li><a href="#magistrale-zubereitung" id="markdown-toc-magistrale-zubereitung">Magistrale Zubereitung</a></li>
+  <li><a href="#angabe-eines-wirkstoffs" id="markdown-toc-angabe-eines-wirkstoffs">Angabe eines Wirkstoffs</a></li>
+</ul>
+
 </div>
 
-<h3 id="repräsentation-von-arzneimitteln">Repräsentation von Arzneimitteln</h3>
+<h3 id="medikation-mit-pzn">Medikation mit PZN</h3>
+<p>Arzneispezialitäten, die in der ASP-Liste mit einer Pharmazentralnummer (PZN) gelistet sind, werden mit dem Profil <a href="StructureDefinition-at-elga-emed-medication-standard-medikation.html">AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN</a> abgebildet. Das Arzneimittel wird über <code class="language-plaintext highlighter-rouge">Medication.code</code> identifiziert, wobei genau ein Coding aus dem CodeSystem <code class="language-plaintext highlighter-rouge">https://termgit.elga.gv.at/CodeSystem/asp-liste</code> mit der PZN angegeben werden muss.</p>
 
-<h4 id="medikation-mit-pzn">Medikation mit PZN</h4>
+<p>Die weiteren Angaben wie Darreichungsform (<code class="language-plaintext highlighter-rouge">form</code>), Packungsgröße (<code class="language-plaintext highlighter-rouge">amount</code>) sowie die enthaltenen Wirkstoffe inklusive Stärke (<code class="language-plaintext highlighter-rouge">ingredient</code>) werden anhand der PZN von der Fachanwendung aus der ASP-Liste abgeleitet und bei lesenden Zugriffen in der contained Medication-Ressource bereitgestellt. Wirkstoffe werden dabei ausschließlich codiert angegeben.</p>
 
-<h4 id="magistrale-zubereitung">Magistrale Zubereitung</h4>
+<p>Das Profil wird in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe verwendet. Ein Beispiel ist unter <a href="Medication-at-emed-journey-medication-ramipril.html">Beispiel Medikation Ramipril</a> verfügbar.</p>
 
 <h4 id="pzn-medication-ressource-contained-vs-conditional-reference">PZN Medication Ressource Contained vs. Conditional Reference</h4>
 
 <p>Für die Referenzierung von Arzneimitteln mit PZN wird abhängig von der Art des Zugriffs zwischen einer Conditional Reference bei schreibenden Zugriffen und einer enthaltenen (contained) Medication-Ressource bei lesenden Zugriffen unterschieden.</p>
 
-<p>Die Pharmazentralnummer (PZN) dient dabei als eindeutiger fachlicher Identifikator für das Arzneimittel. Zusätzlich kann die Bezeichnung des Arzneimittels als display-Wert angegeben werden. Dieser unterstützt insbesondere die fachliche Plausibilisierung und erleichtert es Nutzenden, das ausgewählte Arzneimittel nachzuvollziehen. Die Fachanwendung verwaltet die aktuelle ASP-Liste und kann anhand der PZN jederzeit die aktuellen Informationen zur Medication-Ressource ableiten.</p>
+<p>Die Pharmazentralnummer (PZN) dient dabei als eindeutiger fachlicher Identifikator für das Arzneimittel. Zusätzlich kann die Bezeichnung des Arzneimittels als display-Wert angegeben werden. Dieser unterstützt insbesondere die fachliche Plausibilisierung und erleichtert es, das ausgewählte Arzneimittel nachzuvollziehen. Die Fachanwendung verwaltet die aktuelle ASP-Liste und kann anhand der PZN jederzeit die aktuellen Informationen zur Medication-Ressource ableiten.</p>
 
 <p>Magistrale Zubereitungen hingegen werden immer als contained Medication-Ressource mitgegeben.</p>
 
-<div class="dragon">
-<p class="note-to-balloters">
-Offene Punkte: <br />Bezeichnung des Arzneimittels als kann oder als muss?
-</p>
-</div>
-
-<h5 id="medication-referenz-für-schreibende-zugriffe">Medication Referenz für schreibende Zugriffe</h5>
+<h4 id="medication-referenz-für-schreibende-zugriffe">Medication Referenz für schreibende Zugriffe</h4>
 
 <p>Beim Erstellen oder Aktualisieren von Ressourcen, die auf ein Arzneimittel verweisen, insbesondere MedicationRequest und MedicationDispense, wird die Medication über eine Conditional Reference referenziert.</p>
 
@@ -284,34 +284,90 @@ Offene Punkte: <br />Bezeichnung des Arzneimittels als kann oder als muss?
 
 <p>Diese Vorgehensweise reduziert Redundanzen, vermeidet die Übertragung potenziell veralteter Arzneimittelstammdaten und stellt sicher, dass die Fachanwendung bei der Verarbeitung auf ihren aktuellen Datenbestand zurückgreifen kann.</p>
 
-<h5 id="medication-referenz-für-lesende-zugriffe">Medication Referenz für lesende Zugriffe</h5>
+<h4 id="medication-referenz-für-lesende-zugriffe">Medication Referenz für lesende Zugriffe</h4>
 <p>Bei lesenden Zugriffen wird die referenzierte Medication-Ressource als enthaltene Ressource (contained) innerhalb der jeweiligen fachlichen Ressource bereitgestellt. Dies betrifft insbesondere MedicationRequest und MedicationDispense.</p>
 
-<p>Die Medication-Referenz verweist in diesem Fall auf die enthaltene Ressource, beispielsweise:</p>
+<p>Die Medication-Referenz verweist in diesem Fall auf die enthaltene Ressource. Der folgende Ausschnitt einer <a href="MedicationRequest-d9d43746-69ab-4ed8-9200-3a939f7224de.html">Geplanten Abgabe</a> zeigt die contained Medication-Ressource und die zugehörige Referenz in <code class="language-plaintext highlighter-rouge">medicationReference</code>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
-  "contained" : [
+<pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest">resourceType</a>" : "MedicationRequest",
+  ...
+  "<a href="http://hl7.org/fhir/R4/medication.html#Medication">contained</a>" : [
     {
-      "resourceType" : "Medication",
-      "id" : "at-emed-journey-medication-ramipril",
-      "meta" : {
-        "profile" : [
-          🔗 "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"
+      "<a href="http://hl7.org/fhir/R4/medication.html">resourceType</a>" : "Medication",
+      "<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a>" : "at-emed-journey-medication-ramipril",
+      "<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+          <a href="StructureDefinition-at-elga-emed-medication-standard-medikation.html" style="color: Maroon">&#x1F517;</a> "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"
         ]
       },
-      "code" : {
-        "coding" : [
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
           {
-            "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
-            "code" : "2450836",
-            "display" : "RAMIPRIL HEX TBL 5MG"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "2450836",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "RAMIPRIL HEX TBL 5MG"
           }
         ]
-      }
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "100000073664",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Tablette"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.amount">amount</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.numerator">numerator</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 30,
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "Stück",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "{Stueck}"
+        }
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">ingredient</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "C09AA05",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Ramipril"
+              },
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "100000092240",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "RAMIPRIL"
+              }
+            ]
+          },
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.isActive">isActive</a>" : true,
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.strength">strength</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.numerator">numerator</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 5,
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "mg",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "mg"
+            },
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.denominator">denominator</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 1,
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "Stück",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "{Stueck}"
+            }
+          }
+        }
+      ]
     }
   ],
   ...
-</code></pre></div></div>
+  "<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.medication_x_">medicationReference</a>" : {
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "#at-emed-journey-medication-ramipril"
+  },
+  ...
+}</code></pre>
 
 <p>Durch die enthaltene Medication-Ressource erhalten konsumierende Systeme alle für die Verarbeitung, Darstellung oder den Export relevanten Arzneimittelinformationen unmittelbar mit dem jeweiligen MedicationRequest bzw. MedicationDispense. Eine zusätzliche Auflösung der PZN gegen einen lokalen oder externen Arzneimittelstammdatendienst ist für diese Anwendungsfälle daher nicht erforderlich.</p>
 
@@ -333,6 +389,177 @@ Offene Punkte: <br />Bezeichnung des Arzneimittels als kann oder als muss?
 </ul>
 
 <p>Die enthaltene Medication-Ressource ist ausschließlich im Kontext der umschließenden Ressource gültig. Sie stellt keine eigenständig persistierbare oder serverseitig referenzierbare Medication-Ressource dar.</p>
+
+<h3 id="magistrale-zubereitung">Magistrale Zubereitung</h3>
+<p>Magistrale Zubereitungen werden in der Apotheke individuell hergestellt und besitzen daher keine PZN. Sie werden mit dem Profil <a href="StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html">AT ELGA e-Medikation Medication Magistrale Medikation</a> abgebildet.</p>
+
+<p>Da die Angaben nicht aus der ASP-Liste abgeleitet werden können, müssen alle fachlich relevanten Informationen vom einbringenden System befüllt werden:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">code.text</code>: Bezeichnung der Zubereitung (verpflichtend),</li>
+  <li><code class="language-plaintext highlighter-rouge">extension[Rezeptur]</code>: Rezeptur für die Zubereitung als Markdown (verpflichtend),</li>
+  <li><code class="language-plaintext highlighter-rouge">ingredient</code>: mindestens ein Inhaltsstoff. Wirkstoffe (<code class="language-plaintext highlighter-rouge">isActive = true</code>) werden codiert angegeben (ATC-Code gemäß WIdO bzw. Wirkstoff-Code der AGES), sonstige Bestandteile (<code class="language-plaintext highlighter-rouge">isActive = false</code>), wie beispielsweise eine Salbengrundlage, können auch als Freitext in <code class="language-plaintext highlighter-rouge">itemCodeableConcept.text</code> angegeben werden. Die Menge des jeweiligen Inhaltsstoffes wird in <code class="language-plaintext highlighter-rouge">strength</code> angegeben,</li>
+  <li>optional <code class="language-plaintext highlighter-rouge">form</code> (Darreichungsform) und <code class="language-plaintext highlighter-rouge">amount</code> (Gesamtmenge).</li>
+</ul>
+
+<p>Magistrale Zubereitungen werden sowohl bei schreibenden als auch bei lesenden Zugriffen immer als contained Medication-Ressource übermittelt. Eine Conditional Reference ist nicht möglich. Das Profil wird in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe verwendet.</p>
+
+<p>Der folgende Ausschnitt eines <a href="MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.html">Planeintrags</a> zeigt eine magistrale Zubereitung (Dexpanthenol-Salbe) als contained Medication-Ressource:</p>
+
+<pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest">resourceType</a>" : "MedicationRequest",
+  ...
+  "<a href="http://hl7.org/fhir/R4/medication.html#Medication">contained</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/medication.html">resourceType</a>" : "Medication",
+      "<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a>" : "contained-medication-magistral-01",
+      "<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+          <a href="StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html" style="color: Maroon">&#x1F517;</a> "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/domainresource.html#Medication.extension">extension</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur",
+          "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value_x_">valueMarkdown</a>" : "TODO: Beispielrezeptur"
+        }
+      ],
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.code">code</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Dexpanthenol-5-%-Salbe"
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.form">form</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "100000073713",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Salbe"
+          }
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.amount">amount</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.numerator">numerator</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 100,
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "g",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "g"
+        },
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.denominator">denominator</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 1
+        }
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">ingredient</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "A11HA30",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "Dexpanthenol"
+              }
+            ]
+          },
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.isActive">isActive</a>" : true,
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.strength">strength</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.numerator">numerator</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 5,
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "g",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "g"
+            },
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.denominator">denominator</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 100,
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "g",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "g"
+            }
+          }
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "Salbengrundlage"
+          },
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.isActive">isActive</a>" : false,
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.strength">strength</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.numerator">numerator</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 95,
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "g",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "g"
+            },
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.denominator">denominator</a>" : {
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 100,
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "g",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+              "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "g"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  ...
+  "<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.medication_x_">medicationReference</a>" : {
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "#contained-medication-magistral-01"
+  },
+  ...
+}</code></pre>
+
+<h3 id="angabe-eines-wirkstoffs">Angabe eines Wirkstoffs</h3>
+<p>Im Medikationsplan kann anstelle eines konkreten Arzneimittels auch ein Wirkstoff dokumentiert werden. Hierfür wird das Profil <a href="StructureDefinition-at-elga-emed-medication-wirkstoff.html">AT ELGA e-Medikation Medication Wirkstoff</a> verwendet.</p>
+
+<p>Die Wirkstoffangabe enthält mindestens einen aktiven Inhaltsstoff (<code class="language-plaintext highlighter-rouge">ingredient[activeIngredient]</code>), der codiert angegeben wird (ATC-Code gemäß WIdO bzw. Wirkstoff-Code der AGES). Optional können Darreichungsform (<code class="language-plaintext highlighter-rouge">form</code>), Menge (<code class="language-plaintext highlighter-rouge">amount</code>) und Stärke (<code class="language-plaintext highlighter-rouge">ingredient.strength</code>) angegeben werden. Eine Rezeptur ist nicht zulässig.</p>
+
+<p>Wie magistrale Zubereitungen wird eine Wirkstoffangabe immer als contained Medication-Ressource übermittelt.</p>
+
+<p>Die Wirkstoffangabe ist ausschließlich im Planeintrag zulässig. Eine Geplante Abgabe muss immer ein konkretes Arzneimittel (mit PZN) oder eine magistrale Zubereitung enthalten. Ist im Planeintrag nur ein Wirkstoff dokumentiert, muss der Planeintrag vor dem Erstellen einer Geplanten Abgabe angepasst und ein Präparat ausgewählt werden (siehe <a href="design_choices.html">Design Choices</a>).</p>
+
+<p>Der folgende Ausschnitt eines <a href="MedicationRequest-7128c60c-126d-42b2-b575-dc26a2324b8b.html">Planeintrags</a> zeigt eine Wirkstoffangabe (Metamizol) als contained Medication-Ressource:</p>
+
+<pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest">resourceType</a>" : "MedicationRequest",
+  ...
+  "<a href="http://hl7.org/fhir/R4/medication.html#Medication">contained</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/medication.html">resourceType</a>" : "Medication",
+      "<a href="http://hl7.org/fhir/R4/resource.html#Medication.id">id</a>" : "at-emed-journey-medication-wirkstoff-metamizol",
+      "<a href="http://hl7.org/fhir/R4/resource.html#Medication.meta">meta</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+          <a href="StructureDefinition-at-elga-emed-medication-wirkstoff.html" style="color: Maroon">&#x1F517;</a> "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-wirkstoff"
+        ]
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.amount">amount</a>" : {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.numerator">numerator</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 1000,
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.unit">unit</a>" : "mg",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.system">system</a>" : "http://unitsofmeasure.org",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.code">code</a>" : "mg"
+        },
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Ratio#Ratio.denominator">denominator</a>" : {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a>" : 1
+        }
+      },
+      "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient">ingredient</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.item_x_">itemCodeableConcept</a>" : {
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+              {
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "8023400",
+                "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>" : "METAMIZOL NATRIUM MONOHYDRAT"
+              }
+            ]
+          },
+          "<a href="http://hl7.org/fhir/R4/medication.html#Medication.ingredient.isActive">isActive</a>" : true
+        }
+      ]
+    }
+  ],
+  ...
+  "<a href="http://hl7.org/fhir/R4/medicationrequest.html#MedicationRequest.medication_x_">medicationReference</a>" : {
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "#at-emed-journey-medication-wirkstoff-metamizol"
+  },
+  ...
+}</code></pre>
 
 
 
@@ -362,7 +589,7 @@ Offene Punkte: <br />Bezeichnung des Arzneimittels als kann oder als muss?
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-28 09:21:00 +0000">
+  <span title="2026-10-28 10:28:00 +0000">
     2026-10-28
   </span>
 
