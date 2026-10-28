@@ -47,7 +47,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-core-ext-compo
   "name" : "CompositionTerminologyDate",
   "title" : "Composition Terminology Date",
   "status" : "active",
-  "date" : "2026-10-28T07:26:46+00:00",
+  "date" : "2026-10-28T07:37:52+00:00",
   "publisher" : "HL7® Austria, TC FHIR®",
   "contact" : [{
     "name" : "HL7® Austria, TC FHIR®",
