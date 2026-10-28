@@ -1,4 +1,4 @@
-# AT e-Diagnose OperationOutcome Details VS - ELGA e-Diagnose R4 v0.1.0
+# AT e-Diagnose OperationOutcome Details VS - ELGA e-Diagnose R4 v0.1.1
 
 ## ValueSet: AT e-Diagnose OperationOutcome Details VS 
 
@@ -28,12 +28,12 @@
   "resourceType" : "ValueSet",
   "id" : "at-ediag-operationoutcome-details",
   "url" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-operationoutcome-details",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "name" : "AtEdiagOperationOutcomeDetails",
   "title" : "AT e-Diagnose OperationOutcome Details VS",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-27T15:15:47+00:00",
+  "date" : "2026-10-28T08:34:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

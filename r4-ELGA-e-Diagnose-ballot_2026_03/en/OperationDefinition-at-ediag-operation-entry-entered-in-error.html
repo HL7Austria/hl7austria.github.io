@@ -8,7 +8,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>e-Diagnose Operation $entered-in-error - ELGA e-Diagnose R4 v0.1.0</title>
+    <title>e-Diagnose Operation $entered-in-error - ELGA e-Diagnose R4 v0.1.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status" data-fhir="generated">
           <p><span style="font-size:12pt;font-weight:bold">ELGA e-Diagnose R4</span>
             <br/>
-            <span style="display:inline-block;">0.1.0 - Normativ
+            <span style="display:inline-block;">0.1.1 - Normativ
 
 
             </span>
@@ -210,7 +210,7 @@
 
 <!-- layouts\layout-canonical -->
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">ELGA e-Diagnose R4 - Local Development build (v0.1.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/ediag/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -267,7 +267,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-entered-in-error<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-entered-in-error"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-entered-in-error|0.1.0"/></span>
+      <span class="copy-text">0.1.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-entry-entered-in-error|0.1.1"/></span>
       </td>
       <td style="text-align: right;border-left-style: hidden" title="Enable this to see changes since the last official release">
         <span id="toggle-change-display"><label style="margin:0;font-weight:normal" for="showChanges">Highlight text changes?</label>
@@ -292,7 +292,7 @@
           
 
             as of 
-2026-10-27
+2026-10-28
 
           
         
@@ -322,6 +322,40 @@
 
   <!-- insert intro if present -->
   
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<h3 id="wer-ruft-diese-operation-in-welchem-zusammenhang-auf">Wer ruft diese Operation in welchem Zusammenhang auf?</h3>
+
+<p>Möchte der GDA einen Eintrag in der e-Diagnose Fachanwendung stornieren, muss diese Operation ausgeführt werden.</p>
+
+<h3 id="voraussetzung-für-den-aufruf">Voraussetzung für den Aufruf</h3>
+
+<ul>
+  <li>Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.</li>
+</ul>
+
+<h3 id="detaillierte-business-logik">Detaillierte Business-Logik</h3>
+
+<ol>
+  <li>Der Eintrag (Condition, Procedure oder AllergyIntolerance) wird anhand der übergebenen ID in der e-Diagnose Fachanwendung storniert.</li>
+  <li>Als <code class="language-plaintext highlighter-rouge">[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[practitioner]</code> wird durch die e-Diagnose Fachanwendung der GDA, der die Stornierung durchführt, dokumentiert.</li>
+  <li>Als <code class="language-plaintext highlighter-rouge">[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[datetime]</code> wird  durch die e-Diagnose Fachanwendung das Datum und die Uhrzeit der Stornierung dokumentiert.</li>
+  <li>Als <code class="language-plaintext highlighter-rouge">[Condition|Procedure|AllergyIntolerance].extension[entered-in-error].extension[reason]</code> wird der Grund für die Stornierung, der vom GDA angegeben werden <strong>kann</strong>, festgehalten.</li>
+  <li>Alle weiteren Informationen des Eintrags bleiben unverändert erhalten.</li>
+  <li>Ist der Eintrag Teil der jeweiligen Summary-Liste, wird er aus der Summary-Liste entfernt. Als Autor (<code class="language-plaintext highlighter-rouge">List.source</code>) der Summary-Liste wird der GDA dokumentiert.</li>
+</ol>
+
+<h3 id="validierung--fehlerbehandlung">Validierung / Fehlerbehandlung</h3>
+
+<ul>
+  <li>Der zu stornierende Eintrag muss in der e-Diagnose Fachanwendung vorhanden sein.</li>
+</ul>
+
+</div>
+
 
 
 
@@ -367,10 +401,10 @@
 
 
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
-          Package hl7.at.fhir.elga.ediag.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Package hl7.at.fhir.elga.ediag.r4#0.1.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-27 15:15:00 +0000">
-    2026-10-27
+  <span title="2026-10-28 08:34:00 +0000">
+    2026-10-28
   </span>
 
           <br/>

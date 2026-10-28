@@ -1,4 +1,4 @@
-# Beispielinstanz einer Diagnose für die Gesamtansicht (Eitrige Angina) - ELGA e-Diagnose R4 v0.1.0
+# Beispielinstanz einer Diagnose für die Gesamtansicht (Eitrige Angina) - ELGA e-Diagnose R4 v0.1.1
 
 ## Example Condition: Beispielinstanz einer Diagnose für die Gesamtansicht (Eitrige Angina)
 

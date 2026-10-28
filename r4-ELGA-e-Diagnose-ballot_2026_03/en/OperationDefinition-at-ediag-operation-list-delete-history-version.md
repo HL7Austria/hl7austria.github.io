@@ -1,4 +1,4 @@
-# e-Diagnose Operation $delete-history-version - ELGA e-Diagnose R4 v0.1.0
+# e-Diagnose Operation $delete-history-version - ELGA e-Diagnose R4 v0.1.1
 
 ## OperationDefinition: e-Diagnose Operation $delete-history-version 
 
@@ -32,13 +32,13 @@ Die Teilnehmerrechte können – abgesehen vom Widerspruch über die ELGA-Widers
   "resourceType" : "OperationDefinition",
   "id" : "at-ediag-operation-list-delete-history-version",
   "url" : "https://fhir.hl7.at/elga/ediag/r4/OperationDefinition/at-ediag-operation-list-delete-history-version",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "name" : "AtDiagListDeleteHistoryVersion",
   "title" : "e-Diagnose Operation $delete-history-version",
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-27T15:15:47+00:00",
+  "date" : "2026-10-28T08:34:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

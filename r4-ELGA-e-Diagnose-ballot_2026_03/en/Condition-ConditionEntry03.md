@@ -1,4 +1,4 @@
-# Beispielinstanz einer Diagnose für die Summary-Liste (Morbus Crohn (Code: Hyperthyreose)) - ELGA e-Diagnose R4 v0.1.0
+# Beispielinstanz einer Diagnose für die Summary-Liste (Morbus Crohn (Code: Hyperthyreose)) - ELGA e-Diagnose R4 v0.1.1
 
 ## Example Condition: Beispielinstanz einer Diagnose für die Summary-Liste (Morbus Crohn (Code: Hyperthyreose))
 

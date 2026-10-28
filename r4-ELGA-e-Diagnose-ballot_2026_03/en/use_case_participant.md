@@ -1,4 +1,4 @@
-# Ausüben von Teilnehmerrechten - ELGA e-Diagnose R4 v0.1.0
+# Ausüben von Teilnehmerrechten - ELGA e-Diagnose R4 v0.1.1
 
 ## Ausüben von Teilnehmerrechten
 

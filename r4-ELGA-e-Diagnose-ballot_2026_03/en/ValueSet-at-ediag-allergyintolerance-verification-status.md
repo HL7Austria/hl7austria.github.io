@@ -1,10 +1,12 @@
-# AT e-Diagnose AllergyIntolerance Verification Status - ELGA e-Diagnose R4 v0.1.0
+# AT e-Diagnose AllergyIntolerance Verification Status - ELGA e-Diagnose R4 v0.1.1
 
 ## ValueSet: AT e-Diagnose AllergyIntolerance Verification Status 
 
  **References** 
 
 * [AT e-Diagnose AllergyIntolerance](StructureDefinition-at-elga-ediag-allergyintolerance.md)
+
+* Dieses Value-Set wurde für die e-Diagnose entworfen und wird auf den [österreichischen e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
 
 ### Logical Definition (CLD)
 
@@ -25,12 +27,12 @@
   "resourceType" : "ValueSet",
   "id" : "at-ediag-allergyintolerance-verification-status",
   "url" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-verification-status",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "name" : "AtEdiagAllergyIntoleranceVerificationStatus",
   "title" : "AT e-Diagnose AllergyIntolerance Verification Status",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-27T15:15:47+00:00",
+  "date" : "2026-10-28T08:34:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

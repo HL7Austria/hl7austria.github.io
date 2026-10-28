@@ -1,4 +1,4 @@
-# Copyright - ELGA e-Diagnose R4 v0.1.0
+# Copyright - ELGA e-Diagnose R4 v0.1.1
 
 ## Copyright
 

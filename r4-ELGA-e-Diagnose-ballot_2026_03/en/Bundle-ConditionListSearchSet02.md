@@ -1,4 +1,4 @@
-# SearchSet-Bundle der Condition-Summary-Liste (Version 3) - ELGA e-Diagnose R4 v0.1.0
+# SearchSet-Bundle der Condition-Summary-Liste (Version 3) - ELGA e-Diagnose R4 v0.1.1
 
 ## Example Bundle: SearchSet-Bundle der Condition-Summary-Liste (Version 3)
 

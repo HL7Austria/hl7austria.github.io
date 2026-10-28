@@ -1,13 +1,13 @@
 ELGAeDiagnoseR4 : Validation Results
 =========================================
 
-err = 6, warn = 2, info = 1, broken links = 0
+err = 11, warn = 2, info = 5, broken links = 0
 IG Publisher Version: 3.0.1
-Generated Tue Oct 27 15:22:56 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.ediag.r4#0.1.0 (canonical = https://fhir.hl7.at/elga/ediag/r4)
+Generated Wed Oct 28 08:48:53 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.ediag.r4#0.1.1 (canonical = https://fhir.hl7.at/elga/ediag/r4)
  Build Errors : 0 / 0 / 0
- /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/AllergyIntolerance-AllergyEntry01 : 1 / 4 / 2
- /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/AllergyIntolerance-AllergyEntry01Request : 1 / 4 / 2
- /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-AllergyListSearchSet01 : 2 / 5 / 7
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/AllergyIntolerance-AllergyEntry01 : 2 / 3 / 2
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/AllergyIntolerance-AllergyEntry01Request : 2 / 3 / 2
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-AllergyListSearchSet01 : 3 / 4 / 7
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-ConditionListSearchSet01 : 0 / 3 / 5
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-ConditionListSearchSet02 : 0 / 5 / 7
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Bundle-ConditionListSearchSet03 : 0 / 3 / 5
@@ -49,7 +49,7 @@ Generated Tue Oct 27 15:22:56 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Parameters-ConditionListWrite02 : 0 / 2 / 3
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Parameters-ConditionListWrite03 : 0 / 2 / 3
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Parameters-ProcedureListWrite01 : 0 / 2 / 3
- /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Patient-PatientExample : 0 / 10 / 1
+ /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Patient-PatientExample : 2 / 8 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Practitioner-PractitionerExample : 0 / 1 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Procedure-ProcedureEntry01 : 0 / 2 / 1
  /home/runner/work/ELGA-e-Diagnose-R4/ELGA-e-Diagnose-R4/fsh-generated/resources/Procedure-ProcedureEntry01Request : 0 / 2 / 1
@@ -85,17 +85,23 @@ Generated Tue Oct 27 15:22:56 UTC 2026. FHIR version 4.0.1 for hl7.at.fhir.elga.
 
 
 == fsh-generated/resources/AllergyIntolerance-AllergyEntry01.json ==
-ERROR: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.code: None of the codings provided are in the value set 'AT e-Diagnose AllergyIntolerance Code' (https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code|0.1.0), and a coding from this value set is required) (codes = https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe#1708923)
+ERROR: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.code.coding[0]: Error from https://tx.fhir.org/r4: Error: Failed to create database /opt/NodeServer/data/terminology-cache/vsac/vsac-valuesets.db: SQLITE_CANTOPEN: unable to open database file
+ERROR: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.code: None of the codings provided are in the value set 'AT e-Diagnose AllergyIntolerance Code' (https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code|0.1.1), and a coding from this value set is required) (codes = https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe#1708923)
+INFORMATION: AllergyIntolerance/AllergyEntry01: AllergyIntolerance.reaction[0].extension[0].value.ofType(CodeableConcept): Reference to draft CodeSystem https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time|0.1.1
 
 
 == fsh-generated/resources/AllergyIntolerance-AllergyEntry01Request.json ==
-ERROR: AllergyIntolerance/AllergyEntry01Request: AllergyIntolerance.code: None of the codings provided are in the value set 'AT e-Diagnose AllergyIntolerance Code' (https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code|0.1.0), and a coding from this value set is required) (codes = https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe#1708923)
+ERROR: AllergyIntolerance/AllergyEntry01Request: AllergyIntolerance.code.coding[0]: Error from https://tx.fhir.org/r4: Error: Failed to create database /opt/NodeServer/data/terminology-cache/vsac/vsac-valuesets.db: SQLITE_CANTOPEN: unable to open database file
+ERROR: AllergyIntolerance/AllergyEntry01Request: AllergyIntolerance.code: None of the codings provided are in the value set 'AT e-Diagnose AllergyIntolerance Code' (https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code|0.1.1), and a coding from this value set is required) (codes = https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe#1708923)
+INFORMATION: AllergyIntolerance/AllergyEntry01Request: AllergyIntolerance.reaction[0].extension[0].value.ofType(CodeableConcept): Reference to draft CodeSystem https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time|0.1.1
 
 
 == fsh-generated/resources/Bundle-AllergyListSearchSet01.json ==
 ERROR: Bundle/AllergyListSearchSet01: Bundle.entry[0].resource/*List/AllergyList01*/.entry[0].item: Unable to find a profile match for AllergyIntolerance/AllergyEntry01 among choices: https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance, https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-condition, https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-procedure
-INFORMATION: Bundle/AllergyListSearchSet01: Bundle.entry[0].resource/*List/AllergyList01*/.entry[0].item: Details for AllergyIntolerance/AllergyEntry01 matching against profile https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance|0.1.0
-ERROR: Bundle/AllergyListSearchSet01: Bundle.entry[1].resource/*AllergyIntolerance/AllergyEntry01*/.code: None of the codings provided are in the value set 'AT e-Diagnose AllergyIntolerance Code' (https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code|0.1.0), and a coding from this value set is required) (codes = https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe#1708923)
+INFORMATION: Bundle/AllergyListSearchSet01: Bundle.entry[0].resource/*List/AllergyList01*/.entry[0].item: Details for AllergyIntolerance/AllergyEntry01 matching against profile https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-allergyintolerance|0.1.1
+ERROR: Bundle/AllergyListSearchSet01: Bundle.entry[1].resource/*AllergyIntolerance/AllergyEntry01*/.code.coding[0]: Error from https://tx.fhir.org/r4: Error: Failed to create database /opt/NodeServer/data/terminology-cache/vsac/vsac-valuesets.db: SQLITE_CANTOPEN: unable to open database file
+INFORMATION: Bundle/AllergyListSearchSet01: Bundle.entry[1].resource/*AllergyIntolerance/AllergyEntry01*/.reaction[0].extension[0].value.ofType(CodeableConcept): Reference to draft CodeSystem https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-reaction-time|0.1.1
+ERROR: Bundle/AllergyListSearchSet01: Bundle.entry[1].resource/*AllergyIntolerance/AllergyEntry01*/.code: None of the codings provided are in the value set 'AT e-Diagnose AllergyIntolerance Code' (https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-allergyintolerance-code|0.1.1), and a coding from this value set is required) (codes = https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe#1708923)
 
 
 == fsh-generated/resources/Bundle-ConditionListSearchSet01.json ==
@@ -222,6 +228,8 @@ ERROR: Bundle/AllergyListSearchSet01: Bundle.entry[1].resource/*AllergyIntoleran
 
 
 == fsh-generated/resources/Patient-PatientExample.json ==
+ERROR: Patient/PatientExample: Patient.extension[0].value.ofType(CodeableConcept).coding[0]: Error from https://tx.fhir.org/r4: Error: Failed to create database /opt/NodeServer/data/terminology-cache/vsac/vsac-valuesets.db: SQLITE_CANTOPEN: unable to open database file
+ERROR: Patient/PatientExample: Patient.extension[1].extension[0].value.ofType(CodeableConcept).coding[0]: Error from https://tx.fhir.org/r4: Error: Failed to create database /opt/NodeServer/data/terminology-cache/vsac/vsac-valuesets.db: SQLITE_CANTOPEN: unable to open database file
 
 
 == fsh-generated/resources/Practitioner-PractitionerExample.json ==
@@ -249,6 +257,7 @@ ERROR: Bundle/AllergyListSearchSet01: Bundle.entry[1].resource/*AllergyIntoleran
 
 
 == fsh-generated/resources/StructureDefinition-at-elga-ediag-allergyintolerance.json ==
+INFORMATION: StructureDefinition/at-elga-ediag-allergyintolerance: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.4.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
 
 
 == fsh-generated/resources/StructureDefinition-at-elga-ediag-condition.json ==

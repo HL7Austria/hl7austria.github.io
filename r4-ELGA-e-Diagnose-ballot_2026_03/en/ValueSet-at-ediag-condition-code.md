@@ -1,4 +1,4 @@
-# AT e-Diagnose Condition Code - ELGA e-Diagnose R4 v0.1.0
+# AT e-Diagnose Condition Code - ELGA e-Diagnose R4 v0.1.1
 
 ## ValueSet: AT e-Diagnose Condition Code 
 
@@ -34,12 +34,12 @@ Der Inhalt dieses Value-Sets bildet alle SNOMED CT Konzepte ab, die das [e-Healt
   "resourceType" : "ValueSet",
   "id" : "at-ediag-condition-code",
   "url" : "https://fhir.hl7.at/elga/ediag/r4/ValueSet/at-ediag-condition-code",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "name" : "AtEDiagConditionCode",
   "title" : "AT e-Diagnose Condition Code",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-27T15:15:47+00:00",
+  "date" : "2026-10-28T08:34:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

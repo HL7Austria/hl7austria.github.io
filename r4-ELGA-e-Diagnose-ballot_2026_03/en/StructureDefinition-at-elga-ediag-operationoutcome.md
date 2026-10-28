@@ -1,4 +1,4 @@
-# AT e-Diagnose OperationOutcome - ELGA e-Diagnose R4 v0.1.0
+# AT e-Diagnose OperationOutcome - ELGA e-Diagnose R4 v0.1.1
 
 ## Resource Profile: AT e-Diagnose OperationOutcome 
 
@@ -25,11 +25,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-ope
   "resourceType" : "StructureDefinition",
   "id" : "at-elga-ediag-operationoutcome",
   "url" : "https://fhir.hl7.at/elga/ediag/r4/StructureDefinition/at-elga-ediag-operationoutcome",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "name" : "AtEdiagOperationOutcome",
   "title" : "AT e-Diagnose OperationOutcome",
   "status" : "active",
-  "date" : "2026-10-27T15:15:47+00:00",
+  "date" : "2026-10-28T08:34:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

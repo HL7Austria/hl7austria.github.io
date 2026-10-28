@@ -1,4 +1,4 @@
-# Beispiel Device (e-Diagnose-Fachanwendung) - ELGA e-Diagnose R4 v0.1.0
+# Beispiel Device (e-Diagnose-Fachanwendung) - ELGA e-Diagnose R4 v0.1.1
 
 ## Example Device: Beispiel Device (e-Diagnose-Fachanwendung)
 

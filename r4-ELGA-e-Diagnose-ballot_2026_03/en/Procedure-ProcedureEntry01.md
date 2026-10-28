@@ -1,4 +1,4 @@
-# Beispielinstanz einer Prozedur für die Summary-Liste - ELGA e-Diagnose R4 v0.1.0
+# Beispielinstanz einer Prozedur für die Summary-Liste - ELGA e-Diagnose R4 v0.1.1
 
 ## Example Procedure: Beispielinstanz einer Prozedur für die Summary-Liste
 

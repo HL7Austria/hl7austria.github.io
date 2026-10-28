@@ -1,4 +1,4 @@
-# Parameters der Antwort auf $delete einer Diagnose - ELGA e-Diagnose R4 v0.1.0
+# Parameters der Antwort auf $delete einer Diagnose - ELGA e-Diagnose R4 v0.1.1
 
 ## Example Parameters: Parameters der Antwort auf $delete einer Diagnose
 

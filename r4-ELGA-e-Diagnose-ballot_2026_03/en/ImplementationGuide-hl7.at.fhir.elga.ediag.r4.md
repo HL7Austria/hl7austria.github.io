@@ -10,11 +10,11 @@
   "id" : "hl7.at.fhir.elga.ediag.r4",
   "language" : "en",
   "url" : "https://fhir.hl7.at/elga/ediag/r4/ImplementationGuide/hl7.at.fhir.elga.ediag.r4",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "name" : "ELGAeDiagnoseR4",
   "title" : "ELGA e-Diagnose R4",
   "status" : "draft",
-  "date" : "2026-10-27T15:15:47+00:00",
+  "date" : "2026-10-28T08:34:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -53,7 +53,7 @@
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   },
   {
     "id" : "hl7_at_fhir_core_r4",

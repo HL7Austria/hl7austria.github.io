@@ -1,4 +1,4 @@
-# Beispiel Patient - ELGA e-Diagnose R4 v0.1.0
+# Beispiel Patient - ELGA e-Diagnose R4 v0.1.1
 
 ## Example Patient: Beispiel Patient
 
@@ -17,7 +17,7 @@ Max Mustermann Male, DoB: 1970-01-01 ( Social Security number: 1234010100)
 * [+436501234567890](tel:+436501234567890)
 * Landstrasse 1 Stock 9 Tür 42 Linz Oberösterreich 4020 AUT (home)
  |
-| [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Pastafarianismus |
+| [Patient Religion](http://hl7.org/fhir/extensions/5.4.0/StructureDefinition-patient-religion.html) | Pastafarianismus |
 | Patient Citizenship: | * code: Österreich
  |
 

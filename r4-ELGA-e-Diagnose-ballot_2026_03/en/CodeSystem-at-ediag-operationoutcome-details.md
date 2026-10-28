@@ -1,6 +1,9 @@
-# AT e-Diagnose OperationOutcome Details CS - ELGA e-Diagnose R4 v0.1.0
+# AT e-Diagnose OperationOutcome Details CS - ELGA e-Diagnose R4 v0.1.1
 
 ## CodeSystem: AT e-Diagnose OperationOutcome Details CS 
+
+* Dieses Codesystem wurde für die e-Diagnose entworfen und wird auf den [österreichischen e-Health Terminologieserver](https://termgit.elga.gv.at/) verschoben, abhängig vom Ergebnis des Ballots.
+* Dieses Codesystem ist aktuell leer, weil noch keine detaillierten Fehlercodes der e-Diagnose-Fachanwendung bekannt sind.
 
 This Code system is referenced in the definition of the following value sets:
 
@@ -19,12 +22,12 @@ This Code system is referenced in the definition of the following value sets:
   "resourceType" : "CodeSystem",
   "id" : "at-ediag-operationoutcome-details",
   "url" : "https://fhir.hl7.at/elga/ediag/r4/CodeSystem/at-ediag-operationoutcome-details",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "name" : "AtEdiagOperationOutcomeDetailsCS",
   "title" : "AT e-Diagnose OperationOutcome Details CS",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-27T15:15:47+00:00",
+  "date" : "2026-10-28T08:34:30+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
