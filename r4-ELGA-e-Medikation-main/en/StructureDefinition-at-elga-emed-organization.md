@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "name" : "AtElgaEmedOrganization",
   "title" : "AT ELGA e-Medikation Organization",
   "status" : "draft",
-  "date" : "2026-10-28T10:28:56+00:00",
+  "date" : "2026-10-28T15:47:56+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

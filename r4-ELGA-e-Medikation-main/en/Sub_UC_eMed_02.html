@@ -617,7 +617,7 @@ Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokollie
 
 <h3 id="sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01 - Medikationsplan schreiben (Plan-Write)</h3>
 
-<p>Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (<a href="https://hl7.org/fhir/http.html#concurrency">Optimistic Locking</a>), um konkurrierende Änderungen am Medikationsplan zu erkennen.</p>
+<p>Alle vom GDA ausgeführten, schreibenden Zugriffe auf den Medikationsplan erfolgen über die Custom Operation <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a>. Die Fachanwendung verwendet den im Request übermittelten <em>ETag</em> zur Integritätsprüfung (<a href="https://hl7.org/fhir/http.html#concurrency"><strong>Optimistic Locking</strong></a>), um konkurrierende Änderungen am Medikationsplan zu erkennen (siehe auch <a href="design_choices.html#optimistisches-locking-mit-etags">Designentscheidungen - Optimistisches Locking mit ETags</a>).</p>
 
 <h4 id="ablauf">Ablauf</h4>
 
@@ -1182,7 +1182,7 @@ Der Einnahmezeitraum der im Planeintrag dokumentierten Arzneimittel darf noch ni
           IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
           Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
           Generated 
-  <span title="2026-10-28 10:28:00 +0000">
+  <span title="2026-10-28 15:47:00 +0000">
     2026-10-28
   </span>
 
