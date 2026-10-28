@@ -31,7 +31,7 @@ Andreas Bucher Male, DoB: 1961-12-24 ( Social Security number: 1111241261 (use:
 * Managing Organization: [Amadeus Spital (Allgemeine Krankenanstalt) (OID:1.2.40.0.34.99.4613.3)](Organization-HL7ATCoreOrganizationExample01.md)
 * Also see: [Muster Andreas Bucher Male, DoB: 1990-12-24 ( Social Security number: 1111241261 (use: usual))](Patient-HL7ATCorePatientExample03-deceasedBoolean.md)
  | | |
-| [Patient Religion](http://hl7.org/fhir/extensions/5.3.0/StructureDefinition-patient-religion.html) | Römisch-Katholisch | | |
+| [Patient Religion](http://hl7.org/fhir/extensions/5.4.0/StructureDefinition-patient-religion.html) | Römisch-Katholisch | | |
 | Patient Citizenship: | * code: Österreich
 * period: 2016-07-30 08:30:00+0100 --> 2022-07-30 08:35:00+0100
  | | |
