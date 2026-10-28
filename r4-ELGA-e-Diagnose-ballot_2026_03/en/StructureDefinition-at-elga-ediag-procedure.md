@@ -40,7 +40,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-ediag-pro
   "name" : "AtEdiagProcedure",
   "title" : "AT e-Diagnose Procedure",
   "status" : "active",
-  "date" : "2026-10-28T08:34:30+00:00",
+  "date" : "2026-10-28T08:57:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -27,7 +27,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "AT e-Diagnose OperationOutcome Details CS",
   "status" : "draft",
   "experimental" : false,
-  "date" : "2026-10-28T08:34:30+00:00",
+  "date" : "2026-10-28T08:57:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -38,7 +38,7 @@ Die Teilnehmerrechte können – abgesehen vom Widerspruch über die ELGA-Widers
   "status" : "active",
   "kind" : "operation",
   "experimental" : false,
-  "date" : "2026-10-28T08:34:30+00:00",
+  "date" : "2026-10-28T08:57:40+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
