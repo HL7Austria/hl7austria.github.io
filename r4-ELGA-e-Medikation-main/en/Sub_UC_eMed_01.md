@@ -161,7 +161,7 @@ Der Abruf erfolgt mittels POST [$history-search](Sub_UC_eMed_01.md#custom-operat
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
 * **Erstellungszeitpunkt**
-* [**Status**] (ValueSet-PlaneintragStatusVS.html)
+* [**Status**](ValueSet-PlaneintragStatusVS.md)
 * [**StatusReason**](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
 
  Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
