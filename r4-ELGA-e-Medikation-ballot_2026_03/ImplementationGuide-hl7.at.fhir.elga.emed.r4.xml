@@ -1,0 +1,1969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="hl7.at.fhir.elga.emed.r4"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide hl7.at.fhir.elga.emed.r4</b></p><a name="hl7.at.fhir.elga.emed.r4"> </a><a name="hchl7.at.fhir.elga.emed.r4"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>ELGA-e-Medikation-R4</h2><p>The official URL for this implementation guide is: </p><pre>https://fhir.hl7.at/elga/emed/r4/ImplementationGuide/hl7.at.fhir.elga.emed.r4</pre><div><p>The FHIR® implementation guide ELGA e-Medikation (R4)</p>
+</div></div>
+  </text>
+  <url value="https://fhir.hl7.at/elga/emed/r4/ImplementationGuide/hl7.at.fhir.elga.emed.r4"/>
+  <version value="0.1.0"/>
+  <name value="ELGA-e-Medikation-R4"/>
+  <title value="ELGA e-Medikation (R4) DRAFT"/>
+  <status value="draft"/>
+  <date value="2026-10-29T15:54:42+00:00"/>
+  <publisher value="ELGA GmbH"/>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://elga.gv.at"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="ELGA GmbH"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://elga.gv.at"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="The FHIR® implementation guide ELGA e-Medikation (R4)"/>
+  <packageId value="hl7.at.fhir.elga.emed.r4"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.5.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.4.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_at_fhir_core_r4">
+    <uri value="https://fhir.hl7.at/core/r4/ImplementationGuide/hl7.at.fhir.core.r4"/>
+    <packageId value="hl7.at.fhir.core.r4"/>
+    <version value="current"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_xver_r5_r4">
+    <uri value="http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4"/>
+    <packageId value="hl7.fhir.uv.xver-r5.r4"/>
+    <version value="0.1.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#1.3.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2026+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://termgit.elga.gv.at/CodeSystem/medikationrezeptart"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://termgit.elga.gv.at/ValueSet/elga-medikationrezeptart"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid-template"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid-template"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://fhir.hl7.at/elga/emed/r4/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="i18n-default-lang"/>
+      </extension>
+      <extension url="value">
+        <valueString value="en"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="wantGen-ttl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="wantGen-ttl-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <grouping id="Medikationsplan">
+      <name value="Medikationsplan"/>
+      <description value="Medikationsplan"/>
+    </grouping>
+    <grouping id="GeplanteAbgabe">
+      <name value="Geplante Abgabe"/>
+      <description value="Geplante Abgabe"/>
+    </grouping>
+    <grouping id="DurchgefuehrteAbgabe">
+      <name value="Durchgeführte Abgabe"/>
+      <description value="Durchgeführte Abgabe"/>
+    </grouping>
+    <grouping id="Medikation">
+      <name value="Medikation"/>
+      <description value="Medikation"/>
+    </grouping>
+    <grouping id="Dosierungen">
+      <name value="Dosierungen"/>
+      <description value="Dosierungsvarianten"/>
+    </grouping>
+    <grouping id="Stammdaten">
+      <name value="Stammdaten"/>
+      <description value="Stammdaten"/>
+    </grouping>
+    <grouping id="OpPlanRead">
+      <name value="$plan-read"/>
+      <description value="Operation $plan-read inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpPlanWrite">
+      <name value="$plan-write"/>
+      <description value="Operation $plan-write inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpReferencePlan">
+      <name value="$reference-plan"/>
+      <description value="Operation $reference-plan inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpPrescriptionWrite">
+      <name value="$prescription-write"/>
+      <description value="Operation $prescription-write inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpPrescriptionDiscard">
+      <name value="$prescription-discard"/>
+      <description value="Operation $prescription-discard inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpDispenseWrite">
+      <name value="$dispense-write"/>
+      <description value="Operation $dispense-write inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpDispenseDiscard">
+      <name value="$dispense-discard"/>
+      <description value="Operation $dispense-discard inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpGroupidentifierCreate">
+      <name value="$groupidentifier-create"/>
+      <description value="Operation $groupidentifier-create inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OpGroupidentifierSearch">
+      <name value="$groupidentifier-search"/>
+      <description value="Operation $groupidentifier-search inkl. Ein- und Ausgabeparameter"/>
+    </grouping>
+    <grouping id="OperationCommon">
+      <name value="Gemeinsame Profile der Operationen"/>
+      <description value="Profile, die von allen Operationen verwendet werden"/>
+    </grouping>
+    <grouping id="Suchparameter">
+      <name value="Suchparameter"/>
+      <description value="Suchparameter"/>
+    </grouping>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-elga-emed-codesystem-operationoutcome-details-cs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation CodeSystem für OperationOutcome Details"/>
+      <description value="Dieses Codesystem legt die möglichen Fehlercodes im Rahmen der e-Medikation-Fachanwendung fest."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-device-fachanwendung"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Device Fachanwendung"/>
+      <description value="Das Device, welches die eMed Fachanwendung abbildet"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Stammdaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-elga-emed-codesystem-dosagecategory-cs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Dosage Category Status CodeSystem"/>
+      <description value="Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-dosagecategory-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Dosage Category Status ValueSet"/>
+      <description value="Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-dosierung"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Dosage Dosierung"/>
+      <description value="Basisprofil für alle Dosierungschemata"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-timingwhenstandardadministration-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema"/>
+      <description value="ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-extension-dosage-category"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Extension Dosierungskategorie"/>
+      <description value="AT ELGA e-Medikation Extension Dosierungskategorie"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-extension-group-identifier"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Extension Group Identifier"/>
+      <description value="AT ELGA e-Medikation Extension, die den e-Med GroupIdentifier beinhaltet."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-extension-patient-modified"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Extension Patient Modified"/>
+      <description value="AT ELGA e-Medikation Extension, die Angibt, ob in einer Ressource eine Änderung vom Patienten veranlasst wurde."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-extension-rezeptur"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Extension Rezeptur"/>
+      <description value="AT ELGA e-Medikation Extension für die Rezeptur für die Zubereitung einer magistralen Zubereitung"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-freetext-administration"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Freitext-Dosierschema"/>
+      <description value="Profil für das Freitext-Dosierschema"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-geplanteabgabestatus-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Geplante Abgabe Status ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen eines Status einer Geplanten Abgabe (MedicationRequest)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-listemptyreason-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation List Empty Reason ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-list-medikationsplan"/>
+      </reference>
+      <name value="AT ELGA e-Medikation List Medikationsplan"/>
+      <description value="Profil für einen Medikationsplan."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-elga-emed-codesystem-listentryflag-cs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation List.entry.flag CodeSystem"/>
+      <description value="CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-listentryflag-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation List.entry.flag ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Medication Magistrale Medikation"/>
+      <description value="Bildet eine Magistrale Zubereitung in der Medication-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Medikation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medication-standard-medikation"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN"/>
+      <description value="Bildet ein Arzneimittel in der &quot;Medication&quot;-Ressource ab. Wird grundsätzlich verwendet in Planeintrag, Geplanter Abgabe und Durchgeführter Abgabe."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Medikation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medication-wirkstoff"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Medication Wirkstoff"/>
+      <description value="Bildet einen Wirkstoff in der Medication-Ressource ab. Wird grundsätzlich verwendet im Planeintrag."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Medikation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe"/>
+      <description value="Profil einer Durchgeführten Abgabe eines Arzneimittels."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="DurchgefuehrteAbgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-elga-emed-codesystem-medicationdispense-performer-function-cs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationDispense Performer Function CodeSystem"/>
+      <description value="Codesystem für zulässige Ausprägungen der MedicationDispense Performer Function."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-medicationdispense-performer-function-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationDispense Performer Function ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen der MedicationDispense Performer Function."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-medicationdispense-status-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationDispense Status ValueSet"/>
+      <description value="Zulässige Ausprägungen des Status einer MedicationDispense-Ressource in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-medicationdispense-type-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationDispense Type ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen des Elements type einer MedicationDispense."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medicationrequest-base"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationRequest Base"/>
+      <description value="Die Basis für alle in eMed verwendeten MedicationRequests"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-medicationrequest-courseoftherapytype-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationRequest courseOfTherapyType ValueSet"/>
+      <description value="Zulässige Ausprägungen des Elements courseOfTherapyType in ELGA."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationRequest Geplante Abgabe"/>
+      <description value="Profil einer Geplanten Abgabe eines Arzneimittels aus dem Medikationsplan."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="GeplanteAbgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationRequest Kategorie CodeSystem"/>
+      <description value="Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von Geplanten Abgaben und Medikationsplaneinträgen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-medicationrequestcategory-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationRequest Kategorie ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von Geplanten Abgaben und Medikationsplaneinträgen"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationRequest Planeintrag"/>
+      <description value="Profil für einen Planeintrag."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/at-elga-emed-codesystem-planeintrag-statusreason-cs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem"/>
+      <description value="Codesystem für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan"/>
+      <description value="Profil für den Medikationsplan als Ergebnis der $plan-read Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPlanRead"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-planeintragstatus-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Medikationsplaneintrag Status ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-planeintrag-statusreason-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Medikationsplaneintrag StatusReason ValueSet"/>
+      <description value="ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-dispense-discard"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $dispense-discard"/>
+      <description value="Operation für das Stornieren von Durchgeführten Abgaben"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpDispenseDiscard"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-dispense-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $dispense-write"/>
+      <description value="Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpDispenseWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-groupidentifier-create"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $groupidentifier-create"/>
+      <description value="Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpGroupidentifierCreate"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-groupidentifier-search"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $groupidentifier-search"/>
+      <description value="Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpGroupidentifierSearch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-plan-read"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $plan-read"/>
+      <description value="Die $plan-read Operation ruft den aktuellen Medikationsplan eines&#xA;ELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten&#xA;Zustand ab."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPlanRead"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-plan-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $plan-write"/>
+      <description value="Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPlanWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-prescription-discard"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $prescription-discard"/>
+      <description value="Operation für das Stornieren von Geplanten Abgaben"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPrescriptionDiscard"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-prescription-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $prescription-write"/>
+      <description value="Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPrescriptionWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/at-elga-emed-operation-reference-plan"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Operation für $reference-plan"/>
+      <description value="Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpReferencePlan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-operationoutcome"/>
+      </reference>
+      <name value="AT ELGA e-Medikation OperationOutcome"/>
+      <description value="Dieses Profil gibt vor, welche Details im Rahmen der e-Medikation im Fehlerfall..."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OperationCommon"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-organization"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Organization"/>
+      <description value="Profil für die Struktur von Organisationen"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Stammdaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-dispense-discard"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $dispense-discard"/>
+      <description value="Profil für den Rückgabewert der $dispense-discard Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpDispenseDiscard"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-dispense-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $dispense-write"/>
+      <description value="Profil für den Rückgabewert der $dispense-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpDispenseWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-groupidentifier-create"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $groupidentifier-create"/>
+      <description value="Profil für den Rückgabewert der $groupidentifier-create Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpGroupidentifierCreate"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-groupidentifier-search"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $groupidentifier-search"/>
+      <description value="Profil für den Rückgabewert der $groupidentifier-search Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpGroupidentifierSearch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-plan-read"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $plan-read"/>
+      <description value="Profil für den Rückgabewert der $plan-read Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPlanRead"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-plan-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $plan-write"/>
+      <description value="Profil für den Rückgabewert der $plan-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPlanWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-prescription-discard"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $prescription-discard"/>
+      <description value="Profil für den Rückgabewert der $prescription-discard Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPrescriptionDiscard"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-prescription-write"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $prescription-write"/>
+      <description value="Profil für den Rückgabewert der $prescription-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPrescriptionWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-parameters-out-reference-plan"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Parameters Out $reference-plan"/>
+      <description value="Profil für den Rückgabewert der $reference-plan Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpReferencePlan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-patient"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Patient"/>
+      <description value="Profil für die Struktur der Patienten Ressource"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Stammdaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-practitioner"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Practitioner"/>
+      <description value="Profil für die Struktur der Practitioner Ressource"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Stammdaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-practitionerrole"/>
+      </reference>
+      <name value="AT ELGA e-Medikation PractitionerRole"/>
+      <description value="Profil für die Struktur der PractitionerRole Ressource"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Stammdaten"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/at-elga-emed-searchparameter-list-mr-medication-code"/>
+      </reference>
+      <name value="AT ELGA e-Medikation SearchParameter List Medication Code"/>
+      <description value="Suchparameter für den Code (PZN) eines Arzneimittels, das in einem MedicationRequest eines Medikationsplans (List) enthalten ist."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Suchparameter"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-groupidentifier-search-result"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search"/>
+      <description value="Profil für das Ergebnis der $groupidentifier-search Operation. Das Bundle enthält die dem e-Med GroupIdentifier zugeordneten Geplanten und Durchgeführten Abgaben sowie die von ihnen referenzierten Patient- und Autoren-Ressourcen."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpGroupidentifierSearch"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-dosage-standard-administration"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema"/>
+      <description value="Profil für das Standard-Tageszeiten-Dosierschema"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:complex-type"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-timing"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Timing"/>
+      <description value="AT ELGA e-Medikation Timing"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="Dosierungen"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction Bundle Durchgeführte Abgaben"/>
+      <description value="Profil für das Schreiben der Durchgeführten Abgaben mit der $dispense-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpDispenseWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction Bundle Geplante Abgaben"/>
+      <description value="Profil für das Schreiben der Geplanten Abgaben mit der $prescription-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPrescriptionWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction Bundle Medikationsplan"/>
+      <description value="Profil für das Schreiben des Medikationsplans mit der $plan-write Operation."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPlanWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-write-response"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction-Response Bundle Durchgeführte Abgaben"/>
+      <description value="Profil für die Antwort des Servers auf das Schreiben von Durchgeführten Abgaben mit der $dispense-write Operation. Das Bundle enthält die persistierten Durchgeführten Abgaben."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpDispenseWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-geplanteabgaben-write-response"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction-Response Bundle Geplante Abgaben"/>
+      <description value="Profil für die Antwort des Servers auf das Schreiben von Geplanten Abgaben mit der $prescription-write Operation. Das Bundle enthält die persistierten Geplanten Abgaben."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPrescriptionWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/at-elga-emed-bundle-medikationsplan-write-response"/>
+      </reference>
+      <name value="AT ELGA e-Medikation Transaction-Response Bundle Medikationsplan"/>
+      <description value="Profil für die Antwort des Servers auf das Schreiben des Medikationsplans mit der $plan-write Operation. Das Bundle enthält den persistierten Medikationsplan sowie die persistierten Medikationsplaneinträge."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="OpPlanWrite"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-operationoutcome-details-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation ValueSet für OperationOutcome Details"/>
+      <description value="Value-Set mit den für e-Medikation zulässigen detaillierten Fehlercodes."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/at-elga-emed-valueset-medikationsplan-http-codes-vs"/>
+      </reference>
+      <name value="AT ELGA e-Medikation ValueSet Medikationsplan HTTP Codes"/>
+      <description value="ValueSet für die zulässigen HTTP Codes beim Medikationsplan schreiben"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
+      </reference>
+      <name value="Beispiel Allgemeinmedizinerin 01"/>
+      <description value="Beispiel einer Allgemeinmedizinerin (Dr. Hausärztin)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-02"/>
+      </reference>
+      <name value="Beispiel Apothekerin 02"/>
+      <description value="Beispiel einer Apothekerin (Dr. Apothekerin)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/At-Emed-Journey-01-01-01-Parameters-Out-Plan-Read"/>
+      </reference>
+      <name value="Beispiel Journey 01-01-01: $plan-read Response"/>
+      <description value="Beispiel einer Response eines $plan-read mit dem initial erstellten, leeren Medikationsplan."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"/>
+      </reference>
+      <name value="Beispiel Journey 01-01-01: Medikationsplan-Bundle"/>
+      <description value="Beispiel eines Medikationsplan-Bundles, mit leerem Medikationsplan (referenziert List-Ressource ohne Einträge)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/at-emed-journey-01-01-02-bundle-geplanteAbgaben"/>
+      </reference>
+      <name value="Beispiel Journey 01-01-02: Geplante-Abgaben-Bundle"/>
+      <description value="Beispiel eines leeren Geplante-Abgaben-Bundles."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/at-emed-journey-01-01-03-bundle-durchgefuehrte-abgaben"/>
+      </reference>
+      <name value="Beispiel Journey 01-01-03: Durchgeführte Abgaben-Bundle"/>
+      <description value="Beispiel eines leeren Durchgeführte Abgaben-Bundles."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/At-Emed-Journey-01-02-Parameters-Out-Plan-Read"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: $plan-read Response"/>
+      <description value="Beispiel einer Response eines $plan-read mit dem Medikationsplan und 2 Planeinträgen."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/At-Emed-Journey-01-02-Parameters-In-Plan-Write"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: $plan-write Request"/>
+      <description value="Beispiel eines Request Body eines $plan-write mit dem Medikationsplan-Transaction-Bundle."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/At-Emed-Journey-01-02-Parameters-Out-Plan-Write"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: $plan-write Response"/>
+      <description value="Beispiel einer Response eines $plan-write mit dem persistierten Medikationsplan und 2 neuen Planeinträgen."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-write"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response"/>
+      <description value="Beispiel eines Medikationsplan-Bundles, das einen Medikationsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: Medikationsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) enthält."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-01-02-Bundle-plan-write-response"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: Plan-Write-Response"/>
+      <description value="Beispiel einer Response eines plan-write mit 2 neuen Planeinträgen"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan-write-response"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: Planeintrag 1"/>
+      <description value="Bildet einen Planeintrag mit dem Arzneimittel Ramipril und der Dosierungsanweisung ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"/>
+      </reference>
+      <name value="Beispiel Journey 01-02: Planeintrag 2"/>
+      <description value="Bildet einen Planeintrag mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und der Dosierungsanweisung ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/At-Emed-Journey-01-03-Parameters-Out-GroupIdentifier-Create"/>
+      </reference>
+      <name value="Beispiel Journey 01-03: $groupidentifier-create Response"/>
+      <description value="Beispiel einer Response eines $groupidentifier-create mit dem neu erzeugten e-Med GroupIdentifier und dem zugehörigen DataMatrix-Code."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-groupidentifier-create"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/At-Emed-Journey-01-03-Parameters-In-Prescription-Write"/>
+      </reference>
+      <name value="Beispiel Journey 01-03: $prescription-write Request"/>
+      <description value="Beispiel eines Request Body eines $prescription-write mit dem Geplante-Abgaben-Transaction-Bundle."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/At-Emed-Journey-01-03-Parameters-Out-Prescription-Write"/>
+      </reference>
+      <name value="Beispiel Journey 01-03: $prescription-write Response"/>
+      <description value="Beispiel einer Response eines $prescription-write mit 2 persistierten Geplanten Abgaben."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-prescription-write"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/d9d43746-69ab-4ed8-9200-3a939f7224de"/>
+      </reference>
+      <name value="Beispiel Journey 01-03: Geplante Abgabe 1"/>
+      <description value="Bildet eine persistierte Geplante Abgabe des Arzneimittels Ramipril mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/f564f377-ef44-4943-9bb2-fccc8a5db24a"/>
+      </reference>
+      <name value="Beispiel Journey 01-03: Geplante Abgabe 2"/>
+      <description value="Bildet eine persistierte Geplante Abgabe mit einer magistralen Zubereitung (Dexpanthenol-Salbe) und den Dosierungsanweisungen gemäß zugehörigem Planeintrag ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 01-03: Geplante-Abgaben-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles mit 2 Geplanten Abgaben."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Write-Response"/>
+      </reference>
+      <name value="Beispiel Journey 01-03: Prescription-Write-Response"/>
+      <description value="Beispiel einer Response eines prescription-write mit 2 neuen Geplanten Abgaben"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-write-response"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Device"/>
+      </extension>
+      <reference>
+        <reference value="Device/At-Emed-Example-Device-01"/>
+      </reference>
+      <name value="Beispiel Journey 01: e-Med Fachanwendung"/>
+      <description value="Beispiel der e-Med Fachanwendung, die den Medikationsplan initial erstellt."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-02-01-Bundle-Durchgefuehrte-Abgaben-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 02-01: Durchgefuehrte-Abgaben-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles mit 2 Durchgeführten Abgaben."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-01"/>
+      </reference>
+      <name value="Beispiel Journey 02-01: Durchgeführte Abgabe 1"/>
+      <description value="Bildet eine Durchgeführte Abgabe mit dem Arzneimittel Ramipril gemäß Geplanter Abgabe ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/At-Emed-Journey-02-01-Md-Durchgefuehrte-Abgabe-02"/>
+      </reference>
+      <name value="Beispiel Journey 02-01: Durchgeführte Abgabe 2"/>
+      <description value="Bildet eine Durchgeführte Abgabe mit Besorgerprozess (magistrale Zubereitung Dexpanthenol-Salbe) gemäß Geplanter Abgabe ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/At-Emed-Example-Medication-Magistral-01"/>
+      </reference>
+      <name value="Beispiel Journey 02: Magistrale Zubereitung"/>
+      <description value="Beispiel einer magistralen Zubereitung (Dexpanthenol-Salbe)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-03-01-Bundle-Durchgefuehrte-Abgaben-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 03-01: Durchgefuehrte-Abgaben-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles mit 1 Durchgeführten Abgaben."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-durchgefuehrteabgaben-tx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationDispense"/>
+      </extension>
+      <reference>
+        <reference value="MedicationDispense/At-Emed-Journey-03-01-Md-Durchgefuehrte-Abgabe-02"/>
+      </reference>
+      <name value="Beispiel Journey 03-01: Durchgeführte Abgabe 1"/>
+      <description value="Bildet eine Durchgeführte Abgabe mit Beendigung eines Besorgerprozesses (magistrale Zubereitung Dexpanthenol-Salbe) gemäß Geplanter Abgabe ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationdispense-durchgefuehrteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response"/>
+      </reference>
+      <name value="Beispiel Journey 05-01: Medikationsplan-Bundle $plan-read Response"/>
+      <description value="Beispiel eines Medikationsplan-Bundles, das einen Medikationsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 05-01: Medikationsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten und 1 unveränderten Planeintrag beinhaltet."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 06-02: Medikationsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag beinhaltet."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/7128c60c-126d-42b2-b575-dc26a2324b8b"/>
+      </reference>
+      <name value="Beispiel Journey 06-02: Planeintrag 3"/>
+      <description value="Bildet einen Planeintrag mit einer Wirkstoffangabe (Metamizol) und Dosierung ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 07-02: Medikationsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 abgelaufenen und 1 neuen Planeintrag beinhaltet."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03"/>
+      </reference>
+      <name value="Beispiel Journey 07-03: Geplante Abgabe 1"/>
+      <description value="Bildet eine Geplante Abgabe von Magelan-Tropfen mit Dosierungsanweisungen gemäß zugehörigem Planeintrag ab."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx"/>
+      </reference>
+      <name value="Beispiel Journey 07-03: Geplante-Abgaben-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles mit 1 Geplanten Abgabe."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-03"/>
+      </reference>
+      <name value="Beispiel Krankenhausärztin"/>
+      <description value="Beispiel Ärztin im Krankenhaus (Dr. Krankenhaus)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Medication"/>
+      </extension>
+      <reference>
+        <reference value="Medication/at-emed-journey-medication-ramipril"/>
+      </reference>
+      <name value="Beispiel Medikation Ramipril"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedExampleDosageStandardAdministration1"/>
+      </reference>
+      <name value="Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 1"/>
+      <description value="Medikationsplaneintrag mit Dosierung im Tageszeitenschema (morgens, mittags, abends, nachts): 1-0-1-0."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedExampleDosageStandardAdministration2"/>
+      </reference>
+      <name value="Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 2"/>
+      <description value="Medikationsplaneintrag mit Dosierung im Tageszeitenschema"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="MedicationRequest"/>
+      </extension>
+      <reference>
+        <reference value="MedicationRequest/AtEmedExampleDosageStandardAdministration3"/>
+      </reference>
+      <name value="Beispiel Medikationsplaneintrag mit Dosierung im Tageszeitenschema 3"/>
+      <description value="Medikationsplaneintrag mit Dosierung im Tageszeitenschema"/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/At-Emed-Example-Organization-02"/>
+      </reference>
+      <name value="Beispiel Organisation Apotheke"/>
+      <description value="Beispiel Organisation: Apotheke."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/At-Emed-Example-Organization-01"/>
+      </reference>
+      <name value="Beispiel Organisation Hausärztin"/>
+      <description value="Beispiel Organisation: Ordination einer Hausärztin."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/At-Emed-Example-Organization-03"/>
+      </reference>
+      <name value="Beispiel Organisation Krankenhaus"/>
+      <description value="Beispiel Organisation: Krankenhaus."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/At-Emed-Example-Organization-04"/>
+      </reference>
+      <name value="Beispiel Organisation Urlaubsvertretung"/>
+      <description value="Beispiel Organisation: Ordination der Urlaubsvertretung."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/At-Emed-Example-Patient-01"/>
+      </reference>
+      <name value="Beispiel Patient 01"/>
+      <description value="Beispiel eines Patienten (Anton Mustermann)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/At-Emed-Example-Practitioner-04"/>
+      </reference>
+      <name value="Beispiel Urlaubsvertreung"/>
+      <description value="Beispiel einer Allgemeinmedizinerin (Dr. Urlaubsvertreung)."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/elga-medikationrezeptart"/>
+      </reference>
+      <name value="ELGA_MedikationRezeptart"/>
+      <description value="**Description:** ELGA ValueSet for Prescription type&#xA;&#xA;**Beschreibung:** ELGA ValueSet für RezeptArt"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/medikationrezeptart"/>
+      </reference>
+      <name value="MedikationRezeptart"/>
+      <description value="**Description:** ELGA Codelist for Prescription type&#xA;&#xA;**Beschreibung:** ELGA Codeliste für RezeptArt"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="scope_and_content.html"/>
+        </extension>
+        <nameUrl value="scope_and_content.html"/>
+        <title value="Umfang und Inhalt"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="background.html"/>
+        </extension>
+        <nameUrl value="background.html"/>
+        <title value="Hintergrund"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="challenges.html"/>
+        </extension>
+        <nameUrl value="challenges.html"/>
+        <title value="Herausforderungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="design_choices.html"/>
+        </extension>
+        <nameUrl value="design_choices.html"/>
+        <title value="Designentscheidungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="workflowmanagement.html"/>
+        </extension>
+        <nameUrl value="workflowmanagement.html"/>
+        <title value="Workflowmanagement"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="interactions.html"/>
+        </extension>
+        <nameUrl value="interactions.html"/>
+        <title value="Transaktionen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="actors.html"/>
+        </extension>
+        <nameUrl value="actors.html"/>
+        <title value="Akteure"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="dosages.html"/>
+        </extension>
+        <nameUrl value="dosages.html"/>
+        <title value="Dosierungen"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="medication.html"/>
+        </extension>
+        <nameUrl value="medication.html"/>
+        <title value="Medikation - Repräsentation von Arzneimitteln"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="overview_sub_use_case.html"/>
+        </extension>
+        <nameUrl value="overview_sub_use_case.html"/>
+        <title value="Use Cases Übersicht (fachlich und technisch)"/>
+        <generation value="markdown"/>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="Sub_UC_eMed_01.html"/>
+          </extension>
+          <nameUrl value="Sub_UC_eMed_01.html"/>
+          <title value="​Technische Use Cases für Medikationsplan lesen (UC_eMed_01)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="Sub_UC_eMed_02.html"/>
+          </extension>
+          <nameUrl value="Sub_UC_eMed_02.html"/>
+          <title value="​Technische Use Cases für Medikationsplan schreiben (UC_eMed_02)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="Sub_UC_eMed_03.html"/>
+          </extension>
+          <nameUrl value="Sub_UC_eMed_03.html"/>
+          <title value="​Technische Use Cases für Geplante und Durchgeführte Abgaben lesen (UC_eMed_03)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="Sub_UC_eMed_04.html"/>
+          </extension>
+          <nameUrl value="Sub_UC_eMed_04.html"/>
+          <title value="​Technische Use Cases für Geplante Abgabe schreiben (UC_eMed_04)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="Sub_UC_eMed_05.html"/>
+          </extension>
+          <nameUrl value="Sub_UC_eMed_05.html"/>
+          <title value="​Technische Use Cases für Durchgeführte Abgabe schreiben (UC_eMed_05)"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="patient_journey.html"/>
+          </extension>
+          <nameUrl value="patient_journey.html"/>
+          <title value="Patient Journey"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="contributors.html"/>
+          </extension>
+          <nameUrl value="contributors.html"/>
+          <title value="Autoren und Mitwirkende"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="downloads.html"/>
+          </extension>
+          <nameUrl value="downloads.html"/>
+          <title value="Download"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="publication_info.html"/>
+          </extension>
+          <nameUrl value="publication_info.html"/>
+          <title value="Publikationsinformationen"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="dependencies.html"/>
+          </extension>
+          <nameUrl value="dependencies.html"/>
+          <title value="Dependencies"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="copyright.html"/>
+          </extension>
+          <nameUrl value="copyright.html"/>
+          <title value="Copyright"/>
+          <generation value="markdown"/>
+        </page>
+        <page>
+          <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+            <valueUrl value="imprint.html"/>
+          </extension>
+          <nameUrl value="imprint.html"/>
+          <title value="Impressum"/>
+          <generation value="markdown"/>
+        </page>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/assets"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

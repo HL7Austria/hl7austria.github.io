@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <id value="At-Emed-Journey-01-02-Parameters-Out-Plan-Read"/>
+  <meta>
+    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read"/>
+  </meta>
+  <parameter>
+    <name value="medikationsplan"/>
+    <resource>
+      <Bundle>
+        <id value="At-Emed-Journey-01-02-Bundle-plan-read-response"/>
+        <meta>
+          <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+        </meta>
+        <type value="searchset"/>
+        <total value="1"/>
+        <link>
+          <relation value="self"/>
+          <url value="https://example.elga.com/base/List/$plan-read"/>
+        </link>
+        <entry>
+          <fullUrl value="https://example.elga.com/base/List/4cb4dceb-173f-461a-a267-683ec33e4be1"/>
+          <resource>
+            <List>
+              <id value="4cb4dceb-173f-461a-a267-683ec33e4be1"/>
+              <meta>
+                <versionId value="v25cd90b82-be84-41c1-ae4b-715d232fec20"/>
+                <lastUpdated value="2026-02-27T08:10:00.312+00:00"/>
+                <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"/>
+              </meta>
+              <text>
+                <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Narrative in Arbeit.</div>
+              </text>
+              <status value="current"/>
+              <mode value="working"/>
+              <code>
+                <coding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="736378000"/>
+                </coding>
+              </code>
+              <subject>
+                <reference value="Patient/At-Emed-Example-Patient-01"/>
+                <type value="Patient"/>
+                <identifier>
+                  <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+                  <value value="GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="/>
+                </identifier>
+              </subject>
+              <date value="2026-02-27T08:10:00+00:00"/>
+              <source>
+                <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
+                <identifier>
+                  <system value="urn:ietf:rfc:3986"/>
+                  <value value="urn:oid:1.2.40.0.34.99.4613.1"/>
+                </identifier>
+              </source>
+              <entry>
+                <flag>
+                  <coding>
+                    <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-listentryflag-cs"/>
+                    <code value="unchanged"/>
+                    <display value="Planeintrag beibehalten"/>
+                  </coding>
+                </flag>
+                <item>
+                  <reference value="MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52/_history/v1aeb5e5e8-785a-430b-afef-ee57335b213d"/>
+                </item>
+              </entry>
+              <entry>
+                <flag>
+                  <coding>
+                    <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-listentryflag-cs"/>
+                    <code value="unchanged"/>
+                    <display value="Planeintrag beibehalten"/>
+                  </coding>
+                </flag>
+                <item>
+                  <reference value="MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391/_history/v101275d13-fd59-4781-99ae-744fb90a1ba0"/>
+                </item>
+              </entry>
+            </List>
+          </resource>
+          <search>
+            <mode value="match"/>
+          </search>
+        </entry>
+        <entry>
+          <fullUrl value="https://example.elga.com/base/MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"/>
+          <resource>
+            <MedicationRequest>
+              <id value="6bacfe23-d469-4945-bf3c-90c7e647aa52"/>
+              <meta>
+                <versionId value="v1aeb5e5e8-785a-430b-afef-ee57335b213d"/>
+                <lastUpdated value="2026-02-27T08:10:00.314+00:00"/>
+                <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+              </meta>
+              <text>
+                <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Narrative in Arbeit.</div>
+              </text>
+              <contained>
+                <Medication>
+                  <id value="at-emed-journey-medication-ramipril"/>
+                  <meta>
+                    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"/>
+                  </meta>
+                  <code>
+                    <coding>
+                      <system value="https://termgit.elga.gv.at/CodeSystem/asp-liste"/>
+                      <code value="2450836"/>
+                      <display value="RAMIPRIL HEX TBL 5MG"/>
+                    </coding>
+                  </code>
+                  <form>
+                    <coding>
+                      <system value="https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform"/>
+                      <code value="100000073664"/>
+                      <display value="Tablette"/>
+                    </coding>
+                  </form>
+                  <amount>
+                    <numerator>
+                      <value value="30"/>
+                      <unit value="Stück"/>
+                      <system value="http://unitsofmeasure.org"/>
+                      <code value="{Stueck}"/>
+                    </numerator>
+                    <denominator>
+                      <value value="1"/>
+                    </denominator>
+                  </amount>
+                  <ingredient>
+                    <itemCodeableConcept>
+                      <coding>
+                        <system value="https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido"/>
+                        <code value="C09AA05"/>
+                        <display value="Ramipril"/>
+                      </coding>
+                      <coding>
+                        <system value="https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe"/>
+                        <code value="100000092240"/>
+                        <display value="RAMIPRIL"/>
+                      </coding>
+                    </itemCodeableConcept>
+                    <isActive value="true"/>
+                    <strength>
+                      <numerator>
+                        <value value="5"/>
+                        <unit value="mg"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="mg"/>
+                      </numerator>
+                      <denominator>
+                        <value value="1"/>
+                        <unit value="Stück"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="{Stueck}"/>
+                      </denominator>
+                    </strength>
+                  </ingredient>
+                </Medication>
+              </contained>
+              <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod">
+                <valuePeriod>
+                  <start value="2026-02-27"/>
+                </valuePeriod>
+              </extension>
+              <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+                <valueMarkdown value="1-0-0-0 | Täglich: 1-0-0-0"/>
+              </extension>
+              <status value="active"/>
+              <intent value="order"/>
+              <category>
+                <coding>
+                  <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs"/>
+                  <code value="Planeintrag"/>
+                  <display value="Planeintrag"/>
+                </coding>
+              </category>
+              <reportedBoolean value="false"/>
+              <medicationReference>
+                <reference value="#at-emed-journey-medication-ramipril"/>
+              </medicationReference>
+              <subject>
+                <reference value="Patient/At-Emed-Example-Patient-01"/>
+                <identifier>
+                  <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+                  <value value="GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="/>
+                </identifier>
+              </subject>
+              <authoredOn value="2026-02-27T08:10:00+00:00"/>
+              <requester>
+                <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
+                <identifier>
+                  <system value="urn:ietf:rfc:3986"/>
+                  <value value="urn:oid:1.2.40.0.34.99.4613.1"/>
+                </identifier>
+              </requester>
+              <courseOfTherapyType>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy"/>
+                  <code value="continuous"/>
+                </coding>
+              </courseOfTherapyType>
+              <dosageInstruction>
+                <extension url="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs"/>
+                      <code value="standard"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <sequence value="1"/>
+                <patientInstruction value="Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein."/>
+                <timing>
+                  <repeat>
+                    <frequency value="1"/>
+                    <period value="1"/>
+                    <periodUnit value="d"/>
+                    <when value="MORN"/>
+                  </repeat>
+                </timing>
+                <route>
+                  <coding>
+                    <system value="https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"/>
+                    <code value="100000073619"/>
+                    <display value="zum Einnehmen"/>
+                  </coding>
+                </route>
+                <doseAndRate>
+                  <doseQuantity>
+                    <value value="1"/>
+                    <unit value="Stück"/>
+                    <system value="http://unitsofmeasure.org"/>
+                    <code value="{Stueck}"/>
+                  </doseQuantity>
+                </doseAndRate>
+              </dosageInstruction>
+            </MedicationRequest>
+          </resource>
+          <search>
+            <mode value="include"/>
+          </search>
+        </entry>
+        <entry>
+          <fullUrl value="https://example.elga.com/base/MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"/>
+          <resource>
+            <MedicationRequest>
+              <id value="55e4be12-0d10-454c-a85f-cfb5f849e391"/>
+              <meta>
+                <versionId value="v101275d13-fd59-4781-99ae-744fb90a1ba0"/>
+                <lastUpdated value="2026-02-27T08:10:00.360+00:00"/>
+                <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"/>
+              </meta>
+              <text>
+                <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">Narrative in Arbeit.</div>
+              </text>
+              <contained>
+                <Medication>
+                  <id value="contained-medication-magistral-01"/>
+                  <meta>
+                    <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"/>
+                  </meta>
+                  <extension url="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur">
+                    <valueMarkdown value="TODO: Beispielrezeptur"/>
+                  </extension>
+                  <code>
+                    <text value="Dexpanthenol-5-%-Salbe"/>
+                  </code>
+                  <form>
+                    <coding>
+                      <system value="https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform"/>
+                      <code value="100000073713"/>
+                      <display value="Salbe"/>
+                    </coding>
+                  </form>
+                  <amount>
+                    <numerator>
+                      <value value="100"/>
+                      <unit value="g"/>
+                      <system value="http://unitsofmeasure.org"/>
+                      <code value="g"/>
+                    </numerator>
+                    <denominator>
+                      <value value="1"/>
+                    </denominator>
+                  </amount>
+                  <ingredient>
+                    <itemCodeableConcept>
+                      <coding>
+                        <system value="https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido"/>
+                        <code value="A11HA30"/>
+                        <display value="Dexpanthenol"/>
+                      </coding>
+                    </itemCodeableConcept>
+                    <isActive value="true"/>
+                    <strength>
+                      <numerator>
+                        <value value="5"/>
+                        <unit value="g"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="g"/>
+                      </numerator>
+                      <denominator>
+                        <value value="100"/>
+                        <unit value="g"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="g"/>
+                      </denominator>
+                    </strength>
+                  </ingredient>
+                  <ingredient>
+                    <itemCodeableConcept>
+                      <text value="Salbengrundlage"/>
+                    </itemCodeableConcept>
+                    <isActive value="false"/>
+                    <strength>
+                      <numerator>
+                        <value value="95"/>
+                        <unit value="g"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="g"/>
+                      </numerator>
+                      <denominator>
+                        <value value="100"/>
+                        <unit value="g"/>
+                        <system value="http://unitsofmeasure.org"/>
+                        <code value="g"/>
+                      </denominator>
+                    </strength>
+                  </ingredient>
+                </Medication>
+              </contained>
+              <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod">
+                <valuePeriod>
+                  <start value="2026-02-27"/>
+                  <end value="2026-03-20"/>
+                </valuePeriod>
+              </extension>
+              <extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction">
+                <valueMarkdown value="1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen"/>
+              </extension>
+              <status value="active"/>
+              <intent value="order"/>
+              <category>
+                <coding>
+                  <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs"/>
+                  <code value="Planeintrag"/>
+                  <display value="Planeintrag"/>
+                </coding>
+              </category>
+              <reportedBoolean value="false"/>
+              <medicationReference>
+                <reference value="#contained-medication-magistral-01"/>
+              </medicationReference>
+              <subject>
+                <reference value="Patient/At-Emed-Example-Patient-01"/>
+                <identifier>
+                  <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+                  <value value="GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="/>
+                </identifier>
+              </subject>
+              <authoredOn value="2026-02-27T08:10:00+00:00"/>
+              <requester>
+                <reference value="Practitioner/At-Emed-Example-Practitioner-01"/>
+                <identifier>
+                  <system value="urn:ietf:rfc:3986"/>
+                  <value value="urn:oid:1.2.40.0.34.99.4613.1"/>
+                </identifier>
+              </requester>
+              <courseOfTherapyType>
+                <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy"/>
+                  <code value="acute"/>
+                </coding>
+              </courseOfTherapyType>
+              <dosageInstruction>
+                <extension url="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category">
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs"/>
+                      <code value="standard"/>
+                    </coding>
+                  </valueCodeableConcept>
+                </extension>
+                <sequence value="1"/>
+                <patientInstruction value="Dünn auftragen."/>
+                <timing>
+                  <repeat>
+                    <boundsDuration>
+                      <value value="3"/>
+                      <unit value="wk"/>
+                      <system value="http://unitsofmeasure.org"/>
+                      <code value="wk"/>
+                    </boundsDuration>
+                    <frequency value="2"/>
+                    <period value="1"/>
+                    <periodUnit value="d"/>
+                    <when value="MORN"/>
+                    <when value="EVE"/>
+                  </repeat>
+                </timing>
+                <route>
+                  <coding>
+                    <system value="https://termgit.elga.gv.at/CodeSystem/medikationartanwendung"/>
+                    <code value="100000073566"/>
+                    <display value="Anwendung auf der Haut"/>
+                  </coding>
+                </route>
+              </dosageInstruction>
+            </MedicationRequest>
+          </resource>
+          <search>
+            <mode value="include"/>
+          </search>
+        </entry>
+        <entry>
+          <fullUrl value="https://example.elga.com/base/Patient/At-Emed-Example-Patient-01"/>
+          <resource>
+            <Patient>
+              <id value="At-Emed-Example-Patient-01"/>
+              <meta>
+                <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"/>
+              </meta>
+              <identifier>
+                <type>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                    <code value="SS"/>
+                    <display value="Social Security number"/>
+                  </coding>
+                </type>
+                <system value="urn:oid:1.2.40.0.10.1.4.3.1"/>
+                <value value="1234010100"/>
+              </identifier>
+              <identifier>
+                <type>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                    <code value="NI"/>
+                    <display value="National unique individual identifier"/>
+                  </coding>
+                </type>
+                <system value="urn:oid:1.2.40.0.10.2.1.1.149"/>
+                <value value="GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="/>
+              </identifier>
+              <identifier>
+                <type>
+                  <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                    <code value="PI"/>
+                    <display value="Patient internal identifier"/>
+                  </coding>
+                </type>
+                <system value="urn:oid:1.2.3.4.5"/>
+                <value value="0815"/>
+              </identifier>
+              <name>
+                <family value="Mustermann"/>
+                <given value="Anton"/>
+                <prefix value="DI"/>
+              </name>
+              <gender value="male"/>
+              <birthDate value="1900-01-01"/>
+            </Patient>
+          </resource>
+          <search>
+            <mode value="include"/>
+          </search>
+        </entry>
+        <entry>
+          <fullUrl value="https://example.elga.com/base/Practitioner/At-Emed-Example-Practitioner-01"/>
+          <resource>
+            <Practitioner>
+              <id value="At-Emed-Example-Practitioner-01"/>
+              <meta>
+                <profile value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"/>
+              </meta>
+              <identifier>
+                <system value="urn:ietf:rfc:3986"/>
+                <value value="urn:oid:1.2.40.0.34.99.4613.1"/>
+              </identifier>
+              <identifier>
+                <system value="urn:oid:1.2.40.0.10.1.4.3.2"/>
+                <value value="987654321"/>
+              </identifier>
+              <name>
+                <family value="Hausärztin"/>
+                <given value="Melanie"/>
+                <prefix value="Prof. Dr."/>
+              </name>
+            </Practitioner>
+          </resource>
+          <search>
+            <mode value="include"/>
+          </search>
+        </entry>
+      </Bundle>
+    </resource>
+  </parameter>
+</Parameters>

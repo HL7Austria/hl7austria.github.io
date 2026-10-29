@@ -1,0 +1,512 @@
+# Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response - ELGA e-Medikation (R4) DRAFT v0.1.0
+
+## Example Bundle: Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "At-Emed-Journey-01-02-Bundle-plan-read-response",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"]
+  },
+  "type" : "searchset",
+  "total" : 1,
+  "link" : [{
+    "relation" : "self",
+    "url" : "https://example.elga.com/base/List/$plan-read"
+  }],
+  "entry" : [{
+    "fullUrl" : "https://example.elga.com/base/List/4cb4dceb-173f-461a-a267-683ec33e4be1",
+    "resource" : {
+      "resourceType" : "List",
+      "id" : "4cb4dceb-173f-461a-a267-683ec33e4be1",
+      "meta" : {
+        "versionId" : "v25cd90b82-be84-41c1-ae4b-715d232fec20",
+        "lastUpdated" : "2026-02-27T08:10:00.312+00:00",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-list-medikationsplan"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a>Narrative in Arbeit.</div>"
+      },
+      "status" : "current",
+      "mode" : "working",
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "736378000"
+        }]
+      },
+      "subject" : {
+        "reference" : "Patient/At-Emed-Example-Patient-01",
+        "type" : "Patient",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "date" : "2026-02-27T08:10:00+00:00",
+      "source" : {
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+        }
+      },
+      "entry" : [{
+        "flag" : {
+          "coding" : [{
+            "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-listentryflag-cs",
+            "code" : "unchanged",
+            "display" : "Planeintrag beibehalten"
+          }]
+        },
+        "item" : {
+          "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52/_history/v1aeb5e5e8-785a-430b-afef-ee57335b213d"
+        }
+      },
+      {
+        "flag" : {
+          "coding" : [{
+            "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-listentryflag-cs",
+            "code" : "unchanged",
+            "display" : "Planeintrag beibehalten"
+          }]
+        },
+        "item" : {
+          "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391/_history/v101275d13-fd59-4781-99ae-744fb90a1ba0"
+        }
+      }]
+    },
+    "search" : {
+      "mode" : "match"
+    }
+  },
+  {
+    "fullUrl" : "https://example.elga.com/base/MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "id" : "6bacfe23-d469-4945-bf3c-90c7e647aa52",
+      "meta" : {
+        "versionId" : "v1aeb5e5e8-785a-430b-afef-ee57335b213d",
+        "lastUpdated" : "2026-02-27T08:10:00.314+00:00",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_6bacfe23-d469-4945-bf3c-90c7e647aa52\"> </a>Narrative in Arbeit.</div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "at-emed-journey-medication-ramipril",
+        "meta" : {
+          "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
+        },
+        "code" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+            "code" : "2450836",
+            "display" : "RAMIPRIL HEX TBL 5MG"
+          }]
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+            "code" : "100000073664",
+            "display" : "Tablette"
+          }]
+        },
+        "amount" : {
+          "numerator" : {
+            "value" : 30,
+            "unit" : "Stück",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "{Stueck}"
+          },
+          "denominator" : {
+            "value" : 1
+          }
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+              "code" : "C09AA05",
+              "display" : "Ramipril"
+            },
+            {
+              "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
+              "code" : "100000092240",
+              "display" : "RAMIPRIL"
+            }]
+          },
+          "isActive" : true,
+          "strength" : {
+            "numerator" : {
+              "value" : 5,
+              "unit" : "mg",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "mg"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Stück",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "{Stueck}"
+            }
+          }
+        }]
+      }],
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+        "valuePeriod" : {
+          "start" : "2026-02-27"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+        "valueMarkdown" : "1-0-0-0 | Täglich: 1-0-0-0"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "category" : [{
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
+          "code" : "Planeintrag",
+          "display" : "Planeintrag"
+        }]
+      }],
+      "reportedBoolean" : false,
+      "medicationReference" : {
+        "reference" : "#at-emed-journey-medication-ramipril"
+      },
+      "subject" : {
+        "reference" : "Patient/At-Emed-Example-Patient-01",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "authoredOn" : "2026-02-27T08:10:00+00:00",
+      "requester" : {
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+        }
+      },
+      "courseOfTherapyType" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+          "code" : "continuous"
+        }]
+      },
+      "dosageInstruction" : [{
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
+              "code" : "standard"
+            }]
+          }
+        }],
+        "sequence" : 1,
+        "patientInstruction" : "Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein.",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 1,
+            "period" : 1,
+            "periodUnit" : "d",
+            "when" : ["MORN"]
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+            "code" : "100000073619",
+            "display" : "zum Einnehmen"
+          }]
+        },
+        "doseAndRate" : [{
+          "doseQuantity" : {
+            "value" : 1,
+            "unit" : "Stück",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "{Stueck}"
+          }
+        }]
+      }]
+    },
+    "search" : {
+      "mode" : "include"
+    }
+  },
+  {
+    "fullUrl" : "https://example.elga.com/base/MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "id" : "55e4be12-0d10-454c-a85f-cfb5f849e391",
+      "meta" : {
+        "versionId" : "v101275d13-fd59-4781-99ae-744fb90a1ba0",
+        "lastUpdated" : "2026-02-27T08:10:00.360+00:00",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_55e4be12-0d10-454c-a85f-cfb5f849e391\"> </a>Narrative in Arbeit.</div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "contained-medication-magistral-01",
+        "meta" : {
+          "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
+        },
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur",
+          "valueMarkdown" : "TODO: Beispielrezeptur"
+        }],
+        "code" : {
+          "text" : "Dexpanthenol-5-%-Salbe"
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+            "code" : "100000073713",
+            "display" : "Salbe"
+          }]
+        },
+        "amount" : {
+          "numerator" : {
+            "value" : 100,
+            "unit" : "g",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "g"
+          },
+          "denominator" : {
+            "value" : 1
+          }
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+              "code" : "A11HA30",
+              "display" : "Dexpanthenol"
+            }]
+          },
+          "isActive" : true,
+          "strength" : {
+            "numerator" : {
+              "value" : 5,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        },
+        {
+          "itemCodeableConcept" : {
+            "text" : "Salbengrundlage"
+          },
+          "isActive" : false,
+          "strength" : {
+            "numerator" : {
+              "value" : 95,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        }]
+      }],
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+        "valuePeriod" : {
+          "start" : "2026-02-27",
+          "end" : "2026-03-20"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+        "valueMarkdown" : "1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "category" : [{
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
+          "code" : "Planeintrag",
+          "display" : "Planeintrag"
+        }]
+      }],
+      "reportedBoolean" : false,
+      "medicationReference" : {
+        "reference" : "#contained-medication-magistral-01"
+      },
+      "subject" : {
+        "reference" : "Patient/At-Emed-Example-Patient-01",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "authoredOn" : "2026-02-27T08:10:00+00:00",
+      "requester" : {
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+        }
+      },
+      "courseOfTherapyType" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
+          "code" : "acute"
+        }]
+      },
+      "dosageInstruction" : [{
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
+              "code" : "standard"
+            }]
+          }
+        }],
+        "sequence" : 1,
+        "patientInstruction" : "Dünn auftragen.",
+        "timing" : {
+          "repeat" : {
+            "boundsDuration" : {
+              "value" : 3,
+              "unit" : "wk",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "wk"
+            },
+            "frequency" : 2,
+            "period" : 1,
+            "periodUnit" : "d",
+            "when" : ["MORN", "EVE"]
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+            "code" : "100000073566",
+            "display" : "Anwendung auf der Haut"
+          }]
+        }
+      }]
+    },
+    "search" : {
+      "mode" : "include"
+    }
+  },
+  {
+    "fullUrl" : "https://example.elga.com/base/Patient/At-Emed-Example-Patient-01",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "At-Emed-Example-Patient-01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-patient"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_At-Emed-Example-Patient-01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient At-Emed-Example-Patient-01</b></p><a name=\"At-Emed-Example-Patient-01\"> </a><a name=\"hcAt-Emed-Example-Patient-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-patient.html\">AT ELGA e-Medikation Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Anton Mustermann  Male, DoB: 1900-01-01 ( Social Security number: 1234010100)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>National unique individual identifier/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</li><li>Patient internal identifier/0815</li></ul></td></tr></table></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "SS",
+            "display" : "Social Security number"
+          }]
+        },
+        "system" : "urn:oid:1.2.40.0.10.1.4.3.1",
+        "value" : "1234010100"
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "NI",
+            "display" : "National unique individual identifier"
+          }]
+        },
+        "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+        "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "PI",
+            "display" : "Patient internal identifier"
+          }]
+        },
+        "system" : "urn:oid:1.2.3.4.5",
+        "value" : "0815"
+      }],
+      "name" : [{
+        "family" : "Mustermann",
+        "given" : ["Anton"],
+        "prefix" : ["DI"]
+      }],
+      "gender" : "male",
+      "birthDate" : "1900-01-01"
+    },
+    "search" : {
+      "mode" : "include"
+    }
+  },
+  {
+    "fullUrl" : "https://example.elga.com/base/Practitioner/At-Emed-Example-Practitioner-01",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "id" : "At-Emed-Example-Practitioner-01",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_At-Emed-Example-Practitioner-01\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner At-Emed-Example-Practitioner-01</b></p><a name=\"At-Emed-Example-Practitioner-01\"> </a><a name=\"hcAt-Emed-Example-Practitioner-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-practitioner.html\">AT ELGA e-Medikation Practitioner</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Melanie Hausärztin (OID:1.2.40.0.34.99.4613.1)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Id (see the one above)\">Other Id:</td><td colspan=\"3\"><code>urn:oid:1.2.40.0.10.1.4.3.2</code>/987654321</td></tr></table></div>"
+      },
+      "identifier" : [{
+        "system" : "urn:ietf:rfc:3986",
+        "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+      },
+      {
+        "system" : "urn:oid:1.2.40.0.10.1.4.3.2",
+        "value" : "987654321"
+      }],
+      "name" : [{
+        "family" : "Hausärztin",
+        "given" : ["Melanie"],
+        "prefix" : ["Prof. Dr."]
+      }]
+    },
+    "search" : {
+      "mode" : "include"
+    }
+  }]
+}
+
+```

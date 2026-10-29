@@ -1,0 +1,320 @@
+# Beispiel Journey 01-03: Geplante-Abgaben-Transaction-Bundle - ELGA e-Medikation (R4) DRAFT v0.1.0
+
+## Example Bundle: Beispiel Journey 01-03: Geplante-Abgaben-Transaction-Bundle
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Bundle",
+  "id" : "At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"]
+  },
+  "type" : "transaction",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:e68fbdbe-a04e-408b-a98f-865af70b1741",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html\">AT ELGA e-Medikation MedicationRequest Geplante Abgabe</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-02-27 --&gt; (ongoing)</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-0-0 | Täglich: 1-0-0-0</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs GeplAbgabe}\">Geplante Abgabe</span>, <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationrezeptart KASSEN}\">Kassenrezept</span></p><p><b>medication</b>: <code>Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&amp;code:text=RAMIPRIL%20HEX%20TBL%205MG</code></p><p><b>subject</b>: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</p><p><b>authoredOn</b>: 2026-02-27 08:15:00+0000</p><p><b>requester</b>: Identifier: <a href=\"http://terminology.hl7.org/7.5.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:oid:1.2.40.0.34.99.4613.1</p><p><b>basedOn</b>: <a href=\"MedicationRequest-6bacfe23-d469-4945-bf3c-90c7e647aa52.html\">MedicationRequest: extension = 2026-02-27 --&gt; (ongoing),1-0-0-0 | Täglich: 1-0-0-0; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication RAMIPRIL HEX TBL 5MG; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Continuous long term therapy</a></p><p><b>groupIdentifier</b>: <code>http://tbd.com</code>/WYE82A2G8EEW</p><blockquote><p><b>dosageInstruction</b></p><p><b>AT ELGA e-Medikation Extension Dosierungskategorie</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs standard}\">Standard Administration</span></p><p><b>sequence</b>: 1</p><p><b>patientInstruction</b>: Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein.</p><p><b>timing</b>: Morning, Once per 1 day</p><p><b>route</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationartanwendung 100000073619}\">zum Einnehmen</span></p><h3>DoseAndRates</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Dose[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>1 Stück<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  code{Stueck} = '{Stueck}')</span></td></tr></table></blockquote><h3>DispenseRequests</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ValidityPeriod</b></td><td><b>NumberOfRepeatsAllowed</b></td><td><b>Quantity</b></td></tr><tr><td style=\"display: none\">*</td><td>2026-02-27 --&gt; 2026-03-27</td><td>0</td><td>1 Packung</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+        "valuePeriod" : {
+          "start" : "2026-02-27"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+        "valueMarkdown" : "1-0-0-0 | Täglich: 1-0-0-0"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "category" : [{
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
+          "code" : "GeplAbgabe",
+          "display" : "Geplante Abgabe"
+        }]
+      },
+      {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
+          "code" : "KASSEN",
+          "display" : "Kassenrezept"
+        }]
+      }],
+      "medicationReference" : {
+        "reference" : "Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&code:text=RAMIPRIL%20HEX%20TBL%205MG"
+      },
+      "subject" : {
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "authoredOn" : "2026-02-27T08:15:00+00:00",
+      "requester" : {
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+        }
+      },
+      "basedOn" : [{
+        "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"
+      }],
+      "groupIdentifier" : {
+        "system" : "http://tbd.com",
+        "value" : "WYE82A2G8EEW"
+      },
+      "dosageInstruction" : [{
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
+              "code" : "standard"
+            }]
+          }
+        }],
+        "sequence" : 1,
+        "patientInstruction" : "Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein.",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 1,
+            "period" : 1,
+            "periodUnit" : "d",
+            "when" : ["MORN"]
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+            "code" : "100000073619",
+            "display" : "zum Einnehmen"
+          }]
+        },
+        "doseAndRate" : [{
+          "doseQuantity" : {
+            "value" : 1,
+            "unit" : "Stück",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "{Stueck}"
+          }
+        }]
+      }],
+      "dispenseRequest" : {
+        "validityPeriod" : {
+          "start" : "2026-02-27",
+          "end" : "2026-03-27"
+        },
+        "numberOfRepeatsAllowed" : 0,
+        "quantity" : {
+          "value" : 1,
+          "unit" : "Packung"
+        }
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "MedicationRequest"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:bc10cdbb-2fa8-4176-ac50-1f2b82275010",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
+      },
+      "text" : {
+        "status" : "extensions",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_null\"> </a><p class=\"res-header-id\"><b>Generated Narrative: MedicationRequest </b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html\">AT ELGA e-Medikation MedicationRequest Geplante Abgabe</a></p></div><p><b>R5: Period over which the medication is to be taken (new)</b>: 2026-02-27 --&gt; 2026-03-20</p><p><b>R5: Full representation of the dosage instructions (new)</b>: </p><div><p>1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen</p>\n</div><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs GeplAbgabe}\">Geplante Abgabe</span>, <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationrezeptart KASSEN}\">Kassenrezept</span></p><p><b>medication</b>: <a href=\"#hcnull/contained-medication-magistral-01\">Medication Dexpanthenol-5-%-Salbe</a></p><p><b>subject</b>: Identifier: <code>urn:oid:1.2.40.0.10.2.1.1.149</code>/GH:oeLdSEb0l+8kSdJWjOYyYmnYki0=</p><p><b>authoredOn</b>: 2026-02-27 08:15:00+0000</p><p><b>requester</b>: Identifier: <a href=\"http://terminology.hl7.org/7.5.0/NamingSystem-uri.html\" title=\"As defined by RFC 3986 (http://www.ietf.org/rfc/rfc3986.txt)(with many schemes defined in many RFCs). For OIDs and UUIDs, use the URN form (urn:oid:(note: lowercase) and urn:uuid:). See http://www.ietf.org/rfc/rfc3001.txt and http://www.ietf.org/rfc/rfc4122.txt \r\n\r\nThis oid is used as an identifier II.root to indicate the the extension is an absolute URI (technically, an IRI). Typically, this is used for OIDs and GUIDs. Note that when this OID is used with OIDs and GUIDs, the II.extension should start with urn:oid or urn:uuid: \r\n\r\nNote that this OID is created to aid with interconversion between CDA and FHIR - FHIR uses urn:ietf:rfc:3986 as equivalent to this OID. URIs as identifiers appear more commonly in FHIR.\r\n\r\nThis OID may also be used in CD.codeSystem.\">Uniform Resource Identifier (URI)</a>/urn:oid:1.2.40.0.34.99.4613.1</p><p><b>basedOn</b>: <a href=\"MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.html\">MedicationRequest: extension = 2026-02-27 --&gt; 2026-03-20,1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen; status = active; intent = order; category = Planeintrag; reported[x] = false; medication[x] = -&gt;Medication Dexpanthenol-5-%-Salbe; authoredOn = 2026-02-27 08:10:00+0000; courseOfTherapyType = Short course (acute) therapy</a></p><p><b>groupIdentifier</b>: <code>http://tbd.com</code>/WYE82A2G8EEW</p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Extension</b></td><td><b>Sequence</b></td><td><b>PatientInstruction</b></td><td><b>Timing</b></td><td><b>Route</b></td></tr><tr><td style=\"display: none\">*</td><td/><td>1</td><td>Dünn auftragen.</td><td>Morning, Evening, 2 per 1 day</td><td><span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationartanwendung 100000073566}\">Anwendung auf der Haut</span></td></tr></table><h3>DispenseRequests</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ValidityPeriod</b></td><td><b>NumberOfRepeatsAllowed</b></td><td><b>Quantity</b></td></tr><tr><td style=\"display: none\">*</td><td>2026-02-27 --&gt; 2026-03-27</td><td>0</td><td>1 Packung</td></tr></table><hr/><blockquote><p class=\"res-header-id\"><b>Generated Narrative: Medication #contained-medication-magistral-01</b></p><a name=\"null/contained-medication-magistral-01\"> </a><a name=\"hcnull/contained-medication-magistral-01\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-at-elga-emed-medication-magistrale-zubereitung.html\">AT ELGA e-Medikation Medication Magistrale Medikation</a></p></div><p><b>AT ELGA e-Medikation Extension Rezeptur</b>: </p><div><p>TODO: Beispielrezeptur</p>\n</div><p><b>code</b>: <span title=\"Codes:\">Dexpanthenol-5-%-Salbe</span></p><p><b>form</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform 100000073713}\">Salbe</span></p><p><b>amount</b>: 100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/1</p><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:{https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido A11HA30}\">Dexpanthenol</span></p><p><b>isActive</b>: true</p><p><b>strength</b>: 5 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote><blockquote><p><b>ingredient</b></p><p><b>item</b>: <span title=\"Codes:\">Salbengrundlage</span></p><p><b>isActive</b>: false</p><p><b>strength</b>: 95 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span>/100 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM  codeg = 'g')</span></p></blockquote></blockquote></div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "contained-medication-magistral-01",
+        "meta" : {
+          "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
+        },
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur",
+          "valueMarkdown" : "TODO: Beispielrezeptur"
+        }],
+        "code" : {
+          "text" : "Dexpanthenol-5-%-Salbe"
+        },
+        "form" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+            "code" : "100000073713",
+            "display" : "Salbe"
+          }]
+        },
+        "amount" : {
+          "numerator" : {
+            "value" : 100,
+            "unit" : "g",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "g"
+          },
+          "denominator" : {
+            "value" : 1
+          }
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+              "code" : "A11HA30",
+              "display" : "Dexpanthenol"
+            }]
+          },
+          "isActive" : true,
+          "strength" : {
+            "numerator" : {
+              "value" : 5,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        },
+        {
+          "itemCodeableConcept" : {
+            "text" : "Salbengrundlage"
+          },
+          "isActive" : false,
+          "strength" : {
+            "numerator" : {
+              "value" : 95,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            },
+            "denominator" : {
+              "value" : 100,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            }
+          }
+        }]
+      }],
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+        "valuePeriod" : {
+          "start" : "2026-02-27",
+          "end" : "2026-03-20"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+        "valueMarkdown" : "1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "category" : [{
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
+          "code" : "GeplAbgabe",
+          "display" : "Geplante Abgabe"
+        }]
+      },
+      {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
+          "code" : "KASSEN",
+          "display" : "Kassenrezept"
+        }]
+      }],
+      "medicationReference" : {
+        "reference" : "#contained-medication-magistral-01"
+      },
+      "subject" : {
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "authoredOn" : "2026-02-27T08:15:00+00:00",
+      "requester" : {
+        "identifier" : {
+          "system" : "urn:ietf:rfc:3986",
+          "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+        }
+      },
+      "basedOn" : [{
+        "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
+      }],
+      "groupIdentifier" : {
+        "system" : "http://tbd.com",
+        "value" : "WYE82A2G8EEW"
+      },
+      "dosageInstruction" : [{
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
+              "code" : "standard"
+            }]
+          }
+        }],
+        "sequence" : 1,
+        "patientInstruction" : "Dünn auftragen.",
+        "timing" : {
+          "repeat" : {
+            "boundsDuration" : {
+              "value" : 3,
+              "unit" : "wk",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "wk"
+            },
+            "frequency" : 2,
+            "period" : 1,
+            "periodUnit" : "d",
+            "when" : ["MORN", "EVE"]
+          }
+        },
+        "route" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+            "code" : "100000073566",
+            "display" : "Anwendung auf der Haut"
+          }]
+        }
+      }],
+      "dispenseRequest" : {
+        "validityPeriod" : {
+          "start" : "2026-02-27",
+          "end" : "2026-03-27"
+        },
+        "numberOfRepeatsAllowed" : 0,
+        "quantity" : {
+          "value" : 1,
+          "unit" : "Packung"
+        }
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "MedicationRequest"
+    }
+  }]
+}
+
+```

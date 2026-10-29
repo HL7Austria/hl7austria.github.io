@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Umfang und Inhalt - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/liquid.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/template.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+                <div id="project-nav">
+          <img height="50" alt="Logo" src="assets/images/logo.jpg"/>
+        </div>
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+      <li>
+        <a href="dosages.html">Dosierungen</a>
+      </li>
+      <li>
+        <a href="medication.html">Medikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">UC 1 Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">UC 2 Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">UC 3 Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">UC 4 Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">UC 5 Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Umfang und Inhalt</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Umfang und Inhalt</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#umfang-des-implementation-guides" id="markdown-toc-umfang-des-implementation-guides">Umfang des Implementation Guides</a></li>
+  <li><a href="#aufbau-des-implementation-guides" id="markdown-toc-aufbau-des-implementation-guides">Aufbau des Implementation Guides</a></li>
+  <li><a href="#wie-die-profile-zu-lesen-sind" id="markdown-toc-wie-die-profile-zu-lesen-sind">Wie die Profile zu lesen sind</a></li>
+</ul>
+
+</div>
+
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+/* Tabellencontainer mit horizontalem und vertikalem Scrollen */
+.table-responsive {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.table-responsive > table {
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid #e8eef0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
+}
+
+/* Tabellenzellen */
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  color: #202c33;
+  background: #ffffff;
+  text-align: left;
+}
+
+/* Sticky Tabellenkopf */
+.table-responsive thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Erste Spalte horizontal fixieren */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+
+/* Linke obere Ecke über allen anderen Sticky-Zellen */
+.table-responsive thead th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Alternierende Zeilenfarben */
+.table-responsive tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td {
+  background: #e9edef;
+}
+
+/* Erste Spalte passend zur jeweiligen Zeilenfarbe */
+.table-responsive tbody tr:nth-child(odd) td:first-child {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td:first-child {
+  background: #e9edef;
+}
+
+/* Use-Case-Zellen wie Überschriften formatieren */
+.table-responsive table tbody td.use-case-heading {
+  background: #e8eef0 !important;
+  color: #294b56;
+  font-weight: bold;
+}
+
+/* Hinweisbox */
+.hinweisbox {
+  font-size: 12px;
+  border: 1px solid #246783;
+  background: #e0e7e9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.tabs .tab label {
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+<h3 id="umfang-des-implementation-guides">Umfang des Implementation Guides</h3>
+
+<p>Dieser Implementation Guide beschreibt die technische Umsetzung der ELGA e-Medikation (Version 4) auf Basis von HL7® FHIR® R4. Er umfasst:</p>
+
+<ul>
+  <li>den <strong><a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">Medikationsplan</a></strong> mit seinen <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">Planeinträgen</a> und deren <a href="design_choices.html#versionierung">Versionierung</a>,</li>
+  <li>die <strong><a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Geplanten Abgaben</a></strong> (mit Bezug zu einem Planeintrag),</li>
+  <li>die <strong><a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Durchgeführten Abgaben</a></strong>,</li>
+  <li>die Abbildung von <strong><a href="medication.html">Arzneimitteln</a></strong> (Arzneispezialitäten mit PZN, Wirkstoffangaben und magistrale Zubereitungen) und <strong><a href="dosages.html">Dosierungen</a></strong>,</li>
+  <li>die <strong><a href="interactions.html">Schnittstellen</a></strong> der zentralen e-Medikation-Fachanwendung, d.h. die lesenden und schreibenden Transaktionen inklusive der dafür definierten Custom-Operations,</li>
+  <li>die <strong><a href="workflowmanagement.html">Statusmodelle und Konsistenzregeln</a></strong> (Workflowmanagement) zwischen Medikationsplan, Planeinträgen, Geplanten und Durchgeführten Abgaben.</li>
+</ul>
+
+<h4 id="nicht-im-umfang">Nicht im Umfang</h4>
+<ul>
+  <li><strong>Patientenkontakt und Zugriffssteuerung:</strong> Wie der Kontext eines ELGA-Teilnehmers hergestellt und der Zugriff berechtigt wird, ist in der <a href="https://dev.elga.gv.at/apis/emed/latest/emed-fhir-anbindung/">Lösungsarchitektur</a> beschrieben. Die Requests werden in diesem IG daher ab dem <code class="language-plaintext highlighter-rouge">/[type]</code> dargestellt (siehe <a href="interactions.html">Transaktionen</a>).</li>
+  <li><strong>Migration und Parallelbetrieb:</strong> Zu Mapping, Migration und Parallelbetrieb mit der bestehenden CDA-basierten e-Medikation (Version 2, siehe <a href="background.html">Hintergrund</a>) wird nur ein Ausblick in den <a href="challenges.html">Herausforderungen</a> beschrieben.</li>
+  <li><strong>Integration in Softwaresysteme:</strong>
+Die konkrete Gestaltung von Benutzeroberflächen und die Einbettung in lokale Arbeitsabläufe sind nicht Gegenstand dieses Implementation Guides. Zur Veranschaulichung zeigt ein <a href="https://www.figma.com/proto/BtrsW5Jb5s73A26ly5UcS9/ELGA-e-Medikation?node-id=199-14052&amp;viewport=405%2C479%2C0.14&amp;t=MPQWY1MpmDc1EUyi-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=199%3A14052&amp;show-proto-sidebar=1&amp;page-id=199%3A11859">Clickdummy</a> exemplarisch, wie ausgewählte Anwendungsfälle aus ärztlicher Sicht in einem Arztinformationssystem umgesetzt werden könnten. Er dient als Diskussionsgrundlage und stellt keine verbindliche Vorgabe für die Gestaltung von Softwaresystemen dar. Der <a href="https://www.figma.com/proto/BtrsW5Jb5s73A26ly5UcS9/ELGA-e-Medikation?node-id=199-14052&amp;viewport=405%2C479%2C0.14&amp;t=MPQWY1MpmDc1EUyi-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=199%3A14052&amp;show-proto-sidebar=1&amp;page-id=199%3A11859">Clickdummy</a> wird unabhängig vom Implementation Guide laufend weiterentwickelt und erweitert.</li>
+</ul>
+
+<h3 id="aufbau-des-implementation-guides">Aufbau des Implementation Guides</h3>
+
+<p>Der IG ist in folgende Bereiche gegliedert (siehe auch Menüleiste bzw. <a href="toc.html">Inhaltsverzeichnis</a>):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Bereich</strong></th>
+      <th><strong>Inhalt</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Einleitung</strong></td>
+      <td><a href="scope_and_content.html">Umfang und Inhalt</a> (diese Seite), <a href="background.html">Hintergrund</a> zur Ablöse der CDA-basierten e-Medikation, <a href="challenges.html">Herausforderungen</a> bei Mapping und Parallelbetrieb</td>
+    </tr>
+    <tr>
+      <td><strong>Funktionales</strong></td>
+      <td><a href="design_choices.html">Designentscheidungen</a> (Ressourcenmodell, Must-Support-Ansatz, Versionierung, ID-Management, Locking u.a.), <a href="workflowmanagement.html">Workflowmanagement</a> (Statusmodelle und Konsistenzregeln), <a href="interactions.html">Transaktionen</a> (Übersicht aller Endpunkte und Operations), <a href="dosages.html">Dosierungen</a>, <a href="medication.html">Medikation</a></td>
+    </tr>
+    <tr>
+      <td><strong>Anwendungsfälle</strong></td>
+      <td><a href="overview_sub_use_case.html">Überblick</a> sowie die technischen Use Cases <a href="Sub_UC_eMed_01.html">UC 1</a> bis <a href="Sub_UC_eMed_05.html">UC 5</a> mit Sequenzdiagrammen und relevanten Elementen; die <a href="patient_journey.html">Patient Journey</a> zeigt anhand eines durchgängigen Beispiels, wie sich Medikationsplan und Abgaben über die Zeit verändern</td>
+    </tr>
+    <tr>
+      <td><strong>Artifacts</strong></td>
+      <td>Alle technischen Artefakte: Profile, Extensions, OperationDefinitions, SearchParameter, ValueSets, CodeSystems und Beispiele (siehe <a href="artifacts.html">Artifacts</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>About</strong></td>
+      <td><a href="contributors.html">Autoren</a>, <a href="downloads.html">Downloads</a>, <a href="publication_info.html">Publikationsinformationen</a>, <a href="dependencies.html">Dependencies</a>, <a href="copyright.html">Copyright</a> und <a href="imprint.html">Impressum</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="artefakte-im-überblick">Artefakte im Überblick</h4>
+
+<p>Die Profile sind auf der Seite <a href="artifacts.html">Artifacts</a> nach fachlichen Gruppen geordnet:</p>
+
+<ul>
+  <li><strong>Medikationsplan:</strong> Medikationsplan (<em>List</em>), Planeintrag (<em>MedicationRequest</em>), Medikationsplan-Bundle für lesende Zugriffe sowie Transaction Bundle für schreibende Zugriffe</li>
+  <li><strong>Geplante Abgabe:</strong> Geplante Abgabe (<em>MedicationRequest</em>) und zugehöriges Transaction Bundle</li>
+  <li><strong>Durchgeführte Abgabe:</strong> Durchgeführte Abgabe (<em>MedicationDispense</em>) und zugehöriges Transaction Bundle</li>
+  <li><strong>Medikation:</strong> Arzneispezialität mit PZN und magistrale Zubereitung (<em>Medication</em>)</li>
+  <li><strong>Dosierungen:</strong> Dosierung, Dosierschemata und Timing (<em>Dosage</em>, <em>Timing</em>)</li>
+  <li><strong>Stammdaten:</strong> Patient, Practitioner, Organization (abgeleitet von den Profilen des HL7 Austria FHIR Core IG)</li>
+  <li><strong>Suchparameter</strong></li>
+  <li><strong>OperationDefinitions</strong> der Custom-Operations</li>
+  <li><strong>Extensions:</strong> Erweiterungen der Basisprofile</li>
+  <li><strong>Terminologien:</strong> ValueSets und CodeSystems</li>
+  <li><strong>Example Instances:</strong> Beispielressourcen</li>
+</ul>
+
+<p>Für Elemente, die in FHIR R4 noch nicht verfügbar sind, werden Cross-Version-Extensions aus FHIR R5 verwendet (z.B. <code class="language-plaintext highlighter-rouge">effectiveDosePeriod</code> im <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">Planeintrag</a>). Die verwendeten Pakete sind unter <a href="dependencies.html">Dependencies</a> gelistet.</p>
+
+<h3 id="wie-die-profile-zu-lesen-sind">Wie die Profile zu lesen sind</h3>
+
+<p>Jede Profilseite (StructureDefinition) zeigt die Elemente des Profils in mehreren Ansichten, die über Tabs gewechselt werden können. Für die Arbeit mit diesem Leitfaden sind vor allem drei davon relevant:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ansicht</th>
+      <th>Was ist zu sehen?</th>
+      <th>Wofür ist sie gedacht?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Key Elements</strong></td>
+      <td>Alle mit <strong>Must Support (MS)</strong> gekennzeichneten Elemente – also jene Elemente, die von der e-Medikation-Fachanwendung fachlich verarbeitet, gespeichert und für die Anzeige bereitgestellt werden. Inklusive Kardinalitäten, fixe Werte, Terminologie-Bindings, Slices und Extensions dieser Elemente.</td>
+      <td><strong>Einstiegspunkt für die Implementierung.</strong> Diese Ansicht zeigt kompakt, welche Elemente ein System befüllen bzw. verarbeiten können muss.</td>
+    </tr>
+    <tr>
+      <td><strong>Differential</strong></td>
+      <td>Nur jene Elemente, die gegenüber dem Basisprofil verändert wurden: Einschränkungen von Kardinalitäten, MS-Kennzeichnungen, fixe Werte, Terminologie-Bindings, Slices, Extensions und <strong>entfernte Elemente (Kardinalität 0..0)</strong>.</td>
+      <td>Nachvollziehen, <strong>was dieses Profil festlegt</strong>, und insbesondere erkennen, <strong>welche Elemente bewusst ausgeschlossen</strong> wurden.</td>
+    </tr>
+    <tr>
+      <td><strong>Snapshot</strong></td>
+      <td>Die vollständige Struktur der Ressource mit <strong>allen</strong> Elementen – auch jenen, die nicht MS sind und im Rahmen der e-Medikation nicht explizit verwendet werden.</td>
+      <td>Vollständige Sicht, v.a. <strong>für den Review</strong> relevant: Hier wird sichtbar, welche Elemente der Ressource zwar zulässig sind, aber nicht unterstützt werden.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="must-support-nicht-unterstützte-und-entfernte-elemente">Must Support, nicht unterstützte und entfernte Elemente</h4>
+
+<p>Aus den Ansichten ergeben sich drei Arten von Elementen, die unterschiedlich behandelt werden (Details unter <a href="design_choices.html#kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</a>):</p>
+
+<ul>
+  <li><strong>Elemente mit MS-Kennzeichnung</strong> (sichtbar im Tab <em>Key Elements</em>) werden von der Fachanwendung fachlich verarbeitet und gespeichert. Ob ein Element tatsächlich befüllt werden muss, ergibt sich aus seiner Mindestkardinalität und gegebenenfalls aus Invarianten. Bei komplexen Elementen gilt die <a href="design_choices.html#must-support-profilierung">MS-Kennzeichnung</a> nur für jene Unterelemente, die selbst als MS gekennzeichnet sind.</li>
+  <li><strong>Elemente ohne MS-Kennzeichnung</strong> (nur im Tab <em>Snapshot</em> sichtbar) sind zulässig, werden aber nicht verarbeitet. Die Fachanwendung ignoriert sie und weist in der Response per <code class="language-plaintext highlighter-rouge">OperationOutcome</code> (<code class="language-plaintext highlighter-rouge">severity = information</code>) darauf hin (siehe <a href="design_choices.html#serverhalten-bei-elementen-ohne-ms-markierung">Serverhalten bei Elementen ohne MS Markierung</a>).</li>
+  <li><strong>Elemente mit Kardinalität 0..0</strong> (im Tab <em>Differential</em> sichtbar) wurden aufgrund einer fachlichen Entscheidung ausgeschlossen und DÜRFEN NICHT übermittelt werden; ein Request, der sie enthält, wird abgelehnt (siehe <a href="design_choices.html#kardinalitäten">Kardinalitäten</a>). Die Begründung für den Ausschluss ist jeweils in der Kurzbeschreibung (<em>short</em>) des Elements als „Fachliche Begründung: …“ dokumentiert.</li>
+</ul>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+
+    <p>Um zu prüfen, ob für ein bestimmtes Element eine fachliche Entscheidung getroffen wurde, empfiehlt sich der Vergleich von <em>Snapshot</em> und <em>Differential</em>: Ist ein Element im <em>Snapshot</em> vorhanden, aber weder als MS gekennzeichnet noch im <em>Differential</em> auf 0..0 gesetzt, wurde zu diesem Element bisher keine Festlegung getroffen. Feedback, ob solche Elemente doch unterstützt oder ausgeschlossen werden sollen, ist ausdrücklich erwünscht.</p>
+
+  </div>
+</div>
+
+<h4 id="weitere-inhalte-der-profilseiten">Weitere Inhalte der Profilseiten</h4>
+
+<p>Neben den Tabellen enthalten die Profilseiten – sofern vorhanden – eine fachliche Einleitung, ergänzende Hinweise zur Befüllung (z.B. zu <a href="workflowmanagement.html">Statuswerten</a> oder zur Narrative), Constraints (Invarianten), Terminologie-Bindings, Suchparameter, Verweise auf Beispiele sowie Hinweise zur Generierung des Narrative (siehe <a href="design_choices.html#befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</a>). Die Beispiele aus der <a href="patient_journey.html">Patient Journey</a> zeigen die Profile im Zusammenspiel.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
+          Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-10-29 15:54:00 +0000">
+    2026-10-29
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

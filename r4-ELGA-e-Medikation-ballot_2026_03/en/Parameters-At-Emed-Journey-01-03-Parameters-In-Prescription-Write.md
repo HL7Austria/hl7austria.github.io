@@ -1,0 +1,319 @@
+# Beispiel Journey 01-03: $prescription-write Request - ELGA e-Medikation (R4) DRAFT v0.1.0
+
+## Example Parameters: Beispiel Journey 01-03: $prescription-write Request
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Parameters",
+  "id" : "At-Emed-Journey-01-03-Parameters-In-Prescription-Write",
+  "parameter" : [{
+    "name" : "geplanteAbgaben",
+    "resource" : {
+      "resourceType" : "Bundle",
+      "id" : "At-Emed-Journey-01-03-Bundle-Geplante-Abgaben-Tx",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"]
+      },
+      "type" : "transaction",
+      "entry" : [{
+        "fullUrl" : "urn:uuid:e68fbdbe-a04e-408b-a98f-865af70b1741",
+        "resource" : {
+          "resourceType" : "MedicationRequest",
+          "meta" : {
+            "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
+          },
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+            "valuePeriod" : {
+              "start" : "2026-02-27"
+            }
+          },
+          {
+            "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+            "valueMarkdown" : "1-0-0-0 | Täglich: 1-0-0-0"
+          }],
+          "status" : "active",
+          "intent" : "order",
+          "category" : [{
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
+              "code" : "GeplAbgabe",
+              "display" : "Geplante Abgabe"
+            }]
+          },
+          {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
+              "code" : "KASSEN",
+              "display" : "Kassenrezept"
+            }]
+          }],
+          "medicationReference" : {
+            "reference" : "Medication?code=https://termgit.elga.gv.at/CodeSystem/asp-liste|2450836&code:text=RAMIPRIL%20HEX%20TBL%205MG"
+          },
+          "subject" : {
+            "identifier" : {
+              "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+              "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+            }
+          },
+          "authoredOn" : "2026-02-27T08:15:00+00:00",
+          "requester" : {
+            "identifier" : {
+              "system" : "urn:ietf:rfc:3986",
+              "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+            }
+          },
+          "basedOn" : [{
+            "reference" : "MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52"
+          }],
+          "groupIdentifier" : {
+            "system" : "http://tbd.com",
+            "value" : "WYE82A2G8EEW"
+          },
+          "dosageInstruction" : [{
+            "extension" : [{
+              "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
+                  "code" : "standard"
+                }]
+              }
+            }],
+            "sequence" : 1,
+            "patientInstruction" : "Nehmen Sie die Tablette vor dem Essen mit ausreichend Flüssigkeit ein.",
+            "timing" : {
+              "repeat" : {
+                "frequency" : 1,
+                "period" : 1,
+                "periodUnit" : "d",
+                "when" : ["MORN"]
+              }
+            },
+            "route" : {
+              "coding" : [{
+                "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+                "code" : "100000073619",
+                "display" : "zum Einnehmen"
+              }]
+            },
+            "doseAndRate" : [{
+              "doseQuantity" : {
+                "value" : 1,
+                "unit" : "Stück",
+                "system" : "http://unitsofmeasure.org",
+                "code" : "{Stueck}"
+              }
+            }]
+          }],
+          "dispenseRequest" : {
+            "validityPeriod" : {
+              "start" : "2026-02-27",
+              "end" : "2026-03-27"
+            },
+            "numberOfRepeatsAllowed" : 0,
+            "quantity" : {
+              "value" : 1,
+              "unit" : "Packung"
+            }
+          }
+        },
+        "request" : {
+          "method" : "POST",
+          "url" : "MedicationRequest"
+        }
+      },
+      {
+        "fullUrl" : "urn:uuid:bc10cdbb-2fa8-4176-ac50-1f2b82275010",
+        "resource" : {
+          "resourceType" : "MedicationRequest",
+          "meta" : {
+            "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
+          },
+          "contained" : [{
+            "resourceType" : "Medication",
+            "id" : "contained-medication-magistral-01",
+            "meta" : {
+              "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-magistrale-zubereitung"]
+            },
+            "extension" : [{
+              "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-rezeptur",
+              "valueMarkdown" : "TODO: Beispielrezeptur"
+            }],
+            "code" : {
+              "text" : "Dexpanthenol-5-%-Salbe"
+            },
+            "form" : {
+              "coding" : [{
+                "system" : "https://termgit.elga.gv.at/CodeSystem/medikationdarreichungsform",
+                "code" : "100000073713",
+                "display" : "Salbe"
+              }]
+            },
+            "amount" : {
+              "numerator" : {
+                "value" : 100,
+                "unit" : "g",
+                "system" : "http://unitsofmeasure.org",
+                "code" : "g"
+              },
+              "denominator" : {
+                "value" : 1
+              }
+            },
+            "ingredient" : [{
+              "itemCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido",
+                  "code" : "A11HA30",
+                  "display" : "Dexpanthenol"
+                }]
+              },
+              "isActive" : true,
+              "strength" : {
+                "numerator" : {
+                  "value" : 5,
+                  "unit" : "g",
+                  "system" : "http://unitsofmeasure.org",
+                  "code" : "g"
+                },
+                "denominator" : {
+                  "value" : 100,
+                  "unit" : "g",
+                  "system" : "http://unitsofmeasure.org",
+                  "code" : "g"
+                }
+              }
+            },
+            {
+              "itemCodeableConcept" : {
+                "text" : "Salbengrundlage"
+              },
+              "isActive" : false,
+              "strength" : {
+                "numerator" : {
+                  "value" : 95,
+                  "unit" : "g",
+                  "system" : "http://unitsofmeasure.org",
+                  "code" : "g"
+                },
+                "denominator" : {
+                  "value" : 100,
+                  "unit" : "g",
+                  "system" : "http://unitsofmeasure.org",
+                  "code" : "g"
+                }
+              }
+            }]
+          }],
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+            "valuePeriod" : {
+              "start" : "2026-02-27",
+              "end" : "2026-03-20"
+            }
+          },
+          {
+            "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+            "valueMarkdown" : "1-0-1-0 | Täglich 1-0-1-0 für 3 Wochen"
+          }],
+          "status" : "active",
+          "intent" : "order",
+          "category" : [{
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
+              "code" : "GeplAbgabe",
+              "display" : "Geplante Abgabe"
+            }]
+          },
+          {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
+              "code" : "KASSEN",
+              "display" : "Kassenrezept"
+            }]
+          }],
+          "medicationReference" : {
+            "reference" : "#contained-medication-magistral-01"
+          },
+          "subject" : {
+            "identifier" : {
+              "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+              "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+            }
+          },
+          "authoredOn" : "2026-02-27T08:15:00+00:00",
+          "requester" : {
+            "identifier" : {
+              "system" : "urn:ietf:rfc:3986",
+              "value" : "urn:oid:1.2.40.0.34.99.4613.1"
+            }
+          },
+          "basedOn" : [{
+            "reference" : "MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391"
+          }],
+          "groupIdentifier" : {
+            "system" : "http://tbd.com",
+            "value" : "WYE82A2G8EEW"
+          },
+          "dosageInstruction" : [{
+            "extension" : [{
+              "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
+                  "code" : "standard"
+                }]
+              }
+            }],
+            "sequence" : 1,
+            "patientInstruction" : "Dünn auftragen.",
+            "timing" : {
+              "repeat" : {
+                "boundsDuration" : {
+                  "value" : 3,
+                  "unit" : "wk",
+                  "system" : "http://unitsofmeasure.org",
+                  "code" : "wk"
+                },
+                "frequency" : 2,
+                "period" : 1,
+                "periodUnit" : "d",
+                "when" : ["MORN", "EVE"]
+              }
+            },
+            "route" : {
+              "coding" : [{
+                "system" : "https://termgit.elga.gv.at/CodeSystem/medikationartanwendung",
+                "code" : "100000073566",
+                "display" : "Anwendung auf der Haut"
+              }]
+            }
+          }],
+          "dispenseRequest" : {
+            "validityPeriod" : {
+              "start" : "2026-02-27",
+              "end" : "2026-03-27"
+            },
+            "numberOfRepeatsAllowed" : 0,
+            "quantity" : {
+              "value" : 1,
+              "unit" : "Packung"
+            }
+          }
+        },
+        "request" : {
+          "method" : "POST",
+          "url" : "MedicationRequest"
+        }
+      }]
+    }
+  }]
+}
+
+```

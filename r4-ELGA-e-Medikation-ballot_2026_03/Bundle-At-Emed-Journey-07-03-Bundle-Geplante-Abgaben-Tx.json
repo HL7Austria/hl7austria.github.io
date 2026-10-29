@@ -1,0 +1,137 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "At-Emed-Journey-07-03-Bundle-Geplante-Abgaben-Tx",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-geplanteabgaben-tx"]
+  },
+  "type" : "transaction",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:7a1fd5cc-e600-4a30-9f7d-15d653dc88ff",
+    "resource" : {
+      "resourceType" : "MedicationRequest",
+      "id" : "At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03",
+      "meta" : {
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_At-Emed-Journey-07-03-Mr-Geplante-Abgabe-03\"> </a>TODO: Some Narrative</div>"
+      },
+      "contained" : [{
+        "resourceType" : "Medication",
+        "id" : "at-emed-journey-medication-metagelan",
+        "meta" : {
+          "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"]
+        },
+        "code" : {
+          "coding" : [{
+            "system" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+            "code" : "4467812",
+            "display" : "METAGELAN TR 500MG/ML"
+          }]
+        },
+        "ingredient" : [{
+          "itemCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe",
+              "code" : "8023400"
+            }]
+          }
+        }]
+      }],
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.effectiveDosePeriod",
+        "valuePeriod" : {
+          "start" : "2026-03-19"
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
+        "valueMarkdown" : "1-1-1-1 | 4 x täglich 40 Tropfen"
+      }],
+      "status" : "active",
+      "intent" : "order",
+      "category" : [{
+        "coding" : [{
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
+          "code" : "GeplAbgabe",
+          "display" : "Geplante Abgabe"
+        }]
+      },
+      {
+        "coding" : [{
+          "system" : "https://termgit.elga.gv.at/CodeSystem/medikationrezeptart",
+          "code" : "KASSEN",
+          "display" : "Kassenrezept"
+        }]
+      }],
+      "medicationReference" : {
+        "reference" : "#at-emed-journey-medication-metagelan"
+      },
+      "subject" : {
+        "type" : "Patient",
+        "identifier" : {
+          "system" : "urn:oid:1.2.40.0.10.2.1.1.149",
+          "value" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+        }
+      },
+      "authoredOn" : "2026-03-22T16:10:00+00:00",
+      "requester" : {
+        "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
+        "display" : "Dr. Hausärztin"
+      },
+      "basedOn" : [{
+        "reference" : "MedicationRequest/7128c60c-126d-42b2-b575-dc26a2324b8b"
+      }],
+      "groupIdentifier" : {
+        "value" : "WYE82A2G8EEW"
+      },
+      "dosageInstruction" : [{
+        "extension" : [{
+          "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
+          "valueCodeableConcept" : {
+            "coding" : [{
+              "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
+              "code" : "standard"
+            }]
+          }
+        }],
+        "sequence" : 1,
+        "patientInstruction" : "Nehmen Sie die Tropfen nach dem Essen ein.",
+        "timing" : {
+          "repeat" : {
+            "frequency" : 4,
+            "period" : 1,
+            "periodUnit" : "d",
+            "when" : ["MORN",
+            "NOON",
+            "EVE",
+            "NIGHT"]
+          }
+        },
+        "doseAndRate" : [{
+          "doseQuantity" : {
+            "value" : 40,
+            "unit" : "Tropfen",
+            "system" : "http://unitsofmeasure.org",
+            "code" : "{Tropfen}"
+          }
+        }]
+      }],
+      "dispenseRequest" : {
+        "validityPeriod" : {
+          "end" : "2026-04-20"
+        },
+        "numberOfRepeatsAllowed" : 0,
+        "quantity" : {
+          "value" : 2,
+          "unit" : "Packung"
+        }
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "MedicationRequest"
+    }
+  }]
+}

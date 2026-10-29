@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Dosierungen - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/liquid.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/template.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+                <div id="project-nav">
+          <img height="50" alt="Logo" src="assets/images/logo.jpg"/>
+        </div>
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+      <li>
+        <a href="dosages.html">Dosierungen</a>
+      </li>
+      <li>
+        <a href="medication.html">Medikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">UC 1 Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">UC 2 Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">UC 3 Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">UC 4 Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">UC 5 Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Dosierungen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Dosierungen</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#hinweis-zum-reifegrad" id="markdown-toc-hinweis-zum-reifegrad">Hinweis zum Reifegrad</a></li>
+  <li><a href="#genereller-ansatz" id="markdown-toc-genereller-ansatz">Genereller Ansatz</a></li>
+  <li><a href="#schemaübergreifende-regeln" id="markdown-toc-schemaübergreifende-regeln">Schemaübergreifende Regeln</a></li>
+  <li><a href="#verwendung-mehrerer-sequences" id="markdown-toc-verwendung-mehrerer-sequences">Verwendung mehrerer Sequences</a></li>
+  <li><a href="#datumsangaben" id="markdown-toc-datumsangaben">Datumsangaben</a></li>
+  <li><a href="#textdarstellungen-und-ergänzende-hinweise" id="markdown-toc-textdarstellungen-und-ergänzende-hinweise">Textdarstellungen und ergänzende Hinweise</a></li>
+</ul>
+
+</div>
+
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+/* Tabellencontainer mit horizontalem und vertikalem Scrollen */
+.table-responsive {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.table-responsive > table {
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid #e8eef0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
+}
+
+/* Tabellenzellen */
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  color: #202c33;
+  background: #ffffff;
+  text-align: left;
+}
+
+/* Sticky Tabellenkopf */
+.table-responsive thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Erste Spalte horizontal fixieren */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+
+/* Linke obere Ecke über allen anderen Sticky-Zellen */
+.table-responsive thead th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Alternierende Zeilenfarben */
+.table-responsive tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td {
+  background: #e9edef;
+}
+
+/* Erste Spalte passend zur jeweiligen Zeilenfarbe */
+.table-responsive tbody tr:nth-child(odd) td:first-child {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td:first-child {
+  background: #e9edef;
+}
+
+/* Use-Case-Zellen wie Überschriften formatieren */
+.table-responsive table tbody td.use-case-heading {
+  background: #e8eef0 !important;
+  color: #294b56;
+  font-weight: bold;
+}
+
+/* Hinweisbox */
+.hinweisbox {
+  font-size: 12px;
+  border: 1px solid #246783;
+  background: #e0e7e9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.tabs .tab label {
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+<h3 id="hinweis-zum-reifegrad">Hinweis zum Reifegrad</h3>
+
+<div class="dragon">
+  <p class="note-to-balloters">
+Die Dosierungsmodellierung wird derzeit noch fachlich und technisch finalisiert. Die in diesem Abschnitt beschriebenen Regeln, Dosierschemata und Profile stellen den aktuellen Arbeitsstand dar. Insbesondere sind bisher das Standard-Tageszeitenschema und die Freitextdosierung detaillierter ausgearbeitet. Sie dienen als Referenz für den generellen Modellierungsansatz; weitere Dosierschemata und Detailregeln folgen in einer kommenden Version des Implementation Guides. Feedback aus der Community ist ausdrücklich erwünscht.
+</p>
+</div>
+
+<h3 id="genereller-ansatz">Genereller Ansatz</h3>
+
+<p>Jede <code class="language-plaintext highlighter-rouge">Dosage</code> wird genau einer Dosierungskategorie zugeordnet. Die Kategorie wird über die Extension <code class="language-plaintext highlighter-rouge">Dosage.extension:DosageCategory</code> angegeben. Sie legt fest, nach welchem fachlichen Schema die Dosierung interpretiert wird und welches spezialisierte Dosage-Profil anzuwenden ist.</p>
+
+<p>Die Kategorisierung ermöglicht, unterschiedliche Dosierschemata klar voneinander zu trennen. Dadurch kann jedes Schema gezielt eingeschränkt und validiert werden, ohne für alle Dosierungen die selben, oft zu allgemeinen Regeln verwenden zu müssen.</p>
+
+<p>Vorteile dieses Ansatzes sind:</p>
+
+<ul>
+  <li>Für jede Dosierungskategorie können konkrete Struktur- und Plausibilitätsregeln definiert werden.</li>
+  <li>Es ist eindeutig festgelegt, welche Elemente innerhalb eines Schemas verwendet werden dürfen, müssen oder nicht verwendet werden dürfen.</li>
+  <li>Eingabemasken der GDAs können gezielt auf die unterstützten Anwendungsfälle abgestimmt werden.</li>
+  <li>Es kann festgelegt werden, welche Dosierungsanweisungen sequenziell/parallel kombiniert verwendet werden dürfen.</li>
+  <li>Für jede Dosierungskategorie kann ein eigener Algorithmus zur Erzeugung einer menschenlesbaren Textdarstellung definiert werden.</li>
+  <li>Empfänger können die strukturierte Dosierung anhand der Kategorie eindeutig interpretieren und müssen nicht aus einer Kombination optionaler Elemente auf das beabsichtigte Schema schließen.</li>
+  <li>Schemaübergreifende Regeln, etwa für mehrere <code class="language-plaintext highlighter-rouge">dosageInstruction</code>-Einträge, können unabhängig von einzelnen Kategorien definiert werden.</li>
+</ul>
+
+<h4 id="dosierschema-kategorien">Dosierschema Kategorien</h4>
+
+<p>Folgende Dosierungskategorien sind vorgesehen:</p>
+
+<ul>
+  <li><strong>Standard-Tageszeitenschema:</strong> Regelmäßig wiederkehrende Einnahmen zu standardisierten Tageszeiten, beispielsweise morgens, mittags, abends oder nachts (1-1-1-1). Dieses Schema wird durch das Profil <a href="StructureDefinition-at-elga-emed-dosage-standard-administration.html">AT ELGA e-Medikation Dosage Standard Administration</a> beschrieben.</li>
+  <li><strong>Freitextdosierung:</strong> Dosierungsanweisungen, die nicht ausreichend oder nicht sinnvoll strukturiert abgebildet werden können. Dieses Schema wird durch das Profil <a href="StructureDefinition-at-elga-emed-dosage-freetext-administration.html">AT ELGA e-Medikation Dosage Freitext Administration</a> beschrieben.</li>
+  <li><strong>Uhrzeitenschema:</strong> Einnahmen zu konkreten Uhrzeiten.</li>
+  <li><strong>Intervallschema:</strong> Einnahmen in regelmäßigen Zeitabständen, beispielsweise alle acht Stunden.</li>
+  <li><strong>Einmalige Einnahme:</strong> Einmalige Anwendung zu einem bestimmten Zeitpunkt oder in Bezug auf ein Ereignis.</li>
+  <li><strong>Dosistitration:</strong> Ein- oder Ausschleichen sowie andere Dosierungsänderungen mit mehreren aufeinanderfolgenden Behandlungsphasen.</li>
+  <li>…</li>
+</ul>
+
+<div class="dragon">
+  <p class="note-to-balloters">
+Die finale Liste der Dosierungskategorien sowie die zugehörigen Profile werden noch erarbeitet und in einer zukünftigen Version des Implementation Guides ergänzt. Feedback aus der Community ist erwünscht.
+</p>
+</div>
+
+<h3 id="schemaübergreifende-regeln">Schemaübergreifende Regeln</h3>
+
+<p>Unabhängig von der verwendeten Dosierungskategorie gelten insbesondere für mehrere <code class="language-plaintext highlighter-rouge">dosageInstruction</code>-Einträge eines MedicationRequest oder MedicationDispense die folgenden Regeln:</p>
+
+<ul>
+  <li>Alle Dosierungsanweisungen, die gemeinsam eine strukturierte Dosierung abbilden, MÜSSEN dieselbe Einheit für die Einzeldosis verwenden. Bei <code class="language-plaintext highlighter-rouge">doseAndRate.doseQuantity</code> betrifft dies insbesondere die Einheit.</li>
+  <li>Dosierungsanweisungen mit demselben <code class="language-plaintext highlighter-rouge">sequence</code>-Wert gelten als parallel und beschreiben gemeinsam eine Behandlungsphase.</li>
+  <li>Dosierungsanweisungen mit unterschiedlichen <code class="language-plaintext highlighter-rouge">sequence</code>-Werten beschreiben aufeinanderfolgende Behandlungsphasen. Die Reihenfolge ergibt sich aus dem aufsteigenden <code class="language-plaintext highlighter-rouge">sequence</code>-Wert.</li>
+  <li><code class="language-plaintext highlighter-rouge">sequence</code>-Werte MÜSSEN positiv sein und ohne Lücken vergeben werden.</li>
+  <li>Werden zeitliche Grenzen über <code class="language-plaintext highlighter-rouge">timing.repeat.bounds[x]</code> angegeben, MÜSSEN diese innerhalb einer Sequenz konsistent verwendet werden. Insbesondere dürfen parallele Dosierungsanweisungen nicht in <code class="language-plaintext highlighter-rouge">timing.repeat.bounds[x]</code> voneinander abweichen.</li>
+  <li>Wird in einer der Dosierungen <code class="language-plaintext highlighter-rouge">boundsPeriod</code> verwendet, so müssen alle Dosierungen <code class="language-plaintext highlighter-rouge">timing.repeat.boundsPeriod</code> verwenden</li>
+  <li>Alle Dosierungsanweisungen MÜSSEN immer denselben Wiederholungszeitraum verwenden. <code class="language-plaintext highlighter-rouge">timing.repeat.period</code> und <code class="language-plaintext highlighter-rouge">timing.repeat.periodUnit</code> dürfen innerhalb einer Sequenz nicht voneinander abweichen (immer täglich oder immer wöchentlich bzw. monatlich)</li>
+  <li>Für unterschiedliche Sequenzen dürfen unterschiedliche zeitliche Begrenzungen verwendet werden, sofern diese eine widerspruchsfreie zeitliche Abfolge der Behandlungsphasen ergeben und <code class="language-plaintext highlighter-rouge">effectiveDosePeriod</code> nicht widersprechen.</li>
+  <li><code class="language-plaintext highlighter-rouge">timing.repeat.bounds[x]</code> und <code class="language-plaintext highlighter-rouge">effectiveDosePeriod</code> MÜSSEN widerspruchsfrei sein. Ein durch <code class="language-plaintext highlighter-rouge">boundsPeriod</code> angegebener Zeitraum darf nicht außerhalb von <code class="language-plaintext highlighter-rouge">effectiveDosePeriod</code> liegen.</li>
+  <li>Eine strukturierte Dosierung MUSS ausreichend vollständig sein, um die Einnahme oder Anwendung ohne Rückgriff auf einen Freitext zu bestimmen. Ist dies nicht möglich, ist eine Freitextdosierung zu verwenden.</li>
+</ul>
+
+<div class="dragon">
+  <p class="note-to-balloters">
+Die finale Liste der schemaübergreifenden Regeln wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.
+</p>
+</div>
+
+<h3 id="verwendung-mehrerer-sequences">Verwendung mehrerer Sequences</h3>
+
+<p>Ein Dosierschema kann aus mehreren <code class="language-plaintext highlighter-rouge">dosageInstruction</code>-Einträgen bestehen. Das Element <code class="language-plaintext highlighter-rouge">sequence</code> legt fest, ob diese Einträge parallel gelten oder nacheinander anzuwenden sind. Dabei ist zwischen einer einzelnen Dosierungsanweisung und einer Sequenz zu unterscheiden: Mehrere Dosierungsanweisungen können gemeinsam eine Sequenz bilden.</p>
+
+<ul>
+  <li>Parallele Dosierungsanweisungen haben denselben <code class="language-plaintext highlighter-rouge">sequence</code>-Wert. Sie beschreiben gemeinsam das Dosierschema einer Behandlungsphase, beispielsweise unterschiedliche Einnahmemengen am Morgen und in der Nacht.</li>
+  <li>Sequentielle Dosierungsanweisungen haben unterschiedliche <code class="language-plaintext highlighter-rouge">sequence</code>-Werte. Sie werden in aufsteigender Reihenfolge angewendet, beispielsweise zuerst eine höhere und anschließend eine niedrigere Dosierung. Innerhalb jeder dieser Sequenzen können wiederum mehrere parallele Dosierungsanweisungen vorkommen.</li>
+</ul>
+
+<p>„Parallel“ bedeutet dabei <strong>nicht</strong>, dass die Einnahmen zum selben Zeitpunkt stattfinden. Die konkreten Einnahmezeitpunkte ergeben sich aus <code class="language-plaintext highlighter-rouge">timing</code>. Unterschiedliche Tageszeiten oder Wochentage erfordern daher keine unterschiedlichen <code class="language-plaintext highlighter-rouge">sequence</code>-Werte, solange die Anweisungen zur selben Behandlungsphase gehören und die selbe Einnahmemenge besitzen.</p>
+
+<p>Die folgenden Beispiele zeigen die Aufteilung eines Standard-Tageszeitenschemas auf mehrere Dosierungsanweisungen. Die Angaben dienen ausschließlich der Veranschaulichung der Modellierung.</p>
+
+<h4 id="täglich-mit-unterschiedlicher-tablettenanzahl-pro-tageszeit">Täglich mit unterschiedlicher Tablettenanzahl pro Tageszeit</h4>
+
+<p>Es werden täglich zwei Stück morgens, zwei Stück abends und ein Stück nachts eingenommen. Die Einnahmen am Morgen und am Abend können in einer Dosierungsanweisung zusammengefasst werden, da für beide dieselbe Einzeldosis gilt. Für die abweichende Einzeldosis in der Nacht wird eine zweite Dosierungsanweisung benötigt. Beide Einträge erhalten <code class="language-plaintext highlighter-rouge">sequence = 1</code>, da sie gemeinsam das tägliche Dosierschema beschreiben.</p>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Dosierungsanweisung</th>
+      <th> sequence </th>
+      <th> when </th>
+      <th> frequency </th>
+      <th> period  /  periodUnit </th>
+      <th>Einzeldosis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td style="text-align: right;">1</td>
+      <td><code>MORN</code>, <code>EVE</code></td>
+      <td style="text-align: right;">2</td>
+      <td><code>1 d</code></td>
+      <td style="text-align: right;">2 Stück</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td style="text-align: right;">1</td>
+      <td><code>NIGHT</code></td>
+      <td style="text-align: right;">1</td>
+      <td><code>1 d</code></td>
+      <td style="text-align: right;">1 Stück</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Die Einzeldosis gilt jeweils pro Einnahmezeitpunkt. Die beiden Stück aus Dosierungsanweisung A werden somit sowohl morgens als auch abends eingenommen.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                        Sequenz 1
+              ┌─────────────────────────────────┐
+              │ morgens  mittags  abends  nachts│
+Anweisung A   │    2         –       2       –  │
+Anweisung B   │    –         –       –       1  │
+              ├─────────────────────────────────┤
+Gesamtschema  │    2         0       2       1  │
+              └─────────────────────────────────┘
+                         täglich
+</code></pre></div></div>
+
+<h4 id="wöchentlich-mit-unterschiedlichen-tageszeiten-pro-wochentag">Wöchentlich mit unterschiedlichen Tageszeiten pro Wochentag</h4>
+
+<p>In diesem Beispiel erfolgt die Einnahme montags, mittwochs und freitags morgens sowie dienstags und donnerstags abends. Die Einzeldosis beträgt jeweils ein Stück. Da die Zuordnung von Wochentagen zu Tageszeiten unterschiedlich ist, werden zwei Dosierungsanweisungen verwendet. <code class="language-plaintext highlighter-rouge">dayOfWeek</code> legt die Wochentage fest, <code class="language-plaintext highlighter-rouge">when</code> die jeweilige Tageszeit. Beide Anweisungen gehören zur gleichen Sequenz.</p>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Dosierungsanweisung</th>
+      <th> sequence </th>
+      <th> dayOfWeek </th>
+      <th> when </th>
+      <th> frequency </th>
+      <th> period  /  periodUnit </th>
+      <th>Einzeldosis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td style="text-align: right;">1</td>
+      <td><code>mon</code>, <code>wed</code>, <code>fri</code></td>
+      <td><code>MORN</code></td>
+      <td style="text-align: right;">3</td>
+      <td><code>1 wk</code></td>
+      <td style="text-align: right;">1 Stück</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td style="text-align: right;">1</td>
+      <td><code>tue</code>, <code>thu</code></td>
+      <td><code>EVE</code></td>
+      <td style="text-align: right;">2</td>
+      <td><code>1 wk</code></td>
+      <td style="text-align: right;">1 Stück</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                         Sequenz 1
+              Mo    Di    Mi    Do    Fr    Sa    So
+morgens        1     –     1     –     1     –     –
+mittags        –     –     –     –     –     –     –
+abends         –     1     –     1     –     –     –
+nachts         –     –     –     –     –     –     –
+
+                    wöchentlich wiederholt
+</code></pre></div></div>
+
+<p>Die <code class="language-plaintext highlighter-rouge">frequency</code> bezieht sich in dieser Darstellung auf die jeweilige Dosierungsanweisung und den angegebenen Zeitraum: Anweisung A beschreibt drei, Anweisung B zwei Einnahmen pro Woche.</p>
+
+<h4 id="wöchentlich-mit-unterschiedlichen-tageszeiten-und-tablettenanzahlen">Wöchentlich mit unterschiedlichen Tageszeiten und Tablettenanzahlen</h4>
+
+<p>Das vorherige Beispiel wird um unterschiedliche Einzeldosen erweitert: Montags, mittwochs und freitags werden jeweils zwei Stück morgens und ein Stück nachts eingenommen. Dienstags und donnerstags wird jeweils ein Stück abends eingenommen.</p>
+
+<p>Hierfür werden drei Dosierungsanweisungen verwendet. Die morgendliche und nächtliche Einnahme an denselben Wochentagen werden getrennt abgebildet, da sich ihre Einzeldosen unterscheiden. Alle drei Anweisungen erhalten weiterhin <code class="language-plaintext highlighter-rouge">sequence = 1</code>.</p>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Dosierungsanweisung</th>
+      <th> sequence </th>
+      <th> dayOfWeek </th>
+      <th> when </th>
+      <th> frequency </th>
+      <th> period  /  periodUnit </th>
+      <th>Einzeldosis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td style="text-align: right;">1</td>
+      <td><code>mon</code>, <code>wed</code>, <code>fri</code></td>
+      <td><code>MORN</code></td>
+      <td style="text-align: right;">3</td>
+      <td><code>1 wk</code></td>
+      <td style="text-align: right;">2 Stück</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td style="text-align: right;">1</td>
+      <td><code>mon</code>, <code>wed</code>, <code>fri</code></td>
+      <td><code>NIGHT</code></td>
+      <td style="text-align: right;">3</td>
+      <td><code>1 wk</code></td>
+      <td style="text-align: right;">1 Stück</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td style="text-align: right;">1</td>
+      <td><code>tue</code>, <code>thu</code></td>
+      <td><code>EVE</code></td>
+      <td style="text-align: right;">2</td>
+      <td><code>1 wk</code></td>
+      <td style="text-align: right;">1 Stück</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                         Sequenz 1
+              Mo    Di    Mi    Do    Fr    Sa    So
+morgens        2     –     2     –     2     –     –
+mittags        –     –     –     –     –     –     –
+abends         –     1     –     1     –     –     –
+nachts         1     –     1     –     1     –     –
+
+                    wöchentlich wiederholt
+</code></pre></div></div>
+
+<h4 id="aufeinanderfolgende-sequenzen">Aufeinanderfolgende Sequenzen</h4>
+
+<p>Ändert sich das Dosierschema im Verlauf der Behandlung, werden die Behandlungsphasen durch unterschiedliche <code class="language-plaintext highlighter-rouge">sequence</code>-Werte unterschieden. Beispielsweise kann auf das tägliche Schema <code class="language-plaintext highlighter-rouge">2-0-2-1</code> aus dem Ausgangsbeispiel eine zweite Phase mit dem Schema <code class="language-plaintext highlighter-rouge">1-0-1-0</code> folgen. Die beiden Dosierungsanweisungen der ersten Phase erhalten <code class="language-plaintext highlighter-rouge">sequence = 1</code>; die Dosierungsanweisung der anschließenden Phase erhält <code class="language-plaintext highlighter-rouge">sequence = 2</code>.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Zeit ─────────────────────────────────────────────────────►
+
+       Sequenz 1                       Sequenz 2
+       täglich 2-0-2-1                 täglich 1-0-1-0
+
+       ┌────────────────────────┐      ┌─────────────────────┐
+       │ A: 2 Stück             │      │ C: 1 Stück          │
+       │    morgens und abends  │ ───► │    morgens und      │
+       │ B: 1 Stück nachts      │      │    abends           │
+       └────────────────────────┘      └─────────────────────┘
+          A und B gelten                  C gilt
+          parallel                        anschließend
+</code></pre></div></div>
+
+<p>Der <code class="language-plaintext highlighter-rouge">sequence</code>-Wert beschreibt die Reihenfolge, nicht die Dauer oder den konkreten Wechselzeitpunkt. Die zeitliche Begrenzung der einzelnen Phasen wird über <code class="language-plaintext highlighter-rouge">timing.repeat.bounds[x]</code> angegeben und mit dem übergeordneten Einnahmezeitraum abgestimmt; siehe Abschnitt <a href="#datumsangaben">Datumsangaben</a>.</p>
+
+<h3 id="datumsangaben">Datumsangaben</h3>
+<p>Die zeitliche Gültigkeit einer Medikation wird auf zwei Ebenen beschrieben: <code>effectiveDosePeriod</code> gibt den übergeordneten Einnahmezeitraum an, während <code>Dosage.timing.repeat.bounds[x]</code> die zeitliche Begrenzung einer einzelnen Dosierungsanweisung innerhalb dieses Zeitraums beschreibt. Diese Unterscheidung ist insbesondere bei Dosierschemata mit mehreren aufeinanderfolgenden Sequenzen relevant, beispielsweise beim Ein- oder Ausschleichen eines Medikaments.</p>
+
+<p>Für die zeitliche Begrenzung einer Dosierungsanweisung stehen folgende Varianten zur Verfügung:</p>
+
+<ul>
+  <li><code>boundsPeriod</code>: Angabe eines konkreten Zeitraums mit Beginn und/oder Ende.</li>
+  <li><code>boundsDuration</code>: Angabe einer Dauer, beispielsweise „1 Woche“.</li>
+  <li><code>boundsRange</code>: Angabe eines Bereichs für die Dauer, beispielsweise „2 bis 3 Wochen“.</li>
+</ul>
+
+<p><code>effectiveDosePeriod</code> und die zeitlichen Begrenzungen der einzelnen Dosierungsanweisungen MÜSSEN aufeinander abgestimmt sein und dürfen sich nicht widersprechen. Ist der Einnahmezeitraum durch Beginn und Ende begrenzt, MUSS jede Dosierungsanweisung vollständig innerhalb dieses Zeitraums ausführbar sein. Ein mit boundsPeriod angegebener Zeitraum darf daher nicht über den Einnahmezeitraum hinausreichen. Bei boundsDuration und boundsRange muss die angegebene Dauer beziehungsweise der gesamte angegebene Bereich innerhalb des Einnahmezeitraums liegen.</p>
+
+<div class="dragon">
+  <p class="note-to-balloters">
+Die Auswirkungen von Timing.repeat.offset wurden in dieser Version noch nicht betrachtet.
+</p>
+</div>
+
+<h4 id="beispiele">Beispiele:</h4>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+        <th>effectiveDosePeriod</th>
+        <th>DosageInstruction.timing.repeat.bounds[x]</th>
+        <th>bounds[x] Value</th>
+        <th>erlaubte Kombination</th> 
+        <th>Interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>1.10.2026 bis 1.11.2026</td>
+        <td>boundsPeriod</td>
+        <td>1.10.2026 bis 1.11.2026</td>
+        <td>Ja</td>
+        <td>Medikament soll für den gesamten Einnahmezeitraum eingenommen werden</td>
+    </tr>
+    <tr>
+        <td>1.10.2026 bis 1.11.2026</td>
+        <td>boundsPeriod</td>
+        <td>1.10.2026 bis 1.12.2026</td>
+        <td>Nein</td>
+        <td>Einnahmezeitraum müsste angepasst werden.</td>
+    </tr>
+    <tr>
+        <td>1.10.2026 bis 1.11.2026</td>
+        <td>boundsRange</td>
+        <td>2-3 Wochen</td>
+        <td>Ja</td>
+        <td>Einnahme für 2-3 Wochen innerhalb des angegebenen Einnahmezeitraums.</td>
+    </tr>
+        <tr>
+        <td>1.10.2026 bis 5.10.2026</td>
+        <td>boundsRange</td>
+        <td>1 Wochen</td>
+        <td>Nein</td>
+        <td>Einnahmezeitraum müsste angepasst werden.</td>
+    </tr>
+    <tr>
+        <td>1.10.2026 bis 1.11.2026</td>
+        <td>boundsDuration</td>
+        <td>1 Woche</td>
+        <td>Ja</td>
+        <td>Einnahme für 1 Wochen innerhalb des angegebenen Einnahmezeitraums.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="kombinationen-aus-effectivedoseperiod-und-boundsperiod">Kombinationen aus effectivedosePeriod und boundsPeriod</h4>
+<p><a href="boundsPeriod.png"><img src="boundsPeriod.png" alt="diagram" style="width: 60%" /></a></p>
+
+<h4 id="kombinationen-aus-effectivedoseperiod-und-boundsduration">Kombinationen aus effectivedosePeriod und boundsDuration</h4>
+<p><a href="boundsDuration.png"><img src="boundsDuration.png" alt="diagram" style="width: 60%" /></a></p>
+
+<h4 id="kombinationen-aus-effectivedoseperiod-und-boundsrange">Kombinationen aus effectivedosePeriod und boundsRange</h4>
+<p><a href="boundsRange.png"><img src="boundsRange.png" alt="diagram" style="width: 60%" /></a></p>
+
+<h3 id="textdarstellungen-und-ergänzende-hinweise">Textdarstellungen und ergänzende Hinweise</h3>
+
+<div class="dragon">
+  <p class="note-to-balloters">
+Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen der einzelnen Ressourcen und Dosierschemata wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.
+</p>
+</div>
+<p><br /></p>
+
+<p>Die strukturierte Dosierung ist die primäre, maschinenlesbare Repräsentation. <strong>Die Textdarstellung unterstützt die menschliche Lesbarkeit, darf jedoch nicht als Ersatz für strukturierte Daten verwendet werden, wenn die Dosierung durch ein unterstütztes Dosierschema vollständig abbildbar ist.</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">MedicationRequest.text</code> bzw. <code class="language-plaintext highlighter-rouge">MedicationDispense.text</code> und <code class="language-plaintext highlighter-rouge">extension:renderedDosageInstruction</code> werden immer durch die e-Medikation-Fachanwendung generiert. Für strukturierte Dosierungen wird <code class="language-plaintext highlighter-rouge">Dosage.text</code> aus den strukturierten Elementen der jeweiligen <code class="language-plaintext highlighter-rouge">Dosage</code> durch die Fachanwendung generiert und befüllt. Bei mehreren <code class="language-plaintext highlighter-rouge">dosageInstruction</code>-Einträgen fasst <code class="language-plaintext highlighter-rouge">renderedDosageInstruction</code> die Dosierung des gesamten MedicationRequest beziehungsweise MedicationDispense zusammen. Der genaue Algorithmus für die Zusammenführung mehrerer paralleler und sequenzieller Dosierungsanweisungen wird noch festgelegt.</p>
+
+<p>Kann eine Dosierung nicht mit einem unterstützten Schema vollständig und widerspruchsfrei strukturiert dargestellt werden, ist die Dosierungskategorie <code class="language-plaintext highlighter-rouge">freitext</code> zu verwenden. In diesem Fall enthält <code class="language-plaintext highlighter-rouge">Dosage.text</code> die vom GDA erfasste, maßgebliche Freitext-Dosierungsanweisung; <code class="language-plaintext highlighter-rouge">extension:renderedDosageInstruction</code> und die Narrative werden auch in diesem Fall durch die Fachanwendung generiert.</p>
+
+<p>Die folgenden Elemente unterstützen die menschenlesbare Darstellung von Ressourcen, welche eine Dosierung enthalten. Sie unterscheiden sich in ihrem Geltungsbereich: Die Narrative beschreibt den MedicationRequest/MedicationDispense als Ganzes, die Dosierungstexte beschreiben die Einnahme bzw. Anwendung und ergänzende Hinweise enthalten weitere Informationen. Nicht alle Texte werden aus strukturierten Daten generiert. Insbesondere können Freitextanweisungen Informationen enthalten, die nicht zusätzlich strukturiert vorliegen.</p>
+
+<p><a href="dosage_text_overview.png"><img src="dosage_text_overview.png" alt="diagram" style="width: 60%" /></a></p>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Element Pfad</th>
+      <th>Datentyp</th>
+      <th>Erklärung</th>
+      <th>Befüllt durch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MedicationRequest.text</code></td>
+      <td><code>Narrative</code> → XHTML in <code>div</code></td>
+      <td>
+       Menschenlesbare Textrepräsentation der wesentlichen Informationen der gesamten Ressource.
+        Enthält die für das Verständnis relevanten Informationen einschließlich der Dosierung und der
+        (<code>contained</code>) <code>Medication</code>.
+      </td>
+      <td>Wird immer durch die Fachanwendung generiert.</td>
+    </tr>
+    <tr>
+      <td><code>MedicationRequest.note.text</code></td>
+      <td><code>markdown</code> innerhalb von <code>Annotation</code></td>
+      <td>
+        Zusätzliche Informationen zum Planeintrag, z. B. „Kontrolle der Blutwerte
+        innerhalb von vier Wochen erforderlich“.
+      </td>
+      <td>Wird durch den Client befüllt.</td>
+    </tr>
+    <tr>
+      <td><code>MedicationRequest.extension:renderedDosageInstruction</code></td>
+      <td><code>markdown</code> (<code>valueMarkdown</code>)</td>
+      <td>
+        Da ein MedicationRequest/MedicationDispense mehrere Dosages besitzten kann bildet renderedDosageInstruction eine gesamte Textrepräsentation aller Medicationrequest.dosageInstructions ab. Gibt es nur eine dosageInstruction so entspricht der Inhalt von extension:renderedDosageInstruction dem Inhalt von dosageInstruction.text.
+      </td>
+      <td>Wird immer durch die Fachanwendung generiert.</td>
+    </tr>
+    <tr>
+      <td><code>MedicationRequest.dosageInstruction.text</code></td>
+      <td><code>string</code></td>
+      <td>
+        Textrepräsentation einer einzelnen <code>Dosage</code>-Instanz.
+        Berücksichtigt auch die Inhalte von <code>additionalInstruction</code> und <code>patientInstruction</code>. Bei einer Dosierung die nicht strukturiert abgebildet werden kann, stellt dieses Element das Freitextfeld für die Repräsentation der Dosierung dar.
+      </td>
+      <td>bei strukturierter Dosierung durch die Fachanwendung generiert; bei Dosierungskategorie <code>freitext</code> vom GDA erfasster Freitext.
+      </td>
+    </tr>
+    <tr>
+      <td><code>MedicationRequest.dosageInstruction.additionalInstruction</code></td>
+      <td><code>CodeableConcept</code></td>
+      <td>
+        Ergänzende Einnahme- oder Anwendungshinweise und Warnhinweise, die codiert
+        angegeben werden können.
+      </td>
+      <td>Wird durch den Client befüllt.</td>
+    </tr>
+    <tr>
+      <td><code>MedicationRequest.dosageInstruction.patientInstruction</code></td>
+      <td><code>string</code></td>
+      <td>
+       Zusätzlicher Einnahme-/Anwendungshinweis für den Patienten.
+      </td>
+      <td>Wird durch den Client befüllt.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+    <p>
+      <code>Dosage.additionalInstruction</code> KANN für ergänzende,
+      standardisiert codierbare Einnahme-, Anwendungs- oder Warnhinweise
+      verwendet werden. Das Element ergänzt die eigentliche Dosierungsanweisung,
+      ersetzt jedoch weder <code>Dosage.timing</code>,
+      <code>doseAndRate</code> noch <code>Dosage.patientInstruction</code>.
+    </p>
+    <p>
+      Geeignete Inhalte sind insbesondere Hinweise, die sich als begrenzte
+      Auswahl vordefinierter Werte erfassen lassen und deren Bedeutung für die
+      sichere Anwendung relevant ist. Beispiele können Hinweise zur Einnahme
+      in Bezug auf Mahlzeiten, zur besonderen Art der Anwendung oder zur
+      Aufbewahrung sein.
+    </p>
+    <p>
+      <code>additionalInstruction</code> SOLL nicht für individuelle, lange
+      oder komplexe Freitextanweisungen verwendet werden. Solche Informationen
+      sind in <code>patientInstruction</code> abzubilden. Hinweise, die bereits
+      vollständig durch <code>timing</code>, <code>route</code>,
+      <code>method</code>, <code>site</code> oder andere strukturierte Elemente
+      ausgedrückt werden, SOLLEN nicht redundant in
+      <code>additionalInstruction</code> wiederholt werden.
+    </p>
+    <p>
+      Gibt es eine sinnvolle Verwendung für das Feld
+      <code>Dosage.additionalInstruction</code>? Welche Ausprägungen/Codierten
+      Werte würden hier Sinn machen? Community Feedback ist erwünscht.
+    </p>
+  </div>
+</div>
+<p><br /></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
+          Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-10-29 15:54:00 +0000">
+    2026-10-29
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

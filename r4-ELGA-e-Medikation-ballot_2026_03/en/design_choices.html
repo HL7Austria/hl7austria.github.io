@@ -1,0 +1,1450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Designentscheidungen - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/liquid.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/template.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+                <div id="project-nav">
+          <img height="50" alt="Logo" src="assets/images/logo.jpg"/>
+        </div>
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+      <li>
+        <a href="dosages.html">Dosierungen</a>
+      </li>
+      <li>
+        <a href="medication.html">Medikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">UC 1 Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">UC 2 Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">UC 3 Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">UC 4 Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">UC 5 Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Designentscheidungen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Designentscheidungen</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#übersicht-der-relevanten-ressourcen" id="markdown-toc-übersicht-der-relevanten-ressourcen">Übersicht der Relevanten Ressourcen</a></li>
+  <li><a href="#fachliche-designentscheidungen" id="markdown-toc-fachliche-designentscheidungen">Fachliche Designentscheidungen</a></li>
+  <li><a href="#technische-designentscheidungen" id="markdown-toc-technische-designentscheidungen">Technische Designentscheidungen</a></li>
+</ul>
+
+</div>
+
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+/* Tabellencontainer mit horizontalem und vertikalem Scrollen */
+.table-responsive {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.table-responsive > table {
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid #e8eef0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
+}
+
+/* Tabellenzellen */
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  color: #202c33;
+  background: #ffffff;
+  text-align: left;
+}
+
+/* Sticky Tabellenkopf */
+.table-responsive thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Erste Spalte horizontal fixieren */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+
+/* Linke obere Ecke über allen anderen Sticky-Zellen */
+.table-responsive thead th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Alternierende Zeilenfarben */
+.table-responsive tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td {
+  background: #e9edef;
+}
+
+/* Erste Spalte passend zur jeweiligen Zeilenfarbe */
+.table-responsive tbody tr:nth-child(odd) td:first-child {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td:first-child {
+  background: #e9edef;
+}
+
+/* Use-Case-Zellen wie Überschriften formatieren */
+.table-responsive table tbody td.use-case-heading {
+  background: #e8eef0 !important;
+  color: #294b56;
+  font-weight: bold;
+}
+
+/* Hinweisbox */
+.hinweisbox {
+  font-size: 12px;
+  border: 1px solid #246783;
+  background: #e0e7e9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.tabs .tab label {
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+<h3 id="übersicht-der-relevanten-ressourcen">Übersicht der Relevanten Ressourcen</h3>
+
+<p>Die folgende Abbildung veranschaulicht den Aufbau der e-Medikation und das Zusammenspiel der verwendeten FHIR-Ressourcen.</p>
+
+<p>Zentrale Ressource ist der Medikationsplan (<em>List</em>), der die einzelnen Planeinträge (<em>MedicationRequest</em>) referenziert. Auf Basis der Planeinträge werden <em>Geplante Abgaben</em> (MedicationRequest) erstellt. Diese bilden die Grundlage für die Dokumentation der tatsächlich erfolgten <em>Durchgeführten Abgaben</em> (MedicationDispense).</p>
+
+<p>Die Fachanwendung persistiert ausschließlich die einzelnen FHIR-Ressourcen. Historische Zustände werden durch versionierte Ressourcen und versionierte Referenzen abgebildet. Medikationsplan-Bundles dienen ausschließlich der Auslieferung eines Medikationsplans und werden bei Bedarf aus den entsprechenden Ressourcenversionen erzeugt.</p>
+
+<p><br />
+<a href="Uebersicht_e_Medikation_Ressourcen.svg"><img src="Uebersicht_e_Medikation_Ressourcen.svg" alt="diagram" style="width: 100%" /></a></p>
+
+<h4 id="medikationsplan-atelgaemedlistmedikationsplan-list">Medikationsplan: AtElgaEmedListMedikationsplan (<em>List</em>)</h4>
+
+<p>Der Medikationsplan eines ELGA-Teilnehmers wird durch eine <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource abgebildet, welche keinen oder mehrere Planeinträge referenziert. Jeder Planeintrag ist im <em>List.entry.flag</em> durch einen Status gekennzeichnet (siehe <a href="workflowmanagement.html#status-des-listentryflags-im-medikationsplan">Status der List.entry.flag (Medikationsplan)</a>).</p>
+
+<p>Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen die Grundlage für den Aufbau des aktuellen bzw. eines historischen Medikationsplans.</p>
+
+<!-- TODO: Wiederverwendbarkeit der Liste für e-Diagnose und e-Behandlungsplan -->
+
+<h4 id="medikationsplaneintrag-bzw-planeintrag-atelgaemedmedicationrequestplaneintrag-medicationrequest">Medikationsplaneintrag bzw. Planeintrag: AtElgaEmedMedicationRequestPlaneintrag (<em>MedicationRequest</em>)</h4>
+
+<p>Ein Planeintrag wird durch eine <a href="StructureDefinition-at-elga-emed-medicationrequest-planeintrag.html">MedicationRequest</a>-Ressource der Kategorie "Planeintrag" abgebildet. Die Ressource enthält genau ein verordnetes Arzneimittel mit der zugehörigen Dosierung.</p>
+
+<p>Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer <em>Geplanten Abgabe</em> dienen.</p>
+
+<p>In Abhängigkeit des zugehörigen List.entry.flags im Medikationsplan kann der Planeintrag unterschiedliche Status einnehmen (siehe <a href="workflowmanagement.html#status-des-medikationsplaneintrags-medicationrequest">Status des MedicationRequests im Planeintrag</a>).</p>
+
+<p>Abhängig vom List.entry.flag kann der Planeintrag nur bestimmte Statuswerte annehmen (siehe <a href="workflowmanagement.html#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status">Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status</a>).</p>
+
+<h4 id="geplante-abgabe-atelgaemedmedicationrequestgeplanteabgabe-medicationrequest"><em>Geplante Abgabe</em>: AtElgaEmedMedicationRequestGeplanteAbgabe (<em>MedicationRequest</em>)</h4>
+
+<p>Eine geplante Ausgabe eines Arzneimittels wird durch eine <em>MedicationRequest</em>-Ressource der Kategorie <em>Geplante Abgabe</em> abgebildet und dient der Nachvollziehbarkeit der rezeptierten Arzneimittel in der e-Medikation, siehe <a href="StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.html">Profil <em>Geplante Abgabe</em></a>.</p>
+
+<h4 id="durchgeführte-abgabe-atelgaemedmedicationdispensedurchgefuehrteabgabe-medicationdispense"><em>Durchgeführte Abgabe</em>: AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe (<em>MedicationDispense</em>)</h4>
+
+<p>Die tatsächliche Ausgabe eines Arzneimittels wird mit einer <em>Durchgeführte Abgaben</em> in einer <em>MedicationDispense</em>-Ressource dokumentiert und dient der Nachvollziehbarkeit der abgegebenen Arzneimittel in der e-Medikation, siehe <a href="StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.html">Profil Durchgeführte Abgabe</a>.</p>
+
+<h3 id="fachliche-designentscheidungen">Fachliche Designentscheidungen</h3>
+
+<h4 id="abhängigkeit-von-planeintrag-und-geplanter-abgabe">Abhängigkeit von Planeintrag und Geplanter Abgabe</h4>
+<p>Gemäß Fachkonzept müssen Arzneimittel und Dosierung einer <em>Geplanten Abgabe</em> zum Zeitpunkt ihrer Erstellung mit dem zugehörigen Planeintrag identisch sein (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01</a>). Dies umfasst insbesondere das verordnete Arzneimittel einschließlich seiner PZN, beziehungsweise die dokumentierten Wirkstoffe, sowie die Dosierungsangaben. Enthält der Planeintrag nur Wirkstoffe, muss der Planeintrag zuvor angepasst und ein Präparat ausgewählt werden, bevor eine <em>Geplante Abgabe</em> erstellt werden kann.</p>
+
+<p>Ziel dieser Vorgabe ist es, die Erstellung einer <em>Geplanten Abgabe</em> verbindlich mit der Aktualisierung des Medikationsplans zu verknüpfen. Der verordnende GDA soll die vorgesehene Medikation nicht ausschließlich in der <em>Geplanten Abgabe</em> dokumentieren, sondern erforderliche Änderungen auch im zugehörigen Planeintrag vornehmen. Der Medikationsplan soll dadurch die zum Zeitpunkt der Verordnung vorgesehene Medikation widerspiegeln. Eine neue <em>Geplante Abgabe</em> kann somit nicht auf Grundlage eines inhaltlich abweichenden Planeintrags erstellt werden.</p>
+
+<p>Die Übereinstimmung wird ausschließlich zum Zeitpunkt der Erstellung der <em>Geplanten Abgabe</em> gefordert. Eine spätere Änderung des Planeintrags macht eine bereits erstellte <em>Geplante Abgabe</em> nicht automatisch ungültig. Da <code class="language-plaintext highlighter-rouge">basedOn</code> unversioniert ist, verweist diese Referenz auf den jeweils aktuellen Zustand des Planeintrags und hält nicht fest, welche Planeintragsversion bei der Erstellung der <em>Geplanten Abgabe</em> zugrunde lag.</p>
+
+<p><strong>Vergleichsumfang</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Vergleich</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Arzneimittel (<code class="language-plaintext highlighter-rouge">medication</code>)</td>
+      <td>identisch</td>
+    </tr>
+    <tr>
+      <td>Dosierung (<code class="language-plaintext highlighter-rouge">dosageInstruction</code>)</td>
+      <td>identisch</td>
+    </tr>
+    <tr>
+      <td>Einnahmezeitraum (<code class="language-plaintext highlighter-rouge">effectiveDosePeriod</code>)</td>
+      <td>nicht identisch; Im Planeintrag kann der Beginn in der Vergangenheit liegen (z.B. bei Nacherfassung oder Dauermedikation seit Monaten).</td>
+    </tr>
+    <tr>
+      <td>Status, Kategorie, Ersteller, <code class="language-plaintext highlighter-rouge">dispenseRequest.*</code></td>
+      <td>nicht vergleichbar</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Abgrenzung der drei Ebenen</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beziehung</th>
+      <th>Fachliche Vorgabe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Planeintrag ↔ <em>Geplante Abgabe</em></td>
+      <td>Arzneimittel und Dosierung identisch (bei Erstellung)</td>
+    </tr>
+    <tr>
+      <td><em>Geplante Abgabe</em> ↔ <em>Durchgeführte Abgabe</em></td>
+      <td>Abweichungen möglich, dokumentiert in der <em>Durchgeführten Abgabe</em> (z.B. verordnetes Präparat nicht lieferbar, andere Packungsgröße o.ä.)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+    <ul>
+      <li>Wie bleibt der Medikationsplan verständlich, wenn das abgegebene Arzneimittel vom Präparat im Planeintrag abweicht?<br /></li>
+      <li>Soll <code class="language-plaintext highlighter-rouge">basedOn</code> versioniert werden, um die geprüfte Planeintrag-Version nachvollziehen zu können?</li>
+    </ul>
+  </div>
+</div>
+
+<h4 id="automatische-statusänderungen-der-beim-plan-read-ausgelieferten-ressourcen">Automatische Statusänderungen der beim Plan-Read ausgelieferten Ressourcen</h4>
+<!-- Welche Felde können/sollen von der Fachanwendung vorbefüllt werden (Datumfelder, GDA, Patient, status bei list.entry.flag removed + default-Begründung: abgelaufen usw.)
+ -->
+
+<p><em>Plan-Read</em> liefert den Medikationsplan in einem für die Bearbeitung aufbereiteten Zustand. Die Fachanwendung erzeugt dazu aus der aktuellen <em>List</em>-Version ein <strong>temporäres</strong> Bundle. Die persistierten Ressourcen bleiben unverändert:</p>
+
+<ul>
+  <li><em>List.entry.flag</em> <em>new</em> und <em>changed</em> werden als <em>unchanged</em> ausgeliefert.</li>
+  <li>Einträge mit <em>removed</em> werden nicht ausgeliefert. Bleibt kein Eintrag übrig, wird <em>List.emptyReason = nilknown</em> gesetzt.</li>
+  <li>Abgelaufene Planeinträge werden mit <em>removed</em> und <em>stopped</em> ausgeliefert.</li>
+</ul>
+
+<p><em>Plan-History-Search</em> liefert dagegen alle Inhalte, Status und Flags unverändert.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+
+    <ul>
+      <li>
+        <ul>
+          <li>Soll der GDA den aufbereiteten Zustand erhalten (aktuell), welcher den Schreibvorgang vereinfacht, bei dem er aber den Originalstatus der persistierten Ressourcen nicht sieht, oder den persistierten Originalzustand?</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- - Das Beispiel Journey-01-02 zeigt *unchanged* mit *stopped*, UC_eMed_01 verlangt *removed* mit *stopped*. -->
+
+<h4 id="gruppierung-von-medikamenten">Gruppierung von Medikamenten</h4>
+
+<p>Manche Arzneimittel müssen gemeinsam oder in einem festgelegten zeitlichen Abstand zueinander eingenommen werden. Beispiele sind die gleichzeitige Einnahme mehrerer Arzneimittel im Rahmen einer Eradikationstherapie oder ein Abstand von mehreren Stunden zwischen Levothyroxin und Eisen- bzw. Calciumpräparaten. Es ist zu entscheiden, ob und wie dieser Zusammenhang zwischen mehreren Planeinträgen im Medikationsplan abgebildet wird.</p>
+
+<p><strong>Aktueller Stand</strong></p>
+
+<p>Jedes Arzneimittel wird als eigenständiger Planeintrag (<em>MedicationRequest</em>) dokumentiert. Eine strukturierte Verknüpfung zwischen Planeinträgen ist derzeit nicht vorgesehen:</p>
+
+<ul>
+  <li>Auf Ebene des Medikationsplans gibt es keinen Freitext (<code class="language-plaintext highlighter-rouge">List.note</code> ist auf 0..0 eingeschränkt).</li>
+  <li><code class="language-plaintext highlighter-rouge">MedicationRequest.groupIdentifier</code> ist im Planeintrag ausgeschlossen. In der <em>Geplanten Abgabe</em> bildet der <code class="language-plaintext highlighter-rouge">MedicationRequest.groupIdentifier</code> als <em>e-Med GroupIdentifier</em> die Rezept-Klammer. Der Basisstandard definiert <a href="https://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.groupIdentifier">groupIdentifier</a> außerdem als Kennung für gemeinsam verordnete Requests und nicht für gemeinsam einzunehmende Arzneimittel.</li>
+  <li>Die strukturierte Dosierung kann Einnahmezeitpunkte relativ zu Tagesereignissen abbilden, nicht jedoch relativ zur Einnahme eines anderen Arzneimittels.</li>
+</ul>
+
+<p>Ein Hinweis zur gemeinsamen bzw. zeitlich versetzten Einnahme muss daher als Freitext in jeden betroffenen Planeintrag übernommen werden.</p>
+
+<p><strong>Mögliche Abbildungsvarianten</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variante</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A: Freitext in jedem Planeintrag (aktuell)</td>
+      <td>Der Hinweis wird in jedem betroffenen Planeintrag als Freitext dokumentiert, z.B. in <code class="language-plaintext highlighter-rouge">dosageInstruction.patientInstruction</code> oder <code class="language-plaintext highlighter-rouge">note</code> (siehe <a href="dosages.html#textdarstellungen-und-ergänzende-hinweise">Textdarstellungen und ergänzende Hinweise</a>).</td>
+    </tr>
+    <tr>
+      <td>B: Übergeordneter <em>MedicationRequest</em></td>
+      <td>Ein zusätzlicher <em>MedicationRequest</em> enthält die gemeinsame Dosierungsangabe. Die zugehörigen Planeinträge verweisen über <a href="https://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.basedOn">basedOn</a> auf diesen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Vorteile von A:</em></p>
+<ul>
+  <li>Es sind keine zusätzlichen Ressourcen, Referenzen oder Konsistenzregeln erforderlich.</li>
+  <li>Wird der Hinweis in <code class="language-plaintext highlighter-rouge">dosageInstruction.patientInstruction</code> dokumentiert, ist er Teil der Dosierung und wird damit auch in die <em>Geplante Abgabe</em> übernommen (siehe <a href="#abhängigkeit-von-planeintrag-und-geplanter-abgabe">Abhängigkeit von Planeintrag und Geplanter Abgabe</a>).</li>
+</ul>
+
+<p><em>Nachteile von A:</em></p>
+<ul>
+  <li>Der Hinweis wird redundant in mehreren Planeinträgen geführt und ist nicht maschinenlesbar. Die Zusammengehörigkeit kann nicht als Gruppe dargestellt werden.</li>
+  <li>Wird einer der Planeinträge geändert oder abgesetzt, müssen die Hinweise in den übrigen Planeinträgen manuell angepasst werden. Anderenfalls verweist ein Hinweis auf ein nicht mehr eingenommenes Arzneimittel.</li>
+  <li>Eine Änderung des Hinweises erzeugt neue Versionen aller betroffenen Planeinträge.</li>
+</ul>
+
+<p><em>Vorteile von B:</em></p>
+<ul>
+  <li>Die gemeinsame Dosierungsangabe wird nur einmal dokumentiert.</li>
+  <li>Die Zusammengehörigkeit ist strukturiert und maschinenlesbar abgebildet.</li>
+</ul>
+
+<p><em>Nachteile von B:</em></p>
+<ul>
+  <li><a href="https://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.medication_x_">MedicationRequest.medication[x]</a> ist im Basisstandard verpflichtend (1..1). Ein übergeordneter <em>MedicationRequest</em> ohne eigenes Arzneimittel ist damit nicht ohne Hilfskonstrukt abbildbar.</li>
+  <li>Die Semantik von <code class="language-plaintext highlighter-rouge">basedOn</code> („Plan oder Request, der durch diesen Request ganz oder teilweise erfüllt wird“) passt nur bedingt zu einer gemeinsamen Einnahmeanweisung.</li>
+  <li>Es sind zusätzliche Regeln erforderlich: Wird der übergeordnete <em>MedicationRequest</em> als eigener Eintrag im Medikationsplan geführt? Wie hängen Status und <em>List.entry.flag</em> zusammen? Welche Dosierung gilt für den Abgleich mit der <em>Geplanten Abgabe</em>?</li>
+  <li>Die strukturierte Eingabe und Darstellung ist für Client-Anwendungen aufwändig.</li>
+</ul>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+<ul>
+<li>Ist die Abbildung als Freitext in den einzelnen Planeinträgen (Variante A) für die Praxis ausreichend oder wird eine strukturierte Gruppierung benötigt? Welche konkreten Anwendungsfälle gibt es und wie häufig treten diese auf?</li>
+<li>Falls Variante A beibehalten wird: Soll der Hinweis in <code>dosageInstruction.patientInstruction</code> (Teil der Dosierung, wird in die <i>Geplante Abgabe</i> übernommen) oder in <code>note</code> dokumentiert werden?</li>
+<li>Falls eine strukturierte Gruppierung benötigt wird: Ist Variante B oder eine andere Alternative zu bevorzugen? Können Client-Anwendungen die Eingabe und Darstellung einer solchen Gruppierung umsetzen?</li>
+<li>Wie soll mit einer Gruppierung umgegangen werden, wenn einer der zugehörigen Planeinträge geändert, abgesetzt oder durch ELGA-Teilnehmer:innen gelöscht wird?</li>
+</ul>
+</div>
+</div>
+
+<h3 id="technische-designentscheidungen">Technische Designentscheidungen</h3>
+
+<h4 id="kennzeichnung-der-relevanten-elemente">Kennzeichnung der relevanten Elemente</h4>
+<p>Die in der e-Medikation relevanten Elemente werden nach einem Whitelisting-Ansatz festgelegt. Hierzu werden Elemente, die fachlich verarbeitet, gespeichert und in weiterer Folge für die Anzeige bereitgestellt werden sollen, in den Profilen explizit mit dem <em>Must Support Flag MS</em> gekennzeichnet.</p>
+
+<p>Bei der Profilierung gelten folgende Regeln:</p>
+<ul>
+  <li>Elemente, die von der zentralen Fachanwendung fachlich verarbeitet werden sollen, MÜSSEN mit Must Support gekennzeichnet werden.</li>
+  <li>Elemente, deren Verwendung aufgrund einer fachlichen Entscheidung ausgeschlossen wird, MÜSSEN auf die Kardinalität 0..0 eingeschränkt werden. Der Ausschluss MUSS fachlich begründet und dokumentiert werden.</li>
+  <li>Liegt keine fachliche Entscheidung zur Verwendung eines Elements vor, bleibt dessen Definition unverändert. Insbesondere wird ein Element nicht allein deshalb auf 0..0 eingeschränkt, weil es derzeit nicht verwendet wird. Ohne Must-Support-Kennzeichnung wird es jedoch nicht in die fachliche Verarbeitung aufgenommen.</li>
+  <li>Für Modifier-Elemente MUSS eine explizite Entscheidung über deren Zulässigkeit und Verarbeitung getroffen und dokumentiert werden. Sie DÜRFEN NICHT ohne fachliche Bewertung der allgemeinen Regel für nicht unterstützte Elemente unterliegen.</li>
+</ul>
+
+<p>Damit wird zwischen dem expliziten Ausschluss eines Elements und seiner fehlenden Unterstützung unterschieden: Ein auf 0..0 eingeschränktes Element DARF NICHT übermittelt werden. Ein anderweitig zulässiges Element ohne Must-Support-Kennzeichnung kann übermittelt werden, wird jedoch gemäß den nachfolgend beschriebenen Regeln ignoriert.</p>
+
+<h5 id="kardinalitäten">Kardinalitäten</h5>
+<p>Die in den anzuwendenden Profilen festgelegten Kardinalitäten MÜSSEN eingehalten werden. Fehlt ein verpflichtendes Element oder wird die zulässige maximale Anzahl von Wiederholungen überschritten, MUSS die Operation abgelehnt werden. Dies gilt insbesondere für die Übermittlung von Elementen, deren Kardinalität auf 0..0 eingeschränkt wurde. Die Ablehnung MUSS durch ein entsprechendes OperationOutcome begründet werden.</p>
+
+<h5 id="must-support-profilierung">Must Support Profilierung</h5>
+<p>Die Must-Support-Kennzeichnung legt in diesem Implementierungsleitfaden fest, welche Elemente die zentrale Fachanwendung fachlich unterstützt. Übermittelte Werte dieser Elemente MÜSSEN entsprechend den jeweiligen fachlichen Regeln verarbeitet, gespeichert und für eine nachgelagerte Anzeige bereitgestellt werden.</p>
+
+<p>Die Kennzeichnung begründet für sich allein keine Pflicht, ein Element in jeder Instanz zu übermitteln. Ob ein Element vorhanden sein muss, ergibt sich aus seiner Mindestkardinalität sowie aus gegebenenfalls zusätzlich festgelegten Bedingungen und Invarianten.</p>
+
+<p>Bei der Kennzeichnung komplexer Elemente wird eindeutig festgelegt, welche ihrer Unterelemente unterstützt werden. Aus der Must-Support-Kennzeichnung eines übergeordneten Elements wird keine pauschale Unterstützung sämtlicher Unterelemente abgeleitet.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+    <p>Ergänzend könnten Obligations eingesetzt werden, um die mit der Kennzeichnung verbundenen Pflichten für die beteiligten Akteure präziser festzulegen.
+International werden Obligations von vielen Ländern für unterschiedliche Use Cases eingesetzt.<br />
+Sollen Obligations eingesetzt werden, um die MS Markierungen noch aussagekräftiger zu machen? Feedback aus der Community ist erwünscht.</p>
+  </div>
+</div>
+
+<h5 id="serverhalten-bei-elementen-ohne-ms-markierung">Serverhalten bei Elementen ohne MS Markierung</h5>
+<p>Werden Elemente ohne Must-Support-Kennzeichnung übermittelt, MUSS die zentrale Fachanwendung diese Elemente ignorieren. Sie werden nicht fachlich verarbeitet, gespeichert oder für die Anzeige im Portal bereitgestellt.</p>
+
+<p>Die Response MUSS ein OperationOutcome enthalten, das mit <code class="language-plaintext highlighter-rouge">OperationOutcome.issue.severity = information</code> auf die ignorierten Elemente hinweist. Die Meldung MUSS die betroffenen Elemente eindeutig benennen und deutlich machen, dass deren Inhalte weder verarbeitet noch gespeichert wurden. Die Übermittlung solcher Elemente allein führt nicht zur Ablehnung der Operation.</p>
+
+<p>Diese Regel DARF NICHT verwendet werden, um Profilverletzungen zu tolerieren. Insbesondere MÜSSEN übermittelte Elemente mit der Kardinalität 0..0 zur Ablehnung führen. Für Modifier-Elemente gelten die jeweils explizit festgelegten Entscheidungen.</p>
+
+<h4 id="profile-für-die-abbildung-von-operation-in--output">Profile für die Abbildung von Operation In &amp; Output</h4>
+
+<p>Die Ressourcen und Bundles unterscheiden sich abhängig davon, ob sie als Eingabe einer schreibenden Operation, als Ergebnis eines Schreibvorgangs oder als Ausgabe einer lesenden Operation verwendet werden. Diese Unterschiede entstehen durch serverseitige Ergänzungen, die Auflösung von Referenzen sowie durch operationsspezifische Transformationen bei der Auslieferung.</p>
+
+<p>Es ist daher zu entscheiden, ob für diese unterschiedlichen Verwendungszwecke eigene Ressourcen- und Bundle-Profile definiert werden sollen oder ob gemeinsame Profile in Verbindung mit ergänzenden Regeln in den jeweiligen OperationDefinitions ausreichen.</p>
+
+<h5 id="unterschiede-zwischen-eingabe-persistiertem-zustand-und-ausgabe">Unterschiede zwischen Eingabe, persistiertem Zustand und Ausgabe</h5>
+
+<p>Bei schreibenden Operationen übermittelt der Client Ressourcen, die durch die zentrale Fachanwendung vor der Persistierung ergänzt und aufbereitet werden. Insbesondere werden serverseitig verwaltete Elemente wie meta.versionId, meta.lastUpdated und die gemäß IG zu erzeugende Narrative (Resource.text) durch die Fachanwendung gesetzt beziehungsweise erzeugt. Die erfolgreiche Schreibantwort enthält hingegen die Ressourcen in ihrem tatsächlich persistierten Zustand einschließlich der serverseitigen Ergänzungen.</p>
+
+<p>Für die Eingabe ist noch festzulegen, ob diese serverseitig verwalteten Elemente ausdrücklich ausgeschlossen werden sollen oder ob bereits vorhandene Werte übermittelt werden dürfen, vom Server jedoch ignoriert beziehungsweise ersetzt werden. Diese Unterscheidung ist insbesondere für Clients relevant, die zuvor gelesene Ressourcen als Grundlage eines nachfolgenden Schreibvorgangs verwenden.</p>
+
+<p>Auch die Darstellung von Referenzen unterscheidet sich zwischen Eingabe und Ausgabe:</p>
+
+<ul>
+  <li>Logische Referenzen über Reference.identifier, beispielsweise auf Patient oder Practitioner, werden beim Schreiben durch die Fachanwendung aufgelöst und durch Referenzen auf die tatsächlich zugeordneten Ressourcen ersetzt.</li>
+  <li>Die für Medication vorgesehenen Conditional References (PZN+Displayname) werden serverseitig aufgelöst. Die Medication wird anschließend als enthaltene Ressource (contained) abgebildet. Diese Darstellung wird dann beim Lesen ausgeliefert.</li>
+</ul>
+
+<p>Die für die Eingabe zulässige Darstellung ist damit nicht in allen Fällen mit der persistierten und zurückgegebenen Darstellung identisch.</p>
+
+<h6 id="sonderfall-plan-read">Sonderfall $plan-read</h6>
+
+<p>Die Operation <em>$plan-read</em> unterscheidet sich von der Rückgabe persistierter Ressourcen, da sie für die Auslieferung einen aufbereiteten Medikationsplan erzeugt. Dabei werden unter anderem Flags angepasst und zum Entfernen markierte Planeinträge aus der ausgelieferten Darstellung entfernt. Diese Transformationen verändern die persistierten Ressourcen nicht.</p>
+
+<p>Für die Profilierung sind somit drei unterschiedliche Darstellungen zu berücksichtigen:</p>
+
+<ul>
+  <li>die vom Client übermittelte Eingabe eines Schreibvorgangs;</li>
+  <li>die persistierten Ressourcen und deren Rückgabe nach einem erfolgreichen Schreibvorgang;</li>
+  <li>die für <em>$plan-read</em> transformierte Auslieferungsdarstellung.</li>
+</ul>
+
+<h5 id="mögliche-ansätze-zur-profilierung">Mögliche Ansätze zur Profilierung</h5>
+
+<p>Für die Abbildung dieser Unterschiede werden folgende Ansätze zur Diskussion gestellt:</p>
+
+<ul>
+  <li>
+    <p><strong>Eigene Profile für Eingabe und Ausgabe</strong>:
+Unterschiede hinsichtlich serverseitig verwalteter Elemente, zulässiger Referenzdarstellungen und erforderlicher Inhalte werden durch getrennte Ressourcenprofile beschrieben. Eigene Bundle-Profile legen zusätzlich die Struktur und Zusammensetzung der jeweiligen Eingabe und Ausgabe fest.</p>
+  </li>
+  <li>
+    <p><strong>Gemeinsame Profile mit operationsspezifischen Regeln</strong>:
+Gemeinsame Ressourcenprofile beschreiben die fachlichen Inhalte. Abweichende Anforderungen für Eingabe und Ausgabe werden in den jeweiligen OperationDefinitions und der zugehörigen Business-Logik festgelegt. Hierzu gehören insbesondere das Verhalten bei übermittelten serverseitigen Metadaten sowie die Auflösung und Umwandlung von Referenzen.</p>
+  </li>
+</ul>
+
+<h5 id="ausgabeprofile-für-weitere-lesende-interaktionen">Ausgabeprofile für weitere lesende Interaktionen</h5>
+
+<p>Zusätzlich ist zu entscheiden, ob für lesende Interaktionen, beispielsweise GET von <em>Geplanten Abgaben</em> oder <em>$history-search</em>, eigene Ausgabe-Bundle-Profile definiert werden sollen.</p>
+
+<p>Zur Diskussion steht, ob die Festlegung auf ein Bundle vom Typ <em>searchset</em> zusammen mit der Beschreibung der Operation ausreicht oder ob die erwartete Antwortstruktur weiter eingeschränkt werden soll. Ein eigenes Ausgabeprofil würde die strukturellen Erwartungen an die Antwort explizit beschreiben. Operationsspezifische Regeln wären weiterhin erforderlich, um die Auswahl der zurückgegebenen Ressourcen und gegebenenfalls durchzuführende Transformationen festzulegen.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+<ul>
+<li>Sind getrennte Ressourcenprofile für die Eingabe schreibender Operationen und die Rückgabe persistierter Ressourcen erforderlich oder reichen gemeinsame Profile mit operationsspezifischen Regeln aus?</li>
+<li>Sollen serverseitig verwaltete Elemente wie <code>meta.versionId</code>, <code>meta.lastUpdated</code> und <code>Resource.text</code> in Schreibanfragen ausgeschlossen werden, oder sollen vorhandene Werte akzeptiert und serverseitig ignoriert beziehungsweise ersetzt werden?</li>
+<li>Benötigt die transformierte Ausgabe von <code>$plan-read</code> eigene Ressourcenprofile, oder reichen ein spezifisches Bundle-Profil und die dokumentierte Transformationslogik aus?</li>
+<li>Sollen für weitere lesende Interaktionen wie z.B. <code>$history-search</code> und  <code>GET [base]/MedicationDispense</code> eigene Ausgabe-Bundle-Profile definiert werden, die über die Festlegung von <code>Bundle.type = searchset</code> hinausgehen?</li>
+</ul>
+</div>
+</div>
+
+<h4 id="versionierung">Versionierung</h4>
+
+<p>Die Fachanwendung speichert alle e-Medikation-Ressourcen versioniert: den Medikationsplan (<em>List</em>), die Planeinträge und <em>Geplanten Abgaben</em> (<em>MedicationRequest</em>) sowie die <em>Durchgeführten Abgaben</em> (<em>MedicationDispense</em>). Sie unterstützt damit die vollständige Versionierung gemäß <a href="https://hl7.org/fhir/R4/http.html#versions">Support for Versions</a>: <code class="language-plaintext highlighter-rouge">meta.versionId</code> wird gepflegt und frühere Versionen sind für MedicationRequests und für die List Ressource über $history abrufbar (siehe <a href="interactions.html">Transaktionen</a>). Enthaltene Ressourcen (<em>contained</em>), wie die <em>Medication</em>, werden gemeinsam mit der sie enthaltenden Ressource versioniert.</p>
+
+<p>Historische Versionen können von GDAs nicht bearbeitet werden. Änderungen erfolgen immer auf Basis der aktuellen Version (siehe <a href="Sub_UC_eMed_02.html">Sub_UC_eMed_02</a>). Ausgenommen davon ist das Löschen auf Veranlassung von ELGA-Teilnehmer:innen (siehe <a href="#löschen-und-stornieren-von-versionierten-ressourcen">Löschen und Stornieren von versionierten Ressourcen</a>).</p>
+
+<p><strong>Entstehung neuer Versionen</strong></p>
+
+<p>Jedes Update, das zu einer inhaltlichen Änderung einer Ressource führt, erzeugt eine neue Version. Die Fachanwendung vergibt dabei eine neue <code class="language-plaintext highlighter-rouge">meta.versionId</code> und setzt <code class="language-plaintext highlighter-rouge">meta.lastUpdated</code> auf den Speicherzeitpunkt. Die Response enthält die neu vergebene Version.</p>
+
+<p>Ist die übermittelte Ressource inhaltlich identisch mit ihrer aktuellen Version, wird keine neue Version erzeugt. Damit wird verhindert, dass wiederholtes Speichern derselben Daten zu einer Vielzahl inhaltsgleicher Versionen führt. Beim Vergleich bleiben die serverseitig verwalteten Elemente <code class="language-plaintext highlighter-rouge">meta.versionId</code>, <code class="language-plaintext highlighter-rouge">meta.lastUpdated</code> und die von der Fachanwendung erzeugte Narrative (<code class="language-plaintext highlighter-rouge">Resource.text</code>) unberücksichtigt. Die Response enthält in diesem Fall die unveränderte aktuelle Version.</p>
+
+<p>Da <code class="language-plaintext highlighter-rouge">List.date</code> bei jedem Plan-Write von der Fachanwendung gesetzt wird, führt jeder erfolgreiche Plan-Write zu einer neuen Medikationsplanversion. Dies gilt auch dann, wenn alle Planeinträge unverändert übernommen werden (<em>List.entry.flag = unchanged</em>), etwa um die Reihenfolge der bestehenden Medikation zu verändern.</p>
+
+<p><strong>Versionskennung</strong></p>
+
+<p>Die <code class="language-plaintext highlighter-rouge">meta.versionId</code> wird ausschließlich von der Fachanwendung vergeben. Vom Client übermittelte Werte für <code class="language-plaintext highlighter-rouge">meta.versionId</code> und <code class="language-plaintext highlighter-rouge">meta.lastUpdated</code> werden gemäß <a href="https://hl7.org/fhir/R4/http.html#update">update</a> ignoriert.</p>
+
+<p>Der Basisstandard erlaubt dem Server, die Versionskennung in beliebiger Form zu erzeugen, solange sie dem Datentyp <em>id</em> entspricht und innerhalb der Versionen derselben Ressource eindeutig ist (siehe <a href="https://hl7.org/fhir/R4/http.html#concurrency">Managing Resource Contention</a>). Clients DÜRFEN die <code class="language-plaintext highlighter-rouge">meta.versionId</code> daher nur als opake Kennung verwenden und keine Reihenfolge oder Anzahl von Versionen daraus ableiten. Die zeitliche Reihenfolge der Versionen ergibt sich aus den jeweiligen Datumselementen der Ressourcen.</p>
+
+<p>Die aktuelle Version einer Ressource wird über <a href="https://hl7.org/fhir/R4/http.html#read">read</a> bzw. für den Medikationsplan über <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> ermittelt. Historische Medikationsplanversionen sind inhaltlich nicht als solche gekennzeichnet, da <code class="language-plaintext highlighter-rouge">List.status</code> fix <em>current</em> ist. Ob eine abgerufene Version die aktuelle ist, kann nur durch Vergleich mit der aktuellen Version festgestellt werden.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+<ul>
+<li>Welche Elemente sollen beim Vergleich auf inhaltliche Gleichheit unberücksichtigt bleiben?</li>
+<li>Wie soll die Fachanwendung reagieren, wenn ein Planeintrag mit <i>List.entry.flag = changed</i> übermittelt wird, der inhaltlich identisch mit der aktuellen Version ist: Ablehnen oder ohne neue Planeintragsversion als <i>unchanged</i> behandeln?</li>
+<li>Soll ein Plan-Write, bei dem alle Planeinträge unverändert bleiben, eine neue Medikationsplanversion erzeugen (aktuell) oder nur dann, wenn sich Planeinträge ändern?</li>
+<li>Soll es eine zusätzliche Kennung in den Daten des Medikationsplans geben, um die aktuelle Version des Medikationsplans zu markieren? Aus den Ergebnissen einer historischen Suche kann nicht abgeleitet werden, ob die aktuelle Version der Liste enthalten ist. Derzeit kann die aktuelle Version nur über plan-read ermittelt werden. </li>
+</ul>
+</div>
+</div>
+
+<h5 id="versionierte-referenzen">Versionierte Referenzen</h5>
+
+<p>Eine Referenz kann <a href="https://hl7.org/fhir/R4/references.html#versions">versionsspezifisch</a> auf eine bestimmte Ressourcenversion verweisen (<code class="language-plaintext highlighter-rouge">[type]/[id]/_history/[vid]</code>) oder unversioniert auf die jeweils aktuelle Version (<code class="language-plaintext highlighter-rouge">[type]/[id]</code>). In diesem Implementierungsleitfaden werden die Referenzen wie folgt verwendet:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Referenz</th>
+      <th>Versioniert</th>
+      <th>Begründung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Medikationsplan → Planeintrag (<code class="language-plaintext highlighter-rouge">List.entry.item</code>)</td>
+      <td>ja</td>
+      <td>Jede Medikationsplanversion muss den zum Zeitpunkt der Speicherung gültigen Stand der Planeinträge wiedergeben. Nur so kann ein historischer Medikationsplan rekonstruiert werden.</td>
+    </tr>
+    <tr>
+      <td><em>Geplante Abgabe</em> → Planeintrag (<code class="language-plaintext highlighter-rouge">basedOn</code>)</td>
+      <td>nein</td>
+      <td>Die <em>Geplante Abgabe</em> verweist immer auf den aktuellen Planeintrag (siehe <a href="Sub_UC_eMed_04.html#sub_uc_emed_04_01---geplante-abgabe-erstellen-prescription-write">Sub_UC_eMed_04_01</a>).</td>
+    </tr>
+    <tr>
+      <td><em>Durchgeführte Abgabe</em> → Planeintrag bzw. <em>Geplante Abgabe</em> (<code class="language-plaintext highlighter-rouge">authorizingPrescription</code>)</td>
+      <td>nein</td>
+      <td>Die <em>Durchgeführte Abgabe</em> verweist immer auf die aktuellen Versionen (siehe <a href="Sub_UC_eMed_03.html">Sub_UC_eMed_03</a>).</td>
+    </tr>
+    <tr>
+      <td>Ressourcen → Patient und GDA (z.B. <code class="language-plaintext highlighter-rouge">subject</code>, <code class="language-plaintext highlighter-rouge">requester</code>, <code class="language-plaintext highlighter-rouge">List.source</code>, <code class="language-plaintext highlighter-rouge">performer</code>)</td>
+      <td>nein</td>
+      <td>Die Identität ist über die logische Referenz (bPK-GH bzw. OID) dauerhaft festgelegt (siehe <a href="#informationen-über-gda-und-patienten">Informationen über GDA und Patienten</a>).</td>
+    </tr>
+    <tr>
+      <td>Planeintrag bzw. Abgabe → <em>Medication</em></td>
+      <td>–</td>
+      <td>Die <em>Medication</em> ist als <em>contained</em> Ressource enthalten und wird mit der enthaltenden Ressource versioniert.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Erzeugung der versionierten Referenzen im Medikationsplan</strong></p>
+
+<p>Bei der Verarbeitung einer <a href="https://hl7.org/fhir/R4/http.html#trules">Transaction</a> ersetzt der Server Referenzen auf neu angelegte Ressourcen (<em>urn:uuid</em>) durch die vergebenen Ressourcen-IDs. Bereits versionsspezifische Referenzen bleiben versionsspezifisch. Unversionierte Referenzen werden im jedoch nicht in versionierte Referenzen umgewandelt.</p>
+
+<p>Der Client kennt die Version eines neuen oder geänderten Planeintrags erst nach dem Plan-Write. Daher wird im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a> jede Referenz in <code class="language-plaintext highlighter-rouge">List.entry.item</code> verpflichtend mit der Extension <a href="https://hl7.org/fhir/extensions/StructureDefinition-resolve-as-version-specific.html">resolve-as-version-specific</a> (<code class="language-plaintext highlighter-rouge">valueBoolean = true</code>) gekennzeichnet. Die Extension stammt aus dem FHIR Extensions Pack und ist auch für R4 anwendbar. Die Fachanwendung ersetzt die gekennzeichneten Referenzen durch versionierte Referenzen auf jene Planeintragsversion, die nach Abschluss der Transaktion aktuell ist:</p>
+
+<ul>
+  <li><strong>neue Planeinträge</strong> (POST): Die <em>urn:uuid</em> wird durch die Referenz auf die neu angelegte Version ersetzt.</li>
+  <li><strong>geänderte bzw. zu entfernende Planeinträge</strong> (PUT): Die Referenz verweist auf die durch die Transaktion entstandene Version.</li>
+  <li><strong>unveränderte Planeinträge</strong> (nur referenziert, nicht im Bundle enthalten): Die Referenz verweist auf die aktuelle, unveränderte Version.</li>
+</ul>
+
+<p>In der persistierten <em>List</em>-Ressource ist die Extension nicht mehr enthalten. Ein Beispiel zeigen das <a href="Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a> und das zugehörige <a href="Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a>.</p>
+
+<p><strong>Unversionierte Referenzen der Abgaben auf Planeinträge</strong></p>
+
+<p>Die Referenzen von <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> auf Planeinträge sind nicht versioniert. Eine spätere Änderung des Planeintrags ist damit über die Abgabe sichtbar, es ist jedoch nicht nachvollziehbar, auf welcher Planeintragsversion die Abgabe beruht.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variante</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A: unversioniert (aktuell)</td>
+      <td>Die Referenz verweist immer auf die aktuelle Version des Planeintrags bzw. der <em>Geplanten Abgabe</em>.</td>
+    </tr>
+    <tr>
+      <td>B: versioniert</td>
+      <td>Die Fachanwendung löst die Referenz beim Speichern der Abgabe auf die zu diesem Zeitpunkt aktuelle Version auf (analog zu <code class="language-plaintext highlighter-rouge">List.entry.item</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Vorteile von A:</em></p>
+<ul>
+  <li>Die Abgabe zeigt immer den aktuellen Zustand des Planeintrags, z.B. ob dieser inzwischen pausiert oder abgesetzt wurde.</li>
+</ul>
+
+<p><em>Nachteile von A:</em></p>
+<ul>
+  <li>Es ist nicht nachvollziehbar, welche Planeintragsversion der Erstellung der <em>Geplanten Abgabe</em> zugrunde lag. Die bei der Erstellung geforderte Übereinstimmung von Arzneimittel und Dosierung kann im Nachhinein nicht überprüft werden.</li>
+  <li>Ressourcen, die auf eine bestimmte Planeintragsversion verweisen, können nicht gezielt gesucht werden (siehe <a href="Sub_UC_eMed_01.html">Sub_UC_eMed_01</a>).</li>
+</ul>
+
+<p><em>Vorteile von B:</em></p>
+<ul>
+  <li>Der Zusammenhang zwischen Abgabe und Planeintragsversion ist eindeutig dokumentiert.</li>
+  <li>Die aktuelle Version bleibt ermittelbar, da sich die unversionierte Referenz durch Weglassen von <code class="language-plaintext highlighter-rouge">/_history/[vid]</code> ergibt.</li>
+</ul>
+
+<p><em>Nachteile von B:</em></p>
+<ul>
+  <li>Beim Löschen von Planeintragsversionen müssen auch die Referenzen aus <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> berücksichtigt werden.</li>
+  <li>Clients müssen die aktuelle Version des Planeintrags gesondert abrufen, um dessen aktuellen Zustand anzuzeigen.</li>
+  <li>Suchparameter auf diese Referenzen müssen auch versionierte Referenzwerte berücksichtigen.</li>
+</ul>
+
+<p><strong>Referenzen auf Patient und GDA</strong></p>
+
+<p>Referenzen auf Patient, Practitioner, PractitionerRole und Organization sind nicht versioniert. Die Identität des Patienten bzw. GDA ist über die logische Referenz dauerhaft festgelegt. Die angezeigten Stammdaten (z.B. Name, Fachrichtung, Organisation) entsprechen jedoch dem aktuellen Stand der jeweiligen Ressource und nicht zwingend dem Stand zum Zeitpunkt der Dokumentation.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+<ul>
+<li>Sollen die Referenzen von <i>Geplanten Abgaben</i> und <i>Durchgeführten Abgaben</i> auf Planeinträge versioniert werden oder soll der Verweis weiterhin auf die jeweils aktuelle Version zeigen? (siehe auch <a href="#abhängigkeit-von-planeintrag-und-geplanter-abgabe">Abhängigkeit von Planeintrag und Geplanter Abgabe</a>)</li>
+<li>Wie soll die Fachanwendung reagieren, wenn ein Client im Medikationsplan-Transaction-Bundle bereits eine versionierte Referenz in <code>List.entry.item</code> übermittelt: Ablehnen, oder akzeptieren, sofern sie auf die aktuelle Version verweist?</li>
+</ul>
+</div>
+</div>
+
+<h4 id="id-management">ID-Management</h4>
+
+<p>Die logische ID (<code class="language-plaintext highlighter-rouge">Resource.id</code>) aller persistierten Ressourcen wird ausschließlich von der Fachanwendung vergeben. Sie bleibt über alle Versionen einer Ressource unverändert und ist bei der Auslieferung durch die Fachanwendung immer befüllt.</p>
+
+<p>Die Ressourcen werden in Transaction Bundles übermittelt. Dabei gelten die <a href="https://hl7.org/fhir/R4/http.html#trules">Transaction Processing Rules</a> sowie die Regeln zur <a href="https://hl7.org/fhir/R4/bundle.html#references">Auflösung von Referenzen in Bundles</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Neue Ressource (POST)</th>
+      <th>Bestehende Ressource ändern (PUT)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Bundle.entry.fullUrl</code></td>
+      <td>temporäre, vom Client erzeugte <em>urn:uuid</em></td>
+      <td>absolute URL der bestehenden Ressource (<code class="language-plaintext highlighter-rouge">[base]/[type]/[id]</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Bundle.entry.request.url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[type]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[type]/[id]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Resource.id</code></td>
+      <td>optional, wird ignoriert</td>
+      <td>verpflichtend, identisch mit der <code class="language-plaintext highlighter-rouge">[id]</code> in <code class="language-plaintext highlighter-rouge">request.url</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">meta.versionId</code>, <code class="language-plaintext highlighter-rouge">meta.lastUpdated</code></td>
+      <td>werden ignoriert</td>
+      <td>werden ignoriert</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Neue Ressourcen (POST)</strong></p>
+
+<p>Neue Ressourcen erhalten im Transaction Bundle eine temporäre <em>urn:uuid</em> als <code class="language-plaintext highlighter-rouge">fullUrl</code>. Andere Ressourcen im selben Bundle verweisen über diese <em>urn:uuid</em> auf die neue Ressource. Die Fachanwendung vergibt während der Verarbeitung die IDs und ersetzt alle Referenzen auf die temporären <em>urn:uuid</em> durch Referenzen auf die angelegten Ressourcen. Wo dies festgelegt ist, werden die Referenzen dabei durch versionierte Referenzen ersetzt (siehe <a href="#versionierte-referenzen">Versionierte Referenzen</a>).</p>
+
+<p><strong>Bestehende Ressourcen (PUT)</strong></p>
+
+<p>Bei einer Änderung referenzieren <code class="language-plaintext highlighter-rouge">fullUrl</code> und <code class="language-plaintext highlighter-rouge">request.url</code> die bestehende Ressource über ihre logische ID. Diese ist dem Client aus dem vorangegangenen Lesezugriff bekannt, z.B. aus dem Medikationsplan-Bundle des <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a>. Die Ressource erhält eine neue <code class="language-plaintext highlighter-rouge">meta.versionId</code>, sofern sich ihr Inhalt geändert hat (siehe <a href="#versionierung">Versionierung</a>). Gemäß <a href="https://hl7.org/fhir/R4/http.html#update">update</a> MUSS die Operation abgelehnt werden, wenn <code class="language-plaintext highlighter-rouge">Resource.id</code> fehlt oder von der ID in <code class="language-plaintext highlighter-rouge">request.url</code> abweicht.</p>
+
+<p>Das Anlegen von Ressourcen mit einer vom Client festgelegten ID über PUT (<a href="https://hl7.org/fhir/R4/http.html#upsert">Update as Create</a>) ist nicht vorgesehen. Ein PUT auf eine nicht vorhandene Ressource wird abgelehnt.</p>
+
+<p>Für die einzelnen Ressourcen ergibt sich daraus:</p>
+
+<ul>
+  <li><strong>Medikationsplan</strong> (<em>List</em>): Pro ELGA-Teilnehmer existiert genau eine Medikationsplan <em>List</em>-Ressource (<code class="language-plaintext highlighter-rouge">List.code = http://snomed.info/sct#736378000</code>). Diese wird von der Fachanwendung angelegt (<em>List.emptyReason = notstarted</em>). Clients ändern den Medikationsplan daher immer über PUT.</li>
+  <li><strong>Planeinträge</strong>: neue Planeinträge über POST, geänderte und zu entfernende Planeinträge über PUT im <a href="StructureDefinition-at-elga-emed-bundle-medikationsplantx.html">Medikationsplan-Transaction-Bundle</a>.</li>
+  <li><strong><em>Geplante Abgaben</em> und <em>Durchgeführte Abgaben</em></strong>: neue Abgaben über POST im jeweiligen Transaction Bundle. Spätere Änderungen erfolgen über eigene Operations auf die bestehende Ressource (z.B. <a href="OperationDefinition-at-elga-emed-operation-prescription-discard.html">$prescription-discard</a>).</li>
+</ul>
+
+<p><strong>Response</strong></p>
+
+<p>Die Response auf ein Transaction Bundle ist ein Bundle vom Typ <em>transaction-response</em>. Für jede Ressource enthält <a href="https://hl7.org/fhir/R4/bundle-definitions.html#Bundle.entry.response">Bundle.entry.response</a>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">status</code>: <em>201</em> bei neu angelegten, <em>200</em> bei geänderten Ressourcen,</li>
+  <li><code class="language-plaintext highlighter-rouge">location</code>: die versionierte URL der persistierten Version (<code class="language-plaintext highlighter-rouge">[base]/[type]/[id]/_history/[vid]</code>),
+<!-- - `etag`: die Versionskennung als Weak ETag (z.B. `W/"[vid]"`),--></li>
+  <li><code class="language-plaintext highlighter-rouge">lastModified</code>: der Speicherzeitpunkt.</li>
+</ul>
+
+<p>Ein Beispiel zeigt das <a href="Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a>.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+<ul>
+<li>Kann die <code>Resource.id</code> bei neuen Ressourcen (POST) befüllt sein und wird von der Fachanwendung ignoriert oder darf das Element gar nicht vorhanden sein?</li>
+</ul>
+</div>
+</div>
+
+<h4 id="optimistisches-locking-mit-etags">Optimistisches Locking mit ETags</h4>
+
+<p>Der Basisstandard beschreibt unter <a href="https://hl7.org/fhir/R4/http.html#concurrency">Managing Resource Contention</a> ein Verfahren, um gleichzeitige Schreibinteraktionen zu verhindern: Der Server liefert mit einer Ressource einen ETag. Bei einem Update sendet der Client diesen Wert im Header <code class="language-plaintext highlighter-rouge">If-Match</code> zurück. Weicht er von der aktuellen Version ab, lehnt der Server das Update ab (<em>Optimistic Locking</em>).</p>
+
+<p><strong>Anwendung auf den Medikationsplan</strong></p>
+
+<p>In der e-Medikation schützt der ETag den Medikationsplan als Ganzes. Er bezieht sich auf die aktuelle persistierte Version der <em>List</em>-Ressource. Planeinträge können nur gemeinsam mit dem Medikationsplan über Plan-Write geändert werden und jeder Plan-Write erzeugt eine neue <em>List</em>-Version. Der ETag der <em>List</em> erkennt damit auch zwischenzeitliche Änderungen an den Planeinträgen.</p>
+
+<p>Der Ablauf ist in <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01</a> und <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Sub_UC_eMed_02_01</a> beschrieben:</p>
+
+<ol>
+  <li>Die Fachanwendung liefert bei <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> im HTTP-Response-Header den ETag der aktuellen persistierten <em>List</em>-Version.</li>
+  <li>Der Client übermittelt diesen ETag beim <a href="OperationDefinition-at-elga-emed-operation-plan-write.html">$plan-write</a> im HTTP-Request-Header <code class="language-plaintext highlighter-rouge">If-Match</code>.</li>
+  <li>Die Fachanwendung vergleicht den übermittelten ETag mit dem ETag der aktuell persistierten <em>List</em>-Version:
+    <ul>
+      <li>Stimmen beide überein, wurde der Medikationsplan seit dem $plan-read nicht geändert und der Schreibvorgang wird verarbeitet.</li>
+      <li>Stimmen sie nicht überein, wird der Schreibvorgang mit einem OperationOutcome abgelehnt. Der Client muss den Medikationsplan erneut mittels $plan-read abrufen und seine Änderungen auf Basis der aktuellen Version durchführen.</li>
+      <li>Fehlt der Header <code class="language-plaintext highlighter-rouge">If-Match</code>, wird der Schreibvorgang ebenfalls abgelehnt.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Abweichend vom Basisstandard wird der ETag hier für das Ergebnis einer Operation (Plan-Read) geliefert und bezieht sich auf die darin enthaltene <em>List</em>-Ressource. Im Basisstandard wird für Ressourcen in einem Bundle kein gemeinsamer ETag geliefert, sondern <code class="language-plaintext highlighter-rouge">Bundle.request.ifMatch</code> und <code class="language-plaintext highlighter-rouge">Bundle.response.etag</code> verwendet. Zu beachten ist außerdem, dass die bei $plan-read ausgelieferte <em>List</em> transformiert ist (siehe <a href="#automatische-statusänderungen-der-beim-plan-read-ausgelieferten-ressourcen">Automatische Statusänderungen</a>). Der ETag bezieht sich dennoch auf die persistierte Version.</p>
+
+<p><strong>Wert des ETags</strong></p>
+
+<p>Die Bildung des ETags ist implementierungsabhängig. Clients DÜRFEN den Wert nur unverändert zurücksenden und nicht interpretieren. Die Verwendung der <code class="language-plaintext highlighter-rouge">meta.versionId</code> der <em>List</em> ist eine mögliche Variante, die dem Basisstandard entspricht.</p>
+
+<p><strong>Alternative: ETag im Transaction Bundle</strong></p>
+
+<p>Anstelle des HTTP-Headers kann der ETag im Medikationsplan-Transaction-Bundle über <a href="https://hl7.org/fhir/R4/bundle-definitions.html#Bundle.entry.request.ifMatch">Bundle.entry.request.ifMatch</a> des <em>List</em>-Eintrags übermittelt werden. Damit wäre das Bundle in sich vollständig. Ein zusätzlicher HTTP-Header für die Custom Operation wäre nicht erforderlich.</p>
+
+<!-- <div class="dragon" markdown="1">
+<div class="note-to-balloters">
+<ul>
+<li>Soll der ETag beim $plan-write im HTTP-Header <code>If-Match</code> oder in <code>Bundle.entry.request.ifMatch</code> des <i>List</i>-Eintrags im Medikationsplan-Transaction-Bundle übermittelt werden?</li>
+<li>Soll als ETag verpflichtend die <code>meta.versionId</code> der <i>List</i> verwendet werden oder soll der Wert implementierungsabhängig bleiben?</li>
+<li>Ist der ETag der <i>List</i> ausreichend oder werden zusätzlich ETags für Planeinträge benötigt?</li>
+<li>Ist ein Optimistic Locking auch für schreibende Operations auf <i>Geplante Abgaben</i> und <i>Durchgeführte Abgaben</i> erforderlich, oder reichen die Regeln für zulässige Statusübergänge aus?</li>
+</ul>
+</div>
+</div> -->
+
+<h4 id="informationen-über-gda-und-patienten">Informationen über GDA und Patienten</h4>
+
+<p>Stammdaten zu Gesundheitsdiensteanbietern (GDA) und Patienten werden ausschließlich von der e-Medikation-Fachanwendung, bzw. von den darüberliegenden zentralen Registern, verwaltet. Client-Anwendungen dürfen daher keine eigenen <code class="language-plaintext highlighter-rouge">Patient</code>-, <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen übermitteln. Es genügt, diese über ihren Identifier als logische Referenz (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) anzugeben:</p>
+
+<ul>
+  <li><strong>GDA:</strong> OID des GDA laut GDA-Index (GDA-I)</li>
+  <li><strong>Patient:</strong> bereichsspezifisches Personenkennzeichen Gesundheit (bPK-GH)</li>
+</ul>
+
+<p>Die e-Medikation-Fachanwendung löst diese Identifier gegen den GDA-I bzw. den Zentralen Patientenindex (ZPI) auf. Bei Bedarf legt sie die zugehörigen Ressourcen an und ergänzt die logischen Referenzen um Referenzen auf diese Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>). Die übermittelten logischen Referenzen (<code class="language-plaintext highlighter-rouge">Reference.identifier</code>) dürfen dabei nicht ersetzt werden, sondern bleiben unverändert erhalten. Beim Abruf von Daten enthalten die Ressourcen daher sowohl die logischen als auch die aufgelösten Referenzen.</p>
+
+<p>Bei Referenzen, die auf mehrere Ressourcentypen verweisen können (z. B. <code class="language-plaintext highlighter-rouge">requester</code>, <code class="language-plaintext highlighter-rouge">performer</code> oder <code class="language-plaintext highlighter-rouge">List.source</code>), ergibt sich aus dem jewiligen <code class="language-plaintext highlighter-rouge">Reference.identifer.system</code>, ob es sich um eine OID oder ein bPK-GH handelt. Die e-Medikation-Fachanwendung kann daraus den Identifier eindeutig zuordnen. Verweise auf Einträge (<code class="language-plaintext highlighter-rouge">List.entry.item</code>) sind hingegen immer Referenzen auf bereits in der e-Medikation-Fachanwendung gespeicherte Ressourcen (<code class="language-plaintext highlighter-rouge">Reference.reference</code>) oder Ressourcen, welche im TransactionBundle mitgeliefert werden.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+    <p>Aktuell wird in einer AG des TC FHIR daran gearbeitet, wie die e-Medikation-Fachanwendung die Informationen aus dem GDA-I auf Basis einer OID auf die <code class="language-plaintext highlighter-rouge">Practitioner</code>-, <code class="language-plaintext highlighter-rouge">PractitionerRole</code>- und/oder <code class="language-plaintext highlighter-rouge">Organization</code>-Ressourcen umlegen kann. Die Ergebnisse dieser AG werden in die Implementierung der e-Medikation-Fachanwendung einfließen.</p>
+  </div>
+</div>
+
+<p><br /></p>
+
+<p>Das folgende Beispiel zeigt denselben Eintrag einmal als übermittelte und einmal als gespeicherte Ressource:</p>
+
+<table class="grid">
+  <tr>
+    <th></th>
+    <th>Request</th>
+    <th>Gespeichert</th>
+  </tr>
+  <tr>
+    <td><strong>Beispieldateien</strong></td>
+    <td><a href="Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html">Transaction Bundle</a></td>
+    <td><a href="Bundle-At-Emed-Journey-01-02-Bundle-plan-write-response.html">plan-write Response Bundle</a></td>
+  </tr>
+  <tr>
+    <td><strong>Beispielfragmente</strong></td>
+    <td><pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/list.html#List">resourceType</a>" : "List",
+  ...
+  "<a href="http://hl7.org/fhir/R4/list.html#List.subject">subject</a>" : {
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.type">type</a>" : "Patient",
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.40.0.10.2.1.1.149",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+    }
+  },
+  ...
+  "<a href="http://hl7.org/fhir/R4/list.html#List.source">source</a>" : {
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:ietf:rfc:3986",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "urn:oid:1.2.40.0.34.99.4613.4"
+    }
+  },
+  ...
+}</code></pre>
+</td>
+    <td><pre class="json" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-json" style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/list.html#List">resourceType</a>" : "List",
+  ...
+  "<a href="http://hl7.org/fhir/R4/list.html#List.subject">subject</a>" : {
+    <a href="Patient-At-Emed-Example-Patient-01.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Patient/At-Emed-Example-Patient-01",
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.type">type</a>" : "Patient",
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:1.2.40.0.10.2.1.1.149",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "GH:oeLdSEb0l+8kSdJWjOYyYmnYki0="
+    }
+  },
+  ...
+  "<a href="http://hl7.org/fhir/R4/list.html#List.source">source</a>" : {
+    <a href="Practitioner-At-Emed-Example-Practitioner-01.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Practitioner/At-Emed-Example-Practitioner-01",
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.identifier">identifier</a>" : {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:ietf:rfc:3986",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "urn:oid:1.2.40.0.34.99.4613.1"
+    }
+  },
+  ...
+}</code></pre>
+ </td>
+  </tr>
+</table>
+
+<h4 id="befüllung-der-narrativen-teile">Befüllung der Narrativen Teile</h4>
+
+<p>Für die im IG festgelegten Ressourcen wird die menschenlesbare Darstellung (Resource.text) zentral durch die Fachanwendung erzeugt. Ziel ist eine einheitliche und nachvollziehbare Darstellung der wesentlichen Ressourceninhalte. Die Narrative muss dem jeweils gespeicherten bzw. ausgelieferten Zustand entsprechen und nach serverseitigen Änderungen oder Transformationen entsprechend angepasst werden. Ebenso wird <code class="language-plaintext highlighter-rouge">extension:renderedDosageInstruction</code> immer durch die Fachanwendung generiert; <code class="language-plaintext highlighter-rouge">Dosage.text</code> wird bei strukturierten Dosierungen generiert und enthält nur bei der Dosierungskategorie <code class="language-plaintext highlighter-rouge">freitext</code> die vom GDA erfasste Dosierungsanweisung.</p>
+
+<p>Die Generierung berücksichtigt sowohl strukturierte Angaben als auch Freitextinformationen. Die Narrative ergänzt die strukturierten Daten, ersetzt diese jedoch nicht. Davon zu unterscheiden sind fachlich erfasste Freitexte, beispielsweise ergänzende Hinweise oder eine nicht strukturiert abbildbare Dosierungsanweisung; diese bleiben eigenständige Inhalte und werden bei der Generierung berücksichtigt. Die unterschiedlichen Textfelder und ihr jeweiliger Geltungsbereich sind im Abschnitt <a href="dosages.html#textdarstellungen-und-ergänzende-hinweise">Textdarstellungen und ergänzende Hinweise im Kapitel der Dosierungen</a> beschrieben.</p>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+    <p>Der finale Algorithmus für die Generierung der menschenlesbaren Textdarstellungen der einzelnen Ressourcen und Dosierschemata wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt. Feedback aus der Community ist erwünscht.</p>
+  </div>
+</div>
+<p><br /></p>
+
+<!-- * Regelwerk für text Generierung (durch Fachanw.)
+    * text beim Schreiben leer, beim lesen 1..1 -->
+
+<h4 id="löschen-und-stornieren-von-versionierten-ressourcen">Löschen und Stornieren von versionierten Ressourcen</h4>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+    <p>Dieser Abschnitt beschreibt die zur Diskussion stehenden Konzepte für das Löschen und Stornieren versionierter Ressourcen sowie deren Auswirkungen auf den Medikationsplan und seine Historie. Die beschriebenen Löschvarianten sind bislang nicht im IG umgesetzt. Insbesondere zur Behandlung historischer Ressourcenversionen, zur Referenzintegrität und zur technischen Umsetzbarkeit wird Feedback aus der Community erbeten.</p>
+  </div>
+</div>
+
+<p><br />
+Das fachliche Stornieren durch einen GDA ist vom Löschen auf Veranlassung von ELGA-Teilnehmer:innen zu unterscheiden.</p>
+
+<p>Beim Stornieren wird ein fachlicher Sachverhalt zurückgenommen beziehungsweise als nicht mehr gültig gekennzeichnet. Die betroffenen Ressourcen bleiben erhalten und es wird nur der <em>status</em> geändert, sodass die ursprüngliche Dokumentation und die nachfolgende Stornierung nachvollziehbar bleiben. Die konkrete Abbildung erfolgt entsprechend den für die jeweilige Ressource festgelegten Status- und Workflowregeln.</p>
+
+<p>Das Löschen auf Veranlassung von ELGA-Teilnehmer:innen verfolgt hingegen das Ziel, die betroffenen Inhalte dauerhaft aus dem verfügbaren Datenbestand einschließlich der jeweils betroffenen Historie zu entfernen. Eine reine Statusänderung oder das Ausblenden aus dem aktuellen Medikationsplan reicht dafür nicht aus.</p>
+
+<p>Der genaue Umfang dieser Löschung wird im Rahmen der Teilnehmerrechte festgelegt.</p>
+
+<h5 id="löschen-von-medikationsplan-und-medikationsplaneinträgen">Löschen von Medikationsplan und Medikationsplaneinträgen</h5>
+
+<p>Für das Löschen sind zwei unterschiedliche Konzepte zu unterscheiden: das <strong>horizontale Löschen von Medikationsplaneinträgen</strong> und das <strong>vertikale Löschen von Medikationsplänen</strong>.</p>
+
+<ul>
+  <li>Horizontales Löschen: Ein bestimmter Medikationsplaneintrag wird über alle Medikationsplanversionen hinweg einschließlich seiner gesamten Versionshistorie gelöscht.</li>
+  <li>Vertikales Löschen: Eine bestimmte Medikationsplanversion wird gelöscht. Zusätzlich werden jene Versionen der darin referenzierten Planeinträge gelöscht, die von keiner verbleibenden Medikationsplanversion mehr benötigt werden.</li>
+</ul>
+
+<p>Die Begriffe „horizontal“ und „vertikal“ beschreiben hier den fachlichen Löschumfang und keine eigenständigen FHIR-Interaktionen.</p>
+
+<p>Das horizontale Löschen ermöglicht es, einen bestimmten Medikationsplaneintrag einschließlich seines Verlaufs zu entfernen, ohne zugleich die Dokumentation anderer Medikationen zu verlieren. Stünde ausschließlich das vertikale Löschen zur Verfügung, müssten alle Medikationsplanversionen gelöscht werden, in denen der betreffende Eintrag enthalten ist. Abhängig davon, wie lange dieser Eintrag im Medikationsplan geführt wurde, könnte dies einen erheblichen Teil der Planhistorie betreffen. Dabei würden auch Informationen zu anderen Medikationen entfernt, auf die sich das Löschanliegen nicht bezieht. Das horizontale Löschen soll solche zusätzlichen Informationsverluste möglichst vermeiden.</p>
+
+<p>Das vertikale Löschen setzt hingegen an einem bestimmten dokumentierten Planstand an und nicht am gesamten Verlauf einer einzelnen Medikation. Es ermöglicht, eine ausgewählte Medikationsplanversion zu entfernen, während andere Planversionen und die dafür weiterhin benötigten Planeintragsversionen erhalten bleiben. Beide Konzepte unterscheiden sich somit darin, worauf sich das Löschanliegen bezieht: auf einen einzelnen Eintrag über seinen Verlauf hinweg oder auf einen bestimmten Stand des gesamten Medikationsplans.</p>
+
+<p><a href="Löschen_horizontal_vertikal.png"><img src="Löschen_horizontal_vertikal.png" alt="diagram" style="width: 60%" /></a></p>
+
+<p><strong>Horizontales Löschen von Medikationsplaneinträgen</strong></p>
+
+<p>Beim horizontalen Löschen wird ein Medikationsplaneintrag (<code class="language-plaintext highlighter-rouge">MedicationRequest</code>) einschließlich aller Versionen unwiderruflich gelöscht. Der Eintrag ist damit weder in aktuellen noch in historischen Medikationsplanversionen oder über einen direkten Abruf seiner Ressourcenversionen verfügbar.</p>
+
+<p>Der zur Diskussion stehende Ablauf umfasst:</p>
+<ol>
+  <li>Ermitteln aller Versionen der betroffenen MedicationRequest-Ressource.</li>
+  <li>Ermitteln aller aktuellen und historischen List-Versionen, die eine dieser Versionen referenzieren.</li>
+  <li>Entfernen der betroffenen List.entry-Elemente aus diesen Medikationsplanversionen.</li>
+  <li>Kennzeichnen der betroffenen Medikationsplanversionen mit List.extension:PatientModified = true.</li>
+  <li>Dauerhaftes Löschen sämtlicher Versionen der betroffenen MedicationRequest-Ressource.</li>
+</ol>
+
+<p>Das <code class="language-plaintext highlighter-rouge">extension:PatientModified</code>-Flag kennzeichnet, dass die ursprüngliche Dokumentation des jeweiligen Medikationsplans aufgrund einer durch Teilnehmer:innen veranlassten Löschung nicht mehr vollständig verfügbar ist.</p>
+
+<p>Die übrigen Planeinträge und deren Versionshistorie bleiben von der Löschung unberührt.</p>
+
+<p>Enthält eine betroffene Medikationsplanversion nach der Bereinigung keine Einträge mehr, ist zusätzlich festzulegen, wie dieser Zustand durch List.emptyReason abgebildet wird.</p>
+
+<p>Die Löschung muss auch bei der Erzeugung von Narrativen und Auslieferungs-Bundles berücksichtigt werden. Bereits entfernte Inhalte dürfen nicht über solche Darstellungen weiterhin verfügbar sein.</p>
+
+<p><strong>Technische Einordnung des horizontalen Löschens</strong></p>
+
+<p>Ein reguläres FHIR-delete ist nicht mit der vollständigen Entfernung aller Ressourcenversionen gleichzusetzen. Bei versionierenden Servern bleibt die bisherige Historie grundsätzlich erhalten; die Löschung wird als weiterer Zustand in der Historie dokumentiert. FHIR R4 erlaubt jedoch eine vollständige Entfernung einschließlich Historie, wenn entsprechende Richtlinien oder fachliche Regeln dies vorsehen.</p>
+
+<p>Im aktuellen FHIR-CI-Build sind zusätzlich folgende Interaktionen beschrieben:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE [base]/MedicationRequest/[id]
+DELETE [base]/MedicationRequest/[id]/_history
+</code></pre></div></div>
+<p>Die erste Interaktion löscht die Ressource im Sinne des regulären <a href="https://build.fhir.org/http.html#delete">delete</a>. Die zweite Interaktion <a href="https://build.fhir.org/http.html#delete-history">delete-history</a> entfernt die historischen Versionen, nicht jedoch den aktuellen Zustand. Die Kombination ist daher eine technische Orientierung für die Entfernung der Ressourceninhalte und ihrer Historie.</p>
+
+<p>Diese zusätzlichen History-Löschinteraktionen sind nicht Bestandteil der REST-Interaktionen von FHIR R4. Daher würde eine custom Operation <code class="language-plaintext highlighter-rouge">[base]/MedicationRequest/[id] $planentry-delete</code> zum Einsatz kommen.</p>
+
+<p><strong>Umgang mit betroffenen historischen Medikationsplanversionen</strong></p>
+
+<p>Das horizontale Löschen betrifft nicht nur die zu löschende MedicationRequest, sondern auch bereits gespeicherte historische List-Versionen: Sowohl das Entfernen von List.entry als auch das Setzen von PatientModified verändern deren bisherigen Inhalt.</p>
+
+<p>Hier besteht ein grundlegender Konflikt mit der Verwendung der FHIR-Historie als Abbildung unveränderlicher Ressourcenversionen. Ein reguläres FHIR-update erzeugt eine neue aktuelle Version; eine Aktualisierung einer bestimmten historischen Version ist nicht vorgesehen.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variante</th>
+      <th>Beschreibung</th>
+      <th>Wesentliche Konsequenzen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A: Bereinigung unter Beibehaltung der meta.versionId</td>
+      <td>Die betroffene historische List-Version wird bereinigt und mit PatientModified = true gekennzeichnet. Ihre bisherige meta.versionId bleibt erhalten.</td>
+      <td>Bestehende versionierte Referenzen bleiben verwendbar. Unter derselben Versionskennung wäre jedoch nach der Löschung ein anderer Inhalt verfügbar. Der Umgang mit meta.lastUpdated, ETags, Caches und bereits abgerufenen Darstellungen müsste ausdrücklich geregelt werden.</td>
+    </tr>
+    <tr>
+      <td>B: Ersatz durch eine bereinigte Version mit neuer meta.versionId</td>
+      <td>Für den betroffenen historischen Planstand wird eine bereinigte Ersatzdarstellung mit neuer Versionskennung erzeugt. Die ursprüngliche Version wird dauerhaft gelöscht.</td>
+      <td>Die geänderte Darstellung erhält eine eigene Versionskennung. Allerdings müssen die Zuordnung zum ursprünglichen fachlichen Planstand, die zeitliche Einordnung und der Umgang mit Referenzen auf die entfernte Version geregelt werden.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Variante B ist nicht allein durch ein reguläres update umsetzbar: Dieses erzeugt eine neue aktuelle Version und ersetzt nicht gezielt eine Version innerhalb der bestehenden Historie. Auch diese Variante benötigt daher ein ausdrücklich beschriebenes Konzept für die Abbildung historischer Planstände.</p>
+
+<p>Als weitere fachliche Alternative kann diskutiert werden, gelöschte Einträge durch einen Hinweis auf nicht mehr verfügbare Inhalte zu ersetzen (broken-link oder Referenz ersetzt durch data-absent-reason-extension), anstatt das jeweilige List.entry vollständig zu entfernen. Damit bliebe erkennbar, dass und gegebenenfalls wie viele Einträge gelöscht wurden. Ob diese Information erhalten bleiben darf und wie sie profiliert werden könnte, ist gesondert zu entscheiden. Das Problem der nachträglichen Veränderung historischer Planversionen würde dadurch nicht entfallen.</p>
+
+<p><strong>Vertikales Löschen von Medikationsplänen</strong></p>
+
+<p>Beim vertikalen Löschen werden einzelne Medikationsplanversionen (Versionen der <code class="language-plaintext highlighter-rouge">List</code>-Ressource) unwiderruflich gelöscht. Die darin referenzierten Planeinträge werden nicht pauschal einschließlich ihrer gesamten Historie gelöscht. Stattdessen wird für jede referenzierte MedicationRequest-Version geprüft, ob sie von einer verbleibenden Medikationsplanversion weiterhin referenziert wird.</p>
+
+<p>Nur die MedicationRequest-Versionen auf die keine Referenz mehr zeigt, sollen zusätzlich gelöscht werden. Andere Versionen des MedicationRequests bleiben erhalten. Dadurch bleiben bestehende Referenzen auflösbar.</p>
+
+<p><strong>Löschen einer historischen Medikationsplanversion</strong></p>
+
+<p>Für das Löschen einer historischen Medikationsplanversion wird folgender Ablauf vorgeschlagen:</p>
+
+<ol>
+  <li>Ermitteln der zu löschenden List-Version und der darin referenzierten MedicationRequest-Versionen.</li>
+  <li>Ermitteln, welche dieser MedicationRequest-Versionen von keiner verbleibenden Medikationsplanversion mehr referenziert werden.</li>
+  <li>Dauerhaftes Löschen der ausgewählten historischen List-Version.</li>
+  <li>Dauerhaftes Löschen der gemäß Schritt 2 nicht mehr benötigten MedicationRequest-Versionen.</li>
+</ol>
+
+<p>Die verbleibenden Medikationsplanversionen und die weiterhin benötigten Planeintragsversionen bleiben unverändert. Die gelöschte Planversion ist anschließend nicht mehr Teil der Historie.</p>
+
+<p>Die Entfernung einer einzelnen historischen Ressourcenversion entspricht konzeptionell der im FHIR-CI-Build beschriebenen Interaktion <a href="https://build.fhir.org/http.html#delete-history-version">delete-history-version</a>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE [base]/List/[id]/_history/[vid]
+DELETE [base]/MedicationRequest/[id]/_history/[vid]
+</code></pre></div></div>
+<p>Diese Interaktion schließt die jeweils aktuelle Ressourcenversion ausdrücklich aus. Sollte eine zu entfernende MedicationRequest-Version zugleich deren aktuelle Version sein, ist daher ein gesondertes Vorgehen erforderlich. Daher würde auch hier eine Custom Operation <code class="language-plaintext highlighter-rouge">[base]/List $history-delete</code> zum Einsatz kommen.</p>
+
+<p><strong>Löschen der aktuellen Medikationsplanversion</strong>
+Beim Löschen des aktuellen Medikationsplans soll verhindert werden, dass eine ältere Medikationsplanversion unbeabsichtigt wieder als aktueller Plan verwendet wird.</p>
+
+<p>Für diesen Fall wird folgender fachlicher Zielzustand vorgeschlagen:</p>
+
+<ol>
+  <li>Die bisher aktuelle List-Version wird dauerhaft gelöscht.</li>
+  <li>Die darin referenzierten MedicationRequest-Versionen werden gelöscht, sofern sie von keiner verbleibenden Medikationsplanversion mehr referenziert werden.</li>
+  <li>Unter derselben List.id wird eine neue, leere Medikationsplanversion mit einer neuen meta.versionId bereitgestellt.</li>
+  <li>Als Autor beziehungsweise Quelle des neuen leeren Medikationsplans wird das Device der Fachanwendung eingetragen.</li>
+  <li>Der neue leere Medikationsplan wird mit List.extension:PatientModified = true gekennzeichnet.</li>
+</ol>
+
+<p>Die verbleibenden historischen Medikationsplanversionen bleiben verfügbar. Der aktuelle Medikationsplan ist jedoch leer und wird nicht aus einer älteren Version wiederhergestellt. Die konkrete Belegung von List.emptyReason ist noch festzulegen.</p>
+
+<p><strong>Auswirkungen auf die aktuelle Version von Medikationsplaneinträgen</strong></p>
+
+<p>Beim vertikalen Löschen kann eine MedicationRequest-Version betroffen sein, die zwar von keiner verbleibenden Medikationsplanversion mehr benötigt wird, technisch aber die aktuelle Version dieser Ressource darstellt.</p>
+
+<p>Für diesen Fall ist zu entscheiden, ob eine ältere verbleibende MedicationRequest-Version wieder als aktuelle Version bereitgestellt werden soll.</p>
+
+<p>Die Entscheidung ist insbesondere für unversionierte Referenzen relevant. Im bisherigen Design ist beispielsweise die Referenz einer <em>Geplanten Abgabe</em> auf ihren Planeintrag über basedOn unversioniert. Daher muss geprüft werden, welche Auswirkungen eine Löschung oder ein Wechsel des aktuellen Planeintragszustands auf diese Referenzen hat.</p>
+
+<p><strong>Übergreifende Anforderungen und offene Abgrenzungen</strong></p>
+
+<p>Unabhängig von der gewählten technischen Variante sind folgende Punkte festzulegen:</p>
+
+<ul>
+  <li>Referenzintegrität: Die Prüfung darf sich nicht ausschließlich auf List.entry.item beschränken, wenn weitere Ressourcen auf den betroffenen Planeintrag oder eine seiner Versionen verweisen. Insbesondere ist zu entscheiden, wie Referenzen aus <em>Geplanten Abgaben</em> und <em>Durchgeführten Abgaben</em> behandelt werden.</li>
+  <li>Abgeleitete Inhalte: Narrative, Suchergebnisse und erzeugte Bundles dürfen die gelöschten Inhalte nicht weiterhin enthalten.</li>
+</ul>
+
+<div class="dragon">
+  <div class="note-to-balloters">
+    <p>Die beschriebenen Löschkonzepte sind bislang nicht im IG umgesetzt. Zu diesem Abschnitt wird besonders um fachliches und technisches Feedback gebeten. Insbesondere sollen Erfahrungen aus der Implementierung versionierender FHIR-Server und vergleichbarer Konzepte berücksichtigt werden.</p>
+    <ul>
+<li>Ist die Unterscheidung zwischen horizontalem Löschen eines Planeintrags einschließlich aller Versionen und vertikalem Löschen einzelner Medikationsplanversionen fachlich ausreichend?</li>
+<li>Wie sollen historische Medikationsplanversionen beim horizontalen Löschen bereinigt werden: unter Beibehaltung ihrer bisherigen <code>meta.versionId</code> oder durch bereinigte Ersatzdarstellungen mit neuer Versionskennung? Welche Alternativen vermeiden eine Veränderung bereits identifizierter historischer Inhalte?</li>
+<li>Wie können bei einer Ersatzdarstellung die ursprüngliche zeitliche Einordnung, die Zuordnung zum fachlichen Planzustand und bestehende versionierte Referenzen erhalten beziehungsweise nachvollziehbar behandelt werden?</li>
+<li>Sollen betroffene <code>List.entry</code>-Elemente vollständig entfernt werden oder soll ein Hinweis auf gelöschte Inhalte erhalten bleiben? Darf daraus die Anzahl gelöschter Einträge erkennbar sein?</li>
+<li>Ist es fachlich richtig, beim Löschen der aktuellen Medikationsplanversion einen neuen leeren Plan mit der Fachanwendung als Autor und <code>PatientModified = true</code> bereitzustellen? Welcher Wert für <code>List.emptyReason</code> soll diesen Zustand beschreiben?</li>
+<li>Wie soll eine zu löschende aktuelle <code>MedicationRequest</code>-Version behandelt werden, wenn ältere Versionen weiterhin benötigt werden? Darf eine ältere Version wieder zur aktuellen Version werden, insbesondere im Hinblick auf unversionierte Referenzen?</li>
+<li>Welche weiteren Referenzen, insbesondere aus Geplanten und Durchgeführten Abgaben, müssen bei der Bestimmung des Löschumfangs berücksichtigt werden?</li>
+<li>Welche der beschriebenen Varianten können bestehende FHIR-R4-Server umsetzen? Welche zusätzlichen Operationen oder serverinternen Funktionen wären erforderlich?</li>
+<li>Wie sollen  <code>meta.versionId</code>, <code>meta.lastUpdated</code>, ETags nach einer Löschung behandelt werden?</li>
+</ul>
+  </div>
+</div>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
+          Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-10-29 15:54:00 +0000">
+    2026-10-29
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,468 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>AT ELGA e-Medikation Operation für $dispense-discard - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/liquid.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/template.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"12.36"}
+    h3,h4,h5,h6{--heading-prefix:"12.36"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+                <div id="project-nav">
+          <img height="50" alt="Logo" src="assets/images/logo.jpg"/>
+        </div>
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+      <li>
+        <a href="dosages.html">Dosierungen</a>
+      </li>
+      <li>
+        <a href="medication.html">Medikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">UC 1 Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">UC 2 Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">UC 3 Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">UC 4 Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">UC 5 Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>AT ELGA e-Medikation Operation für $dispense-discard</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-canonical -->
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="OperationDefinition-at-elga-emed-operation-dispense-discard.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="OperationDefinition-at-elga-emed-operation-dispense-discard.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">OperationDefinition: AT ELGA e-Medikation Operation für $dispense-discard
+
+  </h2>
+
+  <table class="colsd" data-fhir="generated">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-dispense-discard<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-dispense-discard"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.1.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-dispense-discard|0.1.0"/></span>
+      </td>
+      <td style="text-align: right;border-left-style: hidden" title="Enable this to see changes since the last official release">
+        <span id="toggle-change-display"><label style="margin:0;font-weight:normal" for="showChanges">Highlight text changes?</label>
+  
+        <input style="margin:0" type="checkbox" id="showChanges" onchange="toggleChanges()"/>
+  
+      </span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="5">
+        
+          Draft
+          
+
+            as of 
+2026-10-29
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">AtElgaEmedDispenseDiscard</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+<div data-fhir="generated">
+<p>Operation für das Stornieren von Durchgeführten Abgaben</p>
+
+</div>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<div class="dragon">
+  <p class="note-to-balloters">
+    <ul>
+    <li>Die finale Liste der allgemeinen Businesslogik wird noch erarbeitet. Feedback für zusätzliche Prüfungen/Regeln ist erwünscht.</li>
+    <li>Die genaue Struktur des OperationOutcome im Fehlerfall ist noch zu definieren.</li>
+    </ul>
+</p>
+</div>
+
+<h3 id="allgemeine-business-logik-für-schreibende-operations">Allgemeine Business-Logik für schreibende Operations</h3>
+<p>Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementierungsleitfadens. Sie gelten sowohl für unmittelbar übermittelte Änderungen als auch für daraus resultierende serverseitige Folgeänderungen. Input und Output sind in den <a href="#parameters">Parameters</a> festgelegt.Ergänzende Regelungen werden in der für die <a href="#operation-spezifische-business-logik">Operation spezifischen Business-Logik</a> beschrieben.</p>
+
+<h4 id="generell">Generell</h4>
+<ul>
+  <li>Für alle im IG entsprechend festgelegten Ressourcen MUSS die Narrative (.text) gemäß den ressourcenspezifischen Regeln erzeugt werden. Nach serverseitigen Änderungen MUSS sichergestellt sein, dass die Narrative dem tatsächlich gespeicherten beziehungsweise ausgelieferten strukturierten Inhalt entspricht.</li>
+</ul>
+
+<h4 id="kontext">Kontext</h4>
+<ul>
+  <li>Vor der Verarbeitung MUSS geprüft werden, ob der Aufrufer der Operation für den betroffenen Patienten und die betroffenen Ressourcen berechtigt ist.</li>
+  <li>Es MUSS geprüft werden, dass der schreibende GDA nach der Transaktion auch als Autor der veränderten Ressourcen dokumentiert ist.</li>
+  <li>Alle patientenbezogenen Ressourcen des fachlichen Schreibvorgangs MÜSSEN demselben ELGA-Teilnehmer zugeordnet sein. Dies MUSS auch für referenzierte bestehende Ressourcen und für die durch Folgeänderungen betroffenen Ressourcen geprüft werden.</li>
+  <li>Client-Anwendungen dürfen keine eigenen Patient-, Practitioner- oder Organization-Ressourcen zur Stammdatenanlage oder -änderung übermitteln. Die Identifikation erfolgt gemäß IG über die vorgegebenen logischen Referenzen.</li>
+</ul>
+
+<h4 id="validierung">Validierung</h4>
+<ul>
+  <li>Die Fachanwendung MUSS den Zustand der Ressourcen validieren, der nach Anwendung aller übermittelten Änderungen, Referenzauflösungen und serverseitigen Ergänzungen entstehen würde. Schlägt eine erforderliche Prüfung fehl, MUSS die Operation abgelehnt werden. Es DÜRFEN KEINE fachlichen Teiländerungen persistiert werden.</li>
+  <li>Die Validierung MUSS mindestens die FHIR-R4-Basisregeln, die anzuwendenden IG-Profile und deren Abhängigkeiten, Kardinalitäten, Datentypen, Slicing-Regeln, fixe Werte, Terminology Bindings entsprechend ihrer Bindungsstärke, Must-Support Mechanismus sowie Invarianten umfassen.</li>
+  <li>Werden Elemente übermittelt, welche im IG explizit gestrichen worden sind (Kardinalität 0..0) so MUSS die Operation abgelehnt werden.</li>
+  <li>Werden Elemente übermittelt, welche im IG nicht als MS markiert sind, so ist in einem OperationOutcome mit der .severity #information in der Response deutlich zu kennzeichenen, dass die Elemente ignoriert und nicht vom Server verarbeitet werden.</li>
+</ul>
+
+<h4 id="response">Response</h4>
+<ul>
+  <li>Das Ergebnis von schreibenden Operations ist immer die persistierte Version der angelegten oder geänderten Ressource(n). Diese zurückgegebene Ressourcen MÜSSEN dem erfolgreich persistierten Zustand einschließlich aller serverseitigen Ergänzungen und Änderungen entsprechen:
+    <ul>
+      <li>Bei neuen Versionen einzelner Ressourcen wird statt einem Bundle nur die Ressource selbst zurückgegeben so wie sie nach der Operation am Server persistiert ist.</li>
+      <li>Bei einem TransactionBundle als Input wird auch als Response ein Bundle mit allen persistierten Resssourcen zurückgegeben</li>
+    </ul>
+  </li>
+  <li>Wird eine eigenständig persistierte Ressource neu angelegt oder eine neue Version einer bestehenden Ressource gespeichert, MUSS die Fachanwendung meta.lastUpdated auf den serverseitigen Speicherzeitpunkt setzen und eine neue meta.versionId vergeben. Bei Änderungen bleibt die logische id der Ressource unverändert. Vom Client übermittelte Werte für meta.versionId und meta.lastUpdated bestimmen nicht die neu gespeicherten Metadaten.</li>
+</ul>
+
+<h4 id="fehlerfall">Fehlerfall</h4>
+<ul>
+  <li>Bei Ablehnung einer schreibenden Operation MUSS ein passender HTTP-Fehlerstatus zurückgegeben werden. Der Response-Body MUSS ein OperationOutcome mit den Fehlermeldungen enthalten.</li>
+</ul>
+
+<h3 id="operation-spezifische-business-logik">Operation spezifische Business Logik</h3>
+
+<div class="note-to-balloters">
+  <p>Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.</p>
+</div>
+
+</div>
+
+
+
+
+<!--  <p>
+  Formats: <a href="OperationDefinition-at-elga-emed-operation-dispense-discard.xml.html">XML</a>, <a href="OperationDefinition-at-elga-emed-operation-dispense-discard.json.html">JSON</a>, <a href="OperationDefinition-at-elga-emed-operation-dispense-discard.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div data-fhir="generated"><p class="res-header-id"/><a name="at-elga-emed-operation-dispense-discard"> </a><a name="hcat-elga-emed-operation-dispense-discard"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><p>URL: [base]/MedicationDispense/[id]/$dispense-discard</p><h3>Parameters</h3><table class="grid" data-fhir="generated"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/resource.html">Resource</a> (<a href="StructureDefinition-at-elga-emed-parameters-out-dispense-discard.html" title="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-dispense-discard">AT ELGA e-Medikation Parameters Out $dispense-discard</a>)</td><td/><td><div><p>Der <em>return</em> Parameter enthält je nach Erfolg der Operation entweder die stornierte Durchgeführte Abgabe (sowie ggf. die dadurch in ihrem Status geänderte Geplante Abgabe), so wie sie nach dem Ausführen der Operation am Server persistiert ist oder ein OperationOutcome mit dem Fehler, der zur Ablehnung der Operation geführt hat.</p>
+</div></td></tr></table></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
+          Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-10-29 15:54:00 +0000">
+    2026-10-29
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

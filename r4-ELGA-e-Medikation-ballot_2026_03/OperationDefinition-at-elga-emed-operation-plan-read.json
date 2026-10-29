@@ -1,0 +1,47 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "at-elga-emed-operation-plan-read",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition at-elga-emed-operation-plan-read</b></p><a name=\"at-elga-emed-operation-plan-read\"> </a><a name=\"hcat-elga-emed-operation-plan-read\"> </a><p>URL: [base]/List/$plan-read</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>OUT</td><td>return</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/resource.html\">Resource</a> (<a href=\"StructureDefinition-at-elga-emed-parameters-out-plan-read.html\" title=\"https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read\">AT ELGA e-Medikation Parameters Out $plan-read</a>)</td><td/><td><div><p>Der <em>return</em> Parameter enthält je nach Erfolg der Operation OperationOutcome(s)\nund falls die Operation erfolgreich war auch das temporäre, für die Bearbeitung\naufbereitete Medikationsplan-Bundle. Es enthält die aktuelle, gegebenenfalls\ntransformierte oder initial erzeugte List-Ressource sowie sämtliche von ihr\nreferenzierten Ressourcen.</p>\n<p>Der ETag der aktuellen persistierten List-Version wird im HTTP-\nResponse-Header übermittelt und ist kein Ausgabeparameter der Operation.</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-plan-read",
+  "version" : "0.1.0",
+  "name" : "AtElgaEmedListPlanRead",
+  "title" : "AT ELGA e-Medikation Operation für $plan-read",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2026-10-29T15:54:42+00:00",
+  "publisher" : "ELGA GmbH",
+  "contact" : [{
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://elga.gv.at"
+    }]
+  },
+  {
+    "name" : "ELGA GmbH",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://elga.gv.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.",
+  "affectsState" : true,
+  "code" : "plan-read",
+  "resource" : ["List"],
+  "system" : false,
+  "type" : true,
+  "instance" : false,
+  "parameter" : [{
+    "name" : "return",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "Der *return* Parameter enthält je nach Erfolg der Operation OperationOutcome(s)\nund falls die Operation erfolgreich war auch das temporäre, für die Bearbeitung\naufbereitete Medikationsplan-Bundle. Es enthält die aktuelle, gegebenenfalls\ntransformierte oder initial erzeugte List-Ressource sowie sämtliche von ihr\nreferenzierten Ressourcen.\n\nDer ETag der aktuellen persistierten List-Version wird im HTTP-\nResponse-Header übermittelt und ist kein Ausgabeparameter der Operation.",
+    "type" : "Resource",
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-parameters-out-plan-read"]
+  }]
+}

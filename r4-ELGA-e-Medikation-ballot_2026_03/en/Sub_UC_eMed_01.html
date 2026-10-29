@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>​Technische Use Cases für Medikationsplan lesen (UC_eMed_01) - ELGA e-Medikation (R4) DRAFT v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/liquid.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/template.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.1"}
+    h3,h4,h5,h6{--heading-prefix:"11.1"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+                <div id="project-nav">
+          <img height="50" alt="Logo" src="assets/images/logo.jpg"/>
+        </div>
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">ELGA e-Medikation (R4) DRAFT</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Inhaltsverzeichnis</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Einleitung
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="scope_and_content.html">Umfang und Inhalt</a>
+      </li>
+      <li>
+        <a href="background.html">Hintergrund</a>
+      </li>
+      <li>
+        <a href="challenges.html">Herausforderungen</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Funktionales
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="design_choices.html">Designentscheidungen</a>
+      </li>
+      <li>
+        <a href="actors.html">Akteure</a>
+      </li>
+      <li>
+        <a href="workflowmanagement.html">Workflowmanagement</a>
+      </li>
+      <li>
+        <a href="interactions.html">Transaktionen</a>
+      </li>
+      <li>
+        <a href="dosages.html">Dosierungen</a>
+      </li>
+      <li>
+        <a href="medication.html">Medikation</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Anwendungsfälle
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="overview_sub_use_case.html">Überblick Use Cases</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_01.html">UC 1 Medikationsplan lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_02.html">UC 2 Medikationsplan schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_03.html">UC 3 Geplante Abgaben und Durchgeführte Abgaben lesen</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_04.html">UC 4 Geplante Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="Sub_UC_eMed_05.html">UC 5 Durchgeführte Abgabe schreiben</a>
+      </li>
+      <li>
+        <a href="patient_journey.html">Patient Journey</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">About
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="contributors.html">Autoren und Mitwirkende</a>
+      </li>
+      <li>
+        <a href="downloads.html">Download</a>
+      </li>
+      <li>
+        <a href="publication_info.html">Publikationsinformationen</a>
+      </li>
+      <li>
+        <a href="dependencies.html">Dependencies</a>
+      </li>
+      <li>
+        <a href="copyright.html">Copyright</a>
+      </li>
+      <li>
+        <a href="imprint.html">Impressum</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='overview_sub_use_case.html'><b>Use Cases Übersicht (fachlich und technisch)</b></a></li><li><b>​Technische Use Cases für Medikationsplan lesen (UC_eMed_01)</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">ELGA e-Medikation (R4) DRAFT - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='https://fhir.hl7.at/elga/emed/r4/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>​Technische Use Cases für Medikationsplan lesen (UC_eMed_01)</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read" id="markdown-toc-sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</a></li>
+  <li><a href="#sub_uc_emed_01_02---medikationsplaneinträge-suchen-planentry-search" id="markdown-toc-sub_uc_emed_01_02---medikationsplaneinträge-suchen-planentry-search">Sub_UC_eMed_01_02 - Medikationsplaneinträge suchen (Planentry-Search)</a></li>
+  <li><a href="#sub_uc_emed_01_03-suche-und-den-abruf-historischer-versionen-history-search" id="markdown-toc-sub_uc_emed_01_03-suche-und-den-abruf-historischer-versionen-history-search">Sub_UC_eMed_01_03 Suche und den Abruf historischer Versionen (History-Search)</a></li>
+</ul>
+
+</div>
+
+<style>
+.no-number {
+    --heading-prefix: none;
+}
+.notification-table {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notification-table th,
+.notification-table td {
+  padding: 10px;
+  background: #f5f5f5; /* Cell color */
+  box-shadow: 0 0 0 3px #fff;
+  text-align: left;
+}
+.notification-table th {
+  background: #e4e4e4;
+}
+
+/* Tabellencontainer mit horizontalem und vertikalem Scrollen */
+.table-responsive {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.table-responsive > table {
+  width: 100%;
+  margin-bottom: 0;
+  border: 1px solid #e8eef0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
+}
+
+/* Tabellenzellen */
+.table-responsive th,
+.table-responsive td {
+  padding: 15px;
+  color: #202c33;
+  background: #ffffff;
+  text-align: left;
+}
+
+/* Sticky Tabellenkopf */
+.table-responsive thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Erste Spalte horizontal fixieren */
+.table-responsive th:first-child,
+.table-responsive td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+
+/* Linke obere Ecke über allen anderen Sticky-Zellen */
+.table-responsive thead th:first-child {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: #cbd6d9;
+  color: #102d46;
+}
+
+/* Alternierende Zeilenfarben */
+.table-responsive tbody tr:nth-child(odd) td {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td {
+  background: #e9edef;
+}
+
+/* Erste Spalte passend zur jeweiligen Zeilenfarbe */
+.table-responsive tbody tr:nth-child(odd) td:first-child {
+  background: #ffffff;
+}
+
+.table-responsive tbody tr:nth-child(even) td:first-child {
+  background: #e9edef;
+}
+
+/* Use-Case-Zellen wie Überschriften formatieren */
+.table-responsive table tbody td.use-case-heading {
+  background: #e8eef0 !important;
+  color: #294b56;
+  font-weight: bold;
+}
+
+/* Hinweisbox */
+.hinweisbox {
+  font-size: 12px;
+  border: 1px solid #246783;
+  background: #e0e7e9;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.codebox {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #2d2d2d;
+}
+
+.tabs {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  align-items: end;
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  max-height: none;
+  margin: 5px 0 5px;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.tabs .tab label {
+  white-space: nowrap;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+/* Let label and content participate directly in the grid */
+.tab {
+  display: contents;
+}
+
+.tab input[id^="tab-"] {
+  display: none;
+}
+
+.tab label {
+  background: #eeeeee;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: -1px;
+  position: relative;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  grid-row: 1;
+}
+
+.tabs .tab label {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* Hidden tabs must not take up space */
+.content-in-tab {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 8px 8px;  /*10px;*/
+  border: 1px solid #cccccc;
+  /* Maximum visible panel height */
+  max-height: 700px;
+  overflow: auto;
+}
+
+/* Only the active tab panel is displayed and determines height */
+[type="radio"]:checked ~ label {
+  background: #ffffff;
+  border-bottom-color: #ffffff;
+  z-index: 2;
+}
+
+[type="radio"]:checked ~ .content-in-tab {
+  display: block;
+}
+
+.request-panel {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  margin: 0.5rem 0;
+  border-radius: 0 4px 4px 0;
+  border-left: 4px solid #007bff;
+}
+
+.request-panel--success {
+  border-left-color: #28a745;
+}
+
+.request-meta {
+  font-size: 0.9em;
+  color: #666666;
+  margin-top: 0.5rem;
+}
+
+.request-code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.8em;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.request-method-post {
+  color: #d63384;
+  font-weight: bold;
+}
+
+.request-method-get {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.request-url {
+  background: #e7f3ff;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: #0066cc;
+}
+
+.request-header {
+  background: #f1f3f4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.tabs:has(input[id^="tab-request-"]:checked) {
+  min-height: 140px;
+}
+
+.content-in-tab:has(.request-panel) {
+  padding: 10px;
+}
+
+.content-in-tab:has(pre) {
+  padding: 10px;
+  overflow: auto;  
+  max-height: calc(100vh - 120px); 
+}
+
+/* .tab label.request-tab {
+  --tab-height: 120px;
+} */
+
+.tabs:has(input[id^="tab-body-"]:checked) {
+  min-height: 520px;
+}
+
+
+.tab label.body-tab {
+  --tab-height: 500px; 
+}
+
+/* Abstand zwischen Überschriften und Tabs verleinern */
+h4 + .tabs {  
+  margin-top: 5px;
+}
+
+
+</style>
+
+<!-- Technische Use Cases für Medikationsplan lesen (UC_eMed_01) -->
+
+<p>Dieser technische Use Case beschreibt den lesenden Zugriff berechtigter Akteure auf den Medikationsplan eines ELGA-Teilnehmers.</p>
+
+<p>Für ELGA-Teilnehmer und deren Vertretungen erfolgt der lesende Zugriff über das ELGA-Zugangsportal. Für die übrigen Akteure erfolgt der lesende Zugriff über die e-Medikations-Schnittstelle des jeweiligen GDA-Systems.</p>
+
+<p>Der lesende Zugriff umfasst:</p>
+
+<ul>
+  <li>
+    <p>den Abruf des <strong>aktuellen Medikationsplans</strong>, der für eine mögliche Bearbeitung aufbereitet ist (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Plan-Read</a>),</p>
+  </li>
+  <li>
+    <p>die Suche und den Abruf <strong>aktueller Planeinträge</strong> (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_02---medikationsplaneinträge-suchen-planentry-search">Planentry-Search</a>) sowie</p>
+  </li>
+  <li>
+    <p>die Suche und den Abruf (History-Search):</p>
+    <ul>
+      <li>historischer Medikationsplanversionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03_01---historische-medikationsplanversionen-suchen-plan-history-search">Plan-History-Search</a>)</li>
+      <li>historischer Planeintragsversionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03_02---historische-planeintragsversionen-suchen-planentry-history-search">Planentry-History-Search</a>)</li>
+      <li>Verzeichnis historischer Medikationsplanversionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03_03---verzeichnis-der-medikationspanversionen-lesen-plan-history-directory-search">Plan-History-Directory-Search</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="hinweisbox">
+ℹ️ Die fachlichen Anforderungen dieses Use Cases werden im  <a href="https://dev.elga.gv.at/apis/emed/use-cases/assets/pdfs/UC_eMed_01%20Medikationsplan%20lesen.pdf">UC_eMed_01 Medikationsplan lesen</a> beschrieben.<br /> 
+Es gelten die dort festgelegten Vorbedingungen. Alle Zugriffe werden protokolliert. 
+</div>
+
+<h3 id="sub_uc_emed_01_01---aktuellen-medikationsplan-lesen-plan-read">Sub_UC_eMed_01_01 - Aktuellen Medikationsplan lesen (Plan-Read)</h3>
+
+<p><em>Plan-Read</em> dient dem Abruf des aktuellen Medikationsplans in einem für die Bearbeitung durch den GDA <strong>aufbereiteten Zustand</strong>.</p>
+
+<p>Hierfür erzeugt die Fachanwendung aus der aktuellen Version der <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource sowie den von ihr referenzierten Ressourcen ein <strong>temporäres</strong> <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung. Der Abruf erfolgt über die Custom Operation <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a>.</p>
+
+<h4 id="ablauf">Ablauf</h4>
+
+<ol>
+  <li>Der Client führt <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus.</li>
+  <li>Die Fachanwendung prüft den Zustand des Medikationsplans (siehe Kapitel <a href="Sub_UC_eMed_01.html#prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</a>) und erzeugt ein <a href="StructureDefinition-at-elga-emed-bundle-medikationsplan.html">Medikationsplan-Bundle</a> zur Auslieferung.</li>
+  <li>Die Fachanwendung liefert das Medikationsplan-Bundle zurück. Dieses enthält im HTTP-Header den <strong><em>ETag</em></strong> der aktuellen Version der <em>List</em>-Ressource für das <a href="https://hl7.org/fhir/http.html#concurrency"><strong>Optimistic Locking</strong></a> (siehe auch <a href="design_choices.html#optimistisches-locking-mit-etags">Designentscheidungen - Optimistisches Locking mit ETags</a>).</li>
+</ol>
+
+<p>Nachfolgend kann der Medikationsplan vom GDA bearbeitet und mittels <a href="Sub_UC_eMed_02.html#sub_uc_emed_02_01---medikationsplan-schreiben-plan-write">Plan-Write</a> gespeichert werden.</p>
+
+<p><br />
+<a href="plantuml/UC_eMed_01_01.svg"><img src="plantuml/UC_eMed_01_01.svg" alt="overview" class="mx-auto" style="width:35%;" /></a>
+<br /></p>
+
+<h4 id="custom-operations">Custom Operations</h4>
+
+<ul>
+  <li><em>POST</em> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a></li>
+</ul>
+
+<h4 id="prüfung-des-planzustands-und-erzeugung-des-medikationsplan-bundles">Prüfung des Planzustands und Erzeugung des Medikationsplan-Bundles</h4>
+
+<p>Nach Eingang eines <em>$plan-read</em> prüft die Fachanwendung den Zustand des Medikationsplans und führt entsprechende Schritte durch, bevor ein Medikationsplan-Bundle zur Auslieferung erstellt wird (siehe <a href="Sub_UC_eMed_01.html#ablauf">Ablauf</a>).</p>
+
+<p>Die <strong>persistierten Ressourcen am Server</strong> werden durch die Transformationen für das Auslieferungs-Bundle <strong>nicht verändert</strong>.</p>
+
+<h4 id="ablauf-1">Ablauf</h4>
+
+<p>A) <strong>Es existiert kein Medikationsplan</strong>:</p>
+<ul>
+  <li>Es wird ein initialer Medikationsplan erstellt (siehe <a href="Sub_UC_eMed_01.html#sub_uc_emed_01_01_01---initial-erstellter-medikationsplan">Sub_UC_eMed_01_01_01 - Initial erstellter Medikationsplan</a>) mit einer <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource und <em>List.emptyReason = notstarted</em>.</li>
+  <li>Es erfolgt keine Transformation.</li>
+</ul>
+
+<p>B) <strong>Es existiert ein Medikationsplan mit Planeinträgen</strong>:</p>
+<ul>
+  <li>Folgende Transformationen werden durchgeführt (siehe <a href="workflowmanagement.html#status-des-listentryflags-im-medikationsplan">Status des List.entry.flags im Medikationsplan</a>):
+    <ul>
+      <li>Neue oder geänderte Planeinträge (<em>List.entry.flag = new</em> oder <em>changed</em>) werden auf <strong><em>unchanged</em></strong> gesetzt.</li>
+      <li>Stornierte und beendete Planeinträge mit <em>List.entry.flag = <strong>removed</strong></em> werden aus dem Medikationsplan <strong>entfernt</strong>.</li>
+      <li>Planeinträge mit <strong>abgelaufenem Behandlungszeitraum</strong> werden mit <em>List.entry.flag = removed</em> gekennzeichnet und werden mit <strong>ausgeliefert</strong>, um dem GDA die Möglichkeit zu geben, das Arzneimittel weiterzuverordnen. Anderenfalls nimmt der GDA zur Kenntnis, dass der Planeintrag mit seinem nächsten Schreibvorgang entfernt wird.</li>
+      <li>Sind nach der Transformation keine Planeinträge mehr vorhanden, wird <em>List.emptyReason = nilknown</em> gesetzt.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>C) <strong>Es existiert ein leerer Medikationsplan</strong> (mit einem <a href="ValueSet-at-elga-emed-valueset-listemptyreason-vs.html">List.emptyReason</a>).</p>
+<ul>
+  <li>Es erfolgt keine Transformation.</li>
+</ul>
+
+<p>D) Das <strong>Medikationsplan-Bundle</strong> ist zur Auslieferung bereit. Es enthält:</p>
+<ul>
+  <li>die (ggf. transformierte) <a href="StructureDefinition-at-elga-emed-list-medikationsplan.html">List</a>-Ressource,</li>
+  <li>sämtliche von der <em>List</em> referenzierten Ressourcen</li>
+</ul>
+
+<p><br />
+<a href="plantuml/UC_eMed_01_01_plancheck.svg"><img src="plantuml/UC_eMed_01_01_plancheck.svg" alt="overview" class="mx-auto" style="width:60%;" /></a>
+<br /></p>
+
+<h4 id="sub_uc_emed_01_01_01---initial-erstellter-medikationsplan">Sub_UC_eMed_01_01_01 - Initial erstellter Medikationsplan</h4>
+
+<p>Die initiale Erstellung eines Medikationsplans erfolgt ausschließlich durch die e-Medikation-Fachanwendung. Sie wird ausgelöst, wenn im Rahmen eines erstmaligen Aufrufs von <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> noch kein Medikationsplan für den ELGA-Teilnehmer existiert.</p>
+
+<p>Der dabei erzeugte initiale Medikationsplan besitzt den Wert <em>List.emptyReason = notstarted</em>. Dieser kennzeichnet ausschließlich den <strong>Initialzustand</strong> des Medikationsplans und bedeutet, dass bisher noch keine Medikationsplaneinträge erfasst wurden. Er trifft jedoch keine Aussage darüber, ob der Patient Medikamente einnimmt.</p>
+
+<p>Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Teilnehmer über das Zugangsportal ausgelöst werden.</p>
+
+<h4 id="ablauf-2">Ablauf</h4>
+
+<ol>
+  <li>Ein Client führt <strong>POST</strong> <a href="OperationDefinition-at-elga-emed-operation-plan-read.html">$plan-read</a> aus.</li>
+  <li>Die Fachanwendung prüft, ob bereits ein Medikationsplan existiert.</li>
+  <li>Existiert noch kein Medikationsplan, erstellt die Fachanwendung initial eine List-Ressource mit <em>emptyReason = notstarted</em>.</li>
+  <li>Die List-Ressource wird als erste Version persistiert.</li>
+  <li>Für das <em>Plan-Read</em> erzeugt die Fachanwendung daraus ein temporäres Medikationsplan-Bundle zur Auslieferung.</li>
+  <li>Dieses wird mit <em>List.emptyReason = notstarted</em> sowie dem zugehörigen ETag zurückgeliefert.</li>
+</ol>
+
+<p><br />
+<a href="plantuml/UC_eMed_01_01_01.svg"><img src="plantuml/UC_eMed_01_01_01.svg" alt="overview" class="mx-auto" style="width:40%;" /></a>
+<br /></p>
+
+<h3 id="sub_uc_emed_01_02---medikationsplaneinträge-suchen-planentry-search">Sub_UC_eMed_01_02 - Medikationsplaneinträge suchen (Planentry-Search)</h3>
+
+<p><strong>Planentry-Search</strong> dient der gezielten Suche nach <strong>aktuellen</strong> Planeinträgen. Als Planeintrag gilt eine im Medikationsplan referenzierte <em>MedicationRequest</em>-Ressource mit <em>category = "Planeintrag"</em>.</p>
+
+<h4 id="suchparameter">Suchparameter</h4>
+
+<ul>
+  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
+  <li><strong>Einnahmezeitraum</strong></li>
+  <li><strong>Erstellungszeitpunkt</strong></li>
+  <li><a href="ValueSet-at-elga-emed-valueset-planeintragstatus-vs.html"><strong>Status</strong></a></li>
+  <li><a href="ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.html"><strong>StatusReason</strong></a>
+<!-- * Erstellender GDA? Todo akl 2.10. --></li>
+</ul>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="interactions.html#suchparameter-überblick">Suchparameter Überblick</a> <br />
+</p>
+</div>
+<p><br /></p>
+
+<p>Die gefundenen Planeinträge können als Ausgangspunkt für weitere Abfragen verwendet werden:</p>
+
+<ul>
+  <li><em>Geplante Abgaben</em> (<a href="Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search">Prescription-Search</a>)</li>
+  <li><em>Durchgeführte Abgaben</em> (<a href="Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search">Dispense-Search</a>)</li>
+</ul>
+
+<h4 id="ablauf-3">Ablauf</h4>
+
+<ol>
+  <li>Der Client führt einen <strong>GET</strong>-Request auf den Planentry-Search-Endpunkt mit den gewünschten Suchparametern aus (<em>MedicationRequest</em> mit <em>category = "Planeintrag"</em>).</li>
+  <li>Die Fachanwendung ermittelt anhand der Suchparameter die passenden Medikationsplaneinträge.</li>
+  <li>Die Fachanwendung liefert die Suchergebnisse als Bundle vom Typ <em>searchset</em> zurück.</li>
+  <li>Werden keine passenden Medikationsplaneinträge gefunden, enthält das zurückgelieferte Searchset Bundle keine Einträge.</li>
+  <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
+</ol>
+
+<p><br />
+<a href="plantuml/UC_eMed_01_02.svg"><img src="plantuml/UC_eMed_01_02.svg" alt="overview" class="mx-auto" style="width:50%;" /></a>
+<br /></p>
+
+<h3 id="sub_uc_emed_01_03-suche-und-den-abruf-historischer-versionen-history-search">Sub_UC_eMed_01_03 Suche und den Abruf historischer Versionen (History-Search)</h3>
+
+<p>Diese umfasst die Suche und den Abruf historischer Medikationsplan- und Planeintragsversionen und eine Verzeichnissuche der Medikationspanversionen. Die History-Search ermöglicht die Suche und den Abruf gespeicherter Versionen des Medikationsplans und seiner Planeinträge. Dabei werden drei Abfragen unterschieden:</p>
+
+<ul>
+  <li>
+    <p>Plan-History-Search liefert Medikationsplanversionen einschließlich der jeweils referenzierten Ressourcenversionen.</p>
+  </li>
+  <li>
+    <p>Planentry-History-Search liefert aktuelle und historische Versionen einzelner Medikationsplaneinträge.</p>
+  </li>
+  <li>
+    <p>Plan-History-Directory-Search liefert ein Verzeichnis der Medikationsplanversionen in Form der jeweiligen List-Ressourcen, ohne die referenzierten Ressourcen mitzuliefern. Dies ermöglicht einen Überblick über die verfügbaren Versionen, bevor ausgewählte Medikationsplanversionen einschließlich aller referenzierten Ressourcen abgerufen werden.</p>
+  </li>
+</ul>
+
+<p>Die Abfragen dienen der Nachvollziehbarkeit der Historie gespeicherter Medikationsinformationen. Anders als bei Plan-Read werden die zurückgegebenen Versionen nicht für eine anschließende Bearbeitung aufbereitet, sondern unverändert ausgeliefert. Die hiefür verwendete Operation <a href="Sub_UC_eMed_01.html#custom-operations-1">$history-search</a> und die entsprechenden Inputparameter werden in den folgenden Use Cases beschrieben.</p>
+
+<h4 id="sub_uc_emed_01_03_01---historische-medikationsplanversionen-suchen-plan-history-search">Sub_UC_eMed_01_03_01 - Historische Medikationsplanversionen suchen (Plan-History-Search)</h4>
+
+<p>Bei der <em>Plan-History-Search</em> löst die Fachanwendung historische Versionen des Medikationsplans aus Versionen der List-Ressource sowie den von diesen referenzierten Ressourcenversionen auf und liefert diese unverändert aus. Alle diese Ressourcen sind Teil des resultierenden Searchset-Bundles.</p>
+
+<p>Bei der <em>Plan-History-Search</em> erfolgt <strong>keine Änderung</strong> der Medikationspläne durch die Fachanwendung. Insbesondere werden keine Inhalte, Statusinformationen oder Kennzeichnungen (Flags) verändert. Der Zugriff dient ausschließlich der Anzeige bzw. Informationsabfrage persistierter historischer Medikationsplanversionen.</p>
+
+<h5 id="inputparameter">Inputparameter</h5>
+
+<p>Der Abruf erfolgt mittels POST <a href="Sub_UC_eMed_01.html#custom-operations-1">$history-search</a> auf den <em>List</em>-Ressourcen-Endpunkt unter Angabe geeigneter Inputparameter:</p>
+
+<ul>
+  <li><strong>Zeitraum der Erfassung</strong> von Medikationsplanversionen</li>
+  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
+  <li><strong>Einnahmezeitraum</strong> einer Medikation</li>
+  <li><strong>Planeintragsid ohne Version</strong>: Abrufen aller Medikationsplanversionen, die diesen Planeintrag enthalten</li>
+  <li><strong>Planeintragsid mit Version</strong>: Abrufen der Medikationsplanversionen, die genau diese Planeintragsversion enthalten.</li>
+  <li><strong>StatusReason eines im Plan einthaltenen Planeintrags</strong>: Abrufen aller Planversionen, mit Planeinträgen mit bestimmtem <a href="ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.html">statusReason</a>.
+<!-- * Erstellender GDA? Todo akl 2.10. --></li>
+</ul>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="interactions.html#suchparameter-überblick">Suchparameter Überblick</a> <br />
+</p>
+</div>
+<p><br /></p>
+
+<h4 id="sub_uc_emed_01_03_02---historische-planeintragsversionen-suchen-planentry-history-search">Sub_UC_eMed_01_03_02 - Historische Planeintragsversionen suchen (Planentry-History-Search)</h4>
+
+<p><em>Planentry-History-Search</em> ermöglicht den Zugriff auf historische Versionen von Medikationsplaneinträgen und somit die Nachverfolgung von Änderungen, beispielsweise hinsichtlich Präparat, Dosierung oder Einnahmeanweisung.</p>
+
+<h4 id="inputparameter-1">Inputparameter</h4>
+
+<p>Der Abruf erfolgt mittels POST <a href="Sub_UC_eMed_01.html#custom-operations-1">$history-search</a> auf den <em>MedicationRequest</em>-Ressourcen-Endpunkt unter Angabe geeigneter Inputparameter:</p>
+
+<ul>
+  <li><em>MedicationRequest.category</em> = "Planteintrag"</li>
+  <li><strong>Medikation</strong> (PZN, Arzneimittelname oder Wirkstoff)</li>
+  <li><strong>Einnahmezeitraum</strong></li>
+  <li><strong>Erstellungszeitpunkt</strong></li>
+  <li><a href="ValueSet-at-elga-emed-valueset-planeintragstatus-vs.html"><strong>Status</strong></a></li>
+  <li><a href="ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.html"><strong>StatusReason</strong></a>
+<!-- * Erstellender GDA? Todo akl 2.10. --></li>
+</ul>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? <a href="interactions.html#suchparameter-überblick">Suchparameter Überblick</a> <br />
+</p>
+</div>
+<p><br /></p>
+
+<p>Die gefundenen Planeinträge können als Ausgangspunkt für weitere Abfragen verwendet werden, um jene Ressourcen zu ermittelnt, die genau auf diese Planeintragsversion referenzieren:</p>
+
+<!-- * *Geplante Abgaben* ([Prescription-Search](Sub_UC_eMed_03.html#sub_uc_emed_03_01---geplante-abgaben-lesen-prescription-search)) 
+* *Durchgeführte Abgaben* ([Dispense-Search](Sub_UC_eMed_03.html#sub_uc_emed_03_02---durchgeführte-abgaben-lesen-dispense-search))  -->
+<!-- TODO nicht möglich wenn die referenzen nicht versioniert sind -->
+
+<ul>
+  <li>die zugehörigen Medikationsplanversionen (<a href="Sub_UC_eMed_01.html#sub_uc_emed_01_03_01---historische-medikationsplanversionen-suchen-plan-history-search">Plan-History-Search</a>)</li>
+</ul>
+
+<h4 id="sub_uc_emed_01_03_03---verzeichnis-der-medikationspanversionen-lesen-plan-history-directory-search">Sub_UC_eMed_01_03_03 - Verzeichnis der Medikationspanversionen lesen (Plan-History-Directory-Search)</h4>
+
+<p>Plan-History-Directory-Search ermöglicht die Suche nach Medikationsplanversionen und liefert ein Verzeichnis der gefundenen Versionen. Im Unterschied zur Plan-History-Search enthält das zurückgegebene searchset-Bundle ausschließlich die jeweiligen List-Ressourcen, ohne die darin referenzierten Ressourcen mitzuliefern. Die List-Ressourcen werden unverändert ausgeliefert.</p>
+
+<p>Die Abfrage dient dazu, einen Überblick über die verfügbaren Medikationsplanversionen zu erhalten. Ausgewählte Versionen können anschließend mittels Plan-History-Search einschließlich der jeweils referenzierten Ressourcenversionen abgerufen werden.</p>
+
+<h4 id="ablauf-4">Ablauf</h4>
+
+<ol>
+  <li>Der Client führt POST <a href="Sub_UC_eMed_01.html#custom-operations-1">$history-search</a> mit geeigneten Inputparametern aus.</li>
+  <li>Die Fachanwendung ermittelt anhand dieser die historischen Ressourcen-Versionen und löst die darin referenzierten Versionen auf.</li>
+  <li>Die Fachanwendung liefert das Ergebnis in einem Bundle vom Typ searchset zurück.</li>
+  <li>Werden keine passenden Ressourcen-Versionen gefunden, enthält das zurückgelieferte <em>searchset</em> Bundle keine Einträge.</li>
+  <li>Im Fehlerfall wird ein entsprechender <em>OperationOutcome</em> zurückgegeben.</li>
+</ol>
+
+<p><br />
+<a href="plantuml/UC_eMed_01_03.svg"><img src="plantuml/UC_eMed_01_03.svg" alt="overview" class="mx-auto" style="width:50%;" /></a>
+<br /></p>
+
+<h4 id="custom-operations-1">Custom Operations</h4>
+
+<div class="dragon">
+<p class="note-to-balloters">
+Offene Punkte: <br />$history-search: in Arbeit.
+</p>
+</div>
+
+<!-- * Aktuelle Medikationsplanversion lesen:
+GET [base]/Patient/[id]/List -->
+<!-- * Historische Versionen eines Medikationsplans lesen:
+GET [base]/Patient/[id]/List/_history -->
+<!-- * Historische Medikationsplanversionen lesen, die ab einem bestimmten Datum erstellt wurden:
+GET [base]/Patient/[id]/List/_history?date=ge2025-01-01 -->
+<!-- * Historische Medikationsplanversionen lesen, die einen bestimmten Planeintrag enthalten:
+GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id] -->
+<!-- * Historische Medikationsplanversionen lesen, die nach einem bestimmten Datum erstellt wurden und einen bestimmten Planeintrag enthalten:
+GET [base]/Patient/[id]/List/_history?_include=*&item=MedicationRequest/[id]&date=ge2025-01-01 -->
+
+<!-- * Alle aktiven Medikationsplaneinträge eines Patienten:
+  `GET /Patient/[id]/MedicationRequest?status=active` -->
+<!-- * Medikationsplaneinträge zu einem bestimmten Arzneimittel:
+  `GET /Patient/[id]/MedicationRequest?medication=<PZN>` -->
+<!-- * Medikationsplaneinträge innerhalb eines Erstellungszeitraums:
+  `GET /Patient/[id]/MedicationRequest?authoredon=ge2026-01-01&authoredon=le2026-12-31` -->
+<!-- 
+* Historische und aktuelle Medikationsplaneinträge eines bestimmten Wirkstoffs:
+  `GET /Patient/[id]/MedicationRequest?ingredient=<Wirkstoff>` -->
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="http://elga.gv.at">ELGA GmbH</a>.  
+          Package hl7.at.fhir.elga.emed.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-10-29 15:54:00 +0000">
+    2026-10-29
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
