@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-timi
   "name" : "AtElgaEmedTiming",
   "title" : "AT ELGA e-Medikation Timing",
   "status" : "draft",
-  "date" : "2026-10-29T13:53:17+00:00",
+  "date" : "2026-10-29T14:20:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -155,7 +155,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-timi
     {
       "id" : "Timing.repeat.bounds[x]:boundsDuration.comparator",
       "path" : "Timing.repeat.bounds[x].comparator",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -199,11 +198,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-timi
       "mustSupport" : true
     },
     {
-      "id" : "Timing.repeat.bounds[x]:boundsRange.low.comparator",
-      "path" : "Timing.repeat.bounds[x].low.comparator",
-      "short" : "Fachliche Begründung: TODO"
-    },
-    {
       "id" : "Timing.repeat.bounds[x]:boundsRange.low.unit",
       "path" : "Timing.repeat.bounds[x].low.unit",
       "min" : 1,
@@ -231,11 +225,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-timi
       "path" : "Timing.repeat.bounds[x].high.value",
       "min" : 1,
       "mustSupport" : true
-    },
-    {
-      "id" : "Timing.repeat.bounds[x]:boundsRange.high.comparator",
-      "path" : "Timing.repeat.bounds[x].high.comparator",
-      "short" : "Fachliche Begründung: TODO"
     },
     {
       "id" : "Timing.repeat.bounds[x]:boundsRange.high.unit",

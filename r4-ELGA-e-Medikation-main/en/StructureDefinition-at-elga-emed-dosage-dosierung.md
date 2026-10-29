@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
   "name" : "AtElgaEmedDosageDosierung",
   "title" : "AT ELGA e-Medikation Dosage Dosierung",
   "status" : "draft",
-  "date" : "2026-10-29T13:53:17+00:00",
+  "date" : "2026-10-29T14:20:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -139,7 +139,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.additionalInstruction.text",
       "path" : "Dosage.additionalInstruction.text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -386,7 +385,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
       "id" : "Dosage.doseAndRate.dose[x]:doseQuantity",
       "path" : "Dosage.doseAndRate.dose[x]",
       "sliceName" : "doseQuantity",
-      "short" : "TODO",
       "min" : 0,
       "max" : "1",
       "type" : [{
@@ -568,7 +566,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.doseAndRate.rate[x]:rateRatio.numerator.comparator",
       "path" : "Dosage.doseAndRate.rate[x].numerator.comparator",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -603,7 +600,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.doseAndRate.rate[x]:rateRatio.denominator.comparator",
       "path" : "Dosage.doseAndRate.rate[x].denominator.comparator",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -645,7 +641,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.maxDosePerPeriod.numerator.comparator",
       "path" : "Dosage.maxDosePerPeriod.numerator.comparator",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -680,7 +675,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-dosa
     {
       "id" : "Dosage.maxDosePerPeriod.denominator.comparator",
       "path" : "Dosage.maxDosePerPeriod.denominator.comparator",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {

@@ -266,7 +266,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_55e4be12-0d10-454c-a85f-cfb5f849e391\"> </a>TODO</div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_55e4be12-0d10-454c-a85f-cfb5f849e391\"> </a>Narrative in Arbeit.</div>"
       },
       "contained" : [{
         "resourceType" : "Medication",

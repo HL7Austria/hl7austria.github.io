@@ -31,7 +31,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a>TODO</div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"List_4cb4dceb-173f-461a-a267-683ec33e4be1\"> </a>Narrative in Arbeit.</div>"
       },
       "status" : "current",
       "mode" : "working",

@@ -2,7 +2,7 @@
 
 ## Example MedicationRequest: Beispiel Journey 01-03: Geplante Abgabe 2
 
-TODO
+Narrative in Arbeit.
 
 
 

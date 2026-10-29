@@ -338,7 +338,7 @@ Beispiel: montags morgens und nachts, freitags nur morgens.
 
 #### Nicht zulässige Muster
 
-*  `1-0-0-0 täglich um 07:00` oder `1-0-0-0 täglich um 17:00`: Exakte Uhrzeiten dürfen in diesem Schema nicht über `timeOfDay` angegeben werden. Es kann ausschließlich eine zulässige Tageszeit, beispielsweise `MORN`, ausgedrückt werden. Für genau Uhrzeit muss das Uhrzeiten Dosierungsschema verwendet werden. TODO: Link einfügen. 
+*  `1-0-0-0 täglich um 07:00` oder `1-0-0-0 täglich um 17:00`: Exakte Uhrzeiten dürfen in diesem Schema nicht über `timeOfDay` angegeben werden. Es kann ausschließlich eine zulässige Tageszeit, beispielsweise `MORN`, ausgedrückt werden. Für genau Uhrzeit muss das Uhrzeiten Dosierungsschema verwendet werden. 
 *  `1-0-0-1 zweimal täglich alle zwei Tage, montags und freitags`: nicht zulässig. Die Kombination aus `dayOfWeek` und einer täglichen Periodeneinheit ist nicht erlaubt, da sich die Aussagen widersprechen können. 
 *  Eine Tageszeit mehrfach anzugeben, beispielsweise `when = [MORN, MORN]`: nicht zulässig. 
 *  Einen Wochentag mehrfach anzugeben, beispielsweise `dayOfWeek = [mon, mon]`: nicht zulässig. 
@@ -451,7 +451,7 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
   "name" : "AtElgaEmedDosageStandardAdministration",
   "title" : "AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-29T13:53:17+00:00",
+  "date" : "2026-10-29T14:20:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

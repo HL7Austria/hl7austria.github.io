@@ -39,7 +39,7 @@
           },
           "text" : {
             "status" : "generated",
-            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">TODO</div>"
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Narrative in Arbeit.</div>"
           },
           "status" : "current",
           "mode" : "working",
@@ -106,7 +106,7 @@
           },
           "text" : {
             "status" : "generated",
-            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">TODO</div>"
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Narrative in Arbeit.</div>"
           },
           "contained" : [{
             "resourceType" : "Medication",
@@ -266,7 +266,7 @@
           },
           "text" : {
             "status" : "generated",
-            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">TODO</div>"
+            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Narrative in Arbeit.</div>"
           },
           "contained" : [{
             "resourceType" : "Medication",

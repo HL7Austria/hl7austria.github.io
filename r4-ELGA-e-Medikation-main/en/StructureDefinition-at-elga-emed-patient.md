@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
   "name" : "AtElgaEmedPatient",
   "title" : "AT ELGA e-Medikation Patient",
   "status" : "draft",
-  "date" : "2026-10-29T13:53:17+00:00",
+  "date" : "2026-10-29T14:20:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -152,7 +152,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
     {
       "id" : "Patient.identifier:socialSecurityNumber.use",
       "path" : "Patient.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -206,7 +205,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
     {
       "id" : "Patient.identifier:bPK.use",
       "path" : "Patient.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -258,7 +256,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
     {
       "id" : "Patient.identifier:localPatientId.use",
       "path" : "Patient.identifier.use",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {

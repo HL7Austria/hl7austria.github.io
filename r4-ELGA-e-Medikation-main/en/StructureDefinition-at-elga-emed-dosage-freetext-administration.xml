@@ -21,7 +21,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
   <name value="AtElgaEmedDosageFreeTextAdministration"/>
   <title value="AT ELGA e-Medikation Freitext-Dosierschema"/>
   <status value="draft"/>
-  <date value="2026-10-29T13:53:17+00:00"/>
+  <date value="2026-10-29T14:20:15+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -712,7 +712,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
         <valueBoolean value="true"/>
       </extension>
       <path value="Dosage.extension.value[x].text"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="Plain text representation of the concept"/>
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
       <comment value="Very often the text is the same as a displayName of one of the codings."/>
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>
@@ -1287,7 +1287,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
         <valueBoolean value="true"/>
       </extension>
       <path value="Dosage.additionalInstruction.text"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="Plain text representation of the concept"/>
       <definition value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user."/>
       <comment value="Very often the text is the same as a displayName of one of the codings."/>
       <requirements value="The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source."/>
@@ -3765,7 +3765,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
     <element id="Dosage.doseAndRate.dose[x]:doseQuantity">
       <path value="Dosage.doseAndRate.dose[x]"/>
       <sliceName value="doseQuantity"/>
-      <short value="TODO"/>
+      <short value="Amount of medication per dose"/>
       <definition value="Amount of medication per dose."/>
       <comment value="Note that this specifies the quantity of the specified medication, not the quantity for each active ingredient(s). Each ingredient amount can be communicated in the Medication resource. For example, if one wants to communicate that a tablet was 375 mg, where the dose was one tablet, you can use the Medication resource to document that the tablet was comprised of 375 mg of drug XYZ. Alternatively if the dose was 375 mg, then you may only need to use the Medication resource to indicate this was a tablet. If the example were an IV such as dopamine and you wanted to communicate that 400mg of dopamine was mixed in 500 ml of some IV solution, then this would all be communicated in the Medication resource. If the administration is not intended to be instantaneous (rate is present or timing has a duration), this can be specified to convey the total amount to be administered over the period of time as indicated by the schedule e.g. 500 ml in dose, with timing used to convey that this should be done over 4 hours."/>
       <requirements value="The amount of therapeutic or other substance given at one administration event."/>
@@ -5400,7 +5400,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
     </element>
     <element id="Dosage.doseAndRate.rate[x]:rateRatio.numerator.comparator">
       <path value="Dosage.doseAndRate.rate[x].numerator.comparator"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
       <definition value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
       <requirements value="Need a framework for handling measures where the value is &lt;5ug/L or &gt;400mg/L due to the limitations of measuring methodology."/>
       <min value="0"/>
@@ -5693,7 +5693,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
     </element>
     <element id="Dosage.doseAndRate.rate[x]:rateRatio.denominator.comparator">
       <path value="Dosage.doseAndRate.rate[x].denominator.comparator"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
       <definition value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
       <requirements value="Need a framework for handling measures where the value is &lt;5ug/L or &gt;400mg/L due to the limitations of measuring methodology."/>
       <min value="0"/>
@@ -6095,7 +6095,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
     </element>
     <element id="Dosage.maxDosePerPeriod.numerator.comparator">
       <path value="Dosage.maxDosePerPeriod.numerator.comparator"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
       <definition value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
       <requirements value="Need a framework for handling measures where the value is &lt;5ug/L or &gt;400mg/L due to the limitations of measuring methodology."/>
       <min value="0"/>
@@ -6388,7 +6388,7 @@ Um widersprüchliche Anweisungen zu vermeiden, ist entweder Dosage.timing oder D
     </element>
     <element id="Dosage.maxDosePerPeriod.denominator.comparator">
       <path value="Dosage.maxDosePerPeriod.denominator.comparator"/>
-      <short value="Fachliche Begründung: TODO"/>
+      <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
       <definition value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
       <requirements value="Need a framework for handling measures where the value is &lt;5ug/L or &gt;400mg/L due to the limitations of measuring methodology."/>
       <min value="0"/>

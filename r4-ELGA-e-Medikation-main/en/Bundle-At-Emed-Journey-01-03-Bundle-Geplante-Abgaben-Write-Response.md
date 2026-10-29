@@ -30,7 +30,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_d9d43746-69ab-4ed8-9200-3a939f7224de\"> </a>TODO</div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_d9d43746-69ab-4ed8-9200-3a939f7224de\"> </a>Narrative in Arbeit.</div>"
       },
       "contained" : [{
         "resourceType" : "Medication",
@@ -210,7 +210,7 @@
       },
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_f564f377-ef44-4943-9bb2-fccc8a5db24a\"> </a>TODO</div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"MedicationRequest_f564f377-ef44-4943-9bb2-fccc8a5db24a\"> </a>Narrative in Arbeit.</div>"
       },
       "contained" : [{
         "resourceType" : "Medication",

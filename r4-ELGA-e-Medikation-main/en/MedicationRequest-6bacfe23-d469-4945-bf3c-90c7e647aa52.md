@@ -2,7 +2,7 @@
 
 ## Example MedicationRequest: Beispiel Journey 01-02: Planeintrag 1
 
-TODO
+Narrative in Arbeit.
 
 
 

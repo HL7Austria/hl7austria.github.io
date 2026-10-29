@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationMagistraleZubereitung",
   "title" : "AT ELGA e-Medikation Medication Magistrale Medikation",
   "status" : "draft",
-  "date" : "2026-10-29T13:53:17+00:00",
+  "date" : "2026-10-29T14:20:15+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -242,7 +242,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.amount.numerator.comparator",
       "path" : "Medication.amount.numerator.comparator",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -275,7 +274,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.amount.denominator.comparator",
       "path" : "Medication.amount.denominator.comparator",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
@@ -424,7 +422,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
     {
       "id" : "Medication.ingredient:activeIngredient.item[x].text",
       "path" : "Medication.ingredient.item[x].text",
-      "short" : "Fachliche Begründung: TODO",
       "max" : "0"
     },
     {
