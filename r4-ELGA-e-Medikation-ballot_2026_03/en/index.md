@@ -4,7 +4,7 @@
 
 Sehr geehrte e-Medikation-Konsensgruppen-Mitglieder,
 
-* Dieser FHIR® Implementation Guide wird von **29.10.2026 bis 26.11.2026** einem **normativen Ballot** unterzogen.
+* Dieser FHIR® Implementation Guide wird von **29.10.2026 bis 26.11.2026** einem **STU-Ballot** unterzogen.
 * Abstimmungsberechtigt sind nur aktuelle Mitglieder der HL7 Austria, die sich bis 19.10.2026 für die Konsensgruppe registriert haben.
 * Kommentarberechtigt ist jeder. Bitte verwenden Sie das [Excel-Formular](HL7-Ballot-2026-3_e-Medikation_MeineOrganisation.xlsx) und geben Sie immer eine exakte Beschreibung des Problems sowie einen Verweis als Link auf die entsprechende Stelle im Implementation Guide an.
 * Die Kommunikation über den Ballot wird über den Verteiler der Konsensgruppe laufen; alle Ballot-Teilnehmer sind angehalten ihre Kommentare und Fragen an [tc-fhir@hl7.at](mailto:tc-fhir@hl7.at) zu melden.
