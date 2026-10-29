@@ -43,8 +43,9 @@ Die folgenden Regeln gelten für alle schreibenden Operations dieses Implementie
 
 ### Operation spezifische Business Logik
 
-* Die angegebene **plan-reference** wird zur neuen Referenz auf einen Planeintrag. War dieses Feld bereits vor der Ausführung der Operation befüllt so wird die Referenz ersetzt durch die in der Operation angegebene.
-* Ein fehlender **plan-reference** Parameter führt zum Entfernen der Verlinkung zwischen Plan und Durchgeführter Abgabe.
+* Die angegebene **planentry-reference** wird zur neuen Referenz auf einen Planeintrag. War dieses Feld bereits vor der Ausführung der Operation befüllt so wird die Referenz ersetzt durch die in der Operation angegebene.
+* Wird **remove-reference** mit `true` übergeben so wird die Referenz auf den Planeintrag aus der durchgeführten Abgabe entfernt.
+* Es kann immer nur einer der beiden IN Parameter befüllt sein aber nicht beide gleichzeitig.
 
 Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
@@ -62,7 +63,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "title" : "e-Med Operation für $reference-plan",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-29T10:03:24+00:00",
+  "date" : "2026-10-29T10:46:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -92,7 +93,16 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
     "min" : 0,
     "max" : "1",
     "documentation" : "Referenz auf den Planeintrag mit welchem die Durchgeführte Abgabe verbunden werden soll.",
-    "type" : "Reference"
+    "type" : "Reference",
+    "targetProfile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag"]
+  },
+  {
+    "name" : "remove-reference",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "Parameter, um anzugeben, dass die Verlinkung zwischen Durchgeführer Abgabe und Planeintrag entfernt werden soll.",
+    "type" : "boolean"
   },
   {
     "name" : "return",

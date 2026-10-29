@@ -12,7 +12,7 @@
   <name value="ELGA-e-Medikation-R4"/>
   <title value="ELGA e-Medikation (R4) DRAFT"/>
   <status value="draft"/>
-  <date value="2026-10-29T10:03:24+00:00"/>
+  <date value="2026-10-29T10:46:22+00:00"/>
   <publisher value="ELGA GmbH"/>
   <contact>
     <name value="ELGA GmbH"/>
@@ -49,11 +49,6 @@
     <packageId value="hl7.fhir.uv.extensions.r4"/>
     <version value="5.4.0"/>
   </dependsOn>
-  <dependsOn id="hl7_fhir_eu_mpd">
-    <uri value="http://hl7.eu/fhir/mpd/ImplementationGuide/hl7.fhir.eu.mpd"/>
-    <packageId value="hl7.fhir.eu.mpd"/>
-    <version value="0.1.0-ballot"/>
-  </dependsOn>
   <dependsOn id="hl7_at_fhir_core_r4">
     <uri value="http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4"/>
     <packageId value="hl7.at.fhir.core.r4"/>
@@ -63,11 +58,6 @@
     <uri value="http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4"/>
     <packageId value="hl7.fhir.uv.xver-r5.r4"/>
     <version value="0.1.0"/>
-  </dependsOn>
-  <dependsOn id="ihe_pharm_mpd_r4">
-    <uri value="https://profiles.ihe.net/PHARM/MPD/ImplementationGuide/ihe.pharm.mpd"/>
-    <packageId value="ihe.pharm.mpd.r4"/>
-    <version value="1.0.0-comment-2"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
@@ -905,7 +895,7 @@
         <reference value="Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"/>
       </reference>
       <name value="Beispiel Journey 01-01-01: Medikationsplan-Bundle"/>
-      <description value="Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge)."/>
+      <description value="Beispiel eines Medikationsplan-Bundles, mit leerem Medikationsplan (referenziert List-Ressource ohne Einträge)."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
@@ -968,22 +958,22 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"/>
+        <reference value="Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response"/>
       </reference>
-      <name value="Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) enthält."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+      <name value="Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response"/>
+      <description value="Beispiel eines Medikationsplan-Bundles, das einen Medikationsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response"/>
+        <reference value="Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"/>
       </reference>
-      <name value="Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response"/>
-      <description value="Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+      <name value="Beispiel Journey 01-02: Medikationsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) enthält."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1103,7 +1093,7 @@
         <reference value="Device/At-Emed-Example-Device-01"/>
       </reference>
       <name value="Beispiel Journey 01: e-Med Fachanwendung"/>
-      <description value="Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt."/>
+      <description value="Beispiel der e-Med Fachanwendung, die den Medikationsplan initial erstellt."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"/>
     </resource>
     <resource>
@@ -1177,22 +1167,22 @@
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"/>
+        <reference value="Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response"/>
       </reference>
-      <name value="Beispiel Journey 05-01: Mediaktionsplan-Transaction-Bundle"/>
-      <description value="Beispiel eines Transaction Bundles, das einen Mediaktionsplan mit 1 geänderten und 1 unveränderten Planeintrag beinhaltet."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
+      <name value="Beispiel Journey 05-01: Medikationsplan-Bundle $plan-read Response"/>
+      <description value="Beispiel eines Medikationsplan-Bundles, das einen Medikationsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>
       </extension>
       <reference>
-        <reference value="Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response"/>
+        <reference value="Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"/>
       </reference>
-      <name value="Beispiel Journey 05-01: Medikationsplan-Bundle $plan-read Response"/>
-      <description value="Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert."/>
-      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"/>
+      <name value="Beispiel Journey 05-01: Medikationsplan-Transaction-Bundle"/>
+      <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten und 1 unveränderten Planeintrag beinhaltet."/>
+      <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1201,7 +1191,7 @@
       <reference>
         <reference value="Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx"/>
       </reference>
-      <name value="Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle"/>
+      <name value="Beispiel Journey 06-02: Medikationsplan-Transaction-Bundle"/>
       <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
@@ -1223,7 +1213,7 @@
       <reference>
         <reference value="Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx"/>
       </reference>
-      <name value="Beispiel Journey 07-02: Mediaktionsplan-Transaction-Bundle"/>
+      <name value="Beispiel Journey 07-02: Medikationsplan-Transaction-Bundle"/>
       <description value="Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 abgelaufenen und 1 neuen Planeintrag beinhaltet."/>
       <exampleCanonical value="https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"/>
     </resource>
@@ -1633,17 +1623,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/ElgaListStatusVS"/>
-      </reference>
-      <name value="ELGA List Status ValueSet"/>
-      <description value="Zulässige Ausprägungen des Status einer List-Ressource in ELGA."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
@@ -1922,10 +1901,6 @@
         </page>
       </page>
     </page>
-    <parameter>
-      <code value="generate-turtle"/>
-      <value value="false"/>
-    </parameter>
     <parameter>
       <code value="path-resource"/>
       <value value="input/capabilities"/>

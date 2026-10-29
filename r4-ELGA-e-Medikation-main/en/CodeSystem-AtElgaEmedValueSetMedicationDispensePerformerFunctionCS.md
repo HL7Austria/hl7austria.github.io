@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "ELGA e-Med MedicationDispense Performer Function CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-29T10:03:24+00:00",
+  "date" : "2026-10-29T10:46:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -47,11 +47,11 @@ This Code system is referenced in the definition of the following value sets:
   "count" : 2,
   "concept" : [{
     "code" : "dispenseGDA",
-    "display" : "Planeintrag verknüpfender GDA"
+    "display" : "Abgebender GDA"
   },
   {
     "code" : "referenceGDA",
-    "display" : "Abgebender GDA"
+    "display" : "Planeintrag verknüpfender GDA"
   }]
 }
 

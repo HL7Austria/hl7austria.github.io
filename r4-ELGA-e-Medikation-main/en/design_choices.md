@@ -20,7 +20,7 @@ Die List-Ressource bildet gemeinsam mit den referenzierten Ressourcenversionen d
 
 #### Medikationsplaneintrag bzw. Planeintrag: AtElgaEmedMedicationRequestPlaneintrag (MedicationRequest)
 
-Ein Planeintrag wird durch eine [MedicationRequest](StructureDefinition-at-elga-emed-list-medikationsplan.md)-Ressource der Kategorie "Planeintrag" abgebildet. Die Ressource enthält genau ein verordnetes Arzneimittel mit der zugehörigen Dosierung.
+Ein Planeintrag wird durch eine [MedicationRequest](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)-Ressource der Kategorie "Planeintrag" abgebildet. Die Ressource enthält genau ein verordnetes Arzneimittel mit der zugehörigen Dosierung.
 
 Der Planeintrag kann in weiterer Folge als Grundlage für die Erstellung einer **Geplanten Abgabe** dienen.
 
@@ -359,7 +359,7 @@ Der Ablauf ist in [Sub_UC_eMed_01_01](Sub_UC_eMed_01.md#sub_uc_emed_01_01---aktu
 * Stimmen sie nicht überein, wird der Schreibvorgang mit einem OperationOutcome abgelehnt. Der Client muss den Medikationsplan erneut mittels $plan-read abrufen und seine Änderungen auf Basis der aktuellen Version durchführen.
 * Fehlt der Header `If-Match`, wird der Schreibvorgang ebenfalls abgelehnt.
 
-Abweichend vom Basisstandard wird der ETag hier für das Ergebnis einer Operation (Plan-Read) geliefert und bezieht sich auf die darin enthaltene **List**-Ressource. Im Basisstandard wird für Ressourcen in einem Bundle kein geimeinsamer ETag geliefert, sondern `Bundle.request.ifMatch` und `Bundle.response.etag` verwendet. Zu beachten ist außerdem, dass die bei $plan-read ausgelieferte **List** transformiert ist (siehe [Automatische Statusänderungen](#automatische-statusänderungen-der-beim-plan-read-ausgelieferten-ressourcen)). Der ETag bezieht sich dennoch auf die persistierte Version.
+Abweichend vom Basisstandard wird der ETag hier für das Ergebnis einer Operation (Plan-Read) geliefert und bezieht sich auf die darin enthaltene **List**-Ressource. Im Basisstandard wird für Ressourcen in einem Bundle kein gemeinsamer ETag geliefert, sondern `Bundle.request.ifMatch` und `Bundle.response.etag` verwendet. Zu beachten ist außerdem, dass die bei $plan-read ausgelieferte **List** transformiert ist (siehe [Automatische Statusänderungen](#automatische-statusänderungen-der-beim-plan-read-ausgelieferten-ressourcen)). Der ETag bezieht sich dennoch auf die persistierte Version.
 
 **Wert des ETags**
 

@@ -41,7 +41,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
   "name" : "AtElgaEmedBundleMedikationsplan",
   "title" : "AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-29T10:03:24+00:00",
+  "date" : "2026-10-29T10:46:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -355,6 +355,10 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-bund
       {
         "code" : "PractitionerRole",
         "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitionerrole"]
+      },
+      {
+        "code" : "Organization",
+        "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-organization"]
       }],
       "mustSupport" : true
     },

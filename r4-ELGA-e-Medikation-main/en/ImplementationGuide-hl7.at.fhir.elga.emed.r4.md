@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-29T10:03:24+00:00",
+  "date" : "2026-10-29T10:46:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -56,12 +56,6 @@
     "version" : "5.4.0"
   },
   {
-    "id" : "hl7_fhir_eu_mpd",
-    "uri" : "http://hl7.eu/fhir/mpd/ImplementationGuide/hl7.fhir.eu.mpd",
-    "packageId" : "hl7.fhir.eu.mpd",
-    "version" : "0.1.0-ballot"
-  },
-  {
     "id" : "hl7_at_fhir_core_r4",
     "uri" : "http://hl7.at/fhir/HL7ATCoreProfiles/4.0.1/ImplementationGuide/hl7.at.fhir.core.r4",
     "packageId" : "hl7.at.fhir.core.r4",
@@ -72,12 +66,6 @@
     "uri" : "http://hl7.org/fhir/uv/xver/ImplementationGuide/hl7.fhir.uv.xver-r5.r4",
     "packageId" : "hl7.fhir.uv.xver-r5.r4",
     "version" : "0.1.0"
-  },
-  {
-    "id" : "ihe_pharm_mpd_r4",
-    "uri" : "https://profiles.ihe.net/PHARM/MPD/ImplementationGuide/ihe.pharm.mpd",
-    "packageId" : "ihe.pharm.mpd.r4",
-    "version" : "1.0.0-comment-2"
   }],
   "definition" : {
     "extension" : [{
@@ -1246,7 +1234,7 @@
         "reference" : "Bundle/At-Emed-Journey-01-01-01-Bundle-Medikationsplan"
       },
       "name" : "Beispiel Journey 01-01-01: Medikationsplan-Bundle",
-      "description" : "Beispiel eines Medikationsplan-Bundles, mit leerem Mediaktionsplan (referenziert List-Ressource ohne Einträge).",
+      "description" : "Beispiel eines Medikationsplan-Bundles, mit leerem Medikationsplan (referenziert List-Ressource ohne Einträge).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
     },
     {
@@ -1336,14 +1324,14 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html"
+        "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.html"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"
+        "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response"
       },
-      "name" : "Beispiel Journey 01-02: Mediaktionsplan-Transaction-Bundle",
-      "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) enthält.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
+      "name" : "Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response",
+      "description" : "Beispiel eines Medikationsplan-Bundles, das einen Medikationsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
     },
     {
       "extension" : [{
@@ -1352,14 +1340,14 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-plan-read-response.html"
+        "valueUri" : "Bundle-At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx.html"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-plan-read-response"
+        "reference" : "Bundle/At-Emed-Journey-01-02-Bundle-Medikationsplan-Tx"
       },
-      "name" : "Beispiel Journey 01-02: Medikationsplan-Bundle $plan-read Response",
-      "description" : "Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
+      "name" : "Beispiel Journey 01-02: Medikationsplan-Transaction-Bundle",
+      "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan (List) mit 2 neuen Planeinträgen (MedicationRequests) enthält.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {
       "extension" : [{
@@ -1534,7 +1522,7 @@
         "reference" : "Device/At-Emed-Example-Device-01"
       },
       "name" : "Beispiel Journey 01: e-Med Fachanwendung",
-      "description" : "Beispiel der e-Med Fachanwendung, die den Mediaktionsplan initial erstellt.",
+      "description" : "Beispiel der e-Med Fachanwendung, die den Medikationsplan initial erstellt.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"
     },
     {
@@ -1640,14 +1628,14 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.html"
+        "valueUri" : "Bundle-At-Emed-Journey-05-01-Bundle-plan-read-response.html"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"
+        "reference" : "Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response"
       },
-      "name" : "Beispiel Journey 05-01: Mediaktionsplan-Transaction-Bundle",
-      "description" : "Beispiel eines Transaction Bundles, das einen Mediaktionsplan mit 1 geänderten und 1 unveränderten Planeintrag beinhaltet.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
+      "name" : "Beispiel Journey 05-01: Medikationsplan-Bundle $plan-read Response",
+      "description" : "Beispiel eines Medikationsplan-Bundles, das einen Medikationsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
     },
     {
       "extension" : [{
@@ -1656,14 +1644,14 @@
       },
       {
         "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "Bundle-At-Emed-Journey-05-01-Bundle-plan-read-response.html"
+        "valueUri" : "Bundle-At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx.html"
       }],
       "reference" : {
-        "reference" : "Bundle/At-Emed-Journey-05-01-Bundle-plan-read-response"
+        "reference" : "Bundle/At-Emed-Journey-05-01-Bundle-Medikationsplan-Tx"
       },
-      "name" : "Beispiel Journey 05-01: Medikationsplan-Bundle $plan-read Response",
-      "description" : "Beispiel eines Medikationsplan-Bundles, das einen Mediaktionsplan (List) mit 2 Planeinträgen (MedicationRequests) referenziert.",
-      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplan"
+      "name" : "Beispiel Journey 05-01: Medikationsplan-Transaction-Bundle",
+      "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten und 1 unveränderten Planeintrag beinhaltet.",
+      "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {
       "extension" : [{
@@ -1677,7 +1665,7 @@
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-06-02-Bundle-Medikationsplan-Tx"
       },
-      "name" : "Beispiel Journey 06-02: Mediaktionsplan-Transaction-Bundle",
+      "name" : "Beispiel Journey 06-02: Medikationsplan-Transaction-Bundle",
       "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag beinhaltet.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
@@ -1709,7 +1697,7 @@
       "reference" : {
         "reference" : "Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx"
       },
-      "name" : "Beispiel Journey 07-02: Mediaktionsplan-Transaction-Bundle",
+      "name" : "Beispiel Journey 07-02: Medikationsplan-Transaction-Bundle",
       "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 abgelaufenen und 1 neuen Planeintrag beinhaltet.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
@@ -2300,22 +2288,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-ElgaListStatusVS.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/ElgaListStatusVS"
-      },
-      "name" : "ELGA List Status ValueSet",
-      "description" : "Zulässige Ausprägungen des Status einer List-Ressource in ELGA.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "CodeSystem"
       },
       {
@@ -2658,10 +2630,6 @@
       }]
     },
     "parameter" : [{
-      "code" : "generate-turtle",
-      "value" : "false"
-    },
-    {
       "code" : "path-resource",
       "value" : "input/capabilities"
     },

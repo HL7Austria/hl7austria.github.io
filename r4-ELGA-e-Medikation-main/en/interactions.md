@@ -23,7 +23,7 @@ In diesem IG werden daher alle Requests ab dem `/[type]` dargestellt.
 | **DELETE** | `/MedicationRequest/[id]` | `delete` | [Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) | prescription-delete: Geplante Abgabe löschen; nur für Geplante Abgaben | PAT |  |
 | **POST** | `/MedicationDispense` | `$dispense-write` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | Durchgeführte Abgabe schreiben | GDA |  |
 | **GET** | `/MedicationDispense` | `search-type` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | dispense-search: Durchgeführte Abgaben suchen | GDA, PAT | [MedicationDispense (Search-) parameters](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md#search-parameters) |
-| **POST** | `/MedicationDispense/[id]` | `$dispense-discard` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | Eigene durchgeführte Abgabe stornieren | GDA |  |
+| **POST** | `/MedicationDispense/[id]` | `$dispense-discard` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | Eigene Durchgeführte Abgabe stornieren | GDA |  |
 | **POST** | `/MedicationDispense/[id]` | `$reference-plan` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | Referenz auf Medikationsplan erstellen | GDA |  |
 | **DELETE** | `/MedicationDispense/[id]` | `delete` | [Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) | dispense-delete: Durchgeführte Abgabe löschen | PAT |  |
 

@@ -43,8 +43,8 @@ Die Profile sind auf der Seite [Artifacts](artifacts.md) nach fachlichen Gruppen
 * **Stammdaten:** Patient, Practitioner, Organization (abgeleitet von den Profilen des HL7 Austria FHIR Core IG)
 * **Suchparameter**
 * **OperationDefinitions** der Custom-Operations
-* **Extensiohns:** Erweiterungen der Basisprofile
-* **Terminologien:** ValueSets und Codesystemee
+* **Extensions:** Erweiterungen der Basisprofile
+* **Terminologien:** ValueSets und CodeSystems
 * **Example Instances:** Beispielressourcen
 
 Für Elemente, die in FHIR R4 noch nicht verfügbar sind, werden Cross-Version-Extensions aus FHIR R5 verwendet (z.B. `effectiveDosePeriod` im [Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)). Die verwendeten Pakete sind unter [Dependencies](dependencies.md) gelistet.

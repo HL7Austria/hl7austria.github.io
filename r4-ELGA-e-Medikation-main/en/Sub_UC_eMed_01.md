@@ -59,7 +59,7 @@ B) **Es existiert ein Medikationsplan mit Planeinträgen**:
 * Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt.
  
 
-C) **Es existiert ein leerer Medikationsplan** (mit einem [List.emptyReason](https://fhir.hl7.at/r4-ELGA-e-Medikation-main/ValueSet-ElgaListEmptyReasonVS.html)).
+C) **Es existiert ein leerer Medikationsplan** (mit einem [List.emptyReason](ValueSet-ElgaListEmptyReasonVS.md)).
 
 * Es erfolgt keine Transformation.
 

@@ -4,7 +4,7 @@
 
 **Usages:**
 
-* Use this Profile: [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md)
+* Use this Profile: [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md) and [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
 * Refer to this Profile: [AT ELGA e-Medikation PractitionerRole](StructureDefinition-at-elga-emed-practitionerrole.md)
 * Examples for this Profile: [Organization/At-Emed-Example-Organization-01](Organization-At-Emed-Example-Organization-01.md), [Amadeus Apotheke](Organization-At-Emed-Example-Organization-02.md), [Amadeus Apotheke](Organization-At-Emed-Example-Organization-03.md) and [Organization/At-Emed-Example-Organization-04](Organization-At-Emed-Example-Organization-04.md)
 
@@ -31,7 +31,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "name" : "AtElgaEmedOrganization",
   "title" : "AT ELGA e-Medikation Organization",
   "status" : "draft",
-  "date" : "2026-10-29T10:03:24+00:00",
+  "date" : "2026-10-29T10:46:22+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
