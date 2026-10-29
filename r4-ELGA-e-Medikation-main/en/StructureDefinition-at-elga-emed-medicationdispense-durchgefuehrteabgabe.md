@@ -52,7 +52,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-28T21:33:03+00:00",
+  "date" : "2026-10-29T07:35:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -295,7 +295,11 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "id" : "MedicationDispense.status",
       "path" : "MedicationDispense.status",
       "short" : "Status der Durchgeführten Abgabe. Mögliche Ausprägungen: [completed | cancelled | entered-in-error ] Bedeutung: completed: Die Durchgeführte Abgabe ist abgeschlossen (Einzel- oder Teilabgabe durchgeführt) | cancelled: Leerabgabe wird durchgeführt | entered-in-error: Die Durchgeführte Abgabe wird aufgrund eines Fehlers storniert.",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetMedicationDispenseStatusVS"
+      }
     },
     {
       "id" : "MedicationDispense.medication[x]",

@@ -4,7 +4,7 @@
 
  **References** 
 
-This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)
+* [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md)
 
 ### Logical Definition (CLD)
 
@@ -30,7 +30,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "title" : "ELGA MedicationDispense Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-28T21:33:03+00:00",
+  "date" : "2026-10-29T07:35:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -33,16 +33,6 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-list
 
 #### Search Parameters
 
-**Historische Planversionen (`_history`)**
-
- `_history` ist kein Suchparameter, sondern eine eigene FHIR-Interaktion, die als Teil des URL-Pfads angegeben wird. Sie liefert frühere Versionen des Medikationsplans (List-Ressource). Pro Patient existiert genau eine List-Ressource. Deren Versionen bilden die gesamte Historie der Medikationsplanversionen dieses Patienten ab. 
-
-* **Alle Versionen des Plans, mit Suchparametern:** `[base]/List/_history?[searchparameters]`
-* **Alle Versionen eines Plans:** `[base]/List/[id]/_history`
-* **Eine bestimmte, bereits bekannte Version:** `[base]/List/[id]/_history/[vid]`
-
- Als Erweiterung des FHIR-Basisstandards können alle unten aufgeführten Suchparameter auch auf die History-Interaktion angewendet werden. Die Suche wirkt dann auf alle gespeicherten Versionen und nicht nur auf die aktuelle. Beispiel: `[base]/List/_history?date=ge2026-01-01`. Die Standard-History-Parameter (`_since`, `_at`, `_count`) bleiben zusätzlich nutzbar. 
-
 * **Name**: _id
   * **Type**: [token](https://hl7.org/fhir/R4/search.html#token)
   * **Description**: Technische id der Ressource
@@ -129,7 +119,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-28T21:33:03+00:00",
+  "date" : "2026-10-29T07:35:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

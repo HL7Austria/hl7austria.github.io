@@ -158,7 +158,7 @@ Wurden alle möglichen Einlösungen einer **Geplanten Abgabe** planmäßig durch
 
 **Sonderfall**: Wird die letzte **Durchgeführte Abgabe** im Anschluss storniert (Status **entered-in-error**), wird der Status der **Geplanten Abgabe** durch die Fachanwendung wieder auf **active** gesetzt.
 
-Die Fachanwendung erkennt anhand von **MedicationRequest.numberOfRepeatsAllowed > 0**, ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Je möglicher Einlösung muss mindestens eine **Durchgeführte Abgabe** erstellt werden (bei Teilabgaben können es mehrere sein). Eine Einlösung gilt als vollständig, wenn MedicationDispense.type den Wert **FFC (First Fill – Complete)** oder **PFC (Part Fill - Complete)** enthält.
+Die Fachanwendung erkennt anhand von **MedicationRequest.numberOfRepeatsAllowed > 0**, ob weitere Einlösungen erlaubt sind (z.B. bei einem Privatrezept). Je möglicher Einlösung muss mindestens eine **Durchgeführte Abgabe** erstellt werden (bei Teilabgaben können es mehrere sein). Eine Einlösung gilt als vollständig, wenn MedicationDispense.type den Wert **FFC (First Fill – Complete)** oder **RFC (Refill - Complete)** enthält.
 
 #### Relevante Elemente (MedicationRequest)
 

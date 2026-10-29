@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-28T21:33:03+00:00",
+  "date" : "2026-10-29T07:35:42+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -2135,38 +2135,6 @@
       },
       "name" : "ELGA Dosierung Timing When ValueSet für Tageszeitenschema",
       "description" : "ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-DurchgefuehrteAbgabeStatusVS.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/DurchgefuehrteAbgabeStatusVS"
-      },
-      "name" : "ELGA e-Med Durchgeführte Abgabe Status ValueSet",
-      "description" : "ValueSet für zulässige Ausprägungen eines Status einer Durchgeführten Abgabe (MedicationDispense).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "ValueSet-DurchgefuehrteAbgabeTypVS.html"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/DurchgefuehrteAbgabeTypVS"
-      },
-      "name" : "ELGA e-Med Durchgeführte Abgabe Typ ValueSet",
-      "description" : "ValueSet für zulässige Ausprägungen eines Typs einer Durchgeführten Abgabe (MedicationDispense).",
       "exampleBoolean" : false
     },
     {
