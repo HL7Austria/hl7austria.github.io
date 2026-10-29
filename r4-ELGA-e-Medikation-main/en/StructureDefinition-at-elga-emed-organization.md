@@ -4,6 +4,8 @@
 
 Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
+Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md) and [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
@@ -33,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "name" : "AtElgaEmedOrganization",
   "title" : "AT ELGA e-Medikation Organization",
   "status" : "draft",
-  "date" : "2026-10-29T13:18:54+00:00",
+  "date" : "2026-10-29T13:53:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

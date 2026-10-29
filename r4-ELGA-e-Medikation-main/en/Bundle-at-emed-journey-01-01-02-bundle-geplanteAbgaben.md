@@ -17,7 +17,7 @@
   "total" : 0,
   "link" : [{
     "relation" : "self",
-    "url" : "https://example.elga.com/base/MedicationRequest?category=https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS|GeplAbgabe&status=active"
+    "url" : "https://example.elga.com/base/MedicationRequest?category=https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs|GeplAbgabe&status=active"
   }]
 }
 

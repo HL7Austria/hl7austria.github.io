@@ -187,7 +187,7 @@ Dosage [0]
   extension: DosageCategory
     valueCodeableConcept
       coding
-        system: [canonical]/CodeSystem/at-elga-emed-dosage-category
+        system: [canonical]/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs
         code: standard
   timing
     repeat
@@ -207,7 +207,7 @@ Dosage [1]
   extension: DosageCategory
     valueCodeableConcept
       coding
-        system: [canonical]/CodeSystem/at-elga-emed-dosage-category
+        system: [canonical]/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs
         code: standard
   timing
     repeat
@@ -235,7 +235,7 @@ JSON
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "[canonical]/CodeSystem/at-elga-emed-dosage-category",
+              "system": "[canonical]/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
               "code": "standard"
             }
           ]
@@ -269,7 +269,7 @@ JSON
         "valueCodeableConcept": {
           "coding": [
             {
-              "system": "[canonical]/CodeSystem/at-elga-emed-dosage-category",
+              "system": "[canonical]/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
               "code": "standard"
             }
           ]
@@ -451,7 +451,7 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
   "name" : "AtElgaEmedDosageStandardAdministration",
   "title" : "AT ELGA e-Medikation Standard-Tageszeiten-Dosierschema",
   "status" : "draft",
-  "date" : "2026-10-29T13:18:54+00:00",
+  "date" : "2026-10-29T13:53:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -608,7 +608,7 @@ Bei Bedarf, täglich: {MORN-NOON-EVE-NIGHT}
       "min" : 1,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/ElgaTimingWhenStandardAdministrationVS"
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-valueset-timingwhenstandardadministration-vs"
       }
     },
     {

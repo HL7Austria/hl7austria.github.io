@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN",
   "status" : "draft",
-  "date" : "2026-10-29T13:18:54+00:00",
+  "date" : "2026-10-29T13:53:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

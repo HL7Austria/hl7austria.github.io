@@ -59,7 +59,7 @@ B) **Es existiert ein Medikationsplan mit Planeinträgen**:
 * Sind nach der Transformation keine Planeinträge mehr vorhanden, wird **List.emptyReason = nilknown** gesetzt.
  
 
-C) **Es existiert ein leerer Medikationsplan** (mit einem [List.emptyReason](ValueSet-ElgaListEmptyReasonVS.md)).
+C) **Es existiert ein leerer Medikationsplan** (mit einem [List.emptyReason](ValueSet-at-elga-emed-valueset-listemptyreason-vs.md)).
 
 * Es erfolgt keine Transformation.
 
@@ -98,8 +98,8 @@ Die Initialisierung kann sowohl durch ein GDA-System als auch durch den ELGA-Tei
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
 * **Erstellungszeitpunkt**
-* [**Status**](ValueSet-PlaneintragStatusVS.md)
-* [**StatusReason**](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
+* [**Status**](ValueSet-at-elga-emed-valueset-planeintragstatus-vs.md)
+* [**StatusReason**](ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.md) 
 
  Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
@@ -144,7 +144,7 @@ Der Abruf erfolgt mittels POST [$history-search](Sub_UC_eMed_01.md#custom-operat
 * **Einnahmezeitraum** einer Medikation
 * **Planeintragsid ohne Version**: Abrufen aller Medikationsplanversionen, die diesen Planeintrag enthalten
 * **Planeintragsid mit Version**: Abrufen der Medikationsplanversionen, die genau diese Planeintragsversion enthalten.
-* **StatusReason eines im Plan einthaltenen Planeintrags**: Abrufen aller Planversionen, mit Planeinträgen mit bestimmtem [statusReason](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md). 
+* **StatusReason eines im Plan einthaltenen Planeintrags**: Abrufen aller Planversionen, mit Planeinträgen mit bestimmtem [statusReason](ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.md). 
 
  Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  
@@ -161,8 +161,8 @@ Der Abruf erfolgt mittels POST [$history-search](Sub_UC_eMed_01.md#custom-operat
 * **Medikation** (PZN, Arzneimittelname oder Wirkstoff)
 * **Einnahmezeitraum**
 * **Erstellungszeitpunkt**
-* [**Status**](ValueSet-PlaneintragStatusVS.md)
-* [**StatusReason**](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md) 
+* [**Status**](ValueSet-at-elga-emed-valueset-planeintragstatus-vs.md)
+* [**StatusReason**](ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.md) 
 
  Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
  

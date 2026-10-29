@@ -15,6 +15,7 @@ e-Medikation Fachanwendung.
   "meta" : {
     "profile" : ["https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung"]
   },
+  "status" : "active",
   "deviceName" : [{
     "name" : "e-Med Fachanwendung",
     "type" : "user-friendly-name"

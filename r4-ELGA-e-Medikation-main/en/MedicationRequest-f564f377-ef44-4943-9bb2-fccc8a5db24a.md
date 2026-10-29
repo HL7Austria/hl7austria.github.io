@@ -108,7 +108,7 @@ TODO
   "intent" : "order",
   "category" : [{
     "coding" : [{
-      "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/MedicationRequestCategoryCS",
+      "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs",
       "code" : "GeplAbgabe",
       "display" : "Geplante Abgabe"
     }]
@@ -150,7 +150,7 @@ TODO
       "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
           "code" : "standard"
         }]
       }

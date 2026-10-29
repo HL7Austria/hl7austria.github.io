@@ -4,6 +4,8 @@
 
 Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
+Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md) and [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
@@ -33,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
   "name" : "AtElgaEmedPatient",
   "title" : "AT ELGA e-Medikation Patient",
   "status" : "draft",
-  "date" : "2026-10-29T13:18:54+00:00",
+  "date" : "2026-10-29T13:53:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -159,6 +161,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
       "mustSupport" : true
     },
     {
+      "id" : "Patient.identifier:socialSecurityNumber.type.coding",
+      "path" : "Patient.identifier.type.coding",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.identifier:socialSecurityNumber.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
       "mustSupport" : true
@@ -205,6 +212,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
     {
       "id" : "Patient.identifier:bPK.type",
       "path" : "Patient.identifier.type",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Patient.identifier:bPK.type.coding",
+      "path" : "Patient.identifier.type.coding",
       "mustSupport" : true
     },
     {
@@ -255,6 +267,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
       "mustSupport" : true
     },
     {
+      "id" : "Patient.identifier:localPatientId.type.coding",
+      "path" : "Patient.identifier.type.coding",
+      "mustSupport" : true
+    },
+    {
       "id" : "Patient.identifier:localPatientId.type.coding.system",
       "path" : "Patient.identifier.type.coding.system",
       "mustSupport" : true
@@ -283,6 +300,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
       "id" : "Patient.identifier:localPatientId.value",
       "path" : "Patient.identifier.value",
       "mustSupport" : true
+    },
+    {
+      "id" : "Patient.active",
+      "path" : "Patient.active",
+      "max" : "0"
     },
     {
       "id" : "Patient.name",
@@ -323,6 +345,34 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-pati
       "id" : "Patient.birthDate",
       "path" : "Patient.birthDate",
       "mustSupport" : true
+    },
+    {
+      "id" : "Patient.deceased[x]",
+      "path" : "Patient.deceased[x]",
+      "max" : "0"
+    },
+    {
+      "id" : "Patient.deceased[x]:deceasedBoolean",
+      "path" : "Patient.deceased[x]",
+      "sliceName" : "deceasedBoolean",
+      "max" : "0",
+      "type" : [{
+        "code" : "boolean"
+      }]
+    },
+    {
+      "id" : "Patient.deceased[x]:deceasedDateTime",
+      "path" : "Patient.deceased[x]",
+      "sliceName" : "deceasedDateTime",
+      "max" : "0",
+      "type" : [{
+        "code" : "dateTime"
+      }]
+    },
+    {
+      "id" : "Patient.link",
+      "path" : "Patient.link",
+      "max" : "0"
     }]
   }
 }

@@ -35,7 +35,7 @@ Die Suche nach [Geplanten Abgaben](StructureDefinition-at-elga-emed-medicationre
 * alle (ohne Einschränkung)
 * in einem bestimmten Zeitraum erfasste
 * mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (inkl. Magistraler Zubereitungen)
-* mit einem bestimmten [status](ValueSet-GeplanteAbgabeStatusVS.md) 
+* mit einem bestimmten [status](ValueSet-at-elga-emed-valueset-geplanteabgabestatus-vs.md) 
 * mit einem bestimmten **e-Med GroupIdentifier** 
 
  Ballot-Feedback: Gibt es zusätzliche Suchparameter die unterstützt werden sollen? [Suchparameter Überblick](interactions.md#suchparameter-überblick) 
@@ -74,7 +74,7 @@ Die Suche nach [Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medica
 * alle (ohne Einschränkung)
 * in einem bestimmten Zeitraum erfasste
 * mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (inkl. Magistraler Zubereitungen)
-* mit einem bestimmten [status](ValueSet-AtElgaEmedValueSetMedicationDispenseStatusVS.md) 
+* mit einem bestimmten [status](ValueSet-at-elga-emed-valueset-medicationdispense-status-vs.md) 
 * mit einem bestimmten **e-Med GroupIdentifier** 
 
 Die gefundenen **Durchgeführten Abgaben** können als Ausgangspunkt für weitere Abfragen verwendet werden:

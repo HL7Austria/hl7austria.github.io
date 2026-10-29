@@ -102,7 +102,7 @@
   "performer" : [{
     "function" : {
       "coding" : [{
-        "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedValueSetMedicationDispensePerformerFunctionCS",
+        "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-medicationdispense-performer-function-cs",
         "code" : "dispenseGDA"
       }]
     },
@@ -134,7 +134,7 @@
       "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-extension-dosage-category",
       "valueCodeableConcept" : {
         "coding" : [{
-          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
+          "system" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
           "code" : "standard"
         }]
       }

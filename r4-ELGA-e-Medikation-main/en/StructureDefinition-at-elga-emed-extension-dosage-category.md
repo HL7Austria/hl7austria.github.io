@@ -34,7 +34,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
   "name" : "AtElgaEmedExtensionDosageCategory",
   "title" : "AT ELGA e-Medikation Extension Dosierungskategorie",
   "status" : "draft",
-  "date" : "2026-10-29T13:18:54+00:00",
+  "date" : "2026-10-29T13:53:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -96,7 +96,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
       "binding" : {
         "strength" : "required",
         "description" : "Code für die Art der Dosierung",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/AtElgaEmedValueSetDosageCategory"
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-valueset-dosagecategory-vs"
       }
     },
     {
@@ -110,7 +110,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-exte
       "id" : "Extension.value[x].coding.system",
       "path" : "Extension.value[x].coding.system",
       "min" : 1,
-      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/AtElgaEmedCodeSystemDosageCategory",
+      "patternUri" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-dosagecategory-cs",
       "mustSupport" : true
     },
     {

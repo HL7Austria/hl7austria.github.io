@@ -29,7 +29,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-oper
   "name" : "AtElgaEmedOperationOutcome",
   "title" : "AT ELGA e-Medikation OperationOutcome",
   "status" : "active",
-  "date" : "2026-10-29T13:18:54+00:00",
+  "date" : "2026-10-29T13:53:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -74,7 +74,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-oper
       "path" : "OperationOutcome.issue.details",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-operationoutcome-details"
+        "valueSet" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-valueset-operationoutcome-details-vs"
       }
     }]
   }

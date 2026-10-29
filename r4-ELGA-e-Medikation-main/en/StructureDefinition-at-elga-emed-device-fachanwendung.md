@@ -4,6 +4,8 @@
 
 Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
+Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
@@ -33,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
   "name" : "AtElgaEmedDeviceFachanwendung",
   "title" : "At ELGA e-Medikation Device Fachanwendung",
   "status" : "draft",
-  "date" : "2026-10-29T13:18:54+00:00",
+  "date" : "2026-10-29T13:53:17+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -123,7 +125,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
     {
       "id" : "Device.status",
       "path" : "Device.status",
-      "patternCode" : "active"
+      "min" : 1,
+      "patternCode" : "active",
+      "mustSupport" : true
     }]
   }
 }

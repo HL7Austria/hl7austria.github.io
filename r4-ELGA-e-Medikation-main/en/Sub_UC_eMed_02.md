@@ -251,7 +251,7 @@ Der GDA führt ein **POST** [$plan-read](OperationDefinition-at-elga-emed-operat
  
 * **MedicationRequest**-Ressource(n) bearbeiten: [AtElgaEmedMedicationRequestPlaneintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md):  
 * **Status** muss beim **Pausieren** mit **on-hold** und beim **Reaktivieren** mit **active** dokumentiert werden (siehe [Status des Medikationsplaneintrags (MedicationRequest)](workflowmanagement.md#status-des-medikationsplaneintrags-medicationrequest) und [Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status))
-* **Grund für die Pausierung** (**statusReason.coding**) verpflichtender Grund für die Pausierung als Code oder Freitext (siehe [AtElgaEmedValueSetPlaneintragStatusReasonVS](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md)) 
+* **Grund für die Pausierung** (**statusReason.coding**) verpflichtender Grund für die Pausierung als Code oder Freitext (siehe [AtElgaEmedValueSetPlaneintragStatusReasonVS](ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.md)) 
 * falls weitere Elemente geändert werden, siehe [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern)
  
 
@@ -387,7 +387,7 @@ Der GDA führt ein **POST** [$plan-read](OperationDefinition-at-elga-emed-operat
  
 * **MedicationRequest**-Ressource(n) bearbeiten: [AtElgaEmedMedicationRequestPlaneintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md):  
 * **Status** muss ****stopped**** sein (siehe [Status des Medikationsplaneintrags (MedicationRequest)](workflowmanagement.md#status-des-medikationsplaneintrags-medicationrequest) und [Konsistenzregeln zwischen List.entry.flags und MedicationRequest-Status](workflowmanagement.md#konsistenzregeln-zwischen-listentryflags-und-medicationrequest-status))
-* **Absetzgrund** (**statusReason.coding**) muss **verpflichend** mit Code dokumentiert werden. Existiert im Valueset (siehe [AtElgaEmedValueSetPlaneintragStatusReasonVS](ValueSet-AtElgaEmedValueSetPlaneintragStatusReasonVS.md)) kein passender Code, muss "other" ausgewählt werden und ein Freitext in **statusReason.text** dokumentiert werden.
+* **Absetzgrund** (**statusReason.coding**) muss **verpflichend** mit Code dokumentiert werden. Existiert im Valueset (siehe [AtElgaEmedValueSetPlaneintragStatusReasonVS](ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.md)) kein passender Code, muss "other" ausgewählt werden und ein Freitext in **statusReason.text** dokumentiert werden.
 * falls weitere Elemente geändert werden, siehe [Sub_UC_eMed_02_03 - Planeintrag im Medikationsplan ändern](Sub_UC_eMed_02.md#sub_uc_emed_02_03---planeintrag-im-medikationsplan-ändern)
  
 

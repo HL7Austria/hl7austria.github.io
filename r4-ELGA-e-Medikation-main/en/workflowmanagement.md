@@ -10,7 +10,7 @@
 
 Ein **Medikationsplaneintrag** kann, abhängig vom jeweiligen ([Use Case für Medikationsplan schreiben](Sub_UC_eMed_02.md)), unterschiedliche Status einnehmen. Dieser Status wird sowohl in der MedicationRequest-Ressource selbst als auch auf **List-Ebene** im **List.entry.flag** dokumentiert.
 
-Das **List.entry.flag** kann folgende Status einnehmen (siehe [CodeSystem-ElgaListEntryFlagCS](CodeSystem-ElgaListEntryFlagCS.md)): 
+Das **List.entry.flag** kann folgende Status einnehmen (siehe [CodeSystem-at-elga-emed-codesystem-listentryflag-cs](CodeSystem-at-elga-emed-codesystem-listentryflag-cs.md)): 
 
 
 | | |
@@ -36,7 +36,7 @@ Je nach Zugriffsart (Plan-History-Search, Plan-Read oder Write) ergeben sich unt
 
 Das **status**-Element der MedicationRequest-Ressource beschreibt den **aktuellen Zustand eines Medikationsplaneintrags**.
 
-Im Kontext des Medikationsplans kann dieses Element folgende Statuswerte annehmen (siehe [CodeSystem-ElgaListEntryFlagCS](CodeSystem-ElgaListEntryFlagCS.md)): 
+Im Kontext des Medikationsplans kann dieses Element folgende Statuswerte annehmen (siehe [CodeSystem-at-elga-emed-codesystem-listentryflag-cs](CodeSystem-at-elga-emed-codesystem-listentryflag-cs.md)): 
 
 
 | | |
