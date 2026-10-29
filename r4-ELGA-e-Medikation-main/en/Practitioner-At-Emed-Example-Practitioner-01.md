@@ -4,7 +4,7 @@
 
 Profile: [AT ELGA e-Medikation Practitioner](StructureDefinition-at-elga-emed-practitioner.md)
 
-Melanie Hausärztin (OID:1.2.40.0.34.99.4613.4)
+Melanie Hausärztin (OID:1.2.40.0.34.99.4613.1)
 
 -------
 
@@ -25,7 +25,7 @@ Melanie Hausärztin (OID:1.2.40.0.34.99.4613.4)
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+    "value" : "urn:oid:1.2.40.0.34.99.4613.1"
   },
   {
     "system" : "urn:oid:1.2.40.0.10.1.4.3.2",

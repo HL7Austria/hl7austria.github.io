@@ -62,7 +62,7 @@
             "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
             "identifier" : {
               "system" : "urn:ietf:rfc:3986",
-              "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+              "value" : "urn:oid:1.2.40.0.34.99.4613.1"
             }
           },
           "entry" : [{
@@ -204,7 +204,7 @@
             "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
             "identifier" : {
               "system" : "urn:ietf:rfc:3986",
-              "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+              "value" : "urn:oid:1.2.40.0.34.99.4613.1"
             }
           },
           "courseOfTherapyType" : {
@@ -380,7 +380,7 @@
             "reference" : "Practitioner/At-Emed-Example-Practitioner-01",
             "identifier" : {
               "system" : "urn:ietf:rfc:3986",
-              "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+              "value" : "urn:oid:1.2.40.0.34.99.4613.1"
             }
           },
           "courseOfTherapyType" : {
@@ -491,7 +491,7 @@
           },
           "identifier" : [{
             "system" : "urn:ietf:rfc:3986",
-            "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+            "value" : "urn:oid:1.2.40.0.34.99.4613.1"
           },
           {
             "system" : "urn:oid:1.2.40.0.10.1.4.3.2",

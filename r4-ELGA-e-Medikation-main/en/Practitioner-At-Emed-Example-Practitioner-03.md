@@ -4,7 +4,7 @@
 
 Profile: [AT ELGA e-Medikation Practitioner](StructureDefinition-at-elga-emed-practitioner.md)
 
-Paula Krankenhaus (OID:1.2.40.0.34.99.4613.4)
+Paula Krankenhaus (OID:1.2.40.0.34.99.4613.3)
 
 -------
 
@@ -26,7 +26,7 @@ Paula Krankenhaus (OID:1.2.40.0.34.99.4613.4)
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:1.2.40.0.34.99.4613.4",
+    "value" : "urn:oid:1.2.40.0.34.99.4613.3",
     "assigner" : {
       "display" : "Bundesministerium für Gesundheit"
     }

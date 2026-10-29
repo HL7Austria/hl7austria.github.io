@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-29T08:46:29+00:00",
+  "date" : "2026-10-29T10:03:24+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -1710,7 +1710,7 @@
         "reference" : "Bundle/At-Emed-Journey-07-02-Bundle-Medikationsplan-Tx"
       },
       "name" : "Beispiel Journey 07-02: Mediaktionsplan-Transaction-Bundle",
-      "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 unveränderten und 1 neuen Planeintrag beinhaltet.",
+      "description" : "Beispiel eines Transaction Bundles, das einen Medikationsplan mit 1 geänderten, 1 abgelaufenen und 1 neuen Planeintrag beinhaltet.",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-bundle-medikationsplantx"
     },
     {

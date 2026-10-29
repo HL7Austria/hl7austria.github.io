@@ -4,7 +4,7 @@
 
 Profile: [AT ELGA e-Medikation Organization](StructureDefinition-at-elga-emed-organization.md)
 
-Amadeus Apotheke (Öffentliche Apotheke) (OID:1.2.40.0.34.99.4613.3)
+Amadeus Apotheke (Öffentliche Apotheke) (OID:1.2.40.0.34.99.4613.2)
 
 -------
 
@@ -30,7 +30,7 @@ Amadeus Apotheke (Öffentliche Apotheke) (OID:1.2.40.0.34.99.4613.3)
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:1.2.40.0.34.99.4613.3",
+    "value" : "urn:oid:1.2.40.0.34.99.4613.2",
     "assigner" : {
       "display" : "Bundesministerium für Gesundheit"
     }

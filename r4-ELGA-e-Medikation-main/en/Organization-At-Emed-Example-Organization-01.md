@@ -4,7 +4,7 @@
 
 Profile: [AT ELGA e-Medikation Organization](StructureDefinition-at-elga-emed-organization.md)
 
-Unnamed Organization (OID:1.2.40.0.34.99.4613.4)
+Unnamed Organization (OID:1.2.40.0.34.99.4613.1)
 
 -------
 
@@ -26,7 +26,7 @@ Unnamed Organization (OID:1.2.40.0.34.99.4613.4)
   },
   "identifier" : [{
     "system" : "urn:ietf:rfc:3986",
-    "value" : "urn:oid:1.2.40.0.34.99.4613.4",
+    "value" : "urn:oid:1.2.40.0.34.99.4613.1",
     "assigner" : {
       "display" : "Bundesministerium für Gesundheit"
     }

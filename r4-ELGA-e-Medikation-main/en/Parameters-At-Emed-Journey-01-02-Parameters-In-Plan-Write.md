@@ -99,10 +99,6 @@
             "valuePeriod" : {
               "start" : "2026-02-27"
             }
-          },
-          {
-            "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationRequest.renderedDosageInstruction",
-            "valueMarkdown" : "1-0-0-0 | Täglich: 1-0-0-0"
           }],
           "status" : "active",
           "intent" : "order",
@@ -127,7 +123,7 @@
           "requester" : {
             "identifier" : {
               "system" : "urn:ietf:rfc:3986",
-              "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+              "value" : "urn:oid:1.2.40.0.34.99.4613.1"
             }
           },
           "courseOfTherapyType" : {
@@ -295,7 +291,7 @@
           "requester" : {
             "identifier" : {
               "system" : "urn:ietf:rfc:3986",
-              "value" : "urn:oid:1.2.40.0.34.99.4613.4"
+              "value" : "urn:oid:1.2.40.0.34.99.4613.1"
             }
           },
           "courseOfTherapyType" : {
