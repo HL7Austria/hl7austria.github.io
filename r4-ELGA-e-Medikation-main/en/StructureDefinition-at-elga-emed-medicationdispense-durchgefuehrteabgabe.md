@@ -52,7 +52,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedMedicationDispenseDurchgefuehrteAbgabe",
   "title" : "AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe",
   "status" : "draft",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

@@ -1,6 +1,6 @@
-# At ELGA e-Medikation Device Fachanwendung - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Device Fachanwendung - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: At ELGA e-Medikation Device Fachanwendung 
+## Resource Profile: AT ELGA e-Medikation Device Fachanwendung 
 
 Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
 
@@ -33,9 +33,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-device-fachanwendung",
   "version" : "0.1.0",
   "name" : "AtElgaEmedDeviceFachanwendung",
-  "title" : "At ELGA e-Medikation Device Fachanwendung",
+  "title" : "AT ELGA e-Medikation Device Fachanwendung",
   "status" : "draft",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

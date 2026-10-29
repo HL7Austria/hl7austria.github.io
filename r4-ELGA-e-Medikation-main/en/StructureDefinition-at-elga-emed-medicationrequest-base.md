@@ -1,10 +1,10 @@
-# At ELGA e-Medikation MedicationRequest Base - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation MedicationRequest Base - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: At ELGA e-Medikation MedicationRequest Base 
+## Resource Profile: AT ELGA e-Medikation MedicationRequest Base 
 
 **Usages:**
 
-* Derived from this Profile: [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [At ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
+* Derived from this Profile: [AT ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md) and [AT ELGA e-Medikation MedicationRequest Planeintrag](StructureDefinition-at-elga-emed-medicationrequest-planeintrag.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationrequest-base.json)
 
@@ -27,9 +27,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-base",
   "version" : "0.1.0",
   "name" : "AtElgaEmedMedicationRequestBase",
-  "title" : "At ELGA e-Medikation MedicationRequest Base",
+  "title" : "AT ELGA e-Medikation MedicationRequest Base",
   "status" : "draft",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

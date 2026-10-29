@@ -1,6 +1,6 @@
-# e-Med Operation für $plan-write - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Operation für $plan-write - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## OperationDefinition: e-Med Operation für $plan-write 
+## OperationDefinition: AT ELGA e-Medikation Operation für $plan-write 
 
  
 * Die finale Liste der allgemeinen Businesslogik wird noch erarbeitet. Feedback für zusätzliche Prüfungen/Regeln ist erwünscht.
@@ -58,10 +58,10 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-plan-write",
   "version" : "0.1.0",
   "name" : "AtElgaEmedListPlanWrite",
-  "title" : "e-Med Operation für $plan-write",
+  "title" : "AT ELGA e-Medikation Operation für $plan-write",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

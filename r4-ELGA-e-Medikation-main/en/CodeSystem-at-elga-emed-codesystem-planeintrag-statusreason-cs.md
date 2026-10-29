@@ -1,10 +1,10 @@
-# At ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## CodeSystem: At ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem (Experimental) 
+## CodeSystem: AT ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem (Experimental) 
 
 This Code system is referenced in the definition of the following value sets:
 
-* [At ELGA e-Medikation Medikationsplaneintrag StatusReason ValueSet](ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.md)
+* [AT ELGA e-Medikation Medikationsplaneintrag StatusReason ValueSet](ValueSet-at-elga-emed-valueset-planeintrag-statusreason-vs.md)
 
 -------
 
@@ -21,10 +21,10 @@ This Code system is referenced in the definition of the following value sets:
   "url" : "https://fhir.hl7.at/elga/emed/r4/CodeSystem/at-elga-emed-codesystem-planeintrag-statusreason-cs",
   "version" : "0.1.0",
   "name" : "AtElgaEmedCodeSystemPlaneintragStatusReasonCS",
-  "title" : "At ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem",
+  "title" : "AT ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

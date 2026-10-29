@@ -14,7 +14,7 @@
   "name" : "ELGA-e-Medikation-R4",
   "title" : "ELGA e-Medikation (R4) DRAFT",
   "status" : "draft",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -510,7 +510,7 @@
       "reference" : {
         "reference" : "CodeSystem/at-elga-emed-codesystem-operationoutcome-details-cs"
       },
-      "name" : "At ELGA e-Medikation CodeSystem für OperationOutcome Details",
+      "name" : "AT ELGA e-Medikation CodeSystem für OperationOutcome Details",
       "description" : "Dieses Codesystem legt die möglichen Fehlercodes im Rahmen der e-Medikation-Fachanwendung fest.",
       "exampleBoolean" : false
     },
@@ -526,7 +526,7 @@
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-device-fachanwendung"
       },
-      "name" : "At ELGA e-Medikation Device Fachanwendung",
+      "name" : "AT ELGA e-Medikation Device Fachanwendung",
       "description" : "Das Device, welches die eMed Fachanwendung abbildet",
       "exampleBoolean" : false,
       "groupingId" : "Stammdaten"
@@ -543,7 +543,7 @@
       "reference" : {
         "reference" : "CodeSystem/at-elga-emed-codesystem-dosagecategory-cs"
       },
-      "name" : "At ELGA e-Medikation Dosage Category Status CodeSystem",
+      "name" : "AT ELGA e-Medikation Dosage Category Status CodeSystem",
       "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
       "exampleBoolean" : false
     },
@@ -559,7 +559,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-dosagecategory-vs"
       },
-      "name" : "At ELGA e-Medikation Dosage Category Status ValueSet",
+      "name" : "AT ELGA e-Medikation Dosage Category Status ValueSet",
       "description" : "Zulässige Ausprägungen der Kategorie einer Dosierung in ELGA.",
       "exampleBoolean" : false
     },
@@ -592,7 +592,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-timingwhenstandardadministration-vs"
       },
-      "name" : "At ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema",
+      "name" : "AT ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema",
       "description" : "ValueSet für zulässige Ausprägungen des Elements when eines Timings für eine Dosierung mit Tageszeitenschema.",
       "exampleBoolean" : false
     },
@@ -689,7 +689,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-geplanteabgabestatus-vs"
       },
-      "name" : "At ELGA e-Medikation Geplante Abgabe Status ValueSet",
+      "name" : "AT ELGA e-Medikation Geplante Abgabe Status ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen eines Status einer Geplanten Abgabe (MedicationRequest).",
       "exampleBoolean" : false
     },
@@ -705,7 +705,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-listemptyreason-vs"
       },
-      "name" : "At ELGA e-Medikation List Empty Reason ValueSet",
+      "name" : "AT ELGA e-Medikation List Empty Reason ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen des Elements emptyReason einer Liste.",
       "exampleBoolean" : false
     },
@@ -738,7 +738,7 @@
       "reference" : {
         "reference" : "CodeSystem/at-elga-emed-codesystem-listentryflag-cs"
       },
-      "name" : "At ELGA e-Medikation List.entry.flag CodeSystem",
+      "name" : "AT ELGA e-Medikation List.entry.flag CodeSystem",
       "description" : "CodeSystem für zulässige Ausprägungen des Flags eines List.Entries in ELGA.",
       "exampleBoolean" : false
     },
@@ -754,7 +754,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-listentryflag-vs"
       },
-      "name" : "At ELGA e-Medikation List.entry.flag ValueSet",
+      "name" : "AT ELGA e-Medikation List.entry.flag ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen Ausprägungen des Flags eines List.Entries in ELGA.",
       "exampleBoolean" : false
     },
@@ -838,7 +838,7 @@
       "reference" : {
         "reference" : "CodeSystem/at-elga-emed-codesystem-medicationdispense-performer-function-cs"
       },
-      "name" : "At ELGA e-Medikation MedicationDispense Performer Function CodeSystem",
+      "name" : "AT ELGA e-Medikation MedicationDispense Performer Function CodeSystem",
       "description" : "Codesystem für zulässige Ausprägungen der MedicationDispense Performer Function.",
       "exampleBoolean" : false
     },
@@ -854,7 +854,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-medicationdispense-performer-function-vs"
       },
-      "name" : "At ELGA e-Medikation MedicationDispense Performer Function ValueSet",
+      "name" : "AT ELGA e-Medikation MedicationDispense Performer Function ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen der MedicationDispense Performer Function.",
       "exampleBoolean" : false
     },
@@ -870,7 +870,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-medicationdispense-status-vs"
       },
-      "name" : "At ELGA e-Medikation MedicationDispense Status ValueSet",
+      "name" : "AT ELGA e-Medikation MedicationDispense Status ValueSet",
       "description" : "Zulässige Ausprägungen des Status einer MedicationDispense-Ressource in ELGA.",
       "exampleBoolean" : false
     },
@@ -886,7 +886,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-medicationdispense-type-vs"
       },
-      "name" : "At ELGA e-Medikation MedicationDispense Type ValueSet",
+      "name" : "AT ELGA e-Medikation MedicationDispense Type ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen des Elements type einer MedicationDispense.",
       "exampleBoolean" : false
     },
@@ -902,7 +902,7 @@
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-base"
       },
-      "name" : "At ELGA e-Medikation MedicationRequest Base",
+      "name" : "AT ELGA e-Medikation MedicationRequest Base",
       "description" : "Die Basis für alle in eMed verwendeten MedicationRequests",
       "exampleBoolean" : false
     },
@@ -918,7 +918,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-medicationrequest-courseoftherapytype-vs"
       },
-      "name" : "At ELGA e-Medikation MedicationRequest courseOfTherapyType ValueSet",
+      "name" : "AT ELGA e-Medikation MedicationRequest courseOfTherapyType ValueSet",
       "description" : "Zulässige Ausprägungen des Elements courseOfTherapyType in ELGA.",
       "exampleBoolean" : false
     },
@@ -934,7 +934,7 @@
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe"
       },
-      "name" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
+      "name" : "AT ELGA e-Medikation MedicationRequest Geplante Abgabe",
       "description" : "Profil einer Geplanten Abgabe eines Arzneimittels aus dem Medikationsplan.",
       "exampleBoolean" : false,
       "groupingId" : "GeplanteAbgabe"
@@ -951,7 +951,7 @@
       "reference" : {
         "reference" : "CodeSystem/at-elga-emed-codesystem-medicationrequestcategory-cs"
       },
-      "name" : "At ELGA e-Medikation MedicationRequest Kategorie CodeSystem",
+      "name" : "AT ELGA e-Medikation MedicationRequest Kategorie CodeSystem",
       "description" : "Codesystem für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von Geplanten Abgaben und Medikationsplaneinträgen.",
       "exampleBoolean" : false
     },
@@ -967,7 +967,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-medicationrequestcategory-vs"
       },
-      "name" : "At ELGA e-Medikation MedicationRequest Kategorie ValueSet",
+      "name" : "AT ELGA e-Medikation MedicationRequest Kategorie ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen der MedicationRequest Kategorie. Dient der Unterscheidung von Geplanten Abgaben und Medikationsplaneinträgen",
       "exampleBoolean" : false
     },
@@ -983,7 +983,7 @@
       "reference" : {
         "reference" : "StructureDefinition/at-elga-emed-medicationrequest-planeintrag"
       },
-      "name" : "At ELGA e-Medikation MedicationRequest Planeintrag",
+      "name" : "AT ELGA e-Medikation MedicationRequest Planeintrag",
       "description" : "Profil für einen Planeintrag.",
       "exampleBoolean" : false,
       "groupingId" : "Medikationsplan"
@@ -1000,7 +1000,7 @@
       "reference" : {
         "reference" : "CodeSystem/at-elga-emed-codesystem-planeintrag-statusreason-cs"
       },
-      "name" : "At ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem",
+      "name" : "AT ELGA e-Medikation MedicationRequest Planeintrag StatusReason CodeSystem",
       "description" : "Codesystem für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest).",
       "exampleBoolean" : false
     },
@@ -1033,7 +1033,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-planeintragstatus-vs"
       },
-      "name" : "At ELGA e-Medikation Medikationsplaneintrag Status ValueSet",
+      "name" : "AT ELGA e-Medikation Medikationsplaneintrag Status ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen eines Status eines Medikationsplaneintrags (MedicationRequest).",
       "exampleBoolean" : false
     },
@@ -1049,9 +1049,162 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-planeintrag-statusreason-vs"
       },
-      "name" : "At ELGA e-Medikation Medikationsplaneintrag StatusReason ValueSet",
+      "name" : "AT ELGA e-Medikation Medikationsplaneintrag StatusReason ValueSet",
       "description" : "ValueSet für zulässige Ausprägungen des StatusReason eines Medikationsplaneintrags (MedicationRequest).",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-dispense-discard.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-dispense-discard"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $dispense-discard",
+      "description" : "Operation für das Stornieren von Durchgeführten Abgaben",
+      "exampleBoolean" : false,
+      "groupingId" : "OpDispenseDiscard"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-dispense-write.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-dispense-write"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $dispense-write",
+      "description" : "Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen.",
+      "exampleBoolean" : false,
+      "groupingId" : "OpDispenseWrite"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-groupidentifier-create.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-groupidentifier-create"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $groupidentifier-create",
+      "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
+      "exampleBoolean" : false,
+      "groupingId" : "OpGroupidentifierCreate"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-groupidentifier-search.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-groupidentifier-search"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $groupidentifier-search",
+      "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
+      "exampleBoolean" : false,
+      "groupingId" : "OpGroupidentifierSearch"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-plan-read.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-plan-read"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $plan-read",
+      "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.",
+      "exampleBoolean" : false,
+      "groupingId" : "OpPlanRead"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-plan-write.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-plan-write"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $plan-write",
+      "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
+      "exampleBoolean" : false,
+      "groupingId" : "OpPlanWrite"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-prescription-discard.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-prescription-discard"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $prescription-discard",
+      "description" : "Operation für das Stornieren von Geplanten Abgaben",
+      "exampleBoolean" : false,
+      "groupingId" : "OpPrescriptionDiscard"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-prescription-write.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-prescription-write"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $prescription-write",
+      "description" : "Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen.",
+      "exampleBoolean" : false,
+      "groupingId" : "OpPrescriptionWrite"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
+        "valueUri" : "OperationDefinition-at-elga-emed-operation-reference-plan.html"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/at-elga-emed-operation-reference-plan"
+      },
+      "name" : "AT ELGA e-Medikation Operation für $reference-plan",
+      "description" : "Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen.",
+      "exampleBoolean" : false,
+      "groupingId" : "OpReferencePlan"
     },
     {
       "extension" : [{
@@ -1473,7 +1626,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-operationoutcome-details-vs"
       },
-      "name" : "At ELGA e-Medikation ValueSet für AT e-Medikation OperationOutcome Details",
+      "name" : "AT ELGA e-Medikation ValueSet für OperationOutcome Details",
       "description" : "Value-Set mit den für e-Medikation zulässigen detaillierten Fehlercodes.",
       "exampleBoolean" : false
     },
@@ -1489,7 +1642,7 @@
       "reference" : {
         "reference" : "ValueSet/at-elga-emed-valueset-medikationsplan-http-codes-vs"
       },
-      "name" : "At ELGA e-Medikation ValueSet Medikationsplan HTTP Codes",
+      "name" : "AT ELGA e-Medikation ValueSet Medikationsplan HTTP Codes",
       "description" : "ValueSet für die zulässigen HTTP Codes beim Medikationsplan schreiben",
       "exampleBoolean" : false
     },
@@ -2227,159 +2380,6 @@
       "name" : "Beispiel Urlaubsvertreung",
       "description" : "Beispiel einer Allgemeinmedizinerin (Dr. Urlaubsvertreung).",
       "exampleCanonical" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-practitioner"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-dispense-discard.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-dispense-discard"
-      },
-      "name" : "e-Med Operation für $dispense-discard",
-      "description" : "Operation für das Stornieren von Durchgeführten Abgaben",
-      "exampleBoolean" : false,
-      "groupingId" : "OpDispenseDiscard"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-dispense-write.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-dispense-write"
-      },
-      "name" : "e-Med Operation für $dispense-write",
-      "description" : "Die $dispense-write Operation wird aufgerufen, wenn Durchgeführte Abgaben geschrieben werden sollen.",
-      "exampleBoolean" : false,
-      "groupingId" : "OpDispenseWrite"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-groupidentifier-create.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-groupidentifier-create"
-      },
-      "name" : "e-Med Operation für $groupidentifier-create",
-      "description" : "Die $groupidentifier-create Operation wird aufgerufen, wenn ein neuer GroupIdentifer (ohne Patientenbezug) vom Server angefordert werden soll.",
-      "exampleBoolean" : false,
-      "groupingId" : "OpGroupidentifierCreate"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-groupidentifier-search.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-groupidentifier-search"
-      },
-      "name" : "e-Med Operation für $groupidentifier-search",
-      "description" : "Die $groupidentifier-prescription-search Operation wird aufgerufen, wenn ein Zugriff auf Geplante und Durchgeführte Abgaben mittels e-Med GroupIdentifier erfolgen soll.",
-      "exampleBoolean" : false,
-      "groupingId" : "OpGroupidentifierSearch"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-plan-read.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-plan-read"
-      },
-      "name" : "e-Med Operation für $plan-read",
-      "description" : "Die $plan-read Operation ruft den aktuellen Medikationsplan eines\nELGA-Teilnehmers in einem für die Bearbeitung durch den GDA aufbereiteten\nZustand ab.",
-      "exampleBoolean" : false,
-      "groupingId" : "OpPlanRead"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-plan-write.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-plan-write"
-      },
-      "name" : "e-Med Operation für $plan-write",
-      "description" : "Die $plan-write Operation wird aufgerufen, wenn ein Medikationsplan geschrieben wird.",
-      "exampleBoolean" : false,
-      "groupingId" : "OpPlanWrite"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-prescription-discard.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-prescription-discard"
-      },
-      "name" : "e-Med Operation für $prescription-discard",
-      "description" : "Operation für das Stornieren von Geplanten Abgaben",
-      "exampleBoolean" : false,
-      "groupingId" : "OpPrescriptionDiscard"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-prescription-write.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-prescription-write"
-      },
-      "name" : "e-Med Operation für $prescription-write",
-      "description" : "Die $prescription-write Operation wird aufgerufen, wenn Geplante Abgaben geschrieben werden sollen.",
-      "exampleBoolean" : false,
-      "groupingId" : "OpPrescriptionWrite"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
-      },
-      {
-        "url" : "http://hl7.org/fhir/StructureDefinition/implementationguide-page",
-        "valueUri" : "OperationDefinition-at-elga-emed-operation-reference-plan.html"
-      }],
-      "reference" : {
-        "reference" : "OperationDefinition/at-elga-emed-operation-reference-plan"
-      },
-      "name" : "e-Med Operation für $reference-plan",
-      "description" : "Operation für das Verknüpfen von durchgeführten Abgaben und Planeinträgen.",
-      "exampleBoolean" : false,
-      "groupingId" : "OpReferencePlan"
     },
     {
       "extension" : [{

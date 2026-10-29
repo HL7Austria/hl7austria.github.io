@@ -1,6 +1,6 @@
-# At ELGA e-Medikation List.entry.flag ValueSet - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation List.entry.flag ValueSet - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## ValueSet: At ELGA e-Medikation List.entry.flag ValueSet (Experimental) 
+## ValueSet: AT ELGA e-Medikation List.entry.flag ValueSet (Experimental) 
 
  **References** 
 
@@ -27,10 +27,10 @@
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-valueset-listentryflag-vs",
   "version" : "0.1.0",
   "name" : "ElgaListEntryFlagVS",
-  "title" : "At ELGA e-Medikation List.entry.flag ValueSet",
+  "title" : "AT ELGA e-Medikation List.entry.flag ValueSet",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

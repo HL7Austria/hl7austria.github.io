@@ -1,10 +1,10 @@
-# At ELGA e-Medikation Geplante Abgabe Status ValueSet - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Geplante Abgabe Status ValueSet - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## ValueSet: At ELGA e-Medikation Geplante Abgabe Status ValueSet (Experimental) 
+## ValueSet: AT ELGA e-Medikation Geplante Abgabe Status ValueSet (Experimental) 
 
  **References** 
 
-* [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
+* [AT ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
 
 ### Logical Definition (CLD)
 
@@ -27,10 +27,10 @@
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-valueset-geplanteabgabestatus-vs",
   "version" : "0.1.0",
   "name" : "GeplanteAbgabeStatusVS",
-  "title" : "At ELGA e-Medikation Geplante Abgabe Status ValueSet",
+  "title" : "AT ELGA e-Medikation Geplante Abgabe Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

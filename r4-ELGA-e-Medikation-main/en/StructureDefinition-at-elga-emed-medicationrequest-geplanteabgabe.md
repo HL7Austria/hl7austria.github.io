@@ -1,6 +1,6 @@
-# At ELGA e-Medikation MedicationRequest Geplante Abgabe - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation MedicationRequest Geplante Abgabe - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: At ELGA e-Medikation MedicationRequest Geplante Abgabe 
+## Resource Profile: AT ELGA e-Medikation MedicationRequest Geplante Abgabe 
 
 Die Ressource **`MedicationRequest`** mit der Kategorie "Geplante Abgabe" bildet eine **Geplante Abgabe** ab.
 
@@ -53,9 +53,9 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-geplanteabgabe",
   "version" : "0.1.0",
   "name" : "AtElgaEmedMedicationRequestGeplanteAbgabe",
-  "title" : "At ELGA e-Medikation MedicationRequest Geplante Abgabe",
+  "title" : "AT ELGA e-Medikation MedicationRequest Geplante Abgabe",
   "status" : "draft",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

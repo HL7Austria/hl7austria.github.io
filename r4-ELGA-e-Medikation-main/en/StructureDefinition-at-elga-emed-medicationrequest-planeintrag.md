@@ -1,6 +1,6 @@
-# At ELGA e-Medikation MedicationRequest Planeintrag - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation MedicationRequest Planeintrag - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## Resource Profile: At ELGA e-Medikation MedicationRequest Planeintrag 
+## Resource Profile: AT ELGA e-Medikation MedicationRequest Planeintrag 
 
 Die Ressource **`MedicationRequest`** mit der Kategorie "Planeintrag" bildet einen Planeintrag des Medikationsplans ab.
 
@@ -17,7 +17,7 @@ Die Übersetzungen der `short-descriptions` werden noch erarbeitet und im nächs
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Transaction-Response Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan-write-response.md), [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md) and [AT ELGA e-Medikation Transaction Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplantx.md)
-* Refer to this Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) and [At ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
+* Refer to this Profile: [AT ELGA e-Medikation List Medikationsplan](StructureDefinition-at-elga-emed-list-medikationsplan.md), [AT ELGA e-Medikation MedicationDispense Durchgeführte Abgabe](StructureDefinition-at-elga-emed-medicationdispense-durchgefuehrteabgabe.md) and [AT ELGA e-Medikation MedicationRequest Geplante Abgabe](StructureDefinition-at-elga-emed-medicationrequest-geplanteabgabe.md)
 * Examples for this Profile: [MedicationRequest/55e4be12-0d10-454c-a85f-cfb5f849e391](MedicationRequest-55e4be12-0d10-454c-a85f-cfb5f849e391.md), [MedicationRequest/6bacfe23-d469-4945-bf3c-90c7e647aa52](MedicationRequest-6bacfe23-d469-4945-bf3c-90c7e647aa52.md), [MedicationRequest/7128c60c-126d-42b2-b575-dc26a2324b8b](MedicationRequest-7128c60c-126d-42b2-b575-dc26a2324b8b.md), [MedicationRequest/AtEmedExampleDosageStandardAdministration1](MedicationRequest-AtEmedExampleDosageStandardAdministration1.md)... Show 2 more, [MedicationRequest/AtEmedExampleDosageStandardAdministration2](MedicationRequest-AtEmedExampleDosageStandardAdministration2.md) and [MedicationRequest/AtEmedExampleDosageStandardAdministration3](MedicationRequest-AtEmedExampleDosageStandardAdministration3.md)
 
 You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/hl7.at.fhir.elga.emed.r4|current/StructureDefinition/StructureDefinition-at-elga-emed-medicationrequest-planeintrag.json)
@@ -51,9 +51,9 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "url" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medicationrequest-planeintrag",
   "version" : "0.1.0",
   "name" : "AtElgaEmedMedicationRequestPlaneintrag",
-  "title" : "At ELGA e-Medikation MedicationRequest Planeintrag",
+  "title" : "AT ELGA e-Medikation MedicationRequest Planeintrag",
   "status" : "draft",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

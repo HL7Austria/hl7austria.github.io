@@ -1,6 +1,6 @@
-# e-Med Operation für $plan-read - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Operation für $plan-read - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## OperationDefinition: e-Med Operation für $plan-read 
+## OperationDefinition: AT ELGA e-Medikation Operation für $plan-read 
 
 ### Operation spezifische Business Logik
 
@@ -38,10 +38,10 @@ Im Fehlerfall wird ein HTTP-Fehlerstatus mit einem OperationOutcome zurückgegeb
   "url" : "https://fhir.hl7.at/elga/emed/r4/OperationDefinition/at-elga-emed-operation-plan-read",
   "version" : "0.1.0",
   "name" : "AtElgaEmedListPlanRead",
-  "title" : "e-Med Operation für $plan-read",
+  "title" : "AT ELGA e-Medikation Operation für $plan-read",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

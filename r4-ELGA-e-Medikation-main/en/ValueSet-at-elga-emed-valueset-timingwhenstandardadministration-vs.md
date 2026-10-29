@@ -1,6 +1,6 @@
-# At ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## ValueSet: At ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema (Experimental) 
+## ValueSet: AT ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema (Experimental) 
 
  **References** 
 
@@ -27,10 +27,10 @@
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-valueset-timingwhenstandardadministration-vs",
   "version" : "0.1.0",
   "name" : "ElgaTimingWhenStandardAdministrationVS",
-  "title" : "At ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema",
+  "title" : "AT ELGA e-Medikation Dosierung Timing When ValueSet für Tageszeitenschema",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

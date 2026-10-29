@@ -1,6 +1,6 @@
-# At ELGA e-Medikation ValueSet für AT e-Medikation OperationOutcome Details - ELGA e-Medikation (R4) DRAFT v0.1.0
+# AT ELGA e-Medikation ValueSet für OperationOutcome Details - ELGA e-Medikation (R4) DRAFT v0.1.0
 
-## ValueSet: At ELGA e-Medikation ValueSet für AT e-Medikation OperationOutcome Details 
+## ValueSet: AT ELGA e-Medikation ValueSet für OperationOutcome Details 
 
  **References** 
 
@@ -27,10 +27,10 @@
   "url" : "https://fhir.hl7.at/elga/emed/r4/ValueSet/at-elga-emed-valueset-operationoutcome-details-vs",
   "version" : "0.1.0",
   "name" : "AtElgaEmedOperationOutcomeDetailsVS",
-  "title" : "At ELGA e-Medikation ValueSet für AT e-Medikation OperationOutcome Details",
+  "title" : "AT ELGA e-Medikation ValueSet für OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-29T14:20:15+00:00",
+  "date" : "2026-10-29T14:50:53+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
