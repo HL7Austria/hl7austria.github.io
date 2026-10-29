@@ -114,6 +114,7 @@
   <sch:pattern>
     <sch:title>f:List/f:entry</sch:title>
     <sch:rule context="f:List/f:entry">
+      <sch:assert test="count(f:modifierExtension) &lt;= 0">modifierExtension: maximum cardinality of 'modifierExtension' is 0</sch:assert>
       <sch:assert test="count(f:flag) &gt;= 1">flag: minimum cardinality of 'flag' is 1</sch:assert>
       <sch:assert test="count(f:deleted) &lt;= 0">deleted: maximum cardinality of 'deleted' is 0</sch:assert>
       <sch:assert test="count(f:date) &lt;= 0">date: maximum cardinality of 'date' is 0</sch:assert>

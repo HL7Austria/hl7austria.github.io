@@ -119,7 +119,7 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
   "name" : "AtElgaEmedListMedikationsplan",
   "title" : "AT ELGA e-Medikation List Medikationsplan",
   "status" : "draft",
-  "date" : "2026-10-29T11:16:49+00:00",
+  "date" : "2026-10-29T12:53:50+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -225,7 +225,8 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "mustSupport" : true
     },
     {
       "id" : "List.extension:PatientModified",
@@ -415,6 +416,12 @@ Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur V
       "path" : "List.entry",
       "short" : "Medikationsplaneinträge. Die Reihenfolge der Medikationsplaneinträge ist fachlich relevant und wird durch den Ersteller durch die Reihung der Eintries festgelegt.",
       "mustSupport" : true
+    },
+    {
+      "id" : "List.entry.modifierExtension",
+      "path" : "List.entry.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
     },
     {
       "id" : "List.entry.flag",

@@ -35,7 +35,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
   "name" : "AtElgaEmedMedicationStandardMedikation",
   "title" : "AT ELGA e-Medikation Medication Profil für die Standardmedikation mit PZN",
   "status" : "draft",
-  "date" : "2026-10-29T11:16:49+00:00",
+  "date" : "2026-10-29T12:53:50+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -137,17 +137,36 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "id" : "Medication.code.coding",
       "path" : "Medication.code.coding",
       "min" : 1,
-      "max" : "1"
+      "max" : "1",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.code.coding.system",
       "path" : "Medication.code.coding.system",
-      "fixedUri" : "https://termgit.elga.gv.at/CodeSystem/asp-liste"
+      "min" : 1,
+      "fixedUri" : "https://termgit.elga.gv.at/CodeSystem/asp-liste",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding.version",
+      "path" : "Medication.code.coding.version",
+      "mustSupport" : true
     },
     {
       "id" : "Medication.code.coding.code",
       "path" : "Medication.code.coding.code",
-      "min" : 1
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.coding.display",
+      "path" : "Medication.code.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.code.text",
+      "path" : "Medication.code.text",
+      "max" : "0"
     },
     {
       "id" : "Medication.status",
@@ -166,6 +185,40 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       }
     },
     {
+      "id" : "Medication.form.coding",
+      "path" : "Medication.form.coding",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form.coding.system",
+      "path" : "Medication.form.coding.system",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form.coding.version",
+      "path" : "Medication.form.coding.version",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form.coding.code",
+      "path" : "Medication.form.coding.code",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form.coding.display",
+      "path" : "Medication.form.coding.display",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.form.text",
+      "path" : "Medication.form.text",
+      "max" : "0"
+    },
+    {
       "id" : "Medication.amount",
       "path" : "Medication.amount",
       "short" : "Die Gesamtmenge des Arzneimittels in der Verpackung.",
@@ -176,6 +229,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "path" : "Medication.amount.numerator",
       "min" : 1,
       "mustSupport" : true
+    },
+    {
+      "id" : "Medication.amount.numerator.comparator",
+      "path" : "Medication.amount.numerator.comparator",
+      "max" : "0"
     },
     {
       "id" : "Medication.amount.numerator.code",
@@ -200,6 +258,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.amount.denominator.comparator",
+      "path" : "Medication.amount.denominator.comparator",
+      "max" : "0"
+    },
+    {
       "id" : "Medication.amount.denominator.code",
       "path" : "Medication.amount.denominator.code",
       "mustSupport" : true,
@@ -216,11 +279,24 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.ingredient.modifierExtension",
+      "path" : "Medication.ingredient.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "Medication.ingredient.item[x]",
       "path" : "Medication.ingredient.item[x]",
       "short" : "Inhaltsstoff codiert. Wirkstoff-Codes stammen aus der ATC-Klassifikation (Anatomical Therapeutic Chemical Classification), die von der WHO herausgegeben wird. Weitere Codes, wie auch die deutsche Bezeichnung der Codes, entsprechen dem GKV-Arzneimittelindex im Wissenschaftlichen Institut der AOK (WidO), AOK Bundesverband GbR, Deutschland, welcher auf den WHO ATC basiert. Zusätzlich kommen ergänzende Codes aus dem Arzneimittelverzeichnis der AGES zum Einsatz.",
       "type" : [{
         "code" : "CodeableConcept"
+      }],
+      "constraint" : [{
+        "key" : "at-emed-medication-ingredient-atcwido-oder-wirkstoffeages",
+        "severity" : "error",
+        "human" : "Der Wirkstoff muss entweder mit einem Code aus ATC (WIdO) oder aus dem AGES-Wirkstoffverzeichnis angegeben werden.",
+        "expression" : "coding.where(system = 'https://termgit.elga.gv.at/CodeSystem/atc-deutsch-wido' or system = 'https://termgit.elga.gv.at/CodeSystem/medikation-ages-wirkstoffe').exists()",
+        "source" : "https://fhir.hl7.at/elga/emed/r4/StructureDefinition/at-elga-emed-medication-standard-medikation"
       }],
       "mustSupport" : true
     },
@@ -234,7 +310,9 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
         }],
         "ordered" : false,
         "rules" : "open"
-      }
+      },
+      "min" : 1,
+      "mustSupport" : true
     },
     {
       "id" : "Medication.ingredient.item[x].coding:ATCWidO",
@@ -252,9 +330,19 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.ingredient.item[x].coding:ATCWidO.version",
+      "path" : "Medication.ingredient.item[x].coding.version",
+      "mustSupport" : true
+    },
+    {
       "id" : "Medication.ingredient.item[x].coding:ATCWidO.code",
       "path" : "Medication.ingredient.item[x].coding.code",
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x].coding:ATCWidO.display",
+      "path" : "Medication.ingredient.item[x].coding.display",
       "mustSupport" : true
     },
     {
@@ -273,9 +361,19 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-medi
       "mustSupport" : true
     },
     {
+      "id" : "Medication.ingredient.item[x].coding:WirkstoffeAges.version",
+      "path" : "Medication.ingredient.item[x].coding.version",
+      "mustSupport" : true
+    },
+    {
       "id" : "Medication.ingredient.item[x].coding:WirkstoffeAges.code",
       "path" : "Medication.ingredient.item[x].coding.code",
       "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Medication.ingredient.item[x].coding:WirkstoffeAges.display",
+      "path" : "Medication.ingredient.item[x].coding.display",
       "mustSupport" : true
     },
     {

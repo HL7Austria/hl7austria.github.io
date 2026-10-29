@@ -74,7 +74,7 @@ Die Suche nach [Durchgeführten Abgaben](StructureDefinition-at-elga-emed-medica
 * alle (ohne Einschränkung)
 * in einem bestimmten Zeitraum erfasste
 * mit bestimmter Medikation: PZN/Name bzw. Wirkstoff (inkl. Magistraler Zubereitungen)
-* mit einem bestimmten [status](ValueSet-DurchgefuehrteAbgabeStatusVS.md) 
+* mit einem bestimmten [status](ValueSet-AtElgaEmedValueSetMedicationDispenseStatusVS.md) 
 * mit einem bestimmten **e-Med GroupIdentifier** 
 
 Die gefundenen **Durchgeführten Abgaben** können als Ausgangspunkt für weitere Abfragen verwendet werden:
