@@ -24,7 +24,7 @@ This Code system is referenced in the definition of the following value sets:
   "title" : "CodeSystem für AT e-Medikation OperationOutcome Details",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-29T12:53:50+00:00",
+  "date" : "2026-10-29T13:18:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

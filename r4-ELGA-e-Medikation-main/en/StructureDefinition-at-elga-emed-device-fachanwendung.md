@@ -33,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
   "name" : "AtElgaEmedDeviceFachanwendung",
   "title" : "At ELGA e-Medikation Device Fachanwendung",
   "status" : "draft",
-  "date" : "2026-10-29T12:53:50+00:00",
+  "date" : "2026-10-29T13:18:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -74,6 +74,53 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-devi
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "Device.id",
+      "path" : "Device.id",
+      "short" : "Technische id der Ressource",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.meta",
+      "path" : "Device.meta",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.meta.profile",
+      "path" : "Device.meta.profile",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.implicitRules",
+      "path" : "Device.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
+      "max" : "0"
+    },
+    {
+      "id" : "Device.text",
+      "path" : "Device.text",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.text.status",
+      "path" : "Device.text.status",
+      "short" : "Siehe Notes - \"Regeln für den Inhalt der narrativen Teile in den Notes\".",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.text.div",
+      "path" : "Device.text.div",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Device.modifierExtension",
+      "path" : "Device.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "Device.status",
       "path" : "Device.status",
       "patternCode" : "active"

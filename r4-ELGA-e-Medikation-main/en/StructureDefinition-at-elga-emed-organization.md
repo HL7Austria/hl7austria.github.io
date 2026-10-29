@@ -2,6 +2,8 @@
 
 ## Resource Profile: AT ELGA e-Medikation Organization 
 
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md) and [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
@@ -31,7 +33,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "name" : "AtElgaEmedOrganization",
   "title" : "AT ELGA e-Medikation Organization",
   "status" : "draft",
-  "date" : "2026-10-29T12:53:50+00:00",
+  "date" : "2026-10-29T13:18:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -77,6 +79,53 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "Organization.id",
+      "path" : "Organization.id",
+      "short" : "Technische id der Ressource",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.meta",
+      "path" : "Organization.meta",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.meta.profile",
+      "path" : "Organization.meta.profile",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.implicitRules",
+      "path" : "Organization.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
+      "max" : "0"
+    },
+    {
+      "id" : "Organization.text",
+      "path" : "Organization.text",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.text.status",
+      "path" : "Organization.text.status",
+      "short" : "Siehe Notes - \"Regeln für den Inhalt der narrativen Teile in den Notes\".",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.text.div",
+      "path" : "Organization.text.div",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Organization.modifierExtension",
+      "path" : "Organization.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "Organization.identifier",
       "path" : "Organization.identifier",
       "min" : 1,
@@ -172,6 +221,11 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
       "mustSupport" : true
     },
     {
+      "id" : "Organization.active",
+      "path" : "Organization.active",
+      "max" : "0"
+    },
+    {
       "id" : "Organization.type",
       "path" : "Organization.type",
       "mustSupport" : true
@@ -217,6 +271,12 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
       "mustSupport" : true
     },
     {
+      "id" : "Organization.contact.modifierExtension",
+      "path" : "Organization.contact.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "Organization.contact.address",
       "path" : "Organization.contact.address",
       "mustSupport" : true
@@ -234,7 +294,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
     {
       "id" : "Organization.contact.address.line.extension:street",
       "path" : "Organization.contact.address.line.extension",
-      "sliceName" : "street"
+      "sliceName" : "street",
+      "mustSupport" : true
     },
     {
       "id" : "Organization.contact.address.line.extension:street.url",
@@ -249,7 +310,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
     {
       "id" : "Organization.contact.address.line.extension:streetNumber",
       "path" : "Organization.contact.address.line.extension",
-      "sliceName" : "streetNumber"
+      "sliceName" : "streetNumber",
+      "mustSupport" : true
     },
     {
       "id" : "Organization.contact.address.line.extension:streetNumber.url",
@@ -264,7 +326,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
     {
       "id" : "Organization.contact.address.line.extension:floorDoorNumber",
       "path" : "Organization.contact.address.line.extension",
-      "sliceName" : "floorDoorNumber"
+      "sliceName" : "floorDoorNumber",
+      "mustSupport" : true
     },
     {
       "id" : "Organization.contact.address.line.extension:floorDoorNumber.url",
@@ -279,7 +342,8 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-orga
     {
       "id" : "Organization.contact.address.line.extension:additionalInformation",
       "path" : "Organization.contact.address.line.extension",
-      "sliceName" : "additionalInformation"
+      "sliceName" : "additionalInformation",
+      "mustSupport" : true
     },
     {
       "id" : "Organization.contact.address.line.extension:additionalInformation.url",

@@ -30,7 +30,7 @@
   "title" : "ELGA e-Med Geplante Abgabe Status ValueSet",
   "status" : "active",
   "experimental" : true,
-  "date" : "2026-10-29T12:53:50+00:00",
+  "date" : "2026-10-29T13:18:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",

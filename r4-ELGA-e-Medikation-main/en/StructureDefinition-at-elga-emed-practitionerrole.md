@@ -2,6 +2,8 @@
 
 ## Resource Profile: AT ELGA e-Medikation PractitionerRole 
 
+Dieser Teil der Spezifikation wird noch erarbeitet und im nächsten Ballot zur Verfügung gestellt.
+
 **Usages:**
 
 * Use this Profile: [AT ELGA e-Medikation Searchset Bundle GroupIdentifier-Search](StructureDefinition-at-elga-emed-bundle-groupidentifier-search-result.md) and [AT ELGA e-Medikation Medikationsplan-Bundle Medikationsplan](StructureDefinition-at-elga-emed-bundle-medikationsplan.md)
@@ -30,7 +32,7 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-prac
   "name" : "AtElgaEmedPractitionerRole",
   "title" : "AT ELGA e-Medikation PractitionerRole",
   "status" : "draft",
-  "date" : "2026-10-29T12:53:50+00:00",
+  "date" : "2026-10-29T13:18:54+00:00",
   "publisher" : "ELGA GmbH",
   "contact" : [{
     "name" : "ELGA GmbH",
@@ -76,6 +78,53 @@ Other representations of profile: [CSV](../StructureDefinition-at-elga-emed-prac
   "derivation" : "constraint",
   "differential" : {
     "element" : [{
+      "id" : "PractitionerRole.id",
+      "path" : "PractitionerRole.id",
+      "short" : "Technische id der Ressource",
+      "min" : 1,
+      "mustSupport" : true
+    },
+    {
+      "id" : "PractitionerRole.meta",
+      "path" : "PractitionerRole.meta",
+      "mustSupport" : true
+    },
+    {
+      "id" : "PractitionerRole.meta.profile",
+      "path" : "PractitionerRole.meta.profile",
+      "min" : 1,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "PractitionerRole.implicitRules",
+      "path" : "PractitionerRole.implicitRules",
+      "short" : "Fachliche Begründung: Die Ressource wird nach den Regeln dieses Implementierungsleitfadens interpretiert. Zusätzliche implizite Verarbeitungsregeln werden nicht verwendet.",
+      "max" : "0"
+    },
+    {
+      "id" : "PractitionerRole.text",
+      "path" : "PractitionerRole.text",
+      "mustSupport" : true
+    },
+    {
+      "id" : "PractitionerRole.text.status",
+      "path" : "PractitionerRole.text.status",
+      "short" : "Siehe Notes - \"Regeln für den Inhalt der narrativen Teile in den Notes\".",
+      "mustSupport" : true
+    },
+    {
+      "id" : "PractitionerRole.text.div",
+      "path" : "PractitionerRole.text.div",
+      "mustSupport" : true
+    },
+    {
+      "id" : "PractitionerRole.modifierExtension",
+      "path" : "PractitionerRole.modifierExtension",
+      "short" : "Fachliche Begründung: Für den Medikationsplan sind keine zusätzlichen Erweiterungen vorgesehen, die die Bedeutung der Ressource oder ihrer Elemente verändern.",
+      "max" : "0"
+    },
+    {
       "id" : "PractitionerRole.practitioner",
       "path" : "PractitionerRole.practitioner",
       "type" : [{
