@@ -1,0 +1,45 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.org/fhir/trust-ai-transparency/PractitionerRole/practitionerrole-reviewer-001> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "practitionerrole-reviewer-001"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-practitionerrole"^^xsd:anyURI ;
+       fhir:link <http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole practitionerrole-reviewer-001</b></p><a name=\"practitionerrole-reviewer-001\"> </a><a name=\"hcpractitionerrole-reviewer-001\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-trust-ai-practitionerrole.html\">Trust AI Practitioner Role</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Clinical Reviewer: human-overseer at Example Hospital (healthcare-provider)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"The practitioner who is able to provide the services in this role\">Practitioner:</td><td colspan=\"3\"><a href=\"Practitioner-practitioner-001.html\">Clinical Reviewer</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The organization where the practitioner performs the roles\">Organization:</td><td colspan=\"3\"><a href=\"Organization-organization-examplehospital.html\">Example Hospital (healthcare-provider)</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Roles which this practitioner is authorized to perform for the organization\">Role:</td><td colspan=\"3\"><span title=\"Codes:\">human-overseer</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The specialties of the practitioner in this role\">Specialty:</td><td colspan=\"3\"><span title=\"Codes:\">Internal Medicine</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Records whether the practitioner acting in the documented role has completed training specific to the relevant AI system.\"><a href=\"StructureDefinition-ai-system-training-status.html\">AI System-Specific Training Status</a></td><td colspan=\"3\">true</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-system-training-status"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:boolean ;
+       fhir:v true
+     ]
+  ] ) ; # 
+  fhir:practitioner [
+     fhir:link <http://example.org/fhir/trust-ai-transparency/Practitioner/practitioner-001> ;
+     fhir:reference [ fhir:v "Practitioner/practitioner-001" ]
+  ] ; # 
+  fhir:organization [
+     fhir:link <http://example.org/fhir/trust-ai-transparency/Organization/organization-examplehospital> ;
+     fhir:reference [ fhir:v "Organization/organization-examplehospital" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:text [ fhir:v "human-overseer" ]
+  ] ) ; # 
+  fhir:specialty ( [
+     fhir:text [ fhir:v "Internal Medicine" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
