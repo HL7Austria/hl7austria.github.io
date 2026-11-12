@@ -52,7 +52,7 @@ Purpose categories used to document the secondary use of electronic health data 
   "title" : "Secondary-Use Purpose Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Purpose categories used to document the secondary use of electronic health data under the EHDS.",
   "compose" : {

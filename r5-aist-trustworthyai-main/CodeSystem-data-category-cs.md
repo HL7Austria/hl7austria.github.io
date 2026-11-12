@@ -32,7 +32,7 @@ Codes representing categories of electronic health data that may be made availab
   "title" : "Data Category Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes representing categories of electronic health data that may be made available for secondary use under the EHDS.",
   "caseSensitive" : true,

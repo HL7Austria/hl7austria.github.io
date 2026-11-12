@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-machine-exe
   "name" : "Trust_AIAuditEvent",
   "title" : "Trust AI Execution Audit Event",
   "status" : "draft",
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability.",
   "fhirVersion" : "5.0.0",

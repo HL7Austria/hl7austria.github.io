@@ -51,7 +51,7 @@ Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basi
   "title" : "GDPR Article 6 Legal Basis Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Legal bases listed in Article 6(1) GDPR for documenting the asserted lawful basis for processing personal data.",
   "compose" : {

@@ -32,7 +32,7 @@ Codes representing selected conditions in Article 9(2) GDPR under which special 
   "title" : "GDPR Article 9 Condition Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes representing selected conditions in Article 9(2) GDPR under which special categories of personal data may be processed.",
   "caseSensitive" : true,

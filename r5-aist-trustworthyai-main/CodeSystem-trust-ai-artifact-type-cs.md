@@ -32,7 +32,7 @@ Codes identifying AI-related documentation artifacts represented by this impleme
   "title" : "Trust AI Artifact Type Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying AI-related documentation artifacts represented by this implementation guide.",
   "caseSensitive" : true,

@@ -59,7 +59,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-practitione
   "name" : "Trust_AIPractitionerRole",
   "title" : "Trust AI Practitioner Role",
   "status" : "draft",
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A PractitionerRole profile representing the role, qualification context, specialty, and AI-related training information of the human reviewer involved in oversight of an AI-supported workflow.",
   "fhirVersion" : "5.0.0",

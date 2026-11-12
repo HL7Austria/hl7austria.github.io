@@ -32,7 +32,7 @@ Codes describing assessed data-quality characteristics relevant to the developme
   "title" : "Trust AI Data Quality Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes describing assessed data-quality characteristics relevant to the development, validation, testing, or evaluation of an AI system.",
   "caseSensitive" : true,

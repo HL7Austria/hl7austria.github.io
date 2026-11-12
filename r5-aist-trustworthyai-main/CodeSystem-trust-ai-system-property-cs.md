@@ -32,7 +32,7 @@ Codes identifying structured properties used to describe regulatory and operatio
   "title" : "Trust AI System Property Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:51:29+00:00",
+  "date" : "2026-11-12T19:52:39+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying structured properties used to describe regulatory and operational characteristics of an AI system in Device.property.",
   "caseSensitive" : true,
