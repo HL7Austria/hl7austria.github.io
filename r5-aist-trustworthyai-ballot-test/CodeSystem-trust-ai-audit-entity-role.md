@@ -31,7 +31,7 @@ Roles used to distinguish entities involved in an AI execution audit event.
   "name" : "TrustAIAuditEntityRoleCodeSystem",
   "title" : "Trust AI Audit Entity Role Code System",
   "status" : "draft",
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Roles used to distinguish entities involved in an AI execution audit event.",
   "caseSensitive" : true,

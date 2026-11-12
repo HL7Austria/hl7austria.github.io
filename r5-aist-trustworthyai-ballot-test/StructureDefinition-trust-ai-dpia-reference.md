@@ -50,7 +50,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-dpia-refere
   "name" : "DPIAReference",
   "title" : "Trust AI DPIA Reference",
   "status" : "draft",
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Privacy risk management, GDPR accountability",
   "fhirVersion" : "5.0.0",

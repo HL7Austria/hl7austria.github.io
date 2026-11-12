@@ -32,7 +32,7 @@ Codes indicating the documented clinical validation status of an AI system for i
   "title" : "Trust AI Clinical Validation Status Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes indicating the documented clinical validation status of an AI system for its intended clinical use.",
   "caseSensitive" : true,

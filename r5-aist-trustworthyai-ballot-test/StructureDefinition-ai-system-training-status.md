@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-system-training-s
   "name" : "AISystemTrainingStatus",
   "title" : "AI System-Specific Training Status",
   "status" : "draft",
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records whether the practitioner acting in the documented role has completed training specific to the relevant AI system.",
   "fhirVersion" : "5.0.0",

@@ -62,7 +62,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-organizatio
   "name" : "Trust_AIOrganization",
   "title" : "Trust AI Responsible Organization",
   "status" : "draft",
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An Organization profile representing an organization involved in manufacturing, providing, deploying, or operating an AI system, including relevant accountability and contact information.",
   "fhirVersion" : "5.0.0",

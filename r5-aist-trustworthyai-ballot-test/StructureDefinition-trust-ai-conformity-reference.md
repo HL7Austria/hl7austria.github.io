@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-conformity-
   "name" : "EUConformityDeclarationReference",
   "title" : "EU Conformity Declaration Reference",
   "status" : "draft",
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "The EU declaration of conformity shall identify the high-risk AI system.",
   "fhirVersion" : "5.0.0",

@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-data-permit.csv), [E
   "name" : "DataPermit",
   "title" : "Data Permit",
   "status" : "draft",
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the identifier of an EHDS data permit associated with the documented secondary use, where applicable.",
   "fhirVersion" : "5.0.0",

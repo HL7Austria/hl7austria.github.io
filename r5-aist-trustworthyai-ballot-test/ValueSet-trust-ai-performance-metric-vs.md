@@ -51,7 +51,7 @@ Performance characteristics that may be documented for an AI system.
   "title" : "Trust AI Performance Metric Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Performance characteristics that may be documented for an AI system.",
   "compose" : {

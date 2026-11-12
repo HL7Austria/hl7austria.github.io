@@ -50,7 +50,7 @@ This value set is not used here; it may be used elsewhere (e.g. specifications a
   "name" : "TrustAIAuditEntityRoleValueSet",
   "title" : "Trust AI Audit Entity Role Value Set",
   "status" : "draft",
-  "date" : "2026-11-12T18:32:52+00:00",
+  "date" : "2026-11-12T20:00:06+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Roles of entities involved in an AI execution audit event.",
   "compose" : {
