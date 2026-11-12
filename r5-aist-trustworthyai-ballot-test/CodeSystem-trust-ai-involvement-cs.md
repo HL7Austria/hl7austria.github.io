@@ -32,7 +32,7 @@ Codes indicating the manner in which an AI system contributed to the content rep
   "title" : "Trust AI Involvement Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes indicating the manner in which an AI system contributed to the content represented by a FHIR resource.",
   "caseSensitive" : true,

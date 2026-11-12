@@ -51,7 +51,7 @@ Clinical purposes for applying an AI system in an individual care context.
   "title" : "Trust AI Case-Specific Indication Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Clinical purposes for applying an AI system in an individual care context.",
   "compose" : {

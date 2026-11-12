@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-human-overs
   "name" : "Trust_AIHumanOversightAssessment",
   "title" : "Trust AI Human Oversight Assessment",
   "status" : "draft",
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An ArtifactAssessment profile documenting professional review of an AI-generated output, including whether the result was accepted, corrected, modified, or overridden.",
   "fhirVersion" : "5.0.0",

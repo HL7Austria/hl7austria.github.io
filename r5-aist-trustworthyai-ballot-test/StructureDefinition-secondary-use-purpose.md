@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-secondary-use-purpos
   "name" : "SecondaryUsePurpose",
   "title" : "Secondary Use Purpose",
   "status" : "draft",
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the documented purpose for secondary use of electronic health data in the EHDS context.",
   "fhirVersion" : "5.0.0",

@@ -48,7 +48,7 @@ This IG provides a FHIR-based representation of these concepts by defining reusa
   "version" : "0.1.0",
   "name" : "TrustAITransparencyIG",
   "status" : "draft",
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "packageId" : "fhir.ig.trust.aitransparency",
   "fhirVersion" : ["5.0.0"],

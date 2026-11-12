@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-retention-informa
   "name" : "AIRetentionInformation",
   "title" : "AI Retention Information",
   "status" : "draft",
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents the stated retention duration for AI-related data, outputs, logs, or documentation.",
   "fhirVersion" : "5.0.0",

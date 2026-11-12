@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-provenance.
   "name" : "Trust_AIProvenance",
   "title" : "Trust AI Provenance",
   "status" : "draft",
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context.",
   "fhirVersion" : "5.0.0",

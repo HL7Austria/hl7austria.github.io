@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-third-country-data-t
   "name" : "ThirdCountryDataTransfer",
   "title" : "Third-Country Data Transfer",
   "status" : "draft",
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents whether use of the AI system involves a transfer of personal data to a third country or an international organisation and identifies the destination country or countries where applicable.",
   "fhirVersion" : "5.0.0",

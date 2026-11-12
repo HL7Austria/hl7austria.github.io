@@ -32,7 +32,7 @@ Codes identifying regulatory identifier types associated with an AI system.
   "title" : "Trust AI Identifier Type Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:15:49+00:00",
+  "date" : "2026-11-12T18:32:52+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying regulatory identifier types associated with an AI system.",
   "caseSensitive" : true,
