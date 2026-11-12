@@ -16,7 +16,7 @@
 
 **effective**: 2026-03-01 10:20:00+0000
 
-**performer**: [Practitioner Clinical Reviewer ](Practitioner-practitioner-001.md)
+**performer**: [Clinical Reviewer](Practitioner-practitioner-001.md)
 
 **value**: high-risk
 
@@ -37,7 +37,7 @@ The simulated AI output was intentionally configured as inconsistent and correct
 Corrected clinical result created for PoC traceability demonstration.
 
 
-**derivedFrom**: [Observation ](Observation-sc-04-correction-exp-ai-observation-risk-001.md)
+**derivedFrom**: [Observation AI-assisted early warning risk assessment](Observation-sc-04-correction-exp-ai-observation-risk-001.md)
 
 
 

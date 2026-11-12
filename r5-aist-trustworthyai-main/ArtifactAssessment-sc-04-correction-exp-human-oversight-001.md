@@ -10,14 +10,14 @@ Profile: [Trust AI Human Oversight Assessment](StructureDefinition-trust-ai-huma
 
 **date**: 2026-03-01 10:20:00+0000
 
-**artifact**: [Observation ](Observation-sc-04-correction-exp-ai-observation-risk-001.md)
+**artifact**: [Observation AI-assisted early warning risk assessment](Observation-sc-04-correction-exp-ai-observation-risk-001.md)
 
 ### Contents
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **Summary** | **Classifier** | **Author** |
-| * | The simulated AI output was intentionally configured as inconsistent and corrected by the human reviewer. | Human Correction | [PractitionerRole ](PractitionerRole-practitionerrole-reviewer-001.md) |
+| * | The simulated AI output was intentionally configured as inconsistent and corrected by the human reviewer. | Human Correction | [Clinical Reviewer: human-overseer at Example Hospital (healthcare-provider)](PractitionerRole-practitionerrole-reviewer-001.md) |
 
 **workflowStatus**: Published
 

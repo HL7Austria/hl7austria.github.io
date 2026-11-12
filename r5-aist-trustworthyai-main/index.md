@@ -8,11 +8,11 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/ImplementationGuide/fhir.ig.trust.aitransparency | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:TrustAITransparencyIG |
+| Draft as of 2026-11-12 | *Computable Name*:TrustAITransparencyIG |
 
-# Trust AI Transparency Implementation Guide
+### Trust AI Transparency Implementation Guide
 
-## Scope
+#### Scope
 
 The IG covers selected metadata areas relevant to AI-supported processing in healthcare:
 
@@ -29,7 +29,7 @@ The IG covers selected metadata areas relevant to AI-supported processing in hea
 
 The IG does not replace clinical validation, conformity assessment, data protection assessment, national legal review, or organization-specific governance processes.
 
-## Purpose
+#### Purpose
 
 AI-supported healthcare workflows require technical documentation that is understandable, traceable, and interoperable across systems. Relevant information may include the identity of the AI system, its intended purpose, technical documentation, training-data context, privacy metadata, legal processing context, generated outputs, execution traces, human oversight, and patient-facing information.
 
@@ -48,10 +48,9 @@ This IG provides a FHIR-based representation of these concepts by defining reusa
   "version" : "0.1.0",
   "name" : "TrustAITransparencyIG",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "packageId" : "fhir.ig.trust.aitransparency",
-  "license" : "CC0-1.0",
   "fhirVersion" : ["5.0.0"],
   "dependsOn" : [{
     "id" : "hl7tx",
@@ -61,7 +60,7 @@ This IG provides a FHIR-based representation of these concepts by defining reusa
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r5",
-    "version" : "7.4.0"
+    "version" : "7.5.0"
   },
   {
     "id" : "hl7ext",
@@ -71,12 +70,12 @@ This IG provides a FHIR-based representation of these concepts by defining reusa
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r5",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   }],
   "definition" : {
     "extension" : [{
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools.r5#1.1.2"
+      "valueCode" : "hl7.fhir.uv.tools.r5#1.3.0"
     }],
     "grouping" : [{
       "id" : "generalized",

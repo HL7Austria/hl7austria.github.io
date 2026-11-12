@@ -5,7 +5,7 @@
 
 ## Use Case 2 - AI-generated Diagnostic Report
 
-## Overview
+### Overview
 
 | | |
 | :--- | :--- |
@@ -15,7 +15,7 @@
 | **Preconditions** | The patient and the input observation are available as structured clinical data, the DiagnosticAssist AI system is registered with its model card and conformity declaration, and the responsible organization and human reviewer are configured. |
 | **Result** | An AI-generated DiagnosticReport is linked to its input observation, AI system, provenance and audit information, a documented human validation and a patient-facing explanation. |
 
-## Description
+### Description
 
 Use Case 2 demonstrates the **generalized AI output** approach of this IG. Not every AI output fits a dedicated profile such as [Trust_AIObservation](StructureDefinition-trust-ai-observation.md). This use case shows how any FHIR resource, here a DiagnosticReport, can be documented as an AI output using the generic transparency pattern of the IG.
 
@@ -27,7 +27,7 @@ The AI involvement is recorded directly on the output resource: the DiagnosticRe
 
 In contrast to [Use Case 1](use_case1.md), this scenario is a single standalone example and is not part of the PoC pipeline.
 
-## Related FHIR Resources
+### Related FHIR Resources
 
 The following resources represent Use Case 2 in this IG. All of them belong to the [Generalized AI Output Scenario](artifacts.md#1) example set.
 

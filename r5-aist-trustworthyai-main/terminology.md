@@ -5,11 +5,11 @@
 
 ## Terminology
 
-# Terminology
+### Terminology
 
 The Implementation Guide defines custom terminology where existing FHIR terminologies do not sufficiently represent AI transparency concepts. It contains 16 CodeSystems and 12 ValueSets.
 
-## AI Transparency and Documentation
+#### AI Transparency and Documentation
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -19,20 +19,20 @@ The Implementation Guide defines custom terminology where existing FHIR terminol
 | [Trust AI Data Quality](CodeSystem-trust-ai-data-quality-cs.md) | `representative`,`error-free`,`complete`,`relevant` | [Trust AI Data Quality](ValueSet-trust-ai-data-quality-vs.md)(extensible) | [AI Training Data Metadata](StructureDefinition-ai-training-data.md) |
 | [Trust AI Case-Specific Indication](CodeSystem-trust-ai-case-specific-indication-cs.md) | `triage`,`screening`,`second-opinion`,`diagnostic-support`,`treatment-planning`,`prognosis` | [Trust AI Case-Specific Indication](ValueSet-trust-ai-case-specific-indication-vs.md)(extensible) | [Case-Specific Indication](StructureDefinition-case-specific-indication.md) |
 
-## Human Oversight
+#### Human Oversight
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | [Trust AI Human Oversight](CodeSystem-trust-ai-human-oversight-cs.md) | `human-validation`,`human-override`,`human-correction` | [Trust AI Human Oversight Action](ValueSet-trust-ai-human-oversight-action-vs.md)(extensible) | [Trust_AIHumanOversightAssessment](StructureDefinition-trust-ai-human-oversight.md)`content.classifier` |
 
-## GDPR
+#### GDPR
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | [GDPR Article 6 Legal Basis](CodeSystem-gdpr-art6-codesystem.md) | Art. 6(1)(a) to (f) | [GDPR Article 6 Legal Basis](ValueSet-gdpr-art6-legal-basis-vs.md)(required) | [Trust_AIProvenance](StructureDefinition-trust-ai-provenance.md)`authorization` |
 | [GDPR Article 9 Condition](CodeSystem-gdpr-art9-codesystem.md) | Art. 9(2)(a), (c), (g), (h), (i), (j) | [GDPR Article 9 Condition](ValueSet-gdpr-art9-condition-vs.md)(required) | [Trust_AIProvenance](StructureDefinition-trust-ai-provenance.md)`authorization` |
 
-## European Health Data Space (EHDS)
+#### European Health Data Space (EHDS)
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -40,7 +40,7 @@ The Implementation Guide defines custom terminology where existing FHIR terminol
 | [Data Category](CodeSystem-data-category-cs.md) | 17 categories of electronic health data for secondary use | [Data Category](ValueSet-data-category-vs.md)(extensible) | [AI Training Data Metadata](StructureDefinition-ai-training-data.md) |
 | [Secondary-Use Purpose](CodeSystem-secondary-use-purpose-cs.md) | 8 permitted purposes of secondary use | [Secondary-Use Purpose](ValueSet-secondary-use-purpose-vs.md)(required in[Secondary Use Purpose](StructureDefinition-secondary-use-purpose.md), extensible in[AI Training Data Metadata](StructureDefinition-ai-training-data.md)) | [Secondary Use Purpose](StructureDefinition-secondary-use-purpose.md),[AI Training Data Metadata](StructureDefinition-ai-training-data.md) |
 
-## Structural Codes
+#### Structural Codes
 
 These code systems provide fixed codes that identify slices and document types within the profiles.
 

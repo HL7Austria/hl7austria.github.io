@@ -14,11 +14,11 @@ Profile: [Trust AI Patient Explanation Communication](StructureDefinition-trust-
 
 **subject**: [Anonymous Patient Female, DoB: 1965-06-15](Patient-dr-patient.md)
 
-**about**: [ArtifactAssessment: date = 2026-03-10 09:10:00+0000; artifact[x] = ->Diagnostic Report for '' for '->Anonymous Patient Female, DoB: 1965-06-15'; workflowStatus = published](ArtifactAssessment-dr-human-assessment.md)
+**about**: [ArtifactAssessment: date = 2026-03-10 09:10:00+0000; artifact[x] = ->Diagnostic Report for 'AI-generated diagnostic assessment' for '->Anonymous Patient Female, DoB: 1965-06-15'; workflowStatus = published](ArtifactAssessment-dr-human-assessment.md)
 
 **sent**: 2026-03-10 09:15:00+0000
 
-**sender**: [PractitionerRole ](PractitionerRole-dr-practitioner-role.md)
+**sender**: [Dana Reviewer: Human AI reviewer at Example Diagnostic Center](PractitionerRole-dr-practitioner-role.md)
 
 ### Payloads
 

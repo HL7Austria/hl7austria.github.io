@@ -52,7 +52,7 @@ Profile: [Trust AI System Device](StructureDefinition-trust-ai-device.md)
 
 > **property****type**: Target Population**value**: Adult patients with suspected infection in an acute care setting
 
-**owner**: [Organization Example Hospital](Organization-organization-examplehospital.md)
+**owner**: [Example Hospital (healthcare-provider)](Organization-organization-examplehospital.md)
 
 **note**: , 
 

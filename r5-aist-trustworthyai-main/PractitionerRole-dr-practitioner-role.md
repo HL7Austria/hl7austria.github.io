@@ -8,15 +8,17 @@
 
 Profile: [Trust AI Practitioner Role](StructureDefinition-trust-ai-practitionerrole.md)
 
-**AI System-Specific Training Status**: true
+Dana Reviewer: Human AI reviewer at Example Diagnostic Center
 
-**practitioner**: [Practitioner Dana Reviewer ](Practitioner-dr-practitioner.md)
+-------
 
-**organization**: [Organization Example Diagnostic Center](Organization-dr-organization.md)
-
-**code**: Human AI reviewer
-
-**specialty**: Internal Medicine
+| | |
+| :--- | :--- |
+| Practitioner: | [Dana Reviewer](Practitioner-dr-practitioner.md) |
+| Organization: | [Example Diagnostic Center](Organization-dr-organization.md) |
+| Role: | Human AI reviewer |
+| Specialty: | Internal Medicine |
+| [AI System-Specific Training Status](StructureDefinition-ai-system-training-status.md) | true |
 
 
 

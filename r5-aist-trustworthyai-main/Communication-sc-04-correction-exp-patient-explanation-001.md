@@ -14,11 +14,11 @@ Profile: [Trust AI Patient Explanation Communication](StructureDefinition-trust-
 
 **subject**: [Anonymous Patient Female, DoB: 1959-04-12](Patient-patient-001.md)
 
-**about**: [ArtifactAssessment: date = 2026-03-01 10:20:00+0000; artifact[x] = ->Observation ; workflowStatus = published](ArtifactAssessment-sc-04-correction-exp-human-oversight-001.md)
+**about**: [ArtifactAssessment: date = 2026-03-01 10:20:00+0000; artifact[x] = ->Observation AI-assisted early warning risk assessment; workflowStatus = published](ArtifactAssessment-sc-04-correction-exp-human-oversight-001.md)
 
 **sent**: 2026-03-01 10:30:00+0000
 
-**sender**: [PractitionerRole ](PractitionerRole-practitionerrole-reviewer-001.md)
+**sender**: [Clinical Reviewer: human-overseer at Example Hospital (healthcare-provider)](PractitionerRole-practitionerrole-reviewer-001.md)
 
 ### Payloads
 

@@ -6,7 +6,9 @@
 
 ## Example Practitioner: Practitioner: Human Reviewer
 
-**name**: Clinical Reviewer 
+Clinical Reviewer
+
+-------
 
 
 

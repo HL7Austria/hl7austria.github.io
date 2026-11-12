@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-training-data | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:AITrainingData |
+| Draft as of 2026-11-12 | *Computable Name*:AITrainingData |
 
 Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.
 
@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-training-data.csv
   "name" : "AITrainingData",
   "title" : "AI Training Data Metadata",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents the origin, relevant EHDS-related classifications, applicable permit identifiers, secondary-use purposes, and reported quality characteristics of data used to train or develop the AI system.",
   "fhirVersion" : "5.0.0",

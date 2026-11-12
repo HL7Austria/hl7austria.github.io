@@ -5,7 +5,7 @@
 
 ## Authors and Contributors
 
-# Authors and Contributors
+### Authors and Contributors
 
 | | | |
 | :--- | :--- | :--- |

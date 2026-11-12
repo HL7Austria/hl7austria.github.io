@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/CodeSystem/trust-ai-involvement-cs | *Version*:0.1.0 |
-| Active as of 2026-10-02 | *Computable Name*:TrustAIInvolvementCodeSystem |
+| Active as of 2026-11-12 | *Computable Name*:TrustAIInvolvementCodeSystem |
 
  
 Codes indicating the manner in which an AI system contributed to the content represented by a FHIR resource. 
@@ -32,7 +32,7 @@ Codes indicating the manner in which an AI system contributed to the content rep
   "title" : "Trust AI Involvement Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes indicating the manner in which an AI system contributed to the content represented by a FHIR resource.",
   "caseSensitive" : true,

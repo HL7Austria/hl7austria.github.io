@@ -50,7 +50,7 @@ Profile: [Trust AI System Device](StructureDefinition-trust-ai-device.md)
 
 > **property****type**: Target Population**value**: Adult patients
 
-**owner**: [Organization Example Diagnostic Center](Organization-dr-organization.md)
+**owner**: [Example Diagnostic Center](Organization-dr-organization.md)
 
 **contact**: [manufacturer@example-ai-medical.example](mailto:manufacturer@example-ai-medical.example), [dpo@example-ai-medical.example](mailto:dpo@example-ai-medical.example)
 

@@ -8,20 +8,22 @@
 
 Profile: [Trust AI Responsible Organization](StructureDefinition-trust-ai-organization.md)
 
-**active**: true
+Example Hospital (healthcare-provider)
 
-**type**: healthcare-provider
+-------
 
-**name**: Example Hospital
-
-### Contacts
-
-| | | | |
-| :--- | :--- | :--- | :--- |
-| - | **Purpose** | **Name** | **Telecom** |
-| * | Administrative |  | [contact@examplehospital.example](mailto:contact@examplehospital.example) |
-| * | Data Protection Officer | Data Protection Officer | [dpo@examplehospital.example](mailto:dpo@examplehospital.example) |
-| * | AI Incident Reporting Contact | AI Incident Reporting Contact | [incidents@examplehospital.example](mailto:incidents@examplehospital.example) |
+| | |
+| :--- | :--- |
+| Active: | true |
+| Type: | healthcare-provider |
+| Administrative: | * [contact@examplehospital.example](mailto:contact@examplehospital.example)
+ |
+| Data Protection Officer: | * Data Protection Officer
+* [dpo@examplehospital.example](mailto:dpo@examplehospital.example)
+ |
+| AI Incident Reporting Contact: | * AI Incident Reporting Contact
+* [incidents@examplehospital.example](mailto:incidents@examplehospital.example)
+ |
 
 
 

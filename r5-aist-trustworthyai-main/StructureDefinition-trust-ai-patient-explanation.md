@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-patient-explanation | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:Trust_AIPatientExplanation |
+| Draft as of 2026-11-12 | *Computable Name*:Trust_AIPatientExplanation |
 
  
 A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act. 
@@ -60,7 +60,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-patient-exp
   "name" : "Trust_AIPatientExplanation",
   "title" : "Trust AI Patient Explanation Communication",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Communication profile documenting that an explanation regarding an AI-supported clinical decision was provided to a patient. The explanation may describe the role of the AI system, the related human oversight, and the key elements of the resulting clinical decision in accordance with Article 86 of the EU AI Act.",
   "fhirVersion" : "5.0.0",

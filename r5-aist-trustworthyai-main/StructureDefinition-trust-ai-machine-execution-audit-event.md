@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-machine-execution-audit-event | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:Trust_AIAuditEvent |
+| Draft as of 2026-11-12 | *Computable Name*:Trust_AIAuditEvent |
 
  
 An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability. 
@@ -58,7 +58,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-machine-exe
   "name" : "Trust_AIAuditEvent",
   "title" : "Trust AI Execution Audit Event",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "An AuditEvent profile documenting execution-related metadata of an AI-supported processing event to support retrospective reconstruction and auditability.",
   "fhirVersion" : "5.0.0",

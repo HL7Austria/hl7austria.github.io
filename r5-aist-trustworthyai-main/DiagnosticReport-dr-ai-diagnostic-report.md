@@ -8,7 +8,7 @@
 
 Security Label: [AI Generated (Details: Trust AI Involvement Code System code ai-generated = 'AI Generated')](CodeSystem-trust-ai-involvement-cs.md)
 
-## AI-generated diagnostic assessment 
+### AI-generated diagnostic assessment 
 
 | | |
 | :--- | :--- |

@@ -5,11 +5,11 @@
 
 ## Extensions
 
-# Extensions
+### Extensions
 
 The IG defines custom extensions where the FHIR core specification does not sufficiently represent AI transparency, legal context, or regulatory metadata. The **Requirement** column links to the logical attribute on the [Requirements Traceability](requirements.md) page that the extension implements.
 
-## Static System Context
+#### Static System Context
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -22,7 +22,7 @@ The IG defines custom extensions where the FHIR core specification does not suff
 | [AI Retention Information](StructureDefinition-ai-retention-information.md) | [Trust_AIModelCard](StructureDefinition-trust-ai-model-card.md) | `retention`(Duration) | [LAW-06](requirements.md#law-06) |
 | [AI Clinical Validation Status](StructureDefinition-ai-clinical-validation-status.md) | [Trust_AIModelCard](StructureDefinition-trust-ai-model-card.md) | CodeableConcept | – |
 
-## AI Output Context
+#### AI Output Context
 
 | | | | |
 | :--- | :--- | :--- | :--- |
@@ -33,7 +33,7 @@ The IG defines custom extensions where the FHIR core specification does not suff
 | [Automated Decision-Making Flag](StructureDefinition-automated-decision-flag.md) | [Trust_AIProvenance](StructureDefinition-trust-ai-provenance.md) | boolean | [LAW-02](requirements.md#law-02) |
 | [Trust AI Log Integrity Signature](StructureDefinition-trust-ai-log-integrity.md) | [Trust_AIAuditEvent](StructureDefinition-trust-ai-machine-execution-audit-event.md) | Signature | [LAW-08](requirements.md#law-08) |
 
-## Clinical Decision Context
+#### Clinical Decision Context
 
 | | | | |
 | :--- | :--- | :--- | :--- |

@@ -5,7 +5,7 @@
 
 ## Use Case 1 - AI-supported Risk evaluation
 
-## Overview
+### Overview
 
 | | |
 | :--- | :--- |
@@ -15,7 +15,7 @@
 | **Preconditions** | A synthetic adult patient and encounter have been defined, the relevant vital-sign observations are available as structured clinical data, and the[RiskAssist AI](Device-device-riskassist-ai.md)system and[responsible human reviewer](PractitionerRole-practitionerrole-reviewer-001.md)are configured. |
 | **Result** | RiskAssist AI has generated a synthetic high-risk output linked to the relevant observations and execution metadata, including provenance and audit information. |
 
-## Description
+### Description
 
 Use Case one is framed as a simplified suspected-infection deterioration case. In this scenario, a synthetic adult patient presents with abnormal vital signs, including increased body temperature, increased heart rate, increased respiratory rate, reduced oxygen saturation, and low systolic blood pressure. A simulated AI-supported early warning component, referred to as RiskAssist AI, receives these observations and generates a synthetic high-risk output. The output is not stored as an isolated result. It is accompanied by metadata describing when it was generated, which input observations were used, which provenance and audit information was recorded, and whether human oversight or patient-facing explanation was documented.
 
@@ -23,7 +23,7 @@ The metadata is organized into static scenario metadata and generated execution 
 
 The synthetic acute-care scenario is inspired by the [NEWS2](https://www.rcp.ac.uk/media/a4ibkkbf/news2-final-report_0_0.pdf). NEWS2 defines a standardized set of routinely measured physiological parameters for assessing acute-illness severity, including respiratory rate, oxygen saturation, supplemental oxygen, systolic blood pressure, pulse rate, level of consciousness or new confusion, and body temperature. These parameters are suitable for the PoC because they can be represented as structured clinical observations and linked to the generated AI output.
 
-## Related FHIR Resources
+### Related FHIR Resources
 
 The following resources represent Use Case 1 in this IG. The examples are taken from the validation scenario (`sc-02-validation`); the patient explanation is taken from the correction scenario (`sc-04-correction-exp`), because the validation scenario has none.
 

@@ -5,9 +5,9 @@
 
 ## Introduction
 
-# Introduction
+### Introduction
 
-## Overview
+#### Overview
 
 This Implementation Guide (IG) defines a custom FHIR R5 framework for representing selected AI-related transparency, traceability, legal-context, and human-oversight metadata in healthcare.
 
@@ -15,11 +15,11 @@ The IG focuses on how documentation requirements and transparency-relevant conce
 
 The IG does not claim to provide complete legal compliance or regulatory certification. Instead, it supports structured documentation, traceability, and interoperability for selected AI-related metadata.
 
-## Out of Scope
+#### Out of Scope
 
 The requirements of [Article 15 of the EU AI Act](https://artificialintelligenceact.eu/article/15/) concerning the accuracy, robustness, and cybersecurity of high-risk AI systems are not represented as computable artifacts, profiles, extensions, or conformance requirements within this Implementation Guide. However, these requirements remain highly relevant for the design, development, deployment, and governance of AI-enabled solutions and should be taken into account when planning and structuring implementation projects. In particular, project teams should consider the need to document and manage performance metrics, system robustness, error handling, resilience measures, and cybersecurity controls in accordance with applicable regulatory obligations. Article 15 applies throughout the lifecycle of high-risk AI systems and requires appropriate levels of accuracy, robustness, and cybersecurity, including protection against AI-specific security threats.
 
-## Regulatory Foundations
+#### Regulatory Foundations
 
 The profiles in this IG are derived from a structured [requirement analysis](requirements.md) of the **EU AI Act**, the **GDPR**, and the **European Health Data Space (EHDS)**. The analysis identifies 38 high-level documentation requirements in six categories:
 
@@ -44,7 +44,7 @@ The requirements are refined into three logical data models, one per architectur
 
 The complete requirements matrix, the logical data models, the element-level mapping, and the open points are on the **[Requirements Traceability](requirements.md)** page. Each profile page also lists the requirements it implements.
 
-## Architecture
+#### Architecture
 
 The Implementation Guide is organized into three architectural layers:
 

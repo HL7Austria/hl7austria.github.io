@@ -8,20 +8,22 @@
 
 Profile: [Trust AI Responsible Organization](StructureDefinition-trust-ai-organization.md)
 
-**active**: true
+ExampleMed AI GmbH (manufacturer)
 
-**type**: manufacturer
+-------
 
-**name**: ExampleMed AI GmbH
-
-### Contacts
-
-| | | | |
-| :--- | :--- | :--- | :--- |
-| - | **Purpose** | **Name** | **Telecom** |
-| * | Administrative |  | [contact@examplemed.example](mailto:contact@examplemed.example) |
-| * | Data Protection Officer | Data Protection Officer | [dpo@examplemed.example](mailto:dpo@examplemed.example) |
-| * | AI Incident Reporting Contact | AI Incident Reporting Contact | [incidents@examplemed.example](mailto:incidents@examplemed.example) |
+| | |
+| :--- | :--- |
+| Active: | true |
+| Type: | manufacturer |
+| Administrative: | * [contact@examplemed.example](mailto:contact@examplemed.example)
+ |
+| Data Protection Officer: | * Data Protection Officer
+* [dpo@examplemed.example](mailto:dpo@examplemed.example)
+ |
+| AI Incident Reporting Contact: | * AI Incident Reporting Contact
+* [incidents@examplemed.example](mailto:incidents@examplemed.example)
+ |
 
 
 

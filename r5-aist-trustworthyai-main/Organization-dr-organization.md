@@ -8,18 +8,21 @@
 
 Profile: [Trust AI Responsible Organization](StructureDefinition-trust-ai-organization.md)
 
-**active**: true
+Example Diagnostic Center
 
-**name**: Example Diagnostic Center
+-------
 
-### Contacts
-
-| | | | |
-| :--- | :--- | :--- | :--- |
-| - | **Purpose** | **Name** | **Telecom** |
-| * | Administrative |  | [contact@diagnostic-center.example](mailto:contact@diagnostic-center.example) |
-| * | Data Protection Officer | Data Protection Officer | [dpo@diagnostic-center.example](mailto:dpo@diagnostic-center.example) |
-| * | AI Incident Reporting Contact | AI Incident Reporting Contact | [ai-incidents@diagnostic-center.example](mailto:ai-incidents@diagnostic-center.example) |
+| | |
+| :--- | :--- |
+| Active: | true |
+| Administrative: | * [contact@diagnostic-center.example](mailto:contact@diagnostic-center.example)
+ |
+| Data Protection Officer: | * Data Protection Officer
+* [dpo@diagnostic-center.example](mailto:dpo@diagnostic-center.example)
+ |
+| AI Incident Reporting Contact: | * AI Incident Reporting Contact
+* [ai-incidents@diagnostic-center.example](mailto:ai-incidents@diagnostic-center.example)
+ |
 
 
 

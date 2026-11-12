@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-device | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:Trust_AIDevice |
+| Draft as of 2026-11-12 | *Computable Name*:Trust_AIDevice |
 
  
 A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata. 
@@ -79,7 +79,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-device.csv)
   "name" : "Trust_AIDevice",
   "title" : "Trust AI System Device",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Device profile representing an AI system or software component, including system identification, versioning, intended purpose, and selected regulatory documentation metadata.",
   "fhirVersion" : "5.0.0",

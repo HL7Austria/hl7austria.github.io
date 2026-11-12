@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/ai-retention-information | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:AIRetentionInformation |
+| Draft as of 2026-11-12 | *Computable Name*:AIRetentionInformation |
 
 Documents the stated retention duration for AI-related data, outputs, logs, or documentation.
 
@@ -51,7 +51,7 @@ Other representations of profile: [CSV](StructureDefinition-ai-retention-informa
   "name" : "AIRetentionInformation",
   "title" : "AI Retention Information",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Documents the stated retention duration for AI-related data, outputs, logs, or documentation.",
   "fhirVersion" : "5.0.0",

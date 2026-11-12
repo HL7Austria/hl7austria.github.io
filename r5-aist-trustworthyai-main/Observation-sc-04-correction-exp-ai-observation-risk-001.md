@@ -18,7 +18,7 @@ Profile: [Trust AI Generated Observation](StructureDefinition-trust-ai-observati
 
 **effective**: 2026-03-01 10:15:03+0000
 
-**performer**: [Organization Example Hospital](Organization-organization-examplehospital.md)
+**performer**: [Example Hospital (healthcare-provider)](Organization-organization-examplehospital.md)
 
 **value**: low-risk
 
@@ -31,7 +31,7 @@ Profile: [Trust AI Generated Observation](StructureDefinition-trust-ai-observati
 No immediate escalation suggested
 
 
-**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+**device**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number: trust-ai-000123; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
 
 > **component****code**: Confidence**value**: 0.68 1 (Details: UCUM code1 = '1')
 

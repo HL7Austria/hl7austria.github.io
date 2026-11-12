@@ -14,7 +14,7 @@
 
 **effective**: 2026-03-10 09:00:00+0000
 
-**performer**: [Organization Example Diagnostic Center](Organization-dr-organization.md)
+**performer**: [Example Diagnostic Center](Organization-dr-organization.md)
 
 **value**: 148 mg/L
 

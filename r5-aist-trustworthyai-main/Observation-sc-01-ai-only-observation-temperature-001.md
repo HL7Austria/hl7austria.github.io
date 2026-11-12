@@ -18,7 +18,7 @@
 
 **effective**: 2026-03-01 10:10:00+0000
 
-**performer**: [Practitioner Clinical Reviewer ](Practitioner-practitioner-001.md)
+**performer**: [Clinical Reviewer](Practitioner-practitioner-001.md)
 
 **value**: 38.6 °C (Details: UCUM codeCel = 'Cel')
 

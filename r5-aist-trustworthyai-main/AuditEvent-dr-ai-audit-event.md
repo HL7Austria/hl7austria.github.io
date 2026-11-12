@@ -21,21 +21,21 @@ Profile: [Trust AI Execution Audit Event](StructureDefinition-trust-ai-machine-e
 | | | |
 | :--- | :--- | :--- |
 | - | **Who** | **Requestor** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) | false |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number: trust-ai-DIAG-001; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) | false |
 
 ### Sources
 
 | | |
 | :--- | :--- |
 | - | **Observer** |
-| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) |
+| * | [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number: trust-ai-DIAG-001; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md) |
 
 ### Entities
 
 | | | |
 | :--- | :--- | :--- |
 | - | **What** | **Role** |
-| * | [Diagnostic Report for '' for '->Anonymous Patient Female, DoB: 1965-06-15'](DiagnosticReport-dr-ai-diagnostic-report.md) | AI Output |
+| * | [Diagnostic Report for 'AI-generated diagnostic assessment' for '->Anonymous Patient Female, DoB: 1965-06-15'](DiagnosticReport-dr-ai-diagnostic-report.md) | AI Output |
 
 
 

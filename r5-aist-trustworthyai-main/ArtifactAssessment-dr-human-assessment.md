@@ -10,14 +10,14 @@ Profile: [Trust AI Human Oversight Assessment](StructureDefinition-trust-ai-huma
 
 **date**: 2026-03-10 09:10:00+0000
 
-**artifact**: [Diagnostic Report for '' for '->Anonymous Patient Female, DoB: 1965-06-15'](DiagnosticReport-dr-ai-diagnostic-report.md)
+**artifact**: [Diagnostic Report for 'AI-generated diagnostic assessment' for '->Anonymous Patient Female, DoB: 1965-06-15'](DiagnosticReport-dr-ai-diagnostic-report.md)
 
 ### Contents
 
 | | | | |
 | :--- | :--- | :--- | :--- |
 | - | **Summary** | **Classifier** | **Author** |
-| * | The clinician reviewed the AI-generated diagnostic report and accepted its conclusion. | Human Validation | [PractitionerRole ](PractitionerRole-dr-practitioner-role.md) |
+| * | The clinician reviewed the AI-generated diagnostic report and accepted its conclusion. | Human Validation | [Dana Reviewer: Human AI reviewer at Example Diagnostic Center](PractitionerRole-dr-practitioner-role.md) |
 
 **workflowStatus**: Published
 

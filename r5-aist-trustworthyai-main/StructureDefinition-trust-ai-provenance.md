@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-provenance | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:Trust_AIProvenance |
+| Draft as of 2026-11-12 | *Computable Name*:Trust_AIProvenance |
 
  
 A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context. 
@@ -67,7 +67,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-provenance.
   "name" : "Trust_AIProvenance",
   "title" : "Trust AI Provenance",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A Provenance profile linking an AI-generated output to the contributing AI system, source data, and relevant processing or governance context.",
   "fhirVersion" : "5.0.0",

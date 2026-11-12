@@ -8,7 +8,7 @@
 
 Profile: [Trust AI Provenance](StructureDefinition-trust-ai-provenance.md)
 
-Provenance for [Observation ](Observation-sc-02-validation-ai-observation-risk-001.md)
+Provenance for [Observation AI-assisted early warning risk assessment](Observation-sc-02-validation-ai-observation-risk-001.md)
 
 Summary
 
@@ -17,10 +17,30 @@ Summary
 | Occurrence | 2026-03-01 10:15:00+0000 --> 2026-03-01 10:15:03+0000 |
 | Recorded | 2026-03-01 10:15:04+0000 |
 | Activity | ai-output-generation |
+| Authorization | * Vital Interests (Art. 6(1)(d))
+* Health or Social Care (Art. 9(2)(h))
+ |
+| Subject | [Anonymous Patient Female, DoB: 1959-04-12](Patient-patient-001.md) |
+| Encounter | [Encounter: status = completed; class = ambulatory; actualPeriod = 2026-03-01 10:00:00+0000 --> 2026-03-01 10:30:00+0000](Encounter-encounter-001.md) |
 
 **Agents**
 
-* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for a deterministic AI-output simulation component used in the PoC.,->DocumentReference: status = current; identifier = Trust AI Registration Number: trust-ai-000123; status = active; manufacturer = ExampleMed AI GmbH; note = Synthetic maintenance information for PoC purposes.,AI-assisted early warning risk assessment based on synthetic NEWS2-inspired vital parameters.](Device-device-riskassist-ai.md)
+
+**Entities**
+
+* **Role**: Source
+  * **What**: [Observation Body temperature](Observation-sc-02-validation-observation-temperature-001.md)
+* **Role**: Source
+  * **What**: [Observation Heart rate](Observation-sc-02-validation-observation-heart-rate-001.md)
+* **Role**: Source
+  * **What**: [Observation Respiratory rate](Observation-sc-02-validation-observation-respiratory-rate-001.md)
+* **Role**: Source
+  * **What**: [Observation Blood pressure panel with all children optional](Observation-sc-02-validation-observation-blood-pressure-001.md)
+* **Role**: Source
+  * **What**: [Observation Oxygen saturation in Arterial blood by Pulse oximetry](Observation-sc-02-validation-observation-oxygen-saturation-001.md)
+* **Role**: Source
+  * **What**: [Observation Consciousness status](Observation-sc-02-validation-observation-consciousness-status-001.md)
 
 
 

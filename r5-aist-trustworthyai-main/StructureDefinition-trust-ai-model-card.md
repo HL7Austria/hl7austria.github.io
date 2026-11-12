@@ -9,7 +9,7 @@
 | | |
 | :--- | :--- |
 | *Official URL*:http://example.org/fhir/trust-ai-transparency/StructureDefinition/trust-ai-model-card | *Version*:0.1.0 |
-| Draft as of 2026-10-02 | *Computable Name*:Trust_AIModelCard |
+| Draft as of 2026-11-12 | *Computable Name*:Trust_AIModelCard |
 
  
 A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation. 
@@ -87,7 +87,7 @@ Other representations of profile: [CSV](StructureDefinition-trust-ai-model-card.
   "name" : "Trust_AIModelCard",
   "title" : "Trust AI Model Card",
   "status" : "draft",
-  "date" : "2026-10-02T06:10:43+00:00",
+  "date" : "2026-11-12T18:24:55+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "A DocumentReference profile representing technical documentation about an AI system, such as intended use, limitations, risk-related information, performance-related information, and model documentation.",
   "fhirVersion" : "5.0.0",

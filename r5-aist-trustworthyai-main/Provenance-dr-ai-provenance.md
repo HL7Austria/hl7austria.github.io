@@ -8,7 +8,7 @@
 
 Profile: [Trust AI Provenance](StructureDefinition-trust-ai-provenance.md)
 
-Provenance for [Diagnostic Report for '' for '->Anonymous Patient Female, DoB: 1965-06-15'](DiagnosticReport-dr-ai-diagnostic-report.md)
+Provenance for [Diagnostic Report for 'AI-generated diagnostic assessment' for '->Anonymous Patient Female, DoB: 1965-06-15'](DiagnosticReport-dr-ai-diagnostic-report.md)
 
 Summary
 
@@ -16,10 +16,18 @@ Summary
 | :--- | :--- |
 | Occurrence | 2026-03-10 09:05:00+0000 --> 2026-03-10 09:05:03+0000 |
 | Recorded | 2026-03-10 09:05:04+0000 |
+| Authorization | * Vital Interests (Art. 6(1)(d))
+* Health or Social Care (Art. 9(2)(h))
+ |
 
 **Agents**
 
-* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md)
+* **who**: [Device: extension = ,->DocumentReference: extension = Not Clinically Validated,,,; status = current; type = AI Model Card; date = 2026-03-01 10:00:00+0000; description = Synthetic model card for an AI system generating diagnostic reports from structured clinical input.,->DocumentReference: status = current; identifier = Trust AI Registration Number: trust-ai-DIAG-001; status = active; manufacturer = Example AI Medical GmbH; contact = manufacturer@example-ai-medical.example,dpo@example-ai-medical.example; note = Annual maintenance and validation required.](Device-dr-ai-device.md)
+
+**Entities**
+
+* **Role**: Source
+  * **What**: [Observation C-reactive protein concentration](Observation-dr-input-observation.md)
 
 
 

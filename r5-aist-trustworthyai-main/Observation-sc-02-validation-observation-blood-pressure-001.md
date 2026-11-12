@@ -18,7 +18,7 @@
 
 **effective**: 2026-03-01 10:10:00+0000
 
-**performer**: [Practitioner Clinical Reviewer ](Practitioner-practitioner-001.md)
+**performer**: [Clinical Reviewer](Practitioner-practitioner-001.md)
 
 > **component****code**: Systolic blood pressure**value**: 96 mmHg (Details: UCUM codemm[Hg] = 'mm[Hg]')
 

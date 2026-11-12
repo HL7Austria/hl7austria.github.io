@@ -22,7 +22,7 @@ Profile: [Trust AI Model Card](StructureDefinition-trust-ai-model-card.md)
 * dataQuality: Complete
 
 > **AI Retention Information**
-* retention: No display for Duration (value: 10; unit: years; system: http://unitsofmeasure.org; code: a)
+* retention: 10 years (Details: UCUM codea = 'a')
 
 **status**: Current
 

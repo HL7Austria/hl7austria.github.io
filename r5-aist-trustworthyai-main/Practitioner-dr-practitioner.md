@@ -6,7 +6,9 @@
 
 ## Example Practitioner: Practitioner: Diagnostic Reviewer
 
-**name**: Dana Reviewer 
+Dana Reviewer
+
+-------
 
 
 
