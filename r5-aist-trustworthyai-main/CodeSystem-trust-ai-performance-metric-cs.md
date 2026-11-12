@@ -32,7 +32,7 @@ Codes identifying performance characteristics used to document the evaluation of
   "title" : "Trust AI Performance Metric Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:24:55+00:00",
+  "date" : "2026-11-12T18:51:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying performance characteristics used to document the evaluation of an AI system.",
   "caseSensitive" : true,

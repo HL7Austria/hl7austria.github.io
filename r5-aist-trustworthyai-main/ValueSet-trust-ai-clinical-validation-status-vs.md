@@ -51,7 +51,7 @@ Clinical validation statuses applicable to an AI system and its documented inten
   "title" : "Trust AI Clinical Validation Status Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:24:55+00:00",
+  "date" : "2026-11-12T18:51:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Clinical validation statuses applicable to an AI system and its documented intended use.",
   "compose" : {

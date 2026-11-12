@@ -53,7 +53,7 @@ Other representations of profile: [CSV](StructureDefinition-case-specific-indica
   "name" : "CaseSpecificIndication",
   "title" : "Case-Specific Indication",
   "status" : "draft",
-  "date" : "2026-11-12T18:24:55+00:00",
+  "date" : "2026-11-12T18:51:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Records the clinical indication or case-specific reason for applying the AI system in the documented patient context.",
   "fhirVersion" : "5.0.0",

@@ -51,7 +51,7 @@ Selected Article 9(2) GDPR conditions relevant to processing health data and oth
   "title" : "GDPR Article 9 Condition Value Set",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:24:55+00:00",
+  "date" : "2026-11-12T18:51:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Selected Article 9(2) GDPR conditions relevant to processing health data and other special categories of personal data in this implementation guide.",
   "compose" : {

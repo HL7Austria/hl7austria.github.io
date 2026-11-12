@@ -32,7 +32,7 @@ Codes identifying organizational contact responsibilities relevant to data prote
   "title" : "Trust AI Contact Purpose Code System",
   "status" : "active",
   "experimental" : false,
-  "date" : "2026-11-12T18:24:55+00:00",
+  "date" : "2026-11-12T18:51:29+00:00",
   "publisher" : "Selina Adlberger",
   "description" : "Codes identifying organizational contact responsibilities relevant to data protection and AI-system governance.",
   "caseSensitive" : true,
