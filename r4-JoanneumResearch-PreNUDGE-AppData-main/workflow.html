@@ -225,6 +225,14 @@ To ensure maximum confidentiality of sensitive identity data, the Person resourc
   <li><strong>GET</strong> requests to retrieve patient-related resources (e.g., <code class="language-plaintext highlighter-rouge">GET /Patient/{id}</code>, <code class="language-plaintext highlighter-rouge">GET /Observation?patient={id}</code>)</li>
   <li><strong>POST</strong> requests to submit new data like observations or questionnaire responses</li>
   <li><strong>PUT</strong> requests to update existing resources</li>
+  <li><strong>DELETE</strong> requests to withdraw questionnaire responses submitted by mistake</li>
+</ul>
+
+<h4 id="correcting-or-withdrawing-questionnaire-responses">Correcting or withdrawing questionnaire responses</h4>
+
+<ul>
+  <li>To correct a submitted response, the app sends the corrected <code class="language-plaintext highlighter-rouge">QuestionnaireResponse</code> to <code class="language-plaintext highlighter-rouge">PUT /QuestionnaireResponse/{id}</code> using the ID of the original response. The response status remains <code class="language-plaintext highlighter-rouge">completed</code>. The server updates the Observations derived from the response through the mappings.</li>
+  <li>To withdraw a response submitted by mistake, the app sends <code class="language-plaintext highlighter-rouge">DELETE /QuestionnaireResponse/{id}</code> using the ID of that response. The server removes the Observations derived from the withdrawn response.</li>
 </ul>
 
 <p>All interactions <strong>MUST</strong> conform to the specifications, resource profiles, and security guidelines defined in this <strong>Implementation Guide (IG)</strong> to ensure compliance, interoperability, and data integrity.<br />
@@ -249,7 +257,7 @@ These interactions follow the <a href="https://hl7.org/fhir/R4/http.html">HL7® 
 
 <div class="inner-wrapper">
   <p>
-    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Wed, Oct 21, 2026 09:39+0000">2026-10-21</span>
+    IG &#169; 2026+ <a style="color:var(--footer-hyperlink-text-color)" href="https://prenudge.at">The PreNUDGE Consortium</a>.  Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR® 4.0.1</a>. Generated <span title="Mon, Nov 23, 2026 08:40+0000">2026-11-23</span>
     <br/>
     <span style="color: var(--footer-highlight-text-color)"></span>
                 Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

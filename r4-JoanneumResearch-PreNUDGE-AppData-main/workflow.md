@@ -61,6 +61,12 @@ Using the obtained access token, the app can perform authorized operations such 
 * **GET** requests to retrieve patient-related resources (e.g., `GET /Patient/{id}`, `GET /Observation?patient={id}`)
 * **POST** requests to submit new data like observations or questionnaire responses
 * **PUT** requests to update existing resources
+* **DELETE** requests to withdraw questionnaire responses submitted by mistake
+
+#### Correcting or withdrawing questionnaire responses
+
+* To correct a submitted response, the app sends the corrected `QuestionnaireResponse` to `PUT /QuestionnaireResponse/{id}` using the ID of the original response. The response status remains `completed`. The server updates the Observations derived from the response through the mappings.
+* To withdraw a response submitted by mistake, the app sends `DELETE /QuestionnaireResponse/{id}` using the ID of that response. The server removes the Observations derived from the withdrawn response.
 
 All interactions **MUST** conform to the specifications, resource profiles, and security guidelines defined in this **Implementation Guide (IG)** to ensure compliance, interoperability, and data integrity.
  These interactions follow the [HL7® FHIR R4 REST API](https://hl7.org/fhir/R4/http.html) principles, ensuring full interoperability and secure data exchange between the citizen's app and the platform.
@@ -68,7 +74,7 @@ All interactions **MUST** conform to the specifications, resource profiles, and 
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-10-21
+2026-11-23
 
 Links:
 [Table of Contents](toc.md)|

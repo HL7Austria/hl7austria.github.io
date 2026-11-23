@@ -21,7 +21,7 @@ Prevention and Health Promotion through Intelligent
  Data and Innovations to Strengthen
  Health Literacy
 
-#### Why
+### Why
 
 We aim for Austria to **stay healthy longer**.
 
@@ -29,7 +29,7 @@ To achieve this, health indicators of the Austrian population should be **system
 
 ![](PreNUDGE_Vision.png)
 
-#### How
+### How
 
 We collaborate by leveraging the knowledge and vision of **14 different companies**:
 
@@ -48,7 +48,7 @@ We collaborate by leveraging the knowledge and vision of **14 different companie
 * Universität Wien – Research competence in data science, public health, and behavioral economics.
 * Wirtschaftsuniversität Wien – Expertise in economics, incentive design, and behavioral economics for nudging strategies.
 
-#### What
+### What
 
 We will **focus** on:
 
@@ -66,7 +66,7 @@ For more, see [https://prenudge.at](https://prenudge.at).
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-10-21
+2026-11-23
 
 Links:
 [Table of Contents](toc.md)|

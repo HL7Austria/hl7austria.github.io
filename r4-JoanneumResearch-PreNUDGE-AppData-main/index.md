@@ -77,7 +77,7 @@ An Observation is incomplete and does not conform to the PreNUDGE data quality e
 IG © 2026+
 [The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
 [FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
-2026-10-21
+2026-11-23
 
 Links:
 [Table of Contents](toc.md)|
@@ -94,7 +94,7 @@ Links:
   "name" : "PreNUDGE-Appdata-R4",
   "title" : "PreNUDGE FHIR® IG for Data Provider / Data from Apps (R4)",
   "status" : "draft",
-  "date" : "2026-10-21T09:39:19+00:00",
+  "date" : "2026-11-23T08:40:48+00:00",
   "publisher" : "The PreNUDGE Consortium",
   "contact" : [{
     "name" : "The PreNUDGE Consortium",
@@ -123,7 +123,7 @@ Links:
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "7.4.0"
+    "version" : "7.5.0"
   },
   {
     "id" : "hl7ext",
@@ -133,7 +133,7 @@ Links:
     }],
     "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
     "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "5.3.0"
+    "version" : "5.4.0"
   },
   {
     "id" : "hl7_at_fhir_elga_aps_r4",
