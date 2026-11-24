@@ -1,0 +1,123 @@
+# HL7.AT.FHIR.PRENUDGE.APPDATA.R4\Konsumhäufigkeit fett-, zucker- und salzreicher Lebensmittel und energiereicher Getränke - FHIR® v4.0.1
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Konsumhäufigkeit fett-, zucker- und salzreicher Lebensmittel und energiereicher Getränke**
+
+## Questionnaire: Konsumhäufigkeit fett-, zucker- und salzreicher Lebensmittel und energiereicher Getränke 
+
+| | | |
+| :--- | :--- | :--- |
+| *Official URL*:https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/NutritionSugarSaltyQuestionnaire | *Version*:0.1.0 | |
+| Active as of 2026-11-24 | *Responsible:*[The PreNUDGE Consortium](https://prenudge.at) | *Computable Name*:NutritionSugarSaltyQuestionnaire |
+
+ 
+PreNUDGE minimal-set adaptation of ATHIS 2025 item DH6. The original item covers sugar-sweetened soft drinks. The adaptation also covers fatty, sugary, and salty foods and records a self-reported consumption frequency category for a typical week. 
+
+IG © 2026+
+[The PreNUDGE Consortium](https://prenudge.at). Package hl7.at.fhir.prenudge.appdata.r4#0.1.0 based on
+[FHIR® 4.0.1](http://hl7.org/fhir/R4/). Generated
+2026-11-24
+
+Links:
+[Table of Contents](toc.md)|
+[QA Report](qa.md)
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Questionnaire",
+  "id" : "NutritionSugarSaltyQuestionnaire",
+  "meta" : {
+    "profile" : ["https://fhir.hl7.at/prenudge/appdata/r4/StructureDefinition/at-prenudge-questionnaire"]
+  },
+  "url" : "https://fhir.hl7.at/prenudge/appdata/r4/Questionnaire/NutritionSugarSaltyQuestionnaire",
+  "version" : "0.1.0",
+  "name" : "NutritionSugarSaltyQuestionnaire",
+  "title" : "Konsumhäufigkeit fett-, zucker- und salzreicher Lebensmittel und energiereicher Getränke",
+  "status" : "active",
+  "experimental" : false,
+  "subjectType" : ["Patient"],
+  "date" : "2026-11-24T07:38:51+00:00",
+  "publisher" : "The PreNUDGE Consortium",
+  "contact" : [{
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at"
+    }]
+  },
+  {
+    "name" : "The PreNUDGE Consortium",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://prenudge.at",
+      "use" : "work"
+    }]
+  }],
+  "description" : "PreNUDGE minimal-set adaptation of ATHIS 2025 item DH6. The original item covers sugar-sweetened soft drinks. The adaptation also covers fatty, sugary, and salty foods and records a self-reported consumption frequency category for a typical week.",
+  "item" : [{
+    "linkId" : "DH6",
+    "text" : "DH6: Wie oft konsumieren Sie fett-, zucker- und salzreiche Lebensmittel, wie Süßigkeiten, Mehlspeisen, Knabbereien und trinken Sie energiereiche Getränke wie Limonaden in einer typischen Woche?\n\nDazu zählen: zuckerhaltige Erfrischungsgetränke (\"Softdrinks\") wie Cola, Fanta, Sprite, Eistee, Energy-Drinks; zuckerhaltige Limonaden; zuckerhaltige Sirup-Getränke.\n\nNicht dazu zählen: Erfrischungsgetränke mit ausschließlich künstlichen Süßstoffen; Diät-, Light- und Zero-Getränke; gezuckerter Tee oder Kaffee.",
+    "type" : "choice",
+    "required" : true,
+    "repeats" : false,
+    "answerOption" : [{
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "diet-daily-or-more",
+        "display" : "Täglich oder mehrmals täglich"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "diet-4-6-per-week",
+        "display" : "4 bis 6 Mal pro Woche"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "diet-1-3-per-week",
+        "display" : "1 bis 3 Mal pro Woche"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "diet-less-than-once-per-week",
+        "display" : "Weniger als einmal pro Woche"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "diet-never",
+        "display" : "Nie"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "meta-unknown",
+        "display" : "Weiß nicht"
+      }
+    },
+    {
+      "valueCoding" : {
+        "system" : "https://fhir.hl7.at/prenudge/appdata/r4/CodeSystem/athis-answers",
+        "code" : "meta-not-stated",
+        "display" : "Keine Angabe"
+      }
+    }],
+    "item" : [{
+      "linkId" : "DH6-comment",
+      "text" : "Haben Sie zu Ihrer Antwort noch einen Kommentar oder etwas hinzuzufügen?",
+      "type" : "string"
+    }]
+  }]
+}
+
+```
